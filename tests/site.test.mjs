@@ -29,4 +29,4 @@ test('local inquiry persists, deduplicates, refuses bad origins, rate limits and
   assert.equal((await send()).status,429);
  }finally{await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true});}
 });
-test('native HTML form works without browser JavaScript',async()=>{const dir=await mkdtemp(join(tmpdir(),'wm-test-'));const {server,url}=await createServer({runtime:dir,port:0});try{const response=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams(lead)});assert.equal(response.status,201);assert.match(await response.text(),/Synthetic inquiry saved/);}finally{await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true});}});
+test('native HTML form works without browser JavaScript',async()=>{const dir=await mkdtemp(join(tmpdir(),'wm-test-'));const {server,url}=await createServer({runtime:dir,port:0});try{const response=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams(lead)});assert.equal(response.status,201);assert.match(await response.text(),/Test inquiry recorded/);}finally{await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true});}});

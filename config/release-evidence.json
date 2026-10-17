@@ -66,7 +66,7 @@
   },
   "websitePublication": {
     "authorizedAt": "2026-10-17",
-    "basis": "Owner requested Custom websites and SEO for Buffalo and beyond, stronger SEO emphasis, and hiding the separate mobile header project CTA when the menu is open.",
+    "basis": "Owner requested a clear confirmation after submitting a scope, question or inquiry because the cleared form looked blank.",
     "evidence": [
       "evidence/finished-site-http.json",
       "evidence/finished-site-inquiry.json",
@@ -254,14 +254,16 @@
       "evidence/claude-audit-20261017/completion-ledger.json",
       "evidence/claude-audit-20261017/reassessment.json",
       "evidence/seo-positioning-20261017/release.json",
-      "evidence/seo-positioning-20261017/live-http.json"
+      "evidence/seo-positioning-20261017/live-http.json",
+      "evidence/inquiry-confirmation-20261017/release.json",
+      "evidence/inquiry-confirmation-20261017/live-http.json"
     ],
     "searchIndexing": true,
-    "deployedVersion": "93fc87d5-0caf-453b-ad3b-a00eae9122b1",
-    "verifiedAt": "2026-10-17T14:51:24.505Z",
+    "deployedVersion": "4d93e476-f523-491b-9f96-704a0ec2adf7",
+    "verifiedAt": "2026-10-17T15:19:53.311Z",
     "fingerprint": {
-      "artifactSha256": "ebdebce7f95d6279185d90487cddc061502987a6b88548f7d1a9d4e8b37e6610",
-      "sourceSha256": "1166efd48566add8c69d77b2374c1019c26489560109c7ccf505ee2af879d529"
+      "artifactSha256": "cea3a23d3be38f0367f742318c6ca5819e02c8d96104c4ad50ea9a65d744c679",
+      "sourceSha256": "61f88459d06cb0bbd957f368adaa81d1f5406ce8ab05436119093f88566ab3b3"
     }
   },
   "seoPass": {
@@ -356,5 +358,12 @@
     "verifiedAt": "2026-10-17T14:51:24.506Z",
     "releaseEvidence": "evidence/seo-positioning-20261017/release.json",
     "wholeBusinessApproved": false
+  },
+  "inquiryConfirmation": {
+    "version": "4d93e476-f523-491b-9f96-704a0ec2adf7",
+    "verifiedAt": "2026-10-17T15:19:53.311Z",
+    "technicalTests": 231,
+    "scope": "Contact and all eight service requests; focused receipt after a confirmed save, sending state, retained input on errors, shared native confirmation.",
+    "evidence": "evidence/inquiry-confirmation-20261017/release.json"
   }
 }

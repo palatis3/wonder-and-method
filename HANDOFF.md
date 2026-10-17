@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/claude-audit-20261017/` for verification.
+Updated October 17, 2026. Current production: October 17 inquiry confirmation release `4d93e476-f523-491b-9f96-704a0ec2adf7`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/inquiry-confirmation-20261017/` for current release verification.
 
 ## Daily inquiry handling
 

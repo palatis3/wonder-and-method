@@ -83,7 +83,7 @@ test('new monthly and audit choices save successfully through the native form wi
   for(const service of ['keep_running','improve','grow','audit_fix_sprint']){
    const response=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({name:'Synthetic Service',email:'synthetic@example.test',business:'Fictional verification',service,message:'Synthetic native form choice verification only.'})});
    assert.equal(response.status,201);const html=await response.text();assert.match(html,/Selected service:/);assert.match(html,/No email was sent/);
-   assert.match(html,new RegExp('/contact/\\?offer='+service));
+   assert.match(html,/id="inquiry-confirmation-heading"/);assert.match(html,/Your reference/);
   }
   const records=db.prepare('SELECT payload FROM inquiries').all().map(row=>JSON.parse(row.payload).service).sort();
   assert.deepEqual(records,['audit_fix_sprint','grow','improve','keep_running']);

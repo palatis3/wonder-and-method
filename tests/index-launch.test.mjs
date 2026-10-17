@@ -16,7 +16,7 @@ test('native question selection survives a real form POST and durable storage',a
   assert.doesNotMatch(html,/<input[^>]*type="hidden"[^>]*name="request_kind"/);
   const body=new URLSearchParams({name:'Synthetic launch test',email:'fixture@example.invalid',business:'Synthetic only',service:'improve',request_kind:'question',billing:'annual',message:'Synthetic question about annual service scope; do not contact.'});
   const response=await fetch(url+'/api/inquiries',{method:'POST',body});
-  assert.equal(response.status,201);assert.match(await response.text(),/Synthetic inquiry saved/);
+  assert.equal(response.status,201);assert.match(await response.text(),/Test inquiry recorded/);
   const db=new DatabaseSync(join(runtime,'inquiries.sqlite'));
   try{const row=db.prepare('SELECT payload FROM inquiries').get();const saved=JSON.parse(row.payload);assert.equal(saved.request_kind,'question');assert.equal(saved.billing,'annual');assert.equal(saved.service,'improve');}finally{db.close();}
  }finally{await new Promise(resolve=>server.close(resolve));await rm(runtime,{recursive:true,force:true});}

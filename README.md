@@ -4,7 +4,7 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1` (55 routes, 41 index-eligible routes, 17 guides). All 227 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/claude-audit-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
+The current production release is the October 17 inquiry confirmation release `4d93e476-f523-491b-9f96-704a0ec2adf7` (55 routes, 41 index-eligible routes, 17 guides). All 231 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/inquiry-confirmation-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
 
 ## Rebuild and check
 

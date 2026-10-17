@@ -127,3 +127,19 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 
 /* Keep reading text and form labels legible on small screens. */
 @media(max-width:767px){.studio-site main :is(p,li,label,summary),.studio-site .journal-prose :is(p,li),.studio-site .compact-offer p,.studio-site .package-quick-comparison dd{font-size:max(1rem,16px)}.studio-site .service-hub-links a{display:inline-flex;align-items:center;min-height:44px}}
+
+/* The receipt replaces the form only after storage returns a reference. */
+.inquiry-confirmation{border:1px solid var(--moss);background:var(--subtle);padding:clamp(1.4rem,3vw,2.6rem);border-radius:4px;scroll-margin-top:8rem;min-width:0}
+.inquiry-confirmation:focus{outline:2px solid var(--moss);outline-offset:5px}
+.studio-site .inquiry-confirmation h1,.studio-site .inquiry-confirmation h2{font-size:clamp(2.35rem,4vw,3.5rem);line-height:1.05;margin:.8rem 0 1.25rem}
+.confirmation-label{display:flex;align-items:center;gap:.65rem;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--moss);margin:0}
+.confirmation-label span{display:grid;place-items:center;border-radius:50%;background:var(--moss);color:var(--paper);width:1.9rem;height:1.9rem;font-size:1.1rem}
+.inquiry-confirmation .inquiry-reference{display:grid;gap:.4rem;padding:1rem;background:var(--paper);border:1px solid var(--line);font-size:.85rem;overflow-wrap:anywhere}
+.inquiry-confirmation code{font-size:.85rem;white-space:normal;overflow-wrap:anywhere}
+.studio-site .inquiry-confirmation .response-next :is(h2,h3){font-size:1.15rem;margin:1.5rem 0 .6rem}
+.inquiry-confirmation .response-next p{margin:.6rem 0}
+.confirmation-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.25rem;margin:1.5rem 0}
+.confirmation-help{font-size:.85rem;overflow-wrap:anywhere}
+.studio-response main{padding-top:3rem}
+#form-status{scroll-margin-top:8rem}
+@media(max-width:767px){.inquiry-confirmation{scroll-margin-top:7rem}.confirmation-actions{align-items:stretch;flex-direction:column}.confirmation-actions>a{min-height:44px;display:inline-flex;align-items:center}}

@@ -2,7 +2,7 @@
 
 Updated October 17, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 
-The current live release is the October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1`: 55 routes, 41 index-eligible routes and 17 guides. Exact route/asset, schema and provider evidence is under `evidence/claude-audit-20261017/`.
+The current live release is the October 17 inquiry confirmation release `4d93e476-f523-491b-9f96-704a0ec2adf7`: 55 routes, 41 index-eligible routes and 17 guides. Current receipt and route/asset evidence is under `evidence/inquiry-confirmation-20261017/`; prior schema and provider evidence remains under `evidence/claude-audit-20261017/`.
 
 Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` and Worker `SEARCH_INDEXING: "true"`. The sitemap is generated from `src/index-policy.mjs`; protected operator APIs and private/utility routes keep appropriate noindex/no-store behavior. Noindex is not access control.
 
