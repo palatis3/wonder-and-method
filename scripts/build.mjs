@@ -4,7 +4,7 @@ import {writeOwnedProof} from './build-owned-proof.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
 import {readFile,writeFile,mkdir,cp,readdir,rm} from 'node:fs/promises';
-import {resolve,dirname} from 'node:path';
+import {resolve,dirname,basename,extname,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
 import {assertSiteOrigin,crawlFiles} from '../src/seo.mjs';
 import {routeIndexEligible} from '../src/index-policy.mjs';
@@ -13,6 +13,58 @@ import {renderPages} from '../src/pages.mjs';
 import {transform,build as bundle} from 'esbuild';
 const root=resolve(import.meta.dirname,'..');
 const readJSON=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'));
+
+export async function buildCssBundles(assets,{includeChat=false}={}){
+ const readStyles=async names=>(await Promise.all(names.map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
+ const minify=async css=>(await transform(css,{loader:'css',minify:true,target:['chrome110','safari16']})).code;
+ const shared=await readStyles(['style.css','journal.css','premium.css','site-refresh.css',...(includeChat?['support-chat.css']:[])]);
+ const plans=await readStyles(['brand.css','package-visuals.css']);
+ return {shared:await minify(shared),plans:await minify(plans)};
+}
+
+export function applyCssBundles(html,boot){
+ const plans=html.includes('href="/assets/package-visuals.css"');
+ html=html.replace('<script src="/assets/boot.js"></script>',`<script>${boot}</script>`)
+  .replace(/<link rel="stylesheet" href="\/assets\/(?:style|journal|premium|site-refresh|support-chat)\.css">/g,'');
+ if(plans)html=html.replace(/<link rel="stylesheet" href="\/assets\/(?:brand|package-visuals)\.css">/g,'');
+ // Keep the original plan cascade: route styles, brand/package rules, shared rules.
+ // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
+ return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}<link rel="stylesheet" href="/assets/site.css"></head>`);
+}
+
+// Explicit build-only candidates, not a general unused-asset sweep. Artwork used
+// by work archives, poster variants, downloads, fonts and buyer packs stay intact.
+const obsoleteBuildAssets=[
+ ...['motion-1280.mp4','still-1536.webp','still-960.webp','still-640.webp'].map(name=>({file:`assets/editions/buffalo-dusk/${name}`,dynamic:['buffalo-dusk','editions/']})),
+ {file:'assets/package-visuals/feature-guides.json',dynamic:['feature-guides']},
+ {file:'assets/package-visuals/manifest.json',dynamic:['package-visuals/manifest']},
+ ...['boot.js','journey-counts.js','fonts.css','journal.css','package-visuals.css','support-chat.css'].map(name=>({file:`assets/${name}`,dynamic:[]}))
+];
+export async function pruneObsoleteBuildAssets(output){
+ const outputRoot=resolve(output),files=[];
+ async function walk(directory){for(const entry of await readdir(directory,{withFileTypes:true})){
+  const file=resolve(directory,entry.name);
+  if(entry.isDirectory())await walk(file);else if(entry.isFile())files.push(file);
+ }}
+ await walk(outputRoot);
+ const documents=await Promise.all(files.filter(file=>['.html','.css','.js','.mjs','.json','.svg','.xml','.txt'].includes(extname(file).toLowerCase())).map(async file=>({file,text:(await readFile(file,'utf8')).replace(/\\\//g,'/').replace(/\\u([\da-f]{4})|\\x([\da-f]{2})/gi,(_match,unicode,hex)=>String.fromCharCode(parseInt(unicode||hex,16)))})));
+ const removed=[],retained=[];
+ for(const candidate of obsoleteBuildAssets){
+  const target=resolve(outputRoot,candidate.file);
+  if(!target.startsWith(resolve(outputRoot,'assets')+sep))throw Error('Invalid obsolete asset path');
+  if(!files.includes(target))continue;
+  // A basename also catches relative URLs. Directory/stem guards retain dormant
+  // edition/data candidates when a generated script could construct their URL.
+  const tokens=[basename(target),candidate.file,...candidate.dynamic];
+  const references=documents.filter(document=>document.file!==target&&tokens.some(token=>document.text.includes(token)));
+  if(references.length){retained.push({file:candidate.file,referencedBy:references.map(document=>relative(outputRoot,document.file).split(sep).join('/'))});continue;}
+  const bytes=(await readFile(target)).byteLength;
+  await rm(target);removed.push({file:candidate.file,bytes});
+ }
+ return {removed,retained,bytesRemoved:removed.reduce((sum,item)=>sum+item.bytes,0)};
+}
+
+export async function buildSite(){
 const config=await readJSON('config/site.json');
 const chatCsp=supportChatCsp(config);
 const offers=await readJSON('config/offers.json');
@@ -39,14 +91,10 @@ if(config.homeEdition==='civic-sculpture'){
 }
 const boot=(await readFile(resolve(root,'src/assets/boot.js'),'utf8')).trim();
 const bootHash=createHash('sha256').update(boot).digest('base64');
-const styles=(await Promise.all(['style.css','journal.css','premium.css','site-refresh.css',...(chatCsp?['support-chat.css']:[])].map(name=>readFile(resolve(root,'src/assets',name),'utf8')))).join('\n');
-await writeFile(resolve(output,'assets/site.css'),(await transform(styles,{loader:'css',minify:true,target:['chrome110','safari16']})).code);
-for(const page of pages)page.html=page.html.replace('<script src="/assets/boot.js"></script>',`<script>${boot}</script>`).replace(/<link rel="stylesheet" href="\/assets\/(?:style|journal|premium|site-refresh|support-chat)\.css">/g,'').replace('</head>','<link rel="stylesheet" href="/assets/site.css"></head>');
-// Plan pages use the same cascade in one request so their first paint does not
-// wait for three separate stylesheets. Other routes retain the shared bundle.
-const planStyles=(await Promise.all(['brand.css','package-visuals.css'].map(name=>readFile(resolve(root,'src/assets',name),'utf8')))).join('\n')+'\n'+styles;
-await writeFile(resolve(output,'assets/site-plans.css'),(await transform(planStyles,{loader:'css',minify:true,target:['chrome110','safari16']})).code);
-for(const page of pages)if(page.html.includes('href="/assets/package-visuals.css"'))page.html=page.html.replace(/<link rel="stylesheet" href="\/assets\/(?:brand|package-visuals)\.css">/g,'').replace('href="/assets/site.css"','href="/assets/site-plans.css"');
+const css=await buildCssBundles(resolve(root,'src/assets'),{includeChat:Boolean(chatCsp)});
+await writeFile(resolve(output,'assets/site.css'),css.shared);
+await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
+for(const page of pages)page.html=applyCssBundles(page.html,boot);
 const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
 await writeBuyerPacks(output,offers);
@@ -77,8 +125,15 @@ ${earlyHints}`);
 const inventory=[];
 const {sourceSha256}=await releaseFingerprint(root);
 await writeFile(resolve(output,'version.json'),JSON.stringify({site:'wonder-and-method',sourceSha256,routes:pages.length},null,2)+'\n');
+// Scan all emitted documents, including generated buyer packs, before pruning.
+const assetPruning=await pruneObsoleteBuildAssets(output);
 for(const name of await readdir(resolve(root,'authority/v5'))){const bytes=await readFile(resolve(root,'authority/v5',name)); inventory.push({file:name,sha256:createHash('sha256').update(bytes).digest('hex')});}
 await mkdir(resolve(root,'evidence'),{recursive:true});
 await writeFile(resolve(root,'evidence/authority-hashes.json'),JSON.stringify(inventory,null,2));
 await writeFile(resolve(root,'evidence/build.json'),JSON.stringify({builtAt:new Date().toISOString(),mode:config.mode,routes:pages.map(p=>p.path),pageDates:Object.fromEntries(pages.filter(p=>p.modifiedAt).map(p=>[p.path,p.modifiedAt])),prices,source:'config/offers.json',gated:['/services/website-care/',...map.pages.filter(p=>p.stage==='launch_if_evidence_ready').map(p=>p.url)].filter(path=>!pages.some(p=>p.path===path)),guideReason:config.guideApprovals?.length?'Dated editorial review and owner publication instruction recorded in config/site.json':'Dated editorial evidence review required before publication',careReason:config.careReady?'Actual coverage and review recorded':'Actual staffed coverage, recipient and escalation must be agreed before enrollment'},null,2));
 console.log(`Built ${pages.length} HTML routes (${config.mode}); source plan and operating records excluded from dist.`);
+console.log(`Removed ${assetPruning.removed.length} unreferenced build assets (${assetPruning.bytesRemoved} bytes); retained ${assetPruning.retained.length} referenced candidates.`);
+return {routes:pages.length,assetPruning,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans)}};
+}
+
+if(process.argv[1]&&resolve(process.argv[1])===resolve(import.meta.filename))await buildSite();

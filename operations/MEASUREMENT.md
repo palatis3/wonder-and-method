@@ -4,7 +4,7 @@ Updated October 17, 2026. These are aggregate event counts, not unique people, l
 
 ## Read privately
 
-After the candidate summary endpoint is deployed:
+The deployed summary endpoint supports:
 
 ```powershell
 npm run inquiries:production -- measurement
@@ -13,7 +13,7 @@ npm run inquiries:production -- measurement 30
 
 The default is seven UTC dates including today; accepted values are integers 1–90. The local operator reads DPAPI credentials and calls the authenticated `/api/operator/journey-summary?days=N` endpoint. Do not paste tokens into browser URLs, screenshots or reports. The older authenticated `/api/operator/journey-counts` endpoint returns at most 5,000 raw aggregate rows; reaching that limit can mean truncation. Use aggregate reporting, not an inquiry export, to measure site activity.
 
-The October 17 candidate and migration `0004_journey_categories.sql` extend fixed page categories while preserving existing count rows. New categories distinguish guide/index, individual service types, areas and the work demo. Verify the migration before enabling the candidate collector; local code does not prove remote schema readiness. Earlier broad-category history cannot be retroactively split into the new categories.
+The October 17 release and verified migration `0004_journey_categories.sql` extend fixed page categories while preserving existing count rows. New categories distinguish guide/index, individual service types, areas and the work demo. Migration count preservation and read-only operator access are recorded in the audit evidence. Earlier broad-category history cannot be retroactively split into the new categories.
 
 ## Events and privacy
 

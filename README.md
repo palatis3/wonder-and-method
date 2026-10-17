@@ -1,10 +1,10 @@
 # Wonder and Method
 
-Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current operating documentation was reconciled on October 17, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the distinction between production and the audit candidate.
+Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current operating documentation was reconciled on October 17, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The last recorded production release is the October 16 navigation release `2c4e0fb5-6eed-4677-b96b-8214cfdc48d9` (49 routes, 37 index-eligible routes, 14 guides). The October 17 audit candidate has 55 routes, 41 index-eligible routes and 17 guides; it is not yet recorded as deployed. The active art is Civic Sculpture finale-v2, with source readiness in `public/civic-sculpture/finale-v2/pipeline-status.json`. Production builds fail when required motion assets are missing.
+The current production release is the October 17 audit release `464be5fb-4424-4c95-b356-16e4e13d599a` (55 routes, 41 index-eligible routes, 17 guides). All 227 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/claude-audit-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
 
 ## Rebuild and check
 
@@ -20,7 +20,7 @@ npm start
 
 Open http://127.0.0.1:4183. The loopback server saves synthetic inquiries locally and sends no email; use invented details. The separate `deployment/` toolchain uses `npm --prefix deployment ci` and `npm --prefix deployment run check` for a Worker dry run. These checks do not deploy.
 
-The audit work is adding `npm run technical:check` as a combined local technical gate; use it once the command is present in `package.json`. The broader `npm run release:check` retains business readiness gates and can fail while commercial dependencies remain unresolved. Neither a successful technical check nor a build authorizes billing, outreach or a new provider purchase.
+Run `npm run technical:check` for the combined build, tests, static verification and Worker dry run. The broader `npm run release:check` retains business readiness gates and can fail while commercial dependencies remain unresolved. Neither check authorizes billing, outreach or a new provider purchase.
 
 Normal builds use checked-in public assets and Node dependencies. Optional Python asset/font regeneration tools use `python -m pip install -r requirements.txt`; these packages are not required to serve the site. Blender supplies `bpy`/`mathutils` through its own Python runtime, and Blender/FFmpeg must be installed separately for rendering. See `motion/README.md` for render tooling; older design directions there are historical, not the active production art.
 

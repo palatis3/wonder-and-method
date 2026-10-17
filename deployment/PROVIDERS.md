@@ -18,7 +18,7 @@ Cloudflare/D1/Resend/Bitwarden were selected on free tiers. Fastmail began with 
 
 The website writes D1 before attempting an owner notification. Review Fastmail and operator delivery status each business day. The confirmed response commitment is one business day, Monday–Friday Eastern. Neither inbox acceptance nor chat presence implies an immediate reply.
 
-Candidate notification recovery is documented in [PRODUCTION.md](PRODUCTION.md); do not assume new retry/schema behavior is live before the recorded release. The application cap defaults to 50 notification attempts per UTC day including retries; actual sender quotas remain a separate constraint.
+Deployed notification recovery is documented in [PRODUCTION.md](PRODUCTION.md); the October17 audit release and migrations are verified. The application cap defaults to 50 notification attempts per UTC day including retries; actual sender quotas remain a separate constraint.
 
 The tawk.to setup uses core chat, with no paid add-on or AI/hired agent enabled in the recorded setup. The consent prompt is enabled and uploads disabled. Owner phone notification and reply were verified October 16 in `evidence/support-links-release-20261016/phone-test.json`. Recheck physical-device delivery after changes. Review and remove unsuccessful chat records with matching email/D1/export copies under [INQUIRY_RETENTION.md](../operations/INQUIRY_RETENTION.md); providers do not automatically perform that whole cleanup.
 

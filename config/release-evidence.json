@@ -65,8 +65,8 @@
     }
   },
   "websitePublication": {
-    "authorizedAt": "2026-10-15",
-    "basis": "Owner: Send the updates to the website that is online. Still no index.",
+    "authorizedAt": "2026-10-17",
+    "basis": "Owner requested implementing sensible audit fixes, publishing the site updates and notifying Google. Indexing was explicitly enabled October16 and remains ON.",
     "evidence": [
       "evidence/finished-site-http.json",
       "evidence/finished-site-inquiry.json",
@@ -244,14 +244,22 @@
       "evidence/navigation-refresh-20261016/verify.log",
       "evidence/navigation-refresh-20261016/deploy.log",
       "evidence/navigation-refresh-20261016/live-desktop-sticky.png",
-      "evidence/navigation-refresh-20261016/live-mobile-sticky.png"
+      "evidence/navigation-refresh-20261016/live-mobile-sticky.png",
+      "evidence/claude-audit-20261017/release.json",
+      "evidence/claude-audit-20261017/live-http.json",
+      "evidence/claude-audit-20261017/migration-verification.json",
+      "evidence/claude-audit-20261017/provider-checks.json",
+      "evidence/claude-audit-20261017/google-notification.json",
+      "evidence/claude-audit-20261017/responsive-final.json",
+      "evidence/claude-audit-20261017/completion-ledger.json",
+      "evidence/claude-audit-20261017/reassessment.json"
     ],
-    "searchIndexing": false,
-    "deployedVersion": "2c4e0fb5-6eed-4677-b96b-8214cfdc48d9",
-    "verifiedAt": "2026-10-16T21:14:32.509Z",
+    "searchIndexing": true,
+    "deployedVersion": "464be5fb-4424-4c95-b356-16e4e13d599a",
+    "verifiedAt": "2026-10-17T14:38:55.287Z",
     "fingerprint": {
-      "artifactSha256": "4d9852c6b67dbf1171bda650427a1c867ed165c4e45409110ba270f955161a18",
-      "sourceSha256": "845a44bad07d22d2fae51e907d73dccfd251fc745ed7961b81d3f625d37e6047"
+      "artifactSha256": "ce552635e54a1f4da0ec3a7a7101a896a536c5716bc56ab5dea8320b33cc0049",
+      "sourceSha256": "e22bc31e945ffc4bc339bb51ece4af4b9a88c7106676a8a71b222ed2a86d7524"
     }
   },
   "seoPass": {
@@ -325,6 +333,20 @@
     "breadcrumbTrailsVerified": 48,
     "googleBreadcrumbTests": 2,
     "independentReviewsResolved": true,
+    "wholeBusinessApproved": false
+  },
+  "claudeAudit": {
+    "verifiedAt": "2026-10-17T14:38:55.288Z",
+    "version": "464be5fb-4424-4c95-b356-16e4e13d599a",
+    "releaseEvidence": "evidence/claude-audit-20261017/release.json",
+    "routes": 55,
+    "indexEligible": 41,
+    "guides": 17,
+    "tests": 227,
+    "searchIndexing": true,
+    "sitemapSubmission": "success",
+    "sitemapUrls": 41,
+    "autoRenew": "off by owner choice",
     "wholeBusinessApproved": false
   }
 }

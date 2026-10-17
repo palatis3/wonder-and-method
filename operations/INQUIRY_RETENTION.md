@@ -4,7 +4,7 @@ Updated October 17, 2026. Owner: the owner of Venture House Group LLC. Review du
 
 ## Record facts before evaluating deletion
 
-Migration `0003_inquiry_followup.sql` adds nullable `last_substantive_contact_at`, explicit client/hold state, hold reason/review time and frozen notification payloads. It does not backfill contact dates from `created_at`: the database cannot infer later email/chat contact. Confirm applied schema and deployed operator support before using these candidate commands. Unknown contact stays null until the owner reconciles the conversation; when there was no response, explicitly record the verified submission time.
+Migration `0003_inquiry_followup.sql` adds nullable `last_substantive_contact_at`, explicit client/hold state, hold reason/review time and frozen notification payloads. It does not backfill contact dates from `created_at`: the database cannot infer later email/chat contact. The schema and read-only preview endpoint were verified in the October17 audit release. Confirm the production target before using these commands. Unknown contact stays null until the owner reconciles the conversation; when there was no response, explicitly record the verified submission time.
 
 ```powershell
 npm run inquiries:production -- retention-preview

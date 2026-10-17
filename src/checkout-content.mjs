@@ -4,6 +4,7 @@ import {inquiryForm} from './inquiry-form.mjs';
 export const checkoutPath=id=>'/checkout/'+id.replaceAll('_','-')+'/';
 export function offerActions(id,name,{monthly=false,compact=false}={}){
  if(!inquiryChoices.some(([key])=>key===id)||id==='unsure')throw Error('Unknown offer action');
+ if(id==='website_baseline')name='Website Baseline';
  return `<div class="offer-purchase-actions"><a class="button" href="${checkoutPath(id)}${monthly?'?billing=monthly':''}">Request ${e(name)}</a><a class="text-link" href="/contact/?offer=${id}&amp;request_kind=question#inquiry">Ask about ${e(name)}</a>${compact?'':'<p>Fit and scope approval before payment.</p>'}</div>`;
 }
 export function checkoutPages(o,intake){return buyerPacks(o).map(pack=>{

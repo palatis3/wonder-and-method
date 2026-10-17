@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Last recorded production: October 16 navigation release `2c4e0fb5-6eed-4677-b96b-8214cfdc48d9`. The audit candidate is not yet deployed; use [BUILD_STATUS.md](BUILD_STATUS.md) and the dated release evidence before treating local changes as live.
+Updated October 17, 2026. Current production: October 17 audit release `464be5fb-4424-4c95-b356-16e4e13d599a`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/claude-audit-20261017/` for verification.
 
 ## Daily inquiry handling
 
@@ -17,9 +17,9 @@ Status prints delivery counts, not inquiry text. Export creates a new plaintext 
 
 For a known reference, `retry REFERENCE CONFIRM_REFERENCE` may send a real notification; `delete REFERENCE CONFIRM_REFERENCE` removes the active record. Both arguments must be the same exact UUID. Reconcile uncertain delivery in Resend and Fastmail before retrying. Do not use the production form, retry or deletion commands for synthetic QA.
 
-The candidate Worker caps notification attempts at five within a 22-hour retry window, uses a default site-wide 50-attempt UTC-day budget including retries, fences completion to the current sending lease and freezes the provider request body for new attempts after migration 0003. Hourly retries process at most 20 eligible records per run. Exhausted or ambiguous records need manual review; acceptance still does not establish inbox delivery. Do not assume this candidate behavior is live before release verification, or that a second-channel alert exists.
+The deployed Worker caps notification attempts at five within a 22-hour retry window, uses a default site-wide 50-attempt UTC-day budget including retries, fences completion to the current sending lease and freezes the provider request body for new attempts after migration 0003. Hourly retries process at most 20 eligible records per run. Exhausted or ambiguous records need manual review; acceptance still does not establish inbox delivery. A second-channel failure alert is not configured. Review delivery counts and reconcile uncertain provider outcomes.
 
-Keep one weekly-board row per actual buyer. Record the last substantive contact, client status and any justified hold. Run `npm run inquiries:production -- retention-preview` after migration 0003 is verified; it is a dry run, not deletion. See [INQUIRY_RETENTION.md](operations/INQUIRY_RETENTION.md) for follow-up JSON and all-copy cleanup. Use `npm run inquiries:production -- measurement 7` after the candidate summary endpoint is deployed for aggregate reporting.
+Keep one weekly-board row per actual buyer. Record the last substantive contact, client status and any justified hold. Run `npm run inquiries:production -- retention-preview` using the verified migration 0003 schema; it is a dry run, not deletion. See [INQUIRY_RETENTION.md](operations/INQUIRY_RETENTION.md) for follow-up JSON and all-copy cleanup. Use `npm run inquiries:production -- measurement 7` for the deployed aggregate summary endpoint for aggregate reporting.
 
 ## Rebuild, deploy and recover
 

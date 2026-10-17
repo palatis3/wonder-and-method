@@ -5,7 +5,7 @@ export function buyerPacks(o){
  const prices=priceList(o);
  return ids.map(id=>{
   const build=id.endsWith('_site'),monthly=Object.hasOwn(o.plans,id),p=build?o[id]:monthly?o.plans[id]:id==='audit_fix_sprint'?o.audit_sprint:o.baseline;
-  const example=o.decision_pack_examples[id],base={id,name:id==='website_baseline'?'Website Baseline':p.public_name,scopeStatus:'Current offer '+o.version+'. This is a proposal request, not a booking, payment or client acceptance.',request:'/contact/?offer='+id,...(monthly?{annual:p.annual}:{})};
+  const example=o.decision_pack_examples[id],base={id,name:id==='website_baseline'?'Website Baseline':p.public_name,scopeStatus:'Current scope for new proposals. This is a proposal request, not a booking, payment or client acceptance.',request:'/contact/?offer='+id,...(monthly?{annual:p.annual}:{})};
   let sections,cost;
   if(build){
    const tier=id.replace('_site','');cost=calculateCost(prices,{build:tier,plan:'none',cycles:0,hostingMonthly:20,hostingMonths:12,external:120});
