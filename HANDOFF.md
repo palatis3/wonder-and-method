@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: October 17 Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/gmail-routing-20261017/` for current release verification.
+Updated October 17, 2026. Current production: conversion and local-concept release `655a60b1-a23e-4ce8-842c-73eb95ab59ed`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/top10-improvements-20261017/` for current release verification. Gmail routing remains unchanged from the verified preceding release.
 
 ## Daily inquiry handling
 
@@ -14,6 +14,8 @@ npm run inquiries:production -- export review-20261017
 ```
 
 Status prints delivery counts, not inquiry text. Export creates a new plaintext JSON file in `.runtime/exports` and refuses to overwrite it. Protect the file as personal data and delete it under the same retention decision as other working copies. The operator loads production credentials through Windows DPAPI without printing them.
+
+Track real buyer progress in the [private lead pipeline](operations/LEAD_PIPELINE.md), using the saved reference and one row per buyer. `npm run leads -- report` shows received, qualified, proposal, won and lost counts by service and volunteered source, plus overdue actions and retention reviews. The private board starts empty and is separate from the public fictional demo and aggregate website events.
 
 For a known reference, `retry REFERENCE CONFIRM_REFERENCE` may send a real notification; `delete REFERENCE CONFIRM_REFERENCE` removes the active record. Both arguments must be the same exact UUID. Reconcile uncertain delivery in Resend and Fastmail before retrying. Do not use the production form, retry or deletion commands for synthetic QA.
 

@@ -2,13 +2,15 @@
 
 | Area | Current evidence |
 | --- | --- |
-| Production | Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0`; 55 routes, 41 index-eligible pages, 17 guides |
-| Technical validation | 231 tests pass; build, static verifier and production dry run pass; exact live HTTP verification recorded |
+| Production | Conversion and local-concept release `655a60b1-a23e-4ce8-842c-73eb95ab59ed`; 64 routes, 41 index-eligible pages, 17 guides |
+| Technical validation | 244 tests pass; build, static verifier, production dry run and private GitHub CI pass; 64 live pages and 201 asset hashes match |
 | Search | Indexing ON. Google sitemap submission succeeded October 17, with 41 discovered pages. Homepage inspection says indexed. New manual recrawl request failed because Google's reCAPTCHA service could not connect. |
 | Source recovery | Private GitHub repository `palatis3/wonder-and-method`; sanitized source, secret scan, clean staged-checkout rebuild and CI recorded. This does not establish lost-device credential recovery. |
 | Database | Migrations 0003/0004 applied with a private pre-migration backup; inquiry and aggregate counts unchanged. No inquiry deletion or inferred contact-date backfill. |
 | Provider settings | DMARC monitoring record added; DNSSEC public chain and minimum TLS1.2 verified. Auto-renew remains OFF by explicit owner choice; domain expires October14,2027. |
 | Media | Civic Sculpture finale-v2; all approved package artwork preserved. Twelve unreferenced build files excluded (1.44MB); source art retained. |
+
+The top-ten improvement batch is published: three complete fictional business concepts, earlier website proof, shorter homepage, core inquiry fields first, stacked pricing comparisons, plain-language offer summaries, separate finite/ongoing SEO inquiry paths, proposal-stage wording, contextual guide actions and a private lead pipeline. Concepts remain excluded from search; the main work page stays eligible. `evidence/top10-improvements-20261017/` records market selection, independent review fixes, local browser checks, exact live verification and recovery evidence. The actual lead board starts empty; no demand, paid client result or conversion lift is inferred.
 
 Website inquiry and scope notifications now go directly to the owner’s Gmail inbox. A test notification arrived in Gmail, and the live release is verified in `evidence/gmail-routing-20261017/`. Fastmail rejected forwarding on its trial plan; the owner chose to leave support-mail and tawk.to routing unchanged.
 

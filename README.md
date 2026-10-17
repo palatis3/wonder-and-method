@@ -4,7 +4,9 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the October 17 Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0` (55 routes, 41 index-eligible routes, 17 guides). All 231 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/gmail-routing-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
+The current production release is the October 17 conversion and local-concept release `655a60b1-a23e-4ce8-842c-73eb95ab59ed` (64 routes, 41 index-eligible routes, 17 guides). All 244 tests and the deployment dry run passed; 64 live pages and 201 asset hashes match the tested build. Verification is in `evidence/top10-improvements-20261017/`. Three fictional concepts demonstrate landscaping, remodeling and a pizzeria, selected using Erie County establishment data. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
+
+The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `npm run leads -- report` shows current stages by service and stated source. See [operations/LEAD_PIPELINE.md](operations/LEAD_PIPELINE.md). Actual buyer records stay out of Git and public assets. Gmail inquiry routing remains as verified in the prior release.
 
 ## Rebuild and check
 

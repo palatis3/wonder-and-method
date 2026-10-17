@@ -2,7 +2,7 @@
 
 Updated October 17, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 
-The current live release is the October 17 Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0`: 55 routes, 41 index-eligible routes and 17 guides. Current notification and route/asset evidence is under `evidence/gmail-routing-20261017/`; prior schema and provider evidence remains under `evidence/claude-audit-20261017/`.
+The current live release is the October 17 conversion and local-concept release `655a60b1-a23e-4ce8-842c-73eb95ab59ed`: 64 routes, 41 index-eligible routes and 17 guides. Current route/asset evidence is under `evidence/top10-improvements-20261017/`; notification routing evidence remains under `evidence/gmail-routing-20261017/`, with prior schema and provider evidence under `evidence/claude-audit-20261017/`. All 244 tests pass. This release changes no database schema or notification recipients.
 
 Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` and Worker `SEARCH_INDEXING: "true"`. The sitemap is generated from `src/index-policy.mjs`; protected operator APIs and private/utility routes keep appropriate noindex/no-store behavior. Noindex is not access control.
 
@@ -18,7 +18,7 @@ Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` a
    node deployment/node_modules/wrangler/bin/wrangler.js deploy --config deployment/wrangler.production.jsonc
    ```
 
-5. Record the returned version ID and verify live route/asset parity against that exact build, indexable canonical pages, robots and populated sitemap, private-path exclusions, unauthenticated operator rejection, navigation and responsive form behavior. Use `?qa=1` for browser review; it suppresses measurement but does not sandbox a live form. No real email, production inquiry or deletion is needed for routine QA. Run `node scripts/verify-finished-site.mjs VERSION_ID` for the current index-aware exact route/asset verification. Older `finished-site` evidence remains historical.
+5. Record the returned version ID and verify live route/asset parity against that exact build, indexable canonical pages, robots and populated sitemap, private-path exclusions, unauthenticated operator rejection, navigation and responsive form behavior. Use `?qa=1` for browser review; it suppresses measurement but does not sandbox a live form. No real email, production inquiry or deletion is needed for routine QA. Run `node scripts/verify-finished-site.mjs VERSION_ID evidence/RELEASE_FOLDER/live-http.json` for the current index-aware exact route/asset verification. If no output path is supplied, it writes `evidence/finished-site-live-http.json`. Preserve dated evidence from previous releases.
 6. Perform the separately requested Google notification only against the verified current sitemap; record the actual provider result. Update the current release/version and pending-work statements in these runbooks from evidence. A sitemap notification is not proof of indexing, ranking or traffic.
 
 ## Inquiry safety and credentials
