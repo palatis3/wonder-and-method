@@ -1,10 +1,10 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: October 17 inquiry confirmation release `4d93e476-f523-491b-9f96-704a0ec2adf7`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/inquiry-confirmation-20261017/` for current release verification.
+Updated October 17, 2026. Current production: October 17 Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/gmail-routing-20261017/` for current release verification.
 
 ## Daily inquiry handling
 
-Review `support@wonderandmethod.com` in Fastmail and the tawk.to dashboard each business day. Reply within one business day, Monday–Friday Eastern. Chat presence should reflect actual availability; the response commitment does not imply instant chat coverage. The owner confirmed phone chat notification/reply on October 16; historical setup notes that say it is pending are superseded.
+Review website inquiry and scope-request notifications in the owner's `palatis3@gmail.com` inbox. Support mail remains in Fastmail and tawk.to notifications remain unchanged, per the owner’s October 17 choice. The attempted Fastmail forwarding rule was rejected because forwarding is unavailable on its trial plan; no forwarding rule was saved. Continue reviewing those channels each business day. Reply within one business day, Monday–Friday Eastern. Chat presence should reflect actual availability; the response commitment does not imply instant chat coverage. The owner confirmed phone chat notification/reply on October 16; historical setup notes that say it is pending are superseded.
 
 Check saved inquiry status independently of email receipt:
 

@@ -2,7 +2,7 @@
 
 Updated October 17, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 
-The current live release is the October 17 inquiry confirmation release `4d93e476-f523-491b-9f96-704a0ec2adf7`: 55 routes, 41 index-eligible routes and 17 guides. Current receipt and route/asset evidence is under `evidence/inquiry-confirmation-20261017/`; prior schema and provider evidence remains under `evidence/claude-audit-20261017/`.
+The current live release is the October 17 Gmail inquiry routing release `c4d0dcf2-8fa0-466d-b5e2-926b00a379e0`: 55 routes, 41 index-eligible routes and 17 guides. Current notification and route/asset evidence is under `evidence/gmail-routing-20261017/`; prior schema and provider evidence remains under `evidence/claude-audit-20261017/`.
 
 Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` and Worker `SEARCH_INDEXING: "true"`. The sitemap is generated from `src/index-policy.mjs`; protected operator APIs and private/utility routes keep appropriate noindex/no-store behavior. Noindex is not access control.
 
@@ -23,7 +23,7 @@ Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` a
 
 ## Inquiry safety and credentials
 
-The Worker persists the inquiry before Resend notification to `support@wonderandmethod.com` on Fastmail. Candidate retries are bounded to five attempts and a 22-hour window; hourly runs select at most 20 eligible rows. `NOTIFICATION_DAILY_LIMIT` defaults to 50 attempts per UTC day, including retries. Raising the cap requires checking actual provider limits and cost authority. The cap and leases do not prove delivery.
+The Worker persists the inquiry before Resend notification to the owner's `palatis3@gmail.com` inbox, as requested October 17. Public contact remains `support@wonderandmethod.com`. This applies to new notifications; existing attempted sends retain their frozen recipient for retry consistency. The owner chose to leave Fastmail support mail and tawk.to notifications unchanged after Fastmail rejected forwarding on its trial plan. No forwarding rule was saved. Candidate retries are bounded to five attempts and a 22-hour window; hourly runs select at most 20 eligible rows. `NOTIFICATION_DAILY_LIMIT` defaults to 50 attempts per UTC day, including retries. Raising the cap requires checking actual provider limits and cost authority. The cap and leases do not prove delivery.
 
 Migration 0003 enables an exact frozen notification request body for new first attempts. Existing attempted records retain their legacy format. Sending completion is fenced to the owning attempt/lease so an old request cannot overwrite a newer result. Records outside retry bounds or held by the daily budget require manual review. Do not reset attempts or change a frozen request to force another send. Reconcile the provider and inbox first.
 

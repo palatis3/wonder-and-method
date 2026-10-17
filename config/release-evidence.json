@@ -66,7 +66,7 @@
   },
   "websitePublication": {
     "authorizedAt": "2026-10-17",
-    "basis": "Owner requested a clear confirmation after submitting a scope, question or inquiry because the cleared form looked blank.",
+    "basis": "Owner requested website inquiry and scope notifications at palatis3@gmail.com; after Fastmail rejected trial-account forwarding, owner chose to keep only website inquiries routed to Gmail for now.",
     "evidence": [
       "evidence/finished-site-http.json",
       "evidence/finished-site-inquiry.json",
@@ -256,14 +256,16 @@
       "evidence/seo-positioning-20261017/release.json",
       "evidence/seo-positioning-20261017/live-http.json",
       "evidence/inquiry-confirmation-20261017/release.json",
-      "evidence/inquiry-confirmation-20261017/live-http.json"
+      "evidence/inquiry-confirmation-20261017/live-http.json",
+      "evidence/gmail-routing-20261017/release.json",
+      "evidence/gmail-routing-20261017/live-http.json"
     ],
     "searchIndexing": true,
-    "deployedVersion": "4d93e476-f523-491b-9f96-704a0ec2adf7",
-    "verifiedAt": "2026-10-17T15:19:53.311Z",
+    "deployedVersion": "c4d0dcf2-8fa0-466d-b5e2-926b00a379e0",
+    "verifiedAt": "2026-10-17T15:33:14.463Z",
     "fingerprint": {
-      "artifactSha256": "cea3a23d3be38f0367f742318c6ca5819e02c8d96104c4ad50ea9a65d744c679",
-      "sourceSha256": "61f88459d06cb0bbd957f368adaa81d1f5406ce8ab05436119093f88566ab3b3"
+      "artifactSha256": "817622e651a96e4c57469775d9a7a9537bf572ecad62ce6170b19b415397e96a",
+      "sourceSha256": "7c3f36fef2f285b9655e6a2f154f9ae942601a8c33d3a2bc71112f9b6c449980"
     }
   },
   "seoPass": {
@@ -365,5 +367,11 @@
     "technicalTests": 231,
     "scope": "Contact and all eight service requests; focused receipt after a confirmed save, sending state, retained input on errors, shared native confirmation.",
     "evidence": "evidence/inquiry-confirmation-20261017/release.json"
+  },
+  "gmailInquiryRouting": {
+    "version": "c4d0dcf2-8fa0-466d-b5e2-926b00a379e0",
+    "verifiedAt": "2026-10-17T15:33:14.463Z",
+    "scope": "New website inquiry and scope notifications to owner Gmail. Support inbox and tawk.to unchanged by final owner instruction.",
+    "evidence": "evidence/gmail-routing-20261017/release.json"
   }
 }
