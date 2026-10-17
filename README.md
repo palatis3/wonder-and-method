@@ -4,7 +4,7 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the October 17 audit release `464be5fb-4424-4c95-b356-16e4e13d599a` (55 routes, 41 index-eligible routes, 17 guides). All 227 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/claude-audit-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
+The current production release is the October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1` (55 routes, 41 index-eligible routes, 17 guides). All 227 tests and the deployment dry run passed. Live route/asset verification is recorded in `evidence/claude-audit-20261017/live-http.json`. The active art is Civic Sculpture finale-v2; required motion assets are enforced by the production build.
 
 ## Rebuild and check
 
@@ -42,3 +42,5 @@ Current offer facts come from `config/offers.json`: Launch / Focused / Signature
 - [operations/OUTREACH.md](operations/OUTREACH.md): unsent drafts and requirements before authorized outreach.
 
 Serve only `dist/`. Never serve the repository root, credentials, business records, evidence or exports. Keep secrets, account evidence, `evidence/`, `.runtime/`, private job records and generated private outputs out of Git; review the actual staged inventory before committing. Production secrets use Windows DPAPI CurrentUser. A local encrypted backup is not proof of recovery after losing this Windows account. Private remote backup, clean-clone restore and new schema deployment remain work in progress until their separate evidence is recorded.
+
+Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.

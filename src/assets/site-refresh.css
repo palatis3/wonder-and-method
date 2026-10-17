@@ -111,6 +111,7 @@ body:has(.support-chat :focus-visible) .support-chat,body:has(.back-to-top:focus
  .studio-site .menu-toggle{order:1;border-radius:999px;border-color:#93a18f;padding:.6rem .85rem;font-weight:600}
  .studio-site .menu-toggle:hover,.studio-site .menu-toggle[aria-expanded=true]{background:var(--subtle);border-color:var(--blue);color:var(--ink)}
  .studio-site .site-header nav{order:3}
+ .studio-site.menu-open .header-contact,html:not(.nav-ready) .studio-site .header-contact{display:none}
  .studio-site .contact-layout{grid-template-columns:minmax(0,1fr)}
  .package-relationship{grid-template-columns:1fr;padding:1.5rem}
  .buyer-pack-links{columns:1}

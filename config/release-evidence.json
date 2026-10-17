@@ -66,7 +66,7 @@
   },
   "websitePublication": {
     "authorizedAt": "2026-10-17",
-    "basis": "Owner requested implementing sensible audit fixes, publishing the site updates and notifying Google. Indexing was explicitly enabled October16 and remains ON.",
+    "basis": "Owner requested Custom websites and SEO for Buffalo and beyond, stronger SEO emphasis, and hiding the separate mobile header project CTA when the menu is open.",
     "evidence": [
       "evidence/finished-site-http.json",
       "evidence/finished-site-inquiry.json",
@@ -252,14 +252,16 @@
       "evidence/claude-audit-20261017/google-notification.json",
       "evidence/claude-audit-20261017/responsive-final.json",
       "evidence/claude-audit-20261017/completion-ledger.json",
-      "evidence/claude-audit-20261017/reassessment.json"
+      "evidence/claude-audit-20261017/reassessment.json",
+      "evidence/seo-positioning-20261017/release.json",
+      "evidence/seo-positioning-20261017/live-http.json"
     ],
     "searchIndexing": true,
-    "deployedVersion": "464be5fb-4424-4c95-b356-16e4e13d599a",
-    "verifiedAt": "2026-10-17T14:38:55.287Z",
+    "deployedVersion": "93fc87d5-0caf-453b-ad3b-a00eae9122b1",
+    "verifiedAt": "2026-10-17T14:51:24.505Z",
     "fingerprint": {
-      "artifactSha256": "ce552635e54a1f4da0ec3a7a7101a896a536c5716bc56ab5dea8320b33cc0049",
-      "sourceSha256": "e22bc31e945ffc4bc339bb51ece4af4b9a88c7106676a8a71b222ed2a86d7524"
+      "artifactSha256": "ebdebce7f95d6279185d90487cddc061502987a6b88548f7d1a9d4e8b37e6610",
+      "sourceSha256": "1166efd48566add8c69d77b2374c1019c26489560109c7ccf505ee2af879d529"
     }
   },
   "seoPass": {
@@ -347,6 +349,12 @@
     "sitemapSubmission": "success",
     "sitemapUrls": 41,
     "autoRenew": "off by owner choice",
+    "wholeBusinessApproved": false
+  },
+  "seoPositioning": {
+    "version": "93fc87d5-0caf-453b-ad3b-a00eae9122b1",
+    "verifiedAt": "2026-10-17T14:51:24.506Z",
+    "releaseEvidence": "evidence/seo-positioning-20261017/release.json",
     "wholeBusinessApproved": false
   }
 }

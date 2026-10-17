@@ -2,7 +2,7 @@
 
 | Area | Current evidence |
 | --- | --- |
-| Production | Audit release `464be5fb-4424-4c95-b356-16e4e13d599a`; 55 routes, 41 index-eligible pages, 17 guides |
+| Production | Homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1`; 55 routes, 41 index-eligible pages, 17 guides |
 | Technical validation | 227 tests pass; build, static verifier and production dry run pass; exact live HTTP verification recorded |
 | Search | Indexing ON. Google sitemap submission succeeded October 17, with 41 discovered pages. Homepage inspection says indexed. New manual recrawl request failed because Google's reCAPTCHA service could not connect. |
 | Source recovery | Private GitHub repository `palatis3/wonder-and-method`; sanitized source, secret scan, clean staged-checkout rebuild and CI recorded. This does not establish lost-device credential recovery. |
@@ -15,3 +15,5 @@ Current evidence is in `evidence/claude-audit-20261017/`: live-http, release, mi
 The owner confirmed Buffalo, a one-business-day reply Monday–Friday Eastern, and typical delivery 7–10days after the agreed start and ready inputs. No phone, profile, testimonial or paid-client result is invented.
 
 Remaining business dependencies include real project proof/reviews, approved client agreements and cancellation decisions, assumed-name verification, appropriate off-site profiles, provider billing/recovery checks and staffed Care coverage. The all-sections-80 target is not claimed complete. Original historical release folders remain evidence of their dates, not current operating instructions.
+
+Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.

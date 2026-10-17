@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: October 17 audit release `464be5fb-4424-4c95-b356-16e4e13d599a`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/claude-audit-20261017/` for verification.
+Updated October 17, 2026. Current production: October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/claude-audit-20261017/` for verification.
 
 ## Daily inquiry handling
 
@@ -32,3 +32,5 @@ Before a release, record a compatible rollback Worker version and a private D1 e
 Use `config/offers.json` for new scopes and preserve accepted historical terms. Confirm the buyer's scope, start date, ready inputs and actual capacity before booking; typical 7–10 day delivery starts only after those conditions. Issue private Stripe invoices only after the required written approvals. Care requires separately established coverage. Maintain actual costs, cash, client/accounting retention and client-owned accounts; a published website does not prove these business gates are complete.
 
 At client handoff, deliver agreed paid source/assets/licenses and verified account access. Optional service cancellation must not disable a paid client-owned site. Actual client outcomes, independent user research and unverified business facts remain separate evidence requirements.
+
+Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.

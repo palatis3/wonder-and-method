@@ -2,7 +2,7 @@
 
 Updated October 17, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 
-The current live release is the October 17 audit release `464be5fb-4424-4c95-b356-16e4e13d599a`: 55 routes, 41 index-eligible routes and 17 guides. Exact route/asset, schema and provider evidence is under `evidence/claude-audit-20261017/`.
+The current live release is the October 17 homepage SEO and navigation release `93fc87d5-0caf-453b-ad3b-a00eae9122b1`: 55 routes, 41 index-eligible routes and 17 guides. Exact route/asset, schema and provider evidence is under `evidence/claude-audit-20261017/`.
 
 Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` and Worker `SEARCH_INDEXING: "true"`. The sitemap is generated from `src/index-policy.mjs`; protected operator APIs and private/utility routes keep appropriate noindex/no-store behavior. Noindex is not access control.
 
@@ -34,3 +34,5 @@ Production `OPERATOR_TOKEN` and `FINGERPRINT_SECRET` are stored using Windows DP
 ## Recovery
 
 A Worker rollback changes code/assets, not D1 contents or migrations. Check schema compatibility before choosing a version. Never restore an old database over newer inquiries without a deliberate reconciliation. Historical rollback and isolated restore evidence in `evidence/production-recovery.json` is dated and does not prove present-volume, mailbox or lost-device recovery. Protect exports and account for them during retention cleanup. Current source/schema/deployment state and independent backup must each be recorded explicitly.
+
+Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.
