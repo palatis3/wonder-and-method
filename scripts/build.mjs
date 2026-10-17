@@ -57,6 +57,8 @@ for(const page of pages){const file=resolve(output,`.${page.path}index.html`);aw
 const crawl=crawlFiles(config,pages);
 await writeFile(resolve(output,'sitemap.xml'),crawl.sitemap);
 await writeFile(resolve(output,'robots.txt'),crawl.robots);
+await mkdir(resolve(output,'.well-known'),{recursive:true});
+await writeFile(resolve(output,'.well-known/security.txt'),'Contact: mailto:support@wonderandmethod.com\nExpires: 2027-04-17T00:00:00Z\nPreferred-Languages: en\nCanonical: https://wonderandmethod.com/.well-known/security.txt\n');
 await cp(resolve(output,'404/index.html'),resolve(output,'404.html'));
 // Static CSS hints only; no private, API, error or payment response is hinted.
 const earlyHints=pages.filter(page=>routeIndexEligible(page.path)).map(page=>{const styles=[...page.html.matchAll(/<link rel="stylesheet" href="(\/assets\/[^"?]+\.css)"/g)].map(([,asset])=>`<${asset}?v=${assetVersions.get(asset)}>; rel=preload; as=style`);return styles.length?`${page.path}\n  Link: ${styles.join(', ')}\n`:'';}).join('\n');

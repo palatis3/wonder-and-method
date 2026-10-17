@@ -8,6 +8,14 @@ import {inquiryResponseHtml} from '../src/inquiry-response.mjs';
 import {inquiryContextSummary} from '../src/shared.mjs';
 const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const offers=await load('config/offers.json'),config=await load('config/site.json');
+
+test('monthly checkout states setup plus the first cycle and the baseline waiver',()=>{
+ const pages=checkoutPages(offers,intakeContent(config));
+ for(const [slug,total] of [['keep-running','$549'],['improve','$799'],['grow','$1,199']]){
+  const body=pages.find(p=>p.path===`/checkout/${slug}/`).body;
+  assert.ok(body.includes(total));assert.ok(body.includes('$399 setup'));assert.match(body,/usable studio build or Sprint already covers setup/);
+ }
+});
 test('all eight offers have request-only checkout with the exact service preserved without JavaScript',()=>{
  const pages=checkoutPages(offers,intakeContent(config));assert.equal(pages.length,8);assert.equal(new Set(pages.map(p=>p.path)).size,8);
  for(const page of pages){const id=page.path.split('/')[2].replaceAll('-','_');assert.match(page.body,new RegExp(`<option value="${id}" selected>`));assert.match(page.body,/<option value="checkout" selected>/);assert.match(page.body,/No payment is taken here/);assert.match(page.body,/action="\/api\/inquiries"/);assert.doesNotMatch(page.body,/buy\.stripe\.com|invoice\.stripe\.com|name="(?:card|cvc|card_number)"/);}

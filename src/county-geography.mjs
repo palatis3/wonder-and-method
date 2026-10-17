@@ -190,7 +190,7 @@ export const countyGeography = {
         "name": "Mattydale",
         "type": "hamlet",
         "town": "Salina",
-        "source": "https://efc.ny.gov/final-amendment-no-1-2025-clean-water-state-revolving-fund-intended-use-plan-pdf"
+        "source": "https://efc.ny.gov/system/files/documents/2025/01/2025-amendment-1.pdf"
       }
     ]
   },
@@ -249,7 +249,7 @@ export const countyGeography = {
     },
     "sources": [
       "https://www.ny.gov/counties/orange",
-      "https://www.tuxedogov.org/1290/Summary-of-Status-of-Consolidation"
+      "https://www.tuxedogov.org/DocumentCenter/View/1209/1pt0144-Summary-of-Status-of-Consolida"
     ],
     "communities": [
       {
@@ -462,43 +462,43 @@ export const countyGeography = {
         "name": "Delmar",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "Glenmont",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "Slingerlands",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "Elsmere",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "Selkirk",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "North Bethlehem",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "South Bethlehem",
         "type": "hamlet",
         "town": "Bethlehem",
-        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126"
+        "source": "https://www.townofbethlehem.org/DocumentCenter/View/14126/Appendix-A-Combined?bidId="
       },
       {
         "name": "Latham",
@@ -628,13 +628,13 @@ export const countyGeography = {
         "name": "Dover Plains",
         "type": "hamlet",
         "town": "Dover",
-        "source": "https://www.doverny.gov/328/2022-Town-of-Dover-Comprehensive-Plan-Up"
+        "source": "https://www.doverny.gov/DocumentCenter/View/345/2022-Comprehensive-Plan-Update"
       },
       {
         "name": "Wingdale",
         "type": "hamlet",
         "town": "Dover",
-        "source": "https://www.doverny.gov/328/2022-Town-of-Dover-Comprehensive-Plan-Up"
+        "source": "https://www.doverny.gov/DocumentCenter/View/345/2022-Comprehensive-Plan-Update"
       }
     ]
   },
