@@ -142,4 +142,18 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .confirmation-help{font-size:.85rem;overflow-wrap:anywhere}
 .studio-response main{padding-top:3rem}
 #form-status{scroll-margin-top:8rem}
+.concept-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:2rem 0}
+.concept-preview-grid article{min-width:0}.concept-preview{display:block;overflow:hidden;border:1px solid var(--line);background:var(--subtle)}
+.concept-preview img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .25s}.concept-preview:hover img{transform:scale(1.025)}
+.concept-preview-grid h3{margin:.5rem 0;font-size:1.65rem}.concept-preview-grid .eyebrow{margin:1.1rem 0 .4rem}.concept-preview-grid p{font-size:1rem}
+.inquiry-promise{padding:1rem 1.2rem;border-left:3px solid var(--moss);background:var(--subtle);margin:0 0 1.5rem}
+.inquiry-extra{margin:1rem 0 1.25rem;border-block:1px solid var(--line);padding:.8rem 0}.inquiry-extra>summary{font-size:1rem;min-height:44px;align-content:center;cursor:pointer}
+.inquiry-extra .inquiry-options{border:0;padding:0}.inquiry-extra label{display:block;margin-top:1rem}
+form .request-summary{background:var(--subtle);border:1px solid var(--line);padding:1rem;margin:1rem 0}form .request-summary h3{font-size:1.05rem;margin:0 0 .5rem}form .request-summary p{font-size:.9rem;margin:.5rem 0}
+.pricing-detail-table,.pricing-plan-artwork{margin:1.5rem 0;border-block:1px solid var(--line);padding:1rem 0}.pricing-detail-table>summary,.pricing-plan-artwork>summary{font-size:1rem;min-height:44px;align-content:center;cursor:pointer}.pricing-detail-table[open] .comparison-scroll{margin-top:1rem}
+.home-content .home-proof{padding-top:clamp(2rem,5vw,4rem)}
+@media(max-width:767px){.concept-preview-grid{grid-template-columns:1fr;gap:2rem}.concept-preview-grid article{display:grid;grid-template-columns:1fr;gap:0}.studio-site .home-content>.studio-section{padding-block:2.5rem}.studio-site .home-content .compact-comparison{gap:1rem}.studio-site .home-content .compact-offer{padding:1.25rem}.studio-site .contact-layout{gap:2rem}.studio-site .inquiry-promise{font-size:1rem}.studio-site .contact-layout form label{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.concept-preview img{transition:none}}
+.studio-site .contact-intro{padding-bottom:1.5rem;margin-bottom:1.5rem}.studio-site .contact-intro h1{font-size:clamp(2.5rem,5vw,4.8rem)}
+@media(max-width:767px){.studio-site .contact-intro{padding-top:1rem}.studio-site .contact-intro h1{font-size:2.5rem;line-height:1.08}.studio-site .contact-intro .lede{font-size:1rem;line-height:1.5}.studio-site .inquiry-promise{padding:.8rem 1rem}}
 @media(max-width:767px){.inquiry-confirmation{scroll-margin-top:7rem}.confirmation-actions{align-items:stretch;flex-direction:column}.confirmation-actions>a{min-height:44px;display:inline-flex;align-items:center}}

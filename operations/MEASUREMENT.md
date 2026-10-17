@@ -1,5 +1,7 @@
 # Website journey counts
 
+Actual buyer progress is recorded separately in the [private lead pipeline](LEAD_PIPELINE.md): received, qualified, proposal, won or lost. Use `npm run leads -- report` for current-stage counts by service and stated source. This is a separate view from anonymous website activity; it does not join people to page events or create a visitor conversion rate.
+
 Updated October 17, 2026. These are aggregate event counts, not unique people, linked funnels, conversion rates, leads or proof of demand. Reloads/bots can add events; privacy preferences, blocked JavaScript and failed requests can remove them. Compare like date ranges and fixed categories.
 
 ## Read privately

@@ -2,7 +2,7 @@
 
 Current offers come from `config/offers.json` and the versioned commercial snapshot saved with each job. New builds are $1,400 Launch, $2,350 Focused and $3,700 Signature. Keep Running, Improve and Grow are $150/$400/$800 per monthly cycle or $1,710/$4,560/$9,120 for twelve prepaid cycles. The baseline is $399; Audit & Fix Sprint is $750. Original V5 assumptions and `service-rules.json` are historical; their old prices, word limits and economics do not control new work. Previously accepted agreements retain their rights and prices.
 
-Use `weekly-board.json` as the business board with one row per economic buyer and links to that job's accepted scope and cumulative receipt. Keep actual client records in ignored `operations/jobs`, outside public assets. Unknown values remain unknown. Synthetic tests never establish a real business gate.
+Use `.runtime/operations/weekly-board.json` as the private business board (`weekly-board.json` is the tracked blank template) with one row per economic buyer and links to that job's accepted scope and cumulative receipt. Keep actual client records in ignored `operations/jobs`, outside public assets. Unknown values remain unknown. Synthetic tests never establish a real business gate.
 
 Create an offer draft with `node scripts/create-job.mjs JOB-ID OFFER-ID`. Offers: `launch_site`, `focused_site`, `signature_site`, `keep_running`, `improve`, `grow`, `website_baseline`, `audit_fix_sprint`. Add `--annual` only for an ongoing plan. `npm run local:packet -- operations/jobs/JOB-ID` renders a buyer-review packet, not an issued invoice. [PAYMENTS.md](PAYMENTS.md) explains the separate Stripe workflow.
 

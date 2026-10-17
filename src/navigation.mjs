@@ -7,6 +7,7 @@ export function breadcrumbTrail(path,title){
  else if(path.startsWith('/areas/')&&path!=='/areas/')trail.push({path:'/areas/',name:'Service areas'});
  else if(path.startsWith('/services/')||path.startsWith('/checkout/'))trail.push({path:'/pricing/',name:'Services & pricing'});
  else if(path.startsWith('/work/')&&path!=='/work/')trail.push({path:'/work/',name:'Work'});
+ const concept=path.match(/^\/work\/(fieldwork|northline|hearthside)\/(.+)\/$/);if(concept)trail.push({path:'/work/'+concept[1]+'/',name:concept[1][0].toUpperCase()+concept[1].slice(1)+' concept'});
  const shortNames={'/pricing/':'Services & pricing','/contact/':'Contact','/about/':'About','/process/':'Process','/work/':'Work','/work/lead-workbench/':'Lead workbench','/privacy/':'Privacy','/terms/':'Website terms','/accessibility/':'Accessibility','/guides/':'Guides','/areas/':'Service areas','/services/web-design/':'Web design','/services/website-redesign/':'Website redesign','/services/seo/':'SEO & research','/services/website-care/':'Website care','/services/website-audit/':'Website audit','/services/contractor-websites/':'Contractor websites'};
  const county=path.match(/^\/areas\/([a-z-]+)-county\/$/);
  const name=shortNames[path]||(county?county[1].split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' ')+' County':title);

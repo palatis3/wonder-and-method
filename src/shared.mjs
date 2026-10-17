@@ -8,7 +8,7 @@ export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serv
 export const inquiryContextFields={
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
  found_via:{label:'How you found us',services:inquiryChoices.map(([id])=>id),options:[['search','Search engine'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
- request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Scope/fit and payment-link request'],['question','Question about this service']]},
+ request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Question about this service']]},
  booking_choice:{label:'Launch connection',services:['launch_site'],options:[['booking','Booking'],['newsletter','Newsletter'],['decide','Choose after fit review']]},
  workflow:{label:'Signature workflow',services:['signature_site'],options:[['lead_pipeline','Lead pipeline'],['client_portal','Client portal / dashboard'],['small_store','Small hosted store'],['decide','Choose after fit review']]},
  priority:{label:'First monthly priority',services:['improve','grow'],options:[['page','Page / CMS / known workflow'],['article','Useful article'],['gbp','Eligible profile batch'],['graphic','Promotional graphic'],['email','Newsletter campaign draft/setup'],['decide','Choose after review']]},

@@ -6,6 +6,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
   const confirmation=document.querySelector('#inquiry-confirmation');
   const button=form.querySelector('[type=submit]');
   let pending=false;
+  const focusInvalid=input=>{let details=input.closest?.('details');while(details){details.open=true;details=details.parentElement?.closest('details');}input.focus();};
   form.addEventListener('submit',async event=>{
     event.preventDefault();
     if(pending||form.hidden)return;
@@ -18,7 +19,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       input.setAttribute('aria-invalid',String(!valid));
       if(!valid&&!first)first=input;
     }
-    if(first){first.focus();return;}
+    if(first){focusInvalid(first);return;}
     const submitted=Object.fromEntries(new FormData(form));
     const label=button.textContent;
     pending=true;
@@ -51,7 +52,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       if(realSaved){try{countJourney(submitted.request_kind==='question'?'question_saved':'inquiry_saved',submitted.service);}catch{}}
     }catch(error){
       status.textContent=error.name==='AbortError'?'The connection took too long to confirm. Your entries remain here; please try again or contact the studio.':error instanceof TypeError?'Connection failed. Your entries are still here; please try again or email support@wonderandmethod.com.':error.message;
-      if(first)first.focus();else status.focus();
+      if(first)focusInvalid(first);else status.focus();
     }finally{
       clearTimeout(timeout);
       pending=false;

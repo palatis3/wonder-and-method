@@ -1,8 +1,8 @@
-import {readFile,writeFile,readdir} from 'node:fs/promises';
+import {readFile,writeFile,readdir,mkdir} from 'node:fs/promises';
 import {routeIndexEligible} from '../src/index-policy.mjs';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
-import {resolve,relative} from 'node:path';
+import {resolve,relative,dirname} from 'node:path';
 const root=resolve(import.meta.dirname,'..');
 const origin='https://wonderandmethod.com';
 const build=JSON.parse(await readFile(resolve(root,'evidence/build.json'),'utf8'));
@@ -41,5 +41,7 @@ const robots=await(await fetch(origin+'/robots.txt')).text(),sitemap=await(await
 assert.equal(robots,await readFile(resolve(root,'dist/robots.txt'),'utf8'));
 const versionResponse=await fetch(origin+'/version.json');assert.deepEqual(await versionResponse.json(),JSON.parse(await readFile(resolve(root,'dist/version.json'),'utf8')));
 const result={checkedAt:new Date().toISOString(),origin,worker:'wonder-method-production',version:process.argv[2]||null,pages,assets:{count:assets.length,sha256:'all match local dist'},privateRoutes,operatorUnauthenticated:401,crossOriginSubmission:403,www:308,search:{eligibleRoutes:pages.filter(p=>p.indexEligible).length,privatePagesNoindex:true,sitemapMatches:true,submissionPerformed:false},limits:'Noindex is a crawler directive, not authentication or a guarantee about third-party search systems. The live inquiry path is verified separately in finished-site-inquiry.json.'};
-await writeFile(resolve(root,'evidence/claude-audit-20261017/live-http.json'),JSON.stringify(result,null,2)+'\n');
+const output=resolve(root,process.argv[3]||'evidence/finished-site-live-http.json');
+await mkdir(dirname(output),{recursive:true});
+await writeFile(output,JSON.stringify(result,null,2)+'\n');
 console.log(`Verified ${pages.length} deployed HTML routes, ${assets.length} asset hashes, private exclusions, canonical redirect and route-specific indexing.`);

@@ -29,7 +29,7 @@ test('confirmed requests replace the form with a focused, visible receipt and pr
   release(response());await pending;
   assert.equal(ui.form.hidden,true);assert.equal(ui.form.resetCalled,true);
   assert.equal(ui.confirmation.hidden,false);assert.equal(ui.confirmation.focused,true);assert.equal(ui.confirmation.scrolled,true);
-  assert.match(ui.confirmation.innerHTML,/Request received/);assert.match(ui.confirmation.innerHTML,/reference-123/);
+  assert.match(ui.confirmation.innerHTML,/Proposal request received/);assert.match(ui.confirmation.innerHTML,/reference-123/);
   assert.match(ui.confirmation.innerHTML,/one business day/);assert.match(ui.confirmation.innerHTML,/do not need to submit again/);
   assert.deepEqual(ui.counts,[['inquiry_saved','launch_site']]);
   await ui.submit();assert.equal(calls,1);

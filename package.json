@@ -7,6 +7,7 @@
     "node": ">=24.0.0"
   },
   "scripts": {
+    "leads": "node scripts/lead-pipeline.mjs",
     "inquiries:production": "node deployment/production-operator.mjs",
     "motion:prepare": "node scripts/prepare-motion-assets.mjs",
     "motion:build": "node scripts/build-motion-study.mjs",

@@ -5,5 +5,5 @@ export function routeIndexEligible(path){
  if(/^\/assets\/(?:brand|editorial|guides|work|editions|civic-sculpture|county-briefs)\/[a-zA-Z0-9_./-]+\.(?:png|jpe?g|webp|svg|ico)$/i.test(path))return true;
  let clean;try{clean=decodeURIComponent(path).replace(/\/index\.html$/,'/').replace(/\.html$/,'/');}catch{return false;}
  if(!clean.endsWith('/'))clean+='/';
- return !['/api/','/assets/','/checkout/','/payments/','/privacy/','/terms/','/accessibility/','/work/lead-workbench/','/404/','/version.json/','/.well-known/'].some(prefix=>clean.startsWith(prefix));
+ return !['/api/','/assets/','/checkout/','/payments/','/privacy/','/terms/','/accessibility/','/work/lead-workbench/','/work/fieldwork/','/work/northline/','/work/hearthside/','/404/','/version.json/','/.well-known/'].some(prefix=>clean.startsWith(prefix));
 }

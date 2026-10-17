@@ -1,4 +1,8 @@
 const header=document.querySelector('.site-header');
+// Pricing details can be collapsed while links still reach the chosen plan.
+function revealAnchor(){let target;try{target=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return;}if(!target)return;let details=target.closest('details'),changed=false;while(details){if(!details.open){details.open=true;changed=true;}details=details.parentElement?.closest('details');}if(changed)target.scrollIntoView({block:'start'});}
+window.addEventListener('hashchange',revealAnchor);
+revealAnchor();
 const topLink=document.querySelector('.back-to-top');
 if(header&&topLink){
  const root=document.documentElement;
