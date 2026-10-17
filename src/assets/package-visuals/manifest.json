@@ -1,0 +1,295 @@
+{
+  "revision": "20261016-single-complete-posters",
+  "format": "One complete poster per plan, with inheritance on upgraded plans; every feature also has native readable text.",
+  "website": {
+    "offers": [
+      {
+        "key": "launch_site",
+        "name": "Launch",
+        "configuredName": "Launch Website",
+        "price": 1400,
+        "pages": 3,
+        "poster": {
+          "file": "launch-site-complete.webp",
+          "width": 887,
+          "height": 1774,
+          "title": "Launch Website",
+          "price": "$1,400 fixed project · USD",
+          "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": null,
+          "featureIds": [
+            "launch_site.discovery",
+            "launch_site.pages",
+            "launch_site.copy",
+            "launch_site.intent_map",
+            "launch_site.search_titles",
+            "launch_site.headings_links",
+            "launch_site.crawl_map",
+            "launch_site.structured_data",
+            "launch_site.measurement",
+            "launch_site.design",
+            "launch_site.responsive",
+            "launch_site.interface_motion",
+            "launch_site.launch_graphics",
+            "launch_site.brand_sheet",
+            "launch_site.browser_icon",
+            "launch_site.sharing_image",
+            "launch_site.inquiry_forms",
+            "launch_site.form_checks",
+            "launch_site.static_site",
+            "launch_site.tool_choice",
+            "launch_site.booking",
+            "launch_site.newsletter",
+            "launch_site.provider_fit",
+            "launch_site.account_setup",
+            "launch_site.domain_https",
+            "launch_site.redirects",
+            "launch_site.policy_pages",
+            "launch_site.full_review",
+            "launch_site.usability_checks",
+            "launch_site.review_rounds",
+            "launch_site.project_records",
+            "launch_site.ownership",
+            "launch_site.handoff",
+            "launch_site.training",
+            "launch_site.defect_correction",
+            "launch_site.followup"
+          ],
+          "intro": "All included features, explained in plain words."
+        }
+      },
+      {
+        "key": "focused_site",
+        "name": "Focused",
+        "configuredName": "Focused Website",
+        "price": 2350,
+        "pages": 7,
+        "poster": {
+          "file": "focused-site-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Focused Website",
+          "price": "$2,350 fixed project · USD",
+          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": "Includes all features of Launch PLUS",
+          "featureIds": [
+            "focused_site.pages",
+            "focused_site.launch_graphics",
+            "focused_site.photo_edits",
+            "focused_site.logo_exports",
+            "focused_site.templates",
+            "focused_site.inquiry_forms",
+            "focused_site.cms",
+            "focused_site.connected_tools",
+            "focused_site.booking",
+            "focused_site.newsletter",
+            "focused_site.training",
+            "focused_site.followup",
+            "focused_site.articles",
+            "focused_site.profile",
+            "focused_site.profile_substitute"
+          ],
+          "intro": "Your added features and upgraded allowances."
+        }
+      },
+      {
+        "key": "signature_site",
+        "name": "Signature",
+        "configuredName": "Signature Website",
+        "price": 3700,
+        "pages": 12,
+        "poster": {
+          "file": "signature-site-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Signature Website",
+          "price": "$3,700 fixed project · USD",
+          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": "Includes all features of Focused PLUS",
+          "featureIds": [
+            "signature_site.pages",
+            "signature_site.hero_motion",
+            "signature_site.launch_graphics",
+            "signature_site.brand_kit",
+            "signature_site.photo_edits",
+            "signature_site.templates",
+            "signature_site.training",
+            "signature_site.articles",
+            "signature_site.profile",
+            "signature_site.call_tracking",
+            "signature_site.workflow",
+            "signature_site.workflow_plan",
+            "signature_site.lead_pipeline_flow",
+            "signature_site.lead_pipeline_records",
+            "signature_site.lead_pipeline_stages",
+            "signature_site.lead_pipeline_staff",
+            "signature_site.lead_pipeline_dedupe",
+            "signature_site.lead_pipeline_export",
+            "signature_site.client_portal_screens",
+            "signature_site.client_portal_accounts",
+            "signature_site.client_portal_updates",
+            "signature_site.client_portal_isolation",
+            "signature_site.client_portal_export",
+            "signature_site.small_store_catalog",
+            "signature_site.small_store_checkout",
+            "signature_site.small_store_delivery",
+            "signature_site.small_store_purchase",
+            "signature_site.small_store_manage",
+            "signature_site.small_store_ownership"
+          ],
+          "intro": "Choose ONE business tool from the three alternatives below."
+        }
+      }
+    ]
+  },
+  "monthly": {
+    "offers": [
+      {
+        "key": "keep_running",
+        "name": "Keep Running",
+        "price": 150,
+        "priorities": 0,
+        "poster": {
+          "file": "keep-running-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Keep Running",
+          "price": "$150 per month · USD",
+          "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": null,
+          "featureIds": [
+            "keep_running.small_changes",
+            "keep_running.publishing_help",
+            "keep_running.monitoring",
+            "keep_running.site_checks",
+            "keep_running.tool_checks",
+            "keep_running.diagnostic_search",
+            "keep_running.quarterly_review",
+            "keep_running.receipt",
+            "keep_running.advice",
+            "keep_running.defect_repairs",
+            "keep_running.paid_handoff",
+            "keep_running.coverage"
+          ],
+          "intro": "All included features, explained in plain words."
+        }
+      },
+      {
+        "key": "improve",
+        "name": "Improve",
+        "price": 400,
+        "priorities": 1,
+        "poster": {
+          "file": "improve-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Improve",
+          "price": "$400 per month · USD",
+          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": "Includes all features of Keep Running PLUS",
+          "featureIds": [
+            "improve.priority",
+            "improve.monthly_research",
+            "improve.quarterly_keywords",
+            "improve.deeper_advice",
+            "improve.conversation",
+            "improve.action_list",
+            "improve.refinement",
+            "improve.choice_page",
+            "improve.choice_article",
+            "improve.choice_gbp",
+            "improve.choice_graphic",
+            "improve.choice_email"
+          ],
+          "intro": "Choose ONE agreed improvement each month from the task options below."
+        }
+      },
+      {
+        "key": "grow",
+        "name": "Grow",
+        "price": 800,
+        "priorities": 2,
+        "poster": {
+          "file": "grow-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Grow",
+          "price": "$800 per month · USD",
+          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": "Includes all features of Improve PLUS",
+          "featureIds": [
+            "grow.priority",
+            "grow.monthly_research",
+            "grow.strategy",
+            "grow.conversation"
+          ],
+          "intro": "Choose TWO agreed improvements each month from the task options below, completed in sequence."
+        }
+      }
+    ]
+  },
+  "existing": {
+    "offers": [
+      {
+        "key": "website_baseline",
+        "configKey": "baseline",
+        "name": "Existing-site baseline",
+        "price": 399,
+        "poster": {
+          "file": "website-baseline-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Existing-site baseline",
+          "price": "$399 fixed project · USD",
+          "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": null,
+          "featureIds": [
+            "website_baseline.fit",
+            "website_baseline.inventory",
+            "website_baseline.full_review",
+            "website_baseline.backlog",
+            "website_baseline.first_fix",
+            "website_baseline.no_fix",
+            "website_baseline.refinement",
+            "website_baseline.handoff_notes",
+            "website_baseline.ownership",
+            "website_baseline.correction",
+            "website_baseline.usable_baseline"
+          ],
+          "intro": "All included features, explained in plain words."
+        }
+      },
+      {
+        "key": "audit_fix_sprint",
+        "configKey": "audit_sprint",
+        "name": "Audit & Fix Sprint",
+        "price": 750,
+        "pages": 12,
+        "poster": {
+          "file": "audit-fix-sprint-complete.webp",
+          "width": 1086,
+          "height": 1448,
+          "title": "Audit & Fix Sprint",
+          "price": "$750 fixed project · USD",
+          "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "inheritance": null,
+          "featureIds": [
+            "audit_fix_sprint.fit",
+            "audit_fix_sprint.inventory",
+            "audit_fix_sprint.full_review",
+            "audit_fix_sprint.backlog",
+            "audit_fix_sprint.two_fixes",
+            "audit_fix_sprint.before_after",
+            "audit_fix_sprint.refinement",
+            "audit_fix_sprint.handoff_notes",
+            "audit_fix_sprint.ownership",
+            "audit_fix_sprint.correction",
+            "audit_fix_sprint.usable_baseline"
+          ],
+          "intro": "All included features, explained in plain words."
+        }
+      }
+    ]
+  },
+  "scopeSha256": "de052d01f441325f8fc1f90a59a82e1c959bc0f80fa59e78d7e89db3d87689a3"
+}

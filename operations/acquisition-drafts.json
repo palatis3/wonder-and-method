@@ -1,0 +1,39 @@
+{
+  "status": "Unsent editable drafts; no contacts, external messages or wins",
+  "selected_lanes": [],
+  "sales_time_budget_hours": null,
+  "lanes_maximum": 2,
+  "source_of_truth": "V5 growth-tests.json",
+  "gates": [
+    "Online-only: no Google Business Profile or Maps workaround.",
+    "Owned/demo work is not paid-client proof.",
+    "Verify current facts, rights, eligibility and costs before use.",
+    "No paid membership without cash gate, named cohort, attendance plan and stop rule.",
+    "Do not manufacture outreach or content quotas.",
+    "Separate authorization required to send or publish."
+  ],
+  "drafts": {
+    "warm_introduction": "I’m building Wonder and Method, an online studio for custom websites and practical search improvements. If you know an owner whose site no longer explains their work well, and they’re open to an introduction, I can share a relevant example and scope.",
+    "individual_approach": "Hi [name], I noticed [specific verified business fact]. If [relevant website/customer problem] is a current priority, I can share one relevant example and discuss whether a focused project would help. Are you the right person to ask?",
+    "one_follow_up": "Following up on [actual context]. If this isn’t a priority, I’ll close the loop. If it is, I can send [one relevant example or scope].",
+    "feedback": "What was most useful, and what should I improve?",
+    "separate_publication_permission": "May I publish [exact wording] with [name/logo] in [specific context]? Please confirm the wording, permissions and any measured claim source; support does not depend on your response."
+  },
+  "draft_context": {
+    "verified_fact_source": null,
+    "reason_for_contact": null,
+    "recipient_volunteered_business_contact": null,
+    "authorization_reference": null,
+    "decline_status": null,
+    "actual_prior_context": null,
+    "source_confidence": null,
+    "next_decision": null
+  },
+  "review_windows": [
+    "day7",
+    "day30",
+    "day60",
+    "day90"
+  ],
+  "measurement": "Record actual qualified conversations, proposals, decisions, wins, cash and hours in the weekly board/receipt. Unknown attribution remains unknown; search visibility does not establish causal leads."
+}

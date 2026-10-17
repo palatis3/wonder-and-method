@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261013.1",
+    "wrangler": "4.150.0"
+  },
+  "name": "wonder-method-deployment",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "wrangler deploy --dry-run --outdir dry-run",
+    "types": "wrangler types worker-configuration.d.ts --include-runtime false",
+    "migrateLocal": "wrangler d1 migrations apply wonder-method-staging --local"
+  }
+}

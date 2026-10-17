@@ -1,0 +1,169 @@
+{
+  "status": "SYNTHETIC REHEARSAL — not a real client or accepted agreement",
+  "client_id": "synthetic-service-studio",
+  "version": 1,
+  "previous_version_reference": null,
+  "named_approver": "Synthetic Approver",
+  "buyer_job": "Help visitors understand one service and request a fit conversation.",
+  "audience": "Synthetic service buyers",
+  "primary_action": "Send an inquiry",
+  "service_area": "Synthetic single primary market",
+  "offer_id": "focused_site",
+  "fixed_price": 3000,
+  "editing_choice": "Technically capable editor",
+  "technical_editor_or_separate_cms_scope": "Synthetic technical editor; no CMS",
+  "exact_routes": [
+    "/",
+    "/service/",
+    "/contact/"
+  ],
+  "copy_form_redirect_media_limits": {
+    "marketing_pages": 3,
+    "copy_words": 1200,
+    "privacy_text_source": "SYNTHETIC supplied text",
+    "form_fields": 6,
+    "form_destination": "SYNTHETIC recipient — not an inbox",
+    "confirmation_state": 1,
+    "supplied_redirect_pairs": [],
+    "hero_and_fallbacks": "Focused code-native composition; no bespoke media promised"
+  },
+  "project_fact_sheet": {
+    "facts": [
+      "Synthetic business offers one service; no real organization facts used."
+    ],
+    "source_ids": [
+      "synthetic-fixture"
+    ],
+    "rights": [
+      "Original text only; no client media"
+    ],
+    "input_owners_and_due_dates": [
+      {
+        "owner": "Synthetic Approver",
+        "due": "2026-10-16"
+      }
+    ]
+  },
+  "milestones": [
+    {
+      "event": "scope/booking",
+      "percent": 50,
+      "amount": 1500,
+      "due_date": "2026-10-19",
+      "approval_reference": "SYNTHETIC booking acceptance",
+      "invoice_system_reference": "SYNTHETIC-INV-001",
+      "payment_confirmed": false
+    },
+    {
+      "event": "written design acceptance",
+      "percent": 30,
+      "amount": 900,
+      "due_date": "2026-11-05",
+      "approval_reference": "SYNTHETIC written design acceptance",
+      "invoice_system_reference": "SYNTHETIC-INV-002",
+      "payment_confirmed": false
+    },
+    {
+      "event": "written staging acceptance before launch",
+      "percent": 20,
+      "amount": 600,
+      "due_date": "2026-11-20",
+      "approval_reference": "SYNTHETIC written staging acceptance",
+      "invoice_system_reference": "SYNTHETIC-INV-003",
+      "payment_confirmed": false
+    }
+  ],
+  "schedule": {
+    "booked_start": "2026-10-19",
+    "input_due": "2026-10-16",
+    "design_review_window": "2026-10-30 through 2026-11-05",
+    "staging_review_window": "2026-11-16 through 2026-11-20",
+    "target_launch": "2026-11-23",
+    "correction_end": "2026-12-23"
+  },
+  "external_costs": [
+    {
+      "required": true,
+      "provider": "SYNTHETIC provider placeholder",
+      "owner": "Synthetic Client",
+      "payer": "Synthetic Client",
+      "setup_price": null,
+      "renewal_amount": null,
+      "renewal_date": null,
+      "status": "Unresolved; this sample cannot be signed or booked"
+    }
+  ],
+  "external_cost_row": {
+    "required": null,
+    "provider": null,
+    "owner": null,
+    "payer": null,
+    "setup_price": null,
+    "renewal_amount": null,
+    "renewal_date": null,
+    "included_usage": null,
+    "overage": null,
+    "license_reference": null,
+    "export_method": null,
+    "cancellation_rule": null
+  },
+  "acceptance_tests": [
+    "Exact named page/content/scope checks",
+    "Six-field synthetic inquiry and failure states",
+    "Mobile/keyboard/reflow checks",
+    "Synthetic rollback and paid-source handoff"
+  ],
+  "included_revisions": "One consolidated design round and one consolidated staging round; named approver within approved direction.",
+  "defect_window": "30 calendar days after launch for defects against accepted scope; does not consume revision rounds.",
+  "exclusions": [
+    "No CMS, ecommerce, booking, member area, CRM/API integration or third-party subscription included.",
+    "Original research, legal drafting, extensive migration and unapproved extra scope."
+  ],
+  "change_process": "Record deliverable, acceptance, fee/payment and date effect; obtain written approval before extra work.",
+  "paid_work_rights": "Paid bespoke work/source and operating rights at relevant paid milestone or reconciled termination; disclosed third-party/preexisting licenses apply; accounts remain client-controlled.",
+  "cancellation_reconciliation": "Dated completed-work/approved-committed-cost/payment ledger under signed terms; deposits not automatically earned. Existing paid materials and operating inventory within five business days; routine handoff included, new migration separate.",
+  "optional_services": [],
+  "optional_service_row": {
+    "service": null,
+    "paid_period": null,
+    "renewal_timestamp": null,
+    "timezone": null,
+    "written_cancellation_route": null,
+    "staffed_hours": null,
+    "closures": null,
+    "contact_route": null,
+    "alert_recipient": null,
+    "escalation_path": null,
+    "search_baseline": null,
+    "next_approved_task": null,
+    "required_inputs": null
+  },
+  "buyer_confirmation": {
+    "page_copy_limits": null,
+    "self_editing_understood": null,
+    "required_optional_bills": null,
+    "approvals": null,
+    "ownership_and_exit": null,
+    "questions_resolved": null,
+    "written_acceptance_reference": null,
+    "accepted_version": null,
+    "accepted_at": null
+  },
+  "invoice_system_reference": null,
+  "access_manager_reference": null,
+  "secret_policy": "References only; never credentials or personal inquiry contents.",
+  "commercial_source": "config/offers.json",
+  "commercial_boundaries": {
+    "page_scope": "One primary service or tightly related service group and one primary market. Separate service, area, case-study, blog or landing pages are quoted additions when distinct intent and evidence justify them. Plain client-approved policy text may be linked; legal drafting excluded.",
+    "included_pages": "Up to three unique marketing pages chosen from the client's goals and search intent, not a mandatory Home/Services/Contact template. A proposal identifies exact canonical pages and which topics are consolidated.",
+    "copy": "Client provides facts, service details and approved imagery; one discovery interview; write/edit up to 1,200 words of new client-facing copy across included pages, including headlines, core sections and calls to action, plus metadata. The word ceiling is a scope change trigger, not a content target. One client fact-check and consolidated edits. No field research, photo shoot or long-form article.",
+    "creative": "Distinct art direction through typography, composition, color, imagery treatment and restrained code-native interaction using existing production patterns. No bespoke Blender/Remotion media or newly designed interactive system; optional still imagery requires client license or source.",
+    "functionality": "Mobile-first custom coded responsive site, one inquiry form through a client-controlled provider, basic spam defense, accessible navigation and tested contact path. No CMS, ecommerce, booking, member area, CRM/API integration or third-party subscription included.",
+    "seo_foundation": "Agreed keyword-to-canonical-page map, semantic structure, titles/meta, index/canonical/sitemap and redirect checks, structured data only for verified facts, Search Console/analytics setup or connection with access, and launch validation. No ongoing SEO program or ranking guarantee.",
+    "platform_fit": "Custom static website; no self-service visual editor. Choose a technical editor, separately quoted changes or eligible Care. Frequent publishing, a CMS or a different platform must be scoped before deposit.",
+    "policy": "One plain /privacy/ page containing client-approved supplied text is included beyond the marketing-page cap; no legal drafting. Other policies separately agreed.",
+    "form": "One form, up to six fields, one receiving destination, one confirmation state; no CRM/API workflow, uploads, payments or sensitive-data intake.",
+    "redirects": "Up to 10 simple one-to-one redirects from an existing supplied URL inventory. Migration discovery, large migrations and redirect chains require separate scope."
+  },
+  "accepted_at": null
+}

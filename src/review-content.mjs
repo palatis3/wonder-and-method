@@ -1,0 +1,26 @@
+const checks={
+ positioning:'Can the intended customer tell who the business serves and what it helps them do?',
+ identity:'Do the visual choices give the business a coherent, recognizable presence?',
+ hero:'Does the opening explain the offer, with useful motion and a complete still fallback?',
+ typography:'Are headings, body text and labels readable and clearly organized?',
+ rhythm:'Is information paced so a visitor can scan, compare and find the next step?',
+ visuals:'Do images and diagrams explain the work without misleading claims?',
+ proof:'Can visitors inspect relevant examples, with concept work and real evidence clearly labeled?',
+ people:'Are the responsible person, business and contact routes clear and supported by facts?',
+ fit:'Can a buyer distinguish the services, their fit and their limits?',
+ priceclarity:'Are studio fees, recurring bills and optional work explained before commitment?',
+ pricevalue:'Can a buyer understand what the stated price buys and compare like-for-like scope?',
+ ongoing:'Are maintenance and improvement tasks useful, finite and distinct from already-paid work?',
+ copy:'Is the writing clear, accurate and specific to the customer’s questions?',
+ navigation:'Can a visitor move between related information without getting lost?',
+ conversion:'Does the inquiry or booking path explain the next step and handle errors clearly?',
+ mobile:'Do the important tasks and content work on narrow screens and with enlarged text?',
+ accessibility:'Are keyboard use, focus, labels, contrast and motion preferences considered?',
+ performance:'Do loading behavior and fallbacks support the main tasks? Lab evidence and field evidence are kept separate.',
+ search:'Do page purpose, metadata, internal links and crawl/indexing settings agree?',
+ editorial:'Is helpful published guidance accurate, maintained and linked to relevant services?',
+ consistency:'Do promises, prices, labels and visual patterns agree across the site?',
+ handoff:'Are paid work, accounts, licenses, correction boundaries and handoff responsibilities clear?',
+};
+// Explicit public allowlist: private review weights and ratings never leave the offer source.
+export function publicReviewAreas(offers){return offers.review_standard.sections.map(({id,title})=>({id,title,check:checks[id]||'Inspect this area against the agreed website purpose and record the evidence and access limits.'}));}

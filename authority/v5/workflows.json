@@ -1,0 +1,37 @@
+{
+  "version": "5.0",
+  "status": "Derived structured summary of OPERATING_SYSTEM.md; execution evidence remains to be produced",
+  "source_of_truth": "OPERATING_SYSTEM.md",
+  "flow": [
+    "Fit",
+    "Quote and book",
+    "Design and build",
+    "Approve and launch",
+    "Correct and hand over",
+    "Optional ongoing service"
+  ],
+  "records": {
+    "board": "One weekly board for leads and active jobs; phase, owner, next event/date, booked/actual hours and linked evidence.",
+    "scope": "One accepted scope/cost/ownership sheet per client.",
+    "receipt": "One cumulative work/QA receipt per client; append status, changes, incidents, releases and monthly service sections.",
+    "systems": "Existing secure access manager and invoicing system; no duplicate credential or cash ledger."
+  },
+  "booking": "Dated capability evidence from founder-calendar.readiness_gate plus actual calendar and cash check. No fixed practice-hour/week gate.",
+  "scope_authority": "offers.json",
+  "templates": "SERVICE_PLAYBOOK.md",
+  "technical_acceptance": "build-contract.json",
+  "calibration": {
+    "website": "Measure three paid builds per tier before broader throughput claims; stop new timing promises if two comparable jobs exceed estimate by20%. Honor accepted jobs.",
+    "care": "Complete at least one paid quarter including the dependency/recovery review, actual incident and coordination time, plus startup/exit allocation or timed exit drill. Two months alone do not validate quarterly work.",
+    "search": "Two complete paid cycles with approved facts, minor fix, factual revision, QA, coordination and reserve before widening availability."
+  },
+  "global_rules": [
+    "One named client approver; no silence-as-acceptance",
+    "No priced extra without written scope/fee/date approval",
+    "Human reviews facts, integration and production release",
+    "Synthetic test leads; minimize real personal data in AI context",
+    "Keep paid client-owned site/accounts usable on service cancellation",
+    "No new starts when actual incident/review load consumes booked recovery"
+  ],
+  "authority_role": "Derived summary only; OPERATING_SYSTEM.md governs delivery flow and records."
+}

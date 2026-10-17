@@ -1,0 +1,238 @@
+{
+  "status": "SYNTHETIC ONLY — deterministic local logic rehearsal, not client or provider evidence",
+  "external_actions": [],
+  "purchase_to_handoff": [
+    {
+      "blocked": {
+        "stage": "Fit",
+        "status": "blocked",
+        "missing": [
+          "buyer_job_known",
+          "editing_fit_confirmed",
+          "offer_fit_confirmed"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Fit",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    },
+    {
+      "blocked": {
+        "stage": "Quote and book",
+        "status": "blocked",
+        "missing": [
+          "written_scope",
+          "named_approver",
+          "ready_inputs",
+          "mandatory_bills_resolved",
+          "capability_evidence",
+          "dated_capacity_with_correction_tail",
+          "cash_checked",
+          "booking_payment_confirmed"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Quote and book",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    },
+    {
+      "blocked": {
+        "stage": "Design and build",
+        "status": "blocked",
+        "missing": [
+          "approved_facts_and_rights",
+          "approved_direction",
+          "founder_integration_review"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Design and build",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    },
+    {
+      "blocked": {
+        "stage": "Approve and launch",
+        "status": "blocked",
+        "missing": [
+          "exact_version_written_acceptance",
+          "agreed_payment_confirmed",
+          "all_scope_checks_passed",
+          "actual_provider_and_inbox_receipt",
+          "no_critical_accessibility_barrier",
+          "facts_and_licenses_cleared",
+          "staging_and_secrets_safe",
+          "tested_rollback",
+          "client_owned_accounts",
+          "staffed_launch_window"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Approve and launch",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    },
+    {
+      "blocked": {
+        "stage": "Correct and hand over",
+        "status": "blocked",
+        "missing": [
+          "paid_source_and_inventory_delivered",
+          "client_access_verified",
+          "operating_notes_delivered",
+          "defect_owners_and_dates",
+          "remaining_obligations_recorded"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Correct and hand over",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    },
+    {
+      "blocked": {
+        "stage": "Optional service",
+        "status": "blocked",
+        "missing": [
+          "service_useful_and_approved",
+          "supported_stack",
+          "terms_and_renewal_confirmed",
+          "coverage_or_search_task_confirmed",
+          "capacity_confirmed"
+        ],
+        "automatic_action": false
+      },
+      "simulated_complete": {
+        "stage": "Optional service",
+        "status": "ready-for-human-decision",
+        "missing": [],
+        "automatic_action": false
+      }
+    }
+  ],
+  "scope_change": {
+    "unapproved": {
+      "action": "hold-extra-work",
+      "missing": [
+        "acceptance_test",
+        "fee",
+        "date_effect",
+        "written_approval_reference"
+      ],
+      "automatic_invoice": false
+    },
+    "approved": {
+      "action": "ready-for-approved-change",
+      "missing": [],
+      "automatic_invoice": false
+    },
+    "defect": {
+      "action": "correct-under-existing-scope",
+      "extra_invoice": false
+    }
+  },
+  "incident": {
+    "action": "verify-notify-route",
+    "missing": [],
+    "release_blocked": true,
+    "restoration_deadline": null,
+    "repair": "separately-quote-repair-if-needed",
+    "note": "Record actions in the cumulative receipt. Care incident triage is not unlimited repair; a notice reference records a human action, it does not send one."
+  },
+  "search_renewal": {
+    "action": "ready-for-human-renewal-review",
+    "task_approval_due_local_date": "2026-10-26",
+    "automatic_charge": false,
+    "note": "Check recorded approval/input dates against the deadline. Care checks continue through paid periods even without an edit; no unused edit rollover."
+  },
+  "search_pause": {
+    "action": "pause-next-invoice",
+    "task_approval_due_local_date": "2026-10-26",
+    "automatic_charge": false
+  },
+  "search_unused_charge": {
+    "action": "customer-chooses-refund-or-credit",
+    "task_approval_due_local_date": "2026-10-26",
+    "automatic_charge": false
+  },
+  "search_started_charge": {
+    "action": "itemize-work-and-reconcile-unearned-remainder",
+    "task_approval_due_local_date": "2026-10-26",
+    "automatic_charge": false
+  },
+  "care_missing_coverage": {
+    "action": "hold-renewal-and-agree-coverage-adjustment",
+    "automatic_charge": false
+  },
+  "care_renewal": {
+    "action": "ready-for-human-renewal-review",
+    "task_approval_due_local_date": null,
+    "automatic_charge": false,
+    "note": "Check recorded approval/input dates against the deadline. Care checks continue through paid periods even without an edit; no unused edit rollover."
+  },
+  "cancellation_before_renewal": {
+    "action": "stop-next-renewal",
+    "service_through": null,
+    "preserve_paid_site": true,
+    "automatic_charge": false
+  },
+  "cancellation_handoff": {
+    "action": "human-reconcile-under-signed-terms",
+    "missing": [],
+    "stop_future_renewal": true,
+    "preserve_paid_site_and_accounts": true,
+    "handoff_within_business_days": 5,
+    "routine_handoff_included": true,
+    "new_migration_separate": true,
+    "remaining_actions": [
+      "Identify unfinished and unpaid material",
+      "Provide paid source/assets/licenses and deploy notes",
+      "Verify client access/export",
+      "Remove delegated access after verification",
+      "Record retention/deletion owner and action"
+    ],
+    "automatic_refund": false,
+    "note": "Deposits are not automatically earned. Resolve any disputed amounts under the agreement."
+  },
+  "capacity_overbooked": {
+    "status": "overbooked",
+    "potential_client_hours": 20,
+    "unexpected_reserve_hours": 4,
+    "bookable_hours": 16,
+    "remaining_hours": -1,
+    "remaining_gates": [
+      "Check actual dated stage peaks and correction tails",
+      "Check calendar-month planned <=96 and total client <=120 hours",
+      "Confirm cash and relevant capability evidence"
+    ]
+  },
+  "cash_below_reserve": {
+    "status": "below-reserve-floor",
+    "ending_cash_after_outflows_and_tax_transfer": 4500,
+    "unearned_obligations_reserve": 3000,
+    "headroom": -500,
+    "note": "Planning snapshot from existing invoice/bookkeeping records; not a second payment ledger. No founder hourly cost deducted from bank cash. Unknown or future receipts are not cash."
+  },
+  "limitations": [
+    "No actual customer, payment, inbox receipt or production release",
+    "No proof of paid demand, profitability, speed or recurring retention",
+    "Human evidence and dated inputs still required for real commitments"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "assessment": "Passed bounded final consistency review after both fixes; no production or demand validation claimed.",
+  "overall_status": "passed",
+  "findings": [
+    {
+      "id": "FR-01",
+      "priority": "P1",
+      "status": "resolved",
+      "issue": "Current purchase-contract.json duplicates governed commercial fields and its generic Search Sprint wire can imply broader implementation than the exact governed existing-page unit.",
+      "evidence": ["purchase-contract.json: document, status, public_card_wire, optional_services.search_sprint.deliverables", "offers.json: search_sprint.deliverables", "OFFERS.md: An existing site can start with a finite improvement"],
+      "fix": "Make purchase-contract.json a layout/proof wire referencing offer IDs, or generate its commercial fields from offers.json; at minimum synchronize Sprint scope and V5 title.",
+      "resolution_verified": "purchase-contract.json now identifies itself as a V5 layout/proof wire, references offers.json through offer_components/global_commercial_refs, and has no public_card_wire, optional_services, copied price fields or generic Sprint implementation unit."
+    },
+    {
+      "id": "FR-02",
+      "priority": "P2",
+      "status": "resolved",
+      "issue": "Delivery authority points from authority-map.json to workflows.json, which points back to OPERATING_SYSTEM.md as source of truth.",
+      "evidence": ["authority-map.json: domains.delivery", "workflows.json: source_of_truth", "OPERATING_SYSTEM.md: One flow; Three records"],
+      "fix": "Point delivery authority directly to OPERATING_SYSTEM.md and mark workflows.json a derived summary, or consistently make workflows.json the authority.",
+      "resolution_verified": "authority-map.json.domains.delivery and build-contract.json primary source delivery both identify OPERATING_SYSTEM.md; workflows.json.status says derived structured summary and source_of_truth remains OPERATING_SYSTEM.md."
+    }
+  ],
+  "verified_nonissues": ["No mandatory 85-hour or week-seven gate in current runbook/calendar", "Six delivery steps and three records agree", "Main offer prices, cancellation/source rights and renewal conditions agree in OFFERS.md and offers.json", "Keyword count 482; site-map has 9 core commercial, privacy, 3 gated guides and 1 conditional Care route"],
+  "unvalidated": ["Actual staffed Care coverage", "Actual founder availability and cash", "Live site/browser/provider operation", "Paid buyer acceptance and delivery hours"]
+}

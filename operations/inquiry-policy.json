@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "selectedAt": "2026-10-14T15:51:14.696Z",
+  "businessIdentity": "Venture House Group LLC",
+  "owner": "Owner of Venture House Group LLC (user)",
+  "authority": "Owner supplied legal-name correction and personal/as-available review; delegated selection of inquiry deletion ownership and retention on 2026-10-14. Owner confirmed Buffalo and replies within one business day (Monday–Friday, Eastern) on 2026-10-17.",
+  "responsePolicy": "The owner personally reviews inquiries and replies within one business day, Monday–Friday, Eastern time.",
+  "fixedStaffedHours": null,
+  "guaranteedResponseTime": "Within one business day, Monday–Friday, Eastern time",
+  "careCoverageEstablished": false,
+  "unsuccessfulInquiries": {
+    "retentionDays": 90,
+    "clock": "Last substantive two-way project contact; use original submission date if no response. Automated reminders or internal review do not reset the clock.",
+    "deletionOwner": "Owner of Venture House Group LLC (user)",
+    "reviewCadence": "Owner reviews expiry dates weekly and schedules deletion by the 90-day date.",
+    "systems": [
+      "Cloudflare D1 inquiry payload",
+      "Matching Fastmail and earlier Gmail notification/conversation copies",
+      "Owner-controlled exports, local working copies and optional chat records"
+    ],
+    "exceptions": "Converted clients follow a separately reviewed contract/accounting schedule. Suspend deletion for a documented dispute or legal preservation need, with a reason and review date. These exceptions do not authorize indefinite storage of all leads.",
+    "procedure": [
+      "Identify the exact inquiry reference and last substantive contact before deletion; the database creation timestamp alone cannot establish subsequent email contact.",
+      "Check whether the inquiry converted to a client or has a documented preservation exception.",
+      "Delete the exact eligible D1 record through the authenticated operator and verify absence.",
+      "Remove matching owner-controlled email and export copies through their normal controls. Record only a minimal deletion result without retaining the original inquiry body.",
+      "Verify provider backup/recovery retention before publishing a universal deletion promise. Do not claim provider-held backup copies disappear immediately."
+    ],
+    "automationEnabled": false,
+    "executionStatus": "Authenticated retention preview and explicit contact/client/hold tracking implemented. Weekly owner review and specific record confirmation remain required; no automatic inquiry deletion."
+  },
+  "rationale": "90 days leaves a practical window to reopen a short project discussion while limiting storage of unsuccessful leads. This is a chosen operating default, not a proven most-common period.",
+  "guidance": [
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business",
+      "supports": "Keep information only as long as needed; document retention and secure disposal. Does not prescribe 90 days."
+    }
+  ],
+  "publicationStatus": "Privacy published at /privacy/; current approved notice is in config/site.json.",
+  "providerRetentionReview": {
+    "checkedAt": "2026-10-14T16:01:22.693Z",
+    "sources": "config/site.json privacyNotice",
+    "summary": "Current public notice distinguishes working-copy deletion from Cloudflare D1 recovery, Workers logs, Resend records, Fastmail recovery, earlier Gmail copies and tawk.to backups. See linked provider policies.",
+    "productionPlanConfirmationPending": true
+  },
+  "updatedAt": "2026-10-17"
+}

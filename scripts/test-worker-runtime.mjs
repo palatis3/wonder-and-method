@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+const base='http://127.0.0.1:4184',authorization='Basic '+Buffer.from('synthetic:test-only-not-a-real-secret').toString('base64');
+assert.equal((await fetch(base)).status,401);
+const home=await fetch(base,{headers:{Authorization:authorization}});assert.equal(home.status,200);assert.match(home.headers.get('x-robots-tag'),/noindex/);
+const lead={name:'Synthetic Runtime Tester',email:'runtime@example.test',business:'Synthetic Runtime',website:'https://example.test',service:'focused_site',message:'This synthetic inquiry verifies the actual local Worker runtime.'};
+const submit=()=>fetch(base+'/api/inquiries',{method:'POST',headers:{Authorization:authorization,Origin:base,'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(lead)});
+const first=await submit();assert.equal(first.status,202);const saved=await first.json();assert.ok(saved.reference);
+const second=await submit();assert.equal(second.status,202);assert.equal((await second.json()).reference,saved.reference);
+const exported=await fetch(base+'/api/operator/inquiries',{headers:{Authorization:'Bearer synthetic-local-operator-only','X-Staging-Authorization':authorization}});assert.equal(exported.status,200);const data=await exported.json();assert.ok(data.records.some(x=>x.id===saved.reference));
+const result={checkedAt:new Date().toISOString(),runtime:'Wrangler 4.150.0 / local workerd + local D1',accessControl:'unauthorized401, authorized200',inquiry:'synthetic durable save202 and duplicate202 same reference',operatorExport:'authenticated record present',email:'not sent; synthetic mode',remoteVerification:false};
+await writeFile(new URL('../evidence/worker-runtime.json',import.meta.url),JSON.stringify(result,null,2));console.log(JSON.stringify(result));

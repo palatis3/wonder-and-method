@@ -1,0 +1,15 @@
+{
+  "reference": "wm-email-setup-2026-10-14-01",
+  "from": "Wonder and Method <notifications@notify.wonderandmethod.com>",
+  "to": [
+    "palatis3@gmail.com"
+  ],
+  "subject": "[Setup test] Wonder and Method email delivery",
+  "text": "This is a setup test from Wonder and Method.\n\nPurpose: verify the notification sender and delivery to the owner's Gmail inbox.\n\nThis is not a client inquiry and no action or payment is required.\n\nReference: wm-email-setup-2026-10-14-01",
+  "approval": {
+    "approved": false,
+    "approvedAt": null,
+    "payloadSha256": null
+  },
+  "scope": "One direct provider test to the owner's inbox. Does not enable the website's live inquiry mode or prove the complete deployed form-to-inbox path."
+}

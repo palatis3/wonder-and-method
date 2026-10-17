@@ -1,0 +1,484 @@
+{
+  "schema_version": "v4-growth-tests-1",
+  "checked_date": "2026-10-13",
+  "scope": "Bounded acquisition, local eligibility, search architecture, buyer-intent and reporting checks for an online-only Wonder and Method launch in Erie County NY.",
+  "interpretation": {
+    "not_a_forecast": true,
+    "score_scale": "1-5 operating judgment: 1=poor fit or slow/uncertain, 5=strong fit or relatively fast/low-cost. Scores are not demand, rank, conversion or revenue probabilities.",
+    "budget": "Startup cash and weekly availability are unconfirmed. Default new acquisition cash is $0; existing domain/hosting/email bills are handled elsewhere.",
+    "authorization": "Planning only. No profile creation, spending, outreach, publication or purchase is authorized by this file.",
+    "keyword_policy": "Preserve all 482 inventory rows. Route synonyms and municipality modifiers to one appropriate canonical URL; do not create new pages solely for phrase coverage."
+  },
+  "channel_scores": [
+    {
+      "channel": "technical SEO and canonical commercial core",
+      "role": "Indexable web-design, SEO, pricing, work, process, contact and Erie County logistics pages plus Search Console measurement",
+      "speed_to_lead_judgment": 2,
+      "trust_and_conversion_judgment": 4,
+      "compounding_value_judgment": 5,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 3,
+      "online_only_fit": 5,
+      "gate": "Release QA, real form receipt, self-canonicals, sitemap and proof labels"
+    },
+    {
+      "channel": "warm referrals and complementary relationships",
+      "role": "A small number of authorized conversations with people who know the founder or serve adjacent buyer jobs",
+      "speed_to_lead_judgment": 4,
+      "trust_and_conversion_judgment": 5,
+      "compounding_value_judgment": 3,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 3,
+      "online_only_fit": 5,
+      "gate": "Specific buyer fit, useful reason for contact, no paid/reciprocal link request, source logged"
+    },
+    {
+      "channel": "owned proof and evidence-led content",
+      "role": "Cost explanation, sample SEO report, redesign brief or permissioned real case",
+      "speed_to_lead_judgment": 2,
+      "trust_and_conversion_judgment": 5,
+      "compounding_value_judgment": 4,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 2,
+      "online_only_fit": 5,
+      "gate": "Dated fact sheet, original artifact, rights check, one buyer decision and 3-4h all-in test after first asset"
+    },
+    {
+      "channel": "LinkedIn personal profile, Company Page and Service Page",
+      "role": "Free identity and referral surface with a direct link to the owned site",
+      "speed_to_lead_judgment": 2,
+      "trust_and_conversion_judgment": 3,
+      "compounding_value_judgment": 2,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 4,
+      "online_only_fit": 5,
+      "gate": "Founder authorizes setup; exact studio identity and remote delivery are stated; no invented location or results"
+    },
+    {
+      "channel": "Clutch Basic",
+      "role": "Optional free directory/profile after a real, inspectable project exists",
+      "speed_to_lead_judgment": 1,
+      "trust_and_conversion_judgment": 2,
+      "compounding_value_judgment": 2,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 4,
+      "online_only_fit": 4,
+      "gate": "Real client relationship or legitimate portfolio material; no fabricated review; skip paid Verified ($499/year) during first 90 days"
+    },
+    {
+      "channel": "Buffalo Niagara Partnership Pro Free",
+      "role": "Conditional local directory, seminar and networking surface",
+      "speed_to_lead_judgment": 2,
+      "trust_and_conversion_judgment": 3,
+      "compounding_value_judgment": 2,
+      "cash_cost_judgment": 3,
+      "founder_time_judgment": 3,
+      "online_only_fit": 3,
+      "gate": "Confirm five-or-fewer-FTE/local ownership and website/social rules plus whether any application fee applies; do not imply an office"
+    },
+    {
+      "channel": "Buffalo State SBDC and SCORE Western NY",
+      "role": "Free advisory and community learning, not a lead directory",
+      "speed_to_lead_judgment": 1,
+      "trust_and_conversion_judgment": 3,
+      "compounding_value_judgment": 2,
+      "cash_cost_judgment": 5,
+      "founder_time_judgment": 3,
+      "online_only_fit": 5,
+      "gate": "Use a concrete offer, cash, buyer or measurement question; treat advice separately from acquisition output"
+    },
+    {
+      "channel": "paid chamber/association membership",
+      "role": "Access to events, introductions and member directory where a named buyer cohort exists",
+      "speed_to_lead_judgment": 2,
+      "trust_and_conversion_judgment": 3,
+      "compounding_value_judgment": 2,
+      "cash_cost_judgment": 1,
+      "founder_time_judgment": 2,
+      "online_only_fit": 3,
+      "gate": "Budget approved, specific events/introductions named, attendance capacity protected, dated stop rule"
+    }
+  ],
+  "canonical_intent_plan": [
+    {
+      "buyer_segment": "new or growing service business needing a custom site",
+      "canonical_url": "/services/web-design/",
+      "supporting_urls": [
+        "/pricing/",
+        "/guides/website-project-cost/",
+        "/work/",
+        "/contact/"
+      ],
+      "retained_terms": [
+        "web design",
+        "website design",
+        "custom website",
+        "web development",
+        "redesign",
+        "WordPress fit",
+        "Buffalo and Erie County modifiers"
+      ],
+      "conversion_proof": "Exact two-tier scope, owner inputs, handoff, labeled work and clear CTA"
+    },
+    {
+      "buyer_segment": "existing owner seeking ongoing search diagnosis and implementation",
+      "canonical_url": "/services/seo/",
+      "supporting_urls": [
+        "/pricing/",
+        "/guides/seo-work-and-reporting/",
+        "/work/",
+        "/contact/"
+      ],
+      "retained_terms": [
+        "SEO services",
+        "Buffalo SEO",
+        "local SEO",
+        "technical SEO",
+        "SEO reporting",
+        "monthly SEO"
+      ],
+      "conversion_proof": "Bounded monthly work units, sample report, dependencies and no ranking promise"
+    },
+    {
+      "buyer_segment": "coverage and remote-delivery question",
+      "canonical_url": "/areas/erie-county/",
+      "supporting_urls": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/contact/"
+      ],
+      "retained_terms": [
+        "Erie County coverage",
+        "Buffalo area",
+        "West Seneca",
+        "Cheektowaga",
+        "Amherst and other municipality modifiers"
+      ],
+      "conversion_proof": "Plain online-only model and accurate municipality index; no office or local-pack claim"
+    },
+    {
+      "buyer_segment": "care, rescue or a materially distinct offer",
+      "canonical_url": "/pricing/ or an approved later service URL",
+      "supporting_urls": [
+        "/services/web-design/",
+        "/contact/"
+      ],
+      "retained_terms": [
+        "website maintenance",
+        "website support",
+        "website rescue",
+        "migration"
+      ],
+      "conversion_proof": "Supported stack, acceptance test, capacity and written terms before page creation",
+      "status": "conditional"
+    }
+  ],
+  "acquisition_tests": [
+    {
+      "id": "GT-08-01",
+      "window": "Final prelaunch release checks, then launch days1–14 observation",
+      "lane": "technical SEO and conversion foundation",
+      "actions": [
+        "Reconcile each retained keyword to one current primary URL",
+        "verify mobile HTML links, canonicals, sitemap and form receipt",
+        "open business-owned Search Console and start the lead log"
+      ],
+      "time_box_hours": "8–12 inside existing own-site technical/production allocation, not additional to studio budget",
+      "cash": 0,
+      "evidence": [
+        "HTTP/status and canonical checks",
+        "form delivery test",
+        "Search Console property/sitemap evidence",
+        "proof-label inventory"
+      ],
+      "decision": "Fix crawl, routing, proof or conversion blockers before adding content or profiles"
+    },
+    {
+      "id": "GT-08-02",
+      "window": "days 15-30",
+      "lane": "owned proof plus free identity",
+      "actions": [
+        "Create one cost guide, sample-report guide or redesign brief from a fact sheet",
+        "if authorized, align personal LinkedIn, Company Page and Service Page",
+        "optionally use one SBDC or SCORE session for a concrete business question"
+      ],
+      "time_box_hours": "3-6 for asset/profile plus 1-2 for advisory session",
+      "cash": 0,
+      "evidence": [
+        "Dated source facts",
+        "original artifact",
+        "rights check",
+        "service-page CTA and internal links"
+      ],
+      "decision": "Defer any asset without firsthand facts; do not publish to meet a quota"
+    },
+    {
+      "id": "GT-08-03",
+      "window": "days 31-60",
+      "lane": "warm/partner learning and optional Clutch",
+      "actions": [
+        "After separate founder authorization, hold 2-4 high-fit conversations per month with existing contacts or complementary professionals",
+        "offer a useful artifact or fit rule rather than a ranking link",
+        "consider Clutch Basic only if genuine work exists"
+      ],
+      "time_box_hours": "2-4 per month for relationship work; 0.5-1 for Clutch if gated",
+      "cash": 0,
+      "evidence": [
+        "Reason for contact",
+        "buyer situation",
+        "source and qualification",
+        "proposal or next step",
+        "Clutch work/review legitimacy"
+      ],
+      "decision": "Stop or change the lane if it consumes time without a credible buyer learning signal"
+    },
+    {
+      "id": "GT-08-04",
+      "window": "days 61-90",
+      "lane": "second evidence asset and local eligibility check",
+      "actions": [
+        "Add one asset or permissioned case only if first asset met the 3-4h all-in gate",
+        "verify current BNP Pro Free eligibility and fee before any application",
+        "review Search Console page/query data and lead log"
+      ],
+      "time_box_hours": "3-4 for the asset; 2 for the review",
+      "cash": 0,
+      "evidence": [
+        "Observed asset hours",
+        "qualified conversations/proposals/wins/cash",
+        "indexed canonical URLs",
+        "referrer/source confidence"
+      ],
+      "decision": "Continue only 1-2 lanes whose observed learning or pipeline justifies their time and whose cash gate passes"
+    }
+  ],
+  "commercial_expansion_gates": [
+    {
+      "candidate": "/services/website-care/",
+      "status": "conditional",
+      "required_evidence": [
+        "supported stack",
+        "restore drill",
+        "backup/security boundaries",
+        "response/cancellation terms",
+        "capacity and sample report"
+      ],
+      "until_ready": "Describe availability carefully on /pricing/; keep maintenance terms mapped there"
+    },
+    {
+      "candidate": "/services/website-rescue/",
+      "status": "defer",
+      "required_evidence": [
+        "distinct diagnostic and priced unit",
+        "supported failure modes",
+        "acceptance test",
+        "response capacity"
+      ],
+      "until_ready": "Use a repair-versus-redesign section on /services/web-design/"
+    },
+    {
+      "candidate": "municipality page or new SEO/AI-search product page",
+      "status": "defer",
+      "required_evidence": [
+        "distinct buyer question",
+        "permissioned firsthand local evidence",
+        "observed relevant query or inquiry",
+        "standalone utility",
+        "maintenance owner"
+      ],
+      "until_ready": "Retain all terms in the canonical route manifest and improve existing pages"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-08-001",
+      "severity": "critical",
+      "issue": "Online-only operations create an eligibility dead end for Google Business Profile.",
+      "evidence": "Google's current eligibility page requires in-person customer contact and lists online-only businesses, P.O. boxes and remote mailboxes as ineligible. The founder confirmed online-only launch operations.",
+      "impact": "Profile creation, virtual-office workarounds and Maps lead assumptions could cause suspension or fictitious pipeline.",
+      "fix": "Remove GBP/Maps from current acquisition and offer language; state online delivery plainly; reassess only after a real operating-model change.",
+      "status": "resolved_by_no-GBP decision",
+      "owner_or_gate": "Founder future operations change"
+    },
+    {
+      "id": "F-08-002",
+      "severity": "high",
+      "issue": "A new domain has insufficient paid-client proof for premium outcome language.",
+      "evidence": "No Wonder and Method paid-client cases were supplied; Google people-first guidance favors first-hand experience and useful original content.",
+      "impact": "A concept or owned-site result could be read as a client outcome and weaken trust.",
+      "fix": "Label owned work, demo work and client work separately; disclose role, property, period, constraints and permissions; publish one inspectable sample artifact before broad content.",
+      "status": "open",
+      "owner_or_gate": "Founder proof and rights gate"
+    },
+    {
+      "id": "F-08-003",
+      "severity": "high",
+      "issue": "The 482-row inventory can trigger URL multiplication and intent cannibalization.",
+      "evidence": "V3 maps hundreds of design and SEO variants to two service URLs; Google warns against doorway and scaled low-value pages and recommends consistent canonical signals.",
+      "impact": "Thin town pages and duplicate service routes dilute maintenance, confuse buyers and create policy risk.",
+      "fix": "Preserve every row in the manifest but route by buyer job; use one county logistics page and gate any later page on distinct evidence.",
+      "status": "controlled_by_canonical_route plan",
+      "owner_or_gate": "Root route manifest and editorial gate"
+    },
+    {
+      "id": "F-08-004",
+      "severity": "high",
+      "issue": "Organic search alone is too slow and uncertain to carry early acquisition.",
+      "evidence": "Google states changes may take hours to several months and offers no indexing or ranking guarantee; third-party US keyword estimates are not Erie County demand.",
+      "impact": "A quiet first month could cause overproduction or cash stress while qualified buyers remain uncontacted.",
+      "fix": "Run technical SEO, proof content and a small authorized warm/partner lane in parallel; judge by qualified conversations, proposals, wins, cash and hours, not rank promises.",
+      "status": "open_demand_hypothesis",
+      "owner_or_gate": "Root 90-day portfolio review"
+    },
+    {
+      "id": "F-08-005",
+      "severity": "high",
+      "issue": "Directory and chamber profiles have asymmetric value and cost.",
+      "evidence": "Clutch Basic is free but has limited case studies, no verification and no website link from directory pages; BNP Pro Free advertises no charge and eligibility gates, while the V3 evidence observed a $50 application fee and the current general BNP application lists paid tiers at $1,750/$3,000 plus $30.",
+      "impact": "Automatic membership or paid verification could consume unknown startup cash without a qualified buyer path.",
+      "fix": "Use $0 profiles only after truthful proof exists; verify BNP terms; hold paid memberships until a named cohort, attendance plan and stop rule justify them.",
+      "status": "open_future_profile_gate",
+      "owner_or_gate": "Founder budget and eligibility check"
+    },
+    {
+      "id": "F-08-006",
+      "severity": "medium",
+      "issue": "Free advisory organizations are easy to mistake for referral channels.",
+      "evidence": "Buffalo State SBDC offers no-charge direct counseling to existing and prospective small businesses in Erie County/Niagara Frontier; SCORE offers free confidential mentoring to U.S.-based businesses, including remote sessions.",
+      "impact": "Time spent attending can be misclassified as pipeline, and pitching a resource community can damage fit.",
+      "fix": "Use SBDC/SCORE for offer, cash and buyer-question validation; log any introduction separately and do not forecast leads.",
+      "status": "controlled_by_channel_role",
+      "owner_or_gate": "Founder time-box and source log"
+    },
+    {
+      "id": "F-08-007",
+      "severity": "medium",
+      "issue": "Search Console data cannot replace lead attribution.",
+      "evidence": "Google describes impressions, clicks, CTR and query/page dimensions; anonymized queries and aggregation mean exported rows do not represent every search or a causal lead path.",
+      "impact": "Visibility could be reported as qualified demand or revenue contribution.",
+      "fix": "Maintain a separate source-confidence lead log and review it with indexed canonical URLs and query/page data at days 7, 30, 60 and 90.",
+      "status": "proposed_in_measurement",
+      "owner_or_gate": "Founder dashboard implementation"
+    },
+    {
+      "id": "F-08-008",
+      "severity": "medium",
+      "issue": "The post-launch content backlog can become a production quota.",
+      "evidence": "V3 contains twelve briefs and a stretch plan; Google warns that many pages generated primarily for search, including AI-generated pages without added value, can be scaled content abuse.",
+      "impact": "Founder hours move away from client delivery, proof and commercial page clarity.",
+      "fix": "Default to one fact-based asset in days 31-60 and one in days 61-90; require two observed 3-4h assets before any stretch run.",
+      "status": "controlled_by_time_gate",
+      "owner_or_gate": "Founder calendar and fact-sheet gate"
+    },
+    {
+      "id": "F-08-009",
+      "severity": "medium",
+      "issue": "Paid or reciprocal local links would turn legitimate relationships into a ranking tactic.",
+      "evidence": "Google's spam policy identifies buying links, exchanging goods/services for links and excessive link exchanges as link spam.",
+      "impact": "Wasted spend, policy exposure and damaged partner trust.",
+      "fix": "Ask for no ranking link; collaborate only where the relationship has a real business or community purpose, with any commercial link qualified as required.",
+      "status": "controlled_by_no-link-purchase rule",
+      "owner_or_gate": "Founder future outreach approval"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google Business Profile eligibility and ownership",
+      "url": "https://support.google.com/business/answer/13763036",
+      "checked_date": "2026-10-13",
+      "claim": "In-person contact required; online-only, mailbox and P.O. box examples ineligible"
+    },
+    {
+      "title": "Google guidelines for representing a business",
+      "url": "https://support.google.com/business/answer/3038177",
+      "checked_date": "2026-10-13",
+      "claim": "Service-area businesses must actually serve customers; virtual offices are not allowed"
+    },
+    {
+      "title": "Google canonical URL guidance",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "checked_date": "2026-10-13",
+      "claim": "Redirects and rel=canonical are stronger signals than sitemap inclusion; URL fragments are not suitable canonicals"
+    },
+    {
+      "title": "Google spam policies",
+      "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+      "checked_date": "2026-10-13",
+      "claim": "Doorway, scaled-content and link-spam risks"
+    },
+    {
+      "title": "Google SEO Starter Guide",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "checked_date": "2026-10-13",
+      "claim": "Changes can take hours to months; no index/ranking guarantee"
+    },
+    {
+      "title": "Google helpful content guidance",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "checked_date": "2026-10-13",
+      "claim": "People-first content and first-hand expertise"
+    },
+    {
+      "title": "Search Console Performance report",
+      "url": "https://support.google.com/webmasters/answer/7576553",
+      "checked_date": "2026-10-13",
+      "claim": "Impressions, clicks, CTR, average position and query/page dimensions"
+    },
+    {
+      "title": "LinkedIn create a Page",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a541785",
+      "checked_date": "2026-10-13",
+      "claim": "Company Page is free"
+    },
+    {
+      "title": "LinkedIn service pages comparison",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a7436041",
+      "checked_date": "2026-10-13",
+      "claim": "Profile and Company Page service surfaces are free; Company Page eligibility limit"
+    },
+    {
+      "title": "Clutch get listed",
+      "url": "https://clutch.co/get-listed",
+      "checked_date": "2026-10-13",
+      "claim": "Basic free; limited proof and no website link from directory pages; Verified advertised $499/year"
+    },
+    {
+      "title": "Clutch falsified reviews policy",
+      "url": "https://help.clutch.co/en/knowledge/falsified-reviews-and-how-clutch-address-them",
+      "checked_date": "2026-10-13",
+      "claim": "Reviews require a genuine client relationship"
+    },
+    {
+      "title": "Buffalo Niagara Partnership Pro Free",
+      "url": "https://www.thepartnership.org/bnpprofree/",
+      "checked_date": "2026-10-13",
+      "claim": "Complimentary tier, small-business eligibility, website/social presence and directory/networking benefits"
+    },
+    {
+      "title": "Buffalo Niagara Partnership membership application",
+      "url": "https://members.thepartnership.org/membership-application",
+      "checked_date": "2026-10-13",
+      "claim": "Current application lists Builder and Connector paid prices"
+    },
+    {
+      "title": "SUNY Buffalo State SBDC",
+      "url": "https://sbdc.buffalostate.edu/",
+      "checked_date": "2026-10-13",
+      "claim": "Free direct counseling for Erie County/Niagara Frontier startups and existing businesses"
+    },
+    {
+      "title": "SCORE small-business services",
+      "url": "https://www.score.org/scores-small-business-services/",
+      "checked_date": "2026-10-13",
+      "claim": "Free confidential mentoring and remote options"
+    },
+    {
+      "title": "SCORE Western NY",
+      "url": "https://www.score.org/ny/western-ny/",
+      "checked_date": "2026-10-13",
+      "claim": "Buffalo-Niagara coverage and free mentoring/workshops"
+    }
+  ],
+  "schedule_anchor": "Day windows are relative to public launch; final launch-blocking technical/form tests occur before release, then observation continues. Do not assume public launch in calendar week1.",
+  "capacity_accounting": "All tests draw from existing 145 studio / 78 sales / 52 admin allocations. They are not additive hours. Technical test within107 own-site production; guides within24 launch+14later; relationship/profile/advisory work within sales/admin. Rephase if those budgets are exceeded."
+}

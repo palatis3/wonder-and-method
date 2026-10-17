@@ -1,0 +1,1992 @@
+{
+  "schema_version": "v3-search-inventory-1",
+  "retrieved_date": "2026-10-13",
+  "scope": "Erie County, New York launch for Wonder and Method; Buffalo and named suburbs tested in current web queries.",
+  "legacy_inventory": {
+    "files": [
+      "outputs/buffalo-web-studio-business-plan-v2/keyword-summary.json",
+      "outputs/buffalo-web-studio-business-plan-v2/county-keywords-raw.json",
+      "outputs/buffalo-web-studio-business-plan-v2/county-keywords.csv",
+      "outputs/buffalo-web-studio-business-plan-v2/erie-geography.csv",
+      "outputs/buffalo-web-studio-business-plan-v2/local-page-map.csv",
+      "outputs/buffalo-web-studio-business-plan-v2/LOCAL_SEARCH_PLAN.md"
+    ],
+    "summary": {
+      "keyword_summary_rows": 359,
+      "unique_queries": 359,
+      "positive_volume": 58,
+      "explicit_zero": 6,
+      "not_returned": 295,
+      "raw_requests": 337,
+      "raw_positive": 54,
+      "raw_zero": 6,
+      "raw_missing": 277,
+      "grouped_search_names": 38,
+      "municipal_jurisdictions": 44
+    },
+    "csv_schema_columns": 34,
+    "csv_columns": [
+      "keyword",
+      "geography",
+      "jurisdiction_types",
+      "jurisdictions",
+      "county_scope",
+      "service_family",
+      "query_intent",
+      "query_geography_qualification",
+      "database",
+      "search_volume_us_monthly",
+      "cpc_usd",
+      "keyword_difficulty",
+      "paid_competition",
+      "semrush_intent_raw",
+      "status",
+      "retrieved_date",
+      "snapshot_month",
+      "priority",
+      "priority_reason",
+      "recommended_page_cluster",
+      "recommended_page",
+      "source",
+      "source_batch",
+      "source_url",
+      "metrics_origin",
+      "raw_evidence_file",
+      "notes",
+      "historical_recommended_page",
+      "historical_raw_evidence_file",
+      "primary_url",
+      "intent_cluster",
+      "publish_status",
+      "proposed_primary_url",
+      "publication_gate"
+    ],
+    "geography_schema_columns": 13,
+    "geography_columns": [
+      "search_place",
+      "jurisdiction_types",
+      "jurisdictions",
+      "jurisdiction_count",
+      "village_parent_towns",
+      "contained_villages",
+      "county_scope",
+      "optional_locality_variants",
+      "ambiguity_and_deduplication_notes",
+      "specific_source",
+      "source_inventory",
+      "source_parent_mapping",
+      "verified_date"
+    ],
+    "page_map_schema_columns": 6,
+    "page_map_columns": [
+      "primary_url",
+      "intent_cluster",
+      "publish_status",
+      "original_evidence_required",
+      "town_page_policy",
+      "query_rows"
+    ],
+    "page_map_query_sum": 358,
+    "flaws": [
+      "Exact keyword strings are unique, but semantic variants (Buffalo web design/web designer/website design/web development; SEO/local SEO/company/services) all cluster on the same canonical page. Reconciliation must keep variants as supporting terms and prevent accidental page-per-variant publication.",
+      "The page map allocates 358 rows while the CSV has 359. The extra row is 'website redesign cost buffalo' routed to '/services/web-design/#investment', a fragment absent from the map and unsuitable as a canonical URL; route it to a page or guide.",
+      "Historical routing still carries stale paths such as /service-area/, /seo/, /web-design/, /web-development/ and fragments. Preserve for audit only; never generate links or pages from historical_recommended_page.",
+      "The 38 grouped search names compress 44 legal jurisdictions. Shared names (Alden, Hamburg, Lancaster, North Collins, Orchard Park, Tonawanda) and nested villages can be misread as separate demand pools; preserve legal type and parent in the geography file.",
+      "Local-page-map has four service URLs absorbing 358 rows. This is sound for intent consolidation but creates cannibalization risk if future town sections are indexed as thin pages or if redesign/development/WordPress sections become competing URLs.",
+      "18 repair/support rows are labeled 'Buffalo NY phrase; US metric geography' and four are national benchmarks; blanks are missing data, not zero demand.",
+      "Semrush figures are US database estimates for phrases, not searches from Erie County; they must not be summed or described as local demand. No volume, difficulty or live pack position is inferred from current web queries."
+    ],
+    "exact_metric_samples": [
+      {
+        "keyword": "local seo services",
+        "us_monthly": 27100,
+        "cpc_usd": 17.51,
+        "kd": 48,
+        "scope": "US Semrush database; benchmark only"
+      },
+      {
+        "keyword": "small business website design",
+        "us_monthly": 4400,
+        "cpc_usd": 11.77,
+        "kd": 62,
+        "scope": "US Semrush database; benchmark only"
+      },
+      {
+        "keyword": "website maintenance services",
+        "us_monthly": 4400,
+        "cpc_usd": 13.17,
+        "kd": 23,
+        "scope": "US Semrush database; benchmark only"
+      },
+      {
+        "keyword": "buffalo seo company",
+        "us_monthly": 720,
+        "cpc_usd": 13.78,
+        "kd": 15,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      },
+      {
+        "keyword": "buffalo web design",
+        "us_monthly": 590,
+        "cpc_usd": 11.54,
+        "kd": 39,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      },
+      {
+        "keyword": "seo buffalo ny",
+        "us_monthly": 390,
+        "cpc_usd": 11.62,
+        "kd": 14,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      },
+      {
+        "keyword": "web design buffalo ny",
+        "us_monthly": 320,
+        "cpc_usd": 9.78,
+        "kd": 36,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      },
+      {
+        "keyword": "web design hamburg ny",
+        "us_monthly": 20,
+        "cpc_usd": 16.37,
+        "kd": 0,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      },
+      {
+        "keyword": "seo williamsville ny",
+        "us_monthly": 50,
+        "cpc_usd": 0,
+        "kd": 0,
+        "scope": "US Semrush phrase estimate; not local-origin proof"
+      }
+    ]
+  },
+  "web_query_research": {
+    "checked_date": "2026-10-13",
+    "query_count": 16,
+    "interpretation": "Search snippets/pages were inspected for intent and recurring offers. These are current result samples, not live location-controlled rankings, Google pack positions or market shares.",
+    "queries": [
+      {
+        "query": "Buffalo NY web design agency web designer",
+        "sources": [
+          "https://www.jamiestott.com/",
+          "https://www.aldomedia.com/",
+          "https://www.buffaloweb.com/",
+          "https://www.vagaricreative.com/"
+        ],
+        "intent": "Commercial provider selection for custom web design; results mix solo designer, established agency and brand-led studio.",
+        "signals": [
+          "Fixed-price/direct-access language appears on Jamie Stott; AldoMedia and BuffaloWeb combine design with hosting/support; Vagari leads with brand strategy."
+        ],
+        "gap": "Explicit scope, price, ownership and evidence labels are uncommon."
+      },
+      {
+        "query": "Buffalo NY website designer",
+        "sources": [
+          "https://www.jamiestott.com/",
+          "https://www.aldomedia.com/",
+          "https://ingenious.org/",
+          "https://www.buffaloweb.com/"
+        ],
+        "intent": "Commercial provider selection with personal designer and full-service agencies.",
+        "signals": [
+          "Personal contact and custom sites recur; some results sell broader IT/hosting."
+        ],
+        "gap": "A clear studio fit and a concise decision guide can reduce ambiguity."
+      },
+      {
+        "query": "Buffalo NY local SEO agency",
+        "sources": [
+          "https://makariosmarketing.com/",
+          "https://surdej.com/services/seo/",
+          "https://www.localmighty.com/buffalo/",
+          "https://holtzdigital.com/seo-services/local-seo"
+        ],
+        "intent": "Commercial local visibility/GBP/organic service selection.",
+        "signals": [
+          "Local SEO pages emphasize Maps/GBP, citations, technical fixes, content and reporting; offers range from founder-led to larger agencies."
+        ],
+        "gap": "Truthful baseline-vs-ongoing scope, no guarantees, and a measured owned-work example."
+      },
+      {
+        "query": "Buffalo NY SEO agency",
+        "sources": [
+          "https://www.expertise.com/business/seo-agencies/new-york/buffalo",
+          "https://makariosmarketing.com/",
+          "https://holtzdigital.com/seo-services/local-seo",
+          "https://shaunsavvy.com/local-seo-services-buffalo/"
+        ],
+        "intent": "Broad SEO agency comparison, including directories and provider pages.",
+        "signals": [
+          "Case-study/ranking and traffic claims are prominent; provider pages mention technical, content, links and local work."
+        ],
+        "gap": "Transparent package boundaries and source-labeled evidence."
+      },
+      {
+        "query": "web design West Seneca NY website designer",
+        "sources": [
+          "https://www.webwahofbuffalo.com/web-design-company-west-seneca/",
+          "https://hourglass-media.com/service/website-design/"
+        ],
+        "intent": "Suburban commercial design query; provider pages target the town from Buffalo.",
+        "signals": [
+          "Local service copy stresses custom, responsive, SEO-optimized design; WordPress/support appears."
+        ],
+        "gap": "Avoid thin town page; place West Seneca proof/availability in county hub or service section."
+      },
+      {
+        "query": "web design Cheektowaga NY website designer",
+        "sources": [
+          "https://www.aldomedia.com/cheektowaga-ny-website-design",
+          "https://holtzdigital.com/web-design/cheektowaga-ny",
+          "https://buffalowebsitebuilder.com/",
+          "https://www.yellowpages.com/cheektowaga-ny/web-site-design-services"
+        ],
+        "intent": "Commercial design query with local directories and agency location page.",
+        "signals": [
+          "Pages mention mobile-first, local search, click-to-call, sector examples, support and geographic corridors."
+        ],
+        "gap": "Claims such as traffic/lead multipliers need evidence; offer a fact-specific county hub instead."
+      },
+      {
+        "query": "web design Amherst NY website designer",
+        "sources": [
+          "https://www.expertise.com/business/web-design/new-york/amherst",
+          "https://williamsmedia.co/location/amherst",
+          "https://www.aldomedia.com/"
+        ],
+        "intent": "Commercial design and redesign selection in Amherst.",
+        "signals": [
+          "Directory and agency pages feature WordPress, support, free-homepage offers, 6–8 week delivery and conversion language."
+        ],
+        "gap": "Published scope/price and ownership can differentiate without a city page."
+      },
+      {
+        "query": "web design Clarence NY website designer",
+        "sources": [
+          "https://apprisedmarketing.com/",
+          "https://www.studio29webdesign.com/clarence-new-york/"
+        ],
+        "intent": "Commercial local design/marketing query.",
+        "signals": [
+          "Pages bundle custom/template sites, SEO, PPC, hosting and support; Studio 29 uses broad service-area copy and FAQ."
+        ],
+        "gap": "Explain what is included in foundational SEO and what ongoing work costs."
+      },
+      {
+        "query": "web design Hamburg NY website designer",
+        "sources": [
+          "https://www.mg3webworks.com/",
+          "https://boydmediallc.com/",
+          "https://www.yellowpages.com/hamburg-ny/web-site-design-services"
+        ],
+        "intent": "Commercial local design provider selection.",
+        "signals": [
+          "Results include an established Orchard Park firm serving Hamburg, a boutique Hamburg studio, and directory listings."
+        ],
+        "gap": "Local relationship plus transparent project tiers can compete with broad agency language."
+      },
+      {
+        "query": "web design Orchard Park NY website designer",
+        "sources": [
+          "https://www.mg3webworks.com/",
+          "https://www.nsytes.com/",
+          "https://surdej.com/"
+        ],
+        "intent": "Commercial design/development selection near a local agency cluster.",
+        "signals": [
+          "Established providers stress custom code/CMS, portfolios, SEO included and regional service coverage."
+        ],
+        "gap": "Show concrete process, ownership, limits and before/after evidence."
+      },
+      {
+        "query": "web design Tonawanda NY website designer",
+        "sources": [
+          "https://www.360psg.com/buffalo",
+          "https://joshbagnall.com/"
+        ],
+        "intent": "Commercial design/development provider selection.",
+        "signals": [
+          "SERP mixes a large established provider with a personal support/development offer; city and town share the name."
+        ],
+        "gap": "Specify which Tonawanda context is served; avoid implying a City/Town office without proof."
+      },
+      {
+        "query": "web design Lancaster NY website designer",
+        "sources": [
+          "https://www.studio29webdesign.com/lancaster-new-york/",
+          "https://surdej.com/",
+          "https://www.mainstreetdigitalservices.com/"
+        ],
+        "intent": "Commercial design query contaminated by Lancaster, Pennsylvania results.",
+        "signals": [
+          "NY pages offer web design/hosting/SEO; PA result is a different county and price context."
+        ],
+        "gap": "Always qualify Lancaster NY/Erie County in copy, titles and research; do not reuse PA evidence."
+      },
+      {
+        "query": "web design Williamsville NY website designer",
+        "sources": [
+          "https://adwebvertising.com/services/web-design/williamsville-ny",
+          "https://www.expertise.com/business/web-design/new-york/amherst"
+        ],
+        "intent": "Commercial design query in a village nested in Amherst.",
+        "signals": [
+          "Remote agency page emphasizes conversion, CMS, accessibility and speed; directories route to Amherst providers."
+        ],
+        "gap": "Use Williamsville as a named search term within service/county content only until firsthand proof exists."
+      },
+      {
+        "query": "web design East Aurora NY website designer",
+        "sources": [
+          "https://holtzdigital.com/web-design/east-aurora-ny",
+          "https://www.studio29webdesign.com/east-aurora-new-york/",
+          "https://www.kygo.tech/"
+        ],
+        "intent": "Commercial village design/support query.",
+        "signals": [
+          "Pages target small businesses, local search, mobile-first conversion and boutique support; KYGO emphasizes personalized IT and updates."
+        ],
+        "gap": "Separate East Aurora village from Town of Aurora and offer a useful local buyer section."
+      },
+      {
+        "query": "local SEO West Seneca NY SEO agency",
+        "sources": [
+          "https://www.breaklineagency.com/seo-agency/west-seneca-new-york/",
+          "https://rankpa.com/new-york/west-seneca/",
+          "https://www.topseos.com/best-local-seo-companies-in-west-seneca-new-york",
+          "https://marketinglocalseo.com/west-seneca-ny/"
+        ],
+        "intent": "Commercial local SEO query; results include aggressive claims and directory listicles.",
+        "signals": [
+          "GBP/citations, reporting, link building and lead claims recur; some pages use ranking guarantees."
+        ],
+        "gap": "No-guarantee language plus exact deliverables and measurement is a trust opportunity."
+      },
+      {
+        "query": "local SEO Amherst NY SEO agency",
+        "sources": [
+          "https://www.expertise.com/business/seo-agencies/new-york/amherst",
+          "https://www.ezmarketing.com/locations/seo-amherst-new-york/"
+        ],
+        "intent": "Commercial SEO/local SEO selection in Amherst.",
+        "signals": [
+          "Directory and agency pages combine keyword research, content, on-site/local optimization and website design."
+        ],
+        "gap": "Clarify service fit, foundational SEO versus ongoing retainer, and evidence requirements."
+      }
+    ]
+  },
+  "recurring_competitor_patterns": [
+    {
+      "pattern": "Web design plus SEO/care/hosting bundles",
+      "observed_on": [
+        "AldoMedia",
+        "Surdej",
+        "Holtz Digital",
+        "Studio 29",
+        "360 PSG"
+      ],
+      "implication": "Wonder and Method needs explicit boundaries between build foundation, ongoing SEO, care and rescue."
+    },
+    {
+      "pattern": "Mobile-first, speed, conversion and local-search copy",
+      "observed_on": [
+        "Holtz Digital",
+        "Jamie Stott",
+        "AldoMedia",
+        "Williams Media",
+        "webWAH!"
+      ],
+      "implication": "These are table stakes; proof, scope and honest measurement can carry differentiation."
+    },
+    {
+      "pattern": "Location pages for many Erie County towns",
+      "observed_on": [
+        "Holtz Digital",
+        "Studio 29",
+        "AldoMedia",
+        "webWAH!"
+      ],
+      "implication": "SERP presence does not justify mass city×service pages; require firsthand work and unique buyer questions."
+    },
+    {
+      "pattern": "Free audits/consultations and promotional claims",
+      "observed_on": [
+        "Makarios",
+        "LocalMighty",
+        "Williams Media",
+        "Breakline",
+        "RankPa"
+      ],
+      "implication": "Offer a bounded inquiry/audit only if capacity and evidence support it; avoid unsubstantiated guarantees."
+    },
+    {
+      "pattern": "Founder-led or boutique trust positioning",
+      "observed_on": [
+        "Jamie Stott",
+        "Holtz Digital",
+        "Boyd Media",
+        "KYGO",
+        "nSytes"
+      ],
+      "implication": "A direct relationship and transparent price/scope can be credible early positioning."
+    },
+    {
+      "pattern": "Lancaster Pennsylvania contamination",
+      "observed_on": [
+        "Main Street Digital",
+        "Rachel Lynn Heisey"
+      ],
+      "implication": "Every Lancaster term and evidence record must say Lancaster NY/Erie County."
+    }
+  ],
+  "content_gaps": [
+    "Plain-language cost and scope comparison: what the buyer gets, what changes price, ownership, payment milestones and timeline.",
+    "Build SEO versus ongoing SEO: titles, headings, crawl/index controls, schema and performance foundation versus reporting, content, local profiles and iteration.",
+    "Evidence-labeled work: owned-site, paid-client and concept labels with dates, role, screenshots/data and limitations.",
+    "Care boundaries: supported stack, backups/restore drill, response hours, edits, security responsibilities and cancellation.",
+    "Rescue/migration boundary: diagnosis first, supported stacks and excluded emergency/malware claims.",
+    "Local logistics and GBP eligibility for a service-area operation; no implied office or town duplicates.",
+    "Customer measurement questions: qualified inquiries, source confidence and what rankings can/cannot prove.",
+    "Motion/accessibility/performance tradeoffs for a visually distinctive site."
+  ],
+  "method_limits": [
+    "No Google Trends was used; no normalized trend index is treated as volume.",
+    "No automated city×service pages are recommended.",
+    "Web query results do not establish live rankings or a Google local pack.",
+    "All estimates are hypotheses to validate with Search Console, lead logs and buyer conversations after launch."
+  ],
+  "term_hypotheses": [
+    {
+      "id": "KW-001",
+      "primary": "web design buffalo ny",
+      "secondary": "web design buffalo",
+      "longtail": "custom web design buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-002",
+      "primary": "buffalo web design",
+      "secondary": "buffalo web design",
+      "longtail": "custom buffalo web design for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=buffalo%20web%20design",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-003",
+      "primary": "website design buffalo",
+      "secondary": "website design buffalo",
+      "longtail": "custom website design buffalo for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "website design provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20design%20buffalo",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-004",
+      "primary": "website design buffalo ny",
+      "secondary": "website design buffalo",
+      "longtail": "custom website design buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "website design provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20design%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-005",
+      "primary": "web designer buffalo",
+      "secondary": "web designer buffalo",
+      "longtail": "custom web designer buffalo for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "individual provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20designer%20buffalo",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-006",
+      "primary": "buffalo website design",
+      "secondary": "buffalo website design",
+      "longtail": "custom buffalo website design for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "website design provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=buffalo%20website%20design",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-007",
+      "primary": "web design company buffalo ny",
+      "secondary": "web design company buffalo",
+      "longtail": "custom web design company buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "agency/provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20company%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-008",
+      "primary": "web development buffalo ny",
+      "secondary": "web development buffalo",
+      "longtail": "custom web development buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "technical website provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20development%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-009",
+      "primary": "buffalo website development",
+      "secondary": "buffalo website development",
+      "longtail": "custom buffalo website development for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "technical website provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=buffalo%20website%20development",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-010",
+      "primary": "custom website design buffalo",
+      "secondary": "custom website design buffalo",
+      "longtail": "custom custom website design buffalo for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "custom build provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=custom%20website%20design%20buffalo",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-011",
+      "primary": "small business website design",
+      "secondary": "small business website design",
+      "longtail": "custom small business website design for a small business",
+      "geography": "United States benchmark; adapt to Buffalo",
+      "service": "Web design",
+      "intent": "small business website provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "Buffalo web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=small%20business%20website%20design",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-012",
+      "primary": "web design erie county ny",
+      "secondary": "web design erie county",
+      "longtail": "custom web design erie county ny for a small business",
+      "geography": "Erie County NY",
+      "service": "Web design",
+      "intent": "county service-area provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "County coverage + web design",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20erie%20county%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-013",
+      "primary": "website redesign buffalo",
+      "secondary": "website redesign buffalo",
+      "longtail": "custom website redesign buffalo for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "replace/improve existing site",
+      "priority": "P1",
+      "proposedPageCluster": "Buffalo web design / redesign section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20redesign%20buffalo",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-014",
+      "primary": "website redesign buffalo ny",
+      "secondary": "website redesign buffalo",
+      "longtail": "custom website redesign buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "replace/improve existing site",
+      "priority": "P1",
+      "proposedPageCluster": "Buffalo web design / redesign section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20redesign%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-015",
+      "primary": "website redesign services",
+      "secondary": "website redesign services",
+      "longtail": "custom website redesign services for a small business",
+      "geography": "US benchmark; adapt to Buffalo",
+      "service": "Web design",
+      "intent": "replace/improve existing site",
+      "priority": "P1",
+      "proposedPageCluster": "Web design / redesign section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20redesign%20services",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-016",
+      "primary": "wordpress web design buffalo ny",
+      "secondary": "wordpress web design buffalo",
+      "longtail": "custom wordpress web design buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "WordPress provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "Web design / WordPress section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20web%20design%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-017",
+      "primary": "wordpress developer buffalo ny",
+      "secondary": "wordpress developer buffalo",
+      "longtail": "custom wordpress developer buffalo ny for a small business",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Web design",
+      "intent": "WordPress provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "Web design / WordPress section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20developer%20buffalo%20ny",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-018",
+      "primary": "wordpress development services",
+      "secondary": "wordpress development services",
+      "longtail": "custom wordpress development services for a small business",
+      "geography": "US benchmark; adapt only if supported",
+      "service": "Web design",
+      "intent": "WordPress provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design / WordPress section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20development%20services",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-019",
+      "primary": "buffalo seo",
+      "secondary": "SEO company Buffalo NY",
+      "longtail": "buffalo seo pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=buffalo%20seo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-020",
+      "primary": "buffalo seo company",
+      "secondary": "Buffalo SEO agency",
+      "longtail": "buffalo seo company pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO agency/provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=buffalo%20seo%20company",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-021",
+      "primary": "seo buffalo ny",
+      "secondary": "SEO Buffalo",
+      "longtail": "seo buffalo ny pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20buffalo%20ny",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-022",
+      "primary": "seo services buffalo ny",
+      "secondary": "Buffalo SEO services",
+      "longtail": "seo services buffalo ny pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO services selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20services%20buffalo%20ny",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-023",
+      "primary": "local seo buffalo",
+      "secondary": "Buffalo local SEO",
+      "longtail": "local seo buffalo pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "local visibility provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO / local SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=local%20seo%20buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-024",
+      "primary": "local seo buffalo ny",
+      "secondary": "local SEO Buffalo NY",
+      "longtail": "local seo buffalo ny pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "local visibility provider selection",
+      "priority": "P0",
+      "proposedPageCluster": "Buffalo SEO / local SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=local%20seo%20buffalo%20ny",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-025",
+      "primary": "local seo services",
+      "secondary": "local seo services",
+      "longtail": "local seo services pricing and deliverables",
+      "geography": "US benchmark; adapt to Buffalo",
+      "service": "SEO/local SEO",
+      "intent": "local visibility service selection",
+      "priority": "P1",
+      "proposedPageCluster": "Buffalo SEO / local SEO",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=local%20seo%20services",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-026",
+      "primary": "ai seo buffalo",
+      "secondary": "Buffalo AI SEO",
+      "longtail": "ai seo buffalo pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "AI-search/GEO service research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO page AI-search section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=ai%20seo%20buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-027",
+      "primary": "generative engine optimization buffalo",
+      "secondary": "Buffalo generative engine optimization",
+      "longtail": "generative engine optimization buffalo pricing and deliverables",
+      "geography": "Buffalo, Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "AI-search/GEO service research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO page AI-search section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=generative%20engine%20optimization%20buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-028",
+      "primary": "generative engine optimization services",
+      "secondary": "generative engine optimization services",
+      "longtail": "generative engine optimization services pricing and deliverables",
+      "geography": "US benchmark; adapt cautiously",
+      "service": "SEO/local SEO",
+      "intent": "AI-search/GEO service research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO page AI-search section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=generative%20engine%20optimization%20services",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-029",
+      "primary": "answer engine optimization services",
+      "secondary": "answer engine optimization services",
+      "longtail": "answer engine optimization services pricing and deliverables",
+      "geography": "US benchmark; adapt cautiously",
+      "service": "SEO/local SEO",
+      "intent": "AI-search/GEO service research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO page AI-search section",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=answer%20engine%20optimization%20services",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-030",
+      "primary": "website maintenance buffalo",
+      "secondary": "website maintenance buffalo",
+      "longtail": "how much does website maintenance buffalo cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "recurring website support selection",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20maintenance%20buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-031",
+      "primary": "website maintenance buffalo ny",
+      "secondary": "website maintenance buffalo",
+      "longtail": "how much does website maintenance buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "recurring website support selection",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20maintenance%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-032",
+      "primary": "wordpress maintenance buffalo",
+      "secondary": "wordpress maintenance buffalo",
+      "longtail": "how much does wordpress maintenance buffalo cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "recurring WordPress support selection",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20maintenance%20buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-033",
+      "primary": "website support buffalo",
+      "secondary": "website support buffalo",
+      "longtail": "how much does website support buffalo cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "recurring website support selection",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20support%20buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-034",
+      "primary": "website care plans",
+      "secondary": "website care plans",
+      "longtail": "how much does website care plans cost",
+      "geography": "US benchmark; adapt to actual offer",
+      "service": "Website care",
+      "intent": "recurring website support research",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20care%20plans",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-035",
+      "primary": "website maintenance services",
+      "secondary": "website maintenance services",
+      "longtail": "how much does website maintenance services cost",
+      "geography": "US benchmark; adapt to actual offer",
+      "service": "Website care",
+      "intent": "recurring website support research",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20maintenance%20services",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-036",
+      "primary": "website rescue buffalo ny",
+      "secondary": "website rescue buffalo",
+      "longtail": "how much does website rescue buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website rescue",
+      "intent": "bounded repair/rescue selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20rescue%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-037",
+      "primary": "website repair buffalo ny",
+      "secondary": "website repair buffalo",
+      "longtail": "how much does website repair buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website rescue",
+      "intent": "bounded repair/rescue selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20repair%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-038",
+      "primary": "website migration buffalo ny",
+      "secondary": "website migration buffalo",
+      "longtail": "how much does website migration buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website rescue",
+      "intent": "migration/technical support selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20migration%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-039",
+      "primary": "website speed optimization buffalo",
+      "secondary": "website speed optimization buffalo",
+      "longtail": "how much does website speed optimization buffalo cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website rescue",
+      "intent": "technical performance support selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20speed%20optimization%20buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-040",
+      "primary": "wordpress support buffalo ny",
+      "secondary": "wordpress support buffalo",
+      "longtail": "how much does wordpress support buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "WordPress support selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20support%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-041",
+      "primary": "wordpress help buffalo ny",
+      "secondary": "wordpress help buffalo",
+      "longtail": "how much does wordpress help buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website care",
+      "intent": "WordPress support selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=wordpress%20help%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-042",
+      "primary": "website fixes buffalo ny",
+      "secondary": "website fixes buffalo",
+      "longtail": "how much does website fixes buffalo ny cost",
+      "geography": "Buffalo, Erie County NY",
+      "service": "Website rescue",
+      "intent": "bounded repair selection",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20fixes%20buffalo%20ny",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-043",
+      "primary": "website repair service",
+      "secondary": "website repair service",
+      "longtail": "how much does website repair service cost",
+      "geography": "US benchmark; adapt to actual stack",
+      "service": "Website rescue",
+      "intent": "repair/support research",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20repair%20service",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-044",
+      "primary": "website migration services",
+      "secondary": "website migration services",
+      "longtail": "how much does website migration services cost",
+      "geography": "US benchmark; adapt to actual capability",
+      "service": "Website rescue",
+      "intent": "migration/support research",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20migration%20services",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-045",
+      "primary": "web design hamburg ny",
+      "secondary": "website design hamburg ny",
+      "longtail": "custom web design hamburg ny for a small business",
+      "geography": "Hamburg NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20hamburg%20ny",
+        "https://boydmediallc.com/",
+        "https://www.yellowpages.com/hamburg-ny/web-site-design-services",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-046",
+      "primary": "web design amherst ny",
+      "secondary": "website design amherst ny",
+      "longtail": "custom web design amherst ny for a small business",
+      "geography": "Amherst NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20amherst%20ny",
+        "https://williamsmedia.co/location/amherst",
+        "https://www.expertise.com/business/seo-agencies/new-york/amherst",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-047",
+      "primary": "web design east aurora ny",
+      "secondary": "website design east aurora ny",
+      "longtail": "custom web design east aurora ny for a small business",
+      "geography": "East Aurora NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20east%20aurora%20ny",
+        "https://holtzdigital.com/web-design/east-aurora-ny",
+        "https://www.studio29webdesign.com/east-aurora-new-york/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-048",
+      "primary": "web design tonawanda ny",
+      "secondary": "website design tonawanda ny",
+      "longtail": "custom web design tonawanda ny for a small business",
+      "geography": "Tonawanda NY; city/town ambiguity",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20tonawanda%20ny",
+        "https://www.360psg.com/buffalo",
+        "https://joshbagnall.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-049",
+      "primary": "web design west seneca ny",
+      "secondary": "website design west seneca ny",
+      "longtail": "custom web design west seneca ny for a small business",
+      "geography": "West Seneca NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20west%20seneca%20ny",
+        "https://www.webwahofbuffalo.com/web-design-company-west-seneca/",
+        "https://www.breaklineagency.com/seo-agency/west-seneca-new-york/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-050",
+      "primary": "web design williamsville ny",
+      "secondary": "website design williamsville ny",
+      "longtail": "custom web design williamsville ny for a small business",
+      "geography": "Williamsville NY; village in Amherst",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20williamsville%20ny",
+        "https://adwebvertising.com/services/web-design/williamsville-ny",
+        "https://www.expertise.com/business/web-design/new-york/amherst",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-051",
+      "primary": "web design lancaster ny",
+      "secondary": "website design lancaster ny",
+      "longtail": "custom web design lancaster ny for a small business",
+      "geography": "Lancaster NY; town/village",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20lancaster%20ny",
+        "https://www.studio29webdesign.com/lancaster-new-york/",
+        "https://surdej.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-052",
+      "primary": "web design orchard park ny",
+      "secondary": "website design orchard park ny",
+      "longtail": "custom web design orchard park ny for a small business",
+      "geography": "Orchard Park NY; town/village",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20orchard%20park%20ny",
+        "https://www.mg3webworks.com/",
+        "https://www.nsytes.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-053",
+      "primary": "web design cheektowaga ny",
+      "secondary": "website design cheektowaga ny",
+      "longtail": "custom web design cheektowaga ny for a small business",
+      "geography": "Cheektowaga NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20cheektowaga%20ny",
+        "https://www.aldomedia.com/cheektowaga-ny-website-design",
+        "https://holtzdigital.com/web-design/cheektowaga-ny",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-054",
+      "primary": "web design clarence ny",
+      "secondary": "website design clarence ny",
+      "longtail": "custom web design clarence ny for a small business",
+      "geography": "Clarence NY",
+      "service": "Web design",
+      "intent": "web design provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20clarence%20ny",
+        "https://www.studio29webdesign.com/clarence-new-york/",
+        "https://apprisedmarketing.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-055",
+      "primary": "seo amherst ny",
+      "secondary": "local seo amherst ny",
+      "longtail": "local SEO deliverables for a Amherst small business",
+      "geography": "Amherst NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20amherst%20ny",
+        "https://williamsmedia.co/location/amherst",
+        "https://www.expertise.com/business/seo-agencies/new-york/amherst",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-056",
+      "primary": "seo hamburg ny",
+      "secondary": "local seo hamburg ny",
+      "longtail": "local SEO deliverables for a Hamburg small business",
+      "geography": "Hamburg NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20hamburg%20ny",
+        "https://boydmediallc.com/",
+        "https://www.yellowpages.com/hamburg-ny/web-site-design-services",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-057",
+      "primary": "seo orchard park ny",
+      "secondary": "local seo orchard park ny",
+      "longtail": "local SEO deliverables for a Orchard Park small business",
+      "geography": "Orchard Park NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20orchard%20park%20ny",
+        "https://www.mg3webworks.com/",
+        "https://www.nsytes.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-058",
+      "primary": "seo cheektowaga ny",
+      "secondary": "local seo cheektowaga ny",
+      "longtail": "local SEO deliverables for a Cheektowaga small business",
+      "geography": "Cheektowaga NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20cheektowaga%20ny",
+        "https://www.aldomedia.com/cheektowaga-ny-website-design",
+        "https://holtzdigital.com/web-design/cheektowaga-ny",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-059",
+      "primary": "seo clarence ny",
+      "secondary": "local seo clarence ny",
+      "longtail": "local SEO deliverables for a Clarence small business",
+      "geography": "Clarence NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20clarence%20ny",
+        "https://www.studio29webdesign.com/clarence-new-york/",
+        "https://apprisedmarketing.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-060",
+      "primary": "seo east aurora ny",
+      "secondary": "local seo east aurora ny",
+      "longtail": "local SEO deliverables for a East Aurora small business",
+      "geography": "East Aurora NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20east%20aurora%20ny",
+        "https://holtzdigital.com/web-design/east-aurora-ny",
+        "https://www.studio29webdesign.com/east-aurora-new-york/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-061",
+      "primary": "seo tonawanda ny",
+      "secondary": "local seo tonawanda ny",
+      "longtail": "local SEO deliverables for a Tonawanda small business",
+      "geography": "Tonawanda NY; city/town ambiguity",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20tonawanda%20ny",
+        "https://www.360psg.com/buffalo",
+        "https://joshbagnall.com/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-062",
+      "primary": "seo west seneca ny",
+      "secondary": "local seo west seneca ny",
+      "longtail": "local SEO deliverables for a West Seneca small business",
+      "geography": "West Seneca NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20west%20seneca%20ny",
+        "https://www.webwahofbuffalo.com/web-design-company-west-seneca/",
+        "https://www.breaklineagency.com/seo-agency/west-seneca-new-york/",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-063",
+      "primary": "seo williamsville ny",
+      "secondary": "local seo williamsville ny",
+      "longtail": "local SEO deliverables for a Williamsville small business",
+      "geography": "Williamsville NY; village in Amherst",
+      "service": "SEO/local SEO",
+      "intent": "SEO provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=seo%20williamsville%20ny",
+        "https://adwebvertising.com/services/web-design/williamsville-ny",
+        "https://www.expertise.com/business/web-design/new-york/amherst",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-064",
+      "primary": "local seo hamburg ny",
+      "secondary": "local seo local seo hamburg ny",
+      "longtail": "local SEO deliverables for a Hamburg small business",
+      "geography": "Hamburg NY",
+      "service": "SEO/local SEO",
+      "intent": "local visibility provider selection",
+      "priority": "P1",
+      "proposedPageCluster": "SEO + county hub",
+      "observedvsinferred": "observed_legacy_query",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=local%20seo%20hamburg%20ny",
+        "https://boydmediallc.com/",
+        "https://www.yellowpages.com/hamburg-ny/web-site-design-services",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-065",
+      "primary": "how much does a website cost in Buffalo NY",
+      "secondary": "how much does a website cost in Buffalo",
+      "longtail": "how much does a website cost in Buffalo NY for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "website cost research",
+      "priority": "P1",
+      "proposedPageCluster": "Website cost guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=how%20much%20does%20a%20website%20cost%20in%20Buffalo%20NY",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-066",
+      "primary": "website design pricing Buffalo NY",
+      "secondary": "website design pricing Buffalo",
+      "longtail": "website design pricing Buffalo NY for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "website cost research",
+      "priority": "P1",
+      "proposedPageCluster": "Website cost guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20design%20pricing%20Buffalo%20NY",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-067",
+      "primary": "custom website timeline Buffalo NY",
+      "secondary": "custom website timeline Buffalo",
+      "longtail": "custom website timeline Buffalo NY for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "project timeline research",
+      "priority": "P1",
+      "proposedPageCluster": "Website cost guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=custom%20website%20timeline%20Buffalo%20NY",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-068",
+      "primary": "what is included in a Buffalo small business website",
+      "secondary": "what is included in a Buffalo small business website",
+      "longtail": "what is included in a Buffalo small business website for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "scope/comparison research",
+      "priority": "P1",
+      "proposedPageCluster": "Website cost guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=what%20is%20included%20in%20a%20Buffalo%20small%20business%20website",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-069",
+      "primary": "website redesign or new website Buffalo NY",
+      "secondary": "website redesign or new website Buffalo",
+      "longtail": "website redesign or new website Buffalo NY for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "replace vs rebuild research",
+      "priority": "P1",
+      "proposedPageCluster": "Web design / redesign section",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20redesign%20or%20new%20website%20Buffalo%20NY",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-070",
+      "primary": "who owns my website after a Buffalo web design project",
+      "secondary": "who owns my website after a Buffalo web design project",
+      "longtail": "who owns my website after a Buffalo web design project for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "ownership/contract research",
+      "priority": "P1",
+      "proposedPageCluster": "Web design service page",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=who%20owns%20my%20website%20after%20a%20Buffalo%20web%20design%20project",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-071",
+      "primary": "Buffalo website designer content requirements",
+      "secondary": "Buffalo website designer content requirements",
+      "longtail": "Buffalo website designer content requirements for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "buyer preparation research",
+      "priority": "P2",
+      "proposedPageCluster": "Web design service page",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=Buffalo%20website%20designer%20content%20requirements",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-072",
+      "primary": "foundational SEO included in website design Buffalo",
+      "secondary": "foundational SEO included in website design Buffalo",
+      "longtail": "foundational SEO included in website design Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "foundational vs ongoing SEO question",
+      "priority": "P1",
+      "proposedPageCluster": "Web design + SEO cross-link",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=foundational%20SEO%20included%20in%20website%20design%20Buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-073",
+      "primary": "ongoing SEO vs website SEO setup Buffalo",
+      "secondary": "ongoing SEO vs website SEO setup Buffalo",
+      "longtail": "ongoing SEO vs website SEO setup Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "foundational vs ongoing SEO question",
+      "priority": "P1",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=ongoing%20SEO%20vs%20website%20SEO%20setup%20Buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-074",
+      "primary": "local SEO monthly deliverables Buffalo NY",
+      "secondary": "local SEO monthly deliverables Buffalo",
+      "longtail": "local SEO monthly deliverables Buffalo NY for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "local SEO scope/pricing research",
+      "priority": "P1",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=local%20SEO%20monthly%20deliverables%20Buffalo%20NY",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-075",
+      "primary": "how long does local SEO take Buffalo",
+      "secondary": "how long does local SEO take Buffalo",
+      "longtail": "how long does local SEO take Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO expectations research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=how%20long%20does%20local%20SEO%20take%20Buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-076",
+      "primary": "does local SEO guarantee Google rankings Buffalo",
+      "secondary": "does local SEO guarantee Google rankings Buffalo",
+      "longtail": "does local SEO guarantee Google rankings Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO risk/guarantee question",
+      "priority": "P2",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=does%20local%20SEO%20guarantee%20Google%20rankings%20Buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-077",
+      "primary": "Google Business Profile eligibility service area business NY",
+      "secondary": "Google Business Profile eligibility service area business",
+      "longtail": "Google Business Profile eligibility service area business NY for a small business",
+      "geography": "Erie County NY",
+      "service": "SEO/local SEO",
+      "intent": "GBP eligibility research",
+      "priority": "P1",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=Google%20Business%20Profile%20eligibility%20service%20area%20business%20NY",
+        "https://support.google.com/business/answer/13763036",
+        "https://support.google.com/business/answer/3038177"
+      ]
+    },
+    {
+      "id": "KW-078",
+      "primary": "website maintenance backups security Buffalo",
+      "secondary": "website maintenance backups security Buffalo",
+      "longtail": "website maintenance backups security Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "Website care",
+      "intent": "care scope/risk question",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20maintenance%20backups%20security%20Buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-079",
+      "primary": "website care response hours Buffalo",
+      "secondary": "website care response hours Buffalo",
+      "longtail": "website care response hours Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "Website care",
+      "intent": "care scope/pricing question",
+      "priority": "P1",
+      "proposedPageCluster": "Website care (gated launch)",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20care%20response%20hours%20Buffalo",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-080",
+      "primary": "WordPress migration checklist Buffalo small business",
+      "secondary": "WordPress migration checklist Buffalo small business",
+      "longtail": "WordPress migration checklist Buffalo small business for a small business",
+      "geography": "Buffalo NY",
+      "service": "Website rescue",
+      "intent": "migration/rescue research",
+      "priority": "P2",
+      "proposedPageCluster": "Website rescue (conditional)",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=WordPress%20migration%20checklist%20Buffalo%20small%20business",
+        "https://www.vagaricreative.com/",
+        "https://www.jamiestott.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-081",
+      "primary": "website speed accessibility checklist Buffalo",
+      "secondary": "website speed accessibility checklist Buffalo",
+      "longtail": "website speed accessibility checklist Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "Web design",
+      "intent": "technical quality research",
+      "priority": "P2",
+      "proposedPageCluster": "Web design service page",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=website%20speed%20accessibility%20checklist%20Buffalo",
+        "https://www.jamiestott.com/",
+        "https://www.aldomedia.com/",
+        "https://holtzdigital.com/"
+      ]
+    },
+    {
+      "id": "KW-082",
+      "primary": "how to measure SEO leads not rankings Buffalo",
+      "secondary": "how to measure SEO leads not rankings Buffalo",
+      "longtail": "how to measure SEO leads not rankings Buffalo for a small business",
+      "geography": "Buffalo NY",
+      "service": "SEO/local SEO",
+      "intent": "SEO measurement research",
+      "priority": "P2",
+      "proposedPageCluster": "SEO work/reporting guide",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=how%20to%20measure%20SEO%20leads%20not%20rankings%20Buffalo",
+        "https://makariosmarketing.com/",
+        "https://surdej.com/services/seo/",
+        "https://holtzdigital.com/seo-services/local-seo"
+      ]
+    },
+    {
+      "id": "KW-083",
+      "primary": "web design Erie County NY remote or in person",
+      "secondary": "web design Erie County remote or in person",
+      "longtail": "web design Erie County NY remote or in person for a small business",
+      "geography": "Erie County NY",
+      "service": "Web design",
+      "intent": "service logistics research",
+      "priority": "P2",
+      "proposedPageCluster": "County coverage hub",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=web%20design%20Erie%20County%20NY%20remote%20or%20in%20person",
+        "https://www4.erie.gov/state-and-regional-municipalities",
+        "https://www3.erie.gov/gis/erie-county-map-gallery"
+      ]
+    },
+    {
+      "id": "KW-084",
+      "primary": "Lancaster NY website designer Erie County",
+      "secondary": "Lancaster website designer Erie County",
+      "longtail": "Lancaster NY website designer Erie County for a small business",
+      "geography": "Lancaster NY",
+      "service": "Web design",
+      "intent": "disambiguated local provider selection",
+      "priority": "P2",
+      "proposedPageCluster": "Web design + county hub",
+      "observedvsinferred": "inferred_from_SERP_and_buyer_questions",
+      "sourceURLs": [
+        "https://www.semrush.com/analytics/keywordoverview/?db=us&q=Lancaster%20NY%20website%20designer%20Erie%20County",
+        "https://www.studio29webdesign.com/lancaster-new-york/",
+        "https://surdej.com/"
+      ]
+    }
+  ]
+}

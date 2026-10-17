@@ -1,0 +1,8 @@
+# Copy locally to .dev.vars; never commit actual values.
+# Basic credential format is username:long-random-password (ASCII).
+STAGING_AUTH=
+OPERATOR_TOKEN=
+# Random secret, at least 32 characters; hashes IP rate keys and deduplication content.
+FINGERPRINT_SECRET=
+# Leave empty in synthetic mode. Add only after sender verification and approval.
+RESEND_API_KEY=

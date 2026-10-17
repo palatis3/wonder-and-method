@@ -1,0 +1,889 @@
+{
+  "metadata": {
+    "title": "Buffalo and Erie County website/SEO competitor inventory",
+    "prepared_date": "2026-10-13",
+    "timezone": "America/New_York",
+    "scope": "Official provider pages checked for Buffalo, Erie County, or an explicitly served Buffalo market. Providers are direct website/SEO alternatives, premium comparables, or local productized substitutes; directories, resellers, and listing pages are excluded.",
+    "evidence_rule": "Prices are provider asking prices, not completed transactions. Provider performance, ranking, speed, review, and client-count statements remain self-reported unless independently measured; no performance claim is inferred here.",
+    "currency": "USD",
+    "checked_date": "2026-10-13"
+  },
+  "competitors": [
+    {
+      "id": "LC-01",
+      "provider": "Buffalo Web",
+      "market": "Buffalo/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "lower_price_and_established_local",
+      "service_focus": [
+        "website design/development",
+        "SEO foundations",
+        "hosting",
+        "support"
+      ],
+      "positioning": "Accessible small-business launch packages, then a path to a full custom redesign.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "SmartStart Essential",
+            "upfront_usd": 299.99,
+            "monthly_usd": 99,
+            "term": "2-year commitment",
+            "scope": "Standard design to match logo, contact form, essential SEO, social links, up to 20 formatted pages, mobile-responsive, two years hosting."
+          },
+          {
+            "name": "SmartStart Enhanced",
+            "upfront_usd": 599.99,
+            "monthly_usd": 139,
+            "term": "2-year commitment",
+            "scope": "Essential plus two enhancements such as slideshow, gallery, calendar, or blog."
+          }
+        ],
+        "caveat": "Full custom build is quote-only; SmartStart terms and ownership should be read with the provider's terms page."
+      },
+      "proof_and_terms": "Portfolio, training/support and a stated full-custom upgrade path are visible; package-specific ownership, cancellation payoff and export details were not established on the pricing page.",
+      "mobile_ui_pattern": "The provider states mobile-first/mobile-responsive work. The reviewed page uses a clear package comparison, persistent service navigation, and a contact CTA; this is an observed interface pattern, not a measured performance result.",
+      "keywords_and_pages_observed": [
+        "Buffalo website design",
+        "website design and development",
+        "search engine optimization",
+        "SmartStart",
+        "web hosting",
+        "design portfolio"
+      ],
+      "sources": [
+        {
+          "url": "https://www.buffaloweb.com/smartstart/",
+          "checked_date": "2026-10-13",
+          "evidence": "Posted SmartStart prices, term and inclusions."
+        },
+        {
+          "url": "https://www.buffaloweb.com/website-design-and-development/",
+          "checked_date": "2026-10-13",
+          "evidence": "Mobile-first, SEO/coding, training and process claims."
+        },
+        {
+          "url": "https://www.buffaloweb.com/terms-of-service/",
+          "checked_date": "2026-10-13",
+          "evidence": "General terms link retained for package-specific review."
+        }
+      ]
+    },
+    {
+      "id": "LC-02",
+      "provider": "Jamie Stott",
+      "market": "Buffalo/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "solo_direct_founder_comparable",
+      "service_focus": [
+        "custom small-business websites",
+        "copy and page strategy",
+        "website care"
+      ],
+      "positioning": "A named founder promises direct access, plain-language fixed choices, and a site that keeps changing with the business.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "New Website + Care",
+            "upfront_usd": 500,
+            "monthly_usd": 250,
+            "term": "12 months, then month-to-month",
+            "scope": "Full custom website, copy/page strategy, launch in 4-8 weeks, ongoing updates; one hour of care monthly in year one and two hours after year one."
+          },
+          {
+            "name": "New Website",
+            "upfront_usd": 4400,
+            "monthly_usd": 0,
+            "term": "Four milestone payments of $1,100",
+            "scope": "Standalone full custom website, copy/page strategy, full access and ownership after final payment; care optional at $250/month."
+          }
+        ],
+        "caveat": "The page calls first-year care-plan total $3,500 and standalone total $4,400; hosting is estimated at $25-35/month and domain at $20-30/year, billed directly."
+      },
+      "proof_and_terms": "Plan comparison, process, client testimonials and domain/ownership language are public. Care-plan site-owner role transfers within 10 business days after cancellation; standalone access follows final payment.",
+      "mobile_ui_pattern": "The page uses a side-by-side plan comparison, milestone language and repeated start CTAs. No measured mobile/performance result was observed.",
+      "keywords_and_pages_observed": [
+        "custom website design Buffalo",
+        "website + care",
+        "custom web design for small businesses",
+        "Buffalo/WNY website support"
+      ],
+      "sources": [
+        {
+          "url": "https://www.jamiestott.com/custom-web-design-buffalo",
+          "checked_date": "2026-10-13",
+          "evidence": "Pricing, scope, care hours, ownership, payment and timeline."
+        }
+      ]
+    },
+    {
+      "id": "LC-03",
+      "provider": "Driram Group",
+      "market": "Erie County/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "lower_price_custom_code",
+      "service_focus": [
+        "custom HTML/CSS websites",
+        "domain/hosting/email setup",
+        "GBP/local SEO",
+        "website care"
+      ],
+      "positioning": "Fixed-price, fast-launch packages framed as below local market rates for small businesses.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "Launch",
+            "upfront_usd": 999,
+            "monthly_usd": 0,
+            "term": "one-time",
+            "scope": "Three-page custom site, one year domain/hosting/email/SSL, mobile/tablet responsive, form, GBP setup, 5-7 business days."
+          },
+          {
+            "name": "Business",
+            "upfront_usd": 1849,
+            "monthly_usd": 39,
+            "term": "one-time build plus optional Basic Care",
+            "scope": "Six pages, pricing/services, testimonials, local SEO setup, Analytics, social links, auto-reply form, 30 days support; Basic Care adds backups, SSL/uptime monitoring and one hour edits."
+          },
+          {
+            "name": "Full Launch",
+            "upfront_usd": 2999,
+            "monthly_usd": 0,
+            "term": "one-time plus optional care",
+            "scope": "Eight-plus pages, branding, blog, booking, advanced lead capture, integrations, performance optimization and 60 days managed support."
+          }
+        ],
+        "caveat": "Care is listed at $39/$79/$129 per month; post-year-one domain/hosting is estimated at $30-50/year. Provider's 40% market comparison is an unverified claim."
+      },
+      "proof_and_terms": "Credentials handover and a review-before-launch process are stated; detailed case studies or independent outcomes were not established in the reviewed page.",
+      "mobile_ui_pattern": "The page explicitly lists mobile/tablet responsiveness and uses package cards with inclusions, delivery windows and add-ons. No measured speed result is inferred.",
+      "keywords_and_pages_observed": [
+        "Buffalo web services",
+        "Erie County website",
+        "custom HTML/CSS website",
+        "website care",
+        "local SEO setup"
+      ],
+      "sources": [
+        {
+          "url": "https://driramgroup.com/web-services",
+          "checked_date": "2026-10-13",
+          "evidence": "Current package prices, inclusions, delivery and care page."
+        }
+      ]
+    },
+    {
+      "id": "LC-04",
+      "provider": "Buffalo Creative Group",
+      "market": "Buffalo/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "lower_price_wordpress",
+      "service_focus": [
+        "WordPress websites",
+        "hosting",
+        "maintenance",
+        "graphic design",
+        "SEO availability"
+      ],
+      "positioning": "Small-business, nonprofit, author and personal-site design with simple published packages and one-to-one service.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "Basic redesign",
+            "upfront_usd": 700,
+            "monthly_usd": 0,
+            "term": "one-time on existing hosting",
+            "scope": "Home, About, Product/Services and Contact pages, social links, six client photos and up to four stock assets."
+          },
+          {
+            "name": "Basic hosted website",
+            "upfront_usd": 1200,
+            "monthly_usd": 0,
+            "term": "one year hosting included; renewal unknown",
+            "scope": "Above plus hosting, SSL, daily backups and malware scans."
+          },
+          {
+            "name": "Maintenance",
+            "upfront_usd": 0,
+            "monthly_usd": 50,
+            "term": "monthly",
+            "scope": "One hour of maintenance monthly; pay-as-you-go option is $75/hour."
+          }
+        ],
+        "caveat": "Domain, later hosting and package ownership/cancellation terms were not established on the reviewed page."
+      },
+      "proof_and_terms": "Public portfolio and named testimonials, including WNY organizations, are visible; outcomes are testimonial claims, not independently audited results.",
+      "mobile_ui_pattern": "Responsive phone/tablet/computer language, package lists, portfolio thumbnails and a quote CTA are visible. No measured performance claim is made.",
+      "keywords_and_pages_observed": [
+        "Buffalo web design",
+        "website hosting",
+        "search engine optimization",
+        "WordPress website",
+        "site maintenance"
+      ],
+      "sources": [
+        {
+          "url": "https://buffalocreativegroup.com/web-design/",
+          "checked_date": "2026-10-13",
+          "evidence": "Package prices, inclusions, maintenance and portfolio/testimonials."
+        }
+      ]
+    },
+    {
+      "id": "LC-05",
+      "provider": "Gung Ho Local",
+      "market": "Buffalo; contractor/trades focus",
+      "market_fit": "direct_local",
+      "competitive_role": "productized_local_alternative",
+      "service_focus": [
+        "trade websites",
+        "local SEO",
+        "lead capture",
+        "review automation",
+        "text-back/inbox tools"
+      ],
+      "positioning": "A managed website and response system that turns calls, forms, texts and reviews into one contractor workflow.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "SIMPLE",
+            "upfront_usd": 500,
+            "monthly_usd": 99,
+            "term": "month-to-month; cancel anytime per FAQ",
+            "scope": "Mobile-friendly one-page site, services/photos/reviews, click-to-call, form, email notifications, connected Google Profile and system access."
+          },
+          {
+            "name": "PRO",
+            "upfront_usd": 1000,
+            "monthly_usd": 299,
+            "term": "month-to-month; cancel anytime per FAQ",
+            "scope": "Customized 20-page site, SEO boost and city pages, 10-second text-back, unified inbox, review engine and unlimited website updates."
+          }
+        ],
+        "caveat": "The reviewed current page says no hidden setup fees and no long-term contracts; older indexed copy and FAQ language have changed, so a written quote controls."
+      },
+      "proof_and_terms": "Free mockup CTA, feature comparison and an interactive ROI calculator are visible; calculator outputs are illustrations and not proof of customer revenue.",
+      "mobile_ui_pattern": "Mobile-friendly one-page positioning, package comparison, sliders and ROI calculator are prominent. No independent speed or conversion measurement is inferred.",
+      "keywords_and_pages_observed": [
+        "contractor websites",
+        "website pricing Buffalo",
+        "local SEO",
+        "city pages",
+        "review automation",
+        "text back"
+      ],
+      "sources": [
+        {
+          "url": "https://gungholocal.com/pricing",
+          "checked_date": "2026-10-13",
+          "evidence": "Current SIMPLE/PRO prices, feature matrix, cancellation FAQ and calculator."
+        },
+        {
+          "url": "https://gungholocal.com/terms",
+          "checked_date": "2026-10-13",
+          "evidence": "Terms link retained for agreement review."
+        }
+      ]
+    },
+    {
+      "id": "LC-06",
+      "provider": "Holtz Digital",
+      "market": "Buffalo/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "SEO_comparable",
+      "service_focus": [
+        "technical SEO",
+        "on-page SEO",
+        "local SEO",
+        "custom development",
+        "website maintenance"
+      ],
+      "positioning": "SEO implementation for small businesses, with technical foundations and a Buffalo-specific local-search lane.",
+      "posted_pricing": {
+        "status": "posted_for_seo; website_quote_only",
+        "offers": [
+          {
+            "name": "SEO Starter",
+            "upfront_usd": 0,
+            "monthly_usd": 500,
+            "term": "3-month minimum",
+            "scope": "Technical audit/fixes, 15 target keywords, up to 10 pages, GBP setup, five citations, monthly report and Analytics/Search Console setup."
+          },
+          {
+            "name": "SEO Professional",
+            "upfront_usd": 0,
+            "monthly_usd": 1200,
+            "term": "3-month minimum",
+            "scope": "30 target keywords, up to 25 pages, two posts/month, 15 citations, competitor analysis, five advertised backlinks/month, schema, strategy call and priority email."
+          },
+          {
+            "name": "SEO Enterprise",
+            "upfront_usd": 0,
+            "monthly_usd": 2500,
+            "term": "3-month minimum",
+            "scope": "50-plus keywords, unlimited pages, four posts/month, 30-plus citations, 15 advertised backlinks/month, CRO/A-B testing and account management."
+          },
+          {
+            "name": "One-Time SEO",
+            "upfront_usd": 750,
+            "monthly_usd": 0,
+            "term": "one-time agreed scope",
+            "scope": "Technical/on-page/local work as agreed; not every monthly deliverable."
+          }
+        ],
+        "caveat": "Backlink quality, outcomes and fulfillment were not independently verified; the provider expressly says no ranking guarantee."
+      },
+      "proof_and_terms": "Free audit, dated Buffalo SEO content and a client testimonial are visible; no audited outcome is assumed.",
+      "mobile_ui_pattern": "Service page lists mobile-first indexing, Core Web Vitals, schema and a six-step process. A free audit CTA and package comparison reduce the first interaction to one action.",
+      "keywords_and_pages_observed": [
+        "Buffalo SEO",
+        "small business SEO packages",
+        "Buffalo local SEO",
+        "contractor SEO",
+        "technical SEO",
+        "website maintenance"
+      ],
+      "sources": [
+        {
+          "url": "https://holtzdigital.com/seo-services",
+          "checked_date": "2026-10-13",
+          "evidence": "Current SEO package prices, 3-month minimum, inclusions and no-guarantee language."
+        },
+        {
+          "url": "https://holtzdigital.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo web design/custom development positioning and technology pages."
+        }
+      ]
+    },
+    {
+      "id": "LC-07",
+      "provider": "Mainstreethost",
+      "market": "Buffalo and remote",
+      "market_fit": "local_established_and_remote",
+      "competitive_role": "scale_SEO_and_full_service",
+      "service_focus": [
+        "SEO",
+        "local/technical/ecommerce SEO",
+        "analytics",
+        "web design",
+        "AI search",
+        "PPC/social/content"
+      ],
+      "positioning": "Long-running Buffalo-based full-service digital marketing team with tiered SEO and broad channel coverage.",
+      "posted_pricing": {
+        "status": "posted_starting_rates",
+        "offers": [
+          {
+            "name": "SEO Essentials",
+            "monthly_usd": 149,
+            "term": "rate shown when billed annually",
+            "scope": "Low-risk small-business/startup SEO; exact quantities not visible on reviewed page."
+          },
+          {
+            "name": "SEO Standard",
+            "monthly_usd": 249,
+            "term": "rate shown when billed annually",
+            "scope": "General optimization; exact quantities not visible on reviewed page."
+          },
+          {
+            "name": "SEO Premium",
+            "monthly_usd": 449,
+            "term": "rate shown when billed annually",
+            "scope": "Advanced/wide-reaching SEO; exact quantities not visible on reviewed page."
+          },
+          {
+            "name": "SEO Custom",
+            "monthly_usd": 999,
+            "term": "rate shown when billed annually",
+            "scope": "Full-service custom SEO; exact quantities not visible on reviewed page."
+          }
+        ],
+        "caveat": "Annual billing, refund/cancellation and tier deliverables require a quote or agreement; do not compare rates as equivalent monthly scopes."
+      },
+      "proof_and_terms": "Provider states Buffalo and Las Vegas locations, 25-plus years of experience, a resource library and a named customer testimonial; results remain provider/client statements.",
+      "mobile_ui_pattern": "The page uses a broad service mega-navigation, package cards, resource content and repeated call/contact actions. No measured mobile or speed result was taken.",
+      "keywords_and_pages_observed": [
+        "SEO packages",
+        "Buffalo SEO",
+        "local SEO",
+        "technical SEO",
+        "analytics",
+        "ecommerce SEO",
+        "AI search"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mainstreethost.com/seo-packages/",
+          "checked_date": "2026-10-13",
+          "evidence": "Posted starting rates, local/technical/analytics inclusions, Buffalo location and experience claim."
+        }
+      ]
+    },
+    {
+      "id": "LC-08",
+      "provider": "AldoMedia",
+      "market": "Buffalo/Western New York",
+      "market_fit": "direct_local",
+      "competitive_role": "premium_established_local",
+      "service_focus": [
+        "custom hand-coded websites",
+        "SEO/AEO/GEO",
+        "hosting",
+        "accessibility",
+        "ecommerce",
+        "360-degree tours"
+      ],
+      "positioning": "A local, long-running one-stop digital provider combining hand-coded sites, search, hosting, accessibility and visual/360 assets.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "Every project is quoted after consultation; hosting, domain, photography, video and tours are shown as optional items."
+      },
+      "proof_and_terms": "The official site states Buffalo service since 1999, publishes case studies with live links, describes client-controlled domains/files and includes an accessibility target; client testimonials and volume claims are self-reported.",
+      "mobile_ui_pattern": "The provider states responsive phone/tablet/desktop design and hand-written HTML/CSS. The reviewed site exposes a deep service menu, free quote CTA, case studies and review section; no actual performance measurement is inferred.",
+      "keywords_and_pages_observed": [
+        "Buffalo website design",
+        "Buffalo SEO",
+        "hand-coded website",
+        "responsive website design",
+        "ADA website design",
+        "AI search visibility"
+      ],
+      "sources": [
+        {
+          "url": "https://www.aldomedia.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo location, service breadth, responsive/hand-coded claims, testimonials and navigation."
+        },
+        {
+          "url": "https://www.aldomedia.com/buffalo-web-design-seo",
+          "checked_date": "2026-10-13",
+          "evidence": "Included launch SEO/accessibility, custom quote, ownership and optional-cost language."
+        },
+        {
+          "url": "https://www.aldomedia.com/case-studies/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo/WNY case studies with live-site links."
+        }
+      ]
+    },
+    {
+      "id": "LC-09",
+      "provider": "Brass Ring Web Solutions",
+      "market": "Buffalo/WNY businesses and nonprofits",
+      "market_fit": "direct_local",
+      "competitive_role": "premium_owner_led_package",
+      "service_focus": [
+        "Webflow website design",
+        "local SEO",
+        "hosting/upkeep",
+        "digital marketing",
+        "photography",
+        "IT/cybersecurity"
+      ],
+      "positioning": "Owner-led local support with defined packages, agreements and a broad online/IT relationship.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "Standard up to 5 pages, Business up to 10 pages, Enterprise up to 20 pages; build plus first full year of hosting/upkeep/support is included in total project investment, but dollar prices are not public."
+      },
+      "package_inclusions": "Standard lists basic SEO, mobile optimization, 1-2 revisions, light animation, WCAG 2.0, Analytics and 12 months support; Business adds CMS/SEO structure/conversion layout; Enterprise adds advanced SEO, performance, animation and integrations.",
+      "proof_and_terms": "The site states 30-plus clients since 2019, named client testimonials and a direct owner relationship; no independent performance evidence is assumed.",
+      "mobile_ui_pattern": "Package comparison, a pricing calculator, a 30-minute discovery CTA and mobile-optimization language are visible. Actual mobile performance was not measured.",
+      "keywords_and_pages_observed": [
+        "Buffalo web design",
+        "Buffalo local SEO",
+        "Webflow website packages",
+        "website upkeep",
+        "WNY nonprofit web design"
+      ],
+      "sources": [
+        {
+          "url": "https://www.brassringwny.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Local services, owner-led positioning, client proof and CTA."
+        },
+        {
+          "url": "https://www.brassringwny.com/packages",
+          "checked_date": "2026-10-13",
+          "evidence": "Package page, scope, inclusions, first-year support and quote-only terms."
+        }
+      ]
+    },
+    {
+      "id": "LC-10",
+      "provider": "Surdej Web Solutions",
+      "market": "Erie County/WNY",
+      "market_fit": "direct_local",
+      "competitive_role": "established_wordpress_local",
+      "service_focus": [
+        "WordPress web design",
+        "custom/responsive sites",
+        "ecommerce",
+        "Buffalo SEO",
+        "hosting/maintenance",
+        "Google Ads"
+      ],
+      "positioning": "Locally based WordPress and SEO-first builds for businesses across Erie County, with Orchard Park and Lancaster offices.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "Free quote; no public project or monthly SEO dollar rate on the reviewed home page."
+      },
+      "proof_and_terms": "Recent work links to Buffalo, Tonawanda and East Aurora projects; offices and Erie County coverage are public. Ownership, cancellation and detailed package limits were not established.",
+      "mobile_ui_pattern": "The page leads with rank/load/convert messaging, service cards, a portfolio CTA and location coverage. Responsive/custom language is present; no measured speed claim is inferred.",
+      "keywords_and_pages_observed": [
+        "Buffalo web design",
+        "WordPress website design",
+        "Buffalo SEO services",
+        "ecommerce website design",
+        "website hosting",
+        "Orchard Park web design"
+      ],
+      "sources": [
+        {
+          "url": "https://surdej.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Services, offices, Erie County coverage, recent work and quote CTA."
+        }
+      ]
+    },
+    {
+      "id": "LC-11",
+      "provider": "Strelva",
+      "market": "Buffalo, NY",
+      "market_fit": "direct_local_productized",
+      "competitive_role": "managed_subscription_alternative",
+      "service_focus": [
+        "custom managed websites",
+        "local SEO foundations",
+        "booking/ecommerce",
+        "content",
+        "updates and reporting"
+      ],
+      "positioning": "Build once, then operate the public website and repeated updates through an owner-friendly managed service.",
+      "posted_pricing": {
+        "status": "posted_monthly; build_quote_only",
+        "offers": [
+          {
+            "name": "Presence",
+            "monthly_usd": 99,
+            "term": "month-to-month unless scoped otherwise",
+            "scope": "Custom one-page site, domain/SSL, mobile-optimized design, call/booking/form, local SEO foundations, chat updates and quality checks."
+          },
+          {
+            "name": "Growth",
+            "monthly_usd": 199,
+            "term": "month-to-month unless scoped otherwise",
+            "scope": "Presence plus multi-page custom site, booking/basic ecommerce, GBP connection where supported, review monitoring, performance receipt and priority support."
+          },
+          {
+            "name": "Scale",
+            "monthly_usd": 499,
+            "term": "month-to-month unless scoped otherwise",
+            "scope": "Growth plus content engine, multi-location, integrations and deeper reporting."
+          }
+        ],
+        "caveat": "Custom build is quoted separately; connected services, integrations and export/repository handoff are defined in accepted scope."
+      },
+      "proof_and_terms": "Built in Buffalo, with public demos, free audits, weekly-receipt concept, domain ownership and cancellation/export language. Demos and provider claims are not paid-client outcome evidence.",
+      "mobile_ui_pattern": "Mobile-optimized package language, dashboard/chat change request, approval gates and weekly reporting are central interface patterns; no independent performance result is inferred.",
+      "keywords_and_pages_observed": [
+        "Buffalo web design",
+        "managed website",
+        "website pricing",
+        "custom website Buffalo",
+        "local SEO foundations",
+        "website updates"
+      ],
+      "sources": [
+        {
+          "url": "https://www.strelva.com/pricing",
+          "checked_date": "2026-10-13",
+          "evidence": "Current monthly packages, terms, ownership and scope boundaries."
+        },
+        {
+          "url": "https://www.strelva.com/buffalo-web-design",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo page, launch standard, ownership and no-ranking-fiction language."
+        },
+        {
+          "url": "https://www.strelva.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo origin, productized workflow and demo/audit navigation."
+        }
+      ]
+    },
+    {
+      "id": "LC-12",
+      "provider": "Newbird",
+      "market": "Buffalo-based; national reach",
+      "market_fit": "premium_local_agency",
+      "competitive_role": "premium_comparable",
+      "service_focus": [
+        "strategy",
+        "brand",
+        "visual design/development",
+        "React/WordPress/ecommerce",
+        "SEO",
+        "AI transformation",
+        "video",
+        "AR/VR",
+        "CRO"
+      ],
+      "positioning": "Full-service digital agency built around partnership, broad creative/development capability and data-driven marketing.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "No public website or SEO dollar rate found on reviewed pages."
+      },
+      "proof_and_terms": "Buffalo office, case-study navigation, 15-plus years in web design, certified partners and a broad service taxonomy are public. Clutch has historical client-spend bands; they are recorded separately as buyer evidence, not current price quotes.",
+      "mobile_ui_pattern": "The root page uses a large service mega-menu, case-study and client links, partner badges, blog/resource filters and contact CTA. Responsive/performance behavior was not measured from text sources.",
+      "keywords_and_pages_observed": [
+        "Buffalo website design",
+        "React website development",
+        "ecommerce agency",
+        "AI transformation",
+        "SEO",
+        "AR/VR",
+        "conversion rate optimization"
+      ],
+      "sources": [
+        {
+          "url": "https://newbird.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo address, service taxonomy, case studies, partner badges and 15-plus-year design claim."
+        },
+        {
+          "url": "https://clutch.co/profile/newbird",
+          "checked_date": "2026-10-13",
+          "evidence": "Historical buyer review records, retained as spending evidence with date/scope caveat."
+        }
+      ]
+    },
+    {
+      "id": "LC-13",
+      "provider": "Williams Media",
+      "market": "Buffalo and nearby locations",
+      "market_fit": "premium_local_agency",
+      "competitive_role": "premium_risk_reversal_comparable",
+      "service_focus": [
+        "custom website design/development",
+        "content strategy/copywriting",
+        "UI/UX",
+        "SEO",
+        "CRM integration",
+        "hosting/maintenance"
+      ],
+      "positioning": "Collaborative, WordPress-based custom sites with a free homepage/risk-reversal offer and ongoing support.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "Dollar price not public; page says a homepage can be designed/built free and payment waits until the buyer loves it, with refund/satisfaction language."
+      },
+      "proof_and_terms": "Buffalo address, a 5.0 rating display, named logo/client portfolio, industry list, 6-8 week standard timing, training, account management and hosting/support are visible. Guarantee conditions are not independently validated beyond provider page.",
+      "mobile_ui_pattern": "Provider describes responsive design, interactive maps, data visualizations, bold imagery and clean layouts. The page uses a process sequence, free-audit CTA, long intake form and booking CTA; no measured result is inferred.",
+      "keywords_and_pages_observed": [
+        "Buffalo website design",
+        "Buffalo web development",
+        "Buffalo SEO",
+        "UI/UX design",
+        "StoryBrand website",
+        "website support"
+      ],
+      "sources": [
+        {
+          "url": "https://williamsmedia.co/location/buffalo-website-design",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo offer, process, inclusions, risk reversal, responsive language and proof sections."
+        }
+      ]
+    },
+    {
+      "id": "LC-14",
+      "provider": "Cypress North",
+      "market": "Buffalo/WNY; national reach",
+      "market_fit": "premium_local_agency",
+      "competitive_role": "premium_integrated_agency",
+      "service_focus": [
+        "digital marketing",
+        "creative",
+        "technology",
+        "data/analytics",
+        "website/UX",
+        "ecommerce",
+        "paid search/social",
+        "SEO"
+      ],
+      "positioning": "Performance-driven integrated agency with in-house specialists and full-funnel marketing.",
+      "posted_pricing": {
+        "status": "quote_only",
+        "scope": "No public website or SEO price found on the reviewed official pages."
+      },
+      "proof_and_terms": "Official site lists Buffalo and Rochester offices, 16 years in business, 40 in-house marketers, client testimonials, case-study/work navigation and a frequently updated resource library. These are provider-published proof signals, not a claim of superior outcomes.",
+      "mobile_ui_pattern": "The site organizes services under solutions, creative, technology and data, then exposes work, people and resource content with repeated start-project CTAs. No mobile/performance measurement was performed.",
+      "keywords_and_pages_observed": [
+        "Buffalo digital marketing",
+        "website design/development",
+        "creative agency",
+        "ecommerce marketing",
+        "PPC",
+        "SEO",
+        "analytics"
+      ],
+      "sources": [
+        {
+          "url": "https://cypressnorth.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Buffalo address, service model, in-house/team claims, testimonials and proof/navigation."
+        },
+        {
+          "url": "https://cypressnorth.com/solutions/integrated-solutions/website-design-development/",
+          "checked_date": "2026-10-13",
+          "evidence": "Official website design/development solution URL; page fetch was intermittent, so no unobserved detail is asserted."
+        }
+      ]
+    },
+    {
+      "id": "LC-15",
+      "provider": "ROC Web Tech",
+      "market": "Rochester-based; explicitly serves Erie County/Buffalo",
+      "market_fit": "regional_direct_comparable",
+      "competitive_role": "transparent_custom_code_and_SEO",
+      "service_focus": [
+        "hand-coded Next.js websites",
+        "local SEO",
+        "AI-search work",
+        "hosting",
+        "automations/apps"
+      ],
+      "positioning": "Published fixed-scope coded tiers with bundled launch SEO and explicit Erie County expansion coverage.",
+      "posted_pricing": {
+        "status": "posted",
+        "offers": [
+          {
+            "name": "Starter",
+            "upfront_usd": 1950,
+            "monthly_usd": 69,
+            "term": "3 months hosting free, then $69/mo; one month SEO bundled",
+            "scope": "1-5 pages, hand-coded Next.js, mobile-first, form, local schema and on-page SEO."
+          },
+          {
+            "name": "Growth",
+            "upfront_usd": 3500,
+            "monthly_usd": 129,
+            "term": "6 months hosting free, then $129/mo; three months SEO bundled",
+            "scope": "6-15 pages, blog/CMS, local SEO/service-area pages, three months ongoing SEO."
+          },
+          {
+            "name": "Authority",
+            "upfront_usd": 6500,
+            "monthly_usd": 269,
+            "term": "12 months hosting free, then $269/mo; six months SEO bundled",
+            "scope": "Unlimited pages, Analytics/call tracking, monthly report and AI-search optimization."
+          },
+          {
+            "name": "Managed Local SEO",
+            "upfront_usd": 0,
+            "monthly_usd": 695,
+            "term": "No long-term contract claim; precise notice requires quote",
+            "scope": "Geo-grid tracking, two content pieces/month, strategy call and link acquisition at one or two placements/quarter."
+          }
+        ],
+        "caveat": "Page uses self-reported Lighthouse/PageSpeed and ranking language; none is treated as a measured result here. Content changes and features outside tiers are separate; hosting cancellation is stated at 30 days."
+      },
+      "proof_and_terms": "Provider says every shipped site is visible on its work page and offers a free site audit; these are provider claims. It explicitly lists Buffalo, Amherst, Cheektowaga and Tonawanda in Erie County coverage.",
+      "mobile_ui_pattern": "Package cards, instant-estimate questions, free-audit CTA, local directory pages and fixed-scope FAQ create a low-friction buying path. Mobile-first/Lighthouse claims are unmeasured provider statements.",
+      "keywords_and_pages_observed": [
+        "Buffalo web design",
+        "Erie County SEO",
+        "Rochester web design",
+        "hand-coded Next.js website",
+        "local SEO",
+        "service-area pages",
+        "AI search"
+      ],
+      "sources": [
+        {
+          "url": "https://www.rocwebtech.com/cost",
+          "checked_date": "2026-10-13",
+          "evidence": "Current 2026 build tiers, hosting, bundled SEO, payment and cancellation terms."
+        },
+        {
+          "url": "https://www.rocwebtech.com/rochester-seo",
+          "checked_date": "2026-10-13",
+          "evidence": "Managed SEO price/scope, Erie County coverage and service-area pages."
+        },
+        {
+          "url": "https://www.rocwebtech.com/",
+          "checked_date": "2026-10-13",
+          "evidence": "Regional Buffalo/Erie service positioning."
+        }
+      ]
+    }
+  ],
+  "buyer_spend_evidence": [
+    {
+      "id": "PAY-01",
+      "provider": "Alpine Design",
+      "buyer": "Next Level Storage",
+      "geography": "Lewiston, NY (WNY; outside Erie County)",
+      "scope": "Website redesign, Jan-Mar 2024",
+      "review_published": "2024-05-03",
+      "reported_spend": "Under $10,000 project band",
+      "caveat": "Exact payment is undisclosed; a review band is not an invoice or local median.",
+      "source": "https://clutch.co/profile/alpine-design",
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "PAY-02",
+      "provider": "Helm Experience & Design",
+      "buyer": "LenderLogix",
+      "geography": "Buffalo",
+      "scope": "Design and HTML/CSS source assets, Mar-Apr/May 2020; client integrated the assets",
+      "review_published": "2020-09-17",
+      "reported_spend": "About $10,000 in interview; review header also says under $10,000",
+      "caveat": "Preserve the discrepancy; this is not a full independent website-build price.",
+      "source": "https://clutch.co/profile/helm-experience-design",
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "PAY-03",
+      "provider": "Helm Experience & Design",
+      "buyer": "Anonymous historical institution",
+      "geography": "Buffalo-listed reviewer",
+      "scope": "Custom WordPress/plugins, search and library calendar, Aug 2019-Feb 2020; $250/month support separately stated",
+      "review_published": "2020-09-28",
+      "reported_spend": "About $38,000 in interview; $10,000-$49,999 review band",
+      "caveat": "Older, complex and partly anonymous; not comparable to a bounded brochure site.",
+      "source": "https://clutch.co/profile/helm-experience-design",
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "PAY-04",
+      "provider": "Newbird",
+      "buyer": "Klarisana",
+      "geography": "San Antonio, TX",
+      "scope": "Brand, website redesign and marketing plan, Feb 2024-Jan 2025",
+      "review_published": "2025-03-09",
+      "reported_spend": "$10,000-$49,999 project band",
+      "caveat": "Recent but bundled and nonlocal; website allocation is unknown.",
+      "source": "https://clutch.co/profile/newbird",
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "PAY-05",
+      "provider": "360 PSG",
+      "buyer": "Perma Tech",
+      "geography": "Buffalo",
+      "scope": "Platform migration, responsive design, maintenance/security; ecommerce expansion planned, May 2019-ongoing",
+      "review_published": "2022-07-08",
+      "reported_spend": "$10,000-$49,999 band; interview says $10,000-$20,000 to date",
+      "caveat": "Ongoing mixed scope; do not assume planned ecommerce was purchased or isolate website-only spend.",
+      "source": "https://clutch.co/profile/360-psg",
+      "checked_date": "2026-10-13"
+    }
+  ],
+  "buyer_spend_limit": "These five public records establish examples and broad bands only. They do not establish a current Erie County median, a completed 2025-2026 local website-only price, or a defensible percentage discount for Wonder and Method."
+}

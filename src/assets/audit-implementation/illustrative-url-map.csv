@@ -1,0 +1,4 @@
+example_status,old_url,new_url,decision,reason,acceptance_check
+Fictional example only,/our-services,/services/,301 redirect,Same supported-service intent,Old URL resolves directly to relevant new page
+Fictional example only,/about-us,/about/,301 redirect,Same company information intent,No redirect chain and new page returns 200
+Fictional example only,/temporary-sale,,410 or 404 after review,Retired unsupported offer with no relevant replacement,Confirm no useful content or inquiry route is lost

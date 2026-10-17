@@ -1,0 +1,17 @@
+import {access,copyFile,writeFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {resolve} from 'node:path';
+const root=resolve(import.meta.dirname,'..');
+const frames=resolve(root,'public/buffalo-paper/frames');
+const frame=n=>resolve(frames,`paper-${String(n).padStart(4,'0')}.png`);
+await Promise.all(Array.from({length:132},(_,i)=>access(frame(i+1))));
+for(let n=133;n<=192;n++)await copyFile(frame(132),frame(n));
+const binary=name=>resolve(root,`node_modules/@remotion/compositor-win32-x64-msvc/${name}.exe`);
+const output=resolve(root,'public/buffalo-paper/paper-study.mp4');
+execFileSync(binary('ffmpeg'),['-hide_banner','-loglevel','error','-y','-framerate','24','-i',resolve(frames,'paper-%04d.png'),'-frames:v','192','-c:v','libx264','-crf','20','-preset','medium','-pix_fmt','yuv420p','-movflags','+faststart',output],{stdio:'inherit'});
+const metadata=JSON.parse(execFileSync(binary('ffprobe'),['-v','error','-select_streams','v:0','-show_entries','stream=codec_name,width,height,r_frame_rate,nb_frames,duration','-show_entries','format=duration,size','-of','json',output],{encoding:'utf8'}));
+const stream=metadata.streams[0];
+if(stream.nb_frames!=='192'||stream.r_frame_rate!=='24/1'||Number(metadata.format.duration)!==8)throw Error('Unexpected motion metadata');
+await copyFile(output,resolve(root,'evidence/creative-audit-20261015/paper-study.mp4'));
+await writeFile(resolve(root,'evidence/creative-audit-20261015/motion-encoding.json'),JSON.stringify(metadata,null,2));
+console.log(`Encoded ${metadata.format.size} bytes: 1600×800, 192 frames, 24 fps, 8 seconds.`);

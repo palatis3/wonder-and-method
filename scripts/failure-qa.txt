@@ -1,0 +1,22 @@
+async (page)=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('http://127.0.0.1:4183/contact/');
+ await page.getByLabel('Your name').fill('Synthetic Failure Test');
+ await page.getByLabel('Email',{exact:false}).fill('failure@example.test');
+ await page.getByLabel('Business name').fill('Synthetic Business');
+ await page.getByLabel('What are you considering?').selectOption('focused_site');
+ const message='Synthetic failure test: preserve this message when delivery is unavailable.';
+ await page.getByLabel('What should change?').fill(message);
+ await page.route('**/api/inquiries',r=>r.abort('failed'));
+ await page.getByRole('button',{name:'Submit synthetic inquiry'}).click();
+ await page.waitForFunction(()=>document.querySelector('#form-status').textContent.includes('Connection failed'));
+ if(await page.locator('#message').inputValue()!==message)throw new Error('Failure lost message');
+ if(await page.getByRole('button',{name:'Submit synthetic inquiry'}).isDisabled())throw new Error('Retry button remained disabled');
+ await page.unroute('**/api/inquiries');
+ await page.goto('http://127.0.0.1:4183/');
+ const menu=page.getByRole('button',{name:'Menu',exact:true});await menu.focus();await page.keyboard.press('Enter');
+ if(await page.evaluate(()=>document.activeElement.textContent)!=='Web design')throw new Error('Menu keyboard focus');
+ await page.keyboard.press('Escape');if(!await menu.evaluate(x=>x===document.activeElement))throw new Error('Escape focus');
+ await page.screenshot({path:'output/playwright/home-final-390.png'});
+ return {checkedAt:new Date().toISOString(),networkFailure:'clear error; fields retained; retry available',keyboard:'Enter opens; first destination focused; Escape closes and returns focus'};
+}

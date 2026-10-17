@@ -1,0 +1,85 @@
+{
+  "status": "Blank planning snapshots from existing invoicing/bookkeeping; never a second invoice/payment ledger",
+  "existing_invoice_provider": null,
+  "bookkeeping_reference": null,
+  "months": [],
+  "month_template": {
+    "calendar_month": null,
+    "opening_cash": null,
+    "minimum_balance": null,
+    "actual_receipts": null,
+    "cash_costs": null,
+    "tax_reserve_transfer": null,
+    "owner_draw": null,
+    "unearned_obligations_reserve": null,
+    "ending_cash": null
+  },
+  "dated_cash_obligations": [],
+  "obligation_row": {
+    "date": null,
+    "category": null,
+    "provider_or_invoice_reference": null,
+    "cash_amount": null,
+    "earned_work_amount_under_signed_terms": null,
+    "unearned_work_obligation": null,
+    "approved_committed_cost": null,
+    "evidence_reference": null
+  },
+  "categories": [
+    "fixed overhead",
+    "approved setup spend",
+    "direct project cost",
+    "deposit",
+    "accepted milestone",
+    "service receipt",
+    "annual domain/license",
+    "quarterly/annual bill",
+    "tax reserve transfer",
+    "owner draw"
+  ],
+  "economic_contribution_separate": {
+    "earned_revenue": null,
+    "delivery_founder_hours": null,
+    "hourly_value": null,
+    "direct_cost": null,
+    "payment_cost": null,
+    "leakage": null,
+    "acquisition_hours_and_cash": null,
+    "activation_exit_hours_not_already_counted": null
+  },
+  "stress_cases": [
+    {
+      "case": "Delayed final payment",
+      "revised_date": null,
+      "cash_effect": null,
+      "capacity_effect": null
+    },
+    {
+      "case": "One cancelled service",
+      "reconciliation_reference": null,
+      "cash_effect": null
+    },
+    {
+      "case": "Correction-heavy week",
+      "extra_founder_hours": null,
+      "dated_slot": null,
+      "cash_effect": null
+    }
+  ],
+  "rules": [
+    "Actual receipts only; future renewals are not cash.",
+    "Deposits are not all earned or spendable while work is owed.",
+    "Ending cash = opening + actual receipts - cash costs - tax reserve transfer - owner draw.",
+    "Reserve headroom = ending cash - unearned obligations reserve - approved minimum balance.",
+    "Economic contribution includes founder labor separately; do not deduct the same owner draw and modeled founder cost twice.",
+    "Null is unknown, never zero."
+  ],
+  "owner_input": {
+    "statement": "Estimate cash is minimal but can be used when needed.",
+    "numeric_startup_cash": null,
+    "minimum_balance": null,
+    "required_monthly_owner_pay": null,
+    "interpretation": "Qualitative cash constraint; monetary amounts remain unknown. Existing spending approvals remain scoped.",
+    "recorded_at": "2026-10-14T16:38:21.081Z"
+  }
+}

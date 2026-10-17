@@ -1,0 +1,42 @@
+{
+  "name": "wonder-and-method",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "inquiries:production": "node deployment/production-operator.mjs",
+    "motion:prepare": "node scripts/prepare-motion-assets.mjs",
+    "motion:build": "node scripts/build-motion-study.mjs",
+    "motion:studio": "remotion studio motion/remotion/index.jsx --port=4194",
+    "build": "node scripts/build.mjs",
+    "experience:build": "node scripts/build-experience.mjs",
+    "experience:serve": "node scripts/experience-server.mjs",
+    "experience:verify": "node scripts/verify-experience.mjs",
+    "start": "node scripts/server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node scripts/verify.mjs",
+    "technical:check": "node scripts/technical-check.mjs",
+    "release:check": "node scripts/release-check.mjs",
+    "local:check": "node scripts/local-check.mjs",
+    "local:packet": "node scripts/job-packet.mjs",
+    "review:all-pages": "node scripts/review-all-pages.mjs",
+    "review:verify": "node scripts/verify-showcase.mjs",
+    "review:serve": "node scripts/review-server.mjs",
+    "capacity:check": "node scripts/capacity-calendar.mjs",
+    "premium:build": "node scripts/build-experience.mjs",
+    "premium:serve": "node scripts/premium-server.mjs",
+    "billing": "node scripts/stripe-billing.mjs"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.535",
+    "@remotion/media": "^4.0.535",
+    "esbuild": "0.28.2",
+    "motion": "14.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.535"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "evidence/bitwarden-account.json": {
+    "verified_on": "2026-10-13",
+    "method": "External Chrome authenticated vault dashboard"
+  },
+  "evidence/payments-20261016/readiness.json": {
+    "verified_on": "2026-10-16",
+    "method": "Authenticated Stripe Dashboard inspection and account/catalog API readback; synthetic hosted-invoice checkout tested separately."
+  }
+}

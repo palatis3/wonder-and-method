@@ -1,0 +1,98 @@
+{
+  "status": "Draft for owner review; not approved or published",
+  "preparedAt": "2026-10-16",
+  "approved": false,
+  "scope": "Planned public website inquiries only; client contracts and billing require their own record schedule",
+  "notice": {
+    "contact": "support@wonderandmethod.com",
+    "purpose": "We use your inquiry to understand the project, decide whether our services fit, and respond to you. Submitting an inquiry does not book a project or subscribe you to marketing. Please provide business details needed for the discussion and avoid passwords, payment information or sensitive personal information.",
+    "access": "The owner of Venture House Group LLC personally reviews inquiries. Access is limited to the owner and the services needed to host the site, store inquiries, deliver email operate optional chat and process agreed payments. We do not sell inquiry information or share it for targeted advertising. Our providers may also process information for their own security, compliance and service-operation purposes under their policies.",
+    "networkData": "Our hosting provider processes connection and request information, including IP addresses, to deliver and protect the site. Our inquiry application uses keyed identifiers derived from the network address for short-lived rate controls, and a keyed duplicate marker derived from the submitted fields, processing mode and a ten-minute time bucket, retained with the inquiry. The application does not store the raw network address in the inquiry record. The rate-control records expire after 20 minutes and are removed by an hourly cleanup job; provider network records and recovery copies can last longer.",
+    "retention": "For inquiries that do not become client projects, we delete our working inquiry and chat records and matching owner-controlled email and export copies within 90 days after the last substantive project contact, or after submission if there is no response. Routine internal review and automated reminders do not restart that period. If a project proceeds, the necessary records follow the separately reviewed client and accounting schedule. We may preserve specific records for a documented dispute or legal obligation, with the reason and a review date recorded.",
+    "providerRetention": "Deletion from our working records does not immediately erase every recovery or provider copy. Under the selected Free services, Cloudflare documents a seven-day D1 recovery window and three-day Workers log retention; Resend documents 30-day email and log retention. Fastmail describes a 7–14 day recovery period for deleted email and does not give a fixed pruning schedule for all backup and index copies. Earlier correspondence may remain in Gmail during the transition: Trash can retain messages for 30 days, and Google describes encrypted backups lasting up to six months, with possible delays and exceptions. These periods describe different systems, not a promise that every copy disappears on the same date. See the linked provider policies for their processing and retention details. tawk.to keeps chat records until they are deleted and describes backup retention of up to 90 days, with possible mandatory retention exceptions. Our 90-day unsuccessful-inquiry cleanup is an owner-managed process, not an automatic provider purge.",
+    "rights": "Email support@wonderandmethod.com for questions or to request access, correction or deletion of your inquiry. Include the inquiry reference if you have it; do not send identity documents or passwords in the first message. We may ask for proportionate confirmation that the inquiry is yours. We assess requests under the law that applies and explain any information we need to retain and why.",
+    "locations": "The selected services may process information in the United States and other countries where they operate. The inquiry system is not represented as New York-only storage. Provider policies describe their international processing arrangements.",
+    "changes": "We will update this notice when our inquiry practices change and show the review date. New analytics, marketing tools or materially different uses require a fresh review before they are enabled.",
+    "reviewedAt": "2026-10-16",
+    "processors": [
+      {
+        "name": "Cloudflare",
+        "purpose": "Website delivery, request security, inquiry processing and D1 storage/recovery",
+        "policyUrl": "https://www.cloudflare.com/privacypolicy/"
+      },
+      {
+        "name": "Resend",
+        "purpose": "Attempt delivery of the inquiry notification, including the submitted details, to the owner and retain delivery records; an accepted send does not guarantee Inbox receipt",
+        "policyUrl": "https://resend.com/legal/privacy-policy"
+      },
+      {
+        "name": "Fastmail",
+        "purpose": "Receive inquiry notifications and store the studio's email correspondence, including recovery and backup copies",
+        "policyUrl": "https://www.fastmail.com/policies/privacy/"
+      },
+      {
+        "name": "Google / Gmail",
+        "purpose": "Retain earlier inquiry notifications and correspondence during the mailbox transition; new website inquiry notifications go to Fastmail",
+        "policyUrl": "https://policies.google.com/privacy"
+      },
+      {
+        "name": "tawk.to",
+        "purpose": "Provide optional website chat, store messages and supplied contact details, process connection information and deliver notifications to the studio owner",
+        "policyUrl": "https://www.tawk.to/privacy-policy/"
+      },
+      {
+        "name": "Stripe",
+        "purpose": "Host agreed invoice payments and receipts; process billing and payment data, payment status, fraud prevention and related support",
+        "policyUrl": "https://stripe.com/privacy"
+      }
+    ],
+    "chat": "Chat is optional and provided by tawk.to. Its code loads only after you select “Message us.” The widget asks for consent before using chat cookies and local storage. When you use chat, tawk.to receives your messages, any name or email you provide, the page address, and connection and device information such as IP address and browser details. The studio owner can read and answer through the dashboard or mobile app. A returning-visitor cookie may last six months; other chat storage can last for the session. Please avoid passwords, payment details and sensitive personal information. You can use email or the contact form instead. We do not use AI chat agents.",
+    "payments": "For agreed work, Stripe hosts the payment page and processes payment details. We provide the customer contact, invoice description, amount and related billing information needed for that transaction. We receive invoice and payment status and limited payment-method information for reconciliation and support; our website does not collect full card numbers. Please do not send payment details through our inquiry form, email or chat.",
+    "paymentRetention": "Client scopes, invoices and payment records are separate from unsuccessful inquiries. We retain the records needed to deliver the agreed work, keep accounts, meet applicable legal obligations and resolve disputes; the 90-day unsuccessful-inquiry period does not apply to these records. Stripe also retains information under its own policy and applicable requirements. You can contact us about access, correction or deletion, and we will explain any records we must retain."
+  },
+  "ownerReview": [
+    "Confirm that this accurately describes the intended public inquiry practices and that the owner can perform the 90-day deletion routine.",
+    "Review the entity/name and applicable privacy obligations before publication; this draft is not an independent legal clearance.",
+    "Confirm owner-controlled account access, MFA/recovery and the handling of exports before public collection.",
+    "Recheck the actual production plans, bindings and logging configuration before approval. No new provider processing is authorized by this draft.",
+    "The 90-day rule is a manual owner workflow, not an automatic purge. Keep the weekly board contact/expiry fields current, verify the mailbox history and check all matching copies before deletion."
+  ],
+  "sources": [
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business",
+      "supports": "Purpose-based retention and a documented secure disposal policy; does not prescribe 90 days."
+    },
+    {
+      "url": "https://developers.cloudflare.com/d1/reference/time-travel/",
+      "supports": "D1 Time Travel always on; Free seven days and Paid thirty days."
+    },
+    {
+      "url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/",
+      "supports": "Current Workers Free log retention three days; announced pricing change December 1, 2026 requires recheck."
+    },
+    {
+      "url": "https://resend.com/security",
+      "supports": "Email and log retention thirty days on Free, Pro and Scale."
+    },
+    {
+      "url": "https://support.google.com/mail/answer/7401?hl=en",
+      "supports": "Gmail Trash recoverable for up to thirty days unless permanently deleted sooner."
+    },
+    {
+      "url": "https://policies.google.com/technologies/retention",
+      "supports": "Google deletion process and encrypted backup retention up to six months, with possible delays and exceptions."
+    },
+    {
+      "url": "https://www.fastmail.com/policies/dpa/annex2/",
+      "supports": "Deleted email recovery window and backup/index pruning; no single guaranteed purge date."
+    },
+    {
+      "url": "https://www.tawk.to/data-protection/how-we-store-your-data/",
+      "supports": "Chat retention until deletion, backups and mandatory retention exceptions."
+    },
+    {
+      "url": "https://help.tawk.to/article/what-are-tawkto-cookies-and-what-do-they-do",
+      "supports": "Chat cookies/local storage, returning-visitor identifier and consent behavior."
+    }
+  ]
+}

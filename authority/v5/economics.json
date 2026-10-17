@@ -1,0 +1,1089 @@
+{
+  "status": "Analyst hypotheses, not observed demand, delivery productivity, or forecast",
+  "date": "2026-10-13",
+  "formula": "Contribution = price*(1 - payment fee - 1% leakage) - $0.30*charges - direct cost - rate*(fulfillment hours plus separately shown CAC/activation/exit hours). No overhead, tax, owner draws, or infrastructure.",
+  "fee_assumptions": {
+    "project_rate": 0.033,
+    "recurring_rate": 0.036,
+    "per_charge": 0.3,
+    "leakage": 0.01,
+    "source_us_card": "https://stripe.com/us/pricing",
+    "source_billing": "https://stripe.com/billing/pricing",
+    "checked_date": "2026-10-13"
+  },
+  "units": {
+    "v3_focused_site": {
+      "price": 6000,
+      "fulfillment_hours": 55,
+      "direct_cost": 150,
+      "fee_rate": 0.033,
+      "charges": 3,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 2841.1,
+      "margin_at_50": 0.4735,
+      "contribution_at_75": 1466.1,
+      "margin_at_75": 0.2444,
+      "contribution_at_100": 91.1,
+      "margin_at_100": 0.0152,
+      "price_floor_40pct_at_75": 7676.66
+    },
+    "v3_signature_site": {
+      "price": 9500,
+      "fulfillment_hours": 85,
+      "direct_cost": 200,
+      "fee_rate": 0.033,
+      "charges": 3,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 4640.6,
+      "margin_at_50": 0.4885,
+      "contribution_at_75": 2515.6,
+      "margin_at_75": 0.2648,
+      "contribution_at_100": 390.6,
+      "margin_at_100": 0.0411,
+      "price_floor_40pct_at_75": 11805.92
+    },
+    "conditional_compact_site": {
+      "price": 5500,
+      "fulfillment_hours": 38,
+      "direct_cost": 125,
+      "fee_rate": 0.033,
+      "charges": 3,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 3237.6,
+      "margin_at_50": 0.5887,
+      "contribution_at_75": 2287.6,
+      "margin_at_75": 0.4159,
+      "contribution_at_100": 1337.6,
+      "margin_at_100": 0.2432,
+      "price_floor_40pct_at_75": 5342.73
+    },
+    "v3_care": {
+      "price": 349,
+      "fulfillment_hours": 2.5,
+      "direct_cost": 15,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 192.65,
+      "margin_at_50": 0.552,
+      "contribution_at_75": 130.15,
+      "margin_at_75": 0.3729,
+      "contribution_at_100": 67.65,
+      "margin_at_100": 0.1938,
+      "price_floor_40pct_at_75": 366.06
+    },
+    "low_care_199": {
+      "price": 199,
+      "fulfillment_hours": 1.25,
+      "direct_cost": 15,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 112.05,
+      "margin_at_50": 0.563,
+      "contribution_at_75": 80.8,
+      "margin_at_75": 0.406,
+      "contribution_at_100": 49.55,
+      "margin_at_100": 0.249,
+      "price_floor_40pct_at_75": 196.84
+    },
+    "care_249": {
+      "price": 249,
+      "fulfillment_hours": 1.5,
+      "direct_cost": 15,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 147.25,
+      "margin_at_50": 0.5913,
+      "contribution_at_75": 109.75,
+      "margin_at_75": 0.4407,
+      "contribution_at_100": 72.25,
+      "margin_at_100": 0.2901,
+      "price_floor_40pct_at_75": 230.69
+    },
+    "proactive_399": {
+      "price": 399,
+      "fulfillment_hours": 2.5,
+      "direct_cost": 15,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 240.35,
+      "margin_at_50": 0.6024,
+      "contribution_at_75": 177.85,
+      "margin_at_75": 0.4457,
+      "contribution_at_100": 115.35,
+      "margin_at_100": 0.2891,
+      "price_floor_40pct_at_75": 366.06
+    },
+    "quarterly_check_249": {
+      "price": 249,
+      "fulfillment_hours": 1.5,
+      "direct_cost": 10,
+      "fee_rate": 0.033,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 152.99,
+      "margin_at_50": 0.6144,
+      "contribution_at_75": 115.49,
+      "margin_at_75": 0.4638,
+      "contribution_at_100": 77.99,
+      "margin_at_100": 0.3132,
+      "price_floor_40pct_at_75": 220.47
+    },
+    "v3_seo_setup": {
+      "price": 600,
+      "fulfillment_hours": 4,
+      "direct_cost": 15,
+      "fee_rate": 0.033,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 358.9,
+      "margin_at_50": 0.5982,
+      "contribution_at_75": 258.9,
+      "margin_at_75": 0.4315,
+      "contribution_at_100": 158.9,
+      "margin_at_100": 0.2648,
+      "price_floor_40pct_at_75": 566.07
+    },
+    "v3_seo_focused": {
+      "price": 1100,
+      "fulfillment_hours": 7,
+      "direct_cost": 35,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 664.1,
+      "margin_at_50": 0.6037,
+      "contribution_at_75": 489.1,
+      "margin_at_75": 0.4446,
+      "contribution_at_100": 314.1,
+      "margin_at_100": 0.2855,
+      "price_floor_40pct_at_75": 1011.37
+    },
+    "v3_seo_growth": {
+      "price": 1800,
+      "fulfillment_hours": 12,
+      "direct_cost": 60,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 1056.9,
+      "margin_at_50": 0.5872,
+      "contribution_at_75": 756.9,
+      "margin_at_75": 0.4205,
+      "contribution_at_100": 456.9,
+      "margin_at_100": 0.2538,
+      "price_floor_40pct_at_75": 1733.39
+    },
+    "search_sprint_1500": {
+      "price": 1500,
+      "fulfillment_hours": 10,
+      "direct_cost": 35,
+      "fee_rate": 0.033,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 900.2,
+      "margin_at_50": 0.6001,
+      "contribution_at_75": 650.2,
+      "margin_at_75": 0.4335,
+      "contribution_at_100": 400.2,
+      "margin_at_100": 0.2668,
+      "price_floor_40pct_at_75": 1409.87
+    },
+    "search_plan_1100": {
+      "price": 1100,
+      "fulfillment_hours": 7,
+      "direct_cost": 35,
+      "fee_rate": 0.036,
+      "charges": 1,
+      "leakage_rate": 0.01,
+      "contribution_at_50": 664.1,
+      "margin_at_50": 0.6037,
+      "contribution_at_75": 489.1,
+      "margin_at_75": 0.4446,
+      "contribution_at_100": 314.1,
+      "margin_at_100": 0.2855,
+      "price_floor_40pct_at_75": 1011.37
+    }
+  },
+  "build_cac": {
+    "v3_focused_site": {
+      "post_cac_8h_plus_50": {
+        "at_50": 2391.1,
+        "at_75": 816.1,
+        "at_100": -758.9
+      },
+      "price_floor_40pct_post_cac_at_75": 8843.63
+    },
+    "v3_signature_site": {
+      "post_cac_8h_plus_50": {
+        "at_50": 4190.6,
+        "at_75": 1865.6,
+        "at_100": -459.4
+      },
+      "price_floor_40pct_post_cac_at_75": 12972.89
+    },
+    "conditional_compact_site": {
+      "post_cac_8h_plus_50": {
+        "at_50": 2787.6,
+        "at_75": 1637.6,
+        "at_100": 487.6
+      },
+      "price_floor_40pct_post_cac_at_75": 6509.69
+    }
+  },
+  "care_lifecycle": {
+    "v3_care": {
+      "known_new_build_incremental": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 130.15,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -82.35,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 130.15,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 177.95,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 130.15,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 568.4,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 130.15,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1219.15,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 130.15,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 2780.95,
+          "payback_paid_month": 2
+        }
+      ],
+      "standalone_legacy_excluding_assessment": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 130.15,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -419.85,
+          "payback_paid_month": 5
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 130.15,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -159.55,
+          "payback_paid_month": 5
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 130.15,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 230.9,
+          "payback_paid_month": 5
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 130.15,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 881.65,
+          "payback_paid_month": 5
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 130.15,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 2443.45,
+          "payback_paid_month": 5
+        }
+      ]
+    },
+    "low_care_199": {
+      "known_new_build_incremental": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 80.8,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -131.7,
+          "payback_paid_month": 3
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 80.8,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 29.9,
+          "payback_paid_month": 3
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 80.8,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 272.3,
+          "payback_paid_month": 3
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 80.8,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 676.3,
+          "payback_paid_month": 3
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 80.8,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1645.9,
+          "payback_paid_month": 3
+        }
+      ],
+      "standalone_legacy_excluding_assessment": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 80.8,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -469.2,
+          "payback_paid_month": 7
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 80.8,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -307.6,
+          "payback_paid_month": 7
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 80.8,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -65.2,
+          "payback_paid_month": 7
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 80.8,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 338.8,
+          "payback_paid_month": 7
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 80.8,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1308.4,
+          "payback_paid_month": 7
+        }
+      ]
+    },
+    "care_249": {
+      "known_new_build_incremental": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 109.75,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -102.75,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 109.75,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 116.75,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 109.75,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 446.0,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 109.75,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 994.75,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 109.75,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 2311.75,
+          "payback_paid_month": 2
+        }
+      ],
+      "standalone_legacy_excluding_assessment": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 109.75,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -440.25,
+          "payback_paid_month": 6
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 109.75,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -220.75,
+          "payback_paid_month": 6
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 109.75,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 108.5,
+          "payback_paid_month": 6
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 109.75,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 657.25,
+          "payback_paid_month": 6
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 109.75,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1974.25,
+          "payback_paid_month": 6
+        }
+      ]
+    },
+    "proactive_399": {
+      "known_new_build_incremental": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 177.85,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -34.65,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 177.85,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 321.05,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 177.85,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 854.6,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 177.85,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1743.85,
+          "payback_paid_month": 2
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 177.85,
+          "activation_hours": 0.5,
+          "exit_hours": 1,
+          "sales_hours": 1,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 3878.05,
+          "payback_paid_month": 2
+        }
+      ],
+      "standalone_legacy_excluding_assessment": [
+        {
+          "paid_months": 1,
+          "monthly_contribution": 177.85,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -372.15,
+          "payback_paid_month": 4
+        },
+        {
+          "paid_months": 3,
+          "monthly_contribution": 177.85,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": -16.45,
+          "payback_paid_month": 4
+        },
+        {
+          "paid_months": 6,
+          "monthly_contribution": 177.85,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 517.1,
+          "payback_paid_month": 4
+        },
+        {
+          "paid_months": 11,
+          "monthly_contribution": 177.85,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 1406.35,
+          "payback_paid_month": 4
+        },
+        {
+          "paid_months": 23,
+          "monthly_contribution": 177.85,
+          "activation_hours": 2,
+          "exit_hours": 1,
+          "sales_hours": 4,
+          "cash_cac": 25,
+          "after_activation_exit_cac": 3540.55,
+          "payback_paid_month": 4
+        }
+      ]
+    }
+  },
+  "search_lifecycle": {
+    "after_paid_sprint_or_usable_new_build_baseline": [
+      {
+        "paid_months": 1,
+        "monthly_contribution": 489.1,
+        "activation_hours": 0.5,
+        "exit_hours": 1,
+        "sales_hours": 1,
+        "cash_cac": 25,
+        "after_activation_exit_cac": 276.6,
+        "payback_paid_month": 1
+      },
+      {
+        "paid_months": 3,
+        "monthly_contribution": 489.1,
+        "activation_hours": 0.5,
+        "exit_hours": 1,
+        "sales_hours": 1,
+        "cash_cac": 25,
+        "after_activation_exit_cac": 1254.8,
+        "payback_paid_month": 1
+      },
+      {
+        "paid_months": 11,
+        "monthly_contribution": 489.1,
+        "activation_hours": 0.5,
+        "exit_hours": 1,
+        "sales_hours": 1,
+        "cash_cac": 25,
+        "after_activation_exit_cac": 5167.6,
+        "payback_paid_month": 1
+      },
+      {
+        "paid_months": 23,
+        "monthly_contribution": 489.1,
+        "activation_hours": 0.5,
+        "exit_hours": 1,
+        "sales_hours": 1,
+        "cash_cac": 25,
+        "after_activation_exit_cac": 11036.8,
+        "payback_paid_month": 1
+      }
+    ]
+  },
+  "delinquency": {
+    "low_care_199": [
+      {
+        "unpaid_share_of_invoices": 0.05,
+        "assumption": "Full delivery occurs on every invoice; card/Billing fees apply only to collected invoices. Stress case, not observed delinquency.",
+        "expected_contribution_at_75": 71.32
+      },
+      {
+        "unpaid_share_of_invoices": 0.1,
+        "assumption": "Full delivery occurs on every invoice; card/Billing fees apply only to collected invoices. Stress case, not observed delinquency.",
+        "expected_contribution_at_75": 61.84
+      }
+    ],
+    "search_plan_1100": [
+      {
+        "unpaid_share_of_invoices": 0.05,
+        "assumption": "Full delivery occurs on every invoice; card/Billing fees apply only to collected invoices. Stress case, not observed delinquency.",
+        "expected_contribution_at_75": 436.64
+      },
+      {
+        "unpaid_share_of_invoices": 0.1,
+        "assumption": "Full delivery occurs on every invoice; card/Billing fees apply only to collected invoices. Stress case, not observed delinquency.",
+        "expected_contribution_at_75": 384.19
+      }
+    ]
+  },
+  "overruns": {
+    "low_care_199": [
+      {
+        "price": 199,
+        "fulfillment_hours": 1.25,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 112.05,
+        "margin_at_50": 0.563,
+        "contribution_at_75": 80.8,
+        "margin_at_75": 0.406,
+        "contribution_at_100": 49.55,
+        "margin_at_100": 0.249,
+        "additional_hours": 0
+      },
+      {
+        "price": 199,
+        "fulfillment_hours": 1.75,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 87.05,
+        "margin_at_50": 0.4374,
+        "contribution_at_75": 43.3,
+        "margin_at_75": 0.2176,
+        "contribution_at_100": -0.45,
+        "margin_at_100": -0.0023,
+        "additional_hours": 0.5
+      },
+      {
+        "price": 199,
+        "fulfillment_hours": 2.25,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 62.05,
+        "margin_at_50": 0.3118,
+        "contribution_at_75": 5.8,
+        "margin_at_75": 0.0291,
+        "contribution_at_100": -50.45,
+        "margin_at_100": -0.2535,
+        "additional_hours": 1
+      }
+    ],
+    "care_249": [
+      {
+        "price": 249,
+        "fulfillment_hours": 1.5,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 147.25,
+        "margin_at_50": 0.5913,
+        "contribution_at_75": 109.75,
+        "margin_at_75": 0.4407,
+        "contribution_at_100": 72.25,
+        "margin_at_100": 0.2901,
+        "additional_hours": 0
+      },
+      {
+        "price": 249,
+        "fulfillment_hours": 2.0,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 122.25,
+        "margin_at_50": 0.4909,
+        "contribution_at_75": 72.25,
+        "margin_at_75": 0.2901,
+        "contribution_at_100": 22.25,
+        "margin_at_100": 0.0893,
+        "additional_hours": 0.5
+      },
+      {
+        "price": 249,
+        "fulfillment_hours": 2.5,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 97.25,
+        "margin_at_50": 0.3905,
+        "contribution_at_75": 34.75,
+        "margin_at_75": 0.1395,
+        "contribution_at_100": -27.75,
+        "margin_at_100": -0.1115,
+        "additional_hours": 1
+      }
+    ],
+    "proactive_399": [
+      {
+        "price": 399,
+        "fulfillment_hours": 2.5,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 240.35,
+        "margin_at_50": 0.6024,
+        "contribution_at_75": 177.85,
+        "margin_at_75": 0.4457,
+        "contribution_at_100": 115.35,
+        "margin_at_100": 0.2891,
+        "additional_hours": 0
+      },
+      {
+        "price": 399,
+        "fulfillment_hours": 3.0,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 215.35,
+        "margin_at_50": 0.5397,
+        "contribution_at_75": 140.35,
+        "margin_at_75": 0.3517,
+        "contribution_at_100": 65.35,
+        "margin_at_100": 0.1638,
+        "additional_hours": 0.5
+      },
+      {
+        "price": 399,
+        "fulfillment_hours": 3.5,
+        "direct_cost": 15,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 190.35,
+        "margin_at_50": 0.4771,
+        "contribution_at_75": 102.85,
+        "margin_at_75": 0.2578,
+        "contribution_at_100": 15.35,
+        "margin_at_100": 0.0385,
+        "additional_hours": 1
+      }
+    ],
+    "search_sprint_1500": [
+      {
+        "price": 1500,
+        "fulfillment_hours": 10,
+        "direct_cost": 35,
+        "fee_rate": 0.033,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 900.2,
+        "margin_at_50": 0.6001,
+        "contribution_at_75": 650.2,
+        "margin_at_75": 0.4335,
+        "contribution_at_100": 400.2,
+        "margin_at_100": 0.2668,
+        "additional_hours": 0
+      },
+      {
+        "price": 1500,
+        "fulfillment_hours": 12,
+        "direct_cost": 35,
+        "fee_rate": 0.033,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 800.2,
+        "margin_at_50": 0.5335,
+        "contribution_at_75": 500.2,
+        "margin_at_75": 0.3335,
+        "contribution_at_100": 200.2,
+        "margin_at_100": 0.1335,
+        "additional_hours": 2
+      },
+      {
+        "price": 1500,
+        "fulfillment_hours": 14,
+        "direct_cost": 35,
+        "fee_rate": 0.033,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 700.2,
+        "margin_at_50": 0.4668,
+        "contribution_at_75": 350.2,
+        "margin_at_75": 0.2335,
+        "contribution_at_100": 0.2,
+        "margin_at_100": 0.0001,
+        "additional_hours": 4
+      }
+    ],
+    "search_plan_1100": [
+      {
+        "price": 1100,
+        "fulfillment_hours": 7,
+        "direct_cost": 35,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 664.1,
+        "margin_at_50": 0.6037,
+        "contribution_at_75": 489.1,
+        "margin_at_75": 0.4446,
+        "contribution_at_100": 314.1,
+        "margin_at_100": 0.2855,
+        "additional_hours": 0
+      },
+      {
+        "price": 1100,
+        "fulfillment_hours": 9,
+        "direct_cost": 35,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 564.1,
+        "margin_at_50": 0.5128,
+        "contribution_at_75": 339.1,
+        "margin_at_75": 0.3083,
+        "contribution_at_100": 114.1,
+        "margin_at_100": 0.1037,
+        "additional_hours": 2
+      },
+      {
+        "price": 1100,
+        "fulfillment_hours": 11,
+        "direct_cost": 35,
+        "fee_rate": 0.036,
+        "charges": 1,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 464.1,
+        "margin_at_50": 0.4219,
+        "contribution_at_75": 189.1,
+        "margin_at_75": 0.1719,
+        "contribution_at_100": -85.9,
+        "margin_at_100": -0.0781,
+        "additional_hours": 4
+      }
+    ],
+    "conditional_compact_site": [
+      {
+        "price": 5500,
+        "fulfillment_hours": 38,
+        "direct_cost": 125,
+        "fee_rate": 0.033,
+        "charges": 3,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 3237.6,
+        "margin_at_50": 0.5887,
+        "contribution_at_75": 2287.6,
+        "margin_at_75": 0.4159,
+        "contribution_at_100": 1337.6,
+        "margin_at_100": 0.2432,
+        "additional_hours": 0
+      },
+      {
+        "price": 5500,
+        "fulfillment_hours": 48,
+        "direct_cost": 125,
+        "fee_rate": 0.033,
+        "charges": 3,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 2737.6,
+        "margin_at_50": 0.4977,
+        "contribution_at_75": 1537.6,
+        "margin_at_75": 0.2796,
+        "contribution_at_100": 337.6,
+        "margin_at_100": 0.0614,
+        "additional_hours": 10
+      },
+      {
+        "price": 5500,
+        "fulfillment_hours": 55,
+        "direct_cost": 125,
+        "fee_rate": 0.033,
+        "charges": 3,
+        "leakage_rate": 0.01,
+        "contribution_at_50": 2387.6,
+        "margin_at_50": 0.4341,
+        "contribution_at_75": 1012.6,
+        "margin_at_75": 0.1841,
+        "contribution_at_100": -362.4,
+        "margin_at_100": -0.0659,
+        "additional_hours": 17
+      }
+    ]
+  },
+  "buyer_cost": {
+    "focused_build_only": {
+      "12_planning_months_11_recurring_invoices": 6000,
+      "24_planning_months_23_recurring_invoices": 6000
+    },
+    "focused_plus_v3_care": {
+      "12_planning_months_11_recurring_invoices": 9839,
+      "24_planning_months_23_recurring_invoices": 14027
+    },
+    "focused_plus_care_249": {
+      "12_planning_months_11_recurring_invoices": 8739,
+      "24_planning_months_23_recurring_invoices": 11727
+    },
+    "focused_plus_low_care_199": {
+      "12_planning_months_11_recurring_invoices": 8189,
+      "24_planning_months_23_recurring_invoices": 10577
+    },
+    "focused_plus_proactive_399": {
+      "12_planning_months_11_recurring_invoices": 10389,
+      "24_planning_months_23_recurring_invoices": 15177
+    },
+    "focused_plus_quarterly_check_249": {
+      "12_planning_months_four_checks": 6996,
+      "24_planning_months_eight_checks": 7992
+    },
+    "focused_plus_one_search_sprint": {
+      "12_planning_months_11_recurring_invoices": 7500,
+      "24_planning_months_23_recurring_invoices": 7500
+    },
+    "focused_plus_care_249_one_sprint": {
+      "12_planning_months_11_recurring_invoices": 10239,
+      "24_planning_months_23_recurring_invoices": 13227
+    },
+    "focused_plus_care_199_search_plan_1100_after_sprint": {
+      "12_planning_months_11_recurring_invoices": 21789,
+      "24_planning_months_23_recurring_invoices": 37377
+    },
+    "focused_plus_care_199_search_plan_1100_known_build_no_sprint": {
+      "12_planning_months_11_recurring_invoices": 20289,
+      "24_planning_months_23_recurring_invoices": 35877
+    },
+    "focused_plus_v3_care_focused_seo": {
+      "12_planning_months_11_recurring_invoices": 22539,
+      "24_planning_months_23_recurring_invoices": 39927
+    },
+    "signature_plus_care_249": {
+      "12_planning_months_11_recurring_invoices": 12239,
+      "24_planning_months_23_recurring_invoices": 15227
+    }
+  },
+  "subscription_credit_risk": {
+    "setup": 1500,
+    "monthly": 299,
+    "site_build_hours": 55,
+    "ongoing_monthly_hours": 1.5,
+    "site_direct_cost": 150,
+    "monthly_direct_cost": 15,
+    "sales_hours": 8,
+    "cash_cac": 50,
+    "buyer_cost_12": 5088,
+    "buyer_cost_24": 8676,
+    "initial_unrecovered_after_setup_at_75": 3489.8,
+    "monthly_contribution_at_75": 157.45,
+    "break_even_paid_month_at_75": 23,
+    "loss_if_one_month_then_cancel_at_75": -3332.35,
+    "contribution_if_12_months_paid_at_75": -1600.45,
+    "contribution_if_24_months_paid_at_75": 288.9,
+    "contribution_if_months_1_to_3_paid_then_months_4_to_6_default_but_work_delivered_at_75": -3399.96,
+    "note": "Illustrative cash exposure. Prepayment and stopping new service on missed renewal can prevent some delivery loss, but cannot recover financed build cost. Does not model collections/legal costs, taxes, or time value of money."
+  },
+  "tax_and_budget": "Income-tax reserves, sales-tax applicability, owner cash needs, actual launch budget, and actual payment mix are unknown. Obtain professional advice and enter real figures before commitments; no modeled contribution is spendable cash.",
+  "public_menu_authority": "offers.json; all other modeled prices are historical or unselected experiments."
+}

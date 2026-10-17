@@ -1,0 +1,101 @@
+{
+  "document": "V5 buyer-page layout and proof wire",
+  "as_of": "2026-10-13",
+  "status": "Current interface instructions only. Resolve every commercial value from offers.json; this file deliberately stores no copied prices, allowances or competing service descriptions.",
+  "commercial_source": "offers.json",
+  "reference_format": "File plus JSON pointer. Resolve the full selected object, including its limits, billing and ownership rules; never render only its price.",
+  "global_commercial_refs": [
+    "offers.json#/ownership_and_billing",
+    "offers.json#/billing_illustration",
+    "offers.json#/add_on_guardrail"
+  ],
+  "offer_components": [
+    {
+      "id": "focused_website",
+      "offer_ref": "offers.json#/focused_site"
+    },
+    {
+      "id": "signature_website",
+      "offer_ref": "offers.json#/signature_site"
+    },
+    {
+      "id": "website_care",
+      "offer_ref": "offers.json#/care"
+    },
+    {
+      "id": "search_sprint",
+      "offer_ref": "offers.json#/search_sprint"
+    },
+    {
+      "id": "monthly_search",
+      "offer_ref": "offers.json#/search_plan"
+    },
+    {
+      "id": "care_plus_search",
+      "offer_ref": "offers.json#/combined_monthly"
+    },
+    {
+      "id": "scoped_extras",
+      "offer_ref": "offers.json#/add_ons"
+    }
+  ],
+  "card_layout_order": [
+    "fixed price and best fit",
+    "exact pages/copy/functionality/media",
+    "editing route",
+    "acceptance and handoff",
+    "exclusions",
+    "payment and actual timing",
+    "proof status",
+    "next action"
+  ],
+  "buyer_path": "Choose a website scope, confirm editing and actual external bills, then consider only useful optional services. Use the documented baseline rule to decide Search entry. Exact commercial wording comes from the selected offer reference.",
+  "cost_illustration": {
+    "source": "buyer-costs.json",
+    "rule": "Illustrative planning cycles only. The accepted quote uses actual dated invoices and required provider fees; show unknown external fees explicitly before provider selection and resolve required bills before signing."
+  },
+  "scope_record": "client-record-template.json#/scope",
+  "purchase_and_delivery_source": "OPERATING_SYSTEM.md",
+  "receipt_templates": "SERVICE_PLAYBOOK.md",
+  "proof_contract": {
+    "launch_case": {
+      "label": "Owned-site build · self-commissioned · [release date]",
+      "situation": "Online-only Erie County studio needed clear custom website/SEO paths, exact prices, truthful proof, and a working inquiry route.",
+      "show": [
+        "canonical page map and three-versus-five-page decision",
+        "pricing cards and scope ledger",
+        "mobile form and synthetic receipt",
+        "account/handoff language",
+        "one media asset with poster/reduced-motion fallback",
+        "live artifact or redacted build record",
+        "320/360/desktop screenshots"
+      ],
+      "result_rule": "Record only checks actually run. If traffic, rankings, revenue, or paid-client baselines do not exist, write 'not collected'."
+    },
+    "concept_label": "Concept demo — no client result claimed",
+    "paid_case_requirements": [
+      "permission",
+      "role",
+      "date",
+      "scope",
+      "baseline",
+      "measured source",
+      "outcome limits"
+    ]
+  },
+  "buyer_usability_check": {
+    "method": "Diagnostic task-based sessions with five relevant prospective buyers when available; record behavior and uncertainty, not a conversion-rate claim.",
+    "tasks": [
+      "Identify the offered service and intended buyer",
+      "Find the fixed price and explain pages, copy, revisions, form/media and excluded work from the resolved offer",
+      "Explain how editing works and distinguish technical ownership from a separately scoped CMS",
+      "Find real proof and identify an owned demo or concept correctly",
+      "Explain mandatory external bills, optional service costs and the actual quote billing dates",
+      "Explain written acceptance, paid-source/account rights, cancellation and handoff",
+      "Complete the inquiry using mobile and keyboard; confirm receipt through implementation tests"
+    ],
+    "record": "Task result, confusion, exact feedback, severity, owner and change evidence in the same work receipt."
+  },
+  "mobile_and_release_source": "build-contract.json",
+  "rendering_invariant": "If this wire, prose or a page disagrees with offers.json, resolve the discrepancy before quoting or publishing. Automated implementation checks should compare rendered commercial fields with the resolved source, not with historical examples."
+}

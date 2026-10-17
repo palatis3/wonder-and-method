@@ -1,0 +1,330 @@
+{
+  "status": "editorial briefs, not published content or traffic forecasts",
+  "rule": "A brief is a backlog option, never a ranking quota. Publish only after a founder fact sheet supplies original observations, verified facts, rights, and a useful buyer decision. AI may organize and edit; founder verifies every claim.",
+  "cadence": {
+    "launch": "Target three short, useful guides already tied to launch decisions; if evidence is missing, ship the commercial core and defer a guide rather than inventing facts.",
+    "days_1_30": "Improve offer answers from real buyer questions; no additional blog post quota.",
+    "days_31_60": "Default one new evidence-led guide or properly labeled project case, chosen from actual inquiry patterns; record all-in hours.",
+    "days_61_90": "Default one further guide or case if capacity and evidence allow; default 0 municipality pages.",
+    "days_91_180": "Set cadence from observed asset hours, buyer demand and sales assistance after a monthly review; one useful asset/month is a planning baseline only, and pause when client delivery or weak evidence takes priority.",
+    "default_new_post_count_first_90_days": 2,
+    "planned_guides_at_launch": 3,
+    "default_guides_by_day_90_if_all_gates_pass": 5,
+    "stretch_new_assets_first_90_days": "Four to six additional after launch, seven to nine total including the three launch guides, only if the first two new assets each take no more than 3-4 all-in founder hours including source research, fact review, rights review, writing, design, links, accessibility and QA; each has unique firsthand proof and real query/buyer need; and the client calendar preserves contracted delivery and the 60-hour weekly ceiling. This is an optional observed-capacity gate, never an article or ranking target.",
+    "no_guarantee": "No post count, cadence, publication date, ranking, indexing, lead, or AI citation guarantee."
+  },
+  "earned_profile_plan": [
+    {
+      "review_by_day": 30,
+      "profile": "LinkedIn personal, free Company Page, optional free Service Page",
+      "status": "proposed; no account action authorized",
+      "gate": "Founder identity, accurate online-only service description, real portfolio URL and deliberate personal-versus-company Service Page choice",
+      "cost_evidence": "Company and Service Pages described as free by LinkedIn",
+      "source_urls": [
+        "https://www.linkedin.com/help/linkedin/answer/a542801",
+        "https://www.linkedin.com/help/linkedin/answer/a565541"
+      ]
+    },
+    {
+      "review_by_day": 60,
+      "profile": "Clutch Basic",
+      "status": "proposed; no account action authorized",
+      "gate": "Real project or honest portfolio item and accurate company details; reviews only from legitimate clients",
+      "cost_evidence": "Clutch lists Basic as free; Verified as $499/year and Basic without directory-page site link",
+      "source_urls": [
+        "https://clutch.co/get-listed",
+        "https://help.clutch.co/en/knowledge/get-listed-on-clutch",
+        "https://help.clutch.co/en/knowledge/falsified-reviews-and-how-clutch-address-them"
+      ]
+    },
+    {
+      "review_by_day": 90,
+      "profile": "Buffalo Niagara Partnership BNP Pro Free",
+      "status": "conditional; no application or spend authorized",
+      "gate": "Locally owned eligible business, five or fewer full-time employees, business website and social presence; resolve pricing discrepancy before application",
+      "cost_evidence": "Public page says complimentary; current application displays $50 one-time fee",
+      "source_urls": [
+        "https://www.thepartnership.org/bnpprofree/",
+        "https://members.thepartnership.org/ap/Membership/Application/zLwOzALA"
+      ]
+    },
+    {
+      "review_by_day": 90,
+      "profile": "Vendor ecosystem directory",
+      "status": "defer",
+      "gate": "Actual platform specialty, verified work and provider qualification; no generic membership farming",
+      "cost_evidence": "Eligibility rather than fee is the first gate",
+      "source_urls": [
+        "https://help.webflow.com/hc/en-us/articles/33961415802003-Webflow-Certified-Partner-program",
+        "https://help.shopify.com/en/partners/grow-your-business/partner-directory/join"
+      ]
+    }
+  ],
+  "briefs": [
+    {
+      "id": "E01",
+      "stage": "launch if evidence ready",
+      "priority": 1,
+      "slug": "/guides/website-project-cost/",
+      "title": "What a custom website project costs at Wonder and Method",
+      "h1": "What goes into a custom website budget?",
+      "primary_query": "custom website cost Buffalo",
+      "secondary_queries": [
+        "website design pricing Buffalo",
+        "website redesign cost",
+        "small business website project budget"
+      ],
+      "search_job": "Help a buyer form a workable budget and recognize which requirements change this studio's quote.",
+      "evidence": "Approved studio price/scope, two anonymized illustrative scope calculations based on actual estimate logic, explicit exclusions and owner responsibilities; label examples as estimates, not closed transactions or market averages.",
+      "cta": "Review current website pricing",
+      "internal_links": [
+        "/pricing/",
+        "/services/web-design/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E02",
+      "stage": "launch if evidence ready",
+      "priority": 1,
+      "slug": "/guides/seo-work-and-reporting/",
+      "title": "What monthly SEO work and a useful report actually show",
+      "h1": "How monthly SEO work is planned and reported",
+      "primary_query": "SEO reporting example",
+      "secondary_queries": [
+        "what does an SEO agency do monthly",
+        "Search Console SEO report",
+        "monthly SEO work examples"
+      ],
+      "search_job": "Let a buyer judge whether a bounded monthly SEO engagement is accountable.",
+      "evidence": "Founder-created sample report or authorized owned-site example, with period, property role, measures, actual changes, uncertainty and no fabricated client outcome; distinguish illustrative cells.",
+      "cta": "See SEO scope and packages",
+      "internal_links": [
+        "/services/seo/",
+        "/pricing/",
+        "/work/"
+      ]
+    },
+    {
+      "id": "E03",
+      "stage": "launch if evidence ready",
+      "priority": 1,
+      "slug": "/guides/website-redesign-brief/",
+      "title": "A practical website redesign brief for a small business",
+      "h1": "How to brief a website redesign",
+      "primary_query": "website redesign brief",
+      "secondary_queries": [
+        "website redesign checklist for small business",
+        "how to prepare for website redesign",
+        "website project requirements checklist"
+      ],
+      "search_job": "Help a buyer collect goals, page inventory, content owners, integrations, access and acceptance criteria before requesting quotes.",
+      "evidence": "Founder-authored template grounded in the studio's actual discovery and acceptance process; validate that promised stages match offers.",
+      "cta": "Discuss your redesign",
+      "internal_links": [
+        "/services/web-design/",
+        "/process/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E04",
+      "stage": "days 31-60 candidate",
+      "priority": 2,
+      "slug": "/guides/website-scope-checklist/",
+      "title": "Website scope checklist: pages, content, forms, and handoff",
+      "h1": "What belongs in a website project scope?",
+      "primary_query": "website project scope checklist",
+      "secondary_queries": [
+        "web design project scope",
+        "website content responsibilities",
+        "website handoff checklist"
+      ],
+      "search_job": "Make bids comparable and prevent hidden content or integration work.",
+      "evidence": "Redacted actual proposal structure, delivery-stage estimates and acceptance tests, with price variables kept consistent with /pricing/.",
+      "cta": "See the studio process",
+      "internal_links": [
+        "/process/",
+        "/pricing/",
+        "/services/web-design/"
+      ]
+    },
+    {
+      "id": "E05",
+      "stage": "days 31-90 candidate",
+      "priority": 2,
+      "slug": "/guides/website-migration-checklist/",
+      "title": "Website migration checklist for owners planning a redesign",
+      "h1": "What to protect when a website moves",
+      "primary_query": "website migration checklist",
+      "secondary_queries": [
+        "website redesign SEO migration",
+        "redirect checklist",
+        "protect website leads during redesign"
+      ],
+      "search_job": "Help an owner recognize URLs, forms, tracking, ownership and rollback tasks before a rebuild.",
+      "evidence": "Actual migration test checklist and redacted sample redirect map; no unsupported claim that traffic is preserved.",
+      "cta": "Discuss a redesign with migration scope",
+      "internal_links": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E06",
+      "stage": "days 61-90 candidate",
+      "priority": 2,
+      "slug": "/guides/custom-website-or-template/",
+      "title": "Custom website or template: choosing by business requirements",
+      "h1": "When is a custom website worth it?",
+      "primary_query": "custom website vs template",
+      "secondary_queries": [
+        "custom coded website benefits",
+        "website template limitations",
+        "should I use a website builder"
+      ],
+      "search_job": "Give a fair decision framework, including cases where a cheaper template is sufficient.",
+      "evidence": "One inspectable prototype or design comparison with identical content, actual implementation constraints and disclosed assumptions; no universal performance claims.",
+      "cta": "See custom website scope",
+      "internal_links": [
+        "/services/web-design/",
+        "/pricing/",
+        "/work/"
+      ]
+    },
+    {
+      "id": "E07",
+      "stage": "post-90 candidate",
+      "priority": 3,
+      "slug": "/guides/website-motion-and-speed/",
+      "title": "Purposeful website motion without sacrificing clarity and speed",
+      "h1": "How we decide where website motion helps",
+      "primary_query": "website animation performance",
+      "secondary_queries": [
+        "website motion accessibility",
+        "Remotion website video performance",
+        "3D website performance"
+      ],
+      "search_job": "Show a buyer how a restrained creative feature is evaluated on mobile and reduced-motion settings.",
+      "evidence": "One actual Blender or Remotion prototype, mobile before/after measurements with conditions, keyboard/reduced-motion behavior and fallback image; no generic ranking promise.",
+      "cta": "Explore the design service",
+      "internal_links": [
+        "/services/web-design/",
+        "/work/",
+        "/process/"
+      ]
+    },
+    {
+      "id": "E08",
+      "stage": "post-90 candidate",
+      "priority": 3,
+      "slug": "/guides/how-to-evaluate-seo-proposals/",
+      "title": "How to compare SEO proposals without ranking promises",
+      "h1": "Questions to ask before hiring for SEO",
+      "primary_query": "how to choose an SEO agency",
+      "secondary_queries": [
+        "SEO proposal checklist",
+        "SEO contract questions",
+        "SEO reporting deliverables"
+      ],
+      "search_job": "Help a buyer compare scope, access, implementation, reporting and exit terms.",
+      "evidence": "The studio's actual scope and reporting sample, Google documentation on SEO timing, anonymized buyer questions if available; acknowledge that the studio's offer is one option.",
+      "cta": "Compare our SEO package",
+      "internal_links": [
+        "/services/seo/",
+        "/pricing/",
+        "/guides/seo-work-and-reporting/"
+      ]
+    },
+    {
+      "id": "E09",
+      "stage": "post-90 candidate",
+      "priority": 3,
+      "slug": "/guides/local-seo-profile-eligibility/",
+      "title": "Local SEO and Google Business Profile eligibility for service businesses",
+      "h1": "Does your service business qualify for a Google Business Profile?",
+      "primary_query": "Google Business Profile service area eligibility",
+      "secondary_queries": [
+        "remote only business Google Business Profile",
+        "hide service business address",
+        "service area business SEO"
+      ],
+      "search_job": "Help a prospective client avoid an ineligible or inaccurate profile and understand other search options.",
+      "evidence": "Current official eligibility and representation policies, dated check, clearly hypothetical examples; no claim of special appeal success.",
+      "cta": "Discuss local search scope",
+      "internal_links": [
+        "/services/seo/",
+        "/areas/erie-county/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E10",
+      "stage": "post-90 candidate",
+      "priority": 3,
+      "slug": "/guides/search-console-first-90-days/",
+      "title": "Reading Search Console during a new site's first 90 days",
+      "h1": "What Search Console can and cannot tell a new site",
+      "primary_query": "Search Console new website",
+      "secondary_queries": [
+        "Search Console impressions no clicks",
+        "website indexing check",
+        "new website SEO measurement"
+      ],
+      "search_job": "Separate crawl/indexation problems from normal low-demand or early data and set sensible decisions.",
+      "evidence": "Dated screenshots from an authorized property or a clearly labeled illustrative dataset, exact definitions and Google Search Console documentation.",
+      "cta": "See SEO measurement approach",
+      "internal_links": [
+        "/services/seo/",
+        "/guides/seo-work-and-reporting/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E11",
+      "stage": "post-90 conditional",
+      "priority": 4,
+      "slug": "/guides/website-repair-or-redesign/",
+      "title": "Website repair or redesign: choosing the smaller useful fix",
+      "h1": "Should you repair or rebuild your website?",
+      "primary_query": "website repair or redesign",
+      "secondary_queries": [
+        "fix broken website form",
+        "website redesign decision",
+        "website support Buffalo"
+      ],
+      "search_job": "Help an owner decide when a bounded fix suffices and when a redesign is justified.",
+      "evidence": "At least one real diagnostic and test record, supported stack and exclusions; publish only when repair is a defined deliverable, not to chase sparse keyword estimates.",
+      "cta": "Request a fit check",
+      "internal_links": [
+        "/services/web-design/",
+        "/pricing/",
+        "/contact/"
+      ]
+    },
+    {
+      "id": "E12",
+      "stage": "post-90 candidate",
+      "priority": 4,
+      "slug": "/guides/seo-setup-versus-monthly-work/",
+      "title": "SEO setup versus monthly SEO work: what each should cover",
+      "h1": "What happens during SEO setup and each month after?",
+      "primary_query": "SEO setup vs monthly SEO",
+      "secondary_queries": [
+        "SEO onboarding cost",
+        "monthly SEO service scope",
+        "technical SEO audit versus ongoing SEO"
+      ],
+      "search_job": "Explain the difference between initial access/baseline/priorities and ongoing implementation, including when setup is redundant after a studio build.",
+      "evidence": "Approved onboarding checklist and actual monthly capacity table; use the final commercial prices and avoid duplicating a project's foundational SEO charge.",
+      "cta": "See SEO packages and scope",
+      "internal_links": [
+        "/services/seo/",
+        "/pricing/",
+        "/services/web-design/"
+      ]
+    }
+  ],
+  "v5_active_rule": "Only E01–E03 are launch candidates when evidence-ready. Select two later assets from actual buyer questions/capacity; remainingbriefs staybacklog until separatelyactivated. No sitemap/nav/schema for deferredslugs."
+}

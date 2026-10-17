@@ -1,0 +1,31 @@
+.civic-hero{background:#bec7b7;color:#0e1b2a;padding:30px 5% 0;isolation:isolate}
+.civic-copy{display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:5vw;max-width:1280px;margin:0 auto 18px}
+.studio-site .civic-copy h1{font-size:clamp(48px,4.5vw,64px);line-height:1.02;letter-spacing:-.035em;margin:0;max-width:680px}
+.civic-copy h1 span{color:#4556db}
+.civic-copy p{font-size:17px;line-height:1.6;max-width:460px;margin:0 0 18px}
+.civic-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.civic-actions .text-link{font-size:14px}
+.civic-stage{position:relative;width:min(100%,clamp(720px,calc((100svh - 390px)*2),1120px));aspect-ratio:2/1;margin:0 auto;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 22%,#000 80%,transparent);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 22%,#000 80%,transparent);-webkit-mask-composite:source-in}
+.civic-poster,.civic-motion{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.civic-motion{visibility:hidden;pointer-events:none}
+.has-civic-motion .civic-motion--intro{visibility:visible}
+.has-civic-ambient .civic-motion--ambient{visibility:visible;z-index:2}
+.civic-controls{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 16px;min-height:64px;padding:8px 0 12px}
+.civic-controls button{min-height:44px;padding:9px 20px;border:1px solid #74836d;border-radius:999px;background:#f4f7fb;color:#0e1b2a;font:500 13px/1.4 Manrope,Arial,sans-serif;cursor:pointer}
+.civic-controls [hidden]{display:none}
+.civic-status{font-size:12px;line-height:1.5}
+.civic-status:empty{display:none}
+.project-image[data-edition="civic-sculpture"]{background:#bec7b7}
+.project-image[data-edition="civic-sculpture"] img{aspect-ratio:2/1;object-fit:contain;object-position:center}
+.project-image[data-edition="civic-sculpture"]:hover img{transform:none}
+@media(max-width:767px){
+  .civic-hero{padding:26px 20px 0}
+  .civic-copy{display:block;margin-bottom:22px}
+  .studio-site .civic-copy h1{font-size:clamp(44px,11.8vw,65px);max-width:560px}
+  .civic-copy p{font-size:15px;margin:18px 0}
+  .civic-actions{gap:4px 18px}
+  .civic-actions .button{min-height:46px;font-size:13px;padding:12px 20px}
+  .civic-actions .text-link{min-height:46px;font-size:12px}
+  .civic-stage{width:calc(100% + 40px);max-width:none;margin:0 -20px}
+  .civic-controls{min-height:66px}
+}

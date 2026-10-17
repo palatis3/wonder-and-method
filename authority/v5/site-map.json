@@ -1,0 +1,463 @@
+{
+  "status": "proposed, not published",
+  "brand": "Wonder and Method",
+  "market": "Erie County, New York launch; services can be sold nationally; founder confirms online-only operation at launch",
+  "canonical_policy": "One indexable URL per distinct buyer job. All listed paths are proposed and require actual site implementation. Do not create Buffalo and Erie County duplicates for the same service intent. Use self-referencing canonicals on published pages, one preferred HTTPS hostname, and permanent redirects from retired equivalent paths. Canonicals do not substitute for distinct content.",
+  "launch_target": "9 essential commercial pages plus one privacy utility page; up to 3 evidence-ready guides; optional care route only after support readiness. Core is 10 actual URLs including privacy, target 13 including three guides, or 14 with care.",
+  "home_interactions": {
+    "desktop": "Web Design, SEO, Pricing, Work, and Contact are direct header links: one activation from home.",
+    "mobile": "One menu activation, then one visible link activation to Web Design, SEO, Pricing, Work, Contact, Process, About, or Erie County; a separate persistent contact link can reach Contact in one activation.",
+    "rule": "No hover dependency, nested service submenu, carousel, modal, or accordion between home and a key commercial page. Keyboard and screen-reader operation must match touch routing."
+  },
+  "navigation": {
+    "primary": [
+      "/services/web-design/",
+      "/services/seo/",
+      "/pricing/",
+      "/work/",
+      "/about/",
+      "/contact/"
+    ],
+    "mobile_extra_direct_links": [
+      "/process/",
+      "/areas/erie-county/"
+    ],
+    "footer": [
+      "/services/web-design/",
+      "/services/seo/",
+      "/pricing/",
+      "/work/",
+      "/process/",
+      "/about/",
+      "/areas/erie-county/",
+      "/contact/"
+    ],
+    "conditional_care_link": "/services/website-care/ only after the offer and delivery checks pass",
+    "breadcrumb_rule": "Home > Web design, Home > SEO, Home > Guide title, Home > Project title. Link an intermediate hub only if that real useful hub is published; no empty /services/ or /guides/ routes.",
+    "internal_link_rule": "Each service links to Pricing, at least one relevant proof or truthful demonstration, Contact, and its closest guide. Each guide links to one primary service and Pricing or Contact when useful. Work entries link back to the service they demonstrate. County page links to service pages and Contact; services link back to county only where geographic logistics help the buyer. Use descriptive anchors and ordinary href links in HTML."
+  },
+  "keyword_inventory_routes": [
+    {
+      "term_clusters": [
+        "Buffalo web design",
+        "Buffalo web design / redesign section",
+        "Web design / redesign section",
+        "Web design / WordPress section",
+        "Web design service page",
+        "Web design + county hub",
+        "Web design + SEO cross-link"
+      ],
+      "primary_url": "/services/web-design/",
+      "secondary_url_when_useful": "/areas/erie-county/",
+      "rule": "Development, redesign, WordPress migration and municipality modifiers stay on one design page while the offer is one custom-build scope."
+    },
+    {
+      "term_clusters": [
+        "Buffalo SEO",
+        "Buffalo SEO / local SEO",
+        "SEO + county hub",
+        "SEO page AI-search section"
+      ],
+      "primary_url": "/services/seo/",
+      "secondary_url_when_useful": "/areas/erie-county/",
+      "rule": "Local SEO, technical SEO and AI-search questions are sections of the active SEO offer; no separate promise of AI citations."
+    },
+    {
+      "term_clusters": [
+        "SEO work/reporting guide"
+      ],
+      "primary_url": "/guides/seo-work-and-reporting/",
+      "fallback_until_published": "/services/seo/",
+      "rule": "Informational process questions link back to the commercial SEO offer."
+    },
+    {
+      "term_clusters": [
+        "Website cost guide"
+      ],
+      "primary_url": "/guides/website-project-cost/",
+      "fallback_until_published": "/pricing/",
+      "rule": "Includes legacy unmatched 'website redesign cost buffalo'; exact offer prices live on Pricing."
+    },
+    {
+      "term_clusters": [
+        "County coverage + web design",
+        "County coverage hub"
+      ],
+      "primary_url": "/areas/erie-county/",
+      "secondary_url_when_useful": "/services/web-design/",
+      "rule": "Only location/logistics queries go primarily to county; commercial service queries go to service."
+    },
+    {
+      "term_clusters": [
+        "Website care (gated launch)"
+      ],
+      "primary_url": "/services/website-care/",
+      "fallback_until_published": "/pricing/",
+      "rule": "Publish a dedicated care URL only after the actual care offer and operations pass readiness; otherwise pricing describes it as unavailable or limited."
+    },
+    {
+      "term_clusters": [
+        "Website rescue (conditional)"
+      ],
+      "primary_url": "/services/web-design/",
+      "possible_later_url": "/services/website-rescue/",
+      "rule": "Keep repair/migration questions in a scoped web-design section until a distinct priced, supported rescue offer exists."
+    }
+  ],
+  "pages": [
+    {
+      "url": "/",
+      "stage": "launch",
+      "type": "brand",
+      "primary_intent": "Find a premium custom website and SEO studio serving Buffalo and beyond",
+      "secondary_intent": [
+        "understand fit",
+        "see credible work",
+        "start an inquiry"
+      ],
+      "query_family": [
+        "Buffalo web design and SEO studio",
+        "custom website and SEO studio"
+      ],
+      "evidence_gate": "Real founder identity, actual capabilities, labeled work, true service area and a tested inquiry route",
+      "main_cta": "Discuss a project",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/pricing/",
+        "/work/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/services/web-design/",
+      "stage": "launch",
+      "type": "commercial",
+      "primary_intent": "Commission a custom website or redesign",
+      "secondary_intent": [
+        "web development",
+        "website redesign",
+        "mobile design",
+        "scope and ownership"
+      ],
+      "query_family": [
+        "web design Buffalo NY",
+        "website design Buffalo",
+        "web development Buffalo",
+        "Buffalo website redesign",
+        "custom website Erie County"
+      ],
+      "evidence_gate": "Actual scope, starting investment and exclusions, ownership and handoff, founder role, inspectable work or labeled demonstration",
+      "main_cta": "Discuss your website",
+      "links_to": [
+        "/pricing/",
+        "/work/",
+        "/process/",
+        "/guides/website-project-cost/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/services/seo/",
+      "stage": "launch",
+      "type": "commercial",
+      "primary_intent": "Hire ongoing SEO support",
+      "secondary_intent": [
+        "local SEO",
+        "technical SEO",
+        "Search Console work",
+        "SEO reporting"
+      ],
+      "query_family": [
+        "SEO services Buffalo NY",
+        "Buffalo SEO company",
+        "local SEO Buffalo",
+        "Erie County SEO services"
+      ],
+      "evidence_gate": "Actual work process, monthly capacity and exclusions, sample report or properly labeled owned-site evidence, no ranking promises",
+      "main_cta": "Discuss search priorities",
+      "links_to": [
+        "/pricing/",
+        "/guides/seo-work-and-reporting/",
+        "/work/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/pricing/",
+      "stage": "launch",
+      "type": "commercial",
+      "primary_intent": "Compare this studio's current website and SEO prices",
+      "secondary_intent": [
+        "what is included",
+        "payment milestones",
+        "care price if offered",
+        "how to obtain a scoped quote"
+      ],
+      "query_family": [
+        "Wonder and Method pricing",
+        "Buffalo web design cost",
+        "Buffalo SEO pricing"
+      ],
+      "evidence_gate": "Approved offer table with explicit scope, exclusions and estimate caveats; no invented market average",
+      "main_cta": "Request a scoped proposal",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/process/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/process/",
+      "stage": "launch",
+      "type": "decision_support",
+      "primary_intent": "Understand how a custom website or SEO engagement works",
+      "secondary_intent": [
+        "responsibilities",
+        "reviews and acceptance",
+        "handoff"
+      ],
+      "query_family": [
+        "website project process",
+        "SEO engagement process"
+      ],
+      "evidence_gate": "Real delivery stages and client obligations consistent with actual contracts and capacity",
+      "main_cta": "Talk through your project",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/pricing/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/work/",
+      "stage": "launch",
+      "type": "proof",
+      "primary_intent": "Inspect what the founder can actually do",
+      "secondary_intent": [
+        "web craft",
+        "SEO method",
+        "role and limitations"
+      ],
+      "query_family": [
+        "Wonder and Method work",
+        "Buffalo web design portfolio"
+      ],
+      "evidence_gate": "At least one real inspectable owned project or completed labeled demo; paid client outcomes only with permission; no empty cards",
+      "main_cta": "Discuss relevant work",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/about/",
+      "stage": "launch",
+      "type": "trust",
+      "primary_intent": "Learn who is responsible for strategy and delivery",
+      "secondary_intent": [
+        "experience",
+        "studio approach",
+        "location and reach"
+      ],
+      "query_family": [
+        "Wonder and Method founder",
+        "Wonder and Method studio"
+      ],
+      "evidence_gate": "Verified founder credentials and actual location/remote work model",
+      "main_cta": "Meet about your project",
+      "links_to": [
+        "/work/",
+        "/process/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/contact/",
+      "stage": "launch",
+      "type": "conversion",
+      "primary_intent": "Start a qualified project inquiry",
+      "secondary_intent": [
+        "fit",
+        "response expectations",
+        "privacy"
+      ],
+      "query_family": [
+        "contact Wonder and Method",
+        "Buffalo web designer consultation"
+      ],
+      "evidence_gate": "Form fields and privacy text approved; real end-to-end delivery test; no false response promise",
+      "main_cta": "Send project details",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/pricing/"
+      ]
+    },
+    {
+      "url": "/areas/erie-county/",
+      "stage": "launch",
+      "type": "service_area",
+      "primary_intent": "Check whether and how the online-only studio serves Erie County",
+      "secondary_intent": [
+        "Buffalo",
+        "West Seneca",
+        "Cheektowaga",
+        "other municipalities",
+        "remote project logistics"
+      ],
+      "query_family": [
+        "Erie County web design service area",
+        "Buffalo area website studio"
+      ],
+      "evidence_gate": "Plain online-only delivery model and concise municipality index; no office, in-person meeting, local case or travel claim",
+      "main_cta": "Check project fit",
+      "links_to": [
+        "/services/web-design/",
+        "/services/seo/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/guides/website-project-cost/",
+      "stage": "launch_if_evidence_ready",
+      "type": "editorial",
+      "primary_intent": "Understand the cost drivers of a custom website project",
+      "secondary_intent": [
+        "scope",
+        "content",
+        "integrations",
+        "maintenance"
+      ],
+      "query_family": [
+        "custom website cost Buffalo",
+        "website redesign cost buffalo",
+        "how much does a website cost",
+        "website redesign budget"
+      ],
+      "evidence_gate": "Studio's real scope/estimate examples, clearly distinguished from market prices",
+      "main_cta": "See current website scope and pricing",
+      "links_to": [
+        "/pricing/",
+        "/services/web-design/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/guides/seo-work-and-reporting/",
+      "stage": "launch_if_evidence_ready",
+      "type": "editorial",
+      "primary_intent": "Understand what monthly SEO work and reporting look like",
+      "secondary_intent": [
+        "Search Console",
+        "measurement",
+        "priorities",
+        "uncertainty"
+      ],
+      "query_family": [
+        "what does an SEO agency do monthly",
+        "SEO reporting example",
+        "Search Console SEO report"
+      ],
+      "evidence_gate": "Actual or explicitly illustrative report with no fictional client outcome",
+      "main_cta": "See SEO service scope",
+      "links_to": [
+        "/services/seo/",
+        "/pricing/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/guides/website-redesign-brief/",
+      "stage": "launch_if_evidence_ready",
+      "type": "editorial",
+      "primary_intent": "Prepare a useful brief for a custom website redesign",
+      "secondary_intent": [
+        "goals",
+        "content inventory",
+        "handoff",
+        "measurements"
+      ],
+      "query_family": [
+        "website redesign brief",
+        "website redesign checklist for small business",
+        "prepare for website redesign"
+      ],
+      "evidence_gate": "Founder-developed reusable template and real acceptance questions, reviewed for accuracy",
+      "main_cta": "Discuss your redesign",
+      "links_to": [
+        "/services/web-design/",
+        "/process/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/services/website-care/",
+      "stage": "conditional",
+      "type": "commercial",
+      "primary_intent": "Buy supported website maintenance and care",
+      "secondary_intent": [
+        "updates",
+        "restore",
+        "small edits",
+        "response hours"
+      ],
+      "query_family": [
+        "website maintenance Buffalo",
+        "website support Buffalo",
+        "website care Erie County"
+      ],
+      "evidence_gate": "Supported stack, written scope, real restore drill, report sample, response and cancellation terms verified; otherwise cover care briefly on Pricing and defer URL",
+      "main_cta": "Check care fit",
+      "links_to": [
+        "/pricing/",
+        "/services/web-design/",
+        "/contact/"
+      ]
+    },
+    {
+      "url": "/privacy/",
+      "stage": "launch_utility",
+      "type": "policy",
+      "primary_intent": "Understand actual inquiry and analytics data practices",
+      "query_family": [],
+      "evidence_gate": "Actual processors, retention, contact and privacy choices documented and reviewed",
+      "main_cta": "Contact about privacy",
+      "links_to": [
+        "/contact/"
+      ]
+    }
+  ],
+  "deferred_routes": [
+    {
+      "pattern": "/areas/{municipality}/",
+      "gate": "Real distinct local buying question, authorized firsthand project or relationship, original place-specific artifacts, observed inquiry/query demand, and a useful standalone page; no city-by-service matrix"
+    },
+    {
+      "pattern": "/services/website-rescue/",
+      "gate": "Distinct priced, supported repair offer with acceptance test and capacity; otherwise one web-design FAQ section"
+    },
+    {
+      "pattern": "/work/{real-project}/",
+      "gate": "Project details, role and permission verified; accurately label owned work, concept or paid client"
+    },
+    {
+      "pattern": "/services/web-development/ and /services/web-redesign/",
+      "gate": "Do not publish while intent and scope overlap web-design; reconsider only with distinct offer and evidence"
+    },
+    {
+      "pattern": "/buffalo-web-design/, /erie-county-web-design/, /seo-buffalo/, /seo-erie-county/",
+      "gate": "Do not publish as duplicate service targets; route relevant terms to canonical service URLs"
+    }
+  ],
+  "source_urls": [
+    "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+    "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing",
+    "https://developers.google.com/search/docs/essentials/spam-policies"
+  ],
+  "v5_build_rule": "Keyword primary_url is intended destination, not a publish instruction. Resolve to the listed published fallback while a route is gated. publication_stage is not a quota. Core is9commercial+privacy; up to3readyguides and conditionalCare. No automaticrescue/municipality/project URLs."
+}

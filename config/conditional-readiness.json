@@ -1,0 +1,65 @@
+{
+  "status": "Six guides published under the owner instruction; Care remains subject to actual coverage",
+  "launch_guides": [
+    {
+      "path": "/guides/website-project-cost/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    },
+    {
+      "path": "/guides/website-redesign-brief/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    },
+    {
+      "path": "/guides/local-seo-profile-eligibility/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    },
+    {
+      "path": "/guides/seo-work-and-reporting/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    },
+    {
+      "path": "/guides/website-migration-checklist/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    },
+    {
+      "path": "/guides/custom-website-or-template/",
+      "implementation": "src/journal.mjs",
+      "reviewedAt": "2026-10-14",
+      "reviewedBy": "Codex editorial review under owner publication instruction",
+      "evidenceReference": "evidence/editorial-release.json",
+      "status": "published_noindex"
+    }
+  ],
+  "care": {
+    "path": "/services/website-care/",
+    "implementation": "src/conditional.mjs",
+    "fallback": "/pricing/",
+    "remaining": "Agree actual staffed hours, timezone, closures, contact, alert recipient and escalation; record current service-specific form and recovery evidence before enrollment."
+  },
+  "backlog": {
+    "authority": "authority/v5/content-plan.json",
+    "briefs_preserved": 12,
+    "municipality_matrix": false
+  },
+  "enable_rule": "Dated editorial evidence required for guide publication. Care additionally requires actual coverage and operational evidence. Search indexing is separately disabled by owner instruction."
+}

@@ -1,0 +1,53 @@
+{
+  "version": "selected-a-premium-preview-20261014",
+  "ownerSelection": "A \u2014 Newsreader display and wordmark; Manrope body and interface",
+  "status": "Implemented for local review; not a production release approval",
+  "displayFont": "Newsreader",
+  "bodyFont": "Manrope",
+  "colors": {
+    "ink": "#0E1B2A",
+    "paper": "#F4F7FB",
+    "blue": "#4556DB",
+    "lightBlue": "#9BB2FF",
+    "slate": "#526174"
+  },
+  "edition": "buffalo-dusk",
+  "sourceReference": "evidence/brand-reset-20261014/identity-spec.json",
+  "implementation": [
+    "src/assets/premium.css",
+    "src/premium-site.mjs",
+    "src/editions.mjs"
+  ],
+  "contrastPairs": [
+    {
+      "name": "body",
+      "foreground": "#0E1B2A",
+      "background": "#F4F7FB"
+    },
+    {
+      "name": "secondary text",
+      "foreground": "#526174",
+      "background": "#F4F7FB"
+    },
+    {
+      "name": "primary action",
+      "foreground": "#F4F7FB",
+      "background": "#4556DB"
+    },
+    {
+      "name": "dark accent",
+      "foreground": "#9BB2FF",
+      "background": "#0E1B2A"
+    }
+  ],
+  "navigationDecision": {
+    "source": "Selected homepage direction and owner instruction to keep the identity consistent throughout the entire website on 2026-10-14",
+    "primary": [
+      "Work",
+      "Services & pricing",
+      "About",
+      "Start a project"
+    ],
+    "supporting": "Web Design, Search, Process, Erie County, Guides and Privacy remain available in the shared footer; detailed offers are one or two clicks from the primary navigation. This selected design supersedes the older six-link navigation layout without removing routes."
+  }
+}

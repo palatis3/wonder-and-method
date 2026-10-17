@@ -1,0 +1,13 @@
+.county-section{padding-block:clamp(2.8rem,6vw,5rem)}
+.county-section .section-heading{max-width:850px}.county-section .section-heading h2{max-width:22ch}
+.county-intro-copy,.county-reading{max-width:820px;font-size:1.05rem;line-height:1.8}
+.county-jump{flex-wrap:wrap}.county-example-label{margin-top:2.5rem;font-size:.85rem;color:var(--muted,#637178)}
+.county-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:1.5rem 0 2rem}
+.county-cards article{border-top:1px solid #bac2c2;padding-top:1.4rem}.county-cards h3{font-size:1.2rem;line-height:1.35;margin:0 0 1rem}.county-cards p{font-size:.98rem;line-height:1.75}
+.county-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2rem 0}.county-directory h3{font-size:1rem;border-bottom:1px solid #bac2c2;padding-bottom:.8rem}
+.county-place-list{list-style:none;padding:0;columns:2;column-gap:1rem}.county-place-list li{break-inside:avoid;margin:0 0 .6rem;font-size:.94rem;line-height:1.5}
+.county-geography-note{max-width:900px;border-left:3px solid #a05a3b;padding-left:1.2rem;font-size:.95rem;line-height:1.8}
+.county-communities,.county-faq details{border-block-start:1px solid #bac2c2;padding:1.2rem 0}.county-communities summary,.county-faq summary{cursor:pointer;font-weight:600;line-height:1.5}.county-communities li{margin-block:.7rem;line-height:1.65}.county-faq{max-width:850px}.county-faq p{max-width:75ch;line-height:1.8}
+.county-sources{font-size:.8rem;line-height:1.7;margin-top:2rem}.county-hub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem}.county-hub-grid article{border-top:1px solid #bac2c2;padding:1.8rem 0 2.3rem}.county-hub-grid h2{font-size:clamp(1.7rem,3vw,2.6rem);margin:.5rem 0 1rem}.county-hub-grid .eyebrow{font-size:.72rem}.county-reading .button{margin:1rem 1.5rem 1rem 0}
+@media(max-width:1000px){.county-directory{grid-template-columns:1fr 1fr}.county-directory>div:first-child{grid-column:1/-1}.county-cards{gap:1rem}}
+@media(max-width:700px){.county-cards,.county-directory,.county-hub-grid{grid-template-columns:1fr}.county-directory>div:first-child{grid-column:auto}.county-directory{gap:.8rem}.county-cards article{padding-top:1.2rem}.county-place-list{columns:2}.county-section{padding-block:2.4rem}.county-intro-copy,.county-reading{font-size:1rem}.county-hub-grid article{padding-block:1.5rem}.county-jump{gap:.7rem 1rem}}

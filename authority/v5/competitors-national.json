@@ -1,0 +1,493 @@
+{
+  "meta": {
+    "title": "National competitor and subscription comparables",
+    "checked_date": "2026-10-13",
+    "currency": "USD",
+    "scope": "Current official provider pages reachable by an Erie County, New York buyer. The set deliberately mixes one-time custom websites, managed care, design subscriptions, and SEO retainers so that unlike offers are not treated as equivalents.",
+    "method": "Provider asking prices and scope statements were checked on official pages. No quote was requested, no purchase was made, and no completed customer invoice was observed. Posted minimums, estimates, and illustrative 12/24-month arithmetic are labeled in each row.",
+    "v2_reused": [
+      "The prior Buffalo Web, Jamie Stott, Driram, Buffalo Creative Group, ROC Web Tech, Gung Ho Local, Holtz Digital, Mainstreethost, Butter, and ROC SEO evidence in work/plan-v2/02-competitor-pricing.csv was reviewed.",
+      "Mainstreethost and Butter were refreshed against their current official pricing and cancellation pages here; local Erie/Buffalo rows remain in V2 for the local-competitor stream."
+    ],
+    "v2_local_context": [
+      "Buffalo Web SmartStart remains a useful local financed-build comparator at $299.99 upfront + $99/month with a stated 24-month commitment; V2 calculated $1,487.99 paid in the first 12 months and $2,675.99 over 24 months, excluding unknown extras.",
+      "Driram's V2 row remains a useful local coded-build comparator at $1,849 for six pages + $39/month care; V2 calculated $2,317/$2,785 over 12/24 months, with care timing and later infrastructure uncertain."
+    ],
+    "interpretation_rule": "Every provider row is a current provider asking-price observation. observed_buyer_payment is null unless a completed transaction is independently evidenced; no market median is inferred from these rows."
+  },
+  "competitors": [
+    {
+      "id": "nat-01-b12",
+      "provider": "B12",
+      "reach": "United States service businesses; B12 says its done-for-you route is available only to US service-based companies.",
+      "offer_type": "AI website platform with optional expert setup and recurring hosting",
+      "primary_offer": "Expert Setup Advanced",
+      "posted_pricing": {
+        "setup_usd": 1999,
+        "monthly_usd": 399,
+        "annual_monthly_equivalent_usd": 339,
+        "billing": "Monthly or annual subscription after one-time setup",
+        "low_monthly_self_serve": {
+          "website_monthly_usd": 24,
+          "website_annual_monthly_equivalent_usd": 20,
+          "description": "Self-serve Website plan; no setup fee"
+        }
+      },
+      "12_month_fee_subtotal_usd": {
+        "dify_advanced_monthly_billing": 6787,
+        "dify_advanced_annual_billing": 6067,
+        "basis": "$1,999 setup + 12 subscription payments; excludes tax and unpriced extras"
+      },
+      "24_month_fee_subtotal_usd": {
+        "dify_advanced_monthly_billing": 11575,
+        "dify_advanced_annual_billing": 10135,
+        "basis": "$1,999 setup + 24 subscription payments; illustrative continuation, not a stated minimum"
+      },
+      "setup_term_cancel": "DIY plans state no setup fee. Expert Setup carries a $1,999 one-time setup. The reviewed pricing/help pages do not state a minimum term or refund window for the selected plan; cancellation ends the active subscription service and hosting.",
+      "ownership_handoff": "The domain belongs to the customer, but B12 states the site is unpublished after cancellation and that website files/images cannot be exported after cancellation; contacts and form submissions must be exported while active. This is a portability limitation even where domain ownership remains with the buyer.",
+      "hosting_domain": "Hosting, mobile-optimized site, custom domain, unlimited bandwidth and storage are included while subscribed. A B12-bought domain may be managed through its registrar partner; a customer-owned domain can be pointed elsewhere.",
+      "content_revisions": "Advanced includes design and copy update requests and monthly blog content sent for review and automatic publication. The page does not publish a page count, revision-round limit, or monthly edit-hour allowance.",
+      "performance_seo": "Mobile-optimized site, website and SEO analytics, metrics tracking, account-review consultations, and ongoing SEO support are listed on Advanced. No ranking or conversion guarantee is stated.",
+      "design_specificity": "Expert designers and copywriters handle setup, but the low monthly self-serve plan is an AI/editor platform and the expert page does not promise a bespoke code repository or a fixed creative process. Treat it as a hosted platform service, not a directly comparable custom-coded project.",
+      "comparability": "Useful loss-leader and portability comparator; the $24/$20 self-serve price should never be framed as the cost of a premium custom website. The DIFY total is closer to a hosted done-for-you product but still couples the site to the platform.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://support.b12.io/en/b12-website-subscription-plans-and-pricing",
+          "claim": "Current DIY and Expert Setup pricing, features, $1,999 setup, and US service-business eligibility."
+        },
+        {
+          "url": "https://support.b12.io/en/what-happens-if-you-leave-b12",
+          "claim": "Cancellation unpublishes the site; export limitations and domain ownership."
+        },
+        {
+          "url": "https://www.b12.io/contractor-website-design/website-cost/",
+          "claim": "DIFY route and no-setup-fee distinction."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-02-finewright",
+      "provider": "FineWright",
+      "reach": "Miami-based studio serving small businesses across the United States.",
+      "offer_type": "Public fixed-price custom website builds plus optional care",
+      "primary_offer": "Professional website plus Tend care",
+      "posted_pricing": {
+        "professional_build_usd": 1499,
+        "premium_build_starting_usd": 2999,
+        "tend_care_monthly_usd": 49,
+        "cultivate_care_monthly_usd": 149,
+        "flourish_care_monthly_usd": 299,
+        "setup_usd": 0,
+        "billing": "One-time build; care billed monthly or annually"
+      },
+      "12_month_fee_subtotal_usd": {
+        "professional_plus_tend": 2087,
+        "premium_plus_flourish": 6587,
+        "basis": "Build plus 12 care payments; optional care is not required by the build page"
+      },
+      "24_month_fee_subtotal_usd": {
+        "professional_plus_tend": 2675,
+        "premium_plus_flourish": 10175,
+        "basis": "Build plus 24 care payments; illustrative continuation"
+      },
+      "setup_term_cancel": "No separate setup fee is posted. Professional is up to five custom pages with four free edits and about two-week delivery; Premium is scoped to exact needs. Care is billed monthly, with cancellation anytime and no long lock-in. The build refund language covers a refundable deposit before work starts and a first-direction miss, subject to its policy.",
+      "ownership_handoff": "The reviewed pricing page does not state repository ownership, source-file delivery, or a portability handoff for the build. It does state fixed quotes and a hand-coded build; obtain written ownership/export terms before using it as a direct custom-site comparator.",
+      "hosting_domain": "Tend care includes managed hosting, backups, security and uptime monitoring. Domain handling is not specified on the pricing page.",
+      "content_revisions": "Professional includes copywriting help and four free edits; Basic includes two. Premium page count, revision count, and content-production limits are scoped rather than posted.",
+      "performance_seo": "Professional lists full on-page and technical SEO, motion/interactions, and easy-to-edit setup. Tend covers hosting, backups, security and uptime; Cultivate adds monthly SEO upkeep and performance tuning; Flourish adds full SEO/content, conversion testing and new pages/features.",
+      "design_specificity": "Provider explicitly says custom, never templated, bespoke design and hand-coded delivery. This is a useful lower-cost custom reference, but the public Premium price is only a floor and may not match a high-art-direction studio build.",
+      "comparability": "Good transparent low-to-mid custom comparator and a realistic $49 care loss leader. Do not equate its care subscription with new custom design capacity; the care hours and feature scope are not the same as a new site project.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://finewright.com/pricing",
+          "claim": "Public build, care, edits, SEO, animation, performance, cancellation and add-on pricing."
+        },
+        {
+          "url": "https://finewright.com/terms",
+          "claim": "Linked provider terms; detailed contract terms require review before relying on ownership or refunds."
+        },
+        {
+          "url": "https://finewright.com/refunds",
+          "claim": "Linked refund policy for deposit and first-design-direction language."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-03-studio-dianna",
+      "provider": "Studio Dianna",
+      "reach": "Los Angeles-based, serving clients nationwide.",
+      "offer_type": "Custom strategy, design, hand-built website and SEO foundation",
+      "primary_offer": "Full multi-page custom website",
+      "posted_pricing": {
+        "starter_five_page_usd": 2400,
+        "full_multi_page_starting_usd": 5000,
+        "care_monthly_range_usd": [
+          99,
+          249
+        ],
+        "setup_usd": 0,
+        "billing": "Fixed project quote; no retainer for build"
+      },
+      "12_month_fee_subtotal_usd": {
+        "build_only": 5000,
+        "build_plus_optional_care_range": [
+          6188,
+          7988
+        ],
+        "basis": "$5,000 build plus 12 months at the published $99-$249 care range; care scope/prerequisite not fully reviewed"
+      },
+      "24_month_fee_subtotal_usd": {
+        "build_only": 5000,
+        "build_plus_optional_care_range": [
+          7376,
+          10976
+        ],
+        "basis": "$5,000 build plus 24 months at the published $99-$249 care range; illustrative only"
+      },
+      "setup_term_cancel": "The custom page says fixed quote before work, 2-3 weeks starter or 4-6 weeks full multi-page, and no retainer. Build cancellation, deposit, and refund terms are not posted on the reviewed service page. Ongoing care is advertised separately at $99-$249/month.",
+      "ownership_handoff": "Domain, hosting, and accounts stay in the client's name; every login is supplied at launch with an editing walkthrough. This is unusually clear portability evidence for a custom-site comparator.",
+      "hosting_domain": "Client-named domain, hosting and accounts; platform recommendation may be Webflow, WordPress or a hand-built modern stack. Provider does not require a named platform in the public offer.",
+      "content_revisions": "Copy shaping and content structure are included. Starter is up to five pages; two weeks of post-launch tweaks are included. A full multi-page revision-round cap is not posted.",
+      "performance_seo": "Semantic headings, unique titles/descriptions, clean URLs, schema, sitemap, fast pages, responsive build, analytics events, HTTPS, forms, 404 page and a pre-launch checklist are in the build. The redesign page also describes speed/Core Web Vitals and redirect-safe migration.",
+      "design_specificity": "Strongly custom: design from scratch, custom design system, page structure mapped to customer searches, hand-built responsive site and a live review process. This is the clearest direct quality/scope comparator to a premium Wonder and Method build.",
+      "comparability": "Use the $5,000 full-site floor as a custom-quality anchor, while treating the $2,400 starter price as a smaller scope. Its public page does not make the amount a completed customer price or an industry median.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://studiodianna.com/website-design",
+          "claim": "Custom-site price, timeline, ownership, page/content scope, SEO foundation and launch checklist."
+        },
+        {
+          "url": "https://studiodianna.com/services",
+          "claim": "Service overview and $99-$249/month care range."
+        },
+        {
+          "url": "https://studiodianna.com/website-redesign",
+          "claim": "Redirect, speed and Core Web Vitals comparator for redesign work."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-04-aliante",
+      "provider": "Aliante Web Services",
+      "reach": "North Las Vegas-based team serving businesses throughout the United States.",
+      "offer_type": "Custom website plus month-to-month managed hosting/care and local SEO",
+      "primary_offer": "Custom web design + management + local SEO",
+      "posted_pricing": {
+        "custom_build_starting_usd": 3500,
+        "management_monthly_usd": 250,
+        "management_plus_local_seo_monthly_usd": 599,
+        "setup_usd": 0,
+        "billing": "One-time starting build followed by month-to-month management or SEO"
+      },
+      "12_month_fee_subtotal_usd": {
+        "build_plus_management": 6500,
+        "build_plus_management_and_local_seo": 10688,
+        "basis": "Starting build plus 12 monthly payments; actual quote depends on pages, integrations and content"
+      },
+      "24_month_fee_subtotal_usd": {
+        "build_plus_management": 9500,
+        "build_plus_management_and_local_seo": 17876,
+        "basis": "Starting build plus 24 monthly payments; illustrative continuation"
+      },
+      "setup_term_cancel": "The build is a starting floor and receives a written quote after a short call. Management and management-plus-SEO are month-to-month with no minimum term and cancel anytime. Larger redesigns, ecommerce and integrations are quoted separately.",
+      "ownership_handoff": "The reviewed pages do not state code/repository ownership for a new build. The management FAQ says a client can keep a current domain and email and that Aliante can manage sites hosted elsewhere; this does not establish a new-site export right.",
+      "hosting_domain": "The $250 management plan includes hosting, SSL, backups, monitoring, domain/DNS/email administration and updates. Hosting is not required for every supported site, according to the FAQ.",
+      "content_revisions": "Unlimited content updates are posted, but the FAQ defines them as roughly 30-minute text/image/service/hour/staff/promotion changes; larger sections, stores, redesigns and new functionality are separately quoted.",
+      "performance_seo": "Management covers security, backups, speed, Core Web Vitals, mobile checks, uptime and forms. The $599 plan adds local keyword research, Google/Bing/Yelp profiles, citations, reviews, technical/on-page SEO, AI search optimization, one SEO blog article monthly, 10-20 tracked keywords and reporting.",
+      "design_specificity": "The build page describes custom development, mobile-first/conversion layouts, analytics and performance, but the public $3,500 number is a floor rather than a fixed scope. It is a useful integrated-care comparator, not a like-for-like creative-art-direction offer.",
+      "comparability": "Strong evidence that buyers can buy care and local SEO without tying those subscriptions to a new build. The $599 rate is an asking price for a broad local plan, not evidence of output quality or ranking results.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.aliantewebdesign.com/pricing/",
+          "claim": "Starting build, management and local SEO prices and what moves the quote."
+        },
+        {
+          "url": "https://www.aliantewebdesign.com/services/website-maintenance/",
+          "claim": "Management/SEO inclusions, 30-minute update boundary, hosting/domain administration and cancellation."
+        },
+        {
+          "url": "https://www.aliantewebdesign.com/services/web-design/",
+          "claim": "Custom development, mobile/performance/analytics scope and nationwide reach."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-05-manypixels",
+      "provider": "ManyPixels",
+      "reach": "Remote design subscription available to US Eastern, Central European and Indochina time zones.",
+      "offer_type": "Design subscription with web design, landing pages, motion and graphics",
+      "primary_offer": "Advanced design subscription",
+      "posted_pricing": {
+        "monthly_usd": 699,
+        "setup_usd": 0,
+        "billing": "Flat monthly; quarterly and yearly views also offered"
+      },
+      "12_month_fee_subtotal_usd": {
+        "subscription_only": 8388,
+        "basis": "$699 x 12"
+      },
+      "24_month_fee_subtotal_usd": {
+        "subscription_only": 16776,
+        "basis": "$699 x 24; assumes unchanged monthly rate"
+      },
+      "setup_term_cancel": "No contracts are advertised. The provider says cancel anytime with no fees; a $10/month pause keeps file access.",
+      "ownership_handoff": "Provider states complete ownership of delivered files, with native Adobe/Figma/Canva source files plus PNG/JPEG/SVG/PDF. This is stronger file ownership language than many subscription competitors.",
+      "hosting_domain": "No website hosting, domain registration, deployment, or ongoing SEO is included in the reviewed design plan. Web design/landing pages are listed as design services.",
+      "content_revisions": "Unlimited requests and revisions, but Advanced has one daily output and a project queue; the provider says complex work such as a full website spans multiple days. Unlimited does not mean simultaneous production or unlimited hours.",
+      "performance_seo": "No ongoing SEO, performance monitoring, hosting, accessibility acceptance test, or site launch guarantee is posted for this plan. Motion graphics and video editing are available as design services, subject to the queue.",
+      "design_specificity": "Custom design files are produced by a team with project manager and quality controller; clients may choose a designer on relevant plans. It is a design-production subscription, not a fixed-scope finished website or SEO retainer.",
+      "comparability": "Useful subscription-capacity comparator for design requests and revisions. The practical unit is one daily output, so its price cannot be divided into an unlimited number of finished websites.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.manypixels.co/pricing",
+          "claim": "Advanced price, one daily output, web design scope, unlimited requests/revisions, source files and ownership."
+        },
+        {
+          "url": "https://www.manypixels.co/help/pause-cancel-refund",
+          "claim": "Pause/cancel behavior and file access."
+        },
+        {
+          "url": "https://www.manypixels.co/help/ownership-rights-terms",
+          "claim": "Native source files and ownership terms."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-06-designjoy",
+      "provider": "Designjoy",
+      "reach": "Remote subscription provider headquartered in Phoenix, Arizona.",
+      "offer_type": "Single-designer design subscription with Webflow development",
+      "primary_offer": "Monthly Club",
+      "posted_pricing": {
+        "current_monthly_usd": 4995,
+        "displayed_standard_monthly_usd": 5995,
+        "setup_usd": 0,
+        "billing": "Monthly club; current page labels $4,995 a limited-time lifetime discount"
+      },
+      "12_month_fee_subtotal_usd": {
+        "current_price": 59940,
+        "standard_displayed_price": 71940,
+        "basis": "Monthly price x 12; subscription-only"
+      },
+      "24_month_fee_subtotal_usd": {
+        "current_price": 119880,
+        "standard_displayed_price": 143880,
+        "basis": "Monthly price x 24; illustrative continuation"
+      },
+      "setup_term_cancel": "No setup fee is posted. Pause or cancel anytime; the FAQ says one month or one year is possible. A first-week refund is 75% if not satisfied, while refunds are not available after the first week or for completed work.",
+      "ownership_handoff": "Homepage says every design is 100% yours. It does not state a repository export process or named native source-file formats on the reviewed page; clarify handoff for Webflow development and licensed assets.",
+      "hosting_domain": "Webflow development is listed, but the subscription page does not say that hosting, domain, maintenance, or a finished multi-page site is included. The FAQ says a subscription is not necessary to maintain a website.",
+      "content_revisions": "One request at a time, average 48-hour delivery, and revisions continue until the client is satisfied. Exclusions include 3D modeling, animated graphics, video, complex packaging, extensive print and InDesign documents.",
+      "performance_seo": "No SEO deliverable, Core Web Vitals acceptance test, analytics setup, or ranking/traffic commitment is listed on the subscription page.",
+      "design_specificity": "Every design is described as unique and made especially for the client, with senior-level design and a limited roster. The delivery model is a one-request queue run by one designer, so a multi-page custom site is a sequence of requests rather than a guaranteed fixed project.",
+      "comparability": "Premium design-subscription ceiling rather than a website quote. Its price demonstrates that subscription design can be expensive while still having queue and exclusion limits; do not compare it to a bounded $6,000 website by monthly arithmetic alone.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.designjoy.co/",
+          "claim": "Current $4,995/$5,995 price, queue, delivery, Webflow, ownership language and included scope."
+        },
+        {
+          "url": "https://www.designjoy.co/?via=designup",
+          "claim": "FAQ for exclusions, refund window, pause/cancel and one-month use."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-07-hoth",
+      "provider": "The HOTH",
+      "reach": "US-based remote SEO provider with local and national programs.",
+      "offer_type": "Managed SEO, local SEO and AI-search subscriptions",
+      "primary_offer": "Managed SEO",
+      "posted_pricing": {
+        "monthly_starting_usd": 1000,
+        "setup_usd": 0,
+        "billing": "Monthly; custom pricing based on scope",
+        "other_posted_entries": {
+          "review_reputation_per_location_monthly": 275,
+          "ai_discover_monthly": [
+            1500,
+            2500,
+            5000
+          ]
+        }
+      },
+      "12_month_fee_subtotal_usd": {
+        "minimum_at_starting_price": 12000,
+        "basis": "$1,000 x 12; custom scope may be higher"
+      },
+      "24_month_fee_subtotal_usd": {
+        "minimum_at_starting_price": 24000,
+        "basis": "$1,000 x 24; illustrative continuation"
+      },
+      "setup_term_cancel": "No setup fee is posted for Managed SEO. All managed programs are monthly with no long-term contracts; provider says pause, scale, or cancel at any time.",
+      "ownership_handoff": "Ownership of content, links, reports, accounts, and handoff after cancellation is not established on the reviewed pages. The provider reports results and uses a dedicated campaign manager, but that is not a transfer promise.",
+      "hosting_domain": "No website build, domain, hosting, or maintenance is included in the Managed SEO offer.",
+      "content_revisions": "Managed SEO is custom and can be multi-channel or scoped to content, links, technical SEO, or local. The public starting price does not promise a fixed post count, link count, page count, or revision allowance.",
+      "performance_seo": "Dedicated strategist/campaign manager, technical SEO for speed/accessibility/visibility, link building, content, local SEO, reporting, and custom strategy are listed. Provider says results vary and does not promise rankings.",
+      "design_specificity": "No custom website design deliverable; SEO work assumes a site or existing assets to optimize. The $275 reputation entry point is a standardized local activity, not a full SEO strategy or website service.",
+      "comparability": "Useful transparent monthly SEO floor and scope ladder. The $1,000 minimum is not proof that Wonder and Method should match it; compare the proposed backlog and hours, not the label ‘managed.’",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.thehoth.com/managed-services/",
+          "claim": "Managed-program pricing, no-long-term-contract statement and custom program description."
+        },
+        {
+          "url": "https://www.thehoth.com/managed-seo/",
+          "claim": "$1,000/$2,500/$5,000/$10,000 managed tiers and technical/content/link scope."
+        },
+        {
+          "url": "https://www.thehoth.com/local-services/",
+          "claim": "Local GBP/review/citation/content products and $1,000 managed-local floor."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-08-webfx",
+      "provider": "WebFX",
+      "reach": "US full-service agency headquartered in Harrisburg, Pennsylvania, with locations including New York and remote service.",
+      "offer_type": "Custom managed SEO with content, technical, local and reporting teams",
+      "primary_offer": "SEO plans starting at $3,000/month",
+      "posted_pricing": {
+        "monthly_starting_usd": 3000,
+        "alternate_progressive_package_starting_usd": 2900,
+        "setup_usd": null,
+        "billing": "Monthly service with initial six-month commitment"
+      },
+      "12_month_fee_subtotal_usd": {
+        "illustrative_at_3000": 36000,
+        "basis": "$3,000 x 12; initial six months are the stated commitment, not a stated 12-month obligation"
+      },
+      "24_month_fee_subtotal_usd": {
+        "illustrative_at_3000": 72000,
+        "basis": "$3,000 x 24; assumes unchanged continuation after minimum"
+      },
+      "setup_term_cancel": "The current service page states an initial six-month commitment. Post-minimum cancellation/refund terms are not posted on the reviewed page. The pricing page shows a six-month progressive option with the first month at $2,900, but plan selection and exact quote require contact.",
+      "ownership_handoff": "Ownership of SEO copy, design work, analytics, reports, links, and handoff is not established in the reviewed public pages. No website hosting is promised in the SEO price.",
+      "hosting_domain": "No website build, hosting, or domain inclusion is stated in this SEO offer.",
+      "content_revisions": "Custom strategy includes on-page SEO with copywriting and implementation. Previewed packages state up to 30, 40, 50 or 60 pages optimized and keyphrase counts up to 150-300, but the actual custom plan, revision policy and content volume remain quote-dependent.",
+      "performance_seo": "Initial audit/action plan, data-backed strategy, on-page and technical SEO, copywriting, content analytics and ROI reporting are advertised; WebFX says it measures rankings, traffic, leads and sales. No ranking guarantee is stated.",
+      "design_specificity": "Design and CRO teams support SEO, but the offer is a large-agency SEO service, not a posted custom website build or a directly comparable three-page creative project.",
+      "comparability": "Useful high-end SEO ceiling and term-risk comparator. The six-month commitment changes cash exposure; a buyer should obtain the full deliverable schedule and cancellation clause before comparing it to a month-to-month plan.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.webfx.com/seo/services/",
+          "claim": "$3,000/month starting price, initial six-month commitment, strategy, teams, reporting and no-guarantee context."
+        },
+        {
+          "url": "https://www.webfx.com/seo/pricing/",
+          "claim": "$2,900 progressive monthly option, custom SEO highlights and package preview."
+        },
+        {
+          "url": "https://www.webfx.com/seo/services/organic/",
+          "claim": "Organic SEO service model, custom strategy and local/traditional SEO distinctions."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-09-mainstreethost",
+      "provider": "Mainstreethost",
+      "reach": "Buffalo-headquartered provider with remote service and national packages.",
+      "offer_type": "Packaged and custom SEO subscriptions",
+      "primary_offer": "SEO Premium",
+      "posted_pricing": {
+        "monthly_usd_when_billed_annually": 449,
+        "custom_starting_monthly_usd_when_billed_annually": 999,
+        "setup_usd": null,
+        "billing": "Annual billing display; exact term/refund terms not shown on reviewed page"
+      },
+      "12_month_fee_subtotal_usd": {
+        "premium": 5388,
+        "basis": "$449 x 12 at the advertised annual-billing equivalent"
+      },
+      "24_month_fee_subtotal_usd": {
+        "premium": 10776,
+        "basis": "$449 x 24 assuming unchanged renewal; actual annual terms/refunds unknown"
+      },
+      "setup_term_cancel": "No setup fee, minimum term, cancellation or refund language was established on the reviewed pricing page. The displayed rate is explicitly when billed annually, so it should not be presented as a freely cancellable $449 monthly plan.",
+      "ownership_handoff": "No website build ownership or SEO-content handoff terms are stated on the reviewed package page. Reporting and account access need written confirmation.",
+      "hosting_domain": "Hosting and domain are not listed as included in SEO Premium.",
+      "content_revisions": "Package page gives broad local SEO, technical SEO, analytics, speed, schema, penalty recovery, GBP, citations and localized-content categories, but no exact content count, page count, revision rule, or implementation hours for Premium.",
+      "performance_seo": "Local search, GBP, citation setup/optimization, localized content, audits, speed optimization, schema, penalty recovery, analytics and reporting are listed across the SEO program; exact tier allocation is incomplete.",
+      "design_specificity": "This is SEO only; it does not promise custom website design. Mainstreethost also advertises custom SEO starting at $999/month, which shows the $449 Premium floor is not the full-service ceiling.",
+      "comparability": "Good lower-cost SEO anchor and local Buffalo awareness, but scope opacity makes price matching unsound. Treat $449 as a posted annual-billing floor, not a complete equivalent to a $900 implementation-led SEO plan.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.mainstreethost.com/seo-packages/",
+          "claim": "Current $149/$249/$449/$999 annual-billing starts, local/technical/analytics scope, Buffalo location and no ranking timetable claim."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    },
+    {
+      "id": "nat-10-butter",
+      "provider": "Butter Marketing",
+      "reach": "Remote provider with an explicit Buffalo SEO page and national GEO/SEO offering.",
+      "offer_type": "GEO and SEO subscription",
+      "primary_offer": "GEO+SEO",
+      "posted_pricing": {
+        "monthly_usd": 799,
+        "geo_only_monthly_usd": 399,
+        "setup_usd": 0,
+        "billing": "Monthly option; annual plan billed monthly creates a 12-month commitment"
+      },
+      "12_month_fee_subtotal_usd": {
+        "geo_plus_seo": 9588,
+        "basis": "$799 x 12 on monthly option"
+      },
+      "24_month_fee_subtotal_usd": {
+        "geo_plus_seo": 19176,
+        "basis": "$799 x 24 assuming unchanged monthly renewal"
+      },
+      "setup_term_cancel": "Monthly plans have no contract and can be canceled before the next renewal; started billing cycles are nonrefundable. The cancellation policy says an annual plan billed monthly commits to 12 months and may require the rate difference or remaining balance on early exit.",
+      "ownership_handoff": "The reviewed pricing and cancellation pages do not state ownership/export of AI articles, backlinks, analytics data, or account assets. Confirm what remains usable after cancellation.",
+      "hosting_domain": "No website hosting, domain, or custom website build is listed. GEO+SEO requires backend access for on-page and analytics implementation.",
+      "content_revisions": "GEO+SEO lists eight AI-generated articles published monthly, unlimited on-page optimization, one quality backlink monthly, technical fixes, and an analytics dashboard with 85+ integrations. Article revisions, approval workflow, and quality/placement controls are not quantified.",
+      "performance_seo": "Technical fixes include broken links and crawl issues; dashboard includes Analytics and Search Console; monthly delivery reports and prompt testing are included. Provider explicitly does not guarantee placement in ChatGPT or other search engines.",
+      "design_specificity": "No custom website design or visual identity work is included. This is a content/technical/off-page search subscription whose low monthly price should not be used to price a custom website project.",
+      "comparability": "Useful Erie-accessible monthly SEO/GEO floor. The 8-article promise and one backlink are materially different from an implementation-led, evidence-based backlog; article volume alone is not equivalent to SEO quality.",
+      "observed_buyer_payment": null,
+      "evidence_type": "Current provider asking price; no completed transaction verified",
+      "sources": [
+        {
+          "url": "https://www.buttermarketing.com/pricing",
+          "claim": "$399 GEO and $799 GEO+SEO prices, scope, no-contract option and access/guarantee FAQ."
+        },
+        {
+          "url": "https://www.buttermarketing.com/cancellation-policy",
+          "claim": "Renewal, nonrefund, monthly cancellation and annual-billed-monthly commitment terms."
+        },
+        {
+          "url": "https://www.buttermarketing.com/cities/buffalo-seo",
+          "claim": "Buffalo availability and current package details."
+        }
+      ],
+      "checked_date": "2026-10-13"
+    }
+  ]
+}

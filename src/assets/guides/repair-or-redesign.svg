@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="850" viewBox="0 0 360 850" role="img" aria-labelledby="title desc">
+  <title id="title">Keep, fix, rework or rebuild?</title>
+  <desc id="desc">First confirm the visitor task and access. If either is unknown, record gaps and obtain authorized access. If the visitor task works, keep the useful site. If a supported contained correction and retest are known, fix and retest. Otherwise diagnose whether the current site can support changed requirements: rework it if suitable, or scope a rebuild if needed. Compare approved scope and remaining risk; this tree does not give a price or guarantee.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4556db"/></marker></defs>
+  <rect width="360" height="850" rx="12" fill="#f8f7f2"/>
+  <g fill="none" stroke="#4556db" stroke-width="2.5" marker-end="url(#arrow)">
+    <path d="M210 64H225"/><path d="M110 112V151"/><path d="M210 202H225"/>
+    <path d="M110 250V291"/><path d="M210 354H225"/><path d="M110 416V461"/>
+    <path d="M180 584V606H92V635"/><path d="M180 606H267V635"/>
+    <path d="M92 728V752H267V728M180 752V782"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#0e1b2a" text-anchor="middle">
+    <rect x="10" y="16" width="200" height="96" rx="9" fill="#e4ebe2"/>
+    <text x="110" y="53" font-size="21" font-weight="700"><tspan x="110">Task and access</tspan><tspan x="110" dy="29">known?</tspan></text>
+    <rect x="230" y="16" width="120" height="96" rx="9" fill="#f3e8d4"/>
+    <text x="290" y="43" font-size="20"><tspan x="290">No: record</tspan><tspan x="290" dy="25">gaps; obtain</tspan><tspan x="290" dy="25">access</tspan></text>
+    <text x="138" y="139" font-size="18">Yes</text>
+    <rect x="10" y="154" width="200" height="96" rx="9" fill="#e4ebe2"/>
+    <text x="110" y="191" font-size="21" font-weight="700"><tspan x="110">Does the visitor</tspan><tspan x="110" dy="29">task work?</tspan></text>
+    <rect x="230" y="154" width="120" height="96" rx="9" fill="#eceefa"/>
+    <text x="290" y="181" font-size="20"><tspan x="290">Yes: keep</tspan><tspan x="290" dy="25">the site</tspan><tspan x="290" dy="25">as it is</tspan></text>
+    <text x="137" y="279" font-size="18">No</text>
+    <rect x="10" y="294" width="200" height="122" rx="9" fill="#e4ebe2"/>
+    <text x="110" y="326" font-size="20" font-weight="700"><tspan x="110">Supported</tspan><tspan x="110" dy="29">contained fix</tspan><tspan x="110" dy="29">and retest known?</tspan></text>
+    <rect x="230" y="294" width="120" height="122" rx="9" fill="#eceefa"/>
+    <text x="290" y="342" font-size="20"><tspan x="290">Yes: fix</tspan><tspan x="290" dy="27">then retest</tspan></text>
+    <text x="137" y="447" font-size="18">No</text>
+    <rect x="10" y="464" width="340" height="120" rx="9" fill="#e4ebe2"/>
+    <text x="180" y="498" font-size="21" font-weight="700"><tspan x="180">Diagnose the scope</tspan><tspan x="180" dy="30">Can the current site support</tspan><tspan x="180" dy="30">the changed requirements?</tspan></text>
+    <text x="66" y="626" font-size="18">Yes</text><text x="292" y="626" font-size="18">No</text>
+    <rect x="10" y="638" width="165" height="90" rx="9" fill="#eceefa"/>
+    <text x="92" y="673" font-size="20"><tspan x="92">Rework content</tspan><tspan x="92" dy="28">or structure</tspan></text>
+    <rect x="185" y="638" width="165" height="90" rx="9" fill="#eceefa"/>
+    <text x="267" y="673" font-size="20"><tspan x="267">Scope a rebuild</tspan><tspan x="267" dy="28">if needed</tspan></text>
+    <rect x="10" y="786" width="340" height="54" rx="9" fill="#0e1b2a"/>
+    <text x="180" y="821" font-size="21" font-weight="700" fill="#fff">Compare scope and risk</text>
+  </g>
+</svg>

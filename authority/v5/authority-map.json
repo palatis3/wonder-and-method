@@ -1,0 +1,24 @@
+{
+  "version": "5.0",
+  "rule": "Use V5 current contract for each domain. Prose/report renders those contracts. Research and historical archives never override current scope. If current artifacts disagree, stop the affected commitment and reconcile that one domain before changing it.",
+  "domains": {
+    "commercial": "offers.json",
+    "routes": "site-map.json",
+    "keywords": "keyword-manifest.json",
+    "content": "content-plan.json",
+    "visual": "design-tokens.json",
+    "delivery": "OPERATING_SYSTEM.md",
+    "booking_examples": "founder-calendar.json",
+    "release": "build-contract.json",
+    "financial_scenarios": "economics.json",
+    "buyer_examples": "buyer-costs.json",
+    "history": "history-manifest.json"
+  },
+  "daily_entry": "OPERATING_SYSTEM.md",
+  "customer_entry": "OFFERS.md",
+  "implementation_entry": "CODEX_HANDOFF.md",
+  "derived_summaries": {
+    "workflows.json": "OPERATING_SYSTEM.md",
+    "purchase-contract.json": "Layout and proof references; commercial values resolve from offers.json"
+  }
+}

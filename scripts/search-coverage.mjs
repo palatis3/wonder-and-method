@@ -1,0 +1,22 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const root=resolve(import.meta.dirname,'..');
+const json=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'));
+const [manifest,build,config]=await Promise.all(['authority/v5/keyword-manifest.json','evidence/build.json','config/site.json'].map(json));
+const available=new Set(build.routes),html=new Map();
+for(const route of available)html.set(route,await readFile(resolve(root,'dist','.'+route,'index.html'),'utf8'));
+const issues=[],groups={},ids=new Set();
+const rows=manifest.keywords.map(k=>{
+ if(ids.has(k.id))issues.push(`Duplicate keyword ID: ${k.id}`);ids.add(k.id);
+ const primary=available.has(k.primary_url),effective=primary?k.primary_url:(available.has(k.fallback_url)?k.fallback_url:null);
+ if(!effective)issues.push(`No built primary/fallback for ${k.id}`);
+ const canonical=effective?(html.get(effective).match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/i)?.[1]??null):null;
+ if(effective&&canonical!==config.origin+effective)issues.push(`Canonical mismatch for ${k.id}: ${effective}`);
+ if(effective)groups[effective]=(groups[effective]||0)+1;
+ return {id:k.id,keyword:k.keyword,evidence_status:k.evidence_status,primary_url:k.primary_url,fallback_url:k.fallback_url,effective_url:effective,route_state:primary?'built-primary':'built-fallback',publication_stage:k.publication_stage,canonical};
+});
+if(rows.length!==manifest.total_terms)issues.push('Manifest record count differs from authority total_terms');
+const report={checkedAt:new Date().toISOString(),mode:config.mode,source:'authority/v5/keyword-manifest.json',total_keywords:rows.length,unique_ids:ids.size,coverage_passed:issues.length===0,effective_route_counts:groups,issues,limits:['This checks retained intent routing and local canonical markup, not search engine indexing or ranking.','US phrase-volume estimates are not summed and do not establish Erie County demand.','Conditional and deferred primary routes use their authority-defined fallback until evidence permits publication.','No municipality pages or extra offers are created for keyword coverage.'],rows};
+await writeFile(resolve(root,'evidence/search-route-coverage.json'),JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify({coverage_passed:report.coverage_passed,total_keywords:rows.length,effective_route_counts:groups,issues},null,2));
+if(issues.length)process.exitCode=1;

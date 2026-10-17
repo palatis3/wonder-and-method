@@ -1,0 +1,147 @@
+{
+  "status": "Current website/contact systems operational. Live Stripe charges and payouts enabled; current catalog synchronized and synthetic hosted checkout verified. EIN mismatch remains owner action before the payout deadline/volume threshold.",
+  "approved_account_owner_email": "palatis3@gmail.com",
+  "setup": {
+    "legal_identity": "Venture House Group LLC — owner-confirmed legal name; New York Department of State registry lists an active domestic LLC, DOS ID 7654870, first filed 2025-07-08, Erie County.",
+    "public_contact": "support@wonderandmethod.com",
+    "future_public_contact": null,
+    "registration_status_reference": "evidence/entity-registration.json",
+    "reviewed_agreement_reference": null,
+    "tax_invoicing_treatment_reference": null,
+    "insurance_coverage_decision_reference": null,
+    "actual_cash_floor": null,
+    "required_compensation": null,
+    "actual_weekly_availability": null,
+    "domain": "wonderandmethod.com",
+    "domain_ownership_verified": true,
+    "email_delivery_verified": true,
+    "biography": null,
+    "domain_registration_status": "Registered by owner; Cloudflare API confirms active, privacy redaction, auto-renew off, expires 2027-10-14.",
+    "domain_registration_reference": "evidence/domain-registration.json",
+    "inquiry_policy_reference": "operations/inquiry-policy.json",
+    "production_recovery_reference": "evidence/production-recovery.json",
+    "registration_jurisdiction": "New York",
+    "registration_status_owner_reported": "active",
+    "registration_owner_confirmation_reference": "evidence/entity-registration.json",
+    "registration_dos_id": "7654870"
+  },
+  "existing_systems": {
+    "secure_access_manager": {
+      "provider": "Bitwarden Free",
+      "approved_provider": "Bitwarden Free",
+      "nonsecret_reference": "evidence/bitwarden-account.json",
+      "owner": "palatis3@gmail.com",
+      "status": "Authenticator MFA visibly enabled. Four owner-approved existing credential backups saved, exact values checked, and all four available after refresh and fresh owner unlock. Recovery codes remain private; lost-device recovery was not exercised."
+    },
+    "invoice_system": {
+      "provider": "Stripe live account and separate sandbox",
+      "approved_provider": "Stripe hosted invoicing",
+      "owner": "palatis3@gmail.com",
+      "nonsecret_reference": "evidence/payments-20261016/readiness.json",
+      "status": "Live charges and payouts API verified. Eight products and eighteen current one-time milestone/service-cycle prices verified. Restricted key encrypted with Windows DPAPI. Synthetic hosted checkout decline/success and receipt availability verified; no real charge or invoice email. EIN/document mismatch: payouts pause on 2026-11-15 or $600 total volume."
+    },
+    "bookkeeping": {
+      "provider": null,
+      "nonsecret_reference": null,
+      "owner": null,
+      "status": "pending"
+    }
+  },
+  "accounts_and_licenses": [
+    {
+      "provider": "Cloudflare",
+      "account_reference": "4fc7ad8717e64e119476c2dcf8f0666e",
+      "resources": [
+        "dfcded52-c87b-48f4-959a-84079e1cec97",
+        "c1282e43-6f23-407d-abb0-92610107307b",
+        "wonder-method-staging",
+        "wonder-method-production"
+      ],
+      "purpose": "Official website Worker plus separate protected staging and production D1",
+      "approved_plan": "Free tier; no paid upgrade authorized",
+      "verification": "evidence/production-recovery.json",
+      "vault_item_reference": "Personal Bitwarden: Wonder and Method — staging access; Wonder and Method — staging operator; Wonder and Method — staging fingerprint",
+      "local_secret_reference": "Windows DPAPI CurrentUser .runtime/credentials/cloudflare-staging.dpapi; matching owner-approved Bitwarden backup saved",
+      "production_secret_reference": "Windows DPAPI CurrentUser .runtime/credentials/cloudflare-production.dpapi; independent recovery outside this computer is not yet verified"
+    },
+    {
+      "provider": "Cloudflare Registrar",
+      "account_reference": "4fc7ad8717e64e119476c2dcf8f0666e",
+      "purpose": "Wonder and Method domain registration",
+      "domain": "wonderandmethod.com",
+      "zone_id": "81854dfe5ceecc678fc467f25cc325b5",
+      "term_years": 1,
+      "expires_at": "2027-10-14T13:28:21Z",
+      "auto_renew": false,
+      "quoted_subtotal_usd": 10.46,
+      "final_invoice_total_usd": null,
+      "invoice_status": "No invoice yet; dashboard says consolidated invoices appear within 24 hours of order",
+      "verification": "evidence/domain-registration.json"
+    },
+    {
+      "provider": "Resend",
+      "account_reference": "Workspace palatis3",
+      "purpose": "Website inquiry notifications",
+      "sender_domain": "notify.wonderandmethod.com",
+      "provider_domain_id": "fde6a602-f56b-414d-9687-bce1c2f6ba64",
+      "dns_applied": true,
+      "domain_verified": true,
+      "approved_plan": "Free tier; no paid upgrade authorized",
+      "verification": "evidence/sender-dns-verification.json",
+      "sending_key_created": true,
+      "test_email_sent": true,
+      "vault_item_reference": "Personal Bitwarden: Wonder and Method — Resend notifications",
+      "direct_inbox_receipt_verified": true,
+      "key_reference": "Owner credential vault; access material is excluded from Git.",
+      "local_secret_reference": ".runtime/credentials/resend-notifications.dpapi",
+      "delivery_evidence": "evidence/email-delivery-test.json"
+    }
+  ],
+  "inventory_row": {
+    "service_or_asset": null,
+    "provider": null,
+    "client_owner": null,
+    "payer": null,
+    "purpose": null,
+    "required_or_optional": null,
+    "setup_price": null,
+    "renewal_amount": null,
+    "renewal_date": null,
+    "included_usage": null,
+    "overage": null,
+    "license_source": null,
+    "license_scope": null,
+    "preexisting_or_bespoke": null,
+    "transferability": null,
+    "operating_rights": null,
+    "export_method": null,
+    "cancellation_rule": null,
+    "vault_item_reference": null,
+    "recovery_test_reference": null,
+    "delegated_access": null,
+    "retention_deletion_owner": null
+  },
+  "rules": [
+    "Resolve each mandatory external bill before scope acceptance.",
+    "Client controls production accounts from the start.",
+    "Use existing invoice and secure vault providers; unknown names remain pending.",
+    "Do not store secrets in these records, repository or prompts.",
+    "Third-party and preexisting license boundaries remain disclosed.",
+    "Purchases, DNS changes, charges and external messages require the applicable exact authorization; these local files perform none."
+  ],
+  "system_context": "Owner-controlled Cloudflare production remains live with noindex. Resend notifications reach support@wonderandmethod.com in Fastmail; mailbox reply and tawk.to phone notification/reply have evidence. Production rollback/export/restore and New York entity registration are verified. Current-offer scope/fit requests and manual Stripe-hosted invoicing are implemented; owner economics, accepted per-job scope, bookkeeping and EIN correction remain distinct.",
+  "pending_provider_categories": [
+    "EIN verification before payout deadline or threshold",
+    "bookkeeping"
+  ],
+  "operating_references": {
+    "current_workflow": "operations/WORKFLOWS.md",
+    "payments": "operations/PAYMENTS.md",
+    "mail_and_chat": "evidence/support-links-release-20261016/release.json",
+    "phone": "evidence/support-links-release-20261016/phone-test.json",
+    "website_current_release": "evidence/navigation-refresh-20261016/release.json",
+    "measurement": "operations/MEASUREMENT.md",
+    "usability_test_kit": "evidence/preindex-improvements-20261016/usability-test-kit.html",
+    "search_console": "https://search.google.com/search-console?resource_id=sc-domain%3Awonderandmethod.com"
+  }
+}

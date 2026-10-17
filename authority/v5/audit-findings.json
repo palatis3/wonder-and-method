@@ -1,0 +1,748 @@
+{
+  "version": "5.0",
+  "checked_date": "2026-10-13",
+  "count": 74,
+  "meaning": "74 reviewer observations, including overlaps and simplification proposals. Addressed means a selected documented plan response, not 74 production defects fixed or business risks eliminated.",
+  "findings": [
+    {
+      "id": "LEG-01",
+      "severity_reported": "high",
+      "issue": "Sales scripts and one pipeline",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Restored short unsent drafts and fit fields in the one current client flow; retired the old multi-stage pipeline.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-02",
+      "severity_reported": "high",
+      "issue": "Demand experiment and prospect roster",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Retained the bounded twenty-account/two-cohort learning example by reference to the complete V2 archive, including controls and substitution detail; no live-lead or contact quota.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-03",
+      "severity_reported": "high",
+      "issue": "Incident and change records",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Restored change/incident cards as sections of the same receipt.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-04",
+      "severity_reported": "high",
+      "issue": "Business setup and readiness",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "FINANCIAL_GUIDE.md",
+      "selected_action": "Restored the compact identity, terms, payment/bookkeeping, tax/coverage and cash setup record; old budgets remain historical.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-05",
+      "severity_reported": "high",
+      "issue": "Per-client repository, environment, MFA and secrets",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored per-client boundaries, lockfile, MFA, least privilege, vault and owner-controlled recovery.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-06",
+      "severity_reported": "high",
+      "issue": "Conditional anti-bot server verification",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored conditional server-side token verification and end-to-end form tests without mandating a provider.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-07",
+      "severity_reported": "high",
+      "issue": "Remotion license and source-versus-finished-media handoff",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored input rights and the distinction between finished media and an operable licensed editable project.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-08",
+      "severity_reported": "medium",
+      "issue": "Preliminary business-name status",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Explicitly labeled name research preliminary; identity and rights remain implementation prerequisites.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-09",
+      "severity_reported": "high",
+      "issue": "Raw legacy keyword files and provenance",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Restored the V2 raw/CSV pair and both V3 raw keyword evidence files; archives preserve originals.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-10",
+      "severity_reported": "medium",
+      "issue": "One compact operating register",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "client-record-template.json",
+      "selected_action": "Selected three connected records plus existing access/invoice systems, with no duplicate ledger.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-11",
+      "severity_reported": "medium",
+      "issue": "Neutral feedback, testimonial and introduction drafts",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Restored neutral feedback and consent for exact claims/name/logo; no sentiment-gated review requests.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LEG-12",
+      "severity_reported": "medium",
+      "issue": "Historical review/change authority",
+      "source": "evidence/v5/01-legacy-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "history-manifest.json",
+      "selected_action": "Archived the complete older decision record; it cannot override V5.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "AUTH-01",
+      "severity_reported": "high",
+      "issue": "V4 maps concerns to multiple authority files but does not state a conflict-precedence rule; build-contract primary_authorities also does not name its own release-gate role.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "authority-map.json",
+      "selected_action": "Named one current authority per domain and a rule for reconciling a conflict before making the affected commitment.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "TECH-02",
+      "severity_reported": "high",
+      "issue": "V4 retains separate repository/accounts and a high-level least-privilege gate, but drops the concrete per-client environment, MFA, reproducible-build, ownership, and dependency/renewal controls.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored isolation, dependency, account/renewal and reproducible recovery requirements.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SEC-03",
+      "severity_reported": "high",
+      "issue": "V4 says to keep credentials out of prompts and use synthetic leads, but no longer states scoped secret storage or the no-source/browser/log prohibition.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored scoped secret storage and explicit source/browser/prompt/log exclusions.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "DATA-04",
+      "severity_reported": "high",
+      "issue": "V4 assigns retention/deletion to the client and mentions closure, but lacks a concise required retention/deletion record and export method.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Added minimal-data purpose, owner, retention/deletion trigger, export and access-removal evidence.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "FORM-05",
+      "severity_reported": "high",
+      "issue": "V4 requires a working provider record and inbox receipt but omits the conditional server-side verification rule and several delivery safeguards.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "build-contract.json",
+      "selected_action": "Added server validation, spam/rate/duplicate behavior, durable record and actual inbox receipt; conditional token verification.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "LIC-06",
+      "severity_reported": "high",
+      "issue": "V4 retains a generic rights/source check but omits the Blender input-rights inventory and Remotion editable-source versus finished-media licensing condition.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored actual asset and source/runtime license checks before promising source handoff.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "NAME-07",
+      "severity_reported": "high",
+      "issue": "V4 identity acceptance says name review/rights records are real but drops the explicit preliminary-name and no-clearance status.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Kept selected identity distinct from legal clearance or paid buyer proof.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RELEASE-08",
+      "severity_reported": "high",
+      "issue": "V4 contains protected-staging, rollback, and release-matrix concepts but loses the compact hard-blocker list and the noindex/access-control distinction.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Restored hard launch blockers and access-controlled confidential staging in addition to noindex.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "OPS-09",
+      "severity_reported": "medium",
+      "issue": "V4 has incident and feedback stages, but no compact reusable incident/change record with owner, status, next-update, acceptance, and approval fields.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Added compact change and incident fields to the existing receipt.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PIPE-10",
+      "severity_reported": "medium",
+      "issue": "V4 reduces acquisition to one or two lanes and growth tests, omitting V3's small pipeline stages, 20-account research example, founder-send control, and learning targets.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Restored acquisition learning and unsent drafts within the six-stage flow; no autonomous outreach authority.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PLAT-11",
+      "severity_reported": "medium",
+      "issue": "V4 requires a static/CMS choice before deposit but does not preserve V3's proof sequence for self-editing fit.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Require an agreed editing route before deposit; do not imply that repository ownership provides a CMS.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PROV-12",
+      "severity_reported": "medium",
+      "issue": "V4 claims preservation of 359 legacy phrases and provenance but omits V3's raw legacy keyword evidence files from the package.",
+      "source": "evidence/v5/02-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Restored both V3 raw keyword artifacts and complete history snapshots.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C1",
+      "severity_reported": "high",
+      "issue": "Renewal and cancel timing plus blocked prepaid Search cycle are incomplete",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Added exact renewal timestamp/timezone and cancel route, invoice pause, unused-cycle refund/credit choice and partial-work reconciliation.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C2",
+      "severity_reported": "high",
+      "issue": "Written milestone acceptance can stall; cancellation reconciliation lacks a work ledger",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Added one approver, written acceptance, delay notice/rebooking and dated work/cost/payment ledger for termination.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C3",
+      "severity_reported": "high",
+      "issue": "Care acknowledgment can be mistaken for included repair or restoration",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Distinguished alert verification/notification/routing from separately scoped repair and restoration; actual coverage required.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C4",
+      "severity_reported": "high",
+      "issue": "Combined Care/Search receipt risks double-counting one change",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "One edit cannot satisfy two paid outcomes; shared deployment QA can run once. Pause Search when no distinct task exists.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C5",
+      "severity_reported": "high",
+      "issue": "Internal 7/10-hour estimates may quietly cut fixed Sprint/Search deliverables when blocked",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Internal hours guide preflight and estimation; they do not permit an audit-only Sprint or abandoned fixed deliverables.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C6",
+      "severity_reported": "medium",
+      "issue": "Ten route illustrations and generic month-two wording hide the actual buying calendar",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Show a short menu and on-demand calculator. Actual invoice dates override the 11/23-cycle illustration.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C7",
+      "severity_reported": "medium",
+      "issue": "Page add-ons may bypass package fit; static editing fit may surface after deposit",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Add-ons stay within accepted service/market/design direction; CMS/new template/new service/first hero require fresh scope.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "C8",
+      "severity_reported": "medium",
+      "issue": "Care first-quarter contribution is fragile to small labor overruns",
+      "source": "evidence/v5/03-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "FINANCIAL_GUIDE.md",
+      "selected_action": "Exposed the $29.90 first-quarter Care contribution and -$82.60 overrun case; keep scaling conditional on full paid-quarter evidence.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "CAP-01",
+      "severity_reported": "high",
+      "issue": "The 85-hour representative Signature slice and illustrative week-7 date operate as a mandatory booking gate, although V4 also allows equivalent proof or faster measured completion.",
+      "source": "evidence/v5/04-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "founder-calendar.json",
+      "selected_action": "Replaced the mandatory 85-hour/week-seven gate with relevant capability evidence and actual dated capacity.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "CAP-02",
+      "severity_reported": "high",
+      "issue": "Booking from aggregate hours or an AI throughput claim can hide weekly founder review, QA, launches and correction tails.",
+      "source": "evidence/v5/04-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Schedule reviews, QA, launch and correction tails before accepting deposits; parallel work allowed only when those fit.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "CAP-03",
+      "severity_reported": "medium",
+      "issue": "Known corrections, Search's internal reserve, Care quarterly allowance and pooled recovery can be counted twice if calendar terms are not explicit.",
+      "source": "evidence/v5/04-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "founder-calendar.json",
+      "selected_action": "Defined which reserves already sit inside each sold unit; pooled recovery covers additional unexpected work.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "CAP-04",
+      "severity_reported": "medium",
+      "issue": "The 12 build stages plus recurring stages and multiple status artifacts add process cost before paid evidence proves their value.",
+      "source": "evidence/v5/04-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "workflows.json",
+      "selected_action": "Reduced execution to six stages, three records and one reusable production prompt.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "CAP-05",
+      "severity_reported": "medium",
+      "issue": "35/40/50-hour scenarios and 20/24-hour client caps risk reading as actual availability or a rigid project-count cap.",
+      "source": "evidence/v5/04-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "founder-calendar.json",
+      "selected_action": "Kept scenario ceilings as sensitivities; actual availability and calendar determine bookings, not a fixed project count.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-001",
+      "severity_reported": "high",
+      "issue": "A V4-named buyer-needs file still embeds the superseded V3 menu: Care $349, SEO Setup $600, Focused SEO $1,100 and Growth SEO $1,800, plus the old 30-minute Care allowance.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "history-manifest.json",
+      "selected_action": "Moved the stale buyer-needs menu out of current reference; preserved it only inside its original historical archive.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-002",
+      "severity_reported": "medium",
+      "issue": "The preserved search-evidence artifact reports a historical page-map sum of 358 against 359 V2 CSV rows and retains stale historical paths/fragments.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Labeled the historical 358 route-map count versus 359 source terms; preserved bytes, with the current 482-term register and site map authoritative.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-003",
+      "severity_reported": "high",
+      "issue": "The register exposes seven assigned route families and many keyword-level publication_stage values while the actual current page shape is a small canonical core plus conditional routes.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "site-map.json",
+      "selected_action": "Keyword destinations are intent assignments; only approved live routes publish, and deferred intent uses its listed fallback.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-004",
+      "severity_reported": "medium",
+      "issue": "The twelve-brief backlog, three launch guides, two later defaults and four-to-six-asset stretch language can be read as a multi-tier publishing program despite the explicit no-quota rule.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "content-plan.json",
+      "selected_action": "Three evidence-ready launch candidates plus two later defaults; the remaining briefs stay backlog, never a publication quota.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-005",
+      "severity_reported": "high",
+      "issue": "The selected Wonder and Method identity is supported by preliminary naming work, not clearance or buyer validation.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "CODEX_HANDOFF.md",
+      "selected_action": "Name research remains preliminary; no trademark clearance or buyer validation claim.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-006",
+      "severity_reported": "medium",
+      "issue": "The sandbox contains a broad React/WebGL animation stack that is not required by the current V4 visual authority and has no browser rendering proof.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "build-contract.json",
+      "selected_action": "Archived only authored library setup/lockfiles; optional tool inventory creates no dependency requirement. Live WebGL remains off by default.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "SBI-007",
+      "severity_reported": "low",
+      "issue": "Three palettes and a rich motion standard are useful comparison evidence but can become parallel implementation work if their statuses are not explicit.",
+      "source": "evidence/v5/05-search-brand-inventory.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "build-contract.json",
+      "selected_action": "Selected wonder_method_ink as active; other palettes remain comparison studies, with bounded prerendered hero media.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-001",
+      "severity_reported": "high",
+      "issue": "The older playbook's nine-stage pipeline and separate research/account examples make a non-authorized research example look like active qualified pipeline.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Historical account research is labeled research; leads and active jobs share one board and six current phases.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-002",
+      "severity_reported": "high",
+      "issue": "Outbound drafts did not make authorization and stopping behavior operationally clear.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Drafts remain unsent; respect declines and allow one contextual follow-up. Plan creation grants no sending permission.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-003",
+      "severity_reported": "high",
+      "issue": "Fit, scope, authority, budget and CMS compatibility can be discussed without a clear 20-minute decision rule.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Restored a twenty-minute fit conversation with an explicit next decision and a no-change/no-fit option.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-004",
+      "severity_reported": "high",
+      "issue": "The buyer can see package prices without a single compact explanation of exact routes, limits, milestones, external bills and change rules.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "One scope sheet records routes, limits, milestones, mandatory/optional costs, changes and ownership.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-005",
+      "severity_reported": "high",
+      "issue": "Static delivery, account ownership and unsupported application work can surface after a deposit.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Editing, account ownership and application exclusions are settled before deposit.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-006",
+      "severity_reported": "medium",
+      "issue": "Recurring services and first-year arithmetic can be read as an unlimited subscription or as a guaranteed result.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Bound recurring units and illustrate optional cost separately from outcomes; no results guarantee.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-007",
+      "severity_reported": "medium",
+      "issue": "Approval and communication can be inferred from compliments, silence or fragmented feedback, creating scope and schedule disputes.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Written version acceptance and one consolidated list; silence does not bill a milestone.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "V5-SALES-008",
+      "severity_reported": "medium",
+      "issue": "A lead log can drift into unnecessary personal-data collection and speculative prospect research.",
+      "source": "evidence/v5/06-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "client-record-template.json",
+      "selected_action": "Keep necessary appropriate business contact only; record source/confidence and avoid speculative personal enrichment.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-01",
+      "severity_reported": "P0",
+      "issue": "The four existing ZIPs are valid byte-consistent snapshots, but only V3/V4 have per-file package manifests and those manifests intentionally omit themselves.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "history-manifest.json",
+      "selected_action": "Preserved 270 authored prior-plan files byte-for-byte and hashed every historical member plus archive; current package manifest excludes itself explicitly.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-02",
+      "severity_reported": "P1",
+      "issue": "Every old frontdoor resolves its local hrefs and has matching chapter counts, but carrying four active frontdoors into V5 would create competing navigation and authority.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "One V5 front door; prior full reports are reachable only through clearly historical ZIPs.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-03",
+      "severity_reported": "P0",
+      "issue": "V4 drops the two V3 raw legacy keyword source files even though its keyword manifest still claims and embeds the 482-term inventory (359 legacy plus 123 hypotheses).",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Restored the exact V3 raw keyword pair, with hashes checked.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-04",
+      "severity_reported": "P1",
+      "issue": "Research JSON contains provenance paths into work/ and sibling outputs/ folders that cannot be followed from a standalone V5 archive.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "source-path-map.json",
+      "selected_action": "Mapped legacy output paths to archive members and bundled work references where possible; named unbundled authoring references without inventing files.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-05",
+      "severity_reported": "P1",
+      "issue": "V4 evidence retains many historical $349 Care, rejected setup/Growth and other V3 terms; its current docs do mark them as superseded, but a flat V5 reference list could promote stale candidates.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Separated research/historical candidates from current commercial authority; selected-unit finances remain current.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-06",
+      "severity_reported": "P2",
+      "issue": "The V4 authoring workspace has generators, validators and BRIEF.md omitted from the user-facing output; copying them into the current core would add build machinery without a user dependency.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "The HTML report is prebuilt and standalone; no private authoring generator is required to read it.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PKG-07",
+      "severity_reported": "P2",
+      "issue": "The design-library folder is a local installation snapshot, not a website dependency bundle; node_modules is large, platform-specific and unnecessary for a standalone plan.",
+      "source": "evidence/v5/07-package-dependency.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "history-manifest.json",
+      "selected_action": "Preserved INSTALLATION.md/package.json/package-lock.json only; excluded installed node_modules.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-01",
+      "severity_reported": "P1",
+      "issue": "V4 has several overlapping authorities. OFFERS names offers.json as the machine-readable authority; SERVICE_PLAYBOOK also points to offers.json; CODEX_HANDOFF distributes authority across offers.json, OFFERS.md, purchase-contract.json, site-map.json, keyword-manifest.json, SEARCH_AND_CONTENT.md, content-plan.json, BRAND_AND_MOBILE.md, design-tokens.json, workflows.json, founder-calendar.json, OPERATING_SYSTEM.md, economics.json, buyer-costs.json and build-contract.json. A reader cannot tell which page is the current decision source versus deep evidence.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "START_HERE.md",
+      "selected_action": "One starting page points to offers, operations, build brief and reference; one authority map resolves domain ownership.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-02",
+      "severity_reported": "P1",
+      "issue": "Buyer-facing OFFERS exposes internal planning budgets: 55/85 founder hours in the website cards and a 1.5h/2.5h/0.5h/0.75h/0.75h/1h Search budget. Those numbers invite an hourly entitlement reading even though BUSINESS_PLAN says the price is for a fixed deliverable and internal hours are only a planning boundary.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Removed internal labor-hour budgets from buyer cards; kept fixed deliverables and finance assumptions in reference.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-03",
+      "severity_reported": "P1",
+      "issue": "Caveats are repeated at the point of sale and again in internal handoff pages: not cheapest/best/fastest, no guarantees, unknown cash and availability, no live-site proof, no browser preview, no GBP, no 24/7 restoration, no forced Sprint, and no ranking/traffic/revenue guarantee. The repetition makes ordinary scope harder to find and makes the business sound defensive.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Condensed repeated caveats while retaining material scope, price, ownership and response boundaries.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-04",
+      "severity_reported": "P2",
+      "issue": "The public menu creates too many choices at once: two builds, Care, Sprint, direct Monthly Search, Care plus Search, three add-on units, ten 12/24-month rows, and historical V3 comparisons. The buyer must understand baseline state, service eligibility, bundles and renewal logic before choosing a website.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Two build choices and optional services form the buyer path; detailed variants live behind the calculator/reference.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-05",
+      "severity_reported": "P2",
+      "issue": "OPERATING_SYSTEM repeats capacity and readiness in several forms: 35/40/50-hour scenarios, weekly and monthly ceilings, steady-state sensitivities, 85h/145h gate language, 95.2/123.2/140 post-gate capacity and a second detailed readiness section. BUSINESS_PLAN and START_HERE repeat parts of the same gate. These are useful internal estimates but poor front-door reading and can look like promises or arbitrary waiting rules.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Removed practice-hour/post-week-six capacity rules; actual dated booking evidence controls.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-06",
+      "severity_reported": "P2",
+      "issue": "The record system is larger than the operating flow requires. SERVICE_PLAYBOOK has nine templates, while OPERATING_SYSTEM repeats Fit through Exit controls and a weekly review, and CODEX_HANDOFF repeats build, QA, acceptance and handoff steps. Scope, approvals, QA, ownership and cancellation appear in multiple records with slightly different prompts.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "SERVICE_PLAYBOOK.md",
+      "selected_action": "Reusable event sections append to the same records; no separate checklist/dashboard product is required.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "PL-07",
+      "severity_reported": "P2",
+      "issue": "Historical V3 comparisons and rejected candidates appear beside current offers: 15 versus 30 minutes, $600 setup, $1,800 Growth, $249 quarterly check, $399 alternative and V3 cost deltas. A buyer who only needs the current price now has to learn which numbers are dead.",
+      "source": "evidence/v5/08-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "Historical offers remain labeled research/history and are removed from the current public menu.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-01",
+      "severity_reported": "critical",
+      "issue": "Fixed 85-hour rehearsal and illustrative week-7 deposit gate can delay sales by construction without proving paid delivery.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "founder-calendar.json",
+      "selected_action": "Removed arbitrary elapsed-practice gate without weakening sold-scope launch tests.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-02",
+      "severity_reported": "high",
+      "issue": "Care alerts and next-business-day acknowledgment depend on unconfirmed solo coverage and fragile 1.25-hour economics.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Actual staffed coverage and a full-quarter cost check gate Care enrollment/scale; the financial risk remains explicit.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-03",
+      "severity_reported": "high",
+      "issue": "Client-controlled repository/accounts, final-payment source transfer and five-business-day cancellation handoff have an unresolved mid-project edge case.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "offers.json",
+      "selected_action": "Paid bespoke/source deliverables stay usable at paid milestones or reconciled termination; client accounts remain accessible throughout.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-04",
+      "severity_reported": "high",
+      "issue": "Illustrative 35/40/50-hour scenario and pooled reserve can be mistaken for actual sellable capacity or used to overlap review/launch peaks.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OPERATING_SYSTEM.md",
+      "selected_action": "Actual weekly review/QA/launch/correction calendar controls parallel work; scenarios are not inventory.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-05",
+      "severity_reported": "high",
+      "issue": "Static ownership may be mistaken for self-service editing despite no CMS and only 15 Care edit minutes.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "OFFERS.md",
+      "selected_action": "Static technical editing and separately scoped CMS are clear before deposit; Care has a fifteen-minute supplied-edit allowance.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-06",
+      "severity_reported": "high",
+      "issue": "69-file V4 package repeats current and rejected decisions; V3 raw legacy keyword evidence is not carried in V4.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "RESEARCH_INDEX.md",
+      "selected_action": "One current entry, grouped reference, full history and restored raw evidence eliminate the omitted-file/competing-authority gap.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-07",
+      "severity_reported": "high",
+      "issue": "Premium price and design/QA superiority lack paid client cases or willingness-to-pay proof while comparable lower-price competitors exist and pre-acquisition build contribution is thin.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "FINANCIAL_GUIDE.md",
+      "selected_action": "Kept prices as paid-test hypotheses and exposed thin acquisition-adjusted contribution. Demand, time savings and superiority remain unproven.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    },
+    {
+      "id": "RT-08",
+      "severity_reported": "medium",
+      "issue": "Seven prompt-library units plus prompt/version/output/time records and daily review queues risk creating a second operating product.",
+      "source": "evidence/v5/09-findings.json",
+      "disposition": "addressed_in_plan",
+      "current_destination": "workflows.json",
+      "selected_action": "One production prompt, three records, existing vault/invoices; no startup portal or seven-prompt-library dependency.",
+      "execution_status": "Plan change only; production and commercial evidence still required where applicable."
+    }
+  ]
+}

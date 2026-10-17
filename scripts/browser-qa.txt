@@ -1,0 +1,57 @@
+async (page) => {
+  const base='http://127.0.0.1:4183';
+  const routes=['/','/services/web-design/','/services/seo/','/pricing/','/work/','/process/','/about/','/areas/erie-county/','/contact/','/privacy/'];
+  const results=[];
+  for(const width of [320,360,390,768,1440]){
+    await page.setViewportSize({width,height:900});
+    for(const route of routes){
+      await page.goto(base+route);
+      await page.evaluate(()=>document.fonts.ready);
+      const metrics=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,missingLabels:[...document.querySelectorAll('input:not([tabindex="-1"]),textarea,select')].filter(x=>!x.labels?.length).map(x=>x.id),invalidImages:[...document.images].filter(x=>!x.complete||!x.naturalWidth).length}));
+      if(metrics.scroll>width+1||metrics.h1!==1||metrics.missingLabels.length||metrics.invalidImages)throw new Error(JSON.stringify({route,width,metrics}));
+      results.push({route,width,overflow:false,labels:'pass'});
+    }
+    await page.goto(base+'/');
+    await page.screenshot({path:`output/playwright/home-${width}.png`,fullPage:true});
+  }
+  console.log('Responsive matrix: '+JSON.stringify(results));
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(base+'/');
+  await page.getByRole('button',{name:'Menu',exact:true}).click();
+  if(await page.evaluate(()=>document.activeElement.textContent)!=='Web design')throw new Error('Menu did not focus first destination');
+  await page.keyboard.press('Escape');
+  if(!await page.getByRole('button',{name:'Menu',exact:true}).evaluate(x=>x===document.activeElement))throw new Error('Escape focus lost');
+  await page.getByRole('button',{name:'Menu',exact:true}).click();
+  await page.getByRole('navigation',{name:'Primary'}).getByRole('link',{name:'Pricing',exact:true}).click();
+  await page.getByLabel('Care —', {exact:false}).check();
+  if(await page.locator('#cost-total').textContent()!=='$8,189')throw new Error('Care cost incorrect');
+  await page.getByLabel('Monthly Search —',{exact:false}).check();
+  if(await page.locator('#cost-total').textContent()!=='$20,289')throw new Error('Combined cost incorrect');
+  await page.locator('#cycles').fill('23');
+  if(await page.locator('#cost-total').textContent()!=='$35,877')throw new Error('24-month convention incorrect');
+  await page.screenshot({path:'output/playwright/pricing-390.png',fullPage:true});
+  await page.getByRole('link',{name:'Discuss Focused'}).click();
+  await page.waitForURL('**/contact/?offer=focused_site');
+  if(await page.locator('#service').inputValue()!=='focused_site')throw new Error('Offer not carried to inquiry');
+  await page.getByRole('button',{name:'Submit synthetic inquiry'}).click();
+  if(await page.evaluate(()=>document.activeElement.id)!=='name')throw new Error('First error focus missing');
+  await page.getByLabel('Your name').fill('Synthetic Browser Tester');
+  await page.getByLabel('Email',{exact:false}).fill('browser-test@example.test');
+  await page.getByLabel('Business name').fill('Synthetic Test Studio');
+  await page.getByLabel('Current website').fill('https://example.test');
+  await page.getByLabel('What should change?').fill('Synthetic browser test: make the service and inquiry journey clear.');
+  await page.getByRole('button',{name:'Submit synthetic inquiry'}).click();
+  await page.waitForFunction(()=>document.querySelector('#form-status').textContent.includes('No email was sent'));
+  await page.screenshot({path:'output/playwright/contact-success-390.png',fullPage:true});
+  await page.goto(base+'/work/');
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.getByRole('button',{name:'Play 10-second study'}).click();
+  if(await page.locator('.art-panel').evaluate(x=>getComputedStyle(x).animationName)!=='none')throw new Error('Reduced-motion failed');
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await page.goto(base+'/pricing/');
+  await page.route('**/assets/qa-text-spacing.css',route=>route.fulfill({contentType:'text/css',body:'*{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important}p{margin-bottom:2em!important}'}));
+ await page.addStyleTag({url:'http://127.0.0.1:4183/assets/qa-text-spacing.css'});
+  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw new Error('Text spacing overflow');
+  await page.screenshot({path:'output/playwright/text-spacing-390.png',fullPage:true});
+  console.log(JSON.stringify({checkedAt:new Date().toISOString(),browser:await page.context().browser().version(),matrix:results,journey:'home-menu-pricing-selected-offer-inquiry saved',calculator:'11/23 cycles matched V5',keyboard:'menu first focus and Escape return; invalid first-field focus',reducedMotion:'static fallback',textSpacing:'pass at390',limits:'No real inbox, field metrics, screen reader or buyer study. 320 CSS-px reflow tested, browser 400% zoom not directly exercised.'}));
+}

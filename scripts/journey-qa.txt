@@ -1,0 +1,29 @@
+async (page) => {
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('http://127.0.0.1:4183/pricing/');
+ const link=page.getByRole('link',{name:'Discuss Focused'});
+ await link.click();
+ await page.waitForURL('**/contact/?offer=focused_site');
+ if(await page.locator('#service').inputValue()!=='focused_site')throw new Error('Offer not selected');
+ await page.getByRole('button',{name:'Submit synthetic inquiry'}).click();
+ if(await page.evaluate(()=>document.activeElement.id)!=='name')throw new Error('Error focus missing');
+ await page.getByLabel('Your name').fill('Synthetic Browser Tester');
+ await page.getByLabel('Email',{exact:false}).fill('browser-test@example.test');
+ await page.getByLabel('Business name').fill('Synthetic Test Studio');
+ await page.getByLabel('Current website').fill('https://example.test');
+ await page.getByLabel('What should change?').fill('Synthetic browser test: make the service and inquiry journey clear.');
+ await page.getByRole('button',{name:'Submit synthetic inquiry'}).click();
+ await page.waitForFunction(()=>document.querySelector('#form-status').textContent.includes('No email was sent'));
+ await page.screenshot({path:'output/playwright/contact-success-390.png',fullPage:true});
+ await page.goto('http://127.0.0.1:4183/work/');
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.getByRole('button',{name:'Play 10-second study'}).click();
+ if(await page.locator('.art-panel').evaluate(x=>getComputedStyle(x).animationName)!=='none')throw new Error('Reduced-motion failed');
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ await page.goto('http://127.0.0.1:4183/pricing/');
+ await page.route('**/assets/qa-text-spacing.css',route=>route.fulfill({contentType:'text/css',body:'*{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important}p{margin-bottom:2em!important}'}));
+ await page.addStyleTag({url:'http://127.0.0.1:4183/assets/qa-text-spacing.css'});
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw new Error('Text spacing overflow');
+ await page.screenshot({path:'output/playwright/text-spacing-390.png',fullPage:true});
+ return {checkedAt:new Date().toISOString(),browser:await page.context().browser().version(),offerCarryForward:'pass',firstInvalidFocus:'pass',inquiry:'synthetic persisted; no email sent',reducedMotion:'pass',textSpacing:'pass390'};
+}

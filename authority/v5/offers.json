@@ -1,0 +1,305 @@
+{
+  "version": "5.0",
+  "as_of": "2026-10-13",
+  "status": "Current V5 proposed menu. Exact fixed deliverables; actual capacity, supported stack and scoped evidence checked before booking. Prices and production estimates still require paid validation.",
+  "focused_site": {
+    "public_name": "Focused Website",
+    "hours_all_in": 55,
+    "direct_cost": 150,
+    "type": "Fixed price for the exact listed scope. The signed quote identifies pages and deliverables. Any extra is separately priced before signing or through a written change request.",
+    "included_pages": "Up to three unique marketing pages chosen from the client's goals and search intent, not a mandatory Home/Services/Contact template. A proposal identifies exact canonical pages and which topics are consolidated.",
+    "page_scope": "One primary service or tightly related service group and one primary market. Separate service, area, case-study, blog or landing pages are quoted additions when distinct intent and evidence justify them. Plain client-approved policy text may be linked; legal drafting excluded.",
+    "copy": "Client provides facts, service details and approved imagery; one discovery interview; write/edit up to 1,200 words of new client-facing copy across included pages, including headlines, core sections and calls to action, plus metadata. The word ceiling is a scope change trigger, not a content target. One client fact-check and consolidated edits. No field research, photo shoot or long-form article.",
+    "seo_foundation": "Agreed keyword-to-canonical-page map, semantic structure, titles/meta, index/canonical/sitemap and redirect checks, structured data only for verified facts, Search Console/analytics setup or connection with access, and launch validation. No ongoing SEO program or ranking guarantee.",
+    "creative": "Distinct art direction through typography, composition, color, imagery treatment and restrained code-native interaction using existing production patterns. No bespoke Blender/Remotion media or newly designed interactive system; optional still imagery requires client license or source.",
+    "functionality": "Mobile-first custom coded responsive site, one inquiry form through a client-controlled provider, basic spam defense, accessible navigation and tested contact path. No CMS, ecommerce, booking, member area, CRM/API integration or third-party subscription included.",
+    "revisions": "One consolidated visual-design round and one consolidated staging round within approved scope. New direction, page or feature requires written change quote.",
+    "handoff": "Client-owned accounts remain accessible throughout. Paid bespoke deliverables and their operating license/source are handed over at the relevant paid milestone or reconciled termination; complete project walkthrough after final payment. Disclosed third-party and preexisting licenses apply.",
+    "correction": "30 calendar days after launch for defects against approved scope; new requests and external-provider changes are separate.",
+    "delivery_target": "Typically 4-6 weeks after inputs and booking are ready; dated quote controls and quicker delivery is possible when workload permits.",
+    "payment_schedule": [
+      {
+        "event": "scope/booking",
+        "percent": 50,
+        "amount": 3000
+      },
+      {
+        "event": "design acceptance",
+        "percent": 30,
+        "amount": 1800
+      },
+      {
+        "event": "staging acceptance before launch",
+        "percent": 20,
+        "amount": 1200
+      }
+    ],
+    "hour_budget": {
+      "scope_discovery": 4,
+      "content_and_seo_ia": 5,
+      "copy_edit": 5,
+      "design": 7,
+      "implementation": 17,
+      "qa": 8,
+      "launch_handoff": 3,
+      "revisions_coordination": 3,
+      "correction_reserve": 3
+    },
+    "public_price": 6000,
+    "policy_page": "One plain /privacy/ page containing client-approved supplied text is included beyond the marketing-page cap; no legal drafting. Other policies separately agreed.",
+    "redirect_limit": "Up to 10 simple one-to-one redirects from an existing supplied URL inventory. Migration discovery, large migrations and redirect chains require separate scope.",
+    "form_limit": "One form, up to six fields, one receiving destination, one confirmation state; no CRM/API workflow, uploads, payments or sensitive-data intake.",
+    "revision_definition": "One consolidated visual round and one consolidated staging round. A round is one written list from the named approver within the approved direction and page/features scope. Defect correction does not consume a revision round.",
+    "acceptance": "Named acceptance tests, one approver and a dated version; client sends written acceptance or one consolidated defect/punch list within the agreed review window. Silence is not acceptance and does not trigger milestone billing. Missing inputs rebook dates after notice.",
+    "maximum_inclusions_hour_case": {
+      "status": "Sized estimate, not observed production evidence. Full listed scope is included in the existing stage budgets; no measured speed claim.",
+      "implementation_detail": {
+        "shared_shell_components": 5,
+        "three_page_assembly": 5,
+        "six_field_form_and_delivery": 3,
+        "ten_supplied_redirects": 1.5,
+        "supplied_privacy_markup": 0.5,
+        "responsive_integration": 2
+      },
+      "qa_detail": {
+        "form_receipt_validation_failure": 1.5,
+        "ten_redirect_status_checks": 1,
+        "privacy_links_and_format": 0.5,
+        "keyboard_focus_screenreader": 2,
+        "performance_media": 1,
+        "responsive_crossbrowser": 1.5,
+        "secrets_dependency_rollback": 0.5
+      },
+      "implementation_total": 17.0,
+      "qa_total": 8.0,
+      "conditions": "Supplied final privacy text, ten unambiguous old/new URL pairs, one six-field form with supported provider and no custom workflow; reusable production patterns. New unknown integration or migration discovery is excluded.",
+      "validation_gate": "Run a representative build/rehearsal with full inclusions and record actual hours before expanding throughput; use first paid delivery records to validate estimates. Scope must be honored if sold."
+    },
+    "platform_fit": "Static custom site; no self-serve CMS. Ask who edits and how often before quoting. If self-editing is required, separately scope a CMS/platform or recommend an appropriate provider before deposit.",
+    "ownership_boundary": "Client owns paid bespoke work and supplied assets; preexisting reusable components and third-party software retain their licenses, with sufficient perpetual license to operate the delivered site. Client controls production accounts from the start. No subscription is required to keep the paid site."
+  },
+  "signature_site": {
+    "public_name": "Signature Website",
+    "hours_all_in": 85,
+    "direct_cost": 200,
+    "type": "Fixed price for the exact listed scope. The signed quote identifies pages and deliverables. Any extra is separately priced before signing or through a written change request.",
+    "included_pages": "Up to five unique marketing pages chosen from the client's goals and search intent. The quote lists exact canonical pages; no universal page list is imposed.",
+    "page_scope": "Up to two primary service lines with distinct pages if search intent warrants, using a reusable design system. Further service, area, case-study, blog or landing pages require separate scope and genuine supporting evidence. Plain client-approved policy text may be linked, without legal drafting.",
+    "copy": "One discovery interview and client-provided facts; write/edit up to 2,000 words of new client-facing copy across included pages, including headlines, key sections and calls to action, plus metadata. The word ceiling is a scope change trigger, not a content target. One client fact-check and consolidated revisions. Original research, long-form articles, photography and legal copy excluded.",
+    "seo_foundation": "Keyword-to-page map for agreed primary services, clean semantic headings and metadata, index/canonical/redirect and sitemap checks, structured data when supported by verified facts, Search Console/analytics connection with client access, and launch validation. No recurring publishing, link outreach, GBP operation or ranking promise. More distinct service/location intent than five pages can support is a scope gate, not silently consolidated or multiplied.",
+    "creative": "One restrained brand-specific hero composition: still image plus optional prerendered motion loop of up to eight seconds, mobile crop/poster fallback, reduced-motion and performance treatment. No new character animation, multi-scene film, 3D configurator or campaign video.",
+    "functionality": "Responsive five-page custom coded site, one contact form routed through a client-controlled account, basic spam defense, accessible navigation, analytics and Search Console wiring if access is ready. No CMS, commerce, payments, booking system, member area, CRM/API integration or third-party subscription included.",
+    "revisions": "One consolidated visual-design round and one consolidated staging round within the agreed pages and features. Material direction change or new content/functionality gets a written change quote.",
+    "handoff": "Client-owned accounts remain accessible throughout. Paid bespoke deliverables and their operating license/source are handed over at the relevant paid milestone or reconciled termination; complete project walkthrough after final payment. Disclosed third-party and preexisting licenses apply.",
+    "correction": "30 calendar days after launch for defects against approved scope; new requests and third-party platform changes are separate work. Paid care may start only after the period ends.",
+    "delivery_target": "Typically 6-8 weeks after inputs and booking are ready; dated quote controls and quicker delivery is possible when workload permits.",
+    "payment_schedule": [
+      {
+        "event": "scope/booking",
+        "percent": 50,
+        "amount": 4750
+      },
+      {
+        "event": "design acceptance",
+        "percent": 30,
+        "amount": 2850
+      },
+      {
+        "event": "staging acceptance before launch",
+        "percent": 20,
+        "amount": 1900
+      }
+    ],
+    "hour_budget": {
+      "scope_discovery": 5,
+      "content_and_seo_ia": 7,
+      "copy_edit": 8,
+      "design": 10,
+      "hero_asset": 8,
+      "implementation": 22,
+      "qa": 10,
+      "launch_handoff": 5,
+      "revisions_coordination": 6,
+      "correction_reserve": 4
+    },
+    "public_price": 9500,
+    "policy_page": "One plain /privacy/ page containing client-approved supplied text is included beyond the marketing-page cap; no legal drafting. Other policies separately agreed.",
+    "redirect_limit": "Up to 10 simple one-to-one redirects from an existing supplied URL inventory. Migration discovery, large migrations and redirect chains require separate scope.",
+    "form_limit": "One form, up to six fields, one receiving destination, one confirmation state; no CRM/API workflow, uploads, payments or sensitive-data intake.",
+    "revision_definition": "One consolidated visual round and one consolidated staging round. A round is one written list from the named approver within the approved direction and page/features scope. Defect correction does not consume a revision round.",
+    "acceptance": "Named acceptance tests, one approver and a dated version; client sends written acceptance or one consolidated defect/punch list within the agreed review window. Silence is not acceptance and does not trigger milestone billing. Missing inputs rebook dates after notice.",
+    "maximum_inclusions_hour_case": {
+      "status": "Sized estimate, not observed production evidence. Full listed scope is included in the existing stage budgets; no measured speed claim.",
+      "implementation_detail": {
+        "shared_shell_components": 6,
+        "five_page_assembly": 7,
+        "hero_integration": 2,
+        "six_field_form_and_delivery": 3,
+        "ten_supplied_redirects": 1.5,
+        "supplied_privacy_markup": 0.5,
+        "responsive_integration": 2
+      },
+      "qa_detail": {
+        "form_receipt_validation_failure": 2,
+        "ten_redirect_status_checks": 1,
+        "privacy_links_and_format": 0.5,
+        "keyboard_focus_screenreader": 2,
+        "performance_media": 1.5,
+        "responsive_crossbrowser": 2,
+        "secrets_dependency_rollback": 1
+      },
+      "implementation_total": 22.0,
+      "qa_total": 10.0,
+      "conditions": "Supplied final privacy text, ten unambiguous old/new URL pairs, one six-field form with supported provider and no custom workflow; reusable production patterns. New unknown integration or migration discovery is excluded.",
+      "validation_gate": "Run a representative build/rehearsal with full inclusions and record actual hours before expanding throughput; use first paid delivery records to validate estimates. Scope must be honored if sold."
+    },
+    "platform_fit": "Static custom site; no self-serve CMS. Ask who edits and how often before quoting. If self-editing is required, separately scope a CMS/platform or recommend an appropriate provider before deposit.",
+    "ownership_boundary": "Client owns paid bespoke work and supplied assets; preexisting reusable components and third-party software retain their licenses, with sufficient perpetual license to operate the delivered site. Client controls production accounts from the start. No subscription is required to keep the paid site."
+  },
+  "care": {
+    "public_name": "Website Care",
+    "monthly_price": 199,
+    "hours_all_in": 1.25,
+    "direct_cost": 15,
+    "edit_minutes": 15,
+    "eligibility": "Known Wonder and Method static builds only at launch; unknown legacy stack requires separately quoted assessment and acceptance.",
+    "deliverables": [
+      "Automated uptime alerts with business-hours human review",
+      "Monthly critical-page and form journey check, with client mailbox receipt confirmation or permitted delegated access",
+      "One consolidated supplied minor text/link/image edit estimated up to 15 minutes, including deployment QA",
+      "Quarterly relevant dependency and recovery review, with monthly allocation",
+      "Monthly dated work receipt and open-issue note"
+    ],
+    "normal_ack_business_days": 2,
+    "critical_ack_business_days": 1,
+    "business_hours": "Monday-Friday 9am-5pm America/New_York, excluding stated holidays; confirm actual founder coverage before offering",
+    "response_boundary": "Acknowledgment target, not a fix deadline; no 24/7 human coverage or guaranteed restoration. Quote larger incidents after triage. Defects covered by correction terms remain separate from paid edits.",
+    "activation_hours_known_build": 0.5,
+    "exit_hours": 1,
+    "technical_baseline_rule": "Included in original build; no second technical activation fee.",
+    "unused_time": "Does not roll over; client sees the 15-minute allowance, not an entitlement to internal 1.25 hours.",
+    "excluded": [
+      "New pages",
+      "Redesign",
+      "CMS or integration work",
+      "Routine email hosting administration",
+      "Unlimited incident repair",
+      "Third-party fees"
+    ],
+    "scale_gate": "Complete at least one paid quarter including the dependency/recovery review, actual incident and coordination time, plus startup/exit allocation or timed exit drill. Two months alone do not validate quarterly work.",
+    "incident_action": "Included: business-hours alert review, verify/classify, notify client, route to responsible provider and state next update. Build defects follow the 30-day correction promise; other repair labor needs a written quote. No restoration deadline.",
+    "coverage_rule": "Before enrollment record actual staffed window, timezone, holidays/closure dates, alert recipient and contact route. Proposed Mon–Fri9–5 Eastern is usable only if actually staffed. After-hours alerts enter the queue when the next staffed window opens; next-business-day acknowledgment is due by the end of the next staffed business day. Normal acknowledgment within two staffed business days. Pause new enrollment when coverage cannot be met.",
+    "pilot_economics_at_75": {
+      "first_quarter_net_after_lifecycle_and_acquisition": 29.9,
+      "with_extra_half_hour_each_month": -82.6,
+      "basis": "3 paid months; monthly contribution80.80 or43.30 minus0.5 activation+1 exit+1 sales hour at75 plus25cash. Not a bank cash forecast."
+    }
+  },
+  "search_sprint": {
+    "public_name": "Search Improvement Sprint",
+    "one_time_price": 1500,
+    "hours_all_in": 10,
+    "direct_cost": 35,
+    "deliverables": [
+      "Verified baseline and one agreed buyer/search priority",
+      "One implemented existing-page improvement using supplied approved facts, within existing template and up to 800 new or edited words",
+      "One related minor fix only if explicitly included in the signed 10-hour scope",
+      "One consolidated factual correction within approved direction",
+      "QA, URL-level before/after record, and a 90-day prioritized backlog"
+    ],
+    "preflight": "Access, supported stack, facts and worthwhile bounded change verified before sale; choose implementable priority by hour 3. Do not sell an audit-only substitute. If unexpected access blocker arises, pause and agree alternate same-scope implementation or reconcile unearned work.",
+    "baseline_rule": "New studio builds with a documented usable baseline can enter monthly Search directly. No forced Sprint and no separate setup charge. If Sprint is useful, replace duplicated baseline work with explicitly agreed implementation.",
+    "excluded": [
+      "Original research guide",
+      "New template or CMS",
+      "Migration",
+      "Custom integration",
+      "Backlink outreach or purchases",
+      "Ranking/lead guarantee"
+    ]
+  },
+  "search_plan": {
+    "public_name": "Monthly Search Plan",
+    "monthly_price": 1100,
+    "hours_all_in": 7,
+    "direct_cost": 35,
+    "page_word_limit": 800,
+    "minor_fix_count": 1,
+    "revision_rounds": 1,
+    "deliverables": [
+      "One agreed priority cycle on a known supported site with documented baseline",
+      "One existing-page improvement up to 800 new or edited words using supplied facts and an existing template",
+      "One defined related low-risk minor fix, estimated up to 30 minutes: metadata, internal linking or simple on-page correction",
+      "QA and URL-level work receipt with observation window and next decision"
+    ],
+    "hour_budget": {
+      "measurement_priority": 1.5,
+      "page": 2.5,
+      "minor_fix": 0.5,
+      "qa": 0.75,
+      "receipt_coordination": 0.75,
+      "reserve": 1
+    },
+    "revision_scope": "One consolidated factual correction within approved direction; counts in the seven-hour estimate, but sold deliverable must be honored even if estimate is exceeded.",
+    "entry_rule": "Documented launch or Sprint baseline; supported stack and useful approved backlog.",
+    "renewal_rule": "Quote states exact renewal date/time/timezone and one written cancellation route. Five business days before renewal, confirm a useful approved task and required inputs or pause next invoice. Client may cancel any time before actual renewal. If charged without an approved useful task, customer chooses refund or credit for the unused cycle; begun work is itemized and unearned remainder reconciled under signed terms.",
+    "excluded": [
+      "New original guide",
+      "Unlimited pages",
+      "Technical migration",
+      "API/CRM or measurement integration",
+      "Keyword/ranking/lead/revenue guarantees",
+      "Guaranteed links",
+      "GBP operation"
+    ],
+    "scale_gate": "Two complete paid cycles with approved facts, minor fix, factual revision, QA, coordination and reserve before widening availability."
+  },
+  "combined_monthly": {
+    "care_plus_search": 1299,
+    "discount": 0,
+    "rule": "Sum of two optional services; avoid duplicate form/deploy/report effort and show one consolidated receipt. No mandatory bundle.",
+    "delivery_rule": "Care checks and its requested edit remain distinct from Search page/fix outcomes. Shared deployment QA may be run once, but one edit cannot satisfy both paid units. If no distinct useful Search task exists, pause Search and continue chosen Care only."
+  },
+  "add_ons": [
+    {
+      "id": "simple_content_page",
+      "public_fixed_unit_price": 850,
+      "hours": 7,
+      "direct": 10,
+      "scope": "One page, up to 600 words edited from supplied facts, using one existing design pattern; supplied licensed imagery; metadata/internal links; one consolidated revision and responsive QA. No new template, research or functionality."
+    },
+    {
+      "id": "evidence_service_or_area_page",
+      "public_fixed_unit_price": 1250,
+      "hours": 10,
+      "direct": 10,
+      "scope": "One distinct service or evidenced area page up to 900 words, one interview up to 30 minutes, existing design pattern, supplied factual evidence/imagery, metadata/internal links, one consolidated factual revision and responsive QA. No new template, field research or functionality; local evidence gate still applies."
+    },
+    {
+      "id": "second_motion_scene",
+      "public_fixed_unit_price": 1500,
+      "hours": 12,
+      "direct": 25,
+      "scope": "One approved simple prerendered scene up to 8 seconds, one storyboard direction, one consolidated revision, one desktop crop, one mobile crop, still/poster and reduced-motion fallback. No new character, complex simulation, voiceover or live 3D."
+    }
+  ],
+  "add_on_guardrail": "Extra 8-second scene at $1,500 is eligible only after an established approved bespoke hero/direction, normally Signature. A first bespoke hero on Focused is separately scoped; do not imply a discounted Signature reconstruction or fake package savings. Page units extend the accepted service/market/design direction only; they do not buy a new service line, template, CMS or first bespoke hero. Re-scope before work if fit changes.",
+  "ownership_and_billing": {
+    "build_milestones": "50% booking, 30% written design acceptance, 20% written staging acceptance before launch. Silence is not acceptance.",
+    "subscription": "Optional advance monthly billing, no minimum term, cancellation before actual renewal stops future invoices; service runs through paid period. No forfeiture of paid site.",
+    "late_payment": "Pause new unpaid work after notice; preserve client-owned assets and access. No disabling a paid client-owned website to enforce an unrelated service invoice.",
+    "build_cancellation": "Provide a dated ledger of completed work, approved committed costs and payments. Reconcile under the signed agreement. Client-owned accounts and paid bespoke deliverables/source remain usable; identify unfinished/unpaid material and its status explicitly. Final contract should resolve disputed amounts without taking client accounts hostage.",
+    "handoff": "Within five business days provide existing paid source/content/media, license/account map, build/deploy instructions and known unfinished items, on completion or reconciled termination. Routine handoff included; new migration labor separately scoped. Client accounts accessible throughout.",
+    "third_party": "List exact provider, payer, setup, renewal, included usage, overage, license, cancellation and ownership before deposit. No assumed zero hosting or vague all-in claim.",
+    "buyer_confirmation": "Exact routes, copy limits, CMS/editing fit, date schedule, feedback windows, costs, exclusions and named approver accepted in writing.",
+    "acceptance_and_delay": "One named approver, acceptance tests and five-business-day review window unless agreed otherwise. Written acceptance or consolidated defect list. No deemed approval or automatic design/staging milestone invoice when the client misses a deadline; send notice and revise available slot.",
+    "cancellation_route": "One written/electronic route in the quote with exact renewal timestamp/timezone and acknowledgment. No service cancellation disables an already paid client-owned website."
+  },
+  "billing_illustration": {
+    "convention": "Planning month 1 contains build and optional Sprint; service examples use 11 bills through month 12 and 23 through month 24. This is an explicit convention, not a mathematical consequence of starting on day 31. Signed quotes show exact dates.",
+    "first_year_cycles": 11,
+    "second_year_total_cycles": 23,
+    "care_starts": "After included 30-day correction period; new ongoing Search starts on agreed nonduplicative service date.",
+    "actual_quote_rule": "The 11/23-cycle table is an illustration only. The quote records actual start/renewal dates, partial periods and number of invoices within each anniversary window. No fixed month-two rule overrides those dates."
+  }
+}

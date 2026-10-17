@@ -1,0 +1,14 @@
+import {mkdir,readFile,writeFile,cp,stat} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {build} from 'esbuild';
+import {motionStudyPage} from '../motion/site/page.mjs';
+const root=resolve(import.meta.dirname,'..'),output=resolve(root,'.runtime/editorial-review');
+await stat(resolve(output,'concepts/index.html'));
+const offers=JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8'));
+await mkdir(resolve(output,'motion-study'),{recursive:true});await mkdir(resolve(output,'motion-assets'),{recursive:true});
+await cp(resolve(root,'motion/site/site.css'),resolve(output,'motion-assets/site.css'));
+for(const name of ['ribbon-poster.webp','ribbon-loop.mp4'])await cp(resolve(root,'output/motion',name),resolve(output,'motion-assets',name));
+await build({entryPoints:[resolve(root,'motion/site/site.js')],outfile:resolve(output,'motion-assets/site.js'),bundle:true,minify:true,format:'esm',target:['es2022']});
+const price=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(offers.focused_site.public_price);
+await writeFile(resolve(output,'motion-study/index.html'),motionStudyPage({price}));
+console.log('Private motion prototype prepared at /motion-study/.');

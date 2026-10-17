@@ -1,0 +1,531 @@
+{
+  "version": "5.0",
+  "date": "2026-10-13",
+  "status": "passed",
+  "passed": 103,
+  "total": 103,
+  "checks": [
+    {
+      "check": "All package JSON parses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Exact selected prices",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No former setup or Growth offer in selected schema",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Care supported scope and scale gate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Search exact monthly unit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No duplicate baseline required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Combined price is simple sum",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "focused_site milestone arithmetic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "focused_site budget arithmetic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "signature_site milestone arithmetic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "signature_site budget arithmetic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Six stages and three working records",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer wire references resolve to current offer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Unit economics v3_focused_site",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics v3_signature_site",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics conditional_compact_site",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics v3_care",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics low_care_199",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics care_249",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics proactive_399",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics quarterly_check_249",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics v3_seo_setup",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics v3_seo_focused",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics v3_seo_growth",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics search_sprint_1500",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Unit economics search_plan_1100",
+      "passed": true,
+      "detail": "Recomputed at $50/$75/$100 from full labor, direct costs, fees and leakage."
+    },
+    {
+      "check": "Buyer totals Focused Build only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Focused Build + Care",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Focused Build + Search; launch baseline ready",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Focused Build + Care + Search; launch baseline ready",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Focused Build + Sprint + Care + Search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Signature Build only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Signature Build + Care",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Signature Build + Search; launch baseline ready",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Signature Build + Care + Search; launch baseline ready",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Buyer totals Signature Build + Sprint + Care + Search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Direct Focused TCO known example",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Sprint Focused TCO known example",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Studio budget has no mandatory85h rehearsal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "35h all dated weeks fit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "35h weekly planned ceiling",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "35h monthly ceilings",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "35h calendar/weekly totals",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "40h all dated weeks fit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "40h weekly planned ceiling",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "40h monthly ceilings",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "40h calendar/weekly totals",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "50h all dated weeks fit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "50h weekly planned ceiling",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "50h monthly ceilings",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "50h calendar/weekly totals",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No false completed website release gates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Online-only/GBP/budget uncertainty preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Preserved bytes keyword-manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Preserved bytes KEYWORD_REGISTER.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Preserved bytes geography.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Preserved bytes design-tokens.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Preserved bytes search-evidence.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "482 unique terms and 359 legacy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Municipality/search-place inventories",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Palettes and contrast evidence preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Twelve content briefs preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "14 maximum gated site-map entries",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "59 records, 52 brands, 28 additions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No unknown provider names",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Distinct review sample",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "74 observations with explicit dispositions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML unique IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML 14 chapters and keyword register",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML anchor targets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Relative document and report links resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Report correct version/counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Interactive buyer-cost controls included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Report preserves responsive and print rules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Report JavaScript syntax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Interactive calculator scenarios",
+      "passed": true,
+      "detail": "9 calculator scenarios passed, including base/combined/Sprint/external costs, unit margin, loss and invalid values. No browser rendering simulated.\n"
+    },
+    {
+      "check": "Independent final review resolved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "All six historical archives match original bytes and hashes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "270 prior-plan files plus six related artifacts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No node_modules in history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "All168 inventoried V1/V2 files preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Raw restored legacy-keywords-raw.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Raw restored legacy-keyword-delta-raw.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "V2 county CSV raw values preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "V2 raw JSON content preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Every original authored path mapped to an archive",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No stale buyer-needs menu in current root",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Five primary chapters and collapsed reference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Current domain authorities resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "One delivery authority and derived summary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No duplicate commercial wire",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No mandatory unpaid practice or delay",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Calendar former post-week-six inventory removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Paid cancellation and milestone handoff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Written acceptance and silence boundary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Renewal refund and invoice pause",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Distinct combined outcomes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Actual Care coverage and repair boundary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Care paid-quarter lifecycle economics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Restored technical release domains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "One active palette and bounded media",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Deferred routes and backlog rules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "No browser rendering claim",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "not_verified": [
+    "Browser visual rendering: local preview blocked by browser policy; no workaround attempted",
+    "Actual website/device/accessibility/field performance",
+    "Live form/inbox and account handoff",
+    "Actual founder budget, weekly availability and coverage",
+    "Paid demand, completed-client outcomes and production hours"
+  ]
+}

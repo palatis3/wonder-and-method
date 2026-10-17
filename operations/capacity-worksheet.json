@@ -1,0 +1,71 @@
+{
+  "status": "Blank actual capacity; illustrative source calendar is not availability",
+  "weeks": [],
+  "week_template": {
+    "week_start": null,
+    "available_hours": null,
+    "studio_hours": null,
+    "sales_hours": null,
+    "admin_hours": null,
+    "planned_client_hours": null,
+    "actual_client_hours": null,
+    "unexpected_client_hours": null,
+    "dated_stage_slots": [],
+    "approvals": [],
+    "launches": [],
+    "recurring_dates": [],
+    "correction_tails": [],
+    "known_activation_exit_hours_included_once": null
+  },
+  "calendar_months": [],
+  "month_template": {
+    "calendar_month": null,
+    "planned_client_hours": null,
+    "total_client_hours": null
+  },
+  "rules": {
+    "deduct_leave_first": true,
+    "unexpected_reserve_fraction": 0.2,
+    "outer_planned_week_cap": 24,
+    "outer_planned_calendar_month_cap": 96,
+    "outer_total_client_calendar_month_cap": 120,
+    "conservative_example_weekly_plan": 20,
+    "outer_total_work_week_cap": 60
+  },
+  "accounting": "Focused55/Signature85 include known revisions, handoff and correction tails. Search7 includes its1h reserve; Care1.25 includes allocated quarterly work. Add activation/exit only once; sales labor belongs to sales. Shared unexpected recovery is not sellable. Unattended renders are elapsed time.",
+  "booking_inputs": {
+    "actual_calendar_confirmed": null,
+    "correction_tail_confirmed": null,
+    "capability_evidence": "evidence/studio-capability.json",
+    "cash_check_reference": null
+  },
+  "founder_availability_input": {
+    "reported_weekly_hours": null,
+    "certainty": "Flexible availability stated; no dated start week, reliably reserved numeric hours or closures supplied.",
+    "interpreted_as": "Strong availability intent; V5 60-hour total-work ceiling retained; not a confirmed client booking calendar.",
+    "planning_weekly_ceiling": 60,
+    "dated_calendar_confirmed": false,
+    "previous_tentative_weekly_hours": 80,
+    "latest_owner_statement": "I will focus as much time as possible; unlimited time to work on projects. Priority is website design and SEO this week.",
+    "updated_at": "2026-10-14T16:38:21.079Z"
+  },
+  "build_commitments": [],
+  "build_commitment_template": {
+    "job_id": null,
+    "launch_date": null,
+    "correction_tail_end": null,
+    "correction_slot_ids": []
+  },
+  "dated_stage_slot_template": {
+    "id": null,
+    "date": null,
+    "job_id": null,
+    "kind": null,
+    "planned_hours": null,
+    "actual_hours": null,
+    "unexpected_hours": null,
+    "source_reference": null
+  },
+  "calculation_command": "node scripts/capacity-calendar.mjs operations/capacity-worksheet.json",
+  "allocation_accounting": "One unique allocation ID per dated work block. actual_hours is observed work against plan, excluding separately recorded unexpected_hours. Use 0 for explicitly unperformed future work; null is unknown. Monthly total uses max(planned,actual)+unexpected. Reference the existing job receipt, not a new time ledger. Leave calendar_months empty to derive totals; entered summaries must reconcile."
+}

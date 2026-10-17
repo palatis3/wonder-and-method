@@ -1,0 +1,1970 @@
+{
+  "rule": "Archive mappings are exact. Same-name work matches are candidate mappings only; check content/source context. Private authoring paths are provenance, not executable or required links. Read the prebuilt index.html; no workspace scripts are needed.",
+  "exact_legacy_files": [
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/BACKLOG.csv",
+      "archive": "history/v1.zip",
+      "member": "BACKLOG.csv",
+      "sha256": "dd40ae036ee4335ecd514c864dd9992b3f9b7642d2e589e54f25a30bad329c49",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/backlog.json",
+      "archive": "history/v1.zip",
+      "member": "backlog.json",
+      "sha256": "324e9d455f038141aa562391b43ca331b3c6aee16e1c85c0ffe685e037c28fc5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/BUSINESS_PLAN.md",
+      "archive": "history/v1.zip",
+      "member": "BUSINESS_PLAN.md",
+      "sha256": "76259d3432e60b974c07fa1a9219ba655c22819477316fb66c50bdcbf7d7f50d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/CODEX_RUNBOOK.md",
+      "archive": "history/v1.zip",
+      "member": "CODEX_RUNBOOK.md",
+      "sha256": "93812e7ca7290d019e2d5a5940f64c742b370977ff1c8ed639df986620ec408d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/county-keywords-raw.json",
+      "archive": "history/v1.zip",
+      "member": "county-keywords-raw.json",
+      "sha256": "e2257b60634d5d72438586dbdd597ba8568fafab24fe980f440c26ab69bfdef2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/county-keywords.csv",
+      "archive": "history/v1.zip",
+      "member": "county-keywords.csv",
+      "sha256": "58375af3860035808d5389bbe69d2c78743c41c403f5198f834d294b04f53f45",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/erie-geography.csv",
+      "archive": "history/v1.zip",
+      "member": "erie-geography.csv",
+      "sha256": "ef39fd4308baea370bce0d3fc1a3cd90643ef4a83612d85a747e1e45c551c06c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/financial-model.csv",
+      "archive": "history/v1.zip",
+      "member": "financial-model.csv",
+      "sha256": "41a48d82eed86ba0a8d54131ad0c3226df67314138f2641ab8e8bc4cdbbf5a9e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/financial-model.json",
+      "archive": "history/v1.zip",
+      "member": "financial-model.json",
+      "sha256": "9a850be247cb83846ed4e1657e472c75a090a8caadd330d9fcae7a3dddd7ef64",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/index.html",
+      "archive": "history/v1.zip",
+      "member": "index.html",
+      "sha256": "a3232fc004ad18ccd63d00ba534341350c73fb7a1d93ece44608cc2386c3977e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/keyword-research.csv",
+      "archive": "history/v1.zip",
+      "member": "keyword-research.csv",
+      "sha256": "763cd53faaf5d087340f036ade01c2e97691f55eef7188ebd5be54d3e81660c3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/local-page-map.csv",
+      "archive": "history/v1.zip",
+      "member": "local-page-map.csv",
+      "sha256": "f2bde3d1e083e6f0f592350bbed8d6606e2743b9fc04ad4731f087aaf14ada61",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/market-data.csv",
+      "archive": "history/v1.zip",
+      "member": "market-data.csv",
+      "sha256": "6b4f1e19c03054624054925a6878471a03180c2ad43186ed4a1c8a2c696603c8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/OFFERS.md",
+      "archive": "history/v1.zip",
+      "member": "OFFERS.md",
+      "sha256": "2fa26fbdd4ec70eb51116b8ebafe4777ce197b47c2435625cdfa8b283ee76100",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/payment-models.csv",
+      "archive": "history/v1.zip",
+      "member": "payment-models.csv",
+      "sha256": "d1e241f48650fe781dd70b7f240894200c8351db0822c65fa48a4fcc71e57065",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/prospect-examples.csv",
+      "archive": "history/v1.zip",
+      "member": "prospect-examples.csv",
+      "sha256": "78428962227eb27aeaf5772556c0315801a5311c408285d24bea56a58864ab92",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/README.md",
+      "archive": "history/v1.zip",
+      "member": "README.md",
+      "sha256": "8ce3893a38c1430e69a5b891c84a5d708daae651d4b9905c8608ce9470679605",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/report-manifest.json",
+      "archive": "history/v1.zip",
+      "member": "report-manifest.json",
+      "sha256": "07cd684d2e8d4fc1b6a621a7ba08bf9ae1d7b9f80cbd83b4858e80a31a1d1720",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/01-premium-competitors.md",
+      "archive": "history/v1.zip",
+      "member": "research/01-premium-competitors.md",
+      "sha256": "41cf286c5185eca1fe263d74db62469e5a6aa229a9346a657ddd59621cfcd917",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/02-offer-models.md",
+      "archive": "history/v1.zip",
+      "member": "research/02-offer-models.md",
+      "sha256": "764ea841b908869cd63b21996432ae4a4a1f15d12fcd3353f5e2e1957724ec61",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/02-subscription-competitors.md",
+      "archive": "history/v1.zip",
+      "member": "research/02-subscription-competitors.md",
+      "sha256": "30dc6a7e4200186ecddb2a50fe5165f6ab9ade5a0717cbc361a9b936f673fdcc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/03-reviews-social.md",
+      "archive": "history/v1.zip",
+      "member": "research/03-reviews-social.md",
+      "sha256": "31f1ee971fd67d1155d77956385a39d55be2e01b527dd58b5e94c7a3a9967e66",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/04-local-demand.md",
+      "archive": "history/v1.zip",
+      "member": "research/04-local-demand.md",
+      "sha256": "bbe5b3385d4290efa0d3453282bc366a79c52f1f354ecee19c20453f7551ec89",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/05-seo-geo.md",
+      "archive": "history/v1.zip",
+      "member": "research/05-seo-geo.md",
+      "sha256": "793da22b777c06e3d24b8957497c47eebf5b581b31331bc9280452696f341fce",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/06-acquisition.md",
+      "archive": "history/v1.zip",
+      "member": "research/06-acquisition.md",
+      "sha256": "28d173628e675905a8aef2b57c27b58b3ebcf0b7fb622ef65d3f28aed5c6d6e9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/07-pricing-financials.md",
+      "archive": "history/v1.zip",
+      "member": "research/07-pricing-financials.md",
+      "sha256": "8c94df09a220235bdcaeb3b270e28f033f908a47110b3f5cfd85f030ce19708d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/08-production-system.md",
+      "archive": "history/v1.zip",
+      "member": "research/08-production-system.md",
+      "sha256": "b3d5af637fda252fc24093328eda733df513d59f5ae93b379d1fa13132b0e7e0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/09-business-operations.md",
+      "archive": "history/v1.zip",
+      "member": "research/09-business-operations.md",
+      "sha256": "119e50b4cbe1bd0a928021d6098516752ce6540dbb4fe9f223432e15cde34224",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/10-buying-experience.md",
+      "archive": "history/v1.zip",
+      "member": "research/10-buying-experience.md",
+      "sha256": "8420fb0ddfd56c0b9e5f57d02804a00b6b4f1c5f02ebf39c00967aee6758943d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/11-monthly-website-economics.md",
+      "archive": "history/v1.zip",
+      "member": "research/11-monthly-website-economics.md",
+      "sha256": "22bf6de91ecb938c926a02601cf61128ab0196801041966839d7f6a4785cee40",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/12-evidence-audit.md",
+      "archive": "history/v1.zip",
+      "member": "research/12-evidence-audit.md",
+      "sha256": "251b4504e81014f89ffb21ceb90da6b4dae27bfd26997340d004b93dab29a896",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/13-prospect-examples.md",
+      "archive": "history/v1.zip",
+      "member": "research/13-prospect-examples.md",
+      "sha256": "4f202177344e141ad1d93c4b98782fc490211e9dc88e1cac9beeefb8f8829535",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/14-referral-partners.md",
+      "archive": "history/v1.zip",
+      "member": "research/14-referral-partners.md",
+      "sha256": "21ee50d12d0dc269a924c71ed830fca44c79017839c6079bb0d577a93adbdedb",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/15-tool-costs.md",
+      "archive": "history/v1.zip",
+      "member": "research/15-tool-costs.md",
+      "sha256": "992e4a6baabdddab6b43ebe322a0919ae879ea2acbf425fdb5b6e4b0febdbf5e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/16-add-on-opportunities.md",
+      "archive": "history/v1.zip",
+      "member": "research/16-add-on-opportunities.md",
+      "sha256": "265543e27569b7df1f49ac4049fda02ccd13624974f379e466f70c924b09dc50",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/17-buyer-budget-evidence.md",
+      "archive": "history/v1.zip",
+      "member": "research/17-buyer-budget-evidence.md",
+      "sha256": "43726b9b4673ff574793c40faf5dff5707e06b3ca361460e15497b4ece934195",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/18-plan-review.md",
+      "archive": "history/v1.zip",
+      "member": "research/18-plan-review.md",
+      "sha256": "ede71901b692afbd6dafa6ddf543b396e7707519ae6076931bcf9316331009a7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/19-search-competitor-supplement.md",
+      "archive": "history/v1.zip",
+      "member": "research/19-search-competitor-supplement.md",
+      "sha256": "69902924478ccc736c467b05bdc8787d6d1fb823e480b7c3a9741ce7ba03b75c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/20-erie-geography.md",
+      "archive": "history/v1.zip",
+      "member": "research/20-erie-geography.md",
+      "sha256": "39880c5f569af011fa7a569fdb98a7dc8fb07d998df46ddecb35e5ab5ffa35a9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/21-county-keywords.md",
+      "archive": "history/v1.zip",
+      "member": "research/21-county-keywords.md",
+      "sha256": "95e21dafa73cb3bb3c9b0bf6fc88f488f1f4cf7fdfb9045d775482f6723b3582",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/22-local-launch-map.md",
+      "archive": "history/v1.zip",
+      "member": "research/22-local-launch-map.md",
+      "sha256": "79f26b526b9032baa1aa5833e8d49c3ddd998adfd64c8f7b0ffbfd6c5af6cc85",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/research/23-review-closeout.md",
+      "archive": "history/v1.zip",
+      "member": "research/23-review-closeout.md",
+      "sha256": "0b26a5eef44714050aaa789b7e4f6812c62e12a407ed922ac8303bfce55b8a6f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/RESEARCH_INDEX.md",
+      "archive": "history/v1.zip",
+      "member": "RESEARCH_INDEX.md",
+      "sha256": "a8f832585398ae631e9d90a1e322be328e3335a9ff06853cb628cf138b917ac8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/review-coverage.csv",
+      "archive": "history/v1.zip",
+      "member": "review-coverage.csv",
+      "sha256": "7237d3b8aea574789b077ac9109f40687c3549ea61feed3773fc9ffe3068e783",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/sources.csv",
+      "archive": "history/v1.zip",
+      "member": "sources.csv",
+      "sha256": "647c0dd93e993520771737f97277030ac653237e387efdfaf296874f0b69b4b5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/START_HERE.md",
+      "archive": "history/v1.zip",
+      "member": "START_HERE.md",
+      "sha256": "1cd3490344dd3155648a908cbfe528193872f9b1574d0fe174d0c8b109d5a1d8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/TEMPLATES.md",
+      "archive": "history/v1.zip",
+      "member": "TEMPLATES.md",
+      "sha256": "20eddf82f80a957f0abaf05801bfd34e9d773b333bc5643e8667bf15682180f7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/verification-results.json",
+      "archive": "history/v1.zip",
+      "member": "verification-results.json",
+      "sha256": "b456ab434bdb46454da7e1817da2106d63f53cf98004534e31db6d160d11ca7d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan/VERIFICATION.md",
+      "archive": "history/v1.zip",
+      "member": "VERIFICATION.md",
+      "sha256": "59c89941327309e79e3ff5e57ecf48eec3d44f263e071f9dc73889f53c7e7a61",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/AI_DELIVERY_PLAYBOOK.md",
+      "archive": "history/v2.zip",
+      "member": "AI_DELIVERY_PLAYBOOK.md",
+      "sha256": "832608ebc23c0be18ef0cd07bc4a796ba2dda878c0048b195bbeb1cae6229cd9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/BACKLOG.csv",
+      "archive": "history/v2.zip",
+      "member": "BACKLOG.csv",
+      "sha256": "42e32f36bdbb559acb4c966e6a1a0c9e6cf9fca817fc69fef5a2c3093a3fd72c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/backlog.json",
+      "archive": "history/v2.zip",
+      "member": "backlog.json",
+      "sha256": "7ee2f21ec10dd956517c9ed75514ef71addcea1643347dacb2b739059e979e1c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/bundles.json",
+      "archive": "history/v2.zip",
+      "member": "bundles.json",
+      "sha256": "368a69207e1a2acc7176b011c6356dd9ae16fcbb1486025661a1919c2466beb1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/BUSINESS_PLAN.md",
+      "archive": "history/v2.zip",
+      "member": "BUSINESS_PLAN.md",
+      "sha256": "8cf3037ee6d81db02a594fae116fd1d0d06d7e29b6f75c48ca09eb217f22a291",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/buyer-payment-evidence.csv",
+      "archive": "history/v2.zip",
+      "member": "buyer-payment-evidence.csv",
+      "sha256": "075240780e44afbc872fe9ac4720788822d9ed9304942dd697e7d3e8115dc8b2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/change-register.csv",
+      "archive": "history/v2.zip",
+      "member": "change-register.csv",
+      "sha256": "06fcf78e832cf6e7167a4a178e798521ab1a43b5b43626db8f409d9983589278",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/change-register.json",
+      "archive": "history/v2.zip",
+      "member": "change-register.json",
+      "sha256": "233d66820cdbfad83f44370c7594ce17c2cdfc88928e27c5e7dc0442f6661b6a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/CHANGES_AND_DECISIONS.md",
+      "archive": "history/v2.zip",
+      "member": "CHANGES_AND_DECISIONS.md",
+      "sha256": "c7189d3dd2a0747d2f196cf108151d5c10d9d553ec9c8b01d88efae004a963a7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/CODEX_RUNBOOK.md",
+      "archive": "history/v2.zip",
+      "member": "CODEX_RUNBOOK.md",
+      "sha256": "a419a01b580910e49f5b01af87633165c3538c251c039e5a6145669590bb885a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/competitor-pricing.csv",
+      "archive": "history/v2.zip",
+      "member": "competitor-pricing.csv",
+      "sha256": "4beb82cdd6ee069303e0d5ae994f44aa0ed900d06b957d09e44e4216781c3b3d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/county-keywords-raw.json",
+      "archive": "history/v2.zip",
+      "member": "county-keywords-raw.json",
+      "sha256": "e2257b60634d5d72438586dbdd597ba8568fafab24fe980f440c26ab69bfdef2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/county-keywords.csv",
+      "archive": "history/v2.zip",
+      "member": "county-keywords.csv",
+      "sha256": "1b21ebd1264a76cc24535efb02f6bbc13912996a0371d46e457ddc85f00d8b7d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/erie-geography.csv",
+      "archive": "history/v2.zip",
+      "member": "erie-geography.csv",
+      "sha256": "ef39fd4308baea370bce0d3fc1a3cd90643ef4a83612d85a747e1e45c551c06c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/financial-model.csv",
+      "archive": "history/v2.zip",
+      "member": "financial-model.csv",
+      "sha256": "f9731259420213a9e332a9f8efb644d0e5432b00427efeb1d0a73c8ca8fc41f7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/financial-model.html",
+      "archive": "history/v2.zip",
+      "member": "financial-model.html",
+      "sha256": "9eb5f9f8647212ab6c27fb80cab875672d6ca61c7785ba82d24e9787dfb51859",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/financial-model.json",
+      "archive": "history/v2.zip",
+      "member": "financial-model.json",
+      "sha256": "d6866c482ab03018dfda98e0da356185b823e3ea200c352bc6d86d75c1f28d39",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/FINANCIAL_GUIDE.md",
+      "archive": "history/v2.zip",
+      "member": "FINANCIAL_GUIDE.md",
+      "sha256": "8b7e31a87693b0ff9934ad8a7e1c787b182457e8568e239c62f43955f170f1dc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/index.html",
+      "archive": "history/v2.zip",
+      "member": "index.html",
+      "sha256": "82c7d8f6400654ee99656e80e18e6ba348e1d0cb2a06acf0ce5c01582a4cc0cc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/keyword-research.csv",
+      "archive": "history/v2.zip",
+      "member": "keyword-research.csv",
+      "sha256": "1b21ebd1264a76cc24535efb02f6bbc13912996a0371d46e457ddc85f00d8b7d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/keyword-summary.json",
+      "archive": "history/v2.zip",
+      "member": "keyword-summary.json",
+      "sha256": "0c9563b266b05009d8f38bfc897d7c5308cd124201ccff3062fff77ba6fe76f8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/local-page-map.csv",
+      "archive": "history/v2.zip",
+      "member": "local-page-map.csv",
+      "sha256": "768c496373009af4ef73d4c70fb5b5022747a52b6d17ef37e3f6f0d5279f1c4b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/LOCAL_SEARCH_PLAN.md",
+      "archive": "history/v2.zip",
+      "member": "LOCAL_SEARCH_PLAN.md",
+      "sha256": "cca2484f0749a2d931907cd40b21e5331a4c3f7e12e96dcf59c6e849c8c95d30",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/market-data.csv",
+      "archive": "history/v2.zip",
+      "member": "market-data.csv",
+      "sha256": "6b4f1e19c03054624054925a6878471a03180c2ad43186ed4a1c8a2c696603c8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/offer-inputs.json",
+      "archive": "history/v2.zip",
+      "member": "offer-inputs.json",
+      "sha256": "7699994e283ecc14973a6590c90a7030523e4b6d1b53ff5cd5121f553c58acc0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/OFFERS.md",
+      "archive": "history/v2.zip",
+      "member": "OFFERS.md",
+      "sha256": "fe9deab0c69c82ebd02a398692ebaa3608911b02cff7ae7f9bf3dbe2f05cde3d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/OPERATIONS_AND_TEMPLATES.md",
+      "archive": "history/v2.zip",
+      "member": "OPERATIONS_AND_TEMPLATES.md",
+      "sha256": "5699b606d791bf27af29be67a07135b23af20f10fe760959b006fda26bd3974c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/prospect-examples.csv",
+      "archive": "history/v2.zip",
+      "member": "prospect-examples.csv",
+      "sha256": "78428962227eb27aeaf5772556c0315801a5311c408285d24bea56a58864ab92",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/README.md",
+      "archive": "history/v2.zip",
+      "member": "README.md",
+      "sha256": "b702f8f4b430d6aa150f15d5fd2536135c679e23b0d0daab32d29e600772f957",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/report-manifest.json",
+      "archive": "history/v2.zip",
+      "member": "report-manifest.json",
+      "sha256": "d208dde245c568e98cef2e428c15be2c162c8ccd9fe7540502c8735e0957065f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/01-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/01-findings.json",
+      "sha256": "2f0701125190a284b80749e5cbf2874ac1fdc627e583129586773c987cd0b715",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/01-positioning.md",
+      "archive": "history/v2.zip",
+      "member": "research/01-positioning.md",
+      "sha256": "1e0871987280a63fc2c9b40846fcbb92c04f87d6139918347ef0736f2ea16fbb",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/02-bundles.json",
+      "archive": "history/v2.zip",
+      "member": "research/02-bundles.json",
+      "sha256": "368a69207e1a2acc7176b011c6356dd9ae16fcbb1486025661a1919c2466beb1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/02-competitor-pricing.csv",
+      "archive": "history/v2.zip",
+      "member": "research/02-competitor-pricing.csv",
+      "sha256": "4beb82cdd6ee069303e0d5ae994f44aa0ed900d06b957d09e44e4216781c3b3d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/02-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/02-findings.json",
+      "sha256": "5d6056d4805ddf7f6bf82db872fcebdba542c95723382de7f66c5009fff1dcb2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/02-offer-inputs.json",
+      "archive": "history/v2.zip",
+      "member": "research/02-offer-inputs.json",
+      "sha256": "7699994e283ecc14973a6590c90a7030523e4b6d1b53ff5cd5121f553c58acc0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/02-offers.md",
+      "archive": "history/v2.zip",
+      "member": "research/02-offers.md",
+      "sha256": "443baa3aca7414b36dac04f7c7e54a2647b6a36dd4df78ec8046bb79e01e8273",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/03-client-success.md",
+      "archive": "history/v2.zip",
+      "member": "research/03-client-success.md",
+      "sha256": "4bf02136fc24c079678db4124f6d061952b6df02829f751bbc9d1ab74b75a343",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/03-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/03-findings.json",
+      "sha256": "d93274d4ef2291d004f36aaf70548d04787e2ec0b90cf504f90a0620cd37d5fe",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/03-payment-evidence.csv",
+      "archive": "history/v2.zip",
+      "member": "research/03-payment-evidence.csv",
+      "sha256": "075240780e44afbc872fe9ac4720788822d9ed9304942dd697e7d3e8115dc8b2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/03-payment-evidence.md",
+      "archive": "history/v2.zip",
+      "member": "research/03-payment-evidence.md",
+      "sha256": "4fb18e809e3c7c035d4fa7074b661eddb8a5ea01ed6d1ba2b5438dfa440d72c0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/04-demand-validation.md",
+      "archive": "history/v2.zip",
+      "member": "research/04-demand-validation.md",
+      "sha256": "d4760d11a87e3ddfb52ece479f1fdaefbab04fb34290afdac427dd44f2f1cf18",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/04-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/04-findings.json",
+      "sha256": "536952385271c25bf3e8b9db54835c27fabf8fd380a47cd124dc11a0cdea8abb",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/05-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/05-findings.json",
+      "sha256": "8c769d80e215e769e90a2ecb0f22c5f73c99557c0db3a250629bc4288c49263d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/05-keyword-delta-raw.json",
+      "archive": "history/v2.zip",
+      "member": "research/05-keyword-delta-raw.json",
+      "sha256": "b032c3f7ebd6a300ad5cbd1de75519aa7b4dcac0aa9442ad5ae87055e28537f3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/05-keyword-delta.csv",
+      "archive": "history/v2.zip",
+      "member": "research/05-keyword-delta.csv",
+      "sha256": "e787bf16c33f4228ed821202603c1ea39cdb48c9155f8e7f13125ccf615fa4c4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/05-search-growth.md",
+      "archive": "history/v2.zip",
+      "member": "research/05-search-growth.md",
+      "sha256": "e16adbcee458ae12874238f07a0d73f0623a4cba9caade12f0f214bb1a5e5bc0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/06-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/06-findings.json",
+      "sha256": "672e031e62f791ffb4a6310ba355b24e6f3ff3fe6cde4b39577a10788c2f709f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/06-funnel.json",
+      "archive": "history/v2.zip",
+      "member": "research/06-funnel.json",
+      "sha256": "2c0bac2dba100e2eb56f9d1efbef937af13107566a0620dd10e9fa9af027d196",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/06-revenue-engine.md",
+      "archive": "history/v2.zip",
+      "member": "research/06-revenue-engine.md",
+      "sha256": "095530e2e26f71584a2187defd59106d06332c7ccbbcfade5d1010e56c968938",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/07-financial-review.md",
+      "archive": "history/v2.zip",
+      "member": "research/07-financial-review.md",
+      "sha256": "c9efb9f2d75e2e8f76a869e3bbd0ce64d3ddab37d36a090fb41f94eda05694f7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/07-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/07-findings.json",
+      "sha256": "9424e3ad25c45eb33854720598c294976e3cdada014121c3d333a6d349e9243a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/07-model.json",
+      "archive": "history/v2.zip",
+      "member": "research/07-model.json",
+      "sha256": "d6866c482ab03018dfda98e0da356185b823e3ea200c352bc6d86d75c1f28d39",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/07-monthly.csv",
+      "archive": "history/v2.zip",
+      "member": "research/07-monthly.csv",
+      "sha256": "f9731259420213a9e332a9f8efb644d0e5432b00427efeb1d0a73c8ca8fc41f7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/08-ai-production.md",
+      "archive": "history/v2.zip",
+      "member": "research/08-ai-production.md",
+      "sha256": "309530743dbb697b9aafe357129f984af1418bba1683b195e4a02716002882f8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/08-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/08-findings.json",
+      "sha256": "594cf7ec87068ef6e29c9041849440db4cabbed77ce744082e5b2fc37acb581f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/08-workflows.json",
+      "archive": "history/v2.zip",
+      "member": "research/08-workflows.json",
+      "sha256": "918d3beeaccb02785bad0f3057275a47472193a75d4043808fedbdc8f53aef9b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/09-ceo-operations.md",
+      "archive": "history/v2.zip",
+      "member": "research/09-ceo-operations.md",
+      "sha256": "cbe371cd277f7c697a2fd08073861ca6b64325162a5e9c90074f9b555a31d953",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/09-critical-path.csv",
+      "archive": "history/v2.zip",
+      "member": "research/09-critical-path.csv",
+      "sha256": "51b2c0d5c2ee6926057e837274c5687d95b3441e0b9a0617d8b2cf3fe547aa6d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/09-findings.json",
+      "archive": "history/v2.zip",
+      "member": "research/09-findings.json",
+      "sha256": "3943dc9f469ce7d5bf06d0c8f3c0ca86a546c5822466c05da02e543fd4d37963",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/01-premium-competitors.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/01-premium-competitors.md",
+      "sha256": "4f9baf099c4b9c7e34aeb35095c573f291132d0c5455e953375b1a180548d4c4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/02-offer-models.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/02-offer-models.md",
+      "sha256": "829571f7332f3cba9d2a65b866d333d043c230b5ccd64a369026a02df4691ee5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/02-subscription-competitors.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/02-subscription-competitors.md",
+      "sha256": "b7c2b3d0baec7a9ba7413e7c60735517d3e5781e3510e305243bb92def7d564b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/03-reviews-social.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/03-reviews-social.md",
+      "sha256": "9c15fa99fa6893ca3ebecad0ca38af3adef1fe275d291749ecdebba6f73c5385",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/04-local-demand.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/04-local-demand.md",
+      "sha256": "61e30ee268352deae97337e09335db564b16d728d8ed4abe673145de8afb3bbe",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/05-seo-geo.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/05-seo-geo.md",
+      "sha256": "f1c4efb4142c57292375d575714d0645b9fd94d39fc652cee1f9fc1c8aa78d38",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/06-acquisition.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/06-acquisition.md",
+      "sha256": "72f46292e435034d574f61d522bd8f152891058aaf643692bdb95b1356034101",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/07-pricing-financials.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/07-pricing-financials.md",
+      "sha256": "6b239e7806a7ff69b03b31110d5da1bf869bd25ac60102eca3c0814cb10c4d5b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/08-production-system.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/08-production-system.md",
+      "sha256": "8e611a39934d2da072aaf07e13e8c6cc9d7def6d92fbeb3326acc276a6cfcaa4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/09-business-operations.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/09-business-operations.md",
+      "sha256": "fa4c87dba10dfa3661e22745460b26b755897900fa391abb91dadc5a1bb93bb3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/10-buying-experience.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/10-buying-experience.md",
+      "sha256": "e6a8faa2024837c3029e8cf9b68736b9acc060aaa7ca590e12813233be280f2c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/11-monthly-website-economics.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/11-monthly-website-economics.md",
+      "sha256": "861178befb7ce7aedf4377f310c6f33304ce162dd754579a83db97aa283e5854",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/12-evidence-audit.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/12-evidence-audit.md",
+      "sha256": "7582b31540da3f069f16d22ea7cc8c7e0a3cec6ff38a2598b10bb25c336de26f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/13-prospect-examples.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/13-prospect-examples.md",
+      "sha256": "b6cef87d3b420c3e183b69fcbb99bed9ce8d4aa8372ad8519cf03576b217c3f5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/14-referral-partners.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/14-referral-partners.md",
+      "sha256": "3a5ac2fe1dd75e8de2a89d5e72972df45c61b75b0eb7c9b3987502bf9e95a1f8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/15-tool-costs.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/15-tool-costs.md",
+      "sha256": "0d1865a94b6cae678e56655755f1b23722bbfa06c129fb4b76a94bb384bef52d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/16-add-on-opportunities.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/16-add-on-opportunities.md",
+      "sha256": "2d006a596c3e15a4979603a53c0eb8d70b7de38561992c6ba70e8c77822bdbd9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/17-buyer-budget-evidence.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/17-buyer-budget-evidence.md",
+      "sha256": "8fdd31d368e5347534b1bb20133c9a773f0663a114457131d48e70806a3d7abb",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/18-plan-review.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/18-plan-review.md",
+      "sha256": "dea816200ab1ce9fba09ba0ff01e0bb7c1a41c917a637765a92d4fcfeb452e18",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/19-search-competitor-supplement.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/19-search-competitor-supplement.md",
+      "sha256": "3e9d7e73384e80e1172020d2b0877f1d7e42a77faa3f887cc8572cf6744cff9d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/20-erie-geography.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/20-erie-geography.md",
+      "sha256": "ce3b2bf8da426d8142130c0f401b5ffebcbc8540b788ab7df7678cbb0cea0931",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/21-county-keywords.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/21-county-keywords.md",
+      "sha256": "a3dadf9644ec3cca990d3cfddc11262c9100be9606993e5a6042a9214e8c95cc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/22-local-launch-map.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/22-local-launch-map.md",
+      "sha256": "7e4b7e0df83d45ad1f86aea791404eabc625c808b76ca4573555eeddf4015c9d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/23-review-closeout.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/23-review-closeout.md",
+      "sha256": "89f668c2174a8c7dc5379f20ef701020c030231831e592bb2e5da86d10248259",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/BACKLOG.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/BACKLOG.csv",
+      "sha256": "dd40ae036ee4335ecd514c864dd9992b3f9b7642d2e589e54f25a30bad329c49",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/backlog.json",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/backlog.json",
+      "sha256": "324e9d455f038141aa562391b43ca331b3c6aee16e1c85c0ffe685e037c28fc5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/BUSINESS_PLAN.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/BUSINESS_PLAN.md",
+      "sha256": "120e95e9dba3d0884d2d8e1c9298666fb198567d83445685fb99e137bef6db63",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/CODEX_RUNBOOK.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/CODEX_RUNBOOK.md",
+      "sha256": "27b913ddf648b675e7f9fb906be43f986d731c43cb803334f3dca9e3ca97104e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/county-keywords-raw.json",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/county-keywords-raw.json",
+      "sha256": "e2257b60634d5d72438586dbdd597ba8568fafab24fe980f440c26ab69bfdef2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/county-keywords.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/county-keywords.csv",
+      "sha256": "58375af3860035808d5389bbe69d2c78743c41c403f5198f834d294b04f53f45",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/erie-geography.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/erie-geography.csv",
+      "sha256": "ef39fd4308baea370bce0d3fc1a3cd90643ef4a83612d85a747e1e45c551c06c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/financial-model.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/financial-model.csv",
+      "sha256": "41a48d82eed86ba0a8d54131ad0c3226df67314138f2641ab8e8bc4cdbbf5a9e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/financial-model.json",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/financial-model.json",
+      "sha256": "9a850be247cb83846ed4e1657e472c75a090a8caadd330d9fcae7a3dddd7ef64",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/keyword-research.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/keyword-research.csv",
+      "sha256": "763cd53faaf5d087340f036ade01c2e97691f55eef7188ebd5be54d3e81660c3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/local-page-map.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/local-page-map.csv",
+      "sha256": "f2bde3d1e083e6f0f592350bbed8d6606e2743b9fc04ad4731f087aaf14ada61",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/market-data.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/market-data.csv",
+      "sha256": "6b4f1e19c03054624054925a6878471a03180c2ad43186ed4a1c8a2c696603c8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/OFFERS.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/OFFERS.md",
+      "sha256": "ef621d86195cb66929368891a1e32e8114aa4bbf1d8bf93f70899a452248dc18",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/payment-models.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/payment-models.csv",
+      "sha256": "d1e241f48650fe781dd70b7f240894200c8351db0822c65fa48a4fcc71e57065",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/prospect-examples.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/prospect-examples.csv",
+      "sha256": "78428962227eb27aeaf5772556c0315801a5311c408285d24bea56a58864ab92",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/README.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/README.md",
+      "sha256": "eb685c35eae7b6c5f2253dd77bd8468557c926482dd9540984eac72b14ef6d86",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/report-manifest.json",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/report-manifest.json",
+      "sha256": "07cd684d2e8d4fc1b6a621a7ba08bf9ae1d7b9f80cbd83b4858e80a31a1d1720",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/RESEARCH_INDEX.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/RESEARCH_INDEX.md",
+      "sha256": "a1bd2dce62ebc93f858d753d4b655c1ece371de68bc57ab4b1532d5be9fc81c4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/review-coverage.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/review-coverage.csv",
+      "sha256": "7237d3b8aea574789b077ac9109f40687c3549ea61feed3773fc9ffe3068e783",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/sources.csv",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/sources.csv",
+      "sha256": "647c0dd93e993520771737f97277030ac653237e387efdfaf296874f0b69b4b5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/START_HERE.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/START_HERE.md",
+      "sha256": "a2de07c1a535b37d5640ab064b71181b1eadd5679ca96da2a113314d2602d77b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/TEMPLATES.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/TEMPLATES.md",
+      "sha256": "a6f959d59fcd5dbf4a7b6efbd9fd90bbe546a89fe66fe4dbb04acfc525dbe52b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/verification-results.json",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/verification-results.json",
+      "sha256": "b456ab434bdb46454da7e1817da2106d63f53cf98004534e31db6d160d11ca7d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/baseline-v1/files/VERIFICATION.md",
+      "archive": "history/v2.zip",
+      "member": "research/baseline-v1/files/VERIFICATION.md",
+      "sha256": "00ad32b111916cb1ac0de79d80df952e06cf0c37fedf321b99e9562e2b7d5338",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/final-review.json",
+      "archive": "history/v2.zip",
+      "member": "research/final-review.json",
+      "sha256": "d86434578321672ebde2bd3dbbd953cd6fe7fdc8fa6dec8e7f54420c75d1ebc5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/research/final-review.md",
+      "archive": "history/v2.zip",
+      "member": "research/final-review.md",
+      "sha256": "26980cf772c31080d05f212783d6edbe2f729b12d72676596dc485a39a9f9009",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/RESEARCH_INDEX.md",
+      "archive": "history/v2.zip",
+      "member": "RESEARCH_INDEX.md",
+      "sha256": "48bea1e8b6d560a663504ad6f7ffea6e4c1262bd1c0b978edd8c8eca9d4ab579",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/review-coverage.csv",
+      "archive": "history/v2.zip",
+      "member": "review-coverage.csv",
+      "sha256": "7237d3b8aea574789b077ac9109f40687c3549ea61feed3773fc9ffe3068e783",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/REVIEW_CLOSEOUT.md",
+      "archive": "history/v2.zip",
+      "member": "REVIEW_CLOSEOUT.md",
+      "sha256": "749f90a353588381c1e183193f0840c464999bec91a9004ae96d02e0d35ab18e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/SALES_PLAYBOOK.md",
+      "archive": "history/v2.zip",
+      "member": "SALES_PLAYBOOK.md",
+      "sha256": "bc0e75fc7500039e23deefb719dfe06c71fd3e5bf34c66c94ae31ee724299980",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/sources.csv",
+      "archive": "history/v2.zip",
+      "member": "sources.csv",
+      "sha256": "5711cfff09d052b5716b27fdebbfa43c155455881fe41e64d2a18b75abe98c2a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/START_HERE.md",
+      "archive": "history/v2.zip",
+      "member": "START_HERE.md",
+      "sha256": "a000715b97dd8cded10a3d93229d8232da8d6e239945c848f74ddd4608c78c06",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/verification-results.json",
+      "archive": "history/v2.zip",
+      "member": "verification-results.json",
+      "sha256": "1e8b159e60ffec076f6c433cb8765e85c3644ea0e2d7b4711a51a4761118cae1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/VERIFICATION.md",
+      "archive": "history/v2.zip",
+      "member": "VERIFICATION.md",
+      "sha256": "b78680f79fa9edede60a0c99a1db0813fd163ff693c5a4be94cb308ac85f9d36",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/buffalo-web-studio-business-plan-v2/verify-financial-model.py",
+      "archive": "history/v2.zip",
+      "member": "verify-financial-model.py",
+      "sha256": "250acba8f0a879cdc6d4e664163ea29ab78d301aa7833197bf965af0d58009f5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/audit-findings.json",
+      "archive": "history/v3.zip",
+      "member": "audit-findings.json",
+      "sha256": "8d65c03dcf2b11395efd148428cb61cfa6c576c13c705ba3d371049fb975430d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/backlog.json",
+      "archive": "history/v3.zip",
+      "member": "backlog.json",
+      "sha256": "2117343846b1e359848acfb6694d372f277388e3c6ade3de7ef9f5a69d02f031",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/BRAND_AND_MOBILE.md",
+      "archive": "history/v3.zip",
+      "member": "BRAND_AND_MOBILE.md",
+      "sha256": "53abacd4d4414fb242d583a58f476f370ae33bf9022c60bd73bf62288e3417f2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/build-contract.json",
+      "archive": "history/v3.zip",
+      "member": "build-contract.json",
+      "sha256": "d323c6437ecc7a5f5164a533b15a3774fc9258a9bfe1ea0791391f188e8050e5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/BUSINESS_PLAN.md",
+      "archive": "history/v3.zip",
+      "member": "BUSINESS_PLAN.md",
+      "sha256": "dca647a41d44d24c9a62ac5930a5972caf1b3f746e6d3b68dfda371351368f00",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/CODEX_HANDOFF.md",
+      "archive": "history/v3.zip",
+      "member": "CODEX_HANDOFF.md",
+      "sha256": "9352c64cc4862143154a55a17a535af3c2360edd90102e548d60f642ab9d8999",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/competitors-local.json",
+      "archive": "history/v3.zip",
+      "member": "competitors-local.json",
+      "sha256": "19f52104ee7744df9884ddfbee11a907f0ee1e66998af862bf82a1262dc474d3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/competitors-national.json",
+      "archive": "history/v3.zip",
+      "member": "competitors-national.json",
+      "sha256": "55d1606503294390975b21e32c0b5192b380818dc379d0448cbf7a2b59a64e6a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/content-plan.json",
+      "archive": "history/v3.zip",
+      "member": "content-plan.json",
+      "sha256": "c31290a75a048d75fac8cb0788aff3c781280e1474e39319ac66cf6e8dbc6324",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/design-tokens.json",
+      "archive": "history/v3.zip",
+      "member": "design-tokens.json",
+      "sha256": "9c0d8b32a58689f862581ec394898148b2f813050f9e8576d3ce090c15e85dba",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/economics.json",
+      "archive": "history/v3.zip",
+      "member": "economics.json",
+      "sha256": "a0d08078f949799ed1d30ef28d25174da44310af9ee958ab569efae110cf60a4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/evidence/legacy-keyword-delta-raw.json",
+      "archive": "history/v3.zip",
+      "member": "evidence/legacy-keyword-delta-raw.json",
+      "sha256": "b032c3f7ebd6a300ad5cbd1de75519aa7b4dcac0aa9442ad5ae87055e28537f3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/evidence/legacy-keywords-raw.json",
+      "archive": "history/v3.zip",
+      "member": "evidence/legacy-keywords-raw.json",
+      "sha256": "e2257b60634d5d72438586dbdd597ba8568fafab24fe980f440c26ab69bfdef2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/final-review.json",
+      "archive": "history/v3.zip",
+      "member": "final-review.json",
+      "sha256": "82770be0675c904ca3ab26c989442a5f59fe459e672a00271a4ef71946bd56c7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/FINANCIAL_GUIDE.md",
+      "archive": "history/v3.zip",
+      "member": "FINANCIAL_GUIDE.md",
+      "sha256": "5ef57ed70d65551c138f0fdb044d521b8c6294251e9f29f1a9896b8070e805b9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/founder-calendar.json",
+      "archive": "history/v3.zip",
+      "member": "founder-calendar.json",
+      "sha256": "8e53204b674443ece21e1db91ca1f438963e6e08daae0acae68446feac7d9be3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/geography.json",
+      "archive": "history/v3.zip",
+      "member": "geography.json",
+      "sha256": "7d83f004583966668691417400283538090a0c5a3fe5fb8ed2d28a44e2177df4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/index.html",
+      "archive": "history/v3.zip",
+      "member": "index.html",
+      "sha256": "975a959e0656a36e9c527b1440f19175c43d0f788b44c58cae998c60ba497020",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/keyword-manifest.json",
+      "archive": "history/v3.zip",
+      "member": "keyword-manifest.json",
+      "sha256": "1041f1b99e7798cfa90496dac3d9695d6af38247ca133a80a2e6039f13dc158b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/KEYWORD_REGISTER.md",
+      "archive": "history/v3.zip",
+      "member": "KEYWORD_REGISTER.md",
+      "sha256": "d57434499a9f37bb5d1badbf12a0520ecf8acec49b6c59d3dc015e5cd043f889",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/offers.json",
+      "archive": "history/v3.zip",
+      "member": "offers.json",
+      "sha256": "89e944d30c781dff9e66b7870a0290ef42f20b2a9950cbb2fb90743ee806c04f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/OFFERS.md",
+      "archive": "history/v3.zip",
+      "member": "OFFERS.md",
+      "sha256": "e1ee76e51df5412ec92298e410599cc2256bb3150ffbeb0a83bedcffdcd960b0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/OPERATING_SYSTEM.md",
+      "archive": "history/v3.zip",
+      "member": "OPERATING_SYSTEM.md",
+      "sha256": "9e46df16d04d67889cac99e40eb37ff5769691fe73b255aa4792163838d0d143",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/package-manifest.json",
+      "archive": "history/v3.zip",
+      "member": "package-manifest.json",
+      "sha256": "71f22ccaa4d77b2f1b0e9087f90ea71f5d91ea7ffd0396ee7a91db0944781dfa",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/report-manifest.json",
+      "archive": "history/v3.zip",
+      "member": "report-manifest.json",
+      "sha256": "e6491e06c83dd32fc746a2c0276116470f89932c5911c256f9859b11e3d32b08",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/RESEARCH_INDEX.md",
+      "archive": "history/v3.zip",
+      "member": "RESEARCH_INDEX.md",
+      "sha256": "09acd5fa854436f2d370d5a03598361c10cdb9fd65da93f3d6786047de350afc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/REVIEW_CLOSEOUT.md",
+      "archive": "history/v3.zip",
+      "member": "REVIEW_CLOSEOUT.md",
+      "sha256": "891844966f0286249b872a339a2c4c3042808dd8a86d4b76bf9e661839c2eb57",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/search-evidence.json",
+      "archive": "history/v3.zip",
+      "member": "search-evidence.json",
+      "sha256": "a036c3a26940c167ef72677d8aa1d3aacdd72b2f2044c0ca8a0a85c1671c10e6",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/SEARCH_AND_CONTENT.md",
+      "archive": "history/v3.zip",
+      "member": "SEARCH_AND_CONTENT.md",
+      "sha256": "e0de2b7e88ee8a58bac9890c55cfa2a092d79a3e855f699035865474260bd129",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/site-map.json",
+      "archive": "history/v3.zip",
+      "member": "site-map.json",
+      "sha256": "93326487a227621618dae558a121dcd6434f5df347e52de686ee2eb1596a8cbd",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/START_HERE.md",
+      "archive": "history/v3.zip",
+      "member": "START_HERE.md",
+      "sha256": "5e9e0b35af6bef7ab05bb40c79fd9ae12f3032f766bada0ef9f792808b877926",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/verification.json",
+      "archive": "history/v3.zip",
+      "member": "verification.json",
+      "sha256": "f09764c279f5f6b0f7256dd38edcc6e535201397781d03e216c542453d0fe0db",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v3/workflows.json",
+      "archive": "history/v3.zip",
+      "member": "workflows.json",
+      "sha256": "4e289c386f540f0a8d578dfcb0b89296f3e3b8def6aea0f46ac42b905d534199",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/audit-findings.json",
+      "archive": "history/v4.zip",
+      "member": "audit-findings.json",
+      "sha256": "61b46797a0f8eb4ee9bc7bc8380ea6ad59c31b0c7bd29ca781afbd3cd6285a68",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/backlog.json",
+      "archive": "history/v4.zip",
+      "member": "backlog.json",
+      "sha256": "21dd085f10ed7072b1e1a8c6fec9d26e5d6b09b46e4bb39236b67a634ca33e11",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/BRAND_AND_MOBILE.md",
+      "archive": "history/v4.zip",
+      "member": "BRAND_AND_MOBILE.md",
+      "sha256": "53abacd4d4414fb242d583a58f476f370ae33bf9022c60bd73bf62288e3417f2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/build-contract.json",
+      "archive": "history/v4.zip",
+      "member": "build-contract.json",
+      "sha256": "b912a2cba3f9a49025c801193934d4f78889e814667462b085856549bdc67c0d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/BUSINESS_PLAN.md",
+      "archive": "history/v4.zip",
+      "member": "BUSINESS_PLAN.md",
+      "sha256": "65ba06026dd28600dce8635972c65bfe9d2052622a590416b3bea50a552bbfe1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/buyer-costs.json",
+      "archive": "history/v4.zip",
+      "member": "buyer-costs.json",
+      "sha256": "5d687b5ec24a9d573a83f52b294baf6c648611a9ae310dcdb29f583393a06b3f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/buyer-needs-evidence.json",
+      "archive": "history/v4.zip",
+      "member": "buyer-needs-evidence.json",
+      "sha256": "9381d3afbc172833da41e1e874c192876c43937f85c829a2e836a3ca367718d9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/buyer-reviews.json",
+      "archive": "history/v4.zip",
+      "member": "buyer-reviews.json",
+      "sha256": "28cd05179dca512e966d2af6dd1d912549183d73246be5a88efd8bf5b44cf314",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/CODEX_HANDOFF.md",
+      "archive": "history/v4.zip",
+      "member": "CODEX_HANDOFF.md",
+      "sha256": "a86988e94e2f7beff6c22ac177a71dfafc4a8dc30bc4f835a14f6558a076e9cd",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/COMPETITIVE_POSITION.md",
+      "archive": "history/v4.zip",
+      "member": "COMPETITIVE_POSITION.md",
+      "sha256": "6e40dc43ddfc5fd169f2769332b1118a2ff188aaa0ffabdafafa947c83294cfd",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/competitors-local.json",
+      "archive": "history/v4.zip",
+      "member": "competitors-local.json",
+      "sha256": "19f52104ee7744df9884ddfbee11a907f0ee1e66998af862bf82a1262dc474d3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/competitors-national.json",
+      "archive": "history/v4.zip",
+      "member": "competitors-national.json",
+      "sha256": "55d1606503294390975b21e32c0b5192b380818dc379d0448cbf7a2b59a64e6a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/competitors-v4.json",
+      "archive": "history/v4.zip",
+      "member": "competitors-v4.json",
+      "sha256": "cb099ad8c72048b758710939f8640db7f9cc75b6e8398c3b3f96adf3e67e8e0a",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/content-plan.json",
+      "archive": "history/v4.zip",
+      "member": "content-plan.json",
+      "sha256": "c31290a75a048d75fac8cb0788aff3c781280e1474e39319ac66cf6e8dbc6324",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/design-tokens.json",
+      "archive": "history/v4.zip",
+      "member": "design-tokens.json",
+      "sha256": "9c0d8b32a58689f862581ec394898148b2f813050f9e8576d3ce090c15e85dba",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/economics.json",
+      "archive": "history/v4.zip",
+      "member": "economics.json",
+      "sha256": "ea965be87b8eed00fedee58c9c889bd11532f23d56089eae6b87cfb88eb4213e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/01-competitors.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/01-competitors.json",
+      "sha256": "c92b75c591b341c279f8093b228d2543da099b32df60d7668455a996dd4488ac",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/01-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/01-findings.json",
+      "sha256": "992ea3b75e579f1a8464e10d363186b48a971ee7ff2ff00ad464bb8e71359047",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/01-website-subscriptions.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/01-website-subscriptions.md",
+      "sha256": "7323dcbd28cf9b9fa58c115ab4e279d2e0cd262cfdadb94517185b22849e5299",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/02-competitors.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/02-competitors.json",
+      "sha256": "3805b4340bf36b47d25e515290c5d30d4058f168ed4733887d744852fa824d8c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/02-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/02-findings.json",
+      "sha256": "ebfdf68c692ad350808429e2a8cf6c03515f3b48a5921ad39370695b945da573",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/02-local-positioning.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/02-local-positioning.md",
+      "sha256": "144ef30acd3f84ec00c3ba4f0de1c1b6049d051f9a55691c530815e0f66130dc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/03-buyer-evidence.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/03-buyer-evidence.md",
+      "sha256": "b60c71209ebea9fd7bafd157094ee6a505123274c2007bc86af1f97d61002106",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/03-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/03-findings.json",
+      "sha256": "2d8529bdcf5d49ead35138de8d0f4b0458adab90dfd7015f03280d3c114c9dc1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/03-needs-map.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/03-needs-map.json",
+      "sha256": "134bcf68a99dc8d85e75f0f482748efc15a66b31c488e2d907456d1d4b90e5ee",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/03-review-records.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/03-review-records.json",
+      "sha256": "28cd05179dca512e966d2af6dd1d912549183d73246be5a88efd8bf5b44cf314",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/04-competitors.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/04-competitors.json",
+      "sha256": "397846132cacdbbad9b505c9f9f574162f056afc9162f35e6eeba55b71bd50e3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/04-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/04-findings.json",
+      "sha256": "ee7d3d2eddcb5f119b89e953e628d92d4605bd4fef5c4e8cce8a4094f7770260",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/04-seo-subscriptions.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/04-seo-subscriptions.md",
+      "sha256": "912fe6e78827eec09a4a350c3c56a984b70baf27f2a71d7eecef4544a31b6da9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/05-calculator.py",
+      "archive": "history/v4.zip",
+      "member": "evidence/05-calculator.py",
+      "sha256": "78150a528e8bcad07c77c4b3dd9626f4a02c87b53cd2d6bc8cebd1d695c656c5",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/05-economics.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/05-economics.json",
+      "sha256": "49d1391088f0ead3679c167b200bd3e696eb826598dc75b116241bc60835ead9",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/05-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/05-findings.json",
+      "sha256": "009bffb390feea2dc7b129af832e8d61cfc600a67404cde10fea68a1d0199c6d",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/05-offer-economics.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/05-offer-economics.md",
+      "sha256": "9471593c3792f02a6b7cce46023845f3f9bb93f71f5804a6538e4c3d6e3df9a2",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/05-offers-proposed.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/05-offers-proposed.json",
+      "sha256": "4ee35370b100809cb59ae1297d99784d65351de82f47d782e7f5c7104458dbfc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/06-capacity.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/06-capacity.json",
+      "sha256": "33261c36f7886849935b6b264f62f55d9600dfbff49db18d9d755997f604b158",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/06-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/06-findings.json",
+      "sha256": "785ec5740ab833195022b9e1dbc862b3d683d47243a2c70902beae5fc0e3e273",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/06-operations-stress.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/06-operations-stress.md",
+      "sha256": "6a9fec7b1148239ede6b454920c14b5741dc9b74a16e75be8ac7e171f7c3ab65",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/06-workflows.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/06-workflows.json",
+      "sha256": "af567f4bb7e48cc23e5cd276db1e236f94747d4084d1596ed24fbd0ce461ceb1",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/07-conversion-value.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/07-conversion-value.md",
+      "sha256": "be40356ca3167123d161db63fecae8ef44f955b77c8331bf20c681b70e841d2c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/07-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/07-findings.json",
+      "sha256": "007f08abf98abe7351148414a24f3944b70cd6533953971f2e611d0a5b12f705",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/07-purchase-contract.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/07-purchase-contract.json",
+      "sha256": "40a29787ff4e54cdfc4b293a508cce11bd72260c96233253f28f2f498d6881b3",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/08-acquisition-checks.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/08-acquisition-checks.md",
+      "sha256": "ca2df306783bf0c6a890ed115d0d28478cdf73b8ab244e56ab9181ce00ddfd87",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/08-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/08-findings.json",
+      "sha256": "ef2367275e36496dafdb27a21f348ac525519ac8924fa11c49dcac7505dac426",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/08-growth-tests.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/08-growth-tests.json",
+      "sha256": "0061ab897ad8bfc40ff04adc688550c40bdfe0cc3be5f5267891f9e7f534832c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/09-findings.json",
+      "archive": "history/v4.zip",
+      "member": "evidence/09-findings.json",
+      "sha256": "4b442052438a65dd261cd2970fd4f44b26b415a313242164931833425d855587",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/evidence/09-red-team.md",
+      "archive": "history/v4.zip",
+      "member": "evidence/09-red-team.md",
+      "sha256": "98bf7625d2e47bd29f368dcbdb7dfc87d94503d641cb23541d0738b246e4f596",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/final-review.json",
+      "archive": "history/v4.zip",
+      "member": "final-review.json",
+      "sha256": "772945b3193c00ab3adeee37fb8918a3ee5394b1931377f98bad27e4eb333694",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/FINANCIAL_GUIDE.md",
+      "archive": "history/v4.zip",
+      "member": "FINANCIAL_GUIDE.md",
+      "sha256": "f71256165870655b6af0289fbcffa9d46690c3e58345ede0182a18275d07ea78",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/founder-calendar.json",
+      "archive": "history/v4.zip",
+      "member": "founder-calendar.json",
+      "sha256": "9bc1f0919e3f0114ff65f43678beb0168cf3e881548bfc28636bace938527028",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/geography.json",
+      "archive": "history/v4.zip",
+      "member": "geography.json",
+      "sha256": "7d83f004583966668691417400283538090a0c5a3fe5fb8ed2d28a44e2177df4",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/growth-tests.json",
+      "archive": "history/v4.zip",
+      "member": "growth-tests.json",
+      "sha256": "4338ce4296eed214a4a5f6eaac25b0e67c34d67671e6b2c64b02a96f2b35b122",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/index.html",
+      "archive": "history/v4.zip",
+      "member": "index.html",
+      "sha256": "4153115e8a8ad2eb3846dc6eb7d0e1e75013d146781fbddcc4a0cb1ecf0c4d0b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/keyword-manifest.json",
+      "archive": "history/v4.zip",
+      "member": "keyword-manifest.json",
+      "sha256": "1041f1b99e7798cfa90496dac3d9695d6af38247ca133a80a2e6039f13dc158b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/KEYWORD_REGISTER.md",
+      "archive": "history/v4.zip",
+      "member": "KEYWORD_REGISTER.md",
+      "sha256": "d57434499a9f37bb5d1badbf12a0520ecf8acec49b6c59d3dc015e5cd043f889",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/offers.json",
+      "archive": "history/v4.zip",
+      "member": "offers.json",
+      "sha256": "21183d23c836cf312739ba223fea67cd65021cdb4748d7a35c28007c6b39266c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/OFFERS.md",
+      "archive": "history/v4.zip",
+      "member": "OFFERS.md",
+      "sha256": "9229f60eb16f6b149dd218c51afffe76b7a417523bfdd900f41ca5aca894315c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/OPERATING_SYSTEM.md",
+      "archive": "history/v4.zip",
+      "member": "OPERATING_SYSTEM.md",
+      "sha256": "b9fc618a1e1392c1445eac315130dc5ae8d1c3563213676d6a5e94f900855fba",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/package-manifest.json",
+      "archive": "history/v4.zip",
+      "member": "package-manifest.json",
+      "sha256": "af69e45e3081c973cf1ea47bfd1b6b9f69bf81c7fa4ee518b9caef01a51f4c1b",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/purchase-contract.json",
+      "archive": "history/v4.zip",
+      "member": "purchase-contract.json",
+      "sha256": "b135af825b68497bf7d5babe689bffbf8f6039b52caa478aa2fe3b8d4a8ae413",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/report-manifest.json",
+      "archive": "history/v4.zip",
+      "member": "report-manifest.json",
+      "sha256": "d784348edd822cf9f946938d6faea733087f8900b3741e33dbea68f9aafb767c",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/RESEARCH_INDEX.md",
+      "archive": "history/v4.zip",
+      "member": "RESEARCH_INDEX.md",
+      "sha256": "442619daed784558cc0218e37dfd0dc3a5472fb6f5d33d4abd36ee106f9793f0",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/REVIEW_CLOSEOUT.md",
+      "archive": "history/v4.zip",
+      "member": "REVIEW_CLOSEOUT.md",
+      "sha256": "ef794153f57110ff186fc736131788c3e27ce5362989e34e59010c7529945f8e",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/search-evidence.json",
+      "archive": "history/v4.zip",
+      "member": "search-evidence.json",
+      "sha256": "a036c3a26940c167ef72677d8aa1d3aacdd72b2f2044c0ca8a0a85c1671c10e6",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/SEARCH_AND_CONTENT.md",
+      "archive": "history/v4.zip",
+      "member": "SEARCH_AND_CONTENT.md",
+      "sha256": "e0de2b7e88ee8a58bac9890c55cfa2a092d79a3e855f699035865474260bd129",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/SERVICE_PLAYBOOK.md",
+      "archive": "history/v4.zip",
+      "member": "SERVICE_PLAYBOOK.md",
+      "sha256": "b854a717c4d68c1eb6c3d388c1d96d16154f862aa1c78ce68405d279718d70e8",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/site-map.json",
+      "archive": "history/v4.zip",
+      "member": "site-map.json",
+      "sha256": "93326487a227621618dae558a121dcd6434f5df347e52de686ee2eb1596a8cbd",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/START_HERE.md",
+      "archive": "history/v4.zip",
+      "member": "START_HERE.md",
+      "sha256": "22a11afb908785f836157824a22216d5221b79921e6f29c83fd5e0a86f26f8dc",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/verification.json",
+      "archive": "history/v4.zip",
+      "member": "verification.json",
+      "sha256": "96f2b5a11f3500c5cdd066dce7da4abea35b719d4b6a8294d5410cfee23da031",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/wonder-and-method-business-plan-v4/workflows.json",
+      "archive": "history/v4.zip",
+      "member": "workflows.json",
+      "sha256": "7c1e6f5f698184df2d7159e2d0111a354ccdcb558a66707f00c6206960831646",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/business-name-research/buyer-test.html",
+      "archive": "history/naming.zip",
+      "member": "buyer-test.html",
+      "sha256": "a93178a27fd8e73a687673750eb8f4546f68302fc2d7fbef17c5b95d1a880ac7",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/business-name-research/naming-data.json",
+      "archive": "history/naming.zip",
+      "member": "naming-data.json",
+      "sha256": "86d298acb5ab836e2bcb59f3c360290293d11c868b282b433097c80570d53490",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/business-name-research/naming-research.html",
+      "archive": "history/naming.zip",
+      "member": "naming-research.html",
+      "sha256": "d23c5bfcb315cbd3e8de702a9737abc37031de0394a749869fc90d04f468046f",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/web-design-libraries/INSTALLATION.md",
+      "archive": "history/design-libraries.zip",
+      "member": "INSTALLATION.md",
+      "sha256": "bfc7ee4d32ceb66c981e9edab73dfdcd169c82c0408deb1442fe8b9e6fe2aaab",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/web-design-libraries/package-lock.json",
+      "archive": "history/design-libraries.zip",
+      "member": "package-lock.json",
+      "sha256": "cbdf4c590032550cbc71af235a750d2fb1361d1c37c7ad40ab463f92c304b4ff",
+      "status": "historical_source_preserved"
+    },
+    {
+      "original": "outputs/web-design-libraries/package.json",
+      "archive": "history/design-libraries.zip",
+      "member": "package.json",
+      "sha256": "e2d40245576c608466e6700c379517a20a004a0aaf7ace8b8404c310aecd4ebc",
+      "status": "historical_source_preserved"
+    }
+  ],
+  "additional_provenance_tokens": [
+    {
+      "original": "work/plan-v2/02-competitor-pricing.csv",
+      "bundled_same_name_candidates": [],
+      "status": "exact_historical_archive_bytes",
+      "archive": "history/v2.zip",
+      "member": "research/02-competitor-pricing.csv",
+      "sha256": "4beb82cdd6ee069303e0d5ae994f44aa0ed900d06b957d09e44e4216781c3b3d"
+    },
+    {
+      "original": "work/plan-v4/01-website-subscriptions.md",
+      "bundled_same_name_candidates": [
+        "evidence/v4/01-website-subscriptions.md"
+      ],
+      "status": "candidate_evidence_match_check_source_context"
+    },
+    {
+      "original": "work/plan-v4/02-local-positioning.md",
+      "bundled_same_name_candidates": [
+        "evidence/v4/02-local-positioning.md"
+      ],
+      "status": "candidate_evidence_match_check_source_context"
+    },
+    {
+      "original": "work/plan-v4/05-economics.json",
+      "bundled_same_name_candidates": [
+        "evidence/v4/05-economics.json"
+      ],
+      "status": "exact_bundled_evidence_bytes",
+      "bundled_path": "evidence/v4/05-economics.json",
+      "sha256": "49d1391088f0ead3679c167b200bd3e696eb826598dc75b116241bc60835ead9"
+    }
+  ]
+}

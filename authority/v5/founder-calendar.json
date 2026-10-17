@@ -1,0 +1,593 @@
+{
+  "status": "Sensitivity examples only; actual dated calendar controls booking. No mandatory week7 start or85h unpaid rehearsal.",
+  "starts": "2026-10-19",
+  "horizon_weeks": 13,
+  "nonclient_hours": 275,
+  "studio_hours": 145,
+  "studio_allocation": {
+    "studio_build_and_validation": 107,
+    "three_launch_guides": 24,
+    "two_later_guides": 14
+  },
+  "readiness_gate": {
+    "rule": "Book from relevant dated capability evidence and an actual delivery slot, not elapsed practice hours. Existing equivalent work can satisfy tests; build only missing tests.",
+    "focused": [
+      "real responsive page/template manually reviewed for visual quality, keyboard, zoom/reflow and reduced motion",
+      "six-field synthetic inquiry reaches provider record and intended mailbox with success/error behavior",
+      "privacy markup and a simple redirect mechanism fixture",
+      "owner-controlled source, reproducible deploy and rollback",
+      "accepted editing model, exact scope/cost sheet and dated capacity including correction tail"
+    ],
+    "signature_additional": [
+      "agreed bespoke hero execution demonstrates mobile/poster/reduced-motion fallbacks and rights/handoff fit"
+    ],
+    "maximum_scope_validation": "Five pages/up to2000words, ten actual supplied redirect pairs and agreed eight-second hero/fallbacks are validated where applicable in the studio or controlled paid pilot before expanding throughput claims. All sold client inclusions still pass launch acceptance. No unneeded public fixture pages.",
+    "mandatory_wait_weeks": 0,
+    "extra_unpaid_practice_builds": 0
+  },
+  "caps": {
+    "planned_week": 24,
+    "planned_calendar_month": 96,
+    "all_client_calendar_month": 120
+  },
+  "template_rule": "Cap illustrative scheduled client work at 20 planned hours plus 25% of planned as reserve (20% of total client capacity); lower when actual weekly availability requires it. This avoids frontloaded studio work overflowing a flat template.",
+  "scenarios": [
+    {
+      "available_hours_per_week": 35,
+      "weeks": [
+        {
+          "week": 1,
+          "starts": "2026-10-19",
+          "ends": "2026-10-25",
+          "available": 35,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 5.6,
+          "pooled_recovery": 1.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 2,
+          "starts": "2026-10-26",
+          "ends": "2026-11-01",
+          "available": 35,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 5.6,
+          "pooled_recovery": 1.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 3,
+          "starts": "2026-11-02",
+          "ends": "2026-11-08",
+          "available": 35,
+          "studio": 15,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 8.0,
+          "pooled_recovery": 2.0,
+          "unallocated": 0.0
+        },
+        {
+          "week": 4,
+          "starts": "2026-11-09",
+          "ends": "2026-11-15",
+          "available": 35,
+          "studio": 14,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 8.8,
+          "pooled_recovery": 2.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 5,
+          "starts": "2026-11-16",
+          "ends": "2026-11-22",
+          "available": 35,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 10.4,
+          "pooled_recovery": 2.6,
+          "unallocated": -0.0
+        },
+        {
+          "week": 6,
+          "starts": "2026-11-23",
+          "ends": "2026-11-29",
+          "available": 35,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 10.4,
+          "pooled_recovery": 2.6,
+          "unallocated": -0.0
+        },
+        {
+          "week": 7,
+          "starts": "2026-11-30",
+          "ends": "2026-12-06",
+          "available": 35,
+          "studio": 10,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 12.0,
+          "pooled_recovery": 3.0,
+          "unallocated": 0.0
+        },
+        {
+          "week": 8,
+          "starts": "2026-12-07",
+          "ends": "2026-12-13",
+          "available": 35,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 12.8,
+          "pooled_recovery": 3.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 9,
+          "starts": "2026-12-14",
+          "ends": "2026-12-20",
+          "available": 35,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 12.8,
+          "pooled_recovery": 3.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 10,
+          "starts": "2026-12-21",
+          "ends": "2026-12-27",
+          "available": 35,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 13.6,
+          "pooled_recovery": 3.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 11,
+          "starts": "2026-12-28",
+          "ends": "2027-01-03",
+          "available": 35,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 13.6,
+          "pooled_recovery": 3.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 12,
+          "starts": "2027-01-04",
+          "ends": "2027-01-10",
+          "available": 35,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 15.2,
+          "pooled_recovery": 3.8,
+          "unallocated": 0.0
+        },
+        {
+          "week": 13,
+          "starts": "2027-01-11",
+          "ends": "2027-01-17",
+          "available": 35,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 15.2,
+          "pooled_recovery": 3.8,
+          "unallocated": 0.0
+        }
+      ],
+      "calendar_months": {
+        "2026-10": {
+          "planned_client": 11.2,
+          "recovery": 2.8,
+          "all_client": 14.0
+        },
+        "2026-11": {
+          "planned_client": 40.0,
+          "recovery": 10.0,
+          "all_client": 50.0
+        },
+        "2026-12": {
+          "planned_client": 59.68,
+          "recovery": 14.92,
+          "all_client": 74.6
+        },
+        "2027-01": {
+          "planned_client": 33.12,
+          "recovery": 8.28,
+          "all_client": 41.4
+        }
+      },
+      "planned_total": 144.0,
+      "recovery_total": 36.0
+    },
+    {
+      "available_hours_per_week": 40,
+      "weeks": [
+        {
+          "week": 1,
+          "starts": "2026-10-19",
+          "ends": "2026-10-25",
+          "available": 40,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 9.6,
+          "pooled_recovery": 2.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 2,
+          "starts": "2026-10-26",
+          "ends": "2026-11-01",
+          "available": 40,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 9.6,
+          "pooled_recovery": 2.4,
+          "unallocated": 0.0
+        },
+        {
+          "week": 3,
+          "starts": "2026-11-02",
+          "ends": "2026-11-08",
+          "available": 40,
+          "studio": 15,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 12.0,
+          "pooled_recovery": 3.0,
+          "unallocated": 0.0
+        },
+        {
+          "week": 4,
+          "starts": "2026-11-09",
+          "ends": "2026-11-15",
+          "available": 40,
+          "studio": 14,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 12.8,
+          "pooled_recovery": 3.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 5,
+          "starts": "2026-11-16",
+          "ends": "2026-11-22",
+          "available": 40,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 14.4,
+          "pooled_recovery": 3.6,
+          "unallocated": -0.0
+        },
+        {
+          "week": 6,
+          "starts": "2026-11-23",
+          "ends": "2026-11-29",
+          "available": 40,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 14.4,
+          "pooled_recovery": 3.6,
+          "unallocated": -0.0
+        },
+        {
+          "week": 7,
+          "starts": "2026-11-30",
+          "ends": "2026-12-06",
+          "available": 40,
+          "studio": 10,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 16.0,
+          "pooled_recovery": 4.0,
+          "unallocated": 0.0
+        },
+        {
+          "week": 8,
+          "starts": "2026-12-07",
+          "ends": "2026-12-13",
+          "available": 40,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 16.8,
+          "pooled_recovery": 4.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 9,
+          "starts": "2026-12-14",
+          "ends": "2026-12-20",
+          "available": 40,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 16.8,
+          "pooled_recovery": 4.2,
+          "unallocated": -0.0
+        },
+        {
+          "week": 10,
+          "starts": "2026-12-21",
+          "ends": "2026-12-27",
+          "available": 40,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 17.6,
+          "pooled_recovery": 4.4,
+          "unallocated": -0.0
+        },
+        {
+          "week": 11,
+          "starts": "2026-12-28",
+          "ends": "2027-01-03",
+          "available": 40,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 17.6,
+          "pooled_recovery": 4.4,
+          "unallocated": -0.0
+        },
+        {
+          "week": 12,
+          "starts": "2027-01-04",
+          "ends": "2027-01-10",
+          "available": 40,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 19.2,
+          "pooled_recovery": 4.8,
+          "unallocated": 0.0
+        },
+        {
+          "week": 13,
+          "starts": "2027-01-11",
+          "ends": "2027-01-17",
+          "available": 40,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 19.2,
+          "pooled_recovery": 4.8,
+          "unallocated": 0.0
+        }
+      ],
+      "calendar_months": {
+        "2026-10": {
+          "planned_client": 19.2,
+          "recovery": 4.8,
+          "all_client": 24.0
+        },
+        "2026-11": {
+          "planned_client": 56.8,
+          "recovery": 14.2,
+          "all_client": 71.0
+        },
+        "2026-12": {
+          "planned_client": 78.08,
+          "recovery": 19.52,
+          "all_client": 97.6
+        },
+        "2027-01": {
+          "planned_client": 41.92,
+          "recovery": 10.48,
+          "all_client": 52.4
+        }
+      },
+      "planned_total": 196.0,
+      "recovery_total": 49.0
+    },
+    {
+      "available_hours_per_week": 50,
+      "weeks": [
+        {
+          "week": 1,
+          "starts": "2026-10-19",
+          "ends": "2026-10-25",
+          "available": 50,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 17.6,
+          "pooled_recovery": 4.4,
+          "unallocated": -0.0
+        },
+        {
+          "week": 2,
+          "starts": "2026-10-26",
+          "ends": "2026-11-01",
+          "available": 50,
+          "studio": 18,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 17.6,
+          "pooled_recovery": 4.4,
+          "unallocated": -0.0
+        },
+        {
+          "week": 3,
+          "starts": "2026-11-02",
+          "ends": "2026-11-08",
+          "available": 50,
+          "studio": 15,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 0.0
+        },
+        {
+          "week": 4,
+          "starts": "2026-11-09",
+          "ends": "2026-11-15",
+          "available": 50,
+          "studio": 14,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 1.0
+        },
+        {
+          "week": 5,
+          "starts": "2026-11-16",
+          "ends": "2026-11-22",
+          "available": 50,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 3.0
+        },
+        {
+          "week": 6,
+          "starts": "2026-11-23",
+          "ends": "2026-11-29",
+          "available": 50,
+          "studio": 12,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 3.0
+        },
+        {
+          "week": 7,
+          "starts": "2026-11-30",
+          "ends": "2026-12-06",
+          "available": 50,
+          "studio": 10,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 5.0
+        },
+        {
+          "week": 8,
+          "starts": "2026-12-07",
+          "ends": "2026-12-13",
+          "available": 50,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 6.0
+        },
+        {
+          "week": 9,
+          "starts": "2026-12-14",
+          "ends": "2026-12-20",
+          "available": 50,
+          "studio": 9,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 6.0
+        },
+        {
+          "week": 10,
+          "starts": "2026-12-21",
+          "ends": "2026-12-27",
+          "available": 50,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 7.0
+        },
+        {
+          "week": 11,
+          "starts": "2026-12-28",
+          "ends": "2027-01-03",
+          "available": 50,
+          "studio": 8,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 7.0
+        },
+        {
+          "week": 12,
+          "starts": "2027-01-04",
+          "ends": "2027-01-10",
+          "available": 50,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 9.0
+        },
+        {
+          "week": 13,
+          "starts": "2027-01-11",
+          "ends": "2027-01-17",
+          "available": 50,
+          "studio": 6,
+          "sales": 6,
+          "admin": 4,
+          "planned_client_ceiling": 20,
+          "pooled_recovery": 5.0,
+          "unallocated": 9.0
+        }
+      ],
+      "calendar_months": {
+        "2026-10": {
+          "planned_client": 35.2,
+          "recovery": 8.8,
+          "all_client": 44.0
+        },
+        "2026-11": {
+          "planned_client": 84.0,
+          "recovery": 21.0,
+          "all_client": 105.0
+        },
+        "2026-12": {
+          "planned_client": 92.0,
+          "recovery": 23.0,
+          "all_client": 115.0
+        },
+        "2027-01": {
+          "planned_client": 44.0,
+          "recovery": 11.0,
+          "all_client": 55.0
+        }
+      },
+      "planned_total": 255.2,
+      "recovery_total": 63.8
+    }
+  ],
+  "version": "5.0",
+  "double_count_rule": "55/85h builds already include expected revisions/corrections/handoff; Search7h includes1hinternalreserve; Care1.25 includesordinaryquarterlyallocation. Pool is for unexpected work only. Activation/exit are added once when not alreadyincluded; acquisitionhours belong in salesallocation, not twice."
+}

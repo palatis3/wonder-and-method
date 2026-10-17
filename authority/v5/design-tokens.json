@@ -1,0 +1,472 @@
+{
+  "schema_version": "0.1",
+  "stream": "05-brand-mobile",
+  "checked_date": "2026-10-13",
+  "status": "proposal",
+  "brand": {
+    "name": "Wonder and Method",
+    "principle": "Expressive detail held inside a precise, legible system.",
+    "recommended_palette": "wonder_method_ink",
+    "voice": [
+      "warm",
+      "specific",
+      "calm",
+      "scope-aware",
+      "truthful about evidence"
+    ],
+    "claim_guardrail": "Color, typography, motion, and visual quality are hypotheses to test; never describe them as guaranteed trust, conversion, ranking, or speed effects."
+  },
+  "palettes": {
+    "wonder_method_ink": {
+      "description": "Recommended: warm editorial paper, deep ink, one clay interruption, and dark chromatic accents.",
+      "colors": {
+        "paper": "#F8F3EA",
+        "paper_subtle": "#E8E1D7",
+        "ink": "#152432",
+        "clay": "#CB7752",
+        "ultramarine": "#3C5B98",
+        "orchid": "#6D4E74",
+        "moss": "#426A5A",
+        "white": "#FFFFFF"
+      },
+      "semantic_roles": {
+        "surface.default": "paper",
+        "surface.subtle": "paper_subtle",
+        "surface.inverse": "ink",
+        "text.default": "ink",
+        "text.inverse": "paper",
+        "text.muted": "ink",
+        "action.primary.background": "ink",
+        "action.primary.foreground": "paper",
+        "action.secondary.background": "paper",
+        "action.secondary.foreground": "ink",
+        "link.default": "ultramarine",
+        "link.secondary": "orchid",
+        "status.positive": "moss",
+        "accent.expressive": "clay",
+        "focus.ring": "clay",
+        "rule.default": "paper_subtle"
+      },
+      "use_rules": [
+        "Use ink/paper for body copy and primary controls.",
+        "Use ultramarine or orchid links with an underline or another non-color cue.",
+        "Use clay mainly as a fill, rule, illustration cue, or large label; ink on clay is the approved text pairing.",
+        "Do not use color alone for error, success, selected, or required states."
+      ]
+    },
+    "carbon_field_note": {
+      "description": "Alternative: darker archival frame with burgundy and field accents.",
+      "colors": {
+        "parchment": "#F3EFE8",
+        "carbon": "#111820",
+        "burgundy": "#7B2E3A",
+        "field": "#6E806C",
+        "brass": "#B08542"
+      },
+      "semantic_roles": {
+        "surface.default": "parchment",
+        "surface.inverse": "carbon",
+        "text.default": "carbon",
+        "text.inverse": "parchment",
+        "action.primary.background": "carbon",
+        "action.primary.foreground": "parchment",
+        "link.default": "burgundy",
+        "accent.expressive": "brass",
+        "status.positive": "field"
+      },
+      "use_rules": [
+        "Use burgundy for links or large accents after checking the exact background.",
+        "Use field and brass as supporting accents or labeled fills until each text pairing is recalculated."
+      ]
+    },
+    "midnight_signal": {
+      "description": "Alternative: cooler, more digital frame with cobalt and rose signals.",
+      "colors": {
+        "cloud": "#F2F5F7",
+        "midnight": "#0D1B2A",
+        "cobalt": "#2C4A84",
+        "amber": "#B9793D",
+        "rose": "#8A4C68"
+      },
+      "semantic_roles": {
+        "surface.default": "cloud",
+        "surface.inverse": "midnight",
+        "text.default": "midnight",
+        "text.inverse": "cloud",
+        "action.primary.background": "midnight",
+        "action.primary.foreground": "cloud",
+        "link.default": "cobalt",
+        "link.secondary": "rose",
+        "accent.expressive": "amber"
+      },
+      "use_rules": [
+        "Use cobalt and rose as dark text links on cloud only after contrast checks.",
+        "Use amber as a decorative or large-label accent; do not use it for normal-size text without a recalculated pair."
+      ]
+    }
+  },
+  "contrast_method": {
+    "formula": "WCAG 2.x relative luminance ratio (L1 + 0.05) / (L2 + 0.05)",
+    "normal_text_AA_threshold": 4.5,
+    "large_text_AA_threshold": 3.0,
+    "non_text_AA_threshold": 3.0,
+    "large_text_definition": "At least 18pt regular or 14pt bold, evaluated from user-agent font metrics.",
+    "rounding_rule": "Do not round a failing value up to the threshold; recorded ratios are rounded for display only.",
+    "sources": [
+      "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "https://www.w3.org/WAI/WCAG22/understanding/non-text-contrast.html"
+    ]
+  },
+  "contrast_pairs": [
+    {
+      "id": "recommended-body",
+      "palette": "wonder_method_ink",
+      "foreground": "#152432",
+      "background": "#F8F3EA",
+      "ratio": 14.28,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "body",
+        "headings",
+        "form labels",
+        "primary copy"
+      ]
+    },
+    {
+      "id": "recommended-inverse",
+      "palette": "wonder_method_ink",
+      "foreground": "#F8F3EA",
+      "background": "#152432",
+      "ratio": 14.28,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "primary button text",
+        "inverse sections",
+        "dark hero copy"
+      ]
+    },
+    {
+      "id": "recommended-link-ultramarine",
+      "palette": "wonder_method_ink",
+      "foreground": "#3C5B98",
+      "background": "#F8F3EA",
+      "ratio": 6.05,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "links",
+        "selected navigation with an additional cue"
+      ]
+    },
+    {
+      "id": "recommended-link-orchid",
+      "palette": "wonder_method_ink",
+      "foreground": "#6D4E74",
+      "background": "#F8F3EA",
+      "ratio": 6.35,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "secondary links",
+        "editorial labels"
+      ]
+    },
+    {
+      "id": "recommended-status-moss",
+      "palette": "wonder_method_ink",
+      "foreground": "#426A5A",
+      "background": "#F8F3EA",
+      "ratio": 5.52,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "positive/status text with icon or label"
+      ]
+    },
+    {
+      "id": "recommended-clay-fill",
+      "palette": "wonder_method_ink",
+      "foreground": "#152432",
+      "background": "#CB7752",
+      "ratio": 4.74,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "clay badge or accent fill with ink text"
+      ]
+    },
+    {
+      "id": "alternative-carbon-primary",
+      "palette": "carbon_field_note",
+      "foreground": "#F3EFE8",
+      "background": "#111820",
+      "ratio": 15.59,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "primary button text",
+        "inverse copy"
+      ]
+    },
+    {
+      "id": "alternative-burgundy-link",
+      "palette": "carbon_field_note",
+      "foreground": "#F3EFE8",
+      "background": "#7B2E3A",
+      "ratio": 7.99,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "burgundy fill with parchment text"
+      ]
+    },
+    {
+      "id": "alternative-midnight-primary",
+      "palette": "midnight_signal",
+      "foreground": "#F2F5F7",
+      "background": "#0D1B2A",
+      "ratio": 15.89,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "primary button text",
+        "inverse copy"
+      ]
+    },
+    {
+      "id": "alternative-cobalt-link",
+      "palette": "midnight_signal",
+      "foreground": "#2C4A84",
+      "background": "#F2F5F7",
+      "ratio": 7.93,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "links",
+        "selected navigation with an additional cue"
+      ]
+    },
+    {
+      "id": "alternative-rose-link",
+      "palette": "midnight_signal",
+      "foreground": "#8A4C68",
+      "background": "#F2F5F7",
+      "ratio": 5.79,
+      "normal_text_AA": true,
+      "large_text_AA": true,
+      "non_text_AA": true,
+      "approved_for": [
+        "secondary links",
+        "editorial labels"
+      ]
+    }
+  ],
+  "typography": {
+    "recommended": {
+      "display": {
+        "family": "Fraunces",
+        "source": "https://github.com/googlefonts/fraunces",
+        "license": "SIL Open Font License 1.1",
+        "role": "H1/H2 and occasional display emphasis",
+        "weights": [
+          "500",
+          "600",
+          "700"
+        ],
+        "guardrails": [
+          "Use sparingly",
+          "Do not use for body copy or form controls",
+          "Subset and self-host after license review"
+        ]
+      },
+      "body_ui": {
+        "family": "IBM Plex Sans",
+        "source": "https://www.ibm.com/design/language/typography/typeface/",
+        "license": "SIL Open Font License 1.1",
+        "role": "body, nav, pricing, labels, controls",
+        "weights": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "guardrails": [
+          "Use regular/medium or stronger for small text",
+          "Subset to needed scripts",
+          "font-display: swap with system fallback"
+        ]
+      }
+    },
+    "alternatives": [
+      {
+        "display": "Source Serif 4",
+        "body_ui": "IBM Plex Sans",
+        "license": "Verify current SIL OFL file before bundling",
+        "use_when": "A quieter editorial direction is preferred."
+      },
+      {
+        "display": "Canela",
+        "body_ui": "IBM Plex Sans",
+        "license": "Commercial Type license required; do not ship from a mockup assumption",
+        "use_when": "A paid high-fashion/editorial direction is approved and budgeted."
+      }
+    ],
+    "sizes": {
+      "body": "1rem",
+      "body_line_height": 1.55,
+      "small": "0.875rem",
+      "display_mobile": "clamp(2.75rem, 11vw, 4rem)",
+      "display_wide": "clamp(4rem, 7vw, 5.75rem)",
+      "prose_measure": "60ch-70ch"
+    },
+    "text_spacing_override": {
+      "line_height_min": 1.5,
+      "paragraph_spacing_min": 2.0,
+      "letter_spacing_min": 0.12,
+      "word_spacing_min": 0.16,
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
+    }
+  },
+  "layout": {
+    "mobile_first": true,
+    "breakpoints": [
+      {
+        "name": "small",
+        "min_css_px": 320,
+        "max_css_px": 767,
+        "behavior": "single column; stacked cards; full-width actions"
+      },
+      {
+        "name": "medium",
+        "min_css_px": 768,
+        "max_css_px": 1151,
+        "behavior": "two columns where content earns it; pricing remains readable"
+      },
+      {
+        "name": "wide",
+        "min_css_px": 1152,
+        "max_css_px": null,
+        "behavior": "capped reading measure; editorial grid; no forced full-width prose"
+      }
+    ],
+    "content_max_width": "72rem",
+    "prose_max_width": "70ch",
+    "gutter": {
+      "small": "1rem",
+      "medium": "1.5rem",
+      "wide": "2rem"
+    },
+    "reflow_test": "320 CSS px equivalent at 400% zoom with no loss of information/functionality and no two-axis scrolling except meaningful two-dimensional content.",
+    "sources": [
+      "https://www.w3.org/TR/wcag2mobile-22/",
+      "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    ]
+  },
+  "interaction": {
+    "primary_hit_area_css_px": "48x48",
+    "wcag_aa_minimum_css_px": "24x24 with stated exceptions",
+    "minimum_gap_between_primary_targets_css_px": 8,
+    "focus_ring": {
+      "style": "2px solid clay plus offset",
+      "must_remain_visible": true,
+      "avoid_obscuring_sticky_content": true
+    },
+    "mobile_nav": {
+      "closed": "wordmark + labeled menu button + primary CTA",
+      "open": "focus-managed sheet or full-width panel with close control",
+      "links": [
+        "Work",
+        "Services",
+        "Pricing",
+        "Method",
+        "Contact"
+      ],
+      "home_to_key_destinations_max_intentional_interactions": 2
+    },
+    "forms": {
+      "layout": "single column",
+      "label": "visible above every control",
+      "use_native_controls": true,
+      "use_type_inputmode_autocomplete": true,
+      "error": "adjacent text + icon/label; aria-describedby; focus first invalid field on submit",
+      "placeholder_is_label": false,
+      "source": "https://web.dev/learn/forms/accessibility?hl=en"
+    }
+  },
+  "motion": {
+    "tone": "slow, precise, material, purposeful",
+    "production_assumption": "Use the founder's existing Blender/Remotion/AI-assisted workflow; do not add a retraining plan or require a new runtime stack.",
+    "default": "short, interruptible feedback and one meaningful showcase at a time",
+    "reduced_motion": "Respect prefers-reduced-motion; replace autoplay and large transforms with poster or opacity fade; retain equivalent text and controls.",
+    "data_saver": "If Save-Data or equivalent constrained-network signal is available, default to poster; require opt-in for video.",
+    "runtime_webgl": "off by default; use prerendered Blender/Remotion media with HTML/CSS fallback",
+    "showcases": [
+      {
+        "id": "signal_into_system",
+        "tool": "Blender",
+        "duration_seconds": "10-15",
+        "buyer_learns": "Visual character resolves into a repeatable responsive system.",
+        "fallback": "poster + text explanation + optional WebM/MP4"
+      },
+      {
+        "id": "friction_to_path",
+        "tool": "Remotion",
+        "duration_seconds": "8-12",
+        "buyer_learns": "Information hierarchy can turn a vague page into a clear path.",
+        "fallback": "static before/after frames + concept label"
+      },
+      {
+        "id": "searchable_service_map",
+        "tool": "Remotion",
+        "duration_seconds": "10-15",
+        "buyer_learns": "IA and foundational SEO can connect services without ranking claims.",
+        "fallback": "static page tree + short transcript"
+      }
+    ],
+    "source": "https://developer.apple.com/design/human-interface-guidelines/motion"
+  },
+  "performance_budgets": {
+    "field_p75": {
+      "lcp_seconds_max": 2.5,
+      "inp_milliseconds_max": 200,
+      "cls_max": 0.1,
+      "segmentation": "mobile and desktop separately where field data exists",
+      "source": "https://web.dev/articles/vitals"
+    },
+    "lab_or_release_targets": {
+      "critical_initial_route_kib_max": 1000,
+      "lighthouse_total_byte_target_kib_max": 1600,
+      "mobile_hero_image_kib_max": 250,
+      "showcase_poster_kib_max": 100,
+      "showcase_video_requests_at_once_max": 1,
+      "showcase_video_loading": "lazy and route-level; never block first CTA",
+      "source": "https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/"
+    },
+    "media_requirements": [
+      "width/height or aspect-ratio reservation to avoid layout shift",
+      "responsive srcset/sizes for raster images",
+      "eager/high priority only for the actual LCP image",
+      "poster and text fallback for every motion showcase",
+      "no autoplay audio"
+    ]
+  },
+  "copy_examples": {
+    "hero": "Websites with a point of view—and a path to being found.",
+    "pricing_cta": "Request a scoped plan",
+    "service_scope": "A custom marketing site with three agreed pages, one visual direction, launch QA, and a documented handoff.",
+    "scope_limit": "Not included: ecommerce, copywriting beyond the agreed page set, or ongoing SEO. Add them as a separate scope.",
+    "proof_label": "Concept demo — no client result claimed."
+  }
+}

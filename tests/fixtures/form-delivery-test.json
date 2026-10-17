@@ -1,0 +1,24 @@
+{
+  "reference": "wm-protected-form-test-2026-10-14-02",
+  "origin": "https://wonder-method-staging.palatis3.workers.dev",
+  "from": "Wonder and Method <notifications@notify.wonderandmethod.com>",
+  "to": [
+    "palatis3@gmail.com"
+  ],
+  "inquiry": {
+    "name": "Wonder and Method Setup Test",
+    "email": "palatis3@gmail.com",
+    "business": "Synthetic setup verification - no client",
+    "website": "https://example.test",
+    "service": "focused_site",
+    "message": "Approved private staging delivery test. Verify durable inquiry storage and one notification in the owner's Gmail inbox. No client work, booking, or payment is requested. Test reference: wm-protected-form-test-2026-10-14-02."
+  },
+  "subjectTemplate": "Website inquiry {server-generated UUID}",
+  "textTemplate": "Website inquiry\n\nReference: {server-generated UUID}\n\nname: Wonder and Method Setup Test\n\nemail: palatis3@gmail.com\n\nbusiness: Synthetic setup verification - no client\n\nwebsite: https://example.test\n\nservice: focused_site\n\nmessage: Approved private staging delivery test. Verify durable inquiry storage and one notification in the owner's Gmail inbox. No client work, booking, or payment is requested. Test reference: wm-protected-form-test-2026-10-14-02.",
+  "scope": "One authenticated POST to the deployed staging inquiry endpoint and one notification to the owner's Gmail. Temporarily install the restricted sending key in Cloudflare and a test entry point that accepts only this exact fixture, permits one attempt, and expires after five minutes while staging authentication remains enforced. Restore the recorded synthetic Worker version after the attempt; after reconciliation delete only this test inquiry from active D1. Retain the email as evidence. No public launch, domain routing, real client, charge, resend, or operator retry.",
+  "approval": {
+    "approved": false,
+    "approvedAt": null,
+    "payloadSha256": null
+  }
+}

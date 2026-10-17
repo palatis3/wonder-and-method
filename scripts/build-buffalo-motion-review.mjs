@@ -1,0 +1,31 @@
+import {writeBuyerPacks} from './build-buyer-packs.mjs';
+import {writeOwnedProof} from './build-owned-proof.mjs';
+import {priceList} from '../src/shared.mjs';
+import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
+import {readFile,writeFile,mkdir,cp,stat} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {renderPages} from '../src/pages.mjs';
+const root=resolve(import.meta.dirname,'..');
+const output=resolve(root,'.runtime/buffalo-motion-review');
+const json=async p=>JSON.parse(await readFile(resolve(root,p),'utf8'));
+const [config,offers,map,tokens,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/design-tokens.json','authority/v5/geography.json'].map(json));
+const localConfig={...config,homeEdition:'civic-sculpture',origin:'http://localhost:4221',mode:'staging',formMode:'synthetic',reviewOnly:false,searchIndexing:false};
+Object.assign(localConfig,await civicAssetState(root,localConfig));
+const manifest=localConfig.civicMedia,videoReady=localConfig.civicMotionReady;
+await mkdir(output,{recursive:true});
+await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
+await cp(resolve(root,'src/client.js'),resolve(output,'assets/client.js'));
+await cp(resolve(root,'src/shared.mjs'),resolve(output,'assets/shared.mjs'));
+await copyCivicAssets(root,output,localConfig);
+await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(priceList(offers)));
+await writeBuyerPacks(output,offers);
+await writeOwnedProof(root,output,offers);
+for(const page of renderPages({config:localConfig,offers,map,tokens,geography})){
+  const path=resolve(output,`.${page.path}index.html`);await mkdir(dirname(path),{recursive:true});await writeFile(path,page.html);
+}
+await writeFile(resolve(output,'robots.txt'),'User-agent: *\nDisallow: /\n');
+const assets={};
+for(const path of localConfig.civicAssetFiles)assets[path]=(await stat(resolve(root,path))).size;
+const evidence={preview:'http://localhost:4221/',edition:localConfig.homeEdition,savedEdition:config.homeEdition,...localConfig.civicReadiness,ambientReady:localConfig.civicAmbientReady,durationSeconds:manifest.durationSeconds,ambientDurationSeconds:manifest.ambientDurationSeconds??null,fullWordSettledAtSeconds:manifest.fullWordSettledAtSeconds,finalHoldSeconds:manifest.finalHoldSeconds,assets,playback:localConfig.civicAmbientReady?'Once-only intro, then continuous ambient. Explicit Pause/Resume and Replay introduction.':'Accepted v1 intro; new finale remains gated.',productionChanged:false};
+await writeFile(resolve(root,'evidence/premium-audit-20261015/civic-ending-integration-build.json'),JSON.stringify(evidence,null,2)+'\n');
+console.log(`Civic Sculpture homepage preview: ${output} (${localConfig.civicReadiness.selectedRevision}; ${videoReady?'verified motion + posters':'posters only'})`);

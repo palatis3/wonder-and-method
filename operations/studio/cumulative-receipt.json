@@ -1,0 +1,93 @@
+{
+  "status": "Actual studio-owned work evidence; zero buyer usability sessions and no paid-client outcomes",
+  "client_id": "studio-owned-work",
+  "accepted_scope_reference": "config/release-evidence.json#websitePublication",
+  "entries": [
+    {
+      "id": "studio-experience-release-20261014",
+      "date": "2026-10-14",
+      "type": "studio-release",
+      "scope_version": "V5 with owner-selected Buffalo experience direction",
+      "owner": "Venture House Group LLC",
+      "artifact_reference": "evidence/experience-release-20261014/release-touch.json",
+      "decision_reference": "config/release-evidence.json#websitePublication",
+      "actual_founder_hours": null,
+      "next_action": "Conduct relevant buyer sessions when participants are available; resolve actual booking/cash inputs before client commitments",
+      "next_action_due": null,
+      "evidence": [
+        "evidence/studio-capability.json",
+        "evidence/finished-site-inquiry.json",
+        "evidence/finished-site-http.json",
+        "evidence/production-recovery.json",
+        "evidence/buyer-review-candidate.json"
+      ],
+      "unresolved": [
+        "Actual founder labor hours were not recorded; elapsed agent time is not founder labor",
+        "No prospective-buyer sessions or paid client outcomes",
+        "Dated capacity, cash/compensation, live billing, agreement/tax and service coverage remain open"
+      ]
+    }
+  ],
+  "entry_shape": {
+    "id": null,
+    "date": null,
+    "type": null,
+    "scope_version": null,
+    "owner": null,
+    "artifact_reference": null,
+    "decision_reference": null,
+    "actual_founder_hours": null,
+    "next_action": null,
+    "next_action_due": null,
+    "evidence": [],
+    "unresolved": []
+  },
+  "buyer_session_shape": {
+    "participant_code": null,
+    "buyer_relevance": null,
+    "conducted_at": null,
+    "duration_minutes": null,
+    "facilitator": null,
+    "candidate_url": null,
+    "source_sha256": null,
+    "artifact_sha256": null,
+    "device_browser_input": null,
+    "environment": null,
+    "recording_consent_reference": null,
+    "tasks": [],
+    "task_shape": {
+      "id": null,
+      "prompt_reference": "operations/BUYER_REVIEW.md",
+      "result": null,
+      "observed_behavior": null,
+      "exact_feedback": null,
+      "assistance_given": null,
+      "severity": null,
+      "owner": null,
+      "change_reference": null,
+      "retest_version_and_evidence": null,
+      "pending_reason": null
+    },
+    "inquiry_ui_reference": null,
+    "separate_delivery_evidence": null,
+    "closing_feedback": [],
+    "unresolved": []
+  },
+  "completed_artifacts": [],
+  "decisions": [],
+  "status_notes": [],
+  "changes": [],
+  "incidents": [],
+  "actual_tests": [],
+  "time_by_stage": [],
+  "release_handoff": [],
+  "monthly_services": [],
+  "exit": [],
+  "invoice_system_reference": null,
+  "access_manager_reference": null,
+  "rules": [
+    "Use the playbook blocks in this record; do not create duplicate trackers.",
+    "A check is pending until actual evidence exists.",
+    "Synthetic rehearsal is separate from client work and never paid-client proof."
+  ]
+}

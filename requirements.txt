@@ -1,0 +1,8 @@
+# Optional Python asset/font tooling; normal Node site builds do not require these.
+# Versions observed installed on the authoring machine on 2026-10-17.
+# Imports: scripts/*.py and motion/blender packaging/orchestration scripts.
+# Blender provides bpy/mathutils; install Blender and FFmpeg separately as needed.
+Pillow==12.3.0
+numpy==2.5.1
+fonttools==4.67.0
+Brotli==1.2.0

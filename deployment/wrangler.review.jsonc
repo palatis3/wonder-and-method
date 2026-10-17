@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "wonder-method-review",
+  "account_id": "4fc7ad8717e64e119476c2dcf8f0666e",
+  "compatibility_date": "2026-10-13",
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {"pattern": "wonderandmethod.com", "zone_id": "81854dfe5ceecc678fc467f25cc325b5", "custom_domain": true},
+    {"pattern": "www.wonderandmethod.com", "zone_id": "81854dfe5ceecc678fc467f25cc325b5", "custom_domain": true}
+  ],
+  "assets": {
+    "directory": "../.runtime/public-review",
+    "not_found_handling": "404-page"
+  },
+  "observability": {"enabled": false}
+}

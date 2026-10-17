@@ -1,0 +1,126 @@
+{
+  "status": "HISTORICAL V5 operating reference only; not current offer, contract, economics or staffing authority",
+  "authority": "V5 offers.json; OPERATING_SYSTEM.md",
+  "care": {
+    "public_name": "Website Care",
+    "monthly_price": 199,
+    "hours_all_in": 1.25,
+    "direct_cost": 15,
+    "edit_minutes": 15,
+    "eligibility": "Known Wonder and Method static builds only at launch; unknown legacy stack requires separately quoted assessment and acceptance.",
+    "deliverables": [
+      "Automated uptime alerts with business-hours human review",
+      "Monthly critical-page and form journey check, with client mailbox receipt confirmation or permitted delegated access",
+      "One consolidated supplied minor text/link/image edit estimated up to 15 minutes, including deployment QA",
+      "Quarterly relevant dependency and recovery review, with monthly allocation",
+      "Monthly dated work receipt and open-issue note"
+    ],
+    "normal_ack_business_days": 2,
+    "critical_ack_business_days": 1,
+    "business_hours": "Monday-Friday 9am-5pm America/New_York, excluding stated holidays; confirm actual founder coverage before offering",
+    "response_boundary": "Acknowledgment target, not a fix deadline; no 24/7 human coverage or guaranteed restoration. Quote larger incidents after triage. Defects covered by correction terms remain separate from paid edits.",
+    "activation_hours_known_build": 0.5,
+    "exit_hours": 1,
+    "technical_baseline_rule": "Included in original build; no second technical activation fee.",
+    "unused_time": "Does not roll over; client sees the 15-minute allowance, not an entitlement to internal 1.25 hours.",
+    "excluded": [
+      "New pages",
+      "Redesign",
+      "CMS or integration work",
+      "Routine email hosting administration",
+      "Unlimited incident repair",
+      "Third-party fees"
+    ],
+    "scale_gate": "Complete at least one paid quarter including the dependency/recovery review, actual incident and coordination time, plus startup/exit allocation or timed exit drill. Two months alone do not validate quarterly work.",
+    "incident_action": "Included: business-hours alert review, verify/classify, notify client, route to responsible provider and state next update. Build defects follow the 30-day correction promise; other repair labor needs a written quote. No restoration deadline.",
+    "coverage_rule": "Before enrollment record actual staffed window, timezone, holidays/closure dates, alert recipient and contact route. Proposed Mon–Fri9–5 Eastern is usable only if actually staffed. After-hours alerts enter the queue when the next staffed window opens; next-business-day acknowledgment is due by the end of the next staffed business day. Normal acknowledgment within two staffed business days. Pause new enrollment when coverage cannot be met.",
+    "pilot_economics_at_75": {
+      "first_quarter_net_after_lifecycle_and_acquisition": 29.9,
+      "with_extra_half_hour_each_month": -82.6,
+      "basis": "3 paid months; monthly contribution80.80 or43.30 minus0.5 activation+1 exit+1 sales hour at75 plus25cash. Not a bank cash forecast."
+    }
+  },
+  "search": {
+    "public_name": "Monthly Search Plan",
+    "monthly_price": 1100,
+    "hours_all_in": 7,
+    "direct_cost": 35,
+    "page_word_limit": 800,
+    "minor_fix_count": 1,
+    "revision_rounds": 1,
+    "deliverables": [
+      "One agreed priority cycle on a known supported site with documented baseline",
+      "One existing-page improvement up to 800 new or edited words using supplied facts and an existing template",
+      "One defined related low-risk minor fix, estimated up to 30 minutes: metadata, internal linking or simple on-page correction",
+      "QA and URL-level work receipt with observation window and next decision"
+    ],
+    "hour_budget": {
+      "measurement_priority": 1.5,
+      "page": 2.5,
+      "minor_fix": 0.5,
+      "qa": 0.75,
+      "receipt_coordination": 0.75,
+      "reserve": 1
+    },
+    "revision_scope": "One consolidated factual correction within approved direction; counts in the seven-hour estimate, but sold deliverable must be honored even if estimate is exceeded.",
+    "entry_rule": "Documented launch or Sprint baseline; supported stack and useful approved backlog.",
+    "renewal_rule": "Quote states exact renewal date/time/timezone and one written cancellation route. Five business days before renewal, confirm a useful approved task and required inputs or pause next invoice. Client may cancel any time before actual renewal. If charged without an approved useful task, customer chooses refund or credit for the unused cycle; begun work is itemized and unearned remainder reconciled under signed terms.",
+    "excluded": [
+      "New original guide",
+      "Unlimited pages",
+      "Technical migration",
+      "API/CRM or measurement integration",
+      "Keyword/ranking/lead/revenue guarantees",
+      "Guaranteed links",
+      "GBP operation"
+    ],
+    "scale_gate": "Two complete paid cycles with approved facts, minor fix, factual revision, QA, coordination and reserve before widening availability."
+  },
+  "sprint": {
+    "public_name": "Search Improvement Sprint",
+    "one_time_price": 1500,
+    "hours_all_in": 10,
+    "direct_cost": 35,
+    "deliverables": [
+      "Verified baseline and one agreed buyer/search priority",
+      "One implemented existing-page improvement using supplied approved facts, within existing template and up to 800 new or edited words",
+      "One related minor fix only if explicitly included in the signed 10-hour scope",
+      "One consolidated factual correction within approved direction",
+      "QA, URL-level before/after record, and a 90-day prioritized backlog"
+    ],
+    "preflight": "Access, supported stack, facts and worthwhile bounded change verified before sale; choose implementable priority by hour 3. Do not sell an audit-only substitute. If unexpected access blocker arises, pause and agree alternate same-scope implementation or reconcile unearned work.",
+    "baseline_rule": "New studio builds with a documented usable baseline can enter monthly Search directly. No forced Sprint and no separate setup charge. If Sprint is useful, replace duplicated baseline work with explicitly agreed implementation.",
+    "excluded": [
+      "Original research guide",
+      "New template or CMS",
+      "Migration",
+      "Custom integration",
+      "Backlink outreach or purchases",
+      "Ranking/lead guarantee"
+    ]
+  },
+  "ownership_and_billing": {
+    "build_milestones": "50% booking, 30% written design acceptance, 20% written staging acceptance before launch. Silence is not acceptance.",
+    "subscription": "Optional advance monthly billing, no minimum term, cancellation before actual renewal stops future invoices; service runs through paid period. No forfeiture of paid site.",
+    "late_payment": "Pause new unpaid work after notice; preserve client-owned assets and access. No disabling a paid client-owned website to enforce an unrelated service invoice.",
+    "build_cancellation": "Provide a dated ledger of completed work, approved committed costs and payments. Reconcile under the signed agreement. Client-owned accounts and paid bespoke deliverables/source remain usable; identify unfinished/unpaid material and its status explicitly. Final contract should resolve disputed amounts without taking client accounts hostage.",
+    "handoff": "Within five business days provide existing paid source/content/media, license/account map, build/deploy instructions and known unfinished items, on completion or reconciled termination. Routine handoff included; new migration labor separately scoped. Client accounts accessible throughout.",
+    "third_party": "List exact provider, payer, setup, renewal, included usage, overage, license, cancellation and ownership before deposit. No assumed zero hosting or vague all-in claim.",
+    "buyer_confirmation": "Exact routes, copy limits, CMS/editing fit, date schedule, feedback windows, costs, exclusions and named approver accepted in writing.",
+    "acceptance_and_delay": "One named approver, acceptance tests and five-business-day review window unless agreed otherwise. Written acceptance or consolidated defect list. No deemed approval or automatic design/staging milestone invoice when the client misses a deadline; send notice and revise available slot.",
+    "cancellation_route": "One written/electronic route in the quote with exact renewal timestamp/timezone and acknowledgment. No service cancellation disables an already paid client-owned website."
+  },
+  "required_actual_inputs": {
+    "staffed_hours": null,
+    "timezone": null,
+    "closures": null,
+    "contact_route": null,
+    "alert_recipient": null,
+    "escalation_path": null,
+    "renewal_timestamp": null,
+    "written_cancellation_route": null
+  },
+  "current_offer_source": "config/offers.json",
+  "current_quote_tool": "scripts/create-job.mjs",
+  "historical_preservation": "Retain original accepted scope, prices, benefits, payments and refunds. New offers use client-owned direct vendor billing with no subsidy or markup. Never use these historical care/search/sprint units for a new quote."
+}

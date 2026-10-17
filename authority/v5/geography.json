@@ -1,0 +1,711 @@
+{
+  "schema_version": "v3-erie-geography-1",
+  "retrieved_date": "2026-10-13",
+  "county": "Erie County",
+  "state": "New York",
+  "purpose": "Search inventory and evidence-gated local coverage; legal municipality labels are preserved while shared search names are grouped.",
+  "authority_sources": [
+    {
+      "url": "https://www4.erie.gov/state-and-regional-municipalities",
+      "claim": "Official county directory lists municipal names and types; current page returned 44 entries: cities, towns and villages."
+    },
+    {
+      "url": "https://www3.erie.gov/environment/municipal-land-use-and-census-data-summary-sheets",
+      "claim": "County summary-sheet index groups municipalities by city/town/village and shows parent relationships."
+    },
+    {
+      "url": "https://www3.erie.gov/gis/erie-county-map-gallery",
+      "claim": "County GIS map gallery separates Cities, Towns and Villages."
+    },
+    {
+      "url": "https://gis.erie.gov/server/rest/services/MGOConnect/MunicipalBoundaries/FeatureServer/0",
+      "claim": "County GIS municipal-boundary layer; supports current boundary verification."
+    },
+    {
+      "url": "https://eriecountypa.gov/",
+      "claim": "Official Erie County, Pennsylvania government domain used only to disambiguate the unrelated Erie County PA."
+    }
+  ],
+  "counts": {
+    "incorporated_municipalities": 44,
+    "cities": 3,
+    "towns": 25,
+    "villages": 16,
+    "grouped_search_names": 38
+  },
+  "municipalities": [
+    {
+      "name": "Alden",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Alden NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Amherst",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Amherst NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Aurora",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Aurora NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Boston",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Boston NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Brant",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Brant NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Cheektowaga",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Cheektowaga NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Clarence",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Clarence NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Colden",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Colden NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Collins",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Collins NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Concord",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Concord NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Eden",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Eden NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Elma",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Elma NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Evans",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Evans NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Grand Island",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Grand Island NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Hamburg",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Hamburg NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Holland",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Holland NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Lancaster",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Lancaster NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Marilla",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Marilla NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Newstead",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Newstead NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "North Collins",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "North Collins NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Orchard Park",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Orchard Park NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Sardinia",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Sardinia NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Tonawanda",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Tonawanda NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Wales",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Wales NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "West Seneca",
+      "type": "town",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "West Seneca NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Akron",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Newstead",
+      "search_label": "Akron NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Alden",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Alden",
+      "search_label": "Alden NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Angola",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Evans",
+      "search_label": "Angola NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Blasdell",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Hamburg",
+      "search_label": "Blasdell NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Depew",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Cheektowaga;Lancaster",
+      "search_label": "Depew NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "East Aurora",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Aurora",
+      "search_label": "East Aurora NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Farnham",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Brant",
+      "search_label": "Farnham NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Gowanda",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Collins;Cattaraugus County",
+      "search_label": "Gowanda NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Hamburg",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Hamburg",
+      "search_label": "Hamburg NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Kenmore",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Tonawanda",
+      "search_label": "Kenmore NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Lancaster",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Lancaster",
+      "search_label": "Lancaster NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "North Collins",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "North Collins",
+      "search_label": "North Collins NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Orchard Park",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Orchard Park",
+      "search_label": "Orchard Park NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Sloan",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Cheektowaga",
+      "search_label": "Sloan NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Springville",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Concord",
+      "search_label": "Springville NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Williamsville",
+      "type": "village",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": "Amherst",
+      "search_label": "Williamsville NY",
+      "query_policy": "Use municipality plus NY; do not infer a separate landing page"
+    },
+    {
+      "name": "Buffalo",
+      "type": "city",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Buffalo NY",
+      "query_policy": "City name; keep NY qualifier when ambiguity exists"
+    },
+    {
+      "name": "Lackawanna",
+      "type": "city",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Lackawanna NY",
+      "query_policy": "City name; keep NY qualifier when ambiguity exists"
+    },
+    {
+      "name": "Tonawanda",
+      "type": "city",
+      "county": "Erie County",
+      "state": "New York",
+      "parent_town": null,
+      "search_label": "Tonawanda NY",
+      "query_policy": "City name; keep NY qualifier when ambiguity exists"
+    }
+  ],
+  "grouped_search_places": [
+    {
+      "search_place": "Akron NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Akron",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Distinguish Akron, NY from Akron, Ohio; nested in Newstead."
+    },
+    {
+      "search_place": "Alden NY",
+      "jurisdiction_types": "town;village",
+      "jurisdictions": "Town of Alden; Village of Alden",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "One search group for shared name; retain legal type in geography metadata."
+    },
+    {
+      "search_place": "Amherst NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Amherst",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Williamsville is a separate village group; Snyder/Eggertsville/Getzville/East Amherst are localities, not extra municipalities."
+    },
+    {
+      "search_place": "Angola NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Angola",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Village within Evans; use NY."
+    },
+    {
+      "search_place": "Aurora NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Aurora",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Ambiguous with Aurora, NY in Cayuga County; East Aurora is separate village group."
+    },
+    {
+      "search_place": "Blasdell NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Blasdell",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Nested in Hamburg; ZIP areas do not define village boundary."
+    },
+    {
+      "search_place": "Boston NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Boston",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Bare Boston is highly ambiguous; use Boston NY/Erie County."
+    },
+    {
+      "search_place": "Brant NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Brant",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Farnham is a separate village group within Brant."
+    },
+    {
+      "search_place": "Buffalo NY",
+      "jurisdiction_types": "city",
+      "jurisdictions": "City of Buffalo",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "County seat; Buffalo/WNY/metro labels can extend beyond city boundaries."
+    },
+    {
+      "search_place": "Cheektowaga NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Cheektowaga",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Depew and Sloan are separate village groups; Depew spans Cheektowaga and Lancaster."
+    },
+    {
+      "search_place": "Clarence NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Clarence",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Clarence Center/Hollow are localities; no incorporated village row."
+    },
+    {
+      "search_place": "Colden NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Colden",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Collins NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Collins",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Gowanda is a separate village, partly in Cattaraugus County."
+    },
+    {
+      "search_place": "Concord NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Concord",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Springville is a separate village group; bare Concord is ambiguous."
+    },
+    {
+      "search_place": "Depew NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Depew",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Spans Cheektowaga and Lancaster; do not duplicate under each parent."
+    },
+    {
+      "search_place": "East Aurora NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of East Aurora",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Do not collapse into generic Aurora."
+    },
+    {
+      "search_place": "Eden NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Eden",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Elma NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Elma",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Evans NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Evans",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Angola is a separate village group."
+    },
+    {
+      "search_place": "Farnham NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Farnham",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Village within Brant."
+    },
+    {
+      "search_place": "Gowanda NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Gowanda",
+      "county_scope": "Erie and Cattaraugus",
+      "ambiguity_and_deduplication_notes": "Only part of the village is Erie County; do not allocate generic demand entirely to Erie."
+    },
+    {
+      "search_place": "Grand Island NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Grand Island",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Hamburg NY",
+      "jurisdiction_types": "town;village",
+      "jurisdictions": "Town of Hamburg; Village of Hamburg",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "One generic group; Blasdell remains distinct."
+    },
+    {
+      "search_place": "Holland NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Holland",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Kenmore NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Kenmore",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Inside Town of Tonawanda, not City of Tonawanda."
+    },
+    {
+      "search_place": "Lackawanna NY",
+      "jurisdiction_types": "city",
+      "jurisdictions": "City of Lackawanna",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Independent city; not town/village."
+    },
+    {
+      "search_place": "Lancaster NY",
+      "jurisdiction_types": "town;village",
+      "jurisdictions": "Town of Lancaster; Village of Lancaster",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "One generic group; Depew spans Lancaster and Cheektowaga. Add NY to avoid Lancaster PA."
+    },
+    {
+      "search_place": "Marilla NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Marilla",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Newstead NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Newstead",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Akron is a separate village group."
+    },
+    {
+      "search_place": "North Collins NY",
+      "jurisdiction_types": "town;village",
+      "jurisdictions": "Town of North Collins; Village of North Collins",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "One generic group for shared name."
+    },
+    {
+      "search_place": "Orchard Park NY",
+      "jurisdiction_types": "town;village",
+      "jurisdictions": "Town of Orchard Park; Village of Orchard Park",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "One generic group for shared name."
+    },
+    {
+      "search_place": "Sardinia NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Sardinia",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "Sloan NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Sloan",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Village within Cheektowaga."
+    },
+    {
+      "search_place": "Springville NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Springville",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Village within Concord."
+    },
+    {
+      "search_place": "Tonawanda NY",
+      "jurisdiction_types": "city;town",
+      "jurisdictions": "City of Tonawanda; Town of Tonawanda",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Two jurisdictions share a search name; exclude North Tonawanda in Niagara County."
+    },
+    {
+      "search_place": "Wales NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of Wales",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Use NY."
+    },
+    {
+      "search_place": "West Seneca NY",
+      "jurisdiction_types": "town",
+      "jurisdictions": "Town of West Seneca",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Retain full place name."
+    },
+    {
+      "search_place": "Williamsville NY",
+      "jurisdiction_types": "village",
+      "jurisdictions": "Village of Williamsville",
+      "county_scope": "Erie only",
+      "ambiguity_and_deduplication_notes": "Village nested in Amherst; postal usage does not establish village boundary."
+    }
+  ],
+  "disambiguation_rules": [
+    "Use NY/NY-specific county wording in all local commercial terms. Erie County NY is the launch geography; Erie County PA is a separate county and may contaminate generic Erie searches.",
+    "Use Lancaster NY, Buffalo NY and Erie County NY when relevant; Lancaster SERPs returned Pennsylvania businesses and guides.",
+    "Do not treat ZIP codes or postal place names as legal municipality boundaries.",
+    "A shared name is one research group only when the query cannot practically distinguish town and village; preserve each legal jurisdiction in this inventory.",
+    "Gowanda is partly in Cattaraugus County; generic Gowanda demand cannot be assigned wholly to Erie.",
+    "Tonawanda query intent can mean City of Tonawanda or Town of Tonawanda; North Tonawanda is in Niagara County and must be excluded.",
+    "Do not create city/town/village pages from this list without firsthand local proof, a distinct buyer question and original evidence."
+  ]
+}

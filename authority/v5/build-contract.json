@@ -1,0 +1,119 @@
+{
+  "version": "5.0",
+  "brand": "Wonder and Method",
+  "market": "Erie County, New York",
+  "operating_model": "online_only",
+  "gbp_eligible_now": false,
+  "budget_status": "undecided",
+  "primary_authorities": {
+    "commercial": "offers.json",
+    "routes": "site-map.json",
+    "keywords": "keyword-manifest.json",
+    "content": "content-plan.json",
+    "brand": "design-tokens.json",
+    "delivery": "OPERATING_SYSTEM.md",
+    "finance": "economics.json",
+    "capacity": "founder-calendar.json",
+    "purchase": "purchase-contract.json",
+    "execution_index": "OPERATING_SYSTEM.md",
+    "templates": "SERVICE_PLAYBOOK.md",
+    "history": "history-manifest.json"
+  },
+  "public_prices": {
+    "focused_website": 6000,
+    "signature_website": 9500,
+    "care_monthly": 199,
+    "search_sprint_once": 1500,
+    "search_monthly": 1100
+  },
+  "website_pages": {
+    "essential_commercial": 9,
+    "privacy_utility": 1,
+    "conditional_launch_guides": 3,
+    "conditional_care": 1
+  },
+  "mobile_navigation_max_interactions": 2,
+  "proof_policy": "No paid-client cases assumed; label owned work and concepts honestly.",
+  "publication_policy": "This plan does not create or publish a live site; release requires completed implementation and business facts.",
+  "release_gates": [
+    {
+      "id": "identity",
+      "acceptance": "Founder identity, owned domain/contact, honest online-only location, name review and rights records are real.",
+      "state": "not_executed"
+    },
+    {
+      "id": "offer",
+      "acceptance": "Every card, quote example and FAQ renders exact current scope and prices from offers.json; no hidden mandatory service.",
+      "state": "not_executed"
+    },
+    {
+      "id": "proof",
+      "acceptance": "Each work example is labeled owned/concept/paid and every claim and screenshot has evidence and rights.",
+      "state": "not_executed"
+    },
+    {
+      "id": "inquiry",
+      "acceptance": "Form receipt arrives in client-controlled destination, failures are understandable, no PII enters analytics.",
+      "state": "not_executed"
+    },
+    {
+      "id": "mobile",
+      "acceptance": "320/360/390/768/desktop and zoom/reflow checks pass; direct navigation and 48px product targets work.",
+      "state": "not_executed"
+    },
+    {
+      "id": "accessibility",
+      "acceptance": "Manual keyboard, focus, labels/errors, contrast, text spacing and reduced-motion checks pass alongside automated checks.",
+      "state": "not_executed"
+    },
+    {
+      "id": "performance",
+      "acceptance": "Recorded mobile lab configuration and asset budgets pass; sufficient field p75 data is used later for CWV.",
+      "state": "not_executed"
+    },
+    {
+      "id": "search",
+      "acceptance": "Canonical/status/robots/sitemap/title/internal link/schema and scoped redirect checks pass; no empty or gated pages linked.",
+      "state": "not_executed"
+    },
+    {
+      "id": "recovery",
+      "acceptance": "Client-controlled source and accounts, least privilege, dependency/secret checks, reproduce build and tested rollback.",
+      "state": "not_executed"
+    },
+    {
+      "id": "approval",
+      "acceptance": "Exact content/version and payment milestones accepted before release; unresolved blockers are explicit.",
+      "state": "not_executed"
+    },
+    {
+      "id": "platform_fit",
+      "acceptance": "Static ownership versus self-editing CMS fit stated before deposit; supported platform and actual third-party costs explicit.",
+      "state": "not_executed"
+    },
+    {
+      "id": "commercial_readiness",
+      "acceptance": "Relevant dated capability proof, actual calendar and correction tail, cash floor, agreed client inputs and staffed response fit; no85h/week7 waiting rule.",
+      "state": "not_executed"
+    },
+    {
+      "id": "form_server",
+      "acceptance": "Server validation/spam/rate/duplicate handling, recoverable submission record and actual inbox receipt. If Turnstile is used, verify its token server-side.",
+      "state": "not_executed"
+    },
+    {
+      "id": "isolation_and_data",
+      "acceptance": "Per-client repo/project/environment, MFA/least privilege, secrets out of source/bundles/prompts/logs; minimal data, retention/deletion/export owner; staging access control plus indexing controls.",
+      "state": "not_executed"
+    },
+    {
+      "id": "media_and_identity_rights",
+      "acceptance": "Name research is preliminary not trademark clearance. License/input and editable-source rights checked for selected tools and actual handoff; no fabricated identity/claims.",
+      "state": "not_executed"
+    }
+  ],
+  "parallel_policy": "Two active projects allowed when dated founder hours, review queue and launch recovery fit; measured prompt/AI gains may increase capacity.",
+  "weekly_availability_status": "unconfirmed",
+  "active_palette": "wonder_method_ink",
+  "motion_default": "prerendered media with ordinary HTML/text and static/reduced-motion fallback; liveWebGL off unless separately justified and tested"
+}
