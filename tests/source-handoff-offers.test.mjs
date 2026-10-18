@@ -16,10 +16,10 @@ test('new website scope preserves prices, creative allowances and rights while r
   const p=offers[id],old=previous[id],draft=await draftScope(id,'synthetic-source-handoff');
   for(const key of ['public_price','marketing_page_cap','creative_assets','payment_schedule'])assert.deepEqual(p[key],old[key],id+' '+key);
   assert.equal(p.initial_launch_count,1);assert.equal(p.training_minutes,30);assert.equal(p.external_connection_limit,connections);assert.deepEqual(p.cms,{collections:0,editors:0});
-  assert.match(p.platform_fit,/No browser content editor, CMS or editor accounts are included/);
+  assert.match(p.platform_fit,/editable source and content files/);assert.doesNotMatch(p.platform_fit,/browser editor|CMS|not included/);
   assert.match(p.account_setup,/One initial website launch/);assert.match(p.handoff,/folder or ZIP/);assert.match(p.training,/optional handoff call/);assert.match(p.correction,/30/);
   assert.equal(draft.commercial_snapshot.version,offers.version);
-  assert.match(JSON.stringify(draft.exclusions),/Portals, lead trackers\/CRM systems, online stores/);
+  assert.match(JSON.stringify(draft.exclusions),/assessed and quoted before work begins/);
  }
  assert.ok(previous.workflow_menu.client_portal);assert.deepEqual(previous.focused_site.cms,{collections:3,editors:2});
  assert.ok(!Object.hasOwn(offers,'workflow_menu'));
@@ -34,6 +34,18 @@ test('every rendered route and buyer pack withdraws positive promises of bundled
  assert.ok(!Object.hasOwn(value,'workflow'));
 });
 
+test('client copy explains marketing pages without retired-plan comparisons or document-format jargon',()=>{
+ const retired=/browser (?:content )?editor|browser CMS|publishing dashboard|browser publishing system|browser editing|previously accepted bundled|historical accepted|build-funded|START-HERE\.md|\bMarkdown\b/i;
+ for(const page of pages)assert.doesNotMatch(page.html,retired,page.path);
+ for(const pack of buyerPacks(offers))assert.doesNotMatch(JSON.stringify(pack),retired,pack.id);
+ const pricing=pages.find(p=>p.path==='/pricing/').html;
+ assert.match(pricing,/id="marketing-pages"/);
+ assert.match(pricing,/Home, About, Services, individual service pages, Projects, FAQs and Contact/);
+ assert.match(pricing,/contact section still counts as <strong>one page/);
+ assert.match(pricing,/Planting page count as <strong>two pages/);
+ assert.match(pricing,/plain policy pages sit outside the marketing-page limit/);
+});
+
 test('withdrawn editor route redirects GET and HEAD to the noindex source example',async()=>{
  for(const method of ['GET','HEAD']){
   const result=await worker.fetch(new Request('https://studio.example.test/work/content-editor/?from=saved-link',{method}),{ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',PUBLIC_ORIGIN:'https://studio.example.test'},{});
@@ -44,7 +56,7 @@ test('withdrawn editor route redirects GET and HEAD to the noindex source exampl
 
 test('the public handoff download is the exact independently checked fictional archive',async()=>{
  const bytes=await readFile(new URL('../src/assets/source-handoff/fictional-maple-studio.zip',import.meta.url));
- const sha=createHash('sha256').update(bytes).digest('hex');assert.equal(sha,'d60c60458caeef4339d3275ffecb96ec16dbb458ffb7088d5d42f0c88e387305');
+ const sha=createHash('sha256').update(bytes).digest('hex');assert.equal(sha,'6f70a07e96e686d22eb364470ab705ab5a1d682e827d52ec59dc3207d1a8f38d');
  assert.ok(pages.find(p=>p.path==='/work/source-handoff/').html.includes(sha));
  await assert.rejects(access(new URL('../src/assets/editor-walkthrough/sample-content-export.zip',import.meta.url)));
 });

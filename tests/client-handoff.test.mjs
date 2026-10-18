@@ -72,6 +72,14 @@ print(json.dumps(result))`, result.zip, extracted));
   assert.equal(Object.keys(archive).filter(path => path.startsWith('website-source/')).length, f.manifest.sourceFiles.length);
   for (const path of f.manifest.sourceFiles) assert.equal(archive[`website-source/${path}`], original[path]);
   assert(!Object.keys(archive).some(path => /invoice|another-client|\/dist\//.test(path)));
+  const instructionPaths = ['START-HERE.txt', 'website-source/README.txt', ...f.manifest.documentFiles];
+  assert(!Object.keys(archive).some(path => /\.md$/i.test(path)), 'Delivery contains plain-text instructions');
+  for (const path of instructionPaths) {
+    assert(Object.hasOwn(archive, path), `Missing instructions: ${path}`);
+    const content = await readFile(join(extracted, path), 'utf8');
+    assert.doesNotMatch(content, /^(?:#{1,6} |```|\|.*\|)|\*\*|`|\[[^\]]+\]\([^)]+\)/m, path);
+    assert.doesNotMatch(content, /\.md\b|markdown|CMS|in-browser editor|portal|store|CRM|tracking-number|growth follow-up/i, path);
+  }
   const sums = await readFile(join(extracted, 'verification/SHA256SUMS.txt'), 'utf8');
   for (const line of sums.trim().split('\n')) { const [expected, path] = line.split('  '); assert.equal(archive[path], expected, path); }
   assert.equal(sums.trim().split('\n').length, Object.keys(archive).length - 1);
@@ -88,7 +96,7 @@ print(json.dumps(result))`, result.zip, extracted));
 });
 
 test('traversal, absolute paths, hidden files, private filenames, archives and duplicate aliases are rejected', async t => {
-  for (const path of ['../outside.txt', '/absolute.txt', 'C:/outside.txt', 'public\\index.html', '.git/config', '.env', 'public/.env.example', 'docs/invoice.json', 'docs/credentials.json', 'docs/customer-backup.json', 'docs/data.sqlite', 'docs/source.zip', 'node_modules/pkg/index.js', 'public/CON.txt', 'public/trailing.txt ', 'public//index.html']) {
+  for (const path of ['../outside.txt', '/absolute.txt', 'C:/outside.txt', 'public\\index.html', '.git/config', '.env', 'public/.env.example', 'docs/invoice.json', 'docs/credentials.json', 'docs/customer-backup.json', 'docs/data.sqlite', 'docs/source.zip', 'docs/guide.md', 'node_modules/pkg/index.js', 'public/CON.txt', 'public/trailing.txt ', 'public//index.html']) {
     await t.test(path, async t => {
       const f = await fixture(t);
       f.manifest.sourceFiles.push(path);
@@ -162,4 +170,13 @@ test('build cannot modify delivered source or add a forbidden generated file', a
     await assert.rejects(f.run(), pattern);
     assert.deepEqual(await readdir(f.options.outputRoot), []);
   });
+});
+
+test('client instructions must use plain-text document filenames', async t => {
+  const f = await fixture(t);
+  await writeFile(join(f.source, 'docs/guide.html'), '<p>Instructions</p>');
+  f.manifest.documentFiles.push('docs/guide.html');
+  await f.save();
+  await assert.rejects(f.run(), /documentFiles must be plain-text \.txt files/);
+  await assert.rejects(readdir(f.options.outputRoot), /ENOENT/);
 });

@@ -9,7 +9,7 @@ export function clearPricing(o,{costs='',providers=''}={}) {
   const rows = [
     ['Fixed studio fee', ...websites.map(id => money(o[id].public_price))],
     ['Marketing pages', ...websites.map(id => `Up to ${o[id].marketing_page_cap}`)],
-    ['Editing', ...websites.map(() => 'Source code + written handoff; no browser editor')],
+    ['Editing', ...websites.map(() => 'Source code + written handoff')],
     ['Ready service connections', 'Up to 1 link or standard embed', 'Up to 2 links or standard embeds', 'Up to 2 links or standard embeds'],
     ['Initial launch and handoff call', ...websites.map(() => 'One launch + optional 30-minute call')],
     ['Motion centerpiece', '—', '—', 'Included in agreed scope'],

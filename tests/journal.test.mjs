@@ -102,6 +102,6 @@ test('the cost-guide examples distinguish pages and creative scope with source-c
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
  assert.match(html,/Focused is \$2,350 for deeper service explanations, expanded creative assets, two forms and up to two ready service connections/);
  assert.match(html,/a larger marketing-page map, one original animated hero or 3D centerpiece and an expanded creative kit/);
- assert.match(html,/no browser CMS or publishing dashboard/);
+ assert.match(html,/All three plans include editable source and content files/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
 });

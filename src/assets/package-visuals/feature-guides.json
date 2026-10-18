@@ -1,5 +1,5 @@
 {
-  "revision": "20261017-source-handoff",
+  "revision": "20261017-plain-language",
   "products": [
     {
       "id": "launch_site",
@@ -20,7 +20,7 @@
           "id": "launch_site.pages",
           "title": "Up to 3 purposeful pages",
           "plain": "Up to 3 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Your agreed website includes up to 3 marketing pages, each with a clear purpose. The page plan identifies the actual page addresses.",
+          "explanation": "Up to 3 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
@@ -75,7 +75,7 @@
         {
           "id": "launch_site.measurement",
           "title": "Analytics and Search Console connection",
-          "plain": "Connections to visitor reports and GoogleÃ¢â‚¬â„¢s search reports, with your permission and privacy checks.",
+          "plain": "Connections to visitor reports and Google’s search reports, with your permission and privacy checks.",
           "explanation": "Your agreed analytics and Search Console connections are set up with approved account access and reviewed privacy requirements; missing access is recorded clearly.",
           "limits": "Requires approved access and privacy review; no claim of indexing or measured results without evidence.",
           "condition": null
@@ -84,7 +84,7 @@
           "id": "launch_site.design",
           "title": "A custom visual direction",
           "plain": "An original look based on your business, using approved artwork you have permission to use.",
-          "explanation": "Your websiteÃ¢â‚¬â„¢s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
+          "explanation": "Your website’s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
           "limits": "Full identity redesign and original photography are separate.",
           "condition": null
         },
@@ -141,7 +141,7 @@
           "title": "1 inquiry form",
           "plain": "1 contact form with up to 6 questions, one receiving destination and one confirmation message.",
           "explanation": "Your website includes 1 inquiry form, each with up to six agreed fields, one receiving destination and one confirmation state.",
-          "limits": "Ordinary business data only; no sensitive-data intake or upload portal. Booking/signup have separate allowances.",
+          "limits": "Forms collect ordinary business inquiries. Ready service connections have their own stated allowance.",
           "condition": null
         },
         {
@@ -155,9 +155,9 @@
         {
           "id": "launch_site.static_site",
           "title": "Editable source code",
-          "plain": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "explanation": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "plain": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "explanation": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -173,7 +173,7 @@
           "title": "Confirm hosting and service fit",
           "plain": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
           "explanation": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -181,7 +181,7 @@
           "title": "One initial website launch",
           "plain": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
           "explanation": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
-          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers.",
+          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional.",
           "condition": null
         },
         {
@@ -237,7 +237,7 @@
           "title": "Written project updates",
           "plain": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
           "explanation": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -268,7 +268,7 @@
           "id": "launch_site.defect_correction",
           "title": "Thirty-day defect correction",
           "plain": "For 30 days after launch, corrections cover faults against the agreed work. New requests are separate.",
-          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests and scheduled growth work require a separate agreement.",
+          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests receive a separate agreement.",
           "limits": "New requests and external-provider changes separate; paid files not withheld.",
           "condition": null
         }
@@ -292,7 +292,7 @@
         {
           "id": "launch_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7Ã¢â‚¬â€œ10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
         },
         {
           "id": "launch_site.terms.facts",
@@ -302,12 +302,12 @@
         {
           "id": "launch_site.terms.platform",
           "title": "Source-code editing and ready services",
-          "text": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
+          "text": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
         },
         {
           "id": "launch_site.terms.form_data",
           "title": "Form and data limits",
-          "text": "One contact form, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Ordinary business data only; no sensitive-data intake, file uploads, client accounts or lead-management system. Ordinary business data only; sensitive-data intake and file-upload portals are excluded."
+          "text": "One contact form, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Forms collect ordinary business inquiries. Sensitive personal information and file uploads require a separate assessment."
         },
         {
           "id": "launch_site.terms.creative",
@@ -317,7 +317,7 @@
         {
           "id": "launch_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "No scheduled growth work is bundled with this new website offer."
+          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
         },
         {
           "id": "launch_site.terms.qa",
@@ -327,12 +327,12 @@
         {
           "id": "launch_site.terms.fees",
           "title": "Provider costs",
-          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Unknown mandatory costs remain unresolved until confirmed. New booking, newsletter, CMS, database, authentication, phone or commerce services require separate scope and approved costs. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record the actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Required costs are confirmed before you commit. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "launch_site.terms.accounts",
           "title": "Your account responsibilities",
-          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "launch_site.terms.rights",
@@ -351,13 +351,13 @@
         },
         {
           "id": "launch_site.terms.optional",
-          "title": "Optional services and existing agreements",
-          "text": "Monthly care and search work are optional. New builds include launch foundations and 30-day defect correction; scheduled growth work is separate. Previously accepted bundled work remains owed under its saved agreement. The same work or usable baseline is not charged twice."
+          "title": "Optional ongoing services",
+          "text": "Monthly care and search improvements are optional. Your build includes launch foundations and 30-day defect correction. The same work or usable baseline is not charged twice."
         },
         {
           "id": "launch_site.terms.extras",
           "title": "Work that needs another scope",
-          "text": "Browser content editors, CMS setup, editor accounts, ongoing publishing dashboards and unlimited client editing are not included. Portals, lead trackers/CRM systems, online stores, payments, custom applications, databases, sign-in systems, automation and call-tracking setup require a separate feasibility review and written quote. Creating or configuring booking/newsletter service accounts, campaigns, advanced integrations and ongoing account administration are separate; only the agreed ready-service links or compatible standard embeds are included. Scheduled post-launch search reviews, new articles, business-profile work and growth changes are separate services. The 30-day defect-correction window remains included. Original photography, full identity redesign, additional creative assets, large migrations and extra training require a separate scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
+          "text": "Additional pages, features, creative assets, external service setup and migration are assessed and quoted before work begins. Your proposal names the ready service connections and active accounts you provide. Additional connection or account work needs a separate agreement. Optional ongoing care, content and search improvements have their own agreed scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
         }
       ],
       "termGroups": [
@@ -459,7 +459,7 @@
         "width": 887,
         "height": 1774,
         "title": "Launch Website",
-        "price": "$1,400 fixed project Ã‚Â· USD",
+        "price": "$1,400 fixed project · USD",
         "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": null,
         "featureIds": [
@@ -519,7 +519,7 @@
           "id": "focused_site.pages",
           "title": "Up to 7 purposeful pages",
           "plain": "Up to 7 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Your agreed website includes up to 7 marketing pages, each with a clear purpose. The page plan identifies the actual page addresses.",
+          "explanation": "Up to 7 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
@@ -574,7 +574,7 @@
         {
           "id": "focused_site.measurement",
           "title": "Analytics and Search Console connection",
-          "plain": "Connections to visitor reports and GoogleÃ¢â‚¬â„¢s search reports, with your permission and privacy checks.",
+          "plain": "Connections to visitor reports and Google’s search reports, with your permission and privacy checks.",
           "explanation": "Your agreed analytics and Search Console connections are set up with approved account access and reviewed privacy requirements; missing access is recorded clearly.",
           "limits": "Requires approved access and privacy review; no claim of indexing or measured results without evidence.",
           "condition": null
@@ -583,7 +583,7 @@
           "id": "focused_site.design",
           "title": "A custom visual direction",
           "plain": "An original look based on your business, using approved artwork you have permission to use.",
-          "explanation": "Your websiteÃ¢â‚¬â„¢s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
+          "explanation": "Your website’s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
           "limits": "Full identity redesign and original photography are separate.",
           "condition": null
         },
@@ -664,7 +664,7 @@
           "title": "2 inquiry forms",
           "plain": "2 contact forms, each with up to 6 questions, one receiving destination and one confirmation message.",
           "explanation": "Your website includes 2 distinct inquiry forms, each with up to six agreed fields, one receiving destination and one confirmation state.",
-          "limits": "Ordinary business data only; no sensitive-data intake or upload portal. Booking/signup have separate allowances.",
+          "limits": "Forms collect ordinary business inquiries. Ready service connections have their own stated allowance.",
           "condition": null
         },
         {
@@ -680,7 +680,7 @@
           "title": "Confirm hosting and service fit",
           "plain": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
           "explanation": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -688,7 +688,7 @@
           "title": "One initial website launch",
           "plain": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
           "explanation": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
-          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers.",
+          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional.",
           "condition": null
         },
         {
@@ -744,7 +744,7 @@
           "title": "Written project updates",
           "plain": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
           "explanation": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -775,16 +775,16 @@
           "id": "focused_site.defect_correction",
           "title": "Thirty-day defect correction",
           "plain": "For 30 days after launch, corrections cover faults against the agreed work. New requests are separate.",
-          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests and scheduled growth work require a separate agreement.",
+          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests receive a separate agreement.",
           "limits": "New requests and external-provider changes separate; paid files not withheld.",
           "condition": null
         },
         {
           "id": "focused_site.static_site",
           "title": "Editable source code",
-          "plain": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "explanation": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "plain": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "explanation": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -815,7 +815,7 @@
         {
           "id": "focused_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7Ã¢â‚¬â€œ10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
         },
         {
           "id": "focused_site.terms.facts",
@@ -825,12 +825,12 @@
         {
           "id": "focused_site.terms.platform",
           "title": "Source-code editing and ready services",
-          "text": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
+          "text": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
         },
         {
           "id": "focused_site.terms.form_data",
           "title": "Form and data limits",
-          "text": "Two distinct contact forms, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Ordinary business data only; no sensitive-data intake, file uploads, client accounts or lead-management system. Ordinary business data only; sensitive-data intake and file-upload portals are excluded."
+          "text": "Two distinct contact forms, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Forms collect ordinary business inquiries. Sensitive personal information and file uploads require a separate assessment."
         },
         {
           "id": "focused_site.terms.creative",
@@ -840,7 +840,7 @@
         {
           "id": "focused_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "No scheduled growth work is bundled with this new website offer."
+          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
         },
         {
           "id": "focused_site.terms.qa",
@@ -850,12 +850,12 @@
         {
           "id": "focused_site.terms.fees",
           "title": "Provider costs",
-          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Unknown mandatory costs remain unresolved until confirmed. New booking, newsletter, CMS, database, authentication, phone or commerce services require separate scope and approved costs. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record the actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Required costs are confirmed before you commit. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "focused_site.terms.accounts",
           "title": "Your account responsibilities",
-          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "focused_site.terms.rights",
@@ -874,13 +874,13 @@
         },
         {
           "id": "focused_site.terms.optional",
-          "title": "Optional services and existing agreements",
-          "text": "Monthly care and search work are optional. New builds include launch foundations and 30-day defect correction; scheduled growth work is separate. Previously accepted bundled work remains owed under its saved agreement. The same work or usable baseline is not charged twice."
+          "title": "Optional ongoing services",
+          "text": "Monthly care and search improvements are optional. Your build includes launch foundations and 30-day defect correction. The same work or usable baseline is not charged twice."
         },
         {
           "id": "focused_site.terms.extras",
           "title": "Work that needs another scope",
-          "text": "Browser content editors, CMS setup, editor accounts, ongoing publishing dashboards and unlimited client editing are not included. Portals, lead trackers/CRM systems, online stores, payments, custom applications, databases, sign-in systems, automation and call-tracking setup require a separate feasibility review and written quote. Creating or configuring booking/newsletter service accounts, campaigns, advanced integrations and ongoing account administration are separate; only the agreed ready-service links or compatible standard embeds are included. Scheduled post-launch search reviews, new articles, business-profile work and growth changes are separate services. The 30-day defect-correction window remains included. Original photography, full identity redesign, additional creative assets, large migrations and extra training require a separate scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
+          "text": "Additional pages, features, creative assets, external service setup and migration are assessed and quoted before work begins. Your proposal names the ready service connections and active accounts you provide. Additional connection or account work needs a separate agreement. Optional ongoing care, content and search improvements have their own agreed scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
         }
       ],
       "termGroups": [
@@ -985,8 +985,8 @@
         "width": 1086,
         "height": 1448,
         "title": "Focused Website",
-        "price": "$2,350 fixed project Ã‚Â· USD",
-        "footer": "The limits and allowances shown replace the lower planÃ¢â‚¬â„¢s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+        "price": "$2,350 fixed project · USD",
+        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": "Includes all features of Launch PLUS",
         "featureIds": [
           "focused_site.pages",
@@ -1019,7 +1019,7 @@
           "id": "signature_site.pages",
           "title": "Up to 12 purposeful pages",
           "plain": "Up to 12 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Your agreed website includes up to 12 marketing pages, each with a clear purpose. The page plan identifies the actual page addresses.",
+          "explanation": "Up to 12 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
@@ -1074,7 +1074,7 @@
         {
           "id": "signature_site.measurement",
           "title": "Analytics and Search Console connection",
-          "plain": "Connections to visitor reports and GoogleÃ¢â‚¬â„¢s search reports, with your permission and privacy checks.",
+          "plain": "Connections to visitor reports and Google’s search reports, with your permission and privacy checks.",
           "explanation": "Your agreed analytics and Search Console connections are set up with approved account access and reviewed privacy requirements; missing access is recorded clearly.",
           "limits": "Requires approved access and privacy review; no claim of indexing or measured results without evidence.",
           "condition": null
@@ -1083,7 +1083,7 @@
           "id": "signature_site.design",
           "title": "A custom visual direction",
           "plain": "An original look based on your business, using approved artwork you have permission to use.",
-          "explanation": "Your websiteÃ¢â‚¬â„¢s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
+          "explanation": "Your website’s visual direction is developed around your business and approved identity, with purposeful choices for its layout, imagery and overall presentation.",
           "limits": "Full identity redesign and original photography are separate.",
           "condition": null
         },
@@ -1172,7 +1172,7 @@
           "title": "2 inquiry forms",
           "plain": "2 contact forms, each with up to 6 questions, one receiving destination and one confirmation message.",
           "explanation": "Your website includes 2 distinct inquiry forms, each with up to six agreed fields, one receiving destination and one confirmation state.",
-          "limits": "Ordinary business data only; no sensitive-data intake or upload portal. Booking/signup have separate allowances.",
+          "limits": "Forms collect ordinary business inquiries. Ready service connections have their own stated allowance.",
           "condition": null
         },
         {
@@ -1188,7 +1188,7 @@
           "title": "Confirm hosting and service fit",
           "plain": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
           "explanation": "Confirm compatible hosting and ready service connections, including access, privacy, fees and transfer limits.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -1196,7 +1196,7 @@
           "title": "One initial website launch",
           "plain": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
           "explanation": "One initial launch on your hosting account. You complete provider identity, billing and account recovery steps.",
-          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers.",
+          "limits": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional.",
           "condition": null
         },
         {
@@ -1252,7 +1252,7 @@
           "title": "Written project updates",
           "plain": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
           "explanation": "Written progress updates, a dated work log, launch checklist and list of your accounts and providers.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -1283,16 +1283,16 @@
           "id": "signature_site.defect_correction",
           "title": "Thirty-day defect correction",
           "plain": "For 30 days after launch, corrections cover faults against the agreed work. New requests are separate.",
-          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests and scheduled growth work require a separate agreement.",
+          "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests receive a separate agreement.",
           "limits": "New requests and external-provider changes separate; paid files not withheld.",
           "condition": null
         },
         {
           "id": "signature_site.static_site",
           "title": "Editable source code",
-          "plain": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "explanation": "Your website source and content files are included. Updates require code changes, checks and publishing. No browser editor is included.",
-          "limits": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup.",
+          "plain": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "explanation": "Your website source and content files are included. You or your developer can update the code, check changes and publish.",
+          "limits": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking.",
           "condition": null
         },
         {
@@ -1323,7 +1323,7 @@
         {
           "id": "signature_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7Ã¢â‚¬â€œ10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
         },
         {
           "id": "signature_site.terms.facts",
@@ -1333,12 +1333,12 @@
         {
           "id": "signature_site.terms.platform",
           "title": "Source-code editing and ready services",
-          "text": "Custom-coded marketing website with editable source and content files. Updates require code changes, checks and publishing by you or your chosen developer. No browser content editor, CMS or editor accounts are included. The agreed stack and hosting are confirmed before booking; the source can be moved to compatible hosting with appropriate setup. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
+          "text": "Your custom website comes with editable source and content files. You or your chosen developer can update the code, check the changes and publish them. We confirm the technology, compatible hosting and who will handle future updates before booking. You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking."
         },
         {
           "id": "signature_site.terms.form_data",
           "title": "Form and data limits",
-          "text": "Two distinct contact forms, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Ordinary business data only; no sensitive-data intake, file uploads, client accounts or lead-management system. Ordinary business data only; sensitive-data intake and file-upload portals are excluded."
+          "text": "Two distinct contact forms, each with up to six agreed fields, one receiving destination and one confirmation state; basic spam defense and save/notification/confirmation checks. Forms collect ordinary business inquiries. Sensitive personal information and file uploads require a separate assessment."
         },
         {
           "id": "signature_site.terms.creative",
@@ -1348,7 +1348,7 @@
         {
           "id": "signature_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "No scheduled growth work is bundled with this new website offer."
+          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
         },
         {
           "id": "signature_site.terms.qa",
@@ -1358,12 +1358,12 @@
         {
           "id": "signature_site.terms.fees",
           "title": "Provider costs",
-          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Unknown mandatory costs remain unresolved until confirmed. New booking, newsletter, CMS, database, authentication, phone or commerce services require separate scope and approved costs. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "Before booking, itemize the required hosting, domain and form/email provider charges, and any separately requested services. Record the actual plan, billing term, renewal, usage limits, fees and account/recovery owner. Required costs are confirmed before you commit. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "signature_site.terms.accounts",
           "title": "Your account responsibilities",
-          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Creating/configuring booking, newsletter, CMS, commerce or other business-service accounts is separate work; no ongoing account administration is included. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional; no studio hosting markup, reimbursement, prepaid credit or overlap allowance applies to new offers."
+          "text": "One initial website launch on a supported client-owned hosting account, agreed domain connection, HTTPS/redirect checks, agreed contact-path configuration and source handoff are included. You complete provider identity, billing and recovery steps and provide delegated access. Ready service connections use active accounts you supply. You own and pay for hosting, your domain and paid tools directly. Our fee covers the agreed setup and work. Monthly studio service is optional."
         },
         {
           "id": "signature_site.terms.rights",
@@ -1382,13 +1382,13 @@
         },
         {
           "id": "signature_site.terms.optional",
-          "title": "Optional services and existing agreements",
-          "text": "Monthly care and search work are optional. New builds include launch foundations and 30-day defect correction; scheduled growth work is separate. Previously accepted bundled work remains owed under its saved agreement. The same work or usable baseline is not charged twice."
+          "title": "Optional ongoing services",
+          "text": "Monthly care and search improvements are optional. Your build includes launch foundations and 30-day defect correction. The same work or usable baseline is not charged twice."
         },
         {
           "id": "signature_site.terms.extras",
           "title": "Work that needs another scope",
-          "text": "Browser content editors, CMS setup, editor accounts, ongoing publishing dashboards and unlimited client editing are not included. Portals, lead trackers/CRM systems, online stores, payments, custom applications, databases, sign-in systems, automation and call-tracking setup require a separate feasibility review and written quote. Creating or configuring booking/newsletter service accounts, campaigns, advanced integrations and ongoing account administration are separate; only the agreed ready-service links or compatible standard embeds are included. Scheduled post-launch search reviews, new articles, business-profile work and growth changes are separate services. The 30-day defect-correction window remains included. Original photography, full identity redesign, additional creative assets, large migrations and extra training require a separate scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
+          "text": "Additional pages, features, creative assets, external service setup and migration are assessed and quoted before work begins. Your proposal names the ready service connections and active accounts you provide. Additional connection or account work needs a separate agreement. Optional ongoing care, content and search improvements have their own agreed scope. Provider subscriptions, domains, usage, taxes and transaction fees are paid directly to the chosen providers."
         },
         {
           "id": "signature_site.terms.hero",
@@ -1500,8 +1500,8 @@
         "width": 1086,
         "height": 1448,
         "title": "Signature Website",
-        "price": "$3,700 fixed project Ã‚Â· USD",
-        "footer": "The limits and allowances shown replace the lower planÃ¢â‚¬â„¢s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+        "price": "$3,700 fixed project · USD",
+        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": "Includes all features of Focused PLUS",
         "featureIds": [
           "signature_site.pages",
@@ -1557,7 +1557,7 @@
           "id": "keep_running.tool_checks",
           "title": "Checks of covered forms and tools",
           "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreementÃ¢â‚¬â„¢s supported tools are reviewed alongside the website.",
+          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
           "limits": "Known covered systems only; new application features or business-logic changes separate.",
           "condition": null
         },
@@ -1573,7 +1573,7 @@
           "id": "keep_running.quarterly_review",
           "title": "A quarterly review across all 22 areas",
           "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your websiteÃ¢â‚¬â„¢s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -1597,7 +1597,7 @@
           "id": "keep_running.defect_repairs",
           "title": "Corrections do not spend your allowance",
           "plain": "Corrections to mistakes caused by our work do not use your paid updates or improvement allowance.",
-          "explanation": "Defects caused by the studioÃ¢â‚¬â„¢s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
+          "explanation": "Defects caused by the studio’s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
           "limits": "No new fixed correction window is specified for ongoing service.",
           "condition": null
         },
@@ -1697,12 +1697,12 @@
         {
           "id": "keep_running.terms.provider_refunds",
           "title": "Provider refunds follow provider contracts",
-          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendorÃ¢â‚¬â„¢s own contract, without a studio promise of provider refunds."
+          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendor’s own contract, without a studio promise of provider refunds."
         },
         {
           "id": "keep_running.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Build-funded reviews, changes, articles and eligible profile work remain owed. Concurrent monthly/annual service covers distinct work or explicitly credits overlap; no change, defect or usable baseline is sold twice. Ending care does not remove build rights, and historical benefits follow their original agreement."
+          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
         },
         {
           "id": "keep_running.terms.ownership",
@@ -1780,7 +1780,7 @@
         "width": 1086,
         "height": 1448,
         "title": "Keep Running",
-        "price": "$150 per month Ã‚Â· USD",
+        "price": "$150 per month · USD",
         "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": null,
         "featureIds": [
@@ -1843,7 +1843,7 @@
           "id": "improve.tool_checks",
           "title": "Checks of covered forms and tools",
           "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreementÃ¢â‚¬â„¢s supported tools are reviewed alongside the website.",
+          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
           "limits": "Known covered systems only; new application features or business-logic changes separate.",
           "condition": null
         },
@@ -1859,7 +1859,7 @@
           "id": "improve.quarterly_review",
           "title": "A quarterly review across all 22 areas",
           "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your websiteÃ¢â‚¬â„¢s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -1963,7 +1963,7 @@
           "id": "improve.choice_email",
           "title": "A newsletter draft and setup",
           "plain": "If chosen: one newsletter draft and setup, including content and a test. Sending needs your explicit approval.",
-          "explanation": "Use a priority for one campaignÃ¢â‚¬â„¢s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
+          "explanation": "Use a priority for one campaign’s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
           "limits": "Uses one of the 1 monthly priority. One existing template, approved audience and purpose; no automation, list import or new template system. Sending requires your explicit approval.",
           "condition": "Included only when selected as a monthly priority."
         },
@@ -1971,7 +1971,7 @@
           "id": "improve.defect_repairs",
           "title": "Corrections do not spend your allowance",
           "plain": "Corrections to mistakes caused by our work do not use your paid updates or improvement allowance.",
-          "explanation": "Defects caused by the studioÃ¢â‚¬â„¢s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
+          "explanation": "Defects caused by the studio’s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
           "limits": "No new fixed correction window is specified for ongoing service.",
           "condition": null
         },
@@ -2076,12 +2076,12 @@
         {
           "id": "improve.terms.provider_refunds",
           "title": "Provider refunds follow provider contracts",
-          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendorÃ¢â‚¬â„¢s own contract, without a studio promise of provider refunds."
+          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendor’s own contract, without a studio promise of provider refunds."
         },
         {
           "id": "improve.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Build-funded reviews, changes, articles and eligible profile work remain owed. Concurrent monthly/annual service covers distinct work or explicitly credits overlap; no change, defect or usable baseline is sold twice. Ending care does not remove build rights, and historical benefits follow their original agreement."
+          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
         },
         {
           "id": "improve.terms.ownership",
@@ -2176,8 +2176,8 @@
         "width": 1086,
         "height": 1448,
         "title": "Improve",
-        "price": "$400 per month Ã‚Â· USD",
-        "footer": "The limits and allowances shown replace the lower planÃ¢â‚¬â„¢s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+        "price": "$400 per month · USD",
+        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": "Includes all features of Keep Running PLUS",
         "featureIds": [
           "improve.priority",
@@ -2239,7 +2239,7 @@
           "id": "grow.tool_checks",
           "title": "Checks of covered forms and tools",
           "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreementÃ¢â‚¬â„¢s supported tools are reviewed alongside the website.",
+          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
           "limits": "Known covered systems only; new application features or business-logic changes separate.",
           "condition": null
         },
@@ -2255,7 +2255,7 @@
           "id": "grow.quarterly_review",
           "title": "A quarterly review across all 22 areas",
           "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your websiteÃ¢â‚¬â„¢s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -2278,9 +2278,9 @@
         {
           "id": "grow.monthly_research",
           "title": "Monthly keyword and competitor research",
-          "plain": "Monthly research into customer searches and competitors, followed by a clear page decision and action plan. This replaces ImproveÃ¢â‚¬â„¢s lighter monthly review and quarterly search research; quarterly whole-site reviews remain.",
+          "plain": "Monthly research into customer searches and competitors, followed by a clear page decision and action plan. This replaces Improve’s lighter monthly review and quarterly search research; quarterly whole-site reviews remain.",
           "explanation": "Your plan includes focused monthly keyword and competitor research, with an explicit decision about the page and search question to prioritize next.",
-          "limits": "Replaces ImproveÃ¢â‚¬â„¢s lighter research schedule; not an additional quarterly keyword entitlement.",
+          "limits": "Replaces Improve’s lighter research schedule; not an additional quarterly keyword entitlement.",
           "condition": null
         },
         {
@@ -2351,7 +2351,7 @@
           "id": "grow.choice_email",
           "title": "A newsletter draft and setup",
           "plain": "If chosen: one newsletter draft and setup, including content and a test. Sending needs your explicit approval.",
-          "explanation": "Use a priority for one campaignÃ¢â‚¬â„¢s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
+          "explanation": "Use a priority for one campaign’s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
           "limits": "Uses one of the 2 monthly priorities. One existing template, approved audience and purpose; no automation, list import or new template system. Sending requires your explicit approval.",
           "condition": "Included only when selected as a monthly priority."
         },
@@ -2359,7 +2359,7 @@
           "id": "grow.defect_repairs",
           "title": "Corrections do not spend your allowance",
           "plain": "Corrections to mistakes caused by our work do not use your paid updates or improvement allowance.",
-          "explanation": "Defects caused by the studioÃ¢â‚¬â„¢s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
+          "explanation": "Defects caused by the studio’s own work are corrected without consuming your paid small-change batch or improvement priorities, keeping those units available for agreed new work.",
           "limits": "No new fixed correction window is specified for ongoing service.",
           "condition": null
         },
@@ -2464,12 +2464,12 @@
         {
           "id": "grow.terms.provider_refunds",
           "title": "Provider refunds follow provider contracts",
-          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendorÃ¢â‚¬â„¢s own contract, without a studio promise of provider refunds."
+          "text": "Vendor bills remain separate from annual studio service. No hosting subsidy is accrued or returned; vendor cancellations and refunds follow each vendor’s own contract, without a studio promise of provider refunds."
         },
         {
           "id": "grow.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Build-funded reviews, changes, articles and eligible profile work remain owed. Concurrent monthly/annual service covers distinct work or explicitly credits overlap; no change, defect or usable baseline is sold twice. Ending care does not remove build rights, and historical benefits follow their original agreement."
+          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
         },
         {
           "id": "grow.terms.ownership",
@@ -2563,8 +2563,8 @@
         "width": 1086,
         "height": 1448,
         "title": "Grow",
-        "price": "$800 per month Ã‚Â· USD",
-        "footer": "The limits and allowances shown replace the lower planÃ¢â‚¬â„¢s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+        "price": "$800 per month · USD",
+        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": "Includes all features of Improve PLUS",
         "featureIds": [
           "grow.priority",
@@ -2580,20 +2580,20 @@
       "name": "Existing-site baseline",
       "price": 399,
       "priceBasis": "one-time project",
-      "fit": "Access and inventory, a full 22-dimension baseline, prioritized backlog and a first contained safe fix where appropriate. The fix is outside the first monthÃ¢â‚¬â„¢s allowance.",
+      "fit": "Access and inventory, a full 22-dimension baseline, prioritized backlog and a first contained safe fix where appropriate. The fix is outside the first month’s allowance.",
       "features": [
         {
           "id": "website_baseline.fit",
           "title": "Fit and access checked first",
           "plain": "Checks of your site, access, useful work, provider costs and dates before you pay.",
-          "explanation": "Before payment, your websiteÃ¢â‚¬â„¢s technology, inventory, access, useful work, provider costs and delivery dates are reviewed, so unsuitable work is identified before you commit.",
+          "explanation": "Before payment, your website’s technology, inventory, access, useful work, provider costs and delivery dates are reviewed, so unsuitable work is identified before you commit.",
           "limits": "Supported eligible sites only; unsuitable work is re-scoped or not sold.",
           "condition": null
         },
         {
           "id": "website_baseline.inventory",
           "title": "A supported-site and access inventory",
-          "plain": "A list of the supported siteÃ¢â‚¬â„¢s systems, permissions and accounts, including anything that limits the review.",
+          "plain": "A list of the supported site’s systems, permissions and accounts, including anything that limits the review.",
           "explanation": "Your review records the website and supported systems being assessed, with the available permissions and access clearly identified alongside any dependency that limits a check.",
           "limits": "Your covered site inventory is agreed before payment; no numeric page cap is stated for this offer.",
           "condition": null
@@ -2617,8 +2617,8 @@
         {
           "id": "website_baseline.first_fix",
           "title": "A first safe contained fix when useful",
-          "plain": "One small, safe fix when appropriate. It does not use the first monthÃ¢â‚¬â„¢s care allowance.",
-          "explanation": "Where a safe, useful contained fix is appropriate, your baseline includes that correction outside the first monthÃ¢â‚¬â„¢s allowance, so the monthly planÃ¢â‚¬â„¢s units remain separate.",
+          "plain": "One small, safe fix when appropriate. It does not use the first month’s care allowance.",
+          "explanation": "Where a safe, useful contained fix is appropriate, your baseline includes that correction outside the first month’s allowance, so the monthly plan’s units remain separate.",
           "limits": "Conditional on a safe useful correction; not an unconditional promise of a fix.",
           "condition": "Where a safe and useful contained fix is appropriate."
         },
@@ -2658,7 +2658,7 @@
           "id": "website_baseline.correction",
           "title": "Thirty days of defect correction",
           "plain": "30 days after written completion acceptance to correct faults caused by our work, without another paid allowance.",
-          "explanation": "Defects caused by the studioÃ¢â‚¬â„¢s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance.",
+          "explanation": "Defects caused by the studio’s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance.",
           "limits": "New requests and out-of-scope implementation separate.",
           "condition": null
         },
@@ -2685,7 +2685,7 @@
         {
           "id": "website_baseline.terms.fix_status",
           "title": "A safe fix or a clear finding",
-          "text": "Your baseline includes a first contained safe fix only where appropriate, outside month oneÃ¢â‚¬â„¢s allowance. If no safe/useful correction fits, the agreed deliverable is the finding and reason. That outcome is settled before payment; the covered site inventory is agreed before payment."
+          "text": "Your baseline includes a first contained safe fix only where appropriate, outside month one’s allowance. If no safe/useful correction fits, the agreed deliverable is the finding and reason. That outcome is settled before payment; the covered site inventory is agreed before payment."
         },
         {
           "id": "website_baseline.terms.acceptance",
@@ -2700,7 +2700,7 @@
         {
           "id": "website_baseline.terms.correction",
           "title": "Correction window",
-          "text": "Defects caused by the studioÃ¢â‚¬â„¢s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance."
+          "text": "Defects caused by the studio’s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance."
         },
         {
           "id": "website_baseline.terms.ownership",
@@ -2778,7 +2778,7 @@
         "width": 1086,
         "height": 1448,
         "title": "Existing-site baseline",
-        "price": "$399 fixed project Ã‚Â· USD",
+        "price": "$399 fixed project · USD",
         "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": null,
         "featureIds": [
@@ -2808,14 +2808,14 @@
           "id": "audit_fix_sprint.fit",
           "title": "Fit and access checked first",
           "plain": "Checks of your site, access, useful work, provider costs and dates before you pay.",
-          "explanation": "Before payment, your websiteÃ¢â‚¬â„¢s technology, inventory, access, useful work, provider costs and delivery dates are reviewed, so unsuitable work is identified before you commit.",
+          "explanation": "Before payment, your website’s technology, inventory, access, useful work, provider costs and delivery dates are reviewed, so unsuitable work is identified before you commit.",
           "limits": "Supported eligible sites only; unsuitable work is re-scoped or not sold.",
           "condition": null
         },
         {
           "id": "audit_fix_sprint.inventory",
           "title": "A supported-site and access inventory",
-          "plain": "A list of the supported siteÃ¢â‚¬â„¢s systems, permissions and accounts, including anything that limits the review.",
+          "plain": "A list of the supported site’s systems, permissions and accounts, including anything that limits the review.",
           "explanation": "Your review records the website and supported systems being assessed, with the available permissions and access clearly identified alongside any dependency that limits a check.",
           "limits": "Audit Sprint covers one site up to 12 marketing pages; Baseline has no numeric page cap in its configuration.",
           "condition": null
@@ -2880,7 +2880,7 @@
           "id": "audit_fix_sprint.correction",
           "title": "Thirty days of defect correction",
           "plain": "30 days after written completion acceptance to correct faults caused by our work, without another paid allowance.",
-          "explanation": "Defects caused by the studioÃ¢â‚¬â„¢s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance.",
+          "explanation": "Defects caused by the studio’s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance.",
           "limits": "New requests and out-of-scope implementation separate.",
           "condition": null
         },
@@ -2922,7 +2922,7 @@
         {
           "id": "audit_fix_sprint.terms.correction",
           "title": "Correction window",
-          "text": "Defects caused by the studioÃ¢â‚¬â„¢s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance."
+          "text": "Defects caused by the studio’s work against accepted scope are corrected for 30 calendar days after written completion acceptance, without using a new paid allowance."
         },
         {
           "id": "audit_fix_sprint.terms.ownership",
@@ -3000,7 +3000,7 @@
         "width": 1086,
         "height": 1448,
         "title": "Audit & Fix Sprint",
-        "price": "$750 fixed project Ã‚Â· USD",
+        "price": "$750 fixed project · USD",
         "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": null,
         "featureIds": [

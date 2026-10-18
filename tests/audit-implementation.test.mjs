@@ -104,7 +104,7 @@ test('historical snapshot: hosting costs are credited once and overlap reduces t
  assert.throws(()=>calculateLegacyCost(prices,{plan:'improve',cycles:12,serviceStart:2,hostingMonths:12}),/Hosting period/);
 });
 
-test('source-handoff scopes survive quote drafting with explicit application exclusions',async()=>{
+test('source-handoff scopes survive quote drafting with clear agreed delivery limits',async()=>{
  const draft=await draftScope('signature_site','expanded-synthetic');
  assert.deepEqual(draft.commercial_boundaries.modules,offers.focused_site.modules);
  assert.equal(draft.commercial_boundaries.delivery_model,'custom_website_source_handoff');
@@ -119,11 +119,11 @@ test('source-handoff scopes survive quote drafting with explicit application exc
  const html=pages.map(p=>p.html).join(' ');
  assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);
  const web=pages.find(p=>p.path==='/services/web-design/').html;
- assert.match(web,/No browser editor, portal, online store or lead tracker is bundled/);
+ assert.match(web,/source code, approved assets and written build instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
  assert.match(web,/one initial launch/);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
  assert.ok(pages.find(p=>p.path==='/services/website-care/').html.includes(offers.plans.improve.advisor));
- assert.match(pages.find(p=>p.path==='/services/seo/').html,/No scheduled post-launch search program is bundled/);
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/Your proposal records the launch work and checks/);
 });
 
 test('historical snapshot: provider cents survive hosting credits, overlap and the displayed estimate exactly',()=>{

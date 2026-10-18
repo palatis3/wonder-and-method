@@ -17,7 +17,7 @@ test('eight decision packs carry acceptance, payments, costs, limits and the exa
  for(const p of packs){assert.equal(p.request,'/contact/?offer='+p.id);const text=JSON.stringify(p.sections);for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/worked.*fee|fee.*example/i,/outside/i])assert.match(text,pattern);assert.match(text,/unknown|assumptions|hypothetical/i);}
  for(const [id,upfront,equivalent,refund] of [['keep_running',1710,142.5,1140],['improve',4560,380,3040],['grow',9120,760,6080]]){
   const p=packs.find(p=>p.id===id);assert.equal(p.annual.upfront_price,upfront);assert.equal(p.annual.monthly_equivalent,equivalent);assert.equal(annualRefund(prices,{plan:id,completedCycles:4}),refund);assert.match(JSON.stringify(p.sections),/Illustrative completed month — not a client record/);
-  assert.match(JSON.stringify(p.sections),/within ten business days/);assert.match(JSON.stringify(p.sections),/undisputed unearned money/);assert.match(JSON.stringify(p.sections),/refund the full annual service payment/);assert.match(JSON.stringify(p.sections),/remaining build rights/);
+  assert.match(JSON.stringify(p.sections),/within ten business days/);assert.match(JSON.stringify(p.sections),/undisputed unearned money/);assert.match(JSON.stringify(p.sections),/refund the full annual service payment/);assert.match(JSON.stringify(p.sections),/unfinished work owed under your accepted project agreement/);
  }
 });
 
