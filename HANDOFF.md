@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: conversion and local-concept release `655a60b1-a23e-4ce8-842c-73eb95ab59ed`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/top10-improvements-20261017/` for current release verification. Gmail routing remains unchanged from the verified preceding release.
+Updated October 17, 2026. Current production: strict-audit follow-up `adb2cdce-eab2-4245-8bcf-2b1d8c0a379b`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/strict-audit-fixes-20261017/` for current release verification. Gmail routing remains unchanged from the verified preceding release.
 
 ## Daily inquiry handling
 
@@ -13,7 +13,7 @@ npm run inquiries:production -- status
 npm run inquiries:production -- export review-20261017
 ```
 
-Status prints delivery counts, not inquiry text. Export creates a new plaintext JSON file in `.runtime/exports` and refuses to overwrite it. Protect the file as personal data and delete it under the same retention decision as other working copies. The operator loads production credentials through Windows DPAPI without printing them.
+Status uses one aggregate request for delivery counts, backlog, manual-review cases, configuration presence and the last successful recovery run, without retrieving inquiry text. Follow [INQUIRY_HEALTH.md](operations/INQUIRY_HEALTH.md) at the start and end of each business day; a failed status command is a failed check. Export creates a new plaintext JSON file in `.runtime/exports` and refuses to overwrite it. Protect the file as personal data and delete it under the same retention decision as other working copies. The operator loads production credentials through Windows DPAPI without printing them.
 
 Track real buyer progress in the [private lead pipeline](operations/LEAD_PIPELINE.md), using the saved reference and one row per buyer. `npm run leads -- report` shows received, qualified, proposal, won and lost counts by service and volunteered source, plus overdue actions and retention reviews. The private board starts empty and is separate from the public fictional demo and aggregate website events.
 
