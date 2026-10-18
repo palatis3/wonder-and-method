@@ -24,7 +24,7 @@ test('route policy excludes transaction, policy, demo, asset and API variants an
 test('quick comparison uses authoritative prices, page limits and first payment before artwork',()=>{
  const pages=renderPages({config,offers,map,geography});const pricing=pages.find(p=>p.path==='/pricing/').html,home=pages.find(p=>p.path==='/').html;
  assert.ok(pricing.indexOf('pricing-comparison')<pricing.indexOf('class="package-visual-grid'));
- for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(compactComparison(offers).includes(`up to ${p.marketing_page_cap} marketing pages`));assert.ok(home.includes('/pricing/#'+id.replace('_site','')));}
+ for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(new RegExp(`up to ${p.marketing_page_cap} (?:custom |marketing )?pages`,'i').test(compactComparison(offers)));assert.ok(home.includes('/pricing/#'+id.replace('_site','')));}
  assert.doesNotMatch(home,/data-feature=/);assert.match(pricing,/data-feature=/);assert.match(home,/Compare website packages and payment terms/);
 });
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{

@@ -25,6 +25,6 @@ test('eight complete posters preserve every native feature and make all upgrades
    if(kind==='website'){assert.ok(p.features.some(f=>f.id.endsWith('.handoff')));assert.ok(p.features.some(f=>f.id.endsWith('.static_site')));assert.ok(!p.features.some(f=>/\.(cms|workflow|call_tracking|followup|articles|lead_pipeline_.+|client_portal_.+|small_store_.+)$/.test(f.id)));}
   }
  }
- assert.equal(files.size,8);assert.equal(featureCount,185);
+ assert.equal(files.size,8);assert.equal(featureCount,193);
  const changed=structuredClone(offers);changed.launch_site.form_limit+=' Changed field limit.';assert.throws(()=>assertPackageVisualOffers(changed),/configured offer scope changed/);
 });

@@ -355,6 +355,7 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 }
 .creative-example-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
 .creative-example-grid img{display:block;width:100%;height:auto;max-width:480px;margin-bottom:1.5rem}
+.creative-example-single{grid-template-columns:minmax(0,640px)}
 .creative-example-grid p{max-width:55ch}
 .creative-photo-example{margin-block:3rem}
 .creative-photo-example>div:first-child{max-width:75ch}

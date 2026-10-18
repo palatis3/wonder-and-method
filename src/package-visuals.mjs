@@ -7,7 +7,7 @@ import {escapeHtml as e,money} from './shared.mjs';
 import {publicReviewAreas} from './review-content.mjs';
 import {packageArtSource} from './package-art-source.mjs';
 const kinds=['website','monthly','existing'];
-const fits={launch_site:'A clear first website with source-code handoff.',focused_site:'More pages and creative assets for your business.',signature_site:'A larger website with original animation and expanded creative assets.',keep_running:'Keep the site working and make small updates.',improve:'Care for the site and make one useful improvement each month.',grow:'Care for the site and make two useful improvements each month.',website_baseline:'Find out what needs attention and make a first safe fix when appropriate.',audit_fix_sprint:'Review the site and complete up to two agreed fixes.'};
+const fits={launch_site:'A polished presence with complete writing, research and design.',focused_site:'A richer service story with original guides and finished graphics.',signature_site:'Your fullest story, with deeper research and original animation.',keep_running:'Keep the site working and make small updates.',improve:'Care for the site and make one useful improvement each month.',grow:'Care for the site and make two useful improvements each month.',website_baseline:'Find out what needs attention and make a first safe fix when appropriate.',audit_fix_sprint:'Review the site and complete up to two agreed fixes.'};
 export const packageVisualScopeHash=o=>createHash('sha256').update(JSON.stringify(packageArtSource(o))).digest('hex');
 
 // Printed prices and scope must not silently drift from the configured offers.
@@ -26,8 +26,8 @@ function quickComparison(o,kind){
  if(kind==='existing')return '';
  const rows=kind==='website'?[
   ['Launch',`Up to ${o.launch_site.marketing_page_cap} marketing pages; one ready service connection and source-code handoff.`],
-  ['Focused',`Up to ${o.focused_site.marketing_page_cap} marketing pages; expanded creative assets and two ready service connections.`],
-  ['Signature',`Up to ${o.signature_site.marketing_page_cap} marketing pages; an original animated centerpiece and expanded creative kit.`]
+  ['Focused',`Up to ${o.focused_site.marketing_page_cap} marketing pages including two launch guides; six finished graphics and deeper research.`],
+  ['Signature',`Up to ${o.signature_site.marketing_page_cap} marketing pages including four launch guides; twelve finished graphics and an original animated centerpiece.`]
  ]:Object.values(o.plans).map(plan=>[plan.public_name,plan.priorities?`Care and supplied updates, plus ${plan.priorities} agreed improvement priorit${plan.priorities===1?'y':'ies'} per month.`:'Care, checks and a related batch of supplied updates.']);
  return `<dl class="package-quick-comparison" aria-label="${kind==='website'?'Website':'Monthly'} plan differences">${rows.map(([name,copy])=>`<div><dt>${e(name)}</dt><dd>${e(copy)}</dd></div>`).join('')}</dl>`;
 }
@@ -46,6 +46,6 @@ export function packageVisualCards(o,{kind='website',anchors=false,comparison=tr
  }).join('')}</div><p class="package-visual-terms">${terms}</p>`;
 }
 
-export function packageRelationship(){return `<div class="package-relationship"><div><h3>Your website explains.</h3><p>A clear place to understand your business and take the next step.</p></div><div><h3>Search work helps people find it.</h3><p>Useful pages shaped around the questions your customers ask.</p></div><p>Every build includes launch search foundations. Later search and growth work are separately agreed. Monthly work is optional: Keep Running provides care; Improve and Grow add agreed improvements. Rankings, traffic and inquiries are not guaranteed.</p></div>`;}
+export function packageRelationship(){return `<div class="package-relationship"><div><h3>Your website explains.</h3><p>A clear place to understand your business and take the next step.</p></div><div><h3>Search work helps people find it.</h3><p>Useful pages shaped around the questions your customers ask.</p></div><p>Every build includes keyword and competitor research, complete writing and on-site SEO. Focused adds two original launch guides; Signature adds four and a 90-day content plan. Guides count within each page total. Later delivery and monitoring are separately agreed. Monthly work is optional: Keep Running provides care; Improve and Grow add agreed improvements. Rankings, traffic and inquiries are not guaranteed.</p></div>`;}
 
 export function packageVisualCallout(o,{kind='website'}={}){return `<details class="package-visual-callout"><summary>${kind==='website'?'Compare website plans and every included feature':kind==='monthly'?'Compare monthly plans and every included feature':'Compare the baseline and Audit &amp; Fix Sprint'}</summary><div>${packageVisualCards(o,{kind})}</div></details>`;}

@@ -11,10 +11,10 @@ const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'
 const [config,offers,map,geography,previous]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json','operations/historical/offers-2026-10-17-production-timing-clarity.json'].map(read));
 const pages=renderPages({config,offers,map,geography});
 
-test('new website scope preserves prices, creative allowances and rights while recording source delivery',async()=>{
+test('new website scope preserves prices and rights while recording source delivery',async()=>{
  for(const [id,connections] of [['launch_site',1],['focused_site',2],['signature_site',2]]){
   const p=offers[id],old=previous[id],draft=await draftScope(id,'synthetic-source-handoff');
-  for(const key of ['public_price','marketing_page_cap','creative_assets'])assert.deepEqual(p[key],old[key],id+' '+key);
+  for(const key of ['public_price'])assert.deepEqual(p[key],old[key],id+' '+key);
   assert.deepEqual(p.payment_schedule.map(({percent,amount})=>({percent,amount})),old.payment_schedule.map(({percent,amount})=>({percent,amount})));
   assert.equal(p.initial_launch_count,1);assert.equal(p.training_minutes,30);assert.equal(p.external_connection_limit,connections);assert.deepEqual(p.cms,{collections:0,editors:0});
   assert.match(p.platform_fit,/editable source and content files/);assert.doesNotMatch(p.platform_fit,/browser editor|CMS|not included/);

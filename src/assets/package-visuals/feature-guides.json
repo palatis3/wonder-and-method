@@ -1,12 +1,12 @@
 {
-  "revision": "20261018-claude-review",
+  "revision": "20261018-expanded-websites",
   "products": [
     {
       "id": "launch_site",
       "name": "Launch Website",
       "price": 1400,
       "priceBasis": "fixed project",
-      "fit": "A clear first website with an organized source-code handoff.",
+      "fit": "For an independent business ready for a polished, credible presence",
       "features": [
         {
           "id": "launch_site.discovery",
@@ -18,17 +18,17 @@
         },
         {
           "id": "launch_site.pages",
-          "title": "Up to 3 purposeful pages",
-          "plain": "Up to 3 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Up to 3 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
+          "title": "Up to 6 purposeful pages",
+          "plain": "Up to 6 pages explaining your business, with a clear list of what each page will cover.",
+          "explanation": "Up to 6 agreed marketing pages, each with its own web address. Plan the right mix of core pages, service explanations, project stories and customer questions; an article can replace another agreed page within this total. Several sections on one page count as one page. Related pages may share a layout family while their content serves a distinct purpose. Supplied plain policy pages are separate. We agree the page list before booking; unused slots do not require filler pages and additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
         {
           "id": "launch_site.copy",
           "title": "Complete website writing",
-          "plain": "All writing and editing for your agreed pages, using facts you approve. No word limit or filler.",
-          "explanation": "Your agreed pages receive useful writing and editing from facts you approve. The explanation follows the customer question, with no word-count ceiling or padding.",
+          "plain": "Complete writing or rewriting from verified facts, with essential FAQs and no word limit or filler.",
+          "explanation": "Complete website writing for every agreed page: we write from your verified business facts or refine your rough drafts into clear, persuasive copy. Essential FAQs help customers make a confident decision, with more service-specific depth in the larger packages. Content follows the question, with no word-count ceiling or padding. You approve facts and claims; original field research and legal drafting are separate.",
           "limits": "Original field research, legal drafting and unsupported claims are outside scope.",
           "condition": null
         },
@@ -271,6 +271,22 @@
           "explanation": "Defects against the accepted website scope are corrected for 30 calendar days after launch, separately from your feedback rounds. New requests receive a separate agreement.",
           "limits": "New requests and external-provider changes separate; paid files not withheld.",
           "condition": null
+        },
+        {
+          "id": "launch_site.research",
+          "title": "Research that shapes your website",
+          "plain": "Research your main offer and customer questions, with a review of up to 2 relevant search competitors.",
+          "explanation": "Research your main offer and customer questions, with a review of up to 2 relevant search competitors. A keyword-to-page intent map shapes every agreed page. Includes titles, descriptions, headings, internal links, canonical/crawl/sitemap checks and factual structured data where appropriate; analytics and Search Console connection with approved access and reviewed privacy. Concise search next steps to carry forward after launch. No ranking or traffic guarantee.",
+          "limits": "Research informs the agreed launch content; no ranking or traffic guarantee.",
+          "condition": null
+        },
+        {
+          "id": "launch_site.next_steps",
+          "title": "Your search next steps",
+          "plain": "Concise search next steps to carry forward after launch.",
+          "explanation": "Concise search next steps to carry forward after launch.",
+          "limits": "A handoff recommendation; future implementation and monitoring are separate.",
+          "condition": null
         }
       ],
       "terms": [
@@ -292,7 +308,7 @@
         {
           "id": "launch_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
+          "text": "Your written scope sets production, review and launch dates around the agreed page map, content research, creative work and available capacity. Production starts when the required facts, assets and access are ready. Larger page maps, richer creative work and delayed feedback need more time; no blanket turnaround is promised. The schedule reserves launch checks, source handoff and defect-correction capacity."
         },
         {
           "id": "launch_site.terms.facts",
@@ -312,12 +328,12 @@
         {
           "id": "launch_site.terms.creative",
           "title": "Creative quantities and limits",
-          "text": "Your listed graphic, photo-edit and template quantities are the complete tier allowances. They do not add lower-tier quantities. Photo edits use supplied photos. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
+          "text": "Your listed launch and finished promotional graphics, supplied-photo edits and brand assets are the complete tier allowances. They do not add lower-tier quantities. Resize variants do not count as additional designs. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
         },
         {
           "id": "launch_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
+          "text": "Your build includes research, on-site SEO, a search next-steps handoff and 30 days of correction for faults against the accepted scope. Optional care and future content can be agreed separately."
         },
         {
           "id": "launch_site.terms.qa",
@@ -414,7 +430,8 @@
             "launch_site.measurement",
             "launch_site.design",
             "launch_site.responsive",
-            "launch_site.interface_motion"
+            "launch_site.interface_motion",
+            "launch_site.research"
           ]
         },
         {
@@ -450,7 +467,8 @@
             "launch_site.ownership",
             "launch_site.handoff",
             "launch_site.training",
-            "launch_site.defect_correction"
+            "launch_site.defect_correction",
+            "launch_site.next_steps"
           ]
         }
       ],
@@ -495,7 +513,9 @@
           "launch_site.ownership",
           "launch_site.handoff",
           "launch_site.training",
-          "launch_site.defect_correction"
+          "launch_site.defect_correction",
+          "launch_site.research",
+          "launch_site.next_steps"
         ],
         "intro": "All included features, explained in plain words."
       }
@@ -505,7 +525,7 @@
       "name": "Focused Website",
       "price": 2350,
       "priceBasis": "fixed project",
-      "fit": "More room to explain your services, with expanded creative assets.",
+      "fit": "For a growing service business with more expertise to share",
       "features": [
         {
           "id": "focused_site.discovery",
@@ -517,17 +537,17 @@
         },
         {
           "id": "focused_site.pages",
-          "title": "Up to 7 purposeful pages",
-          "plain": "Up to 7 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Up to 7 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
+          "title": "Up to 15 purposeful pages",
+          "plain": "Up to 15 pages explaining your business, with a clear list of what each page will cover.",
+          "explanation": "Up to 15 agreed marketing pages, each with its own web address. Plan the right mix of core pages, service explanations, project stories and customer questions; the 2 included articles or guides count inside this total, not on top. Several sections on one page count as one page. Related pages may share a layout family while their content serves a distinct purpose. Supplied plain policy pages are separate. We agree the page list before booking; unused slots do not require filler pages and additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
         {
           "id": "focused_site.copy",
           "title": "Complete website writing",
-          "plain": "All writing and editing for your agreed pages, using facts you approve. No word limit or filler.",
-          "explanation": "Your agreed pages receive useful writing and editing from facts you approve. The explanation follows the customer question, with no word-count ceiling or padding.",
+          "plain": "Complete writing or rewriting from verified facts, with essential FAQs and no word limit or filler.",
+          "explanation": "Complete website writing for every agreed page: we write from your verified business facts or refine your rough drafts into clear, persuasive copy. Essential FAQs help customers make a confident decision, with more service-specific depth in the larger packages. Content follows the question, with no word-count ceiling or padding. You approve facts and claims; original field research and legal drafting are separate.",
           "limits": "Original field research, legal drafting and unsupported claims are outside scope.",
           "condition": null
         },
@@ -636,11 +656,11 @@
           "condition": null
         },
         {
-          "id": "focused_site.templates",
-          "title": "Editable promotional templates",
-          "plain": "3 editable promotional templates using your approved brand, ready to reuse for the agreed purposes.",
-          "explanation": "Your package includes three editable promotional templates using the approved identity, so you have reusable files for the agreed promotional purposes.",
-          "limits": "Three total for Focused; six total for Signature, not cumulative. Signature presentation template counts as one template.",
+          "id": "focused_site.promotional_graphics",
+          "title": "3 finished promotional graphics",
+          "plain": "3 finished promotional graphics, ready to publish. Together with launch artwork: 6 distinct designs.",
+          "explanation": "3 finished promotional graphics, ready to publish for agreed campaign uses. Each is a distinct design; resizing the same design does not create another graphic. Final image exports are included; reusable editing templates and presentation decks are separate.",
+          "limits": "Agreed campaign uses and final image exports. Resize variants are not additional designs; reusable editing templates are separate.",
           "condition": null
         },
         {
@@ -794,6 +814,30 @@
           "explanation": "Up to 2 ready booking/newsletter links or standard embeds. You supply the active accounts; external service setup is separate.",
           "limits": "You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking.",
           "condition": null
+        },
+        {
+          "id": "focused_site.research",
+          "title": "Research that shapes your website",
+          "plain": "Research your service topics and customer questions, with a content-gap review of up to 3 relevant search competitors.",
+          "explanation": "Research your service topics and customer questions, with a content-gap review of up to 3 relevant search competitors. A keyword-to-page intent map shapes every agreed page. Includes titles, descriptions, headings, internal links, canonical/crawl/sitemap checks and factual structured data where appropriate; analytics and Search Console connection with approved access and reviewed privacy. Up to 5 prioritized content ideas, with the audience question and suggested next step for each. No ranking or traffic guarantee.",
+          "limits": "Research informs the agreed launch content; no ranking or traffic guarantee.",
+          "condition": null
+        },
+        {
+          "id": "focused_site.next_steps",
+          "title": "Your search next steps",
+          "plain": "Up to 5 prioritized content ideas, with the audience question and suggested next step for each.",
+          "explanation": "Up to 5 prioritized content ideas, with the audience question and suggested next step for each.",
+          "limits": "A handoff recommendation; future implementation and monitoring are separate.",
+          "condition": null
+        },
+        {
+          "id": "focused_site.launch_articles",
+          "title": "2 original launch articles or guides",
+          "plain": "2 researched, written and published articles or guides, included within your 15-page total.",
+          "explanation": "2 researched, written and published articles or guides at launch, included within the 15-page total. Topics answer useful customer questions; drafts use verified facts you approve and are delivered with the website source.",
+          "limits": "Published at launch using verified facts you approve; delivered with the website source.",
+          "condition": null
         }
       ],
       "terms": [
@@ -815,7 +859,7 @@
         {
           "id": "focused_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
+          "text": "Your written scope sets production, review and launch dates around the agreed page map, content research, creative work and available capacity. Production starts when the required facts, assets and access are ready. Larger page maps, richer creative work and delayed feedback need more time; no blanket turnaround is promised. The schedule reserves launch checks, source handoff and defect-correction capacity."
         },
         {
           "id": "focused_site.terms.facts",
@@ -835,12 +879,12 @@
         {
           "id": "focused_site.terms.creative",
           "title": "Creative quantities and limits",
-          "text": "Your listed graphic, photo-edit and template quantities are the complete tier allowances. They do not add lower-tier quantities. Photo edits use supplied photos. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
+          "text": "Your listed launch and finished promotional graphics, supplied-photo edits and brand assets are the complete tier allowances. They do not add lower-tier quantities. Resize variants do not count as additional designs. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
         },
         {
           "id": "focused_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
+          "text": "Your build includes research, on-site SEO and 2 articles or guides published at launch, a search next-steps handoff and 30 days of correction for faults against the accepted scope. Optional care and future content can be agreed separately."
         },
         {
           "id": "focused_site.terms.qa",
@@ -937,7 +981,9 @@
             "focused_site.measurement",
             "focused_site.design",
             "focused_site.responsive",
-            "focused_site.interface_motion"
+            "focused_site.interface_motion",
+            "focused_site.research",
+            "focused_site.launch_articles"
           ]
         },
         {
@@ -947,7 +993,7 @@
             "focused_site.brand_sheet",
             "focused_site.photo_edits",
             "focused_site.logo_exports",
-            "focused_site.templates",
+            "focused_site.promotional_graphics",
             "focused_site.browser_icon",
             "focused_site.sharing_image"
           ]
@@ -976,7 +1022,8 @@
             "focused_site.ownership",
             "focused_site.handoff",
             "focused_site.training",
-            "focused_site.defect_correction"
+            "focused_site.defect_correction",
+            "focused_site.next_steps"
           ]
         }
       ],
@@ -993,9 +1040,12 @@
           "focused_site.launch_graphics",
           "focused_site.photo_edits",
           "focused_site.logo_exports",
-          "focused_site.templates",
+          "focused_site.promotional_graphics",
           "focused_site.inquiry_forms",
-          "focused_site.tool_choice"
+          "focused_site.tool_choice",
+          "focused_site.research",
+          "focused_site.next_steps",
+          "focused_site.launch_articles"
         ],
         "intro": "Your added features and upgraded allowances."
       }
@@ -1005,7 +1055,7 @@
       "name": "Signature Website",
       "price": 3700,
       "priceBasis": "fixed project",
-      "fit": "A larger marketing website with distinctive visuals and an original animated centerpiece.",
+      "fit": "For an established business ready to showcase its full expertise",
       "features": [
         {
           "id": "signature_site.discovery",
@@ -1017,17 +1067,17 @@
         },
         {
           "id": "signature_site.pages",
-          "title": "Up to 12 purposeful pages",
-          "plain": "Up to 12 pages explaining your business, with a clear list of what each page will cover.",
-          "explanation": "Up to 12 agreed marketing pages. Marketing pages are the pages that introduce your business, explain your services and help visitors take the next step. Examples include Home, About, Services, individual service pages, Projects, FAQs and Contact. Each page has its own web address; several sections on one page still count as one page. An agreed article page also counts toward the limit. Supplied plain policy pages are separate. We agree the page list before booking; additional pages receive a separate quote.",
+          "title": "Up to 30 purposeful pages",
+          "plain": "Up to 30 pages explaining your business, with a clear list of what each page will cover.",
+          "explanation": "Up to 30 agreed marketing pages, each with its own web address. Plan the right mix of core pages, service explanations, project stories and customer questions; the 4 included articles or guides count inside this total, not on top. Several sections on one page count as one page. Related pages may share a layout family while their content serves a distinct purpose. Supplied plain policy pages are separate. We agree the page list before booking; unused slots do not require filler pages and additional pages receive a separate quote.",
           "limits": "Unused page slots do not require extra pages. Agreed article pages count within the page cap; supplied policy pages and ready service connections have separately stated limits.",
           "condition": null
         },
         {
           "id": "signature_site.copy",
           "title": "Complete website writing",
-          "plain": "All writing and editing for your agreed pages, using facts you approve. No word limit or filler.",
-          "explanation": "Your agreed pages receive useful writing and editing from facts you approve. The explanation follows the customer question, with no word-count ceiling or padding.",
+          "plain": "Complete writing or rewriting from verified facts, with essential FAQs and no word limit or filler.",
+          "explanation": "Complete website writing for every agreed page: we write from your verified business facts or refine your rough drafts into clear, persuasive copy. Essential FAQs help customers make a confident decision, with more service-specific depth in the larger packages. Content follows the question, with no word-count ceiling or padding. You approve facts and claims; original field research and legal drafting are separate.",
           "limits": "Original field research, legal drafting and unsupported claims are outside scope.",
           "condition": null
         },
@@ -1144,11 +1194,11 @@
           "condition": null
         },
         {
-          "id": "signature_site.templates",
-          "title": "Editable promotional templates",
-          "plain": "6 editable templates: 3 social posts, an email header, a one-page promotion and a presentation with 3 reusable layouts.",
-          "explanation": "Your package includes six editable templates: three social, one email header, one one-page promotion and one presentation template containing three reusable layouts.",
-          "limits": "Three total for Focused; six total for Signature, not cumulative. Signature presentation template counts as one template.",
+          "id": "signature_site.promotional_graphics",
+          "title": "6 finished promotional graphics",
+          "plain": "6 finished promotional graphics, ready to publish. Together with launch artwork: 12 distinct designs.",
+          "explanation": "6 finished promotional graphics, ready to publish for agreed campaign uses. Each is a distinct design; resizing the same design does not create another graphic. Final image exports are included; reusable editing templates and presentation decks are separate.",
+          "limits": "Agreed campaign uses and final image exports. Resize variants are not additional designs; reusable editing templates are separate.",
           "condition": null
         },
         {
@@ -1302,6 +1352,30 @@
           "explanation": "Up to 2 ready booking/newsletter links or standard embeds. You supply the active accounts; external service setup is separate.",
           "limits": "You supply an active, client-owned service account and its ready link or standard embed. We check the agreed website connection and its visible path. Creating or configuring the external booking/newsletter service, writing campaigns, automations, payments or account administration is separate work. If a standard embed is unsuitable, agree a link or a separate scope before booking.",
           "condition": null
+        },
+        {
+          "id": "signature_site.research",
+          "title": "Research that shapes your website",
+          "plain": "Deeper keyword, topic and content-gap research across your agreed services, with a review of up to 5 relevant search competitors.",
+          "explanation": "Deeper keyword, topic and content-gap research across your agreed services, with a review of up to 5 relevant search competitors. A keyword-to-page intent map shapes every agreed page. Includes titles, descriptions, headings, internal links, canonical/crawl/sitemap checks and factual structured data where appropriate; analytics and Search Console connection with approved access and reviewed privacy. Up to 10 prioritized content ideas arranged in a practical 90-day sequence. This is a handoff plan; delivery and monitoring after launch are separately agreed. No ranking or traffic guarantee.",
+          "limits": "Research informs the agreed launch content; no ranking or traffic guarantee.",
+          "condition": null
+        },
+        {
+          "id": "signature_site.next_steps",
+          "title": "Your 90-day content plan",
+          "plain": "Up to 10 prioritized content ideas arranged in a practical 90-day sequence. This is a handoff plan; delivery and monitoring after launch are separately agreed.",
+          "explanation": "Up to 10 prioritized content ideas arranged in a practical 90-day sequence. This is a handoff plan; delivery and monitoring after launch are separately agreed.",
+          "limits": "A handoff recommendation; future implementation and monitoring are separate.",
+          "condition": null
+        },
+        {
+          "id": "signature_site.launch_articles",
+          "title": "4 original launch articles or guides",
+          "plain": "4 researched, written and published articles or guides, included within your 30-page total.",
+          "explanation": "4 researched, written and published articles or guides at launch, included within the 30-page total. Topics answer useful customer questions; drafts use verified facts you approve and are delivered with the website source.",
+          "limits": "Published at launch using verified facts you approve; delivered with the website source.",
+          "condition": null
         }
       ],
       "terms": [
@@ -1323,7 +1397,7 @@
         {
           "id": "signature_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
+          "text": "Your written scope sets production, review and launch dates around the agreed page map, content research, creative work and available capacity. Production starts when the required facts, assets and access are ready. Larger page maps, richer creative work and delayed feedback need more time; no blanket turnaround is promised. The schedule reserves launch checks, source handoff and defect-correction capacity."
         },
         {
           "id": "signature_site.terms.facts",
@@ -1343,12 +1417,12 @@
         {
           "id": "signature_site.terms.creative",
           "title": "Creative quantities and limits",
-          "text": "Your listed graphic, photo-edit and template quantities are the complete tier allowances. They do not add lower-tier quantities. Photo edits use supplied photos. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
+          "text": "Your listed launch and finished promotional graphics, supplied-photo edits and brand assets are the complete tier allowances. They do not add lower-tier quantities. Resize variants do not count as additional designs. Full identity redesign, original photography and creative variants beyond the written scope need a separate quote."
         },
         {
           "id": "signature_site.terms.followup",
           "title": "Launch foundations and later work",
-          "text": "Your build includes launch SEO foundations and 30 days of correction for faults against the accepted scope. Optional care and search improvements can be agreed for the next stage."
+          "text": "Your build includes research, on-site SEO and 4 articles or guides published at launch, a search next-steps handoff and 30 days of correction for faults against the accepted scope. Optional care and future content can be agreed separately."
         },
         {
           "id": "signature_site.terms.qa",
@@ -1451,7 +1525,9 @@
             "signature_site.measurement",
             "signature_site.design",
             "signature_site.responsive",
-            "signature_site.interface_motion"
+            "signature_site.interface_motion",
+            "signature_site.research",
+            "signature_site.launch_articles"
           ]
         },
         {
@@ -1462,7 +1538,7 @@
             "signature_site.brand_kit",
             "signature_site.photo_edits",
             "signature_site.logo_exports",
-            "signature_site.templates",
+            "signature_site.promotional_graphics",
             "signature_site.browser_icon",
             "signature_site.sharing_image"
           ]
@@ -1491,7 +1567,8 @@
             "signature_site.ownership",
             "signature_site.handoff",
             "signature_site.training",
-            "signature_site.defect_correction"
+            "signature_site.defect_correction",
+            "signature_site.next_steps"
           ]
         }
       ],
@@ -1509,7 +1586,10 @@
           "signature_site.launch_graphics",
           "signature_site.brand_kit",
           "signature_site.photo_edits",
-          "signature_site.templates"
+          "signature_site.promotional_graphics",
+          "signature_site.research",
+          "signature_site.next_steps",
+          "signature_site.launch_articles"
         ],
         "intro": "Your added features and upgraded allowances."
       }

@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-claude-review",
+  "revision": "20261018-expanded-websites",
   "format": "One complete poster per plan, with inheritance on upgraded plans; every feature also has native readable text.",
   "website": {
     "offers": [
@@ -8,7 +8,7 @@
         "name": "Launch",
         "configuredName": "Launch Website",
         "price": 1400,
-        "pages": 3,
+        "pages": 6,
         "poster": {
           "file": "launch-site-complete.webp",
           "width": 887,
@@ -50,7 +50,9 @@
             "launch_site.ownership",
             "launch_site.handoff",
             "launch_site.training",
-            "launch_site.defect_correction"
+            "launch_site.defect_correction",
+            "launch_site.research",
+            "launch_site.next_steps"
           ],
           "intro": "All included features, explained in plain words."
         }
@@ -60,7 +62,7 @@
         "name": "Focused",
         "configuredName": "Focused Website",
         "price": 2350,
-        "pages": 7,
+        "pages": 15,
         "poster": {
           "file": "focused-site-complete.webp",
           "width": 1086,
@@ -74,9 +76,12 @@
             "focused_site.launch_graphics",
             "focused_site.photo_edits",
             "focused_site.logo_exports",
-            "focused_site.templates",
+            "focused_site.promotional_graphics",
             "focused_site.inquiry_forms",
-            "focused_site.tool_choice"
+            "focused_site.tool_choice",
+            "focused_site.research",
+            "focused_site.next_steps",
+            "focused_site.launch_articles"
           ],
           "intro": "Your added features and upgraded allowances."
         }
@@ -86,7 +91,7 @@
         "name": "Signature",
         "configuredName": "Signature Website",
         "price": 3700,
-        "pages": 12,
+        "pages": 30,
         "poster": {
           "file": "signature-site-complete.webp",
           "width": 1086,
@@ -101,7 +106,10 @@
             "signature_site.launch_graphics",
             "signature_site.brand_kit",
             "signature_site.photo_edits",
-            "signature_site.templates"
+            "signature_site.promotional_graphics",
+            "signature_site.research",
+            "signature_site.next_steps",
+            "signature_site.launch_articles"
           ],
           "intro": "Your added features and upgraded allowances."
         }
@@ -258,6 +266,6 @@
       }
     ]
   },
-  "scopeSha256": "ee620b4ca8f7be8ac4c9652bdceff3fc5808bda4364e280fcfae6f5cbcfee56c",
+  "scopeSha256": "928f7380793b79e7d8f97ad94aec2383f241e179e972da802a830f666f1b11cf",
   "scopeProjectionVersion": 2
 }

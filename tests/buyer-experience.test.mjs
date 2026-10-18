@@ -31,7 +31,7 @@ test('proposal summaries keep annual prepayment and existing-site setup distinct
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- assert.match(config.projectTiming,/7–10 business days of production/);assert.match(config.projectTiming,/plus the agreed client review windows/);
+ assert.match(config.projectTiming,/production, review and launch dates/);assert.match(config.projectTiming,/agreed page map, content research, creative work/);
  const pages=renderPages({config,offers,map,geography});
  for(const path of ['/','/pricing/','/process/'])assert.ok(pages.find(page=>page.path===path).html.includes(config.projectTiming),path);
  for(const pack of buyerPacks(offers).filter(pack=>['launch_site','focused_site','signature_site'].includes(pack.id)))assert.ok(JSON.stringify(pack.sections).includes(config.projectTiming),pack.id);
