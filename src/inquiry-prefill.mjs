@@ -14,14 +14,19 @@ export function prefillInquiryHtml(html,url){
   const requested=resolveServiceId(url.searchParams.get('offer'));
   const current=serviceSelect.match(/<option value="([a-z_]+)" selected>/)?.[1]||'unsure';
   const service=fixed||(inquiryChoices.some(([id])=>id===requested)?requested:current);
-  const values={service,...selectedInquiryContext({service,...Object.fromEntries([...url.searchParams].filter(([key])=>Object.hasOwn(inquiryContextFields,key)))})};
+  const kind=form.match(/<select id="request_kind"[^>]*>([\s\S]*?)<\/select>/)?.[1].match(/<option value="(checkout|question)" selected>/)?.[1]||(fixed?'checkout':'question');
+  const values={service,request_kind:kind,...selectedInquiryContext({service,...Object.fromEntries([...url.searchParams].filter(([key])=>Object.hasOwn(inquiryContextFields,key)))})};
   for(const [key,value] of Object.entries(values)){
+   const options=form.match(new RegExp('<select id="'+key+'"[^>]*>([\\s\\S]*?)<\\/select>'))?.[1];
+   if(!options?.includes(`<option value="${value}"`)){delete values[key];continue;}
    const pattern=new RegExp('(<select id="'+key+'"[^>]*>)([\\s\\S]*?)(<\\/select>)');
    form=form.replace(pattern,(_all,start,options,end)=>start+options.replace(/ selected(?:="selected")?/g,'').replace(`<option value="${value}">`,`<option value="${value}" selected>`)+end);
   }
   const summary=inquiryRequestSummary(values);
   form=form.replace(/(<p id="request-summary">)[\s\S]*?(<\/p>)/,(_all,start,end)=>start+escapeHtml(summary)+end);
-  if(values.request_kind==='question')form=form.replace(/(<label for="message" data-request-label>)[\s\S]*?(<\/label>)/,'$1Your question about this service <span>(required)</span>$2').replace(/(<button type="submit" data-request-submit>)[\s\S]*?(<\/button>)/,'$1Send question ↗$2');
+  const question=values.request_kind==='question';
+  const messageLabel=question?'Your question about this service':['website_baseline','audit_fix_sprint'].includes(service)?'What is broken, and what should happen instead?':'What does your business do, and what would you like the website to do?';
+  form=form.replace(/(<label for="message" data-request-label>)[\s\S]*?(<\/label>)/,(_all,start,end)=>start+messageLabel+' <span>(required)</span>'+end).replace(/(<button type="submit" data-request-submit>)[\s\S]*?(<\/button>)/,(_all,start,end)=>start+(question?'Send question':'Request a proposal')+end);
   return form;
  });
 }

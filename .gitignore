@@ -11,7 +11,6 @@ public/waterfront-fonts/
 *.sqlite*
 *.zip
 !src/assets/source-handoff/fictional-maple-studio.zip
-!authority/Wonder-and-Method-Business-Plan-V5.zip
 dist/
 evidence/
 deployment/dry-run*/
@@ -22,3 +21,32 @@ deployment/.dev.vars
 
 # Private delivery records and CRM inputs
 operations/jobs/
+
+# Local historical studies and private setup evidence; public source assets are explicit.
+.openai/
+PERFORMANCE_AUDIT.md
+design-qa.md
+authority/BUILD_INSTRUCTIONS.txt
+public/buffalo-atmosphere/
+public/buffalo-directions-20261015/
+public/buffalo-paper/
+public/buffalo-refined/
+public/buffalo-sage/
+public/experience/
+public/premium-studies/
+public/civic-sculpture/buffalo-civic-intro.mp4
+public/civic-sculpture/buffalo-civic-mobile.webp
+public/civic-sculpture/buffalo-civic-opening.webp
+public/civic-sculpture/buffalo-civic-poster.webp
+deployment/deployment/
+deployment/EMAIL_TEST.md
+deployment/FORM_DELIVERY_TEST.md
+deployment/IMPLEMENTATION.md
+deployment/STAGING.md
+deployment/email-delivery-test.json
+deployment/form-delivery-test.json
+deployment/sender-dns-change.json
+deployment/setup-inputs.json
+deployment/test-results.txt
+deployment/validation.json
+deployment/worker-configuration.d.ts

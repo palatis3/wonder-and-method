@@ -24,10 +24,11 @@ test('county routes expose reviewed geography, truthful delivery and a complete 
   assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
   assert.match(page.html,/based in Erie County, New York/);assert.match(page.html,/does not represent a local office/);assert.match(page.html,/Illustrative project briefs/);
   assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
-  assert.match(page.html,/name="robots" content="index,follow"/);
+  assert.ok(page.html.includes(`name="robots" content="${county.slug==='niagara'?'index,follow':'noindex,follow'}"`));
  }
  const publicConfig={...config,searchIndexing:true},sitemap=crawlFiles(publicConfig,render(publicConfig)).sitemap;
- for(const path of ['/areas/',...countyProfiles.map(c=>`/areas/${c.slug}-county/`)])assert.ok(sitemap.includes(config.origin+path));
+ for(const county of countyProfiles)assert.equal(sitemap.includes(config.origin+`/areas/${county.slug}-county/`),county.slug==='niagara');
+ assert.ok(sitemap.includes(config.origin+'/areas/erie-county/'));assert.ok(sitemap.includes(config.origin+'/areas/'));
  const held={...config,searchIndexing:false};assert.doesNotMatch(crawlFiles(held,render(held)).sitemap,/<loc>/);
 });
 
@@ -60,5 +61,5 @@ test('supporting guide approvals gate every incoming link and retain distinct re
 test('county offer references and maintenance costs follow the commercial configuration',()=>{
  const changed=structuredClone(offers);changed.launch_site.public_price=1777;changed.focused_site.public_price=2777;changed.signature_site.public_price=4777;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
  for(const page of countyPages(changed))for(const value of ['$1,777','$2,777','$4,777','$877'])assert.ok(page.body.includes(value),page.path+' '+value);
- assert.match(journalSections('/guides/website-maintenance-checklist/',changed).map(s=>s.body).join(''),/\$177/);
+ assert.match(journalSections('/guides/website-maintenance-cost/',changed).map(s=>s.body).join(''),/\$177/);
 });

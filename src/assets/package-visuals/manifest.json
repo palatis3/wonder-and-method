@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-audit-fixes",
+  "revision": "20261018-claude-review",
   "format": "One complete poster per plan, with inheritance on upgraded plans; every feature also has native readable text.",
   "website": {
     "offers": [
@@ -199,13 +199,13 @@
       {
         "key": "website_baseline",
         "configKey": "baseline",
-        "name": "Existing-site baseline",
+        "name": "Website Baseline",
         "price": 399,
         "poster": {
           "file": "website-baseline-complete.webp",
           "width": 1086,
           "height": 1448,
-          "title": "Existing-site baseline",
+          "title": "Website Baseline",
           "price": "$399 fixed project · USD",
           "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
           "inheritance": null,
@@ -222,8 +222,9 @@
             "website_baseline.correction",
             "website_baseline.usable_baseline"
           ],
-          "intro": "All included features, explained in plain words."
-        }
+          "intro": "For one supported website with up to 12 marketing pages."
+        },
+        "pages": 12
       },
       {
         "key": "audit_fix_sprint",
@@ -257,5 +258,6 @@
       }
     ]
   },
-  "scopeSha256": "e2b043c1adbe06f454e06317a68d52797ba256eb8e97359c79833ccb551c9e0f"
+  "scopeSha256": "ee620b4ca8f7be8ac4c9652bdceff3fc5808bda4364e280fcfae6f5cbcfee56c",
+  "scopeProjectionVersion": 2
 }

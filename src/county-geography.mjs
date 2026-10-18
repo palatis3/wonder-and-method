@@ -853,7 +853,7 @@ export const countyGeography = {
     },
     "sources": [
       "https://www.ny.gov/counties/niagara",
-      "https://downloads.niagaracounty.gov/government/county_information/cities%2C_towns_and_villages.php"
+      "https://www.niagaracounty.gov/government/county_information/cities%2C_towns_and_villages.php"
     ],
     "communities": [
       {

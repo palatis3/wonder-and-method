@@ -14,7 +14,7 @@ test('a question retains useful context without adopting proposal prices or open
   assert.match(summary,/Question only\. No booking or payment/);assert.doesNotMatch(summary,/\$|prepaid|First monthly priority|Billing/);
   const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'}),new URL('https://example.test/contact/?offer=improve&request_kind=question&goal=search&concept=fieldwork&billing=annual&priority=article'));
   assert.doesNotMatch(html,/<details class="inquiry-extra" open/);
-  assert.match(html,/value="fieldwork" selected/);assert.match(html,/value="annual" selected/);
+  assert.match(html,/value="fieldwork" selected/);assert.doesNotMatch(html,/value="annual"/);
   assert.ok(html.indexOf('id="message"')<html.indexOf('id="request-summary"'));
   assert.ok(html.indexOf('id="request-summary"')<html.indexOf('class="inquiry-extra"'));
   assert.match(html,/Send question/);
@@ -22,16 +22,16 @@ test('a question retains useful context without adopting proposal prices or open
 
 test('proposal summaries keep annual prepayment and existing-site setup distinct',()=>{
   const summary=inquiryRequestSummary({service:'improve',request_kind:'checkout',billing:'annual'},{price:400,priceLabel:'monthly',annual:{upfront_price:4000},baselineFee:399});
-  assert.match(summary,/\$4,000\.00 prepaid for 12 service cycles/);
-  assert.match(summary,/first payment for an existing site \$4,399\.00 including \$399\.00 setup/);
-  assert.match(summary,/or \$4,000\.00 when a usable studio build or Sprint covers setup/);
+  assert.match(summary,/\$4,000 prepaid for 12 service cycles/);
+  assert.match(summary,/first payment for an existing site \$4,399 including \$399 setup/);
+  assert.match(summary,/or \$4,000 when a usable studio build or Sprint covers setup/);
   assert.match(summary,/Proposal request only/);
 });
 
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- assert.match(config.projectTiming,/7–10 working days of production/);assert.match(config.projectTiming,/plus the agreed client review windows/);
+ assert.match(config.projectTiming,/7–10 business days of production/);assert.match(config.projectTiming,/plus the agreed client review windows/);
  const pages=renderPages({config,offers,map,geography});
  for(const path of ['/','/pricing/','/process/'])assert.ok(pages.find(page=>page.path===path).html.includes(config.projectTiming),path);
  for(const pack of buyerPacks(offers).filter(pack=>['launch_site','focused_site','signature_site'].includes(pack.id)))assert.ok(JSON.stringify(pack.sections).includes(config.projectTiming),pack.id);

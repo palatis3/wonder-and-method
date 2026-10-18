@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { cp, mkdir, mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { createHash, randomBytes } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
@@ -10,7 +11,8 @@ import { prepareClientHandoff } from '../scripts/prepare-client-handoff.mjs';
 
 const repository = fileURLToPath(new URL('../', import.meta.url));
 const template = join(repository, 'templates/client-site');
-const scanner = process.env.GITLEAKS_BIN || (process.platform === 'win32' ? join(repository, '.runtime/tools/gitleaks/bin/gitleaks.exe') : 'gitleaks');
+const localScanner = join(repository, '.runtime/tools/gitleaks/bin',process.platform === 'win32'?'gitleaks.exe':'gitleaks');
+const scanner = process.env.GITLEAKS_BIN || (existsSync(localScanner)?localScanner:'gitleaks');
 const digest = data => createHash('sha256').update(data).digest('hex');
 
 async function fixture(t) {

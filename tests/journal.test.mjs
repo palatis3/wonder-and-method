@@ -1,3 +1,6 @@
+import {socialCardPath} from '../src/social-cards.mjs';
+import {guideIllustration} from '../src/guide-art.mjs';
+import pageDates from '../config/page-dates.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -13,17 +16,17 @@ test('published guides have unique metadata, visible authorship and matching art
  for(const guide of journal){const page=pages.find(x=>x.path===guide.path);assert.ok(page,guide.path);const html=page.html;
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1);assert.ok(!titles.has(guide.title));titles.add(guide.title);
   const data=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  const article=data.find(x=>x['@type']==='Article');assert.equal(article.headline,guide.title);assert.equal(article.mainEntityOfPage,config.origin+guide.path);assert.equal(article.author.name,config.name);assert.equal(article.datePublished,undefined);assert.equal(article.dateModified,undefined);
+  const article=data.find(x=>x['@type']==='Article');assert.equal(article.headline,guide.title);assert.equal(article.mainEntityOfPage,config.origin+guide.path);assert.equal(article.author.name,config.name);assert.equal(article.datePublished,guide.datePublished);assert.equal(article.dateModified,guide.dateModified);
   const newGuide=['google-visibility-flow','contact-form-flow','service-area-decision','maintenance-cycle','contractor-inquiry'].includes(guide.image);
   const auditGuide=['/guides/website-maintenance-cost/','/guides/website-launch-checklist/','/guides/ai-website-or-custom/'].includes(guide.path);
   const revised=auditGuide||['/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/website-not-showing-on-google/'].includes(guide.path);
   assert.equal(guide.datePublished,auditGuide?'2026-10-17':newGuide?'2026-10-16':guide.diagram?'2026-10-15':'2026-10-14');
-  assert.equal(guide.dateModified,revised?'2026-10-17':'2026-10-16');
+  assert.equal(guide.dateModified,pageDates[guide.path].modifiedAt);
   assert.ok(html.includes(`Published <time datetime="${guide.datePublished}">`));
   if(guide.datePublished===guide.dateModified)assert.doesNotMatch(html,/ · Updated/);else assert.ok(html.includes('Updated <time datetime="'+guide.dateModified+'">'));
   if(guide.diagram){assert.ok(html.includes(`/assets/guides/${guide.image}.svg`));assert.match(html,/<figcaption>[^<]+<\/figcaption>/);}
-  else{assert.match(html,/<figure class="journal-hero"><img[^>]+width="1200" height="800"[^>]+loading="lazy"[^>]*><figcaption>Illustration:/);assert.ok(html.includes(`/assets/editorial/${guide.image}-640.webp 640w`));}
-  const image=config.origin+journalImage(guide);assert.deepEqual(article.image,[image]);assert.ok(html.includes(`property="og:image" content="${image}"`));
+  else{assert.match(html,/<figure class="journal-hero"><img[^>]+width="1200" height="800"[^>]+loading="lazy"[^>]*><figcaption>[^<]+/);assert.ok(html.includes(`${guideIllustration(guide)}-640.webp 640w`));}
+  const image=config.origin+journalImage(guide);assert.deepEqual(article.image,guide.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(guide)+'-'+ratio+'.png'));assert.ok(html.includes(`property="og:image" content="${image}"`));
   const crumbs=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;assert.equal(crumbs.at(-1).item,article.mainEntityOfPage);assert.equal(crumbs[1].item,config.origin+'/guides/');
   assert.match(html,/aria-label="In this guide"/);assert.match(html,/class="journal-byline"/);
   for(const match of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${match[1]}"`),match[1]);
@@ -50,7 +53,7 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
  const csv=await readFile(new URL('../src/assets/guides/website-audit-checklist.csv',import.meta.url),'utf8');
  for(const field of ['test','expected_behavior','result','evidence_url_date','severity','owner','proposed_correction','retest','needs_access_status'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
  assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/invalid response is not a saved inquiry/);
- assert.match(checklist,/CA-01/);assert.match(checklist,/CA-04/);assert.match(checklist,/production inbox delivery/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
+ assert.doesNotMatch(checklist,/CA-01|CA-04/);assert.match(checklist,/confirm receipt and inbox arrival/);assert.match(checklist,/hypothetical/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
 });
 
 test('repair-or-redesign guide supports the earlier decision with bounded owned evidence and a distinct worksheet',async()=>{
@@ -58,7 +61,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  const hidden=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!==path)},offers,map,geography});assert.ok(!hidden.some(page=>page.path===path));
  for(const target of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/','/guides/website-project-cost/','/work/','/assets/buyer-packs/owned-audit-two-fixes'])assert.ok(html.includes(`href="${target}"`),target);
  for(const source of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/'])assert.ok(pages.find(page=>page.path===source).html.includes(`href="${path}"`),source);
- assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/neither production inbox delivery nor client acceptance/);assert.doesNotMatch(html,/CA-03/);
+ assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/does not report client outcomes/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
  for(const field of ['failing_visitor_task','evidence','retained_useful_content_assets_accounts','supported_stack_access_check','affected_pages_components','bounded_correction_hypothesis','acceptance_retest','repair_rebuild_decision','unresolved_inputs'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
@@ -71,7 +74,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
 test('care comparison uses current configured service fees and finite units',()=>{
  const revised=structuredClone(offers);revised.plans.keep_running.monthly_price=207;revised.plans.improve.priorities=3;
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
- assert.match(html,/Keep Running \/ \$207/);assert.match(html,/3 agreed sequential priorities/);assert.match(html,/paid directly/);assert.doesNotMatch(html,/base-hosting credit/);
+ assert.match(html,/Keep Running \/ \$207/);assert.match(html,/3 agreed sequential priorities/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
  assert.match(html,/same change cannot fulfill two units/);assert.match(html,/Accepted work delayed by us remains owed/);
 });
 
@@ -84,9 +87,9 @@ test('only pages containing Civic artwork load Civic styles and alternate hero c
 test('approved public launch has indexed editorial pages and excluded utility pages',()=>{
  assert.equal(config.mode,'production');assert.equal(config.formMode,'live');assert.equal(config.searchIndexing,true);
  assert.ok(pages.find(x=>x.path==='/').html.includes('name="robots" content="index,follow"'));
- assert.ok(pages.find(x=>x.path==='/privacy/').html.includes('name="robots" content="noindex,nofollow,noarchive,noimageindex"'));
+ assert.ok(pages.find(x=>x.path==='/privacy/').html.includes('name="robots" content="noindex,follow"'));
  assert.ok(pages.every(x=>!x.html.includes('class="preview-label"')));
- const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,42);
+ const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,34);
  const contact=pages.find(x=>x.path==='/contact/').html;assert.match(contact,/data-mode="live"/);assert.ok(!/<(?:input|select|textarea)[^>]*disabled/.test(contact));
 });
 test('edge noindex covers public assets, rejected API requests and unavailable storage',async()=>{

@@ -14,6 +14,9 @@ async function fixture(){
  for(const dir of ['content','src','experience','scripts','authority/v5','deployment/migrations'])await mkdir(join(root,dir),{recursive:true});
  for(const file of ['dist/index.html','package.json','package-lock.json','config/offers.json','deployment/worker.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css'])await put(file,'fixture');
  await put('config/site.json',config);
+ await put('config/page-dates.json',{});
+ await put('deployment/journey-dimensions.mjs','fixture');
+ await put('deployment/inquiry-rate.mjs','fixture');
  const manifest=(revision)=>{
   const base=`/civic-sculpture/${revision==='finale-v2'?'finale-v2/':''}`;
   return {status:'ready',...(revision?{revision}:{}),video:base+'intro.mp4',poster:base+'poster.webp',mobilePoster:base+'mobile.webp',openingPoster:base+'opening.webp',videoBytes:5,...(revision==='finale-v2'?{ambientVideo:base+'ambient.mp4',ambientVideoBytes:5,ambientLoop:true,width:1440,height:720,fps:24,durationSeconds:10,frames:240,ambientDurationSeconds:4,ambientFrames:96,ambientFirstPoseMatchesIntroFinal:true}:{})};

@@ -42,7 +42,7 @@ test('rolling dedupe spans a fixed bucket boundary, concurrent retries, and expi
  const submit=async(extra={})=>{const response=await worker.fetch(new Request(origin+'/api/inquiries',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',Accept:'application/json','CF-Connecting-IP':extra.ip||'192.0.2.1'},body:JSON.stringify({...payload,...extra.body})}),env,ctx);assert.equal(response.status,202);return (await response.json()).reference;};
  const first=await submit();now+=2;
  assert.equal(await submit(),first);
- assert.deepEqual(await Promise.all([submit(),submit(),submit()]),[first,first,first]);
+ assert.deepEqual(await Promise.all([submit({ip:'192.0.2.2'}),submit({ip:'192.0.2.3'}),submit({ip:'192.0.2.4'})]),[first,first,first]);
  assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n,1);
  now+=600_000;assert.notEqual(await submit(),first);
  assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n,2);

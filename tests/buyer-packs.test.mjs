@@ -14,10 +14,10 @@ const lead={name:'Synthetic Pack Test',email:'synthetic@example.test',business:'
 
 test('eight decision packs carry acceptance, payments, costs, limits and the exact request',()=>{
  const packs=buyerPacks(offers);assert.equal(packs.length,8);assert.equal(new Set(packs.map(p=>p.id)).size,8);
- for(const p of packs){assert.equal(p.request,'/contact/?offer='+p.id);const text=JSON.stringify(p.sections);for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/worked.*fee|fee.*example/i,/outside/i])assert.match(text,pattern);assert.match(text,/unknown|assumptions|hypothetical/i);}
+ for(const p of packs){assert.equal(p.request,'/contact/?offer='+p.id+'&request_kind=checkout#inquiry');const text=JSON.stringify(p.sections);for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/worked.*fee|fee.*example/i,/outside/i])assert.match(text,pattern);assert.match(text,/unknown|assumptions|hypothetical/i);}
  for(const [id,upfront,equivalent,refund] of [['keep_running',1710,142.5,1140],['improve',4560,380,3040],['grow',9120,760,6080]]){
   const p=packs.find(p=>p.id===id);assert.equal(p.annual.upfront_price,upfront);assert.equal(p.annual.monthly_equivalent,equivalent);assert.equal(annualRefund(prices,{plan:id,completedCycles:4}),refund);assert.match(JSON.stringify(p.sections),/Illustrative completed month — not a client record/);
-  assert.match(JSON.stringify(p.sections),/within ten business days/);assert.match(JSON.stringify(p.sections),/undisputed unearned money/);assert.match(JSON.stringify(p.sections),/refund the full annual service payment/);assert.match(JSON.stringify(p.sections),/unfinished work owed under your accepted project agreement/);
+  assert.match(JSON.stringify(p.sections),/within ten business days/);assert.match(JSON.stringify(p.sections),/Undisputed unearned amounts/);assert.match(JSON.stringify(p.sections),/refund the full annual service payment/);assert.match(JSON.stringify(p.sections),/unfinished work owed under your accepted project agreement/);
  }
 });
 
@@ -38,7 +38,7 @@ test('annual and one-off quote snapshots retain their actual payment and exit te
  const annual=await draftScope('improve','synthetic-annual',{billing:'annual'});assert.equal(annual.fixed_price,4560);assert.equal(annual.milestones.length,1);assert.equal(annual.milestones[0].amount,4560);assert.equal(annual.service_period.cycles,12);assert.equal(annual.service_period.start,null);assert.equal(annual.accepted_at,null);assert.match(annual.commercial_boundaries.annual_terms.renewal,/no automatic annual charge/);assert.match(renderJobPacket(annual,{},offers),/\$4,560\.00/);
  assert.equal(annual.commercial_boundaries.enrollment_gate.verified,false);assert.match(JSON.stringify(annual.commercial_boundaries.enrollment_gate),/independent buffer/);
  const sprint=await draftScope('audit_fix_sprint','synthetic-sprint');assert.deepEqual(sprint.milestones.map(m=>m.amount),[375,375]);assert.match(sprint.milestones[1].event,/written completion acceptance/);
- const baseline=await draftScope('website_baseline','synthetic-baseline');assert.equal(baseline.milestones[0].amount,399);assert.match(baseline.commercial_boundaries.acceptance,/not a fictional fix/);assert.match(baseline.commercial_boundaries.terms.remedy,/refund unearned/);
+ const baseline=await draftScope('website_baseline','synthetic-baseline');assert.equal(baseline.milestones[0].amount,399);assert.match(baseline.commercial_boundaries.acceptance,/review and ordered fix list either way/);assert.match(baseline.commercial_boundaries.terms.remedy,/unearned amount to be refunded/);
  await assert.rejects(()=>draftScope('launch_site','synthetic-invalid',{billing:'annual'}),/only available/);
 });
 
@@ -55,7 +55,7 @@ test('native validation and corrected submission retain offer choices without pe
   const response=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({...lead,...choices,message:'short'})});assert.equal(response.status,422);const html=await response.text();
   assert.match(html,/<form action="\/api\/inquiries" method="post">/);assert.match(html,/<option value="annual" selected>/);assert.match(html,/<option value="email" selected>/);assert.match(html,/value="synthetic@example.test"/);assert.match(html,/>short<\/textarea>/);
   const retry=html.match(/href="([^\"]+)"[^>]*>Return to inquiry/)[1];assert.match(retry,/offer=improve/);assert.match(retry,/billing=annual/);assert.doesNotMatch(retry,/synthetic|Fictional|short/);
-  const saved=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({...lead,...choices})});assert.equal(saved.status,201);const savedHtml=await saved.text();assert.match(savedHtml,/Annual prepaid/);assert.match(savedHtml,/Newsletter campaign draft\/setup/);
+  const saved=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({...lead,...choices})});assert.equal(saved.status,201);const savedHtml=await saved.text();assert.match(savedHtml,/Annual prepaid/);assert.match(savedHtml,/Prepare a newsletter/);
   const payload=JSON.parse(db.prepare('SELECT payload FROM inquiries').get().payload);assert.equal(payload.billing,'annual');assert.equal(payload.priority,'email');assert.equal(payload.baseline_status,'needed');
  }finally{await new Promise(done=>server.close(done));await rm(runtime,{recursive:true,force:true});}
 });

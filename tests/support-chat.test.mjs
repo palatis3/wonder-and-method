@@ -28,8 +28,8 @@ function browser(){
  const root={hidden:false,querySelector:s=>s==='.support-chat-fallback'?fallback:s==='.support-chat-status'?status:dismiss};
  const launcher={hidden:true,attributes:{},setAttribute(k,v){this.attributes[k]=v;},focus:()=>focused='launcher',dataset:{chatScript:'https://embed.tawk.to/0123456789abcdef01234567/12345abcde'},closest:()=>root,querySelector:()=>label,addEventListener:(name,callback)=>events[name]=callback};
  const window={};let nextTimer=0,maximized=0,hidden=0;
- const document={querySelector:()=>launcher,createElement:()=>({events:{},addEventListener(name,callback){this.events[name]=callback;}}),head:{append:el=>appended.push(el)}};
- runInNewContext(source,{window,document,setTimeout:fn=>{timeouts.set(++nextTimer,fn);return nextTimer;},clearTimeout:id=>timeouts.delete(id)});
+ const document={body:{},activeElement:null,querySelector:s=>s==='#support-chat-status'?status:launcher,querySelectorAll:()=>[],createElement:()=>({events:{},addEventListener(name,callback){this.events[name]=callback;}}),head:{append:el=>appended.push(el)}};
+ runInNewContext(source,{window,document,MutationObserver:class{observe(){}disconnect(){}},setTimeout:fn=>{timeouts.set(++nextTimer,fn);return nextTimer;},clearTimeout:id=>timeouts.delete(id)});
  const load=()=>{window.Tawk_API.maximize=()=>maximized++;window.Tawk_API.hideWidget=()=>hidden++;window.Tawk_API.onBeforeLoad();window.Tawk_API.onLoad();};
  return {launcher,label,fallback,root,status,focus:()=>focused,appended,timeouts,click:()=>events.click(),dismiss:()=>dismissEvents.click(),load,counts:()=>({maximized,hidden})};
 }
@@ -37,7 +37,7 @@ test('chat has no external request until clicked and loads once before opening',
  const b=browser();assert.equal(b.launcher.hidden,false);assert.equal(b.appended.length,0);
  b.click();b.click();assert.equal(b.appended.length,1);assert.equal(b.launcher.attributes['aria-disabled'],'true');
  assert.match(b.appended[0].src,/^https:\/\/embed\.tawk\.to\//);
- b.load();assert.equal(b.timeouts.size,0);assert.equal(b.root.hidden,true);assert.deepEqual(b.counts(),{maximized:1,hidden:0});
+ b.load();assert.equal(b.timeouts.size,1);assert.equal(b.root.hidden,true);assert.deepEqual(b.counts(),{maximized:1,hidden:0});
 });
 test('chat connection failure exposes the contact fallback and dismissal prevents a late popup',()=>{
  for(const failure of ['error','timeout']){

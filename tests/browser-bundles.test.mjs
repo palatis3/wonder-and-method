@@ -7,7 +7,7 @@ import {buildBrowserBundles} from '../scripts/build.mjs';
 import {renderPages} from '../src/pages.mjs';
 const root=resolve(import.meta.dirname,'..');
 const read=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'));
-test('the receipt bundle has only public receipt config and one canonical analytics import',async()=>{
+test('the receipt bundle has only public receipt config and one optional canonical analytics import',async()=>{
  const config=await read('config/site.json');
  const {client,journeyVersion}=await buildBrowserBundles(root,{...config,privateEditorialMetadata:'must-not-ship',guideApprovals:[{secret:'must-not-ship'}]});
  const text=Buffer.from(client).toString('utf8');
@@ -16,7 +16,7 @@ test('the receipt bundle has only public receipt config and one canonical analyt
  assert.ok(decoded.includes(config.responseWindow));assert.ok(decoded.includes(config.contactEmail));
  const actual=createHash('sha256').update(await readFile(resolve(root,'src/assets/journey-counts.js'))).digest('hex').slice(0,12);
  assert.equal(journeyVersion,actual);
- assert.equal([...text.matchAll(/from"(\/assets\/journey-counts\.js\?v=[a-f\d]{12})"/g)].length,1);
+ assert.equal([...text.matchAll(/import\("(\/assets\/journey-counts\.js\?v=[a-f\d]{12})"\)/g)].length,1);
  assert.ok(text.includes(`/assets/journey-counts.js?v=${actual}`));
  assert.doesNotMatch(text,/page_view|\/api\/journey-counts/,'analytics initialization must stay in the single shared module');
 });

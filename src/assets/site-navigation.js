@@ -4,7 +4,7 @@
   const nav = document.querySelector('#main-nav');
   if (!menu || !nav) return;
   const services = nav.querySelector('.service-navigation');
-  const desktop = matchMedia('(min-width:768px)');
+  const desktop = matchMedia('(min-width:1024px)');
   const serviceSummary = services?.querySelector('summary');
   const syncServices = () => { if (services) services.open = !desktop.matches; };
   syncServices();
@@ -14,6 +14,8 @@
     nav.classList.remove('is-open');
     document.body.classList.remove('menu-open');
   };
+  window.addEventListener('pageshow',event=>{if(event.persisted)close();});
+  nav.addEventListener('click',event=>{if(event.target.closest('a[href]'))close();});
   menu.addEventListener('click', () => {
     if (menu.getAttribute('aria-expanded') === 'true') { close(); menu.focus(); return; }
     menu.setAttribute('aria-expanded', 'true');
@@ -37,6 +39,7 @@
   });
   desktop.addEventListener('change', event => { if (event.matches) close(); syncServices(); });
   document.addEventListener('click', event => {
+    if (!desktop.matches && menu.getAttribute('aria-expanded')==='true' && !nav.contains(event.target) && !menu.contains(event.target))close();
     if (desktop.matches && services?.open && !services.contains(event.target)) services.open=false;
   });
   nav.addEventListener('focusout', () => {

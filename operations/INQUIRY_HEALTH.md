@@ -6,7 +6,7 @@ At the start of each business day and again before finishing the day:
 
 1. Run `npm run inquiries:production -- status`. This uses an authenticated aggregate endpoint: it reports counts, pending age, configuration presence, manual-review count and the last successful recovery run without retrieving names, addresses or messages. A failed command, HTTP error or missing result is a failed check, not zero inquiries.
 2. Review Gmail for new website inquiries and outstanding replies. Also check Fastmail for public support mail and older inquiry notifications, and tawk.to for chats. A provider's accepted state does not establish mailbox receipt or a personal reply.
-3. Reconcile any `manual_review_required`, `notification_backlog`, `notification_configuration_missing` or `recovery_heartbeat_missing_or_stale` reason. Hourly recovery runs at minute 17; its heartbeat is stale after 75 minutes. Backlog means an unaccepted saved inquiry is at least ten minutes old. A successful cron records its completion only after cleanup and retry processing finish. Schema migration 0005 is required for that heartbeat.
+3. Reconcile any `manual_review_required`, `notification_backlog`, `notification_configuration_missing` `recovery_heartbeat_missing_or_stale` or `retention_review_due` reason. Hourly recovery runs at minute 17; its heartbeat is stale after 75 minutes. Backlog means an unaccepted saved inquiry is at least ten minutes old. Recovery runs before cleanup. Its heartbeat is recorded only after the full retry batch completes without a database error; independent cleanup failures are logged separately. Schema migration 0005 is required for that heartbeat.
 4. For a delivery discrepancy, use a new private export to identify the exact saved references and inspect provider/inbox evidence. Do not reset attempts, alter frozen messages or repeatedly retry an uncertain send. Follow the existing bounded retry and exact-reference procedures in `deployment/PRODUCTION.md` and `HANDOFF.md`. Respond to the buyer once the actual request and reply state are reconciled.
 5. Record only check time, reviewer, aggregate result, any incident reference and resolution status in a private operations log. Keep inquiry text and credentials out of the log. Use the weekly retention procedure for working copies and exports.
 
@@ -34,3 +34,26 @@ Verify the deployed notice and set a dated owner reminder to restore the usual
 promise on return. Until coverage is confirmed, do not accept overlapping starts.
 No absence message, customer notification or recurring automation was sent or
 created by this audit-fix task.
+
+## Independent failure alert setup
+
+The Worker supports an optional `HEALTHCHECK_URL` secret for a dedicated HTTPS
+heartbeat receiver. Choose a service whose alerts reach the owner independently
+of Resend, set its expected period to one hour and grace to at least 15 minutes,
+and save the URL with the pinned Wrangler secret command for the production
+configuration. Never commit or print the URL. The request has no inquiry payload,
+uses a five-second timeout and refuses redirects. A ping occurs only in live mode
+when recovery, cleanup and aggregate inquiry health all pass. A missing ping must
+alert through the receiver; merely saving a URL is not proof that paging works.
+
+Before recording this as operational, test the receiver's alert delivery, restore
+the healthy signal, and record both timestamps and the owner's receipt. No
+external receiver or independent alert delivery has been configured or verified
+by this code change. Existing manual mailbox and status checks remain necessary.
+
+A daily notification-budget hold preserves the saved row, attempt count and prior
+frozen body. An inquiry with no provider attempt can recover for 48 hours after
+creation, allowing the next UTC-day quota; after an actual attempt the five-attempt
+and 22-hour limits still apply. Repeated quota holds will appear as backlog.
+Retention review reports known due dates separately from old rows whose last
+contact is unknown; creation date never becomes an assumed last-contact date.

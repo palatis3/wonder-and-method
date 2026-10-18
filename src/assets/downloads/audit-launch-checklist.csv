@@ -1,21 +1,21 @@
-record_type,stage,action,expected_result,owner,result,evidence_or_notes
-metadata,Publisher,Wonder & Method,,,,
-metadata,Source,https://wonderandmethod.com/guides/website-launch-checklist/,,,,
-metadata,Help,https://wonderandmethod.com/contact/,,,,
-metadata,Editorial review,2026-10-17,,,,
-metadata,Instructions,Use pass / fail / blocked / not applicable; keep test data synthetic; record actual check date in notes,,,,
-check,Approval,Record preview version and named approver,Written approval identifies the version and unresolved issues,,,
-check,Content,Verify service facts and contact details,Owner confirms prices / coverage / hours / response expectations,,,
-check,Content,Verify permission for images and proof,No placeholders or unsupported projects / credentials / reviews,,,
-check,Navigation,Complete the service-to-contact journey on a phone,Service and next action are clear without horizontal overflow,,,
-check,Accessibility,Complete navigation and form with keyboard,Controls reachable with visible focus and usable labels,,,
-check,Accessibility,Check reduced motion and error recovery,Motion preference respected and form errors retain valid input,,,
-check,Inquiry,Submit a permitted synthetic inquiry,Acceptance and stored receipt checked separately where supported,,,
-check,Inquiry,Verify notification and reply path,Receiving owner finds test and reply reaches controlled address,,,
-check,Tools,Check the agreed ready-service link or standard embed,Website connection reaches the client-ready service; external setup is separately scoped,,,
-check,Domain,Verify HTTPS and alternate host redirects,Correct public destination and valid certificate; mail DNS preserved,,,
-check,Search,Check titles / canonical / sitemap / indexing instructions,Public intent matches each route; unavailable access recorded,,,
-check,Migration,Follow important old URLs and a missing URL,Old routes reach relevant destination; missing URL returns real 404,,,
-check,Recovery,Verify owner access and recovery procedure,Domain / hosting / tools accessible; recoverable version identified,,,
-check,Release,Repeat key checks on public domain after deployment,Live version and time recorded with actual inquiry result,,,
-check,Follow-up,Assign unresolved items and next review date,Every remaining task has an owner and planned review,,,
+"record_type","stage","action","expected_result","owner","result","evidence_or_notes","publisher","source_url","document_version"
+"metadata","Publisher","Wonder & Method","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"metadata","Source","https://wonderandmethod.com/guides/website-launch-checklist/","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"metadata","Help","https://wonderandmethod.com/contact/","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"metadata","Editorial review","2026-10-17","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"metadata","Instructions","Use pass / fail / blocked / not applicable; keep test data synthetic; record actual check date in notes","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Approval","Record preview version and named approver","Written approval identifies the version and unresolved issues","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Content","Verify service facts and contact details","Owner confirms prices / coverage / hours / response expectations","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Content","Verify permission for images and proof","No placeholders or unsupported projects / credentials / reviews","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Navigation","Complete the service-to-contact journey on a phone","Service and next action are clear without horizontal overflow","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Accessibility","Complete navigation and form with keyboard","Controls reachable with visible focus and usable labels","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Accessibility","Check reduced motion and error recovery","Motion preference respected and form errors retain valid input","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Inquiry","Submit a permitted synthetic inquiry","Acceptance and stored receipt checked separately where supported","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Inquiry","Verify notification and reply path","Receiving owner finds test and reply reaches controlled address","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Tools","Check the agreed ready-service link or standard embed","Website connection reaches the client-ready service; external setup is separately scoped","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Domain","Verify HTTPS and alternate host redirects","Correct public destination and valid certificate; mail DNS preserved","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Search","Check titles / canonical / sitemap / indexing instructions","Public intent matches each route; unavailable access recorded","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Migration","Follow important old URLs and a missing URL","Old routes reach relevant destination; missing URL returns real 404","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Recovery","Verify owner access and recovery procedure","Domain / hosting / tools accessible; recoverable version identified","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Release","Repeat key checks on public domain after deployment","Live version and time recorded with actual inquiry result","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"
+"check","Follow-up","Assign unresolved items and next review date","Every remaining task has an owner and planned review","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-launch-checklist.csv","2026-10-18.1"

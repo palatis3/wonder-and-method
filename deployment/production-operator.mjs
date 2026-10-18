@@ -55,6 +55,16 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
  return {action,reference:label,status:result.status||null,message:result.message||null};
 }
 
+export function formatMeasurement(report){
+ const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Email / chat actions',['email_click','chat_open']]];
+ const total=(events,current)=>report.daily.filter(row=>events.includes(row.event)&&(current?row.day>=report.since:row.day<report.since)).reduce((sum,row)=>sum+Number(row.total),0);
+ const lines=[`Website events: ${report.days} days from ${report.since}`,`Compared with the preceding ${report.days} days (within 90-day retention).`,'Metric                         Current  Previous  Change'];
+ for(const [label,events] of groups){const current=total(events,true),previous=total(events,false);lines.push(label.padEnd(30)+String(current).padStart(8)+String(previous).padStart(10)+String(current-previous).padStart(8));}
+ lines.push('','Page views by fixed page:');for(const row of report.counts.filter(row=>row.event==='page_view'))lines.push(`${row.page} / ${row.service}: ${row.total}`);
+ lines.push('','Page-view source categories:');for(const row of report.bySource||[])lines.push(`${row.source}: ${row.total}`);
+ lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Use the separate lead report for real inquiry stages.');return lines.join('\n');
+}
+
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- productionOperator(process.argv.slice(2)).then(result=>console.log(JSON.stringify(result,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
+ productionOperator(process.argv.slice(2)).then(result=>console.log(process.argv[2]==='measurement'&&Array.isArray(result.daily)?formatMeasurement(result):JSON.stringify(result,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
 }

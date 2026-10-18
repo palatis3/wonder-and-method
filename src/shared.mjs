@@ -1,18 +1,18 @@
 export function escapeHtml(value='') { return String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
+export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(value)?0:2,maximumFractionDigits:2}).format(value);
 export const moneyExact=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
 const cents=value=>{const n=Math.round((value+Number.EPSILON)*100);if(!Number.isSafeInteger(n))throw new Error('Invalid cost inputs');return n;};
 export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','Focused Website'],['signature_site','Signature Website'],['keep_running','Keep Running — website care'],['improve','Improve — monthly priority'],['grow','Grow — two monthly priorities'],['audit_fix_sprint','Audit & Fix Sprint'],['website_baseline','Website Baseline'],['unsure','Help me choose']];
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 export const inquiryContextFields={
- concept:{label:'Website example',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
+ concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
- found_via:{label:'How you found us',services:inquiryChoices.map(([id])=>id),options:[['search','Search engine'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
- request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Question about this service']]},
- booking_choice:{label:'Ready service connection',services:['launch_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
- priority:{label:'First monthly priority',services:['improve','grow'],options:[['page','Page / CMS / known workflow'],['article','Useful article'],['gbp','Eligible profile batch'],['graphic','Promotional graphic'],['email','Newsletter campaign draft/setup'],['decide','Choose after review']]},
- priority_two:{label:'Second Grow priority',services:['grow'],options:[['page','Page / CMS / known workflow'],['article','Useful article'],['gbp','Eligible profile batch'],['graphic','Promotional graphic'],['email','Newsletter campaign draft/setup'],['decide','Choose after review']]},
+ found_via:{label:'How did you find us?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
+ request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Ask a question']]},
+ booking_choice:{label:'A booking or newsletter connection',services:['launch_site','focused_site','signature_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
+ priority:{label:'First monthly priority',services:['improve','grow'],options:[['page','Improve an existing page or supported website tool'],['article','Write one article'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
+ priority_two:{label:'Second Grow priority',services:['grow'],options:[['page','Improve an existing page or supported website tool'],['article','Write one article'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
  baseline_status:{label:'Existing baseline',services:['keep_running','improve','grow','website_baseline','audit_fix_sprint'],options:[['new_build','Recent paid studio build'],['sprint','Usable prior Sprint'],['needed','No usable baseline'],['unknown','Needs review']]},
  billing:{label:'Service billing',services:['keep_running','improve','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
 };
@@ -22,12 +22,12 @@ export function inquiryRequestSummary(value={},pack){
  const question=value.request_kind==='question';
  const context=selectedInquiryContext(value);
  const choice=inquiryChoices.find(([id])=>id===value.service);
- let headline=choice?.[1]||'Help me choose';
+ let headline=value.service==='unsure'?'Not sure yet: Terry will recommend a plan':choice?.[1]||'Not sure yet: Terry will recommend a plan';
  if(!question&&pack){
   const annual=value.billing==='annual'&&pack.annual;
   const fee=annual?pack.annual.upfront_price:pack.price;
-  headline+=' — '+moneyExact(fee)+(annual?' prepaid for 12 service cycles':' '+pack.priceLabel);
-  if(pack.baselineFee)headline+=`; first payment for an existing site ${moneyExact(fee+pack.baselineFee)} including ${moneyExact(pack.baselineFee)} setup, or ${moneyExact(fee)} when a usable studio build or Sprint covers setup`;
+  headline+=' — '+money(fee)+(annual?' prepaid for 12 service cycles':' '+pack.priceLabel);
+  if(pack.baselineFee)headline+=`; first payment for an existing site ${money(fee+pack.baselineFee)} including ${money(pack.baselineFee)} setup, or ${money(fee)} when a usable studio build or Sprint covers setup`;
  }
  const visible=question?Object.fromEntries(Object.entries(context).filter(([key])=>['goal','concept'].includes(key))):context;
  return [headline,...inquiryContextSummary({service:value.service,...visible}),question?'Question only. No booking or payment.':'Proposal request only. Scope, provider costs and dates are confirmed before payment.'].join(' · ');
@@ -60,7 +60,7 @@ export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=
 }
 
 // Current prospective terms: studio work plus directly paid provider costs, without subsidies.
-export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly'}={}) {
+export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=(build==='existing'?12:11),external=null,hostingMonthly=null,hostingMonths=12,billing='monthly'}={}) {
  if(prices.provider_model!=='client_owned_direct_billing')throw new Error('Use the explicit legacy calculator with a saved historical snapshot');
  if(!['launch','focused','signature','existing'].includes(build)||!['none','keep_running','improve','grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
@@ -75,4 +75,4 @@ export function calculateCost(prices,{build='launch',plan='none',baseline=false,
 
 export function annualRefund(prices,{plan,completedCycles}){if(!Object.hasOwn(prices.annual,plan)||!Number.isInteger(completedCycles)||completedCycles<0||completedCycles>12)throw new Error('Invalid annual refund inputs');return cents(prices.annual[plan])*(12-completedCycles)/12/100;}
 
-export function inquiryOptionalFields(value={},onlyApplicable=false){return Object.entries(inquiryContextFields).filter(([key,field])=>key!=='request_kind'&&(onlyApplicable||!['goal','found_via'].includes(key))&&(!onlyApplicable||field.services.includes(value.service))).map(([key,field])=>`<div class="optional-choice" data-context-field="${key}"><label for="${key}">${escapeHtml(field.label)} <span>(optional)</span></label><select id="${key}" name="${key}" aria-describedby="${key}-error"><option value="">Decide during fit review</option>${field.options.map(([id,label])=>`<option value="${id}"${value[key]===id?' selected':''}>${escapeHtml(label)}</option>`).join('')}</select><p class="error" id="${key}-error"></p></div>`).join('');}
+export function inquiryOptionalFields(value={},onlyApplicable=false){return Object.entries(inquiryContextFields).filter(([key,field])=>key!=='request_kind'&&(onlyApplicable||key!=='baseline_status')&&(onlyApplicable||!['goal','found_via'].includes(key))&&(!onlyApplicable||field.services.includes(value.service))).map(([key,field])=>`<div class="optional-choice" data-context-field="${key}"><label for="${key}">${escapeHtml(field.label)} <span>(optional)</span></label><select id="${key}" name="${key}" aria-describedby="${key}-error"><option value="">Decide during fit review</option>${field.options.filter(([id])=>key!=='billing'||id!=='annual'||value.billing==='annual').map(([id,label])=>`<option value="${id}"${value[key]===id?' selected':''}>${escapeHtml(label)}</option>`).join('')}</select><p class="error" id="${key}-error"></p></div>`).join('');}

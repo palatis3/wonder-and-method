@@ -38,7 +38,7 @@ test('annual prepayment and refunds preserve twelve cycles and distinguish curre
  const old=calculateLegacyCost(priceList(legacy),{build:'focused',plan:'keep_running',billing:'annual',cycles:12,serviceStart:2,hostingMonths:13,hostingMonthly:20,external:120});
  assert.deepEqual([old.annualUpfront,old.buildHostingCredit,old.monthlyHostingCredit,old.planOverlapDiscount,old.total],[2268.6,120,140,100,4788.6]);
  assert.equal(annualRefund(priceList(legacy),{plan:'keep_running',completedCycles:4}),1512.4);
- assert.match(offers.annual_terms.cancellation,/current-cycle unearned work/);assert.match(offers.annual_terms.refund_timing,/undisputed unearned money/);assert.match(offers.annual_terms.hosting,/Vendor cancellation and refunds follow each vendor/);
+ assert.match(offers.annual_terms.cancellation,/current-cycle unearned work/);assert.match(offers.annual_terms.refund_timing,/Undisputed unearned amounts/);assert.match(offers.annual_terms.hosting,/Vendor cancellation and refunds follow each vendor/);
 });
 
 test('packs and card summaries keep zero/one/two priorities and lower-build exclusions truthful',()=>{
@@ -57,15 +57,15 @@ test('native task links and simple costs precede advanced estimator; homepage ca
  assert.ok(html.indexOf('Hypothetical build, no care')<html.indexOf('id="cost-calculator"'));assert.match(html,/\$1,760/);assert.match(html,/\$2,559/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);
  assert.match(html,/compatible hosting/);assert.match(html,/the ZIP does not move them automatically/);assert.match(html,/actual renewals/);
- const home=ongoingOverview(offers,{home:true});assert.doesNotMatch(home,/class="monthly-plan"/);assert.match(home,/class="compact-comparison"/);assert.doesNotMatch(home,/package-visual-grid|data-feature=/);assert.match(home,/Full scope and payment terms/);assert.match(home,/\/services\/website-care\//);
+ const home=ongoingOverview(offers,{home:true});assert.doesNotMatch(home,/class="monthly-plan"/);assert.match(home,/class="compact-comparison"/);assert.doesNotMatch(home,/package-visual-grid|data-feature=/);assert.match(home,/scope and terms/);assert.match(home,/\/services\/website-care\//);
 });
 
 test('all builds snapshot explicit icon, sharing, sitemap and HTTPS acceptance without inventing proof',async()=>{
  for(const id of ['launch_site','focused_site','signature_site']){
   const draft=await draftScope(id,'foundation-check');assert.equal(draft.commercial_version,offers.version);
   assert.deepEqual(draft.commercial_snapshot.provider_policy,offers.provider_policy);
-  const checks=JSON.stringify(draft.acceptance_tests);for(const phrase of ['browser-tab icon','default sharing image','sitemap','HTTPS certificate','receiving-mailbox delivery'])assert.ok(checks.includes(phrase),phrase);
-  assert.match(checks,/do not report submission or indexing without evidence/);
+  const checks=JSON.stringify(draft.acceptance_tests);for(const phrase of ['browser-tab icon','sharing image','sitemap','HTTPS','test message reached the receiving inbox'])assert.ok(checks.includes(phrase),phrase);
+  const operational=JSON.parse(await readFile(new URL('../operations/launch-acceptance-checklist.json',import.meta.url),'utf8'));assert.match(JSON.stringify(operational.build_foundation_acceptance),/do not report submission or indexing without evidence/);assert.match(JSON.stringify(operational.build_foundation_acceptance),/receiving-mailbox delivery/);
  }
  const keep=await draftScope('keep_running','no-phantom-priority');assert.deepEqual(keep.commercial_boundaries.priority_menu,[]);assert.deepEqual(keep.commercial_snapshot.priority_menu,[]);
 });

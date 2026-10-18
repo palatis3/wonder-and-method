@@ -1,3 +1,4 @@
+import {socialCardPath} from '../src/social-cards.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -9,7 +10,7 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('every route exposes the same primary journey and local type system',()=>{
- const expected=['/work/','/services/web-design/','/services/seo/','/services/website-care/','/pricing/','/about/','/contact/'];
+ const expected=['/work/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/guides/','/about/','/contact/'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   assert.ok(primary,path);
@@ -42,14 +43,14 @@ test('Civic edition keeps full-word images, local metadata and deferred once-onl
  assert.match(home,/<video[^>]+data-src="\/assets\/civic-sculpture\/buffalo-civic-intro\.mp4"[^>]+preload="none"/);
  assert.doesNotMatch(home,/<video[^>]+(?: loop| autoplay| src=)/);
  assert.match(home,/<img class="civic-poster"[^>]+width="1440" height="720"/);
- assert.match(work,/src="\/assets\/civic-sculpture\/buffalo-civic-poster\.webp"/);
- assert.match(work,/href="\/#hero-heading"/);
- assert.match(work,/Original studio animation/);
- assert.doesNotMatch(work,/<video|civic-sculpture-preview\.js/); // The gallery links to the single homepage controller.
+ assert.doesNotMatch(work,/id="animation"|id="identity"/);
+ assert.match(work,/<video[^>]+controls[^>]+preload="none"/);
+ assert.match(work,/film-landscape\.mp4/);
+ assert.doesNotMatch(work,/civic-sculpture-preview\.js/); // Only home mounts the Civic controller.
  assert.doesNotMatch(home+work,/six-second|dusk scene|original dusk artwork/);
- for(const {html} of civicPages.filter(page=>!page.html.includes('property="og:type" content="article"'))){
-  assert.match(html,/<meta property="og:image" content="http:\/\/localhost:4221\/assets\/brand\/social-card.png"/);
-  assert.match(html,/<meta property="og:image:alt" content="Wonder &amp; Method brush emblem and wordmark/);
+ for(const {html,path} of civicPages.filter(page=>!page.html.includes('property="og:type" content="article"'))){
+  assert.ok(html.includes(`<meta property="og:image" content="http://localhost:4221${socialCardPath(path)||'/assets/brand/social-card.png'}"`));
+  assert.match(html,/<meta property="og:image:alt" content="[^"]+"/);
  }
  const pending=renderPages({config:{...civicConfig,civicMotionReady:false},offers,map,geography}).find(x=>x.path==='/').html;
  assert.doesNotMatch(pending,/<video[^>]+data-src=/);

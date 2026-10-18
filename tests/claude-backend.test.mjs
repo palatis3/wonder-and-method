@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import { readFile } from 'node:fs/promises';
-import worker, { notifyInquiry, retryPendingInquiries } from '../deployment/worker.mjs';
-import { inquiryRetentionPreview, NOTIFICATION_WINDOW_MS } from '../deployment/inquiry-maintenance.mjs';
+import worker, { notifyInquiry, retryPendingInquiries, runScheduledMaintenance } from '../deployment/worker.mjs';
+import { inquiryRetentionPreview, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS } from '../deployment/inquiry-maintenance.mjs';
 
-const migrations = await Promise.all(['0001_inquiries.sql', '0003_inquiry_followup.sql'].map(name =>
+const migrations = await Promise.all(['0001_inquiries.sql', '0003_inquiry_followup.sql', '0005_inquiry_operations.sql'].map(name =>
   readFile(new URL(`../deployment/migrations/${name}`, import.meta.url), 'utf8')));
 const origin = 'https://example.test';
 const payload = {
@@ -22,13 +22,13 @@ test('site-wide notification budget bounds distributed sends without losing save
   assert.equal(calls,2);
   assert.equal(results.filter(result=>result.status==='daily-budget-held').length,1);
   assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n,3);
-  assert.equal(env.DB.sqlite.prepare("SELECT count(*) AS n FROM inquiries WHERE delivery_status='manual_review' AND lease_until IS NULL").get().n,1);
+  assert.equal(env.DB.sqlite.prepare("SELECT count(*) AS n FROM inquiries WHERE delivery_status='pending' AND attempts=0 AND first_attempt_at IS NULL AND notification_payload IS NULL AND lease_until IS NULL").get().n,1);
   env.DB.sqlite.close();
 });
 function database(followup = true) {
   const sqlite = new DatabaseSync(':memory:');
   sqlite.exec(migrations[0]);
-  if (followup) sqlite.exec(migrations[1]);
+  if (followup) sqlite.exec(migrations.slice(1).join("\n"));
   return { sqlite, prepare(sql) {
     const query = values => ({
       bind: (...next) => query(next),
@@ -180,7 +180,7 @@ test('scheduled recovery selects only safe expired leases, respects age and excl
   const env = liveNotificationEnvironment(), now = Date.now();
   const retry = insert(env, { created_at: now - 180_000, delivery_status: 'uncertain', attempts: 1, first_attempt_at: now - 180_000 });
   const exhausted = insert(env, { created_at: now - 180_000, delivery_status: 'failed', attempts: 5, first_attempt_at: now - 180_000 });
-  const old = insert(env, { created_at: now - NOTIFICATION_WINDOW_MS });
+  const old = insert(env, { created_at: now - UNSENT_NOTIFICATION_WINDOW_MS });
   const leased = insert(env, { created_at: now - 180_000, delivery_status: 'sending', lease_until: now + 30_000 });
   const recent = insert(env, { created_at: now - 119_999 });
   insert(env, { delivery_status: 'accepted', created_at: now - 180_000 });
@@ -234,7 +234,7 @@ test('new notification text is readable and frozen byte-for-byte across retry an
   const first = JSON.parse(bodies[0]);
   assert.match(first.subject, /Focused Website/);
   assert.match(first.text, /Name: Synthetic Owner/);
-  assert.match(first.text, /Request type: Question about this service/);
+  assert.match(first.text, /Request type: Ask a question/);
   env.NOTIFICATION_TO = 'different@example.test';
   env.DB.sqlite.prepare('UPDATE inquiries SET payload=? WHERE id=?').run(JSON.stringify({ ...payload, name: 'Changed' }), id);
   await notifyInquiry(env, id, sender, now + 1000);
@@ -279,6 +279,7 @@ test('retention preview uses recorded last contact only and excludes held/client
   assert.equal(preview.dry_run, true);
   assert.deepEqual(preview.due.map(row => row.id), [due]);
   assert.equal(preview.unknown_last_contact, 1);
+  assert.deepEqual(preview.unconfirmed_old_needing_review.map(row=>row.id),[unknown]);
   assert.equal(env.DB.sqlite.prepare('SELECT last_substantive_contact_at FROM inquiries WHERE id=?').get(unknown).last_substantive_contact_at, null);
   await worker.scheduled({}, env);
   assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n, 7);
@@ -321,4 +322,86 @@ test('slow retry batches give every send a fresh lease and current first-attempt
   return Response.json({id:'synthetic-'+sends});
  },start,()=>current);
  assert.equal(sends,10);env.DB.sqlite.close();
+});
+
+test('daily quota hold preserves the unused attempt and recovers after UTC rollover',async()=>{
+  const env=liveNotificationEnvironment();env.NOTIFICATION_DAILY_LIMIT='1';
+  const now=Date.UTC(2026,9,18,23,0),ids=[insert(env,{created_at:now-180000}),insert(env,{created_at:now-180000})];
+  let calls=0;const send=async()=>{calls++;return Response.json({id:'synthetic-'+calls});};
+  await notifyInquiry(env,ids[0],send,now);
+  assert.equal((await notifyInquiry(env,ids[1],send,now)).status,'daily-budget-held');
+  const before=env.DB.sqlite.prepare('SELECT * FROM inquiries WHERE id=?').get(ids[1]);
+  assert.equal(before.attempts,0);assert.equal(before.first_attempt_at,null);assert.equal(before.notification_payload,null);
+  const next=now+2*3600_000;
+  const result=await retryPendingInquiries(env,send,next,()=>next);
+  assert.equal(result.attempted,1);assert.equal(calls,2);
+  assert.equal(env.DB.sqlite.prepare('SELECT delivery_status FROM inquiries WHERE id=?').get(ids[1]).delivery_status,'accepted');
+  env.DB.sqlite.close();
+});
+
+test('scheduler retries before cleanup, isolates cleanup failure and withholds healthy ping',async()=>{
+  const env=liveNotificationEnvironment(),now=Date.now(),id=insert(env);env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
+  const realPrepare=env.DB.prepare,seen=[],logs=[];
+  env.DB.prepare=sql=>{
+    if(sql.startsWith('DELETE FROM rate_limits')){seen.push('cleanup');throw Error('secret details must not be logged');}
+    return realPrepare(sql);
+  };
+  const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async url=>{seen.push(url);return Response.json({id:'synthetic'});}});
+  assert.equal(env.DB.sqlite.prepare('SELECT delivery_status FROM inquiries WHERE id=?').get(id).delivery_status,'accepted');
+  assert.deepEqual(seen,['https://api.resend.com/emails','cleanup']);
+  assert.deepEqual(logs,['scheduled_rate_cleanup_failed']);assert.equal(result.ok,false);
+  assert.equal(env.DB.sqlite.prepare("SELECT last_success_at FROM operation_health WHERE name='inquiry-recovery'").get().last_success_at,now);
+  env.DB.sqlite.close();
+});
+
+test('scheduler continues after one recovery row fails and does not mark recovery successful',async()=>{
+  const env=liveNotificationEnvironment(),now=Date.now(),first=insert(env),second=insert(env);
+  env.DB.sqlite.prepare('UPDATE inquiries SET created_at=? WHERE id=?').run(now-240000,first);
+  const realPrepare=env.DB.prepare;
+  env.DB.prepare=sql=>{
+    if(sql==='SELECT * FROM inquiries WHERE id = ?')return {bind(id){if(id===first)throw Error('synthetic row read failure');return realPrepare(sql).bind(id);}};
+    return realPrepare(sql);
+  };
+  const logs=[];const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async()=>Response.json({id:'synthetic'})});
+  assert.equal(result.ok,false);assert.deepEqual(logs,['scheduled_recovery_row_failed']);
+  assert.equal(env.DB.sqlite.prepare('SELECT delivery_status FROM inquiries WHERE id=?').get(second).delivery_status,'accepted');
+  assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM operation_health').get().n,0);
+  env.DB.sqlite.close();
+});
+
+test('external monitor receives no inquiry data and pings only while aggregate health is good',async()=>{
+  const env=liveNotificationEnvironment(),now=Date.now();env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
+  const calls=[];const send=async(url,options)=>{calls.push({url,options});return new Response('',{status:200});};
+  assert.equal((await runScheduledMaintenance(env,{now,clock:()=>now,logger:()=>{},send})).ok,true);
+  assert.equal(calls.length,1);assert.equal(calls[0].url,env.HEALTHCHECK_URL);assert.equal(calls[0].options.body,undefined);assert.equal(calls[0].options.redirect,'error');
+  insert(env,{delivery_status:'manual_review'});
+  await runScheduledMaintenance(env,{now,clock:()=>now,logger:()=>{},send});assert.equal(calls.length,1);
+  env.INQUIRY_MODE='synthetic';await runScheduledMaintenance(env,{now,logger:()=>{},send});assert.equal(calls.length,1);
+  env.DB.sqlite.close();
+});
+
+test('a stale pre-lease read cannot roll back a newer actual provider attempt after quota exhaustion',async()=>{
+  const env=liveNotificationEnvironment(),now=Date.now(),id=insert(env);env.NOTIFICATION_DAILY_LIMIT='1';
+  const realPrepare=env.DB.prepare;let reads=0,resume,readComplete;
+  const paused=new Promise(resolve=>readComplete=resolve),release=new Promise(resolve=>resume=resolve);
+  env.DB.prepare=sql=>{
+    if(sql==='SELECT * FROM inquiries WHERE id = ?')return {bind(...values){return {async first(){const row=await realPrepare(sql).bind(...values).first();if(++reads===1){readComplete();await release;}return row;}};}};
+    return realPrepare(sql);
+  };
+  const stale=notifyInquiry(env,id,async()=>{throw Error('stale sender must not run');},now);
+  await paused;
+  await notifyInquiry(env,id,async()=>new Response('',{status:503}),now+1);
+  const attempted=env.DB.sqlite.prepare('SELECT delivery_status,attempts,first_attempt_at,notification_payload FROM inquiries WHERE id=?').get(id);
+  assert.equal(attempted.attempts,1);assert.equal(attempted.first_attempt_at,now+1);assert.ok(attempted.notification_payload);
+  resume();assert.equal((await stale).status,'busy-or-ineligible');
+  assert.deepEqual(env.DB.sqlite.prepare('SELECT delivery_status,attempts,first_attempt_at,notification_payload FROM inquiries WHERE id=?').get(id),attempted);
+  env.DB.sqlite.close();
+});
+
+
+test('HEAD video uses the generated size index without fetching media bytes',async()=>{
+ const env=environment(),calls=[];
+ env.ASSETS.fetch=async req=>{const path=new URL(req.url).pathname;calls.push([req.method,path]);if(path==='/assets/media-sizes.json')return Response.json({'/assets/hero.mp4':10});assert.equal(req.method,'HEAD');return new Response(null,{headers:{'Content-Type':'video/mp4'}});};
+ const response=await worker.fetch(request('/assets/hero.mp4',{method:'HEAD'}),env,context());
+ assert.equal(response.status,200);assert.equal(response.headers.get('Content-Length'),'10');assert.equal(await response.text(),'');assert.deepEqual(calls,[['HEAD','/assets/hero.mp4'],['GET','/assets/media-sizes.json']]);
 });

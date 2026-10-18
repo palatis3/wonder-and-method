@@ -1,3 +1,4 @@
+import {validateInquiry} from './inquiry.mjs';
 import {inquiryConfirmationHtml} from './inquiry-confirmation.mjs';
 import {selectedInquiryContext} from './shared.mjs';
 
@@ -20,7 +21,13 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       if(!valid&&!first)first=input;
     }
     if(first){focusInvalid(first);return;}
-    const submitted=Object.fromEntries(new FormData(form));
+    const validation=validateInquiry(Object.fromEntries(new FormData(form)));
+    for(const [key,message] of Object.entries(validation.errors)){
+      const input=form.elements.namedItem(key),error=document.getElementById(key+'-error');
+      if(input&&error){error.textContent='Error: '+message;input.setAttribute('aria-invalid','true');first??=input;}
+    }
+    if(Object.keys(validation.errors).length){if(first)focusInvalid(first);else{status.textContent='Please check your details, or email support@wonderandmethod.com.';status.focus();}return;}
+    const submitted=validation.value;
     const label=button.textContent;
     pending=true;
     button.disabled=true;
@@ -42,7 +49,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       }
       if(typeof result?.reference!=='string'||!result.reference.trim()||typeof result.synthetic!=='boolean')throw new Error('We could not confirm this submission. Your entries remain here; please contact the studio before sending again.');
       const realSaved=form.dataset.mode==='live'&&result.synthetic===false&&!/synthetic/i.test(result.message||'');
-      confirmation.innerHTML=inquiryConfirmationHtml({reference:result.reference,synthetic:!realSaved,service:submitted.service,...selectedInquiryContext(submitted)});
+      confirmation.innerHTML=inquiryConfirmationHtml({reference:result.reference,synthetic:!realSaved,email:submitted.email,service:submitted.service,...selectedInquiryContext(submitted)});
       confirmation.hidden=false;
       form.hidden=true;
       form.reset();
@@ -52,6 +59,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       if(realSaved){try{countJourney(submitted.request_kind==='question'?'question_saved':'inquiry_saved',submitted.service);}catch{}}
     }catch(error){
       status.textContent=error.name==='AbortError'?'The connection took too long to confirm. Your entries remain here; please try again or contact the studio.':error instanceof TypeError?'Connection failed. Your entries are still here; please try again or email support@wonderandmethod.com.':error.message;
+      if(!status.textContent.includes('support@wonderandmethod.com'))status.textContent+=' For help, email support@wonderandmethod.com.';
       if(first)focusInvalid(first);else status.focus();
     }finally{
       clearTimeout(timeout);

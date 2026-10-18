@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-audit-fixes",
+  "revision": "20261018-claude-review",
   "products": [
     {
       "id": "launch_site",
@@ -292,7 +292,7 @@
         {
           "id": "launch_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
         },
         {
           "id": "launch_site.terms.facts",
@@ -815,7 +815,7 @@
         {
           "id": "focused_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
         },
         {
           "id": "focused_site.terms.facts",
@@ -1323,7 +1323,7 @@
         {
           "id": "signature_site.terms.schedule",
           "title": "Production time and review windows",
-          "text": "Typical website projects use 7–10 working days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time. Your written scope confirms dates, ready inputs, review windows and one initial launch. Missing inputs or reviews receive notice and a revised available slot."
+          "text": "Typical website projects use 7–10 business days of production after the agreed start and ready content, access and business facts, plus the agreed client review windows. Larger scopes, extra features or delayed feedback can take longer; your written scope confirms the production, review and launch dates. Dates also depend on selected-tool feasibility and actual capacity. The quote reserves launch checks, source handoff and defect-correction capacity; this is a planning estimate, not a guaranteed turnaround time."
         },
         {
           "id": "signature_site.terms.facts",
@@ -2577,15 +2577,15 @@
     },
     {
       "id": "website_baseline",
-      "name": "Existing-site baseline",
+      "name": "Website Baseline",
       "price": 399,
       "priceBasis": "one-time project",
-      "fit": "Access and inventory, a full website audit baseline, prioritized backlog and a first contained safe fix where appropriate. The fix is outside the first month’s allowance.",
+      "fit": "For one supported website with up to 12 marketing pages.",
       "features": [
         {
           "id": "website_baseline.fit",
           "title": "Fit and access checked first",
-          "plain": "Checks of your site, access, useful work, provider costs and dates before you pay.",
+          "plain": "Checks of your site, access, planned work, provider costs and dates before you pay.",
           "explanation": "Before payment, your website’s technology, inventory, access, useful work, provider costs and delivery dates are reviewed, so unsuitable work is identified before you commit.",
           "limits": "Supported eligible sites only; unsuitable work is re-scoped or not sold.",
           "condition": null
@@ -2595,7 +2595,7 @@
           "title": "A supported-site and access inventory",
           "plain": "A list of the supported site’s systems, permissions and accounts, including anything that limits the review.",
           "explanation": "Your review records the website and supported systems being assessed, with the available permissions and access clearly identified alongside any dependency that limits a check.",
-          "limits": "Your covered site inventory is agreed before payment; no numeric page cap is stated for this offer.",
+          "limits": "One supported website with up to 12 marketing pages; agreed access and account inventory.",
           "condition": null
         },
         {
@@ -2625,9 +2625,9 @@
         {
           "id": "website_baseline.no_fix",
           "title": "A clear finding if no safe fix fits",
-          "plain": "If no safe, useful fix fits, you receive a clear finding and reason. This outcome is agreed before payment.",
-          "explanation": "If no safe or useful contained fix is appropriate, you receive an explicit finding and reason as the agreed deliverable, rather than an invented correction.",
-          "limits": "Outcome agreed before payment; unexpected blockers use reconciliation terms.",
+          "plain": "The review and ordered fix list are included either way. If no safe fix fits, you receive a clear finding and reason.",
+          "explanation": "Before payment, I confirm whether a first small fix appears feasible and explain any known limits. The $399 covers the website review and ordered fix list either way. You receive the findings, access limits, fix status and handoff notes. If no safe fix fits after review, I explain why; unexpected blockers follow the agreed reconciliation terms.",
+          "limits": "The $399 covers the review and ordered fix list; a first small fix depends on safe, feasible work.",
           "condition": "Alternative outcome when no safe or useful contained fix is appropriate."
         },
         {
@@ -2685,7 +2685,7 @@
         {
           "id": "website_baseline.terms.fix_status",
           "title": "A safe fix or a clear finding",
-          "text": "Your baseline includes a first contained safe fix only where appropriate, outside month one’s allowance. If no safe/useful correction fits, the agreed deliverable is the finding and reason. That outcome is settled before payment; the covered site inventory is agreed before payment."
+          "text": "Before payment, I confirm whether a first small fix appears feasible and explain any known limits. The $399 covers the website review and ordered fix list either way. You receive the findings, access limits, fix status and handoff notes. If no safe fix fits after review, I explain why; unexpected blockers follow the agreed reconciliation terms."
         },
         {
           "id": "website_baseline.terms.acceptance",
@@ -2695,7 +2695,7 @@
         {
           "id": "website_baseline.terms.blocked",
           "title": "Cancellation or blocked work",
-          "text": "Fixed deliverables and milestone values are itemized before payment. Cancellation or blockers reconcile accepted completed work and approved unavoidable third-party commitments against payments, returning unearned amounts. No retrospective hourly cap or new fee replaces that agreement. More work needs a written scope."
+          "text": "Before payment, your written scope lists the fixed deliverables and the value of each payment stage. If work is canceled or blocked, you receive an itemized account of completed accepted work, approved unavoidable third-party costs and any unearned amount to be refunded. Any additional work needs your written agreement first."
         },
         {
           "id": "website_baseline.terms.correction",
@@ -2715,12 +2715,12 @@
         {
           "id": "website_baseline.terms.extra_costs",
           "title": "Separate costs need approval",
-          "text": "Provider bills and out-of-scope implementation are itemized and approved before commitment. You pay vendors directly; optional monthly service is a separate studio fee. No new hosting subsidy or studio markup applies."
+          "text": "Provider bills and out-of-scope implementation are itemized and approved before commitment. You pay vendors directly; optional monthly service is a separate studio fee."
         },
         {
           "id": "website_baseline.terms.limits",
           "title": "Review and implementation limits",
-          "text": "The review records evidence and access limits; it does not establish specialist security, legal or exhaustive accessibility certification. New workflows, architecture, complex data/security audits, new systems, custom integrations, extensive migration, original field research and specialist certification require separate scope."
+          "text": "For one supported website with up to 12 marketing pages. The review records evidence and access limits; it does not establish specialist security, legal or exhaustive accessibility certification. New workflows, architecture, complex data/security audits, new systems, custom integrations, extensive migration, original field research and specialist certification require separate scope."
         }
       ],
       "termGroups": [
@@ -2777,7 +2777,7 @@
         "file": "website-baseline-complete.webp",
         "width": 1086,
         "height": 1448,
-        "title": "Existing-site baseline",
+        "title": "Website Baseline",
         "price": "$399 fixed project · USD",
         "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
         "inheritance": null,
@@ -2794,7 +2794,7 @@
           "website_baseline.correction",
           "website_baseline.usable_baseline"
         ],
-        "intro": "All included features, explained in plain words."
+        "intro": "For one supported website with up to 12 marketing pages."
       }
     },
     {
@@ -2917,7 +2917,7 @@
         {
           "id": "audit_fix_sprint.terms.blocked",
           "title": "Cancellation or blocked work",
-          "text": "Fixed deliverables and milestone values are itemized before payment. Cancellation or blockers reconcile accepted completed work and approved unavoidable third-party commitments against payments, returning unearned amounts. No retrospective hourly cap or new fee replaces that agreement. More work needs a written scope."
+          "text": "Before payment, your written scope lists the fixed deliverables and the value of each payment stage. If work is canceled or blocked, you receive an itemized account of completed accepted work, approved unavoidable third-party costs and any unearned amount to be refunded. Any additional work needs your written agreement first."
         },
         {
           "id": "audit_fix_sprint.terms.correction",
@@ -2937,7 +2937,7 @@
         {
           "id": "audit_fix_sprint.terms.extra_costs",
           "title": "Separate costs need approval",
-          "text": "Provider bills and out-of-scope implementation are itemized and approved before commitment. You pay vendors directly; optional monthly service is a separate studio fee. No new hosting subsidy or studio markup applies."
+          "text": "Provider bills and out-of-scope implementation are itemized and approved before commitment. You pay vendors directly; optional monthly service is a separate studio fee."
         },
         {
           "id": "audit_fix_sprint.terms.limits",

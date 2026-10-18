@@ -20,7 +20,7 @@ test('one-off and recurring scopes and packets retain their own review, correcti
     assert.doesNotMatch(scope.defect_window,/30 calendar days/);assert.equal(scope.paid_work_rights,offers.monthly_terms.exit);
     assert.equal(scope.schedule.service_end,null);
     if(id==='keep_running')assert.match(scope.included_revisions,/related small-change batch/);else assert.match(scope.included_revisions,/One consolidated refinement and QA per agreed priority/);
-    if(billing==='annual'){assert.match(scope.cancellation_reconciliation,/within ten business days/);assert.match(scope.cancellation_reconciliation,/undisputed unearned money/);}
+    if(billing==='annual'){assert.match(scope.cancellation_reconciliation,/within ten business days/);assert.match(scope.cancellation_reconciliation,/Undisputed unearned amounts/);}
    }else{
     assert.equal(scope.defect_window,offers.one_off_terms.correction);assert.match(html,/30 calendar days after written completion acceptance/);
     assert.match(scope.included_revisions,/One consolidated refinement/);assert.equal(scope.paid_work_rights,offers.one_off_terms.ownership);assert.equal(scope.cancellation_reconciliation,offers.one_off_terms.remedy);

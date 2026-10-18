@@ -116,8 +116,8 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .compact-offer{border:1px solid var(--line);padding:clamp(1rem,2vw,1.5rem);display:flex;flex-direction:column;min-width:0;background:var(--paper)}
 .compact-offer h3{font-size:1.65rem;margin:.3rem 0}
 .compact-offer p{font-size:.95rem;line-height:1.6;margin:.45rem 0}
-.compact-offer .eyebrow{font-size:.72rem}
-.compact-offer .compact-price{font-size:1.8rem;line-height:1.3}
+.compact-offer .eyebrow{font-size:.8125rem;letter-spacing:.06em}
+.studio-site .compact-offer .compact-price{font-size:clamp(1.75rem,3vw,2.2rem);line-height:1.3}
 .compact-price span{font-size:.8rem;display:block}
 .compact-offer .offer-purchase-actions{margin-top:auto;padding-top:1rem;align-items:flex-start;flex-direction:column}
 .compact-offer>.text-link{font-size:.88rem;margin-top:.8rem}
@@ -162,13 +162,13 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site .compact-offer{padding:1.5rem}
 }
 .studio-site footer nav{display:grid;grid-template-columns:1fr 2fr 1fr;gap:2rem}
-.studio-site .footer-group h2{font-family:Manrope,Arial,sans-serif;font-size:1rem;font-weight:650;margin:0 0 .7rem;letter-spacing:0}
+.studio-site .footer-group .footer-heading{font-family:Manrope,Arial,sans-serif;font-size:1rem;font-weight:650;margin:0 0 .7rem;letter-spacing:0}
 .studio-site .footer-group a{display:flex;min-height:44px;align-items:center}
 .service-intro-action{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1.5rem}
 @media(max-width:767px){.studio-site footer nav{grid-template-columns:1fr;gap:1.5rem}
 }
 /* Keep reading text and form labels legible on small screens. */
-@media(max-width:767px){.studio-site main :is(p,li,label,summary),.studio-site .journal-prose :is(p,li),.studio-site .compact-offer p,.studio-site .package-quick-comparison dd{font-size:max(1rem,16px)}
+@media(max-width:767px){.studio-site main :where(p:not(.compact-price,.price,.service-price),li,label,summary),.studio-site .journal-prose :is(p,li),.studio-site .package-quick-comparison dd{font-size:max(1rem,16px)}
 .studio-site .service-hub-links a{display:inline-flex;align-items:center;min-height:44px}
 }
 /* The receipt replaces the form only after storage returns a reference. */
@@ -365,3 +365,39 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 @media(max-width:767px){.creative-example-grid,.creative-photo-pair{grid-template-columns:1fr}
 .creative-example-grid{gap:2rem}
 }
+
+/* Readable comparisons, short owner introduction and consistent section rhythm. */
+.home-plan-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.home-plan-summary article{border-top:1px solid var(--line);padding-top:1.25rem}
+.home-plan-summary h3{font-size:1.75rem;margin:0 0 .75rem}
+.home-plan-summary a,.founder-strip a,.intro-action a{display:inline-flex;align-items:center;min-height:44px}
+.founder-strip{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:2rem 0;border-top:1px solid var(--line)}
+.founder-strip p{max-width:68ch;margin:0}.founder-strip strong{display:block;margin-bottom:.4rem}
+.plan-chooser{padding-left:1.25rem;max-width:70ch}.plan-chooser li{padding:.25rem 0}
+.studio-section>h2:not(:first-child),.journal-prose section>h2{margin-top:2.5rem}
+form .request-summary{padding:1.25rem!important}
+form>.optional-choice{margin:1.25rem 0}
+.pricing-comparison tbody th{position:sticky;left:0;background:var(--paper);z-index:1}
+.pricing-comparison thead th:first-child{position:sticky;left:0;background:var(--subtle);z-index:2}
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:.25rem .5rem}.breadcrumb li{display:inline-flex;align-items:baseline;gap:.5rem;min-width:0}.breadcrumb li:last-child{max-width:100%}
+.studio-site .eyebrow{font-size:.8125rem;letter-spacing:.07em}
+@media(max-width:767px){.home-plan-summary{grid-template-columns:1fr}.founder-strip{display:block}.founder-strip a{margin-top:.5rem}.studio-site .page-intro:after{display:none}}
+
+/* Cost inputs remain editable while a visitor types. */
+.cost-tool .calculator input:disabled,.cost-tool .calculator select:disabled{opacity:.6;background:var(--paper);cursor:not-allowed}.cost-tool [aria-invalid="true"]{border:2px solid #9b3228}.provider-estimate{margin:1.25rem 0}.provider-estimate[open] label{display:block;margin-top:1rem}
+
+.support-chat-description{font-size:.875rem;max-width:24rem;margin:.5rem 0 0}
+
+.work-preview img{object-fit:cover}.work-video{display:block;width:100%;aspect-ratio:3/2;object-fit:contain;background:#dce4dc}.compact-offer{display:flex;flex-direction:column}.compact-offer .offer-purchase-actions{margin-top:auto}.compact-offer>.text-link:last-child{margin-top:1rem}
+.work-preview-strip{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:2rem;align-items:center;margin:2.5rem 0 3.5rem;padding:1.5rem;background:var(--paper,#f5f5ed);border:1px solid var(--line,#c9cec6)}
+.work-preview-strip img{display:block;width:100%;height:auto;max-height:240px;object-fit:cover;object-position:top}
+.studio-site .work-preview-strip h2{font-size:clamp(1.6rem,2.8vw,2.5rem);line-height:1.15;margin:.35rem 0 1rem;max-width:24ch}
+.work-preview-strip p{font-size:.95rem;line-height:1.6;margin:.6rem 0}
+.work-preview-strip a,.compact-offer>.text-link,.county-hub-grid .text-link,.buyer-pack-links a{display:inline-block;min-height:24px;padding-block:3px}
+.package-visual-heading .package-name{font-family:Newsreader,Georgia,serif;font-size:2rem;line-height:1.1;margin:.5rem 0}
+@media(max-width:767px){.work-preview-strip{grid-template-columns:1fr;gap:1rem;padding:1rem;margin-block:1.5rem 2.5rem}.work-preview-strip img{max-height:180px}}
+
+/* Shared end-of-page rules and compact navigation targets. */
+.studio-site .footer-top{border-top:0}
+.studio-section:has(+.site-tools){border-bottom:0}
+.concept-notice a,.concept-footer a,.county-place-list a,.page-jump a{display:inline-block;min-height:24px;padding-block:3px}

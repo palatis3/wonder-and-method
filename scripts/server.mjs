@@ -42,7 +42,7 @@ export async function createServer({runtime=resolve(root,'.runtime'),port=4183,s
     const existing=db.prepare('SELECT id FROM inquiries WHERE fingerprint=? AND created_at>?').get(fingerprint,new Date(now-86400000).toISOString());
     const id=existing?.id||randomUUID();
     if(!existing)db.prepare('INSERT INTO inquiries VALUES (?,?,?,?,?)').run(id,new Date(now).toISOString(),fingerprint,JSON.stringify(value),'synthetic_saved_not_emailed');
-    reply(existing?200:201,{reference:id,synthetic:true,service:value.service,...selectedInquiryContext(value),message:`Synthetic inquiry ${existing?'already recorded':'saved'}. Reference: ${id}. No email was sent; actual inbox verification remains pending.`});return;
+    reply(existing?200:201,{reference:id,synthetic:true,email:value.email,service:value.service,...selectedInquiryContext(value),message:`Synthetic inquiry ${existing?'already recorded':'saved'}. Reference: ${id}. No email was sent; actual inbox verification remains pending.`});return;
    }
    if(!['GET','HEAD'].includes(req.method)){reply(405,{message:'Method not allowed.'});return;}
    let path;try{path=decodeURIComponent(url.pathname);}catch{reply(400,{message:'Invalid path.'});return;}

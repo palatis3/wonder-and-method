@@ -15,17 +15,17 @@ test('aggregate measurement cannot build live intake without the matching review
  assert.doesNotThrow(()=>intakeContent(config));
 });
 test('route policy excludes transaction, policy, demo, asset and API variants and the global hold can still override launch',async()=>{
- const excluded=['/checkout/launch-site/','/checkout/grow','/checkout/launch-site/index.html','/payments','/payments.html','/privacy/','/work/lead-workbench/','/api/inquiries','/assets/example.txt','/404/'];
+ const excluded=['/areas/monroe-county/','/checkout/launch-site/','/checkout/grow','/checkout/launch-site/index.html','/payments','/payments.html','/privacy/','/work/lead-workbench/','/api/inquiries','/assets/example.txt','/404/'];
  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',ASSETS:{fetch:async()=>new Response('fixture')}};
  for(const path of excluded){assert.equal(routeIndexEligible(path),false,path);if(!path.startsWith('/api/'))assert.match((await worker.fetch(new Request('https://example.test'+path),env,{})).headers.get('X-Robots-Tag'),/noindex/,path);}
- for(const path of ['/','/pricing/','/services/web-design/','/areas/monroe-county/','/guides/service-area-pages/'])assert.equal(routeIndexEligible(path),true,path);
+ for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/'])assert.equal(routeIndexEligible(path),true,path);
  assert.equal(config.searchIndexing,true);const pages=renderPages({config:{...config,searchIndexing:false},offers,map,geography});assert.ok(pages.every(p=>p.html.includes('noindex,nofollow')));
 });
 test('quick comparison uses authoritative prices, page limits and first payment before artwork',()=>{
  const pages=renderPages({config,offers,map,geography});const pricing=pages.find(p=>p.path==='/pricing/').html,home=pages.find(p=>p.path==='/').html;
  assert.ok(pricing.indexOf('pricing-comparison')<pricing.indexOf('class="package-visual-grid'));
- for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(compactComparison(offers).includes(`Up to ${p.marketing_page_cap} marketing pages`));assert.ok(home.includes('/checkout/'+id.replaceAll('_','-')+'/'));}
- assert.doesNotMatch(home,/data-feature=/);assert.match(pricing,/data-feature=/);assert.match(home,/Compare every feature, plan artwork/);
+ for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(compactComparison(offers).includes(`up to ${p.marketing_page_cap} marketing pages`));assert.ok(home.includes('/pricing/#'+id.replace('_site','')));}
+ assert.doesNotMatch(home,/data-feature=/);assert.match(pricing,/data-feature=/);assert.match(home,/Compare website packages and payment terms/);
 });
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{
  const checks=new Set(),titles=new Set();for(const [slug,c] of Object.entries(countyBuyerTasks)){checks.add(c.check);titles.add(c.title);const text=await readFile(new URL('../src/assets/county-briefs/'+slug+'.txt',import.meta.url),'utf8');assert.ok(text.includes(c.check));assert.ok(text.includes(c.output));assert.match(countyBuyerTask(slug),/planning exercise, not a client case study/);}

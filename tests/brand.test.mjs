@@ -1,3 +1,5 @@
+import {socialCardPath} from '../src/social-cards.mjs';
+import {guideIllustration} from '../src/guide-art.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -19,13 +21,13 @@ test('every current page has an accessible full-name identity and real icon fall
 });
 test('brand default sharing metadata is dimensioned while editorial sharing retains each article image',()=>{
  for(const {html,path} of renderPages({config,offers,map,geography})){
-  const article=journal.find(item=>item.path===path),image=config.origin+(article?journalImage(article):'/assets/brand/social-card.png');
+  const article=journal.find(item=>item.path===path),image=config.origin+(socialCardPath(path)||'/assets/brand/social-card.png');
   assert.ok(html.includes(`property="og:image" content="${image}"`));
   assert.ok(html.includes(`name="twitter:image" content="${image}"`));
   const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   assert.equal(schema[0].logo,config.origin+'/assets/brand/logo-square.png');
   if(!article){assert.match(html,/property="og:image:width" content="1200"/);assert.match(html,/property="og:image:height" content="630"/);}
-  else assert.deepEqual(schema.find(item=>item['@type']==='Article').image,[image]);
+  else assert.deepEqual(schema.find(item=>item['@type']==='Article').image,article.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(article)+'-'+ratio+'.png'));
  }
 });
 test('exported icons have actual sizes and opaque PNG pixels; SVG masters contain only vector art',async()=>{

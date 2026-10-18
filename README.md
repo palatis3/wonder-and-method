@@ -1,5 +1,7 @@
 # Wonder and Method
 
+Current source revision: [190-recommendation audit follow-up](operations/CLAUDE_AUDIT_20261018.md). The release identifiers and results dated below describe the preceding published release; use the current `/version.json` and the new private release record for deployed identity.
+
 Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 18, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
@@ -10,12 +12,25 @@ New quotes use `config/offers.json` version `2026-10-18-audit-name`; accepted ag
 
 The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `npm run leads -- report` shows current stages by service and stated source. See [operations/LEAD_PIPELINE.md](operations/LEAD_PIPELINE.md). Actual buyer records stay out of Git and public assets. Gmail inquiry routing remains as verified in the prior release.
 
+## Where things live
+
+- `src/`: page templates, browser behavior and checked-in public assets.
+- `config/offers.json`: current commercial terms; `config/page-dates.json`: verified page content revisions.
+- `deployment/`: Worker, D1 migrations and authenticated operator tools.
+- `scripts/`: build, verification, handoff and release tooling.
+- `operations/`: private operating procedures; actual records are excluded from Git.
+- `motion/`: current Civic sources plus historical studies.
+- `evidence/` and `output/`: ignored local checks and generated artifacts.
+
+Before deployment run `npm run predeploy` after committing, pushing and rebuilding. It verifies the clean tree, upstream commit and built source fingerprint. The separate technical and release gates remain in force. Run `npm run check:citations` for an opt-in public reference check; blocked sources require manual review.
+
 ## Rebuild and check
 
 Use Node.js 24 or later. The full test suite also requires Python 3.9+ and Gitleaks 8.30+ for actual handoff secret scanning. Put Gitleaks on PATH or set `GITLEAKS_BIN` to its executable; see [the handoff prerequisites](operations/CLIENT_HANDOFF.md). CI installs these tools explicitly. From a clean source checkout:
 
 ```powershell
 npm ci
+npm run setup:tools
 npm run build
 npm test
 npm run verify

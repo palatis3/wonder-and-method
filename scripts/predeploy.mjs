@@ -1,0 +1,15 @@
+import {execFileSync} from 'node:child_process';
+import {readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {releaseFingerprint} from '../src/release.mjs';
+const root=resolve(import.meta.dirname,'..');
+const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',windowsHide:true}).trim();
+if(git('status','--porcelain'))throw Error('Commit or intentionally ignore reviewed local files before deployment.');
+const commit=git('rev-parse','HEAD');
+git('fetch','--quiet');
+if(git('rev-parse','@{upstream}')!==commit)throw Error('Push the reviewed commit and reconcile the upstream before deployment.');
+const version=JSON.parse(await readFile(resolve(root,'dist/version.json'),'utf8'));
+if(version.commit!==commit||version.dirty)throw Error('Rebuild from the clean, pushed commit before deployment.');
+const current=await releaseFingerprint(root);
+if(version.sourceSha256!==current.sourceSha256)throw Error('Built source fingerprint no longer matches.');
+console.log(`Predeploy source check passed: ${commit}. Separate technical and release approval checks still apply.`);

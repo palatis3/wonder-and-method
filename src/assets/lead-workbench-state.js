@@ -3,8 +3,8 @@ export const STORAGE_KEY='wm.synthetic-lead-workbench.v1';
 export const STAGES=Object.freeze(['New','Contacted','Proposal','Won','Closed']);
 export const SAMPLES=Object.freeze([
  Object.freeze({id:'sample-consultation',name:'Sample Alex',business:'Fictional consulting studio',email:'alex@example.test',request:'Explain two services and offer a consultation booking.'}),
- Object.freeze({id:'sample-publishing',name:'Sample Morgan',business:'Fictional publishing team',email:'morgan@example.test',request:'Edit service pages and publish useful articles.'}),
- Object.freeze({id:'sample-projects',name:'Sample Casey',business:'Fictional project business',email:'casey@example.test',request:'Organize incoming project inquiries into a lead list.'}),
+ Object.freeze({id:'sample-publishing',name:'Sample Morgan',business:'Fictional garden-care business',email:'morgan@example.test',request:'Explain seasonal garden care and collect an estimate request.'}),
+ Object.freeze({id:'sample-projects',name:'Sample Casey',business:'Fictional remodeling business',email:'casey@example.test',request:'Show approved remodeling projects and explain which jobs are a fit.'}),
 ]);
 const sampleById=new Map(SAMPLES.map(sample=>[sample.id,sample]));
 export const emptyState=()=>({version:1,records:[]});

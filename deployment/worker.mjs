@@ -1,11 +1,12 @@
 import {saveJourneyCount,cleanJourneyCounts} from './journey-counts.mjs';
-import {routeIndexEligible} from '../src/index-policy.mjs';
+import {routeIndexEligible,privateRoute} from '../src/index-policy.mjs';
 import { timingSafeEqual } from 'node:crypto';
 import { validateInquiry } from '../src/inquiry.mjs';
 import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../src/shared.mjs';
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
-import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, hasInquiryFollowup, inquiryRetentionPreview, followupInput } from './inquiry-maintenance.mjs';
+import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, inquiryRetentionPreview, followupInput } from './inquiry-maintenance.mjs';
 import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
+import { allowInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
 
 const encoder = new TextEncoder();
@@ -29,7 +30,9 @@ async function fingerprint(secret, text) {
 }
 function respond(request, status, message, reference = null, errors, service, choices = {}, flags = {}) {
   const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer' };
-  const data = { message, reference, ...(errors ? { errors } : {}), ...(service ? { service } : {}), ...selectedInquiryContext({...choices,service}), ...(typeof flags.synthetic === 'boolean' ? { synthetic: flags.synthetic } : {}) };
+  if(status===405&&new URL(request.url).pathname==='/api/inquiries')headers.Allow='POST';
+  if(status===429)headers['Retry-After']=String(flags.retryAfter||600);
+  const data = { message, reference, ...(reference&&typeof choices.email==='string'?{email:choices.email}:{}), ...(errors ? { errors } : {}), ...(service ? { service } : {}), ...selectedInquiryContext({...choices,service}), ...(typeof flags.synthetic === 'boolean' ? { synthetic: flags.synthetic } : {}) };
   if (request.headers.get('Accept')?.includes('application/json')) return Response.json(data, { status, headers });
   headers['Content-Type'] = 'text/html; charset=utf-8';
   // Native correction POSTs need a same-origin Origin; never send a cross-site referrer.
@@ -70,7 +73,8 @@ export async function notifyInquiry(env, id, send = fetch, now = Date.now()) {
   if (record.delivery_status === 'accepted') return { status: 'accepted', sent: false };
   // Leave a margin inside the provider's 24-hour idempotency horizon.
   if (record.attempts >= MAX_NOTIFICATION_ATTEMPTS ||
-      (record.first_attempt_at !== null && now - record.first_attempt_at >= NOTIFICATION_WINDOW_MS)) {
+      (record.first_attempt_at !== null && now - record.first_attempt_at >= NOTIFICATION_WINDOW_MS) ||
+      (record.first_attempt_at === null && now - record.created_at >= UNSENT_NOTIFICATION_WINDOW_MS)) {
     const held=await db.prepare("UPDATE inquiries SET delivery_status = 'manual_review' WHERE id = ? AND delivery_status != 'accepted' AND (lease_until IS NULL OR lease_until < ?) RETURNING delivery_status").bind(id,now).first();
     return { status: held?'manual_review':'busy-or-ineligible', sent: false };
   }
@@ -79,17 +83,21 @@ export async function notifyInquiry(env, id, send = fetch, now = Date.now()) {
   const snapshot = snapshotEnabled && record.first_attempt_at === null
     ? JSON.stringify(notificationMessage(env, id, JSON.parse(record.payload))) : null;
   const snapshotSql = snapshotEnabled ? ', notification_payload = COALESCE(notification_payload, ?)' : '';
-  const bindings = [now + 60_000, now, ...(snapshotEnabled ? [snapshot] : []), id, now, MAX_NOTIFICATION_ATTEMPTS];
-  const leased = await db.prepare(`UPDATE inquiries SET delivery_status = 'sending', lease_until = ?, first_attempt_at = COALESCE(first_attempt_at, ?), attempts = attempts + 1${snapshotSql} WHERE id = ? AND synthetic = 0 AND delivery_status IN ('pending','failed','uncertain','sending') AND (lease_until IS NULL OR lease_until < ?) AND attempts < ? RETURNING *`).bind(...bindings).first();
+  const bindings = [now + 60_000, now, ...(snapshotEnabled ? [snapshot] : []), id, now, MAX_NOTIFICATION_ATTEMPTS, record.attempts, record.first_attempt_at, record.delivery_status, record.lease_until];
+  const leased = await db.prepare(`UPDATE inquiries SET delivery_status = 'sending', lease_until = ?, first_attempt_at = COALESCE(first_attempt_at, ?), attempts = attempts + 1${snapshotSql} WHERE id = ? AND synthetic = 0 AND delivery_status IN ('pending','failed','uncertain','sending') AND (lease_until IS NULL OR lease_until < ?) AND attempts < ? AND attempts = ? AND first_attempt_at IS ? AND delivery_status = ? AND lease_until IS ? RETURNING *`).bind(...bindings).first();
   if (!leased) return { status: 'busy-or-ineligible', sent: false };
   // A distributed form attack must not turn into an unbounded email bill.
   // This is one atomic, site-wide UTC-day budget, including retries.
   const configuredLimit=Number(env.NOTIFICATION_DAILY_LIMIT??50);
   const dailyLimit=Number.isSafeInteger(configuredLimit)&&configuredLimit>=1&&configuredLimit<=2000?configuredLimit:50;
   const day=Math.floor(now/86400_000);
-  const quota=await db.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<? RETURNING hits').bind('notification-quota:'+day,(day+2)*86400_000,dailyLimit).first();
+  const releaseUnsentLease=()=>db.prepare(`UPDATE inquiries SET delivery_status=?,lease_until=NULL,attempts=?,first_attempt_at=?${snapshotEnabled?',notification_payload=?':''} WHERE id=? AND attempts=? AND lease_until=? AND delivery_status='sending'`)
+    .bind(record.delivery_status==='sending'?'uncertain':record.delivery_status,record.attempts,record.first_attempt_at,...(snapshotEnabled?[record.notification_payload??null]:[]),id,leased.attempts,leased.lease_until).run();
+  let quota;
+  try { quota=await db.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<? RETURNING hits').bind('notification-quota:'+day,(day+2)*86400_000,dailyLimit).first(); }
+  catch(error){await releaseUnsentLease();throw error;}
   if(!quota){
-    await db.prepare("UPDATE inquiries SET delivery_status='manual_review',lease_until=NULL WHERE id=? AND attempts=? AND lease_until=? AND delivery_status='sending'").bind(id,leased.attempts,leased.lease_until).run();
+    await releaseUnsentLease();
     return {status:'daily-budget-held',sent:false};
   }
   const inquiry = JSON.parse(leased.payload);
@@ -130,39 +138,37 @@ export async function retryPendingInquiries(env, send = fetch, now = Date.now(),
   await env.DB.prepare(`UPDATE inquiries SET delivery_status = 'manual_review'
     WHERE synthetic = 0 AND delivery_status IN ('pending','failed','uncertain','sending')
       AND (lease_until IS NULL OR lease_until < ?)
-      AND (attempts >= ? OR created_at <= ? OR (first_attempt_at IS NOT NULL AND first_attempt_at <= ?))
-  `).bind(now, MAX_NOTIFICATION_ATTEMPTS, now - NOTIFICATION_WINDOW_MS, now - NOTIFICATION_WINDOW_MS).run();
+      AND (attempts >= ? OR (first_attempt_at IS NULL AND created_at <= ?) OR (first_attempt_at IS NOT NULL AND first_attempt_at <= ?))
+  `).bind(now, MAX_NOTIFICATION_ATTEMPTS, now - UNSENT_NOTIFICATION_WINDOW_MS, now - NOTIFICATION_WINDOW_MS).run();
   const { results } = await env.DB.prepare(`SELECT id FROM inquiries
     WHERE synthetic = 0 AND delivery_status IN ('pending','failed','uncertain','sending')
-      AND attempts < ? AND created_at <= ? AND created_at > ?
+      AND attempts < ? AND created_at <= ? AND (first_attempt_at IS NOT NULL OR created_at > ?)
       AND (first_attempt_at IS NULL OR first_attempt_at > ?)
       AND (lease_until IS NULL OR lease_until < ?)
     ORDER BY created_at, id LIMIT 20
-  `).bind(MAX_NOTIFICATION_ATTEMPTS, now - 120_000, now - NOTIFICATION_WINDOW_MS, now - NOTIFICATION_WINDOW_MS, now).all();
-  let attempted = 0;
+  `).bind(MAX_NOTIFICATION_ATTEMPTS, now - 120_000, now - UNSENT_NOTIFICATION_WINDOW_MS, now - NOTIFICATION_WINDOW_MS, now).all();
+  let attempted = 0, failed = 0;
   for (const { id } of results) {
-    await notifyInquiry(env, id, send, clock());
+    try { await notifyInquiry(env, id, send, clock()); } catch { failed++; }
     attempted++;
   }
-  return { attempted };
+  return { attempted, failed };
 }
 
 async function submit(request, env, ctx) {
   if (request.method !== 'POST') return respond(request, 405, 'Use the inquiry form.');
   const origin = new URL(request.url).origin;
   if (request.headers.get('Origin') !== origin) return respond(request, 403, 'Submit from this website.');
-  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return respond(request, 503, 'Inquiry storage is not configured. Please try again later.');
+  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return respond(request, 503, 'We could not save your inquiry. Please try again or email support@wonderandmethod.com.');
   let data;
   try { data = await parseBody(request); } catch { return respond(request, 400, 'Use the form fields within the stated limits.'); }
   // Do not identify the trap field or claim that an unstored message was saved.
-  if (data && typeof data === 'object' && data.company_url) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
+  if (data && typeof data === 'object' && (data._faxcheck||data.company_url)) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
   const { errors, value } = validateInquiry(data);
   if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value);
-  const now = Date.now(), bucket = Math.floor(now / 600_000);
-  const ip = request.headers.get('CF-Connecting-IP') || 'local-unknown';
-  const rateKey = await fingerprint(env.FINGERPRINT_SECRET, `rate:${ip}:${bucket}`);
-  const rate = await env.DB.prepare('INSERT INTO rate_limits (key, hits, expires_at) VALUES (?, 1, ?) ON CONFLICT(key) DO UPDATE SET hits = hits + 1 WHERE hits < 5 RETURNING hits').bind(rateKey, now + 1_200_000).first();
-  if (!rate) return respond(request, 429, 'Too many attempts. Please wait ten minutes before trying again.');
+  const now = Date.now();
+  const rate=await allowInquiryRate(env,request.headers.get('CF-Connecting-IP')||'local-unknown',now,fingerprint);
+  if (!rate.allowed) return respond(request, 429, 'Too many attempts. Please try again later or email support@wonderandmethod.com.',null,undefined,undefined,{}, {retryAfter:rate.retryAfter});
   const synthetic = !LIVE(env);
   const id = crypto.randomUUID();
   const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
@@ -195,9 +201,12 @@ async function operator(request, env) {
     if(!Number.isInteger(days)||days<1||days>90)return respond(request,422,'Choose a reporting period from 1 to 90 days.');
     const since=new Date(Date.now()-(days-1)*86400000).toISOString().slice(0,10);
     const {results}=await env.DB.prepare('SELECT event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY event,service,page ORDER BY event,service,page').bind(since).all();
-    return Response.json({days,since,counts:results,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates.'},{headers:{'Cache-Control':'no-store'}});
+    const comparisonSince=new Date(Date.now()-(2*days-1)*86400000).toISOString().slice(0,10);
+    const {results:daily}=await env.DB.prepare('SELECT day,event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY day,event,service,page ORDER BY day,event,service,page').bind(comparisonSince).all();
+    const {results:bySource}=await env.DB.prepare("SELECT source,SUM(total) AS total FROM journey_counts WHERE day>=? AND event='page_view' GROUP BY source ORDER BY source").bind(since).all();
+    return Response.json({days,since,comparisonSince,counts:results,daily,bySource,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates. Source categories are approximate; earlier rows have no source recorded.'},{headers:{'Cache-Control':'no-store'}});
   }
-  if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
+  if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,source,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page,source LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
   if (url.pathname === `${base}/status` && request.method === 'GET') {
     return Response.json(await inquiryStatus(env), {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
@@ -276,6 +285,13 @@ async function videoAsset(request, assets) {
   const response = await assets.fetch(new Request(request, { headers }));
   const resultHeaders = new Headers(response.headers);
   resultHeaders.set('Accept-Ranges', 'bytes');
+  if(request.method==='HEAD'&&response.status===200&&!resultHeaders.has('Content-Length')){
+    // Read the tiny build-generated index, never the video body for a HEAD request.
+    try{
+      const index=await assets.fetch(new Request(new URL('/assets/media-sizes.json',request.url),{headers:{'Accept-Encoding':'identity'}}));
+      if(index.ok){const size=(await index.json())[new URL(request.url).pathname];if(Number.isSafeInteger(size)&&size>=0)resultHeaders.set('Content-Length',String(size));}
+    }catch{} // Preserve the asset response if an older deployment has no index.
+  }
   const rangeHeader = request.headers.get('Range');
   if (request.method !== 'GET' || response.status !== 200 || !rangeHeader || !ifRangeMatches(request, response) ||
       (response.headers.get('Content-Encoding') && response.headers.get('Content-Encoding') !== 'identity')) {
@@ -349,7 +365,7 @@ export default {
       let permanentAssetRedirect=false;
       if(response.status===307 && ['GET','HEAD'].includes(request.method) && !url.pathname.startsWith('/api/')){
         const location=response.headers.get('Location');
-        if(location){const target=new URL(location,url);const cleanPath=url.pathname.endsWith('/index.html')?url.pathname.slice(0,-10):url.pathname.endsWith('.html')?url.pathname.slice(0,-5):url.pathname+'/';permanentAssetRedirect=target.origin===url.origin && target.pathname===cleanPath && target.search===url.search;}
+        if(location){const target=new URL(location,url);const cleanPath=url.pathname.endsWith('/index.html')?url.pathname.slice(0,-10):url.pathname.endsWith('.html')?url.pathname.slice(0,-5)+(url.pathname.startsWith('/assets/')?'':'/'):url.pathname+'/';permanentAssetRedirect=target.origin===url.origin && (target.pathname===cleanPath||target.pathname===cleanPath.slice(0,-1)) && target.search===url.search;if(permanentAssetRedirect){target.pathname=cleanPath;response=new Response(response.body,{status:response.status,headers:response.headers});response.headers.set('Location',target.href);}}
       }
       const result = new Response(response.body, {status:permanentAssetRedirect?308:response.status,statusText:permanentAssetRedirect?'Permanent Redirect':response.statusText,headers:response.headers});
       result.headers.set('X-Content-Type-Options', 'nosniff');
@@ -363,22 +379,42 @@ export default {
         // Existing unversioned URLs must not receive immutable year-long caching.
         if ((result.status >= 200 && result.status < 300) || result.status === 304) result.headers.set('Cache-Control', 'public, max-age=3600, must-revalidate');
       }
-      if(env.SEARCH_INDEXING !== 'true'||!routeIndexEligible(url.pathname)||response.status>=400)result.headers.set('X-Robots-Tag','noindex, nofollow, noarchive, noimageindex');
+      if(env.SEARCH_INDEXING !== 'true'||response.status>=400)result.headers.set('X-Robots-Tag','noindex, nofollow, noarchive, noimageindex');
+       else if(!routeIndexEligible(url.pathname))result.headers.set('X-Robots-Tag',privateRoute(url.pathname)?'noindex, nofollow, noarchive, noimageindex':'noindex, follow');
       if (env.ENVIRONMENT !== 'production' || env.RELEASE_APPROVED !== 'true') { result.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive'); result.headers.set('Cache-Control', 'private, no-store'); }
       return withTransportPolicy(result,request,env);
     } catch {
-      const response=respond(request, 503, 'This request could not be completed. Please try again later.');
+      console.error('worker_request_failed');
+      const response=respond(request, 503, 'This request could not be completed. Please try again or email support@wonderandmethod.com.');
       response.headers.set('X-Robots-Tag','noindex, nofollow, noarchive, noimageindex');
       return withTransportPolicy(response,request,env);
     }
   },
   async scheduled(_event, env) {
-    // Only rate/aggregate records are deleted. Inquiry retention is an explicit dry run.
-    if (env.DB) {
-      await env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(Date.now()).run();
-      await cleanJourneyCounts(env.DB);
-      await retryPendingInquiries(env);
-      await recordRecoverySuccess(env.DB);
-    }
+    return runScheduledMaintenance(env);
   }
 };
+
+// Each job is independent. Logs contain only fixed codes, never inquiry data.
+export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clock=Date.now,logger=console.error}={}){
+  if(!env.DB)return {ok:false,codes:['scheduled_database_missing']};
+  const codes=[];
+  const step=async(code,fn)=>{try{return await fn();}catch{codes.push(code);logger(code);return null;}};
+  const recovery=await step('scheduled_recovery_failed',()=>retryPendingInquiries(env,send,now,clock));
+  if(recovery?.failed){codes.push('scheduled_recovery_row_failed');logger('scheduled_recovery_row_failed');}
+  if(recovery && !recovery.failed)await step('scheduled_heartbeat_failed',()=>recordRecoverySuccess(env.DB,now));
+  await step('scheduled_rate_cleanup_failed',()=>env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(now).run());
+  await step('scheduled_aggregate_cleanup_failed',()=>cleanJourneyCounts(env.DB));
+  if(env.HEALTHCHECK_URL && LIVE(env) && codes.length===0){
+    await step('scheduled_healthcheck_failed',async()=>{
+      const health=await inquiryStatus(env,now);
+      if(!health.health.ok)return;
+      const url=new URL(env.HEALTHCHECK_URL);
+      if(url.protocol!=='https:'||url.username||url.password)throw Error('invalid-healthcheck');
+      const response=await send(url.href,{method:'GET',redirect:'error',signal:AbortSignal.timeout(5000)});
+      await response.body?.cancel();
+      if(!response.ok)throw Error('failed-healthcheck');
+    });
+  }
+  return {ok:codes.length===0,codes};
+}

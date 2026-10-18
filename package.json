@@ -30,7 +30,10 @@
     "premium:build": "node scripts/build-experience.mjs",
     "premium:serve": "node scripts/premium-server.mjs",
     "billing": "node scripts/stripe-billing.mjs",
-    "handoff:prepare": "node scripts/prepare-client-handoff.mjs"
+    "handoff:prepare": "node scripts/prepare-client-handoff.mjs",
+    "setup:tools": "node scripts/setup-tools.mjs",
+    "predeploy": "node scripts/predeploy.mjs",
+    "check:citations": "node scripts/check-citations.mjs"
   },
   "devDependencies": {
     "@remotion/cli": "4.0.535",

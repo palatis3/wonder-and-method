@@ -1,21 +1,21 @@
-record_type,item,action,expected_result,owner,result,evidence_or_notes
-metadata,Publisher,Wonder & Method,,,,
-metadata,Source,https://wonderandmethod.com/guides/website-maintenance-cost/,,,,
-metadata,Help,https://wonderandmethod.com/contact/,,,,
-metadata,Editorial review,2026-10-17,,,,
-metadata,Instructions,Record quoted currency / billing term / renewal date / annual cost in notes; do not treat unknown as zero,,,,
-check,Domain,Confirm registrar and renewal terms,Owner can access and recover account; next renewal cost recorded,,,
-check,Hosting,Record plan and renewal cost,Annual commitment and any introductory price identified,,,
-check,Business email,Record seats and billing owner,Mailbox service distinguished from website hosting,,,
-check,Connected tools,Inventory booking / newsletter / forms / store providers,Subscription and usage charges identified for actual configuration,,,
-check,Maintenance labor,List included checks and small changes,Task allowance and supported platform are explicit,,,
-check,Improvement work,List pending content or customer-journey changes,One-off or monthly work chosen from real priorities,,,
-check,Baseline,Check whether a usable studio build or Sprint baseline exists,No duplicate baseline charge,,,
-check,Overlap,Compare launch and defect scope with monthly tasks,The same agreed task is not sold again,,,
-check,Availability,Check public URL and HTTPS certificate,Date and alert follow-up owner recorded,,,
-check,Forms,Run permitted submission-to-reply test,Receipt / notification / inbox / reply outcomes recorded separately,,,
-check,Updates,Identify CMS / plugin / dependency responsibilities,Applicable update process and post-change checks named,,,
-check,Recovery,Check backup contents and safe restore test,Recovery limits and test evidence recorded; missing coverage named,,,
-check,Access,Verify domain / tools / Search Console access,Authorized owner and recovery route known,,,
-check,Annual comparison,Compare twelve months on the same billing basis,One-time labor / recurring service / vendor bills / tax separated,,,
-check,Review,Record next budget and maintenance review,Renewals and unresolved issues have an owner,,,
+"record_type","item","action","expected_result","owner","result","evidence_or_notes","publisher","source_url","document_version"
+"metadata","Publisher","Wonder & Method","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"metadata","Source","https://wonderandmethod.com/guides/website-maintenance-cost/","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"metadata","Help","https://wonderandmethod.com/contact/","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"metadata","Editorial review","2026-10-17","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"metadata","Instructions","Record quoted currency / billing term / renewal date / annual cost in notes; do not treat unknown as zero","","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Domain","Confirm registrar and renewal terms","Owner can access and recover account; next renewal cost recorded","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Hosting","Record plan and renewal cost","Annual commitment and any introductory price identified","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Business email","Record seats and billing owner","Mailbox service distinguished from website hosting","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Connected tools","Inventory booking / newsletter / forms / store providers","Subscription and usage charges identified for actual configuration","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Maintenance labor","List included checks and small changes","Task allowance and supported platform are explicit","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Improvement work","List pending content or customer-journey changes","One-off or monthly work chosen from real priorities","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Baseline","Check whether a usable studio build or Sprint baseline exists","No duplicate baseline charge","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Overlap","Compare launch and defect scope with monthly tasks","The same agreed task is not sold again","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Availability","Check public URL and HTTPS certificate","Date and alert follow-up owner recorded","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Forms","Run permitted submission-to-reply test","Receipt / notification / inbox / reply outcomes recorded separately","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Updates","Identify CMS / plugin / dependency responsibilities","Applicable update process and post-change checks named","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Recovery","Check backup contents and safe restore test","Recovery limits and test evidence recorded; missing coverage named","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Access","Verify domain / tools / Search Console access","Authorized owner and recovery route known","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Annual comparison","Compare twelve months on the same billing basis","One-time labor / recurring service / vendor bills / tax separated","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"
+"check","Review","Record next budget and maintenance review","Renewals and unresolved issues have an owner","","","","Wonder and Method","https://wonderandmethod.com/assets/downloads/audit-maintenance-budget.csv","2026-10-18.1"

@@ -16,12 +16,13 @@ export function mountCivicSculpture(hero, env = globalThis) {
   const media = [intro, ...(ambient?.dataset.src ? [ambient] : [])];
   const hasAmbient = media.length === 2;
   let loaded = doc.readyState === 'complete', inView = false, started = false;
-  let requested = false, failed = false, ended = false, phase = 'intro', epoch = 0;
+  let requested = false, failed = false, ended = false, phase = 'intro', epoch = 0, replayAvailable = false;
   const active = () => phase === 'ambient' ? ambient : intro;
   const label = () => {
     button.hidden = failed;
     button.textContent = requested ? 'Pause animation' : ended ? 'Replay animation' : phase === 'ambient' || intro.currentTime > 0 ? 'Resume animation' : 'Play animation';
-    if (replay) replay.hidden = failed || !(phase === 'ambient' || ended);
+    if(phase === 'ambient' || ended)replayAvailable = true;
+    if (replay) replay.hidden = failed || !replayAvailable;
     hero.dataset.playing = String(requested);
     hero.dataset.phase = phase;
   };

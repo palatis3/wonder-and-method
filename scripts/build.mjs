@@ -1,9 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {assertPageDates} from './page-dates.mjs';
 import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
-import {readFile,writeFile,mkdir,cp,readdir,rm} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,cp,readdir,rm,stat} from 'node:fs/promises';
 import {resolve,dirname,basename,extname,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
 import {assertSiteOrigin,crawlFiles} from '../src/seo.mjs';
@@ -86,11 +88,15 @@ const geography=await readJSON('authority/v5/geography.json');
 Object.assign(config,await civicAssetState(root,config));
 assertSiteOrigin(config);
 const pages=renderPages({config,offers,map,tokens,geography});
+assertPageDates(pages,await readJSON('config/page-dates.json'));
 const output=resolve(root,'dist');
 if(output!==resolve(root,'dist')) throw new Error('Invalid output');
 await mkdir(output,{recursive:true});
 for(const name of await readdir(output)){const target=resolve(output,name);if(!target.startsWith(output+'\\')&&!target.startsWith(output+'/'))throw Error('Invalid build child');await rm(target,{recursive:true,force:true});}
 await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
+const workbenchStateVersion=createHash('sha256').update(await readFile(resolve(output,'assets/lead-workbench-state.js'))).digest('hex').slice(0,12);
+const workbenchScript=resolve(output,'assets/lead-workbench.js');
+await writeFile(workbenchScript,(await readFile(workbenchScript,'utf8')).replace(/lead-workbench-state\.js\?v=[^'"]+/,`lead-workbench-state.js?v=${workbenchStateVersion}`));
 await cp(resolve(root,'src/siteaudit-NTlhNWVhZD.txt'),resolve(output,'siteaudit-NTlhNWVhZD.txt'));
 await cp(resolve(root,'src/assets/brand/favicon.ico'),resolve(output,'favicon.ico'));
 const browserBundles=await buildBrowserBundles(root,config);
@@ -98,6 +104,9 @@ await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
 await writeFile(resolve(output,'assets/calculator.js'),browserBundles.calculator);
 await cp(resolve(root,'src/shared.mjs'),resolve(output,'assets/shared.mjs'));
 await copyCivicAssets(root,output,config);
+const mediaSizes={};
+for(const file of await readdir(resolve(output,'assets'),{recursive:true}))if(file.endsWith('.mp4'))mediaSizes['/assets/'+file.replaceAll('\\','/')]=(await stat(resolve(output,'assets',file))).size;
+await writeFile(resolve(output,'assets/media-sizes.json'),JSON.stringify(mediaSizes));
 if(config.homeEdition==='civic-sculpture'){
  const civicScript=resolve(output,'assets/civic-sculpture-preview.js');
  await writeFile(civicScript,(await transform(await readFile(civicScript,'utf8'),{loader:'js',minify:true,target:['chrome110','safari16']})).code);
@@ -118,6 +127,7 @@ for(const page of pages){const file=resolve(output,`.${page.path}index.html`);aw
 const crawl=crawlFiles(config,pages);
 await writeFile(resolve(output,'sitemap.xml'),crawl.sitemap);
 await writeFile(resolve(output,'robots.txt'),crawl.robots);
+await writeFile(resolve(output,'llms.txt'),crawl.llms);
 await mkdir(resolve(output,'.well-known'),{recursive:true});
 await writeFile(resolve(output,'.well-known/security.txt'),'Contact: mailto:support@wonderandmethod.com\nExpires: 2027-04-17T00:00:00Z\nPreferred-Languages: en\nCanonical: https://wonderandmethod.com/.well-known/security.txt\n');
 await cp(resolve(output,'404/index.html'),resolve(output,'404.html'));
@@ -137,7 +147,8 @@ ${config.searchIndexing!==true?'  X-Robots-Tag: noindex, nofollow, noarchive, no
 ${earlyHints}`);
 const inventory=[];
 const {sourceSha256}=await releaseFingerprint(root);
-await writeFile(resolve(output,'version.json'),JSON.stringify({site:'wonder-and-method',sourceSha256,routes:pages.length},null,2)+'\n');
+let commit=null,dirty=true;try{commit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();dirty=Boolean(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim());}catch{}
+await writeFile(resolve(output,'version.json'),JSON.stringify({site:'wonder-and-method',sourceSha256,commit,dirty,routes:pages.length},null,2)+'\n');
 // Scan all emitted documents, including generated buyer packs, before pruning.
 const assetPruning=await pruneObsoleteBuildAssets(output);
 for(const name of await readdir(resolve(root,'authority/v5'))){const bytes=await readFile(resolve(root,'authority/v5',name)); inventory.push({file:name,sha256:createHash('sha256').update(bytes).digest('hex')});}

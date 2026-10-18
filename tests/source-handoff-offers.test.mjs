@@ -14,7 +14,8 @@ const pages=renderPages({config,offers,map,geography});
 test('new website scope preserves prices, creative allowances and rights while recording source delivery',async()=>{
  for(const [id,connections] of [['launch_site',1],['focused_site',2],['signature_site',2]]){
   const p=offers[id],old=previous[id],draft=await draftScope(id,'synthetic-source-handoff');
-  for(const key of ['public_price','marketing_page_cap','creative_assets','payment_schedule'])assert.deepEqual(p[key],old[key],id+' '+key);
+  for(const key of ['public_price','marketing_page_cap','creative_assets'])assert.deepEqual(p[key],old[key],id+' '+key);
+  assert.deepEqual(p.payment_schedule.map(({percent,amount})=>({percent,amount})),old.payment_schedule.map(({percent,amount})=>({percent,amount})));
   assert.equal(p.initial_launch_count,1);assert.equal(p.training_minutes,30);assert.equal(p.external_connection_limit,connections);assert.deepEqual(p.cms,{collections:0,editors:0});
   assert.match(p.platform_fit,/editable source and content files/);assert.doesNotMatch(p.platform_fit,/browser editor|CMS|not included/);
   assert.match(p.account_setup,/One initial website launch/);assert.match(p.handoff,/folder or ZIP/);assert.match(p.training,/optional handoff call/);assert.match(p.correction,/30/);
@@ -51,7 +52,7 @@ test('withdrawn editor route redirects GET and HEAD to the noindex source exampl
   const result=await worker.fetch(new Request('https://studio.example.test/work/content-editor/?from=saved-link',{method}),{ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',PUBLIC_ORIGIN:'https://studio.example.test'},{});
   assert.equal(result.status,301);assert.equal(result.headers.get('location'),'https://studio.example.test/work/source-handoff/?from=saved-link');
  }
- const page=pages.find(p=>p.path==='/work/source-handoff/');assert.match(page.html,/noindex,nofollow,noarchive,noimageindex/);assert.match(page.html,/It has no live inquiry system/);
+ const page=pages.find(p=>p.path==='/work/source-handoff/');assert.match(page.html,/noindex,follow/);assert.match(page.html,/It has no live inquiry system/);
 });
 
 test('the public handoff download is the exact independently checked fictional archive',async()=>{

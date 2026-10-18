@@ -1,0 +1,13 @@
+# Claude audit follow-up — October 18, 2026
+
+All 190 ranked recommendations were independently considered. The completion ledger records the adopted change, verification, modified interpretation or reason for deferral/rejection. Source recommendations are not authority to invent business facts, change legal commitments, purchase services or send messages.
+
+This revision improves inquiry reliability and recovery controls, form defaults and summaries, mobile layout, pricing and decision packs, guide instructions/downloads, metadata and social cards, county search eligibility, aggregate measurement and release hygiene. Current fees and explicit client protections remain authoritative in `config/offers.json`; the public document revision is 2026-10-18.1. Personal authorship, real client work and real photographs are not fabricated.
+
+Technical evidence: 318 tests passed; all 66 routes passed internal-link/metadata/static verification; the Worker dry run passed. Browser checks found no horizontal overflow or undersized text-entry fields across all 66 routes at 320px/1440px, with representative 390px/768px checks. These are local checks, not claims of live inbox receipt, search ranking, complete accessibility conformance or customer outcomes. Independent Astra reviews covered backend, schema and release changes; identified regressions were repaired and tested.
+
+Migration 0007 changes aggregate counts to include a fixed source dimension while preserving historical rows as not_recorded. Pause collection with JOURNEY_COUNTS=off before applying it, verify inquiry and aggregate totals, then deploy the normal aggregate configuration. The immediately preceding old analytics writer is not compatible with the new five-part key; retain the tested collection-off version as the rollback option. Never restore a database over newer inquiries without reconciliation. Actual deployment IDs and live parity evidence belong in the private release record.
+
+Remaining owner/external work includes the independent heartbeat receiver, genuine headshot and client/local proof, professional agreement/tax/assumed-name review, authenticated business reply configuration, real business profiles or phone service, complete sender/certificate inventories and independent account recovery. Existing lead retention remains gated by client/legal holds. Automatic deletion, arbitrary forfeiture rules, synthetic testimonials and unsupported tracking identifiers were rejected.
+
+The detailed ledger and browser evidence are in `C:/Wonder and Method/claude-fixes-20261018/`. Historical release records below and elsewhere are dated evidence, not assertions that they validate this new revision.

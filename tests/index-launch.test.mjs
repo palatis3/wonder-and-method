@@ -12,7 +12,7 @@ test('native question selection survives a real form POST and durable storage',a
  const {server,url}=await createServer({runtime,port:0});
  try{
   const html=await (await fetch(url+'/contact/')).text();
-  assert.match(html,/<select[^>]*name="request_kind"[^>]*>[\s\S]*?<option value="question">/);
+  assert.match(html,/<select[^>]*name="request_kind"[^>]*>[\s\S]*?<option value="question" selected>/);
   assert.doesNotMatch(html,/<input[^>]*type="hidden"[^>]*name="request_kind"/);
   const body=new URLSearchParams({name:'Synthetic launch test',email:'fixture@example.invalid',business:'Synthetic only',service:'improve',request_kind:'question',billing:'annual',message:'Synthetic question about annual service scope; do not contact.'});
   const response=await fetch(url+'/api/inquiries',{method:'POST',body});
@@ -33,5 +33,5 @@ test('built public preload hints exactly match each route’s versioned styleshe
   const styles=[...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(styles.length);assert.equal(block.trim().split('\n')[1].trim(),'Link: '+styles.map(s=>`<${s}>; rel=preload; as=style`).join(', '),route);
  }
- assert.equal(count,42);
+ assert.equal(count,34);
 });

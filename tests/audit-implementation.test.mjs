@@ -21,7 +21,8 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
   assert.deepEqual(draft.milestones.map(m=>m.amount),[price*.5,price*.3,price*.2]);
   assert.equal(draft.accepted_at,null);
   assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+1650);
-  for(const route of ['/','/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/contact/?offer='+key));
+  assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/#'+name));
+  for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/contact/?offer='+key));
  }
  assert.equal(offers.plans.keep_running.monthly_price,150);assert.equal(offers.audit_sprint.one_time_price,750);assert.equal(offers.plans.improve.monthly_price,400);
  const publicCopy=pages.map(p=>p.html).join('\n');
@@ -54,7 +55,7 @@ test('published decisions include the real review framework, exclusions and insp
  assert.equal(offers.review_standard.sections.reduce((sum,s)=>sum+s.weight,0),100);
  for(const s of offers.review_standard.sections)assert.ok(page('/services/website-audit/').includes(s.title.replaceAll('&','&amp;')));
  const seo=page('/services/seo/');assert.match(seo,/<h3>Not included<\/h3><ul>/);
- assert.match(page('/guides/seo-work-and-reporting/'),/\/services\/website-care\/#owned-search-receipt/);
+ assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/Example only — no client outcome claimed/);
  assert.match(page('/guides/website-redesign-brief/'),/illustrative-completed-brief\.txt/);
  assert.match(page('/guides/website-migration-checklist/'),/illustrative-url-map\.csv/);
  for(const id of ['keep_running','improve','grow','audit_fix_sprint'])assert.match(page('/contact/'),new RegExp('value="'+id+'"'));

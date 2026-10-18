@@ -1,0 +1,94 @@
+{
+  "recorded": "2026-10-18",
+  "source_version": "2026-10-18-audit-name",
+  "purpose": "Internal launch and contract preparation checklist. Customer versions live in config/offers.json.",
+  "build_foundation_acceptance": [
+    "Page titles/descriptions match the agreed page plan; sitemap URLs and crawl/indexing directives match the approved launch policy. Record Search Console connection or missing access; do not report submission or indexing without evidence.",
+    "Verify one browser-tab icon and one approved default sharing image resolve, and inspect page OG/social title, description and image metadata. Provider preview caching and cropping may vary.",
+    "Verify the agreed domain resolves, the HTTPS certificate is valid for it and HTTP redirects to the intended HTTPS URL; record any provider dependency.",
+    "Record responsive, keyboard, contrast and contact checks with dated evidence; distinguish form save from notification and receiving-mailbox delivery.",
+    "Client can access the agreed accounts and delivery folder; the delivered source builds using its instructions, and service dependencies, licenses and unresolved items are named.",
+    "One initial launch is checked on the agreed hosting account. Any ready-service links/embeds match the approved scope; no excluded service setup or software is implied."
+  ],
+  "one_off_remedy": "Before payment, itemize the fixed deliverables and the value allocated to each milestone. If cancelled or blocked, reconcile completed accepted work and approved unavoidable third-party commitments against payments; refund unearned amounts. Do not invent a retrospective hourly cap or fee. A new scope needs written agreement before more work.",
+  "annual_refund_timing": "Initiate the agreed refund within ten business days of the effective service end, or cancellation confirmation before service starts, and provide an itemized settlement. Return undisputed unearned money within that deadline even if other work or amounts remain disputed. Bank or processor posting time is separate.",
+  "decision_pack_examples": {
+    "assumptions": "Hypothetical fee scenarios assume $20/month hosting and $120 of other provider costs over twelve months. These invented amounts are not provider quotes; replace them with approved actual charges. Unknown fees remain unknown. Taxes and additions are excluded.",
+    "launch_site": {
+      "pages": [
+        "Home",
+        "Services",
+        "Contact"
+      ],
+      "completion": [
+        "Approved 3-page maximum and useful copy match the written page map",
+        "The one contact form and agreed ready-service connections pass recorded checks",
+        "Agreed creative assets and any selected motion outputs are delivered",
+        "One initial launch is verified on the client-owned hosting account",
+        "The clean source delivery builds from its instructions; written handoff and optional 30-minute call are available",
+        "The separate 30-day defect-correction window is recorded; later growth work requires a separate agreement"
+      ]
+    },
+    "focused_site": {
+      "pages": [
+        "Home",
+        "Services",
+        "Service A",
+        "Service B",
+        "Work",
+        "About",
+        "Contact"
+      ],
+      "completion": [
+        "Approved 7-page maximum and useful copy match the written page map",
+        "The two contact forms and agreed ready-service connections pass recorded checks",
+        "Agreed creative assets and any selected motion outputs are delivered",
+        "One initial launch is verified on the client-owned hosting account",
+        "The clean source delivery builds from its instructions; written handoff and optional 30-minute call are available",
+        "The separate 30-day defect-correction window is recorded; later growth work requires a separate agreement"
+      ]
+    },
+    "signature_site": {
+      "pages": [
+        "Home",
+        "Services",
+        "Agreed service detail pages",
+        "Work/project evidence",
+        "About",
+        "Contact"
+      ],
+      "completion": [
+        "Approved 12-page maximum and useful copy match the written page map",
+        "The two contact forms and agreed ready-service connections pass recorded checks",
+        "Agreed creative assets and any selected motion outputs are delivered",
+        "One initial launch is verified on the client-owned hosting account",
+        "The clean source delivery builds from its instructions; written handoff and optional 30-minute call are available",
+        "The separate 30-day defect-correction window is recorded; later growth work requires a separate agreement"
+      ]
+    },
+    "keep_running": {
+      "illustrative_month": [
+        "One related batch updates supplied hours/contact details; layout and links checked",
+        "Focused availability/certificate/form/covered-workflow checks produce dated status",
+        "Receipt records one practical next step and any access gap; no strategy call assumed",
+        "Quarterly review of every area’s status is scheduled, not falsely reported as completed in month one"
+      ]
+    },
+    "improve": {
+      "illustrative_month": [
+        "Separate small-change batch updates supplied contact details",
+        "One selected priority rewrites and publishes one existing service explanation, with one refinement and QA",
+        "Opportunity review plus a 20-minute conversation OR asynchronous equivalent produces concise next actions",
+        "Renewal agrees a distinct next task; the same work is never charged twice"
+      ]
+    },
+    "grow": {
+      "illustrative_month": [
+        "Separate small-change batch updates approved hours",
+        "Priority one clarifies an existing service page and inquiry link; check and accept it",
+        "Priority two publishes one useful article from approved facts; one refinement and QA",
+        "Focused research and a 30-minute conversation OR asynchronous equivalent produce the action plan; the two priorities remain distinct"
+      ]
+    }
+  }
+}

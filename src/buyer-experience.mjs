@@ -1,16 +1,13 @@
 import {escapeHtml as e, money} from './shared.mjs';
 
 export function serviceNavigation(path) {
-  const item=(url,label)=>`<a href="${url}"${path===url?' aria-current="page"':''}>${label}</a>`;
-  return `${item('/work/','Work')}<details class="service-navigation" open><summary>Services</summary><div class="service-links">${item('/services/web-design/','Build or redesign')}${item('/services/seo/','Improve search visibility')}${item('/services/website-care/','Fix or maintain a site')}</div></details>${item('/pricing/','Compare prices')}${item('/about/','About')}${item('/contact/','Start a project')}`;
+  const item=(url,label)=>`<a href="${url}"${path===url?' aria-current="page"':url==='/work/'&&path.startsWith('/work/')?' aria-current="location"':''}>${label}</a>`;
+  const services=[['/services/web-design/','Web design'],['/services/website-redesign/','Website redesign'],['/services/contractor-websites/','Contractor websites'],['/services/seo/','SEO'],['/services/website-care/','Website maintenance'],['/services/website-audit/','Website reviews & fixes']];
+  return `${item('/work/','Work')}<details class="service-navigation${path.startsWith('/services/')?' is-current':''}"><summary>Services</summary><div class="service-links">${services.map(([url,label])=>item(url,label)).join('')}</div></details>${item('/pricing/','Pricing')}${item('/guides/','Guides')}${item('/about/','About')}${item('/contact/','Contact')}`;
 }
 
 export function pageMapExamples(o) {
-  const examples=[
-    ['launch_site','A focused introduction',['Home','Services','Contact']],
-    ['focused_site','Room for distinct services',['Home','About','Garden design','Planting','Seasonal care','Our approach','Contact']],
-    ['signature_site','A broader service business',['Home','About','Garden design','Planting','Seasonal care','Outdoor lighting','Our approach','Project gallery','Service area','FAQs','Our team','Contact']]
-  ];
+  const examples=['launch_site','focused_site','signature_site'].map(id=>[id,o[id].buyer_summary.fit,o.decision_pack_examples[id].pages]);
   return `<section class="page-map-examples" id="marketing-pages" aria-labelledby="marketing-pages-title"><h3 id="marketing-pages-title">What is a marketing page?</h3><p>A marketing page helps someone understand your business, decide whether your services fit, or get in touch. Examples include <strong>Home, About, Services, individual service pages, Projects, FAQs and Contact</strong>.</p><p>Each page has its own web address. A Home page with an introduction, testimonials and a contact section still counts as <strong>one page</strong>. A separate Garden Design page and a separate Planting page count as <strong>two pages</strong>.</p><details><summary>See example 3-, 7- and 12-page websites</summary><p>These examples use each plan’s full allowance. We choose your actual page list together; it can use fewer pages or different subjects.</p><div class="service-fit-grid">${examples.map(([id,title,pages])=>`<article><p class="eyebrow">${e(o[id].public_name)} · up to ${o[id].marketing_page_cap} pages</p><h3>${title}</h3><ol>${pages.map(name=>`<li>${name}</li>`).join('')}</ol></article>`).join('')}</div><dl class="scope-definitions"><dt>A service page</dt><dd>One page explaining one service, who it helps and how to start.</dd><dt>A project or article page</dt><dd>One page showing an agreed project or answering a customer question; it counts toward the page limit.</dd><dt>Policy pages</dt><dd>Your supplied, approved privacy and other plain policy pages sit outside the marketing-page limit. You provide the legal wording.</dd></dl><p>Your proposal names the pages, writing and features included. Extra pages are agreed and priced before work begins.</p></details></section>`;
 }
 

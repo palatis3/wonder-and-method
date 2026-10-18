@@ -219,10 +219,10 @@ html{scroll-padding-top:2rem}
 .motion-toggle{display:none!important}
 }
 .studio-site .journal-card :is(h2,h3){font-family:var(--display);font-size:2.15rem;font-weight:400;line-height:1.15;letter-spacing:-.03em;margin:.8rem 0 1rem}
-.studio-site .journal-card a:hover :is(h2,h3){color:var(--blue)}
+.studio-site .journal-card :is(h2,h3) a:hover{color:var(--blue)}
 .journal-number{display:block;font-family:var(--display);font-size:2rem;line-height:1;color:var(--slate);margin-bottom:1.6rem}
 .journal-index-list{margin:1rem 0 5rem}
-.journal-index-list .journal-card>a{display:grid;grid-template-columns:70px 1.35fr 1fr;gap:2rem;align-items:start;padding:2.7rem 0;border-top:1px solid var(--line)}
+.journal-index-list .journal-card{display:grid;grid-template-columns:70px 1.35fr 1fr;gap:2rem;align-items:start;padding:2.7rem 0;border-top:1px solid var(--line)}
 .journal-index-list .journal-number{font-size:3rem;color:var(--blue);margin:0}
 .journal-index-list .journal-card :is(h2,h3){font-size:2.65rem;max-width:23ch}
 .journal-index-list .journal-card-description{margin:2rem 0 0;max-width:42ch;color:var(--slate)}
@@ -233,7 +233,7 @@ html{scroll-padding-top:2rem}
 .studio-site .journal-prose h3{font-size:1.15rem}
 .studio-site .journal-toc a{color:var(--slate)}
 .studio-site .journal-toc a:hover{color:var(--blue)}
-@media(max-width:767px){.journal-index-list .journal-card>a{grid-template-columns:40px 1fr;gap:0 1rem;padding:2rem 0}
+@media(max-width:767px){.journal-index-list .journal-card{grid-template-columns:40px 1fr;gap:0 1rem;padding:2rem 0}
 .journal-index-list .journal-number{font-size:2rem;padding-top:.15rem}
 .studio-site .journal-index-list .journal-card :is(h2,h3){font-size:2.1rem;max-width:none}
 .journal-index-list .journal-card-description{grid-column:2;margin:0!important}

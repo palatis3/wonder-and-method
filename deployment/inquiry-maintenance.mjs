@@ -1,5 +1,7 @@
 export const MAX_NOTIFICATION_ATTEMPTS = 5;
 export const NOTIFICATION_WINDOW_MS = 22 * 60 * 60 * 1000;
+// A quota hold is not a provider attempt. Allow a bounded next-day recovery.
+export const UNSENT_NOTIFICATION_WINDOW_MS = 48 * 60 * 60 * 1000;
 export const RETENTION_DAYS = 90;
 
 export async function hasInquiryFollowup(db) {
@@ -28,10 +30,15 @@ export async function inquiryRetentionPreview(db, now = Date.now()) {
     WHERE synthetic = 0 AND last_substantive_contact_at IS NULL
   `).first();
   const holds=await db.prepare('SELECT id,retention_hold_review_at FROM inquiries WHERE synthetic=0 AND retention_hold=1 AND (retention_hold_review_at IS NULL OR retention_hold_review_at<=?) ORDER BY retention_hold_review_at,id LIMIT 100').bind(now).all();
+  const unconfirmed=await db.prepare(`SELECT id,created_at,delivery_status FROM inquiries
+    WHERE synthetic=0 AND is_client=0 AND retention_hold=0 AND delivery_status!='sending'
+      AND last_substantive_contact_at IS NULL AND created_at<=?
+    ORDER BY created_at,id LIMIT 100`).bind(cutoff).all();
   return {
     dry_run: true, retention_days: RETENTION_DAYS, due: results, limit: 100,
     unknown_last_contact: unknown.total,
     holds_needing_review: holds.results,
+    unconfirmed_old_needing_review: unconfirmed.results,
     note: 'No records deleted. Reconcile substantive contact, client/hold status and mailbox, exports and backups before any existing confirmed manual deletion action.'
   };
 }

@@ -1,4 +1,12 @@
 import {inquiryChoices,resolveServiceId,inquiryContextFields} from './shared.mjs';
+export function validEmail(email){
+  if(typeof email!=='string'||email.length>254)return false;
+  const parts=email.split('@');
+  if(parts.length!==2||parts[0].length>64||!parts[0]||parts[0].startsWith('.')||parts[0].endsWith('.')||parts[0].includes('..'))return false;
+  if(!/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+$/.test(parts[0]))return false;
+  const labels=parts[1].split('.');
+  return labels.length>=2&&labels.every(label=>/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$/.test(label));
+}
 export const serviceIds=inquiryChoices.map(([id])=>id);
 export function validateInquiry(data){
   const errors={},value={};
@@ -10,12 +18,13 @@ export function validateInquiry(data){
     if(value[key].length>max)errors[key]=`Use no more than ${max} characters.`;
     if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Remove unsupported control characters.';
   }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.email))errors.email='Enter a valid email address.';
+  if(!validEmail(value.email))errors.email='Enter a valid email address.';
   value.service=resolveServiceId(value.service);
   if(!serviceIds.includes(value.service))errors.service='Choose one of the listed services.';
   if(value.message.length<10)errors.message='Please include at least 10 characters.';
+  if(/^(?:none|n\/?a|no website|not yet|-)?$/i.test(value.website))value.website='';
   if(value.website){try{if(!/^[a-z][a-z0-9+.-]*:/i.test(value.website))value.website='https://'+value.website;const url=new URL(value.website);if(!['https:','http:'].includes(url.protocol)||url.username||url.password||!url.hostname.includes('.')||/\s/.test(value.website))throw new Error();}catch{errors.website='Enter a website such as example.com or https://example.com, without a username or password.';}}
-  for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service)){errors[key]='This option does not apply to the selected service.';continue;}value[key]=data[key];}
-  if(data.company_url)errors.company_url='Unable to accept this submission.';
+  for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service))continue;value[key]=data[key];}
+  if(data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
   return {errors,value};
 }

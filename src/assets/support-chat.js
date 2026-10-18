@@ -3,8 +3,18 @@ if(launcher){
  const root=launcher.closest('.support-chat');
  const fallback=root.querySelector('.support-chat-fallback');
  const label=launcher.querySelector('span');
- const status=root.querySelector('.support-chat-status');
- let requested=false,ready=false,dismissed=false,timeout;
+ const status=document.querySelector('#support-chat-status');
+ let requested=false,ready=false,dismissed=false,timeout,focusObserver,focusTimeout;
+ const stopFocus=()=>{focusObserver?.disconnect();clearTimeout(focusTimeout);};
+ const focusChat=()=>{
+  if(dismissed){stopFocus();return;}
+  const active=document.activeElement;
+  if(active&&active!==launcher&&active!==document.body){stopFocus();return;}
+  const frame=[...document.querySelectorAll('iframe[title="Chat widget"]')].find(frame=>{
+   const rect=frame.getBoundingClientRect();return rect.width>100&&rect.height>150&&getComputedStyle(frame).visibility!=='hidden';
+  });
+  if(frame){frame.focus();status.textContent='Chat opened. Follow the chat privacy choices to continue.';stopFocus();}
+ };
  const unavailable=()=>{
   if(ready)return;
   clearTimeout(timeout);
@@ -16,7 +26,8 @@ if(launcher){
  root.querySelector('.support-chat-dismiss').addEventListener('click',()=>{
   dismissed=true;
   root.hidden=true;
-  const next=document.querySelector('main a[href^="/contact/"], header a[href^="/contact/"], .skip');
+  stopFocus();
+  const next=document.querySelector('#site-help a[href^="/contact/"]');
   next?.focus({preventScroll:true});
  });
  launcher.hidden=false;
@@ -26,13 +37,17 @@ if(launcher){
   launcher.setAttribute('aria-disabled','true');
   label.textContent='Opening chat…';
   window.Tawk_API=window.Tawk_API||{};
+  window.Tawk_API.onChatMaximized=focusChat;
   const openWhenReady=()=>{
    if(ready)return;
    ready=true;
+  focusObserver=new MutationObserver(focusChat);
+  focusObserver.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style']});
+  focusTimeout=setTimeout(stopFocus,10000);
    clearTimeout(timeout);
    root.hidden=true;
    if(dismissed)window.Tawk_API.hideWidget();
-   else window.Tawk_API.maximize();
+   else {window.Tawk_API.maximize();focusChat();}
   };
   // The consent screen is available before onLoad, which can wait for consent.
   window.Tawk_API.onBeforeLoad=openWhenReady;
