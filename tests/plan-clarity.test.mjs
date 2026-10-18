@@ -107,7 +107,7 @@ test('existing-site comparison keeps the two real one-off offers and safe-fix an
  const html=packageVisualCards(offers,{kind:'existing'});
  assert.equal((html.match(/<article class="package-visual-card">/g)||[]).length,2);
  for(const id of ['website_baseline','audit_fix_sprint']){assert.ok(html.includes('/assets/buyer-packs/'+id));assert.ok(html.includes('/contact/?offer='+id));}
- assert.match(html,/\$399/);assert.match(html,/\$750/);assert.match(html,/review of all 22 website areas/);assert.match(html,/clear finding and reason/);assert.match(html,/does not use the first month/);assert.match(html,/Up to 2 agreed small fixes TOTAL/);assert.match(html,/not charged twice/);assert.ok(html.includes('/services/website-audit/#one-off-terms'));
+ assert.match(html,/\$399/);assert.match(html,/\$750/);assert.match(html,/complete website audit/);assert.match(html,/clear finding and reason/);assert.match(html,/does not use the first month/);assert.match(html,/Up to 2 agreed small fixes TOTAL/);assert.match(html,/not charged twice/);assert.ok(html.includes('/services/website-audit/#one-off-terms'));
  assert.match(html,/before payment/);assert.ok(html.includes('/assets/buyer-packs/audit_fix_sprint'));assert.doesNotMatch(html,/Everything in Launch|Everything in Focused|billing=monthly/);
 });
 

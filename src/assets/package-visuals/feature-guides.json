@@ -1,5 +1,5 @@
 {
-  "revision": "20261017-plain-language",
+  "revision": "20261018-audit-name",
   "products": [
     {
       "id": "launch_site",
@@ -210,9 +210,9 @@
         },
         {
           "id": "launch_site.full_review",
-          "title": "A complete 22-area website review",
-          "plain": "A review of all 22 website areas, with findings, checks we could not complete and corrections within the agreed work.",
-          "explanation": "Your delivered website is reviewed across all 22 areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
+          "title": "A complete website audit",
+          "plain": "Website audit with findings, checks we could not complete and corrections within the agreed work.",
+          "explanation": "Your delivered website is reviewed across all review areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
           "limits": "Not a specialist certification or promise to repair out-of-scope issues.",
           "condition": null
         },
@@ -322,7 +322,7 @@
         {
           "id": "launch_site.terms.qa",
           "title": "What the checks establish",
-          "text": "The delivered website receives the listed 22-area and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
+          "text": "The delivered website receives the listed website audit and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
         },
         {
           "id": "launch_site.terms.fees",
@@ -717,9 +717,9 @@
         },
         {
           "id": "focused_site.full_review",
-          "title": "A complete 22-area website review",
-          "plain": "A review of all 22 website areas, with findings, checks we could not complete and corrections within the agreed work.",
-          "explanation": "Your delivered website is reviewed across all 22 areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
+          "title": "A complete website audit",
+          "plain": "Website audit with findings, checks we could not complete and corrections within the agreed work.",
+          "explanation": "Your delivered website is reviewed across all review areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
           "limits": "Not a specialist certification or promise to repair out-of-scope issues.",
           "condition": null
         },
@@ -845,7 +845,7 @@
         {
           "id": "focused_site.terms.qa",
           "title": "What the checks establish",
-          "text": "The delivered website receives the listed 22-area and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
+          "text": "The delivered website receives the listed website audit and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
         },
         {
           "id": "focused_site.terms.fees",
@@ -1225,9 +1225,9 @@
         },
         {
           "id": "signature_site.full_review",
-          "title": "A complete 22-area website review",
-          "plain": "A review of all 22 website areas, with findings, checks we could not complete and corrections within the agreed work.",
-          "explanation": "Your delivered website is reviewed across all 22 areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
+          "title": "A complete website audit",
+          "plain": "Website audit with findings, checks we could not complete and corrections within the agreed work.",
+          "explanation": "Your delivered website is reviewed across all review areas, with findings, evidence, access limits and in-scope corrections; additional opportunities are prioritized before release.",
           "limits": "Not a specialist certification or promise to repair out-of-scope issues.",
           "condition": null
         },
@@ -1353,7 +1353,7 @@
         {
           "id": "signature_site.terms.qa",
           "title": "What the checks establish",
-          "text": "The delivered website receives the listed 22-area and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
+          "text": "The delivered website receives the listed website audit and usability checks, with evidence and unavailable checks recorded. This is not WCAG certification, specialist investigation, guaranteed field performance or proof of indexing/search results. Inquiry saving, notification and mailbox delivery are distinct checks."
         },
         {
           "id": "signature_site.terms.fees",
@@ -1571,9 +1571,9 @@
         },
         {
           "id": "keep_running.quarterly_review",
-          "title": "A quarterly review across all 22 areas",
-          "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "title": "A quarterly website audit",
+          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
+          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -1857,9 +1857,9 @@
         },
         {
           "id": "improve.quarterly_review",
-          "title": "A quarterly review across all 22 areas",
-          "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "title": "A quarterly website audit",
+          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
+          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -2253,9 +2253,9 @@
         },
         {
           "id": "grow.quarterly_review",
-          "title": "A quarterly review across all 22 areas",
-          "plain": "Every 3 months, a fresh status review across all 22 website areas, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all 22 review areas, using changed evidence and recording which checks still need access.",
+          "title": "A quarterly website audit",
+          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
+          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
           "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
           "condition": null
         },
@@ -2580,7 +2580,7 @@
       "name": "Existing-site baseline",
       "price": 399,
       "priceBasis": "one-time project",
-      "fit": "Access and inventory, a full 22-dimension baseline, prioritized backlog and a first contained safe fix where appropriate. The fix is outside the first month’s allowance.",
+      "fit": "Access and inventory, a full website audit baseline, prioritized backlog and a first contained safe fix where appropriate. The fix is outside the first month’s allowance.",
       "features": [
         {
           "id": "website_baseline.fit",
@@ -2600,9 +2600,9 @@
         },
         {
           "id": "website_baseline.full_review",
-          "title": "A complete 22-area baseline",
-          "plain": "A review of all 22 website areas, with findings and clear labels for checked, unchecked or unavailable information.",
-          "explanation": "Your website receives a baseline across all 22 review areas, with findings, evidence and honest statuses showing what was checked, needs access, remains unverified or does not apply.",
+          "title": "A complete website audit",
+          "plain": "A complete website audit, with findings and clear labels for checked, unchecked or unavailable information.",
+          "explanation": "Your website receives a baseline across all review areas, with findings, evidence and honest statuses showing what was checked, needs access, remains unverified or does not apply.",
           "limits": "No missing-access pass; not specialist certification or unlimited implementation.",
           "condition": null
         },
@@ -2802,7 +2802,7 @@
       "name": "Audit & Fix Sprint",
       "price": 750,
       "priceBasis": "one-time project",
-      "fit": "One eligible supported website with up to 12 marketing pages. Full 22-dimension baseline plus up to two agreed contained fixes, one consolidated refinement, QA, before/after evidence and a prioritized backlog.",
+      "fit": "One eligible supported website with up to 12 marketing pages. Full website audit baseline plus up to two agreed contained fixes, one consolidated refinement, QA, before/after evidence and a prioritized backlog.",
       "features": [
         {
           "id": "audit_fix_sprint.fit",
@@ -2822,9 +2822,9 @@
         },
         {
           "id": "audit_fix_sprint.full_review",
-          "title": "A complete 22-area baseline",
-          "plain": "A review of all 22 website areas, with findings and clear labels for checked, unchecked or unavailable information.",
-          "explanation": "Your website receives a baseline across all 22 review areas, with findings, evidence and honest statuses showing what was checked, needs access, remains unverified or does not apply.",
+          "title": "A complete website audit",
+          "plain": "A complete website audit, with findings and clear labels for checked, unchecked or unavailable information.",
+          "explanation": "Your website receives a baseline across all review areas, with findings, evidence and honest statuses showing what was checked, needs access, remains unverified or does not apply.",
           "limits": "No missing-access pass; not specialist certification or unlimited implementation.",
           "condition": null
         },
