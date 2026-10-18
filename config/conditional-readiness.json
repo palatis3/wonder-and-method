@@ -1,5 +1,5 @@
 {
-  "status": "Six guides published under the owner instruction; Care remains subject to actual coverage",
+  "status": "Six published guides are index-eligible under the current search policy; Care enrollment still requires actual coverage",
   "launch_guides": [
     {
       "path": "/guides/website-project-cost/",
@@ -7,7 +7,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     },
     {
       "path": "/guides/website-redesign-brief/",
@@ -15,7 +15,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     },
     {
       "path": "/guides/local-seo-profile-eligibility/",
@@ -23,7 +23,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     },
     {
       "path": "/guides/seo-work-and-reporting/",
@@ -31,7 +31,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     },
     {
       "path": "/guides/website-migration-checklist/",
@@ -39,7 +39,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     },
     {
       "path": "/guides/custom-website-or-template/",
@@ -47,7 +47,7 @@
       "reviewedAt": "2026-10-14",
       "reviewedBy": "Codex editorial review under owner publication instruction",
       "evidenceReference": "evidence/editorial-release.json",
-      "status": "published_noindex"
+      "status": "published_indexable"
     }
   ],
   "care": {
@@ -61,5 +61,6 @@
     "briefs_preserved": 12,
     "municipality_matrix": false
   },
-  "enable_rule": "Dated editorial evidence required for guide publication. Care additionally requires actual coverage and operational evidence. Search indexing is separately disabled by owner instruction."
+  "enable_rule": "Dated editorial evidence is required for guide publication. Care additionally requires actual coverage and operational evidence. Search indexing is enabled; current eligibility is governed by config/site.json and src/index-policy.mjs.",
+  "policyReconciledAt": "2026-10-18"
 }

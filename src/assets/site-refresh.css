@@ -402,3 +402,33 @@ form>.optional-choice{margin:1.25rem 0}
 .studio-site .footer-top{border-top:0}
 .studio-section:has(+.site-tools){border-bottom:0}
 .concept-notice a,.concept-footer a,.county-place-list a,.page-jump a{display:inline-block;min-height:24px;padding-block:3px}
+
+/* Put the complete fee comparison before the detailed artwork and scope. */
+.studio-pricing .pricing-intro{padding:1.7rem 0 1.2rem}
+.studio-pricing .pricing-intro h1{font-size:clamp(2.2rem,4.4vw,4rem);max-width:23ch;margin:.65rem 0 1.4rem}
+.pricing-overview{max-width:1000px;margin:0 0 1.5rem}
+.studio-site .pricing-overview h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;margin:0 0 .6rem}
+.pricing-overview table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.95rem;line-height:1.45}
+.pricing-overview caption{text-align:left;font-size:.85rem;color:var(--slate);margin-bottom:.65rem}
+.pricing-overview th,.pricing-overview td{text-align:left;vertical-align:top;padding:.6rem .75rem;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+.pricing-overview thead th{font-size:.8rem;font-weight:600;color:var(--slate)}
+.pricing-overview th:first-child{width:30%;padding-left:0}
+.pricing-overview th:nth-child(2){width:21%}
+.pricing-overview .overview-fee{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pricing-overview .overview-group th{background:var(--subtle);font-size:.79rem;letter-spacing:.035em;padding:.5rem .6rem}
+.pricing-overview a{display:inline-block;min-height:24px;padding-block:2px}
+.studio-site .pricing-overview p{max-width:90ch;font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
+.studio-inner.studio-service .page-intro{padding:2rem 0 2.1rem;margin-bottom:1rem}
+.studio-service .page-intro h1{font-size:clamp(2.35rem,4.6vw,4.7rem);max-width:26ch;line-height:1.04;margin:.75rem 0 1.2rem}
+.studio-service .page-intro .lede{font-size:1.1rem;line-height:1.65;max-width:66ch}
+@media(max-width:767px){
+ .studio-pricing .pricing-intro{padding:1.4rem 0 1rem}
+ .pricing-overview table{font-size:.83rem;line-height:1.4}
+ .pricing-overview th,.pricing-overview td{padding:.5rem .35rem}
+ .pricing-overview th:first-child{width:30%}
+ .pricing-overview th:nth-child(2){width:24%}
+ .pricing-overview .overview-group th{font-size:.76rem}
+ .studio-site .pricing-overview p{font-size:.82rem}
+ .studio-inner.studio-service .page-intro{padding:1.6rem 0 1.7rem}
+ .studio-service .page-intro .lede{font-size:1rem}
+}

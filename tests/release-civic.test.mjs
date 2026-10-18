@@ -5,9 +5,22 @@ import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
 import {releaseFingerprint,evaluateRelease} from '../src/release.mjs';
+import {verifyTechnicalManifest} from '../src/release-verification.mjs';
 import {civicAssetState,copyCivicAssets,civicPublicPath} from '../scripts/build-civic-assets.mjs';
 
 const config={homeEdition:'civic-sculpture'};
+test('predeploy manifest rejects a changed dist byte even when source and commit are unchanged',async()=>{
+ const f=await fixture();
+ try{
+  const commit='a'.repeat(40),current={commit,...await releaseFingerprint(f.root)};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','worker-dry-run']};
+  assert.equal(verifyTechnicalManifest(manifest,current),true);
+  await f.put('dist/index.html','Fixture');
+  const changed={commit,...await releaseFingerprint(f.root)};
+  assert.equal(changed.sourceSha256,current.sourceSha256);
+  assert.throws(()=>verifyTechnicalManifest(manifest,changed),/artifactSha256/);
+ }finally{await f.close();}
+});
 async function fixture(){
  const root=await mkdtemp(join(tmpdir(),'wm-civic-approval-'));
  const put=async(path,content)=>{await mkdir(dirname(join(root,path)),{recursive:true});await writeFile(join(root,path),typeof content==='string'?content:JSON.stringify(content));};

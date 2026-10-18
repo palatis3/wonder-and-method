@@ -27,6 +27,15 @@ const valid = { name: 'Synthetic Person', email: 'synthetic@example.test', busin
 function environment() { return { DB: fakeD1(), ASSETS: { fetch: async () => new Response('synthetic asset') }, ENVIRONMENT: 'staging', INQUIRY_MODE: 'synthetic', RELEASE_APPROVED: 'false', STAGING_AUTH: 'test:synthetic-password-only', OPERATOR_TOKEN: 'synthetic-operator-token', FINGERPRINT_SECRET: 'synthetic-only-32-character-secret-never-live' }; }
 function request(body = valid, extra = {}) { return new Request('https://staging.example.test/api/inquiries', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json', Origin: 'https://staging.example.test', Authorization: `Basic ${btoa('test:synthetic-password-only')}`, 'CF-Connecting-IP': '192.0.2.1', ...extra }, body: typeof body === 'string' ? body : JSON.stringify(body) }); }
 function context() { const promises = []; return { promises, waitUntil(p) { promises.push(p); } }; }
+test('authenticated status exposes only the runtime Worker identity and keeps access controls',async()=>{
+ const env={...environment(),ENVIRONMENT:'production',RELEASE_APPROVED:'true',CF_VERSION_METADATA:{id:'11111111-1111-4111-8111-111111111111',tag:'private-build-tag'}};
+ const url='https://example.test/api/operator/inquiries/status';
+ assert.equal((await worker.fetch(new Request(url),env,context())).status,401);
+ const response=await worker.fetch(new Request(url,{headers:{Authorization:'Bearer '+env.OPERATOR_TOKEN}}),env,context());
+ assert.equal(response.status,200);assert.match(response.headers.get('cache-control'),/no-store/);
+ const status=await response.json();assert.equal(status.runtimeVersion,env.CF_VERSION_METADATA.id);
+ assert.ok(!JSON.stringify(status).includes('private-build-tag'));
+});
 async function record(env) { const response = await worker.fetch(request(), env, context()); return (await response.json()).reference; }
 
 test('synthetic: staging denies assets and form when secret missing or wrong', async () => {

@@ -1,0 +1,46 @@
+{
+  "status": "Template — research not performed",
+  "job_id": null,
+  "cycle": null,
+  "researcher": null,
+  "completed_at": null,
+  "access_check": {
+    "method": "Owner uses their Semrush account manually",
+    "checked_at": null,
+    "required_reports_available": null,
+    "allowance_and_incremental_cost_confirmed": null,
+    "private_evidence_reference": null
+  },
+  "market": {"country": null, "local_area": null, "language": null, "device": null},
+  "agreed_goal": null,
+  "existing_pages_reviewed": [],
+  "candidates": [],
+  "candidate_shape": {
+    "query_or_topic": null,
+    "source_and_report": null,
+    "observed_at": null,
+    "geography_and_device": null,
+    "volume": null,
+    "keyword_difficulty": null,
+    "personal_keyword_difficulty": null,
+    "missing_metrics": [],
+    "search_intent_observation": null,
+    "serp_urls_checked": [],
+    "existing_page_overlap": null,
+    "decision": null,
+    "reason": null
+  },
+  "selected_output": {
+    "agreed_scope_unit": null,
+    "page_or_asset": null,
+    "verified_business_facts_reference": null,
+    "reason_to_choose": null,
+    "approval_reference": null,
+    "completion_check": null,
+    "completed_artifact_reference": null,
+    "publication_or_delivery_status": null,
+    "followup_date": null
+  },
+  "rejected_alternatives": [],
+  "limits": "Null is unknown. Do not invent volume, KD, PKD, completed research or outcomes. Low difficulty is a screening signal, not a ranking promise. Keep exports and client information in the private job folder."
+}

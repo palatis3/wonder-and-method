@@ -2,6 +2,7 @@ import {execFileSync} from 'node:child_process';
 import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {releaseFingerprint} from '../src/release.mjs';
+import {verifyTechnicalManifest} from '../src/release-verification.mjs';
 const root=resolve(import.meta.dirname,'..');
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',windowsHide:true}).trim();
 if(git('status','--porcelain'))throw Error('Commit or intentionally ignore reviewed local files before deployment.');
@@ -12,4 +13,6 @@ const version=JSON.parse(await readFile(resolve(root,'dist/version.json'),'utf8'
 if(version.commit!==commit||version.dirty)throw Error('Rebuild from the clean, pushed commit before deployment.');
 const current=await releaseFingerprint(root);
 if(version.sourceSha256!==current.sourceSha256)throw Error('Built source fingerprint no longer matches.');
-console.log(`Predeploy source check passed: ${commit}. Separate technical and release approval checks still apply.`);
+const manifest=JSON.parse(await readFile(resolve(root,'evidence/technical-check.json'),'utf8'));
+verifyTechnicalManifest(manifest,{commit,...current});
+console.log(`Predeploy source and tested-artifact check passed: ${commit}. Business enrollment gates remain separate.`);

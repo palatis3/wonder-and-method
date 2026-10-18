@@ -5,6 +5,13 @@ const cents=value=>{const n=Math.round((value+Number.EPSILON)*100);if(!Number.is
 export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','Focused Website'],['signature_site','Signature Website'],['keep_running','Keep Running — website care'],['improve','Improve — monthly SEO and website improvement'],['grow','Grow — SEO and growth campaigns'],['audit_fix_sprint','Audit & Fix Sprint'],['website_baseline','Website Baseline'],['unsure','Help me choose']];
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
+export function inquiryMessagePrompt(service='',requestKind='checkout'){
+ if(requestKind==='question')return 'Your question about this service';
+ if(['keep_running','improve','grow'].includes(resolveServiceId(service)))return 'What does your existing website need, and what would you like monthly help to achieve?';
+ if(['website_baseline','audit_fix_sprint'].includes(resolveServiceId(service)))return 'What is broken, and what should happen instead?';
+ if(['launch_site','focused_site','signature_site'].includes(resolveServiceId(service)))return 'What does your business do, and when do you need the website?';
+ return 'What would you like help with, and are there any important dates?';
+}
 export const inquiryContextFields={
  concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},

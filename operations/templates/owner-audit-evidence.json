@@ -1,0 +1,73 @@
+{
+  "status": "Template — no owner actions or external outcomes recorded",
+  "reviewed_at": null,
+  "reviewer": null,
+  "alert_drill": {
+    "receiver_provider": null,
+    "owner_channel": null,
+    "expected_period_minutes": 60,
+    "grace_minutes": 15,
+    "missing_signal_at": null,
+    "alert_received_at": null,
+    "healthy_signal_restored_at": null,
+    "recovery_received_at": null,
+    "owner_acknowledgement_at": null,
+    "evidence_references": []
+  },
+  "independent_recovery": {
+    "device_or_clean_profile_description": null,
+    "started_at": null,
+    "finished_at": null,
+    "source_backup_access": null,
+    "cloudflare_access": null,
+    "domain_dns_access": null,
+    "gmail_access": null,
+    "support_mailbox_access": null,
+    "payment_account_access": null,
+    "second_factor_and_recovery_verified": null,
+    "isolated_database_restore_reference": null,
+    "newer_records_reconciliation_reference": null,
+    "observed_recovery_time_minutes": null,
+    "data_loss_bound_and_basis": null,
+    "unresolved": []
+  },
+  "daily_reviews": [],
+  "daily_review_shape": {
+    "date": null,
+    "opening_or_closing": null,
+    "reviewer": null,
+    "aggregate_check_timestamp": null,
+    "gmail_reviewed_at": null,
+    "support_mailbox_reviewed_at": null,
+    "chat_reviewed_at": null,
+    "outstanding_replies_reconciled_at": null,
+    "coverage_reference": null,
+    "incident_references": [],
+    "unresolved": []
+  },
+  "weekly_retention_reviews": [],
+  "weekly_retention_review_shape": {
+    "reviewed_at": null,
+    "reviewer": null,
+    "aggregate_preview_reference": null,
+    "mailbox_chat_exports_review_reference": null,
+    "preservation_holds_reviewed": null,
+    "authorized_actions_reference": null,
+    "unresolved": []
+  },
+  "billing_gate_evidence": {
+    "provider_verification_closed_at": null,
+    "provider_evidence_reference": null,
+    "funded_reserve_and_fee_buffer_reference": null,
+    "sandbox_refund_evidence_reference": null,
+    "commercial_legal_questions_disposition_reference": null,
+    "unresolved": []
+  },
+  "rules": [
+    "Copy to ignored .runtime/operations/ before adding private evidence. Keep credentials, recovery codes, tax IDs, customer messages and full alert URLs out of this record.",
+    "Append real observations only. Do not backfill hypothetical opening/closing checks or treat aggregate notification acceptance as inbox delivery.",
+    "These records do not automatically approve billing, enrollment or a production restore.",
+    "Retain only required references and set a cleanup date under the existing retention policy."
+  ],
+  "cleanup_review_date": null
+}

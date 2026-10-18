@@ -6,12 +6,30 @@ import {createHmac} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
 import worker from '../deployment/worker.mjs';
 import {saveJourneyCount,cleanJourneyCounts} from '../deployment/journey-counts.mjs';
+import {formatMeasurement} from '../deployment/production-operator.mjs';
 const migrations=await Promise.all(['0001_inquiries.sql','0002_journey_counts.sql','0004_journey_categories.sql','0006_journey_contact_events.sql','0007_journey_sources.sql'].map(n=>readFile(new URL('../deployment/migrations/'+n,import.meta.url),'utf8')));
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const environment=()=>({DB:fixture(),ENVIRONMENT:'production',INQUIRY_MODE:'live',RELEASE_APPROVED:'true',JOURNEY_COUNTS:'aggregate',FINGERPRINT_SECRET:'synthetic-32-character-fingerprint-secret',OPERATOR_TOKEN:'synthetic-token'});
 const payload={event:'offer_select',service:'focused_site',page:'pricing'};
 const request=(data=payload,headers={})=>new Request('https://example.test/api/journey-counts',{method:'POST',headers:{Origin:'https://example.test','Content-Type':'application/json','CF-Connecting-IP':'192.0.2.123',...headers},body:JSON.stringify(data)});
 const dependencies={now:Date.UTC(2026,9,16),readLimited:async (stream,max)=>{const bytes=await new Response(stream).arrayBuffer();if(bytes.byteLength>max)throw Error();return new TextDecoder().decode(bytes);},fingerprint:async (secret,value)=>createHmac('sha256',secret).update(value).digest('hex')};
+test('summary API marks previous periods outside retained history unavailable in CLI output',async()=>{
+ const env=environment(),now=Date.now();
+ try{
+  for(let offset=0;offset<90;offset++)env.DB.sqlite.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?,?)').run(new Date(now-offset*86400000).toISOString().slice(0,10),'page_view','unsure','home','direct',1);
+  for(const days of [45,46,60,90]){
+   const response=await worker.fetch(new Request('https://example.test/api/operator/journey-summary?days='+days,{headers:{Authorization:'Bearer synthetic-token'}}),env,{});
+   assert.equal(response.status,200);
+   const report=await response.json();
+   assert.equal(report.coverage.previousAvailable,days===45);
+   assert.equal(report.counts.reduce((sum,row)=>sum+row.total,0),days);
+   assert.ok(report.daily.every(row=>row.day>=report.coverage.retainedSince));
+   const line=formatMeasurement(report).split('\n').find(line=>line.startsWith('Page views '));
+   assert.match(line,days===45?/45\s+45\s+0$/:new RegExp(days+'\\s+N/A\\s+N/A$'));
+  }
+ }finally{env.DB.sqlite.close();}
+});
+
 test('aggregate storage merges counts without identifiers, request URLs or submitted fields',async()=>{
  const env=environment();for(let i=0;i<2;i++)assert.equal((await saveJourneyCount(request(),env,dependencies)).status,204);
  const row=env.DB.sqlite.prepare('SELECT * FROM journey_counts').get();assert.deepEqual({...row},{day:'2026-10-16',...payload,source:'not_recorded',total:2});

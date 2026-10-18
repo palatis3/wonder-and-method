@@ -1,4 +1,4 @@
-import {escapeHtml,inquiryChoices,inquiryContextFields,inquiryRequestSummary,resolveServiceId,selectedInquiryContext} from './shared.mjs';
+import {escapeHtml,inquiryChoices,inquiryContextFields,inquiryRequestSummary,resolveServiceId,selectedInquiryContext,inquiryMessagePrompt} from './shared.mjs';
 
 export function hasInquiryQuery(url){
  return /^\/(?:contact(?:\/|\.html)?|checkout\/[^/]+\/?)$/.test(url.pathname)&&['offer',...Object.keys(inquiryContextFields)].some(key=>url.searchParams.has(key));
@@ -25,7 +25,7 @@ export function prefillInquiryHtml(html,url){
   const summary=inquiryRequestSummary(values);
   form=form.replace(/(<p id="request-summary">)[\s\S]*?(<\/p>)/,(_all,start,end)=>start+escapeHtml(summary)+end);
   const question=values.request_kind==='question';
-  const messageLabel=question?'Your question about this service':['website_baseline','audit_fix_sprint'].includes(service)?'What is broken, and what should happen instead?':'What does your business do, and what would you like the website to do?';
+  const messageLabel=inquiryMessagePrompt(service,values.request_kind);
   form=form.replace(/(<label for="message" data-request-label>)[\s\S]*?(<\/label>)/,(_all,start,end)=>start+messageLabel+' <span>(required)</span>'+end).replace(/(<button type="submit" data-request-submit>)[\s\S]*?(<\/button>)/,(_all,start,end)=>start+(question?'Send question':'Request a proposal')+end);
   return form;
  });

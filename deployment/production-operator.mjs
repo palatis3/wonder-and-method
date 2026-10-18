@@ -58,8 +58,10 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
 export function formatMeasurement(report){
  const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Email / chat actions',['email_click','chat_open']]];
  const total=(events,current)=>report.daily.filter(row=>events.includes(row.event)&&(current?row.day>=report.since:row.day<report.since)).reduce((sum,row)=>sum+Number(row.total),0);
- const lines=[`Website events: ${report.days} days from ${report.since}`,`Compared with the preceding ${report.days} days (within 90-day retention).`,'Metric                         Current  Previous  Change'];
- for(const [label,events] of groups){const current=total(events,true),previous=total(events,false);lines.push(label.padEnd(30)+String(current).padStart(8)+String(previous).padStart(10)+String(current-previous).padStart(8));}
+ const comparable=report.coverage?.previousAvailable===true&&report.days<=45;
+ const lines=[`Website events: ${report.days} days from ${report.since}`,comparable?`Compared with the preceding ${report.days} days (within 90-day retention).`:'WARNING: Previous and Change are unavailable: an equal previous period is not covered by verified retention metadata.','Metric                         Current  Previous  Change'];
+ if(report.coverage)lines.splice(2,0,`Retained dates: ${report.coverage.retainedSince} through ${report.coverage.through}. Collection continuity is not verified.`);
+ for(const [label,events] of groups){const current=total(events,true),previous=comparable?total(events,false):null;lines.push(label.padEnd(30)+String(current).padStart(8)+(comparable?String(previous):'N/A').padStart(10)+(comparable?String(current-previous):'N/A').padStart(8));}
  lines.push('','Page views by fixed page:');for(const row of report.counts.filter(row=>row.event==='page_view'))lines.push(`${row.page} / ${row.service}: ${row.total}`);
  lines.push('','Page-view source categories:');for(const row of report.bySource||[])lines.push(`${row.source}: ${row.total}`);
  lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Use the separate lead report for real inquiry stages.');return lines.join('\n');

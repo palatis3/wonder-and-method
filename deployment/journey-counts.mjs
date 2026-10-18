@@ -2,6 +2,13 @@ import {journeyPages as pages,journeySources as sources} from './journey-dimensi
 const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open']);
 const services=new Set(['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure']);
 export const journeyRetentionDays=90;
+export function journeyReportCoverage(days,now=Date.now()){
+ if(!Number.isInteger(days)||days<1||days>journeyRetentionDays)throw Error('Reporting days must be 1–90.');
+ const day=offset=>new Date(now-offset*86400000).toISOString().slice(0,10);
+ const since=day(days-1),comparisonSince=day(2*days-1),retainedSince=day(journeyRetentionDays-1);
+ const previousAvailable=comparisonSince>=retainedSince;
+ return {since,comparisonSince,coverage:{retentionDays:journeyRetentionDays,retainedSince,through:day(0),comparisonThrough:day(days),previousAvailable,reason:previousAvailable?null:'previous_period_outside_retention',scope:'retention_window_only'}};
+}
 const reply=status=>new Response(null,{status,headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow'}});
 export async function saveJourneyCount(request,env,{readLimited,fingerprint,now=Date.now()}){
  if(env.JOURNEY_COUNTS!=='aggregate'||env.ENVIRONMENT!=='production'||env.RELEASE_APPROVED!=='true'||env.INQUIRY_MODE!=='live')return reply(404);

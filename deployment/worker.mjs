@@ -1,4 +1,4 @@
-import {saveJourneyCount,cleanJourneyCounts} from './journey-counts.mjs';
+import {saveJourneyCount,cleanJourneyCounts,journeyReportCoverage} from './journey-counts.mjs';
 import {routeIndexEligible,privateRoute} from '../src/index-policy.mjs';
 import { timingSafeEqual } from 'node:crypto';
 import { validateInquiry } from '../src/inquiry.mjs';
@@ -199,17 +199,17 @@ async function operator(request, env) {
   if(url.pathname==='/api/operator/journey-summary'&&request.method==='GET'){
     const days=Number(url.searchParams.get('days')||7);
     if(!Number.isInteger(days)||days<1||days>90)return respond(request,422,'Choose a reporting period from 1 to 90 days.');
-    const since=new Date(Date.now()-(days-1)*86400000).toISOString().slice(0,10);
+    const {since,comparisonSince,coverage}=journeyReportCoverage(days);
     const {results}=await env.DB.prepare('SELECT event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY event,service,page ORDER BY event,service,page').bind(since).all();
-    const comparisonSince=new Date(Date.now()-(2*days-1)*86400000).toISOString().slice(0,10);
-    const {results:daily}=await env.DB.prepare('SELECT day,event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY day,event,service,page ORDER BY day,event,service,page').bind(comparisonSince).all();
+    const availableSince=comparisonSince<coverage.retainedSince?coverage.retainedSince:comparisonSince;
+    const {results:daily}=await env.DB.prepare('SELECT day,event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY day,event,service,page ORDER BY day,event,service,page').bind(availableSince).all();
     const {results:bySource}=await env.DB.prepare("SELECT source,SUM(total) AS total FROM journey_counts WHERE day>=? AND event='page_view' GROUP BY source ORDER BY source").bind(since).all();
-    return Response.json({days,since,comparisonSince,counts:results,daily,bySource,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates. Source categories are approximate; earlier rows have no source recorded.'},{headers:{'Cache-Control':'no-store'}});
+    return Response.json({days,since,comparisonSince,coverage,counts:results,daily,bySource,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates. Source categories are approximate; earlier rows have no source recorded. Coverage describes retention eligibility, not uninterrupted collection; pre-collection dates and outages are not verified. The current UTC day may be incomplete.'},{headers:{'Cache-Control':'no-store'}});
   }
   if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,source,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page,source LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
   if (url.pathname === `${base}/status` && request.method === 'GET') {
-    return Response.json(await inquiryStatus(env), {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+    return Response.json({...await inquiryStatus(env),runtimeVersion:env.CF_VERSION_METADATA?.id||null}, {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
   }
   if (url.pathname === `${base}/retention-preview` && request.method === 'GET') {
     const preview = await inquiryRetentionPreview(env.DB);
