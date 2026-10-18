@@ -313,6 +313,7 @@ export default {
       let response;
       if(env.PUBLIC_ORIGIN&&url.origin!==env.PUBLIC_ORIGIN&&['GET','HEAD'].includes(request.method))response=Response.redirect(env.PUBLIC_ORIGIN+url.pathname+url.search,308);
       else if (['/services', '/services/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) response = Response.redirect(new URL('/services/web-design/' + url.search, url), 301);
+      else if (['/work/content-editor', '/work/content-editor/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) response = Response.redirect(new URL('/work/source-handoff/' + url.search, url), 301);
       else if (url.pathname.startsWith('/api/operator/')) response = await operator(request, env);
       else if (url.pathname === '/api/journey-counts') response = await saveJourneyCount(request,env,{readLimited,fingerprint});
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);

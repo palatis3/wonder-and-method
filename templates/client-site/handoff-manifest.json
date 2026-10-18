@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "clientSlug": "fictional-maple-studio",
+  "displayName": "Maple Studio — fictional demonstration",
+  "status": "fictional-sample",
+  "sourceFiles": [
+    "package.json",
+    "README.md",
+    "public/index.html",
+    "public/styles.css",
+    "public/site.js",
+    "scripts/build.mjs",
+    "scripts/check.mjs",
+    "scripts/preview.mjs"
+  ],
+  "documentFiles": [
+    "docs/EDITING.md",
+    "docs/DEPLOYMENT.md",
+    "docs/SCOPE.md"
+  ]
+}

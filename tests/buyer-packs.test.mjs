@@ -44,7 +44,7 @@ test('annual and one-off quote snapshots retain their actual payment and exit te
 
 test('optional fit choices are allowlisted and never become arbitrary query or message content',()=>{
  const valid={...lead,billing:'annual',priority:'email',baseline_status:'needed'};assert.deepEqual(validateInquiry(valid).errors,{});assert.deepEqual(selectedInquiryContext(valid),{priority:'email',baseline_status:'needed',billing:'annual'});
- assert.ok(validateInquiry({...valid,workflow:'client_portal'}).errors.workflow);assert.ok(validateInquiry({...valid,billing:'<script>'}).errors.billing);assert.ok(validateInquiry({...valid,priority:{}}).errors.priority);
+ assert.ok(!Object.hasOwn(validateInquiry({...valid,workflow:'client_portal'}).value,'workflow'));assert.ok(!Object.hasOwn(selectedInquiryContext({...valid,workflow:'client_portal'}),'workflow'));assert.ok(validateInquiry({...valid,billing:'<script>'}).errors.billing);assert.ok(validateInquiry({...valid,priority:{}}).errors.priority);
  assert.deepEqual(selectedInquiryContext({...lead,billing:'https://example.test/?email=private',priority:'arbitrary',name:'Private'}),{});
 });
 

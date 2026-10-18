@@ -17,7 +17,7 @@ test('production output has coherent canonical, OG, schema and crawl metadata',(
  for(const {path,html} of pages){
   assert.ok(html.includes(`rel="canonical" href="${production.origin}${path}"`));
   assert.ok(html.includes(`property="og:url" content="${production.origin}${path}"`));
-  assert.ok(html.includes(`name="robots" content="${(path==='/404/'||(path.startsWith('/checkout/')||/^\/work\/(fieldwork|northline|hearthside)\//.test(path))||['/payments/','/privacy/','/terms/','/accessibility/','/work/lead-workbench/','/work/content-editor/'].includes(path))?'noindex,nofollow,noarchive,noimageindex':'index,follow'}"`));
+  assert.ok(html.includes(`name="robots" content="${(path==='/404/'||(path.startsWith('/checkout/')||/^\/work\/(fieldwork|northline|hearthside)\//.test(path))||['/payments/','/privacy/','/terms/','/accessibility/','/work/lead-workbench/','/work/source-handoff/'].includes(path))?'noindex,nofollow,noarchive,noimageindex':'index,follow'}"`));
   const title=html.match(/<title>(.*?)<\/title>/)[1],description=html.match(/name="description" content="([^"]+)"/)[1];
   assert.ok(!titles.has(title));assert.ok(!descriptions.has(description));titles.add(title);descriptions.add(description);
   const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);

@@ -249,3 +249,5 @@ form .request-summary{background:var(--subtle);border:1px solid var(--line);padd
 @media(max-width:767px){.editor-boundaries{grid-template-columns:1fr;gap:1rem}.editor-capture{margin-block:1.4rem 2rem}}
 
 @media(max-width:767px){.studio-site .site-header #main-nav{flex-wrap:nowrap;overflow-x:hidden}.studio-site .site-header #main-nav>*{flex-shrink:0}}
+
+.handoff-checksum{overflow-wrap:anywhere;word-break:break-word;font-size:.85em}

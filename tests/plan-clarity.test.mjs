@@ -48,7 +48,7 @@ test('packs and card summaries keep zero/one/two priorities and lower-build excl
  const launch=packs.find(p=>p.id==='launch_site'),launchWork=launch.sections.filter(s=>['What the fee buys','How completion is accepted'].includes(s.title)).flatMap(s=>s.items).join(' ');
  assert.doesNotMatch(launchWork,/selected Signature|chosen workflow|follow-up articles|after day 90|90-day/);
  const focused=offers.focused_site;for(const key of ['page_scope','form_limit','revisions','functionality'])assert.doesNotMatch(focused[key],/selected Signature|chosen Signature|chosen workflow/);
- const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/3 articles total/);assert.doesNotMatch(builds,/hosting credit/);
+ const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/source-code handoff/);assert.doesNotMatch(builds,/3 articles total|CMS\/blog editing/);assert.doesNotMatch(builds,/hosting credit/);
  const monthly=planCards(offers);assert.equal((monthly.match(/Illustrative example:/g)||[]).length,3);assert.match(monthly,/No substantive improvement priority/);
 });
 
@@ -56,7 +56,7 @@ test('native task links and simple costs precede advanced estimator; homepage ca
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
  assert.ok(html.indexOf('Hypothetical build, no care')<html.indexOf('id="cost-calculator"'));assert.match(html,/\$1,760/);assert.match(html,/\$2,559/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);
- assert.match(html,/developers.cloudflare.com/);assert.match(html,/www.sanity.io/);assert.match(html,/webflow.com/);
+ assert.match(html,/compatible hosting/);assert.match(html,/the ZIP does not move them automatically/);assert.match(html,/actual renewals/);
  const home=ongoingOverview(offers,{home:true});assert.doesNotMatch(home,/class="monthly-plan"/);assert.match(home,/class="compact-comparison"/);assert.doesNotMatch(home,/package-visual-grid|data-feature=/);assert.match(home,/Full scope and payment terms/);assert.match(home,/\/services\/website-care\//);
 });
 
@@ -114,7 +114,8 @@ test('existing-site comparison keeps the two real one-off offers and safe-fix an
 test('illustrated comparisons retain native scope, optional costs and distinct service boundaries',()=>{
  const build=packageVisualCards(offers),monthly=packageVisualCards(offers,{kind:'monthly'});
  for(const id of ['launch_site','focused_site','signature_site']){assert.ok(build.includes('/assets/buyer-packs/'+id));assert.ok(build.includes('/contact/?offer='+id));}
- assert.match(build,/website pages need code edits/);assert.match(build,/booking OR newsletter/);assert.match(build,/booking AND newsletter/);assert.match(build,/edit agreed words, pictures and blog posts/);assert.match(build,/Reviews around days 30, 60 and 90/);assert.match(build,/Choose ONE: a new-inquiry tracker, a private client area, or a small online store/);assert.match(build,/Hosting, domains, tools, taxes and approved additions are extra/);
+ assert.match(build,/Updates require code changes, checks and publishing/);assert.match(build,/One ready booking or newsletter link or standard embed/);assert.match(build,/Up to 2 ready booking\/newsletter links or standard embeds/);assert.match(build,/No browser editor is included/);assert.match(build,/optional call of up to 30 minutes/);assert.match(build,/One initial launch on your hosting account/);assert.match(build,/Hosting, domains, tools, taxes and approved additions are extra/);
+ assert.doesNotMatch(build,/Choose ONE: a new-inquiry tracker|Reviews around days 30, 60 and 90|Tools to edit agreed words/);
  assert.match(monthly,/One agreed improvement each month/);assert.match(monthly,/Two agreed improvements each month/);assert.match(monthly,/done one after the other/);assert.match(monthly,/Every 3 months, research into one related set/);assert.match(monthly,/Monthly research into customer searches and competitors/);assert.match(monthly,/no recurring keyword campaign/);assert.match(monthly,/existing-site setup is \$399 once/);assert.match(monthly,/included after a usable build or Audit/);assert.match(monthly,/Bundled launch work is not charged again/);
  for(const html of [build,monthly]){assert.equal((html.match(/<details class="package-visual-details">/g)||[]).length,3);assert.equal((html.match(/loading="lazy"/g)||[]).length,3);assert.doesNotMatch(html,/onclick=|onkeydown=|<script/);}
 });

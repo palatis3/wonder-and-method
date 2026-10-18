@@ -4,7 +4,9 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the October 17 buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f` (66 routes, 42 index-eligible routes, 17 guides). All 258 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed; 66 live pages and 212 asset hashes match. An independent Astra review cleared all ten improvements with no open findings. Evidence is under `evidence/next10-implementation-20261018/`. Three fictional concepts remain clearly labeled. The active art is Civic Sculpture finale-v2, and all approved package artwork is preserved.
+The last verified production release is the October 17 buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f` (66 routes, 42 index-eligible routes, 17 guides). All 258 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed for that release; 66 live pages and 212 asset hashes matched. An independent Astra review cleared all ten improvements with no open findings. Evidence is under `evidence/next10-implementation-20261018/`. Three fictional concepts remain clearly labeled. The active art is Civic Sculpture finale-v2, and all approved package artwork is preserved.
+
+The owner-approved source-handoff simplification is being implemented locally. Whole-release verification and publication are pending; the prior production evidence does not verify these new changes. New quotes follow the current `config/offers.json` version, while accepted agreements retain their saved terms.
 
 The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `npm run leads -- report` shows current stages by service and stated source. See [operations/LEAD_PIPELINE.md](operations/LEAD_PIPELINE.md). Actual buyer records stay out of Git and public assets. Gmail inquiry routing remains as verified in the prior release.
 
@@ -34,9 +36,14 @@ The owner confirmed a reply within one business day, Monday–Friday Eastern, an
 
 Current offer facts come from `config/offers.json`: Launch / Focused / Signature $1,400 / $2,350 / $3,700; Keep Running / Improve / Grow $150 / $400 / $800 monthly; Baseline $399; Sprint $750. Original V5 material remains preserved in `authority/`; accepted historical scopes retain their original terms. Start actual job records with `operations/WORKFLOWS.md`, keeping buyer facts and approvals explicit.
 
+All new website plans deliver custom code, one initial launch, a client source folder/ZIP, written build/publishing notes and one optional handoff call of up to 30 minutes. Existing 3/7/12-page caps, creative/motion scope, two review rounds, payments and 30-day defect correction are unchanged. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. The client supplies ready-to-use services. CMS/browser editors or editor accounts, applications/portals/stores/CRM, booking/newsletter account configuration, tracking-number setup and scheduled post-launch growth work are separate scope. Monthly services remain optional.
+
+Prepare a client handoff from its dedicated source folder with `node scripts/prepare-client-handoff.mjs --source "PATH/TO/CLIENT-FOLDER"`. See [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for the starter, explicit file allowlist, required Node/Python/Gitleaks tooling and verification. With no `--source`, the command packages a fictional sample. It does not launch a site, configure accounts, send submissions or send the ZIP.
+
 ## Operations and recovery
 
 - [HANDOFF.md](HANDOFF.md): daily inbox, operator and recovery workflow.
+- [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md): portable source-folder and ZIP preparation.
 - [deployment/PRODUCTION.md](deployment/PRODUCTION.md): deployment, schema and verification gates.
 - [deployment/PROVIDERS.md](deployment/PROVIDERS.md): provider roles and ownership.
 - [operations/INQUIRY_RETENTION.md](operations/INQUIRY_RETENTION.md): manual 90-day cleanup, client exceptions and preservation holds.

@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/next10-implementation-20261018/` for current release verification. All ten improvements passed independent Astra review and release checks. Gmail routing remains unchanged.
+Updated October 17, 2026. Last verified production: buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/next10-implementation-20261018/` for that release's verification. All ten improvements passed independent Astra review and release checks. The owner-approved source-handoff simplification is a local change awaiting whole-release verification and publication. Gmail routing remains unchanged.
 
 ## Daily inquiry handling
 
@@ -33,6 +33,10 @@ Before a release, record a compatible rollback Worker version and a private D1 e
 
 Use `config/offers.json` for new scopes and preserve accepted historical terms. Confirm the buyer's scope, start date, ready inputs and actual capacity before booking; typical 7–10 working days of production starts only after those conditions, plus agreed client review windows. First contact is email, with a call arranged if useful. Issue private Stripe invoices only after the required written approvals. Care requires separately established coverage. Maintain actual costs, cash, client/accounting retention and client-owned accounts; a published website does not prove these business gates are complete.
 
-At client handoff, deliver agreed paid source/assets/licenses and verified account access. Optional service cancellation must not disable a paid client-owned site. Actual client outcomes, independent user research and unverified business facts remain separate evidence requirements.
+Every new website plan includes custom code, one initial launch, a source folder/ZIP, written operating notes and one optional handoff call of up to 30 minutes. Keep the existing price, page cap, creative/motion scope, two review rounds, payment schedule and 30-day defect correction. Launch allows up to one ready-service link or compatible standard embed; Focused and Signature allow up to two. The client supplies ready-to-use services. Do not include a CMS/editor/accounts, app/portal/store/CRM, booking/newsletter account setup, tracking-number setup or scheduled growth follow-up in a new build quote. Scope these separately when requested; preserve any earlier accepted obligations.
+
+Prepare the delivery with `node scripts/prepare-client-handoff.mjs --source "PATH/TO/CLIENT-FOLDER"` using [CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). Deliver the generated folder/ZIP, agreed paid assets/licenses, build/deployment instructions, service limitations and verified access to agreed client-owned accounts. Record the archive checksum and fresh-copy build evidence separately from the actual initial-launch URL/date and any real form/inbox checks. A fictional sample or clean secret scan does not establish those external results or guarantee every secret is absent.
+
+Provide paid materials within five business days of relevant paid completion or reconciled termination, without waiting for the correction window to end. Optional service cancellation must not disable a paid client-owned site. Actual client outcomes, independent user research and unverified business facts remain separate evidence requirements.
 
 Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.

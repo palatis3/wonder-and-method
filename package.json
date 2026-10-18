@@ -29,7 +29,8 @@
     "capacity:check": "node scripts/capacity-calendar.mjs",
     "premium:build": "node scripts/build-experience.mjs",
     "premium:serve": "node scripts/premium-server.mjs",
-    "billing": "node scripts/stripe-billing.mjs"
+    "billing": "node scripts/stripe-billing.mjs",
+    "handoff:prepare": "node scripts/prepare-client-handoff.mjs"
   },
   "devDependencies": {
     "@remotion/cli": "4.0.535",

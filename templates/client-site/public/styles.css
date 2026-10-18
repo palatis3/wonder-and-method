@@ -1,0 +1,21 @@
+:root { color-scheme: light; font-family: Georgia, "Times New Roman", serif; color: #24382f; background: #f7f3e9; }
+* { box-sizing: border-box; }
+body { max-width: 76rem; margin: auto; padding: 0 6vw; }
+a { color: inherit; text-underline-offset: .22em; }
+a:focus-visible { outline: 3px solid #9b450d; outline-offset: 6px; }
+.skip { position: absolute; top: -5rem; background: white; padding: 1rem; }
+.skip:focus { top: 1rem; }
+header, footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem 0; font: .9rem/1.5 system-ui, sans-serif; }
+header { border-bottom: 1px solid #b8c1b6; }
+.brand { font-weight: 700; text-decoration: none; }
+main { padding-top: 5rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font: .75rem/1.8 system-ui, sans-serif; }
+h1 { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.04em; margin: 1.5rem 0; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 400; }
+p { max-width: 44rem; font-size: 1.1rem; line-height: 1.75; }
+.intro { font-size: 1.25rem; }
+.button { display: inline-block; padding: 1rem 1.4rem; margin: 1rem 0 4rem; background: #24382f; color: #fff; text-decoration: none; font: 1rem/1.5 system-ui, sans-serif; }
+section { border-top: 1px solid #b8c1b6; padding: 2rem 0; }
+.notice, footer { font: .85rem/1.65 system-ui, sans-serif; }
+footer { border-top: 1px solid #b8c1b6; }
+@media (max-width: 40rem) { header { flex-wrap: wrap; } main { padding-top: 3rem; } }

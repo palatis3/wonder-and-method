@@ -12,6 +12,17 @@
   "fixed_price": null,
   "editing_choice": null,
   "technical_editor_or_separate_cms_scope": null,
+  "source_delivery": {
+    "applicability": "For new website builds, resolve these fields from the accepted current offer. Other services and historical agreements retain their own scope.",
+    "editing_mode": null,
+    "initial_launch_count": null,
+    "ready_service_link_or_embed_allowance": null,
+    "ready_service_items": [],
+    "handoff_call_optional": null,
+    "handoff_call_minutes": null,
+    "deliverables": [],
+    "separate_feature_or_growth_scope_reference": null
+  },
   "exact_routes": [],
   "copy_form_redirect_media_limits": {
     "marketing_pages": null,
@@ -88,6 +99,9 @@
   "buyer_confirmation": {
     "page_copy_limits": null,
     "self_editing_understood": null,
+    "source_folder_zip_and_build_notes_understood": null,
+    "initial_launch_ready_service_limits_and_exclusions_understood": null,
+    "optional_handoff_call_and_separate_growth_work_understood": null,
     "required_optional_bills": null,
     "approvals": null,
     "ownership_and_exit": null,

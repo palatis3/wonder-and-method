@@ -1,6 +1,12 @@
 # Implementation status — October 17, 2026
 
-| Area | Current evidence |
+The source-handoff simplification is **in progress locally; whole-release verification and publication are pending**. Current new-offer authority is `config/offers.json` version `2026-10-17-source-handoff`. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. CMS/editor/accounts, apps/portals/stores/CRM, external booking/newsletter account configuration, tracking-number setup and scheduled growth follow-up are outside the new build packages. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
+
+The source-handoff command and fictional starter are documented in [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). Their targeted local packaging checks are separate from final site/release validation and do not prove an actual client launch or form/email delivery.
+
+The following table and release narrative preserve the **previous verified production release**, not verification of the current simplification.
+
+| Area | Previous verified release evidence |
 | --- | --- |
 | Production | Buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`; 66 routes, 42 index-eligible pages, 17 guides |
 | Technical validation | 258 tests pass; clean staged-source build, static verifier, dry run and private GitHub CI pass; 66 live pages and 212 asset hashes match; independent Astra review cleared all ten improvements |
@@ -10,9 +16,9 @@
 | Provider settings | DMARC monitoring record added; DNSSEC public chain and minimum TLS1.2 verified. Auto-renew remains OFF by explicit owner choice; domain expires October14,2027. |
 | Media | Civic Sculpture finale-v2; all approved package artwork preserved. Twelve unreferenced build files excluded (1.44MB); source art retained. |
 
-The ten improvements cover shorter contextual questions, earlier pricing choices, explicit production/review timing, compact proposal pages, an actual content-editor walkthrough, concept debriefs with relevant inquiries, service navigation, existing-site compatibility guidance, email-first contact and 3/7/12-page examples. Every plan includes editable paid source subject to disclosed licenses and provider export limits; Focused and Signature also include the scoped browser editor. The real Decap walkthrough uses a fictional local sample and explicitly does not claim client authentication or production deployment. Browser evidence includes phone, desktop, keyboard, no-JavaScript and short-height reflow checks; literal browser 200% zoom and screen-reader testing were not performed.
+That release's ten improvements covered shorter contextual questions, earlier pricing choices, explicit production/review timing, compact proposal pages, an actual content-editor walkthrough, concept debriefs with relevant inquiries, service navigation, existing-site compatibility guidance, email-first contact and 3/7/12-page examples. Its offer version included editable paid source subject to disclosed licenses and provider export limits, with a scoped browser editor in Focused and Signature. That historical inclusion does not apply to new source-handoff quotes. The Decap walkthrough used a fictional local sample and did not claim client authentication or production deployment. Browser evidence for that release included phone, desktop, keyboard, no-JavaScript and short-height reflow checks; literal browser 200% zoom and screen-reader testing were not performed.
 
-Current release evidence: `evidence/next10-implementation-20261018/`. The private D1 export and compatible prior Worker version are recorded; this release requires no schema migration.
+Previous verified release evidence: `evidence/next10-implementation-20261018/`. The private D1 export and compatible prior Worker version were recorded; that release required no schema migration.
 
 The preceding strict-audit follow-up implements 13 of 18 actions, partially addresses three and prepares two that require outside evidence. It adds hold-safe deletion, rolling duplicate handling, bounded retention deadlines, aggregate health/status, large exports, native form context, real website previews, shorter care/SEO pages, approved founder-profile links, ownership-cost examples and an owned SEO case. The 130 automated desktop/phone route checks found zero violations or overflow; raw manual-review nodes and field/assistive-technology gaps remain explicit. Daily monitoring still requires actual owner coverage. No approved client case or prospect-session result is invented. See `evidence/strict-audit-fixes-20261017/implementation-status.json`, [client-case preparation](operations/CLIENT_CASE_STUDY.md) and [prospect test preparation](operations/PROSPECT_USABILITY.md).
 

@@ -2,7 +2,11 @@
 
 The current operating flow is [WORKFLOWS.md](WORKFLOWS.md), with Stripe billing in [PAYMENTS.md](PAYMENTS.md). `config/offers.json` governs new offers. Accepted jobs retain their own versioned `commercial_snapshot`; changes to public prices do not rewrite them. The original V5 plan and `service-rules.json` remain historical references. Before-payment versions of these operating documents are retained in `historical/`.
 
+New website plans use the source-handoff model: custom code, one initial launch, a source folder/ZIP, written notes and one optional handoff call of up to 30 minutes. Ready-service link/standard-embed allowances are one for Launch and two for Focused/Signature; external account configuration and scheduled growth work are separate. The browser editor, editor accounts and Signature application choices are no longer bundled in new quotes. Prices, page caps, creative/motion work, two review rounds, payment terms and 30-day defect correction remain unchanged. Whole-release verification and publication of this simplification are pending; earlier release evidence remains dated evidence of that earlier version.
+
 `weekly-board.json` is the single business board. `scripts/create-job.mjs` creates a current-offer scope and cumulative receipt under ignored `operations/jobs`. The buyer packet remains a local review draft. `operations/templates/billing.json` supplies private invoice prerequisites; `scripts/stripe-billing.mjs` creates and reconciles manual Stripe-hosted invoices. No command sends customer email or automatically charges, renews, refunds or fulfills work.
+
+`node scripts/prepare-client-handoff.mjs --source "PATH/TO/CLIENT-FOLDER"` prepares the source delivery; [CLIENT_HANDOFF.md](CLIENT_HANDOFF.md) covers its explicit allowlist, Node/Python/Gitleaks requirements and integrity checks. With no source argument it packages a fictional demonstration. This command does not deploy, send files, configure provider accounts or establish actual form/email delivery.
 
 `capacity-worksheet.json` and `cash-worksheet.json` require actual owner inputs. Existing `scripts/operations.mjs` calculators and synthetic rehearsals retain V5 logic and historical Care/Search identifiers; they are not current offer authority. Their numeric checks do not establish current profitability, actual staffing, acceptance or cash. `business-setup-and-inventory.json` records supplied identity and provider evidence. `acquisition-drafts.json` contains unsent drafts only.
 
@@ -22,6 +26,6 @@ Keep the current Buffalo/Erie County search focus separate from delivery reach. 
 
 For expansion, first identify a distinct customer question and genuine service detail. Update an existing service or coverage section when it answers that question; add a new county page only when it has useful, distinct content. Register its route, add contextual links, and check its title, H1, canonical and visible coverage facts. Do not create pages by swapping county names or insert every keyword variation. Keep the keyword implementation map current with the intended page for each topic.
 
-After a coverage edit, run both builds and verifiers, inspect the changed pages at phone and desktop widths, and verify the shared footer and Organization/Service markup. `searchIndexing` and the production `SEARCH_INDEXING` flag remain false until the owner explicitly authorizes activation.
+After a coverage edit, run both builds and verifiers, inspect the changed pages at phone and desktop widths, and verify the shared footer and Organization/Service markup. Search indexing has been owner-authorized and enabled since October 16: preserve `searchIndexing: true` and production `SEARCH_INDEXING: "true"`, with private/API/utility route restrictions unchanged.
 
 

@@ -1,0 +1,7 @@
+# Editing and rebuilding
+
+Keep a backup of the delivered folder before editing. Open `website-source/` in a code editor. Describe the requested change and edit `public/index.html` for content, `public/styles.css` for design, and `public/site.js` for browser behavior. New pages and assets belong under `public/`.
+
+From `website-source/`, run `node scripts/build.mjs`, `node scripts/check.mjs`, and `node scripts/preview.mjs`. Review the result at http://127.0.0.1:4173. Copy the resulting `dist/` contents to the host only after review. The delivered `ready-to-host/` is a snapshot; later edits require a new build.
+
+This is a code handoff, not an in-browser editor or managed account. Keep files under version control in your own private or public repository as appropriate; the delivered archive does not contain Wonder & Method's repository or history. Update the handoff manifest when preparing a later handoff so new source and documentation files are explicitly included.
