@@ -6,17 +6,17 @@ import {costCalculator} from './audit-content.mjs';
 import {monthlyScopeTable,monthlyCampaignExample} from './monthly-content.mjs';
 
 export function pricingOverview(o){
- const row=(name,fee,scope,anchor)=>`<tr><th scope="row"><a href="${anchor}">${e(name)}</a></th><td class="overview-fee">${fee}</td><td>${e(scope)}</td></tr>`;
- const group=(title,rows)=>`<tbody><tr class="overview-group"><th colspan="3" scope="rowgroup">${title}</th></tr>${rows.join('')}</tbody>`;
- return `<section class="pricing-overview" aria-labelledby="pricing-overview-title"><h2 id="pricing-overview-title">Compare the starting points.</h2><table><caption>Studio fees in USD. Monthly figures use monthly billing.</caption><thead><tr><th scope="col">Plan</th><th scope="col">Fee</th><th scope="col">Core scope</th></tr></thead>${group('Website builds · one-time',[
-  ...['launch_site','focused_site','signature_site'].map(id=>row(o[id].public_name.replace(' Website',''),money(o[id].public_price),'Up to '+o[id].marketing_page_cap+' pages','#'+id.replace('_site','')))
- ])}${group('Optional monthly help',[
-  row('Keep Running',money(o.plans.keep_running.monthly_price)+'/mo','Care + supplied updates','#after-launch'),
-  row('Improve',money(o.plans.improve.monthly_price)+'/mo','Research + 1 complete output','#after-launch'),
-  row('Grow',money(o.plans.grow.monthly_price)+'/mo','2 outputs + small promotional reuse','#after-launch')
- ])}${group('Existing-site review · one-time',[
-  row('Baseline',money(o.baseline.one_time_price),'Review + first small fix where appropriate','#audit-sprint'),
-  row('Audit & Fix Sprint',money(o.audit_sprint.one_time_price),'Review + agreed contained fixes','#audit-sprint')
+ const row=(id,name,fee,scope,anchor)=>({id,name,fee,scope,anchor});
+ const group=(id,title,rows)=>`<tbody><tr class="overview-group"><th id="overview-group-${id}" colspan="3" scope="rowgroup">${title}</th></tr>${rows.map(r=>`<tr><th id="overview-${r.id}" scope="row" headers="overview-group-${id} overview-plan"><a href="${r.anchor}">${e(r.name)}</a></th><td class="overview-fee" headers="overview-group-${id} overview-${r.id} overview-fee">${r.fee}</td><td headers="overview-group-${id} overview-${r.id} overview-scope">${e(r.scope)}</td></tr>`).join('')}</tbody>`;
+ return `<section class="pricing-overview" aria-labelledby="pricing-overview-title"><h2 id="pricing-overview-title">Compare the starting points.</h2><table><caption>Studio fees in USD. Monthly figures use monthly billing.</caption><thead><tr><th id="overview-plan" scope="col">Plan</th><th id="overview-fee" scope="col">Fee</th><th id="overview-scope" scope="col">Core scope</th></tr></thead>${group('websites','Website builds · one-time',[
+  ...['launch_site','focused_site','signature_site'].map(id=>row(id,o[id].public_name.replace(' Website',''),money(o[id].public_price),'Up to '+o[id].marketing_page_cap+' pages','#'+id.replace('_site','')))
+ ])}${group('monthly','Optional monthly help',[
+  row('keep-running','Keep Running',money(o.plans.keep_running.monthly_price)+'/mo','Care + supplied updates','#after-launch'),
+  row('improve','Improve',money(o.plans.improve.monthly_price)+'/mo','Research + 1 complete output','#after-launch'),
+  row('grow','Grow',money(o.plans.grow.monthly_price)+'/mo','2 outputs + small promotional reuse','#after-launch')
+ ])}${group('reviews','Existing-site review · one-time',[
+  row('baseline','Baseline',money(o.baseline.one_time_price),'Review + first small fix where appropriate','#audit-sprint'),
+  row('sprint','Audit & Fix Sprint',money(o.audit_sprint.one_time_price),'Review + agreed contained fixes','#audit-sprint')
  ])}</table><p class="overview-costs"><strong>Setup and outside costs.</strong> Existing-site monthly service starts with the ${money(o.baseline.one_time_price)} Baseline, included after a usable studio build or Sprint. Domain, hosting and paid tools are billed directly by your providers; tax and approved additions are extra.</p><p class="overview-foundation">All website builds include design, complete writing, keyword research and on-site SEO. Read the detailed allowances and payment terms below before choosing.</p></section>`;
 }
 
