@@ -4,7 +4,7 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the owner-requested audit naming update `b5c3c30f-ae20-4d79-84f2-aa6f154d44cd` (66 routes, 42 index-eligible routes, 17 guides). Public copy, metadata, generated downloads and four affected posters use “Website audit” without a fixed count. All 22 checklist sections and 185 native features remain; commercial amounts and limits are unchanged. All 292 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed. All 66 live pages and 209 asset hashes match. Independent Astra review cleared the naming-only change. Evidence is under `evidence/audit-name-20261018/`. A private D1 export and compatible previous Worker were recorded before publication; no migration was required. The separate fresh full-site audit reports open consistency, usability and operating-evidence findings in `C:/Wonder and Method/site-audit-20261018-strict/audit-report.html`; naming clearance does not close those findings.
+The current production release is the October 18 audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74` (66 routes, 42 index-eligible routes, 17 guides). All 15 confirmed defects are fixed; ten of thirteen improvements are implemented, and three still require genuine client/local/authorship evidence. All five operating requirements have concrete procedures, checks or safeguards, with actual funding, calendar, sustained operation and independent recovery evidence still pending. All 300 tests, a clean-source rebuild of 292 byte-identical output files, the deployment dry run and private GitHub CI passed. All 66 live pages and 218 asset hashes match. Bounded independent Astra logic and visual reviews have no open actionable findings. Evidence is under `evidence/audit-fixes-20261018/`. A private D1 export and compatible previous Worker were recorded before publication; no migration was required.
 
 New quotes use `config/offers.json` version `2026-10-18-audit-name`; accepted agreements retain their saved terms. The source-code handoff example is live at https://wonderandmethod.com/work/source-handoff/.
 
@@ -41,6 +41,8 @@ All new website plans deliver custom code, one initial launch, a client source f
 Prepare a client handoff from its dedicated source folder with `node scripts/prepare-client-handoff.mjs --source "PATH/TO/CLIENT-FOLDER"`. See [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for the starter, explicit file allowlist, required Node/Python/Gitleaks tooling and verification. With no `--source`, the command packages a fictional sample. It does not launch a site, configure accounts, send submissions or send the ZIP.
 
 ## Operations and recovery
+
+Complete the actual prerequisites in [operations/OWNER_READINESS.md](operations/OWNER_READINESS.md) before booking or annual enrollment. The eight remaining evidence items are recorded in the audit-fix completion ledger.
 
 - [HANDOFF.md](HANDOFF.md): daily inbox, operator and recovery workflow.
 - [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md): portable source-folder and ZIP preparation.

@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 18, 2026. Verified production: audit naming update `b5c3c30f-ae20-4d79-84f2-aa6f154d44cd`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/audit-name-20261018/`. All 292 tests, clean-source parity, private CI and live checks passed. Independent Astra review cleared the naming-only change; the separate full-site audit retains open findings. Gmail routing remains unchanged.
+Updated October 18, 2026. Verified production: audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74`. All 300 tests, clean-source parity, private CI and exact checks of 66 live routes and 218 assets passed. All 15 defects and ten improvements are implemented; three improvements and five operating requirements retain explicit external-evidence steps. See [BUILD_STATUS.md](BUILD_STATUS.md), [OWNER_READINESS.md](operations/OWNER_READINESS.md) and `evidence/audit-fixes-20261018/`. Gmail routing remains unchanged.
 
 ## Daily inquiry handling
 
