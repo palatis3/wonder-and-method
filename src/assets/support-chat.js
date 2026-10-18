@@ -27,8 +27,8 @@ if(launcher){
   dismissed=true;
   root.hidden=true;
   stopFocus();
-  const next=document.querySelector('#site-help a[href^="/contact/"]');
-  next?.focus({preventScroll:true});
+  const next=document.querySelector('.back-to-top:not([hidden]):not(.is-obstructing-controls)')||document.querySelector('.site-header .wordmark');
+  next?.focus();
  });
  launcher.hidden=false;
  launcher.addEventListener('click',()=>{

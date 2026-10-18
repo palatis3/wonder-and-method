@@ -6,6 +6,13 @@
   const services = nav.querySelector('.service-navigation');
   const desktop = matchMedia('(min-width:1024px)');
   const serviceSummary = services?.querySelector('summary');
+  const focusInNav = control => {
+    if (!control) return;
+    control.focus({preventScroll:true});
+    const item=control.getBoundingClientRect(), viewport=nav.getBoundingClientRect();
+    if(item.top<viewport.top)nav.scrollTop-=viewport.top-item.top;
+    else if(item.bottom>viewport.bottom)nav.scrollTop+=item.bottom-viewport.bottom;
+  };
   const syncServices = () => { if (services) services.open = !desktop.matches; };
   syncServices();
   const close = () => {
@@ -17,25 +24,25 @@
   window.addEventListener('pageshow',event=>{if(event.persisted)close();});
   nav.addEventListener('click',event=>{if(event.target.closest('a[href]'))close();});
   menu.addEventListener('click', () => {
-    if (menu.getAttribute('aria-expanded') === 'true') { close(); menu.focus(); return; }
+    if (menu.getAttribute('aria-expanded') === 'true') { close(); menu.focus({preventScroll:true}); return; }
     menu.setAttribute('aria-expanded', 'true');
     menu.textContent = 'Close';
     nav.classList.add('is-open');
     document.body.classList.add('menu-open');
-    nav.querySelector('a')?.focus();
+    focusInNav(nav.querySelector('a'));
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && desktop.matches && services?.open) {
       services.open=false;
-      serviceSummary?.focus();
+      serviceSummary?.focus({preventScroll:true});
       return;
     }
     if (menu.getAttribute('aria-expanded') !== 'true') return;
-    if (event.key === 'Escape') { close(); menu.focus(); }
+    if (event.key === 'Escape') { close(); menu.focus({preventScroll:true}); }
     if (event.key !== 'Tab') return;
     const controls = [menu, ...nav.querySelectorAll('a,summary')].filter(control=>control.getClientRects().length);
-    if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1).focus(); }
-    else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); menu.focus(); }
+    if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); focusInNav(controls.at(-1)); }
+    else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); menu.focus({preventScroll:true}); }
   });
   desktop.addEventListener('change', event => { if (event.matches) close(); syncServices(); });
   document.addEventListener('click', event => {

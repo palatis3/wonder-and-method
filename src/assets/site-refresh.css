@@ -1,6 +1,6 @@
 /* The selected brush identity, shared by every page. */
 .studio-site{--paper:#f8f7f2;--subtle:#edf0e8;--ink:#0e1b2a;--blue:#334739;--light-blue:#b9c8b3;--line:#ced2c7;--slate:#4b574e;--clay:#334739;--moss:#334739}
-html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height) + 1rem)}
+html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height) + 1rem);scroll-padding-bottom:7rem}
 .studio-site main [id]{scroll-margin-top:1rem}
 .studio-site .breadcrumb{font-size:.8rem;padding-top:1rem}
 .breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 .55rem;margin:0;padding:0}
@@ -14,8 +14,13 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .back-to-top:hover .back-to-top-icon{transform:translateY(-2px)}
 .back-to-top:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 .back-to-top[hidden]{display:none!important}
-.studio-site footer{padding-bottom:3rem}
+.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
+.menu-open .back-to-top,.menu-open .support-chat{visibility:hidden}
+.back-to-top.is-obstructing-controls:not(:focus),.support-chat-launch.is-obstructing-controls:not(:focus){visibility:hidden;pointer-events:none}
+.studio-site footer{padding-bottom:8rem}
 @media(max-width:767px){html{--site-header-height:122px}
+.page-tools-ready .back-to-top{width:52px;height:52px;padding:0}
+.page-tools-ready .back-to-top>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media print{.back-to-top{display:none!important}
 }
@@ -319,7 +324,7 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .editor-capture{margin-block:1.4rem 2rem}
 }
 .handoff-checksum{overflow-wrap:anywhere;word-break:break-word;font-size:.85em}
-/* Page help belongs to the layout, with no overlay over text or controls. */
+/* The contact fallback remains in the layout; enhanced controls stay reachable while scrolling. */
 .site-tools{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 2rem;width:90%;margin:2rem auto;padding:1.5rem 0;border-top:1px solid var(--line)}
 .site-tools>p{margin:0}
 .site-tools .page-tools{margin-left:auto}

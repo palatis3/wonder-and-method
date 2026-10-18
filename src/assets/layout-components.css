@@ -96,7 +96,7 @@
 .studio-site .contact-layout>.contact-form-column{order:initial}
 @media(max-width:1023px){.studio-site .site-header{gap:.6rem;padding:.4rem 1rem}}
 @media(max-width:1023px){.studio-site .site-header .wordmark{max-width:calc(100% - 76px);margin-right:auto;min-width:0}}
-@media(max-width:1023px){.studio-site .header-contact{display:none}}
+@media(max-width:1023px){.studio-site .header-contact{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border:1px solid var(--blue);border-radius:999px;background:var(--blue);color:#fff;font:600 .85rem/1.2 Manrope,Arial,sans-serif;text-decoration:none;order:2;width:100%}}
 @media(max-width:1023px){.studio-site .header-contact:hover{background:#24372a;border-color:#24372a;color:#fff;text-decoration:none}}
 @media(max-width:1023px){.studio-site .menu-toggle{order:1;border-radius:999px;border-color:#93a18f;padding:.6rem .85rem;font-weight:600}}
 @media(max-width:1023px){.studio-site .menu-toggle:hover{background:var(--subtle);border-color:var(--blue);color:var(--ink)}}
@@ -129,7 +129,7 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 @media(max-width:1023px){.studio-site .site-header #main-nav .service-links a{padding:.7rem 1rem;font-size:1rem}}
 @media(max-width:1023px){.studio-site .site-header #main-nav{flex-wrap:nowrap;overflow-x:hidden}}
 @media(max-width:1023px){.studio-site .site-header #main-nav>*{flex-shrink:0}}
-@media(max-width:1023px){.studio-concept .header-contact{display:none}}
+@media(min-width:600px) and (max-width:1023px){.studio-site .header-contact{width:auto;order:0}}
 
 /* Proposal form uses the same component with a scope-first layout. */
 .checkout-layout{align-items:start}
