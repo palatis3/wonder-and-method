@@ -4,15 +4,15 @@ Website and operating tools for Wonder and Method, operated by Venture House Gro
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The last verified production release is the October 17 buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f` (66 routes, 42 index-eligible routes, 17 guides). All 258 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed for that release; 66 live pages and 212 asset hashes matched. An independent Astra review cleared all ten improvements with no open findings. Evidence is under `evidence/next10-implementation-20261018/`. Three fictional concepts remain clearly labeled. The active art is Civic Sculpture finale-v2, and all approved package artwork is preserved.
+The current production release is the owner-approved source-handoff simplification `8f89d27a-1ebc-408b-841d-181b3ea7575d` (66 routes, 42 index-eligible routes, 17 guides). All 289 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed. All 66 live pages and 209 asset hashes match the reviewed build. Independent Astra review cleared the combined fixes with no open findings. Evidence is under `evidence/source-handoff-20261018/`. A private D1 export and compatible previous Worker were recorded before publication. This release adds no database migration; migrations through 0006 and notification recipients remain unchanged. The three website-plan posters are regenerated; Civic Sculpture and other unaffected artwork remain.
 
-The owner-approved source-handoff simplification is being implemented locally. Whole-release verification and publication are pending; the prior production evidence does not verify these new changes. New quotes follow the current `config/offers.json` version, while accepted agreements retain their saved terms.
+New quotes use `config/offers.json` version `2026-10-17-source-handoff`; accepted agreements retain their saved terms. The source-code handoff example is live at https://wonderandmethod.com/work/source-handoff/.
 
 The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `npm run leads -- report` shows current stages by service and stated source. See [operations/LEAD_PIPELINE.md](operations/LEAD_PIPELINE.md). Actual buyer records stay out of Git and public assets. Gmail inquiry routing remains as verified in the prior release.
 
 ## Rebuild and check
 
-Use Node.js 24 or later. From a clean source checkout:
+Use Node.js 24 or later. The full test suite also requires Python 3.9+ and Gitleaks 8.30+ for actual handoff secret scanning. Put Gitleaks on PATH or set `GITLEAKS_BIN` to its executable; see [the handoff prerequisites](operations/CLIENT_HANDOFF.md). CI installs these tools explicitly. From a clean source checkout:
 
 ```powershell
 npm ci

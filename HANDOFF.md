@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Last verified production: buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/next10-implementation-20261018/` for that release's verification. All ten improvements passed independent Astra review and release checks. The owner-approved source-handoff simplification is a local change awaiting whole-release verification and publication. Gmail routing remains unchanged.
+Updated October 17, 2026. Verified production: source-handoff update `8f89d27a-1ebc-408b-841d-181b3ea7575d`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/source-handoff-20261018/`. All 289 tests, clean-source parity, private CI and live checks passed; independent Astra review has no open findings. Gmail routing remains unchanged.
 
 ## Daily inquiry handling
 

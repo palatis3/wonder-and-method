@@ -1,20 +1,20 @@
 # Implementation status — October 17, 2026
 
-The source-handoff simplification is **in progress locally; whole-release verification and publication are pending**. Current new-offer authority is `config/offers.json` version `2026-10-17-source-handoff`. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. CMS/editor/accounts, apps/portals/stores/CRM, external booking/newsletter account configuration, tracking-number setup and scheduled growth follow-up are outside the new build packages. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
+The source-handoff simplification is **published and verified**. Current new-offer authority is `config/offers.json` version `2026-10-17-source-handoff`. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. CMS/editor/accounts, apps/portals/stores/CRM, external booking/newsletter account configuration, tracking-number setup and scheduled growth follow-up are outside the new build packages. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
 
-The source-handoff command and fictional starter are documented in [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). Their targeted local packaging checks are separate from final site/release validation and do not prove an actual client launch or form/email delivery.
+The source-handoff command and fictional starter are documented in [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). The packager passes 27 targeted tests, and the final fictional ZIP passes independent extraction, checksum and source-rebuild checks. This does not prove an actual client launch or form/email delivery.
 
-The following table and release narrative preserve the **previous verified production release**, not verification of the current simplification.
+Current release evidence is summarized below. Earlier buyer-experience work remains historical where noted; the new source-handoff model supersedes the former bundled editor demonstration.
 
-| Area | Previous verified release evidence |
+| Area | Current verified release evidence |
 | --- | --- |
-| Production | Buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`; 66 routes, 42 index-eligible pages, 17 guides |
-| Technical validation | 258 tests pass; clean staged-source build, static verifier, dry run and private GitHub CI pass; 66 live pages and 212 asset hashes match; independent Astra review cleared all ten improvements |
+| Production | Source-handoff update `8f89d27a-1ebc-408b-841d-181b3ea7575d`; 66 routes, 42 index-eligible pages, 17 guides |
+| Technical validation | 289 tests pass; clean staged-source build, static verifier, dry run and private GitHub CI pass; 66 live pages and 209 asset hashes match; independent Astra review cleared all remaining findings |
 | Search | Indexing ON. Google sitemap submission succeeded October 17, with 41 discovered pages. Homepage inspection says indexed. New manual recrawl request failed because Google's reCAPTCHA service could not connect. |
 | Source recovery | Private GitHub repository `palatis3/wonder-and-method`; sanitized source, secret scan, clean staged-checkout rebuild and CI recorded. This does not establish lost-device credential recovery. |
 | Database | Migrations through 0006 applied with private pre-migration backups; latest inquiry and aggregate counts unchanged. Current-schema synthetic restore preserves frozen payloads and hold protection. No real inquiry deletion or inferred contact-date backfill. |
 | Provider settings | DMARC monitoring record added; DNSSEC public chain and minimum TLS1.2 verified. Auto-renew remains OFF by explicit owner choice; domain expires October14,2027. |
-| Media | Civic Sculpture finale-v2; all approved package artwork preserved. Twelve unreferenced build files excluded (1.44MB); source art retained. |
+| Media | Civic Sculpture finale-v2 retained; three website-plan posters regenerated for the simplified scope. Withdrawn editor screenshots/export replaced by a checked source-code sample. |
 
 That release's ten improvements covered shorter contextual questions, earlier pricing choices, explicit production/review timing, compact proposal pages, an actual content-editor walkthrough, concept debriefs with relevant inquiries, service navigation, existing-site compatibility guidance, email-first contact and 3/7/12-page examples. Its offer version included editable paid source subject to disclosed licenses and provider export limits, with a scoped browser editor in Focused and Signature. That historical inclusion does not apply to new source-handoff quotes. The Decap walkthrough used a fictional local sample and did not claim client authentication or production deployment. Browser evidence for that release included phone, desktop, keyboard, no-JavaScript and short-height reflow checks; literal browser 200% zoom and screen-reader testing were not performed.
 
