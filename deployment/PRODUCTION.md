@@ -2,7 +2,7 @@
 
 Updated October 17, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 
-The current live release is the October 17 strict-audit follow-up `adb2cdce-eab2-4245-8bcf-2b1d8c0a379b`: 65 routes, 42 index-eligible routes and 17 guides. All 253 tests, fresh staged-source build, dry run and private GitHub CI pass; 65 live pages and 207 asset hashes match. Evidence is under `evidence/strict-audit-fixes-20261017/`. Migrations 0005/0006 add the rolling-lookup index, recovery heartbeat and two coarse contact-event categories; pre/post inquiry and aggregate counts match. Notification recipients are unchanged.
+The current production release is the October 17 buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f` (66 routes, 42 index-eligible routes, 17 guides). All 258 tests, a fresh staged-source rebuild, the deployment dry run and private GitHub CI passed; 66 live pages and 212 asset hashes match. An independent Astra review cleared all ten improvements with no open findings. Evidence is under `evidence/next10-implementation-20261018/`. A private D1 export and compatible previous Worker were recorded before publication. This release adds no database migration; existing migrations through 0006 and notification recipients are unchanged.
 
 Search indexing is enabled. Preserve `config/site.json` `searchIndexing: true` and Worker `SEARCH_INDEXING: "true"`. The sitemap is generated from `src/index-policy.mjs`; protected operator APIs and private/utility routes keep appropriate noindex/no-store behavior. Noindex is not access control.
 

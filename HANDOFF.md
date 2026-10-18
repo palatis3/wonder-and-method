@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 17, 2026. Current production: strict-audit follow-up `adb2cdce-eab2-4245-8bcf-2b1d8c0a379b`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/strict-audit-fixes-20261017/` for current release verification. Gmail routing remains unchanged from the verified preceding release.
+Updated October 17, 2026. Current production: buyer-experience update `707651fa-6602-40e0-ba83-a33643a0fa3f`. See [BUILD_STATUS.md](BUILD_STATUS.md) and `evidence/next10-implementation-20261018/` for current release verification. All ten improvements passed independent Astra review and release checks. Gmail routing remains unchanged.
 
 ## Daily inquiry handling
 
