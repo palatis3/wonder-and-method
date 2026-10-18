@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-expanded-websites",
+  "revision": "20261018-monthly-seo-growth",
   "format": "One complete poster per plan, with inheritance on upgraded plans; every feature also has native readable text.",
   "website": {
     "offers": [
@@ -129,7 +129,7 @@
           "height": 1448,
           "title": "Keep Running",
           "price": "$150 per month · USD",
-          "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+          "footer": "Coverage and working hours are agreed before enrollment. No 24/7 staffing or guaranteed restoration deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
           "inheritance": null,
           "featureIds": [
             "keep_running.small_changes",
@@ -145,7 +145,8 @@
             "keep_running.paid_handoff",
             "keep_running.coverage"
           ],
-          "intro": "All included features, explained in plain words."
+          "intro": "Keep your website working, accurate and ready for customers.",
+          "subtitle": "Website care"
         }
       },
       {
@@ -159,13 +160,15 @@
           "height": 1448,
           "title": "Improve",
           "price": "$400 per month · USD",
-          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
-          "inheritance": "Includes all features of Keep Running PLUS",
+          "footer": "Research and reporting support the improvement; they do not replace it. Lower difficulty is not a ranking deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
+          "inheritance": "Includes Keep Running care PLUS",
           "featureIds": [
             "improve.priority",
             "improve.monthly_research",
             "improve.quarterly_keywords",
-            "improve.deeper_advice",
+            "improve.opportunity_brief",
+            "improve.writing_implementation",
+            "improve.progress",
             "improve.conversation",
             "improve.action_list",
             "improve.refinement",
@@ -175,7 +178,8 @@
             "improve.choice_graphic",
             "improve.choice_email"
           ],
-          "intro": "Choose ONE agreed improvement each month from the task options below."
+          "intro": "Find worthwhile search opportunities. Finish one useful improvement each month.",
+          "subtitle": "Monthly SEO and website improvement"
         }
       },
       {
@@ -189,15 +193,19 @@
           "height": 1448,
           "title": "Grow",
           "price": "$800 per month · USD",
-          "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
-          "inheritance": "Includes all features of Improve PLUS",
+          "footer": "Care updates, the two improvements and the reuse task are separate; the same work never counts twice. The 90-day plan is a planning horizon, not a ranking deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
+          "inheritance": "Includes Improve features with the upgrades below",
           "featureIds": [
             "grow.priority",
             "grow.monthly_research",
-            "grow.strategy",
-            "grow.conversation"
+            "grow.progress",
+            "grow.conversation",
+            "grow.refinement",
+            "grow.growth_plan",
+            "grow.promotion_reuse"
           ],
-          "intro": "Choose TWO agreed improvements each month from the task options below, completed in sequence."
+          "intro": "Build connected content and improvements around the services you want to grow.",
+          "subtitle": "SEO and growth campaigns"
         }
       }
     ]
@@ -266,6 +274,6 @@
       }
     ]
   },
-  "scopeSha256": "928f7380793b79e7d8f97ad94aec2383f241e179e972da802a830f666f1b11cf",
-  "scopeProjectionVersion": 2
+  "scopeSha256": "413701104714a1f6c2130ccf068c0289ae297d674f9ce2d63f38e3c14257fcfe",
+  "scopeProjectionVersion": 4
 }

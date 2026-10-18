@@ -43,13 +43,13 @@ test('annual prepayment and refunds preserve twelve cycles and distinguish curre
 
 test('packs and card summaries keep zero/one/two priorities and lower-build exclusions truthful',()=>{
  const packs=buyerPacks(offers),keep=packs.find(p=>p.id==='keep_running');
- const text=JSON.stringify(keep.sections);assert.match(text,/Zero improvement priorities/);assert.doesNotMatch(text,/Choose one defined priority|before a priority starts/);
+ const text=JSON.stringify(keep.sections);assert.match(text,/No main improvement is included/);assert.doesNotMatch(text,/Choose one defined priority|before a priority starts/);
  for(const [id,count] of [['keep_running',0],['improve',1],['grow',2]])assert.equal(offers.plans[id].priorities,count);
  const launch=packs.find(p=>p.id==='launch_site'),launchWork=launch.sections.filter(s=>['What the fee buys','How completion is accepted'].includes(s.title)).flatMap(s=>s.items).join(' ');
  assert.doesNotMatch(launchWork,/selected Signature|chosen workflow|follow-up articles|after day 90|90-day/);
  const focused=offers.focused_site;for(const key of ['page_scope','form_limit','revisions','functionality'])assert.doesNotMatch(focused[key],/selected Signature|chosen Signature|chosen workflow/);
  const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/source-code handoff/);assert.doesNotMatch(builds,/3 articles total|CMS\/blog editing/);assert.doesNotMatch(builds,/hosting credit/);
- const monthly=planCards(offers);assert.equal((monthly.match(/Illustrative example:/g)||[]).length,3);assert.match(monthly,/No substantive improvement priority/);
+ const monthly=planCards(offers);assert.equal((monthly.match(/Illustrative example:/g)||[]).length,3);assert.match(monthly,/No main improvement/);
 });
 
 test('native task links and simple costs precede advanced estimator; homepage care is concise',()=>{
@@ -116,7 +116,7 @@ test('illustrated comparisons retain native scope, optional costs and distinct s
  for(const id of ['launch_site','focused_site','signature_site']){assert.ok(build.includes('/assets/buyer-packs/'+id));assert.ok(build.includes('/contact/?offer='+id));}
  assert.match(build,/update the code, check changes and publish/);assert.match(build,/One ready booking or newsletter link or standard embed/);assert.match(build,/Up to 2 ready booking\/newsletter links or standard embeds/);assert.match(build,/You or your developer can update the code, check changes and publish/);assert.doesNotMatch(build,/No browser editor is included/);assert.match(build,/optional call of up to 30 minutes/);assert.match(build,/One initial launch on your hosting account/);assert.match(build,/Hosting, domains, tools, taxes and approved additions are extra/);
  assert.doesNotMatch(build,/Choose ONE: a new-inquiry tracker|Reviews around days 30, 60 and 90|Tools to edit agreed words/);
- assert.match(monthly,/One agreed improvement each month/);assert.match(monthly,/Two agreed improvements each month/);assert.match(monthly,/done one after the other/);assert.match(monthly,/Every 3 months, research into one related set/);assert.match(monthly,/Monthly research into customer searches and competitors/);assert.match(monthly,/no recurring keyword campaign/);assert.match(monthly,/existing-site setup is \$399 once/);assert.match(monthly,/included after a usable build or Audit/);assert.match(monthly,/Bundled launch work is not charged again/);
+ assert.match(monthly,/One complete improvement each month/);assert.match(monthly,/Two substantial connected improvements each month/);assert.match(monthly,/delivered in sequence/);assert.match(monthly,/Refresh the wider topic map every quarter/);assert.match(monthly,/Monthly Semrush-informed research/);assert.match(monthly,/Deeper monthly Semrush-informed keyword and competitor research/);assert.match(monthly,/No recurring keyword campaign/);assert.match(monthly,/existing-site setup is \$399 once/);assert.match(monthly,/included after a usable build or Audit/);assert.match(monthly,/Bundled launch work is not charged again/);
  for(const html of [build,monthly]){assert.equal((html.match(/<details class="package-visual-details">/g)||[]).length,3);assert.equal((html.match(/loading="lazy"/g)||[]).length,3);assert.doesNotMatch(html,/onclick=|onkeydown=|<script/);}
 });
 

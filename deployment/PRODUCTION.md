@@ -1,6 +1,6 @@
 # Production website
 
-Current source revision: [expanded website packages](../operations/EXPANDED_PACKAGES_20261018.md). The release identifiers and results dated below describe the preceding published release; use the current `/version.json` and the new private release record for deployed identity.
+Current source revision: [monthly care, SEO and growth plans](../operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
 
 Updated October 18, 2026. Origin: https://wonderandmethod.com; `www` redirects to the apex. Worker: `wonder-method-production`. Configuration: `deployment/wrangler.production.jsonc`. Public assets: `dist/` only.
 

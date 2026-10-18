@@ -49,7 +49,7 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
  }
  const worksheet=await readFile(new URL('../src/assets/guides/website-care-versus-seo-worksheet.csv',import.meta.url),'utf8');
  for(const field of ['problem','evidence_available','maintenance_task','search_content_task','owner','approved_cycle','verification'])assert.ok(worksheet.split('\n')[0].includes(`"${field}"`));
- assert.equal((worksheet.match(/"Illustrative scenario; not client work"/g)||[]).length,2);assert.match(worksheet,/"Actual owned content-change record"/);assert.match(worksheet,/not a completed paid service cycle/);
+ assert.equal((worksheet.match(/"Illustrative scenario; not client work"/g)||[]).length,2);assert.match(worksheet,/"Illustrative Grow month; not client work"/);assert.match(worksheet,/"Actual owned content-change record"/);assert.match(worksheet,/not a completed paid service cycle/);
  const csv=await readFile(new URL('../src/assets/guides/website-audit-checklist.csv',import.meta.url),'utf8');
  for(const field of ['test','expected_behavior','result','evidence_url_date','severity','owner','proposed_correction','retest','needs_access_status'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
  assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/invalid response is not a saved inquiry/);
@@ -74,7 +74,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
 test('care comparison uses current configured service fees and finite units',()=>{
  const revised=structuredClone(offers);revised.plans.keep_running.monthly_price=207;revised.plans.improve.priorities=3;
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
- assert.match(html,/Keep Running \/ \$207/);assert.match(html,/3 agreed sequential priorities/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
+ assert.match(html,/Keep Running \/ \$207/);assert.match(html,/3 complete connected improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
  assert.match(html,/same change cannot fulfill two units/);assert.match(html,/Accepted work delayed by us remains owed/);
 });
 

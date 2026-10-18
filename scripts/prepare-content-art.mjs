@@ -41,4 +41,8 @@ for (const [slug, rows] of Object.entries(guideArt)) {
   for (const width of [640, 1200]) await sharp(Buffer.from(svg)).resize({width}).webp({quality: 88}).toFile(base + '-' + width + '.webp');
   for (const [suffix, width, height] of [['square', 800, 800], ['4x3', 1200, 900], ['16x9', 1280, 720]]) await sharp(Buffer.from(diagram(width, height))).png({compressionLevel: 9}).toFile(base + '-' + suffix + '.png');
 }
-console.log('Prepared page social cards and nine topic-specific guide diagrams.');
+// Preserve the complete portrait diagram in its landscape sharing/thumbnail exports.
+const careDiagram=(await readFile(resolve(root,'src/assets/guides/care-versus-seo.svg'),'utf8')).replace('<svg ','<svg x="770" y="54" ');
+const careShare=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f8f7f2"/><path d="M54 58H700" stroke="#b9c5b5"/><g font-family="Arial,sans-serif" fill="#0e1b2a"><text x="54" y="110" font-size="24" letter-spacing="2">WONDER AND METHOD</text><text x="54" y="218" font-family="Georgia,serif" font-size="53"><tspan x="54">Care keeps it working.</tspan><tspan x="54" dy="72">SEO makes it useful.</tspan></text><text x="54" y="384" font-size="27"><tspan x="54">Monthly research. Complete improvements.</tspan><tspan x="54" dy="43">Connected growth and promotional reuse.</tspan></text><text x="54" y="548" font-size="23" fill="#38564a">Compare the work, scope and evidence.</text></g>${careDiagram}</svg>`;
+for(const [suffix,width,height]of [['social',1200,630],['thumb',480,252]])await sharp(Buffer.from(careShare)).resize(width,height).png({compressionLevel:9}).toFile(resolve(root,`src/assets/guides/care-versus-seo-${suffix}.png`));
+console.log('Prepared page social cards, nine topic-specific guide diagrams and care/SEO diagram exports.');

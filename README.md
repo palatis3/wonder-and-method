@@ -2,7 +2,7 @@
 
 Current website packages: [expanded Launch, Focused and Signature](operations/EXPANDED_PACKAGES_20261018.md), approved October 18, 2026.
 
-Current source revision: [190-recommendation audit follow-up](operations/CLAUDE_AUDIT_20261018.md). The release identifiers and results dated below describe the preceding published release; use the current `/version.json` and the new private release record for deployed identity.
+Current source revision: [monthly care, SEO and growth plans](operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
 
 Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 18, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 

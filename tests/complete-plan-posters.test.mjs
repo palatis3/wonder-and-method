@@ -21,10 +21,10 @@ test('eight complete posters preserve every native feature and make all upgrades
     featureCount++;assert.equal(html.split('data-feature="'+f.id+'"').length-1,1,f.id);
     if(!shown.has(f.id)){assert.ok(parent,p.id+' lacks an inheritance parent');const prior=parent.features.find(x=>x.id.split('.').at(-1)===f.id.split('.').at(-1));assert.equal(prior?.plain,f.plain,f.id+' is neither printed nor truthfully inherited');}
    }
-   if(parent)assert.match(p.poster.inheritance,/^Includes all features of .+ PLUS$/);
+   if(parent){const expected={improve:'Includes Keep Running care PLUS',grow:'Includes Improve features with the upgrades below'};if(expected[p.id])assert.equal(p.poster.inheritance,expected[p.id]);else assert.match(p.poster.inheritance,/^Includes all features of .+ PLUS$/);}
    if(kind==='website'){assert.ok(p.features.some(f=>f.id.endsWith('.handoff')));assert.ok(p.features.some(f=>f.id.endsWith('.static_site')));assert.ok(!p.features.some(f=>/\.(cms|workflow|call_tracking|followup|articles|lead_pipeline_.+|client_portal_.+|small_store_.+)$/.test(f.id)));}
   }
  }
- assert.equal(files.size,8);assert.equal(featureCount,193);
+ assert.equal(files.size,8);assert.equal(featureCount,200);
  const changed=structuredClone(offers);changed.launch_site.form_limit+=' Changed field limit.';assert.throws(()=>assertPackageVisualOffers(changed),/configured offer scope changed/);
 });

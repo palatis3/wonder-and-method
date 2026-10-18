@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-expanded-websites",
+  "revision": "20261018-monthly-seo-growth",
   "products": [
     {
       "id": "launch_site",
@@ -1599,7 +1599,7 @@
       "name": "Keep Running",
       "price": 150,
       "priceBasis": "per month; optional annual prepayment",
-      "fit": "For a supported website that needs working tools, occasional changes and a practical next step.",
+      "fit": "A supported website that needs reliable checks, current information and occasional supplied updates.",
       "features": [
         {
           "id": "keep_running.small_changes",
@@ -1611,10 +1611,10 @@
         },
         {
           "id": "keep_running.publishing_help",
-          "title": "Help publishing in your covered editor",
-          "plain": "Help publishing in the agreed page editor is part of your update batch, not an extra batch.",
-          "explanation": "Your related update batch can include publishing help in the agreed CMS fields, so supplied content reaches the supported pages you actually use.",
-          "limits": "Part of the same small-change batch, not a second unit or unrestricted page building.",
+          "title": "Publishing in your supported workflow",
+          "plain": "Publishing through your supported source-code workflow or existing page editor is part of the supplied-update batch.",
+          "explanation": "We publish the supplied updates through the agreed source-code or supported existing CMS workflow. A new editor or CMS is not required or included.",
+          "limits": "Part of the same related batch, not an additional output or new CMS.",
           "condition": null
         },
         {
@@ -1636,33 +1636,33 @@
         {
           "id": "keep_running.tool_checks",
           "title": "Checks of covered forms and tools",
-          "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
-          "limits": "Known covered systems only; new application features or business-logic changes separate.",
+          "plain": "Checks of covered forms and known website tools, with access limits recorded.",
+          "explanation": "Check the covered forms, existing CMS if used and named workflows using authorized access.",
+          "limits": "Only agreed supported systems; new features and business logic require separate scope.",
           "condition": null
         },
         {
           "id": "keep_running.diagnostic_search",
-          "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
-          "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
-          "limits": "Keep Running includes no recurring keyword campaign.",
+          "title": "Search-health and indexing checks",
+          "plain": "Search-health and indexing checks where access allows, with gaps and warnings recorded.",
+          "explanation": "Search-health and indexing checks where access is available, with a practical next step. No recurring keyword or content campaign.",
+          "limits": "Care diagnoses search-health warnings; a recurring content or keyword campaign belongs to Improve or Grow.",
           "condition": null
         },
         {
           "id": "keep_running.quarterly_review",
-          "title": "A quarterly website audit",
-          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
-          "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
+          "title": "Quarterly status re-check",
+          "plain": "Every three months, a status re-check of the agreed review areas and open issues.",
+          "explanation": "Revisit the agreed review areas using changed evidence, record outstanding findings and identify any access limits.",
+          "limits": "A status re-check, not a new full audit or unlimited repairs.",
           "condition": null
         },
         {
           "id": "keep_running.receipt",
-          "title": "A dated record of the work",
-          "plain": "A dated record showing completed work, open issues and a useful next step.",
-          "explanation": "You receive a dated work receipt and status view showing completed work, unresolved issues and the practical next step supported by the available evidence.",
-          "limits": "One concise receipt; not an invented results report.",
+          "title": "A clear monthly care receipt",
+          "plain": "A dated care receipt showing checks, changes, unresolved issues and the next useful step.",
+          "explanation": "A dated record of checks and supplied changes, access limits, unresolved issues and the next practical action.",
+          "limits": "Record failed and unverified checks accurately.",
           "condition": null
         },
         {
@@ -1712,17 +1712,17 @@
         {
           "id": "keep_running.terms.fit",
           "title": "Supported websites and a usable baseline",
-          "text": "Your plan covers approved static sites, supported managed CMS sites and defined workflows after account/access/provider compatibility review. A $399 baseline is separate if needed, including its safe-fix opportunity outside month one. A paid studio build or usable Sprint already supplies it; the same usable baseline is not charged twice."
+          "text": "One supported website, one main market and one agreed monthly objective, with a named set of covered accounts and workflows. Approved static/source-code websites, supported existing CMS sites and defined workflows require account, permissions, provider and compatibility review. Multiple locations, languages, new templates, unknown legacy applications, arbitrary plugin stacks and complex systems need separate scope. An existing supported site starts with the $399 Website Baseline: access and page inventory, a website audit, an ordered fix list and a first small fix where appropriate. It is separate from the first monthly allowance and is included after a usable studio build or Audit & Fix Sprint, so you do not pay for the same setup twice."
         },
         {
           "id": "keep_running.terms.units",
           "title": "Your monthly work units",
-          "text": "Your plan includes one related small-change batch and 0 agreed improvement priorities. There is no recurring keyword campaign or standing strategy call."
+          "text": "One related supplied-update batch and the agreed care checks. No recurring keyword campaign or main improvement is included."
         },
         {
           "id": "keep_running.terms.queue",
           "title": "One queue and separate allowances",
-          "text": "Your site uses one work queue. A small update batch and a priority are distinct units; the same change cannot count as both. Audit findings can use an agreed priority, while defects caused by the studio do not use paid allowances."
+          "text": "One work queue per site. The supplied-update batch, main improvements and Grow’s small promotional reuse task are separate included work; the same change, asset or resize never fulfills two allowances. Research, planning, calls, reporting and relevant publication checks do not replace a main improvement. A diagnosed audit finding may be selected as an improvement. Our own defects and already-promised launch work are corrected or completed without using a paid allowance."
         },
         {
           "id": "keep_running.terms.useful_work",
@@ -1732,7 +1732,7 @@
         {
           "id": "keep_running.terms.rollover",
           "title": "Unused capacity and delayed work",
-          "text": "Unused capacity does not roll over. Accepted work delayed by the studio remains owed instead of expiring with the month. Missing client inputs receive notice and a revised available slot."
+          "text": "An unused batch of supplied updates does not carry over. Accepted work delayed by the studio remains owed; we agree a new date or refund. Missing inputs receive notice and the next invoice pauses if no useful work is agreed before renewal. Grow’s second accepted improvement and its accepted promotional reuse task stay owed if earlier work is delayed; they are not silently dropped."
         },
         {
           "id": "keep_running.terms.coverage",
@@ -1742,7 +1742,7 @@
         {
           "id": "keep_running.terms.research",
           "title": "Advice stays within the plan",
-          "text": "Advice uses actual available evidence about messaging, discovery, inquiry quality and the visitor journey. Preparation, discussion, analysis and follow-up share the finite plan. There is no profit, traffic, lead, ranking or financial-consultancy promise."
+          "text": "Search-health and indexing checks where access is available, with a practical next step. No recurring keyword or content campaign."
         },
         {
           "id": "keep_running.terms.vendor_fees",
@@ -1782,7 +1782,7 @@
         {
           "id": "keep_running.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
+          "text": "Monthly service covers separately agreed care and useful additional work. Reuse the build’s research, content and usable baseline; promised launch work and our own defect corrections never consume a new monthly allowance. The same work or usable baseline is never charged twice."
         },
         {
           "id": "keep_running.terms.ownership",
@@ -1838,7 +1838,7 @@
       ],
       "sections": [
         {
-          "title": "Your monthly care, checks and continuity",
+          "title": "Your website care and continuity",
           "features": [
             "keep_running.small_changes",
             "keep_running.publishing_help",
@@ -1861,7 +1861,7 @@
         "height": 1448,
         "title": "Keep Running",
         "price": "$150 per month · USD",
-        "footer": "Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
+        "footer": "Coverage and working hours are agreed before enrollment. No 24/7 staffing or guaranteed restoration deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
         "inheritance": null,
         "featureIds": [
           "keep_running.small_changes",
@@ -1877,15 +1877,18 @@
           "keep_running.paid_handoff",
           "keep_running.coverage"
         ],
-        "intro": "All included features, explained in plain words."
-      }
+        "intro": "Keep your website working, accurate and ready for customers.",
+        "subtitle": "Website care"
+      },
+      "category": "Website care",
+      "tagline": "Keep your website working, accurate and ready for customers."
     },
     {
       "id": "improve",
       "name": "Improve",
       "price": 400,
       "priceBasis": "per month; optional annual prepayment",
-      "fit": "For a website with one useful content, usability or search priority to implement each month.",
+      "fit": "A business ready to improve how customers find and choose one service or offer at a time.",
       "features": [
         {
           "id": "improve.small_changes",
@@ -1897,10 +1900,10 @@
         },
         {
           "id": "improve.publishing_help",
-          "title": "Help publishing in your covered editor",
-          "plain": "Help publishing in the agreed page editor is part of your update batch, not an extra batch.",
-          "explanation": "Your related update batch can include publishing help in the agreed CMS fields, so supplied content reaches the supported pages you actually use.",
-          "limits": "Part of the same small-change batch, not a second unit or unrestricted page building.",
+          "title": "Publishing in your supported workflow",
+          "plain": "Publishing through your supported source-code workflow or existing page editor is part of the supplied-update batch.",
+          "explanation": "We publish the supplied updates through the agreed source-code or supported existing CMS workflow. A new editor or CMS is not required or included.",
+          "limits": "Part of the same related batch, not an additional output or new CMS.",
           "condition": null
         },
         {
@@ -1922,130 +1925,34 @@
         {
           "id": "improve.tool_checks",
           "title": "Checks of covered forms and tools",
-          "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
-          "limits": "Known covered systems only; new application features or business-logic changes separate.",
+          "plain": "Checks of covered forms and known website tools, with access limits recorded.",
+          "explanation": "Check the covered forms, existing CMS if used and named workflows using authorized access.",
+          "limits": "Only agreed supported systems; new features and business logic require separate scope.",
           "condition": null
         },
         {
           "id": "improve.diagnostic_search",
-          "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
-          "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
-          "limits": "Diagnostic checks do not use or replace the keyword research included in this plan. Research and implementation remain subject to their stated units and limits.",
+          "title": "Search-health and indexing checks",
+          "plain": "Search-health and indexing checks where access allows, with gaps and warnings recorded.",
+          "explanation": "Search-health and indexing checks where access is available, with a practical next step. No recurring keyword or content campaign.",
+          "limits": "Care diagnoses search-health warnings; a recurring content or keyword campaign belongs to Improve or Grow.",
           "condition": null
         },
         {
           "id": "improve.quarterly_review",
-          "title": "A quarterly website audit",
-          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
-          "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
+          "title": "Quarterly status re-check",
+          "plain": "Every three months, a status re-check of the agreed review areas and open issues.",
+          "explanation": "Revisit the agreed review areas using changed evidence, record outstanding findings and identify any access limits.",
+          "limits": "A status re-check, not a new full audit or unlimited repairs.",
           "condition": null
         },
         {
           "id": "improve.receipt",
-          "title": "A dated record of the work",
-          "plain": "A dated record showing completed work, open issues and a useful next step.",
-          "explanation": "You receive a dated work receipt and status view showing completed work, unresolved issues and the practical next step supported by the available evidence.",
-          "limits": "One concise receipt; not an invented results report.",
+          "title": "A clear monthly care receipt",
+          "plain": "A dated care receipt showing checks, changes, unresolved issues and the next useful step.",
+          "explanation": "A dated record of checks and supplied changes, access limits, unresolved issues and the next practical action.",
+          "limits": "Record failed and unverified checks accurately.",
           "condition": null
-        },
-        {
-          "id": "improve.priority",
-          "title": "1 agreed improvement each month",
-          "plain": "One agreed improvement each month: a page/tool change, article, eligible profile, graphic or newsletter draft/setup.",
-          "explanation": "Your plan includes 1 agreed priority each month. Choose from a page/tool change, article, eligible profile batch, graphic or newsletter draft/setup.",
-          "limits": "Choices use these units; they are not an allowance of every task each month.",
-          "condition": null
-        },
-        {
-          "id": "improve.monthly_research",
-          "title": "A monthly opportunity review",
-          "plain": "A light monthly look for useful improvements to your content, visitor experience or search pages.",
-          "explanation": "Your website receives a light monthly review for useful opportunities, helping select the next content, usability or search question worth addressing with your agreed priority.",
-          "limits": "Opportunity skim, not a full monthly keyword/competitor campaign.",
-          "condition": null
-        },
-        {
-          "id": "improve.quarterly_keywords",
-          "title": "Quarterly focused keyword research",
-          "plain": "Every 3 months, research into one related set of customer searches and which page should answer them.",
-          "explanation": "Once each quarter, your plan includes a focused review of one keyword cluster, connecting related customer searches to the next useful page decision.",
-          "limits": "One focused keyword-cluster review per quarter.",
-          "condition": null
-        },
-        {
-          "id": "improve.deeper_advice",
-          "title": "A deeper monthly website review",
-          "plain": "A deeper monthly review of your message, visitor steps and inquiry quality, using information that actually exists.",
-          "explanation": "Your monthly review considers messaging, the path to an inquiry or booking, and inquiry quality where real data is available, with prioritized recommendations.",
-          "limits": "Preparation, discussion, analysis and follow-up share finite scope; no promised growth.",
-          "condition": null
-        },
-        {
-          "id": "improve.conversation",
-          "title": "A 20-minute conversation or written review",
-          "plain": "One 20-minute monthly conversation OR a written review, so you can discuss the website and next work.",
-          "explanation": "Each month, choose a 20-minute conversation or an equivalent asynchronous review, giving you a defined way to discuss the website and agreed next work.",
-          "limits": "Conversation OR equivalent asynchronous review, not both.",
-          "condition": null
-        },
-        {
-          "id": "improve.action_list",
-          "title": "A concise written action plan",
-          "plain": "A short written list connects the review and research to your agreed next work.",
-          "explanation": "You receive a concise written list of agreed next actions alongside the work receipt, connecting the review and research to the priorities selected for your website.",
-          "limits": "Part of the receipt/action plan; not a second full report.",
-          "condition": null
-        },
-        {
-          "id": "improve.refinement",
-          "title": "A refinement and checks for each priority",
-          "plain": "Each agreed improvement gets one combined feedback adjustment and checks that it does what was agreed.",
-          "explanation": "Each agreed priority includes one consolidated refinement and quality checks against its affected area, intended outcome and completion test, so the change has a clear finish.",
-          "limits": "One refinement and QA per priority; new scope separate.",
-          "condition": null
-        },
-        {
-          "id": "improve.choice_page",
-          "title": "A page or known-tool improvement",
-          "plain": "If chosen: one agreed improvement to a page, page editor or known tool, with feedback and checks.",
-          "explanation": "Use a priority for one contained improvement to an agreed page, covered CMS area or known workflow, using approved facts, a completion test, one refinement and checks.",
-          "limits": "Uses one of the 1 monthly priority. New applications, business logic and unsupported integrations separate.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "improve.choice_article",
-          "title": "A useful article",
-          "plain": "If chosen: one useful article researched, written, edited and published from approved facts, with feedback and checks.",
-          "explanation": "Use a priority for one article answering an agreed customer question, including relevant research, writing, editing, publication and one refinement with checks; no word quota.",
-          "limits": "Uses one of the 1 monthly priority. Approved facts; original field research separate.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "improve.choice_gbp",
-          "title": "An eligible local-profile update",
-          "plain": "If chosen and eligible: one profile check, one update, and draft replies to up to 5 reviews for approval.",
-          "explanation": "Use a priority for one authorized, eligible profile batch: an information check, one useful update and draft replies to up to five reviews for your approval.",
-          "limits": "Uses one of the 1 monthly priority. No invented reviews or guaranteed verification/rankings.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "improve.choice_graphic",
-          "title": "A promotional graphic",
-          "plain": "If chosen: one graphic idea in up to 3 sizes, using your brand, with an editable file, feedback and checks.",
-          "explanation": "Use a priority for one graphic in your existing approved brand: one concept, up to three agreed sizes, an editable export, one refinement and checks.",
-          "limits": "Uses one of the 1 monthly priority. No new logo, identity system, 3D or original illustration.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "improve.choice_email",
-          "title": "A newsletter draft and setup",
-          "plain": "If chosen: one newsletter draft and setup, including content and a test. Sending needs your explicit approval.",
-          "explanation": "Use a priority for one campaign’s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
-          "limits": "Uses one of the 1 monthly priority. One existing template, approved audience and purpose; no automation, list import or new template system. Sending requires your explicit approval.",
-          "condition": "Included only when selected as a monthly priority."
         },
         {
           "id": "improve.defect_repairs",
@@ -2070,6 +1977,118 @@
           "explanation": "Your agreement names covered accounts, checks and operating responsibilities. Urgent issues are classified, communicated and routed within the review and work windows agreed for your plan.",
           "limits": "Actual staffed availability; no continuous human coverage or guaranteed restoration time.",
           "condition": null
+        },
+        {
+          "id": "improve.priority",
+          "title": "1 complete improvement each month",
+          "plain": "One complete improvement each month: a service-page rewrite, researched article or guide, or agreed search or conversion fix.",
+          "explanation": "An improvement is one substantial agreed outcome: a service-page rewrite, researched article or guide, diagnosed contained search/technical fix or conversion-path improvement. An eligible profile batch, full promotional graphic or newsletter draft/setup may replace a main improvement when agreed as the better use of the month. Agree the affected area, verified facts and completion test. Relevant research, complete writing, editing, metadata, internal links, implementation, one consolidated refinement and checks support that output. Website work is published and checked; agreed drafts/assets are delivered in their specified format with approval status recorded. Sending email or posting to public accounts requires explicit client approval. These are alternative uses of the allowance, not unlimited development or simultaneous extras.",
+          "limits": "Alternative tasks use the main improvement allowance; agree the affected area and completion test.",
+          "condition": null
+        },
+        {
+          "id": "improve.monthly_research",
+          "title": "Monthly keyword opportunity research",
+          "plain": "Monthly Semrush-informed research for one active service or topic, including relevant lower-competition searches and existing-page opportunities.",
+          "explanation": "Monthly Semrush-informed opportunity research for one active service or topic, using relevant searches, lower-competition opportunities, actual search results and available website evidence. A concise opportunity brief selects the work; the wider topic map is refreshed quarterly.",
+          "limits": "Investigate up to three useful candidate opportunities for one active service or topic; select a suitable action after checking intent, business relevance, existing-page overlap and actual search results. Counts bound research, not guaranteed new ideas, tracked rankings or new pages. Record available KD/PKD and demand estimates with source, date and geography; label missing data. Lower difficulty is a screening signal, not a ranking probability or deadline.",
+          "condition": null
+        },
+        {
+          "id": "improve.quarterly_keywords",
+          "title": "Quarterly topic-map refresh",
+          "plain": "Refresh the wider topic map every quarter.",
+          "explanation": "Revisit the wider service/topic map quarterly, while monthly opportunity research selects the current work.",
+          "limits": "Planning supports completed work; it does not consume a main improvement.",
+          "condition": null
+        },
+        {
+          "id": "improve.opportunity_brief",
+          "title": "A visible opportunity brief",
+          "plain": "A keyword opportunity brief explains the selected customer question, business fit, evidence and next action.",
+          "explanation": "We use Semrush and available first-party search evidence to identify relevant queries, manageable competition, customer questions and existing-page opportunities, then inspect the actual search results and select useful work. KD/PKD and search volume are estimates with source, date and geography; missing data stays labeled. Lower difficulty does not establish a ranking probability or deadline, and organic keyword difficulty is not a local map-ranking prediction. Related phrases may share one useful page. Research candidates, tracked keywords and completed outputs are different quantities. Any client-specific tool access, tracking scope or additional fee is agreed before payment; a full client Semrush subscription is not automatically required.",
+          "limits": "Actual search results and business fit matter alongside tool estimates. A fresh keyword list or ranking deadline is not promised.",
+          "condition": null
+        },
+        {
+          "id": "improve.writing_implementation",
+          "title": "Complete writing and implementation",
+          "plain": "Complete writing from approved facts, relevant metadata and internal links are included. Website work is published and checked; agreed alternative drafts or assets are delivered.",
+          "explanation": "An improvement is one substantial agreed outcome: a service-page rewrite, researched article or guide, diagnosed contained search/technical fix or conversion-path improvement. An eligible profile batch, full promotional graphic or newsletter draft/setup may replace a main improvement when agreed as the better use of the month. Agree the affected area, verified facts and completion test. Relevant research, complete writing, editing, metadata, internal links, implementation, one consolidated refinement and checks support that output. Website work is published and checked; agreed drafts/assets are delivered in their specified format with approval status recorded. Sending email or posting to public accounts requires explicit client approval. These are alternative uses of the allowance, not unlimited development or simultaneous extras.",
+          "limits": "The client approves business facts; pending approval is recorded separately from publication. Research and reporting do not replace the improvement.",
+          "condition": null
+        },
+        {
+          "id": "improve.progress",
+          "title": "A useful progress receipt",
+          "plain": "A progress receipt shows completed work, available search and enquiry observations and the next decision.",
+          "explanation": "Live website links or delivered draft/asset files, why the work was selected, before/after changes, factual approval and checks, available search and enquiry observations, remaining dependencies and the next action. Pending approval is identified separately from publication; enquiry clicks are not confirmed leads.",
+          "limits": "Show available evidence and missing data; enquiry clicks do not establish qualified leads or sales.",
+          "condition": null
+        },
+        {
+          "id": "improve.conversation",
+          "title": "A 20-minute review or written equivalent",
+          "plain": "One 20-minute monthly review OR an asynchronous review.",
+          "explanation": "One 20-minute monthly review OR equivalent asynchronous review, supported by the opportunity brief, completed work and a concise next-action list.",
+          "limits": "Conversation OR equivalent asynchronous review, not both.",
+          "condition": null
+        },
+        {
+          "id": "improve.action_list",
+          "title": "A concise next-action list",
+          "plain": "A short written list connects the review and research to your agreed next work.",
+          "explanation": "The receipt includes the selected next actions and dependencies.",
+          "limits": "One concise receipt/action list, not another full report.",
+          "condition": null
+        },
+        {
+          "id": "improve.refinement",
+          "title": "One refinement and completion checks",
+          "plain": "One consolidated refinement and checks for the affected page or path.",
+          "explanation": "Review one combined feedback list and check the agreed output against its completion test.",
+          "limits": "New direction or new scope is agreed separately; our own mistakes do not consume the allowance.",
+          "condition": null
+        },
+        {
+          "id": "improve.choice_page",
+          "title": "Service page or conversion improvement",
+          "plain": "If selected: One substantial improvement to an agreed page or supported conversion path using verified facts and known components. Complete writing or rewriting, relevant metadata/internal links, implementation, one refinement and checks are included. A diagnosed contained search/technical fix can be selected instead. New applications, business logic, templates and unsupported integrations need separate scope.",
+          "explanation": "One substantial improvement to an agreed page or supported conversion path using verified facts and known components. Complete writing or rewriting, relevant metadata/internal links, implementation, one refinement and checks are included. A diagnosed contained search/technical fix can be selected instead. New applications, business logic, templates and unsupported integrations need separate scope.",
+          "limits": "Uses one of the 1 main monthly improvement.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "improve.choice_article",
+          "title": "Researched article or customer guide",
+          "plain": "If selected: One useful article or guide answering an agreed customer question: focused research, full writing from approved facts, editing, metadata, relevant internal links, publication, one refinement and checks. Related query variants can share the same page. No filler word quota; original field research or specialist investigation needs separate scope.",
+          "explanation": "One useful article or guide answering an agreed customer question: focused research, full writing from approved facts, editing, metadata, relevant internal links, publication, one refinement and checks. Related query variants can share the same page. No filler word quota; original field research or specialist investigation needs separate scope.",
+          "limits": "Uses one of the 1 main monthly improvement.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "improve.choice_gbp",
+          "title": "Eligible local profile batch",
+          "plain": "If selected: For an eligible authorized profile: one information check, one useful update and draft replies to up to five reviews for client approval. No invented reviews or guarantee of verification/rankings.",
+          "explanation": "For an eligible authorized profile: one information check, one useful update and draft replies to up to five reviews for client approval. No invented reviews or guarantee of verification/rankings.",
+          "limits": "Uses one of the 1 main monthly improvement.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "improve.choice_graphic",
+          "title": "Promotional graphic",
+          "plain": "If selected: One graphic using the existing approved brand: one concept in up to three agreed sizes, editable export, one refinement and quality checks. No new logo, identity system, 3D or original illustration.",
+          "explanation": "One graphic using the existing approved brand: one concept in up to three agreed sizes, editable export, one refinement and quality checks. No new logo, identity system, 3D or original illustration.",
+          "limits": "Uses one of the 1 main monthly improvement.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "improve.choice_email",
+          "title": "Newsletter campaign draft and setup",
+          "plain": "If selected: One campaign in an already approved account: one existing template, one approved audience and one purpose; subject, preheader, body, licensed assets, link/unsubscribe/mobile-preview checks and a test, plus one refinement and quality checks. No automation, list import or new template system. Sending requires the client’s explicit approval.",
+          "explanation": "One campaign in an already approved account: one existing template, one approved audience and one purpose; subject, preheader, body, licensed assets, link/unsubscribe/mobile-preview checks and a test, plus one refinement and quality checks. No automation, list import or new template system. Sending requires the client’s explicit approval.",
+          "limits": "Uses one of the 1 main monthly improvement.",
+          "condition": "Included only when selected as a main monthly improvement."
         }
       ],
       "terms": [
@@ -2086,17 +2105,17 @@
         {
           "id": "improve.terms.fit",
           "title": "Supported websites and a usable baseline",
-          "text": "Your plan covers approved static sites, supported managed CMS sites and defined workflows after account/access/provider compatibility review. A $399 baseline is separate if needed, including its safe-fix opportunity outside month one. A paid studio build or usable Sprint already supplies it; the same usable baseline is not charged twice."
+          "text": "One supported website, one main market and one agreed monthly objective, with a named set of covered accounts and workflows. Approved static/source-code websites, supported existing CMS sites and defined workflows require account, permissions, provider and compatibility review. Multiple locations, languages, new templates, unknown legacy applications, arbitrary plugin stacks and complex systems need separate scope. An existing supported site starts with the $399 Website Baseline: access and page inventory, a website audit, an ordered fix list and a first small fix where appropriate. It is separate from the first monthly allowance and is included after a usable studio build or Audit & Fix Sprint, so you do not pay for the same setup twice."
         },
         {
           "id": "improve.terms.units",
           "title": "Your monthly work units",
-          "text": "Your plan includes one related small-change batch and 1 agreed improvement priority. The listed priority types are alternative uses of the allowance; each includes one refinement and checks. One priority is selected for the cycle."
+          "text": "One related supplied-update batch plus 1 substantial main improvement each month. Research, writing, implementation, reporting and checks support the main work. Alternative task types are selected within the main allowance."
         },
         {
           "id": "improve.terms.queue",
           "title": "One queue and separate allowances",
-          "text": "Your site uses one work queue. A small update batch and a priority are distinct units; the same change cannot count as both. Audit findings can use an agreed priority, while defects caused by the studio do not use paid allowances."
+          "text": "One work queue per site. The supplied-update batch, main improvements and Grow’s small promotional reuse task are separate included work; the same change, asset or resize never fulfills two allowances. Research, planning, calls, reporting and relevant publication checks do not replace a main improvement. A diagnosed audit finding may be selected as an improvement. Our own defects and already-promised launch work are corrected or completed without using a paid allowance."
         },
         {
           "id": "improve.terms.useful_work",
@@ -2106,7 +2125,7 @@
         {
           "id": "improve.terms.rollover",
           "title": "Unused capacity and delayed work",
-          "text": "Unused capacity does not roll over. Accepted work delayed by the studio remains owed instead of expiring with the month. Missing client inputs receive notice and a revised available slot."
+          "text": "An unused batch of supplied updates does not carry over. Accepted work delayed by the studio remains owed; we agree a new date or refund. Missing inputs receive notice and the next invoice pauses if no useful work is agreed before renewal. Grow’s second accepted improvement and its accepted promotional reuse task stay owed if earlier work is delayed; they are not silently dropped."
         },
         {
           "id": "improve.terms.coverage",
@@ -2116,7 +2135,7 @@
         {
           "id": "improve.terms.research",
           "title": "Advice stays within the plan",
-          "text": "Advice uses actual available evidence about messaging, discovery, inquiry quality and the visitor journey. Preparation, discussion, analysis and follow-up share the finite plan. There is no profit, traffic, lead, ranking or financial-consultancy promise."
+          "text": "Monthly Semrush-informed opportunity research for one active service or topic, using relevant searches, lower-competition opportunities, actual search results and available website evidence. A concise opportunity brief selects the work; the wider topic map is refreshed quarterly. Investigate up to three useful candidate opportunities for one active service or topic; select a suitable action after checking intent, business relevance, existing-page overlap and actual search results. Counts bound research, not guaranteed new ideas, tracked rankings or new pages. We use Semrush and available first-party search evidence to identify relevant queries, manageable competition, customer questions and existing-page opportunities, then inspect the actual search results and select useful work. KD/PKD and search volume are estimates with source, date and geography; missing data stays labeled. Lower difficulty does not establish a ranking probability or deadline, and organic keyword difficulty is not a local map-ranking prediction. Related phrases may share one useful page. Research candidates, tracked keywords and completed outputs are different quantities. Any client-specific tool access, tracking scope or additional fee is agreed before payment; a full client Semrush subscription is not automatically required."
         },
         {
           "id": "improve.terms.choices",
@@ -2161,7 +2180,7 @@
         {
           "id": "improve.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
+          "text": "Monthly service covers separately agreed care and useful additional work. Reuse the build’s research, content and usable baseline; promised launch work and our own defect corrections never consume a new monthly allowance. The same work or usable baseline is never charged twice."
         },
         {
           "id": "improve.terms.ownership",
@@ -2218,7 +2237,7 @@
       ],
       "sections": [
         {
-          "title": "Your monthly care and practical advice",
+          "title": "Your website care and continuity",
           "features": [
             "improve.small_changes",
             "improve.publishing_help",
@@ -2228,26 +2247,33 @@
             "improve.diagnostic_search",
             "improve.quarterly_review",
             "improve.receipt",
-            "improve.priority",
-            "improve.monthly_research",
-            "improve.quarterly_keywords",
-            "improve.deeper_advice"
+            "improve.defect_repairs",
+            "improve.paid_handoff",
+            "improve.coverage"
           ]
         },
         {
-          "title": "Your improvement choices and continuity",
+          "title": "Your monthly SEO and completed improvement",
           "features": [
+            "improve.priority",
+            "improve.monthly_research",
+            "improve.quarterly_keywords",
+            "improve.opportunity_brief",
+            "improve.writing_implementation",
+            "improve.progress",
             "improve.conversation",
             "improve.action_list",
-            "improve.refinement",
+            "improve.refinement"
+          ]
+        },
+        {
+          "title": "Alternative main improvements — selected by agreement",
+          "features": [
             "improve.choice_page",
             "improve.choice_article",
             "improve.choice_gbp",
             "improve.choice_graphic",
-            "improve.choice_email",
-            "improve.defect_repairs",
-            "improve.paid_handoff",
-            "improve.coverage"
+            "improve.choice_email"
           ]
         }
       ],
@@ -2257,13 +2283,15 @@
         "height": 1448,
         "title": "Improve",
         "price": "$400 per month · USD",
-        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
-        "inheritance": "Includes all features of Keep Running PLUS",
+        "footer": "Research and reporting support the improvement; they do not replace it. Lower difficulty is not a ranking deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
+        "inheritance": "Includes Keep Running care PLUS",
         "featureIds": [
           "improve.priority",
           "improve.monthly_research",
           "improve.quarterly_keywords",
-          "improve.deeper_advice",
+          "improve.opportunity_brief",
+          "improve.writing_implementation",
+          "improve.progress",
           "improve.conversation",
           "improve.action_list",
           "improve.refinement",
@@ -2273,15 +2301,18 @@
           "improve.choice_graphic",
           "improve.choice_email"
         ],
-        "intro": "Choose ONE agreed improvement each month from the task options below."
-      }
+        "intro": "Find worthwhile search opportunities. Finish one useful improvement each month.",
+        "subtitle": "Monthly SEO and website improvement"
+      },
+      "category": "Monthly SEO and website improvement",
+      "tagline": "Find worthwhile search opportunities and turn them into useful improvements every month."
     },
     {
       "id": "grow",
       "name": "Grow",
       "price": 800,
       "priceBasis": "per month; optional annual prepayment",
-      "fit": "For an established website with two sequential, well-defined improvements ready each month.",
+      "fit": "A business with useful opportunities and ready inputs for two connected improvements and a small promotional reuse task each month.",
       "features": [
         {
           "id": "grow.small_changes",
@@ -2293,10 +2324,10 @@
         },
         {
           "id": "grow.publishing_help",
-          "title": "Help publishing in your covered editor",
-          "plain": "Help publishing in the agreed page editor is part of your update batch, not an extra batch.",
-          "explanation": "Your related update batch can include publishing help in the agreed CMS fields, so supplied content reaches the supported pages you actually use.",
-          "limits": "Part of the same small-change batch, not a second unit or unrestricted page building.",
+          "title": "Publishing in your supported workflow",
+          "plain": "Publishing through your supported source-code workflow or existing page editor is part of the supplied-update batch.",
+          "explanation": "We publish the supplied updates through the agreed source-code or supported existing CMS workflow. A new editor or CMS is not required or included.",
+          "limits": "Part of the same related batch, not an additional output or new CMS.",
           "condition": null
         },
         {
@@ -2318,122 +2349,34 @@
         {
           "id": "grow.tool_checks",
           "title": "Checks of covered forms and tools",
-          "plain": "Monthly checks of your covered page editor, forms and existing business tools, using approved access.",
-          "explanation": "Your covered CMS, forms and known workflows receive routine health checks, including appropriate access checks, so the agreement’s supported tools are reviewed alongside the website.",
-          "limits": "Known covered systems only; new application features or business-logic changes separate.",
+          "plain": "Checks of covered forms and known website tools, with access limits recorded.",
+          "explanation": "Check the covered forms, existing CMS if used and named workflows using authorized access.",
+          "limits": "Only agreed supported systems; new features and business logic require separate scope.",
           "condition": null
         },
         {
           "id": "grow.diagnostic_search",
-          "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
-          "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
-          "limits": "Diagnostic checks do not use or replace the keyword research included in this plan. Research and implementation remain subject to their stated units and limits.",
+          "title": "Search-health and indexing checks",
+          "plain": "Search-health and indexing checks where access allows, with gaps and warnings recorded.",
+          "explanation": "Search-health and indexing checks where access is available, with a practical next step. No recurring keyword or content campaign.",
+          "limits": "Care diagnoses search-health warnings; a recurring content or keyword campaign belongs to Improve or Grow.",
           "condition": null
         },
         {
           "id": "grow.quarterly_review",
-          "title": "A quarterly website audit",
-          "plain": "Every 3 months, a fresh website audit, with findings and access limits.",
-          "explanation": "Every quarter, your website’s status is revisited across all review areas, using changed evidence and recording which checks still need access.",
-          "limits": "Status reassessment, not exhaustive specialist investigation or unlimited repairs.",
+          "title": "Quarterly status re-check",
+          "plain": "Every three months, a status re-check of the agreed review areas and open issues.",
+          "explanation": "Revisit the agreed review areas using changed evidence, record outstanding findings and identify any access limits.",
+          "limits": "A status re-check, not a new full audit or unlimited repairs.",
           "condition": null
         },
         {
           "id": "grow.receipt",
-          "title": "A dated record of the work",
-          "plain": "A dated record showing completed work, open issues and a useful next step.",
-          "explanation": "You receive a dated work receipt and status view showing completed work, unresolved issues and the practical next step supported by the available evidence.",
-          "limits": "One concise receipt; not an invented results report.",
+          "title": "A clear monthly care receipt",
+          "plain": "A dated care receipt showing checks, changes, unresolved issues and the next useful step.",
+          "explanation": "A dated record of checks and supplied changes, access limits, unresolved issues and the next practical action.",
+          "limits": "Record failed and unverified checks accurately.",
           "condition": null
-        },
-        {
-          "id": "grow.priority",
-          "title": "2 agreed improvements each month",
-          "plain": "Two agreed improvements each month, done one after the other: page/tool changes, articles, eligible profiles, graphics or newsletter drafts.",
-          "explanation": "Your plan includes 2 agreed priorities, completed in sequence each month. Choose from a page/tool change, article, eligible profile batch, graphic or newsletter draft/setup.",
-          "limits": "Choices use these units; they are not an allowance of every task each month.",
-          "condition": null
-        },
-        {
-          "id": "grow.monthly_research",
-          "title": "Monthly keyword and competitor research",
-          "plain": "Monthly research into customer searches and competitors, followed by a clear page decision and action plan. This replaces Improve’s lighter monthly review and quarterly search research; quarterly whole-site reviews remain.",
-          "explanation": "Your plan includes focused monthly keyword and competitor research, with an explicit decision about the page and search question to prioritize next.",
-          "limits": "Replaces Improve’s lighter research schedule; not an additional quarterly keyword entitlement.",
-          "condition": null
-        },
-        {
-          "id": "grow.strategy",
-          "title": "Practical website strategy",
-          "plain": "Research-based advice on how people find you, understand your service and get in touch.",
-          "explanation": "Your focused research informs advice about how customers find your website, understand the offer and inquire or book, using actual available evidence to prioritize work.",
-          "limits": "No financial consultancy or profit, traffic, lead or ranking promise.",
-          "condition": null
-        },
-        {
-          "id": "grow.conversation",
-          "title": "A 30-minute conversation or written review",
-          "plain": "One 30-minute monthly conversation OR a written review, so you can discuss the website and next work.",
-          "explanation": "Each month, choose a 30-minute strategy conversation or an equivalent asynchronous review, giving you a defined way to discuss the website and agreed next work.",
-          "limits": "Conversation OR equivalent asynchronous review, not both.",
-          "condition": null
-        },
-        {
-          "id": "grow.action_list",
-          "title": "A concise written action plan",
-          "plain": "A short written list connects the review and research to your agreed next work.",
-          "explanation": "You receive a concise written list of agreed next actions alongside the work receipt, connecting the review and research to the priorities selected for your website.",
-          "limits": "Part of the receipt/action plan; not a second full report.",
-          "condition": null
-        },
-        {
-          "id": "grow.refinement",
-          "title": "A refinement and checks for each priority",
-          "plain": "Each agreed improvement gets one combined feedback adjustment and checks that it does what was agreed.",
-          "explanation": "Each agreed priority includes one consolidated refinement and quality checks against its affected area, intended outcome and completion test, so the change has a clear finish.",
-          "limits": "One refinement and QA per priority; new scope separate.",
-          "condition": null
-        },
-        {
-          "id": "grow.choice_page",
-          "title": "A page or known-tool improvement",
-          "plain": "If chosen: one agreed improvement to a page, page editor or known tool, with feedback and checks.",
-          "explanation": "Use a priority for one contained improvement to an agreed page, covered CMS area or known workflow, using approved facts, a completion test, one refinement and checks.",
-          "limits": "Uses one of the 2 monthly priorities. New applications, business logic and unsupported integrations separate.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "grow.choice_article",
-          "title": "A useful article",
-          "plain": "If chosen: one useful article researched, written, edited and published from approved facts, with feedback and checks.",
-          "explanation": "Use a priority for one article answering an agreed customer question, including relevant research, writing, editing, publication and one refinement with checks; no word quota.",
-          "limits": "Uses one of the 2 monthly priorities. Approved facts; original field research separate.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "grow.choice_gbp",
-          "title": "An eligible local-profile update",
-          "plain": "If chosen and eligible: one profile check, one update, and draft replies to up to 5 reviews for approval.",
-          "explanation": "Use a priority for one authorized, eligible profile batch: an information check, one useful update and draft replies to up to five reviews for your approval.",
-          "limits": "Uses one of the 2 monthly priorities. No invented reviews or guaranteed verification/rankings.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "grow.choice_graphic",
-          "title": "A promotional graphic",
-          "plain": "If chosen: one graphic idea in up to 3 sizes, using your brand, with an editable file, feedback and checks.",
-          "explanation": "Use a priority for one graphic in your existing approved brand: one concept, up to three agreed sizes, an editable export, one refinement and checks.",
-          "limits": "Uses one of the 2 monthly priorities. No new logo, identity system, 3D or original illustration.",
-          "condition": "Included only when selected as a monthly priority."
-        },
-        {
-          "id": "grow.choice_email",
-          "title": "A newsletter draft and setup",
-          "plain": "If chosen: one newsletter draft and setup, including content and a test. Sending needs your explicit approval.",
-          "explanation": "Use a priority for one campaign’s subject, preheader, body and licensed assets in an approved account, with link, unsubscribe and mobile-preview checks, a test and one refinement.",
-          "limits": "Uses one of the 2 monthly priorities. One existing template, approved audience and purpose; no automation, list import or new template system. Sending requires your explicit approval.",
-          "condition": "Included only when selected as a monthly priority."
         },
         {
           "id": "grow.defect_repairs",
@@ -2458,6 +2401,134 @@
           "explanation": "Your agreement names covered accounts, checks and operating responsibilities. Urgent issues are classified, communicated and routed within the review and work windows agreed for your plan.",
           "limits": "Actual staffed availability; no continuous human coverage or guaranteed restoration time.",
           "condition": null
+        },
+        {
+          "id": "grow.priority",
+          "title": "2 complete improvements each month",
+          "plain": "Two substantial connected improvements each month, delivered in sequence. This replaces Improve’s one improvement.",
+          "explanation": "An improvement is one substantial agreed outcome: a service-page rewrite, researched article or guide, diagnosed contained search/technical fix or conversion-path improvement. An eligible profile batch, full promotional graphic or newsletter draft/setup may replace a main improvement when agreed as the better use of the month. Agree the affected area, verified facts and completion test. Relevant research, complete writing, editing, metadata, internal links, implementation, one consolidated refinement and checks support that output. Website work is published and checked; agreed drafts/assets are delivered in their specified format with approval status recorded. Sending email or posting to public accounts requires explicit client approval. These are alternative uses of the allowance, not unlimited development or simultaneous extras.",
+          "limits": "Alternative tasks use the main improvement allowance; agree the affected area and completion test.",
+          "condition": null
+        },
+        {
+          "id": "grow.monthly_research",
+          "title": "Deeper monthly keyword and competitor research",
+          "plain": "Deeper monthly Semrush-informed keyword and competitor research across up to two related topics, including useful content gaps and earlier-work follow-up.",
+          "explanation": "Deeper monthly Semrush-informed keyword and competitor research across up to two related service or topic clusters, including lower-competition opportunities, competitor content gaps and follow-up on earlier work. The findings update a rolling 90-day growth plan.",
+          "limits": "Investigate up to six useful candidates across up to two related clusters and review up to three relevant search competitors. Select two connected actions around one agreed business goal; counts bound research rather than guarantee new ideas, tracked rankings or pages. Record available KD/PKD and demand estimates with source, date and geography; label missing data. Lower difficulty is a screening signal, not a ranking probability or deadline.",
+          "condition": null
+        },
+        {
+          "id": "grow.quarterly_keywords",
+          "title": "Quarterly topic-map refresh",
+          "plain": "Refresh the wider topic map every quarter.",
+          "explanation": "Grow’s rolling 90-day plan is refreshed monthly and includes the wider topic-map review.",
+          "limits": "Planning supports completed work; it does not consume a main improvement.",
+          "condition": null
+        },
+        {
+          "id": "grow.opportunity_brief",
+          "title": "A visible opportunity brief",
+          "plain": "A keyword opportunity brief explains the selected customer question, business fit, evidence and next action.",
+          "explanation": "We use Semrush and available first-party search evidence to identify relevant queries, manageable competition, customer questions and existing-page opportunities, then inspect the actual search results and select useful work. KD/PKD and search volume are estimates with source, date and geography; missing data stays labeled. Lower difficulty does not establish a ranking probability or deadline, and organic keyword difficulty is not a local map-ranking prediction. Related phrases may share one useful page. Research candidates, tracked keywords and completed outputs are different quantities. Any client-specific tool access, tracking scope or additional fee is agreed before payment; a full client Semrush subscription is not automatically required.",
+          "limits": "Actual search results and business fit matter alongside tool estimates. A fresh keyword list or ranking deadline is not promised.",
+          "condition": null
+        },
+        {
+          "id": "grow.writing_implementation",
+          "title": "Complete writing and implementation",
+          "plain": "Complete writing from approved facts, relevant metadata and internal links are included. Website work is published and checked; agreed alternative drafts or assets are delivered.",
+          "explanation": "An improvement is one substantial agreed outcome: a service-page rewrite, researched article or guide, diagnosed contained search/technical fix or conversion-path improvement. An eligible profile batch, full promotional graphic or newsletter draft/setup may replace a main improvement when agreed as the better use of the month. Agree the affected area, verified facts and completion test. Relevant research, complete writing, editing, metadata, internal links, implementation, one consolidated refinement and checks support that output. Website work is published and checked; agreed drafts/assets are delivered in their specified format with approval status recorded. Sending email or posting to public accounts requires explicit client approval. These are alternative uses of the allowance, not unlimited development or simultaneous extras.",
+          "limits": "The client approves business facts; pending approval is recorded separately from publication. Research and reporting do not replace the improvement.",
+          "condition": null
+        },
+        {
+          "id": "grow.progress",
+          "title": "Campaign progress and follow-up",
+          "plain": "A campaign progress receipt follows completed work, earlier results and the next decision.",
+          "explanation": "Live website links or delivered draft/asset files, why the work was selected, before/after changes, factual approval and checks, available search and enquiry observations, remaining dependencies and the next action. Pending approval is identified separately from publication; enquiry clicks are not confirmed leads. Follow up on earlier campaign work and update the connected sequence.",
+          "limits": "Show available evidence and missing data; enquiry clicks do not establish qualified leads or sales.",
+          "condition": null
+        },
+        {
+          "id": "grow.conversation",
+          "title": "A 30-minute review or written equivalent",
+          "plain": "One 30-minute monthly review OR an asynchronous review. This replaces the 20-minute review.",
+          "explanation": "One 30-minute monthly review OR equivalent asynchronous review, with the rolling 90-day growth plan, two connected improvements and one small promotional reuse task. This replaces the shorter Improve review.",
+          "limits": "Conversation OR equivalent asynchronous review, not both.",
+          "condition": null
+        },
+        {
+          "id": "grow.action_list",
+          "title": "A concise next-action list",
+          "plain": "A short written list connects the review and research to your agreed next work.",
+          "explanation": "The receipt includes the selected next actions and dependencies.",
+          "limits": "One concise receipt/action list, not another full report.",
+          "condition": null
+        },
+        {
+          "id": "grow.refinement",
+          "title": "One refinement and completion checks",
+          "plain": "One consolidated refinement and checks for each main improvement and the small reuse task.",
+          "explanation": "Review one combined feedback list and check the agreed output against its completion test.",
+          "limits": "New direction or new scope is agreed separately; our own mistakes do not consume the allowance.",
+          "condition": null
+        },
+        {
+          "id": "grow.choice_page",
+          "title": "Service page or conversion improvement",
+          "plain": "If selected: One substantial improvement to an agreed page or supported conversion path using verified facts and known components. Complete writing or rewriting, relevant metadata/internal links, implementation, one refinement and checks are included. A diagnosed contained search/technical fix can be selected instead. New applications, business logic, templates and unsupported integrations need separate scope.",
+          "explanation": "One substantial improvement to an agreed page or supported conversion path using verified facts and known components. Complete writing or rewriting, relevant metadata/internal links, implementation, one refinement and checks are included. A diagnosed contained search/technical fix can be selected instead. New applications, business logic, templates and unsupported integrations need separate scope.",
+          "limits": "Uses one of the 2 main monthly improvements.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "grow.choice_article",
+          "title": "Researched article or customer guide",
+          "plain": "If selected: One useful article or guide answering an agreed customer question: focused research, full writing from approved facts, editing, metadata, relevant internal links, publication, one refinement and checks. Related query variants can share the same page. No filler word quota; original field research or specialist investigation needs separate scope.",
+          "explanation": "One useful article or guide answering an agreed customer question: focused research, full writing from approved facts, editing, metadata, relevant internal links, publication, one refinement and checks. Related query variants can share the same page. No filler word quota; original field research or specialist investigation needs separate scope.",
+          "limits": "Uses one of the 2 main monthly improvements.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "grow.choice_gbp",
+          "title": "Eligible local profile batch",
+          "plain": "If selected: For an eligible authorized profile: one information check, one useful update and draft replies to up to five reviews for client approval. No invented reviews or guarantee of verification/rankings.",
+          "explanation": "For an eligible authorized profile: one information check, one useful update and draft replies to up to five reviews for client approval. No invented reviews or guarantee of verification/rankings.",
+          "limits": "Uses one of the 2 main monthly improvements.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "grow.choice_graphic",
+          "title": "Promotional graphic",
+          "plain": "If selected: One graphic using the existing approved brand: one concept in up to three agreed sizes, editable export, one refinement and quality checks. No new logo, identity system, 3D or original illustration.",
+          "explanation": "One graphic using the existing approved brand: one concept in up to three agreed sizes, editable export, one refinement and quality checks. No new logo, identity system, 3D or original illustration.",
+          "limits": "Uses one of the 2 main monthly improvements.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "grow.choice_email",
+          "title": "Newsletter campaign draft and setup",
+          "plain": "If selected: One campaign in an already approved account: one existing template, one approved audience and one purpose; subject, preheader, body, licensed assets, link/unsubscribe/mobile-preview checks and a test, plus one refinement and quality checks. No automation, list import or new template system. Sending requires the client’s explicit approval.",
+          "explanation": "One campaign in an already approved account: one existing template, one approved audience and one purpose; subject, preheader, body, licensed assets, link/unsubscribe/mobile-preview checks and a test, plus one refinement and quality checks. No automation, list import or new template system. Sending requires the client’s explicit approval.",
+          "limits": "Uses one of the 2 main monthly improvements.",
+          "condition": "Included only when selected as a main monthly improvement."
+        },
+        {
+          "id": "grow.growth_plan",
+          "title": "A rolling 90-day growth plan",
+          "plain": "A rolling 90-day growth plan connects earlier work, this month’s actions and the next opportunities.",
+          "explanation": "A rolling plan around one agreed business objective, connecting prior work, this month’s two improvements and the next useful opportunities. It is a planning horizon, not a ranking deadline or extra prepaid production.",
+          "limits": "Refreshed monthly. A planning horizon, not a ranking deadline or additional prepaid production.",
+          "condition": null
+        },
+        {
+          "id": "grow.promotion_reuse",
+          "title": "One additional small promotional reuse task",
+          "plain": "One simple branded graphic in up to three sizes with a short caption OR a newsletter excerpt of up to 150 words supplied as copy, using approved content.",
+          "explanation": "One additional small reuse task per month using approved content and existing brand assets: a simple branded graphic in up to three sizes with a short caption OR a newsletter excerpt of up to 150 words supplied as copy. One consolidated refinement and file/text checks are included. No new creative concept, original illustration, new claims, email layout, account/campaign setup, testing or sending. A full graphic concept or newsletter setup can instead be agreed as a main improvement. Public posting or email sending requires explicit client approval. The reuse task is separate from the two main improvements and supplied-update batch; the same asset, resize or change never satisfies two allowances.",
+          "limits": "Separate from the two main improvements. No new creative concept, email setup, testing or sending; one refinement and checks.",
+          "condition": null
         }
       ],
       "terms": [
@@ -2474,17 +2545,17 @@
         {
           "id": "grow.terms.fit",
           "title": "Supported websites and a usable baseline",
-          "text": "Your plan covers approved static sites, supported managed CMS sites and defined workflows after account/access/provider compatibility review. A $399 baseline is separate if needed, including its safe-fix opportunity outside month one. A paid studio build or usable Sprint already supplies it; the same usable baseline is not charged twice."
+          "text": "One supported website, one main market and one agreed monthly objective, with a named set of covered accounts and workflows. Approved static/source-code websites, supported existing CMS sites and defined workflows require account, permissions, provider and compatibility review. Multiple locations, languages, new templates, unknown legacy applications, arbitrary plugin stacks and complex systems need separate scope. An existing supported site starts with the $399 Website Baseline: access and page inventory, a website audit, an ordered fix list and a first small fix where appropriate. It is separate from the first monthly allowance and is included after a usable studio build or Audit & Fix Sprint, so you do not pay for the same setup twice."
         },
         {
           "id": "grow.terms.units",
           "title": "Your monthly work units",
-          "text": "Your plan includes one related small-change batch and 2 agreed improvement priorities. The listed priority types are alternative uses of the allowance; each includes one refinement and checks. Two priorities are completed sequentially."
+          "text": "One related supplied-update batch plus 2 substantial main improvements each month. Research, writing, implementation, reporting and checks support the main work. Grow also includes one separate small promotional reuse task. Alternative task types are selected within the main allowance."
         },
         {
           "id": "grow.terms.queue",
           "title": "One queue and separate allowances",
-          "text": "Your site uses one work queue. A small update batch and a priority are distinct units; the same change cannot count as both. Audit findings can use an agreed priority, while defects caused by the studio do not use paid allowances."
+          "text": "One work queue per site. The supplied-update batch, main improvements and Grow’s small promotional reuse task are separate included work; the same change, asset or resize never fulfills two allowances. Research, planning, calls, reporting and relevant publication checks do not replace a main improvement. A diagnosed audit finding may be selected as an improvement. Our own defects and already-promised launch work are corrected or completed without using a paid allowance."
         },
         {
           "id": "grow.terms.useful_work",
@@ -2494,7 +2565,7 @@
         {
           "id": "grow.terms.rollover",
           "title": "Unused capacity and delayed work",
-          "text": "Unused capacity does not roll over. Accepted work delayed by the studio remains owed instead of expiring with the month. Missing client inputs receive notice and a revised available slot."
+          "text": "An unused batch of supplied updates does not carry over. Accepted work delayed by the studio remains owed; we agree a new date or refund. Missing inputs receive notice and the next invoice pauses if no useful work is agreed before renewal. Grow’s second accepted improvement and its accepted promotional reuse task stay owed if earlier work is delayed; they are not silently dropped."
         },
         {
           "id": "grow.terms.coverage",
@@ -2504,7 +2575,7 @@
         {
           "id": "grow.terms.research",
           "title": "Advice stays within the plan",
-          "text": "Advice uses actual available evidence about messaging, discovery, inquiry quality and the visitor journey. Preparation, discussion, analysis and follow-up share the finite plan. There is no profit, traffic, lead, ranking or financial-consultancy promise."
+          "text": "Deeper monthly Semrush-informed keyword and competitor research across up to two related service or topic clusters, including lower-competition opportunities, competitor content gaps and follow-up on earlier work. The findings update a rolling 90-day growth plan. Investigate up to six useful candidates across up to two related clusters and review up to three relevant search competitors. Select two connected actions around one agreed business goal; counts bound research rather than guarantee new ideas, tracked rankings or pages. We use Semrush and available first-party search evidence to identify relevant queries, manageable competition, customer questions and existing-page opportunities, then inspect the actual search results and select useful work. KD/PKD and search volume are estimates with source, date and geography; missing data stays labeled. Lower difficulty does not establish a ranking probability or deadline, and organic keyword difficulty is not a local map-ranking prediction. Related phrases may share one useful page. Research candidates, tracked keywords and completed outputs are different quantities. Any client-specific tool access, tracking scope or additional fee is agreed before payment; a full client Semrush subscription is not automatically required."
         },
         {
           "id": "grow.terms.choices",
@@ -2549,7 +2620,7 @@
         {
           "id": "grow.terms.overlap",
           "title": "Build rights and overlap stay protected",
-          "text": "Monthly or annual service covers agreed care and improvements. The same work, defect correction or usable baseline is never charged twice. Ending care preserves ownership, account access and unfinished work owed under your accepted agreement."
+          "text": "Monthly service covers separately agreed care and useful additional work. Reuse the build’s research, content and usable baseline; promised launch work and our own defect corrections never consume a new monthly allowance. The same work or usable baseline is never charged twice."
         },
         {
           "id": "grow.terms.ownership",
@@ -2560,6 +2631,11 @@
           "id": "grow.terms.exclusions",
           "title": "What needs separate work",
           "text": "Unlimited requests, pages, revisions or application development; new workflows, data models, custom integrations and unsupported platforms; new 3D, identity redesign, original field research and extensive migration are excluded. Legal advice, penetration tests, exhaustive accessibility certification, ineligible profiles, invented reviews and guaranteed verification/search/business/AI-citation results are not included."
+        },
+        {
+          "id": "grow.terms.promotion_reuse",
+          "title": "The additional promotional reuse task",
+          "text": "One additional small reuse task per month using approved content and existing brand assets: a simple branded graphic in up to three sizes with a short caption OR a newsletter excerpt of up to 150 words supplied as copy. One consolidated refinement and file/text checks are included. No new creative concept, original illustration, new claims, email layout, account/campaign setup, testing or sending. A full graphic concept or newsletter setup can instead be agreed as a main improvement. Public posting or email sending requires explicit client approval. The reuse task is separate from the two main improvements and supplied-update batch; the same asset, resize or change never satisfies two allowances."
         }
       ],
       "termGroups": [
@@ -2581,7 +2657,8 @@
             "grow.terms.coverage",
             "grow.terms.research",
             "grow.terms.choices",
-            "grow.terms.exclusions"
+            "grow.terms.exclusions",
+            "grow.terms.promotion_reuse"
           ]
         },
         {
@@ -2606,7 +2683,7 @@
       ],
       "sections": [
         {
-          "title": "Your monthly care and focused research",
+          "title": "Your website care and continuity",
           "features": [
             "grow.small_changes",
             "grow.publishing_help",
@@ -2616,25 +2693,35 @@
             "grow.diagnostic_search",
             "grow.quarterly_review",
             "grow.receipt",
-            "grow.priority",
-            "grow.monthly_research",
-            "grow.strategy"
+            "grow.defect_repairs",
+            "grow.paid_handoff",
+            "grow.coverage"
           ]
         },
         {
-          "title": "Your two priority choices and continuity",
+          "title": "Your connected SEO and growth campaign",
           "features": [
+            "grow.priority",
+            "grow.monthly_research",
+            "grow.quarterly_keywords",
+            "grow.opportunity_brief",
+            "grow.writing_implementation",
+            "grow.progress",
             "grow.conversation",
             "grow.action_list",
             "grow.refinement",
+            "grow.growth_plan",
+            "grow.promotion_reuse"
+          ]
+        },
+        {
+          "title": "Alternative main improvements — selected by agreement",
+          "features": [
             "grow.choice_page",
             "grow.choice_article",
             "grow.choice_gbp",
             "grow.choice_graphic",
-            "grow.choice_email",
-            "grow.defect_repairs",
-            "grow.paid_handoff",
-            "grow.coverage"
+            "grow.choice_email"
           ]
         }
       ],
@@ -2644,16 +2731,22 @@
         "height": 1448,
         "title": "Grow",
         "price": "$800 per month · USD",
-        "footer": "The limits and allowances shown replace the lower plan’s limits; they do not add together. Provider charges, taxes and approved extras are separate. Scope, access and dates are agreed before work. See the website for full terms.",
-        "inheritance": "Includes all features of Improve PLUS",
+        "footer": "Care updates, the two improvements and the reuse task are separate; the same work never counts twice. The 90-day plan is a planning horizon, not a ranking deadline. Provider bills, taxes and approved extras are separate. See the website for full scope and terms.",
+        "inheritance": "Includes Improve features with the upgrades below",
         "featureIds": [
           "grow.priority",
           "grow.monthly_research",
-          "grow.strategy",
-          "grow.conversation"
+          "grow.progress",
+          "grow.conversation",
+          "grow.refinement",
+          "grow.growth_plan",
+          "grow.promotion_reuse"
         ],
-        "intro": "Choose TWO agreed improvements each month from the task options below, completed in sequence."
-      }
+        "intro": "Build connected content and improvements around the services you want to grow.",
+        "subtitle": "SEO and growth campaigns"
+      },
+      "category": "SEO and growth campaigns",
+      "tagline": "Build connected content and improvements around the services you want to grow."
     },
     {
       "id": "website_baseline",

@@ -26,7 +26,7 @@ export function commercialOffers(config, o) {
     {id: 'website_baseline', offer: o.baseline, price: o.baseline.one_time_price, route: '/services/website-audit/'},
     {id: 'audit_fix_sprint', offer: o.audit_sprint, price: o.audit_sprint.one_time_price, route: '/services/website-audit/'}
   ];
-  return rows.map(({id, offer, price, monthly, route}) => ({'@type': 'Offer', '@id': origin + '/pricing/#offer-' + id, name: id === 'website_baseline' ? 'Website Baseline' : offer.public_name, url: origin + '/pricing/#offer-' + id, priceCurrency: 'USD', price, ...(monthly ? {priceSpecification: {'@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', unitCode: 'MON', unitText: 'month'}} : {}), seller: {'@id': origin + '/#studio'}, itemOffered: {'@id': origin + route + '#service'}}));
+  return rows.map(({id, offer, price, monthly, route}) => ({'@type': 'Offer', '@id': origin + '/pricing/#offer-' + id, name: id === 'website_baseline' ? 'Website Baseline' : offer.public_name, url: origin + '/pricing/#offer-' + id, priceCurrency: 'USD', price, ...(monthly ? {description: offer.buyer_summary.outcomes.join(' '),priceSpecification: {'@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', unitCode: 'MON', unitText: 'month'}} : {}), seller: {'@id': origin + '/#studio'}, itemOffered: {'@id': origin + route + '#service'}}));
 }
 
 export function offerCatalogSchema(config, o) {

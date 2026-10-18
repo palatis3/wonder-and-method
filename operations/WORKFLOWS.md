@@ -48,7 +48,7 @@ At exit stop future renewal and reconcile completed work, approved committed cos
 
 ## 6. Optional service
 
-No further studio service is a normal outcome. Keep Running includes the current care and supplied-update batch; Improve adds one agreed priority and Grow adds two delivered sequentially. Use the saved current offer for complete deliverables/exclusions; do not invent hourly or word quotas.
+No further studio service is a normal outcome. Keep Running includes care and the separate supplied-update batch. Improve adds monthly Semrush-informed opportunity research, one complete improvement and a quarterly topic-map refresh, with a 20-minute review OR written equivalent. Grow replaces those allowances with deeper research, two connected improvements delivered sequentially, a rolling 90-day plan, one additional small promotional reuse task and a 30-minute review OR written equivalent. Complete writing, implementation, metadata, internal links and checks accompany website improvements. See [the current monthly delivery guide](MONTHLY_PLANS_20261018.md). Use the saved offer for deliverables/exclusions; do not invent hourly or word quotas.
 
 Before enrollment establish supported-site fit, usable baseline, actual coverage, contact/escalation routes, paid period/timezone, written cancellation route, useful work and ready inputs. A usable baseline included with a build or Sprint is not sold again. Build defect correction and separately paid service remain distinct; historically included follow-up remains owed or explicitly credited without charging twice.
 
