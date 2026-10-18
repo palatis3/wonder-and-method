@@ -1,4 +1,4 @@
-import {escapeHtml,inquiryChoices,inquiryContextFields,inquiryContextSummary,resolveServiceId,selectedInquiryContext} from './shared.mjs';
+import {escapeHtml,inquiryChoices,inquiryContextFields,inquiryRequestSummary,resolveServiceId,selectedInquiryContext} from './shared.mjs';
 
 export function hasInquiryQuery(url){
  return /^\/(?:contact(?:\/|\.html)?|checkout\/[^/]+\/?)$/.test(url.pathname)&&['offer',...Object.keys(inquiryContextFields)].some(key=>url.searchParams.has(key));
@@ -19,8 +19,7 @@ export function prefillInquiryHtml(html,url){
    const pattern=new RegExp('(<select id="'+key+'"[^>]*>)([\\s\\S]*?)(<\\/select>)');
    form=form.replace(pattern,(_all,start,options,end)=>start+options.replace(/ selected(?:="selected")?/g,'').replace(`<option value="${value}">`,`<option value="${value}" selected>`)+end);
   }
-  form=form.replace('<details class="inquiry-extra">','<details class="inquiry-extra" open>');
-  const summary=[inquiryChoices.find(([id])=>id===service)[1],...inquiryContextSummary(values),values.request_kind==='question'?'Question only; no booking or payment.':'Proposal request; scope, dates and costs are confirmed before payment.'].join(' · ');
+  const summary=inquiryRequestSummary(values);
   form=form.replace(/(<p id="request-summary">)[\s\S]*?(<\/p>)/,(_all,start,end)=>start+escapeHtml(summary)+end);
   if(values.request_kind==='question')form=form.replace(/(<label for="message" data-request-label>)[\s\S]*?(<\/label>)/,'$1Your question about this service <span>(required)</span>$2').replace(/(<button type="submit" data-request-submit>)[\s\S]*?(<\/button>)/,'$1Send question ↗$2');
   return form;

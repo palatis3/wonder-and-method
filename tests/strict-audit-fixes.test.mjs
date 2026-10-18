@@ -83,7 +83,7 @@ test('native contact links preserve known intent without script, reject URL inje
  const response=await worker.fetch(new Request(origin+'/contact/?offer=improve&goal=search&request_kind=question&priority=gbp&name=URL-person',{headers:{'If-None-Match':'"static"'}}),env,context());
  assert.equal(response.status,200);assert.equal(conditional,null);assert.equal(response.headers.get('ETag'),null);assert.equal(response.headers.get('Content-Length'),null);assert.equal(response.headers.get('Cache-Control'),'private, no-store');
  const filled=await response.text();for(const value of ['improve','search','question','gbp'])assert.match(filled,new RegExp('<option value="'+value+'" selected>'));
- assert.match(filled,/<details class="inquiry-extra" open>/);assert.match(filled,/Send question/);assert.doesNotMatch(filled,/URL-person/);
+ assert.doesNotMatch(filled,/<details class="inquiry-extra" open>/);assert.match(filled,/Send question/);assert.doesNotMatch(filled,/URL-person/);
  const locked=prefillInquiryHtml(inquiryForm(intake,{service:'launch_site',checkout:true}),new URL(origin+'/checkout/launch-site/?offer=grow&billing=annual&booking_choice=booking'));
  assert.match(locked,/<option value="launch_site" selected>/);assert.match(locked,/<option value="booking" selected>/);assert.doesNotMatch(locked,/<option value="annual" selected>/);
  const malicious=prefillInquiryHtml(html,new URL(origin+'/contact/?offer=%22%3E%3Cscript%3E&goal=%22%3E%3Cimg%3E&request_kind=unknown'));

@@ -6,6 +6,7 @@ export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','F
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 export const inquiryContextFields={
+ concept:{label:'Website example',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
  found_via:{label:'How you found us',services:inquiryChoices.map(([id])=>id),options:[['search','Search engine'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
  request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Question about this service']]},
@@ -18,6 +19,20 @@ export const inquiryContextFields={
 };
 export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&field.options.some(([id])=>id===value[key]))result[key]=value[key];return result;}
 export function inquiryContextSummary(value={}){return Object.entries(selectedInquiryContext(value)).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]);}
+export function inquiryRequestSummary(value={},pack){
+ const question=value.request_kind==='question';
+ const context=selectedInquiryContext(value);
+ const choice=inquiryChoices.find(([id])=>id===value.service);
+ let headline=choice?.[1]||'Help me choose';
+ if(!question&&pack){
+  const annual=value.billing==='annual'&&pack.annual;
+  const fee=annual?pack.annual.upfront_price:pack.price;
+  headline+=' — '+moneyExact(fee)+(annual?' prepaid for 12 service cycles':' '+pack.priceLabel);
+  if(pack.baselineFee)headline+=`; first payment for an existing site ${moneyExact(fee+pack.baselineFee)} including ${moneyExact(pack.baselineFee)} setup, or ${moneyExact(fee)} when a usable studio build or Sprint covers setup`;
+ }
+ const visible=question?Object.fromEntries(Object.entries(context).filter(([key])=>['goal','concept'].includes(key))):context;
+ return [headline,...inquiryContextSummary({service:value.service,...visible}),question?'Question only. No booking or payment.':'Proposal request only. Scope, provider costs and dates are confirmed before payment.'].join(' · ');
+}
 export const priceList=o=>({launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {

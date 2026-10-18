@@ -30,7 +30,7 @@ Normal builds use checked-in public assets and Node dependencies. Optional Pytho
 
 The form saves an inquiry in D1 before requesting an owner notification through Resend to the owner's Gmail inbox, as requested October 17. Public support mail remains at `support@wonderandmethod.com` on Fastmail. A provider-accepted message is not proof of inbox receipt. tawk.to loads after an explicit visitor chat action. Stripe hosts private invoices after fit and written scope approval; the public site does not automatically enroll visitors in monthly services.
 
-The owner confirmed a reply within one business day, Monday–Friday Eastern, and typical website delivery in 7–10 days after the agreed start and ready inputs. The written scope controls each project's schedule. Do not invent a phone number, social profiles, client work or extra staffed Care coverage.
+The owner confirmed a reply within one business day, Monday–Friday Eastern, and typical website production of 7–10 working days after the agreed start and ready inputs, plus agreed client review windows. First contact is by email, with a call arranged if useful. The written scope controls production, review and launch dates. Do not invent a phone number, social profiles, client work or extra staffed Care coverage.
 
 Current offer facts come from `config/offers.json`: Launch / Focused / Signature $1,400 / $2,350 / $3,700; Keep Running / Improve / Grow $150 / $400 / $800 monthly; Baseline $399; Sprint $750. Original V5 material remains preserved in `authority/`; accepted historical scopes retain their original terms. Start actual job records with `operations/WORKFLOWS.md`, keeping buyer facts and approvals explicit.
 

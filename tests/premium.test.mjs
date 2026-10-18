@@ -9,7 +9,7 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('every route exposes the same primary journey and local type system',()=>{
- const expected=['/work/','/pricing/','/about/','/contact/'];
+ const expected=['/work/','/services/web-design/','/services/seo/','/services/website-care/','/pricing/','/about/','/contact/'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   assert.ok(primary,path);

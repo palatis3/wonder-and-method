@@ -20,7 +20,7 @@ The inquiry receipt fix is verified in `evidence/inquiry-confirmation-20261017/`
 
 Prior audit evidence is in `evidence/claude-audit-20261017/`: live-http, release, migration-verification, provider-checks, google-notification, responsive-final, completion-ledger and reassessment. Independent scores retain Claude's 24 definitions and weights but are an Astra estimate, not a new Claude score or certification.
 
-The owner confirmed Buffalo, a one-business-day reply Monday–Friday Eastern, and typical delivery 7–10days after the agreed start and ready inputs. No phone, profile, testimonial or paid-client result is invented.
+The owner confirmed Buffalo, a one-business-day reply Monday–Friday Eastern, and typical production of 7–10 working days after the agreed start and ready inputs, plus agreed client review windows. First contact is email, with a call arranged if useful. No phone, profile, testimonial or paid-client result is invented.
 
 Remaining business dependencies include real project proof/reviews, approved client agreements and cancellation decisions, assumed-name verification, appropriate off-site profiles, provider billing/recovery checks and staffed Care coverage. The all-sections-80 target is not claimed complete. Original historical release folders remain evidence of their dates, not current operating instructions.
 

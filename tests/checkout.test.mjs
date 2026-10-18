@@ -33,3 +33,12 @@ test('offer actions separate checkout requests from questions and retain annual 
  assert.match(offerActions('launch_site','Launch'),/href="\/checkout\/launch-site\/"/);assert.match(offerActions('launch_site','Launch'),/offer=launch_site&amp;request_kind=question#inquiry/);assert.throws(()=>offerActions('unknown','Unknown'));
  const privacy=intakeContent(config).privacyBody;assert.match(privacy,/Payments and billing/);assert.match(privacy,/90-day unsuccessful-inquiry period does not apply/);assert.match(privacy,/https:\/\/stripe.com\/privacy/);
 });
+
+test('checkout explains the email reply and preserves synthetic-preview boundaries',()=>{
+ const live=checkoutPages(offers,intakeContent(config),config);
+ for(const page of live){assert.ok(page.body.includes(config.responseWindow));assert.match(page.body,/We start by email/);assert.match(page.body,/do not need to book a call/);}
+ const synthetic={...config,mode:'staging',formMode:'synthetic'};
+ for(const page of checkoutPages(offers,intakeContent(synthetic),synthetic)){assert.match(page.body,/Synthetic test form/);assert.match(page.body,/invented details only/);assert.match(page.body,/does not send email/);}
+ const preview={...config,reviewOnly:true};
+ for(const page of checkoutPages(offers,intakeContent(preview),preview))assert.match(page.body,/Submissions are disabled/);
+});

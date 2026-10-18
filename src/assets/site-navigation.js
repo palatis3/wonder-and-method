@@ -3,6 +3,11 @@
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');
   if (!menu || !nav) return;
+  const services = nav.querySelector('.service-navigation');
+  const desktop = matchMedia('(min-width:768px)');
+  const serviceSummary = services?.querySelector('summary');
+  const syncServices = () => { if (services) services.open = !desktop.matches; };
+  syncServices();
   const close = () => {
     menu.setAttribute('aria-expanded', 'false');
     menu.textContent = 'Menu';
@@ -18,13 +23,24 @@
     nav.querySelector('a')?.focus();
   });
   document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && desktop.matches && services?.open) {
+      services.open=false;
+      serviceSummary?.focus();
+      return;
+    }
     if (menu.getAttribute('aria-expanded') !== 'true') return;
     if (event.key === 'Escape') { close(); menu.focus(); }
     if (event.key !== 'Tab') return;
-    const controls = [menu, ...nav.querySelectorAll('a')];
+    const controls = [menu, ...nav.querySelectorAll('a,summary')].filter(control=>control.getClientRects().length);
     if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1).focus(); }
     else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); menu.focus(); }
   });
-  matchMedia('(min-width:768px)').addEventListener('change', event => { if (event.matches) close(); });
+  desktop.addEventListener('change', event => { if (event.matches) close(); syncServices(); });
+  document.addEventListener('click', event => {
+    if (desktop.matches && services?.open && !services.contains(event.target)) services.open=false;
+  });
+  nav.addEventListener('focusout', () => {
+    requestAnimationFrame(()=>{if(desktop.matches&&services?.open&&!services.contains(document.activeElement))services.open=false;});
+  });
   document.documentElement.classList.add('nav-ready');
 })();

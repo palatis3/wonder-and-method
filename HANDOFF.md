@@ -31,7 +31,7 @@ Before a release, record a compatible rollback Worker version and a private D1 e
 
 ## Commercial handoff
 
-Use `config/offers.json` for new scopes and preserve accepted historical terms. Confirm the buyer's scope, start date, ready inputs and actual capacity before booking; typical 7–10 day delivery starts only after those conditions. Issue private Stripe invoices only after the required written approvals. Care requires separately established coverage. Maintain actual costs, cash, client/accounting retention and client-owned accounts; a published website does not prove these business gates are complete.
+Use `config/offers.json` for new scopes and preserve accepted historical terms. Confirm the buyer's scope, start date, ready inputs and actual capacity before booking; typical 7–10 working days of production starts only after those conditions, plus agreed client review windows. First contact is email, with a call arranged if useful. Issue private Stripe invoices only after the required written approvals. Care requires separately established coverage. Maintain actual costs, cash, client/accounting retention and client-owned accounts; a published website does not prove these business gates are complete.
 
 At client handoff, deliver agreed paid source/assets/licenses and verified account access. Optional service cancellation must not disable a paid client-owned site. Actual client outcomes, independent user research and unverified business facts remain separate evidence requirements.
 

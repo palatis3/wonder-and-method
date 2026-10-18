@@ -48,6 +48,24 @@ test('synthetic: six fields persisted and no notification queued by default', as
   assert.deepEqual(Object.keys(JSON.parse(row.payload)), ['name','email','business','website','service','message']);
 });
 
+test('concept questions retain their allowlisted context through native correction and storage', async () => {
+  for (const concept of ['fieldwork','northline','hearthside']) {
+    const env=environment(),ctx=context(),body={...valid,service:'unsure',goal:'new_website',request_kind:'question',concept};
+    const invalid=await worker.fetch(request(new URLSearchParams({...body,message:'short'}).toString(),{'Content-Type':'application/x-www-form-urlencoded',Accept:'text/html'}),env,ctx);
+    assert.equal(invalid.status,422);
+    assert.match(await invalid.text(),new RegExp(`(?:name="concept" value="${concept}"|value="${concept}" selected)`));
+    const saved=await worker.fetch(request(body),env,ctx);assert.equal(saved.status,202);
+    const result=await saved.json();assert.equal(result.concept,concept);assert.equal(result.request_kind,'question');
+    const data=JSON.parse(env.DB.sqlite.prepare('SELECT payload FROM inquiries').get().payload);
+    assert.equal(data.concept,concept);assert.equal(data.goal,'new_website');assert.equal(data.service,'unsure');assert.equal(ctx.promises.length,0);
+    env.DB.sqlite.close();
+  }
+  const env=environment();
+  const invalid=await worker.fetch(request({...valid,concept:'<script>unlisted</script>'}),env,context());
+  assert.equal(invalid.status,422);assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS total FROM inquiries').get().total,0);
+  env.DB.sqlite.close();
+});
+
 test('synthetic: edge native correction retains escaped input and annual choices, then persists only allowlisted context', async () => {
   const env=environment(),ctx=context(),body={...valid,service:'grow',billing:'annual',priority:'graphic',priority_two:'email',baseline_status:'needed',name:'<b>Example</b>',message:'short'};
   const headers={'Content-Type':'application/x-www-form-urlencoded',Accept:'text/html'};
