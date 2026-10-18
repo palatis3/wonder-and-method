@@ -8,10 +8,23 @@
   "capacity_reference": null,
   "cash_reference": null,
   "agreement_reference": null,
-  "tax": {"treatment": null, "review_reference": null, "rate_ids": []},
+  "tax": {
+    "treatment": null,
+    "review_reference": null,
+    "rate_ids": []
+  },
   "cancellation_route": null,
   "coverage_reference": null,
   "cycle_approval_reference": null,
   "annual_reserve_reference": null,
-  "manual_annual_renewal": false
+  "manual_annual_renewal": false,
+  "annual_reserve": {
+    "reviewed_at": null,
+    "funding_evidence_reference": null,
+    "refund_rehearsal_reference": null,
+    "gross_unearned_cents": null,
+    "independent_fee_buffer_cents": null,
+    "accepted_undelivered_cents": null,
+    "funded_total_cents": null
+  }
 }

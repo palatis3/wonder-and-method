@@ -11,7 +11,7 @@ test('plan pages reuse shared CSS without changing the existing cascade',async()
  const assets=new URL('../src/assets/',import.meta.url);
  for(const includeChat of [false,true]){
   const css=await buildCssBundles(fileURLToPath(assets),{includeChat});
-  const source=(await Promise.all(['brand.css','package-visuals.css','style.css','journal.css','premium.css','site-refresh.css',...(includeChat?['support-chat.css']:[])].map(name=>readFile(new URL(name,assets),'utf8')))).join('\n');
+  const source=(await Promise.all(['brand.css','package-visuals.css','style.css','journal.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])].map(name=>readFile(new URL(name,assets),'utf8')))).join('\n');
   const minify=value=>transform(value,{loader:'css',minify:true,target:['chrome110','safari16']});
   // Re-minifying the concatenated new sheets must produce the previous sheet:
   // selectors, declarations, media rules and their order are all preserved.
@@ -19,7 +19,7 @@ test('plan pages reuse shared CSS without changing the existing cascade',async()
   assert.ok(Buffer.byteLength(css.plans)<Buffer.byteLength(css.shared)/4,'Plan CSS must not duplicate the full shared stylesheet');
  }
  const styles=names=>names.map(name=>`<link rel="stylesheet" href="/assets/${name}.css">`).join('');
- const fixture=`<html><head>${styles(['brand','counties','style','package-visuals','civic-sculpture-preview','site-refresh'])}<script src="/assets/boot.js"></script></head><body><p>Keep content</p></body></html>`;
+ const fixture=`<html><head>${styles(['brand','counties','style','package-visuals','civic-sculpture-preview','site-refresh','layout-components'])}<script src="/assets/boot.js"></script></head><body><p>Keep content</p></body></html>`;
  const html=applyCssBundles(fixture,'document.documentElement.classList.add("js");');
  const links=[...html.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]);
  assert.deepEqual(links,['/assets/counties.css','/assets/civic-sculpture-preview.css','/assets/site-plans.css','/assets/site.css']);

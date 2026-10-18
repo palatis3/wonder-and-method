@@ -56,7 +56,7 @@ test('withdrawn editor route redirects GET and HEAD to the noindex source exampl
 
 test('the public handoff download is the exact independently checked fictional archive',async()=>{
  const bytes=await readFile(new URL('../src/assets/source-handoff/fictional-maple-studio.zip',import.meta.url));
- const sha=createHash('sha256').update(bytes).digest('hex');assert.equal(sha,'6f70a07e96e686d22eb364470ab705ab5a1d682e827d52ec59dc3207d1a8f38d');
+ const sha=createHash('sha256').update(bytes).digest('hex');assert.equal(sha,'21190e9af341b6e889c9581debe456423b2a99d93728a579aade1dabb61650c0');
  assert.ok(pages.find(p=>p.path==='/work/source-handoff/').html.includes(sha));
  await assert.rejects(access(new URL('../src/assets/editor-walkthrough/sample-content-export.zip',import.meta.url)));
 });

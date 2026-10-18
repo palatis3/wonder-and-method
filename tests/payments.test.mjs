@@ -12,9 +12,10 @@ const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.me
 const now=new Date('2026-10-16T12:00:00Z');
 async function accepted(id='launch_site',annual=false){
  const scope=await draftScope(id,'synthetic-billing',{billing:annual?'annual':'monthly'});scope.named_approver='Synthetic approver';scope.schedule.booked_start='2026-11-01';scope.milestones[0].approval_reference='synthetic written booking approval';
- scope.buyer_confirmation={page_copy_limits:true,self_editing_understood:true,required_optional_bills:true,approvals:true,ownership_and_exit:true,questions_resolved:true,written_acceptance_reference:'synthetic scope acceptance',accepted_version:1,accepted_at:'2026-10-15T12:00:00Z'};
+ scope.buyer_confirmation={page_copy_limits:true,self_editing_understood:true,source_folder_zip_and_build_notes_understood:true,initial_launch_ready_service_limits_and_exclusions_understood:true,optional_handoff_call_and_separate_growth_work_understood:true,required_optional_bills:true,approvals:true,ownership_and_exit:true,questions_resolved:true,written_acceptance_reference:'synthetic scope acceptance',accepted_version:1,accepted_at:'2026-10-15T12:00:00Z'};
  const billing={mode:'test',account_id:paymentAccounts.test,customer_id:'cus_synthetic',scope_version:1,due_at:'2026-10-30T12:00:00Z',fit_reference:'synthetic',capacity_reference:'synthetic',cash_reference:'synthetic',agreement_reference:'synthetic',tax:{treatment:'no_tax',review_reference:'synthetic tax decision',rate_ids:[]}};
  if(scope.service_period){scope.service_period={start:'2026-11-01T12:00:00Z',end:annual?'2027-11-01T12:00:00Z':'2026-12-01T12:00:00Z',timezone:'America/New_York',cycles:annual?12:1};Object.assign(billing,{cancellation_route:'support@example.invalid',coverage_reference:'synthetic',cycle_approval_reference:'synthetic',annual_reserve_reference:'synthetic',manual_annual_renewal:true});}
+ if(annual)billing.annual_reserve={reviewed_at:'2026-10-15T12:00:00Z',funding_evidence_reference:'synthetic funded reserve',refund_rehearsal_reference:'synthetic rehearsal',gross_unearned_cents:Math.round(scope.fixed_price*100),independent_fee_buffer_cents:20000,accepted_undelivered_cents:5000,funded_total_cents:Math.round(scope.fixed_price*100)+25000};
  return {scope,billing};
 }
 function mockClient(plan){
@@ -41,6 +42,24 @@ test('unaccepted draft, silent approval, unresolved tax and altered amount all b
 });
 test('annual invoice requires all twelve cycles, reserves and manual renewal',async()=>{
  const {scope,billing}=await accepted('improve',true);assert.equal(prepareInvoice(scope,billing,0,{now}).amount,456000);billing.manual_annual_renewal=false;assert.throws(()=>prepareInvoice(scope,billing,0,{now}),/manual renewal/);billing.manual_annual_renewal=true;scope.service_period.cycles=1;assert.throws(()=>prepareInvoice(scope,billing,0,{now}),/cycle count/);
+});
+
+test('current source-delivery builds require each specific buyer confirmation',async()=>{
+ const keys=['source_folder_zip_and_build_notes_understood','initial_launch_ready_service_limits_and_exclusions_understood','optional_handoff_call_and_separate_growth_work_understood'];
+ for(const id of ['launch_site','focused_site','signature_site']){
+  const acceptedBuild=await accepted(id);assert.ok(prepareInvoice(acceptedBuild.scope,acceptedBuild.billing,0,{now}).amount>0);
+  for(const key of keys)for(const missing of [false,null,undefined]){
+   const {scope,billing}=await accepted(id);scope.buyer_confirmation[key]=missing;
+   assert.throws(()=>prepareInvoice(scope,billing,0,{now}),new RegExp(key));
+  }
+ }
+ const historical=await accepted();delete historical.scope.commercial_snapshot.offer.editing_mode;
+ for(const key of keys)delete historical.scope.buyer_confirmation[key];
+ assert.equal(prepareInvoice(historical.scope,historical.billing,0,{now}).amount,70000);
+ for(const id of ['website_baseline','audit_fix_sprint','keep_running']){
+  const {scope,billing}=await accepted(id);for(const key of keys)scope.buyer_confirmation[key]=false;
+  assert.ok(prepareInvoice(scope,billing,0,{now}).amount>0);
+ }
 });
 test('repeated draft creation reuses the invoice and never adds a second line or emails',async()=>{
  const {scope,billing}=await accepted(),plan=prepareInvoice(scope,billing,0,{now}),mock=mockClient(plan);await createDraft(mock.client,plan);await createDraft(mock.client,plan);assert.equal(mock.invoices.length,1);assert.equal(mock.invoices[0].lines.data.length,1);assert.equal(mock.calls.filter(c=>c.method==='POST').length,2);assert.equal(mock.invoices[0].auto_advance,false);assert.equal(mock.invoices[0].collection_method,'send_invoice');assert.ok(!mock.calls.some(c=>/\/send|\/pay/.test(c.path)));
@@ -86,4 +105,10 @@ test('read-only reconciliation works after live charges and payouts become disab
  const {scope,billing}=await accepted();billing.mode='live';billing.account_id=paymentAccounts.live;const plan=prepareInvoice(scope,billing,0,{now}),mock=mockClient(plan);mock.client.mode='live';
  const invoice={customer:plan.customer,livemode:true,currency:'usd',metadata:{wm_request:plan.id,wm_scope_hash:plan.scope_hash},collection_method:'send_invoice',auto_advance:false,automatic_tax:{enabled:false},subtotal:plan.amount,total:plan.amount,lines:{data:[{amount:plan.amount}],has_more:false},due_date:plan.due_date,default_tax_rates:[],id:'in_synthetic',status:'open',amount_paid:0,amount_remaining:plan.amount,starting_balance:0};
  const calls=[],client=stripeClient({key:'sk_live_fake',mode:'live',fetchImpl:async(url,options)=>{calls.push({url,method:options.method});return Response.json(url.endsWith('/account')?{id:paymentAccounts.live,charges_enabled:false,payouts_enabled:false}:invoice);}});assert.equal((await reconcileInvoice(client,plan,'in_synthetic')).status,'open');assert.ok(calls.every(c=>c.method==='GET'));
+});
+
+test('annual enrollment rejects unfunded, missing and future-dated reserve evidence',async()=>{
+ for(const mutate of [b=>b.annual_reserve=null,b=>b.annual_reserve.funding_evidence_reference=null,b=>b.annual_reserve.refund_rehearsal_reference=null,b=>b.annual_reserve.reviewed_at='2027-01-01T00:00:00Z',b=>b.annual_reserve.gross_unearned_cents=1,b=>b.annual_reserve.independent_fee_buffer_cents=0,b=>b.annual_reserve.funded_total_cents-=1,b=>b.annual_reserve.accepted_undelivered_cents=null]){
+  const {scope,billing}=await accepted('improve',true);mutate(billing);assert.throws(()=>prepareInvoice(scope,billing,0,{now}),/reserve|Fund the gross/);
+ }
 });

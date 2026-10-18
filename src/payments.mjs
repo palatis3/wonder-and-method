@@ -26,6 +26,9 @@ export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={})
  requireValue(/^[a-z0-9][a-z0-9-]{0,60}$/.test(scope.client_id||''),'A nonpersonal client ID is required.');
  requireValue(confirmation.accepted_version===scope.version&&dated(confirmation.accepted_at)&&Date.parse(confirmation.accepted_at)<=+now&&nonempty(confirmation.written_acceptance_reference)&&nonempty(scope.named_approver),'Written acceptance of this exact scope version and named approver required.');
  for(const key of ['page_copy_limits','self_editing_understood','required_optional_bills','approvals','ownership_and_exit','questions_resolved'])requireValue(confirmation[key]===true,`Buyer confirmation missing: ${key}.`);
+ if(['launch_site','focused_site','signature_site'].includes(scope.offer_id)&&snapshot.offer.editing_mode==='source_code'){
+  for(const key of ['source_folder_zip_and_build_notes_understood','initial_launch_ready_service_limits_and_exclusions_understood','optional_handoff_call_and_separate_growth_work_understood'])requireValue(confirmation[key]===true,`Buyer confirmation missing: ${key}.`);
+ }
  requireValue(nonempty(scope.schedule?.booked_start),'Agreed start date required.');
  for(const key of ['fit_reference','capacity_reference','cash_reference','agreement_reference'])requireValue(nonempty(billing[key]),`Billing prerequisite missing: ${key}.`);
  requireValue(['test','live'].includes(billing.mode)&&billing.account_id===paymentAccounts[billing.mode],'Billing mode and expected account must match.');
@@ -48,7 +51,12 @@ export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={})
   requireValue(dated(period?.start)&&dated(period?.end)&&Date.parse(period.end)>Date.parse(period.start)&&period.cycles===(scope.billing_option==='annual'?12:1)&&nonempty(period.timezone),'Exact paid service period, timezone and cycle count required.');
   try{new Intl.DateTimeFormat('en',{timeZone:period.timezone});}catch{throw Error('Valid service timezone required.');}
   requireValue(nonempty(billing.cancellation_route)&&nonempty(billing.coverage_reference)&&nonempty(billing.cycle_approval_reference),'Record cancellation route, actual service coverage and approved cycle work/inputs.');
-  if(scope.billing_option==='annual')requireValue(nonempty(billing.annual_reserve_reference)&&billing.manual_annual_renewal===true,'Annual unearned-balance reserve and manual renewal confirmation required.');
+  if(scope.billing_option==='annual'){
+   requireValue(nonempty(billing.annual_reserve_reference)&&billing.manual_annual_renewal===true,'Annual unearned-balance reserve and manual renewal confirmation required.');
+   const reserve=billing.annual_reserve;
+   requireValue(reserve&&dated(reserve.reviewed_at)&&Date.parse(reserve.reviewed_at)<=+now&&nonempty(reserve.funding_evidence_reference)&&nonempty(reserve.refund_rehearsal_reference),'Dated annual reserve funding evidence and refund rehearsal required.');
+   requireValue(['gross_unearned_cents','independent_fee_buffer_cents','accepted_undelivered_cents','funded_total_cents'].every(key=>Number.isSafeInteger(reserve[key])&&reserve[key]>=0)&&reserve.gross_unearned_cents>=cents(snapshot.offer.public_price)&&reserve.independent_fee_buffer_cents>0&&reserve.funded_total_cents>=reserve.gross_unearned_cents+reserve.independent_fee_buffer_cents+reserve.accepted_undelivered_cents,'Fund the gross annual unearned amount, separate payment-fee buffer and accepted undelivered obligations before enrollment.');
+  }
  }
  const immutable={client_id:scope.client_id,scope_version:scope.version,commercial_version:scope.commercial_version,scope_hash:digest(scope),milestone:milestoneIndex+1,mode:billing.mode,account:billing.account_id,customer:billing.customer_id,amount:cents(milestone.amount),currency:'usd',due_date:Math.floor(Date.parse(billing.due_at)/1000),tax_rates:taxRates,service_period:plan?scope.service_period:null};
  return {...immutable,id:`wm-${digest(immutable).slice(0,40)}`,obligation:`wm-${digest([scope.client_id,milestoneIndex+1,plan?scope.service_period.start:null]).slice(0,40)}`,description:`${labels[scope.offer_id]} — ${milestone.event}`,offer_id:scope.offer_id,approval_reference:milestone.approval_reference,prior_milestones:original.slice(0,milestoneIndex).map((previous,index)=>({milestone:index+1,amount:cents(previous.amount),obligation:`wm-${digest([scope.client_id,index+1,null]).slice(0,40)}`})),manual_collection:true};

@@ -1,5 +1,5 @@
 {
-  "revision": "20261018-audit-name",
+  "revision": "20261018-audit-fixes",
   "products": [
     {
       "id": "launch_site",
@@ -1564,7 +1564,7 @@
         {
           "id": "keep_running.diagnostic_search",
           "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available; no recurring keyword campaign is included.",
+          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
           "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
           "limits": "Keep Running includes no recurring keyword campaign.",
           "condition": null
@@ -1850,9 +1850,9 @@
         {
           "id": "improve.diagnostic_search",
           "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available; no recurring keyword campaign is included.",
+          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
           "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
-          "limits": "Keep Running includes no recurring keyword campaign.",
+          "limits": "Diagnostic checks do not use or replace the keyword research included in this plan. Research and implementation remain subject to their stated units and limits.",
           "condition": null
         },
         {
@@ -2246,9 +2246,9 @@
         {
           "id": "grow.diagnostic_search",
           "title": "Diagnostic search and indexing checks",
-          "plain": "Checks for search and indexing problems when information is available; no recurring keyword campaign is included.",
+          "plain": "Checks for search and indexing problems when information is available. Keep Running includes no recurring keyword campaign; Improve and Grow include separately specified research.",
           "explanation": "Where access is available, your supported site receives diagnostic search and indexing checks, helping identify warnings without presenting a missing account as a passed check.",
-          "limits": "Keep Running includes no recurring keyword campaign.",
+          "limits": "Diagnostic checks do not use or replace the keyword research included in this plan. Research and implementation remain subject to their stated units and limits.",
           "condition": null
         },
         {

@@ -32,7 +32,7 @@
     "conservative_example_weekly_plan": 20,
     "outer_total_work_week_cap": 60
   },
-  "accounting": "Focused55/Signature85 include known revisions, handoff and correction tails. Search7 includes its1h reserve; Care1.25 includes allocated quarterly work. Add activation/exit only once; sales labor belongs to sales. Shared unexpected recovery is not sellable. Unattended renders are elapsed time.",
+  "accounting": "Estimate the saved current scope by stage and record observed hours in the existing job receipt. Include writing, review, launch, handoff and the correction tail. Reserve recurring work from its actual agreed units. Add activation/exit only once; sales labor belongs to sales. Shared unexpected recovery is not sellable. Unattended renders are elapsed time.",
   "booking_inputs": {
     "actual_calendar_confirmed": null,
     "correction_tail_confirmed": null,
@@ -41,13 +41,15 @@
   },
   "founder_availability_input": {
     "reported_weekly_hours": null,
-    "certainty": "Flexible availability stated; no dated start week, reliably reserved numeric hours or closures supplied.",
+    "certainty": "Owner confirms flexible availability and no planned closures. Specific booked delivery/review slots and measured stage hours still need confirmation.",
     "interpreted_as": "Strong availability intent; V5 60-hour total-work ceiling retained; not a confirmed client booking calendar.",
     "planning_weekly_ceiling": 60,
     "dated_calendar_confirmed": false,
     "previous_tentative_weekly_hours": 80,
-    "latest_owner_statement": "I will focus as much time as possible; unlimited time to work on projects. Priority is website design and SEO this week.",
-    "updated_at": "2026-10-14T16:38:21.079Z"
+    "latest_owner_statement": "Flexible availability including potential weekends; no planned closures. Owner will update the website and notify clients when away.",
+    "updated_at": "2026-10-18",
+    "planning_weekly_client_hours": 20,
+    "weekend_work": "Optional overflow by owner choice; not included in promised baseline capacity."
   },
   "build_commitments": [],
   "build_commitment_template": {

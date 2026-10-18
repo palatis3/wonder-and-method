@@ -1,0 +1,344 @@
+{
+  "status": "DRAFT ONLY: conservative single-build allocation; no client booking or measured delivery is established",
+  "weeks": [
+    {
+      "week_start": "2026-10-19",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-1-1",
+          "date": "2026-10-19",
+          "job_id": "draft-build-not-booked",
+          "kind": "brief",
+          "planned_hours": 4,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-1-2",
+          "date": "2026-10-20",
+          "job_id": "draft-build-not-booked",
+          "kind": "writing",
+          "planned_hours": 8,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-1-3",
+          "date": "2026-10-22",
+          "job_id": "draft-build-not-booked",
+          "kind": "design",
+          "planned_hours": 8,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-10-26",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-2-1",
+          "date": "2026-10-26",
+          "job_id": "draft-build-not-booked",
+          "kind": "review",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-2-2",
+          "date": "2026-10-28",
+          "job_id": "draft-cycle-allowance",
+          "kind": "recurring",
+          "planned_hours": 4,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-02",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-3-1",
+          "date": "2026-11-02",
+          "job_id": "draft-build-not-booked",
+          "kind": "build",
+          "planned_hours": 12,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-3-2",
+          "date": "2026-11-05",
+          "job_id": "draft-build-not-booked",
+          "kind": "checks",
+          "planned_hours": 6,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-09",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-4-1",
+          "date": "2026-11-09",
+          "job_id": "draft-build-not-booked",
+          "kind": "review",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-4-2",
+          "date": "2026-11-12",
+          "job_id": "draft-build-not-booked",
+          "kind": "launch",
+          "planned_hours": 4,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-4-3",
+          "date": "2026-11-13",
+          "job_id": "draft-build-not-booked",
+          "kind": "handoff",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-4-4",
+          "date": "2026-11-13",
+          "job_id": "draft-build-not-booked",
+          "kind": "correction",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-16",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-5-1",
+          "date": "2026-11-18",
+          "job_id": "draft-build-not-booked",
+          "kind": "correction",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-5-2",
+          "date": "2026-11-19",
+          "job_id": "draft-cycle-allowance",
+          "kind": "recurring",
+          "planned_hours": 4,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-23",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-6-1",
+          "date": "2026-11-25",
+          "job_id": "draft-build-not-booked",
+          "kind": "correction",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-11-30",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-7-1",
+          "date": "2026-12-02",
+          "job_id": "draft-build-not-booked",
+          "kind": "correction",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        },
+        {
+          "id": "draft-7-2",
+          "date": "2026-12-03",
+          "job_id": "draft-cycle-allowance",
+          "kind": "recurring",
+          "planned_hours": 4,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    },
+    {
+      "week_start": "2026-12-07",
+      "available_hours": 35,
+      "studio_hours": 4,
+      "sales_hours": 3,
+      "admin_hours": 3,
+      "known_activation_exit_hours_included_once": true,
+      "dated_stage_slots": [
+        {
+          "id": "draft-8-1",
+          "date": "2026-12-09",
+          "job_id": "draft-build-not-booked",
+          "kind": "correction",
+          "planned_hours": 2,
+          "actual_hours": 0,
+          "unexpected_hours": 0,
+          "source_reference": "Provisional planning assumption; future work explicitly unperformed"
+        }
+      ]
+    }
+  ],
+  "week_template": {
+    "week_start": null,
+    "available_hours": null,
+    "studio_hours": null,
+    "sales_hours": null,
+    "admin_hours": null,
+    "planned_client_hours": null,
+    "actual_client_hours": null,
+    "unexpected_client_hours": null,
+    "dated_stage_slots": [],
+    "approvals": [],
+    "launches": [],
+    "recurring_dates": [],
+    "correction_tails": [],
+    "known_activation_exit_hours_included_once": null
+  },
+  "calendar_months": [],
+  "month_template": {
+    "calendar_month": null,
+    "planned_client_hours": null,
+    "total_client_hours": null
+  },
+  "rules": {
+    "deduct_leave_first": true,
+    "unexpected_reserve_fraction": 0.2,
+    "outer_planned_week_cap": 24,
+    "outer_planned_calendar_month_cap": 96,
+    "outer_total_client_calendar_month_cap": 120,
+    "conservative_example_weekly_plan": 20,
+    "outer_total_work_week_cap": 60
+  },
+  "accounting": "Estimate the saved current scope by stage and record observed hours in the existing job receipt. Include writing, review, launch, handoff and the correction tail. Reserve recurring work from its actual agreed units. Add activation/exit only once; sales labor belongs to sales. Shared unexpected recovery is not sellable. Unattended renders are elapsed time.",
+  "booking_inputs": {
+    "actual_calendar_confirmed": false,
+    "correction_tail_confirmed": false,
+    "capability_evidence": "evidence/studio-capability.json",
+    "cash_check_reference": null
+  },
+  "founder_availability_input": {
+    "reported_weekly_hours": null,
+    "certainty": "Owner confirms flexible availability and no planned closures. Specific booked delivery/review slots and measured stage hours still need confirmation.",
+    "interpreted_as": "Strong availability intent; V5 60-hour total-work ceiling retained; not a confirmed client booking calendar.",
+    "planning_weekly_ceiling": 60,
+    "dated_calendar_confirmed": false,
+    "previous_tentative_weekly_hours": 80,
+    "latest_owner_statement": "Flexible availability including potential weekends; no planned closures. Owner will update the website and notify clients when away.",
+    "updated_at": "2026-10-18",
+    "planning_weekly_client_hours": 20,
+    "weekend_work": "Optional overflow by owner choice; not included in promised baseline capacity."
+  },
+  "build_commitments": [
+    {
+      "job_id": "draft-build-not-booked",
+      "launch_date": "2026-11-12",
+      "correction_tail_end": "2026-12-12",
+      "correction_slot_ids": [
+        "draft-4-4",
+        "draft-5-1",
+        "draft-6-1",
+        "draft-7-1",
+        "draft-8-1"
+      ]
+    }
+  ],
+  "build_commitment_template": {
+    "job_id": null,
+    "launch_date": null,
+    "correction_tail_end": null,
+    "correction_slot_ids": []
+  },
+  "dated_stage_slot_template": {
+    "id": null,
+    "date": null,
+    "job_id": null,
+    "kind": null,
+    "planned_hours": null,
+    "actual_hours": null,
+    "unexpected_hours": null,
+    "source_reference": null
+  },
+  "calculation_command": "node scripts/capacity-calendar.mjs operations/capacity-worksheet.json",
+  "allocation_accounting": "One unique allocation ID per dated work block. actual_hours is observed work against plan, excluding separately recorded unexpected_hours. Use 0 for explicitly unperformed future work; null is unknown. Monthly total uses max(planned,actual)+unexpected. Reference the existing job receipt, not a new time ledger. Leave calendar_months empty to derive totals; entered summaries must reconcile.",
+  "assumptions": [
+    "Owner reported flexible availability and no planned closures.",
+    "35 total hours/week is a planning assumption; 10 are reserved for studio/sales/admin, 5 for unexpected work, leaving at most 20 planned client hours.",
+    "Weekends are optional and excluded from baseline.",
+    "One fictional build plus a four-hour monthly-cycle allowance; stage estimates are provisional and must be replaced with the accepted scope and observed time.",
+    "Owner must confirm outside obligations, actual available dates, provider access and any holiday/absence impact before booking."
+  ]
+}

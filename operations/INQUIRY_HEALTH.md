@@ -13,3 +13,24 @@ At the start of each business day and again before finishing the day:
 If D1 or authentication is unavailable, the independent mailbox review and failed status command are the signals; this endpoint cannot diagnose itself during a total outage. No external paging service or independently verified owner-check history is claimed. If the owner cannot cover these checks, arrange actual coverage before relying on the response commitment.
 
 Authenticated operator traffic has a separate bound of 600 requests per IP per ten-minute bucket; failed authentication remains bounded at 30. Status takes one request at any row count. Exports use 100-row pages and can handle the tested 3,001-row case. A 429 includes `Retry-After: 600`; wait and restart an export under a new label if an earlier partial attempt did not finish. A file is written only after every page is read, and existing exports are never overwritten.
+
+## Keeping a lightweight record
+
+Run `node scripts/record-inquiry-check.mjs` for the aggregate portion. It appends
+only sanitized health/count results to ignored `.runtime/operations/inquiry-checks.jsonl`.
+A failed command produces a failed check. It never marks mailbox, chat or personal
+reply review complete. Add that separate completion and any incident reference to
+the existing private operating record after actually reviewing those channels.
+One healthy automated check is not evidence of a sustained opening/closing routine.
+
+## Absence and closure procedure
+
+The owner reported no planned closures on October 18, 2026. Before an absence,
+review outstanding replies, accepted dates and escalation needs. Arrange actual
+coverage or publish the specific closure/return date and realistic response window
+in the website's shared response configuration, contact copy and inquiry receipts.
+Notify affected clients through their agreed channel after reviewing their dates.
+Verify the deployed notice and set a dated owner reminder to restore the usual
+promise on return. Until coverage is confirmed, do not accept overlapping starts.
+No absence message, customer notification or recurring automation was sent or
+created by this audit-fix task.

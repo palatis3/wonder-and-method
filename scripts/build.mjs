@@ -17,7 +17,7 @@ const readJSON=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'))
 export async function buildCssBundles(assets,{includeChat=false}={}){
  const readStyles=async names=>(await Promise.all(names.map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
  const minify=async css=>(await transform(css,{loader:'css',minify:true,target:['chrome110','safari16']})).code;
- const shared=await readStyles(['style.css','journal.css','premium.css','site-refresh.css',...(includeChat?['support-chat.css']:[])]);
+ const shared=await readStyles(['style.css','journal.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])]);
  const plans=await readStyles(['brand.css','package-visuals.css']);
  return {shared:await minify(shared),plans:await minify(plans)};
 }
@@ -25,11 +25,23 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
 export function applyCssBundles(html,boot){
  const plans=html.includes('href="/assets/package-visuals.css"');
  html=html.replace('<script src="/assets/boot.js"></script>',`<script>${boot}</script>`)
-  .replace(/<link rel="stylesheet" href="\/assets\/(?:style|journal|premium|site-refresh|support-chat)\.css">/g,'');
+  .replace(/<link rel="stylesheet" href="\/assets\/(?:style|journal|premium|site-refresh|layout-components|support-chat)\.css">/g,'');
  if(plans)html=html.replace(/<link rel="stylesheet" href="\/assets\/(?:brand|package-visuals)\.css">/g,'');
  // Keep the original plan cascade: route styles, brand/package rules, shared rules.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
  return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}<link rel="stylesheet" href="/assets/site.css"></head>`);
+}
+
+export async function buildBrowserBundles(root,config){
+ const journeyVersion=createHash('sha256').update(await readFile(resolve(root,'src/assets/journey-counts.js'))).digest('hex').slice(0,12);
+ const client=await bundle({entryPoints:[resolve(root,'src/client.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[{name:'client-public-inputs',setup(build){
+  // Match the HTML script URL exactly so there is one module instance and one
+  // aggregate event deduplication set on pages with an inquiry form.
+  build.onResolve({filter:/^\.\/journey-counts\.js$/},()=>({path:`/assets/journey-counts.js?v=${journeyVersion}`,external:true}));
+  build.onLoad({filter:/[\\/]config[\\/]site\.json$/},()=>({loader:'json',contents:JSON.stringify({responseWindow:config.responseWindow,contactEmail:config.contactEmail})}));
+ }}]});
+ const calculator=await bundle({entryPoints:[resolve(root,'src/calculator.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16']});
+ return {client:client.outputFiles[0].contents,calculator:calculator.outputFiles[0].contents,journeyVersion};
 }
 
 // Explicit build-only candidates, not a general unused-asset sweep. Artwork used
@@ -81,8 +93,9 @@ for(const name of await readdir(output)){const target=resolve(output,name);if(!t
 await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
 await cp(resolve(root,'src/siteaudit-NTlhNWVhZD.txt'),resolve(output,'siteaudit-NTlhNWVhZD.txt'));
 await cp(resolve(root,'src/assets/brand/favicon.ico'),resolve(output,'favicon.ico'));
-const clientBundle=await bundle({entryPoints:[resolve(root,'src/client.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[{name:'client-assets',setup(build){build.onResolve({filter:/^\.\/journey-counts\.js$/},()=>({path:resolve(root,'src/assets/journey-counts.js')}));}}]});
-await writeFile(resolve(output,'assets/client.js'),clientBundle.outputFiles[0].contents);
+const browserBundles=await buildBrowserBundles(root,config);
+await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
+await writeFile(resolve(output,'assets/calculator.js'),browserBundles.calculator);
 await cp(resolve(root,'src/shared.mjs'),resolve(output,'assets/shared.mjs'));
 await copyCivicAssets(root,output,config);
 if(config.homeEdition==='civic-sculpture'){

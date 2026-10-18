@@ -14,7 +14,7 @@ The public `/payments/` page explains private invoice payment, receipts and supp
 
 Stripe API readback confirms live charges and payouts enabled, with eight current products and eighteen one-time milestone/service-cycle prices. The restricted live key is encrypted with Windows DPAPI. Sandbox hosted checkout passed a declined card followed by a successful $700 synthetic Launch milestone; provider reconciliation confirmed the paid amount and zero remaining balance. No real customer was charged and no invoice email was sent. Evidence is in `evidence/payments-20261016/`.
 
-Stripe still requires the owner to correct the EIN/document mismatch directly in Dashboard. Its task says **payouts will pause on November 15, 2026 or when total volume reaches $600**. This is a payout threshold, not a stated $600 checkout limit. Actual calendar, economics, agreement/tax decisions and bookkeeping remain separate business inputs; the sandbox payment does not validate customer demand.
+The October 16 Dashboard observation recorded an EIN/document mismatch and a possible payout pause on November 15, 2026 or $600 volume. That is historical evidence, not a verified current restriction. On October 18 the live account API again reported charges_enabled=true, payouts_enabled=true and details_submitted=true. The restricted response did not expose requirements or future_requirements, so their current state is unknown. Check the owner Dashboard before relying on payout cash; no present checkout spending cap is established. Actual calendar, economics, agreement/tax decisions and bookkeeping remain separate business inputs; the sandbox payment does not validate customer demand.
 
 ## Setup and environments
 
@@ -31,7 +31,7 @@ Run `pwsh -NoProfile -File deployment/save-stripe-key.ps1 -Mode test` (or `live`
 1. Run `node scripts/create-job.mjs JOB-ID OFFER-ID`; add `--annual` only for twelve prepaid service cycles. Use a nonpersonal job ID. Copy `operations/templates/billing.json` into the private job folder.
 2. Complete the exact scope, named approver, buyer confirmations, written exact-version acceptance, dated start and milestone approval. Complete billing environment/account, existing Stripe customer ID, due timestamp and fit/capacity/cash/agreement references.
 3. Record reviewed tax treatment. `no_tax` requires a real decision reference; it is not a default assumption. `stripe_rates` requires approved tax-rate IDs. Review the actual invoice before finalizing.
-4. For service, record exact paid period, timezone, cancellation route, actual coverage and approved useful work/inputs. Annual service additionally requires twelve cycles, manual renewal and an actual unearned-balance reserve. Do not sell an included usable baseline again.
+4. For service, record exact paid period, timezone, cancellation route, actual coverage and approved useful work/inputs. Annual service additionally requires twelve cycles, manual renewal and an actual unearned-balance reserve. Complete billing.annual_reserve with the reviewed timestamp, funding evidence and refund-rehearsal references, gross unearned cents, independent fee buffer, accepted undelivered obligations and actual funded total. The operator holds preparation when the evidence is missing or the funded total is insufficient. A populated reference is an owner assertion, not an automatic bank-balance verification. Do not sell an included usable baseline again.
 5. Run `npm run billing -- prepare MODE JOB-ID MILESTONE`. Milestones are one-based. Review the saved plan and local buyer packet. Preparation creates no invoice.
 
 ## Issue only the reviewed milestone
@@ -59,3 +59,25 @@ Invoice monthly service per approved cycle after the useful-work/input and cance
 Before reporting live checkout ready, verify live charges/payouts, live catalog, customer-facing identity/support settings, sandbox hosted checkout/receipt, failed/incomplete-payment handling, cancellation/refund procedures and secure credentials. A public customer-portal link remains absent until its real live login URL and permissions are checked. Never publish a placeholder or sandbox payment link.
 
 Official references: [Hosted invoices](https://docs.stripe.com/invoicing/hosted-invoice-page), [manual advancement](https://docs.stripe.com/invoicing/integration/automatic-advancement-collection), [idempotency](https://docs.stripe.com/api/idempotent_requests), [API versioning](https://docs.stripe.com/api/versioning).
+
+## Annual settlement and funding record
+
+Copy `operations/templates/annual-settlement.json` into the private job record.
+Use cents from the accepted annual snapshot, completed cycles at the effective
+service end, separately reconciled current-cycle unearned work and accepted
+delayed work still owed. Run `node scripts/annual-refund.mjs PATH-TO-PRIVATE-RECORD`.
+The calculator creates an itemized plan only. It makes no provider request.
+
+Before enrollment, retain evidence that the full gross annual service balance,
+a separately funded fee buffer and accepted undelivered obligations are funded.
+Do not use the client's unearned payment to cover payment fees. Reconcile monthly.
+The public `annual_enrollment_gate.verified` remains false until actual owner
+funding and delivery evidence exists.
+
+For cancellation, record the effective end/confirmation, responsible owner and
+actual ten-business-day deadline, including relevant holidays. Return undisputed
+unearned money on time. Preserve accepted delayed work or agree an itemized
+substitute/refund without double counting. Review the exact original sandbox
+invoice and payment in Stripe Dashboard before rehearsing the refund route;
+this audit's local calculation is not a completed provider refund. Real refunds
+require the customer's actual reconciled obligation and the authorized operator.
