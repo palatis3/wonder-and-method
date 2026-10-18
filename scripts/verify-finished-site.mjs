@@ -13,7 +13,9 @@ for(const route of build.routes){
  const eligible=routeIndexEligible(route);
  assert.equal(/noindex/.test(response.headers.get('x-robots-tag')||''),!eligible,route);
  assert.equal(/<meta name="robots" content="[^"]*noindex/.test(html),!eligible,route);
- assert.ok(html.includes(`rel="canonical" href="${origin}${route}"`),route);
+ // Error pages deliberately have no canonical; all real pages retain theirs.
+ if(route==='/404/')assert.ok(!html.includes('rel="canonical"'),route);
+ else assert.ok(html.includes(`rel="canonical" href="${origin}${route}"`),route);
  assert.match(response.headers.get('content-security-policy')||'',/form-action 'self'/);
  assert.ok(!html.includes('static.cloudflareinsights.com/beacon'),'No unexpected analytics injection');
  assert.ok(!/Public critique preview|Editorial draft — approval pending|This is a read-only preview/.test(html));
