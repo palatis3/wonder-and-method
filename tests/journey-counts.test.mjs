@@ -6,7 +6,7 @@ import {createHmac} from 'node:crypto';
 import {runInNewContext} from 'node:vm';
 import worker from '../deployment/worker.mjs';
 import {saveJourneyCount,cleanJourneyCounts} from '../deployment/journey-counts.mjs';
-const migrations=await Promise.all(['0001_inquiries.sql','0002_journey_counts.sql','0004_journey_categories.sql'].map(n=>readFile(new URL('../deployment/migrations/'+n,import.meta.url),'utf8')));
+const migrations=await Promise.all(['0001_inquiries.sql','0002_journey_counts.sql','0004_journey_categories.sql','0006_journey_contact_events.sql'].map(n=>readFile(new URL('../deployment/migrations/'+n,import.meta.url),'utf8')));
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const environment=()=>({DB:fixture(),ENVIRONMENT:'production',INQUIRY_MODE:'live',RELEASE_APPROVED:'true',JOURNEY_COUNTS:'aggregate',FINGERPRINT_SECRET:'synthetic-32-character-fingerprint-secret',OPERATOR_TOKEN:'synthetic-token'});
 const payload={event:'offer_select',service:'focused_site',page:'pricing'};
@@ -71,4 +71,17 @@ test('client count module respects privacy, test and origin suppression and send
  for(const setting of [{host:'127.0.0.1'},{search:'?qa=1'},{gpc:true},{dnt:'1'},{mode:''}])assert.equal(execute(setting).calls.length,0);
  const {calls,scope}=execute();scope.countJourney('request_start','focused_site');scope.countJourney('request_start','focused_site');assert.equal(calls.length,2);for(const c of calls){assert.equal(c.credentials,'omit');assert.equal(c.referrerPolicy,'no-referrer');assert.deepEqual(Object.keys(JSON.parse(c.body)).sort(),['event','page','service']);}
  assert.deepEqual(JSON.parse(calls[1].body),{event:'request_start',service:'focused_site',page:'pricing'});
+ const clicked=execute();
+ clicked.handlers.click({target:{closest:selector=>selector==='a[href]'?{href:'mailto:support@example.test?body=private-content'}:null}});
+ clicked.handlers.click({target:{closest:selector=>selector==='.support-chat-launch'?{}:null}});
+ assert.deepEqual(clicked.calls.slice(1).map(c=>JSON.parse(c.body).event),['email_click','chat_open']);
+ assert.ok(clicked.calls.every(c=>!c.body.includes('private-content')&&!c.body.includes('support@example.test')));
+ for(const setting of [{search:'?qa=1'},{gpc:true},{dnt:'1'}]){const blocked=execute(setting);blocked.handlers.click({target:{closest:selector=>selector==='.support-chat-launch'?{}:null}});assert.equal(blocked.calls.length,0);}
+});
+
+test('contact-event migration preserves history and accepts only coarse allowed actions',async()=>{
+ const db=new DatabaseSync(':memory:');db.exec(migrations.slice(0,3).join('\n'));db.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?)').run('2026-10-17','page_view','unsure','home',23);db.exec(migrations[3]);assert.equal(db.prepare('SELECT SUM(total) AS n FROM journey_counts').get().n,23);db.close();
+ const env=environment();for(const event of ['email_click','chat_open'])assert.equal((await saveJourneyCount(request({...payload,event,service:'unsure'}),env,dependencies)).status,204);
+ assert.equal((await saveJourneyCount(request({...payload,event:'email_click',address:'private@example.test'}),env,dependencies)).status,400);
+ assert.equal(env.DB.sqlite.prepare('SELECT SUM(total) AS n FROM journey_counts').get().n,2);env.DB.sqlite.close();
 });

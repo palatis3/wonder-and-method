@@ -61,4 +61,6 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       form.setAttribute('aria-busy','false');
     }
   });
+  // Leave native browser validation enabled until the enhanced handler exists.
+  form.noValidate=true;
 }

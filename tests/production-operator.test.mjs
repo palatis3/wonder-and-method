@@ -9,9 +9,9 @@ const credentials=()=>({OPERATOR_TOKEN:'test-token'});
 const record={id,delivery_status:'accepted',payload:'private test contact'};
 
 test('production status reports counts without inquiry content and refuses redirected credentials',async()=>{
- const calls=[];const result=await productionOperator(['status'],{credentials,fetchImpl:async(url,options)=>{calls.push({url,options});return Response.json({records:[record],next_cursor:null});}});
+ const calls=[];const result=await productionOperator(['status'],{credentials,fetchImpl:async(url,options)=>{calls.push({url,options});return Response.json({total:1,delivery:{accepted:1},containsInquiryText:false});}});
  assert.deepEqual(result,{origin:'https://wonderandmethod.com',total:1,delivery:{accepted:1},containsInquiryText:false});
- assert.equal(calls[0].url,'https://wonderandmethod.com/api/operator/inquiries?after=');assert.equal(calls[0].options.redirect,'error');assert.ok(!JSON.stringify(result).includes('private test contact'));
+ assert.equal(calls[0].url,'https://wonderandmethod.com/api/operator/inquiries/status');assert.equal(calls[0].options.redirect,'error');assert.ok(!JSON.stringify(result).includes('private test contact'));
 });
 test('production export follows pagination into a new private file and never overwrites it',async()=>{
  const workspace=await mkdtemp(join(tmpdir(),'wm-operator-'));let calls=0;
@@ -25,6 +25,6 @@ test('production retry and deletion require exact references and correct confirm
  for(const action of ['retry','delete']){let call;await productionOperator([action,id,id],{credentials,fetchImpl:async(url,options)=>{call={url,options};return Response.json({status:'test_only'});}});assert.equal(call.options.method,action==='retry'?'POST':'DELETE');assert.equal(call.options.headers[action==='retry'?'X-Confirm-Retry':'X-Confirm-Delete'],id);assert.equal(call.url,'https://wonderandmethod.com/api/operator/inquiries/'+id+(action==='retry'?'/retry':''));}
 });
 test('production export rejects repeated cursors and hides error response bodies',async()=>{
- await assert.rejects(()=>productionOperator(['status'],{credentials,fetchImpl:async()=>Response.json({records:[record],next_cursor:id})}),/repeated export cursor/);
+ await assert.rejects(()=>productionOperator(['export','repeated-cursor'],{credentials,fetchImpl:async()=>Response.json({records:[record],next_cursor:id})}),/repeated export cursor/);
  await assert.rejects(()=>productionOperator(['status'],{credentials,fetchImpl:async()=>new Response('sensitive response',{status:503})}),error=>error.message.includes('503')&&!error.message.includes('sensitive response'));
 });

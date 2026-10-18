@@ -16,7 +16,7 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
   const parent=path.startsWith('/services/')||path.startsWith('/checkout/')?'/pricing/':path.startsWith('/guides/')&&path!=='/guides/'?'/guides/':path.startsWith('/areas/')&&path!=='/areas/'?'/areas/':path.startsWith('/work/')&&path!=='/work/'?'/work/':null;
   if(parent){assert.equal(items[1].item,config.origin+parent);assert.ok(nav.includes(`href="${parent}"`));}
  }
- assert.equal(total,62);
+ assert.equal(total,pages.filter(page=>!['/','/404/'].includes(page.path)).length);
 });
 test('breadcrumb labels escape markup while structured names retain their actual text',()=>{
  const trail=breadcrumbTrail('/services/test/','A <better> & "clearer" page');assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'A <better> & "clearer" page');assert.match(breadcrumbMarkup(trail),/A &lt;better&gt; &amp; &quot;clearer&quot; page/);

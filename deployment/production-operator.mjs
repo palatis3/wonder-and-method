@@ -17,12 +17,13 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
  const {OPERATOR_TOKEN}=credentials();
  const headers={Accept:'application/json',Authorization:`Bearer ${OPERATOR_TOKEN}`};
  const request=async(path,options={})=>{
-  const response=await fetchImpl(origin+path,{...options,headers:{...headers,...options.headers},redirect:'error'});
+  const response=await fetchImpl(origin+path,{...options,headers:{...headers,...options.headers},redirect:'error',signal:AbortSignal.timeout(20_000)});
   if(!response.ok)throw Error(`Production operator request failed (${response.status}); no private response body printed.`);
   try{return await response.json();}catch{throw Error('Production returned an unreadable response; no private body printed.');}
  };
  if(action==='measurement')return request('/api/operator/journey-summary?days='+Number(label||7));
  if(action==='retention-preview')return request('/api/operator/inquiries/retention-preview');
+ if(action==='status')return {origin,...await request('/api/operator/inquiries/status')};
  if(action==='followup'){
   const file=await realpath(resolve(workspace,extra[0]));
   const privateRoot=await realpath(resolve(workspace,'.runtime'));
@@ -33,7 +34,7 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
   const result=await request('/api/operator/inquiries/'+label+'/followup',{method:'POST',headers:{'X-Confirm-Followup':label,'Content-Type':'application/json'},body:JSON.stringify(data)});
   return {action,reference:label,message:result.message};
  }
- if(action==='status'||action==='export'){
+ if(action==='export'){
   const records=[],seenCursors=new Set();let cursor='';
   do{
    const data=await request('/api/operator/inquiries?after='+encodeURIComponent(cursor));
@@ -42,10 +43,6 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
    if(cursor&&(!referencePattern.test(cursor)||seenCursors.has(cursor)))throw Error('Invalid or repeated export cursor; export refused.');
    if(cursor)seenCursors.add(cursor);
   }while(cursor);
-  if(action==='status'){
-   const delivery={};for(const record of records)delivery[record.delivery_status]=(delivery[record.delivery_status]||0)+1;
-   return {origin,total:records.length,delivery,containsInquiryText:false};
-  }
   const folder=resolve(workspace,'.runtime/exports');await mkdir(folder,{recursive:true});
   const actual=await realpath(folder),expectedRoot=await realpath(workspace),inside=relative(expectedRoot,actual);
   if(inside.startsWith('..'+sep)||inside==='..'||isAbsolute(inside)||inside!==['.runtime','exports'].join(sep))throw Error('Export folder must be the private .runtime/exports directory, without a redirected path.');

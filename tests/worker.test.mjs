@@ -136,6 +136,7 @@ test('idempotency age boundary does not revoke an active delivery lease',async()
 });
 test('synthetic: operator export requires distinct credentials; deletion needs exact confirmation', async () => {
   const env = environment(); const id = await record(env);
+  env.DB.sqlite.exec(await readFile(new URL('../deployment/migrations/0003_inquiry_followup.sql', import.meta.url), 'utf8'));
   const headers = { Accept: 'application/json', Authorization: 'Bearer synthetic-operator-token', 'X-Staging-Authorization': `Basic ${btoa(env.STAGING_AUTH)}` };
   const url = 'https://staging.example.test/api/operator/inquiries';
   assert.equal((await worker.fetch(new Request(url, { headers: { Authorization: `Basic ${btoa(env.STAGING_AUTH)}` } }), env, context())).status, 401);

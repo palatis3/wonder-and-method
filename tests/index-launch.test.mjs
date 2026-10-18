@@ -33,5 +33,5 @@ test('built public preload hints exactly match each route’s versioned styleshe
   const styles=[...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(styles.length);assert.equal(block.trim().split('\n')[1].trim(),'Link: '+styles.map(s=>`<${s}>; rel=preload; as=style`).join(', '),route);
  }
- assert.equal(count,41);
+ assert.equal(count,42);
 });

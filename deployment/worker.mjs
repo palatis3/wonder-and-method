@@ -5,6 +5,8 @@ import { validateInquiry } from '../src/inquiry.mjs';
 import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../src/shared.mjs';
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
 import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, hasInquiryFollowup, inquiryRetentionPreview, followupInput } from './inquiry-maintenance.mjs';
+import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
+import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
 
 const encoder = new TextEncoder();
 const MAX_BODY = 20_000;
@@ -162,23 +164,30 @@ async function submit(request, env, ctx) {
   const rate = await env.DB.prepare('INSERT INTO rate_limits (key, hits, expires_at) VALUES (?, 1, ?) ON CONFLICT(key) DO UPDATE SET hits = hits + 1 WHERE hits < 5 RETURNING hits').bind(rateKey, now + 1_200_000).first();
   if (!rate) return respond(request, 429, 'Too many attempts. Please wait ten minutes before trying again.');
   const synthetic = !LIVE(env);
-  const dedupe = await fingerprint(env.FINGERPRINT_SECRET, `duplicate:${synthetic}:${bucket}:${JSON.stringify(value)}`);
   const id = crypto.randomUUID();
-  await env.DB.prepare('INSERT OR IGNORE INTO inquiries (id, created_at, payload, dedupe_key, synthetic, delivery_status) VALUES (?, ?, ?, ?, ?, ?)').bind(id, now, JSON.stringify(value), dedupe, synthetic ? 1 : 0, synthetic ? 'synthetic' : 'pending').run();
-  const record = await env.DB.prepare('SELECT id, delivery_status FROM inquiries WHERE dedupe_key = ?').bind(dedupe).first();
+  const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
+  const dedupe = await fingerprint(env.FINGERPRINT_SECRET, `duplicate:${synthetic}:${id}`);
+  // One SQLite write makes the rolling-window check and insert atomic. Comparing
+  // normalized payloads also recognizes records saved by the previous release.
+  await env.DB.prepare(`INSERT INTO inquiries (id, created_at, payload, dedupe_key, synthetic, delivery_status)
+    SELECT ?, ?, ?, ?, ?, ? WHERE NOT EXISTS
+      (SELECT 1 FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ?)`)
+    .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now - 600_000, payload, syntheticFlag).run();
+  const record = await env.DB.prepare('SELECT id, delivery_status FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ? ORDER BY created_at, id LIMIT 1').bind(now - 600_000, payload, syntheticFlag).first();
   if (!record) throw new Error('storage-incomplete');
   if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiry(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
   return respond(request, 202, synthetic ? 'Synthetic test recorded. No email was sent and no inbox receipt is claimed.' : (value.request_kind==='question'?'Thank you. Your question is saved for the studio to review. Keep this reference for your records.':'Thank you. Your project details are saved for the studio to review. Keep this reference for your records.'), record.id, undefined, value.service, value, { synthetic });
 }
 
 async function operator(request, env) {
+  const authenticated = await secretEqual(request.headers.get('Authorization'), env.OPERATOR_TOKEN ? `Bearer ${env.OPERATOR_TOKEN}` : null);
   if (env.DB && env.FINGERPRINT_SECRET?.length >= 32) {
     const now = Date.now();
-    const key = await fingerprint(env.FINGERPRINT_SECRET, `operator:${request.headers.get('CF-Connecting-IP') || 'unknown'}:${Math.floor(now / 600_000)}`);
-    const allowed = await env.DB.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<30 RETURNING hits').bind(key, now + 1_200_000).first();
-    if (!allowed) return respond(request, 429, 'Too many operator attempts. Try again later.');
+    const key = await fingerprint(env.FINGERPRINT_SECRET, `operator:${authenticated ? 'authenticated' : 'unauthenticated'}:${request.headers.get('CF-Connecting-IP') || 'unknown'}:${Math.floor(now / 600_000)}`);
+    const allowed = await env.DB.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<? RETURNING hits').bind(key, now + 1_200_000, authenticated ? 600 : 30).first();
+    if (!allowed) { const limited = respond(request, 429, 'Too many operator attempts. Try again in ten minutes.'); limited.headers.set('Retry-After', '600'); return limited; }
   }
-  if (!await secretEqual(request.headers.get('Authorization'), env.OPERATOR_TOKEN ? `Bearer ${env.OPERATOR_TOKEN}` : null)) return respond(request, 401, 'Operator authentication required.');
+  if (!authenticated) return respond(request, 401, 'Operator authentication required.');
   if (!env.DB) return respond(request, 503, 'Storage unavailable.');
   const url = new URL(request.url);
   if(url.pathname==='/api/operator/journey-summary'&&request.method==='GET'){
@@ -190,6 +199,9 @@ async function operator(request, env) {
   }
   if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
+  if (url.pathname === `${base}/status` && request.method === 'GET') {
+    return Response.json(await inquiryStatus(env), {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+  }
   if (url.pathname === `${base}/retention-preview` && request.method === 'GET') {
     const preview = await inquiryRetentionPreview(env.DB);
     return preview ? Response.json(preview, { headers: { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer' } })
@@ -221,8 +233,9 @@ async function operator(request, env) {
     return Response.json(result, { headers: { 'Cache-Control': 'no-store' } });
   }
   if (request.method === 'DELETE' && !match[2] && request.headers.get('X-Confirm-Delete') === id) {
-    const deleted = await env.DB.prepare("DELETE FROM inquiries WHERE id = ? AND delivery_status != 'sending' RETURNING id").bind(id).first();
-    return respond(request, deleted ? 200 : 409, deleted ? 'Record deleted from active D1. Apply the approved retention policy to mailbox, exports and backups separately.' : 'No eligible record deleted; a sending record requires delivery reconciliation first.', id);
+    if (!await hasInquiryFollowup(env.DB)) return respond(request, 503, 'Inquiry follow-up migration is required. No records were changed.');
+    const deleted = await env.DB.prepare("DELETE FROM inquiries WHERE id = ? AND delivery_status != 'sending' AND retention_hold = 0 RETURNING id").bind(id).first();
+    return respond(request, deleted ? 200 : 409, deleted ? 'Record deleted from active D1. Apply the approved retention policy to mailbox, exports and backups separately.' : 'No eligible record deleted. Reconcile any sending attempt or preservation hold before deletion.', id);
   }
   return respond(request, 405, 'Use a supported operator action and exact reference confirmation.');
 }
@@ -305,6 +318,11 @@ export default {
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);
       else if (url.pathname.startsWith('/api/')) response = respond(request, 404, 'Not found.');
       else {
+        let assetRequest=request;
+        if(hasInquiryQuery(url)){
+          const headers=new Headers(request.headers);headers.delete('If-None-Match');headers.delete('If-Modified-Since');
+          assetRequest=new Request(request,{headers});
+        }
         const explicit404 = ['/404', '/404/', '/404.html'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method);
         if (explicit404) {
           const page = await env.ASSETS.fetch(new Request(new URL('/404/', url), { method: request.method }));
@@ -312,7 +330,7 @@ export default {
           if (page.ok || page.status === 404) response = new Response(page.body, { status: 404, headers: page.headers });
           else { await page.body?.cancel(); response = new Response(request.method === 'HEAD' ? null : 'Page not found.', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8' } }); }
         } else response = /\.(?:mp4|webm)$/i.test(url.pathname) && ['GET', 'HEAD'].includes(request.method)
-          ? await videoAsset(request, env.ASSETS) : await env.ASSETS.fetch(request);
+          ? await videoAsset(request, env.ASSETS) : await env.ASSETS.fetch(assetRequest);
         // Our static generator writes /404/index.html; edge fallback expects /404.html.
         // Fetch the existing branded page internally while preserving a real 404 status.
         if (response.status === 404 && ['GET', 'HEAD'].includes(request.method) && !explicit404) {
@@ -320,6 +338,10 @@ export default {
           const page = await env.ASSETS.fetch(new Request(fallback, { method: request.method }));
           if (page.ok) { await response.body?.cancel(); response = new Response(page.body, { status: 404, headers: page.headers }); }
           else await page.body?.cancel();
+        }
+        if(request.method==='GET'&&response.status===200&&hasInquiryQuery(url)&&response.headers.get('Content-Type')?.includes('text/html')){
+          const headers=new Headers(response.headers);headers.delete('Content-Length');headers.delete('ETag');headers.delete('Last-Modified');headers.set('Cache-Control','private, no-store');
+          response=new Response(prefillInquiryHtml(await response.text(),url),{status:200,headers});
         }
       }
       // Asset canonical redirects are permanent; preserve the provider target and query.
@@ -355,6 +377,7 @@ export default {
       await env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(Date.now()).run();
       await cleanJourneyCounts(env.DB);
       await retryPendingInquiries(env);
+      await recordRecoverySuccess(env.DB);
     }
   }
 };

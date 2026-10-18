@@ -28,7 +28,7 @@ Normal builds use checked-in public assets and Node dependencies. Optional Pytho
 
 ## Live workflow
 
-The form saves an inquiry in D1 before requesting an owner notification through Resend to `support@wonderandmethod.com` on Fastmail. A provider-accepted message is not proof of inbox receipt. Gmail is only legacy correspondence/account recovery. tawk.to loads after an explicit visitor chat action. Stripe hosts private invoices after fit and written scope approval; the public site does not automatically enroll visitors in monthly services.
+The form saves an inquiry in D1 before requesting an owner notification through Resend to the owner's Gmail inbox, as requested October 17. Public support mail remains at `support@wonderandmethod.com` on Fastmail. A provider-accepted message is not proof of inbox receipt. tawk.to loads after an explicit visitor chat action. Stripe hosts private invoices after fit and written scope approval; the public site does not automatically enroll visitors in monthly services.
 
 The owner confirmed a reply within one business day, Monday–Friday Eastern, and typical website delivery in 7–10 days after the agreed start and ready inputs. The written scope controls each project's schedule. Do not invent a phone number, social profiles, client work or extra staffed Care coverage.
 

@@ -17,8 +17,11 @@ export function countJourney(event,service='unsure'){
 }
 countJourney('page_view');
 document.addEventListener('click',event=>{
+ if(event.target.closest?.('.support-chat-launch')){countJourney('chat_open');return;}
  const a=event.target.closest?.('a[href]');if(!a)return;
- const url=new URL(a.href,location.href);if(url.origin!==location.origin)return;
+ const url=new URL(a.href,location.href);
+ if(url.protocol==='mailto:'){countJourney('email_click');return;}
+ if(url.origin!==location.origin)return;
  const match=url.pathname.match(/^\/checkout\/([a-z-]+)\/$/);
  if(match)countJourney('offer_select',match[1].replaceAll('-','_'));
  else if(url.pathname==='/contact/'&&url.searchParams.get('request_kind')==='question')countJourney('question_select',url.searchParams.get('offer'));

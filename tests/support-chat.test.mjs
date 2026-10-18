@@ -11,6 +11,8 @@ test('chat requires actual identifiers, verified delivery and privacy, and stays
  assert.equal(supportChatConfig({...c,reviewOnly:true}),null);
  assert.equal(supportChatConfig({...c,mode:'staging',formMode:'synthetic'}),null);
  assert.equal(supportChatCsp({...c,supportChat:{enabled:false}}),null);
+ assert.equal(supportChatCsp(c).script,'https://embed.tawk.to https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js');
+ assert.doesNotMatch(supportChatCsp(c).script,/\*\.tawk\.to/);
  for(const mutation of [{propertyId:'not-a-property'},{widgetId:'../script'},{verified:false}])assert.throws(()=>supportChatConfig({...c,supportChat:{...c.supportChat,...mutation}}));
  assert.throws(()=>supportChatConfig({...c,privacy:{processors:[{name:'tawk.to'}]}}));
  assert.throws(()=>supportChatConfig({...c,privacy:{chat:'Text',processors:[]}}));

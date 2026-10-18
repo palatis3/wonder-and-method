@@ -11,7 +11,7 @@ export async function releaseFingerprint(root){
  // before the corresponding dist files have been rebuilt.
  const config=JSON.parse(await readFile(resolve(root,'config/site.json'),'utf8'));
  const civic=await civicAssetState(root,config);
- const source=await collect(['content','src','experience','scripts','authority/v5','package.json','package-lock.json','config/site.json','config/offers.json','deployment/worker.mjs','deployment/inquiry-maintenance.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/migrations','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css',...(civic.civicSourceFiles??[])]);
+ const source=await collect(['content','src','experience','scripts','authority/v5','package.json','package-lock.json','config/site.json','config/offers.json','deployment/worker.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/migrations','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css',...(civic.civicSourceFiles??[])]);
  return {artifactSha256:digest(JSON.stringify(artifacts)),sourceSha256:digest(JSON.stringify(source))};
 }
 export function evaluateRelease(contract,evidence,current,config,deployment){

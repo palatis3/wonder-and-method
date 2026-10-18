@@ -1,4 +1,4 @@
-const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved']);
+const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open']);
 const services=new Set(['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure']);
 const pages=new Set(['home','pricing','service','county','work','contact','request','other','guide','guide_index','service_new','service_redesign','service_seo','service_care','service_audit','service_contractors','areas','work_demo']);
 export const journeyRetentionDays=90;

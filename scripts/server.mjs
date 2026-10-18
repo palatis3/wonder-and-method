@@ -7,6 +7,7 @@ import {randomUUID,createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {validateInquiry} from '../src/inquiry.mjs';
 import {escapeHtml,selectedInquiryContext} from '../src/shared.mjs';
+import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 const root=resolve(import.meta.dirname,'..');
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png','.ico':'image/x-icon','.mp4':'video/mp4','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
 const security={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",'Cache-Control':'no-store'};
@@ -50,7 +51,7 @@ export async function createServer({runtime=resolve(root,'.runtime'),port=4183,s
    if(!file.startsWith(siteDir+sep)&&file!==siteDir){reply(403,{message:'Access denied.'});return;}
    let code=200;
    try{let info;try{info=await stat(file);}catch{if(extname(file))throw Error();file+='.html';info=await stat(file);}if(info.isDirectory()){if(!path.endsWith('/')){res.writeHead(308,{...security,Location:path+'/'+url.search});res.end();return;}file=resolve(file,'index.html');}await stat(file);}catch{file=resolve(siteDir,'404/index.html');code=404;}
-   const bytes=await readFile(file);res.writeHead(code,{...security,'Content-Type':types[extname(file)]||'application/octet-stream','Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);
+   let bytes=await readFile(file);if(code===200&&extname(file)==='.html')bytes=Buffer.from(prefillInquiryHtml(bytes.toString('utf8'),url));res.writeHead(code,{...security,'Content-Type':types[extname(file)]||'application/octet-stream','Content-Length':bytes.length});res.end(req.method==='HEAD'?undefined:bytes);
   }catch{if(!res.headersSent)reply(503,{message:'The inquiry service is unavailable. Your entries remain in the form; please try again.'});else res.end();}
  });
  server.on('close',()=>db.close());

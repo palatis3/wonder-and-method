@@ -1,0 +1,7 @@
+# Optional chat resource policy
+
+The October 17, 2026 live widget-open check observed scripts from `embed.tawk.to` and the exact EmojiOne 2.2.7 script on `cdn.jsdelivr.net`; requests used `va.tawk.to` and `embed.tawk.to`, styles and images used `embed.tawk.to`, and a rotating `vsb118.tawk.to` host provided WebSocket transport. The sanitized inventory is in `evidence/strict-audit-fixes-20261017/chat-resource-inventory.json`. No message was entered or sent. Query strings, visitor tokens and chat content are not part of the retained inventory.
+
+The script policy now allows the observed exact Tawk script host and exact EmojiOne script URL. It no longer permits executable scripts from every Tawk subdomain. The existing wildcard for connection and other non-script provider resources remains because transport nodes and assets can vary across sessions and chat states. Tawk's inline styles are still required for its injected controls. No site-wide wildcard is introduced.
+
+Verify the candidate's widget opening, consent/normal display and contact fallback after deployment. A widget-open check does not test every message, attachment, transcript or provider upgrade. Review CSP console/network failures after a widget change; add a specific required source with evidence rather than broadening script access speculatively. The visitor must still select Message us before external chat code loads.

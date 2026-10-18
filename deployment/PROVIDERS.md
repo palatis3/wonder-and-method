@@ -6,17 +6,17 @@ Operating roles reconciled October 17, 2026. This is a deployment/inventory guid
 |---|---|---|
 | Website and form endpoint | Cloudflare Workers assets; production custom domains, `dist/` only | Maintain domain/account access and separate staging/production bindings; never expose repository files |
 | Durable inquiry and aggregate data | Cloudflare D1 | Verify schema migrations, private export/recovery and manual retention decisions |
-| Owner email notification | Resend, verified `notify.wonderandmethod.com` sender | Restricted Worker secret; recipient is support@wonderandmethod.com, visitor email is reply-to; acceptance is not inbox proof |
+| Owner email notification | Resend, verified `notify.wonderandmethod.com` sender | Restricted Worker secret; new inquiry notifications go to the owner's Gmail inbox, visitor email is reply-to; acceptance is not inbox proof |
 | Public support inbox | Fastmail, support@wonderandmethod.com | Incoming and outgoing mail verified during setup; check trial/billing continuity and recovery access |
 | Visitor chat | tawk.to | Load after explicit visitor action; monitor dashboard and phone notifications; set actual availability |
 | Agreed project invoices | Stripe hosted private invoices | Confirm written scope/milestone approval and actual account readiness before issuing; no automatic site checkout/subscription enrollment |
 | Founder credentials | Bitwarden plus scoped local DPAPI secrets | Maintain MFA, owner access and independently recoverable encrypted backups |
 
-Cloudflare/D1/Resend/Bitwarden were selected on free tiers. Fastmail began with a 30-day trial and a previously approved USD 6 monthly budget; this is historical account authorization, not a newly checked price or proof of an active paid subscription. Gmail is retained privately for earlier correspondence/account recovery and is not the new production notification destination. Preserve both website and Resend DNS when changing mailbox settings.
+Cloudflare/D1/Resend/Bitwarden were selected on free tiers. Fastmail began with a 30-day trial and a previously approved USD 6 monthly budget; this is historical account authorization, not a newly checked price or proof of an active paid subscription. Gmail is the destination for new production inquiry notifications and related correspondence, per the owner's October 17 choice. Public support mail remains in Fastmail; no Fastmail forwarding rule was saved. Preserve both website and Resend DNS when changing mailbox settings.
 
 ## Inquiry and chat handling
 
-The website writes D1 before attempting an owner notification. Review Fastmail and operator delivery status each business day. The confirmed response commitment is one business day, Monday–Friday Eastern. Neither inbox acceptance nor chat presence implies an immediate reply.
+The website writes D1 before attempting an owner notification. Review Gmail inquiries, Fastmail support mail, tawk.to and aggregate operator status each business day using [INQUIRY_HEALTH.md](../operations/INQUIRY_HEALTH.md). The confirmed response commitment is one business day, Monday–Friday Eastern. Neither inbox acceptance nor chat presence implies an immediate reply.
 
 Deployed notification recovery is documented in [PRODUCTION.md](PRODUCTION.md); the October17 audit release and migrations are verified. The application cap defaults to 50 notification attempts per UTC day including retries; actual sender quotas remain a separate constraint.
 

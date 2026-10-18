@@ -32,7 +32,7 @@ test('published guides have unique metadata, visible authorship and matching art
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
  const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/';
- assert.equal(journal.length,17);assert.equal(pages.length,64);assert.ok(pages.some(page=>page.path==='/payments/'));
+ assert.equal(journal.length,17);assert.equal(pages.length,65);assert.ok(pages.some(page=>page.path==='/payments/'));
  const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>![comparison,audit].includes(x.path))},offers,map,geography});
  assert.ok(!gated.some(x=>[comparison,audit].includes(x.path)));
  for(const path of ['/services/website-care/','/services/seo/','/pricing/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
@@ -86,7 +86,7 @@ test('approved public launch has indexed editorial pages and excluded utility pa
  assert.ok(pages.find(x=>x.path==='/').html.includes('name="robots" content="index,follow"'));
  assert.ok(pages.find(x=>x.path==='/privacy/').html.includes('name="robots" content="noindex,nofollow,noarchive,noimageindex"'));
  assert.ok(pages.every(x=>!x.html.includes('class="preview-label"')));
- const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,41);
+ const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,42);
  const contact=pages.find(x=>x.path==='/contact/').html;assert.match(contact,/data-mode="live"/);assert.ok(!/<(?:input|select|textarea)[^>]*disabled/.test(contact));
 });
 test('edge noindex covers public assets, rejected API requests and unavailable storage',async()=>{

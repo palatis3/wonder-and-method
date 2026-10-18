@@ -58,12 +58,19 @@ test('demo module has no networking or persistence capabilities',async()=>{
  assert.doesNotMatch(source,/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|localStorage|sessionStorage|indexedDB|sendBeacon)\b/);
  assert.doesNotMatch(source,/\.innerHTML\s*=|\.submit\s*\(/);
 });
-test('all portfolio previews are self-contained accessible SVGs',async()=>{
+test('original concept illustrations remain self-contained accessible SVGs',async()=>{
  for(const item of conceptCatalog){
-  const svg=await readFile(new URL(`../src${item.image}`,import.meta.url),'utf8');
+  const svg=await readFile(new URL(`../src/assets/work/concepts/${item.id}.svg`,import.meta.url),'utf8');
   assert.match(svg,/width="1200" height="900"/);
   assert.match(svg,/<title\b/);assert.match(svg,/<desc\b/);
   assert.doesNotMatch(svg,/<(?:script|foreignObject|image)\b/);
   assert.doesNotMatch(svg,/(?:href|src)="(?:https?:|\/\/)/);
+ }
+});
+
+test('website preview assets contain actual desktop and phone WebP captures',async()=>{
+ for(const item of conceptCatalog)for(const asset of [item.image,item.phoneImage]){
+  const bytes=await readFile(new URL(`../src${asset}`,import.meta.url));
+  assert.equal(bytes.subarray(0,4).toString(),'RIFF');assert.equal(bytes.subarray(8,12).toString(),'WEBP');assert.ok(bytes.length<100000);
  }
 });

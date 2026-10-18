@@ -149,11 +149,29 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .inquiry-promise{padding:1rem 1.2rem;border-left:3px solid var(--moss);background:var(--subtle);margin:0 0 1.5rem}
 .inquiry-extra{margin:1rem 0 1.25rem;border-block:1px solid var(--line);padding:.8rem 0}.inquiry-extra>summary{font-size:1rem;min-height:44px;align-content:center;cursor:pointer}
 .inquiry-extra .inquiry-options{border:0;padding:0}.inquiry-extra label{display:block;margin-top:1rem}
-form .request-summary{background:var(--subtle);border:1px solid var(--line);padding:1rem;margin:1rem 0}form .request-summary h3{font-size:1.05rem;margin:0 0 .5rem}form .request-summary p{font-size:.9rem;margin:.5rem 0}
+form .request-summary{background:var(--subtle);border:1px solid var(--line);padding:1rem;margin:1rem 0}form .request-summary :is(h3,.request-summary-heading){font-size:1.05rem;margin:0 0 .5rem}form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .pricing-detail-table,.pricing-plan-artwork{margin:1.5rem 0;border-block:1px solid var(--line);padding:1rem 0}.pricing-detail-table>summary,.pricing-plan-artwork>summary{font-size:1rem;min-height:44px;align-content:center;cursor:pointer}.pricing-detail-table[open] .comparison-scroll{margin-top:1rem}
 .home-content .home-proof{padding-top:clamp(2rem,5vw,4rem)}
 @media(max-width:767px){.concept-preview-grid{grid-template-columns:1fr;gap:2rem}.concept-preview-grid article{display:grid;grid-template-columns:1fr;gap:0}.studio-site .home-content>.studio-section{padding-block:2.5rem}.studio-site .home-content .compact-comparison{gap:1rem}.studio-site .home-content .compact-offer{padding:1.25rem}.studio-site .contact-layout{gap:2rem}.studio-site .inquiry-promise{font-size:1rem}.studio-site .contact-layout form label{font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.concept-preview img{transition:none}}
+.concept-preview{position:relative;padding:1rem 2.5rem 1.5rem .75rem;background:#e8e9e2}
+.concept-preview>img:first-child{border:1px solid #b4bdb4;box-shadow:0 5px 18px #18342a18}
+.concept-preview .concept-phone-preview{position:absolute;right:.5rem;bottom:.5rem;width:24%;height:auto;aspect-ratio:390/844;border:3px solid #273e35;border-radius:7px;box-shadow:0 6px 12px #18342a25;object-fit:contain;background:#f6f4eb}
+.search-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.search-decision-grid article{border-top:1px solid var(--line);padding-top:1.25rem;min-width:0}
+.study-number{font-family:var(--font-display,Georgia,serif);font-size:2.25rem;color:var(--sage)}
+.service-disclosure{margin:1.25rem 0;border-block:1px solid var(--line);padding:1.25rem 0}
+.service-disclosure>summary{font-size:1.1rem;font-weight:600;cursor:pointer;min-height:44px;align-content:center}
+.service-disclosure .studio-section{padding-block:2rem}
+.service-disclosure .studio-section:first-of-type{padding-top:1.5rem}
+.service-disclosure .section-top{display:block}
+.care-content .studio-section,.seo-content .studio-section{padding-block:clamp(2rem,4vw,3.5rem)}
+.service-fit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.service-fit-grid article{border-top:1px solid var(--line);padding-top:1rem;min-width:0}
+.simple-costs .pricing-comparison{min-width:0;width:100%;table-layout:fixed}
+.simple-costs .pricing-comparison th:first-child{width:46%}
+.simple-costs .pricing-comparison caption{text-align:left;white-space:normal}
+@media(max-width:767px){.search-decision-grid,.service-fit-grid{grid-template-columns:1fr}.concept-preview{padding:1rem 2.5rem 1.5rem .75rem}.service-disclosure .studio-section{padding-block:1.5rem}}
 .studio-site .contact-intro{padding-bottom:1.5rem;margin-bottom:1.5rem}.studio-site .contact-intro h1{font-size:clamp(2.5rem,5vw,4.8rem)}
 @media(max-width:767px){.studio-site .contact-intro{padding-top:1rem}.studio-site .contact-intro h1{font-size:2.5rem;line-height:1.08}.studio-site .contact-intro .lede{font-size:1rem;line-height:1.5}.studio-site .inquiry-promise{padding:.8rem 1rem}}
 @media(max-width:767px){.inquiry-confirmation{scroll-margin-top:7rem}.confirmation-actions{align-items:stretch;flex-direction:column}.confirmation-actions>a{min-height:44px;display:inline-flex;align-items:center}}

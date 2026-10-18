@@ -16,10 +16,12 @@ export function supportChatMarkup(config){
 
 export function supportChatCsp(config){
  if(!supportChatConfig(config))return null;
- // Only the requested chat provider is admitted; no external script runs until
- // the visitor opens chat. Tawk injects inline styles for its iframe controls.
+ // Widget-open inventory: embed serves scripts/styles/images; va handles chat
+ // requests and rotating vsb hosts handle WebSockets. Keep variable service
+ // endpoints allowed, but external executable scripts use exact observed hosts.
+ // Tawk injects inline styles for its iframe controls.
  return {
-  script:"https://*.tawk.to https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js",
+  script:"https://embed.tawk.to https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js",
   style:"'unsafe-inline' https://*.tawk.to https://fonts.googleapis.com",
   image:'https://*.tawk.to blob:',
   font:'https://*.tawk.to https://fonts.gstatic.com',

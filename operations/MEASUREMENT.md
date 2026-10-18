@@ -19,7 +19,7 @@ The October 17 release and verified migration `0004_journey_categories.sql` exte
 
 ## Events and privacy
 
-Allowed events are `page_view`, `offer_select`, `question_select`, `contact_select`, `request_start`, `question_start`, `inquiry_saved` and `question_saved`. Selections are link actions; starts are form interactions; saved events require a real saved confirmation. Repeated service events are deduplicated only within the current page instance, not across people or sessions.
+Allowed events are `page_view`, `offer_select`, `question_select`, `contact_select`, `request_start`, `question_start`, `inquiry_saved` `question_saved`, `email_click` and `chat_open`. Email clicks and chat-open requests are contact intent only, not delivered messages or conversations. Their counts contain no address, message or chat content. Migration `0006_journey_contact_events.sql` preserves earlier rows and adds these two fixed events. Selections are link actions; starts are form interactions; saved events require a real saved confirmation. Repeated service events are deduplicated only within the current page instance, not across people or sessions.
 
 The browser sends an allowed event, listed service choice and fixed broad page category to the same-origin Worker. D1 stores UTC day and total with those categories. Count rows contain no name, email, message, full URL, query, referrer, raw IP, visitor ID or session ID. No analytics cookies, browser storage or external analytics library are used. The network still processes connection information; separate keyed rate-limit records expire after 20 minutes and hourly cleanup removes them. They are not joined to count rows.
 

@@ -15,7 +15,7 @@
     "reviewCadence": "Owner reviews expiry dates weekly and schedules deletion by the 90-day date.",
     "systems": [
       "Cloudflare D1 inquiry payload",
-      "Matching Fastmail and earlier Gmail notification/conversation copies",
+      "Matching Gmail inquiry mail and Fastmail support or older notification/conversation copies",
       "Owner-controlled exports, local working copies and optional chat records"
     ],
     "exceptions": "Converted clients follow a separately reviewed contract/accounting schedule. Suspend deletion for a documented dispute or legal preservation need, with a reason and review date. These exceptions do not authorize indefinite storage of all leads.",
@@ -40,7 +40,7 @@
   "providerRetentionReview": {
     "checkedAt": "2026-10-14T16:01:22.693Z",
     "sources": "config/site.json privacyNotice",
-    "summary": "Current public notice distinguishes working-copy deletion from Cloudflare D1 recovery, Workers logs, Resend records, Fastmail recovery, earlier Gmail copies and tawk.to backups. See linked provider policies.",
+    "summary": "Current public notice distinguishes working-copy deletion from Cloudflare D1 recovery, Workers logs, Resend records, Fastmail recovery, Gmail inquiry copies and tawk.to backups. See linked provider policies.",
     "productionPlanConfirmationPending": true
   },
   "updatedAt": "2026-10-17"
