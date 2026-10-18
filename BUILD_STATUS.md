@@ -1,6 +1,6 @@
 # Implementation status — October 17, 2026
 
-The source-handoff simplification is **published and verified**. Current new-offer authority is `config/offers.json` version `2026-10-17-source-handoff`. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. CMS/editor/accounts, apps/portals/stores/CRM, external booking/newsletter account configuration, tracking-number setup and scheduled growth follow-up are outside the new build packages. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
+The plain-language and handoff update is **published and verified**. Current new-offer authority is `config/offers.json` version `2026-10-17-plain-language`. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. Client-facing copy states the agreed scope affirmatively; additional work is assessed and priced before commitment. Marketing-page examples distinguish pages from sections. Client instructions are plain text. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
 
 The source-handoff command and fictional starter are documented in [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). The packager passes 27 targeted tests, and the final fictional ZIP passes independent extraction, checksum and source-rebuild checks. This does not prove an actual client launch or form/email delivery.
 
@@ -8,8 +8,8 @@ Current release evidence is summarized below. Earlier buyer-experience work rema
 
 | Area | Current verified release evidence |
 | --- | --- |
-| Production | Source-handoff update `8f89d27a-1ebc-408b-841d-181b3ea7575d`; 66 routes, 42 index-eligible pages, 17 guides |
-| Technical validation | 289 tests pass; clean staged-source build, static verifier, dry run and private GitHub CI pass; 66 live pages and 209 asset hashes match; independent Astra review cleared all remaining findings |
+| Production | Plain-language update `72a81ac8-a5ba-47d2-a696-2612941c6af4`; 66 routes, 42 index-eligible pages, 17 guides |
+| Technical validation | 292 tests pass; clean staged-source build, static verifier, dry run and private GitHub CI pass; 66 live pages and 209 asset hashes match; independent Astra review cleared all remaining findings |
 | Search | Indexing ON. Google sitemap submission succeeded October 17, with 41 discovered pages. Homepage inspection says indexed. New manual recrawl request failed because Google's reCAPTCHA service could not connect. |
 | Source recovery | Private GitHub repository `palatis3/wonder-and-method`; sanitized source, secret scan, clean staged-checkout rebuild and CI recorded. This does not establish lost-device credential recovery. |
 | Database | Migrations through 0006 applied with private pre-migration backups; latest inquiry and aggregate counts unchanged. Current-schema synthetic restore preserves frozen payloads and hold protection. No real inquiry deletion or inferred contact-date backfill. |
