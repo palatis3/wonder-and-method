@@ -432,3 +432,17 @@ form>.optional-choice{margin:1.25rem 0}
  .studio-inner.studio-service .page-intro{padding:1.6rem 0 1.7rem}
  .studio-service .page-intro .lede{font-size:1rem}
 }
+
+/* Buyer-path improvements: visible evidence and a compact process introduction. */
+.work-preview[href],.concept-preview[href]{display:block;color:inherit}
+.work-caption h2 a{color:inherit;text-decoration:none}
+.work-caption h2 a:hover{text-decoration:underline;text-underline-offset:.15em}
+.work-preview[href]:focus-visible,.concept-preview[href]:focus-visible,.work-preview-strip>a:focus-visible{outline:3px solid var(--moss);outline-offset:5px}
+.work-preview-strip>a{display:block;min-width:0}
+.studio-site .process-intro{padding-bottom:1.5rem;max-width:100%}
+.studio-site .process-intro h1{font-size:clamp(2.5rem,5vw,4.6rem);max-width:20ch}
+.process-overview h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+.editing-model{max-width:80ch;padding:1rem 0;border-block:1px solid var(--line)}
+.seo-plan-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:1.5rem 0}
+.seo-plan-summary article{border-top:1px solid var(--line);padding-top:1rem}
+@media(max-width:600px){.seo-plan-summary{grid-template-columns:1fr}.studio-site .process-intro{padding-top:1.5rem}.process-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.process-route a{min-height:55px}}

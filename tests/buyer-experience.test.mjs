@@ -15,7 +15,7 @@ test('a question retains useful context without adopting proposal prices or open
   const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'}),new URL('https://example.test/contact/?offer=improve&request_kind=question&goal=search&concept=fieldwork&billing=annual&priority=article'));
   assert.doesNotMatch(html,/<details class="inquiry-extra" open/);
   assert.match(html,/value="fieldwork" selected/);assert.doesNotMatch(html,/value="annual"/);
-  assert.ok(html.indexOf('id="message"')<html.indexOf('id="request-summary"'));
+  assert.ok(html.indexOf('id="request-summary"')<html.indexOf('id="name"'));
   assert.ok(html.indexOf('id="request-summary"')<html.indexOf('class="inquiry-extra"'));
   assert.match(html,/Send question/);
 });

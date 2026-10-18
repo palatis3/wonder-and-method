@@ -6,7 +6,7 @@ export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','F
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 export function inquiryMessagePrompt(service='',requestKind='checkout'){
- if(requestKind==='question')return 'Your question about this service';
+ if(requestKind==='question')return service&&service!=='unsure'?'Your question about this service':'Your question';
  if(['keep_running','improve','grow'].includes(resolveServiceId(service)))return 'What does your existing website need, and what would you like monthly help to achieve?';
  if(['website_baseline','audit_fix_sprint'].includes(resolveServiceId(service)))return 'What is broken, and what should happen instead?';
  if(['launch_site','focused_site','signature_site'].includes(resolveServiceId(service)))return 'What does your business do, and when do you need the website?';

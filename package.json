@@ -33,9 +33,11 @@
     "handoff:prepare": "node scripts/prepare-client-handoff.mjs",
     "setup:tools": "node scripts/setup-tools.mjs",
     "predeploy": "node scripts/predeploy.mjs",
-    "check:citations": "node scripts/check-citations.mjs"
+    "check:citations": "node scripts/check-citations.mjs",
+    "test:browser": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@remotion/cli": "4.0.535",
     "@remotion/media": "^4.0.535",
     "axe-core": "4.14.0",

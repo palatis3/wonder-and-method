@@ -2,13 +2,13 @@
 
 Current website packages: [expanded Launch, Focused and Signature](operations/EXPANDED_PACKAGES_20261018.md), approved October 18, 2026.
 
-Current source revision: [monthly care, SEO and growth plans](operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
+Current source revision: [top-ten buyer journey and verification improvements](operations/TOP10_IMPLEMENTATION_20261018.md). Earlier revision: [monthly care, SEO and growth plans](operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
 
 Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 18, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
-The current production release is the October 18 audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74` (66 routes, 42 index-eligible routes, 17 guides). All 15 confirmed defects are fixed; ten of thirteen improvements are implemented, and three still require genuine client/local/authorship evidence. All five operating requirements have concrete procedures, checks or safeguards, with actual funding, calendar, sustained operation and independent recovery evidence still pending. All 300 tests, a clean-source rebuild of 292 byte-identical output files, the deployment dry run and private GitHub CI passed. All 66 live pages and 218 asset hashes match. Bounded independent Astra logic and visual reviews have no open actionable findings. Evidence is under `evidence/audit-fixes-20261018/`. A private D1 export and compatible previous Worker were recorded before publication; no migration was required.
+Historical release: the October 18 audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74` (66 routes, 42 index-eligible routes, 17 guides). All 15 confirmed defects are fixed; ten of thirteen improvements are implemented, and three still require genuine client/local/authorship evidence. All five operating requirements have concrete procedures, checks or safeguards, with actual funding, calendar, sustained operation and independent recovery evidence still pending. All 300 tests, a clean-source rebuild of 292 byte-identical output files, the deployment dry run and private GitHub CI passed. All 66 live pages and 218 asset hashes match. Bounded independent Astra logic and visual reviews have no open actionable findings. Evidence is under `evidence/audit-fixes-20261018/`. A private D1 export and compatible previous Worker were recorded before publication; no migration was required.
 
 New quotes use `config/offers.json` version `2026-10-18-audit-name`; accepted agreements retain their saved terms. The source-code handoff example is live at https://wonderandmethod.com/work/source-handoff/.
 
@@ -32,6 +32,7 @@ Use Node.js 24 or later. The full test suite also requires Python 3.9+ and Gitle
 
 ```powershell
 npm ci
+npx playwright install chromium
 npm run setup:tools
 npm run build
 npm test
@@ -41,7 +42,7 @@ npm start
 
 Open http://127.0.0.1:4183. The loopback server saves synthetic inquiries locally and sends no email; use invented details. The separate `deployment/` toolchain uses `npm --prefix deployment ci` and `npm --prefix deployment run check` for a Worker dry run. These checks do not deploy.
 
-Run `npm run technical:check` for the combined build, tests, static verification and Worker dry run. The broader `npm run release:check` retains business readiness gates and can fail while commercial dependencies remain unresolved. Neither check authorizes billing, outreach or a new provider purchase.
+Run `npm run technical:check` for the combined build, Node tests (including the complete synthetic recovery rehearsal), static verification, local browser journeys and Worker dry run. The broader `npm run release:check` retains business readiness gates and can fail while commercial dependencies remain unresolved. Neither check authorizes billing, outreach or a new provider purchase.
 
 Normal builds use checked-in public assets and Node dependencies. Optional Python asset/font regeneration tools use `python -m pip install -r requirements.txt`; these packages are not required to serve the site. Blender supplies `bpy`/`mathutils` through its own Python runtime, and Blender/FFmpeg must be installed separately for rendering. See `motion/README.md` for render tooling; older design directions there are historical, not the active production art.
 
@@ -75,3 +76,5 @@ Serve only `dist/`. Never serve the repository root, credentials, business recor
 Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.
 
 Technical publication now requires `npm run technical:check` on the clean, pushed commit followed by `npm run predeploy`. The private manifest binds the tested source and generated files to that commit; changing either requires a new check. Existing business enrollment gates are unchanged. See `deployment/PRODUCTION.md`.
+
+The pinned Playwright runner executes against a fresh loopback-only synthetic server. Test requests to other origins and unmocked APIs are blocked. Run `npm run test:browser` after building; reports and failure traces are under ignored `output/playwright/` and retained by GitHub Actions for 14 days. Browser results are required in the technical release manifest. See the current implementation record for limits and client-case preparation.

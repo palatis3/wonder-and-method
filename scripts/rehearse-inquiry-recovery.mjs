@@ -24,7 +24,7 @@ export async function rehearseInquiryRecovery(directory){
   const payload=JSON.stringify({name:'Synthetic recovery fixture',email:'fixture@example.test',service:'focused_site',message:'Invented recovery data; no real person or delivery.'});
   for(let i=0;i<3;i++)put.run(ids[i],now-100*86400_000,payload,ids[i],i===2?'manual_review':'accepted',now-95*86400_000,i===1?1:0,i===1?'Synthetic preservation':null,i===1?now-1000:null,JSON.stringify({to:['fixture@example.test'],text:'Frozen synthetic notification'}));
   source.prepare('UPDATE inquiries SET is_client=1 WHERE id=?').run(ids[2]);
-  source.prepare('INSERT INTO journey_counts VALUES(?,?,?,?,?)').run(new Date(now).toISOString().slice(0,10),'chat_open','unsure','contact',7);
+  source.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)').run(new Date(now).toISOString().slice(0,10),'chat_open','unsure','contact','direct',7);
   source.prepare('INSERT INTO operation_health VALUES(?,?)').run('inquiry-recovery',now);
   const before=digest(source),expected=await inquiryRetentionPreview(adapter(source),now);
   source.prepare('VACUUM INTO ?').run(resolve(directory,'synthetic-restored.sqlite'));

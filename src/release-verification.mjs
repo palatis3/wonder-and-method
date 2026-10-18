@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+export const technicalChecks=['build','tests','static-verification','browser-journeys','worker-dry-run'];
 
 export function verifyWorkerVersion(expectedWorkerVersion,observedWorkerVersion){
  const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
@@ -16,6 +17,6 @@ export function verifyTechnicalManifest(manifest,current){
   assert.ok(current[key],`Missing current ${key}`);
   assert.equal(manifest[key],current[key],`Technical verification no longer matches ${key}; rerun technical:check.`);
  }
- assert.deepEqual(manifest.checks,['build','tests','static-verification','worker-dry-run'],'Incomplete technical check sequence.');
+ assert.deepEqual(manifest.checks,technicalChecks,'Incomplete technical check sequence.');
  return true;
 }

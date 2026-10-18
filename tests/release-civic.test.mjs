@@ -13,8 +13,9 @@ test('predeploy manifest rejects a changed dist byte even when source and commit
  const f=await fixture();
  try{
   const commit='a'.repeat(40),current={commit,...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','browser-journeys','worker-dry-run']};
   assert.equal(verifyTechnicalManifest(manifest,current),true);
+  assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!=='browser-journeys')},current),/Incomplete technical check sequence/);
   await f.put('dist/index.html','Fixture');
   const changed={commit,...await releaseFingerprint(f.root)};
   assert.equal(changed.sourceSha256,current.sourceSha256);
