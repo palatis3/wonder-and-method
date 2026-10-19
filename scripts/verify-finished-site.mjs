@@ -34,7 +34,8 @@ for(let i=0;i<assets.length;i+=6)await Promise.all(assets.slice(i,i+6).map(async
  const url='/'+relative(resolve(root,'dist'),path).replaceAll('\\','/');
  const response=await fetch(origin+url);assert.equal(response.status,200,url);
  assert.equal(/noindex/.test(response.headers.get('x-robots-tag')||''),!routeIndexEligible(url),url);
- assert.equal(response.headers.get('cache-control'),'public, max-age=3600, must-revalidate',url);
+ const revalidates=/\.(?:html|txt|csv|json)$/i.test(url)||url.startsWith('/assets/buyer-packs/');
+ assert.equal(response.headers.get('cache-control'),revalidates?'no-cache':'public, max-age=3600, must-revalidate',url);
  const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
  assert.equal(hash(Buffer.from(await response.arrayBuffer())),hash(await readFile(path)),url);
 }));
