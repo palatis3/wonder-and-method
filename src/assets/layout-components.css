@@ -14,8 +14,8 @@
 .mobile-extra{display:none}
 .footer-top .wordmark{font-size:2rem}
 .contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;padding-bottom:5rem}
-.contact-layout>aside{padding-top:2rem}
-.contact-layout aside h2{font-size:2.2rem}
+.contact-layout>.contact-expectations{padding-top:2rem}
+.contact-layout .contact-expectations h2{font-size:2.2rem}
 .contact-layout .note{margin-top:0}
 .contact-layout form{max-width:650px}
 @media(min-width:1024px) and (max-width:1151px){.site-header{gap:1rem}}
@@ -34,7 +34,7 @@
 @media(max-width:1023px){.contact-layout{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:1023px){.footer-top .wordmark{font-size:1.8rem}}
 @media(max-width:1023px){.contact-layout{padding-bottom:3rem}}
-@media(max-width:1023px){.contact-layout>aside{padding-top:0}}
+@media(max-width:1023px){.contact-layout>.contact-expectations{padding-top:0}}
 @media(max-width:1023px){.contact-layout form button{width:100%}}
 @media(max-width:360px){.site-header{gap:.25rem}}
 @media(max-width:360px){.site-header .wordmark{font-size:1rem}}
@@ -53,8 +53,8 @@
 .studio-site .menu-toggle{display:none}
 .studio-site .mobile-extra{display:none}
 .studio-site .contact-layout{gap:4rem;padding:1rem 0 5rem}
-.studio-site .contact-layout aside h2{font-size:2.3rem}
-.studio-site .contact-layout aside p{font-size:1rem;color:var(--slate)}
+.studio-site .contact-layout .contact-expectations h2{font-size:2.3rem}
+.studio-site .contact-layout .contact-expectations p{font-size:1rem;color:var(--slate)}
 .studio-site .contact-layout label{font-size:.86rem;font-weight:600}
 .studio-site .contact-layout label span{font-weight:400;color:var(--slate)}
 .studio-site .contact-layout form>p{color:var(--slate)}
@@ -67,7 +67,7 @@
 @media(max-width:1023px){.studio-site .site-header nav a:last-of-type{justify-content:center}}
 @media(max-width:1023px){.nav-ready .studio-site .site-header nav{display:none}}
 @media(max-width:1023px){.studio-site .contact-layout{padding:0 0 3rem}}
-@media(max-width:1023px){.studio-site .contact-layout>aside{padding:0}}
+@media(max-width:1023px){.studio-site .contact-layout>.contact-expectations{padding:0}}
 @media(max-width:1023px){.studio-site .contact-layout form button{width:100%}}
 @media(max-width:1023px){.studio-site .footer-top .wordmark{font-size:2.2rem}}
 @media(max-width:370px){.studio-site .site-header .wordmark{font-size:1.62rem}}
@@ -78,8 +78,8 @@
 .studio-site .contact-layout label span{font-size:1rem;line-height:1.65}
 @media(max-width:1023px){.studio-site .contact-layout{display:flex;flex-direction:column}}
 @media(max-width:1023px){.studio-site .contact-layout>div{order:0}}
-@media(max-width:1023px){.studio-site .contact-layout>aside{order:1;border-top:1px solid var(--line);padding-top:1.5rem}}
-.studio-pricing .wordmark{white-space:normal;min-width:0;overflow-wrap:anywhere}
+@media(max-width:1023px){.studio-site .contact-layout>.contact-expectations{order:1;border-top:1px solid var(--line);padding-top:1.5rem}}
+.studio-pricing .wordmark{white-space:nowrap;min-width:0;overflow-wrap:normal}
 @media(max-width:1023px){.studio-pricing .site-header{padding-left:min(1.25rem,20px);padding-right:min(1.25rem,20px)}}
 .studio-site .site-header{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line);transition:box-shadow .2s ease}
 .studio-site .site-header.is-scrolled{box-shadow:0 8px 24px -18px #0e1b2a66}
@@ -87,7 +87,7 @@
 .studio-site .site-header nav a:last-of-type:hover{background:#24372a;color:#fff}
 .studio-site .header-contact{display:none}
 .studio-site .contact-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
-.studio-site .contact-layout>aside{order:initial}
+.studio-site .contact-layout>.contact-expectations{order:initial}
 .studio-site .contact-layout>.contact-form-column{order:initial}
 @media(max-width:1023px){.studio-site .site-header{gap:.6rem;padding:.4rem 1rem}}
 @media(max-width:1023px){.studio-site .site-header .wordmark{max-width:calc(100% - 76px);margin-right:auto;min-width:0}}
@@ -195,3 +195,21 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 @media(max-width:1023px){.studio-site .checkout-layout{display:flex;flex-direction:column}.studio-site .checkout-layout>*{width:100%}}
 
 .studio-site .contact-layout label{font-size:1rem}
+
+/* Keep the compact brand and the open menu usable at narrow widths and zoom. */
+.studio-site .site-header--compact .brand-name{white-space:nowrap;overflow-wrap:normal;flex:none}
+.studio-site .site-footer--compact{padding-bottom:2rem}
+.studio-site .site-footer--compact .footer-information{border:0;margin:0;padding:0}
+.studio-site .site-footer--compact .footer-heading{font:600 1rem/1.5 Manrope,Arial,sans-serif;margin:0;padding:.6rem 0;min-height:44px}
+.studio-site .site-footer--compact .footer-group>div{display:flex;flex-direction:column;align-items:flex-start}
+.studio-site .site-footer--compact .footer-group a{min-height:44px;font-size:1rem}
+@media(max-width:1023px){
+ body.menu-open{overflow:hidden}
+ .studio-site.menu-open .site-header{position:sticky;top:0;z-index:60}
+ .studio-site.menu-open .site-header nav.is-open{max-height:calc(100dvh - var(--site-header-height,64px));overscroll-behavior:contain}
+}
+@media(max-width:359px){
+ .studio-site .site-header--compact .wordmark.brand-lockup{font-size:1rem}
+}
+
+.studio-site .contact-expectations h2{font-size:1.35rem;line-height:1.3}

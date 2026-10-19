@@ -3,10 +3,10 @@ export const guideArt = {
   'website-redesign-brief': [['Customer task', 'What should the visitor be able to do?'], ['Business facts', 'Services, coverage, proof and content'], ['Ready to build', 'Pages, owner, review dates and handoff']],
   'local-seo-profile-eligibility': [['Real business', 'How and where customers are served'], ['Eligible profile', 'Check the rules for the actual operation'], ['Useful website', 'Service details and a clear contact step']],
   'seo-work-and-reporting': [['Find an opportunity', 'Relevant searches, competition and business fit'], ['Write and publish', 'Complete the selected page and its checks'], ['Review and continue', 'Record the work, observations and next decision']],
-  'website-migration-checklist': [['Inventory', 'Find the useful old pages and accounts'], ['Map', 'Give each old URL an appropriate destination'], ['Verify', 'Check redirects, inquiries and recovery']],
-  'custom-website-or-template': [['Use the same content', 'Service, proof and contact information'], ['Try the same task', 'Find the service and make an inquiry'], ['Compare the handoff', 'Editing, portability and ongoing costs']],
+  'website-migration-checklist': [['List what you have', 'Find useful old pages and account owners'], ['Map', 'Give each old URL an appropriate destination'], ['Check the move', 'Test old links, inquiries and recovery']],
+  'custom-website-or-template': [['Use the same content', 'Service, proof and contact information'], ['Try the same task', 'Find the service and make an inquiry'], ['Compare the handoff', 'Editing, moving the site and ongoing costs']],
   'website-maintenance-cost': [['Platform', 'Renewals and usage keep tools available'], ['Care', 'Checks and small supplied updates'], ['SEO and growth', 'Research, completed improvements and a plan']],
-  'website-launch-checklist': [['Approve', 'Check the facts, scope and release version'], ['Test', 'Complete the visitor and owner tasks'], ['Release and recover', 'Verify the public site and retain a rollback']],
+  'website-launch-checklist': [['Approve', 'Check the facts, scope and release version'], ['Test', 'Complete the visitor and owner tasks'], ['Release and recover', 'Check the live site and keep a recovery plan']],
   'ai-website-or-custom': [['Draft', 'Start from a factual brief'], ['Check', 'Remove invented claims and test the form'], ['Own the result', 'Confirm editing, exports and provider terms']]
 };
 

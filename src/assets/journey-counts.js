@@ -52,7 +52,7 @@ document.addEventListener('click',event=>{
  if(match)countJourney('offer_select',match[1].replaceAll('-','_'));
  else if(url.pathname==='/contact/'&&url.searchParams.get('request_kind')==='question')countJourney('question_select',url.searchParams.get('offer'));
  else if(url.pathname==='/contact/')countJourney('contact_select',url.searchParams.get('offer'));
- if(url.pathname==='/contact/'&&url.searchParams.get('offer')==='unsure'){
+ if(url.pathname==='/contact/'){
   const goal=url.searchParams.get('goal');
   if(['new_website','redesign','fix','search','care'].includes(goal))countJourney('goal_'+goal);
  }

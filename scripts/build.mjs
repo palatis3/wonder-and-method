@@ -1,5 +1,6 @@
 import {execFileSync} from 'node:child_process';
 import {assertPageDates} from './page-dates.mjs';
+import {verifyLocalReferences} from './verify-local-references.mjs';
 import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
@@ -20,19 +21,21 @@ const readJSON=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'))
 export async function buildCssBundles(assets,{includeChat=false}={}){
  const readStyles=async names=>(await Promise.all(names.map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
  const minify=async css=>(await transform(css,{loader:'css',minify:true,target:['chrome110','safari16']})).code;
- const shared=await readStyles(['style.css','journal.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])]);
+ const shared=await readStyles(['style.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])]);
+ const guides=await readStyles(['journal.css']);
  const plans=await readStyles(['brand.css','package-visuals.css']);
- return {shared:await minify(shared),plans:await minify(plans)};
+ return {shared:await minify(shared),plans:await minify(plans),guides:await minify(guides)};
 }
 
 export function applyCssBundles(html,boot){
  const plans=html.includes('href="/assets/package-visuals.css"');
+ const guides=html.includes('href="/assets/journal.css"');
  html=html.replace('<script src="/assets/boot.js"></script>',`<script>${boot}</script>`)
   .replace(/<link rel="stylesheet" href="\/assets\/(?:style|journal|premium|site-refresh|layout-components|support-chat)\.css">/g,'');
  if(plans)html=html.replace(/<link rel="stylesheet" href="\/assets\/(?:brand|package-visuals)\.css">/g,'');
  // Keep the original plan cascade: route styles, brand/package rules, shared rules.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}<link rel="stylesheet" href="/assets/site.css"></head>`);
+ return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css"></head>`);
 }
 
 export async function buildBrowserBundles(root,config){
@@ -50,10 +53,11 @@ export async function buildBrowserBundles(root,config){
 // Explicit build-only candidates, not a general unused-asset sweep. Artwork used
 // by work archives, poster variants, downloads, fonts and buyer packs stay intact.
 const obsoleteBuildAssets=[
+ {file:'assets/audit-implementation/illustrative-url-map.csv',dynamic:[]},
  ...['motion-1280.mp4','still-1536.webp','still-960.webp','still-640.webp'].map(name=>({file:`assets/editions/buffalo-dusk/${name}`,dynamic:['buffalo-dusk','editions/']})),
  {file:'assets/package-visuals/feature-guides.json',dynamic:['feature-guides']},
  {file:'assets/package-visuals/manifest.json',dynamic:['package-visuals/manifest']},
- ...['boot.js','journey-counts.js','fonts.css','journal.css','package-visuals.css','support-chat.css'].map(name=>({file:`assets/${name}`,dynamic:[]}))
+ ...['boot.js','journey-counts.js','fonts.css','journal.css','package-visuals.css','support-chat.css','style.css','premium.css','site-refresh.css','layout-components.css','site-plans.css','waterfront.css','film.js','premium.js','study-controls.js'].map(name=>({file:`assets/${name}`,dynamic:[]}))
 ];
 export async function pruneObsoleteBuildAssets(output){
  const outputRoot=resolve(output),files=[];
@@ -62,9 +66,13 @@ export async function pruneObsoleteBuildAssets(output){
   if(entry.isDirectory())await walk(file);else if(entry.isFile())files.push(file);
  }}
  await walk(outputRoot);
+ // These dated exports have been replaced by current cards/bundles. Only prune
+ // their emitted copies, and still require no reference in any emitted document.
+ const retiredPatterns=/^assets\/(?:editorial\/[^/]+\.webp|fonts\/font-[12]\.woff2|guides\/[^/]+(?:-card-240\.webp|-(?:thumb|social)\.png)|audit-implementation\/studio-(?:desktop|phone)\.webp|waterfront\/(?:hero-mobile(?:-450)?|concrete-detail(?:-180|-360)?|water-detail(?:-180|-360)?|grain-model|film-poster-portrait)\.webp)$/;
+ const candidates=[...obsoleteBuildAssets,...files.map(file=>relative(outputRoot,file).split(sep).join('/')).filter(file=>retiredPatterns.test(file)).map(file=>({file,dynamic:[]}))];
  const documents=await Promise.all(files.filter(file=>['.html','.css','.js','.mjs','.json','.svg','.xml','.txt'].includes(extname(file).toLowerCase())).map(async file=>({file,text:(await readFile(file,'utf8')).replace(/\\\//g,'/').replace(/\\u([\da-f]{4})|\\x([\da-f]{2})/gi,(_match,unicode,hex)=>String.fromCharCode(parseInt(unicode||hex,16)))})));
  const removed=[],retained=[];
- for(const candidate of obsoleteBuildAssets){
+ for(const candidate of candidates){
   const target=resolve(outputRoot,candidate.file);
   if(!target.startsWith(resolve(outputRoot,'assets')+sep))throw Error('Invalid obsolete asset path');
   if(!files.includes(target))continue;
@@ -138,6 +146,7 @@ const bootHash=createHash('sha256').update(boot).digest('base64');
 const css=await buildCssBundles(resolve(root,'src/assets'),{includeChat:Boolean(chatCsp)});
 await writeFile(resolve(output,'assets/site.css'),css.shared);
 await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
+await writeFile(resolve(output,'assets/site-guides.css'),css.guides);
 for(const page of pages)page.html=applyCssBundles(page.html,boot);
 const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
@@ -180,6 +189,8 @@ await writeFile(resolve(output,'version.json'),JSON.stringify({site:'wonder-and-
 // Scan all emitted documents, including generated buyer packs, before pruning.
 const assetPruning=await pruneObsoleteBuildAssets(output);
 const retiredPlanArtwork=await pruneRetiredPlanArtwork(output);
+// Validate the finished, pruned artifact, including social cards and srcsets.
+await verifyLocalReferences(output,pages.map(page=>'.'+page.path+'index.html'));
 for(const name of await readdir(resolve(root,'authority/v5'))){const bytes=await readFile(resolve(root,'authority/v5',name)); inventory.push({file:name,sha256:createHash('sha256').update(bytes).digest('hex')});}
 await mkdir(resolve(root,'evidence'),{recursive:true});
 await writeFile(resolve(root,'evidence/authority-hashes.json'),JSON.stringify(inventory,null,2));

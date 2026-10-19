@@ -22,7 +22,7 @@ test('county routes expose reviewed geography, truthful delivery and a complete 
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+path]);
   assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
-  assert.match(page.html,/based in Erie County, New York/);assert.match(page.html,/does not represent a local office/);assert.match(page.html,/Illustrative project briefs/);
+  assert.match(page.html,/based in Erie County, New York/);assert.match(page.html,/does not represent a local office/);assert.match(page.html,/Illustrative .* County example/);
   assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
   assert.ok(page.html.includes(`name="robots" content="${county.slug==='niagara'?'index,follow':'noindex,follow'}"`));
  }
@@ -54,12 +54,16 @@ test('supporting guide approvals gate every incoming link and retain distinct re
   const svg=await readFile(new URL(`../src/assets/guides/${guide.image}.svg`,import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);
   const png=await readFile(new URL(`../src/assets/guides/${guide.image}-social.png`,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
- const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/"Observed result"/);assert.match(maintenance,/"Untested"/);assert.match(maintenance,/not client work/);
- const contractor=await readFile(new URL('../src/assets/guides/contractor-website-worksheet.csv',import.meta.url),'utf8');assert.match(contractor,/"Approved project evidence"/);assert.match(contractor,/"Receipt and response process"/);assert.match(contractor,/not client work/);
+ const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/"Result"/);assert.equal((maintenance.match(/"Untested"/g)||[]).length,5);assert.match(maintenance,/confirmation, inbox\/spam and reply/);
+ const contractor=await readFile(new URL('../src/assets/guides/contractor-website-worksheet.csv',import.meta.url),'utf8');assert.match(contractor,/"Approved photos and facts"/);assert.match(contractor,/"Page and inquiry details needed"/);assert.match(contractor,/Example only:/);
 });
 
 test('county offer references and maintenance costs follow the commercial configuration',()=>{
  const changed=structuredClone(offers);changed.launch_site.public_price=1777;changed.focused_site.public_price=2777;changed.signature_site.public_price=4777;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
- for(const page of countyPages(changed))for(const value of ['$1,777','$2,777','$4,777','$877'])assert.ok(page.body.includes(value),page.path+' '+value);
+ for(const page of countyPages(changed)){
+  for(const value of ['$1,777','$177'])assert.ok(page.body.includes(value),page.path+' '+value);
+  assert.match(page.body,/href="\/pricing\/"/);
+  if(page.path!=='/areas/')assert.ok(page.body.includes('$877'),page.path+' Sprint price');
+ }
  assert.match(journalSections('/guides/website-maintenance-cost/',changed).map(s=>s.body).join(''),/\$177/);
 });

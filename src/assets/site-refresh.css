@@ -1,6 +1,6 @@
 /* The selected brush identity, shared by every page. */
 .studio-site{--paper:#f8f7f2;--subtle:#edf0e8;--ink:#0e1b2a;--blue:#334739;--light-blue:#b9c8b3;--line:#ced2c7;--slate:#4b574e;--clay:#334739;--moss:#334739}
-html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height) + 1rem);scroll-padding-bottom:7rem}
+html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height) + 1rem);scroll-padding-bottom:1rem}
 .studio-site main [id]{scroll-margin-top:1rem}
 .studio-site .breadcrumb{font-size:.8rem;padding-top:1rem}
 .breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 .55rem;margin:0;padding:0}
@@ -14,13 +14,9 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .back-to-top:hover .back-to-top-icon{transform:translateY(-2px)}
 .back-to-top:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 .back-to-top[hidden]{display:none!important}
-.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
 .menu-open .back-to-top,.menu-open .support-chat{visibility:hidden}
-.back-to-top.is-obstructing-controls:not(:focus),.support-chat-launch.is-obstructing-controls:not(:focus){visibility:hidden;pointer-events:none}
-.studio-site footer{padding-bottom:8rem}
+.studio-site footer{padding-bottom:2rem}
 @media(max-width:767px){html{--site-header-height:122px}
-.page-tools-ready .back-to-top{width:52px;height:52px;padding:0}
-.page-tools-ready .back-to-top>span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media print{.back-to-top{display:none!important}
 }
@@ -68,7 +64,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site .prose h2{padding-top:1rem}
 .service-explainer{margin:2rem auto 3rem;max-width:1100px}
 .service-explainer img{display:block;width:100%;height:auto;border:1px solid var(--line)}
-.service-explainer figcaption{font-size:.85rem;color:var(--slate);margin-top:.75rem;max-width:85ch}
+.service-explainer figcaption{font-size:.85rem;color:var(--slate);margin-top:.75rem;max-width:72ch}
 @media(max-width:767px){.studio-inner .page-intro{padding:2.6rem 0 2rem}
 .studio-inner .page-intro:after{width:110px;top:1rem;height:100px;opacity:.055}
 .studio-site .studio-section{padding:2.75rem 0}
@@ -83,7 +79,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .coverage-directory details{align-self:start}
 .coverage-directory ul{padding-left:1.25rem}
 .coverage-directory li{margin:.4rem 0}
-.search-section>p{max-width:85ch}
+.search-section>p{max-width:72ch}
 @media(max-width:767px){.coverage-directory{grid-template-columns:minmax(0,1fr);gap:.5rem}
 .search-section .continuing-grid{gap:1.75rem}
 }
@@ -104,7 +100,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .package-visual-card>.offer-purchase-actions{margin:0;padding:1.25rem;flex-direction:column;align-items:flex-start;flex-wrap:nowrap}
 .package-visual-card>.offer-purchase-actions p{flex-basis:auto}
 .buyer-protections{padding:1.25rem 1.5rem;background:var(--subtle);border:1px solid var(--line);margin:1.5rem 0}
-.buyer-protections p{max-width:85ch;margin:0 0 .5rem;font-size:1rem;line-height:1.65}
+.buyer-protections p{max-width:72ch;margin:0 0 .5rem;font-size:1rem;line-height:1.65}
 .buyer-protections a{display:inline-flex;align-items:center;min-height:44px;font-size:.9rem}
 .checkout-summary{border:1px solid currentColor;padding:clamp(1.1rem,3vw,2rem)}
 .studio-site .checkout-summary .price{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2}
@@ -126,7 +122,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .compact-price span{font-size:.8rem;display:block}
 .compact-offer .offer-purchase-actions{margin-top:auto;padding-top:1rem;align-items:flex-start;flex-direction:column}
 .compact-offer>.text-link{font-size:.88rem;margin-top:.8rem}
-.compact-costs{font-size:.9rem;max-width:85ch}
+.compact-costs{font-size:.9rem;max-width:72ch}
 .sample-receipt{border-left:3px solid var(--blue);padding:1rem 1.5rem;background:var(--subtle)}
 .sample-receipt dt{font-weight:600;margin-top:1rem}
 .sample-receipt dd{margin:.3rem 0}
@@ -147,7 +143,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site :is(input:not([type=checkbox]),select,textarea){font-size:16px;border-color:#758173}
 .studio-site .compact-offer{padding:clamp(1.35rem,2.5vw,2rem);gap:.15rem}
 .package-relationship{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;padding:2rem;background:var(--subtle);border:1px solid var(--line);margin-top:2rem}
-.package-relationship>p{grid-column:1/-1;margin:0;max-width:85ch}
+.package-relationship>p{grid-column:1/-1;margin:0;max-width:72ch}
 .package-relationship h3{font-size:1.35rem}
 .comparison-scroll{overflow-x:auto;border:1px solid var(--line);margin:1.5rem 0 2rem}
 .pricing-comparison{width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px}
@@ -255,7 +251,7 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .studio-site .pricing-intro{padding:2.1rem 0 1.25rem;max-width:none}
 .studio-site .pricing-intro h1{font-size:clamp(2.5rem,4.5vw,4.5rem);line-height:1.08;margin:.65rem 0 1.25rem}
 .studio-site .pricing-intro .page-jump{margin:0;border-block:1px solid var(--line);padding:.35rem 0}
-.pricing-arrival-note{font-size:.88rem;max-width:95ch;margin:1rem 0 0}
+.pricing-arrival-note{font-size:.88rem;max-width:72ch;margin:1rem 0 0}
 .studio-site .pricing-builds{padding-top:.75rem}
 .studio-site .pricing-builds>h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:.4rem 0 .7rem}
 .pricing-builds>.compact-comparison{margin-top:1rem}
@@ -286,7 +282,7 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .process-route span{font-family:var(--display);font-size:1.8rem;color:var(--moss)}
 .process-timing{max-width:80ch;border-left:3px solid var(--moss);padding:.25rem 0 .25rem 1.4rem}
 .process-timing h3{font-size:1.5rem;margin:.5rem 0}
-.calendar-stages{padding:0;list-style:none;max-width:95ch}
+.calendar-stages{padding:0;list-style:none;max-width:72ch}
 .calendar-stages li{display:grid;grid-template-columns:17rem 1fr;gap:2rem;padding:1.1rem 0;border-top:1px solid var(--line)}
 .compatibility-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem;margin:2rem 0}
 .compatibility-grid article{border-top:1px solid var(--line);padding-top:1.1rem;min-width:0}
@@ -319,7 +315,7 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .editor-boundaries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem}
 .editor-boundaries article{border-top:1px solid var(--line);padding-top:1.2rem}
 .editor-boundaries h3{font-size:1.65rem}
-.editor-note{max-width:85ch;font-size:.88rem}
+.editor-note{max-width:72ch;font-size:.88rem}
 @media(max-width:767px){.editor-boundaries{grid-template-columns:1fr;gap:1rem}
 .editor-capture{margin-block:1.4rem 2rem}
 }
@@ -434,7 +430,7 @@ form>.optional-choice{margin:1.25rem 0}
 .pricing-overview .overview-fee{font-variant-numeric:tabular-nums;white-space:nowrap}
 .pricing-overview .overview-group th{background:var(--subtle);font-size:.79rem;letter-spacing:.035em;padding:.5rem .6rem}
 .pricing-overview a{display:inline-block;min-height:24px;padding-block:2px}
-.studio-site .pricing-overview p{max-width:90ch;font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
+.studio-site .pricing-overview p{max-width:72ch;font-size:.85rem;line-height:1.6;margin:.8rem 0 0}
 .studio-inner.studio-service .page-intro{padding:2rem 0 2.1rem;margin-bottom:1rem}
 .studio-service .page-intro h1{font-size:clamp(2.35rem,4.6vw,4.7rem);max-width:26ch;line-height:1.04;margin:.75rem 0 1.2rem}
 .studio-service .page-intro .lede{font-size:1.1rem;line-height:1.65;max-width:66ch}
@@ -507,7 +503,6 @@ form>.optional-choice{margin:1.25rem 0}
  .studio-site h2{font-size:clamp(1.9rem,6.5vw,2.6rem)}
  .studio-site .journal-table-wrap table{font-size:1rem}
  .studio-site .journal-table-wrap :is(th,td){font-size:1rem;min-width:150px;overflow-wrap:normal;hyphens:auto}
- .page-tools-ready .back-to-top{left:auto;right:max(1rem,env(safe-area-inset-right));bottom:calc(5rem + env(safe-area-inset-bottom));width:48px;height:48px}
  .studio-site .comparison-scroll table{min-width:600px}
  .studio-site .comparison-scroll th:first-child{max-width:140px}
 }
@@ -527,3 +522,62 @@ form>.optional-choice{margin:1.25rem 0}
 
 .studio-site :is(.compact-offer,.home-plan-summary,.value-grid,.continuing-grid,.monthly-plan) p:not(.compact-price,.price){font-size:1rem}
 .studio-site main details p,.studio-site .service-note,.studio-site .scope-footnote{font-size:1rem}
+
+/* Readable prose and actions without constraining figures or data grids. */
+.studio-site main :where(section>p,section>ul:not(.link-row),section>ol,details>p,details>ul:not(.link-row),details>ol){max-width:72ch}
+.studio-site :is(.button,.text-link,.concept-button,.pricing-jump a,.page-jump a){font-size:1rem}
+.studio-site .eyebrow{font-size:.875rem;letter-spacing:.06em}
+.studio-site .compact-offer .eyebrow{text-transform:none;letter-spacing:.02em}
+.studio-site .page-jump{border-bottom:0}
+.studio-site .pricing-intro .page-jump{border-bottom:0}
+.studio-site .journal-toc{border-top:0}
+.link-row{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem;list-style:none;margin:1rem 0;padding:0}
+.link-row li{margin:0;padding:0}
+.link-row a,.studio-site :is(.buyer-pack-links,.checkout-alternatives) a{display:inline-flex;align-items:center;min-height:44px;padding-block:.6rem;font-size:1rem}
+.studio-site .back-to-top{position:static;inset:auto;width:auto;height:auto;min-height:48px;font-size:1rem}
+/* Higher specificity than the chat sheet, which is appended to the shared bundle. */
+.studio-site .support-chat,.studio-site .support-chat:has(.support-chat-launch:not([hidden]),.support-chat-fallback:not([hidden])){position:static;inset:auto;z-index:auto;max-width:100%}
+.studio-site .support-chat-launch{display:grid;grid-template-columns:22px 1fr;width:auto;height:auto;min-height:48px;padding:.7rem 1rem;border-radius:20px;font-size:1rem}
+.studio-site .support-chat-launch>span{position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
+.studio-site .page-tools,.studio-site .site-tools{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.studio-site .support-chat-fallback{max-width:min(100%,28rem);box-sizing:border-box}
+/* Every retained financial table shares the same column alignment. */
+.studio-site :is(.payment-schedule,.table-scroll,.comparison-scroll) table{border-collapse:collapse}
+.studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) :is(th,td){text-align:left;padding:1rem;border-bottom:1px solid var(--line);vertical-align:top;white-space:normal;font-size:1rem;overflow-wrap:anywhere}
+.studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) thead{background:var(--subtle)}
+.studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) caption{text-align:left;white-space:normal;font-size:1rem;padding:0 0 1rem;overflow-wrap:anywhere}
+.studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) td{font-variant-numeric:tabular-nums}
+.studio-site table.responsive-table{width:100%;min-width:0;table-layout:auto}
+@media(max-width:600px){
+ /* Keep real headers available to assistive technology when rows become cards. */
+ .studio-site :is(.table-scroll,.comparison-scroll,.payment-schedule,.journal-table-wrap):has(.responsive-table){overflow:visible;max-width:100%}
+ .studio-site table.responsive-table{display:block;min-width:0;width:100%;max-width:100%}
+ .studio-site table.responsive-table caption{display:block;width:100%;max-width:100%;box-sizing:border-box}
+ .studio-site table.responsive-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+ .studio-site table.responsive-table tbody{display:block}
+ .studio-site table.responsive-table tbody tr{display:block;border:1px solid var(--line);margin:0 0 1rem;padding:.75rem;background:var(--paper)}
+ .studio-site table.responsive-table tbody :is(th,td){display:block;position:static;inset:auto;width:auto;min-width:0;max-width:none;white-space:normal;padding:.6rem 0;overflow-wrap:anywhere;box-sizing:border-box}
+ .studio-site table.responsive-table tbody th{font-weight:700;border-bottom:1px solid var(--line)}
+ .studio-site table.responsive-table tbody th:first-child{width:auto;max-width:none}
+ .studio-site table.responsive-table tbody td:last-child{border-bottom:0}
+ .studio-site table.responsive-table td[data-label]::before{content:attr(data-label);display:block;font-weight:650;margin-bottom:.25rem;color:var(--ink)}
+}
+/* One named, keyboard-accessible animation control over the image. */
+.studio-site .civic-hero{position:relative}
+.studio-site .civic-controls{position:absolute;right:max(1.5rem,calc((100% - 1120px)/2 + 1.5rem));bottom:1.5rem;z-index:3;min-height:0;padding:0;gap:0}
+.studio-site .civic-controls .civic-replay{display:none}
+.studio-site .civic-controls .civic-toggle{width:44px;height:44px;min-height:44px;padding:0;display:flex;align-items:center;justify-content:center;gap:0;font-size:0;border-radius:50%;box-shadow:0 2px 10px #0e1b2a20}
+.studio-site .civic-controls .civic-toggle[hidden]{display:none}
+.studio-site .civic-toggle::before{content:'\25B6';font:600 18px/1 Arial,sans-serif}
+.studio-site .civic-hero[data-playing=true] .civic-toggle::before{content:'\2161'}
+.studio-site .compact-comparison:has(>article:only-child){grid-template-columns:minmax(0,1fr);max-width:48rem}
+.studio-site .related-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center}
+.studio-site .related-links a{display:inline-flex;align-items:center;min-height:44px}
+.studio-site .support-chat-choice{max-width:40rem;margin:0}
+.studio-site .support-chat-choice .support-chat-description{position:static;width:auto;height:auto;clip-path:none;white-space:normal;overflow:visible}
+.studio-site .inquiry-next h3{margin-bottom:.4rem}
+.studio-site .inquiry-next p{margin:.5rem 0}
+.studio-site .civic-hero[data-unavailable=true] .civic-controls{position:static;margin:1rem 0;justify-content:center}
+.studio-site .civic-hero[data-unavailable=true] .civic-status{position:static;width:auto;height:auto;clip-path:none;white-space:normal;font-size:1rem}
+
+.studio-site .support-chat-choice{border:0;padding:0}

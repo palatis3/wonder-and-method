@@ -43,8 +43,8 @@ test('explicit decision-pack requests stay proposals without JavaScript and reta
  const {prefillInquiryHtml}=await import('../src/inquiry-prefill.mjs');
  const {default:offers}=await import('../config/offers.json',{with:{type:'json'}});
  for(const pack of buyerPacks(offers)){
-  const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'}),new URL(pack.request,'https://example.test'));
-  assert.match(html,/<option value="checkout" selected>/);
+  assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'},{checkout:true,service:pack.id}),new URL(pack.request,'https://example.test'));
+  assert.match(html,/name="request_kind" value="checkout"/);
   assert.match(html,/<button type="submit" data-request-submit>Request a proposal<\/button>/);
   if(pack.id.endsWith('_site'))assert.ok(JSON.stringify(pack.sections).includes(offers[pack.id].creative));
  }

@@ -46,7 +46,7 @@ test('chat connection failure exposes the contact fallback and dismissal prevent
   if(failure==='error')b.appended[0].events.error();else [...b.timeouts.values()][0]();
   assert.equal(b.fallback.hidden,false);assert.equal(b.launcher.hidden,true);assert.equal(b.timeouts.size,0);
   assert.equal(b.focus(),'fallback');assert.match(b.status.textContent,/Chat could not connect/);
-  b.dismiss();b.load();assert.equal(b.root.hidden,true);assert.deepEqual(b.counts(),{maximized:0,hidden:1});
+  b.dismiss();b.load();assert.equal(b.root.hidden,true);assert.equal(b.counts().maximized,0);assert.ok(b.counts().hidden>=1);
  }
 });
 

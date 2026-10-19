@@ -10,13 +10,13 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('every route exposes the same primary journey and local type system',()=>{
- const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/process/','/guides/','/about/','/contact/'];
+ const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   assert.ok(primary,path);
   assert.deepEqual([...primary.matchAll(/href="([^"]+)"/g)].map(x=>x[1]),expected,path);
   assert.match(html,/\/assets\/premium\/newsreader-regular\.woff2/);
-  assert.match(html,/\/assets\/premium\/manrope\.woff2/);
+  assert.doesNotMatch(html,/<link[^>]+rel="preload"[^>]+manrope/);
   assert.doesNotMatch(html,/<iframe|my\.spline\.design|opening\.mp4|\/assets\/experience\.js/);
  }
 });
@@ -63,14 +63,14 @@ test('Civic edition keeps full-word images, local metadata and deferred once-onl
 });
 
 
-test('validated finale edition renders versioned intro and ambient with deferred sources and explicit replay',()=>{
+test('validated finale edition renders versioned intro and ambient with deferred sources and one explicit motion control',()=>{
  const media={revision:'finale-v2',poster:'/civic-sculpture/finale-v2/buffalo-civic-poster.webp',mobilePoster:'/civic-sculpture/finale-v2/buffalo-civic-mobile.webp',video:'/civic-sculpture/finale-v2/buffalo-civic-intro.mp4',ambientVideo:'/civic-sculpture/finale-v2/buffalo-civic-ambient.mp4',durationSeconds:10,ambientDurationSeconds:4,width:1440,height:720,posterWidth:1440,mobilePosterWidth:960};
  const configV2={...config,homeEdition:'civic-sculpture',civicMotionReady:true,civicAmbientReady:true,civicMedia:media};
  const html=renderPages({config:configV2,offers,map,geography}).find(p=>p.path==='/').html;
  assert.match(html,/<video id="civic-motion"[^>]+data-src="[^"]+finale-v2\/buffalo-civic-intro.mp4"[^>]+data-duration="10"[^>]+preload="none"/);
  assert.match(html,/<video id="civic-ambient"[^>]+data-src="[^"]+finale-v2\/buffalo-civic-ambient.mp4"[^>]+data-duration="4"[^>]+preload="none"/);
  assert.doesNotMatch(html,/<video[^>]+(?: autoplay| src=)/);
- assert.match(html,/class="civic-replay"[^>]+hidden>Replay introduction/);
+ assert.doesNotMatch(html,/class="civic-replay"/);
  assert.match(html,/curled bronze bridge beneath the word/);
  assert.match(selectedEdition(configV2).motionCopy,/ten-second introduction plays once, then a seamless four-second ambient/);
  const withoutTraffic=selectedEdition(configV2);

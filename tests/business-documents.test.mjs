@@ -21,12 +21,12 @@ test('closed annual gate removes enrollment marketing while preserving existing 
   assert.equal(pack.annual, undefined);
   assert.equal(pack.baselineFee, 399);
   assert.doesNotMatch(packBody(pack), /Save \$|Annual prepayment|Available on request|annual option/i);
-  assert.match(packBody(pack), /already have an accepted annual agreement/);
-  assert.match(text(pack), /within ten business days/);
-  assert.match(text(pack), /Undisputed unearned amounts/);
-  assert.match(text(pack), /refund the full annual service payment/);
-  assert.match(text(pack), /no automatic annual charge/);
-  assert.match(text(pack), /unfinished work owed under your accepted project agreement/);
+  assert.match(packBody(pack), /href="\/payments\/"/);
+  assert.match(paymentContent(config, closed), /within ten business days/);
+  assert.match(paymentContent(config, closed), /Undisputed unearned amounts/);
+  assert.match(paymentContent(config, closed), /refund the full annual service payment/);
+  assert.match(paymentContent(config, closed), /no automatic annual charge/);
+  assert.match(paymentContent(config, closed), /unfinished work owed under your accepted project agreement/);
  }
  assert.doesNotMatch(buyerPackSection(closed), /annual prepayment/i);
  assert.doesNotMatch(paymentContent(config, closed), /Annual prepayment|\$1,710|\$4,560|\$9,120/);
@@ -60,7 +60,7 @@ test('monthly documents distinguish ongoing care, main improvements and Grow-onl
  }
  const table = monthlyScopeTable(offers);
  const row = table.match(/<tr><th scope="row">Extra graphic or newsletter excerpt<\/th>(.*?)<\/tr>/)?.[1];
- assert.equal(row, '<td>Not included</td><td>Not included</td><td>1 small reuse task per month</td>');
+ assert.equal(row, '<td>Not included</td><td>Not included</td><td>1 extra graphic or short excerpt</td>');
  assert.doesNotMatch(table, /May replace the main improvement/);
 });
 
@@ -101,7 +101,7 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
   assert.doesNotMatch(body, /twelve hypothetical hosting|\$759|\$1,110.*hosting/);
   assert.match(body, /approved unavoidable third-party costs/);
   assert.match(body, /unearned amount to be refunded/);
-  assert.match(body, /30 calendar days after written completion acceptance/);
+  assert.match(body, /30 calendar days after your written approval of its completion/);
  }
  assert.match(text(packs.find(p => p.id === 'audit_fix_sprint')), /up to 2 fixes total, not a Baseline fix plus 2 more/);
 });
@@ -127,9 +127,9 @@ test('examples use current limits and do not imply included production commerce'
  assert.match(report, /Grow only/);
  assert.match(report, /Blank example/);
  const demo = conceptDebrief('hearthside');
- assert.match(demo, /ready ordering service.*already owns and uses/);
- assert.match(demo, /not included in a standard website package/);
- assert.match(demo, /separate assessment/);
+ assert.match(demo, /ready ordering service you already use/);
+ assert.match(demo, /Building an ordering system or setting up that outside account is separate work/);
+ assert.match(demo, /places no order and takes no payment/);
 });
 
 test('payment portal remains unavailable without an approved live destination', () => {

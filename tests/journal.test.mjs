@@ -7,6 +7,7 @@ import {readFile} from 'node:fs/promises';
 import {renderPages} from '../src/pages.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import {journal,journalImage,journalSections} from '../src/journal.mjs';
+import {buyerPacks} from '../src/buyer-packs.mjs';
 import worker from '../deployment/worker.mjs';
 const json=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(json));
@@ -25,7 +26,7 @@ test('published guides have unique metadata, visible authorship and matching art
  for(const guide of journal){const page=pages.find(x=>x.path===guide.path);assert.ok(page,guide.path);const html=page.html;
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1);assert.ok(!titles.has(guide.title));titles.add(guide.title);
   const data=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  const article=data.find(x=>x['@type']==='Article');assert.equal(article.headline,guide.title);assert.equal(article.mainEntityOfPage,config.origin+guide.path);assert.equal(article.author.name,config.name);assert.equal(article.datePublished,guide.datePublished);assert.equal(article.dateModified,guide.dateModified);
+  const article=data.find(x=>x['@type']==='Article');assert.equal(article.headline,guide.title);assert.equal(article.mainEntityOfPage,config.origin+guide.path);assert.equal(article.author['@id'],config.origin+'/#studio');assert.equal(article.datePublished,guide.datePublished);assert.equal(article.dateModified,guide.dateModified);
   const newGuide=['google-visibility-flow','contact-form-flow','service-area-decision','maintenance-cycle','contractor-inquiry'].includes(guide.image);
   const auditGuide=['/guides/website-maintenance-cost/','/guides/website-launch-checklist/','/guides/ai-website-or-custom/'].includes(guide.path);
   const revised=auditGuide||['/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/website-not-showing-on-google/'].includes(guide.path);
@@ -58,11 +59,11 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
   const png=await readFile(new URL(`../src/assets/guides/${slug}-social.png`,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
  const worksheet=await readFile(new URL('../src/assets/guides/website-care-versus-seo-worksheet.csv',import.meta.url),'utf8');
- for(const field of ['Problem','Evidence available','Maintenance task','Search content task','Owner','Approved cycle','Verification'])assert.ok(worksheet.split('\n')[0].includes(`"${field}"`));
- assert.equal((worksheet.match(/"Illustrative scenario; not client work"/g)||[]).length,2);assert.match(worksheet,/"Illustrative Grow month; not client work"/);assert.match(worksheet,/"Actual owned content-change record"/);assert.match(worksheet,/not a completed paid service cycle/);
+ for(const field of ['Problem','Facts or evidence','Care task','Search or content task','Who / agreed month','How to check it'])assert.ok(worksheet.split('\n')[0].includes(`"${field}"`));
+ assert.equal((worksheet.match(/"Example only:/g)||[]).length,3);assert.match(worksheet,/do not count the same work twice/);assert.doesNotMatch(worksheet,/Actual owned content-change record/);
  const csv=await readFile(new URL('../src/assets/guides/website-audit-checklist.csv',import.meta.url),'utf8');
- for(const field of ['Test','Expected behavior','Result','Evidence url date','Severity','Owner','Proposed correction','Retest','Needs access status'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
- assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/invalid response is not a saved inquiry/);
+ for(const field of ['What to check','What should happen','Result','Evidence (link and date)','Fix needed / who','Next check'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
+ assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/check confirmation, any saved record, inbox or spam, and your reply separately/);
  assert.doesNotMatch(checklist,/CA-01|CA-04/);assert.match(checklist,/confirm receipt and inbox arrival/);assert.match(checklist,/hypothetical/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
 });
 
@@ -74,8 +75,9 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/does not report client outcomes/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
- for(const field of ['Failing visitor task','Evidence','Retained useful content assets accounts','Supported stack access check','Affected pages components','Bounded correction hypothesis','Acceptance retest','Repair rebuild decision','Unresolved inputs'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
- assert.equal((csv.match(/"Actual owned correction; 2026-10-15"/g)||[]).length,2);assert.match(csv,/"Hypothetical rebuild scenario; not client work"/);assert.match(csv,/"Your proposed decision"/);
+ for(const field of ['What’s going wrong','Evidence (link and date)','Useful content and accounts to keep','Platform and access check','Small fix to try and how to check it','Keep, fix or rebuild?'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
+ assert.match(csv,/Example only:/);assert.match(csv,/No client result claimed/);assert.match(csv,/Try a small fix before deciding on a rebuild/);assert.doesNotMatch(csv,/Actual owned correction/);
+ for(const row of csv.trim().split(/\r?\n/))assert.equal((row.match(/"(?:[^"]|"")*"/g)||[]).length,6,'Six usable worksheet fields on every row');
  const svg=await readFile(new URL('../src/assets/guides/repair-or-redesign.svg',import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);assert.match(svg,/record gaps and obtain authorized access/);assert.match(svg,/keep the useful site/);assert.match(svg,/fix and retest/);
  const png=await readFile(new URL('../src/assets/guides/repair-or-redesign-social.png',import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/https:\/\/developers.google.com\/search\/docs\/fundamentals\/ai-optimization-guide/);assert.match(seo,/must be indexed and able to show a search snippet/);assert.match(seo,/No special AI file or extra schema guarantees visibility/);assert.match(seo,/relevant Search Console inclusion setting/);
@@ -84,8 +86,9 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
 test('care comparison uses current configured service fees and finite units',()=>{
  const revised=structuredClone(offers);revised.plans.keep_running.monthly_price=207;revised.plans.improve.priorities=3;
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
- assert.match(html,/Keep Running \/ \$207/);assert.match(html,/3 complete connected improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
- assert.match(html,/same change cannot fulfill two units/);assert.match(html,/Accepted work delayed by us remains owed/);
+ assert.match(html,/Keep Running is \$207/);assert.match(html,/3 complete improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
+ assert.match(html,/it is still one correction/);assert.match(html,/next invoice pauses/);
+ const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/Accepted work delayed by me remains owed/);
 });
 
 test('only pages containing Civic artwork load Civic styles and alternate hero code stays absent',()=>{
@@ -113,9 +116,9 @@ test('edge noindex covers public assets, rejected API requests and unavailable s
 
 test('the cost-guide examples distinguish pages and creative scope with source-code handoff',()=>{
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
- assert.match(html,/Focused is \$2,350 for deeper service explanations, expanded creative assets, two forms and up to two ready service connections/);
- assert.match(html,/a larger marketing-page map, one original animated hero or 3D centerpiece and an expanded creative kit/);
- assert.match(html,/All three plans include editable source and content files/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
+ assert.match(html,/Focused adds more service detail, two forms, two original guides and up to two ready connections/);
+ assert.match(html,/Signature adds a larger page plan, four original guides and an original animated hero or 3D centerpiece/);
+ assert.match(html,/Every studio website package includes.*source files and a written handoff/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
 });
 
@@ -127,8 +130,8 @@ test('guide structure verifier rejects a missing contents-disclosure closing tag
  assert.throws(()=>assertArticleOutsideDisclosures(broken,'broken guide'),/article must sit outside collapsed contents/);
 });
 
-test('pricing connects the monthly decision to the approved care-versus-SEO guide',()=>{
- assert.ok(pages.find(page=>page.path==='/pricing/').html.includes('href="/guides/website-care-versus-seo/"'));
+test('guide publication retains approval gates',()=>{
+ assert.ok(pages.some(page=>page.path==='/guides/website-care-versus-seo/'));
  const held=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!=='/guides/website-care-versus-seo/')},offers,map,geography});
- assert.ok(!held.find(page=>page.path==='/pricing/').html.includes('href="/guides/website-care-versus-seo/"'));
+ assert.ok(!held.some(page=>page.path==='/guides/website-care-versus-seo/'));assert.ok(!held.find(page=>page.path==='/pricing/').html.includes('href="/guides/website-care-versus-seo/"'));
 });

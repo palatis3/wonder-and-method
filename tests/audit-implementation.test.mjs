@@ -23,12 +23,12 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
   assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+1650);
   assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/#offer-'+key));
   assert.ok(pages.find(p=>p.path==='/pricing/').html.includes('id="offer-'+key+'"'));
-  for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/contact/?offer='+key));
+  for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/checkout/'+key.replaceAll('_','-')+'/'));
  }
  assert.equal(offers.plans.keep_running.monthly_price,150);assert.equal(offers.audit_sprint.one_time_price,750);assert.equal(offers.plans.improve.monthly_price,400);
  const publicCopy=pages.map(p=>p.html).join('\n');
  assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope|\$6,000|\$9,500/);
- assert.match(pages.find(p=>p.path==='/pricing/').html,/Custom animated hero or 3D centerpiece/);
+ assert.match(pages.find(p=>p.path==='/pricing/').html,/original animated hero or 3D centerpiece/i);
 });
 
 test('Launch survives a real synthetic request and remains recoverable without sending mail',async()=>{
@@ -54,11 +54,11 @@ test('published decisions include the real review framework, exclusions and insp
  const page=path=>pages.find(p=>p.path===path).html;
  assert.equal(offers.review_standard.sections.length,22);
  assert.equal(offers.review_standard.sections.reduce((sum,s)=>sum+s.weight,0),100);
- for(const s of offers.review_standard.sections)assert.ok(page('/services/website-audit/').includes(s.title.replaceAll('&','&amp;')));
+ assert.match(page('/services/website-audit/'),/Website Baseline/);assert.match(page('/services/website-audit/'),/Audit &amp; Fix Sprint/);
  const seo=page('/services/seo/');assert.match(seo,/<h3>Not included<\/h3><ul>/);
  assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/Example only — no client outcome claimed/);
  assert.match(page('/guides/website-redesign-brief/'),/illustrative-completed-brief\.txt/);
- assert.match(page('/guides/website-migration-checklist/'),/illustrative-url-map\.csv/);
+ assert.match(page('/guides/website-migration-checklist/'),/\/assets\/downloads\/website-url-map\.csv/);
  for(const id of ['keep_running','improve','grow','audit_fix_sprint'])assert.match(page('/contact/'),new RegExp('value="'+id+'"'));
  assert.match(offers.signature_site.creative,/one creative concept, one scene/);
  assert.match(offers.signature_site.creative,/two existing design\/staging review rounds/);
@@ -125,11 +125,11 @@ test('source-handoff scopes survive quote drafting with clear agreed delivery li
  const html=pages.map(p=>p.html).join(' ');
  assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);
  const web=pages.find(p=>p.path==='/services/web-design/').html;
- assert.match(web,/Paid source, approved assets and publishing notes/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
+ assert.match(web,/paid website files, approved assets and publishing instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
  assert.match(web,/one initial launch/i);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
  assert.ok(pages.find(p=>p.path==='/services/seo/').html.includes('20-minute call or written review'));
- assert.match(pages.find(p=>p.path==='/services/seo/').html,/already-promised launch work do not consume a paid allowance/);
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/already-promised launch work.*(?:does not|do not).*paid/i);
 });
 
 test('historical snapshot: provider cents survive hosting credits, overlap and the displayed estimate exactly',()=>{

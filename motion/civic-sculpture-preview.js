@@ -11,19 +11,19 @@ export function mountCivicSculpture(hero, env = globalThis) {
   const reduced = env.matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = env.matchMedia('(max-width: 767px)');
   // Keep a paired rendition for the whole session, including orientation changes.
-  const mobileRendition = narrow.matches;
+  const mobileRendition = narrow.matches || (env.matchMedia('(max-width: 1100px)').matches && (env.devicePixelRatio || 1) <= 1.5);
   const connection = env.navigator.connection;
   const media = [intro, ...(ambient?.dataset.src ? [ambient] : [])];
   const hasAmbient = media.length === 2;
-  let loaded = doc.readyState === 'complete', inView = false, started = false;
-  let interacted = false;
-  let requested = false, failed = false, ended = false, phase = 'intro', epoch = 0, replayAvailable = false;
+  let inView = false;
+  let requested = false, failed = false, ended = false, phase = 'intro', epoch = 0;
   const active = () => phase === 'ambient' ? ambient : intro;
   const label = () => {
     button.hidden = failed;
-    button.textContent = requested ? 'Pause animation' : ended ? 'Replay animation' : phase === 'ambient' || intro.currentTime > 0 ? 'Resume animation' : 'Play animation';
-    if(phase === 'ambient' || ended)replayAvailable = true;
-    if (replay) replay.hidden = failed || !replayAvailable;
+    button.textContent = requested ? 'Pause animation' : ended ? 'Play animation' : phase === 'ambient' || intro.currentTime > 0 ? 'Resume animation' : 'Play animation';
+    button.setAttribute('aria-label',button.textContent);
+    if (replay) replay.hidden = true;
+    hero.dataset.unavailable = String(failed);
     hero.dataset.playing = String(requested);
     hero.dataset.phase = phase;
   };
@@ -59,7 +59,6 @@ export function mountCivicSculpture(hero, env = globalThis) {
   const play = async () => {
     if (failed || requested || doc.hidden) return;
     if (ended) { intro.currentTime = 0; ended = false; phase = 'intro'; }
-    started = true;
     requested = true;
     const video = active(), token = ++epoch;
     status.textContent = '';
@@ -72,25 +71,13 @@ export function mountCivicSculpture(hero, env = globalThis) {
       if (!requested || doc.hidden || !inView) pause();
     } catch {
       if (token !== epoch || failed) return;
+      failed = true;
       pause();
       still();
       status.textContent = 'Animation could not start. The finished image is shown.';
     }
   };
-  const replayIntro = () => {
-    if (failed) return;
-    pause();
-    phase = 'intro'; ended = false;
-    intro.currentTime = 0;
-    if (hasAmbient) ambient.currentTime = 0;
-    // Retain the previous surface until the intro presents a fresh frame.
-    void play();
-  };
-  const automatic = () => {
-    if (loaded && inView && interacted && !narrow.matches && !started && !doc.hidden && !reduced.matches && !connection?.saveData && !/^(slow-2g|2g|3g)$/.test(connection?.effectiveType||'')) void play();
-  };
-  const interact=()=>{interacted=true;automatic();};
-  for(const name of ['pointerdown','keydown','scroll'])env.addEventListener(name,interact,{once:true,passive:true});
+  // Download and play motion only after the visitor chooses its control.
   for (const video of media) {
     video.loop = video === ambient;
     video.muted = true;
@@ -129,24 +116,22 @@ export function mountCivicSculpture(hero, env = globalThis) {
     } else { ended = true; label(); }
   });
   button.addEventListener('click', () => requested ? pause() : void play());
-  replay?.addEventListener('click', replayIntro);
-  doc.addEventListener('visibilitychange', () => {if(doc.hidden){pause();still();}else automatic();});
+  doc.addEventListener('visibilitychange', () => {if(doc.hidden){pause();still();}});
   reduced.addEventListener('change', () => {
     if (reduced.matches) {
       pause(); still(); phase = 'intro'; ended = false;
       intro.currentTime = 0;
       if (hasAmbient) ambient.currentTime = 0;
       label();
-    } else automatic();
+    }
   });
-  connection?.addEventListener?.('change', () => {if(connection.saveData){pause();still();}else automatic();});
+  connection?.addEventListener?.('change', () => {if(connection.saveData){pause();still();}});
   if (env.IntersectionObserver) {
     new env.IntersectionObserver(entries => {
       inView = entries[0].isIntersecting && entries[0].intersectionRatio >= .25;
-      if (!inView) {pause();still();} else automatic();
+      if (!inView) {pause();still();}
     }, {threshold: .25}).observe(hero.querySelector('.civic-stage'));
-  } else { inView = true; started = true; }
-  if (!loaded) env.addEventListener('load', () => { loaded = true; automatic(); }, {once: true});
+  } else { inView = true; }
   label();
 }
 if (typeof document !== 'undefined') {

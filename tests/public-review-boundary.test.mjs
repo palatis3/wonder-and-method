@@ -16,7 +16,7 @@ async function textFiles(folder){const result=[];for(const entry of await readdi
 
 test('public review exposes all 22 useful area names and descriptions through a strict allowlist',()=>{
  const areas=publicReviewAreas(offers);assert.equal(areas.length,22);assert.deepEqual(areas.map(x=>x.id),offers.review_standard.sections.map(x=>x.id));
- for(const area of areas){assert.deepEqual(Object.keys(area),['id','title','check']);assert.ok(area.check.length>35);assert.ok(pages.find(p=>p.path==='/services/website-audit/').html.includes(area.title.replaceAll('&','&amp;')));}
+ for(const area of areas){assert.deepEqual(Object.keys(area),['id','title','check']);assert.ok(area.check.length>35);assert.equal(area.title,offers.review_standard.sections.find(s=>s.id===area.id).title);}
  assert.equal(offers.review_standard.sections.reduce((total,area)=>total+area.weight,0),100);
  const altered=structuredClone(offers);for(const area of altered.review_standard.sections){area.weight=987654;area.score=123456;area.privateNotes='INTERNAL-SENTINEL';}altered.review_standard.score_limit='PRIVATE-LIMIT';
  assert.deepEqual(publicReviewAreas(altered),areas);

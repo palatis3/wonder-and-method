@@ -9,6 +9,7 @@ import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
 import { allowInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
 import {publicRouteRedirect} from './public-route-canonical.mjs';
+import {notificationBudget} from './notification-budget.mjs';
 
 const encoder = new TextEncoder();
 // URL-encoded Unicode needs up to nine bytes per UTF-16 code unit. The legal
@@ -68,7 +69,7 @@ async function parseBody(request) {
 }
 
 // Provider acceptance is not mailbox delivery. At most one leased send per durable row.
-export async function notifyInquiry(env, id, send = fetch, now = Date.now()) {
+export async function notifyInquiry(env, id, send = fetch, now = Date.now(), {ownerReviewed=false}={}) {
   if (!LIVE(env)) return { status: 'synthetic', sent: false };
   if (!env.RESEND_API_KEY || !env.NOTIFICATION_FROM || !env.NOTIFICATION_TO) return { status: 'configuration-pending', sent: false };
   const db = env.DB;
@@ -92,8 +93,8 @@ export async function notifyInquiry(env, id, send = fetch, now = Date.now()) {
   if (!leased) return { status: 'busy-or-ineligible', sent: false };
   // A distributed form attack must not turn into an unbounded email bill.
   // This is one atomic, site-wide UTC-day budget, including retries.
-  const configuredLimit=Number(env.NOTIFICATION_DAILY_LIMIT??50);
-  const dailyLimit=Number.isSafeInteger(configuredLimit)&&configuredLimit>=1&&configuredLimit<=2000?configuredLimit:50;
+  const budget=notificationBudget(env);
+  const dailyLimit=ownerReviewed?budget.limit:budget.automaticLimit;
   const day=Math.floor(now/86400_000);
   const releaseUnsentLease=()=>db.prepare(`UPDATE inquiries SET delivery_status=?,lease_until=NULL,attempts=?,first_attempt_at=?${snapshotEnabled?',notification_payload=?':''} WHERE id=? AND attempts=? AND lease_until=? AND delivery_status='sending'`)
     .bind(record.delivery_status==='sending'?'uncertain':record.delivery_status,record.attempts,record.first_attempt_at,...(snapshotEnabled?[record.notification_payload??null]:[]),id,leased.attempts,leased.lease_until).run();
@@ -132,7 +133,7 @@ function notificationMessage(env, id, inquiry) {
     subject: `[${inquiry.request_kind==='question'?'Question':'Proposal request'}] ${service} — ${subjectName}`,
     text: ['Website inquiry', `Reference: ${id}`, `Name: ${inquiry.name}`, `Email: ${inquiry.email}`,
       `Business: ${inquiry.business || 'Not supplied'}`, `Website: ${inquiry.website || 'Not supplied'}`,
-      `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`].join('\n\n')
+      `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`, 'Owner: reply from the studio support mailbox. A provider acceptance is not proof of inbox delivery.'].join('\n\n')
   };
 }
 
@@ -160,7 +161,7 @@ export async function retryPendingInquiries(env, send = fetch, now = Date.now(),
 }
 
 async function submit(request, env, ctx) {
-  if (request.method !== 'POST') return respond(request, 405, 'Please use the contact form to send your question or project details.');
+  if (request.method !== 'POST') return respond(request, 405, 'Nothing was sent. Open the contact form to send your question or project details.');
   const origin = new URL(request.url).origin;
   if (request.headers.get('Origin') !== origin) return respond(request, 403, 'Please send this from the contact page on wonderandmethod.com.');
   let data;
@@ -220,7 +221,16 @@ async function operator(request, env) {
   if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,source,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page,source LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
   if (url.pathname === `${base}/status` && request.method === 'GET') {
-    return Response.json({...await inquiryStatus(env),runtimeVersion:env.CF_VERSION_METADATA?.id||null}, {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+    let release=null;
+    try{const asset=await env.ASSETS.fetch(new Request(new URL('/version.json',url)));if(asset.ok)release=await asset.json();else await asset.body?.cancel();}catch{}
+    return Response.json({...await inquiryStatus(env),runtimeVersion:env.CF_VERSION_METADATA?.id||null,release}, {headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+  }
+  if(url.pathname===`${base}/lookup`&&request.method==='GET'){
+    const code=(url.searchParams.get('code')||'').toLowerCase().replace(/^wm-/,'').replaceAll('-','');
+    if(!/^[a-f0-9]{12}$/.test(code))return respond(request,422,'Use the 12-character inquiry code.');
+    const {results}=await env.DB.prepare("SELECT id FROM inquiries WHERE replace(id,'-','') LIKE ? ORDER BY id LIMIT 2").bind(code+'%').all();
+    if(results.length!==1)return respond(request,results.length?409:404,results.length?'More than one record matches. Use the full reference.':'No inquiry matches that code.');
+    return Response.json({reference:results[0].id},{headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
   }
   if (url.pathname === `${base}/retention-preview` && request.method === 'GET') {
     const preview = await inquiryRetentionPreview(env.DB);
@@ -249,7 +259,7 @@ async function operator(request, env) {
     return respond(request, 200, 'Follow-up tracking updated. No records were deleted.', id);
   }
   if (request.method === 'POST' && match[2] === '/retry' && request.headers.get('X-Confirm-Retry') === id) {
-    const result = await notifyInquiry(env, id);
+    const result = await notifyInquiry(env, id,fetch,Date.now(),{ownerReviewed:true});
     return Response.json(result, { headers: { 'Cache-Control': 'no-store' } });
   }
   if (request.method === 'DELETE' && !match[2] && request.headers.get('X-Confirm-Delete') === id) {
@@ -344,6 +354,7 @@ export default {
       else if (url.pathname === '/api/journey-counts') response = await saveJourneyCount(request,env,{readLimited,fingerprint});
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);
       else if (url.pathname.startsWith('/api/')) response = respond(request, 404, 'Not found.');
+      else if(/^\/version\.json\/?$/i.test(decodeURIComponent(url.pathname)))response=new Response('Not found.',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}});
       else {
         let assetRequest=request;
         if(hasInquiryQuery(url)){
@@ -391,6 +402,14 @@ export default {
         // unversioned address. Media and versioned code retain their short cache.
         const publicDocument=/^(?:text\/(?:html|plain|csv)|application\/json)(?:;|$)/i.test(type||'')||/\.(?:html|txt|csv|json)$/i.test(url.pathname)||url.pathname.startsWith('/assets/buyer-packs/');
         if ((result.status >= 200 && result.status < 300) || result.status === 304) result.headers.set('Cache-Control',publicDocument?'no-cache':'public, max-age=3600, must-revalidate');
+        // A query hash is immutable only when it names the bytes being served.
+        // Old/unknown hashes on a mutable path must never pin different content.
+        const version=url.searchParams.get('v');
+        if(!publicDocument&&/\.(?:css|js)$/.test(url.pathname)&&request.method==='GET'&&result.status===200&&/^[a-f0-9]{12}$/.test(version||'')){
+          const bytes=await result.clone().arrayBuffer();
+          const actual=hex(await crypto.subtle.digest('SHA-256',bytes)).slice(0,12);
+          result.headers.set('Cache-Control',actual===version?'public, max-age=31536000, immutable':'no-cache');
+        }
       }
       if(env.SEARCH_INDEXING !== 'true'||response.status>=400)result.headers.set('X-Robots-Tag','noindex, nofollow, noarchive, noimageindex');
        else if(!routeIndexEligible(url.pathname))result.headers.set('X-Robots-Tag',privateRoute(url.pathname)?'noindex, nofollow, noarchive, noimageindex':'noindex, follow');

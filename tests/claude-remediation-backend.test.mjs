@@ -18,6 +18,18 @@ const dir=new URL('../deployment/migrations/',import.meta.url);
 const migrations=await Promise.all((await readdir(dir)).filter(n=>n.endsWith('.sql')).sort().map(n=>readFile(new URL(n,dir),'utf8')));
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const base={name:'Synthetic Person',email:'synthetic@example.test',business:'',website:'',service:'unsure',request_kind:'question',message:'A synthetic question for testing.'};
+
+test('review proposals require a website or preserve a planned-site explanation',()=>{
+ for(const service of ['website_baseline','audit_fix_sprint','keep_running','improve','grow']){
+  assert.ok(validateInquiry({...base,service,request_kind:'checkout'}).errors.website);
+  for(const website of ['not yet','no website','not live yet']){
+   const result=validateInquiry({...base,service,request_kind:'checkout',website});
+   assert.deepEqual(result.errors,{});assert.equal(result.value.website,website);
+  }
+  assert.deepEqual(validateInquiry({...base,service,request_kind:'question'}).errors,{});
+ }
+ assert.deepEqual(validateInquiry({...base,service:'launch_site',request_kind:'checkout'}).errors,{});
+});
 const env=()=>({DB:fixture(),ENVIRONMENT:'production',INQUIRY_MODE:'synthetic',RELEASE_APPROVED:'true',FINGERPRINT_SECRET:'synthetic-32-character-fingerprint-secret'});
 const request=(value,origin='https://example.test')=>new Request('https://example.test/api/inquiries',{method:'POST',headers:{Origin:origin,Accept:'text/html','Content-Type':'application/x-www-form-urlencoded','CF-Connecting-IP':'192.0.2.2'},body:new URLSearchParams(value)});
 const ctx={waitUntil(){}};
@@ -38,19 +50,19 @@ test('native query prefill uses the same first-value policy as enhanced URLSearc
   const url=new URL(`https://example.test/contact/?offer=${firstService}&offer=${lastService}&request_kind=${firstKind}&request_kind=${lastKind}&goal=search&goal=fix&email=private@example.test`);
   const html=prefillInquiryHtml(inquiryFormMarkup({live:true}),url);
   assert.match(html,new RegExp(`<option value="${url.searchParams.get('offer')}" selected>`));
-  assert.match(html,new RegExp(`<option value="${url.searchParams.get('request_kind')}" selected>`));
+  assert.match(html,new RegExp(`name="request_kind" value="${url.searchParams.get('request_kind')}"`));
   assert.match(html,/<option value="search" selected>/);assert.doesNotMatch(html,/private@example\.test/);
   const fixed=prefillInquiryHtml(inquiryFormMarkup({live:true},{checkout:true,service:'website_baseline'}),new URL(url.href.replace('/contact/','/checkout/website-baseline/')));
   assert.match(fixed,/type="hidden" id="service" name="service" value="website_baseline"/);
-  assert.match(fixed,new RegExp(`<option value="${firstKind}" selected>`));
+  assert.match(fixed,new RegExp(`name="request_kind" value="${firstKind}"`));
  }
 });
-test('live receipts name the verified sender once and synthetic receipts make no sender promise',()=>{
+test('live receipts confirm the reply destination without promising a verified sender or repeated timing',()=>{
  for(const request_kind of ['question','checkout']){
   const data={reference:'synthetic-regression-reference',service:'unsure',request_kind,found_via:'search'};
   const live=inquiryConfirmationHtml({...data,synthetic:false});
-  assert.equal(live.split('My reply will come from support@wonderandmethod.com').length-1,1);
-  assert.equal(live.split(config.responseWindow).length-1,1);
+  assert.doesNotMatch(live,/My reply will come from/);assert.match(live,/I’ll reply to/);
+  assert.ok(!live.includes(config.responseWindow));
   assert.match(live,/How did you find us\?: Google or another search engine/);
   assert.doesNotMatch(inquiryConfirmationHtml({...data,synthetic:true}),/My reply will come from|one business day/);
  }
@@ -59,12 +71,17 @@ test('live receipts name the verified sender once and synthetic receipts make no
 test('optional service, social notes and advisory email correction preserve valid user intent',()=>{
  const value={...base,service:'',website:'@my-business on Instagram',email:'person@gmial.com'};
  const result=validateInquiry(value);assert.deepEqual(result.errors,{});assert.equal(result.value.service,'unsure');assert.equal(result.value.website,value.website);assert.equal(result.value.email,value.email);assert.equal(emailTypoSuggestion(value.email),'person@gmail.com');assert.equal(emailTypoSuggestion('person@smallbusiness.test'),'');
- assert.ok(validateInquiry({...base,website:'javascript:alert(1)'}).errors.website);
+ assert.deepEqual(validateInquiry({...base,website:'Instagram: @my-business'}).errors,{});
+ for(const website of ['IG: patsbiz','facebook: Pat Plumbing','Note: none yet'])assert.deepEqual(validateInquiry({...base,website}).errors,{});
+ assert.match(validateInquiry({...base,website:'person@example.test'}).errors.website,/looks like an email address/);
+ for(const website of ['javascript:alert(1)','data:text/html,hello','vbscript:msgbox(1)','file:///private'])assert.ok(validateInquiry({...base,website}).errors.website,website);
  assert.ok(validateInquiry({...base,website:'https://user:pass@example.test'}).errors.website);
 });
 test('plain contact starts with a question and fixed proposal keeps choices without inactive annual',()=>{
- const plain=inquiryFormMarkup({live:true});assert.match(plain,/value="question" selected/);assert.match(plain,/<select id="service"[^>]*>/);assert.doesNotMatch(plain,/<select id="service"[^>]*required/);
+ const plain=inquiryFormMarkup({live:true});assert.match(plain,/name="request_kind" value="question"/);assert.match(plain,/<select id="service"[^>]*>/);assert.doesNotMatch(plain,/<select id="service"[^>]*required/);
+ assert.match(plain,/class="request-summary"[^>]* hidden>/);assert.doesNotMatch(plain,/<select[^>]*name="request_kind"/);
  const fixed=inquiryFormMarkup({live:true},{checkout:true,service:'grow',value:{billing:'annual',priority:'graphic'},annualEnabled:false});assert.match(fixed,/type="hidden" id="service" name="service" value="grow"/);assert.match(fixed,/name="priority" value="graphic"/);assert.doesNotMatch(fixed,/value="annual"/);
+ assert.doesNotMatch(fixed,/class="request-summary"|<select[^>]*name="request_kind"/);assert.match(fixed,/name="request_kind" value="checkout"/);
 });
 test('maximum Unicode native inquiry fits bounded body and oversized bodies do not claim recovery',async()=>{
  const e=env();try{const value={...base,name:'名'.repeat(100),business:'社'.repeat(160),website:'注'.repeat(500),message:'文'.repeat(3000)};assert.ok(new URLSearchParams(value).toString().length>20000);const res=await worker.fetch(request(value),e,ctx);assert.equal(res.status,202);assert.equal(JSON.parse(e.DB.sqlite.prepare('SELECT payload FROM inquiries').get().payload).message,value.message);

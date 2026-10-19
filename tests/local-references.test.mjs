@@ -36,6 +36,24 @@ test('showcase rejects an incomplete output before writing concepts',async()=>{
  finally{await rm(root,{recursive:true,force:true});}
 });
 
+test('reference verification checks local social images and every responsive image candidate',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'wm-image-refs-'));
+ try{
+  await mkdir(join(root,'assets'));
+  const canonical='<link rel="canonical" href="https://example.test/">';
+  for(const tag of ['<meta property="og:image" content="https://example.test/assets/social.webp">','<meta name="twitter:image" content="/assets/social.webp">']){
+   await writeFile(join(root,'index.html'),canonical+tag);
+   await assert.rejects(verifyLocalReferences(root,['index.html']),/Missing local reference.*social.webp/);
+  }
+  await writeFile(join(root,'assets/social.webp'),'fixture');
+  await writeFile(join(root,'assets/small.webp'),'fixture');
+  await writeFile(join(root,'index.html'),canonical+'<meta property="og:image" content="https://example.test/assets/social.webp"><meta name="twitter:image" content="https://external.test/remote.webp"><img src="/assets/small.webp" srcset="/assets/small.webp 480w, /assets/large.webp 1080w">');
+  await assert.rejects(verifyLocalReferences(root,['index.html']),/Missing local reference.*large.webp/);
+  await writeFile(join(root,'assets/large.webp'),'fixture');
+  assert.equal((await verifyLocalReferences(root,['index.html'])).status,'pass');
+ }finally{await rm(root,{recursive:true,force:true});}
+});
+
 
 test('reference verification follows generated documents and rejects broken same-page and cross-page fragments',async()=>{
  const root=await mkdtemp(join(tmpdir(),'wm-fragments-'));

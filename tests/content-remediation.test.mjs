@@ -29,14 +29,14 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  assert.equal(form[0].id,'five-minute-check');assert.equal(form[1].id,'platform-settings');
  const body=form.map(x=>x.body).join('');assert.match(body,/Some WordPress plugins.*do not save/);assert.match(body,/offer=audit_fix_sprint&amp;goal=fix/);assert.match(body,/SPF, DKIM and DMARC/);
  const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.equal(search[0].id,'inspection-steps');assert.match(search[0].body,/not a complete index report/);
- const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/One initial launch is included/);assert.match(launch,/offer=audit_fix_sprint&amp;goal=fix/);
+ const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/rollback/);assert.match(launch,/blocked, not passed/);assert.match(launch,/does not guarantee indexing/);
 });
 
 test('county services precede optional worksheet and hub keeps one link per county',()=>{
  const pages=countyPages(offers),hub=pages.find(p=>p.path==='/areas/').body;
  for(const page of pages.filter(p=>p.path!=='/areas/')){
   assert.ok(page.body.indexOf('id="services"')<page.body.indexOf('id="buyer-task"'),page.path);
-  assert.match(page.body,/All three website packages/);
+  assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/web-design\/"/);
  }
  assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,10);
  assert.ok(hub.indexOf('/areas/erie-county/')<hub.indexOf('/areas/niagara-county/'));
@@ -54,16 +54,14 @@ test('catalog monthly entities match the services that offer them; payments stay
  assert.doesNotMatch(guideIllustrationAlt({path:'/guides/website-redesign-brief/'}),/\?\./);
 });
 
-test('guide cards reference real responsive WebP derivatives and only the first index card loads eagerly',async()=>{
+test('guide index is text-only while related cards use responsive WebP derivatives',async()=>{
  const index=journalIndex(journal);
- assert.equal((index.match(/class="journal-card"/g)||[]).length,17);
- assert.equal((index.match(/loading="eager"/g)||[]).length,1);
- assert.equal((index.match(/loading="lazy"/g)||[]).length,16);
- assert.match(index,/sizes="\(max-width:767px\) 72px, 120px"/);
+ assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,17);
+ assert.doesNotMatch(index,/<img\b/);for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'));
  const media=new Set();
  for(const item of journal){
   const card=journalCard(item);
-  assert.match(card,/sizes="\(max-width:767px\) calc\(100vw - 40px\), \(max-width:1100px\) 44vw, 360px"/);
+  assert.match(card,/sizes="\(max-width:767px\) calc\(100vw - 40px\), 406px"/);
   assert.match(card,/alt="" loading="lazy"/);
   assert.doesNotMatch(card,/-thumb\.png|-illustration-640\.webp/);
   const description=card.match(/class="journal-card-description">([^<]+)</)?.[1];
@@ -71,9 +69,9 @@ test('guide cards reference real responsive WebP derivatives and only the first 
   assert.notEqual(description,item.description,item.path+' uses its concise card summary');
   for(const match of card.matchAll(/(?:src|srcset)="([^"]+)"/g))for(const candidate of match[1].split(','))media.add(candidate.trim().split(/\s+/)[0]);
  }
- assert.equal(media.size,34);
+ assert.equal(media.size,51);
  for(const path of media){
-  assert.match(path,/-card-(240|480)\.webp$/);
+  assert.match(path,/-card-(480|720|1080)\.webp$/);
   const bytes=await readFile(new URL('../src'+path,import.meta.url));
   assert.equal(bytes.toString('ascii',0,4),'RIFF',path);assert.equal(bytes.toString('ascii',8,12),'WEBP',path);
  }

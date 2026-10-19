@@ -12,8 +12,8 @@ test('native question selection survives a real form POST and durable storage',a
  const {server,url}=await createServer({runtime,port:0});
  try{
   const html=await (await fetch(url+'/contact/')).text();
-  assert.match(html,/<select[^>]*name="request_kind"[^>]*>[\s\S]*?<option value="question" selected>/);
-  assert.doesNotMatch(html,/<input[^>]*type="hidden"[^>]*name="request_kind"/);
+  assert.match(html,/<input[^>]*type="hidden"[^>]*name="request_kind"[^>]*value="question"/);
+  assert.doesNotMatch(html,/<select[^>]*name="request_kind"/);
   const body=new URLSearchParams({name:'Synthetic launch test',email:'fixture@example.invalid',business:'Synthetic only',service:'improve',request_kind:'question',billing:'annual',message:'Synthetic question about annual service scope; do not contact.'});
   const response=await fetch(url+'/api/inquiries',{method:'POST',body});
   assert.equal(response.status,201);assert.match(await response.text(),/Test inquiry recorded/);

@@ -4,7 +4,7 @@ export const annualEnrollmentAvailable = o => o.annual_enrollment_gate?.verified
 export const standardCareExclusion = 'CMS, plugin and theme software updates, backups and restores, and malware cleanup are not included in standard care. These need a separate suitability assessment or a specialist.';
 
 export function baselineEnrollmentNote(o) {
- return `The ${money(o.baseline.one_time_price)} Website Baseline covers a supported existing website with up to ${o.baseline.page_cap} marketing pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
+ return `The ${money(o.baseline.one_time_price)} Website Baseline covers a supported existing website with up to ${o.baseline.page_cap} marketing pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous Website Baseline, studio build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
 }
 
 // Current sales copy and existing accepted annual agreements are separate.
@@ -26,9 +26,9 @@ export function monthlyPlanDetails(o, id) {
  if (!p) throw Error('Unknown monthly plan');
  const grow = id === 'grow', improvement = p.priorities > 0;
  const included = [
-  `${p.small_change_batches} related batch of small text, photo or link edits you supply each month, in existing website components. Unrelated changes across the site are not one batch.`,
+  `${p.small_change_batches} round of small text, photo or link edits you supply each month, in existing parts of your website. Send related changes together; unrelated changes across the website are separate.`,
   'Automated website availability and security-certificate monitoring, a monthly check of the main contact path and agreed website tools, and search-health warnings where access allows.',
-  'A quarterly status re-check of the agreed areas, not a new full audit.'
+  'A quarterly website check of the agreed areas, not a new full audit.'
  ];
  if (improvement) {
   included.push(
@@ -47,21 +47,21 @@ export function monthlyPlanDetails(o, id) {
  const acceptance = [
   improvement
    ? `Before work starts, agree each improvement${grow ? ' and the additional small graphic or newsletter excerpt' : ''}, the affected area, supplied facts, completion check and one round of changes. Record the published website change or delivered draft/asset, approval status, checks and any unresolved access. Silence is not acceptance.`
-   : 'Agree the related edit batch and covered checks. Record what changed, the check results and any unresolved access. Silence is not acceptance.',
+   : 'Agree the round of small edits and covered checks. Record what changed, the check results and any unresolved access. Silence is not acceptance.',
   'The same work is never counted twice. Correcting my own mistakes or completing already-promised launch work does not use paid monthly work.',
-  'An unused batch of supplied edits does not carry over. Accepted work delayed by me remains owed; we agree a new date or refund.',
+  'An unused round of supplied edits does not carry over. Accepted work delayed by me remains owed; we agree a new date or refund.',
   ...(grow ? ['The second accepted improvement and accepted extra graphic or excerpt remain owed if earlier work is delayed; neither is silently dropped.'] : [])
  ];
  const renewal = [
   `${money(p.monthly_price)}/month, billed in advance with no minimum term. Your proposal records the exact renewal time and timezone, payment date and written cancellation route. Cancel before renewal to stop the next invoice.`,
   improvement
-   ? 'Five business days before the next service period, we confirm useful improvement work and ready inputs. If none is agreed, the next monthly invoice pauses. Missing inputs receive notice.'
+   ? 'Five business days before the next service period, we confirm useful improvement work and ready inputs. If none is agreed, the next monthly invoice pauses. Missing inputs receive notice. Before a pause, I agree with you in writing what happens to included care; there is no automatic replacement charge, and paid work remains due.'
    : 'The monthly fee covers the agreed checks even when you send no edits. If access prevents the agreed care, I notify you so we can agree the next step and settle any unearned work.',
   'A charge without approved useful work receives an unused-work refund or credit. Begun work and any unearned balance are itemized; accepted work delayed by me remains owed.'
  ];
  const exit = [
   o.monthly_terms.exit,
-  'I provide the existing paid website files, content and operating notes within five business days after paid completion or settled cancellation. This does not automatically transfer external services or credentials; account access, licences and export limits still apply.',
+  'I provide the existing paid website files, content and operating notes within five business days after paid completion or settled cancellation. This does not automatically transfer external services or credentials; account access, licenses and export limits still apply.',
   'New migration work is assessed separately. Canceling care does not disable your paid website, and your direct provider bills follow those providers’ terms.'
  ];
  const exclusions = [...o.monthly_terms.excluded];
@@ -77,16 +77,16 @@ export function monthlyScopeTable(o) {
  const plans = ['keep_running', 'improve', 'grow'].map(id => o.plans[id]);
  const rows = [
   ['Monthly price', ...plans.map(p => money(p.monthly_price) + '/month')],
-  ['Care checks and related edits', ...plans.map(p => `Checks + ${p.small_change_batches} related edit batch`)],
+  ['Checks and small edits', ...plans.map(p => `Checks + ${p.small_change_batches} round of small edits`)],
   ['Completed improvements', 'Not included', `${o.plans.improve.priorities} per month`, `${o.plans.grow.priorities} connected improvements per month`],
-  ['Search research', 'Warnings checked where access allows', `Up to ${o.plans.improve.search_scope.candidate_limit} candidate opportunities for ${o.plans.improve.search_scope.active_topics} topic`, `Up to ${o.plans.grow.search_scope.candidate_limit} candidates across ${o.plans.grow.search_scope.active_topics} topics; up to ${o.plans.grow.search_scope.competitor_limit} competitors`],
-  ['Planning', '1 next step; quarterly status re-check', 'Topic list refreshed quarterly', 'Rolling 90-day plan refreshed monthly'],
-  ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', '1 small reuse task per month'],
+  ['Search research', 'Search warnings where access allows', 'One customer topic', 'Two topics and up to 3 competitors'],
+  ['Planning', '1 next step; quarterly website check', 'Topic list refreshed quarterly', 'Rolling 90-day content plan'],
+  ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', '1 extra graphic or short excerpt'],
   ['Review', 'Monthly report; no standing call', '20-minute call or written review', '30-minute call or written review']
  ];
- return `<details class="pricing-detail-table"><summary>Compare monthly plans</summary><div class="comparison-scroll" role="region" aria-label="Monthly plan comparison" tabindex="0"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>A full promotional graphic or newsletter draft/setup may be chosen as a main improvement in Improve or Grow. Grow’s additional small reuse task is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
+ return `<details class="pricing-detail-table" open><summary>Compare monthly plans</summary><div class="comparison-scroll" role="region" aria-label="Monthly plan comparison" tabindex="0"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
 }
 
 export function monthlyCampaignExample(o) {
- return `<section class="studio-section" id="growth-campaign-example"><p class="eyebrow">Example only</p><h2>What one Grow month could include.</h2><p>A restaurant wants clearer catering information. A ${money(o.plans.grow.monthly_price)} Grow month could include:</p><ol class="audit-steps"><li>Rewrite the catering page using approved menus, lead times and minimums.</li><li>Publish a separate event-planning guide and link it to that page.</li><li>Reuse the approved content in a simple graphic with a short caption, or a newsletter excerpt of up to 150 words.</li></ol><p>The page and guide are the two improvements; the small reuse task and supplied care edits are separate. This is a fictional example, not a client result. We agree different work when it better fits the business.</p></section>`;
+ return `<section class="studio-section" id="growth-campaign-example"><p class="eyebrow">Example only</p><h2>What one Grow month could include.</h2><p>A restaurant wants clearer catering information. A ${money(o.plans.grow.monthly_price)} Grow month could include:</p><ol class="audit-steps"><li>Rewrite the catering page using approved menus, lead times and minimums.</li><li>Publish a separate event-planning guide and link it to that page.</li><li>Reuse the approved content in a simple graphic with a short caption, or a newsletter excerpt of up to 150 words.</li></ol><p>The page and guide are the two improvements; the extra graphic or newsletter excerpt and supplied care edits are separate. This is a fictional example, not a client result. We agree different work when it better fits the business.</p></section>`;
 }

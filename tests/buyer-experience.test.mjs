@@ -27,7 +27,7 @@ test('proposal summaries stay concise while hidden selected details remain avail
   assert.equal(inquiryRequestSummary({service:'unsure',request_kind:'question'}),'Question');
   const html=inquiryForm({live:true},{checkout:true,service:'grow',value});
   assert.match(html,/type="hidden" id="service" name="service" value="grow"/);assert.match(html,/name="priority_two" value="article"/);
-  assert.doesNotMatch(html,/class="fixed-service"/);assert.match(html,/href="\/pricing\/">Change service/);
+  assert.doesNotMatch(html,/class="fixed-service"/);assert.doesNotMatch(html,/class="request-summary"/);
 });
 
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
@@ -53,15 +53,15 @@ test('production timing stays consistent across buying pages and generated decis
  const redesign=pages.find(page=>page.path==='/services/website-redesign/').html;
  for(const id of Object.keys(ranges)){
   assert.ok(redesign.includes(`href="/checkout/${id.replaceAll('_','-')}/"`),id+' redesign request action');
-  assert.ok(redesign.includes(`href="/contact/?offer=${id}&amp;request_kind=question#inquiry"`),id+' redesign question action');
+  assert.match(redesign,/href="\/contact\/\?[^"]*goal=redesign[^"]*#inquiry"/);
   assert.ok(redesign.includes(`href="/assets/buyer-packs/${id}"`),id+' redesign full details');
  }
  assert.ok(redesign.indexOf('id="redesign-packages"')<redesign.indexOf('id="migration"'),'Package choices appear before migration detail');
  for(let index=1;index<=6;index++)assert.equal((process.match(new RegExp(`id="process-stage-${index}"`,'g'))||[]).length,1);
  assert.equal((process.match(/id="project-calendar"/g)||[]).length,1);
- assert.match(process,/using that full time can extend the package’s average delivery range/);
- assert.match(process,/Missing inputs or added scope receive a revised schedule/);
- assert.match(process,/review allowance is up to five business days each/);assert.match(process,/silence is never approval/);
- assert.match(process,/five business days after paid completion, or after settling the account if work ends early/);assert.match(process,/30-day defect-correction window does not delay/);
+ assert.match(process,/using that full time can extend the average delivery range/);
+ assert.match(process,/Missing information or extra work means agreeing a new schedule/);
+ assert.match(process,/Each allows up to five business days/);assert.match(process,/Silence is never approval/);
+ assert.match(process,/five business days after the paid work is finished/);assert.match(process,/File delivery does not wait for that period to end/);
  assert.doesNotMatch(process,/ten production days across four working weeks/);
 });

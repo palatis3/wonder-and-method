@@ -11,10 +11,11 @@ import {priceList} from '../src/shared.mjs';
 const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8'));
 test('compact chrome preserves service, pricing, process and contact navigation',()=>{
  const html=siteHeader('/services/seo/');
- for(const path of ['/services/','/pricing/','/process/','/contact/'])assert.ok(html.includes(`href="${path}"`));
+ for(const path of ['/services/','/pricing/','/process/','/contact/#inquiry'])assert.ok(html.includes(`href="${path}"`));
  assert.match(html,/href="\/services\/seo\/" aria-current="page"/);
  assert.match(html,/role="group" aria-label="Services"/);
  assert.match(html,/class="header-contact"/);
+ assert.match(html,/class="header-contact" href="\/contact\/#inquiry" aria-label="Contact"/);
  assert.doesNotMatch(siteHeader('/contact/'),/class="header-contact"/);
  assert.doesNotMatch(siteHeader('/checkout/grow/'),/class="header-contact"/);
  const footer=siteFooter({businessIdentity:'Example & Co'});
@@ -22,6 +23,13 @@ test('compact chrome preserves service, pricing, process and contact navigation'
  assert.match(footer,/Example &amp; Co/);
  assert.equal(breadcrumbTrail('/services/seo/','SEO')[1].path,'/services/');
  assert.equal(breadcrumbTrail('/work/hearthside/request/','Long title').at(-1).name,'Order preview');
+});
+
+test('service navigation marks only the exact service as the current page',()=>{
+ for(const path of ['/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/']){
+  const html=siteHeader(path),current=[...html.matchAll(/<a href="([^"]+)" aria-current="(?:page|location)"/g)].map(match=>match[1]);
+  assert.deepEqual(current,[path]);
+ }
 });
 
 test('pizza note is optional while real inquiry-like demos retain useful message validation',()=>{

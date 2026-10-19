@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import { readFile } from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import worker, { notifyInquiry, retryPendingInquiries, runScheduledMaintenance } from '../deployment/worker.mjs';
 import { inquiryRetentionPreview, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS } from '../deployment/inquiry-maintenance.mjs';
 
@@ -61,6 +62,62 @@ function insert(env, values = {}) {
 }
 const context = () => ({ waitUntil() { throw Error('Unexpected provider work queued by test'); } });
 const request = (path, options = {}) => new Request(origin + path, options);
+
+test('automatic delivery leaves ten of fifty daily sends for authenticated owner recovery', async t => {
+ const env=liveNotificationEnvironment();Object.assign(env,{NOTIFICATION_DAILY_LIMIT:'50',NOTIFICATION_RESERVED_LIMIT:'10'});
+ let calls=0;const send=async()=>Response.json({id:'synthetic-'+(++calls)});
+ const ids=Array.from({length:51},()=>insert(env));
+ try{
+  for(const id of ids.slice(0,40))assert.equal((await notifyInquiry(env,id,send)).status,'accepted');
+  assert.equal((await notifyInquiry(env,ids[40],send)).status,'daily-budget-held');
+  assert.equal(calls,40);
+  const path=`/api/operator/inquiries/${ids[40]}/retry`;
+  assert.equal((await worker.fetch(request(path,{method:'POST',headers:{'X-Confirm-Retry':ids[40]}}),env,context())).status,401);
+  assert.equal(calls,40);
+  t.mock.method(globalThis,'fetch',send);
+  for(const id of ids.slice(40,50)){
+   const response=await worker.fetch(request(`/api/operator/inquiries/${id}/retry`,{method:'POST',headers:{Authorization:'Bearer synthetic-token','X-Confirm-Retry':id}}),env,context());
+   assert.equal(response.status,200);assert.equal((await response.json()).status,'accepted');
+  }
+  assert.equal((await notifyInquiry(env,ids[50],send,Date.now(),{ownerReviewed:true})).status,'daily-budget-held');
+  assert.equal(calls,50);
+  assert.equal(env.DB.sqlite.prepare('SELECT attempts FROM inquiries WHERE id=?').get(ids[50]).attempts,0);
+ }finally{env.DB.sqlite.close();}
+});
+
+test('short reference lookup requires authentication and refuses ambiguous prefixes',async()=>{
+ const env=environment(),headers={Authorization:'Bearer synthetic-token'};
+ const first='abcdef12-3456-4000-8000-000000000001',second='abcdef12-3456-4000-8000-000000000002';
+ const path='/api/operator/inquiries/lookup?code=WM-abcd-ef12-3456';
+ try{
+  insert(env,{id:first});
+  assert.equal((await worker.fetch(request(path),env,context())).status,401);
+  let response=await worker.fetch(request(path,{headers}),env,context());assert.equal(response.status,200);assert.deepEqual(await response.json(),{reference:first});assert.equal(response.headers.get('Cache-Control'),'no-store');
+  insert(env,{id:second});response=await worker.fetch(request(path,{headers}),env,context());assert.equal(response.status,409);assert.doesNotMatch(await response.text(),new RegExp(first+'|'+second));
+  assert.equal((await worker.fetch(request('/api/operator/inquiries/lookup?code=WM-0000-0000-0000',{headers}),env,context())).status,404);
+  assert.equal((await worker.fetch(request('/api/operator/inquiries/lookup?code=%25',{headers}),env,context())).status,422);
+ }finally{env.DB.sqlite.close();}
+});
+
+test('release manifest is private but remains available in authenticated operator status',async()=>{
+ const env=environment(),release={commit:'private-commit',sourceSha256:'private-source'};let reads=0;
+ env.ASSETS.fetch=async()=>{reads++;return Response.json(release);};
+ try{
+  for(const path of ['/version.json','/version.json/','/VERSION.JSON','/%76ersion.json']){const response=await worker.fetch(request(path),env,context());assert.equal(response.status,404,path);assert.doesNotMatch(await response.text(),/private-commit/);}
+  assert.equal(reads,0);
+  assert.equal((await worker.fetch(request('/api/operator/inquiries/status'),env,context())).status,401);
+  const response=await worker.fetch(request('/api/operator/inquiries/status',{headers:{Authorization:'Bearer synthetic-token'}}),env,context());assert.equal(response.status,200);assert.deepEqual((await response.json()).release,release);assert.equal(reads,1);assert.equal(response.headers.get('Cache-Control'),'no-store');
+ }finally{env.DB.sqlite.close();}
+});
+
+test('immutable asset caching requires a matching hash of the actual response bytes',async()=>{
+ const env=environment(),body='export const version = 2;',hash=createHash('sha256').update(body).digest('hex').slice(0,12);
+ env.ASSETS.fetch=async()=>new Response(body,{headers:{'Content-Type':'text/javascript'}});
+ try{
+  for(const [version,expected] of [[hash,'public, max-age=31536000, immutable'],['000000000000','no-cache']]){const response=await worker.fetch(request('/assets/site.js?v='+version),env,context());assert.equal(response.headers.get('Cache-Control'),expected);assert.equal(await response.text(),body);}
+  const document=await worker.fetch(request('/assets/buyer-packs/grow.html?v='+hash),env,context());assert.equal(document.headers.get('Cache-Control'),'no-cache');
+ }finally{env.DB.sqlite.close();}
+});
 
 test('video single ranges return exact bytes; malformed/multipart ranges fall back to full response', async () => {
   const env = environment();

@@ -47,7 +47,8 @@ const rejected=await fetch(origin+'/api/inquiries',{method:'POST',headers:{'Cont
 const www=await fetch('https://www.wonderandmethod.com/guides/',{redirect:'manual'});assert.ok([301,308].includes(www.status),'Canonical host redirect is permanent');assert.equal(www.headers.get('location'),origin+'/guides/');
 const robots=await(await fetch(origin+'/robots.txt')).text(),sitemap=await(await fetch(origin+'/sitemap.xml')).text();assert.match(robots,/Allow: \//);assert.equal(sitemap,await readFile(resolve(root,'dist/sitemap.xml'),'utf8'));
 assert.equal(robots,await readFile(resolve(root,'dist/robots.txt'),'utf8'));
-const versionResponse=await fetch(origin+'/version.json');assert.deepEqual(await versionResponse.json(),JSON.parse(await readFile(resolve(root,'dist/version.json'),'utf8')));
+const versionResponse=await fetch(origin+'/version.json');assert.equal(versionResponse.status,404);assert.match(versionResponse.headers.get('x-robots-tag')||'',/noindex/);
+assert.deepEqual(runtime.release,JSON.parse(await readFile(resolve(root,'dist/version.json'),'utf8')),'Authenticated release metadata matches the local artifact');
 const result={checkedAt:new Date().toISOString(),origin,worker:'wonder-method-production',version:workerVersion.observedWorkerVersion,workerVersion,pages,assets:{count:assets.length,sha256:'all match local dist'},privateRoutes,operatorUnauthenticated:401,crossOriginSubmission:403,www:www.status,search:{eligibleRoutes:pages.filter(p=>p.indexEligible).length,privatePagesNoindex:true,sitemapMatches:true,submissionPerformed:false},limits:'Noindex is a crawler directive, not authentication or a guarantee about third-party search systems. The live inquiry path is verified separately in finished-site-inquiry.json.'};
 const output=resolve(root,process.argv[3]||'evidence/finished-site-live-http.json');
 await mkdir(dirname(output),{recursive:true});

@@ -4,6 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket} from '../scripts/job-packet.mjs';
 import {assertPackageVisualOffers} from '../src/package-visuals.mjs';
+import {buyerPacks} from '../src/buyer-packs.mjs';
 import {renderPages} from '../src/pages.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const [offers,config,map,geography,previous]=await Promise.all(['config/offers.json','config/site.json','authority/v5/site-map.json','authority/v5/geography.json','operations/historical/offers-2026-10-18-expanded-websites.json'].map(read));
@@ -26,7 +27,7 @@ test('monthly scopes preserve delivered outputs, separate promotional reuse and 
  assert.equal(grow.commercial_boundaries.promotion_reuse.newsletter_max_words,150);
  assert.match(grow.commercial_boundaries.promotion_reuse.scope,/No new creative concept.*email layout, account\/campaign setup, testing or sending/);
  assert.match(grow.defect_window,/same change, asset or resize never fulfills two allowances/);
- assert.match(grow.defect_window,/second accepted improvement and its accepted promotional reuse task stay owed/);
+ assert.match(grow.defect_window,/second approved improvement and its approved reuse task stay due/);
  assert.deepEqual(offers.annual_terms,previous.annual_terms);
 });
 
@@ -39,8 +40,13 @@ test('monthly research and reuse changes invalidate artwork rather than leaving 
 
 test('monthly sales pages state concise units while full research and reuse scope remains accessible',()=>{
  const pages=renderPages({config,offers,map,geography});
- for(const path of ['/pricing/','/services/seo/','/guides/seo-work-and-reporting/']){const html=pages.find(p=>p.path===path).html;assert.match(html,/keyword research/i);assert.match(html,/90-day/);assert.match(html,/150 words/);}
- const care=pages.find(p=>p.path==='/services/website-care/').html;assert.match(care,/Keep Running/);assert.match(care,/supplied edits|supplied.*updates/);assert.match(care,/href="\/services\/seo\/"/);assert.doesNotMatch(care,/Two substantial connected improvements/);
- const seo=pages.find(p=>p.path==='/services/seo/').html;assert.match(seo,/does not promise a ranking/);assert.match(seo,/up to three candidates/);assert.match(seo,/up to six candidates/);
- for(const id of ['improve','grow']){const html=pages.find(p=>p.path==='/checkout/'+id+'/').html;assert.match(html,/writing/i);assert.match(html,/research/i);assert.ok(html.includes('/assets/buyer-packs/'+id));}
+ for(const path of ['/pricing/','/services/seo/','/guides/seo-work-and-reporting/']){const html=pages.find(p=>p.path===path).html;assert.match(html,/research/i);assert.match(html,/90-day/);}
+ const care=pages.find(p=>p.path==='/services/website-care/').html;assert.match(care,/Keep Running/);assert.match(care,/related text, photo or link changes/);assert.match(care,/href="\/services\/seo\/"/);assert.doesNotMatch(care,/Two substantial connected improvements/);
+ const packs=buyerPacks(offers);
+ for(const [id,candidates] of [['improve',3],['grow',6]]){
+  const pack=JSON.stringify(packs.find(p=>p.id===id).sections);assert.match(pack,new RegExp('Review up to '+candidates+' possible search opportunities'));assert.match(pack,/research/i);
+  const html=pages.find(p=>p.path==='/checkout/'+id+'/').html;assert.match(pack,/writing/i);assert.match(html,/research/i);assert.ok(html.includes('/assets/buyer-packs/'+id));
+ }
+ assert.match(JSON.stringify(packs.find(p=>p.id==='grow').sections),/150 words/);
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/rankings.*(?:not|cannot)|(?:not|cannot).*rankings/);
 });

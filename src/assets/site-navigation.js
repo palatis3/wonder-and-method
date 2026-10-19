@@ -1,5 +1,10 @@
 // Keep navigation independent of optional form, calculator and measurement code.
 (() => {
+  // Native open disclosures remain fully usable when JavaScript is unavailable.
+  const footerDesktop=matchMedia('(min-width:768px)');
+  const syncFooter=()=>document.querySelectorAll('[data-responsive-footer]').forEach(group=>{group.open=footerDesktop.matches;});
+  syncFooter();
+  footerDesktop.addEventListener('change',syncFooter);
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');
   if (!menu || !nav) return;
@@ -24,11 +29,13 @@
   window.addEventListener('pageshow',event=>{if(event.persisted)close();});
   nav.addEventListener('click',event=>{if(event.target.closest('a[href]'))close();});
   menu.addEventListener('click', () => {
-    if (menu.getAttribute('aria-expanded') === 'true') { close(); menu.focus({preventScroll:true}); return; }
+    if (menu.getAttribute('aria-expanded') === 'true') { close(); menu.focus(); return; }
     menu.setAttribute('aria-expanded', 'true');
     menu.textContent = 'Close';
     nav.classList.add('is-open');
     document.body.classList.add('menu-open');
+    // Short/zoomed viewports may have scrolled the normally static header away.
+    menu.focus();
     focusInNav(nav.querySelector('a'));
   });
   document.addEventListener('keydown', event => {
@@ -38,11 +45,11 @@
       return;
     }
     if (menu.getAttribute('aria-expanded') !== 'true') return;
-    if (event.key === 'Escape') { close(); menu.focus({preventScroll:true}); }
+    if (event.key === 'Escape') { close(); menu.focus(); }
     if (event.key !== 'Tab') return;
     const controls = [menu, ...nav.querySelectorAll('a,summary')].filter(control=>control.getClientRects().length);
     if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); focusInNav(controls.at(-1)); }
-    else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); menu.focus({preventScroll:true}); }
+    else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); menu.focus(); }
   });
   desktop.addEventListener('change', event => { if (event.matches) close(); syncServices(); });
   document.addEventListener('click', event => {

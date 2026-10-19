@@ -4,7 +4,7 @@ if(launcher){
  const fallback=root.querySelector('.support-chat-fallback');
  const label=launcher.querySelector('span');
  const status=document.querySelector('#support-chat-status');
- let requested=false,ready=false,dismissed=false,timeout,focusObserver,focusTimeout;
+ let requested=false,ready=false,dismissed=false,failed=false,timeout,focusObserver,focusTimeout;
  const stopFocus=()=>{focusObserver?.disconnect();clearTimeout(focusTimeout);};
  const focusChat=()=>{
   if(dismissed){stopFocus();return;}
@@ -17,6 +17,9 @@ if(launcher){
  };
  const unavailable=()=>{
   if(ready)return;
+  failed=true;
+  stopFocus();
+  window.Tawk_API?.hideWidget?.();
   const keepFocus=document.activeElement===launcher||document.activeElement===document.body;
   clearTimeout(timeout);
   launcher.hidden=true;
@@ -41,6 +44,7 @@ if(launcher){
   window.Tawk_API=window.Tawk_API||{};
   window.Tawk_API.onChatMaximized=focusChat;
   const openWhenReady=()=>{
+   if(failed||dismissed){clearTimeout(timeout);stopFocus();window.Tawk_API?.hideWidget?.();return;}
    if(ready)return;
    ready=true;
   focusObserver=new MutationObserver(focusChat);

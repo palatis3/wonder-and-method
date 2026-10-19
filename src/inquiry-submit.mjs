@@ -16,6 +16,18 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
   const showEmailHint=()=>{if(emailHint){const suggestion=emailTypoSuggestion(email?.value);emailHint.textContent=suggestion?'Did you mean '+suggestion+'? You can change the address above, or keep it as entered.':'';}};
   email?.addEventListener?.('input',showEmailHint);
   email?.addEventListener?.('blur',showEmailHint);
+  const message=form.elements.namedItem('message'),counter=document.getElementById('message-counter');
+  const showMessageCount=()=>{if(counter&&message){const remaining=3000-message.value.length;counter.hidden=remaining>500;counter.textContent=remaining>=0?`${remaining.toLocaleString('en-US')} characters remaining. Email longer notes to support@wonderandmethod.com.`:'Message is too long. Email longer notes to support@wonderandmethod.com.';}};
+  message?.addEventListener?.('input',showMessageCount);
+  message?.addEventListener?.('paste',event=>{
+   const text=event.clipboardData?.getData('text');if(typeof text!=='string')return;
+   const selected=(message.selectionEnd||0)-(message.selectionStart||0);
+   if(message.value.length-selected+text.length<=3000)return;
+   event.preventDefault();
+   const error=document.getElementById('message-error');
+   if(error)error.textContent='That paste would exceed 3,000 characters, so I have kept your existing text. Email the longer notes to support@wonderandmethod.com.';
+  });
+  showMessageCount();
   let pending=false;
   const focusInvalid=input=>{let details=input.closest?.('details');while(details){details.open=true;details=details.parentElement?.closest('details');}input.focus();};
   form.addEventListener('submit',async event=>{

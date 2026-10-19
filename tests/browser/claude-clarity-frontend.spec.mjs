@@ -22,7 +22,7 @@ async function fixture(page,{width=390,height=844}={}){
  await page.addScriptTag({content:navigation});
  await page.addScriptTag({content:chat});
  await page.addScriptTag({content:tools});
- await expect(page.locator('.support-chat-launch')).toBeVisible();
+ await expect(page.locator('.support-chat-choice>summary')).toBeVisible();
 }
 
 test('compact phone header and footer preserve usable navigation at320 and390',async({page})=>{
@@ -30,7 +30,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   await fixture(page,{width});
   const header=page.locator('.site-header');
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
-  await expect(header.getByRole('link',{name:'Start a project'})).toBeVisible();
+  await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   const footer=await page.locator('footer').boundingBox();expect(footer.height).toBeLessThan(700);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
@@ -41,18 +41,19 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('floating controls yield to a focused link and editing without losing their own focus',async({page})=>{
+test('page tools remain in normal flow while links and form fields keep their focus',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- expect((await launch.boundingBox()).width).toBe(48);
+ await page.locator('.support-chat-choice>summary').click();
+ await expect(page.locator('.support-chat')).toHaveCSS('position','static');
+ expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
- await page.locator('#last-link').evaluate(el=>{el.style.cssText='position:fixed;right:0;bottom:16px;width:180px;min-height:48px;z-index:2';});
  await page.evaluate(()=>dispatchEvent(new Event('scroll')));
  await expect(launch).toBeFocused();await expect(launch).toBeVisible();
  await page.locator('#last-link').focus();
- await expect(launch).toHaveCSS('visibility','hidden');
+ await expect(page.locator('#last-link')).toBeFocused();await expect(launch).toHaveCSS('visibility','visible');
  await page.getByRole('textbox',{name:'Sample question'}).focus();
- await expect(launch).toHaveCSS('visibility','hidden');
+ await expect(page.getByRole('textbox',{name:'Sample question'})).toBeFocused();await expect(page.locator('.support-chat')).toHaveCSS('position','static');
 });
 
 test('text-spacing leaves the mobile project action and menu unclipped',async({page})=>{
@@ -91,7 +92,6 @@ test('without scripts navigation and footer disclose natively while demo fields 
   await expect(page.locator('.concept-demo-form fieldset')).toHaveAttribute('disabled','');
   await expect(page.locator('#concept-name')).toBeDisabled();
   await expect(page.locator('.concept-demo-form button[type=submit]')).toBeDisabled();
-  await page.locator('footer summary').filter({hasText:'Information'}).click();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
  }finally{await context.close();}
 });

@@ -909,7 +909,7 @@ export const countyGeography = {
       {
         "name": "Sanborn",
         "type": "hamlet",
-        "town": "Lewiston (additional boundary extent not established here)",
+        "town": "Lewiston",
         "source": "https://www.niagaracountybusiness.com/file-library/100213/town_lewiston_comprehensive_plan_update.pdf"
       }
     ]

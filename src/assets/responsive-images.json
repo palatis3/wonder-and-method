@@ -4,6 +4,14 @@
     "height": 900,
     "variants": [
       {
+        "path": "/assets/work/concepts/fieldwork-desktop-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-desktop-480.webp",
+        "width": 480
+      },
+      {
         "path": "/assets/work/concepts/fieldwork-desktop-640.webp",
         "width": 640
       },
@@ -21,6 +29,14 @@
     "width": 1200,
     "height": 900,
     "variants": [
+      {
+        "path": "/assets/work/concepts/northline-desktop-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/work/concepts/northline-desktop-480.webp",
+        "width": 480
+      },
       {
         "path": "/assets/work/concepts/northline-desktop-640.webp",
         "width": 640
@@ -40,6 +56,14 @@
     "height": 900,
     "variants": [
       {
+        "path": "/assets/work/concepts/hearthside-desktop-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-desktop-480.webp",
+        "width": 480
+      },
+      {
         "path": "/assets/work/concepts/hearthside-desktop-640.webp",
         "width": 640
       },
@@ -57,6 +81,14 @@
     "width": 1425,
     "height": 990,
     "variants": [
+      {
+        "path": "/assets/work/studio-website-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/work/studio-website-480.webp",
+        "width": 480
+      },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640
@@ -76,6 +108,14 @@
     "height": 1000,
     "variants": [
       {
+        "path": "/assets/work/lead-workbench-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/work/lead-workbench-480.webp",
+        "width": 480
+      },
+      {
         "path": "/assets/work/lead-workbench-640.webp",
         "width": 640
       },
@@ -93,6 +133,14 @@
     "width": 1586,
     "height": 992,
     "variants": [
+      {
+        "path": "/assets/waterfront/hero-desktop-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/waterfront/hero-desktop-480.webp",
+        "width": 480
+      },
       {
         "path": "/assets/waterfront/hero-desktop-640.webp",
         "width": 640
@@ -112,6 +160,14 @@
     "height": 800,
     "variants": [
       {
+        "path": "/assets/creative-samples/photo-before-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/creative-samples/photo-before-480.webp",
+        "width": 480
+      },
+      {
         "path": "/assets/creative-samples/photo-before-640.webp",
         "width": 640
       },
@@ -130,6 +186,14 @@
     "height": 800,
     "variants": [
       {
+        "path": "/assets/creative-samples/photo-after-240.webp",
+        "width": 240
+      },
+      {
+        "path": "/assets/creative-samples/photo-after-480.webp",
+        "width": 480
+      },
+      {
         "path": "/assets/creative-samples/photo-after-640.webp",
         "width": 640
       },
@@ -140,6 +204,78 @@
       {
         "path": "/assets/creative-samples/photo-after.webp",
         "width": 1200
+      }
+    ]
+  },
+  "/assets/work/concepts/fieldwork-phone.webp": {
+    "width": 390,
+    "height": 844,
+    "variants": [
+      {
+        "path": "/assets/work/concepts/fieldwork-phone-180.webp",
+        "width": 180
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-phone-270.webp",
+        "width": 270
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-phone.webp",
+        "width": 390
+      }
+    ]
+  },
+  "/assets/work/concepts/northline-phone.webp": {
+    "width": 390,
+    "height": 844,
+    "variants": [
+      {
+        "path": "/assets/work/concepts/northline-phone-180.webp",
+        "width": 180
+      },
+      {
+        "path": "/assets/work/concepts/northline-phone-270.webp",
+        "width": 270
+      },
+      {
+        "path": "/assets/work/concepts/northline-phone.webp",
+        "width": 390
+      }
+    ]
+  },
+  "/assets/work/concepts/hearthside-phone.webp": {
+    "width": 390,
+    "height": 844,
+    "variants": [
+      {
+        "path": "/assets/work/concepts/hearthside-phone-180.webp",
+        "width": 180
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-phone-270.webp",
+        "width": 270
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-phone.webp",
+        "width": 390
+      }
+    ]
+  },
+  "/assets/creative-samples/maple-promotion.png": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "path": "/assets/creative-samples/maple-promotion-480.webp",
+        "width": 480
+      },
+      {
+        "path": "/assets/creative-samples/maple-promotion-960.webp",
+        "width": 960
+      },
+      {
+        "path": "/assets/creative-samples/maple-promotion-1080.webp",
+        "width": 1080
       }
     ]
   }

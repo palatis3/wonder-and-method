@@ -4,6 +4,15 @@ import {bindInquirySubmission} from '../src/inquiry-submit.mjs';
 import {inquiryConfirmationHtml} from '../src/inquiry-confirmation.mjs';
 import {inquiryResponseHtml} from '../src/inquiry-response.mjs';
 
+test('public receipts use a short code with the complete reference in an optional disclosure',()=>{
+ const reference='abcdef12-3456-4000-8000-000000000001';
+ const html=inquiryConfirmationHtml({reference,email:'person@example.test',request_kind:'question',service:'unsure'});
+ assert.match(html,/<p class="inquiry-reference"><strong>Your reference<\/strong><code>WM-ABCD-EF12-3456<\/code>/);
+ assert.match(html,new RegExp('<details><summary>Full reference</summary><code>'+reference+'</code>'));
+ assert.match(html,/I’ll reply to <strong>person@example.test<\/strong>/);
+ assert.doesNotMatch(html,/My reply will come from|one business day/);
+});
+
 function fixture(fetch, overrides={}){
   const values={name:'Synthetic Person',email:'fixture@example.test',service:'launch_site',request_kind:'checkout',message:'Synthetic browser behavior check.',...overrides};
   const elements=Object.fromEntries(Object.keys(values).map(id=>[id,{id,checkValidity:()=>true,setAttribute(){},focus(){this.focused=true;}}]));
@@ -30,14 +39,14 @@ test('confirmed requests replace the form with a focused, visible receipt and pr
   assert.equal(ui.form.hidden,true);assert.equal(ui.form.resetCalled,true);
   assert.equal(ui.confirmation.hidden,false);assert.equal(ui.confirmation.focused,true);assert.equal(ui.confirmation.scrolled,true);
   assert.match(ui.confirmation.innerHTML,/Proposal request received/);assert.match(ui.confirmation.innerHTML,/reference-123/);
-  assert.match(ui.confirmation.innerHTML,/one business day/);assert.match(ui.confirmation.innerHTML,/do not need to submit again/);
+  assert.match(ui.confirmation.innerHTML,/I’ll reply to/);assert.match(ui.confirmation.innerHTML,/do not need to submit again/);
   assert.deepEqual(ui.counts,[['inquiry_saved','launch_site']]);
   await ui.submit();assert.equal(calls,1);
 });
 
 test('questions get their own receipt and synthetic submissions never promise a real reply',async()=>{
   const question=fixture(async()=>response(),{request_kind:'question'});await question.submit();
-  assert.match(question.confirmation.innerHTML,/Question received/);assert.match(question.confirmation.innerHTML,/review your question/);
+  assert.match(question.confirmation.innerHTML,/Question received/);assert.match(question.confirmation.innerHTML,/read your question/);
   assert.deepEqual(question.counts,[['question_saved','launch_site']]);
   const synthetic=fixture(async()=>response({...saved,synthetic:true}));await synthetic.submit();
   assert.match(synthetic.confirmation.innerHTML,/No email was sent and no reply is expected/);
@@ -55,7 +64,7 @@ test('failed, unreadable and unconfirmed responses keep the populated form avail
 test('native and enhanced receipts share visible next steps and escape response values',()=>{
   const data={...saved,service:'launch_site',request_kind:'checkout'};
   const html=inquiryResponseHtml(data);
-  assert.match(html,/<h1 id="inquiry-confirmation-heading">Thanks\. We have your request\./);
+  assert.match(html,/<h1 id="inquiry-confirmation-heading">Thanks\. I have your request\./);
   assert.match(html,/Your reference/);assert.match(html,/What happens next/);assert.match(html,/no project is booked/);
   assert.doesNotMatch(html,/<script/);
   const escaped=inquiryConfirmationHtml({...data,reference:'<img src=x onerror=alert(1)>'});

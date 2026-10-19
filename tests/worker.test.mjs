@@ -182,7 +182,7 @@ test('native edge validation retains allowlisted monthly and audit intent withou
   const env=environment();
   const res=await worker.fetch(request(new URLSearchParams({...valid,service,message:'short'}).toString(),{Accept:'text/html','Content-Type':'application/x-www-form-urlencoded'}),env,context());
   assert.equal(res.status,422);const html=await res.text();
-  if(service!=='invented')assert.match(html,/Your selected request/);
+  if(service!=='invented')assert.match(html,/aria-label="Selected request"/);
   const retry=html.match(/href="([^\"]+)"[^>]*>Return to inquiry/)[1];
   assert.equal(retry,service==='invented'?'/contact/':'/contact/?offer='+service);
   assert.doesNotMatch(retry,/synthetic@example|Synthetic/);

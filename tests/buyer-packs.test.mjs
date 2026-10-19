@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,mkdtemp,rm} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
+import {paymentContent} from '../src/payment-content.mjs';
 import {buyerPacks} from '../src/buyer-packs.mjs';
 import {calculateCost,priceList,annualRefund,selectedInquiryContext} from '../src/shared.mjs';
 import {validateInquiry} from '../src/inquiry.mjs';
@@ -16,7 +17,7 @@ test('eight decision packs carry acceptance, payments, costs, limits and the exa
  const expected={launch_site:1400,focused_site:2350,signature_site:3700,keep_running:150,improve:400,grow:800,audit_fix_sprint:750,website_baseline:399};
  const packs=buyerPacks(offers);assert.deepEqual(packs.map(p=>p.id),Object.keys(expected));
  for(const p of packs){
-  assert.equal(p.price,expected[p.id]);assert.equal(p.request,'/contact/?offer='+p.id+'&request_kind=checkout#inquiry');
+  assert.equal(p.price,expected[p.id]);assert.equal(p.request,'/checkout/'+p.id.replaceAll('_','-')+'/');
   assert.match(p.scopeStatus,/does not book work, accept terms or make a payment/);
   const text=JSON.stringify(p.sections);
   for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/outside/i,/cancel/i,/provider/i,/five business days/i,/export limits/i])assert.match(text,pattern,p.id);
@@ -26,14 +27,14 @@ test('eight decision packs carry acceptance, payments, costs, limits and the exa
  for(const p of packs.filter(p=>p.id.endsWith('_site'))){
   const text=JSON.stringify(p.sections);
   assert.match(text,/50%/);assert.match(text,/30%/);assert.match(text,/20%/);assert.match(text,/approve the design in writing/);
-  assert.match(text,/dated ledger of completed work/);assert.match(text,/paid completion or reconciled termination/);
-  assert.match(text,/30 calendar days after launch/);assert.match(text,/handoff is not withheld/i);
+  assert.match(text,/dated ledger of completed work/);assert.match(text,/paid work is finished, or after settling the account if the project stops early/);
+  assert.match(text,/30 calendar days after launch/);assert.match(text,/receive your paid files without waiting/i);
   assert.match(text,/No disabling a paid client-owned website/);
  }
  for(const id of ['audit_fix_sprint','website_baseline']){
   const text=JSON.stringify(packs.find(p=>p.id===id).sections);
   assert.match(text,/up to 12 marketing pages/);assert.match(text,/Before any payment, confirm supported technology/);
-  assert.match(text,/unearned amount to be refunded/);assert.match(text,/30 calendar days after written completion acceptance/);
+  assert.match(text,/unearned amount to be refunded/);assert.match(text,/30 calendar days after your written approval of its completion/);
   assert.match(text,/does not include or require a new year of hosting/);assert.match(text,/specialist certification are separate/);
  }
 });
@@ -43,8 +44,8 @@ test('monthly packs gate new annual sales while retaining accepted annual cancel
  for(const [id,upfront,equivalent,refund] of [['keep_running',1710,142.5,1140],['improve',4560,380,3040],['grow',9120,760,6080]]){
   const p=packs.find(p=>p.id===id),text=JSON.stringify(p.sections);assert.ok(!Object.hasOwn(p,'annual'));assert.equal(p.baselineFee,399);
   assert.ok(!p.sections.some(s=>s.title==='Annual prepayment'));
-  const existing=p.sections.find(s=>s.title==='If you already have an accepted annual agreement');assert.equal(existing.disclosure,true);
-  for(const pattern of [/not an offer to enroll/,/within ten business days/,/Undisputed unearned amounts/,/refund the full annual service payment/,/unfinished work owed under your accepted project agreement/,/no automatic annual charge/,/No cancellation penalty, retained processing fee, discount clawback/,/no provider refund is promised/])assert.match(JSON.stringify(existing.items),pattern,id);
+  const existing=paymentContent({contactEmail:'support@example.test'},offers);assert.match(existing,/id="annual-terms"/);
+  for(const pattern of [/not an offer to enroll/,/within ten business days/,/Undisputed unearned amounts/,/refund the full annual service payment/,/unfinished work owed under your accepted project agreement/,/no automatic annual charge/,/No cancellation penalty, retained processing fee, discount clawback/,/no provider refund is promised/])assert.match(existing,pattern,id);
   for(const pattern of [/no minimum term/,/Cancel before renewal/,/unused-work refund or credit/,/up to 12 marketing pages/,/still usable/,/no 24\/7 service/,/backups and restores/,/Canceling care does not disable your paid website/])assert.match(text,pattern,id);
   assert.doesNotMatch(text,/30 calendar days after launch/);
   const enabled=structuredClone(offers);enabled.annual_enrollment_gate.verified=true;
@@ -62,7 +63,7 @@ test('annual estimator charges twelve cycles upfront and keeps refunds distinct 
  }
  const overlap=calculateCost(prices,{build:'focused',plan:'keep_running',billing:'annual',cycles:12,serviceStart:2,hostingMonths:13,hostingMonthly:20,external:120});
  assert.deepEqual([overlap.annualUpfront,overlap.grossHosting,overlap.total],[1710,260,4440]);
- assert.throws(()=>calculateCost(prices,{plan:'improve',billing:'annual',cycles:12,hostingMonths:11}),/Hosting period/);
+ assert.throws(()=>calculateCost(prices,{plan:'improve',billing:'annual',cycles:12,hostingMonths:11,hostingMonthly:20}),/Hosting period/);
  assert.equal(calculateCost(prices,{plan:'improve',billing:'annual',cycles:12,hostingMonthly:null,external:0}).total,null);
 });
 

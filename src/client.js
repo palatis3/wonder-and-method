@@ -2,7 +2,7 @@
 let measurement;
 const countJourney=(...args)=>{measurement??=import('./journey-counts.js').catch(()=>null);measurement.then(module=>module?.countJourney(...args)).catch(()=>{});};
 import {bindInquirySubmission} from './inquiry-submit.mjs';
-import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection} from './shared.mjs';
+import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection,inquiryNeedsWebsite} from './shared.mjs';
 const form=document.querySelector('form#inquiry');
 if(form){
  const field=key=>form.elements.namedItem(key);
@@ -12,6 +12,7 @@ if(form){
  const initial={service:field('service').value,...Object.fromEntries(new FormData(form))};
  for(const key of Object.keys(inquiryContextFields))if(params.has(key))initial[key]=params.get(key);
  const context=publicInquiryContext(initial,annualEnabled);
+ const neutral=form.dataset.neutralMessage==='true'&&!['question','checkout'].includes(params.get('request_kind'));
  for(const key of Object.keys(inquiryContextFields)){
   const input=field(key);if(!input)continue;
   // Server prefill preserves valid historical source answers. Direct static previews
@@ -19,7 +20,6 @@ if(form){
   if(input.options){if(context[key]&&[...input.options].some(option=>option.value===context[key]))input.value=context[key];}
   else input.value=context[key]||'';
  }
- let packIndex=[];
  const updateRequestSummary=()=>{
   const service=field('service').value,question=field('request_kind').value==='question';
   const values={service,...Object.fromEntries(new FormData(form))};
@@ -28,26 +28,27 @@ if(form){
    const input=field(key);if(input?.type==='hidden'){input.value=context[key]||'';}
   }
   const current={service,...context,request_kind:question?'question':'checkout'};
+  const website=field('website'),websiteRequired=inquiryNeedsWebsite(current);
+  website.required=websiteRequired;
+  form.querySelector('#website-help').textContent=websiteRequired?'Please add the website address so I can check fit. If it is not live yet, enter “not live yet” in this field.':'A link, social handle or short note is fine. Leave blank if you do not have one.';
+  const websiteNote=form.querySelector('label[for=website] .field-note');if(websiteNote)websiteNote.textContent=websiteRequired?'(required)':'(optional)';
   const label=form.querySelector('[data-request-label]');
-  label.replaceChildren(document.createTextNode(inquiryMessagePrompt(service,current.request_kind)+' '));
+  label.replaceChildren(document.createTextNode(inquiryMessagePrompt(service,current.request_kind,neutral)+' '));
   const required=document.createElement('span');required.className='field-note';required.textContent='(required)';label.append(required);
-  document.querySelector('#message-help').textContent=inquiryMessageHelp(service,current.request_kind,context.goal);
-  form.querySelector('[data-request-submit]').textContent=question?'Send question':'Request a proposal';
-  const noCharge=form.querySelector('.checkout-no-charge');if(noCharge)noCharge.hidden=question;
-  const wrapper=form.querySelector('.request-summary');wrapper.hidden=!form.dataset.fixedService&&!hasInquirySelection(current);
-  const pack=packIndex.find(p=>p.id===service),summary=document.querySelector('#request-summary');
-  const next=inquiryRequestSummary(current);if(summary.textContent!==next)summary.textContent=next;
+  document.querySelector('#message-help').textContent=inquiryMessageHelp(service,current.request_kind,context.goal,neutral);
+  form.querySelector('[data-request-submit]').textContent=neutral?'Send message':question?'Send question':'Request a proposal';
+  const nextStep=form.querySelector('[data-request-next]');if(nextStep)nextStep.textContent=neutral?'I read your message and reply by email.':question?'I read your question and reply by email.':'I review your project and email you about the work, price and available dates.';
+  const wrapper=form.querySelector('.request-summary');if(wrapper)wrapper.hidden=!hasInquirySelection(current);
+  const summary=document.querySelector('#request-summary');
+  const next=inquiryRequestSummary(current);if(summary&&summary.textContent!==next)summary.textContent=next;
   for(const questionLink of document.querySelectorAll('[data-checkout-question]')){
    const query=new URLSearchParams({offer:service,...selectedInquiryContext(current),request_kind:'question'});
    questionLink.href='/contact/?'+query.toString()+'#inquiry';
   }
-  const place=document.querySelector('#request-pack-link');place.replaceChildren();
-  if(pack&&!question){const a=document.createElement('a');a.href='/assets/buyer-packs/'+pack.id;a.textContent='Full details';place.append(a);}
  };
  form.addEventListener('input',()=>{if(form.dataset.mode==='live')countJourney(field('request_kind').value==='question'?'question_start':'request_start',field('service').value);});
  form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service')updateRequestSummary();});
  updateRequestSummary();
- fetch('/assets/buyer-packs/index.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(packs=>{packIndex=packs;updateRequestSummary();}).catch(()=>{});
  bindInquirySubmission(form,{countJourney});
 }
 

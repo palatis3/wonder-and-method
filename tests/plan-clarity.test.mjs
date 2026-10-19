@@ -49,14 +49,14 @@ test('packs and card summaries keep zero/one/two priorities and lower-build excl
  assert.doesNotMatch(launchWork,/selected Signature|chosen workflow|follow-up articles|after day 90|90-day/);
  const focused=offers.focused_site;for(const key of ['page_scope','form_limit','revisions','functionality'])assert.doesNotMatch(focused[key],/selected Signature|chosen Signature|chosen workflow/);
  const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/source-code handoff/);assert.doesNotMatch(builds,/3 articles total|CMS\/blog editing/);assert.doesNotMatch(builds,/hosting credit/);
- const monthly=planCards(offers);assert.equal((monthly.match(/class="compact-offer"/g)||[]).length,3);assert.match(monthly,/one completed improvement/);assert.match(monthly,/Two connected improvements/);assert.match(monthly,/Full details/);
+ const monthly=planCards(offers);assert.equal((monthly.match(/class="compact-offer"/g)||[]).length,3);assert.match(monthly,/one finished improvement/);assert.match(monthly,/two improvements a month instead of one/);assert.match(monthly,/what’s included/);
 });
 
-test('native pricing choices and direct-cost explanation precede the optional estimator',()=>{
+test('native pricing links to a separate estimator and explains directly paid provider costs',()=>{
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
- assert.ok(html.indexOf('Domain, hosting and paid tools are billed directly')<html.indexOf('id="cost-calculator"'));assert.match(html,/actual.*prices|Actual prices/);assert.match(html,/no minimum term/);
+ assert.doesNotMatch(html,/id="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these companies and any chosen tools directly/);assert.match(html,/actual provider price/);assert.match(html,/no minimum term/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);assert.doesNotMatch(calculator,/value="annual"/);
- const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/Full details/);assert.match(overview,/\/services\/website-care\//);
+ const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/what’s included/);assert.match(overview,/\/services\/website-care\//);
 });
 
 test('all builds snapshot explicit icon, sharing, sitemap and HTTPS acceptance without inventing proof',async()=>{
@@ -106,7 +106,7 @@ test('archived artwork guards retain their exact dated source and reject current
 test('current pricing has eight live-text offers and no stale poster publication',()=>{
  const html=pricingContent(offers);assert.equal((html.match(/class="compact-offer"/g)||[]).length,8);assert.doesNotMatch(html,/package-visual-grid|assets\/package-visuals/);
  for(const id of ['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint']){assert.ok(html.includes('id="offer-'+id+'"'));assert.ok(html.includes('/assets/buyer-packs/'+id));}
- assert.match(html,/first small fix if safe and feasible/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/there is no extra \$399 charge/);
+ assert.match(html,/one small fix if it is safe and practical/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/the \$399 fee is not added again/);
 });
 
 test('archived feature headings remain semantically valid in a disclosure',()=>{

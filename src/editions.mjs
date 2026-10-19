@@ -29,7 +29,7 @@ export const editions = Object.freeze({
     height: 720,
     projectAlt: 'The complete BUFFALO stone sculpture created for the Wonder and Method studio website',
     socialAlt: 'BUFFALO in carved stone and bronze on sage — Wonder and Method',
-    workDescription: 'Explore our studio website: original BUFFALO stone letterforms, a quiet eight-second camera reveal and a clear path from the work to an inquiry.',
+    workDescription: 'Explore my studio website: original BUFFALO stone letterforms, a quiet eight-second camera reveal and a clear path from the work to an inquiry.',
     identityCopy: 'Newsreader display type, a quiet Manrope interface and warm stone against sage give the opening its character. Clear typography and generous space carry it through the site.',
     motionCopy: 'A camera moves from a carved architectural detail to the full BUFFALO sculpture. The eight-second introduction plays once and holds the complete word, with pause, resume and replay controls. Reduced-motion and data-saving settings begin with a still.',
     sceneCopy: 'Original three-dimensional letterforms bring stone, civic relief and a bronze bridge into one composition. These details are Buffalo-inspired allusions, not replicas of individual landmarks.',
@@ -45,7 +45,7 @@ export function selectedEdition(config){
     alt:traffic?'BUFFALO sculpted in warm stone on sage, with matching sculpted cars on a curled bronze bridge beneath the word and a small bronze fan above the O.':'BUFFALO sculpted in warm stone on sage, with a curled bronze bridge beneath the word and a small bronze fan above the O.',
     projectAlt:traffic?'The complete BUFFALO stone sculpture with matching sculpted cars, a curled bronze bridge and a small fan above the O':'The complete BUFFALO stone sculpture with its bronze bridge underline and fan finale',
     socialAlt:traffic?'BUFFALO in carved stone with sculpted cars, a bronze bridge and fan on sage; Wonder and Method':'BUFFALO in carved stone with a bronze bridge and fan on sage; Wonder and Method',
-    workDescription:traffic?'Explore our studio website: a ten-second BUFFALO reveal, matching sculpted cars crossing a bronze bridge and a gentle four-second ambient cycle.':'Explore our studio website: original BUFFALO stone letterforms, a ten-second sculptural reveal and a restrained ambient motion study.',
+    workDescription:traffic?'Explore my studio website: a ten-second BUFFALO reveal, matching sculpted cars crossing a bronze bridge and a gentle four-second ambient cycle.':'Explore my studio website: original BUFFALO stone letterforms, a ten-second sculptural reveal and a restrained ambient motion study.',
     motionCopy:`A camera reveals the BUFFALO sculpture, followed by a curled bronze bridge beneath the word and a small fan above the O. The ten-second introduction plays once, then a seamless four-second ambient cycle gently rocks the complete composition${traffic?' while matching sculpted cars travel continuously across the bridge':''}. Pause, Resume and Replay introduction remain available; reduced-motion and data-saving settings begin with a still.`,
     sceneCopy:`Original three-dimensional letterforms bring stone, civic relief, a curled bronze bridge, a small fan${traffic?' and matching sculpted cars':''} into one composition. These are Buffalo-inspired allusions, not replicas of individual landmarks.`,
   }:{})};

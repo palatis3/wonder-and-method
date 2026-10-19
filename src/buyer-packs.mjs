@@ -1,5 +1,6 @@
 import {escapeHtml as e, money} from './shared.mjs';
 import {annualEnrollmentAvailable, acceptedAnnualTerms, baselineEnrollmentNote, monthlyPlanDetails} from './monthly-content.mjs';
+import {offerSummary} from './offer-summary.mjs';
 
 const ids = ['launch_site', 'focused_site', 'signature_site', 'keep_running', 'improve', 'grow', 'audit_fix_sprint', 'website_baseline'];
 const rows = (title, items, options = {}) => ({title, items: (Array.isArray(items) ? items : [items]).filter(Boolean), ...options});
@@ -13,7 +14,8 @@ export function buyerPacks(o) {
   const base = {
    id, name: id === 'website_baseline' ? 'Website Baseline' : p.public_name,
    scopeStatus: 'Full details for a proposal. Sending a request does not book work, accept terms or make a payment.',
-   request: '/contact/?offer=' + id + '&request_kind=checkout#inquiry',
+   request: '/checkout/' + id.replaceAll('_','-') + '/',
+   summary:offerSummary(o,id),
    ...(monthly ? {baselineFee: o.baseline.one_time_price} : {}),
    ...(monthly && annualEnrollmentAvailable(o) ? {annual: p.annual} : {})
   };
@@ -80,7 +82,7 @@ export function buyerPacks(o) {
      `${money(p.annual.upfront_price)} paid upfront for ${p.annual.cycles} service periods; ${money(p.annual.monthly_equivalent)}/month equivalent, not a monthly charge. Save ${money(p.annual.saving_vs_12_monthly)} compared with twelve monthly invoices. Availability requires confirmed fit, capacity and the enrollment checks.`,
      o.annual_terms.payment, o.annual_terms.dates
     ])] : []),
-    rows(annualEnrollmentAvailable(o) ? 'Annual cancellation terms' : 'If you already have an accepted annual agreement', annualEnrollmentAvailable(o) ? acceptedAnnualTerms(o).slice(1) : acceptedAnnualTerms(o), {disclosure: true}),
+    ...(annualEnrollmentAvailable(o) ? [rows('Annual cancellation terms',acceptedAnnualTerms(o).slice(1),{disclosure:true})] : []),
     rows('Ownership and exit', terms.exit),
     rows('Outside this scope', terms.exclusions)
    ];
@@ -119,13 +121,15 @@ export function buyerPacks(o) {
 }
 
 export function packBody(pack) {
- const sections = pack.sections.map(s => {
+ const sections = pack.sections.slice(1).map(s => {
   const content = `<ul>${s.items.map(item => `<li>${e(item)}</li>`).join('')}</ul>`;
   return s.disclosure
    ? `<details class="pack-terms"><summary>${e(s.title)}</summary>${content}</details>`
    : `<section><h2>${e(s.title)}</h2>${content}</section>`;
  }).join('');
- return `<p class="pack-status">${e(pack.scopeStatus)}</p>${sections}<p><a class="button" href="${e(pack.request)}">Request ${e(pack.name)}</a></p><p><a href="/contact/?offer=${e(pack.id)}&amp;request_kind=question#inquiry">Ask a question first</a> · <a href="/pricing/">Compare all prices</a> · <a href="/payments/">Payments and cancellation</a></p>`;
+ const s=pack.summary;
+ const payment=s.monthly?'Monthly in advance; no minimum term':s.build?'50% to book · 30% after design approval · 20% after working-site approval':pack.id==='website_baseline'?'Before work, after fit is confirmed':'Half before work; half after written completion approval';
+ return `<p class="pack-status">${e(pack.scopeStatus)}</p><p><a class="button" href="${e(pack.request)}">Request ${e(pack.name)}</a></p><section><h2>At a glance</h2><dl class="pack-glance"><dt>Price</dt><dd>${money(pack.price)} ${e(pack.priceLabel)}</dd><dt>Good for</dt><dd>${e(s.fit)}</dd><dt>Payments</dt><dd>${e(payment)}</dd>${s.build?`<dt>Average delivery</dt><dd>${e(s.offer.delivery_average)}, from the confirmed start with inputs ready. Reviews, missing inputs or added work can extend the dates.</dd>`:''}</dl></section><section><h2>What’s included</h2><ul>${s.points.map(point=>`<li>${e(point)}</li>`).join('')}</ul>${s.build?'<p>I write the website from your business facts. You approve its accuracy, provide licensed media and arrange account access. Two feedback rounds cover the design and working website. The website does not include a drag-and-drop editor; later changes need coding skills, a developer or optional monthly help.</p>':s.monthly?'<p>Send related small edits together. I agree each improvement with you before beginning it and report the finished work and anything still open. The same work never counts twice. Software updates, backups, restores and malware cleanup are separate.</p>':'<p>I confirm the website’s technology, access and safe recovery options before payment. Neither offer guarantees that every finding can be fixed. You receive an ordered list of any remaining work.</p>'}</section><section><h2>Before you commit</h2><p>${e(providerCosts)}</p><p>You keep your paid custom work and control your accounts. Existing paid website files and notes arrive within five business days after paid completion or settled cancellation. Provider licenses and account transfers still apply.</p><p>${s.build?'I correct faults in the agreed build for 30 days after launch.':s.monthly?'If I delay work you have paid for, I still need to finish it, agree a new date or refund it.':'I correct faults in the agreed work for 30 days after your written approval of its completion.'} Your written proposal confirms the work, dates and payment arrangements. Silence never counts as approval.</p>${s.monthly?`<p>${e(pack.sections.find(section=>section.title==='Before enrollment')?.items[1]||'')}</p>`:''}</section><details class="pack-terms"><summary>Complete work limits, payments and terms</summary>${sections}</details><nav class="related-links" aria-label="${e(pack.name)} next steps"><a href="/contact/?offer=${e(pack.id)}&amp;request_kind=question#inquiry">Ask about ${e(pack.name)}</a><a href="/pricing/">Compare prices</a><a href="/payments/">Payments and cancellation</a></nav>`;
 }
 
 export function buyerPackSection(o) {

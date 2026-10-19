@@ -10,7 +10,8 @@ const referencePattern=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9
 
 export async function productionOperator(args,{workspace=root,fetchImpl=fetch,credentials=readProductionCredentials,now=()=>new Date()}={}){
  const [action,label,confirmation,...extra]=args;
- if((action==='followup'?extra.length!==1:extra.length)||!['status','export','retry','delete','measurement','retention-preview','followup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS]; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
+ if((action==='followup'?extra.length!==1:extra.length)||!['status','export','retry','delete','measurement','retention-preview','followup','lookup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS]; lookup CODE; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
+ if(action==='lookup'&&(confirmation||!/^WM-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$/i.test(label||'')))throw Error('Lookup needs the short WM-XXXX-XXXX-XXXX code.');
  if(['status','retention-preview'].includes(action)&&(label||confirmation))throw Error('Status takes no additional arguments.');
  if(action==='export'&&(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(label||'')||confirmation))throw Error('Export needs a lowercase filename label, not a path.');
  if(['retry','delete','followup'].includes(action)&&(!referencePattern.test(label||'')||confirmation!==label))throw Error('Supply the exact inquiry reference twice. Retry may send a notification; delete removes the active record.');
@@ -23,6 +24,7 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
   try{return await response.json();}catch{throw Error('Production returned an unreadable response; no private body printed.');}
  };
  if(action==='measurement')return request('/api/operator/journey-summary?days='+Number(label||7));
+ if(action==='lookup')return request('/api/operator/inquiries/lookup?code='+encodeURIComponent(label));
  if(action==='retention-preview')return request('/api/operator/inquiries/retention-preview');
  if(action==='status')return {origin,...await request('/api/operator/inquiries/status')};
  if(action==='followup'){
@@ -60,9 +62,9 @@ export function formatMeasurement(report){
  const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Resource link clicks',['resource_select']],['Email / chat actions',['email_click','chat_open']]];
  const total=(events,current)=>report.daily.filter(row=>events.includes(row.event)&&(current?row.day>=report.since:row.day<report.since)).reduce((sum,row)=>sum+Number(row.total),0);
  const comparable=report.coverage?.previousAvailable===true&&report.days<=45;
- const lines=[`Website events: ${report.days} days from ${report.since}`,comparable?`Compared with the preceding ${report.days} days (within 90-day retention).`:'WARNING: Previous and Change are unavailable: an equal previous period is not covered by verified retention metadata.','Metric                         Current  Previous  Change'];
- lines.splice(1,0,'Approximate arrivals from outside: '+(Array.isArray(report.arrivals)?report.arrivals.reduce((sum,row)=>sum+Number(row.total),0):'not available in this response'));
- if(report.coverage)lines.splice(2,0,`Retained dates: ${report.coverage.retainedSince} through ${report.coverage.through}. Collection continuity is not verified.`);
+ const topSource=[...(report.bySource||[])].filter(row=>!['internal','not_recorded'].includes(row.source)).sort((a,b)=>Number(b.total)-Number(a.total))[0];
+ const lines=['Approximate arrivals from outside: '+(Array.isArray(report.arrivals)?report.arrivals.reduce((sum,row)=>sum+Number(row.total),0):'not available'),`Saved-confirmation events: ${total(['inquiry_saved','question_saved'],true)}${comparable?' (previous period: '+total(['inquiry_saved','question_saved'],false)+')':' (previous period: N/A)'}`,`Largest recorded outside source: ${topSource?topSource.source+' ('+topSource.total+' page views)':'no data'}`,'',`Website events: ${report.days} days from ${report.since}`,comparable?`Compared with the preceding ${report.days} days (within 90-day retention).`:'WARNING: Previous and Change are unavailable: an equal previous period is not covered by verified retention metadata.','Metric                         Current  Previous  Change'];
+ if(report.coverage)lines.splice(6,0,`Retained dates: ${report.coverage.retainedSince} through ${report.coverage.through}. Collection continuity is not verified.`);
  for(const [label,events] of groups){const current=total(events,true),previous=comparable?total(events,false):null;lines.push(label.padEnd(30)+String(current).padStart(8)+(comparable?String(previous):'N/A').padStart(10)+(comparable?String(current-previous):'N/A').padStart(8));}
  const serviceNames=Object.fromEntries(inquiryChoices),title=value=>String(value).replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
  const pageLabel=page=>page==='home'?'Home':page==='404'?'Page not found':page.startsWith('checkout_')?'Checkout — '+(serviceNames[page.slice(9)]||title(page.slice(9))):page.startsWith('guides_')?'Guide — '+title(page.slice(7)):page.startsWith('areas_')?'Area — '+title(page.slice(6)):title(page);
@@ -76,7 +78,7 @@ export function formatMeasurement(report){
  else if(!report.arrivals.length)lines.push('No recorded arrivals in this period.');
  else for(const row of report.arrivals)lines.push(`${pageLabel(row.page)} / ${row.source}: ${row.total}`);
  lines.push('','Page views by page:');for(const row of report.counts.filter(row=>row.event==='page_view'))lines.push(`${pageLabel(row.page)}: ${row.total}`);
- lines.push('','Goals selected on Help me choose links:');
+ lines.push('','Goals selected on contact links:');
  for(const [event,label] of [['goal_new_website','New website'],['goal_redesign','Redesign'],['goal_fix','Repair'],['goal_search','Search visibility'],['goal_care','Website care']])lines.push(`${label}: ${report.counts.filter(row=>row.event===event).reduce((sum,row)=>sum+Number(row.total),0)}`);
  lines.push('','Page-view source categories:');for(const row of report.bySource||[])lines.push(`${row.source}: ${row.total}`);
  lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Resource clicks do not prove a completed download; repeated clicks on the same resource in a page instance count once. Goals describe link selections, not identified inquiries. Use the separate lead report for real inquiry stages.');return lines.join('\n');
