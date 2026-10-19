@@ -7,7 +7,7 @@ class Element extends EventTarget {
   setAttribute(name,value){this.attrs[name]=value;}
   emit(type){this.dispatchEvent(new Event(type));}
 }
-function fixture({mobile=false,mobileSources=false,reduced=false,saveData=false,source=true,ready=true,rejectPlay=false,pendingPlay=false,ambient=false,frameCallbacks=false}={}){
+function fixture({interacted=true,mobile=false,mobileSources=false,reduced=false,saveData=false,source=true,ready=true,rejectPlay=false,pendingPlay=false,ambient=false,frameCallbacks=false}={}){
   const button=new Element(),replay=new Element(),status=new Element(),stage=new Element(),hero=new Element(),doc=new Element(),connection=new Element();
   const makeVideo=(url,pending)=>{
     const video=new Element();
@@ -36,6 +36,7 @@ function fixture({mobile=false,mobileSources=false,reduced=false,saveData=false,
   let intersect;
   Object.assign(env,{document:doc,navigator:{connection},matchMedia:query=>queries[query],IntersectionObserver:class{constructor(callback){intersect=callback;}observe(){}}});
   mountCivicSculpture(hero,env);
+  if(interacted)env.emit('pointerdown');
   return {video,ambientVideo,button,replay,status,hero,doc,env,queries,view:value=>intersect?.([{isIntersecting:value,intersectionRatio:value?1:0}]),finishPending:()=>video.pending[0]?.resolve(),click:()=>button.emit('click')};
 }
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
@@ -63,9 +64,9 @@ test('reduced-motion and data-saving modes keep the final still until explicit p
   }
 });
 
-test('phone autoplay waits for load and visibility, uses paired small streams and preloads ambient after four seconds',async()=>{
+test('phone explicit play uses paired small streams and preloads ambient after four seconds',async()=>{
   const f=fixture({mobile:true,mobileSources:true,ready:false,ambient:true,frameCallbacks:true});
-  f.view(true);assert.equal(f.video.src,undefined);f.env.emit('load');await flush();
+  f.view(true);assert.equal(f.video.src,undefined);f.env.emit('load');await flush();assert.equal(f.video.src,undefined);f.click();await flush();
   assert.equal(f.video.src,'/intro-960.mp4');assert.equal(f.video.muted,true);assert.equal(f.video.playsInline,true);
   assert.equal(f.ambientVideo.src,undefined);assert.ok(!f.hero.classes.has('has-civic-motion'));
   f.video.presentFrame();assert.ok(f.hero.classes.has('has-civic-motion'));
@@ -79,7 +80,7 @@ test('phone autoplay waits for load and visibility, uses paired small streams an
 });
 
 test('phone desktop fallback and an unprepared ambient still preserve the held introduction',async()=>{
-  const f=fixture({mobile:true,ambient:true,frameCallbacks:true});f.view(true);await flush();f.video.presentFrame();
+  const f=fixture({mobile:true,ambient:true,frameCallbacks:true});f.view(true);f.click();await flush();f.video.presentFrame();
   assert.equal(f.video.src,'/intro.mp4');assert.equal(f.ambientVideo.src,undefined);
   endIntro(f);await flush();assert.equal(f.ambientVideo.src,'/ambient.mp4');
   assert.ok(f.hero.classes.has('has-civic-motion'));assert.ok(!f.hero.classes.has('has-civic-ambient'));
@@ -159,4 +160,15 @@ test('new reduced-motion preference cancels ambient and delayed frames until exp
   const pref=f.queries['(prefers-reduced-motion: reduce)'];pref.matches=true;pref.emit('change');f.ambientVideo.presentFrame();
   assert.equal(f.hero.dataset.phase,'intro');assert.equal(f.video.currentTime,0);assert.ok(!f.hero.classes.has('has-civic-motion'));assert.ok(!f.hero.classes.has('has-civic-ambient'));
   pref.matches=false;pref.emit('change');await flush();assert.equal(f.video.playCalls,1);
+});
+
+test('desktop waits for interaction and phone stays poster-first until explicit play',async()=>{
+ const f=fixture({interacted:false});f.view(true);await flush();assert.equal(f.video.src,undefined);
+ f.env.emit('scroll');await flush();assert.equal(f.video.playCalls,1);
+ const phone=fixture({mobile:true});phone.view(true);await flush();assert.equal(phone.video.src,undefined);
+ phone.click();await flush();assert.equal(phone.video.playCalls,1);
+});
+test('blocked playback describes the finished still without inventing a Resume control',async()=>{
+ const f=fixture({rejectPlay:true});f.view(true);await flush();
+ assert.equal(f.status.textContent,'Animation could not start. The finished image is shown.');
 });

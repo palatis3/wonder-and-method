@@ -8,22 +8,37 @@ export function validEmail(email){
   return labels.length>=2&&labels.every(label=>/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$/.test(label));
 }
 export const serviceIds=inquiryChoices.map(([id])=>id);
+export function inquiryFieldMessage(key,validity={}){
+ if(key==='email'&&(validity.valueMissing||validity.typeMismatch||validity.patternMismatch))return 'Please enter your full email, like name@business.com.';
+ if(validity.valueMissing){if(key==='name')return 'Please add your name.';if(key==='message')return 'Please tell me a little about what you need (at least 10 characters).';return 'Please complete this field.';}
+ if(validity.tooShort&&key==='message')return 'Please tell me a little about what you need (at least 10 characters).';
+ if(validity.tooLong)return 'Please shorten this entry to the stated limit.';
+ return key==='email'?'Please enter your full email, like name@business.com.':'Please check this entry.';
+}
 export function validateInquiry(data){
   const errors={},value={};
   if(!data||typeof data!=='object'||Array.isArray(data))return {errors:{name:'Provide inquiry fields.'},value};
   for(const [key,max] of Object.entries({name:100,email:254,business:160,website:500,service:40,message:3000})){
     if(data[key]!==undefined&&typeof data[key]!=='string'){errors[key]='Use plain text.';value[key]='';continue;}
     value[key]=(data[key]||'').trim();
-    if(!['website','business'].includes(key)&&!value[key])errors[key]='This field is required.';
+    if(!['website','business','service'].includes(key)&&!value[key])errors[key]=inquiryFieldMessage(key,{valueMissing:true});
     if(value[key].length>max)errors[key]=`Use no more than ${max} characters.`;
     if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Remove unsupported control characters.';
   }
-  if(!validEmail(value.email))errors.email='Enter a valid email address.';
-  value.service=resolveServiceId(value.service);
+  if(!validEmail(value.email))errors.email=inquiryFieldMessage('email',{typeMismatch:true});
+  value.service=resolveServiceId(value.service)||'unsure';
   if(!serviceIds.includes(value.service))errors.service='Choose one of the listed services.';
-  if(value.message.length<10)errors.message='Please include at least 10 characters.';
+  if(value.message.length<10)errors.message=inquiryFieldMessage('message',{tooShort:true});
   if(/^(?:none|n\/?a|no website|not yet|-)?$/i.test(value.website))value.website='';
-  if(value.website){try{if(!/^[a-z][a-z0-9+.-]*:/i.test(value.website))value.website='https://'+value.website;const url=new URL(value.website);if(!['https:','http:'].includes(url.protocol)||url.username||url.password||!url.hostname.includes('.')||/\s/.test(value.website))throw new Error();}catch{errors.website='Enter a website such as example.com or https://example.com, without a username or password.';}}
+  if(value.website){
+    const original=value.website,scheme=/^[a-z][a-z0-9+.-]*:/i.test(original);
+    if(scheme&&!/^https?:/i.test(original))errors.website='Use a website address, social handle or short note; do not include code or payment links.';
+    else try{
+      const url=new URL(scheme?original:'https://'+original);
+      if(url.username||url.password){if(scheme||original.includes('@')&&!original.startsWith('@'))errors.website='Please remove the username or password from this address.';}
+      else if(['http:','https:'].includes(url.protocol)&&url.hostname.includes('.')&&!/\s/.test(original))value.website=scheme?original:'https://'+original;
+    }catch{/* A harmless website/social note remains plain text, never a generated link. */}
+  }
   for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service))continue;value[key]=data[key];}
   if(data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
   return {errors,value};

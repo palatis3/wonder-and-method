@@ -12,4 +12,4 @@ export const guideArt = {
 
 export const guideSlug = item => item.path.split('/').filter(Boolean).at(-1);
 export const guideIllustration = item => '/assets/guides/' + guideSlug(item) + '-illustration';
-export const guideIllustrationAlt = item => guideArt[guideSlug(item)]?.map(([title, text]) => `${title}: ${text}.`).join(' ') || item.alt;
+export const guideIllustrationAlt = item => guideArt[guideSlug(item)]?.map(([title, text]) => `${title}: ${text}${/[.!?]$/.test(text)?'':'.'}`).join(' ') || item.alt;

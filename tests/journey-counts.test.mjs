@@ -7,7 +7,7 @@ import {runInNewContext} from 'node:vm';
 import worker from '../deployment/worker.mjs';
 import {saveJourneyCount,cleanJourneyCounts} from '../deployment/journey-counts.mjs';
 import {formatMeasurement} from '../deployment/production-operator.mjs';
-const migrations=await Promise.all(['0001_inquiries.sql','0002_journey_counts.sql','0004_journey_categories.sql','0006_journey_contact_events.sql','0007_journey_sources.sql'].map(n=>readFile(new URL('../deployment/migrations/'+n,import.meta.url),'utf8')));
+const migrations=await Promise.all(['0001_inquiries.sql','0002_journey_counts.sql','0004_journey_categories.sql','0006_journey_contact_events.sql','0007_journey_sources.sql','0008_journey_resource_intent.sql'].map(n=>readFile(new URL('../deployment/migrations/'+n,import.meta.url),'utf8')));
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const environment=()=>({DB:fixture(),ENVIRONMENT:'production',INQUIRY_MODE:'live',RELEASE_APPROVED:'true',JOURNEY_COUNTS:'aggregate',FINGERPRINT_SECRET:'synthetic-32-character-fingerprint-secret',OPERATOR_TOKEN:'synthetic-token'});
 const payload={event:'offer_select',service:'focused_site',page:'pricing'};

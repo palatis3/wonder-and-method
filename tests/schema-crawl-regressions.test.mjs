@@ -31,7 +31,7 @@ test('catalog offers lead to visible pricing anchors and resolve to named servic
 
 test('public sitemap and directory exclude held county routes and use recorded modification dates', () => {
   const crawl = crawlFiles(config, pages), urls = [...crawl.sitemap.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod><\/url>/g)];
-  assert.equal(urls.length, 34);
+  assert.equal(urls.length, 35);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(!urls.some(([,url])=>url===config.origin+'/payments/'));
   for (const [, url, date] of urls) assert.equal(date, dates[new URL(url).pathname].modifiedAt);
   assert.match(crawl.llms, /\/pricing\//);assert.doesNotMatch(crawl.llms, /\/checkout\/|\/areas\/monroe-county\//);
   const missing = pages.find(page => page.path === '/404/');
@@ -51,7 +51,7 @@ test('content dates change with content and stay stable across byline date updat
 
 test('edge robots policy lets readers follow excluded public resources while private flows remain restricted', async () => {
   const env = {ENVIRONMENT: 'production', RELEASE_APPROVED: 'true', SEARCH_INDEXING: 'true', ASSETS: {fetch: async () => new Response('page')}};
-  for (const route of ['/privacy/', '/work/fieldwork/', '/areas/monroe-county/']) {
+  for (const route of ['/privacy/', '/payments/', '/work/fieldwork/', '/areas/monroe-county/']) {
     const response = await worker.fetch(new Request('https://example.test' + route), env, {});
     assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, follow');
   }

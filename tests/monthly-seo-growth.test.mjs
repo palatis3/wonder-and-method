@@ -37,17 +37,10 @@ test('monthly research and reuse changes invalidate artwork rather than leaving 
  }
 });
 
-test('new SEO, care, guide and request pages expose complete output and research scope without invented metrics',()=>{
+test('monthly sales pages state concise units while full research and reuse scope remains accessible',()=>{
  const pages=renderPages({config,offers,map,geography});
- for(const path of ['/pricing/','/services/seo/','/services/website-care/','/guides/seo-work-and-reporting/']){
-  const html=pages.find(p=>p.path===path).html;
-  assert.match(html,/keyword research/i);assert.match(html,/90-day/);assert.match(html,/150 words/);assert.match(html,/keyword opportunit/i);
- }
- const seo=pages.find(p=>p.path==='/services/seo/').html;
- assert.match(seo,/difficulty.*does not|does not.*guarantee/i);
- for(const id of ['improve','grow']){
-  const html=pages.find(p=>p.path==='/checkout/'+id+'/').html;
-  assert.match(html,/Complete writing/);assert.match(html,/Monthly.*opportunity|monthly opportunity/);
-  assert.ok(html.includes(offers.plans[id].category));
- }
+ for(const path of ['/pricing/','/services/seo/','/guides/seo-work-and-reporting/']){const html=pages.find(p=>p.path===path).html;assert.match(html,/keyword research/i);assert.match(html,/90-day/);assert.match(html,/150 words/);}
+ const care=pages.find(p=>p.path==='/services/website-care/').html;assert.match(care,/Keep Running/);assert.match(care,/supplied edits|supplied.*updates/);assert.match(care,/href="\/services\/seo\/"/);assert.doesNotMatch(care,/Two substantial connected improvements/);
+ const seo=pages.find(p=>p.path==='/services/seo/').html;assert.match(seo,/does not promise a ranking/);assert.match(seo,/up to three candidates/);assert.match(seo,/up to six candidates/);
+ for(const id of ['improve','grow']){const html=pages.find(p=>p.path==='/checkout/'+id+'/').html;assert.match(html,/writing/i);assert.match(html,/research/i);assert.ok(html.includes('/assets/buyer-packs/'+id));}
 });

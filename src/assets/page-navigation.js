@@ -9,12 +9,14 @@ if(header&&topLink){
  root.classList.add('page-tools-ready');
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
  const floating=[topLink,document.querySelector('.support-chat-launch')].filter(Boolean);
- const protectedControls=[...document.querySelectorAll('main input:not([type="hidden"]),main textarea,main select,main button,.civic-controls')];
+ const protectedControls=[...document.querySelectorAll('main input:not([type="hidden"]),main textarea,main select,main button,main a,main summary,.civic-controls')];
  const updateObstructions=()=>{
-  const controls=protectedControls.map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height&&r.bottom>0&&r.top<innerHeight);
+  const active=document.activeElement;
+  const controls=[...new Set([...protectedControls,...(active&&!floating.includes(active)?[active]:[])])].filter(el=>el!==document.body&&el!==root).map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height&&r.bottom>0&&r.top<innerHeight);
+  const editing=active?.matches('input:not([type="hidden"]),textarea,select');
   for(const control of floating){
    const r=control.getBoundingClientRect();
-   const overlaps=controls.some(p=>r.left<p.right&&r.right>p.left&&r.top<p.bottom&&r.bottom>p.top);
+   const overlaps=editing||controls.some(p=>r.left<p.right&&r.right>p.left&&r.top<p.bottom&&r.bottom>p.top);
    control.classList.toggle('is-obstructing-controls',overlaps);
   }
  };

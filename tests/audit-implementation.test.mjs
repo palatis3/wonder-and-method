@@ -14,20 +14,21 @@ const pages=renderPages({config,offers,map,geography});
 
 test('current fixed-project ladder reconciles through quote, rendered choices and calculator',async()=>{
  const prices=priceList(offers);
- assert.deepEqual(prices,{launch:1400,focused:2350,signature:3700,keep_running:150,improve:400,grow:800,baseline:399,sprint:750,annual:{keep_running:1710,improve:4560,grow:9120},commercial_version:offers.version,provider_model:'client_owned_direct_billing'});
+ assert.deepEqual(prices,{launch:1400,focused:2350,signature:3700,keep_running:150,improve:400,grow:800,baseline:399,sprint:750,annual:{keep_running:1710,improve:4560,grow:9120},annual_available:offers.annual_enrollment_gate.verified===true,commercial_version:offers.version,provider_model:'client_owned_direct_billing'});
  for(const [name,price] of Object.entries(prices).slice(0,3)){
   const key=name+'_site';assert.equal(offers[key].public_price,price);
   const draft=await draftScope(key,'synthetic-ladder');
   assert.deepEqual(draft.milestones.map(m=>m.amount),[price*.5,price*.3,price*.2]);
   assert.equal(draft.accepted_at,null);
   assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+1650);
-  assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/#'+name));
+  assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/#offer-'+key));
+  assert.ok(pages.find(p=>p.path==='/pricing/').html.includes('id="offer-'+key+'"'));
   for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/contact/?offer='+key));
  }
  assert.equal(offers.plans.keep_running.monthly_price,150);assert.equal(offers.audit_sprint.one_time_price,750);assert.equal(offers.plans.improve.monthly_price,400);
  const publicCopy=pages.map(p=>p.html).join('\n');
  assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope|\$6,000|\$9,500/);
- assert.match(publicCopy,/One original animated opening or 3D scene/);
+ assert.match(pages.find(p=>p.path==='/pricing/').html,/Custom animated hero or 3D centerpiece/);
 });
 
 test('Launch survives a real synthetic request and remains recoverable without sending mail',async()=>{
@@ -70,7 +71,11 @@ test('native validation retry retains each new service without placing personal 
   for(const service of ['keep_running','improve','grow','audit_fix_sprint','<script>']){
    const response=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({name:'Synthetic',email:'private@example.test',business:'Fictional',service,message:'short'})});
    assert.equal(response.status,422);const html=await response.text();
-   if(service!=='<script>')assert.match(html,/Selected service:/);
+   if(service!=='<script>')assert.match(html,new RegExp('<option value="'+service+'" selected>'));
+   assert.match(html,/value="Synthetic"/);assert.match(html,/value="private@example.test"/);assert.match(html,/value="Fictional"/);
+   assert.match(html,/<textarea[^>]*name="message"[^>]*>short<\/textarea>/);
+   assert.match(html,/<p id="message-error" class="error">Please tell me a little about what you need \(at least 10 characters\)\.<\/p>/);
+   assert.match(html,/<textarea[^>]*name="message"[^>]*aria-invalid="true"/);
    const retry=html.match(/href="([^\"]+)"[^>]*>Return to inquiry/)[1];
    assert.equal(retry,service==='<script>'?'/contact/':'/contact/?offer='+service);
    assert.doesNotMatch(retry,/private|Synthetic|script/);
@@ -120,11 +125,11 @@ test('source-handoff scopes survive quote drafting with clear agreed delivery li
  const html=pages.map(p=>p.html).join(' ');
  assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);
  const web=pages.find(p=>p.path==='/services/web-design/').html;
- assert.match(web,/source code, approved assets and written build instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
- assert.match(web,/one initial launch/);
+ assert.match(web,/Paid source, approved assets and publishing notes/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
+ assert.match(web,/one initial launch/i);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
- assert.ok(pages.find(p=>p.path==='/services/website-care/').html.includes(offers.plans.improve.advisor));
- assert.match(pages.find(p=>p.path==='/services/seo/').html,/Your proposal records the launch work and checks/);
+ assert.ok(pages.find(p=>p.path==='/services/seo/').html.includes('20-minute call or written review'));
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/already-promised launch work do not consume a paid allowance/);
 });
 
 test('historical snapshot: provider cents survive hosting credits, overlap and the displayed estimate exactly',()=>{

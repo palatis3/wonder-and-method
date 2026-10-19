@@ -6,6 +6,11 @@ export function bindCostCalculator(calculator,prices,doc=document){
  const breakdown=doc.querySelector('#cost-breakdown');
  const errorBox=doc.querySelector('#calculator-error');
  const note=doc.querySelector('#external-note');
+ let monthlyCycles=field('cycles').value;
+ let cyclesEdited=false;
+ const annualOption=[...field('billing').options].find(option=>option.value==='annual');
+ if(annualOption){annualOption.disabled=prices.annual_available!==true;annualOption.hidden=prices.annual_available!==true;}
+ if(prices.annual_available!==true&&field('billing').value==='annual')field('billing').value='monthly';
  const update=()=>{
   const existing=field('build').value==='existing';
   const noPlan=field('plan').value==='none';
@@ -13,6 +18,8 @@ export function bindCostCalculator(calculator,prices,doc=document){
   field('billing').disabled=noPlan;
   field('cycles').readOnly=field('billing').value==='annual'&&!noPlan;
   field('baseline').disabled=!existing||field('sprint').checked;
+  const baselineLabel=field('baseline').closest?.('label');
+  if(baselineLabel)baselineLabel.hidden=!existing;
   for(const name of ['cycles','hostingMonths','external','hostingMonthly'])field(name).removeAttribute('aria-invalid');
   const f=new FormData(calculator);
   try{
@@ -21,21 +28,25 @@ export function bindCostCalculator(calculator,prices,doc=document){
    if(invalid.length){for(const name of invalid)field(name).setAttribute('aria-invalid','true');throw Error('Invalid cost inputs');}
    if(!noPlan&&Number(f.get('cycles'))>Number(f.get('hostingMonths'))){field('hostingMonths').setAttribute('aria-invalid','true');throw Error('Hosting period must include all monthly service months');}
    const v=calculateCost(prices,{build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),external:f.get('external')===''?null:Number(f.get('external')),hostingMonthly:f.get('hostingMonthly')===''?null:Number(f.get('hostingMonthly')),hostingMonths:Number(f.get('hostingMonths')),billing:noPlan?'monthly':f.get('billing')||'monthly'});
-   total.textContent=money(v.total??v.serviceTotal)+(v.total===null?' studio subtotal':' estimated total');
-   breakdown.textContent=`${money(v.once)} one-time${v.baselineFee?` (including ${money(v.baselineFee)} setup review)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 monthly cycles.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
-   note.textContent=v.total===null?'Hosting, domain and paid-tool costs are not included yet. Add confirmed provider quotes below for a complete estimate. Taxes and approved additions are extra.':'Includes studio work and the provider costs you entered. Taxes and approved additions are extra.';
+   const missing=[...(f.get('hostingMonthly')===''?['hosting']:[]),...(f.get('external')===''?['domain, email and other paid tools']:[])];
+   const knownTotal=v.knownSubtotal;
+   total.textContent=knownTotal===0?'Choose a website or service to see an estimate.':money(knownTotal)+(missing.length?' known costs':' estimated total');
+   breakdown.textContent=`${money(v.once)} one-time${v.baselineFee?` (including ${money(v.baselineFee)} Website Baseline)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
+   note.textContent=missing.length?`Includes our fees and any provider costs entered. Still to add: ${missing.join('; ')}. Taxes and approved additions are extra.`:'Includes our fees and the provider costs you entered. Taxes and approved additions are extra.';
    errorBox.textContent='';
   }catch(error){
    errorBox.textContent=error.message==='Hosting period must include all monthly service months'?'Provider months must cover all selected monthly service cycles.':error.message==='Annual billing requires one plan and twelve cycles'?'Annual prepayment covers exactly 12 monthly cycles.':'Enter whole month counts from 0 to 120 and provider costs of 0 or more.';
    total.textContent='Check the highlighted fields';breakdown.textContent='';note.textContent='The estimate will return when the inputs are valid.';
   }
  };
- calculator.addEventListener('input',update);
+ calculator.addEventListener('input',event=>{if(event.target===field('cycles')&&field('billing').value!=='annual'){cyclesEdited=true;monthlyCycles=field('cycles').value;}update();});
  calculator.addEventListener('change',event=>{
-  if(event.target===field('build')&&field('billing').value!=='annual')field('cycles').value=field('build').value==='existing'?'12':'11';
-  if(event.target===field('billing')&&field('billing').value==='annual'){
-   field('cycles').value='12';
-   if(Number(field('hostingMonths').value)<12)field('hostingMonths').value='12';
+  if(event.target===field('build')&&!cyclesEdited){monthlyCycles=field('build').value==='existing'?'12':'11';if(field('billing').value!=='annual')field('cycles').value=monthlyCycles;}
+  if(event.target===field('billing')){
+   if(field('billing').value==='annual'&&prices.annual_available===true){
+    monthlyCycles=field('cycles').value;field('cycles').value='12';
+    if(Number(field('hostingMonths').value)<12)field('hostingMonths').value='12';
+   }else{field('billing').value='monthly';field('cycles').value=monthlyCycles;}
   }
   update();
  });
@@ -43,6 +54,6 @@ export function bindCostCalculator(calculator,prices,doc=document){
  update();
  return update;
 }
-const calculator=document.querySelector('#cost-calculator');
+const calculator=typeof document==='undefined'?null:document.querySelector('#cost-calculator');
 if(calculator)fetch('/assets/prices.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw Error();return response.json();}).then(prices=>bindCostCalculator(calculator,prices)).catch(()=>{document.querySelector('#calculator-error').textContent='Calculator unavailable. Use the visible prices or email support@wonderandmethod.com.';});
-const packSelector=document.querySelector('#pack-selector');if(packSelector){document.querySelector('#pack-selector-control').hidden=false;const showPack=()=>{document.querySelectorAll('[data-pack]').forEach(item=>{item.hidden=item.dataset.pack!==packSelector.value;item.open=!item.hidden;});};packSelector.addEventListener('change',showPack);showPack();}
+const packSelector=typeof document==='undefined'?null:document.querySelector('#pack-selector');if(packSelector){document.querySelector('#pack-selector-control').hidden=false;const showPack=()=>{document.querySelectorAll('[data-pack]').forEach(item=>{item.hidden=item.dataset.pack!==packSelector.value;item.open=!item.hidden;});};packSelector.addEventListener('change',showPack);showPack();}

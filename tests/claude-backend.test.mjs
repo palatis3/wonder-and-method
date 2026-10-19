@@ -148,7 +148,7 @@ test('cache/charset policies are coherent while staging, API and private routes 
   env.DB.sqlite.close();
 });
 
-test('services goes to canonical web-design hub and every explicit error alias returns 404', async () => {
+test('services serves its own overview and every explicit error alias returns 404', async () => {
   const env = environment();
   env.ASSETS.fetch = async req => new Response(req.method === 'HEAD' ? null : '<h1>Page not found</h1>', { headers: { 'Content-Type': 'text/html' } });
   for (const path of ['/404', '/404/', '/404.html']) {
@@ -157,9 +157,12 @@ test('services goes to canonical web-design hub and every explicit error alias r
     assert.match(response.headers.get('X-Robots-Tag'), /noindex/);
     assert.match(await response.text(), /Page not found/);
   }
-  const response = await worker.fetch(request('/services/?source=test'), env, context());
-  assert.equal(response.status, 301);
-  assert.equal(response.headers.get('Location'), origin + '/services/web-design/?source=test');
+  env.ASSETS.fetch=async()=>new Response('<h1>Services overview</h1>',{headers:{'Content-Type':'text/html'}});
+  const overview=await worker.fetch(request('/services/?source=test'),env,context());
+  assert.equal(overview.status,200);assert.match(await overview.text(),/Services overview/);
+  const response = await worker.fetch(request('/services?source=test'), env, context());
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get('Location'), origin + '/services/?source=test');
   env.DB.sqlite.close();
 });
 

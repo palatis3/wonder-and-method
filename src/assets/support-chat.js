@@ -17,11 +17,12 @@ if(launcher){
  };
  const unavailable=()=>{
   if(ready)return;
+  const keepFocus=document.activeElement===launcher||document.activeElement===document.body;
   clearTimeout(timeout);
   launcher.hidden=true;
   fallback.hidden=false;
   status.textContent='Chat could not connect. Use the contact link to send a message.';
-  fallback.querySelector('a').focus();
+  if(keepFocus)fallback.querySelector('a').focus();
  };
  root.querySelector('.support-chat-dismiss').addEventListener('click',()=>{
   dismissed=true;
@@ -36,6 +37,7 @@ if(launcher){
   requested=true;
   launcher.setAttribute('aria-disabled','true');
   label.textContent='Opening chat…';
+  launcher.setAttribute('aria-label','Opening chat with Terry');
   window.Tawk_API=window.Tawk_API||{};
   window.Tawk_API.onChatMaximized=focusChat;
   const openWhenReady=()=>{

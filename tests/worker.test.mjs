@@ -75,12 +75,12 @@ test('concept questions retain their allowlisted context through native correcti
   env.DB.sqlite.close();
 });
 
-test('synthetic: edge native correction retains escaped input and annual choices, then persists only allowlisted context', async () => {
+test('synthetic: edge native correction retains escaped context without offering inactive annual enrollment', async () => {
   const env=environment(),ctx=context(),body={...valid,service:'grow',billing:'annual',priority:'graphic',priority_two:'email',baseline_status:'needed',name:'<b>Example</b>',message:'short'};
   const headers={'Content-Type':'application/x-www-form-urlencoded',Accept:'text/html'};
   const invalid=await worker.fetch(request(new URLSearchParams(body).toString(),headers),env,ctx);
   assert.equal(invalid.status,422);assert.match(invalid.headers.get('Content-Security-Policy'),/form-action 'self'/);
-  const html=await invalid.text();assert.match(html,/value="&lt;b&gt;Example&lt;\/b&gt;"/);assert.match(html,/<option value="annual" selected>/);assert.match(html,/<option value="graphic" selected>/);assert.match(html,/<option value="email" selected>/);
+  const html=await invalid.text();assert.match(html,/value="&lt;b&gt;Example&lt;\/b&gt;"/);assert.doesNotMatch(html,/value="annual"/);assert.match(html,/name="priority" value="graphic"/);assert.match(html,/name="priority_two" value="email"/);
   const retry=html.match(/href="([^\"]+)"[^>]*>Return to inquiry/)[1];assert.match(retry,/offer=grow/);assert.doesNotMatch(retry,/Example|synthetic@example|short/);
   const saved=await worker.fetch(request({...body,message:valid.message}),env,ctx);assert.equal(saved.status,202);
   const result=await saved.json();assert.equal(result.billing,'annual');assert.equal(result.priority_two,'email');assert.equal(result.name,undefined);
@@ -90,7 +90,7 @@ test('synthetic: validation, honeypot, origin and payload constraints reject bef
   const env = environment();
   for (const body of [{ ...valid, company_url: 'bot' }, { ...valid, message: 'short' }, { ...valid, service: 'injected' }, { ...valid, website: 'javascript:alert(1)' }, { ...valid, name: 'x'.repeat(101) }]) assert.equal((await worker.fetch(request(body), env, context())).status, 422);
   assert.equal((await worker.fetch(request(valid, { Origin: 'https://evil.example' }), env, context())).status, 403);
-  assert.equal((await worker.fetch(request('x'.repeat(20001)), env, context())).status, 400);
+  assert.equal((await worker.fetch(request('x'.repeat(40001)), env, context())).status, 400);
   assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n, 0);
 });
 test('synthetic: HTML fallback escapes submitted content and URL-encoded form works', async () => {
@@ -182,7 +182,7 @@ test('native edge validation retains allowlisted monthly and audit intent withou
   const env=environment();
   const res=await worker.fetch(request(new URLSearchParams({...valid,service,message:'short'}).toString(),{Accept:'text/html','Content-Type':'application/x-www-form-urlencoded'}),env,context());
   assert.equal(res.status,422);const html=await res.text();
-  if(service!=='invented')assert.match(html,/Selected service:/);
+  if(service!=='invented')assert.match(html,/Your selected request/);
   const retry=html.match(/href="([^\"]+)"[^>]*>Return to inquiry/)[1];
   assert.equal(retry,service==='invented'?'/contact/':'/contact/?offer='+service);
   assert.doesNotMatch(retry,/synthetic@example|Synthetic/);

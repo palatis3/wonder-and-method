@@ -23,7 +23,7 @@ test('all project actions lead to proposal mode; question actions remain questio
  for(const href of new Set(destinations)){
   await page.goto(href);
   await expect(page.locator('#request_kind')).toHaveValue('checkout');
-  await expect(page.locator('#request-summary')).toContainText('Proposal request only');
+  await expect(page.locator('#request-summary')).toContainText('Proposal request');
   await expect(page.getByRole('button',{name:'Request a proposal',exact:true})).toBeVisible();
  }
  await page.goto('/contact/?request_kind=question#inquiry');
@@ -34,17 +34,17 @@ test('all project actions lead to proposal mode; question actions remain questio
 test('anchored monthly requests show context first and retain fixed service and priorities when switching',async({page})=>{
  await page.goto('/checkout/grow/?offer=launch_site&priority=page&priority_two=article&billing=monthly#inquiry');
  const summary=page.getByRole('group',{name:'Selected request',exact:true});
- await expect(summary).toContainText('Grow');await expect(summary).toContainText('one business day');
+ await expect(summary).toContainText('Grow');await expect(summary).not.toContainText('one business day');await expect(page.locator('.inquiry-response-time')).toContainText('one business day');
  await expect(page.locator('#service')).toHaveValue('grow');
  const summaryBox=await summary.boundingBox(),nameBox=await page.locator('#name').boundingBox();
  expect(summaryBox.y).toBeGreaterThanOrEqual(0);expect(summaryBox.y).toBeLessThan(250);expect(summaryBox.y+summaryBox.height).toBeLessThanOrEqual(nameBox.y);
  await expect(page.locator('[data-request-label]')).toContainText('existing website');
- await page.getByRole('link',{name:'Change request type',exact:true}).click();
+ await page.getByRole('link',{name:"Change what you're asking for",exact:true}).click();
  await page.locator('#request_kind').selectOption('question');
- await expect(page.locator('#request-summary')).toContainText('Question only');
+ await expect(page.locator('#request-summary')).toContainText('Question');
  await expect(page.locator('#request-summary')).not.toContainText('$');
  await page.locator('#request_kind').selectOption('checkout');
- await expect(page.locator('#request-summary')).toContainText('Research and write an article');
+ expect((await page.locator('#request-summary').textContent()).length).toBeLessThan(160);
  await expect(page.locator('#priority')).toHaveValue('page');await expect(page.locator('#priority_two')).toHaveValue('article');
 });
 
@@ -68,18 +68,42 @@ test('inquiry validation, failed submission, retry and focused receipt use a moc
  expect(calls).toBe(2);expect(payloads[1]).toEqual(payloads[0]);expect(payloads[1]).toMatchObject({service:'improve',request_kind:'question'});
 });
 
-test('pricing choices update totals, setup exceptions and annual cycles',async({page})=>{
+test('pricing choices preserve known provider costs, setup exceptions and closed annual gate',async({page})=>{
  await page.goto('/pricing/?qa=1');
- await expect(page.locator('.pricing-overview')).toContainText('4 guides + motion centerpiece');
- await expect(page.locator('.editing-model').first()).toContainText('visual drag-and-drop editor is not included');
  await page.getByText('Estimate your first-year cost',{exact:true}).click();
+ await page.locator('#plan').selectOption('improve');await expect(page.locator('#cycles')).toHaveValue('11');
  await page.locator('#build').selectOption('existing');await page.locator('#plan').selectOption('improve');
- await expect(page.locator('#cost-total')).toHaveText(money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+' studio subtotal');
+ await expect(page.locator('#cycles')).toHaveValue('12');
+ await expect(page.locator('#cost-total')).toHaveText(money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+' known costs');
  await page.locator('input[name="baseline"]').uncheck();
- await expect(page.locator('#cost-total')).toHaveText(money(12*offers.plans.improve.monthly_price)+' studio subtotal');
+ const studio=12*offers.plans.improve.monthly_price;
+ await expect(page.locator('#cost-total')).toHaveText(money(studio)+' known costs');
+ await page.locator('.provider-estimate summary').click();await page.locator('#hosting-monthly').fill('25');
+ await expect(page.locator('#cost-total')).toHaveText(money(studio+300)+' known costs');
+ await expect(page.locator('#external-note')).toContainText('Still to add: domain, email and other paid tools');
+ await page.locator('#external').fill('50');await expect(page.locator('#cost-total')).toHaveText(money(studio+350)+' estimated total');
+ await expect(page.locator('#billing option[value="annual"]')).toHaveCount(0);
+ await page.locator('#build').selectOption('launch');await expect(page.locator('#cycles')).toHaveValue('11');
+ await page.locator('#cycles').fill('8');await page.locator('#build').selectOption('existing');await expect(page.locator('#cycles')).toHaveValue('8');
+});
+
+test('authorized annual calculator fixture restores monthly cycles after switching back',async({page})=>{
+ // The public gate stays closed. This local fixture exercises the supported
+ // future state without changing saved offers or enabling enrollment.
+ await page.route('http://127.0.0.1:4187/pricing/?qa=annual-fixture',async route=>{
+  const response=await route.fetch(),html=await response.text();
+  await route.fulfill({response,body:html.replace('<option value="monthly">Monthly invoices</option>','<option value="monthly">Monthly invoices</option><option value="annual">Annual prepaid — 12 service cycles</option>')});
+ });
+ await page.route('http://127.0.0.1:4187/assets/prices.json',async route=>{
+  const response=await route.fetch(),prices=await response.json();await route.fulfill({response,json:{...prices,annual_available:true}});
+ });
+ await page.goto('/pricing/?qa=annual-fixture');await page.getByText('Estimate your first-year cost',{exact:true}).click();
+ await page.locator('#plan').selectOption('improve');await expect(page.locator('#cycles')).toHaveValue('11');
  await page.locator('#billing').selectOption('annual');await expect(page.locator('#cycles')).toHaveValue('12');
  await expect(page.locator('#cycles')).toHaveJSProperty('readOnly',true);
- await expect(page.locator('#cost-total')).toHaveText(money(offers.plans.improve.annual.upfront_price)+' studio subtotal');
+ await expect(page.locator('#cost-breakdown')).toContainText(money(offers.plans.improve.annual.upfront_price)+' paid upfront for 12 months');
+ await page.locator('#billing').selectOption('monthly');await expect(page.locator('#cycles')).toHaveValue('11');await expect(page.locator('#cycles')).toHaveJSProperty('readOnly',false);
+ await page.locator('#cycles').fill('8');await page.locator('#billing').selectOption('annual');await page.locator('#billing').selectOption('monthly');await expect(page.locator('#cycles')).toHaveValue('8');
 });
 
 test('portfolio previews, SEO topic navigation and early process overview work by keyboard',async({page,isMobile})=>{
@@ -87,14 +111,16 @@ test('portfolio previews, SEO topic navigation and early process overview work b
  const preview=page.locator('#fieldwork a.work-preview');await preview.focus();await expect(preview).toBeFocused();
  await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/fieldwork\//);await expect(page.locator('.concept-notice')).toContainText('Fictional concept');
  await page.goto('/services/seo/?qa=1');
- const topics=page.getByRole('navigation',{name:'SEO topics'});
- await topics.getByRole('link',{name:'Plans & first payment'}).click();
- await expect(page.locator('.seo-plan-summary')).toContainText(money(offers.plans.improve.monthly_price+offers.baseline.one_time_price));
- await topics.getByRole('link',{name:'Limits',exact:true}).click();
- await expect(page.locator('#seo-limits')).toHaveAttribute('open','');
+ const request=page.getByRole('link',{name:'Request Improve',exact:true});await request.focus();await page.keyboard.press('Enter');
+ await expect(page).toHaveURL(/\/checkout\/improve\/\?billing=monthly/);await expect(page.locator('#service')).toHaveValue('improve');
+ await page.goto('/services/seo/?qa=1');
+ const limits=page.locator('summary').filter({hasText:'Research and task limits'});await limits.focus();await page.keyboard.press('Enter');
+ await expect(limits.locator('..')).toHaveAttribute('open','');await expect(limits.locator('..')).toContainText('research limits, not promised new pages or rankings');
  await page.goto('/process/?qa=1');
- await expect(page.locator('.process-route a')).toHaveCount(6);
- const box=await page.locator('.process-route').boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
+ const firstStep=page.getByRole('heading',{name:'Fit',exact:true});await expect(firstStep).toBeVisible();
+ const box=await firstStep.boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
+ for(const name of ['Quote and book','Design and build','Approve and launch','Hand over and correct','Optional ongoing service'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
+ const handoff=page.getByRole('link',{name:'Inspect an example delivery folder',exact:true});await handoff.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/source-handoff\//);
 });
 
 test('main buying pages fit small viewports and reduced motion stays honored',async({page,isMobile},testInfo)=>{

@@ -54,8 +54,8 @@ test('supporting guide approvals gate every incoming link and retain distinct re
   const svg=await readFile(new URL(`../src/assets/guides/${guide.image}.svg`,import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);
   const png=await readFile(new URL(`../src/assets/guides/${guide.image}-social.png`,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
- const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/observed_result/);assert.match(maintenance,/"Untested"/);assert.match(maintenance,/not client work/);
- const contractor=await readFile(new URL('../src/assets/guides/contractor-website-worksheet.csv',import.meta.url),'utf8');assert.match(contractor,/approved_project_evidence/);assert.match(contractor,/receipt_and_response_process/);assert.match(contractor,/not client work/);
+ const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/"Observed result"/);assert.match(maintenance,/"Untested"/);assert.match(maintenance,/not client work/);
+ const contractor=await readFile(new URL('../src/assets/guides/contractor-website-worksheet.csv',import.meta.url),'utf8');assert.match(contractor,/"Approved project evidence"/);assert.match(contractor,/"Receipt and response process"/);assert.match(contractor,/not client work/);
 });
 
 test('county offer references and maintenance costs follow the commercial configuration',()=>{

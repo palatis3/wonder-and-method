@@ -3,7 +3,7 @@ export function validateDemo(values){
  const errors={};
  if(!String(values.name||'').trim())errors.name='Enter a sample name, or use the sample details button.';
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(values.email||'').trim()))errors.email='Enter a sample email such as sample@example.test.';
- if(String(values.message||'').trim().length<10)errors.message='Add at least 10 characters describing the example request.';
+ if(values.concept!=='hearthside'&&String(values.message||'').trim().length<10)errors.message='Add at least 10 characters describing the example request.';
  if(values.concept==='hearthside'&&(!Number.isInteger(Number(values.quantity))||Number(values.quantity)<1||Number(values.quantity)>8))errors.quantity='Choose a whole quantity from 1 to 8.';
  return errors;
 }
@@ -15,7 +15,10 @@ export function bindConceptDemo(form,doc=globalThis.document){
  const extraNames=(form.dataset.concept==='hearthside'?['quantity','time']:['area','timing']).filter(key=>fields.namedItem(key));
  const names=['name','email','service','message',...extraNames];
  const errorNames=['name','email','message',...(extraNames.includes('quantity')?['quantity']:[])];
- const selected=new URLSearchParams(globalThis.location?.search||'').get('service');
+ const requested=new URLSearchParams(globalThis.location?.search||'').get('service');
+ const options=[...fields.namedItem('service').options];
+ const legacyPizza=form.dataset.concept==='hearthside'&&['Classic cheese','Pepperoni','Garden'].find(name=>requested?.startsWith(name));
+ const selected=options.find(option=>option.value===requested)?.value||(legacyPizza?options.find(option=>option.value.startsWith(legacyPizza))?.value:null);
  const restoreChoice=()=>{if([...fields.namedItem('service').options].some(o=>o.value===selected))fields.namedItem('service').value=selected;};
  const clearErrors=()=>{for(const key of errorNames){fields.namedItem(key).removeAttribute('aria-invalid');doc.getElementById(`concept-${key}-error`).textContent='';}};
  form.addEventListener('submit',event=>{

@@ -12,6 +12,7 @@ test('chat requires actual identifiers, verified delivery and privacy, and stays
  assert.equal(supportChatConfig({...c,mode:'staging',formMode:'synthetic'}),null);
  assert.equal(supportChatCsp({...c,supportChat:{enabled:false}}),null);
  assert.equal(supportChatCsp(c).script,'https://embed.tawk.to https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js');
+ assert.doesNotMatch(JSON.stringify(supportChatCsp(c)),/fonts\.googleapis|fonts\.gstatic/);
  assert.doesNotMatch(supportChatCsp(c).script,/\*\.tawk\.to/);
  for(const mutation of [{propertyId:'not-a-property'},{widgetId:'../script'},{verified:false}])assert.throws(()=>supportChatConfig({...c,supportChat:{...c.supportChat,...mutation}}));
  assert.throws(()=>supportChatConfig({...c,privacy:{processors:[{name:'tawk.to'}]}}));
@@ -31,7 +32,7 @@ function browser(){
  const document={body:{},activeElement:null,querySelector:s=>s==='#support-chat-status'?status:launcher,querySelectorAll:()=>[],createElement:()=>({events:{},addEventListener(name,callback){this.events[name]=callback;}}),head:{append:el=>appended.push(el)}};
  runInNewContext(source,{window,document,MutationObserver:class{observe(){}disconnect(){}},setTimeout:fn=>{timeouts.set(++nextTimer,fn);return nextTimer;},clearTimeout:id=>timeouts.delete(id)});
  const load=()=>{window.Tawk_API.maximize=()=>maximized++;window.Tawk_API.hideWidget=()=>hidden++;window.Tawk_API.onBeforeLoad();window.Tawk_API.onLoad();};
- return {launcher,label,fallback,root,status,focus:()=>focused,appended,timeouts,click:()=>events.click(),dismiss:()=>dismissEvents.click(),load,counts:()=>({maximized,hidden})};
+ return {launcher,label,fallback,root,status,focus:()=>focused,appended,timeouts,click:()=>{document.activeElement=launcher;events.click();},moveFocus:()=>{document.activeElement={};},dismiss:()=>dismissEvents.click(),load,counts:()=>({maximized,hidden})};
 }
 test('chat has no external request until clicked and loads once before opening',()=>{
  const b=browser();assert.equal(b.launcher.hidden,false);assert.equal(b.appended.length,0);
@@ -47,4 +48,9 @@ test('chat connection failure exposes the contact fallback and dismissal prevent
   assert.equal(b.focus(),'fallback');assert.match(b.status.textContent,/Chat could not connect/);
   b.dismiss();b.load();assert.equal(b.root.hidden,true);assert.deepEqual(b.counts(),{maximized:0,hidden:1});
  }
+});
+
+test('delayed chat failure does not steal focus after the visitor moves elsewhere',()=>{
+ const b=browser();b.click();b.moveFocus();[...b.timeouts.values()][0]();
+ assert.equal(b.fallback.hidden,false);assert.equal(b.focus(),'');assert.match(b.status.textContent,/could not connect/);
 });

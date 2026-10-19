@@ -1,11 +1,21 @@
-import {validateInquiry} from './inquiry.mjs';
+import {validateInquiry,inquiryFieldMessage} from './inquiry.mjs';
 import {inquiryConfirmationHtml} from './inquiry-confirmation.mjs';
 import {selectedInquiryContext} from './shared.mjs';
+
+export function emailTypoSuggestion(email=''){
+  const split=String(email).trim().split('@');if(split.length!==2||!split[0])return '';
+  const domain=split[1].toLowerCase(),known={'gmail.con':'gmail.com','gmail.cmo':'gmail.com','gmial.com':'gmail.com','gamil.com':'gmail.com','yahoo.con':'yahoo.com','yahoo.cmo':'yahoo.com','outlook.con':'outlook.com','outlook.cmo':'outlook.com','hotmail.con':'hotmail.com','hotmail.cmo':'hotmail.com'};
+  return known[domain]?split[0]+'@'+known[domain]:'';
+}
 
 export function bindInquirySubmission(form, {countJourney=()=>{}, document=globalThis.document, fetch=globalThis.fetch, FormData=globalThis.FormData}={}) {
   const status=document.querySelector('#form-status');
   const confirmation=document.querySelector('#inquiry-confirmation');
   const button=form.querySelector('[type=submit]');
+  const email=form.elements.namedItem('email'),emailHint=document.getElementById('email-hint');
+  const showEmailHint=()=>{if(emailHint){const suggestion=emailTypoSuggestion(email?.value);emailHint.textContent=suggestion?'Did you mean '+suggestion+'? You can change the address above, or keep it as entered.':'';}};
+  email?.addEventListener?.('input',showEmailHint);
+  email?.addEventListener?.('blur',showEmailHint);
   let pending=false;
   const focusInvalid=input=>{let details=input.closest?.('details');while(details){details.open=true;details=details.parentElement?.closest('details');}input.focus();};
   form.addEventListener('submit',async event=>{
@@ -16,15 +26,16 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       const error=document.getElementById(input.id+'-error');
       if(!error)continue;
       const valid=input.checkValidity();
-      error.textContent=valid?'':`Error: ${input.validationMessage}`;
+      error.textContent=valid?'':inquiryFieldMessage(input.name||input.id,input.validity);
       input.setAttribute('aria-invalid',String(!valid));
       if(!valid&&!first)first=input;
     }
     if(first){focusInvalid(first);return;}
+    showEmailHint();
     const validation=validateInquiry(Object.fromEntries(new FormData(form)));
     for(const [key,message] of Object.entries(validation.errors)){
       const input=form.elements.namedItem(key),error=document.getElementById(key+'-error');
-      if(input&&error){error.textContent='Error: '+message;input.setAttribute('aria-invalid','true');first??=input;}
+      if(input&&error){error.textContent=message;input.setAttribute('aria-invalid','true');first??=input;}
     }
     if(Object.keys(validation.errors).length){if(first)focusInvalid(first);else{status.textContent='Please check your details, or email support@wonderandmethod.com.';status.focus();}return;}
     const submitted=validation.value;
@@ -43,7 +54,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       if(!response.ok){
         for(const [key,message] of Object.entries(result?.errors||{})){
           const input=form.elements.namedItem(key),error=document.getElementById(key+'-error');
-          if(input&&error){error.textContent='Error: '+message;input.setAttribute('aria-invalid','true');first??=input;}
+          if(input&&error){error.textContent=message;input.setAttribute('aria-invalid','true');first??=input;}
         }
         throw new Error(result?.message||'The inquiry could not be saved. Your entries remain here; please try again.');
       }

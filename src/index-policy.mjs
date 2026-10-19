@@ -1,7 +1,7 @@
 // County resources stay available; search focus requires local, distinct proof.
 export const countyIndexPolicy={niagara:true,monroe:false,onondaga:false,albany:false,dutchess:false,oneida:false,orange:false,rockland:false,saratoga:false};
 
-export function privateRoute(path){let clean;try{clean=decodeURIComponent(path).replace(/\/index\.html$/,'/').replace(/\.html$/,'/');}catch{return true;}return /^\/(?:api|assets|checkout|payments)(?:\/|$)/.test(clean)||/^\/(?:404|version\.json)(?:\/|$)/.test(clean);}
+export function privateRoute(path){let clean;try{clean=decodeURIComponent(path).replace(/\/index\.html$/,'/').replace(/\.html$/,'/');}catch{return true;}return /^\/(?:api|assets|checkout)(?:\/|$)/.test(clean)||/^\/(?:404|version\.json)(?:\/|$)/.test(clean);}
 
 // Shared editorial eligibility; the global release hold remains a separate gate.
 export function routeIndexEligible(path){

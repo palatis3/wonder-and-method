@@ -22,6 +22,10 @@ export async function inquiryStatus(env, now = Date.now()) {
   const heartbeat = migrationReady ? await env.DB.prepare("SELECT last_success_at FROM operation_health WHERE name='inquiry-recovery'").first() : null;
   const live = env.INQUIRY_MODE==='live' && env.RELEASE_APPROVED==='true';
   const configured = Boolean(env.RESEND_API_KEY && env.NOTIFICATION_FROM && env.NOTIFICATION_TO);
+  const configuredLimit=Number(env.NOTIFICATION_DAILY_LIMIT??50);
+  const dailyLimit=Number.isSafeInteger(configuredLimit)&&configuredLimit>=1&&configuredLimit<=2000?configuredLimit:50;
+  const quota=await env.DB.prepare('SELECT hits FROM rate_limits WHERE key=?').bind('notification-quota:'+Math.floor(now/86400_000)).first();
+  const budget={used:quota?.hits||0,limit:dailyLimit,resets_at:(Math.floor(now/86400_000)+1)*86400_000};
   // Production recovery runs hourly; allow fifteen minutes of scheduling margin.
   const stale = !heartbeat || now-heartbeat.last_success_at>75*60_000;
   const reasons = [];
@@ -33,9 +37,10 @@ export async function inquiryStatus(env, now = Date.now()) {
   if (live && stale) reasons.push('recovery_heartbeat_missing_or_stale');
   if (attention.manual_review) reasons.push('manual_review_required');
   if (attention.pending_over_ten_minutes) reasons.push('notification_backlog');
-  if(retention?.due||retention?.unconfirmed_old)reasons.push('retention_review_due');
+  if(live&&budget.used>=budget.limit)reasons.push('notification_budget_exhausted');
+  const retentionReview=Boolean(retention?.due||retention?.unconfirmed_old);
   return {total:results.reduce((sum,row)=>sum+row.total,0),delivery:Object.fromEntries(results.map(row=>[row.delivery_status,row.total])),
-    containsInquiryText:false, checked_at:now, attention:{manual_review:attention.manual_review||0,pending_over_ten_minutes:attention.pending_over_ten_minutes||0,oldest_pending_at:attention.oldest_pending_at,retention:{due:retention?.due||0,unconfirmed_old:retention?.unconfirmed_old||0}},
+    containsInquiryText:false, checked_at:now, attention:{manual_review:attention.manual_review||0,pending_over_ten_minutes:attention.pending_over_ten_minutes||0,oldest_pending_at:attention.oldest_pending_at,notification_budget:budget,retention:{due:retention?.due||0,unconfirmed_old:retention?.unconfirmed_old||0,review_required:retentionReview,reason:retentionReview?'retention_review_due':null}},
     health:{ok:reasons.length===0,reasons,live,notification_configured:configured,recovery:{migration_ready:migrationReady,last_success_at:heartbeat?.last_success_at??null,stale}},
-    note:'Counts cover saved inquiries; provider acceptance does not prove inbox delivery. Check the owner mailbox and response obligations separately.'};
+    note:'Delivery health and retention attention are separate. Retention review never implies records were deleted. Counts cover saved inquiries; provider acceptance does not prove inbox delivery. Check the owner mailbox and response obligations separately.'};
 }

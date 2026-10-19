@@ -1,0 +1,13 @@
+-- Preserve all historical dimensions and totals. Add resource/goal clicks and other search.
+CREATE TABLE journey_counts_resources (
+ day TEXT NOT NULL,
+ event TEXT NOT NULL CHECK(event IN ('page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open','resource_select','goal_new_website','goal_redesign','goal_fix','goal_search','goal_care')),
+ service TEXT NOT NULL CHECK(service IN ('launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure')),
+ page TEXT NOT NULL CHECK(page IN ('404','about','accessibility','areas','areas_albany_county','areas_dutchess_county','areas_erie_county','areas_monroe_county','areas_niagara_county','areas_oneida_county','areas_onondaga_county','areas_orange_county','areas_rockland_county','areas_saratoga_county','checkout_audit_fix_sprint','checkout_focused_site','checkout_grow','checkout_improve','checkout_keep_running','checkout_launch_site','checkout_signature_site','checkout_website_baseline','contact','county','guide','guide_index','guides_ai_website_or_custom','guides_contact_form_not_working','guides_contractor_website_checklist','guides_custom_website_or_template','guides_local_seo_profile_eligibility','guides_seo_work_and_reporting','guides_service_area_pages','guides_website_audit_checklist','guides_website_care_versus_seo','guides_website_launch_checklist','guides_website_maintenance_checklist','guides_website_maintenance_cost','guides_website_migration_checklist','guides_website_not_showing_on_google','guides_website_project_cost','guides_website_redesign_brief','guides_website_repair_or_redesign','home','other','payments','pricing','privacy','process','request','service','services','service_audit','service_care','service_contractors','service_new','service_redesign','service_seo','terms','work','work_demo','work_fieldwork','work_fieldwork_landscaping','work_fieldwork_request','work_hearthside','work_hearthside_menu','work_hearthside_request','work_northline','work_northline_remodeling','work_northline_request','work_source_handoff','work_studio_search')),
+ source TEXT NOT NULL DEFAULT 'not_recorded' CHECK(source IN ('ai_assistant','bing','campaign','direct','google','internal','not_recorded','referral','search','social')),
+ total INTEGER NOT NULL CHECK(total >= 0 AND total <= 1000000),
+ PRIMARY KEY(day,event,service,page,source)
+) WITHOUT ROWID;
+INSERT INTO journey_counts_resources (day,event,service,page,source,total) SELECT day,event,service,page,source,total FROM journey_counts;
+DROP TABLE journey_counts;
+ALTER TABLE journey_counts_resources RENAME TO journey_counts;

@@ -8,9 +8,12 @@ import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_
 import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
 import { allowInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
+import {publicRouteRedirect} from './public-route-canonical.mjs';
 
 const encoder = new TextEncoder();
-const MAX_BODY = 20_000;
+// URL-encoded Unicode needs up to nine bytes per UTF-16 code unit. The legal
+// 3,000-character message plus all bounded fields fits below this hard limit.
+const MAX_BODY = 40_000;
 const LIVE = env => env.INQUIRY_MODE === 'live' && env.RELEASE_APPROVED === 'true';
 function withTransportPolicy(response,request,env){
   const url=new URL(request.url);
@@ -36,9 +39,10 @@ function respond(request, status, message, reference = null, errors, service, ch
   if (request.headers.get('Accept')?.includes('application/json')) return Response.json(data, { status, headers });
   headers['Content-Type'] = 'text/html; charset=utf-8';
   // Native correction POSTs need a same-origin Origin; never send a cross-site referrer.
-  if (errors) headers['Referrer-Policy'] = 'same-origin';
+  const retry=errors?choices:flags.retry;
+  if (retry) headers['Referrer-Policy'] = 'same-origin';
   headers['Content-Security-Policy'] = "default-src 'none'; style-src 'self'; font-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'";
-  return new Response(inquiryResponseHtml({...data,retry:errors?choices:undefined}), { status, headers });
+  return new Response(inquiryResponseHtml({...data,status,retry,live:flags.live===true}), { status, headers });
 }
 async function readLimited(stream, max = MAX_BODY) {
   if (!stream) return '';
@@ -125,7 +129,7 @@ function notificationMessage(env, id, inquiry) {
   const subjectName = String(inquiry.business || inquiry.name || '').replace(/[\r\n\u0000-\u001f]/g, ' ').slice(0, 100);
   return {
     from: env.NOTIFICATION_FROM, to: [env.NOTIFICATION_TO], reply_to: inquiry.email,
-    subject: `[Project inquiry] ${service} — ${subjectName}`,
+    subject: `[${inquiry.request_kind==='question'?'Question':'Proposal request'}] ${service} — ${subjectName}`,
     text: ['Website inquiry', `Reference: ${id}`, `Name: ${inquiry.name}`, `Email: ${inquiry.email}`,
       `Business: ${inquiry.business || 'Not supplied'}`, `Website: ${inquiry.website || 'Not supplied'}`,
       `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`].join('\n\n')
@@ -156,19 +160,21 @@ export async function retryPendingInquiries(env, send = fetch, now = Date.now(),
 }
 
 async function submit(request, env, ctx) {
-  if (request.method !== 'POST') return respond(request, 405, 'Use the inquiry form.');
+  if (request.method !== 'POST') return respond(request, 405, 'Please use the contact form to send your question or project details.');
   const origin = new URL(request.url).origin;
-  if (request.headers.get('Origin') !== origin) return respond(request, 403, 'Submit from this website.');
-  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return respond(request, 503, 'We could not save your inquiry. Please try again or email support@wonderandmethod.com.');
+  if (request.headers.get('Origin') !== origin) return respond(request, 403, 'Please send this from the contact page on wonderandmethod.com.');
   let data;
-  try { data = await parseBody(request); } catch { return respond(request, 400, 'Use the form fields within the stated limits.'); }
+  try { data = await parseBody(request); } catch { return respond(request, 400, 'Something in the form could not be read. Please return to the form, shorten a very long entry, or email support@wonderandmethod.com.'); }
   // Do not identify the trap field or claim that an unstored message was saved.
   if (data && typeof data === 'object' && (data._faxcheck||data.company_url)) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
   const { errors, value } = validateInquiry(data);
-  if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value);
+  if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value,{live:LIVE(env)});
+  const recover=(status,message,flags={})=>respond(request,status,message,null,undefined,value.service,value,{retry:value,live:LIVE(env),...flags});
+  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return recover(503, 'We could not save your inquiry. Your entries are kept here. Please try again or email support@wonderandmethod.com.');
+  try {
   const now = Date.now();
   const rate=await allowInquiryRate(env,request.headers.get('CF-Connecting-IP')||'local-unknown',now,fingerprint);
-  if (!rate.allowed) return respond(request, 429, 'Too many attempts. Please try again later or email support@wonderandmethod.com.',null,undefined,undefined,{}, {retryAfter:rate.retryAfter});
+  if (!rate.allowed) return recover(429, `Several requests have been sent from this connection. Please wait about ${Math.ceil(rate.retryAfter/60)} minute${Math.ceil(rate.retryAfter/60)===1?'':'s'}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter:rate.retryAfter});
   const synthetic = !LIVE(env);
   const id = crypto.randomUUID();
   const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
@@ -183,6 +189,10 @@ async function submit(request, env, ctx) {
   if (!record) throw new Error('storage-incomplete');
   if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiry(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
   return respond(request, 202, synthetic ? 'Synthetic test recorded. No email was sent and no inbox receipt is claimed.' : (value.request_kind==='question'?'Thank you. Your question is saved for the studio to review. Keep this reference for your records.':'Thank you. Your project details are saved for the studio to review. Keep this reference for your records.'), record.id, undefined, value.service, value, { synthetic });
+  } catch {
+    console.error('inquiry_storage_failed');
+    return recover(503,'We could not confirm that your request was saved. Your entries are kept here; please try again or email support@wonderandmethod.com.');
+  }
 }
 
 async function operator(request, env) {
@@ -204,7 +214,8 @@ async function operator(request, env) {
     const availableSince=comparisonSince<coverage.retainedSince?coverage.retainedSince:comparisonSince;
     const {results:daily}=await env.DB.prepare('SELECT day,event,service,page,SUM(total) AS total FROM journey_counts WHERE day>=? GROUP BY day,event,service,page ORDER BY day,event,service,page').bind(availableSince).all();
     const {results:bySource}=await env.DB.prepare("SELECT source,SUM(total) AS total FROM journey_counts WHERE day>=? AND event='page_view' GROUP BY source ORDER BY source").bind(since).all();
-    return Response.json({days,since,comparisonSince,coverage,counts:results,daily,bySource,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates. Source categories are approximate; earlier rows have no source recorded. Coverage describes retention eligibility, not uninterrupted collection; pre-collection dates and outages are not verified. The current UTC day may be incomplete.'},{headers:{'Cache-Control':'no-store'}});
+    const {results:arrivals}=await env.DB.prepare("SELECT page,service,source,SUM(total) AS total FROM journey_counts WHERE day>=? AND event='page_view' AND source NOT IN ('internal','not_recorded') GROUP BY page,service,source ORDER BY page,service,source").bind(since).all();
+    return Response.json({days,since,comparisonSince,coverage,counts:results,daily,bySource,arrivals,note:'Aggregate event totals, not unique visitors, linked journeys or conversion rates. Arrivals exclude internal and unrecorded sources; direct includes absent referrers and can include reloads. Source categories are approximate; earlier rows have no source recorded. Coverage describes retention eligibility, not uninterrupted collection; pre-collection dates and outages are not verified. The current UTC day may be incomplete.'},{headers:{'Cache-Control':'no-store'}});
   }
   if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,source,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page,source LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
@@ -327,9 +338,8 @@ export default {
         if (!await secretEqual(supplied, expected)) return new Response('Private staging. Authentication required.', { status: 401, headers: { 'WWW-Authenticate': 'Basic realm="Private staging", charset="UTF-8"', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow, noarchive' } });
       }
       let response;
-      if(env.PUBLIC_ORIGIN&&url.origin!==env.PUBLIC_ORIGIN&&['GET','HEAD'].includes(request.method))response=Response.redirect(env.PUBLIC_ORIGIN+url.pathname+url.search,308);
-      else if (['/services', '/services/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) response = Response.redirect(new URL('/services/web-design/' + url.search, url), 301);
-      else if (['/work/content-editor', '/work/content-editor/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) response = Response.redirect(new URL('/work/source-handoff/' + url.search, url), 301);
+      const canonicalTarget=publicRouteRedirect(url,request.method,env.PUBLIC_ORIGIN);
+      if(canonicalTarget)response=Response.redirect(canonicalTarget,308);
       else if (url.pathname.startsWith('/api/operator/')) response = await operator(request, env);
       else if (url.pathname === '/api/journey-counts') response = await saveJourneyCount(request,env,{readLimited,fingerprint});
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);
@@ -375,7 +385,8 @@ export default {
       const type = result.headers.get('Content-Type');
       if (/^(?:text\/(?:plain|csv|html))(?:;|$)/i.test(type || '') && !/charset=/i.test(type)) result.headers.set('Content-Type', `${type}; charset=utf-8`);
       if (url.pathname.startsWith('/assets/') || url.pathname.startsWith('/civic-sculpture/')) {
-        result.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+        const publicShareImage=/^\/assets\/(?:brand|social)\/[^/]+\.(?:png|jpe?g|webp|avif|svg)$/i.test(url.pathname)&&/^image\//i.test(type||'');
+        result.headers.set('Cross-Origin-Resource-Policy', publicShareImage?'cross-origin':'same-origin');
         // Scope, price and worksheet documents must be revalidated even at an
         // unversioned address. Media and versioned code retain their short cache.
         const publicDocument=/^(?:text\/(?:html|plain|csv)|application\/json)(?:;|$)/i.test(type||'')||/\.(?:html|txt|csv|json)$/i.test(url.pathname)||url.pathname.startsWith('/assets/buyer-packs/');

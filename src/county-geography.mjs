@@ -249,7 +249,8 @@ export const countyGeography = {
     },
     "sources": [
       "https://www.ny.gov/counties/orange",
-      "https://www.tuxedogov.org/DocumentCenter/View/1209/1pt0144-Summary-of-Status-of-Consolida"
+      "https://www.tuxedogov.org/DocumentCenter/View/1209/1pt0144-Summary-of-Status-of-Consolida",
+      "https://tuxedogov.org/DocumentCenter/View/672/2021"
     ],
     "communities": [
       {
@@ -455,7 +456,8 @@ export const countyGeography = {
     },
     "sources": [
       "https://www.albanycountyny.gov/rptsa?contentId=91af03fe-9657-487c-a117-098bc13733b5",
-      "https://www.ny.gov/counties/albany"
+      "https://www.ny.gov/counties/albany",
+      "https://www.tax.ny.gov/research/property/legal/localop/village.htm"
     ],
     "communities": [
       {

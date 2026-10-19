@@ -11,3 +11,11 @@
 .support-chat-dismiss{position:absolute;right:.25rem;top:.25rem;min-width:44px;min-height:44px;border:0;background:transparent;color:#0e1b2a;cursor:pointer;font-size:1.3rem}
 @media(max-width:767px){.support-chat{max-width:100%}}
 @media print{.support-chat{display:none}}
+
+@media(max-width:767px),(max-height:520px){
+ .support-chat-launch{width:48px;height:48px;min-height:48px;padding:0;border-radius:50%;display:flex}
+ .support-chat-launch>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+.support-chat-launch[aria-disabled=true]{cursor:progress}
+.support-chat-fallback{font-size:1rem}
+.support-chat-fallback a{display:inline-flex;align-items:center;min-height:44px}

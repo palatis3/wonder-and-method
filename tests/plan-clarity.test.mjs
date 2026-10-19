@@ -9,7 +9,7 @@ import {assertPackageVisualOffers,packageVisualCards} from '../src/package-visua
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket} from '../scripts/job-packet.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
-const offers=await read('config/offers.json'),prices=priceList(offers),legacy=await read('tests/fixtures/legacy-offers.json');
+const offers=await read('config/offers.json'),prices=priceList(offers),legacy=await read('tests/fixtures/legacy-offers.json'),artOffers=await read('tests/fixtures/plan-art-offers-20261018.json');
 
 test('new costs add direct vendor bills once and retain baseline, unknown, zero and cent boundaries',()=>{
  const examples=[
@@ -49,15 +49,14 @@ test('packs and card summaries keep zero/one/two priorities and lower-build excl
  assert.doesNotMatch(launchWork,/selected Signature|chosen workflow|follow-up articles|after day 90|90-day/);
  const focused=offers.focused_site;for(const key of ['page_scope','form_limit','revisions','functionality'])assert.doesNotMatch(focused[key],/selected Signature|chosen Signature|chosen workflow/);
  const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/source-code handoff/);assert.doesNotMatch(builds,/3 articles total|CMS\/blog editing/);assert.doesNotMatch(builds,/hosting credit/);
- const monthly=planCards(offers);assert.equal((monthly.match(/Illustrative example:/g)||[]).length,3);assert.match(monthly,/No main improvement/);
+ const monthly=planCards(offers);assert.equal((monthly.match(/class="compact-offer"/g)||[]).length,3);assert.match(monthly,/one completed improvement/);assert.match(monthly,/Two connected improvements/);assert.match(monthly,/Full details/);
 });
 
-test('native task links and simple costs precede advanced estimator; homepage care is concise',()=>{
+test('native pricing choices and direct-cost explanation precede the optional estimator',()=>{
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
- assert.ok(html.indexOf('Hypothetical build, no care')<html.indexOf('id="cost-calculator"'));assert.match(html,/\$1,760/);assert.match(html,/\$2,559/);
- const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);
- assert.match(html,/compatible hosting/);assert.match(html,/the ZIP does not move them automatically/);assert.match(html,/actual renewals/);
- const home=ongoingOverview(offers,{home:true});assert.doesNotMatch(home,/class="monthly-plan"/);assert.match(home,/class="compact-comparison"/);assert.doesNotMatch(home,/package-visual-grid|data-feature=/);assert.match(home,/scope and terms/);assert.match(home,/\/services\/website-care\//);
+ assert.ok(html.indexOf('Domain, hosting and paid tools are billed directly')<html.indexOf('id="cost-calculator"'));assert.match(html,/actual.*prices|Actual prices/);assert.match(html,/no minimum term/);
+ const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);assert.doesNotMatch(calculator,/value="annual"/);
+ const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/Full details/);assert.match(overview,/\/services\/website-care\//);
 });
 
 test('all builds snapshot explicit icon, sharing, sitemap and HTTPS acceptance without inventing proof',async()=>{
@@ -96,36 +95,20 @@ test('recurring packet billing and cycle changes withhold drafts without reinter
 });
 
 
-test('comparison artwork cannot silently retain stale prices or unit limits',()=>{
- assert.doesNotThrow(()=>assertPackageVisualOffers(offers));
- for(const [key,field,value] of [['launch_site','public_price',1401],['focused_site','marketing_page_cap',8],['signature_site','public_name','Changed Website']]){const changed=structuredClone(offers);changed[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
- for(const [key,field,value] of [['keep_running','monthly_price',151],['improve','priorities',2],['grow','public_name','Changed Plan']]){const changed=structuredClone(offers);changed.plans[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
- for(const [key,field,value] of [['baseline','one_time_price',400],['audit_sprint','one_time_price',751],['audit_sprint','page_cap',13]]){const changed=structuredClone(offers);changed[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
+test('archived artwork guards retain their exact dated source and reject current offer drift',()=>{
+ assert.doesNotThrow(()=>assertPackageVisualOffers(artOffers));
+ assert.throws(()=>assertPackageVisualOffers(offers),/configured offer scope changed/);
+ for(const [key,field,value] of [['launch_site','public_price',1401],['focused_site','marketing_page_cap',8],['signature_site','public_name','Changed Website']]){const changed=structuredClone(artOffers);changed[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
+ for(const [key,field,value] of [['keep_running','monthly_price',151],['improve','priorities',2],['grow','public_name','Changed Plan']]){const changed=structuredClone(artOffers);changed.plans[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
+ for(const [key,field,value] of [['baseline','one_time_price',400],['audit_sprint','one_time_price',751],['audit_sprint','page_cap',13]]){const changed=structuredClone(artOffers);changed[key][field]=value;assert.throws(()=>assertPackageVisualOffers(changed),/Regenerate package comparison image/);}
 });
 
-test('existing-site comparison keeps the two real one-off offers and safe-fix and duplicate-fee limits',()=>{
- const html=packageVisualCards(offers,{kind:'existing'});
- assert.equal((html.match(/<article class="package-visual-card">/g)||[]).length,2);
- for(const id of ['website_baseline','audit_fix_sprint']){assert.ok(html.includes('/assets/buyer-packs/'+id));assert.ok(html.includes('/contact/?offer='+id));}
- assert.match(html,/\$399/);assert.match(html,/\$750/);assert.match(html,/complete website audit/);assert.match(html,/clear finding and reason/);assert.match(html,/does not use the first month/);assert.match(html,/Up to 2 agreed small fixes TOTAL/);assert.match(html,/not charged twice/);assert.ok(html.includes('/services/website-audit/#one-off-terms'));
- assert.match(html,/before payment/);assert.ok(html.includes('/assets/buyer-packs/audit_fix_sprint'));assert.doesNotMatch(html,/Everything in Launch|Everything in Focused|billing=monthly/);
+test('current pricing has eight live-text offers and no stale poster publication',()=>{
+ const html=pricingContent(offers);assert.equal((html.match(/class="compact-offer"/g)||[]).length,8);assert.doesNotMatch(html,/package-visual-grid|assets\/package-visuals/);
+ for(const id of ['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint']){assert.ok(html.includes('id="offer-'+id+'"'));assert.ok(html.includes('/assets/buyer-packs/'+id));}
+ assert.match(html,/first small fix if safe and feasible/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/there is no extra \$399 charge/);
 });
 
-test('illustrated comparisons retain native scope, optional costs and distinct service boundaries',()=>{
- const build=packageVisualCards(offers),monthly=packageVisualCards(offers,{kind:'monthly'});
- for(const id of ['launch_site','focused_site','signature_site']){assert.ok(build.includes('/assets/buyer-packs/'+id));assert.ok(build.includes('/contact/?offer='+id));}
- assert.match(build,/update the code, check changes and publish/);assert.match(build,/One ready booking or newsletter link or standard embed/);assert.match(build,/Up to 2 ready booking\/newsletter links or standard embeds/);assert.match(build,/You or your developer can update the code, check changes and publish/);assert.doesNotMatch(build,/No browser editor is included/);assert.match(build,/optional call of up to 30 minutes/);assert.match(build,/One initial launch on your hosting account/);assert.match(build,/Hosting, domains, tools, taxes and approved additions are extra/);
- assert.doesNotMatch(build,/Choose ONE: a new-inquiry tracker|Reviews around days 30, 60 and 90|Tools to edit agreed words/);
- assert.match(monthly,/One complete improvement each month/);assert.match(monthly,/Two substantial connected improvements each month/);assert.match(monthly,/delivered in sequence/);assert.match(monthly,/Refresh the wider topic map every quarter/);assert.match(monthly,/Monthly keyword research/);assert.match(monthly,/Deeper monthly keyword and competitor research/);assert.match(monthly,/No recurring keyword campaign/);assert.match(monthly,/existing-site setup is \$399 once/);assert.match(monthly,/included after a usable build or Audit/);assert.match(monthly,/Bundled launch work is not charged again/);
- for(const html of [build,monthly]){assert.equal((html.match(/<details class="package-visual-details">/g)||[]).length,3);assert.equal((html.match(/loading="lazy"/g)||[]).length,3);assert.doesNotMatch(html,/onclick=|onkeydown=|<script/);}
-});
-
-
-test('comparison foundation lead-ins do not introduce headings inside a disclosure',()=>{
- for(const kind of ['website','monthly','existing']){
-  const html=packageVisualCards(offers,{kind});
-  const common=html.match(/<div class="package-visual-common">([\s\S]*?)<\/div>/)[1];
-  assert.match(common,/^<p class="package-visual-common-label"><strong>[^<]+<\/strong><\/p>/);
-  assert.doesNotMatch(common,/<h[1-6]\b|role="heading"|aria-level=/);
- }
+test('archived feature headings remain semantically valid in a disclosure',()=>{
+ for(const kind of ['website','monthly','existing']){const html=packageVisualCards(artOffers,{kind});const common=html.match(/<div class="package-visual-common">([\s\S]*?)<\/div>/)[1];assert.match(common,/^<p class="package-visual-common-label"><strong>[^<]+<\/strong><\/p>/);assert.doesNotMatch(common,/<h[1-6]\b|role="heading"|aria-level=/);}
 });

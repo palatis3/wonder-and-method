@@ -16,6 +16,7 @@ export function mountCivicSculpture(hero, env = globalThis) {
   const media = [intro, ...(ambient?.dataset.src ? [ambient] : [])];
   const hasAmbient = media.length === 2;
   let loaded = doc.readyState === 'complete', inView = false, started = false;
+  let interacted = false;
   let requested = false, failed = false, ended = false, phase = 'intro', epoch = 0, replayAvailable = false;
   const active = () => phase === 'ambient' ? ambient : intro;
   const label = () => {
@@ -73,7 +74,7 @@ export function mountCivicSculpture(hero, env = globalThis) {
       if (token !== epoch || failed) return;
       pause();
       still();
-      status.textContent = 'The complete sculpture is shown. Select Play or Resume to try the animation.';
+      status.textContent = 'Animation could not start. The finished image is shown.';
     }
   };
   const replayIntro = () => {
@@ -86,8 +87,10 @@ export function mountCivicSculpture(hero, env = globalThis) {
     void play();
   };
   const automatic = () => {
-    if (loaded && inView && !started && !doc.hidden && !reduced.matches && !connection?.saveData && !/^(slow-2g|2g|3g)$/.test(connection?.effectiveType||'')) void play();
+    if (loaded && inView && interacted && !narrow.matches && !started && !doc.hidden && !reduced.matches && !connection?.saveData && !/^(slow-2g|2g|3g)$/.test(connection?.effectiveType||'')) void play();
   };
+  const interact=()=>{interacted=true;automatic();};
+  for(const name of ['pointerdown','keydown','scroll'])env.addEventListener(name,interact,{once:true,passive:true});
   for (const video of media) {
     video.loop = video === ambient;
     video.muted = true;

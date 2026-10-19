@@ -11,6 +11,15 @@ import worker from '../deployment/worker.mjs';
 const json=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(json));
 const pages=renderPages({config,offers,map,geography});
+function assertArticleOutsideDisclosures(html,label){
+  assert.match(html,/<\/nav><\/details><div class="journal-prose">/,label+' article must sit outside collapsed contents');
+  const disclosures=[];for(const tag of html.matchAll(/<\/?details\b[^>]*>|<div class="journal-prose">/g)){
+   if(tag[0]==='<div class="journal-prose">')assert.equal(disclosures.length,0,label+' article hidden in disclosure');
+   else if(tag[0].startsWith('</'))assert.ok(disclosures.pop(),label+' unexpected details close');
+   else disclosures.push(tag[0]);
+  }assert.equal(disclosures.length,0,label+' unclosed details');
+}
+
 test('published guides have unique metadata, visible authorship and matching article schema',()=>{
  const titles=new Set();
  for(const guide of journal){const page=pages.find(x=>x.path===guide.path);assert.ok(page,guide.path);const html=page.html;
@@ -24,10 +33,11 @@ test('published guides have unique metadata, visible authorship and matching art
   assert.equal(guide.dateModified,pageDates[guide.path].modifiedAt);
   assert.ok(html.includes(`Published <time datetime="${guide.datePublished}">`));
   if(guide.datePublished===guide.dateModified)assert.doesNotMatch(html,/ · Updated/);else assert.ok(html.includes('Updated <time datetime="'+guide.dateModified+'">'));
-  if(guide.diagram){assert.ok(html.includes(`/assets/guides/${guide.image}.svg`));assert.match(html,/<figcaption>[^<]+<\/figcaption>/);}
-  else{assert.match(html,/<figure class="journal-hero"><img[^>]+width="1200" height="800"[^>]+loading="lazy"[^>]*><figcaption>[^<]+/);assert.ok(html.includes(`${guideIllustration(guide)}-640.webp 640w`));}
+  if(guide.diagram){assert.ok(html.includes(`/assets/guides/${guide.image}.svg`));const figure=html.match(/<figure class="journal-hero journal-diagram">(.*?)<\/figure>/s)?.[1];assert.ok(figure);assert.match(figure,/alt="[^"]+"/);assert.doesNotMatch(figure,/<figcaption>|alt="Decision diagram:/);}
+  else{assert.match(html,/<figure class="journal-hero"><img[^>]+width="1200" height="800"[^>]+alt="[^"]+"[^>]+loading="lazy"[^>]*><\/figure>/);assert.ok(html.includes(`${guideIllustration(guide)}-640.webp 640w`));}
   const image=config.origin+journalImage(guide);assert.deepEqual(article.image,guide.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(guide)+'-'+ratio+'.png'));assert.ok(html.includes(`property="og:image" content="${image}"`));
   const crumbs=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;assert.equal(crumbs.at(-1).item,article.mainEntityOfPage);assert.equal(crumbs[1].item,config.origin+'/guides/');
+  assertArticleOutsideDisclosures(html,guide.path);
   assert.match(html,/aria-label="In this guide"/);assert.match(html,/class="journal-byline"/);
   for(const match of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${match[1]}"`),match[1]);
  }
@@ -35,10 +45,10 @@ test('published guides have unique metadata, visible authorship and matching art
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
  const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/';
- assert.equal(journal.length,17);assert.equal(pages.length,66);assert.ok(pages.some(page=>page.path==='/payments/'));
+ assert.equal(journal.length,17);assert.equal(pages.length,67);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
  const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>![comparison,audit].includes(x.path))},offers,map,geography});
- assert.ok(!gated.some(x=>[comparison,audit].includes(x.path)));
- for(const path of ['/services/website-care/','/services/seo/','/pricing/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
+ assert.ok(!gated.some(x=>[comparison,audit].includes(x.path)));for(const page of gated)for(const target of [comparison,audit])assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
+ for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
  assert.ok(pages.find(x=>x.path==='/services/website-audit/').html.includes(`href="${audit}"`));
  const cost=pages.find(x=>x.path===comparison).html,checklist=pages.find(x=>x.path===audit).html;
  for(const target of ['/services/website-care/','/services/seo/','/services/website-audit/','/pricing/#after-launch','/guides/seo-work-and-reporting/'])assert.ok(cost.includes(`href="${target}"`),target);
@@ -48,10 +58,10 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
   const png=await readFile(new URL(`../src/assets/guides/${slug}-social.png`,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
  const worksheet=await readFile(new URL('../src/assets/guides/website-care-versus-seo-worksheet.csv',import.meta.url),'utf8');
- for(const field of ['problem','evidence_available','maintenance_task','search_content_task','owner','approved_cycle','verification'])assert.ok(worksheet.split('\n')[0].includes(`"${field}"`));
+ for(const field of ['Problem','Evidence available','Maintenance task','Search content task','Owner','Approved cycle','Verification'])assert.ok(worksheet.split('\n')[0].includes(`"${field}"`));
  assert.equal((worksheet.match(/"Illustrative scenario; not client work"/g)||[]).length,2);assert.match(worksheet,/"Illustrative Grow month; not client work"/);assert.match(worksheet,/"Actual owned content-change record"/);assert.match(worksheet,/not a completed paid service cycle/);
  const csv=await readFile(new URL('../src/assets/guides/website-audit-checklist.csv',import.meta.url),'utf8');
- for(const field of ['test','expected_behavior','result','evidence_url_date','severity','owner','proposed_correction','retest','needs_access_status'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
+ for(const field of ['Test','Expected behavior','Result','Evidence url date','Severity','Owner','Proposed correction','Retest','Needs access status'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
  assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/invalid response is not a saved inquiry/);
  assert.doesNotMatch(checklist,/CA-01|CA-04/);assert.match(checklist,/confirm receipt and inbox arrival/);assert.match(checklist,/hypothetical/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
 });
@@ -64,11 +74,11 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/does not report client outcomes/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
- for(const field of ['failing_visitor_task','evidence','retained_useful_content_assets_accounts','supported_stack_access_check','affected_pages_components','bounded_correction_hypothesis','acceptance_retest','repair_rebuild_decision','unresolved_inputs'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
+ for(const field of ['Failing visitor task','Evidence','Retained useful content assets accounts','Supported stack access check','Affected pages components','Bounded correction hypothesis','Acceptance retest','Repair rebuild decision','Unresolved inputs'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
  assert.equal((csv.match(/"Actual owned correction; 2026-10-15"/g)||[]).length,2);assert.match(csv,/"Hypothetical rebuild scenario; not client work"/);assert.match(csv,/"Your proposed decision"/);
  const svg=await readFile(new URL('../src/assets/guides/repair-or-redesign.svg',import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);assert.match(svg,/record gaps and obtain authorized access/);assert.match(svg,/keep the useful site/);assert.match(svg,/fix and retest/);
  const png=await readFile(new URL('../src/assets/guides/repair-or-redesign-social.png',import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
- const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/https:\/\/developers.google.com\/search\/docs\/fundamentals\/ai-optimization-guide/);assert.match(seo,/must be indexed and eligible for a Google Search snippet/);assert.match(seo,/No special AI file or extra AI schema is required/);assert.match(seo,/Indexing eligibility follows the agreed launch settings/);
+ const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/https:\/\/developers.google.com\/search\/docs\/fundamentals\/ai-optimization-guide/);assert.match(seo,/must be indexed and able to show a search snippet/);assert.match(seo,/No special AI file or extra schema guarantees visibility/);assert.match(seo,/relevant Search Console inclusion setting/);
 });
 
 test('care comparison uses current configured service fees and finite units',()=>{
@@ -89,7 +99,7 @@ test('approved public launch has indexed editorial pages and excluded utility pa
  assert.ok(pages.find(x=>x.path==='/').html.includes('name="robots" content="index,follow"'));
  assert.ok(pages.find(x=>x.path==='/privacy/').html.includes('name="robots" content="noindex,follow"'));
  assert.ok(pages.every(x=>!x.html.includes('class="preview-label"')));
- const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,34);
+ const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,35);
  const contact=pages.find(x=>x.path==='/contact/').html;assert.match(contact,/data-mode="live"/);assert.ok(!/<(?:input|select|textarea)[^>]*disabled/.test(contact));
 });
 test('edge noindex covers public assets, rejected API requests and unavailable storage',async()=>{
@@ -107,4 +117,18 @@ test('the cost-guide examples distinguish pages and creative scope with source-c
  assert.match(html,/a larger marketing-page map, one original animated hero or 3D centerpiece and an expanded creative kit/);
  assert.match(html,/All three plans include editable source and content files/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
+});
+
+test('guide structure verifier rejects a missing contents-disclosure closing tag',()=>{
+ const html=pages.find(page=>page.path==='/guides/contact-form-not-working/').html;
+ assertArticleOutsideDisclosures(html,'intact guide');
+ const broken=html.replace('</nav></details><div class="journal-prose">','</nav><div class="journal-prose">');
+ assert.notEqual(broken,html,'mutation must remove the contents closing tag');
+ assert.throws(()=>assertArticleOutsideDisclosures(broken,'broken guide'),/article must sit outside collapsed contents/);
+});
+
+test('pricing connects the monthly decision to the approved care-versus-SEO guide',()=>{
+ assert.ok(pages.find(page=>page.path==='/pricing/').html.includes('href="/guides/website-care-versus-seo/"'));
+ const held=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!=='/guides/website-care-versus-seo/')},offers,map,geography});
+ assert.ok(!held.find(page=>page.path==='/pricing/').html.includes('href="/guides/website-care-versus-seo/"'));
 });

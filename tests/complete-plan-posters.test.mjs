@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
 import {packageVisualCards,assertPackageVisualOffers} from '../src/package-visuals.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
-const [offers,guides,manifest]=await Promise.all(['config/offers.json','src/assets/package-visuals/feature-guides.json','src/assets/package-visuals/manifest.json'].map(read));
+const [offers,guides,manifest]=await Promise.all(['tests/fixtures/plan-art-offers-20261018.json','src/assets/package-visuals/feature-guides.json','src/assets/package-visuals/manifest.json'].map(read));
 
-test('eight complete posters preserve every native feature and make all upgrades traceable',async()=>{
+test('eight archived complete posters preserve every native feature and make all upgrades traceable',async()=>{
  const parents={focused_site:'launch_site',signature_site:'focused_site',improve:'keep_running',grow:'improve'};
  const files=new Set();let featureCount=0;
  for(const kind of ['website','monthly','existing']){

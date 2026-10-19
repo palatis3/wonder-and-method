@@ -44,7 +44,8 @@ test('current pages, every buyer pack, owned proof JSON and public text assets o
 });
 
 test('public cleanup retains commercial percentages, owned-work limits and responsible identity',()=>{
- const pricing=pages.find(p=>p.path==='/pricing/').html;for(const percentage of ['50%','30%','20%','5%'])assert.ok(pricing.includes(percentage),percentage);
+ const pricing=pages.find(p=>p.path==='/pricing/').html;for(const percentage of ['50%','30%','20%'])assert.ok(pricing.includes(percentage),percentage);
+ assert.doesNotMatch(pricing,/Save 5%|billing=annual/);
  const work=pages.find(p=>p.path==='/work/').html;assert.doesNotMatch(work,/six guides|Our standard of care/i);assert.match(work,/Earlier studio direction/);assert.match(work,/fictional sample data/);assert.match(work,/no claim about search volume, rankings or client results/);assert.match(work,/href="\/work\/lead-workbench\/"/);
  const about=pages.find(p=>p.path==='/about/').html;for(const value of [config.founderName,config.founderBio,config.businessIdentity,config.contactEmail])assert.ok(about.includes(value.replaceAll('&','&amp;')),value);assert.match(about,/one-person web studio founded by/);assert.match(about,/and operated by/);assert.doesNotMatch(about,/project lead|owner-approved/);
  const demo=pages.find(p=>p.path==='/work/lead-workbench/').html;assert.match(demo,/lead-workbench\.js/);assert.match(demo,/noindex,follow/);assert.ok(pages.filter(p=>p.path!=='/work/lead-workbench/').every(p=>!p.html.includes('src="/assets/lead-workbench.js"')));

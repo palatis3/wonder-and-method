@@ -42,3 +42,12 @@ The browser maps a campaign source or referrer host locally to direct, google, b
 ## Comparison coverage (October 18 correction)
 
 The API still accepts 1–90 days for current totals. It returns UTC retained-start, through-date, prior-period boundaries and `previousAvailable` coverage metadata. For requests longer than 45 days, an equal previous period does not fit the 90-day retention window: the CLI shows `N/A` for Previous and Change and a warning. It never counts expired history as zero. A response without coverage metadata is also non-comparable. Coverage only describes the retention window; it does not prove uninterrupted collection, dates before collection began or complete activity for the current UTC day. No retention policy or production event data changed.
+
+
+## October 19 clarity release
+
+Migration `0008_journey_resource_intent.sql` preserves earlier aggregate rows and adds the Services overview, `resource_select`, five fixed goal events, and `search` for other search engines. Resource selection records a link click, not a completed download. Goal clicks are aggregate intent only and are not joined to identified inquiries. ChatGPT campaign variants and Google-app arrivals map to the reviewed coarse categories; no raw source values are stored. The operator report now includes source and offer-interest tables alongside page arrivals. The all-page regression checks every emitted page key against the migrated database constraints.
+
+The retired `/siteaudit-NTlhNWVhZD.txt` verification file is no longer copied into published output; its owning external account could not be established. Its source history remains recoverable. `/version.json` remains intentionally public: its commit/source fingerprints bind production to the tested artifact and contain no credentials or inquiry data. `routes` counts generated HTML page routes, not every asset or indexed URL.
+
+Independent heartbeat alert delivery, Bing account verification, mail-policy enforcement and optional external CSP reporting require their own account evidence. Local code checks do not establish those integrations.

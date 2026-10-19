@@ -18,8 +18,8 @@ test('approved indexing includes public routes and an explicit hold still exclud
  const held={...config,searchIndexing:false},pages=renderPages({config:held,offers,map,geography});
  assert.ok(pages.every(x=>x.html.includes('noindex,nofollow')));assert.doesNotMatch(crawlFiles(held,pages).sitemap,/<loc>/);
  const enabled={...config,searchIndexing:true},livePages=renderPages({config:enabled,offers,map,geography}),crawl=crawlFiles(enabled,livePages);
- for(const route of [...newGuides,'/services/website-redesign/'])assert.ok(crawl.sitemap.includes(config.origin+route));
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,34);assert.doesNotMatch(crawl.sitemap,/\/checkout\/|\/payments\/|\/privacy\/|\/work\/lead-workbench\/|\/api\/|\/assets\/|\/404\//);
+ for(const route of [...newGuides,'/services/','/services/website-redesign/'])assert.ok(crawl.sitemap.includes(config.origin+route));
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,35);assert.doesNotMatch(crawl.sitemap,/\/checkout\/|\/payments\/|\/privacy\/|\/work\/lead-workbench\/|\/api\/|\/assets\/|\/404\//);
  const evidence={gates:{},approvedVersion:{}},current={};
  assert.ok(evaluateRelease({release_gates:[]},evidence,current,held,deployment).missing.some(x=>x.gate==='indexing_consistency'));
  assert.ok(!evaluateRelease({release_gates:[]},evidence,current,config,deployment).missing.some(x=>x.gate==='indexing_consistency'));
@@ -40,14 +40,16 @@ test('canonical asset redirects become permanent without changing query or unrel
   const response=await worker.fetch(new Request('https://example.test'+route+'?source=test'),env,{});
   assert.equal(response.status,308);assert.equal(response.headers.get('Location'),destination);
   env.ASSETS.fetch=async()=>Response.redirect('https://example.test/different/',307);
-  assert.equal((await worker.fetch(new Request('https://example.test'+route),env,{})).status,307);
+  // Known page variants are normalized before ASSETS; unrelated destinations
+  // still pass through unchanged for paths outside the public-page allowlist.
+  assert.equal((await worker.fetch(new Request('https://example.test'+(route.startsWith('/assets/')?route:'/unmapped-page')),env,{})).status,307);
  }
 });
-test('search descriptions and supplementary prices derive from current offer data',()=>{
- const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.audit_sprint.one_time_price=775;revised.plans.improve.monthly_price=150;
- assert.ok(searchMetadata['/services/web-design/'].description(revised).includes('Plans from $1,625.'));
- assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes('A $775 website audit'));
- assert.ok(searchSupplement('/services/seo/',revised).includes('Improve at $150/month'));
+test('search descriptions derive from current prices and supplements link to diagnosis',()=>{
+ const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.audit_sprint.one_time_price=775;revised.plans.improve.monthly_price=150;revised.baseline.one_time_price=425;
+ assert.ok(searchMetadata['/services/web-design/'].description(revised).includes('from $1,625.'));
+ assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes('Website Baseline $425'));assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes('Audit & Fix Sprint $775'));
+ assert.ok(searchMetadata['/services/seo/'].description(revised).includes('Improve $150/month'));assert.doesNotMatch(searchMetadata['/services/website-care/'].description(revised),/Grow|SEO|growth/);for(const target of newGuides.filter(path=>!path.includes('contact-form')))assert.ok(searchSupplement('/services/seo/',revised).includes(`href="${target}"`));
 });
 
 test('HTTPS-only transport policy covers live apex redirects and failures without affecting other hosts',async()=>{

@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {DatabaseSync} from 'node:sqlite';
 import {createServer} from '../scripts/server.mjs';
-import {routeIndexEligible} from '../src/index-policy.mjs';
+import {routeIndexEligible,privateRoute} from '../src/index-policy.mjs';
 
 test('native question selection survives a real form POST and durable storage',async()=>{
  const runtime=await mkdtemp(join(tmpdir(),'wm-launch-'));
@@ -27,11 +27,11 @@ test('built public preload hints exactly match each route’s versioned styleshe
  const headers=await readFile(new URL('dist/_headers',root),'utf8');let count=0;
  for(const route of build.routes){
   const block=headers.split('\n\n').find(b=>b.trimStart().startsWith(route+'\n'));
-  if(!routeIndexEligible(route)){assert.equal(block,undefined,route);continue;}
+  if(privateRoute(route)||['/404/','/payments/'].includes(route)){assert.equal(block,undefined,route);continue;}
   assert.ok(block,route);count++;
   const html=await readFile(new URL('dist'+route+'index.html',root),'utf8');
   const styles=[...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(styles.length);assert.equal(block.trim().split('\n')[1].trim(),'Link: '+styles.map(s=>`<${s}>; rel=preload; as=style`).join(', '),route);
  }
- assert.equal(count,34);
+ assert.equal(count,build.routes.filter(route=>!privateRoute(route)&&!['/404/','/payments/'].includes(route)).length);assert.ok(headers.includes('/work/fieldwork/\n'));
 });

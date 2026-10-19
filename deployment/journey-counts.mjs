@@ -1,5 +1,5 @@
 import {journeyPages as pages,journeySources as sources} from './journey-dimensions.mjs';
-const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open']);
+const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open','resource_select','goal_new_website','goal_redesign','goal_fix','goal_search','goal_care']);
 const services=new Set(['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure']);
 export const journeyRetentionDays=90;
 export function journeyReportCoverage(days,now=Date.now()){

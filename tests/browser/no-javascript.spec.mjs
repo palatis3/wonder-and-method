@@ -9,7 +9,7 @@ test('server-rendered proposal, general question and fixed monthly context work 
  ]){
   await page.goto(path);await expect(page.locator('#service')).toHaveValue(service);await expect(page.locator('#request_kind')).toHaveValue(kind);
   await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();
-  const summary=await page.locator('.request-summary').boundingBox(),name=await page.locator('#name').boundingBox();expect(summary.y+summary.height).toBeLessThan(name.y);
+  if(service==='unsure'&&kind==='question')await expect(page.locator('.request-summary')).toBeHidden();else{const summary=await page.locator('.request-summary').boundingBox(),name=await page.locator('#name').boundingBox();expect(summary.y+summary.height).toBeLessThan(name.y);}
  }
  await expect(page.locator('[data-request-label]')).toContainText('existing website');
  await page.locator('#name').fill('No-script fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic question submitted with JavaScript disabled.');

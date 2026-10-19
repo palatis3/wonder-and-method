@@ -28,4 +28,4 @@ export function contextualizeGuideBody(body,path){
   return `href="${e(target.pathname+target.search+(target.hash||'#inquiry'))}"`;
  });
 }
-export function guideAction(item){const action=guideInquiry(item.path);return `<aside class="journal-callout"><h3>${e(action.label)}.</h3><p>Send your website address and the question you want to resolve. I reply within one business day, Monday–Friday, Eastern Time. We’ll agree on the next step before any booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></aside>`;}
+export function guideAction(item,{compact=false}={}){const action=guideInquiry(item.path);if(compact)return `<p class="guide-help"><a href="${action.href}">${e(action.label)}</a></p>`;return `<div id="next-decision" class="journal-callout guide-ending"><h2>Need help with the next step?</h2><p>Send your website address and the question you want to resolve. I reply within one business day, Monday–Friday, Eastern Time. We agree the scope before booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></div>`;}

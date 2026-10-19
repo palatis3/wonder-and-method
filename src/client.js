@@ -2,15 +2,54 @@
 let measurement;
 const countJourney=(...args)=>{measurement??=import('./journey-counts.js').catch(()=>null);measurement.then(module=>module?.countJourney(...args)).catch(()=>{});};
 import {bindInquirySubmission} from './inquiry-submit.mjs';
-import {resolveServiceId,inquiryContextFields,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt} from './shared.mjs';
+import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection} from './shared.mjs';
 const form=document.querySelector('form#inquiry');
-if(form){form.addEventListener('input',()=>{if(form.dataset.mode==='live')countJourney(form.elements.namedItem('request_kind').value==='question'?'question_start':'request_start',form.elements.namedItem('service').value);});let packIndex=[];const params=new URLSearchParams(location.search),selected=resolveServiceId(params.get('offer'));if(selected&&[...form.elements.namedItem('service').options].some(x=>x.value===selected))form.elements.namedItem('service').value=selected;
-
-for(const [key,field] of Object.entries(inquiryContextFields)){const value=params.get(key);const input=form.elements.namedItem(key);if(input&&[...input.options].some(option=>option.value===value))input.value=value;}
-const defaultHelp=document.querySelector('#message-help').textContent,defaultButton='Request a proposal';
-const updateRequestSummary=()=>{const question=form.elements.namedItem('request_kind').value==='question';form.querySelector('[data-request-label]').textContent=inquiryMessagePrompt(form.elements.namedItem('service').value,form.elements.namedItem('request_kind').value)+' (required)';document.querySelector('#message-help').textContent=question?'Ask what you need to know about fit, scope, costs or how the service works. Use at least 10 characters. No passwords, payment details or sensitive information.':defaultHelp;form.querySelector('[data-request-submit]').textContent=question?'Send question':defaultButton;const current=form.elements.namedItem('service').value;for(const [key,field] of Object.entries(inquiryContextFields)){const wrapper=form.querySelector('[data-context-field="'+key+'"]');const input=form.elements.namedItem(key);if(!input||!wrapper)continue;const active=key==='request_kind'||field.services.includes(current);wrapper.hidden=!active;input.disabled=!active;}const optional=form.querySelector('.inquiry-options');if(optional)optional.hidden=![...optional.querySelectorAll('select,input')].some(input=>!input.disabled);const values={service:current,...Object.fromEntries(new FormData(form))},pack=packIndex.find(p=>p.id===current);for(const question of document.querySelectorAll('[data-checkout-question]')){const context=selectedInquiryContext(values);const query=new URLSearchParams({offer:current,...context,request_kind:'question'});question.href='/contact/?'+query.toString()+'#inquiry';}const summary=document.querySelector('#request-summary'),next=inquiryRequestSummary(values,pack);if(summary.textContent!==next)summary.textContent=next;const place=document.querySelector('#request-pack-link');place.replaceChildren();if(pack&&!question){const a=document.createElement('a');a.href='/assets/buyer-packs/'+pack.id;a.textContent='Read the decision pack';place.append(a);}};form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service')updateRequestSummary();});updateRequestSummary();fetch('/assets/buyer-packs/index.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(packs=>{packIndex=packs;updateRequestSummary();}).catch(()=>{});
-
-bindInquirySubmission(form,{countJourney});}
+if(form){
+ const field=key=>form.elements.namedItem(key);
+ const annualEnabled=form.dataset.annualEnabled==='true';
+ const params=new URLSearchParams(location.search),requested=resolveServiceId(params.get('offer'));
+ if(!form.dataset.fixedService&&inquiryChoices.some(([id])=>id===requested))field('service').value=requested;
+ const initial={service:field('service').value,...Object.fromEntries(new FormData(form))};
+ for(const key of Object.keys(inquiryContextFields))if(params.has(key))initial[key]=params.get(key);
+ const context=publicInquiryContext(initial,annualEnabled);
+ for(const key of Object.keys(inquiryContextFields)){
+  const input=field(key);if(!input)continue;
+  // Server prefill preserves valid historical source answers. Direct static previews
+ // can only select choices actually present; they never insert arbitrary URL text.
+  if(input.options){if(context[key]&&[...input.options].some(option=>option.value===context[key]))input.value=context[key];}
+  else input.value=context[key]||'';
+ }
+ let packIndex=[];
+ const updateRequestSummary=()=>{
+  const service=field('service').value,question=field('request_kind').value==='question';
+  const values={service,...Object.fromEntries(new FormData(form))};
+  const context=publicInquiryContext(values,annualEnabled);
+  for(const key of Object.keys(inquiryContextFields)){
+   const input=field(key);if(input?.type==='hidden'){input.value=context[key]||'';}
+  }
+  const current={service,...context,request_kind:question?'question':'checkout'};
+  const label=form.querySelector('[data-request-label]');
+  label.replaceChildren(document.createTextNode(inquiryMessagePrompt(service,current.request_kind)+' '));
+  const required=document.createElement('span');required.className='field-note';required.textContent='(required)';label.append(required);
+  document.querySelector('#message-help').textContent=inquiryMessageHelp(service,current.request_kind,context.goal);
+  form.querySelector('[data-request-submit]').textContent=question?'Send question':'Request a proposal';
+  const noCharge=form.querySelector('.checkout-no-charge');if(noCharge)noCharge.hidden=question;
+  const wrapper=form.querySelector('.request-summary');wrapper.hidden=!form.dataset.fixedService&&!hasInquirySelection(current);
+  const pack=packIndex.find(p=>p.id===service),summary=document.querySelector('#request-summary');
+  const next=inquiryRequestSummary(current);if(summary.textContent!==next)summary.textContent=next;
+  for(const questionLink of document.querySelectorAll('[data-checkout-question]')){
+   const query=new URLSearchParams({offer:service,...selectedInquiryContext(current),request_kind:'question'});
+   questionLink.href='/contact/?'+query.toString()+'#inquiry';
+  }
+  const place=document.querySelector('#request-pack-link');place.replaceChildren();
+  if(pack&&!question){const a=document.createElement('a');a.href='/assets/buyer-packs/'+pack.id;a.textContent='Full details';place.append(a);}
+ };
+ form.addEventListener('input',()=>{if(form.dataset.mode==='live')countJourney(field('request_kind').value==='question'?'question_start':'request_start',field('service').value);});
+ form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service')updateRequestSummary();});
+ updateRequestSummary();
+ fetch('/assets/buyer-packs/index.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(packs=>{packIndex=packs;updateRequestSummary();}).catch(()=>{});
+ bindInquirySubmission(form,{countJourney});
+}
 
 // Anchor navigation preserves the visible form and gives keyboard users a real starting point.
 document.querySelectorAll('[data-inquiry-jump]').forEach(link=>link.addEventListener('click',()=>{requestAnimationFrame(()=>{const first=document.querySelector('#inquiry #name');first?.focus({preventScroll:true});});}));

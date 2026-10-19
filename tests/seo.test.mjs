@@ -34,7 +34,7 @@ test('staging remains excluded and guides only gain links when present',()=>{
  const staging={...saved,mode:'staging',formMode:'synthetic',guideApprovals:[]};const pages=render(staging),crawl=crawlFiles(staging,pages);
  assert.ok(pages.every(page=>page.html.includes('noindex,nofollow')));assert.match(crawl.robots,/Disallow: \//);assert.ok(!crawl.sitemap.includes('<loc>'));
  const guide='/guides/website-redesign-brief/';
- assert.ok(!pages.find(p=>p.path==='/services/web-design/').html.includes(`href="${guide}"`));
+ for(const page of pages)assert.ok(!page.html.includes(`href="${guide}"`),page.path+' -> held guide');
  const approved=render({...saved,guideApprovals:[{path:guide,reviewedAt:'2026-10-14',reviewedBy:'Synthetic test',evidenceReference:'Synthetic test only'}]});
  assert.ok(approved.some(p=>p.path===guide));
  assert.ok(approved.find(p=>p.path==='/services/web-design/').html.includes(`href="${guide}"`));

@@ -22,7 +22,7 @@ export function commercialOffers(config, o) {
   const origin = config.origin;
   const rows = [
     ...['launch_site', 'focused_site', 'signature_site'].map(id => ({id, offer: o[id], price: o[id].public_price, route: '/services/web-design/'})),
-    ...Object.entries(o.plans).map(([id, offer]) => ({id, offer, price: offer.monthly_price, monthly: true, route: '/services/website-care/'})),
+    ...Object.entries(o.plans).map(([id, offer]) => ({id, offer, price: offer.monthly_price, monthly: true, route: id === 'keep_running' ? '/services/website-care/' : '/services/seo/'})),
     {id: 'website_baseline', offer: o.baseline, price: o.baseline.one_time_price, route: '/services/website-audit/'},
     {id: 'audit_fix_sprint', offer: o.audit_sprint, price: o.audit_sprint.one_time_price, route: '/services/website-audit/'}
   ];
@@ -34,7 +34,7 @@ export function offerCatalogSchema(config, o) {
 }
 
 export function offersForService(config, o, path) {
-  const routes = {'/services/website-redesign/': '/services/web-design/', '/services/contractor-websites/': '/services/web-design/', '/services/seo/': '/services/website-care/'};
+  const routes = {'/services/website-redesign/': '/services/web-design/', '/services/contractor-websites/': '/services/web-design/'};
   const primaryPath = routes[path] || path;
   return commercialOffers(config, o).filter(offer => offer.itemOffered['@id'] === config.origin + primaryPath + '#service' && (path !== '/services/seo/' || !offer['@id'].endsWith('keep_running')));
 }

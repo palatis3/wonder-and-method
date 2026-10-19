@@ -13,7 +13,7 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
   assert.deepEqual(items.map(x=>x.position),items.map((_,i)=>i+1));assert.equal(items[0].item,config.origin+'/');assert.equal(items.at(-1).item,config.origin+path);
   for(const item of items){assert.equal(item['@type'],'ListItem');assert.ok(item.name.trim());assert.ok(pages.some(page=>config.origin+page.path===item.item),item.item);}
   const nav=html.match(/<nav class="breadcrumb" aria-label="Breadcrumb">(.*?)<\/nav>/s)?.[1];assert.ok(nav,path);assert.match(nav,/<ol>.*<\/ol>/);assert.equal((nav.match(/aria-current="page"/g)||[]).length,1);assert.equal((nav.match(/<li>/g)||[]).length,items.length);
-  const parent=path.startsWith('/services/')||path.startsWith('/checkout/')?'/pricing/':path.startsWith('/guides/')&&path!=='/guides/'?'/guides/':path.startsWith('/areas/')&&path!=='/areas/'?'/areas/':path.startsWith('/work/')&&path!=='/work/'?'/work/':null;
+  const parent=path.startsWith('/services/')&&path!=='/services/'?'/services/':path.startsWith('/checkout/')?'/pricing/':path.startsWith('/guides/')&&path!=='/guides/'?'/guides/':path.startsWith('/areas/')&&path!=='/areas/'?'/areas/':path.startsWith('/work/')&&path!=='/work/'?'/work/':null;
   if(parent){assert.equal(items[1].item,config.origin+parent);assert.ok(nav.includes(`href="${parent}"`));}
  }
  assert.equal(total,pages.filter(page=>!['/','/404/'].includes(page.path)).length);
@@ -21,10 +21,20 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
 test('breadcrumb labels escape markup while structured names retain their actual text',()=>{
  const trail=breadcrumbTrail('/services/test/','A <better> & "clearer" page');assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'A <better> & "clearer" page');assert.match(breadcrumbMarkup(trail),/A &lt;better&gt; &amp; &quot;clearer&quot; page/);
 });
-test('care and pricing section jumps resolve and back-to-top has a native target across every page',()=>{
- for(const [route,label] of [['/services/website-care/','Website care topics'],['/pricing/','Pricing tasks']]){
-  const html=pages.find(p=>p.path===route).html,nav=html.match(new RegExp(`<nav[^>]+aria-label="${label}">(.*?)<\\/nav>`))[1];
-  for(const [,id] of nav.matchAll(/href="#([^"]+)"/g))assert.equal((html.match(new RegExp(`id="${id}"`,'g'))||[]).length,1,id);
+test('contact-form guide uses a concise breadcrumb with matching structured data',()=>{
+ const trail=breadcrumbTrail('/guides/contact-form-not-working/','Contact form not working? Trace the missing inquiry.');
+ assert.equal(trail.at(-1).name,'Contact form help');
+ assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'Contact form help');
+ assert.match(breadcrumbMarkup(trail),/aria-current="page">Contact form help<\/span>/);
+});
+test('rendered navigation section jumps resolve and back-to-top has a native target across every page',()=>{
+ let jumps=0;
+ for(const {path,html} of pages){
+  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);
+  for(const [,nav] of html.matchAll(/<nav\b[^>]*>(.*?)<\/nav>/gs)){
+   for(const [,id] of nav.matchAll(/href="#([^"]+)"/g)){jumps++;assert.equal(ids.filter(value=>value===id).length,1,`${path} #${id}`);}
+  }
  }
+ assert.ok(jumps>0,'Section jump navigation remains available where rendered');
  for(const page of pages){assert.equal((page.html.match(/id="page-top"/g)||[]).length,1);assert.match(page.html,/class="back-to-top" href="#page-top" aria-label="Back to top"/);}
 });

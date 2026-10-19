@@ -59,11 +59,6 @@
 .studio-site .contact-layout label span{font-weight:400;color:var(--slate)}
 .studio-site .contact-layout form>p{color:var(--slate)}
 .studio-site .footer-top .wordmark{font-size:2.55rem;margin:0}
-@media(max-width:1000px) and (min-width:1024px){.studio-site .site-header{gap:1rem}}
-@media(max-width:1000px) and (min-width:1024px){.studio-site .site-header nav{gap:1rem}}
-@media(max-width:1000px) and (min-width:1024px){.studio-site .site-header nav a{font-size:.74rem}}
-@media(max-width:1000px) and (min-width:1024px){.studio-site .site-header .wordmark{font-size:1.9rem}}
-@media(max-width:1000px) and (min-width:1024px){.studio-site .contact-layout{gap:2.5rem}}
 @media(max-width:1023px){.studio-site .site-header{min-height:68px;flex-wrap:wrap}}
 @media(max-width:1023px){.studio-site .site-header .wordmark{font-size:1.85rem}}
 @media(max-width:1023px){.studio-site .menu-toggle{display:flex;align-items:center;justify-content:center;min-width:52px;min-height:44px;background:transparent;color:var(--ink);font-size:.8rem;border:1px solid var(--line)}}
@@ -153,3 +148,50 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
   html:not(.nav-ready) .service-links{position:absolute;z-index:1;left:0;width:min(290px,85vw);background:var(--paper);border:1px solid var(--line);padding:.5rem}
 }
 @media(forced-colors:active){.brand-lockup img,.brand-lockup svg{forced-color-adjust:none}.brand-lockup{background:Canvas;border:1px solid CanvasText}.brand-lockup img{filter:none}}
+
+/* Compact shared chrome. Native footer disclosures remain usable without JavaScript. */
+.mobile-services-label{display:none}
+.header-project-short{display:none}
+.studio-site .site-header--compact #main-nav{gap:1rem}
+.studio-site .site-footer--compact{padding-block:2rem 7rem}
+.studio-site .site-footer--compact .footer-top{padding:0 0 1rem;gap:1rem}
+.studio-site .site-footer--compact .footer-top .wordmark{font-size:1.65rem}
+.studio-site .site-footer--compact .footer-top p:last-child{font-size:1rem}
+.studio-site .site-footer--compact .footer-top a{display:inline-flex;align-items:center;min-height:44px}
+.studio-site .site-footer--compact nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.studio-site .site-footer--compact details{border:0;margin:0;padding:0;min-width:0}
+.studio-site .site-footer--compact summary{font:600 1rem/1.5 Manrope,Arial,sans-serif;min-height:44px;padding:.6rem 0;cursor:pointer}
+.studio-site .site-footer--compact .footer-group a{font-size:.9375rem;min-height:36px;padding:.25rem 0}
+.studio-site .site-footer--compact .footer-bottom{font-size:.875rem;gap:.6rem;margin-top:1rem;padding-top:1rem}
+@media(max-width:1023px){
+ .studio-site .site-header--compact{flex-wrap:nowrap;gap:.5rem;min-height:64px;padding:.5rem 1rem}
+ .studio-site .site-header--compact .wordmark.brand-lockup{font-size:1.15rem;gap:6px;max-width:none;margin-right:auto;flex:1;min-width:0}
+ .studio-site .site-header--compact .brand-emblem{width:22px;height:20px;flex-basis:22px}
+ .studio-site .site-header--compact .brand-name{overflow-wrap:normal}
+ .studio-site .site-header--compact .header-contact{width:auto;order:0;flex:none;min-height:44px;padding:.5rem .65rem;font-size:.875rem}
+ .studio-site .site-header--compact .menu-toggle{order:1;flex:none;min-width:54px;padding:.5rem .65rem;font-size:.875rem}
+ .studio-site .site-header--compact .header-project-full{display:none}
+ .studio-site .site-header--compact .header-project-short{display:inline}
+ .studio-site .site-header--compact .service-links .mobile-services-label{display:block;margin:.3rem 1rem;font:600 .875rem/1.5 Manrope,Arial,sans-serif}
+ .studio-site .site-header--compact #main-nav{gap:.15rem}
+ .studio-site .site-header--compact #main-nav>a,.studio-site .site-header--compact #main-nav .service-links a{padding:.6rem 1rem;min-height:44px}
+ .studio-site .site-footer--compact nav{grid-template-columns:1fr;gap:0}
+ .studio-site .site-footer--compact .footer-top{display:block}
+ .studio-site .site-footer--compact .footer-top>p+p{margin-top:.5rem}
+ html:not(.nav-ready) .studio-site .site-header--compact{flex-wrap:wrap}
+ html:not(.nav-ready) .studio-site .site-header--compact #main-nav{flex-basis:100%}
+}
+@media(max-width:360px){.studio-site .site-header--compact .brand-emblem{display:none}.studio-site .site-header--compact .wordmark.brand-lockup{font-size:1.05rem}}
+@media(forced-colors:active){
+ .brand-lockup .brand-emblem{display:none!important}
+ .brand-lockup:before{content:'';display:block;width:28px;height:22px;flex:none;background:LinkText;mask:url('/assets/brand/emblem.svg') center/contain no-repeat;forced-color-adjust:none}
+ .brand-lockup{border:0}
+}
+
+/* Checkout markup presents the request first, with scope available beside it. */
+.studio-site .checkout-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.studio-site .checkout-layout>section{order:0}
+.studio-site .checkout-layout>aside{order:1}
+@media(max-width:1023px){.studio-site .checkout-layout{display:flex;flex-direction:column}.studio-site .checkout-layout>*{width:100%}}
+
+.studio-site .contact-layout label{font-size:1rem}

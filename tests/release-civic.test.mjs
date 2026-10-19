@@ -9,6 +9,18 @@ import {verifyTechnicalManifest} from '../src/release-verification.mjs';
 import {civicAssetState,copyCivicAssets,civicPublicPath} from '../scripts/build-civic-assets.mjs';
 
 const config={homeEdition:'civic-sculpture'};
+test('changing Worker canonical routing invalidates an exact technical approval',async()=>{
+ const f=await fixture();try{
+  const current={commit:'a'.repeat(40),...await releaseFingerprint(f.root)};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','browser-journeys','worker-dry-run']};
+  assert.equal(verifyTechnicalManifest(manifest,current),true);
+  await f.put('deployment/public-route-canonical.mjs','changed canonical routing');
+  const changed={commit:current.commit,...await releaseFingerprint(f.root)};
+  assert.equal(changed.artifactSha256,current.artifactSha256);
+  assert.notEqual(changed.sourceSha256,current.sourceSha256);
+  assert.throws(()=>verifyTechnicalManifest(manifest,changed),/sourceSha256/);
+ }finally{await f.close();}
+});
 test('predeploy manifest rejects a changed dist byte even when source and commit are unchanged',async()=>{
  const f=await fixture();
  try{
@@ -26,7 +38,7 @@ async function fixture(){
  const root=await mkdtemp(join(tmpdir(),'wm-civic-approval-'));
  const put=async(path,content)=>{await mkdir(dirname(join(root,path)),{recursive:true});await writeFile(join(root,path),typeof content==='string'?content:JSON.stringify(content));};
  for(const dir of ['content','src','experience','scripts','authority/v5','deployment/migrations'])await mkdir(join(root,dir),{recursive:true});
- for(const file of ['dist/index.html','package.json','package-lock.json','config/offers.json','deployment/worker.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css'])await put(file,'fixture');
+ for(const file of ['dist/index.html','package.json','package-lock.json','config/offers.json','deployment/worker.mjs','deployment/public-route-canonical.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css'])await put(file,'fixture');
  await put('config/site.json',config);
  await put('config/page-dates.json',{});
  await put('deployment/journey-dimensions.mjs','fixture');

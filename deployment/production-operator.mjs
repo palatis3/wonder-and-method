@@ -2,6 +2,7 @@ import {mkdir,writeFile,readFile,realpath} from 'node:fs/promises';
 import {resolve,relative,isAbsolute,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {readProductionCredentials} from './production-credentials.mjs';
+import {inquiryChoices} from '../src/shared.mjs';
 
 const root=resolve(import.meta.dirname,'..');
 const origin='https://wonderandmethod.com';
@@ -56,15 +57,29 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
 }
 
 export function formatMeasurement(report){
- const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Email / chat actions',['email_click','chat_open']]];
+ const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Resource link clicks',['resource_select']],['Email / chat actions',['email_click','chat_open']]];
  const total=(events,current)=>report.daily.filter(row=>events.includes(row.event)&&(current?row.day>=report.since:row.day<report.since)).reduce((sum,row)=>sum+Number(row.total),0);
  const comparable=report.coverage?.previousAvailable===true&&report.days<=45;
  const lines=[`Website events: ${report.days} days from ${report.since}`,comparable?`Compared with the preceding ${report.days} days (within 90-day retention).`:'WARNING: Previous and Change are unavailable: an equal previous period is not covered by verified retention metadata.','Metric                         Current  Previous  Change'];
+ lines.splice(1,0,'Approximate arrivals from outside: '+(Array.isArray(report.arrivals)?report.arrivals.reduce((sum,row)=>sum+Number(row.total),0):'not available in this response'));
  if(report.coverage)lines.splice(2,0,`Retained dates: ${report.coverage.retainedSince} through ${report.coverage.through}. Collection continuity is not verified.`);
  for(const [label,events] of groups){const current=total(events,true),previous=comparable?total(events,false):null;lines.push(label.padEnd(30)+String(current).padStart(8)+(comparable?String(previous):'N/A').padStart(10)+(comparable?String(current-previous):'N/A').padStart(8));}
- lines.push('','Page views by fixed page:');for(const row of report.counts.filter(row=>row.event==='page_view'))lines.push(`${row.page} / ${row.service}: ${row.total}`);
+ const serviceNames=Object.fromEntries(inquiryChoices),title=value=>String(value).replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
+ const pageLabel=page=>page==='home'?'Home':page==='404'?'Page not found':page.startsWith('checkout_')?'Checkout — '+(serviceNames[page.slice(9)]||title(page.slice(9))):page.startsWith('guides_')?'Guide — '+title(page.slice(7)):page.startsWith('areas_')?'Area — '+title(page.slice(6)):title(page);
+ lines.push('','Offer interest (event counts):','Offer | Offer clicks | Question clicks | Contact clicks | Form starts | Saved | Resource clicks');
+ for(const [service,label] of inquiryChoices){
+  const rows=report.counts.filter(row=>row.service===service),sum=events=>rows.filter(row=>events.includes(row.event)).reduce((total,row)=>total+Number(row.total),0);
+  lines.push([label,sum(['offer_select']),sum(['question_select']),sum(['contact_select']),sum(['request_start','question_start']),sum(['inquiry_saved','question_saved']),sum(['resource_select'])].join(' | '));
+ }
+ lines.push('','Landing pages (approximate arrivals from outside):');
+ if(!Array.isArray(report.arrivals))lines.push('Not available in this response.');
+ else if(!report.arrivals.length)lines.push('No recorded arrivals in this period.');
+ else for(const row of report.arrivals)lines.push(`${pageLabel(row.page)} / ${row.source}: ${row.total}`);
+ lines.push('','Page views by page:');for(const row of report.counts.filter(row=>row.event==='page_view'))lines.push(`${pageLabel(row.page)}: ${row.total}`);
+ lines.push('','Goals selected on Help me choose links:');
+ for(const [event,label] of [['goal_new_website','New website'],['goal_redesign','Redesign'],['goal_fix','Repair'],['goal_search','Search visibility'],['goal_care','Website care']])lines.push(`${label}: ${report.counts.filter(row=>row.event===event).reduce((sum,row)=>sum+Number(row.total),0)}`);
  lines.push('','Page-view source categories:');for(const row of report.bySource||[])lines.push(`${row.source}: ${row.total}`);
- lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Use the separate lead report for real inquiry stages.');return lines.join('\n');
+ lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Resource clicks do not prove a completed download; repeated clicks on the same resource in a page instance count once. Goals describe link selections, not identified inquiries. Use the separate lead report for real inquiry stages.');return lines.join('\n');
 }
 
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

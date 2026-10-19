@@ -41,7 +41,7 @@ test('retention-limited reports never turn absent previous history into growth',
 test('monthly prompts agree across static and query-prefilled forms, with useful build and repair prompts',()=>{
  for(const service of ['keep_running','improve','grow']){
   const initial=inquiryForm({live:false,privacyLink:'Privacy'},{service,checkout:true});
-  const label=html=>html.match(/data-request-label>(.*?) <span>/)[1];
+  const label=html=>html.match(/data-request-label>(.*?) <span[^>]*>/)[1];
   assert.equal(label(initial),inquiryMessagePrompt(service));assert.match(label(initial),/existing website.*monthly help/);
   for(const query of ['?billing=annual','?request_kind=checkout&billing=monthly','?request_kind=question','?offer=launch_site&request_kind=checkout']){
    const html=prefillInquiryHtml(initial,new URL('https://example.test/checkout/'+service.replaceAll('_','-')+'/'+query));

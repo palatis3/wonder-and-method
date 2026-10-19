@@ -21,12 +21,12 @@ test('route policy excludes transaction, policy, demo, asset and API variants an
  for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/'])assert.equal(routeIndexEligible(path),true,path);
  assert.equal(config.searchIndexing,true);const pages=renderPages({config:{...config,searchIndexing:false},offers,map,geography});assert.ok(pages.every(p=>p.html.includes('noindex,nofollow')));
 });
-test('quick comparison uses authoritative prices, page limits and first payment before artwork',()=>{
+test('website cards use authoritative limits and canonical destinations without duplicate posters',()=>{
  const pages=renderPages({config,offers,map,geography});const pricing=pages.find(p=>p.path==='/pricing/').html,home=pages.find(p=>p.path==='/').html;
- assert.ok(pricing.indexOf('pricing-comparison')<pricing.indexOf('class="package-visual-grid'));
- for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(new RegExp(`up to ${p.marketing_page_cap} (?:custom |marketing )?pages`,'i').test(compactComparison(offers)));assert.ok(home.includes('/pricing/#'+id.replace('_site','')));}
- assert.doesNotMatch(home,/data-feature=/);assert.match(pricing,/data-feature=/);assert.match(home,/Compare website packages and payment terms/);
+ for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(new RegExp(`up to ${p.marketing_page_cap} (?:custom |marketing |custom marketing )?pages`,'i').test(compactComparison(offers)));assert.ok(home.includes('/pricing/#offer-'+id));assert.ok(pricing.includes('id="offer-'+id+'"'));assert.ok(pricing.includes('/assets/buyer-packs/'+id));}
+ assert.doesNotMatch(home,/data-feature=/);assert.doesNotMatch(pricing,/package-visual-grid|data-feature=/);assert.match(home,/Compare website packages and payment terms/);
 });
+
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{
  const checks=new Set(),titles=new Set();for(const [slug,c] of Object.entries(countyBuyerTasks)){checks.add(c.check);titles.add(c.title);const text=await readFile(new URL('../src/assets/county-briefs/'+slug+'.txt',import.meta.url),'utf8');assert.ok(text.includes(c.check));assert.ok(text.includes(c.output));assert.match(countyBuyerTask(slug),/planning exercise, not a client case study/);}
  assert.equal(checks.size,10);assert.equal(titles.size,10);

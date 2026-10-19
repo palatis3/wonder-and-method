@@ -26,7 +26,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 }
 .studio-site .button:hover,.studio-site button[type=submit]:hover{background:#24372a;color:#fff}
 .studio-inner .page-intro{position:relative;isolation:isolate;max-width:none;padding:4.5rem 0 3.5rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
-.studio-inner .page-intro:after{content:'';position:absolute;right:1%;top:3rem;width:clamp(100px,22vw,260px);height:200px;background:url('/assets/brand/emblem.svg') center/contain no-repeat;opacity:.065;z-index:-1;pointer-events:none}
+.studio-inner .page-intro:after{display:none;content:'';position:absolute;right:1%;top:3rem;width:clamp(100px,22vw,260px);height:200px;background:url('/assets/brand/emblem.svg') center/contain no-repeat;opacity:.065;z-index:-1;pointer-events:none}
 .studio-inner .page-intro h1{max-width:1000px}
 .studio-inner .page-intro .lede{max-width:760px}
 .studio-site .studio-section{padding:4rem 0}
@@ -339,6 +339,18 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 .payment-schedule thead{background:var(--subtle)}
 .payment-schedule tbody th{font-weight:650}
 .payment-schedule td{font-variant-numeric:tabular-nums}
+.payment-table-scroll{max-width:100%;overflow-x:auto}
+.payment-table-scroll .website-payment-table{width:100%;min-width:44rem;table-layout:auto}
+.website-payment-table :is(th,td){white-space:nowrap;overflow-wrap:normal;word-break:normal}
+.website-payment-table td{font-variant-numeric:tabular-nums}
+.studio-pricing .table-scroll{max-width:100%;overflow-x:auto}
+.studio-pricing .website-allowance-table{width:100%;min-width:42rem;table-layout:fixed}
+.studio-pricing .website-allowance-table :is(th,td){white-space:normal;overflow-wrap:normal;word-break:normal}
+.studio-pricing .website-allowance-table th:first-child{width:40%}
+.studio-pricing .website-yearly-table{width:100%;min-width:42rem;table-layout:auto}
+.studio-pricing .website-yearly-table :is(th,td){white-space:nowrap;overflow-wrap:normal;word-break:normal}
+.studio-pricing .website-yearly-table td{font-variant-numeric:tabular-nums}
+.studio-pricing .pricing-comparison tbody tr:first-child td{white-space:nowrap}
 @media(max-width:767px){.site-tools{align-items:flex-start}
 .site-tools>p{flex-basis:100%}
 .site-tools .page-tools{margin-left:0}
@@ -468,3 +480,50 @@ form>.optional-choice{margin:1.25rem 0}
  .studio-site{--intro-space-before:1.75rem;--intro-space-after:1.75rem}
  .studio-site.studio-inner .page-intro .lede,.studio-site .journal-header .lede{font-size:1rem}
 }
+
+/* Focused readability and layout corrections; preserve semantic component sizes. */
+.studio-site :is(input,select,textarea){font-size:1rem}
+.studio-site .request-summary .request-summary-heading{font-size:.875rem;letter-spacing:.02em;text-transform:none}
+.studio-site .request-summary p,.studio-site .checkout-schedule :is(dt,dd){font-size:1rem}
+.studio-site .pricing-overview table{font-size:1rem;line-height:1.5}
+.studio-site .pricing-overview :is(thead th,.overview-group th){font-size:.9375rem}
+.studio-site .compact-price span{font-size:.9375rem}
+.studio-site .package-visual-details>div,.studio-site .package-page-limit{font-size:1rem}
+.studio-site .journal-card-description,.studio-site .work-caption details p{font-size:1rem}
+.studio-site .studio-section>h2:not(:first-child):not(.eyebrow+h2){margin-top:2rem}
+.studio-site details{border-bottom:0;margin-top:0}
+.studio-site details+details{border-top:1px solid var(--line)}
+.studio-site .footer-top{border-top:0}
+.studio-site .compact-offer{display:flex;flex-direction:column}
+.studio-site .compact-offer .offer-purchase-actions{margin-top:auto}
+.studio-site :is(.buyer-pack-links,.checkout-alternatives,.studio-concept-debrief,.concept-studio-link) a{display:inline-flex;align-items:center;min-height:32px;padding-block:.25rem}
+.studio-site label.check{min-height:44px;display:flex;align-items:center;gap:.6rem}
+.studio-site label.check input{width:24px;height:24px;flex:none;accent-color:var(--moss)}
+.studio-site video:focus-visible{outline:3px solid var(--moss);outline-offset:5px;box-shadow:0 0 0 2px var(--paper)}
+@media(max-width:767px){
+ html{--site-header-height:64px}
+ .studio-site h1{font-size:clamp(2.2rem,8vw,3.2rem)}
+ .studio-site .civic-copy h1,.studio-site .hero-copy h1{font-size:clamp(2.4rem,9vw,3.4rem)}
+ .studio-site h2{font-size:clamp(1.9rem,6.5vw,2.6rem)}
+ .studio-site .journal-table-wrap table{font-size:1rem}
+ .studio-site .journal-table-wrap :is(th,td){font-size:1rem;min-width:150px;overflow-wrap:normal;hyphens:auto}
+ .page-tools-ready .back-to-top{left:auto;right:max(1rem,env(safe-area-inset-right));bottom:calc(5rem + env(safe-area-inset-bottom));width:48px;height:48px}
+ .studio-site .comparison-scroll table{min-width:600px}
+ .studio-site .comparison-scroll th:first-child{max-width:140px}
+}
+@media(max-height:520px){
+ .studio-site h1,.studio-site .civic-copy h1,.studio-site .hero-copy h1{font-size:2.4rem}
+ .studio-site h2{font-size:2rem}
+ .studio-site .site-header{position:relative}
+}
+
+.studio-site .journal-layout{display:block;max-width:760px;margin:0 auto 4rem}
+.studio-site details.journal-toc{position:static;max-height:none;overflow:visible;scrollbar-gutter:auto;margin:0 0 1.5rem;padding:.25rem 0}
+.studio-site .journal-toc summary{font-size:1rem;min-height:44px;padding:.6rem 0}
+.studio-site .journal-toc ol{font-size:1rem;margin:.5rem 0 1rem}
+.studio-site .journal-toc li{margin-bottom:.35rem}
+.studio-site .journal-toc a{display:inline-block;min-height:32px;padding:.2rem 0}
+.civic-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.studio-site :is(.compact-offer,.home-plan-summary,.value-grid,.continuing-grid,.monthly-plan) p:not(.compact-price,.price){font-size:1rem}
+.studio-site main details p,.studio-site .service-note,.studio-site .scope-footnote{font-size:1rem}

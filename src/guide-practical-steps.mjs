@@ -12,10 +12,10 @@ export function practicalGuideSections(path, sections, o) {
     replace('start-with-scope', section('start-with-scope', 'Website prices you can compare', `<p>Wonder and Method’s fixed website fees run from ${money(o.launch_site.public_price)} to ${money(o.signature_site.public_price)}, before provider bills and applicable tax. A local provider also advertises lower upfront fees tied to a two-year commitment. Compare the whole commitment and included work, not just the first payment.</p><p>The examples below were checked October 18, 2026. They are selected published offers, not a Buffalo market average or equivalent scopes.</p>`));
     replace('dated-price-example', section('dated-price-example', 'Five published Buffalo website offers', table('Selected published website prices · checked October 18, 2026', ['Offer', 'Published payment', 'Cost and scope distinction'], [
       ...['launch_site', 'focused_site', 'signature_site'].map(id => [link('/pricing/#offer-' + id, 'Wonder and Method ' + o[id].public_name), money(o[id].public_price) + ' fixed fee', `Up to ${o[id].marketing_page_cap} marketing pages. Provider bills are separate; monthly care is optional.`]),
-      [link('https://www.buffaloweb.com/smartstart/', 'Buffalo Web SmartStart Essential'), '$299.99 upfront + $99/month for 24 months', '$2,675.99 across the stated commitment. Two years of hosting included.'],
-      [link('https://www.buffaloweb.com/smartstart/', 'Buffalo Web SmartStart Enhanced'), '$599.99 upfront + $139/month for 24 months', '$3,935.99 across the stated commitment. Adds two listed enhancements.']
+      [link('https://www.buffaloweb.com/smartstart/', 'Buffalo Web SmartStart Essential'), '$299.99 upfront + $99/month for 24 months', '$2,675.99 across the stated commitment. Up to 20 pages and two years of hosting included.'],
+      [link('https://www.buffaloweb.com/smartstart/', 'Buffalo Web SmartStart Enhanced'), '$599.99 upfront + $139/month for 24 months', '$3,935.99 across the stated commitment. Up to 20 pages, two years of hosting and two listed enhancements.']
     ]) + '<p>The commitment totals are arithmetic from the advertised fees, before any applicable tax or additions. Confirm current terms, editing access, ownership and exit costs with each provider. A hosting-inclusive two-year plan and an independently hosted fixed-fee build have different responsibilities.</p><p>A DIY reference is ' + link('https://webflow.com/pricing', 'Webflow Basic at $15/month billed yearly') + ': $180/year before tax, for a site without a CMS. Writing, design, checking the result, a domain and other tools can add cost. Your own time belongs in that budget.</p>'));
-    replace('annual-choice', section('annual-choice', 'Check the payment schedule', '<p>Compare the full build fee, optional monthly work and outside bills separately. Annual care prepayment is available only after fit and capacity checks; see ' + link('/pricing/#payments', 'payment and cancellation terms') + ' for the current choices.</p>'));
+    replace('annual-choice', section('annual-choice', 'Check the payment schedule', `<p>Website payments are 50% at booking, 30% at written design acceptance and 20% at written staging acceptance. For Launch, that is ${money(o.launch_site.public_price*.5)}, ${money(o.launch_site.public_price*.3)} and ${money(o.launch_site.public_price*.2)}. Domain, hosting and paid tools are separate. See ${link('/pricing/#payments','payment and cancellation terms')}.</p>`));
   }
   if (path === '/guides/website-maintenance-cost/') {
     replace('platform-cost', section('platform-cost', 'Published platform costs are separate from maintenance', table('Platform price examples · checked October 18, 2026', ['Platform', 'Published charge', 'What to check'], [
@@ -42,7 +42,7 @@ export function practicalGuideSections(path, sections, o) {
       ['/spring-2023-offer/', 'No replacement', 'Remove obsolete internal links and return 404 or 410 if no equivalent page exists.']
     ]) + `<p>Have the developer check that each redirect reaches the final page in one step. Google recommends keeping redirects for as long as possible, generally at least a year. For a move to a different domain or subdomain, review Search Console’s Change of Address procedure as well. A same-domain path change is a different case. ${link('https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes', 'Google’s site-move guidance')}.</p>`));
   }
-  if (path === '/guides/local-seo-profile-eligibility/' || path === '/guides/contractor-website-checklist/') {
+  if (path === '/guides/local-seo-profile-eligibility/') {
     additions.push(section('local-profile-actions', 'Local search steps for a trade business', list([
       'Start with actual coverage: list the towns and jobs the team serves, what requires a site visit, and how an estimate is arranged.',
       'If the business qualifies for a Google Business Profile, use its real business name and the fewest specific categories that describe its core work. A business that visits customers and does not receive them at its address should hide that address.',
@@ -63,5 +63,25 @@ export function practicalGuideSections(path, sections, o) {
   if (path === '/guides/ai-website-or-custom/') {
     replace('trial', section('trial', 'Test the generated draft before buying more work', `<p>Try a short, factual brief: “Create a draft website for a Buffalo garden-care business. Use these approved services and coverage details. Leave missing prices, credentials and project examples blank. Make the main action a request for an estimate.” Supply only information you have permission to use.</p>${list(['Check whether the tool invented a review, qualification, address or completed project. Remove each unsupported claim.', 'Replace a service paragraph and one image. Check the phone layout and whether you can undo the change.', 'Test the full form with a controlled address, then inspect where the message arrived and whether you can reply.', 'Ask what can be exported, how backups work and which features stop when the subscription ends.'])}<p>Use ${link('/assets/downloads/audit-website-approach.csv', 'the approach comparison worksheet')} to record the results. If the design structure itself is the question, use ${link('/guides/custom-website-or-template/', 'the separate custom-versus-template guide')}.</p>`));
   }
-  return [...sections, ...additions];
+  let result=[...sections,...additions];
+  if(path==='/guides/website-not-showing-on-google/'){
+   const first=result.find(x=>x.id==='inspection-steps');
+   first.body='<span id="index"></span>'+first.body;
+   result=[first,...result.filter(x=>!['inspection-steps','index'].includes(x.id))];
+  }
+  if(path==='/guides/contact-form-not-working/'){
+   const quick=section('five-minute-check','Start with a five-minute owner check',list(['Open the public form on your phone and send one clearly labeled test using an email address you control. Note the time and confirmation.','Search the receiving inbox, spam and quarantine for that test. Confirm that someone checks this mailbox.','Open the form settings and check the notification recipient. An old employee or former provider may still be listed.','If your platform keeps submissions, look for the same test there. Some WordPress plugins and custom forms do not save a separate copy.','Reply to the test from the business mailbox. If any step fails, give your web person the page, time and observed result; keep passwords and customer records private.']));
+   quick.body='<span id="trace"></span><span id="inbox"></span>'+quick.body;
+   const platform=result.find(x=>x.id==='platform-settings');
+   result=[quick,platform,...result.filter(x=>!['platform-settings','trace','inbox'].includes(x.id))];
+   result=result.map(x=>['specific-form-checks','notification','receipt'].includes(x.id)?{...x,title:x.id==='specific-form-checks'?'For your web person: technical checks':x.title,body:`<details><summary>Show ${x.id==='receipt'?'receiving-system':x.id==='notification'?'email-delivery':'technical'} checks</summary>${x.body}</details>`}:x);
+   result.push(section('review-options','Choose a review or a supported small fix',`<p>The ${money(o.baseline.one_time_price)} Website Baseline reviews the site and sets priorities. The ${money(o.audit_sprint.one_time_price)} Audit &amp; Fix Sprint adds up to two agreed small fixes. We confirm platform, access and fit first; these are not promises to repair every WordPress, Wix or Squarespace setup. ${link('/contact/?offer=audit_fix_sprint&amp;goal=fix#inquiry','Ask about a form fix')}.</p>`));
+  }
+  if(path==='/guides/website-launch-checklist/'){result=result.filter(x=>x.id!=='launch-check-tools');result[0].body='<span id="launch-check-tools"></span>'+result[0].body;}
+  if(path==='/guides/website-migration-checklist/'){
+   const example=result.find(x=>x.id==='redirect-example');
+   result=[...result.filter(x=>x.id!=='redirect-example')];
+   const position=result.findIndex(x=>x.id==='before');result.splice(position<0?1:position,0,example);
+  }
+  return result.map(x=>({...x,body:x.body.replace(/(<a[^>]+href="[^"]+\.(csv|txt)"[^>]*>)([^<]*)(<\/a>)/gi,(_m,open,ext,label,close)=>open+label+(label.toUpperCase().includes(ext.toUpperCase())?'':' ('+ext.toUpperCase()+')')+close)}));
 }

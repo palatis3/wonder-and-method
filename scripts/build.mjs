@@ -10,7 +10,7 @@ import {readFile,writeFile,mkdir,cp,readdir,rm,stat} from 'node:fs/promises';
 import {resolve,dirname,basename,extname,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
 import {assertSiteOrigin,crawlFiles} from '../src/seo.mjs';
-import {routeIndexEligible} from '../src/index-policy.mjs';
+import {privateRoute} from '../src/index-policy.mjs';
 import {releaseFingerprint} from '../src/release.mjs';
 import {renderPages} from '../src/pages.mjs';
 import {transform,build as bundle} from 'esbuild';
@@ -79,8 +79,29 @@ export async function pruneObsoleteBuildAssets(output){
  return {removed,retained,bytesRemoved:removed.reduce((sum,item)=>sum+item.bytes,0)};
 }
 
+// Complete plan posters are preserved in source as a dated design archive.
+// Current sales pages use live HTML scope. Do not publish stale, unlinked offers.
+export async function pruneRetiredPlanArtwork(output){
+ const root=resolve(output),folder=resolve(root,'assets/package-visuals');
+ if(!folder.startsWith(resolve(root,'assets')+sep))throw Error('Invalid retired artwork path');
+ const outside=[],archived=[];
+ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){
+  const file=resolve(dir,entry.name);
+  if(entry.isDirectory())await walk(file);
+  else if(file.startsWith(folder+sep))archived.push(file);
+  else if(['.html','.css','.js','.mjs','.json','.svg','.xml','.txt'].includes(extname(file)))outside.push(file);
+ }}
+ await walk(root);
+ for(const file of outside)if((await readFile(file,'utf8')).includes('/assets/package-visuals/'))throw Error('Retired plan artwork still referenced by '+relative(root,file));
+ const removed=[];
+ for(const file of archived){const bytes=(await stat(file)).size;await rm(file);removed.push({file:relative(root,file).split(sep).join('/'),bytes});}
+ return removed;
+}
+
 export async function buildSite(){
 const config=await readJSON('config/site.json');
+const captures=await readJSON('src/portfolio-captures.json');
+for(const [file,sha] of Object.entries(captures.sourceHashes))if(createHash('sha256').update(await readFile(resolve(root,file))).digest('hex')!==sha)console.warn('Portfolio homepage screenshot may be stale: '+file+' changed since '+captures.capturedAt+'.');
 const chatCsp=supportChatCsp(config);
 const offers=await readJSON('config/offers.json');
 const map=await readJSON('authority/v5/site-map.json');
@@ -98,7 +119,7 @@ await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
 const workbenchStateVersion=createHash('sha256').update(await readFile(resolve(output,'assets/lead-workbench-state.js'))).digest('hex').slice(0,12);
 const workbenchScript=resolve(output,'assets/lead-workbench.js');
 await writeFile(workbenchScript,(await readFile(workbenchScript,'utf8')).replace(/lead-workbench-state\.js\?v=[^'"]+/,`lead-workbench-state.js?v=${workbenchStateVersion}`));
-await cp(resolve(root,'src/siteaudit-NTlhNWVhZD.txt'),resolve(output,'siteaudit-NTlhNWVhZD.txt'));
+// Retired unaffiliated siteaudit verification file is retained in source history only.
 await cp(resolve(root,'src/assets/brand/favicon.ico'),resolve(output,'favicon.ico'));
 const browserBundles=await buildBrowserBundles(root,config);
 await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
@@ -139,7 +160,7 @@ await mkdir(resolve(output,'.well-known'),{recursive:true});
 await writeFile(resolve(output,'.well-known/security.txt'),'Contact: mailto:support@wonderandmethod.com\nExpires: 2027-04-17T00:00:00Z\nPreferred-Languages: en\nCanonical: https://wonderandmethod.com/.well-known/security.txt\n');
 await cp(resolve(output,'404/index.html'),resolve(output,'404.html'));
 // Static CSS hints only; no private, API, error or payment response is hinted.
-const earlyHints=pages.filter(page=>routeIndexEligible(page.path)).map(page=>{const styles=[...page.html.matchAll(/<link rel="stylesheet" href="(\/assets\/[^"?]+\.css)"/g)].map(([,asset])=>`<${asset}?v=${assetVersions.get(asset)}>; rel=preload; as=style`);return styles.length?`${page.path}\n  Link: ${styles.join(', ')}\n`:'';}).join('\n');
+const earlyHints=pages.filter(page=>!privateRoute(page.path)&&!['/404/','/payments/'].includes(page.path)).map(page=>{const styles=[...page.html.matchAll(/<link rel="stylesheet" href="(\/assets\/[^"?]+\.css)"/g)].map(([,asset])=>`<${asset}?v=${assetVersions.get(asset)}>; rel=preload; as=style`);return styles.length?`${page.path}\n  Link: ${styles.join(', ')}\n`:'';}).join('\n');
 await writeFile(resolve(output,'_headers'),`/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -158,13 +179,14 @@ let commit=null,dirty=true;try{commit=execFileSync('git',['rev-parse','HEAD'],{c
 await writeFile(resolve(output,'version.json'),JSON.stringify({site:'wonder-and-method',sourceSha256,commit,dirty,routes:pages.length},null,2)+'\n');
 // Scan all emitted documents, including generated buyer packs, before pruning.
 const assetPruning=await pruneObsoleteBuildAssets(output);
+const retiredPlanArtwork=await pruneRetiredPlanArtwork(output);
 for(const name of await readdir(resolve(root,'authority/v5'))){const bytes=await readFile(resolve(root,'authority/v5',name)); inventory.push({file:name,sha256:createHash('sha256').update(bytes).digest('hex')});}
 await mkdir(resolve(root,'evidence'),{recursive:true});
 await writeFile(resolve(root,'evidence/authority-hashes.json'),JSON.stringify(inventory,null,2));
 await writeFile(resolve(root,'evidence/build.json'),JSON.stringify({builtAt:new Date().toISOString(),mode:config.mode,routes:pages.map(p=>p.path),pageDates:Object.fromEntries(pages.filter(p=>p.modifiedAt).map(p=>[p.path,p.modifiedAt])),prices,source:'config/offers.json',gated:['/services/website-care/',...map.pages.filter(p=>p.stage==='launch_if_evidence_ready').map(p=>p.url)].filter(path=>!pages.some(p=>p.path===path)),guideReason:config.guideApprovals?.length?'Dated editorial review and owner publication instruction recorded in config/site.json':'Dated editorial evidence review required before publication',careReason:config.careReady?'Actual coverage and review recorded':'Actual staffed coverage, recipient and escalation must be agreed before enrollment'},null,2));
 console.log(`Built ${pages.length} HTML routes (${config.mode}); source plan and operating records excluded from dist.`);
 console.log(`Removed ${assetPruning.removed.length} unreferenced build assets (${assetPruning.bytesRemoved} bytes); retained ${assetPruning.retained.length} referenced candidates.`);
-return {routes:pages.length,assetPruning,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans)}};
+return {routes:pages.length,assetPruning,retiredPlanArtwork,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans)}};
 }
 
 if(process.argv[1]&&resolve(process.argv[1])===resolve(import.meta.filename))await buildSite();

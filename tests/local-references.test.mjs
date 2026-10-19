@@ -35,3 +35,18 @@ test('showcase rejects an incomplete output before writing concepts',async()=>{
  try{await assert.rejects(buildShowcase(root),/complete private preview/);}
  finally{await rm(root,{recursive:true,force:true});}
 });
+
+
+test('reference verification follows generated documents and rejects broken same-page and cross-page fragments',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'wm-fragments-'));
+ try{
+  await mkdir(join(root,'assets'));
+  await writeFile(join(root,'index.html'),'<main id="main"><a href="#main">Skip</a><a href="/assets/pack?v=version#scope">Details</a></main>');
+  await writeFile(join(root,'assets/pack.html'),'<section id="scope"><a href="/#missing">Return</a></section>');
+  await assert.rejects(verifyLocalReferences(root,['index.html']),/Missing local fragment.*missing/);
+  await writeFile(join(root,'assets/pack.html'),'<section id="scope"><a href="/#main">Return</a></section>');
+  assert.equal((await verifyLocalReferences(root,['index.html'])).status,'pass');
+  await writeFile(join(root,'assets/pack.html'),'<section id="renamed"></section>');
+  await assert.rejects(verifyLocalReferences(root,['index.html']),/Missing local fragment.*scope/);
+ }finally{await rm(root,{recursive:true,force:true});}
+});

@@ -14,5 +14,5 @@ export async function publicDocumentStyles(output){
  return links.join('');
 }
 export function publicDocumentHeader(){
- return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a href="/" class="wordmark brand-lockup" aria-label="Wonder &amp; Method home">${brandWordmark()}</a></header>`;
+ return `<a class="skip" href="#main">Skip to content</a><header class="site-header"><a href="/" class="wordmark brand-lockup" aria-label="Wonder &amp; Method home">${brandWordmark()}</a></header>`;
 }

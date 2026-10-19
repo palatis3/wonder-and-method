@@ -8,14 +8,25 @@ export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serv
 export function inquiryMessagePrompt(service='',requestKind='checkout'){
  if(requestKind==='question')return service&&service!=='unsure'?'Your question about this service':'Your question';
  if(['keep_running','improve','grow'].includes(resolveServiceId(service)))return 'What does your existing website need, and what would you like monthly help to achieve?';
- if(['website_baseline','audit_fix_sprint'].includes(resolveServiceId(service)))return 'What is broken, and what should happen instead?';
+ if(resolveServiceId(service)==='website_baseline')return 'What would you like your website to do better?';
+ if(resolveServiceId(service)==='audit_fix_sprint')return 'What is broken, and what should happen instead?';
  if(['launch_site','focused_site','signature_site'].includes(resolveServiceId(service)))return 'What does your business do, and when do you need the website?';
  return 'What would you like help with, and are there any important dates?';
+}
+export function inquiryMessageHelp(service='',requestKind='checkout',goal=''){
+ const id=resolveServiceId(service);
+ let hint=requestKind==='question'?'Ask what you need to know about the service, scope, costs or next steps.'
+  :id==='website_baseline'?'Share your website address above and what you want the starting review to help you decide.'
+  :id==='audit_fix_sprint'||goal==='fix'?'Include the page address, what goes wrong and what should happen instead.'
+  :['keep_running','improve','grow'].includes(id)?'Share your website address above and what you would like help with each month.'
+  :['launch_site','focused_site','signature_site'].includes(id)?'For example: what you do, the area you serve, the pages you need and any deadline.'
+  :'Tell us a little about your business, what you need and any important dates.';
+ return hint+' Please use at least 10 characters. No passwords, payment details or sensitive information.';
 }
 export const inquiryContextFields={
  concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
- found_via:{label:'How did you find us?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
+ found_via:{label:'How did you find us?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Google or another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
  request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Ask a question']]},
  booking_choice:{label:'A booking or newsletter connection',services:['launch_site','focused_site','signature_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
  priority:{label:'First monthly improvement',services:['improve','grow'],options:[['page','Improve a service page or supported inquiry path'],['article','Research and write an article or customer guide'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
@@ -24,22 +35,24 @@ export const inquiryContextFields={
  billing:{label:'Service billing',services:['keep_running','improve','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
 };
 export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&field.options.some(([id])=>id===value[key]))result[key]=value[key];return result;}
-export function inquiryContextSummary(value={}){return Object.entries(selectedInquiryContext(value)).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]);}
-export function inquiryRequestSummary(value={},pack){
- const question=value.request_kind==='question';
- const context=selectedInquiryContext(value);
- const choice=inquiryChoices.find(([id])=>id===value.service);
- let headline=value.service==='unsure'?'Not sure yet: Terry will recommend a plan':choice?.[1]||'Not sure yet: Terry will recommend a plan';
- if(!question&&pack){
-  const annual=value.billing==='annual'&&pack.annual;
-  const fee=annual?pack.annual.upfront_price:pack.price;
-  headline+=' — '+money(fee)+(annual?' prepaid for 12 service cycles':' '+pack.priceLabel);
-  if(pack.baselineFee)headline+=`; first payment for an existing site ${money(fee+pack.baselineFee)} including ${money(pack.baselineFee)} setup, or ${money(fee)} when a usable studio build or Sprint covers setup`;
- }
- const visible=question?Object.fromEntries(Object.entries(context).filter(([key])=>['goal','concept'].includes(key))):context;
- return [headline,...inquiryContextSummary({service:value.service,...visible}),question?'Question only. No booking or payment.':'Proposal request only. Scope, provider costs and dates are confirmed before payment.'].join(' · ');
+// Public forms keep useful link context, without offering inactive annual enrollment.
+// The broader validator/receipt allowlist remains compatible with historical records.
+export function publicInquiryContext(value={},annualEnabled=false){
+ const result=selectedInquiryContext(value);
+ if(!annualEnabled&&result.billing==='annual')delete result.billing;
+ if(!['launch_site','focused_site','signature_site','unsure'].includes(resolveServiceId(value.service))||['fix','care'].includes(result.goal))delete result.concept;
+ return result;
 }
-export const priceList=o=>({launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
+export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.request_kind==='checkout'||value.goal&&value.goal!=='unsure'||value.concept);}
+export function inquiryContextSummary(value={}){return Object.entries(selectedInquiryContext(value)).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]);}
+export function inquiryRequestSummary(value={}){
+ const context=selectedInquiryContext(value),choice=inquiryChoices.find(([id])=>id===value.service);
+ const parts=[value.request_kind==='question'?'Question':'Proposal request'];
+ if(choice&&choice[0]!=='unsure')parts.push(choice[1]);
+ for(const key of ['goal','concept'])if(context[key]&&context[key]!=='unsure')parts.push(inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
+ return parts.join(' · ');
+}
+export const priceList=o=>({launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {
  if(!prices.hosting_credit||prices.provider_model)throw new Error('Legacy calculation requires a saved hosting-credit snapshot');
@@ -76,10 +89,14 @@ export function calculateCost(prices,{build='launch',plan='none',baseline=false,
  const baselineFee=baseline&&build==='existing'&&!sprint?prices.baseline:0;
  const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
  const externalCents=external===null?null:cents(external),grossCents=hostingMonthly===null?null:cents(hostingMonthly)*hostingMonths,totalCents=externalCents===null||grossCents===null?null:serviceCents+grossCents+externalCents;
- if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
- return {once:onceCents/100,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
+ const knownSubtotalCents=serviceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
+ if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents,knownSubtotalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
+ return {once:onceCents/100,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
 }
 
 export function annualRefund(prices,{plan,completedCycles}){if(!Object.hasOwn(prices.annual,plan)||!Number.isInteger(completedCycles)||completedCycles<0||completedCycles>12)throw new Error('Invalid annual refund inputs');return cents(prices.annual[plan])*(12-completedCycles)/12/100;}
 
-export function inquiryOptionalFields(value={},onlyApplicable=false){return Object.entries(inquiryContextFields).filter(([key,field])=>key!=='request_kind'&&(onlyApplicable||key!=='baseline_status')&&(onlyApplicable||!['goal','found_via'].includes(key))&&(!onlyApplicable||field.services.includes(value.service))).map(([key,field])=>`<div class="optional-choice" data-context-field="${key}"><label for="${key}">${escapeHtml(field.label)} <span>(optional)</span></label><select id="${key}" name="${key}" aria-describedby="${key}-error"><option value="">Decide during fit review</option>${field.options.filter(([id])=>key!=='billing'||id!=='annual'||value.billing==='annual').map(([id,label])=>`<option value="${id}"${value[key]===id?' selected':''}>${escapeHtml(label)}</option>`).join('')}</select><p class="error" id="${key}-error"></p></div>`).join('');}
+export function inquiryOptionalFields(value={},_onlyApplicable=false,annualEnabled=false){
+ const context=publicInquiryContext(value,annualEnabled);
+ return Object.keys(inquiryContextFields).filter(key=>!['request_kind','goal','found_via'].includes(key)).map(key=>`<input type="hidden" id="${key}" name="${key}" value="${escapeHtml(context[key]||'')}">`).join('');
+}
