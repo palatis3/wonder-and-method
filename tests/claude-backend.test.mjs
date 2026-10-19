@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import worker, { notifyInquiry, retryPendingInquiries, runScheduledMaintenance } from '../deployment/worker.mjs';
 import { inquiryRetentionPreview, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS } from '../deployment/inquiry-maintenance.mjs';
 
-const migrations = await Promise.all(['0001_inquiries.sql', '0003_inquiry_followup.sql', '0005_inquiry_operations.sql'].map(name =>
+const migrations = await Promise.all(['0001_inquiries.sql', '0002_journey_counts.sql', '0003_inquiry_followup.sql', '0004_journey_categories.sql', '0005_inquiry_operations.sql', '0006_journey_contact_events.sql', '0007_journey_sources.sql', '0008_journey_resource_intent.sql'].map(name =>
   readFile(new URL(`../deployment/migrations/${name}`, import.meta.url), 'utf8')));
 const origin = 'https://example.test';
 const payload = {
@@ -387,6 +387,21 @@ test('external monitor receives no inquiry data and pings only while aggregate h
   await runScheduledMaintenance(env,{now,clock:()=>now,logger:()=>{},send});assert.equal(calls.length,1);
   env.INQUIRY_MODE='synthetic';await runScheduledMaintenance(env,{now,logger:()=>{},send});assert.equal(calls.length,1);
   env.DB.sqlite.close();
+});
+
+test('scheduled maintenance with the complete production schema cleans only expired aggregate data before pinging',async()=>{
+ const env=liveNotificationEnvironment(),now=Date.now();env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
+ const today=new Date(now).toISOString().slice(0,10),old=new Date(now-91*86400000).toISOString().slice(0,10);
+ for(const day of [today,old])env.DB.sqlite.prepare('INSERT INTO journey_counts (day,event,service,page,source,total) VALUES (?,?,?,?,?,?)').run(day,'page_view','unsure','home','direct',1);
+ env.DB.sqlite.prepare('INSERT INTO rate_limits VALUES (?,?,?)').run('expired-test',1,now-1);
+ env.DB.sqlite.prepare('INSERT INTO rate_limits VALUES (?,?,?)').run('current-test',1,now+1200000);
+ const calls=[],logs=[];
+ const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async(url,options)=>{calls.push({url,options});return new Response('OK');}});
+ assert.deepEqual(result,{ok:true,codes:[]});assert.deepEqual(logs,[]);assert.equal(calls.length,1);
+ assert.deepEqual(env.DB.sqlite.prepare('SELECT day,total FROM journey_counts').all().map(row=>({...row})),[{day:today,total:1}]);
+ assert.deepEqual(env.DB.sqlite.prepare('SELECT key FROM rate_limits').all().map(row=>row.key),['current-test']);
+ assert.equal(calls[0].options.body,undefined);assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n,0);
+ env.DB.sqlite.close();
 });
 
 test('a stale pre-lease read cannot roll back a newer actual provider attempt after quota exhaustion',async()=>{

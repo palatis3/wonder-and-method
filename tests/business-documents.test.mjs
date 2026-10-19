@@ -108,9 +108,9 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
 
 test('process and handoff avoid stale schedules and premature final-payment trigger', () => {
  const calendar = projectCalendar(), handoff = sourceHandoff();
- assert.match(calendar, /Launch, Focused and Signature.*7 days/);
+ assert.match(calendar, /3–5 days for Launch, 5–8 days for Focused and 7–10 days for Signature/);
  assert.match(calendar, /I write the content/);
- assert.match(calendar, /full windows.*can move the launch beyond the 7-day target/);
+ assert.match(calendar, /full windows.*can move the launch beyond the package’s average delivery range/);
  assert.doesNotMatch(calendar, /April|2027|four working weeks|ten production days/);
  assert.match(handoff, /five business days after paid completion or settled cancellation/);
  assert.doesNotMatch(handoff, /five business days.*final payment/);

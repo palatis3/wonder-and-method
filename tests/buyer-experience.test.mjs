@@ -33,16 +33,33 @@ test('proposal summaries stay concise while hidden selected details remain avail
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- assert.match(config.projectTiming,/7 days from the confirmed start/);assert.match(config.projectTiming,/page list agreed.*business facts, assets and access ready/);
- assert.match(config.projectTiming,/Complete writing is included/);assert.match(config.projectTiming,/delayed reviews or added scope change the schedule/);assert.match(config.projectTiming,/proposal confirms the dates/);
+ assert.match(config.projectTiming,/Average delivery: Launch 3–5 days, Focused 5–8 days and Signature 7–10 days/);assert.match(config.projectTiming,/page list agreed.*business facts, assets and access ready/);
+ assert.match(config.projectTiming,/Complete writing is included/);assert.match(config.projectTiming,/few extra days.*delayed inputs, reviews or added scope can extend the schedule/);assert.match(config.projectTiming,/proposal confirms the dates/);
  const pages=renderPages({config,offers,map,geography});
- const home=pages.find(page=>page.path==='/').html;assert.match(home,/seven days from a confirmed start/);assert.match(home,/delays or extra work change the schedule/);
+ const home=pages.find(page=>page.path==='/').html;assert.ok(home.includes(config.projectTiming));
  for(const path of ['/pricing/','/process/'])assert.ok(pages.find(page=>page.path===path).html.includes(config.projectTiming),path);
- for(const pack of buyerPacks(offers).filter(pack=>['launch_site','focused_site','signature_site'].includes(pack.id)))assert.ok(JSON.stringify(pack.sections).includes(config.projectTiming),pack.id);
+ const ranges={launch_site:'3–5 days',focused_site:'5–8 days',signature_site:'7–10 days'};
+ for(const [id,range] of Object.entries(ranges)){
+  assert.equal(offers[id].delivery_average,range);
+  assert.equal(offers[id].delivery_target,`Average delivery: ${range}. ${offers.delivery_conditions}`);
+  const pack=buyerPacks(offers).find(pack=>pack.id===id);
+  assert.ok(JSON.stringify(pack.sections).includes(offers[id].delivery_target),id);
+  const checkout=pages.find(page=>page.path===`/checkout/${id.replaceAll('_','-')}/`).html;
+  assert.ok(checkout.includes(offers[id].delivery_target),id+' selected package timing');
+  for(const other of Object.keys(ranges).filter(key=>key!==id))assert.ok(!checkout.includes(offers[other].delivery_target),id+' must not inherit '+other+' timing');
+ }
+ for(const page of pages)assert.doesNotMatch(page.html,/seven.day target|7.day target|delivery in 7 days|target is seven days/i,page.path);
  const process=pages.find(page=>page.path==='/process/').html;
+ const redesign=pages.find(page=>page.path==='/services/website-redesign/').html;
+ for(const id of Object.keys(ranges)){
+  assert.ok(redesign.includes(`href="/checkout/${id.replaceAll('_','-')}/"`),id+' redesign request action');
+  assert.ok(redesign.includes(`href="/contact/?offer=${id}&amp;request_kind=question#inquiry"`),id+' redesign question action');
+  assert.ok(redesign.includes(`href="/assets/buyer-packs/${id}"`),id+' redesign full details');
+ }
+ assert.ok(redesign.indexOf('id="redesign-packages"')<redesign.indexOf('id="migration"'),'Package choices appear before migration detail');
  for(let index=1;index<=6;index++)assert.equal((process.match(new RegExp(`id="process-stage-${index}"`,'g'))||[]).length,1);
  assert.equal((process.match(/id="project-calendar"/g)||[]).length,1);
- assert.match(process,/using that full time can extend the seven-day target/);
+ assert.match(process,/using that full time can extend the package’s average delivery range/);
  assert.match(process,/Missing inputs or added scope receive a revised schedule/);
  assert.match(process,/review allowance is up to five business days each/);assert.match(process,/silence is never approval/);
  assert.match(process,/five business days after paid completion, or after settling the account if work ends early/);assert.match(process,/30-day defect-correction window does not delay/);
