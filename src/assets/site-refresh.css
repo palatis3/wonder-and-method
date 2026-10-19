@@ -534,7 +534,7 @@ form>.optional-choice{margin:1.25rem 0}
 .link-row{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem;list-style:none;margin:1rem 0;padding:0}
 .link-row li{margin:0;padding:0}
 .link-row a,.studio-site :is(.buyer-pack-links,.checkout-alternatives) a{display:inline-flex;align-items:center;min-height:44px;padding-block:.6rem;font-size:1rem}
-.page-top-observer{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
+html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
 /* Fixed corner tools enhance the native footer link after JavaScript is ready. */
 .page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
 .page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}

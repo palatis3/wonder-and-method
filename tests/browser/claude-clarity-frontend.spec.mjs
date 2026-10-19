@@ -100,7 +100,8 @@ test('without scripts navigation and footer disclose natively while demo fields 
 test('enlarged text keeps the full chat launcher clear of underlying links',async({page})=>{
  await fixture(page,{width:1024,height:900});
  await page.addStyleTag({content:'html{font-size:32px}#last-link{position:fixed;right:40px;bottom:115px;z-index:1}'});
- await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
+ await expect(page.locator('.support-chat-launch')).toBeVisible();
  await page.locator('#last-link').focus();await expect(page.locator('#last-link')).toBeFocused();
+ await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
  const unobstructed=await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.right-5,r.top+5));});expect(unobstructed).toBe(true);
 });

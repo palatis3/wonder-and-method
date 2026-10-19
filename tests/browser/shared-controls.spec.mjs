@@ -106,3 +106,23 @@ test('homepage animation can replay its opening after reaching ambient motion',a
  expect(await page.locator('#civic-motion').evaluate(video=>video.currentTime)).toBeLessThan(2);
  await page.locator('.civic-toggle').click();
 });
+
+test('ordinary scrolling keeps corner tools steady and retains every page section',async({page})=>{
+ for(const path of ['/','/pricing/']){
+  await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
+  const sections=()=>page.locator('main section').evaluateAll(xs=>xs.map(x=>({id:x.id,hidden:x.hidden,display:getComputedStyle(x).display,text:x.textContent.length})));
+  const before=await sections(),max=await page.evaluate(()=>document.documentElement.scrollHeight-innerHeight);
+  const scroll=async y=>page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},y);
+  for(let y=600;y<max+250;y+=250){
+   await scroll(Math.min(y,max));
+   await expect(page.locator('.support-chat-launch')).toBeVisible();
+   await expect(page.locator('.back-to-top')).toBeVisible();
+   expect(await sections()).toEqual(before);
+  }
+  for(const y of [540,470,510,400]){await scroll(y);await expect(page.locator('.back-to-top')).toBeVisible();}
+  await scroll(340);await expect(page.locator('.back-to-top')).toBeHidden();
+  await expect(page.locator('.support-chat-launch')).toBeVisible();
+  await page.locator('#main').focus();await scroll(600);
+  await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.back-to-top')).toBeVisible();
+ }
+});
