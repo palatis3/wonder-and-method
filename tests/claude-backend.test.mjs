@@ -404,6 +404,45 @@ test('scheduled maintenance with the complete production schema cleans only expi
  env.DB.sqlite.close();
 });
 
+test('scheduled monitor failures use precise codes without exposing its URL or error details',async()=>{
+ const cases=[
+  {url:'http://monitor.example.test/private-token',code:'scheduled_healthcheck_config_invalid',called:false},
+  {url:'not-a-url-private-token',code:'scheduled_healthcheck_config_invalid',called:false},
+  {url:'https://user:private-token@monitor.example.test',code:'scheduled_healthcheck_config_invalid',called:false},
+  {error:Object.assign(new Error('private-token'),{name:'TimeoutError'}),code:'scheduled_healthcheck_timeout'},
+  {error:new TypeError('private-token'),code:'scheduled_healthcheck_transport_failed'},
+  {status:403,code:'scheduled_healthcheck_forbidden'},
+  {status:404,code:'scheduled_healthcheck_not_found'},
+  {status:429,code:'scheduled_healthcheck_rate_limited'},
+  {status:503,code:'scheduled_healthcheck_http_failed'}
+ ];
+ for(const item of cases){
+  const env=liveNotificationEnvironment(),now=Date.now(),logs=[];let calls=0;
+  env.HEALTHCHECK_URL=item.url||'https://monitor.example.test/private-token';
+  const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async()=>{calls++;if(item.error)throw item.error;return new Response('private-token',{status:item.status||200});}});
+  assert.deepEqual(result,{ok:false,codes:[item.code]});assert.deepEqual(logs,[item.code]);assert.equal(calls,item.called===false?0:1);
+  assert.doesNotMatch(JSON.stringify({result,logs}),/private-token|example\.test/);env.DB.sqlite.close();
+ }
+});
+
+test('unhealthy delivery and failed health queries cannot report scheduled success or send a heartbeat',async()=>{
+ for(const mode of ['unhealthy','query-failed']){
+  const env=liveNotificationEnvironment(),now=Date.now(),logs=[];env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
+  if(mode==='unhealthy')insert(env,{delivery_status:'manual_review'});
+  else{const prepare=env.DB.prepare;env.DB.prepare=sql=>{if(sql.startsWith('SELECT delivery_status, COUNT'))throw Error('private details');return prepare(sql);};}
+  const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async()=>{throw Error('Heartbeat must not be attempted');}});
+  const code=mode==='unhealthy'?'scheduled_delivery_unhealthy':'scheduled_health_status_failed';
+  assert.deepEqual(result,{ok:false,codes:[code]});assert.deepEqual(logs,[code]);env.DB.sqlite.close();
+ }
+});
+
+test('an acknowledged monitor ping stays successful when unused response-body cancellation rejects',async()=>{
+ const env=liveNotificationEnvironment(),now=Date.now(),logs=[];env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
+ let calls=0,cancelled=0;
+ const result=await runScheduledMaintenance(env,{now,clock:()=>now,logger:code=>logs.push(code),send:async()=>{calls++;return {ok:true,status:200,body:{async cancel(){cancelled++;throw Error('private-token');}}};}});
+ assert.deepEqual(result,{ok:true,codes:[]});assert.deepEqual(logs,[]);assert.equal(calls,1);assert.equal(cancelled,1);env.DB.sqlite.close();
+});
+
 test('a stale pre-lease read cannot roll back a newer actual provider attempt after quota exhaustion',async()=>{
   const env=liveNotificationEnvironment(),now=Date.now(),id=insert(env);env.NOTIFICATION_DAILY_LIMIT='1';
   const realPrepare=env.DB.prepare;let reads=0,resume,readComplete;

@@ -412,22 +412,34 @@ export default {
 export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clock=Date.now,logger=console.error}={}){
   if(!env.DB)return {ok:false,codes:['scheduled_database_missing']};
   const codes=[];
-  const step=async(code,fn)=>{try{return await fn();}catch{codes.push(code);logger(code);return null;}};
+  const fail=code=>{codes.push(code);logger(code);};
+  const step=async(code,fn)=>{try{return await fn();}catch{fail(code);return null;}};
   const recovery=await step('scheduled_recovery_failed',()=>retryPendingInquiries(env,send,now,clock));
   if(recovery?.failed){codes.push('scheduled_recovery_row_failed');logger('scheduled_recovery_row_failed');}
   if(recovery && !recovery.failed)await step('scheduled_heartbeat_failed',()=>recordRecoverySuccess(env.DB,now));
   await step('scheduled_rate_cleanup_failed',()=>env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(now).run());
-  await step('scheduled_aggregate_cleanup_failed',()=>cleanJourneyCounts(env.DB));
+  await step('scheduled_aggregate_cleanup_failed',()=>cleanJourneyCounts(env.DB,now));
   if(env.HEALTHCHECK_URL && LIVE(env) && codes.length===0){
-    await step('scheduled_healthcheck_failed',async()=>{
-      const health=await inquiryStatus(env,now);
-      if(!health.health.ok)return;
-      const url=new URL(env.HEALTHCHECK_URL);
-      if(url.protocol!=='https:'||url.username||url.password)throw Error('invalid-healthcheck');
-      const response=await send(url.href,{method:'GET',redirect:'error',signal:AbortSignal.timeout(5000)});
-      await response.body?.cancel();
-      if(!response.ok)throw Error('failed-healthcheck');
-    });
+    const health=await step('scheduled_health_status_failed',()=>inquiryStatus(env,now));
+    if(health && !health.health.ok)fail('scheduled_delivery_unhealthy');
+    if(health?.health.ok){
+      const url=await step('scheduled_healthcheck_config_invalid',async()=>{
+        const value=new URL(env.HEALTHCHECK_URL);
+        if(value.protocol!=='https:'||value.username||value.password)throw Error('invalid-healthcheck');
+        return value;
+      });
+      if(url){
+        let response;
+        try{response=await send(url.href,{method:'GET',redirect:'error',signal:AbortSignal.timeout(5000)});}
+        catch(error){fail(['TimeoutError','AbortError'].includes(error?.name)?'scheduled_healthcheck_timeout':'scheduled_healthcheck_transport_failed');}
+        if(response){
+          if(!response.ok)fail(({403:'scheduled_healthcheck_forbidden',404:'scheduled_healthcheck_not_found',429:'scheduled_healthcheck_rate_limited'})[response.status]||'scheduled_healthcheck_http_failed');
+          // The response status is the receiver acknowledgement. Cancelling its
+          // unused body frees the connection; a cleanup error cannot unsend it.
+          try{await response.body?.cancel();}catch{}
+        }
+      }
+    }
   }
   return {ok:codes.length===0,codes};
 }
