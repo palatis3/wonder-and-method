@@ -22,7 +22,7 @@ export function mountCivicSculpture(hero, env = globalThis) {
     button.hidden = failed;
     button.textContent = requested ? 'Pause animation' : ended ? 'Play animation' : phase === 'ambient' || intro.currentTime > 0 ? 'Resume animation' : 'Play animation';
     button.setAttribute('aria-label',button.textContent);
-    if (replay) replay.hidden = true;
+    if (replay) replay.hidden = failed || (phase !== 'ambient' && !ended);
     hero.dataset.unavailable = String(failed);
     hero.dataset.playing = String(requested);
     hero.dataset.phase = phase;
@@ -116,6 +116,13 @@ export function mountCivicSculpture(hero, env = globalThis) {
     } else { ended = true; label(); }
   });
   button.addEventListener('click', () => requested ? pause() : void play());
+  replay?.addEventListener('click', () => {
+    if (failed) return;
+    pause(); phase = 'intro'; ended = false; intro.currentTime = 0;
+    if (hasAmbient) ambient.currentTime = 0;
+    still(); void play();
+    button.focus?.();
+  });
   doc.addEventListener('visibilitychange', () => {if(doc.hidden){pause();still();}});
   reduced.addEventListener('change', () => {
     if (reduced.matches) {

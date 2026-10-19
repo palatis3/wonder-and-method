@@ -22,7 +22,7 @@ async function fixture(page,{width=390,height=844}={}){
  await page.addScriptTag({content:navigation});
  await page.addScriptTag({content:chat});
  await page.addScriptTag({content:tools});
- await expect(page.locator('.support-chat-choice>summary')).toBeVisible();
+ await expect(page.locator('.support-chat-launch')).toBeVisible();
 }
 
 test('compact phone header and footer preserve usable navigation at320 and390',async({page})=>{
@@ -32,7 +32,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  const footer=await page.locator('footer').boundingBox();expect(footer.height).toBeLessThan(700);
+  const footer=await page.locator('footer').evaluate(el=>({height:el.getBoundingClientRect().height,reserved:parseFloat(getComputedStyle(el).paddingBottom)}));expect(footer.height-footer.reserved).toBeLessThan(700);expect(footer.reserved).toBeGreaterThanOrEqual(80);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.mobile-services-label')).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -41,19 +41,18 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('page tools remain in normal flow while links and form fields keep their focus',async({page})=>{
+test('floating page tools preserve focus and yield while editing',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- await page.locator('.support-chat-choice>summary').click();
- await expect(page.locator('.support-chat')).toHaveCSS('position','static');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
  expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
  await page.evaluate(()=>dispatchEvent(new Event('scroll')));
  await expect(launch).toBeFocused();await expect(launch).toBeVisible();
  await page.locator('#last-link').focus();
- await expect(page.locator('#last-link')).toBeFocused();await expect(launch).toHaveCSS('visibility','visible');
+ await expect(page.locator('#last-link')).toBeFocused();expect(await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.left+5,r.top+5));})).toBe(true);
  await page.getByRole('textbox',{name:'Sample question'}).focus();
- await expect(page.getByRole('textbox',{name:'Sample question'})).toBeFocused();await expect(page.locator('.support-chat')).toHaveCSS('position','static');
+ await expect(page.getByRole('textbox',{name:'Sample question'})).toBeFocused();await expect(launch).toBeHidden();
 });
 
 test('text-spacing leaves the mobile project action and menu unclipped',async({page})=>{
@@ -85,7 +84,7 @@ test('without scripts navigation and footer disclose natively while demo fields 
   await page.route('**/__frontend-component-fixture',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html></html>'}));
   await page.goto('http://127.0.0.1:4187/__frontend-component-fixture');
   const concept=conceptPages({config:{},offers:{}}).find(p=>p.path==='/work/hearthside/request/').body.replace(/<script[\s\S]*?<\/script>/g,'');
-  await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body class="studio-site">${siteHeader('/work/hearthside/request/')}<main>${concept}</main>${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
+  await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body class="studio-site">${siteHeader('/work/hearthside/request/')}<main>${concept}</main>${supportChatMarkup(chatConfig)}${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
   await expect(page.locator('#main-nav')).toBeVisible();
   await page.locator('.service-navigation>summary').click();
   await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
@@ -93,5 +92,15 @@ test('without scripts navigation and footer disclose natively while demo fields 
   await expect(page.locator('#concept-name')).toBeDisabled();
   await expect(page.locator('.concept-demo-form button[type=submit]')).toBeDisabled();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
+  await page.locator('.support-chat noscript a').click();
+  await expect(page).toHaveURL(/\/contact\/#inquiry$/);
  }finally{await context.close();}
+});
+
+test('enlarged text keeps the full chat launcher clear of underlying links',async({page})=>{
+ await fixture(page,{width:1024,height:900});
+ await page.addStyleTag({content:'html{font-size:32px}#last-link{position:fixed;right:40px;bottom:115px;z-index:1}'});
+ await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
+ await page.locator('#last-link').focus();await expect(page.locator('#last-link')).toBeFocused();
+ const unobstructed=await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.right-5,r.top+5));});expect(unobstructed).toBe(true);
 });

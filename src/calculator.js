@@ -59,6 +59,6 @@ export function bindCostCalculator(calculator,prices,doc=document){
  update();
  return update;
 }
-const calculator=typeof document==='undefined'?null:document.querySelector('#cost-calculator');
+const calculator=typeof document==='undefined'?null:document.querySelector('form#cost-calculator');
 if(calculator)fetch('/assets/prices.json',{cache:'no-store'}).then(response=>{if(!response.ok)throw Error();return response.json();}).then(prices=>bindCostCalculator(calculator,prices)).catch(()=>{document.querySelector('#calculator-error').textContent='Calculator unavailable. Use the visible prices or email support@wonderandmethod.com.';});
 const packSelector=typeof document==='undefined'?null:document.querySelector('#pack-selector');if(packSelector){document.querySelector('#pack-selector-control').hidden=false;const showPack=()=>{document.querySelectorAll('[data-pack]').forEach(item=>{item.hidden=item.dataset.pack!==packSelector.value;item.open=!item.hidden;});};packSelector.addEventListener('change',showPack);showPack();}

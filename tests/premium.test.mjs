@@ -70,7 +70,7 @@ test('validated finale edition renders versioned intro and ambient with deferred
  assert.match(html,/<video id="civic-motion"[^>]+data-src="[^"]+finale-v2\/buffalo-civic-intro.mp4"[^>]+data-duration="10"[^>]+preload="none"/);
  assert.match(html,/<video id="civic-ambient"[^>]+data-src="[^"]+finale-v2\/buffalo-civic-ambient.mp4"[^>]+data-duration="4"[^>]+preload="none"/);
  assert.doesNotMatch(html,/<video[^>]+(?: autoplay| src=)/);
- assert.doesNotMatch(html,/class="civic-replay"/);
+ assert.match(html,/class="civic-replay"[^>]*hidden>Replay animation/);
  assert.match(html,/curled bronze bridge beneath the word/);
  assert.match(selectedEdition(configV2).motionCopy,/ten-second introduction plays once, then a seamless four-second ambient/);
  const withoutTraffic=selectedEdition(configV2);

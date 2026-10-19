@@ -132,13 +132,13 @@ test('ambient prepares after four seconds and replaces the held intro only after
   assert.equal(f.hero.dataset.phase,'ambient');assert.equal(f.ambientVideo.playCalls,1);
   assert.ok(f.hero.classes.has('has-civic-motion'));assert.ok(!f.hero.classes.has('has-civic-ambient'),'hold intro until ambient frame');
   f.ambientVideo.presentFrame();assert.ok(f.hero.classes.has('has-civic-ambient'));
-  assert.equal(f.button.textContent,'Pause animation');assert.equal(f.replay.hidden,true);
+  assert.equal(f.button.textContent,'Pause animation');assert.equal(f.replay.hidden,false);
 });
 
-test('ambient pause/resume retains position with one visible control',async()=>{
+test('ambient pause/resume retains position and offers opening replay',async()=>{
  const f=fixture({ambient:true,frameCallbacks:true});f.view(true);f.click();await flush();f.video.presentFrame();endIntro(f);await flush();f.ambientVideo.presentFrame();
  f.ambientVideo.currentTime=2;f.click();f.view(false);f.view(true);await flush();
- assert.equal(f.ambientVideo.playCalls,1);assert.equal(f.button.textContent,'Resume animation');assert.equal(f.replay.hidden,true);
+ assert.equal(f.ambientVideo.playCalls,1);assert.equal(f.button.textContent,'Resume animation');assert.equal(f.replay.hidden,false);
  f.click();await flush();f.ambientVideo.presentFrame();assert.equal(f.ambientVideo.currentTime,2);assert.equal(f.hero.dataset.phase,'ambient');assert.equal(f.button.textContent,'Pause animation');
 });
 
@@ -173,4 +173,10 @@ test('desktop and phone stay poster-first through scroll until explicit play',as
 test('blocked playback describes the finished still without inventing a Resume control',async()=>{
  const f=fixture({rejectPlay:true});f.view(true);f.click();await flush();
  assert.equal(f.status.textContent,'Animation could not start. The finished image is shown.');
+});
+
+test('replay returns from ambient to the opening sequence without reloading the page',async()=>{
+ const f=fixture({ambient:true,frameCallbacks:true});f.view(true);f.click();await flush();f.video.presentFrame();endIntro(f);await flush();f.ambientVideo.presentFrame();
+ f.ambientVideo.currentTime=2;assert.equal(f.replay.hidden,false);f.replay.emit('click');await flush();f.video.presentFrame();
+ assert.equal(f.hero.dataset.phase,'intro');assert.equal(f.video.currentTime,0);assert.equal(f.ambientVideo.currentTime,0);assert.equal(f.ambientVideo.paused,true);assert.equal(f.video.playCalls,2);assert.equal(f.replay.hidden,true);
 });

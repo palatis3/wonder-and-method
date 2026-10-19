@@ -534,13 +534,19 @@ form>.optional-choice{margin:1.25rem 0}
 .link-row{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem;list-style:none;margin:1rem 0;padding:0}
 .link-row li{margin:0;padding:0}
 .link-row a,.studio-site :is(.buyer-pack-links,.checkout-alternatives) a{display:inline-flex;align-items:center;min-height:44px;padding-block:.6rem;font-size:1rem}
-.studio-site .back-to-top{position:static;inset:auto;width:auto;height:auto;min-height:48px;font-size:1rem}
-/* Higher specificity than the chat sheet, which is appended to the shared bundle. */
-.studio-site .support-chat,.studio-site .support-chat:has(.support-chat-launch:not([hidden]),.support-chat-fallback:not([hidden])){position:static;inset:auto;z-index:auto;max-width:100%}
-.studio-site .support-chat-launch{display:grid;grid-template-columns:22px 1fr;width:auto;height:auto;min-height:48px;padding:.7rem 1rem;border-radius:20px;font-size:1rem}
-.studio-site .support-chat-launch>span{position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
-.studio-site .page-tools,.studio-site .site-tools{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
-.studio-site .support-chat-fallback{max-width:min(100%,28rem);box-sizing:border-box}
+.page-top-observer{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
+/* Fixed corner tools enhance the native footer link after JavaScript is ready. */
+.page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
+.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
+.page-tools-ready .studio-site footer{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
+.page-tools-ready :is(.back-to-top,.support-chat-launch).is-obstructing-controls:not(:focus),
+.page-tools-ready.editing-form :is(.back-to-top,.support-chat-launch),
+.page-tools-ready.chat-is-open .back-to-top,
+html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back-to-top{visibility:hidden;pointer-events:none}
+@media(max-width:767px),(max-height:520px){
+ .page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
+ .page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
 /* Every retained financial table shares the same column alignment. */
 .studio-site :is(.payment-schedule,.table-scroll,.comparison-scroll) table{border-collapse:collapse}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) :is(th,td){text-align:left;padding:1rem;border-bottom:1px solid var(--line);vertical-align:top;white-space:normal;font-size:1rem;overflow-wrap:anywhere}
@@ -565,7 +571,8 @@ form>.optional-choice{margin:1.25rem 0}
 /* One named, keyboard-accessible animation control over the image. */
 .studio-site .civic-hero{position:relative}
 .studio-site .civic-controls{position:absolute;right:max(1.5rem,calc((100% - 1120px)/2 + 1.5rem));bottom:1.5rem;z-index:3;min-height:0;padding:0;gap:0}
-.studio-site .civic-controls .civic-replay{display:none}
+.studio-site .civic-controls .civic-replay{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.55rem .85rem;border-radius:999px;font-size:.875rem;margin-right:.5rem;order:-1;background:var(--paper);color:var(--ink)}
+.studio-site .civic-controls .civic-replay[hidden]{display:none}
 .studio-site .civic-controls .civic-toggle{width:44px;height:44px;min-height:44px;padding:0;display:flex;align-items:center;justify-content:center;gap:0;font-size:0;border-radius:50%;box-shadow:0 2px 10px #0e1b2a20}
 .studio-site .civic-controls .civic-toggle[hidden]{display:none}
 .studio-site .civic-toggle::before{content:'\25B6';font:600 18px/1 Arial,sans-serif}
@@ -573,11 +580,10 @@ form>.optional-choice{margin:1.25rem 0}
 .studio-site .compact-comparison:has(>article:only-child){grid-template-columns:minmax(0,1fr);max-width:48rem}
 .studio-site .related-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center}
 .studio-site .related-links a{display:inline-flex;align-items:center;min-height:44px}
-.studio-site .support-chat-choice{max-width:40rem;margin:0}
-.studio-site .support-chat-choice .support-chat-description{position:static;width:auto;height:auto;clip-path:none;white-space:normal;overflow:visible}
 .studio-site .inquiry-next h3{margin-bottom:.4rem}
 .studio-site .inquiry-next p{margin:.5rem 0}
 .studio-site .civic-hero[data-unavailable=true] .civic-controls{position:static;margin:1rem 0;justify-content:center}
 .studio-site .civic-hero[data-unavailable=true] .civic-status{position:static;width:auto;height:auto;clip-path:none;white-space:normal;font-size:1rem}
 
-.studio-site .support-chat-choice{border:0;padding:0}
+
+.legacy-anchor{display:block;position:relative;scroll-margin-top:calc(var(--site-header-height) + 1rem)}

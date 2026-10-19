@@ -42,7 +42,8 @@ if(launcher){
   label.textContent='Opening chat…';
   launcher.setAttribute('aria-label','Opening chat with Terry');
   window.Tawk_API=window.Tawk_API||{};
-  window.Tawk_API.onChatMaximized=focusChat;
+  window.Tawk_API.onChatMaximized=()=>{document.documentElement.classList.add('chat-is-open');focusChat();};
+  window.Tawk_API.onChatMinimized=()=>document.documentElement.classList.remove('chat-is-open');
   const openWhenReady=()=>{
    if(failed||dismissed){clearTimeout(timeout);stopFocus();window.Tawk_API?.hideWidget?.();return;}
    if(ready)return;
