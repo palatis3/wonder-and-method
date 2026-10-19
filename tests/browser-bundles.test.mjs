@@ -25,7 +25,7 @@ test('forms and calculators load their own handlers only on routes that use them
  const pages=renderPages({config,offers,map,tokens,geography});
  for(const {path,html} of pages){
   assert.equal(html.includes('src="/assets/client.js"'),html.includes('id="inquiry"'),path);
-  assert.equal(html.includes('src="/assets/calculator.js"'),html.includes('id="cost-calculator"')||html.includes('id="pack-selector"'),path);
+  assert.equal(html.includes('src="/assets/calculator.js"'),/<form\b[^>]*\bid="cost-calculator"/.test(html)||html.includes('id="pack-selector"'),path);
   assert.equal(html.split('src="/assets/journey-counts.js"').length-1,1,path);
  }
 });

@@ -54,7 +54,7 @@ test('packs and card summaries keep zero/one/two priorities and lower-build excl
 
 test('native pricing links to a separate estimator and explains directly paid provider costs',()=>{
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
- assert.doesNotMatch(html,/id="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these companies and any chosen tools directly/);assert.match(html,/actual provider price/);assert.match(html,/no minimum term/);
+ assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);assert.match(html,/<details\b[^>]*\bid="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these companies and any chosen tools directly/);assert.match(html,/actual provider price/);assert.match(html,/no minimum term/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);assert.doesNotMatch(calculator,/value="annual"/);
  const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/what’s included/);assert.match(overview,/\/services\/website-care\//);
 });
