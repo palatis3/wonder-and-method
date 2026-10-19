@@ -127,11 +127,17 @@ test('cache/charset policies are coherent while staging, API and private routes 
     'Content-Type': 'text/plain', 'Cache-Control': 'no-cache, public, max-age=3600, must-revalidate'
   } });
   const asset = await worker.fetch(request('/assets/buyer-packs/launch.txt'), env, context());
-  assert.equal(asset.headers.get('Cache-Control'), 'public, max-age=3600, must-revalidate');
+  assert.equal(asset.headers.get('Cache-Control'), 'no-cache');
   assert.equal(asset.headers.get('Content-Type'), 'text/plain; charset=utf-8');
   assert.match(asset.headers.get('X-Robots-Tag'), /noindex/);
   assert.equal(asset.headers.get('Permissions-Policy'), 'camera=(), microphone=(), geolocation=(), payment=()');
   assert.equal(asset.headers.get('Cross-Origin-Resource-Policy'), 'same-origin');
+  env.ASSETS.fetch = async () => new Response(null,{status:304});
+  const document304 = await worker.fetch(request('/assets/buyer-packs/improve'),env,context());
+  assert.equal(document304.headers.get('Cache-Control'),'no-cache');
+  env.ASSETS.fetch = async () => new Response('body{}',{headers:{'Content-Type':'text/css'}});
+  const css = await worker.fetch(request('/assets/site.css?v=abc123'),env,context());
+  assert.equal(css.headers.get('Cache-Control'),'public, max-age=3600, must-revalidate');
   const api = await worker.fetch(request('/api/unknown', { headers: { Accept: 'application/json' } }), env, context());
   assert.equal(api.headers.get('Referrer-Policy'), 'no-referrer');
   assert.equal(api.headers.get('Cache-Control'), 'no-store');

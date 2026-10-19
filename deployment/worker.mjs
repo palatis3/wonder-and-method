@@ -376,8 +376,10 @@ export default {
       if (/^(?:text\/(?:plain|csv|html))(?:;|$)/i.test(type || '') && !/charset=/i.test(type)) result.headers.set('Content-Type', `${type}; charset=utf-8`);
       if (url.pathname.startsWith('/assets/') || url.pathname.startsWith('/civic-sculpture/')) {
         result.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
-        // Existing unversioned URLs must not receive immutable year-long caching.
-        if ((result.status >= 200 && result.status < 300) || result.status === 304) result.headers.set('Cache-Control', 'public, max-age=3600, must-revalidate');
+        // Scope, price and worksheet documents must be revalidated even at an
+        // unversioned address. Media and versioned code retain their short cache.
+        const publicDocument=/^(?:text\/(?:html|plain|csv)|application\/json)(?:;|$)/i.test(type||'')||/\.(?:html|txt|csv|json)$/i.test(url.pathname)||url.pathname.startsWith('/assets/buyer-packs/');
+        if ((result.status >= 200 && result.status < 300) || result.status === 304) result.headers.set('Cache-Control',publicDocument?'no-cache':'public, max-age=3600, must-revalidate');
       }
       if(env.SEARCH_INDEXING !== 'true'||response.status>=400)result.headers.set('X-Robots-Tag','noindex, nofollow, noarchive, noimageindex');
        else if(!routeIndexEligible(url.pathname))result.headers.set('X-Robots-Tag',privateRoute(url.pathname)?'noindex, nofollow, noarchive, noimageindex':'noindex, follow');

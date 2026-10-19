@@ -3,6 +3,7 @@ import {assertPageDates} from './page-dates.mjs';
 import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
+import {versionPublicDocumentLinks} from './version-public-documents.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
 import {readFile,writeFile,mkdir,cp,readdir,rm,stat} from 'node:fs/promises';
@@ -121,9 +122,15 @@ const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
 await writeBuyerPacks(output,offers);
 await writeOwnedProof(root,output,offers);
+const documentVersions=new Map();
+for(const name of await readdir(resolve(output,'assets/buyer-packs'))){
+ if(!name.endsWith('.html'))continue;
+ const path='/assets/buyer-packs/'+name,file=resolve(output,'.'+path);
+ await writeFile(file,await versionPublicDocumentLinks(await readFile(file,'utf8'),output,path,documentVersions));
+}
 const assetVersions=new Map();
 for(const page of pages)for(const match of page.html.matchAll(/(?:src|href)="(\/assets\/[^"?]+\.(?:css|js))"/g))if(!assetVersions.has(match[1]))assetVersions.set(match[1],createHash('sha256').update(await readFile(resolve(output,'.'+match[1]))).digest('hex').slice(0,12));
-for(const page of pages){const file=resolve(output,`.${page.path}index.html`);await mkdir(dirname(file),{recursive:true});const html=page.html.replace(/((?:src|href)=")(\/assets\/[^"?]+\.(?:css|js))"/g,(_match,prefix,asset)=>`${prefix}${asset}?v=${assetVersions.get(asset)}"`);await writeFile(file,html);}
+for(const page of pages){const file=resolve(output,`.${page.path}index.html`);await mkdir(dirname(file),{recursive:true});const html=page.html.replace(/((?:src|href)=")(\/assets\/[^"?]+\.(?:css|js))"/g,(_match,prefix,asset)=>`${prefix}${asset}?v=${assetVersions.get(asset)}"`);await writeFile(file,await versionPublicDocumentLinks(html,output,page.path,documentVersions));}
 const crawl=crawlFiles(config,pages);
 await writeFile(resolve(output,'sitemap.xml'),crawl.sitemap);
 await writeFile(resolve(output,'robots.txt'),crawl.robots);
