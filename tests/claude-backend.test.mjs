@@ -382,7 +382,7 @@ test('external monitor receives no inquiry data and pings only while aggregate h
   const env=liveNotificationEnvironment(),now=Date.now();env.HEALTHCHECK_URL='https://monitor.example.test/private-token';
   const calls=[];const send=async(url,options)=>{calls.push({url,options});return new Response('',{status:200});};
   assert.equal((await runScheduledMaintenance(env,{now,clock:()=>now,logger:()=>{},send})).ok,true);
-  assert.equal(calls.length,1);assert.equal(calls[0].url,env.HEALTHCHECK_URL);assert.equal(calls[0].options.body,undefined);assert.equal(calls[0].options.redirect,'error');
+  assert.equal(calls.length,1);assert.equal(calls[0].url,env.HEALTHCHECK_URL);assert.equal(calls[0].options.body,undefined);assert.equal(calls[0].options.redirect,'manual');
   insert(env,{delivery_status:'manual_review'});
   await runScheduledMaintenance(env,{now,clock:()=>now,logger:()=>{},send});assert.equal(calls.length,1);
   env.INQUIRY_MODE='synthetic';await runScheduledMaintenance(env,{now,logger:()=>{},send});assert.equal(calls.length,1);
@@ -411,6 +411,8 @@ test('scheduled monitor failures use precise codes without exposing its URL or e
   {url:'https://user:private-token@monitor.example.test',code:'scheduled_healthcheck_config_invalid',called:false},
   {error:Object.assign(new Error('private-token'),{name:'TimeoutError'}),code:'scheduled_healthcheck_timeout'},
   {error:new TypeError('private-token'),code:'scheduled_healthcheck_transport_failed'},
+  {status:301,code:'scheduled_healthcheck_redirect_rejected'},
+  {status:307,code:'scheduled_healthcheck_redirect_rejected'},
   {status:403,code:'scheduled_healthcheck_forbidden'},
   {status:404,code:'scheduled_healthcheck_not_found'},
   {status:429,code:'scheduled_healthcheck_rate_limited'},

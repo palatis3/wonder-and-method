@@ -430,10 +430,11 @@ export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clo
       });
       if(url){
         let response;
-        try{response=await send(url.href,{method:'GET',redirect:'error',signal:AbortSignal.timeout(5000)});}
+        // Workers supports manual/follow; manual preserves our no-redirect rule.
+        try{response=await send(url.href,{method:'GET',redirect:'manual',signal:AbortSignal.timeout(5000)});}
         catch(error){fail(['TimeoutError','AbortError'].includes(error?.name)?'scheduled_healthcheck_timeout':'scheduled_healthcheck_transport_failed');}
         if(response){
-          if(!response.ok)fail(({403:'scheduled_healthcheck_forbidden',404:'scheduled_healthcheck_not_found',429:'scheduled_healthcheck_rate_limited'})[response.status]||'scheduled_healthcheck_http_failed');
+          if(!response.ok)fail(response.status>=300&&response.status<400?'scheduled_healthcheck_redirect_rejected':({403:'scheduled_healthcheck_forbidden',404:'scheduled_healthcheck_not_found',429:'scheduled_healthcheck_rate_limited'})[response.status]||'scheduled_healthcheck_http_failed');
           // The response status is the receiver acknowledgement. Cancelling its
           // unused body frees the connection; a cleanup error cannot unsend it.
           try{await response.body?.cancel();}catch{}
