@@ -451,3 +451,20 @@ form>.optional-choice{margin:1.25rem 0}
 .seo-plan-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:1.5rem 0}
 .seo-plan-summary article{border-top:1px solid var(--line);padding-top:1rem}
 @media(max-width:600px){.seo-plan-summary{grid-template-columns:1fr}.studio-site .process-intro{padding-top:1.5rem}.process-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.process-route a{min-height:55px}}
+
+/* One introduction scale for studio pages. Home and fictional concept identities
+   retain their own composition; guides retain their centered reading column. */
+.studio-site{--page-title-size:clamp(2.35rem,4.6vw,4.5rem);--intro-space-before:2.5rem;--intro-space-after:2rem;--intro-title-gap:1.2rem}
+.studio-site.studio-inner .page-intro{padding:var(--intro-space-before) 0 var(--intro-space-after);margin-bottom:1.5rem}
+.studio-site.studio-inner .page-intro h1,.studio-site .journal-header h1{font-size:var(--page-title-size);line-height:1.06;margin-block:.75rem var(--intro-title-gap);max-width:26ch}
+.studio-site.studio-inner .page-intro .lede,.studio-site .journal-header .lede{font-size:1.1rem;line-height:1.7;max-width:66ch}
+.studio-site .journal-header{margin-top:0;padding-top:var(--intro-space-before);padding-bottom:var(--intro-space-after);margin-bottom:2.5rem}
+.studio-site .journal-header h1{max-width:24ch}
+.studio-site .journal-header .lede{max-width:52ch}
+.seo-content .continuing-grid>article{display:flex;flex-direction:column;min-width:0}
+.seo-content .continuing-grid>article>.button:last-child{align-self:flex-start;margin-top:auto}
+@media(min-width:768px){.continuing-grid:has(>article:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){
+ .studio-site{--intro-space-before:1.75rem;--intro-space-after:1.75rem}
+ .studio-site.studio-inner .page-intro .lede,.studio-site .journal-header .lede{font-size:1rem}
+}

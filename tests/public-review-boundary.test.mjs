@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile,readdir,mkdtemp,rm} from 'node:fs/promises';
+import {readFile,readdir,mkdtemp,rm,mkdir,writeFile} from 'node:fs/promises';
 import {resolve,join,extname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {renderPages} from '../src/pages.mjs';
@@ -26,8 +26,19 @@ test('public review exposes all 22 useful area names and descriptions through a 
 test('current pages, every buyer pack, owned proof JSON and public text assets omit private scoring',async()=>{
  for(const page of pages)publicSafe(page.path,page.html);
  const output=await mkdtemp(join(tmpdir(),'wm-public-review-'));
- try{await writeBuyerPacks(output,offers);await writeOwnedProof(root,output,offers);const files=[...await textFiles(join(output,'assets')),...await textFiles(join(root,'src/assets'))];
+ try{
+  await mkdir(join(output,'assets'),{recursive:true});
+  await writeFile(join(output,'assets/brand.css'),':root{--brand:green}');
+  await writeFile(join(output,'assets/site.css'),'body{margin:0}');
+  await writeBuyerPacks(output,offers);await writeOwnedProof(root,output,offers);const files=[...await textFiles(join(output,'assets')),...await textFiles(join(root,'src/assets'))];
   for(const file of files){let text=await readFile(file,'utf8');if(extname(file)==='.mjs')text=text.replace(/\(12-completedCycles\)\/12\/100/g,'REFUND-CENTS-CONVERSION');publicSafe(file,text);}
+  for(const file of files.filter(file=>file.startsWith(output)&&extname(file)==='.html')){
+   const html=await readFile(file,'utf8');
+   assert.match(html,/href="\/assets\/site\.css\?v=[a-f0-9]{12}"/);
+   assert.match(html,/href="\/assets\/brand\.css\?v=[a-f0-9]{12}"/);
+   assert.match(html,/class="wordmark brand-lockup"/);assert.match(html,/class="brand-emblem"/);
+   assert.match(html,/<main id="main" tabindex="-1"/);assert.doesNotMatch(html,/semrush/i);
+  }
   const proof=JSON.parse(await readFile(join(output,'assets/buyer-packs/owned-audit-two-fix-record.json'),'utf8'));assert.deepEqual(Object.keys(proof.baseline),['capturedAt','phase','reviewAreas']);assert.equal(proof.baseline.reviewAreas.length,22);assert.ok(proof.baseline.reviewAreas.every(area=>Object.keys(area).join(',')==='id,title'));assert.equal(proof.fixes.length,2);
  }finally{assert.ok(output.startsWith(join(tmpdir(),'wm-public-review-')));await rm(output,{recursive:true,force:true});}
 });

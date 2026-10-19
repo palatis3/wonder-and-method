@@ -41,7 +41,7 @@ test('new SEO, care, guide and request pages expose complete output and research
  const pages=renderPages({config,offers,map,geography});
  for(const path of ['/pricing/','/services/seo/','/services/website-care/','/guides/seo-work-and-reporting/']){
   const html=pages.find(p=>p.path===path).html;
-  assert.match(html,/Semrush/);assert.match(html,/90-day/);assert.match(html,/150 words/);assert.match(html,/keyword opportunit/i);
+  assert.match(html,/keyword research/i);assert.match(html,/90-day/);assert.match(html,/150 words/);assert.match(html,/keyword opportunit/i);
  }
  const seo=pages.find(p=>p.path==='/services/seo/').html;
  assert.match(seo,/difficulty.*does not|does not.*guarantee/i);
