@@ -52,14 +52,14 @@ test('search descriptions derive from current prices and supplements link to dia
  assert.ok(searchMetadata['/services/seo/'].description(revised).includes('Improve $150/month'));assert.doesNotMatch(searchMetadata['/services/website-care/'].description(revised),/Grow|SEO|growth/);for(const target of newGuides.filter(path=>!path.includes('contact-form')))assert.ok(searchSupplement('/services/seo/',revised).includes(`href="${target}"`));
 });
 
-test('HTTPS-only transport policy covers live apex redirects and failures without affecting other hosts',async()=>{
+test('HTTPS-only transport policy includes subdomains on live redirects and failures without affecting other hosts',async()=>{
  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',PUBLIC_ORIGIN:'https://wonderandmethod.com',ASSETS:{fetch:async()=>new Response('ok')}};
  for(const host of ['wonderandmethod.com','www.wonderandmethod.com']){
   const res=await worker.fetch(new Request('https://'+host+'/'),env,{});
-  assert.equal(res.headers.get('Strict-Transport-Security'),'max-age=31536000');
+  assert.equal(res.headers.get('Strict-Transport-Security'),'max-age=31536000; includeSubDomains');
  }
  const failed=await worker.fetch(new Request('https://wonderandmethod.com/'),{...env,ASSETS:{fetch:async()=>{throw Error('fixture');}}},{});
- assert.equal(failed.status,503);assert.equal(failed.headers.get('Strict-Transport-Security'),'max-age=31536000');
+ assert.equal(failed.status,503);assert.equal(failed.headers.get('Strict-Transport-Security'),'max-age=31536000; includeSubDomains');
  for(const url of ['http://wonderandmethod.com/','https://preview.example.test/'])assert.equal((await worker.fetch(new Request(url),env,{})).headers.get('Strict-Transport-Security'),null);
  assert.equal((await worker.fetch(new Request('https://wonderandmethod.com/'),{...env,ENVIRONMENT:'staging'},{})).headers.get('Strict-Transport-Security'),null);
 });

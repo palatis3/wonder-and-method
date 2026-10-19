@@ -17,7 +17,7 @@ const MAX_BODY = 40_000;
 const LIVE = env => env.INQUIRY_MODE === 'live' && env.RELEASE_APPROVED === 'true';
 function withTransportPolicy(response,request,env){
   const url=new URL(request.url);
-  if(env.ENVIRONMENT==='production'&&env.RELEASE_APPROVED==='true'&&url.protocol==='https:'&&['wonderandmethod.com','www.wonderandmethod.com'].includes(url.hostname))response.headers.set('Strict-Transport-Security','max-age=31536000');
+  if(env.ENVIRONMENT==='production'&&env.RELEASE_APPROVED==='true'&&url.protocol==='https:'&&['wonderandmethod.com','www.wonderandmethod.com'].includes(url.hostname))response.headers.set('Strict-Transport-Security','max-age=31536000; includeSubDomains');
   return response;
 }
 const hex = data => [...new Uint8Array(data)].map(x => x.toString(16).padStart(2, '0')).join('');
