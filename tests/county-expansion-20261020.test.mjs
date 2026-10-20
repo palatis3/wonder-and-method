@@ -5,6 +5,8 @@ import {DatabaseSync} from 'node:sqlite';
 import {renderPages} from '../src/pages.mjs';
 import {countyGeography} from '../src/county-geography.mjs';
 import {countyBuyerTasks} from '../src/county-buyer-tasks.mjs';
+import {countySearchQuestions} from '../src/county-search-questions.mjs';
+import {countyPages} from '../src/service-counties.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
@@ -72,6 +74,27 @@ test('borough geography and downloaded planning exercises stay useful and accura
  assert.equal(chautauqua.towns.length,27);assert.equal(chautauqua.villages.length,13);assert.equal(chautauqua.cities.length,2);
  assert.ok(chautauqua.villages.includes('Celoron'));
  for(const dissolved of ['Cherry Creek','Forestville'])assert.ok(!chautauqua.villages.includes(dissolved));
+});
+
+test('research-informed county answers remain visible, linked and consistent with changed commercial prices',()=>{
+ const changed=structuredClone(offers);
+ changed.launch_site.public_price=1887;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.plans.keep_running.monthly_price=187;
+ const changedPages=new Map(countyPages(changed).map(p=>[p.path,p.body]));
+ const questionSet=new Set();
+ for(const slug of slugs){
+  const path=`/areas/${slug}-county/`,body=changedPages.get(path);
+  const faq=body.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
+  assert.equal((faq.match(/<summary>/g)||[]).length,6,slug);
+  for(const [question,answer,url] of countySearchQuestions(slug,changed)){
+   questionSet.add(question);assert.ok(body.includes(question.replaceAll('&','&amp;')),slug);
+   assert.ok(answer.length>=120,slug);assert.ok(byPath.has(url),slug+' -> '+url);
+  }
+  assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month/,slug);
+  if(faq.includes('$487/month'))assert.match(faq,/Both include Keep Running care checks.*Keep Running is also available on its own/);
+ }
+ assert.equal(questionSet.size,45);
+ assert.match(changedPages.get('/areas/kings-county/'),/\$1,887/);
+ assert.match(changedPages.get('/areas/new-york-county/'),/\$487\/month.*\$887\/month.*\$187\/month/s);
 });
 
 test('county migration changes only the fifteen page categories and preserves all stored records',t=>{

@@ -2,6 +2,7 @@ import {countyBuyerTask} from './county-buyer-tasks.mjs';
 import {escapeHtml as e,money} from './shared.mjs';
 import {countyProfiles} from './county-profiles.mjs';
 import {countyGeography} from './county-geography.mjs';
+import {countySearchQuestions} from './county-search-questions.mjs';
 
 const a=(url,label,cls='')=>`<a href="${e(url)}"${cls?` class="${cls}"`:''}>${e(label)}</a>`;
 const intro=(label,title,text)=>`<header class="page-intro"><p class="eyebrow">${e(label)}</p><h1>${e(title)}</h1><p class="lede">${e(text)}</p></header>`;
@@ -68,7 +69,7 @@ function countyPage(c,o){
  +'<span id="approach" class="legacy-anchor" aria-hidden="true"></span>'+countyBuyerTask(c.slug)
  +section('search-plan',`SEO for ${c.anchor}`,`Help customers find and understand your services.`,`<div class="county-reading"><p>${e(c.search)}</p><p>Research informs the page plan, titles, service explanations and internal links. After publishing, available search impressions, queries and inquiries help decide what to improve next. ${a('/services/seo/','Explore the SEO service')} or ${a('/guides/seo-work-and-reporting/','see how changes and results are reported')}.</p></div>`)
  +section('coverage','Local places',`Businesses across ${c.name} County.`,coverage(c))
- +section('questions','Before you inquire','Practical questions.',`<div class="county-faq">${[...c.questions,['How will we work together online?','We agree the pages, features, content responsibilities, feedback rounds and available dates in writing. You review the design and working website, approve the agreed version and receive the paid work and operating notes under the project terms.']].map(([q,answer])=>`<details><summary>${e(q)}</summary><p>${e(answer)}</p></details>`).join('')}</div>`)
+ +section('questions','Before you inquire','Practical questions.',`<div class="county-faq">${[...countySearchQuestions(c.slug,o),...c.questions,['How will we work together online?','We agree the pages, features, content responsibilities, feedback rounds and available dates in writing. You review the design and working website, approve the agreed version and receive the paid work and operating notes under the project terms.']].map(([q,answer,url,label])=>`<details><summary>${e(q)}</summary><p>${e(answer)}${url?` ${a(url,label)}.`:''}</p></details>`).join('')}</div>`)
  +section('next','Wonder and Method',`Tell me what your ${c.name} County website needs to do.`,`<div class="county-reading"><p>Share the business, current website if you have one, services, customer locations and the problem you want to solve. I will assess the fit and propose a clear next step.</p><p>Wonder and Method is based in Buffalo and works with ${e(c.name)} County businesses online.</p><p>${a('/contact/?request_kind=question#inquiry','Discuss your website','button')} ${a('/work/','View studio work','text-link')}</p>${relatedCoverage(c)}<p>${a('/areas/','Explore all service areas')} · ${a('/areas/erie-county/','Buffalo & Erie County')}</p></div>`);
  return {path:path(c),title:c.title||`Web Design & SEO in ${c.name} County, NY`,description:c.description||`Custom web design and scoped SEO for ${c.name} County, NY, including ${c.anchor}. Clear services and online collaboration from Buffalo.`,body};
 }
