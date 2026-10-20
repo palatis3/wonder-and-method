@@ -1,3 +1,4 @@
+import {researchGuideDetails} from '../src/research-guides.mjs';
 import {readFile} from 'node:fs/promises';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -10,7 +11,7 @@ import {privateRoute,routeIndexEligible} from '../src/index-policy.mjs';
 import {guideIllustrationAlt} from '../src/guide-art.mjs';
 
 test('all 17 guide answers precede contents and optional art, with one ending action and valid anchors',()=>{
- assert.equal(journal.length,17);
+ assert.equal(journal.length,23);
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
   assert.ok(html.indexOf('The short answer')<html.indexOf('class="journal-toc"'),item.path);
@@ -56,7 +57,7 @@ test('catalog monthly entities match their services; public payment information 
 
 test('guide index is text-only while related cards use responsive WebP derivatives',async()=>{
  const index=journalIndex(journal);
- assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,17);
+ assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,23);
  assert.doesNotMatch(index,/<img\b/);for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'));
  const media=new Set();
  for(const item of journal){
@@ -69,7 +70,7 @@ test('guide index is text-only while related cards use responsive WebP derivativ
   assert.notEqual(description,item.description,item.path+' uses its concise card summary');
   for(const match of card.matchAll(/(?:src|srcset)="([^"]+)"/g))for(const candidate of match[1].split(','))media.add(candidate.trim().split(/\s+/)[0]);
  }
- assert.equal(media.size,51);
+ assert.equal(media.size,69);
  for(const path of media){
   assert.match(path,/-card-(480|720|1080)\.webp$/);
   const bytes=await readFile(new URL('../src'+path,import.meta.url));
@@ -93,6 +94,6 @@ test('diagram alternatives retain the decisions and limitations without duplicat
   assert.ok(figure,item.path);assert.doesNotMatch(figure,/<figcaption>/);
   assert.ok(figure.includes(`/assets/guides/${item.image}.svg`));
   const alt=figure.match(/alt="([^"]+)"/)?.[1];
-  for(const phrase of required[item.image])assert.ok(alt?.includes(phrase),item.path+' '+phrase);
+  for(const phrase of (required[item.image]||researchGuideDetails[item.path.split('/').at(-2)].steps.flat()))assert.ok(alt?.includes(phrase),item.path+' '+phrase);
  }
 });

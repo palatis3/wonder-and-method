@@ -1,4 +1,5 @@
 import {money} from './shared.mjs';
+import {researchGuideDetails} from './research-guides.mjs';
 
 const decisions={
  'website-repair-or-redesign':['Choose the smallest change that resolves a confirmed visitor problem.','A missing label or a lost service choice may need a contained correction. A changed publishing requirement may call for broader work. Confirm the current task, system and access before choosing.'],
@@ -23,7 +24,8 @@ export function guideDecision(path,o){
  'ai-website-or-custom':['Use an AI draft to try an idea, then test what it actually does.','Check every claim, image permission, form, phone layout and editing or export limit. Pay for help with the work the draft has not solved.'],
  'contractor-website-checklist':['Show the jobs you accept, your service area and how to request an estimate.','Use real project photos with permission. Tell customers what information to send, and test the inquiry path on a phone before adding more pages.']
  };
- const [answer,detail]=extra[slug]||decisions[slug]||[];
+ const added=researchGuideDetails[slug];
+ const [answer,detail]=added?[added.answer,added.detail]:extra[slug]||decisions[slug]||[];
  if(!answer)throw Error(`Missing guide answer: ${path}`);
  return `<div class="guide-decision"><h2>The short answer</h2><p>${answer}</p><p>${detail}</p></div>`;
 }
@@ -31,7 +33,7 @@ export function guideDecision(path,o){
 export function guideDownload(path){
  const slug=path.split('/').filter(Boolean).at(-1);
  const special={'website-repair-or-redesign':'/assets/guides/website-repair-or-redesign-worksheet.csv','website-care-versus-seo':'/assets/guides/website-care-versus-seo-worksheet.csv','website-audit-checklist':'/assets/guides/website-audit-checklist.csv','website-migration-checklist':'/assets/downloads/website-url-map.csv','website-redesign-brief':'/assets/downloads/website-redesign-brief.txt'};
- return special[slug]||(decisions[slug]?`/assets/audit-implementation/${slug}-checklist.txt`:null);
+ return researchGuideDetails[slug]?.download||special[slug]||(decisions[slug]?`/assets/audit-implementation/${slug}-checklist.txt`:null);
 }
 
 export function guideDownloadLabel(path){
@@ -47,6 +49,7 @@ export function guideDownloadLabel(path){
   'website-audit-checklist':'Download the website audit checklist',
   'website-repair-or-redesign':'Download the repair or redesign worksheet'
  };
- if(!labels[slug])throw Error(`Missing guide download label: ${path}`);
- return labels[slug];
+ const label=researchGuideDetails[slug]?.downloadLabel||labels[slug];
+ if(!label)throw Error(`Missing guide download label: ${path}`);
+ return label;
 }

@@ -30,7 +30,9 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
  }
  assert.equal(offers.plans.keep_running.monthly_price,150);assert.equal(offers.audit_sprint.one_time_price,750);assert.equal(offers.plans.improve.monthly_price,400);
  const publicCopy=pages.map(p=>p.html).join('\n');
- assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope|\$6,000|\$9,500/);
+ assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope/);
+ // The ROI tool contains labeled hypothetical contribution amounts, not package prices.
+ assert.doesNotMatch(pages.filter(p=>p.path!=='/tools/website-roi-calculator/').map(p=>p.html).join('\n'),/\$6,000|\$9,500/);
  assert.match(pages.find(p=>p.path==='/pricing/').html,/original animated or 3D (?:home-page feature|feature at the top)/i);
 });
 

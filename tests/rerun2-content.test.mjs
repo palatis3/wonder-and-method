@@ -258,9 +258,9 @@ const ids=html=>[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 const hrefs=html=>[...html.matchAll(/href="([^"]+)"/g)].map(x=>x[1].replaceAll('&amp;','&'));
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
-test('all 17 guides preserve existing bookmarks and downloadable resources',()=>{
- assert.equal(journal.length,17);
- assert.deepEqual(new Set(journal.map(x=>x.path)),new Set(before.map(x=>x.path)));
+test('all published guides preserve existing bookmarks and downloadable resources',()=>{
+ assert.equal(journal.length,23);
+ assert.ok(before.every(old=>journal.some(item=>item.path===old.path)),'Every historical guide remains published');
  for(const item of before){
   const html=journalArticle(journal.find(x=>x.path===item.path),offers,journal),found=ids(html);
   assert.equal(found.length,new Set(found).size,item.path+' duplicate ids');
@@ -356,6 +356,6 @@ test('guide hub keeps all routes with concise copy and original article titles',
   assert.ok(journalArticle(item,offers,journal).includes('<h1>'+item.title.replaceAll('&','&amp;')+'</h1>'));
  }
  const descriptions=[...hub.matchAll(/class="journal-card-description">([^<]+)<\/p>/g)].map(x=>x[1]);
- assert.equal(descriptions.length,17);
+ assert.equal(descriptions.length,23);
  for(const text of descriptions)assert.ok(text.split(/\s+/).length<=14,text);
 });

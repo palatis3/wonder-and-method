@@ -11,7 +11,7 @@ const body=(slug,values=offers)=>sections(slug,values).map(section=>section.body
 const article=slug=>journalArticle(journal.find(item=>item.path===path(slug)),offers,journal);
 
 test('every guide has an ordered section definition and unique rendered bookmarks',()=>{
- assert.equal(journal.length,17);
+ assert.equal(journal.length,23);
  for(const item of journal){
   const content=journalSections(item.path,offers);
   assert.ok(content.length,item.path);

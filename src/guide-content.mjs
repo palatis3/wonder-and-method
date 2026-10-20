@@ -1,4 +1,6 @@
 import {money,escapeHtml as e} from './shared.mjs';
+import {researchGuideContent} from './research-guide-content.mjs';
+import {researchGuideExpansions} from './research-guide-expansions.mjs';
 import {careBoundary} from './offer-summary.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {guideReviewChoices} from './guide-practical-steps.mjs';
@@ -199,5 +201,5 @@ const guideContent={
 };
 
 export function guideContentSections(path,offers){
- return formatGuideSections(guideContent[path]?.(offers)||[]);
+ return formatGuideSections([...(researchGuideContent[path]||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])]);
 }

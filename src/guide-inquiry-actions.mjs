@@ -1,3 +1,4 @@
+import {researchGuideDetails} from './research-guides.mjs';
 import {escapeHtml as e} from './shared.mjs';
 // Deliberate reader intent, independent of the fallback service used for navigation.
 export const guideInquiryActions={
@@ -19,7 +20,7 @@ export const guideInquiryActions={
  'website-audit-checklist':['fix','question','Discuss a website review'],
  'website-repair-or-redesign':['unsure','question','Discuss repair or redesign']
 };
-export function guideInquiry(path){const key=path.split('/').filter(Boolean).at(-1);const choice=guideInquiryActions[key];if(!choice)throw Error(`Missing guide inquiry intent: ${path}`);const [goal,kind,label]=choice;return {label,href:`/contact/?offer=unsure&amp;goal=${goal}&amp;request_kind=${kind}#inquiry`};}
+export function guideInquiry(path){const key=path.split('/').filter(Boolean).at(-1);const extra=researchGuideDetails[key];const choice=extra?[extra.goal,'question',extra.action]:guideInquiryActions[key];if(!choice)throw Error(`Missing guide inquiry intent: ${path}`);const [goal,kind,label]=choice;return {label,href:`/contact/?offer=unsure&amp;goal=${goal}&amp;request_kind=${kind}#inquiry`};}
 export function contextualizeGuideBody(body,path){
  const defaults=new URL(guideInquiry(path).href.replaceAll('&amp;','&'),'https://wonderandmethod.com');
  return body.replace(/href="(\/contact\/(?:[^"<>]*))"/g,(_match,href)=>{
@@ -50,7 +51,7 @@ const endingPrompts={
 export function guideAction(item,{compact=false}={}){
  const action=guideInquiry(item.path);
  if(compact)return `<p class="guide-help"><a href="#next-decision">Get help with this decision</a></p>`;
- const prompt=endingPrompts[item.path.split('/').filter(Boolean).at(-1)];
+ const slug=item.path.split('/').filter(Boolean).at(-1);const prompt=researchGuideDetails[slug]?.prompt||endingPrompts[slug];
  if(!prompt)throw Error(`Missing guide ending: ${item.path}`);
  return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(action.label)}</h2><p>${e(prompt)} I confirm fit, work and price before booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></div>`;
 }

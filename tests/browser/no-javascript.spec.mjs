@@ -2,6 +2,12 @@ import {test,expect} from './fixtures.mjs';
 import {inquiryResponseHtml} from '../../src/inquiry-response.mjs';
 import {validateInquiry} from '../../src/inquiry.mjs';
 
+test('ROI worked example and guide templates stay useful without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/tools/website-roi-calculator/?qa=1');await expect(page.locator('#website-roi')).toBeHidden();await expect(page.locator('#worked-example')).toContainText('$1,800');await expect(page.getByText('The interactive calculator needs JavaScript. The worked example and formulas below remain available.',{exact:true})).toBeVisible();
+ await page.goto('/guides/website-content-template/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();await expect(page.locator('a[href^="/assets/guides/website-content-template.txt"]').first()).toBeVisible();
+});
+
 test('all statewide county links remain usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/new-york/?qa=1');
