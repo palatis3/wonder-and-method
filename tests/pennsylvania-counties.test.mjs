@@ -27,17 +27,17 @@ const priorSql=await Promise.all(priorFiles.map(name=>readFile(new URL(name,migr
 const migration=await readFile(new URL('0013_journey_pennsylvania.sql',migrationFolder),'utf8');
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
-test('two state directories preserve all prior routes and add exactly 67 Pennsylvania county guides',()=>{
- assert.equal(priorRoutes.length,120);assert.equal(pages.length,189);assert.equal(byPath.size,189);
- assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)).map(p=>p.path).sort(),newRoutes.sort());
+test('Pennsylvania additions remain complete within the three-state site',()=>{
+ assert.equal(priorRoutes.length,120);assert.equal(pages.length,278);assert.equal(byPath.size,278);
+ assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&!p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),newRoutes.sort());
  for(const route of priorRoutes)assert.ok(byPath.has(route),route);
  assert.deepEqual(pennsylvaniaProfiles.map(c=>c.slug).sort(),expectedSlugs);
  assert.deepEqual(Object.keys(pennsylvaniaGeography).sort(),expectedSlugs);
  assert.equal(pennsylvaniaRegions.length,10);
  assert.deepEqual(pennsylvaniaRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,188);
- for(const [route,count] of [['/areas/',129],['/areas/new-york/',62],['/areas/pennsylvania/',67]]){
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,277);
+ for(const [route,count] of [['/areas/',217],['/areas/new-york/',62],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls hidden'));
  }

@@ -17,9 +17,13 @@ export function bindCountyDirectory(root=document){
  const update=()=>{
   const query=normalizeCountyQuery(input.value);
   const state=stateFilter?.value||'';
+  // An explicit place type identifies the named place; unqualified searches
+  // still include partial names such as Bethlehem and New Bethlehem.
+  const qualified=/\b(?:city|village|borough|town|township|county)(?: (?:ny|pa|oh|new york|pennsylvania|ohio))?$/.test(query);
+  const exact=qualified&&cards.some(card=>(!state||card.state===state)&&card.terms.includes(query));
   let count=0;
   for(const card of cards){
-   card.element.hidden=!card.terms.some(term=>term.includes(query))||Boolean(state&&card.state!==state);
+   card.element.hidden=!(exact?card.terms.includes(query):card.terms.some(term=>term.includes(query)))||Boolean(state&&card.state!==state);
    if(!card.element.hidden)count++;
   }
   for(const section of sections)section.hidden=![...section.querySelectorAll('[data-county-search]')].some(card=>!card.hidden);

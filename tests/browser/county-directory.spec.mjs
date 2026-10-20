@@ -40,18 +40,40 @@ test('combined finder disambiguates states and shared place names without sendin
  const search=page.getByRole('searchbox',{name:'Find a county or community'}),state=page.getByRole('combobox',{name:'Filter by state'});
  const visible=page.locator('[data-county-search]:visible');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(visible).toHaveCount(129);
+ await expect(visible).toHaveCount(217);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
- await search.fill('Hamburg');await expect(visible).toHaveCount(2);expect(await targets()).toEqual(['/areas/erie-county/','/areas/pennsylvania/berks-county/']);
+ await search.fill('Hamburg');await expect(visible).toHaveCount(3);expect(await targets()).toEqual(['/areas/erie-county/','/areas/ohio/fairfield-county/','/areas/pennsylvania/berks-county/']);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(1);
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('1 county guide matches your search in Pennsylvania.');
  await search.fill('');await expect(visible).toHaveCount(67);
  await state.selectOption('new-york');await expect(visible).toHaveCount(62);
- await page.getByRole('button',{name:'Clear search',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(129);
+ await page.getByRole('button',{name:'Clear search',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(217);
  await search.fill('Erie PA');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/pennsylvania/erie-county/']);
  await search.fill('Erie NY');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/erie-county/']);
+ await search.fill('Erie County OH');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/ohio/erie-county/']);
+ await state.selectOption('ohio');await search.fill('');await expect(visible).toHaveCount(88);
+ await search.fill('Erie NY');await expect(visible).toHaveCount(0);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(0);
  await expect(page.getByRole('heading',{name:'No county guides match that search.'})).toBeVisible();
+ expect(requests).toEqual([]);
+});
+
+test('Ohio finder distinguishes cities, villages and cross-county destinations',async({page})=>{
+ await page.goto('/areas/ohio/?qa=1');
+ const search=page.getByRole('searchbox',{name:'Find a county or community'}),visible=page.locator('[data-county-search]:visible');
+ const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
+ const county=slug=>`/areas/ohio/${slug}-county/`;
+ await expect(visible).toHaveCount(88);
+ const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
+ for(const [query,slugs] of [['Columbus city',['delaware','fairfield','franklin']],['Dublin city',['delaware','franklin','union']],['Fostoria city',['hancock','seneca','wood']],['Hamilton city',['butler']],['Sandusky city',['erie']],['Sandusky city OH',['erie']],['Upper Sandusky city',['wyandot']],['Saint Clairsville city',['belmont']],['McArthur village',['vinton']],['Yellow Springs village',['greene']]]){
+  await search.fill(query);expect(await targets()).toEqual(slugs.map(county).sort());
+ }
+ await search.press('Tab');await expect(page.getByRole('button',{name:'Clear search',exact:true})).toBeFocused();
+ await page.keyboard.press('Tab');await expect(visible.locator('a')).toBeFocused();
+ await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/areas\/ohio\/greene-county\/(?:\?qa=1)?$/);
+ await expect(page.locator('main h1')).toContainText('Greene');await expect(page.locator('.county-faq summary')).toHaveCount(6);
+ await expect(page.getByRole('navigation',{name:'Breadcrumb'})).toContainText('Ohio');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
  expect(requests).toEqual([]);
 });
 

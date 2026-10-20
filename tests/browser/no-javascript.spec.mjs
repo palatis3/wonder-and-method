@@ -14,10 +14,10 @@ test('all statewide county links remain usable without JavaScript',async({page},
  await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
 });
 
-test('both state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
+test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(129);
+ await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(217);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(67);
  await expect(page.getByRole('navigation',{name:'Pennsylvania service regions'}).locator('a')).toHaveCount(10);
@@ -27,6 +27,19 @@ test('both state directories and Pennsylvania county details work without JavaSc
  await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
  await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toBeVisible();
  await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/pennsylvania-columbia\.txt(?:\?v=[a-f0-9]+)?$/);
+});
+
+test('Ohio directory, municipalities and FAQs work without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/areas/?qa=1');
+ await page.locator('.state-area-cards').getByRole('link',{name:'Explore Ohio',exact:true}).click();
+ await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(88);
+ await expect(page.getByRole('navigation',{name:'Ohio service regions'}).locator('a')).toHaveCount(7);
+ await page.locator('[data-county-search] a[href="/areas/ohio/greene-county/"]').click();
+ await expect(page.locator('main h1')).toContainText('Greene');
+ await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Yellow Springs');
+ await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
+ await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/ohio-greene\.txt(?:\?v=[a-f0-9]+)?$/);
 });
 
 test('native additions prefill, correction and receipt preserve all selected work without JavaScript',async({page},testInfo)=>{
