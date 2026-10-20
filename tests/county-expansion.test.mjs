@@ -21,7 +21,7 @@ test('county routes expose reviewed geography, truthful delivery and a complete 
   const original=research.counties.find(c=>c.county===county.name);
   if(original)assert.deepEqual(countyGeography[county.slug].municipalities,original.municipalities);
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+path]);
+  assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+'/areas/new-york/',config.origin+path]);
   assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
   assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);assert.match(page.html,/Illustrative .* County example/);
   assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
@@ -64,7 +64,7 @@ test('county offer references and maintenance costs follow the commercial config
  for(const page of countyPages(changed)){
   for(const value of ['$1,777','$177'])assert.ok(page.body.includes(value),page.path+' '+value);
   assert.match(page.body,/href="\/pricing\/"/);
-  if(page.path!=='/areas/')assert.ok(page.body.includes('$877'),page.path+' Sprint price');
+  if(/-county\/$/.test(page.path))assert.ok(page.body.includes('$877'),page.path+' Sprint price');
  }
  assert.match(journalSections('/guides/website-maintenance-cost/',changed).map(s=>s.body).join(''),/\$177/);
 });

@@ -25,8 +25,8 @@ export const pennsylvaniaTasksC = {
     check:'Follow the contact page and one older customer link to verify that both lead to accurate directions or an appropriate explanation of the change.'
   },
   lebanon:{
-    name:'Lebanon', title:'Give every old catalogue item an intentional next step.',
-    scenario:'An illustrative Lebanon supplier is redesigning a catalogue containing current products, retired models and useful older instructions.',
+    name:'Lebanon', title:'Give every old catalog item an intentional next step.',
+    scenario:'An illustrative Lebanon supplier is redesigning a catalog containing current products, retired models and useful older instructions.',
     decision:'Select a manageable product family and record each existing URL, product status and approved technical source. Decide whether to retain the page, explain a replacement, preserve a reference document or retire the content. Compare any replacement’s actual specifications before treating it as equivalent. Keep this inventory beside the proposed navigation so a visual cleanup does not silently remove information customers still use.',
     questions:['What can a buyer currently order or request?','Which older details are still needed for identification or support?','Is the proposed replacement genuinely relevant to the old page?'],
     output:'A product-status inventory with an owner-approved destination for every reviewed URL.',

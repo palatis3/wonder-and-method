@@ -41,9 +41,9 @@ export const pennsylvaniaTasksA = {
     check: 'Read the proposed expired version as a new visitor and identify whether any wording still promises a bookable package.'
   },
   berks: {
-    name: 'Berks', title: 'Label a representative slice of the catalogue',
+    name: 'Berks', title: 'Label a representative slice of the catalog',
     scenario: 'Imagine a Berks County supplier whose gallery mixes stocked items, completed projects and configurable products. Each currently uses the same inquiry button and availability wording.',
-    decision: 'Select one example of each status and write the facts a buyer needs: item identity, relevant specifications, status and next action. Identify who can confirm stock or quotation requirements. Apply the labels consistently to the sample before expanding across the catalogue. Keep previous-project permissions and any unsupported availability claim on the review list.',
+    decision: 'Select one example of each status and write the facts a buyer needs: item identity, relevant specifications, status and next action. Identify who can confirm stock or quotation requirements. Apply the labels consistently to the sample before expanding across the catalog. Keep previous-project permissions and any unsupported availability claim on the review list.',
     questions: ['Which image shows an available item and which shows an example?', 'What choice changes the information needed for a quote?', 'Who keeps the displayed availability statement current?'],
     output: 'A small approved listing pattern for stocked, example and quotation-only items, with a suitable action for each.',
     check: 'Ask a reader to choose one product and explain whether they can buy it now or must request confirmation.'
