@@ -1,5 +1,8 @@
-// Official geography reviewed October 16, 2026. Sources are displayed on each county page.
+import {expandedCountyGeography} from './county-expansion.mjs';
+// Original geography reviewed October 16; additions reviewed October 20, 2026.
+// Sources are displayed on each county page.
 export const countyGeography = {
+  ...expandedCountyGeography,
   "monroe": {
     "municipalities": {
       "cities": [

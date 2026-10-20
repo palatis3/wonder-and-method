@@ -29,11 +29,11 @@ test('catalog offers lead to visible pricing anchors and resolve to named servic
   assert.ok(seo.offers.every(item => item.priceSpecification.unitCode === 'MON'));
 });
 
-test('public sitemap and directory exclude held county routes and use recorded modification dates', () => {
+test('public sitemap and directory include every published page except the error page and use recorded modification dates', () => {
   const crawl = crawlFiles(config, pages), urls = [...crawl.sitemap.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod><\/url>/g)];
-  assert.equal(urls.length, 36);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(!urls.some(([,url])=>url===config.origin+'/payments/'));
+  assert.equal(urls.length, pages.length-1);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(urls.some(([,url])=>url===config.origin+'/payments/'));
   for (const [, url, date] of urls) assert.equal(date, dates[new URL(url).pathname].modifiedAt);
-  assert.match(crawl.llms, /\/pricing\//);assert.doesNotMatch(crawl.llms, /\/checkout\/|\/areas\/monroe-county\//);
+  assert.match(crawl.llms, /\/pricing\//);assert.match(crawl.llms, /\/checkout\//);assert.match(crawl.llms, /\/areas\/monroe-county\//);assert.doesNotMatch(crawl.llms,/\/404\/|\/api\/operator/);
   const missing = pages.find(page => page.path === '/404/');
   assert.doesNotMatch(missing.html, /rel="canonical"|property="og:url"/);
 });
@@ -49,12 +49,12 @@ test('content dates change with content and stay stable across byline date updat
   assert.equal(nextPageDates([changed], first, '2026-10-18')['/example/'].modifiedAt, '2026-10-18');
 });
 
-test('edge robots policy lets readers follow excluded public resources while private flows remain restricted', async () => {
+test('edge robots policy permits all published content while private endpoints remain restricted', async () => {
   const env = {ENVIRONMENT: 'production', RELEASE_APPROVED: 'true', SEARCH_INDEXING: 'true', ASSETS: {fetch: async () => new Response('page')}};
-  for (const route of ['/privacy/', '/payments/', '/work/fieldwork/', '/areas/monroe-county/']) {
+  for (const route of ['/privacy/', '/payments/', '/work/fieldwork/', '/areas/monroe-county/','/checkout/launch-site/']) {
     const response = await worker.fetch(new Request('https://example.test' + route), env, {});
-    assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, follow');
+    assert.equal(response.headers.get('X-Robots-Tag'), null);
   }
-  const privatePage = await worker.fetch(new Request('https://example.test/checkout/launch-site/'), env, {});
+  const privatePage = await worker.fetch(new Request('https://example.test/api/operator/inquiries'), env, {});
   assert.match(privatePage.headers.get('X-Robots-Tag'), /noindex, nofollow/);
 });

@@ -18,7 +18,7 @@ export function crawlFiles(config,pages){
   const publicPages=publicMode?pages.filter(page=>routeIndexEligible(page.path)):[];
   return {
     sitemap:`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicPages.map(page=>`<url><loc>${escapeHtml(origin+page.path)}</loc>${/^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(page.modifiedAt||'')&&Number.isFinite(Date.parse(page.modifiedAt))?`<lastmod>${escapeHtml(page.modifiedAt)}</lastmod>`:''}</url>`).join('')}</urlset>`,
-    llms:`# ${config.name}\n\n> Independent Buffalo web studio. Services are delivered online across New York.\n\nUse current page content for prices, scope and availability; an inquiry is not a booking.\nPublic information may be crawled under robots.txt. This directory does not grant rights beyond the website terms. Private forms, payment flows and operational downloads are not included.\n\n${publicPages.map(page=>`- [${page.title||page.path}](${origin+page.path}): ${page.description||''}`).join('\n')}\n`,
+    llms:`# ${config.name}\n\n> Independent Buffalo web studio. Services are delivered online across New York.\n\nUse current page content for prices, scope and availability; an inquiry is not a booking.\nPublic information may be crawled under robots.txt. This directory does not grant rights beyond the website terms. Private records, API endpoints and operational downloads are not included.\n\n${publicPages.map(page=>`- [${page.title||page.path}](${origin+page.path}): ${page.description||''}`).join('\n')}\n`,
     robots:publicMode?`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`:config.mode==='production'?'User-agent: *\nAllow: /\n':'User-agent: *\nDisallow: /\n'
   };
 }

@@ -1,3 +1,4 @@
+import {expandedCountyProfiles} from './county-expansion.mjs';
 // County-specific planning examples, not claims of client work or local offices.
 export const countyProfiles = [
  {slug:'monroe',name:'Monroe',anchor:'Rochester',region:'Greater Rochester',places:'Rochester, Greece, Brighton, Henrietta, Webster and the surrounding towns and villages',
@@ -81,4 +82,5 @@ export const countyProfiles = [
   geographyNote:'Niagara is a town distinct from the City of Niagara Falls. North Tonawanda is in Niagara County. Barker is in Somerset; Middleport spans Royalton and Hartland. Named lakeshore communities are included separately below.',
   questions:[['Do you work with Niagara Falls businesses in New York?','Yes. This page describes Niagara County, New York. Our studio is based in Erie County and provides online website and search work across the county.'],['Can you help a seasonal business keep its information current?','We can define the content that changes, who updates the source files and how changes are checked and published. Booking availability and external-provider behavior are confirmed within the agreed scope.']]
  }
+ ,...expandedCountyProfiles
 ];

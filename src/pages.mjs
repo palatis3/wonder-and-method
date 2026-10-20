@@ -23,7 +23,7 @@ import {inquiryForm} from './inquiry-form.mjs';
 import {addonCatalogue} from './addon-content.mjs';
 import {checkoutPages} from './checkout-content.mjs';
 import {paymentContent} from './payment-content.mjs';
-import {countyPages,countyServiceName} from './service-counties.mjs';
+import {countyPages,countyServiceName,serviceAreaLinks} from './service-counties.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {searchMetadata,searchSupplement,countyCoverage} from './search-content.mjs';
 import {redesignPage} from './search-guides.mjs';
@@ -56,7 +56,7 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   function page(path,title,description,body){
     body=premiumBody(path,{config,offers:o})??body;
     if(path==='/areas/erie-county/')body=countyCoverage(geography,config,o);
-    if(path==='/areas/erie-county/')body=body.replace(/<section\b[^>]*id="start-a-project"[^>]*>/,closing=>'<section class="section"><p class="eyebrow">Across New York</p><h2>More places. The same online process.</h2><p>My studio is based in Erie County. I also work online with businesses in <a href="/areas/monroe-county/">Monroe</a>, <a href="/areas/onondaga-county/">Onondaga</a>, <a href="/areas/orange-county/">Orange</a>, <a href="/areas/rockland-county/">Rockland</a>, <a href="/areas/albany-county/">Albany</a>, <a href="/areas/dutchess-county/">Dutchess</a>, <a href="/areas/saratoga-county/">Saratoga</a>, <a href="/areas/oneida-county/">Oneida</a> and <a href="/areas/niagara-county/">Niagara</a> counties.</p><p><a class="text-link" href="/areas/">Explore all county service guides</a></p></section>'+closing);
+    if(path==='/areas/erie-county/')body=body.replace(/<section\b[^>]*id="start-a-project"[^>]*>/,closing=>serviceAreaLinks()+closing);
 
     if(['/about/','/guides/','/areas/'].includes(path))body=body.replace('</header>','<p class="service-intro-action"><a class="button" href="/contact/?request_kind=question#inquiry">Discuss your website</a></p></header>');
     const supplement=searchSupplement(path,o,config);
@@ -66,6 +66,7 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
         body=body.includes('<section class="studio-closing">')?body.replace('<section class="studio-closing">',detail+'<section class="studio-closing">'):body+detail;
       }else body=body.includes('<section class="studio-closing">')?body.replace('<section class="studio-closing">',supplement+'<section class="studio-closing">'):body+supplement;
     }
+    if(path.startsWith('/services/')){const areas=serviceAreaLinks();body=body.includes('<section class="studio-closing">')?body.replace('<section class="studio-closing">',areas+'<section class="studio-closing">'):body+areas;}
     if(searchMetadata[path]){const metadata=searchMetadata[path];title=metadata.title;if(metadata.description)description=typeof metadata.description==='function'?metadata.description(o,config):metadata.description;}
     if(path.startsWith('/services/')&&!body.includes('service-intro-action')){const goal=path==='/services/seo/'?'search':path==='/services/website-care/'?'care':path==='/services/website-audit/'?'fix':path==='/services/website-redesign/'?'redesign':'new_website';body=body.replace('</header>',`<p class="service-intro-action"><a class="button" href="/contact/?offer=unsure&amp;goal=${goal}#inquiry">Discuss your project</a> <a class="text-link" href="/pricing/">Compare prices</a></p></header>`);}
     const introProof=({

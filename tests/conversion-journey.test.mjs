@@ -19,7 +19,7 @@ test('every guide has explicit intent and contextual replacement retains editori
  assert.match(contextualizeGuideBody(body,'/guides/website-redesign-brief/'),/Hypothetical example/);
  assert.match(contextualizeGuideBody(body,'/guides/website-redesign-brief/'),/goal=redesign/);
 });
-test('fictional concept pages stay excluded from search while work remains indexable',()=>{
- for(const id of ['fieldwork','northline','hearthside']){assert.equal(routeIndexEligible(`/work/${id}/`),false);assert.equal(routeIndexEligible(`/work/${id}/request/`),false);}
+test('public fictional concept and work pages are eligible for search',()=>{
+ for(const id of ['fieldwork','northline','hearthside']){assert.equal(routeIndexEligible(`/work/${id}/`),true);assert.equal(routeIndexEligible(`/work/${id}/request/`),true);}
  assert.equal(routeIndexEligible('/work/'),true);
 });

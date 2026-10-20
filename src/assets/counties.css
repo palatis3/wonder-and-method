@@ -2,6 +2,9 @@
 .county-section .section-heading{max-width:850px}.county-section .section-heading h2{max-width:22ch}
 .county-intro-copy,.county-reading{max-width:820px;font-size:1.05rem;line-height:1.8}
 .county-jump{flex-wrap:wrap}.county-example-label{margin-top:2.5rem;font-size:.85rem;color:var(--muted,#637178)}
+.county-region-nav{flex-wrap:wrap;gap:.8rem 1.3rem}
+.county-region-nav a{line-height:1.5}
+.county-directory:has(>div:only-child){grid-template-columns:1fr;max-width:820px}
 .county-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:1.5rem 0 2rem}
 .county-cards article{border-top:1px solid #bac2c2;padding-top:1.4rem}.county-cards h3{font-size:1.2rem;line-height:1.35;margin:0 0 1rem}.county-cards p{font-size:.98rem;line-height:1.75}
 .county-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2rem 0}.county-directory h3{font-size:1rem;border-bottom:1px solid #bac2c2;padding-bottom:.8rem}

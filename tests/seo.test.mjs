@@ -26,7 +26,7 @@ test('production output has coherent canonical, OG, schema and crawl metadata',(
  }
  const crawl=crawlFiles(production,pages);
  assert.match(crawl.robots,/Allow: \/\nSitemap: https:\/\/studio.example.com\/sitemap.xml/);
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.length-32);
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.length-1);
  assert.ok(!crawl.sitemap.includes('/404/'));assert.ok(!crawl.sitemap.includes('/concepts/'));assert.ok(!crawl.sitemap.includes('/guides/'));
  assert.ok(!pages.some(page=>page.html.includes('127.0.0.1')));
 });

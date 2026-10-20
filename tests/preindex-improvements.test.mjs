@@ -14,11 +14,11 @@ test('aggregate measurement cannot build live intake without the matching review
  assert.throws(()=>intakeContent({...config,privacy:{...config.privacy,analytics:''}}),/Aggregate measurement/);
  assert.doesNotThrow(()=>intakeContent(config));
 });
-test('route policy excludes transaction, policy, demo, asset and API variants and the global hold can still override launch',async()=>{
- const excluded=['/areas/monroe-county/','/checkout/launch-site/','/checkout/grow','/checkout/launch-site/index.html','/payments','/payments.html','/privacy/','/work/lead-workbench/','/api/inquiries','/assets/example.txt','/404/'];
+test('all public content variants are indexable while APIs, downloads, errors and the global hold remain protected',async()=>{
+ const excluded=['/api/inquiries','/assets/example.txt','/404/','/404.html','/version.json','/.well-known/private'];
  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',ASSETS:{fetch:async()=>new Response('fixture')}};
  for(const path of excluded){assert.equal(routeIndexEligible(path),false,path);if(!path.startsWith('/api/'))assert.match((await worker.fetch(new Request('https://example.test'+path),env,{})).headers.get('X-Robots-Tag'),/noindex/,path);}
- for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/'])assert.equal(routeIndexEligible(path),true,path);
+ for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/','/areas/monroe-county/','/checkout/launch-site/','/checkout/grow','/checkout/launch-site/index.html','/payments','/payments.html','/privacy/','/work/lead-workbench/'])assert.equal(routeIndexEligible(path),true,path);
  assert.equal(config.searchIndexing,true);const pages=renderPages({config:{...config,searchIndexing:false},offers,map,geography});assert.ok(pages.every(p=>p.html.includes('noindex,nofollow')));
 });
 test('website cards use authoritative limits and canonical destinations without duplicate posters',()=>{
@@ -29,5 +29,5 @@ test('website cards use authoritative limits and canonical destinations without 
 
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{
  const checks=new Set(),titles=new Set();for(const [slug,c] of Object.entries(countyBuyerTasks)){checks.add(c.check);titles.add(c.title);const text=await readFile(new URL('../src/assets/county-briefs/'+slug+'.txt',import.meta.url),'utf8');assert.ok(text.includes(c.check));assert.ok(text.includes(c.output));assert.match(countyBuyerTask(slug),/Illustrative .* County example/);}
- assert.equal(checks.size,10);assert.equal(titles.size,10);
+ assert.equal(checks.size,25);assert.equal(titles.size,25);
 });

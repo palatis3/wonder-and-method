@@ -1,3 +1,4 @@
+import {countyProfiles} from './county-profiles.mjs';
 // Schema.org accepts a Date or a DateTime. Keep the precision actually recorded.
 export function articleDateSchema(article) {
   return Object.fromEntries(['datePublished', 'dateModified'].flatMap(key => {
@@ -10,7 +11,7 @@ export function articleDateSchema(article) {
 
 export const serviceAreas = () => [
   {'@type': 'City', name: 'Buffalo, New York'},
-  ...['Erie County, New York', 'Niagara County, New York', 'New York State'].map(name => ({'@type': 'AdministrativeArea', name}))
+  ...['Erie County, New York', ...countyProfiles.map(c=>`${c.name} County, New York`), 'New York State'].map(name => ({'@type': 'AdministrativeArea', name}))
 ];
 
 export function organizationSchema(config, logo) {

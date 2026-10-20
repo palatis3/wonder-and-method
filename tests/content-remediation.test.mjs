@@ -38,19 +38,19 @@ test('county services precede optional worksheet and hub keeps one link per coun
   assert.ok(page.body.indexOf('id="services"')<page.body.indexOf('id="buyer-task"'),page.path);
   assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/web-design\/"/);
  }
- assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,10);
+ assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,25);
  assert.ok(hub.indexOf('/areas/erie-county/')<hub.indexOf('/areas/niagara-county/'));
  assert.match(pages.find(p=>p.path==='/areas/orange-county/').body,/Tuxedo Park remains a separate village/);
  assert.match(pages.find(p=>p.path==='/areas/albany-county/').body,/Green Island is a coterminous town and village/);
 });
 
-test('catalog monthly entities match the services that offer them; payments stays excluded but followable',()=>{
+test('catalog monthly entities match their services; public payment information and inquiry forms are indexable',()=>{
  const monthly=commercialOffers(config,offers).filter(x=>x.priceSpecification);
  assert.deepEqual(monthly.map(x=>new URL(x.itemOffered['@id']).pathname),['/services/website-care/','/services/seo/','/services/seo/']);
  assert.equal(offersForService(config,offers,'/services/website-care/').length,1);
  assert.equal(offersForService(config,offers,'/services/seo/').length,2);
- assert.equal(privateRoute('/payments/'),false);assert.equal(routeIndexEligible('/payments/'),false);
- assert.equal(privateRoute('/checkout/'),true);assert.equal(privateRoute('/api/inquiries'),true);
+ assert.equal(privateRoute('/payments/'),false);assert.equal(routeIndexEligible('/payments/'),true);
+ assert.equal(privateRoute('/checkout/'),false);assert.equal(privateRoute('/api/inquiries'),true);
  assert.doesNotMatch(guideIllustrationAlt({path:'/guides/website-redesign-brief/'}),/\?\./);
 });
 

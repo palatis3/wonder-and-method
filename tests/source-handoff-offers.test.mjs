@@ -30,7 +30,7 @@ test('every rendered route and buyer pack withdraws positive promises of bundled
  const html=pages.map(p=>p.html).join('\n')+'\n'+JSON.stringify(buyerPacks(offers));
  for(const pattern of [/Focused and Signature include (?:supported |bounded )?CMS/i,/Focused adds a browser/i,/Signature includes one (?:agreed |scoped )?workflow/i,/Choose ONE: a new-inquiry tracker/i,/day-30 review with one (?:contained|agreed small)/i,/reviews around days 30, 60 and 90/i,/up to (?:60|90|120) minutes of (?:scheduled )?(?:training|handoff)/i,/\/assets\/editor-walkthrough\//,/name="workflow"/])assert.doesNotMatch(html,pattern);
  assert.match(pages.find(p=>p.path==='/').html,/href="\/pricing\/"/);for(const path of ['/pricing/','/services/web-design/','/work/source-handoff/'])assert.match(pages.find(p=>p.path===path).html,/source.code|source files|paid website files/i);
- assert.equal(pages.length,68);assert.ok(!pages.some(p=>p.path==='/work/content-editor/'));
+ assert.equal(pages.length,83);assert.ok(!pages.some(p=>p.path==='/work/content-editor/'));
  const value=validateInquiry({name:'Synthetic',email:'sample@example.test',business:'Fictional studio',service:'signature_site',message:'Synthetic check of retired workflow choices.',workflow:'client_portal'}).value;
  assert.ok(!Object.hasOwn(value,'workflow'));
 });
@@ -47,12 +47,12 @@ test('client copy explains marketing pages without retired-plan comparisons or d
  assert.match(pricing,/you supply the legal wording/);
 });
 
-test('withdrawn editor route redirects GET and HEAD to the noindex source example',async()=>{
+test('withdrawn editor route redirects GET and HEAD to the public source example',async()=>{
  for(const method of ['GET','HEAD']){
   const result=await worker.fetch(new Request('https://studio.example.test/work/content-editor/?from=saved-link',{method}),{ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',PUBLIC_ORIGIN:'https://studio.example.test'},{});
   assert.equal(result.status,308);assert.equal(result.headers.get('location'),'https://studio.example.test/work/source-handoff/?from=saved-link');
  }
- const page=pages.find(p=>p.path==='/work/source-handoff/');assert.match(page.html,/noindex,follow/);assert.match(page.html,/It has no live inquiry system/);
+ const page=pages.find(p=>p.path==='/work/source-handoff/');assert.match(page.html,/name="robots" content="index,follow"/);assert.match(page.html,/It has no live inquiry system/);
 });
 
 test('the public handoff download is the exact independently checked fictional archive',async()=>{
