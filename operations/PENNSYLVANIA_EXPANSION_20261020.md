@@ -1,0 +1,33 @@
+# New York and Pennsylvania coverage — October 20, 2026
+
+This expansion adds all 67 Pennsylvania county guides alongside the existing 62 New York counties. `/areas/` becomes the combined 129-county finder. `/areas/new-york/` and `/areas/pennsylvania/` provide state directories, each with ten regional groups. Existing New York county URLs remain unchanged; Pennsylvania county URLs use `/areas/pennsylvania/{slug}-county/` so shared county names have separate canonical addresses. Breadcrumbs describe the browsing hierarchy. The studio remains based in Buffalo and serves both states online.
+
+Each Pennsylvania guide contains two illustrative planning situations, a distinct buyer decision, a downloadable worksheet, a search approach, official municipality references and six visible FAQs. Three answers adapt researched buyer questions, two address the local planning context and one explains the online process. The 67 worksheets and 201 researched answers are individual editorial work, not evidence of local clients or measured county demand. All prices continue to use the existing offer configuration; coverage expansion does not change pricing, terms or inclusions.
+
+## Research and publication choices
+
+Actual Semrush US reports tested 3,701 distinct exact phrases: 310 returned data, including 117 zero estimates; 3,391 were unavailable. Across 74 completed exact and discovery reports, 1,029 unique phrases were returned. The curated question library contains 158 exact source questions, including same-day national service research retained from the New York work. Every published research adaptation retains its exact source query in private evidence.
+
+All 56 official Pennsylvania cities, 953 boroughs and the sole town received both web-design and SEO phrase checks. Another 122 townships and nine sourced communities were checked. The remaining 1,423 townships are explicitly not queried, rather than being mislabeled unavailable or zero demand. The complete site geography still includes all municipalities. The research also tested 420 county-qualified disambiguation phrases. Semrush's US estimates are not county-resident counts; variants and shared-place volumes must not be summed into county demand. No reliable API billing total is claimed because the provider returned anomalous usage metadata.
+
+Pennsylvania-qualified or clearly shared-place positive estimates were found for 38 counties; 29 have no positive qualified estimate in this research. Those guides rely on useful service expertise and verified geography, without inventing local demand. Unrelated competitor, career, webcam, out-of-state and unsupported service queries are excluded. Erie, Bethlehem, Cranberry Township, Chester/West Chester and other shared names retain geographic distinctions and uncertainty.
+
+City, borough and township language is consolidated into the relevant county guide. Additional municipality pages need a distinct customer task, service or real evidence. The editorial approach was reviewed against Google's [helpful content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), [spam policies](https://developers.google.com/search/docs/essentials/spam-policies), [URL guidance](https://developers.google.com/search/docs/crawling-indexing/url-structure) and [breadcrumb guidance](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb). It does not claim Google certification or guaranteed ranking.
+
+The private `pennsylvania-expansion-20261020` folder contains the source responses, compact county briefs, municipality coverage ledger, all FAQ mappings, independent reviews and an HTML research plan. Public copy contains useful explanations, not keyword metrics or private research records.
+
+## Geography and discovery
+
+The [Pennsylvania DCED municipality directory](https://dced.pa.gov/local-government/municipal-statistics/municipalities/) and [PennDOT boundaries](https://pasda.psu.edu/uci/DataSummary.aspx?dataset=41) support 2,555 unique municipalities and 2,566 county entries, including eleven cross-county municipalities. The ten browsing regions follow [DCED PREP](https://dced.pa.gov/local-business-assistance/). Nine individually sourced community names remain separate from municipal government types.
+
+Recent changes are reconciled with primary municipal records, including DuBois/Sandy, Hermitage/Wheatland, Shenango/South New Castle and Greenville's charter. Home-rule names and DCED directory classifications are explained. Bloomsburg is recorded as a town. The city of Bethlehem appears in both applicable counties. County source disclosures link to the primary references, including the working Upper Merion community profile.
+
+Search stays in the browser and works with state filters, county names, all listed municipalities, selected communities and municipality-type aliases such as “Bethlehem city” or “State College borough.” Shared and partial names may match several guides. All county links and native disclosures remain usable without JavaScript. Global service pages link to both state directories and all county guides inside readable disclosures.
+
+## Verification and release
+
+The candidate has 189 HTML routes and 188 index-eligible sitemap entries, preserving all 120 prior routes. State identity, canonicals, breadcrumbs, shared county names, source links, dynamic prices, useful worksheets and FAQ provenance have dedicated checks. Responsive and accessibility reviews cover the whole site and expanded Pennsylvania disclosures. Independent Astra reviews separately examine geography, content, research mapping and technical behavior; final outcomes are kept in the private release evidence.
+
+Migration `0013_journey_pennsylvania.sql` adds exactly 69 aggregate page categories. All other columns, allowed dimensions, defaults, count bounds and conflict keys remain unchanged. Inquiry and delivery-resolution tables are untouched. The previous Worker remains compatible. Export privately before applying; compare a fresh after-export for row preservation, foreign keys and existing aggregate dimensions. Normal live traffic may increase aggregate totals between snapshots.
+
+Follow the existing production runbook: clean pushed source, exact-source technical checks, successful CI, current database backup, predeploy, reviewed migration, deployment, exact live route/asset verification and responsive browser checks. Preserve inquiry health and all privacy controls. Browser QA blocks production APIs and does not send inquiry email. Resubmit the existing sitemap only after live verification, then record the actual Google outcome. Submission is not proof of indexing or ranking.

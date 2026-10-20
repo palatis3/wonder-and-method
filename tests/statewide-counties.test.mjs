@@ -32,8 +32,8 @@ test('all 62 official counties occur once in the directory, region navigation an
  assert.equal(countyRegions.length,10);
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
- const hub=byPath.get('/areas/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,120);assert.equal((sitemap.match(/<loc>/g)||[]).length,119);
+ const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
+ assert.equal(pages.length,189);assert.equal((sitemap.match(/<loc>/g)||[]).length,188);
  assert.equal((hub.match(/data-county-search=/g)||[]).length,62);
  for(const slug of official.countySlugs){
   const route=path(slug),page=byPath.get(route);assert.ok(page,route);

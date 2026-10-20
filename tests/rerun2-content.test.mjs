@@ -320,7 +320,7 @@ test('budget and maintenance wording keeps current allowances and provider assum
 });
 
 test('all sixty-two counties retain distinct examples, worksheets and readable official sources',()=>{
- const pages=countyPages(offers),counties=pages.filter(x=>x.path!=='/areas/');
+ const pages=countyPages(offers),counties=pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path));
  assert.equal(counties.length,61);assert.equal(new Set(counties.map(x=>x.path)).size,61);
  for(const page of counties){
   const slug=page.path.split('/')[2].replace('-county',''),g=countyGeography[slug];

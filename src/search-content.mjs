@@ -3,7 +3,7 @@ import {escapeHtml as e, money} from './shared.mjs';
 
 // Intent owners, not a list of keyword permutations. Prices remain offer-driven.
 export const searchMetadata = {
- '/': {title:'Buffalo Web Design & SEO | Wonder and Method',description:o=>`Custom websites for Buffalo and New York businesses. Complete writing, research, SEO and original graphics, from ${money(o.launch_site.public_price)}.`},
+ '/': {title:'Buffalo Web Design & SEO | Wonder and Method',description:o=>`Buffalo web studio serving New York and Pennsylvania online. Websites with complete writing, research, SEO and original graphics, from ${money(o.launch_site.public_price)}.`},
  '/services/web-design/': {title:'Buffalo Web Design',description:o=>`Custom websites with complete writing, research and SEO. Up to ${o.launch_site.marketing_page_cap}, ${o.focused_site.marketing_page_cap} or ${o.signature_site.marketing_page_cap} pages, from ${money(o.launch_site.public_price)}. Based in Buffalo; delivered online.`},
  '/services/website-redesign/': {title:'Website redesign in Buffalo',description:o=>`Rebuild a website around clear services, useful content and a working inquiry path. Packages from ${money(o.launch_site.public_price)}; review the existing site first.`},
  '/services/seo/': {title:'Monthly SEO for Buffalo businesses',description:o=>`Research, writing and completed improvements. Improve ${money(o.plans.improve.monthly_price)}/month; Grow ${money(o.plans.grow.monthly_price)}/month. A Website Baseline may be needed.`},

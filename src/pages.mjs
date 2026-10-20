@@ -23,7 +23,7 @@ import {inquiryForm} from './inquiry-form.mjs';
 import {addonCatalogue} from './addon-content.mjs';
 import {checkoutPages} from './checkout-content.mjs';
 import {paymentContent} from './payment-content.mjs';
-import {countyPages,countyServiceName,serviceAreaLinks} from './service-counties.mjs';
+import {countyPages,countyServiceArea,serviceAreaLinks} from './service-counties.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {searchMetadata,searchSupplement,countyCoverage} from './search-content.mjs';
 import {redesignPage} from './search-guides.mjs';
@@ -93,7 +93,8 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
     if(path==='/pricing/')schema.push(offerCatalogSchema(config,o),addonOfferCatalogSchema(config,o));
     if(path==='/services/website-addons/')schema.push(addonOfferCatalogSchema(config,o));
     if(breadcrumbs.length)schema.push(breadcrumbSchema(breadcrumbs,config.origin));
-    if(countyServiceName(path)||path==='/areas/erie-county/')schema.push({'@context':'https://schema.org','@type':'Service','@id':canonical+'#service',name:title,description,hasOfferCatalog:{'@id':config.origin+'/pricing/#offers'},provider:{'@id':config.origin+'/#studio'},areaServed:{'@type':'AdministrativeArea',name:(countyServiceName(path)||'Erie')+' County, New York'},url:canonical});
+    const countyArea=countyServiceArea(path);
+    if(countyArea)schema.push({'@context':'https://schema.org','@type':'Service','@id':canonical+'#service',name:title,description,hasOfferCatalog:{'@id':config.origin+'/pricing/#offers'},provider:{'@id':config.origin+'/#studio'},areaServed:{'@type':'AdministrativeArea',name:countyArea.name+' County, '+countyArea.state},url:canonical});
     if(article){schema.push({'@context':'https://schema.org','@type':'Article',headline:article.title,description:article.description,image:article.diagram?[socialImage]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(article)+'-'+ratio+'.png'),...articleDateSchema(article),author:{'@id':config.origin+'/#studio'},publisher:{'@id':config.origin+'/#studio'},mainEntityOfPage:canonical});}
     if(path==='/work/')schema.push({'@context':'https://schema.org','@type':'CollectionPage','@id':canonical+'#collection',name:title,description,url:canonical,mainEntity:{'@type':'ItemList',itemListElement:workItems(config).map((x,i)=>({'@type':'ListItem',position:i+1,name:x.title,url:new URL(x.href,canonical).href}))}});
     if(path===studioSearchStudy.path)schema.push({'@context':'https://schema.org','@type':'Article',headline:title,description,datePublished:'2026-10-17',dateModified:pageDate(path,'2026-10-17'),author:{'@id':config.origin+'/#studio'},publisher:{'@id':config.origin+'/#studio'},mainEntityOfPage:canonical,image:[socialImage]});
@@ -103,11 +104,11 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   }
   const closing=()=>`<section class="closing"><p class="eyebrow">Make the next step clear</p><h2>What should your<br>website make possible?</h2>${cta()}<p>Start with the buyer, the scope and the right fit.</p></section>`;
   const pages=[];
-  pages.push(page('/services/contractor-websites/','Contractor Web Design in Buffalo','Contractor websites with clear job types, real project proof, service areas and useful estimate requests. Buffalo-based, serving New York online.',contractorService(o,config)));
+  pages.push(page('/services/contractor-websites/','Contractor Web Design in Buffalo','Contractor websites with clear job types, real project proof, service areas and useful estimate requests. Buffalo-based, serving New York and Pennsylvania online.',contractorService(o,config)));
   pages.push(page('/terms/','Website terms','Service information, examples, website materials and inquiry terms for Wonder and Method.',websiteTerms(config)));
   pages.push(page('/accessibility/','Accessibility','Accessibility approach, known limits and how to report a barrier on the Wonder and Method website.',accessibilityStatement(config)));
   pages.push(page('/','Custom websites for service businesses','Custom websites for Buffalo and Erie County businesses, with research, complete writing, SEO and original graphics. Packages from $1,400.',''));
-  pages.push(page('/services/','Website, SEO and care services','Find the right website service: new design, redesign, care, SEO, reviews and repairs. Buffalo-based, serving businesses across New York online.',servicesOverview(o)));
+  pages.push(page('/services/','Website, SEO and care services','Find the right website service: new design, redesign, care, SEO, reviews and repairs. Buffalo-based, serving businesses across New York and Pennsylvania online.',servicesOverview(o)));
   pages.push(page('/services/website-addons/','Website add-ons and fixed prices','Add pages, forms, booking, payments, a CRM connection, reporting, a small store, a dashboard or a client portal. See fixed fees and exact scope before requesting a quote.',intro('Website add-ons · Prices in US dollars','Add what your<br>website needs.','Choose additional pages, forms and tools for a new website or an existing supported site. I confirm fit, scope, provider costs and dates before you pay.')+addonCatalogue(o,{detailed:true})+'<section class="studio-closing"><h2>Start with the work you need.</h2><p>Use your included package allowances first. Select the additional work you want to discuss; I check for overlap before confirming a written quote.</p><a class="button" href="/contact/?offer=unsure&amp;request_kind=question#inquiry">Discuss your website</a><ul class="link-row"><li><a href="/pricing/#website-packages">Compare website packages</a></li><li><a href="/payments/#cost-calculator">Estimate your total costs</a></li></ul></section>'));
   pages.push(page('/services/web-design/','Web design for Buffalo small businesses','Custom websites with complete writing, keyword research, on-site SEO and original graphics. Choose 6, 15 or 30 pages, with launch guides in larger packages.',''));
   pages.push(page('/services/seo/','Buffalo SEO & monthly growth services','Monthly keyword opportunity research, complete writing and published improvements for Buffalo and Erie County businesses. Compare Improve and Grow.',''));

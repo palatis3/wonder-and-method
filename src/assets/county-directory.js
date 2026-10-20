@@ -10,24 +10,28 @@ export function bindCountyDirectory(root=document){
  const status=controls?.querySelector('[role="status"]');
  const empty=root.querySelector('[data-county-empty]');
  const navigation=root.querySelector('[data-county-region-nav]');
+ const stateFilter=controls?.querySelector('[data-county-state-filter]');
  if(!controls||!input||!clear||!status||!empty)return;
- const cards=[...directory.querySelectorAll('[data-county-search]')].map(element=>({element,text:normalizeCountyQuery(element.dataset.countySearch)}));
+ const cards=[...directory.querySelectorAll('[data-county-search]')].map(element=>({element,state:element.dataset.countyState,terms:element.dataset.countySearch.split('|').map(normalizeCountyQuery)}));
  const sections=[...directory.querySelectorAll('.county-section')];
  const update=()=>{
   const query=normalizeCountyQuery(input.value);
+  const state=stateFilter?.value||'';
   let count=0;
   for(const card of cards){
-   card.element.hidden=!card.text.includes(query);
+   card.element.hidden=!card.terms.some(term=>term.includes(query))||Boolean(state&&card.state!==state);
    if(!card.element.hidden)count++;
   }
   for(const section of sections)section.hidden=![...section.querySelectorAll('[data-county-search]')].some(card=>!card.hidden);
   empty.hidden=count!==0;
-  clear.disabled=!input.value;
-  if(navigation)navigation.hidden=query.length>0;
-  status.textContent=query?`${count} county ${count===1?'guide matches':'guides match'} your search.`:`Showing all ${cards.length} county guides.`;
+  clear.disabled=!input.value&&!state;
+  if(navigation)navigation.hidden=query.length>0||Boolean(state);
+  const stateName=state?stateFilter.selectedOptions[0].textContent:'';
+  status.textContent=query?`${count} county ${count===1?'guide matches':'guides match'} your search${stateName?' in '+stateName:''}.`:stateName?`Showing ${count} ${stateName} county guides.`:`Showing all ${cards.length} county guides.`;
  };
  input.addEventListener('input',update);
- clear.addEventListener('click',()=>{input.value='';update();input.focus();});
+ stateFilter?.addEventListener('change',update);
+ clear.addEventListener('click',()=>{input.value='';if(stateFilter)stateFilter.value='';update();input.focus();});
  controls.hidden=false;
  update();
 }

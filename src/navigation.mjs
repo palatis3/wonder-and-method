@@ -4,18 +4,24 @@ export function breadcrumbTrail(path,title){
  if(path==='/'||path==='/404/')return [];
  const trail=[{path:'/',name:'Home'}];
  if(path.startsWith('/guides/')&&path!=='/guides/')trail.push({path:'/guides/',name:'Guides'});
- else if(path.startsWith('/areas/')&&path!=='/areas/')trail.push({path:'/areas/',name:'Service areas'});
+ else if(path.startsWith('/areas/')&&path!=='/areas/'){
+  trail.push({path:'/areas/',name:'Service areas'});
+  if(/^\/areas\/pennsylvania\/[^/]+-county\/$/.test(path))trail.push({path:'/areas/pennsylvania/',name:'Pennsylvania'});
+  else if(/^\/areas\/[^/]+-county\/$/.test(path))trail.push({path:'/areas/new-york/',name:'New York'});
+ }
  else if(path.startsWith('/services/')&&path!=='/services/')trail.push({path:'/services/',name:'Services'});
  else if(path.startsWith('/checkout/'))trail.push({path:'/pricing/',name:'Pricing'});
  else if(path.startsWith('/work/')&&path!=='/work/')trail.push({path:'/work/',name:'Work'});
  const concept=path.match(/^\/work\/(fieldwork|northline|hearthside)\/(.+)\/$/);if(concept)trail.push({path:'/work/'+concept[1]+'/',name:concept[1][0].toUpperCase()+concept[1].slice(1)});
  const shortNames={'/work/fieldwork/':'Fieldwork','/work/northline/':'Northline','/work/hearthside/':'Hearthside','/pricing/':'Pricing','/contact/':'Contact','/about/':'About','/process/':'Process','/work/':'Work','/work/lead-workbench/':'Lead workbench','/work/source-handoff/':'Your website files','/work/studio-search/':'SEO changes on this website','/work/website-audit/':'Website audit','/privacy/':'Privacy','/terms/':'Website terms','/accessibility/':'Accessibility','/guides/':'Guides','/areas/':'Service areas','/services/website-addons/':'Website add-ons','/services/web-design/':'Web design','/services/website-redesign/':'Website redesign','/services/seo/':'SEO','/services/website-care/':'Website care','/services/website-audit/':'Website reviews & fixes','/services/contractor-websites/':'Contractor websites'};
- const county=path.match(/^\/areas\/([a-z-]+)-county\/$/);
+ const county=path.match(/^\/areas\/(?:pennsylvania\/)?([a-z-]+)-county\/$/);
+ const stateName=({'/areas/new-york/':'New York','/areas/pennsylvania/':'Pennsylvania'})[path];
  const conceptLabel=concept?({landscaping:'Landscaping',remodeling:'Remodeling',menu:'Menu',request:concept[1]==='hearthside'?'Order preview':'Request preview'})[concept[2]]:null;
  const guideNames={'website-project-cost':'Website costs','local-seo-profile-eligibility':'Local SEO eligibility','seo-work-and-reporting':'SEO work and reporting','website-migration-checklist':'Migration checklist','custom-website-or-template':'Custom or template','website-care-versus-seo':'Care or SEO','website-not-showing-on-google':'Google visibility','website-launch-checklist':'Launch checklist','ai-website-or-custom':'AI or custom website','contact-form-not-working':'Contact form help','website-audit-checklist':'Website audit checklist','website-maintenance-checklist':'Maintenance checklist','website-maintenance-cost':'Maintenance costs','website-repair-or-redesign':'Repair or redesign','website-redesign-brief':'Redesign brief','contractor-website-checklist':'Contractor checklist','service-area-pages':'Service area pages'};
  const guide=path.match(/^\/guides\/([^/]+)\/$/);
  const checkoutName=path.startsWith('/checkout/')?title.replace(/^Request /,'').replace(/ Website$/,''):null;
- const name=checkoutName||(path==='/services/'?'Services':null)||conceptLabel||shortNames[path]||(guide?guideNames[guide[1]]:null)||(county?county[1].split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' ')+' County':title);
+ const countyName=county?(({'mckean':'McKean','st-lawrence':'St. Lawrence'})[county[1]]||county[1].split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '))+' County':null;
+ const name=checkoutName||stateName||(path==='/services/'?'Services':null)||conceptLabel||shortNames[path]||(guide?guideNames[guide[1]]:null)||countyName||title;
  trail.push({path,name});return trail;
 }
 

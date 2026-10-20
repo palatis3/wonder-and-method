@@ -4,7 +4,7 @@ import {validateInquiry} from '../../src/inquiry.mjs';
 
 test('all statewide county links remain usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
- await page.goto('/areas/?qa=1');
+ await page.goto('/areas/new-york/?qa=1');
  await expect(page.locator('[data-county-filter-controls]')).toBeHidden();
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(62);
  await expect(page.getByRole('navigation',{name:'New York service regions'}).locator('a')).toHaveCount(10);
@@ -12,6 +12,21 @@ test('all statewide county links remain usable without JavaScript',async({page},
  await expect(page.locator('main h1')).toContainText('St. Lawrence');
  await page.locator('.county-faq summary').first().click();
  await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
+});
+
+test('both state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/areas/?qa=1');
+ await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(129);
+ await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
+ await expect(page.locator('[data-county-search]:visible')).toHaveCount(67);
+ await expect(page.getByRole('navigation',{name:'Pennsylvania service regions'}).locator('a')).toHaveCount(10);
+ await page.locator('[data-county-search] a[href="/areas/pennsylvania/columbia-county/"]').click();
+ await expect(page.locator('main h1')).toContainText('Columbia');
+ await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Bloomsburg');
+ await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
+ await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/pennsylvania-columbia\.txt(?:\?v=[a-f0-9]+)?$/);
 });
 
 test('native additions prefill, correction and receipt preserve all selected work without JavaScript',async({page},testInfo)=>{
