@@ -1,6 +1,10 @@
 // Optional measurement must never prevent the form handler from loading.
 let measurement;
 const countJourney=(...args)=>{measurement??=import('./journey-counts.js').catch(()=>null);measurement.then(module=>module?.countJourney(...args)).catch(()=>{});};
+import {addonBuildPayments} from './addon-content.mjs';
+import {addonSelectionFromQuery,normalizeAddonSelection,priceAddons} from './addons.mjs';
+import offers from '../config/offers.json' with {type:'json'};
+import {money} from './shared.mjs';
 import {bindInquirySubmission} from './inquiry-submit.mjs';
 import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection,inquiryNeedsWebsite} from './shared.mjs';
 const form=document.querySelector('form#inquiry');
@@ -9,6 +13,7 @@ if(form){
  const annualEnabled=form.dataset.annualEnabled==='true';
  const params=new URLSearchParams(location.search),requested=resolveServiceId(params.get('offer'));
  if(!form.dataset.fixedService&&inquiryChoices.some(([id])=>id===requested))field('service').value=requested;
+ if(params.has('addons')){let selected=[];try{if(params.getAll('addons').length===1)selected=addonSelectionFromQuery(params.get('addons'));}catch{}for(const input of form.querySelectorAll('input[name^="addon_"]'))input.checked=selected.includes(input.name.slice(6));}
  const initial={service:field('service').value,...Object.fromEntries(new FormData(form))};
  for(const key of Object.keys(inquiryContextFields))if(params.has(key))initial[key]=params.get(key);
  const context=publicInquiryContext(initial,annualEnabled);
@@ -28,6 +33,9 @@ if(form){
    const input=field(key);if(input?.type==='hidden'){input.value=context[key]||'';}
   }
   const current={service,...context,request_kind:question?'question':'checkout'};
+  const additions=priceAddons(normalizeAddonSelection(values));
+  const addonSummary=form.querySelector('[data-addon-summary]');
+  if(addonSummary){addonSummary.hidden=!additions.ids.length;addonSummary.querySelector('[data-addon-names]').textContent=additions.lines.map(item=>item.public_name).join('; ');addonSummary.querySelector('[data-addon-total]').textContent=money(additions.total);const project=addonSummary.querySelector('[data-addon-project-total]');const base=offers[service];project.textContent=additions.ids.length&&['launch_site','focused_site','signature_site'].includes(service)?'Package + selected additions: '+money(base.public_price+additions.total)+' in one-time studio fees.':'';addonSummary.querySelector('[data-addon-payments]').textContent=additions.ids.length&&['launch_site','focused_site','signature_site'].includes(service)?addonBuildPayments(base.public_price+additions.total):'';}
   const website=field('website'),websiteRequired=inquiryNeedsWebsite(current);
   website.required=websiteRequired;website.placeholder=websiteRequired?'example.com':'example.com or @yourbusiness';
   form.querySelector('#website-help').textContent=websiteRequired?'Use a website address, such as example.com. It can be offline or broken; I do not need passwords.':'A link, social handle or short note is fine. Leave blank if you do not have one.';
@@ -42,12 +50,13 @@ if(form){
   const summary=document.querySelector('#request-summary');
   const next=inquiryRequestSummary(current);if(summary&&summary.textContent!==next)summary.textContent=next;
   for(const questionLink of document.querySelectorAll('[data-checkout-question]')){
-   const query=new URLSearchParams({offer:service,...selectedInquiryContext(current),request_kind:'question'});
+   const {add_ons=[],...linkContext}=selectedInquiryContext(current);
+   const query=new URLSearchParams({offer:service,...linkContext,...(add_ons.length?{addons:add_ons.join(',')}:{}),request_kind:'question'});
    questionLink.href='/contact/?'+query.toString()+'#inquiry';
   }
  };
  form.addEventListener('input',()=>{if(form.dataset.mode==='live')countJourney(field('request_kind').value==='question'?'question_start':'request_start',field('service').value);});
- form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service')updateRequestSummary();});
+ form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service'||event.target.name.startsWith('addon_'))updateRequestSummary();});
  updateRequestSummary();
  bindInquirySubmission(form,{countJourney});
 }

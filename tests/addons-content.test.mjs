@@ -1,0 +1,159 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
+import {tmpdir} from 'node:os';
+import {renderPages} from '../src/pages.mjs';
+import {buyerPacks,packBody} from '../src/buyer-packs.mjs';
+import {writeBuyerPacks} from '../scripts/build-buyer-packs.mjs';
+import {guideContentSections} from '../src/guide-content.mjs';
+import {escapeHtml as e,money} from '../src/shared.mjs';
+import {crawlFiles} from '../src/seo.mjs';
+
+const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
+const [offers,config,map,geography]=await Promise.all(['config/offers.json','config/site.json','authority/v5/site-map.json','authority/v5/geography.json'].map(read));
+const render=(values=offers)=>renderPages({config,offers:values,map,geography});
+const addonPath='/services/website-addons/';
+const packPath='/assets/buyer-packs/website-addons';
+const baseIds=['launch_site','focused_site','signature_site','keep_running','improve','grow','audit_fix_sprint','website_baseline'];
+const expectedIds=['standard_page','three_page_bundle','campaign_landing_page','contact_form','guided_quote_form','booking_setup','payment_setup','crm_connection','reporting_dashboard','small_store','job_dashboard','client_portal'];
+const schema=html=>JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+
+test('add-on service is discoverable, indexable and separate from all eight base requests',()=>{
+ const pages=render(),catalogue=pages.find(page=>page.path===addonPath),pricing=pages.find(page=>page.path==='/pricing/');
+ assert.ok(catalogue);
+ assert.deepEqual(offers.add_ons.map(item=>item.id),expectedIds);
+ assert.deepEqual(pages.filter(page=>page.path.startsWith('/checkout/')).map(page=>page.path).sort(),baseIds.map(id=>'/checkout/'+id.replaceAll('_','-')+'/').sort());
+ assert.equal((pricing.html.match(/class="compact-offer"/g)||[]).length,8);
+ assert.match(catalogue.html,/<h1>Add what your<br>website needs\.<\/h1>/);
+ assert.match(catalogue.html,/class="founder-strip"/);
+ assert.match(catalogue.html,/class="back-to-top"/);
+ assert.match(catalogue.html,/class="support-chat/);
+ assert.ok(crawlFiles(config,pages).sitemap.includes(config.origin+addonPath));
+ for(const item of offers.add_ons){
+  assert.ok(catalogue.html.includes('id="addon-'+item.id+'"'),item.id);
+  assert.ok(catalogue.html.includes(e(item.public_name)),item.id);
+  assert.ok(catalogue.html.includes(money(item.public_price)),item.id);
+  assert.ok(catalogue.html.includes(e(item.scope)),item.id);
+ }
+ const baseCatalog=schema(pricing.html).find(item=>item['@id']===config.origin+'/pricing/#offers');
+ assert.equal(baseCatalog.itemListElement.length,8);
+ const addonCatalog=schema(pricing.html).find(item=>item['@id']===config.origin+addonPath+'#additions');
+ assert.deepEqual(addonCatalog.itemListElement.map(item=>item.price),offers.add_ons.map(item=>item.public_price));
+ const service=schema(catalogue.html).find(item=>item['@type']==='Service');
+ assert.deepEqual(service.offers.map(item=>item.name),offers.add_ons.map(item=>item.public_name));
+ for(const offer of service.offers){
+  const url=new URL(offer.url);
+  assert.equal(url.pathname,addonPath);
+  assert.ok(catalogue.html.includes('id="'+url.hash.slice(1)+'"'));
+ }
+});
+
+test('relevant service and guide copy links to the complete scope without replacing base allowances',()=>{
+ const pages=render();
+ for(const path of ['/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-care/','/services/seo/','/services/website-audit/','/work/source-handoff/','/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/contractor-website-checklist/','/guides/service-area-pages/','/guides/seo-work-and-reporting/']){
+  const main=pages.find(page=>page.path===path)?.html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+  assert.ok(main?.includes('href="'+addonPath),path);
+ }
+ const ids=new Set(expectedIds);
+ for(const page of pages)for(const [,href] of page.html.matchAll(/\bhref="([^"]+)"/g)){
+  const url=new URL(href.replaceAll('&amp;','&'),config.origin);
+  if(!url.searchParams.has('addons'))continue;
+  assert.equal(url.pathname,'/contact/',page.path);
+  for(const id of url.searchParams.get('addons').split(','))assert.ok(ids.has(id),page.path+' '+id);
+ }
+ const packs=buyerPacks(offers);
+ assert.deepEqual(packs.map(pack=>pack.id),baseIds);
+ for(const pack of packs){
+  const section=pack.sections.find(item=>item.title==='Optional website add-ons');
+  assert.ok(section,pack.id);
+  assert.ok(section.items.includes(offers.add_on_terms.overlap),pack.id);
+  assert.match(packBody(pack),/href="\/assets\/buyer-packs\/website-addons"/);
+  assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');
+ }
+});
+
+test('guide examples and public catalogue evaluate the supplied catalogue prices on every render',()=>{
+ const changed=structuredClone(offers);
+ for(const [index,item] of changed.add_ons.entries()){
+  item.public_price=6101+index*113;
+  item.public_name='Current '+item.id;
+  item.scope='Current scope for '+item.id+'.';
+ }
+ const original=JSON.stringify(offers);
+ const page=render(changed).find(item=>item.path===addonPath);
+ for(const item of changed.add_ons){
+  assert.ok(page.html.includes(money(item.public_price)),item.id);
+  assert.ok(page.html.includes(e(item.public_name)),item.id);
+  assert.ok(page.html.includes(e(item.scope)),item.id);
+ }
+ const cost=guideContentSections('/guides/website-project-cost/',changed).map(section=>section.body).join('');
+ for(const id of ['standard_page','three_page_bundle','campaign_landing_page','contact_form','guided_quote_form']){
+  const item=changed.add_ons.find(item=>item.id===id);
+  assert.ok(cost.includes(money(item.public_price)),id);
+  assert.ok(cost.includes(item.public_name),id);
+ }
+ assert.ok(cost.includes(money(changed.add_ons.find(item=>item.id==='standard_page').public_price+changed.add_ons.find(item=>item.id==='contact_form').public_price)));
+ for(const [slug,id] of [['contact-form-not-working','contact_form'],['contractor-website-checklist','guided_quote_form'],['service-area-pages','standard_page'],['seo-work-and-reporting','reporting_dashboard']]){
+  assert.ok(guideContentSections('/guides/'+slug+'/',changed).some(section=>section.body.includes(money(changed.add_ons.find(item=>item.id===id).public_price))));
+ }
+ assert.equal(JSON.stringify(offers),original);
+});
+
+test('standalone HTML, TXT and index catalogue carry all twelve current scopes without an aggregate package price',async()=>{
+ const folder=await mkdtemp(join(tmpdir(),'wm-addons-content-'));
+ try{
+  await mkdir(join(folder,'assets'),{recursive:true});
+  await writeFile(join(folder,'assets/site.css'),'/* synthetic shared CSS */');
+  const changed=structuredClone(offers);
+  changed.add_ons=changed.add_ons.map((item,index)=>({...item,public_price:4201+index*137,public_name:item.public_name+' <current>',scope:item.scope+' Current catalogue scope.'}));
+  await writeBuyerPacks(folder,changed);
+  const [html,txt,index]=await Promise.all([
+   readFile(join(folder,'assets/buyer-packs/website-addons.html'),'utf8'),
+   readFile(join(folder,'assets/buyer-packs/website-addons.txt'),'utf8'),
+   readFile(join(folder,'assets/buyer-packs/index.json'),'utf8').then(JSON.parse)
+  ]);
+  assert.equal(index.length,9);
+  assert.deepEqual(index.filter(item=>item.kind!=='addon-catalogue').map(item=>item.id),baseIds);
+  const catalog=index.find(item=>item.kind==='addon-catalogue');
+  assert.equal(catalog.path,packPath);
+  assert.equal(catalog.download,packPath+'.txt');
+  assert.equal(Object.hasOwn(catalog,'price'),false);
+  assert.equal(Object.hasOwn(catalog,'priceLabel'),false);
+  assert.deepEqual(catalog.items.map(item=>item.id),expectedIds);
+  assert.deepEqual(catalog.terms,changed.add_on_terms);
+  assert.match(html,/name="robots" content="noindex,nofollow"/);
+  assert.match(html,/href="\/assets\/site\.css\?v=[a-f0-9]{12}"/);
+  assert.match(html,/href="website-addons\.txt" download/);
+  assert.doesNotMatch(html,/<a[^>]+href="\/assets\/buyer-packs\/website-addons"/);
+  for(const item of changed.add_ons){
+   const record=catalog.items.find(record=>record.id===item.id);
+   assert.equal(record.price,item.public_price);
+   assert.equal(record.priceCurrency,'USD');
+   assert.equal(record.scope,item.scope);
+   assert.deepEqual(record.exclusions,item.exclusions);
+   assert.deepEqual(record.acceptance,item.acceptance);
+   assert.ok(html.includes(e(item.public_name)),item.id);
+   assert.ok(html.includes(money(item.public_price)),item.id);
+   assert.ok(html.includes(e(item.scope)),item.id);
+   assert.ok(txt.includes(item.public_name.toUpperCase()),item.id);
+   assert.ok(txt.includes(money(item.public_price)),item.id);
+   assert.ok(txt.includes(item.scope),item.id);
+   const request=new URL(record.request,config.origin);
+   assert.equal(request.pathname,'/contact/');
+   assert.equal(request.searchParams.get('offer'),'unsure');
+   assert.equal(request.searchParams.get('addons'),item.id);
+   assert.equal(request.searchParams.get('request_kind'),'checkout');
+  }
+  assert.doesNotMatch(html,/<current>/);
+  for(const id of baseIds){
+   const baseTxt=await readFile(join(folder,'assets/buyer-packs/'+id+'.txt'),'utf8');
+   assert.match(baseTxt,/OPTIONAL WEBSITE ADD-ONS/);
+   assert.ok(baseTxt.includes(packPath+'.txt'));
+  }
+ }finally{
+  assert.ok(resolve(folder).startsWith(resolve(tmpdir())+'\\')||resolve(folder).startsWith(resolve(tmpdir())+'/'));
+  assert.ok(folder.includes('wm-addons-content-'));
+  await rm(folder,{recursive:true,force:true});
+ }
+});

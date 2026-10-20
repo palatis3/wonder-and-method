@@ -1,14 +1,36 @@
 import {createHash} from 'node:crypto';
-import {quotedOffer} from './commercial.mjs';
+import {quotedOffer,assertAddonCommercialSnapshot,canonicalCommercialJson} from './commercial.mjs';
 
 export const paymentAccounts={test:'acct_1UQHQMLt5KTaVn9K',live:'acct_1UQHQFLjuTLH94aN'};
 export const offerIds=['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint'];
-const labels={launch_site:'Launch website',focused_site:'Focused website',signature_site:'Signature website',keep_running:'Keep Running',improve:'Improve',grow:'Grow',website_baseline:'Website baseline',audit_fix_sprint:'Audit & Fix Sprint'};
+const labels={launch_site:'Launch website',focused_site:'Focused website',signature_site:'Signature website',keep_running:'Keep Running',improve:'Improve',grow:'Grow',website_baseline:'Website baseline',audit_fix_sprint:'Audit & Fix Sprint',website_additions:'Website additions'};
 const requireValue=(condition,message)=>{if(!condition)throw Error(message);};
 const nonempty=value=>typeof value==='string'&&value.trim().length>0;
 const dated=value=>nonempty(value)&&/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(value)&&Number.isFinite(Date.parse(value));
 export const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 export function cents(value){requireValue(Number.isFinite(value)&&value>0&&Math.abs(value*100-Math.round(value*100))<0.00001,'Price must be a positive amount with at most two decimal places.');return Math.round(value*100);}
+
+// Bind every scope field by default, including future commercial terms. The
+// exceptions are workflow status and acceptance/payment/access evidence, which
+// record what happened rather than changing the agreed work or obligations.
+// Milestone dates and any new milestone terms remain part of acceptance.
+export function commercialAcceptanceDigest(scope){
+ const evidence=new Set(['status','buyer_confirmation','accepted_at','invoice_system_reference','access_manager_reference']);
+ const milestoneEvidence=new Set(['approval_reference','invoice_system_reference','payment_confirmed']);
+ const projection=Object.fromEntries(Object.entries(scope).filter(([key])=>!evidence.has(key)));
+ projection.milestones=scope.milestones?.map(stage=>Object.fromEntries(Object.entries(stage).filter(([key])=>!milestoneEvidence.has(key))));
+ return createHash('sha256').update(canonicalCommercialJson(projection)).digest('hex');
+}
+export function assertAddonAcceptance(scope,{allowDraft=false}={}){
+ const quote=assertAddonCommercialSnapshot(scope);
+ if(!quote)return null;
+ const confirmation=scope.buyer_confirmation||{};
+ if(allowDraft&&!confirmation.accepted_at&&!confirmation.accepted_version&&!confirmation.written_acceptance_reference&&!scope.accepted_at)return quote;
+ requireValue(confirmation.accepted_version===scope.version&&dated(confirmation.accepted_at)&&nonempty(confirmation.written_acceptance_reference)&&nonempty(scope.named_approver),'Written acceptance of this exact add-on scope version is required.');
+ requireValue(confirmation.add_ons_and_total_understood===true,'Confirm the selected add-ons, distinct scope and total in writing.');
+ requireValue(confirmation.accepted_commercial_digest===commercialAcceptanceDigest(scope),'Commercial terms changed after acceptance; obtain written approval of the current composition.');
+ return quote;
+}
 
 export function paymentCatalog(offers){
  return offerIds.map(id=>{
@@ -22,7 +44,8 @@ export function paymentCatalog(offers){
 export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={}){
  const snapshot=scope.commercial_snapshot,confirmation=scope.buyer_confirmation||{};
  requireValue(snapshot?.version===scope.commercial_version&&snapshot?.offer_id===scope.offer_id&&snapshot?.offer,'A matching versioned commercial snapshot is required.');
- requireValue(offerIds.includes(scope.offer_id)&&Number.isInteger(scope.version)&&scope.version>0,'Known offer and positive scope version required.');
+ requireValue((offerIds.includes(scope.offer_id)||scope.offer_id==='website_additions')&&Number.isInteger(scope.version)&&scope.version>0,'Known offer and positive scope version required.');
+ assertAddonAcceptance(scope);
  requireValue(/^[a-z0-9][a-z0-9-]{0,60}$/.test(scope.client_id||''),'A nonpersonal client ID is required.');
  requireValue(confirmation.accepted_version===scope.version&&dated(confirmation.accepted_at)&&Date.parse(confirmation.accepted_at)<=+now&&nonempty(confirmation.written_acceptance_reference)&&nonempty(scope.named_approver),'Written acceptance of this exact scope version and named approver required.');
  for(const key of ['page_copy_limits','self_editing_understood','required_optional_bills','approvals','ownership_and_exit','questions_resolved'])requireValue(confirmation[key]===true,`Buyer confirmation missing: ${key}.`);

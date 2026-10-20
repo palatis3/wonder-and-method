@@ -1,3 +1,5 @@
+import {normalizeAddonSelection,priceAddons} from './addons.mjs';
+
 export function escapeHtml(value='') { return String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(value)?0:2,maximumFractionDigits:2}).format(value);
 export const moneyExact=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
@@ -35,7 +37,7 @@ export const inquiryContextFields={
  baseline_status:{label:'Existing baseline',services:['keep_running','improve','grow','website_baseline','audit_fix_sprint'],options:[['new_build','Recent paid studio build'],['sprint','Usable prior Sprint'],['needed','No usable baseline'],['unknown','Needs review']]},
  billing:{label:'Service billing',services:['keep_running','improve','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
 };
-export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&field.options.some(([id])=>id===value[key]))result[key]=value[key];return result;}
+export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&field.options.some(([id])=>id===value[key]))result[key]=value[key];try{const ids=normalizeAddonSelection(value);if(ids.length)result.add_ons=ids;}catch{/* Invalid selections are rejected by inquiry validation. */}return result;}
 // Public forms keep useful link context, without offering inactive annual enrollment.
 // The broader validator/receipt allowlist remains compatible with historical records.
 export function publicInquiryContext(value={},annualEnabled=false){
@@ -44,16 +46,17 @@ export function publicInquiryContext(value={},annualEnabled=false){
  if(!['launch_site','focused_site','signature_site','unsure'].includes(resolveServiceId(value.service))||['fix','care'].includes(result.goal))delete result.concept;
  return result;
 }
-export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept);}
-export function inquiryContextSummary(value={}){return Object.entries(selectedInquiryContext(value)).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]);}
+export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.add_ons?.length);}
+export function inquiryContextSummary(value={}){const {add_ons=[],...context}=selectedInquiryContext(value);const additions=priceAddons(add_ons);return [...Object.entries(context).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]),...additions.lines.map(item=>'Addition requested: '+item.public_name+' — '+money(item.public_price)),...(additions.ids.length?['One-time additions subtotal: '+money(additions.total)+'; subject to fit and written scope.']:[])];}
 export function inquiryRequestSummary(value={}){
  const context=selectedInquiryContext(value),choice=inquiryChoices.find(([id])=>id===value.service);
  const parts=[];
  if(choice&&choice[0]!=='unsure')parts.push(choice[1]);
  for(const key of ['goal','concept'])if(context[key]&&context[key]!=='unsure')parts.push(inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
+ if(context.add_ons?.length)parts.push(priceAddons(context.add_ons).lines.map(item=>item.public_name).join(', '));
  return parts.join(' · ');
 }
-export const priceList=o=>({launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
+export const priceList=o=>({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {
  if(!prices.hosting_credit||prices.provider_model)throw new Error('Legacy calculation requires a saved hosting-credit snapshot');
@@ -81,18 +84,19 @@ export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=
 }
 
 // Current prospective terms: studio work plus directly paid provider costs, without subsidies.
-export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly'}={}) {
+export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly',add_ons=[]}={}) {
  if(prices.provider_model!=='client_owned_direct_billing')throw new Error('Use the explicit legacy calculator with a saved historical snapshot');
  if(!['launch','focused','signature','existing'].includes(build)||!['none','keep_running','improve','grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
  if(hostingMonthly!==null&&plan!=='none'&&cycles>hostingMonths)throw new Error('Hosting period must include all monthly service months');
  const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:prices[plan];
  const baselineFee=baseline&&build==='existing'&&!sprint?prices.baseline:0;
- const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
+ const additions=priceAddons(add_ons,prices.add_ons||[]);
+ const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee)+cents(additions.total),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
  const externalCents=external===null?null:cents(external),grossCents=hostingMonthly===null?null:cents(hostingMonthly)*hostingMonths,totalCents=externalCents===null||grossCents===null?null:serviceCents+grossCents+externalCents;
  const knownSubtotalCents=serviceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
  if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents,knownSubtotalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
- return {once:onceCents/100,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
+ return {once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
 }
 
 export function annualRefund(prices,{plan,completedCycles}){if(!Object.hasOwn(prices.annual,plan)||!Number.isInteger(completedCycles)||completedCycles<0||completedCycles>12)throw new Error('Invalid annual refund inputs');return cents(prices.annual[plan])*(12-completedCycles)/12/100;}

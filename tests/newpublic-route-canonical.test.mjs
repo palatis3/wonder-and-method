@@ -4,7 +4,7 @@ import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 import worker from '../deployment/worker.mjs';
 const canonical='https://wonderandmethod.com';
 test('known page variants combine canonical origin and path in one redirect preserving raw query',async()=>{
- const variants=[['/Pricing','/pricing/'],['//%70ricing//','/pricing/'],['/services/Web-Design//','/services/web-design/'],['/pricing//','/pricing/'],['/pricing/index/','/pricing/'],['/pricing/index.html','/pricing/'],['/INDEX','/'],['/services','/services/'],['/work/content-editor/','/work/source-handoff/']];
+ const variants=[['/Pricing','/pricing/'],['//%70ricing//','/pricing/'],['/services/Web-Design//','/services/web-design/'],['/pricing//','/pricing/'],['/pricing/index/','/pricing/'],['/pricing/index.html','/pricing/'],['/INDEX','/'],['/services','/services/'],['/services/Website-Addons/index.html','/services/website-addons/'],['/assets/buyer-packs/website-addons.html','/assets/buyer-packs/website-addons'],['/assets/buyer-packs/website-addons/','/assets/buyer-packs/website-addons'],['/work/content-editor/','/work/source-handoff/']];
  for(const method of ['GET','HEAD'])for(const [path,target] of variants){
   const query='?x=%2f&x=two+words&Case=KEEP%20ME';let assets=0;
   const response=await worker.fetch(new Request('https://www.wonderandmethod.com'+path+query,{method}),{ENVIRONMENT:'production',RELEASE_APPROVED:'true',PUBLIC_ORIGIN:canonical,ASSETS:{fetch:async()=>{assets++;return new Response('unexpected');}}},{});

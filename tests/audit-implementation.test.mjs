@@ -14,8 +14,11 @@ const pages=renderPages({config,offers,map,geography});
 
 test('current fixed-project ladder reconciles through quote, rendered choices and calculator',async()=>{
  const prices=priceList(offers);
- assert.deepEqual(prices,{launch:1400,focused:2350,signature:3700,keep_running:150,improve:400,grow:800,baseline:399,sprint:750,annual:{keep_running:1710,improve:4560,grow:9120},annual_available:offers.annual_enrollment_gate.verified===true,commercial_version:offers.version,provider_model:'client_owned_direct_billing'});
- for(const [name,price] of Object.entries(prices).slice(0,3)){
+ const {add_ons,...basePrices}=prices;
+ assert.deepEqual(basePrices,{launch:1400,focused:2350,signature:3700,keep_running:150,improve:400,grow:800,baseline:399,sprint:750,annual:{keep_running:1710,improve:4560,grow:9120},annual_available:offers.annual_enrollment_gate.verified===true,commercial_version:offers.version,provider_model:'client_owned_direct_billing'});
+ assert.deepEqual(add_ons,offers.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})));
+ for(const name of ['launch','focused','signature']){
+  const price=prices[name];
   const key=name+'_site';assert.equal(offers[key].public_price,price);
   const draft=await draftScope(key,'synthetic-ladder');
   assert.deepEqual(draft.milestones.map(m=>m.amount),[price*.5,price*.3,price*.2]);

@@ -1,7 +1,7 @@
 {
   "/services/contractor-websites/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "63c7091878b12c5d6106c145759262c140b409bda2bca707564faa783f103930",
+    "sha256": "019e8a3619a2541e2ea8d2892ad490da9466865949664f5b9373b7452de58548",
     "contentHashVersion": 2
   },
   "/terms/": {
@@ -20,23 +20,28 @@
     "contentHashVersion": 2
   },
   "/services/": {
-    "modifiedAt": "2026-10-19",
-    "sha256": "bdc6a1304205fe7033b14244256448ac57b8bf06f89af51af4fd8b1d6f27c7e9",
+    "modifiedAt": "2026-10-20",
+    "sha256": "e934a3b8fdaa4545043ce29ce076be31166ff09100c710d75095f0680cb49c1c",
+    "contentHashVersion": 2
+  },
+  "/services/website-addons/": {
+    "modifiedAt": "2026-10-20",
+    "sha256": "50d33b0a8c8b8a2fb9bb7aa9d4c3ac7065eb94f990fa41e15322fc32a5317563",
     "contentHashVersion": 2
   },
   "/services/web-design/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "00e945b345cc7213019ed860b5cfcb30a65dccf08c9c86a90784370023add3a5",
+    "sha256": "121a23e6e90dee640bf0068354099b1c6217f1e9dd0c680acf8317641feec23e",
     "contentHashVersion": 2
   },
   "/services/seo/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "316d4e98e54137917f4ba019f788145c8248dee7dfe1c2faed6a7f99637c661d",
+    "sha256": "d83598d14a52759632e28d5a8fa6f3fddfb9e9f26e443fb0308d581d458011be",
     "contentHashVersion": 2
   },
   "/pricing/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "67dc7597f1dfb9ad7269a563a4f41df368c3417223929333d65a2c34b3476e13",
+    "sha256": "7f6e4d5bffa52b6d3efac54ecb291fa1c7ffb0f9e9defcd695325feff27b4895",
     "contentHashVersion": 2
   },
   "/work/": {
@@ -51,7 +56,7 @@
   },
   "/work/source-handoff/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "23014b4e785a41e7ef0090b0a3941934f421604a3c1ffc98dad7eef1d060cef7",
+    "sha256": "eef0d01913e0786387379bb4e958d91f2e7969b1343a21652d95bb656d1f893a",
     "contentHashVersion": 2
   },
   "/process/": {
@@ -76,17 +81,17 @@
   },
   "/contact/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "21e67cc2e985161f4ae71b8eb65519424f7a1d7d5a16f59eab764ac5e269e4e2",
+    "sha256": "2097ac741a1eefc9c5892a34fa696423be565032614a1faa87d7a1e3d1b51cc6",
     "contentHashVersion": 2
   },
   "/services/website-care/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "5a6ac71b1187708c82ba18faa44a085b04a4c37909e35c0f18e51e5d21c1f971",
+    "sha256": "b475e4111e8f628872888f23b76987113894527c41d07ed747f84c3e4f98d54d",
     "contentHashVersion": 2
   },
   "/services/website-audit/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "70687d1cb723ac8e2232062fc8b138cb59fef9402fd2d61bb2e1728fe1503937",
+    "sha256": "8789f1b2a3ef59ed528606140b006c7285ab14240e7517fcf9efb74e7d55ef88",
     "contentHashVersion": 2
   },
   "/privacy/": {
@@ -141,47 +146,47 @@
   },
   "/checkout/launch-site/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "d398877576fd920f7a082e6eba5956d1ab9cf4efaa9efe47bb98c93a9b2af514",
+    "sha256": "731fb570a4f66242f724ab633b9aae703b1a8bc6a057a2dd7ca80cf7c2727f78",
     "contentHashVersion": 2
   },
   "/checkout/focused-site/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "37f22c8d67bddbaafb37242e7ea5e7ac6c076f05c944238dfbfe293f3a6dcb33",
+    "sha256": "c2f7a62f6488cdcfc312934f38c3635fbd2908ba063a0d731ae84c8ff2cb42ea",
     "contentHashVersion": 2
   },
   "/checkout/signature-site/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "12b83def07f1ab771cd735a9cff2cebdb9a231d4515dd0273daf570deb2047c4",
+    "sha256": "4ef0a28e7d27770a92a13d82070ed756bbe50c8f600fc23b6059dd71dfcaa96d",
     "contentHashVersion": 2
   },
   "/checkout/keep-running/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "85c5cb2074cd38cabdc3dbe3a26f84382973fb79b51cabd841bf088c53072dd1",
+    "sha256": "d0012f3bd73d3bee2a2a32d8c4c9ce91b2d67f2072373d693af16ff8c7c1e3d6",
     "contentHashVersion": 2
   },
   "/checkout/improve/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "3ef5ab2a18ad7b57d7c793f19501d35c344e9991d608b827d370f0f335f1c3b3",
+    "sha256": "841a948cf9b0e25654cc521d09f35c4209f8aafdb6693133e42fa17de1f01717",
     "contentHashVersion": 2
   },
   "/checkout/grow/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "904af07f786d4b70c1fb5b88d8c7f29141ed70ad0e3d0632a37f7b56fd928e59",
+    "sha256": "0c89edcc9498038c9fc7ddba04356902d7095d8d6f9864c2d68cea8d83711e09",
     "contentHashVersion": 2
   },
   "/checkout/audit-fix-sprint/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "ce063ff93aeb33461567ab7c6c2f1ecd2e4e26397256d4bcfe1d5c6332c17b82",
+    "sha256": "f7a6ee5947435303920d5a9baeae2b3a2d00e257095dd65414f90add895d17f0",
     "contentHashVersion": 2
   },
   "/checkout/website-baseline/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "316f518b2413f196c398577bbc942a2ff1070ecacaa0afa3d68e3fb96380f192",
+    "sha256": "1f6aef4dda6fcd499c87c1d341faaedb814194e8e23cf0343a60fbd094500706",
     "contentHashVersion": 2
   },
   "/payments/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "ef60545379096d0efc891acfe71632818add24239879640afd37fd6322388e92",
+    "sha256": "15904ed4f31cc5435bed6ba07575855500baae2ea3729acab67a868fe8dfe491",
     "contentHashVersion": 2
   },
   "/404/": {
@@ -216,12 +221,12 @@
   },
   "/guides/contact-form-not-working/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "82e25916d257774e7a3d01f9da7d43ac82d7a2124d69faba8ecb6ef7f35e2f47",
+    "sha256": "b965616c9104b2abbe228ab3be6fd47e198e1cf38e7cb18dd3f953074c5ca46e",
     "contentHashVersion": 2
   },
   "/guides/service-area-pages/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "a14c523fdd7f039d7913fbd0bd6100012a3df0ba4b14a8ce153414ba9178c3fe",
+    "sha256": "825a60ca67c6c3f8856f3e7d15d75cb2ffcfc6be87868db79308a1c7b8f86dd7",
     "contentHashVersion": 2
   },
   "/guides/website-maintenance-checklist/": {
@@ -231,12 +236,12 @@
   },
   "/guides/contractor-website-checklist/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "fcdb47580c6dc8e315908f467068c7ed4ee70f3c4e62c6ad50e740d928ee7fde",
+    "sha256": "96b254cae4d8301ea31ea0accfa9100494e0041f7beb5e0471b6391192760eff",
     "contentHashVersion": 2
   },
   "/guides/website-project-cost/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "3f9f322f15d797d7a62a6f4c6076ac5cdfd4ad4cca2930f6ccabe709a3b61920",
+    "sha256": "c8b827fddf6c207c547fecb5fbffdb6e73608d1e39cbf0c7f231018296260ed7",
     "contentHashVersion": 2
   },
   "/guides/website-redesign-brief/": {
@@ -251,7 +256,7 @@
   },
   "/guides/seo-work-and-reporting/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "8b8cbb6d4a80836a892949713d0972357c10d8a9ef0b48e3624e76fb8493ba72",
+    "sha256": "4f4d0790a5ef06151ebb786f6e541f5b6116162a3e7ca461d2ce896f7e47c854",
     "contentHashVersion": 2
   },
   "/guides/website-migration-checklist/": {
@@ -281,7 +286,7 @@
   },
   "/services/website-redesign/": {
     "modifiedAt": "2026-10-20",
-    "sha256": "9b13a7f7d7d399eaada96383d1d00cb6a902d44fb481eedcdbdd347ad8da99cc",
+    "sha256": "d305cdbb88a08f1e4f142249b80f66f60840fa554a48a5d694d4913e7781ecfd",
     "contentHashVersion": 2
   },
   "/areas/": {

@@ -1,4 +1,5 @@
 import {inquiryChoices,resolveServiceId,inquiryContextFields,inquiryNeedsWebsite} from './shared.mjs';
+import {normalizeAddonSelection} from './addons.mjs';
 export function validEmail(email){
   if(typeof email!=='string'||email.length>254)return false;
   const parts=email.split('@');
@@ -63,6 +64,8 @@ export function validateInquiry(data){
    if(!address)errors.website='Please add a public website address, such as example.com. It can be offline or broken; a social handle or note is not a website address.';
    else value.website=address;
   }
+  try{const ids=normalizeAddonSelection(data);if(ids.length)value.add_ons=ids;}
+  catch(error){errors.add_ons=error.message;}
   if(data._wm_note||data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
   return {errors,value};
 }

@@ -18,8 +18,8 @@ test('approved indexing includes public routes and an explicit hold still exclud
  const held={...config,searchIndexing:false},pages=renderPages({config:held,offers,map,geography});
  assert.ok(pages.every(x=>x.html.includes('noindex,nofollow')));assert.doesNotMatch(crawlFiles(held,pages).sitemap,/<loc>/);
  const enabled={...config,searchIndexing:true},livePages=renderPages({config:enabled,offers,map,geography}),crawl=crawlFiles(enabled,livePages);
- for(const route of [...newGuides,'/services/','/services/website-redesign/'])assert.ok(crawl.sitemap.includes(config.origin+route));
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,35);assert.doesNotMatch(crawl.sitemap,/\/checkout\/|\/payments\/|\/privacy\/|\/work\/lead-workbench\/|\/api\/|\/assets\/|\/404\//);
+ for(const route of [...newGuides,'/services/','/services/website-redesign/','/services/website-addons/'])assert.ok(crawl.sitemap.includes(config.origin+route));
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,36);assert.doesNotMatch(crawl.sitemap,/\/checkout\/|\/payments\/|\/privacy\/|\/work\/lead-workbench\/|\/api\/|\/assets\/|\/404\//);
  const evidence={gates:{},approvedVersion:{}},current={};
  assert.ok(evaluateRelease({release_gates:[]},evidence,current,held,deployment).missing.some(x=>x.gate==='indexing_consistency'));
  assert.ok(!evaluateRelease({release_gates:[]},evidence,current,config,deployment).missing.some(x=>x.gate==='indexing_consistency'));

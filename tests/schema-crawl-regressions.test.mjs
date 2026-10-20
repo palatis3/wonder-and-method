@@ -31,7 +31,7 @@ test('catalog offers lead to visible pricing anchors and resolve to named servic
 
 test('public sitemap and directory exclude held county routes and use recorded modification dates', () => {
   const crawl = crawlFiles(config, pages), urls = [...crawl.sitemap.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod><\/url>/g)];
-  assert.equal(urls.length, 35);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(!urls.some(([,url])=>url===config.origin+'/payments/'));
+  assert.equal(urls.length, 36);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(!urls.some(([,url])=>url===config.origin+'/payments/'));
   for (const [, url, date] of urls) assert.equal(date, dates[new URL(url).pathname].modifiedAt);
   assert.match(crawl.llms, /\/pricing\//);assert.doesNotMatch(crawl.llms, /\/checkout\/|\/areas\/monroe-county\//);
   const missing = pages.find(page => page.path === '/404/');

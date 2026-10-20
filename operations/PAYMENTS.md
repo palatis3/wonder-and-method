@@ -10,6 +10,8 @@ Each of the eight current services has a `/checkout/` request page linked from i
 
 The public `/payments/` page explains private invoice payment, receipts and support. The privacy notice identifies Stripe and separates billing retention from unsuccessful inquiry retention.
 
+The twelve optional website additions are listed in `config/offers.json` and `/services/website-addons/`. Native and enhanced forms save a canonical `add_ons` array, with one listed unit or bundle per selection. Prices are read from the catalogue; a submitted price is never authoritative. Review included package allowances first, remove overlapping work, and record the distinct extra scope. Selections on monthly-plan or review inquiries request separate one-time work; they do not change a recurring invoice or authorize a charge.
+
 ## Verified setup on October 16, 2026
 
 Stripe API readback confirms live charges and payouts enabled, with eight current products and eighteen one-time milestone/service-cycle prices. The restricted live key is encrypted with Windows DPAPI. Sandbox hosted checkout passed a declined card followed by a successful $700 synthetic Launch milestone; provider reconciliation confirmed the paid amount and zero remaining balance. No real customer was charged and no invoice email was sent. Evidence is in `evidence/payments-20261016/`.
@@ -33,6 +35,26 @@ Run `pwsh -NoProfile -File deployment/save-stripe-key.ps1 -Mode test` (or `live`
 3. Record reviewed tax treatment. `no_tax` requires a real decision reference; it is not a default assumption. `stripe_rates` requires approved tax-rate IDs. Review the actual invoice before finalizing.
 4. For service, record exact paid period, timezone, cancellation route, actual coverage and approved useful work/inputs. Annual service additionally requires twelve cycles, manual renewal and an actual unearned-balance reserve. Complete billing.annual_reserve with the reviewed timestamp, funding evidence and refund-rehearsal references, gross unearned cents, independent fee buffer, accepted undelivered obligations and actual funded total. The operator holds preparation when the evidence is missing or the funded total is insufficient. A populated reference is an owner assertion, not an automatic bank-balance verification. Do not sell an included usable baseline again.
 5. Run `npm run billing -- prepare MODE JOB-ID MILESTONE`. Milestones are one-based. Review the saved plan and local buyer packet. Preparation creates no invoice.
+
+## Include website additions in a proposal
+
+For a new website, add the selected IDs to the normal draft command:
+
+```powershell
+node scripts/create-job.mjs example-project launch_site --addons=booking_setup,contact_form
+```
+
+This example produces a $2,000 draft: the $1,400 base plus $600 of additions, with $1,000 / $600 / $400 milestones at the existing written-approval triggers. The frozen snapshot includes every selected line, scope, exclusion, acceptance check and price. No additional Stripe products or catalogue synchronization is required for a composed invoice.
+
+For work on an existing website, use `website_additions` and an explicit payment-schedule JSON file:
+
+```powershell
+node scripts/create-job.mjs example-additions website_additions --addons=contact_form,standard_page --payment-schedule=.runtime/agreed-additions-schedule.json
+```
+
+That selection totals $450. The file must contain the actually agreed stages as an array of `{event, percent, amount}` records totaling 100% and $450. There is no default standalone schedule. Confirm provider fees, dates, support ownership, cancellation and the exact workflow before booking. Store, dashboard and portal application support is separately scoped from ordinary website care.
+
+Complete the proposal and generate the private job packet. After the buyer approves that exact version in writing, record the displayed commercial digest in `buyer_confirmation.accepted_commercial_digest` and set `add_ons_and_total_understood` to `true`, alongside the existing acceptance evidence. The digest covers all scope terms and milestone dates; only documented operational evidence is excluded. Changed terms require renewed written approval. Do not copy a prior digest into a changed scope. Stale or inconsistent compositions block billing and withhold invoice drafts. Historical agreements without additions keep their original acceptance rules and prices.
 
 ## Issue only the reviewed milestone
 

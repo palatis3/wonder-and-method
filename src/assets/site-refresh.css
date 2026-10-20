@@ -634,3 +634,37 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site.studio-form .page-tools .back-to-top{width:auto;height:auto;min-height:48px;padding:.65rem 1rem;gap:.65rem}
 .studio-site.studio-form .back-to-top>span:not(.back-to-top-icon){position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
 @media(min-width:768px){.studio-site table.website-allowance-table{table-layout:fixed}}
+
+/* Optional additions use a distinct catalogue; the core package cards stay compact. */
+.studio-site .addon-included-note{max-width:78ch;padding:1rem 1.25rem;background:var(--sage,#edf0e8);border-left:3px solid var(--green,#334739)}
+.studio-site .addon-group{margin-block:2rem}
+.studio-site .addon-group>h3{font-size:1.3rem;margin-bottom:1rem}
+.studio-site .addon-price-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+.studio-site .addon-item{min-width:0;padding:1.25rem 0;border-top:1px solid var(--line,#ced2c7)}
+.studio-site .addon-title{display:flex;justify-content:space-between;align-items:start;gap:1rem}
+.studio-site .addon-title h4{margin:0;font:650 1.1rem/1.45 var(--font-body,Manrope,sans-serif);max-width:26ch}
+.studio-site .addon-price{flex-shrink:0;margin:0;text-align:right;font-size:1.25rem;font-weight:650;font-variant-numeric:tabular-nums}
+.studio-site .addon-price span{display:block;font-size:.75rem;font-weight:400}
+.studio-site .addon-item>p{margin:.5rem 0}
+.studio-site .addon-item>.text-link{display:inline-flex;align-items:center;min-height:44px;gap:.5rem}
+.studio-site .addon-scope>summary,.studio-site .addon-picker>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:650}
+.studio-site .addon-scope p,.studio-site .addon-scope li{font-size:.92rem;line-height:1.7}
+.studio-site .addon-terms{max-width:78ch;margin-block:2rem}
+.studio-site .addon-picker{margin-block:1.25rem;border-block:1px solid var(--line,#ced2c7);padding:.5rem 0}
+.studio-site .addon-picker fieldset{min-width:0;margin:1rem 0;padding:0;border:0}
+.studio-site .addon-picker legend{font-weight:650;font-size:.95rem;padding-block:.5rem}
+.studio-site .addon-picker label.addon-choice{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:start;gap:.75rem;margin:0;padding:.85rem 0;border-top:1px solid var(--line,#ced2c7);cursor:pointer;min-height:44px;font-size:.9rem;font-weight:400}
+.studio-site .addon-picker .addon-choice input{width:20px;height:20px;margin:.15rem 0 0;accent-color:#334739}
+.studio-site .addon-choice small{display:block;margin-top:.25rem;font-size:.8rem;line-height:1.55;font-weight:400}
+.studio-site .addon-choice-price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:650}
+.studio-site .addon-selection-summary{padding:.75rem 1rem;background:#edf0e8;border-radius:6px;margin:1rem 0}
+.studio-site .addon-selection-summary p{margin:.5rem 0}
+.studio-site .addon-selection-summary output{font:inherit}
+.studio-site .addon-selection-summary[hidden]{display:none}
+@media(max-width:620px){
+ .studio-site .addon-price-list{grid-template-columns:minmax(0,1fr)}
+ .studio-site .addon-title h4{font-size:1rem}
+ .studio-site .addon-price{font-size:1.15rem}
+ .studio-site .addon-picker label.addon-choice{grid-template-columns:22px minmax(0,1fr);gap:.5rem}
+ .studio-site .addon-choice-price{grid-column:2}
+}

@@ -1,7 +1,7 @@
 import {escapeHtml as e} from './shared.mjs';
 import {brandWordmark} from './brand.mjs';
 
-const services=[['/services/','All services'],['/services/web-design/','Web design'],['/services/website-redesign/','Website redesign'],['/services/contractor-websites/','Contractor websites'],['/services/seo/','SEO'],['/services/website-care/','Website care'],['/services/website-audit/','Website reviews & fixes']];
+const services=[['/services/','All services'],['/services/web-design/','Web design'],['/services/website-redesign/','Website redesign'],['/services/website-addons/','Website add-ons'],['/services/contractor-websites/','Contractor websites'],['/services/seo/','SEO'],['/services/website-care/','Website care'],['/services/website-audit/','Website reviews & fixes']];
 const navLink=(path,url,label)=>`<a href="${url==='/contact/'?'/contact/#inquiry':url}"${path===url?' aria-current="page"':!url.startsWith('/services/')&&url!=='/'&&path.startsWith(url)?' aria-current="location"':''}>${e(label)}</a>`;
 
 export function siteHeader(path,config={}){

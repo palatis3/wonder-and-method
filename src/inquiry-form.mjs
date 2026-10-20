@@ -1,4 +1,6 @@
 import {escapeHtml as e,inquiryChoices,inquiryOptionalFields,inquiryContextFields,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,publicInquiryContext,hasInquirySelection,inquiryNeedsWebsite} from './shared.mjs';
+import {addonPicker} from './addon-content.mjs';
+import {normalizeAddonSelection} from './addons.mjs';
 import offers from '../config/offers.json' with {type:'json'};
 import site from '../config/site.json' with {type:'json'};
 
@@ -11,6 +13,7 @@ export function inquiryFormMarkup(intake,{service='',checkout=false,value={},ann
  Object.assign(values,publicInquiryContext({...value,service:selected},annualEnabled));
  const neutral=!checkout&&!values.request_kind;
  values.request_kind=values.request_kind||(checkout?'checkout':'question');
+ let addonIds=[];try{addonIds=normalizeAddonSelection(values);}catch{}
  const question=values.request_kind==='question',websiteRequired=inquiryNeedsWebsite(values);
  const personal=(key,max)=>e(typeof values[key]==='string'?values[key].slice(0,max):'');
  const note=text=>`<span class="field-note">(${text})</span>`;
@@ -34,6 +37,7 @@ export function inquiryFormMarkup(intake,{service='',checkout=false,value={},ann
  <label for="message" data-request-label>${e(inquiryMessagePrompt(selected,values.request_kind,neutral))} ${note('required')}</label><p id="message-help" class="hint">${e(inquiryMessageHelp(selected,values.request_kind,values.goal,neutral))}</p><textarea id="message" name="message" rows="5" required minlength="10" maxlength="3000" aria-describedby="message-help message-error message-counter">${personal('message',3000)}</textarea><p id="message-counter" class="hint" aria-live="off" hidden></p><p id="message-error" class="error"></p>
  <details class="inquiry-extra"><summary>${checkout?'Add business details (optional)':'Add business details or choose a service (optional)'}</summary><label for="business">Business name ${note('optional')}</label><input id="business" name="business" autocomplete="organization" maxlength="160" value="${personal('business',160)}" aria-describedby="business-error"><p id="business-error" class="error"></p><input type="hidden" id="goal" name="goal" value="${e(values.goal||'')}">${checkout?'':serviceControl}</details>${contextSelect('found_via')}
  ${inquiryOptionalFields(values,true,annualEnabled)}
+ ${addonPicker(offers,{ids:addonIds,service:selected})}
  <div class="honeypot" aria-hidden="true"><label for="_wm_note">Leave empty</label><input id="_wm_note" name="_wm_note" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore></div><p>Details are used to review and respond to this request. <a href="/privacy/">${e(intake.privacyLink||'Privacy notice')}</a>.</p>
  <div class="inquiry-next"><h3>What happens next</h3><p data-request-next>${neutral?'I read your message and reply by email.':question?'I read your question and reply by email.':'I review your project and email you about the work, price and available dates.'}</p>${intake.live?`<p class="inquiry-response-time">${e(site.responseWindow)}</p>`:'<p class="inquiry-response-time">Synthetic test only. No email is sent and no reply is expected.</p>'}</div><div id="form-status" role="status" aria-live="polite" tabindex="-1"></div><button type="submit" data-request-submit>Send message</button><p class="form-help">Trouble sending? Email <a href="mailto:support@wonderandmethod.com">support@wonderandmethod.com</a>.</p>${recovery?'':'<noscript><p>You can submit without JavaScript. A confirmation page will show your reference.</p></noscript>'}</form>`;
  markup=markup.replace(/(<p\b[^>]*\bid="([a-z_]+)-error"[^>]*>)(<\/p>)/g,(_all,start,key,end)=>start+e(errors[key]||'')+end);

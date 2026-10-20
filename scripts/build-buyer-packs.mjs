@@ -5,7 +5,22 @@ import siteConfig from '../config/site.json' with {type:'json'};
 import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {buyerPacks,packBody} from '../src/buyer-packs.mjs';
+import {addonCatalogue} from '../src/addon-content.mjs';
 import {escapeHtml as e,money} from '../src/shared.mjs';
+const addonPackId='website-addons';
+const addonRequest=id=>'/contact/?offer=unsure&addons='+encodeURIComponent(id)+'&request_kind=checkout#inquiry';
+
+async function writeAddonPack(folder,documentStyles,offers){
+ const path='/assets/buyer-packs/'+addonPackId,name='Website add-ons',terms=offers.add_on_terms;
+ const updated='Updated '+new Date(offers.as_of+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+ const request='/contact/?offer=unsure&request_kind=checkout#inquiry';
+ const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="${e(siteConfig.origin+path)}"><meta name="description" content="Twelve optional website additions: fixed one-time prices, included work, limits, checks and terms before requesting a written quote."><title>Website add-ons: complete scopes and prices | Wonder and Method</title>${documentStyles}</head><body class="studio-site studio-inner buyer-pack-page"><a class="skip" href="#main">Skip to content</a>${siteHeader(path,siteConfig)}<main id="main" tabindex="-1" class="buyer-pack-document">${breadcrumbMarkup([{path:'/',name:'Home'},{path:'/pricing/',name:'Pricing'},{path,name}])}<header class="page-intro"><p class="eyebrow">Full details · ${e(updated)}</p><h1>Website add-ons.</h1><p class="lede">Choose the additional work your website needs. Each price covers its listed scope; this catalogue is not a single package.</p><p>Sending a request does not book work, accept a quote or make a payment.</p></header>${addonCatalogue(offers,{detailed:true,downloads:false})}<p><a class="text-link" href="${addonPackId}.txt" download>Download these details (TXT)</a></p><nav class="related-links" aria-label="Website add-ons next steps"><a href="/services/website-addons/">Website add-on service page</a><a href="/pricing/#website-packages">Compare website packages</a><a href="/payments/">Payments and cancellation</a></nav><p><a href="${e(siteConfig.origin)}/privacy/">Privacy notice</a> · <a href="${e(siteConfig.origin)}/terms/">Website terms</a></p></main>${siteFooter(siteConfig)}<script src="/assets/site-navigation.js" defer></script></body></html>`;
+ const items=offers.add_ons.map(item=>({id:item.id,name:item.public_name,price:item.public_price,priceCurrency:'USD',priceLabel:'one-time studio fee',group:item.group,summary:item.summary,scope:item.scope,exclusions:item.exclusions,acceptance:item.acceptance,request:addonRequest(item.id)}));
+ const txt=['WONDER AND METHOD',siteConfig.origin+'/','WEBSITE ADD-ONS / FULL DETAILS',updated,'Source: '+siteConfig.origin+path,'Each price covers the listed additional work. This catalogue is not a single package.','Sending a request does not book work, accept a quote or make a payment.','',...items.flatMap(item=>[item.name.toUpperCase()+' — '+money(item.price)+' USD, one time',item.summary,item.scope,'LIMITS',...item.exclusions.map(text=>'- '+text),'ACCEPTANCE CHECKS',...item.acceptance.map(text=>'- '+text),'Request this addition: '+siteConfig.origin+item.request,'']),'BEFORE WE START',...Object.entries(terms).filter(([key])=>key!=='version').flatMap(([key,text])=>['',key.toUpperCase(),text]),'','NEXT ACTION: Discuss your additions: '+siteConfig.origin+request,'No booking or payment is made by this request.','Privacy: '+siteConfig.origin+'/privacy/','Website terms: '+siteConfig.origin+'/terms/'].join('\n');
+ await writeFile(resolve(folder,addonPackId+'.html'),html);
+ await writeFile(resolve(folder,addonPackId+'.txt'),txt);
+ return {id:addonPackId,name,kind:'addon-catalogue',summary:'Twelve optional additions with individual fixed prices and scopes.',path,download:path+'.txt',request,items,terms};
+}
 export async function writeBuyerPacks(output,offers){
  const documentStyles=await publicDocumentStyles(output);
  const folder=resolve(output,'assets/buyer-packs');await mkdir(folder,{recursive:true});
@@ -16,5 +31,6 @@ export async function writeBuyerPacks(output,offers){
   const txt=['WONDER AND METHOD',siteConfig.origin+'/',pack.name.toUpperCase()+' / FULL DETAILS',updated,'Source: '+siteConfig.origin+'/assets/buyer-packs/'+pack.id,`${money(pack.price)} ${pack.priceLabel}`,pack.scopeStatus,...pack.sections.flatMap(s=>['',s.title.toUpperCase(),...s.items.filter(Boolean).map(x=>'- '+x)]),'','NEXT ACTION: Request '+pack.name+'. Return to the website that supplied this pack: '+siteConfig.origin+pack.request,'No booking or payment is made by this request.','Privacy: '+siteConfig.origin+'/privacy/','Website terms: '+siteConfig.origin+'/terms/'].join('\n');
   await writeFile(resolve(folder,pack.id+'.html'),html);await writeFile(resolve(folder,pack.id+'.txt'),txt);
  }
- await writeFile(resolve(folder,'index.json'),JSON.stringify(packs.map(p=>({id:p.id,name:p.name,price:p.price,priceLabel:p.priceLabel,summary:p.sections[0].items[0],request:p.request,annual:p.annual||null,baselineFee:p.baselineFee??null})),null,2)+'\n');
+ const addonPack=await writeAddonPack(folder,documentStyles,offers);
+ await writeFile(resolve(folder,'index.json'),JSON.stringify([...packs.map(p=>({id:p.id,name:p.name,price:p.price,priceLabel:p.priceLabel,summary:p.sections[0].items[0],request:p.request,annual:p.annual||null,baselineFee:p.baselineFee??null,addOns:addonPack.path})),addonPack],null,2)+'\n');
 }

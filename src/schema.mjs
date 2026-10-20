@@ -34,7 +34,16 @@ export function offerCatalogSchema(config, o) {
 }
 
 export function offersForService(config, o, path) {
+  if(path === '/services/website-addons/') return addonOffers(config, o);
   const routes = {'/services/website-redesign/': '/services/web-design/', '/services/contractor-websites/': '/services/web-design/'};
   const primaryPath = routes[path] || path;
   return commercialOffers(config, o).filter(offer => offer.itemOffered['@id'] === config.origin + primaryPath + '#service' && (path !== '/services/seo/' || !offer['@id'].endsWith('keep_running')));
+}
+
+export function addonOffers(config,o) {
+ return (o.add_ons||[]).map(item=>({'@type':'Offer','@id':config.origin+'/services/website-addons/#addon-'+item.id,name:item.public_name,url:config.origin+'/services/website-addons/#addon-'+item.id,priceCurrency:'USD',price:item.public_price,description:item.scope,seller:{'@id':config.origin+'/#studio'},itemOffered:{'@type':'Service',name:item.public_name,description:item.scope,provider:{'@id':config.origin+'/#studio'}}}));
+}
+
+export function addonOfferCatalogSchema(config,o) {
+ return {'@context':'https://schema.org','@type':'OfferCatalog','@id':config.origin+'/services/website-addons/#additions',name:'Optional one-time website additions',itemListElement:addonOffers(config,o)};
 }

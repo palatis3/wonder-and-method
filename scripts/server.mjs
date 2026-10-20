@@ -35,7 +35,14 @@ export async function createServer({runtime=resolve(root,'.runtime'),port=4183,s
     if(!['application/json','application/x-www-form-urlencoded'].includes(type)){reply(415,{message:'Use the inquiry form to send these details.'});return;}
     let body='',size=0;
     for await(const chunk of req){size+=chunk.length;if(size>40000){reply(413,{message:'The request is too large. Please return to the form and shorten a long entry.'});return;}body+=chunk;}
-    let data;try{data=type==='application/json'?JSON.parse(body):Object.fromEntries(new URLSearchParams(body));}catch{reply(400,{message:'The request could not be read. Please try again.'});return;}
+    let data;try{
+     if(type==='application/json')data=JSON.parse(body);
+     else{
+      const fields=new URLSearchParams(body);
+      for(const key of fields.keys())if(fields.getAll(key).length!==1)throw Error('duplicate-field');
+      data=Object.fromEntries(fields);
+     }
+    }catch{reply(400,{message:'The request could not be read. Please try again.'});return;}
     const {value,errors}=validateInquiry(data);
     if(Object.keys(errors).length){reply(422,{message:'Check the highlighted fields. Nothing has been saved.',errors,service:value.service,...selectedInquiryContext(value)},value);return;}
     recovery=value;

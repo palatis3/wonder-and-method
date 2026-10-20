@@ -1,7 +1,7 @@
 {
-  "version": "2026-10-19-newer-audit-clarity",
+  "version": "2026-10-20-website-additions",
   "delivery_conditions": "From the confirmed start, with the page list agreed and your business facts, assets and access ready. Complete writing is included. The work may take a few extra days; delayed inputs, reviews or added scope can extend the schedule further. Your proposal confirms the dates, including review and written approval.",
-  "as_of": "2026-10-19",
+  "as_of": "2026-10-20",
   "status": "Owner-authorized website packages: 6, 15 and 30 pages with complete writing, launch research and source handoff. Current prices retained. Planning estimates use the agreed scope; no measured margin or demand claim. Previously accepted agreements retain their exact original terms.",
   "focused_site": {
     "public_name": "Focused Website",
@@ -265,7 +265,188 @@
     "promotional_graphics": "6 finished promotional graphics, ready to publish for agreed campaign uses. Each is a distinct design; resizing the same design does not create another graphic. Final image exports are included; reusable editing templates and presentation decks are separate.",
     "delivery_average": "7–10 days"
   },
-  "add_ons": [],
+  "add_ons": [
+    {
+      "id": "standard_page",
+      "public_name": "Additional standard page",
+      "public_price": 250,
+      "group": "Pages and content",
+      "summary": "One extra page using your website’s established design.",
+      "scope": "One page beyond the agreed package allowance, with complete writing from approved facts, the existing design system, relevant search metadata and internal links, and phone/keyboard checks.",
+      "exclusions": [
+        "A new design system, custom application or campaign strategy is separate.",
+        "Pages already within your package allowance are not charged again."
+      ],
+      "acceptance": [
+        "Approve the page purpose and copy; check its address, links, metadata and responsive layout."
+      ]
+    },
+    {
+      "id": "three_page_bundle",
+      "public_name": "Three-page bundle",
+      "public_price": 600,
+      "group": "Pages and content",
+      "summary": "Three related extra pages, planned and written together.",
+      "scope": "Three additional standard pages beyond the agreed package allowance, using the established design system. Includes complete writing from approved facts, relevant search metadata, internal links and responsive checks.",
+      "exclusions": [
+        "New templates with custom functionality and additional pages are separate.",
+        "Included page slots and approved plain policy pages are not charged again."
+      ],
+      "acceptance": [
+        "Agree all three page purposes; approve their copy and check each published page, metadata and inquiry path."
+      ]
+    },
+    {
+      "id": "campaign_landing_page",
+      "public_name": "Campaign landing page",
+      "public_price": 450,
+      "group": "Pages and content",
+      "summary": "One focused page for one offer and one clear next step.",
+      "scope": "One additional landing page for one agreed campaign, with complete copy from approved facts, a focused layout in your existing brand, one primary call to action and an existing contact or checkout connection.",
+      "exclusions": [
+        "Advertising spend, campaign management, a new form, payment setup and ongoing optimization are separate.",
+        "A campaign page already agreed within your package is not charged again."
+      ],
+      "acceptance": [
+        "Approve the offer and claims; check the page on mobile, its links and the agreed action or conversion event where access allows."
+      ]
+    },
+    {
+      "id": "contact_form",
+      "public_name": "Additional contact form",
+      "public_price": 200,
+      "group": "Forms and connections",
+      "summary": "An extra simple form, delivered to one destination.",
+      "scope": "One additional contact form beyond the included allocation: up to six agreed fields, one receiving destination and one confirmation state, basic spam defense, and save/delivery/confirmation checks.",
+      "exclusions": [
+        "Conditional questions, uploads, sensitive information, CRM automation and additional destinations are separate.",
+        "Your package’s included contact forms are not charged again."
+      ],
+      "acceptance": [
+        "Check required fields and error recovery; submit a test and verify the saved inquiry, receiving destination and confirmation."
+      ]
+    },
+    {
+      "id": "guided_quote_form",
+      "public_name": "Guided quote-request form",
+      "public_price": 500,
+      "group": "Forms and connections",
+      "summary": "Ask the right follow-up questions before a quote.",
+      "scope": "One quote-request form with up to 12 agreed fields and three conditional question branches, one receiving destination and one confirmation. Includes basic spam defense and tests of each agreed branch.",
+      "exclusions": [
+        "This gathers information for a human quote; automatic prices, calculators, uploads, sensitive data and CRM setup are separate.",
+        "Any overlap with an included form is removed from the written scope before booking."
+      ],
+      "acceptance": [
+        "Test every branch, required-field recovery and the saved/delivered answers; confirm that no automatic price or booking is promised."
+      ]
+    },
+    {
+      "id": "booking_setup",
+      "public_name": "Booking system setup",
+      "public_price": 400,
+      "group": "Forms and connections",
+      "summary": "Set up one calendar and up to three appointment types.",
+      "scope": "Configure one supported, client-owned booking service and calendar with up to three appointment types, agreed availability, standard confirmations and its website link or compatible embed.",
+      "exclusions": [
+        "Complex team routing, custom scheduling logic, payment setup and ongoing calendar administration are separate.",
+        "A link or ready embed already included in your website package is not charged again."
+      ],
+      "acceptance": [
+        "Check time zone, availability, appointment choices, confirmation and cancellation/rescheduling through a test booking."
+      ]
+    },
+    {
+      "id": "payment_setup",
+      "public_name": "Online payment or deposit setup",
+      "public_price": 300,
+      "group": "Forms and connections",
+      "summary": "Let customers pay through your own provider account.",
+      "scope": "Configure up to three hosted payment or deposit options with one supported, client-owned payment provider. Connect the website links and check payment, cancellation and confirmation in the provider’s test mode.",
+      "exclusions": [
+        "Provider verification, fees, tax/legal advice, subscriptions, a shopping cart and custom payment processing are separate.",
+        "You enter financial details directly with the provider and approve any live test charge."
+      ],
+      "acceptance": [
+        "Verify approved amounts, currency, return links and test receipts; record test results and any live steps awaiting your approval."
+      ]
+    },
+    {
+      "id": "crm_connection",
+      "public_name": "CRM lead connection",
+      "public_price": 450,
+      "group": "Forms and connections",
+      "summary": "Send one form’s leads into one CRM.",
+      "scope": "Connect one existing agreed form to one supported, client-owned CRM. Map up to 10 fields, use an agreed duplicate rule and check successful delivery plus visible failure handling.",
+      "exclusions": [
+        "CRM migration, historical imports, sales pipelines, multi-step automation and new forms are separate.",
+        "CRM and connector subscriptions are paid directly by you."
+      ],
+      "acceptance": [
+        "Check field mapping, duplicate behavior and delivery failure; confirm a test lead reaches the correct account and document reconnection steps."
+      ]
+    },
+    {
+      "id": "reporting_dashboard",
+      "public_name": "Website reporting dashboard",
+      "public_price": 500,
+      "group": "Reporting and business tools",
+      "summary": "See up to eight useful metrics in one reporting view.",
+      "scope": "One dashboard in a supported reporting tool using up to two existing authorized data sources and eight agreed metrics, with date filters, access checks and a short written walkthrough.",
+      "exclusions": [
+        "New tracking infrastructure, custom data pipelines, a custom business application and ongoing reporting analysis are separate.",
+        "Metrics depend on available data and consent; missing history is not recreated."
+      ],
+      "acceptance": [
+        "Reconcile the displayed metrics against source data for an agreed date range; check filters, account access and refresh limitations."
+      ]
+    },
+    {
+      "id": "small_store",
+      "public_name": "Small online store",
+      "public_price": 1500,
+      "group": "Reporting and business tools",
+      "summary": "Launch a small catalogue with a supported checkout.",
+      "scope": "Set up one supported commerce platform with up to 10 supplied products and two existing variants per product, one payment provider and one agreed shipping or collection arrangement. Includes product entry, store styling and checkout checks.",
+      "exclusions": [
+        "Product photography, inventory migration, subscriptions, complex shipping/tax rules and marketplace or accounting integration are separate.",
+        "You approve product facts, policies and tax settings; platform, processing and other provider fees are yours."
+      ],
+      "acceptance": [
+        "Check product/variant prices, cart, agreed delivery option, test checkout, stock behavior where supported, receipts and order administration."
+      ]
+    },
+    {
+      "id": "job_dashboard",
+      "public_name": "Custom inquiry / job dashboard",
+      "public_price": 4000,
+      "group": "Reporting and business tools",
+      "summary": "Give your team one clear place to manage incoming work.",
+      "scope": "One custom internal dashboard for one agreed inquiry-to-job workflow: staff sign-in, up to five staff accounts, two permission roles, five statuses, 12 record fields, notes, search/filtering and CSV export. Includes one existing inquiry source.",
+      "exclusions": [
+        "A full CRM/ERP, scheduling, accounting, file uploads, complex automation, data migration and additional workflows are separate.",
+        "This is a custom application. Hosting, authentication, backup and ongoing application support are scoped before booking; ordinary website care does not include that support."
+      ],
+      "acceptance": [
+        "Test both permission roles, unauthorized access, record creation and updates, status changes, search/filtering and safe CSV export; document recovery and support ownership."
+      ]
+    },
+    {
+      "id": "client_portal",
+      "public_name": "Client portal",
+      "public_price": 5000,
+      "group": "Reporting and business tools",
+      "summary": "Give clients a private view of their project and approvals.",
+      "scope": "One custom portal with staff and client roles, up to 25 initial client accounts, project status and one agreed document-sharing and approval workflow. Includes private access to agreed PDF/image files up to 10 MB each and a written handoff.",
+      "exclusions": [
+        "Chat, invoicing, complex collaboration, regulated/sensitive records, migration and additional workflows are separate.",
+        "This is a custom application. Authentication, private storage, file limits, backups, hosting and ongoing application support are agreed before booking; ordinary website care does not include that support."
+      ],
+      "acceptance": [
+        "Verify each client can see only their own project/files; test sign-in/recovery, role changes, private downloads, file restrictions and recorded approvals; document account removal and recovery."
+      ]
+    }
+  ],
   "add_on_guardrail": "The written proposal names your pages, creative assets, connections, launch and handoff. Additional requests receive a feasibility check and a separate written price before work begins. Work already included in your accepted scope stays included.",
   "ownership_and_billing": {
     "build_milestones": "50% booking, 30% written design acceptance, 20% written staging acceptance before launch. Silence is not acceptance.",
@@ -929,5 +1110,16 @@
     "Later development or migration",
     "Optional website care and search improvements"
   ],
-  "document_version": "2026-10-19"
+  "document_version": "2026-10-20",
+  "add_on_terms": {
+    "version": "2026-10-20-additions-v1",
+    "pricing": "Fixed one-time studio fees in US dollars for the bounded scope shown. Each selection is one listed unit or bundle. Additional units and work outside these limits are quoted before booking.",
+    "fit": "Add to a new website or request work on an existing supported website after a fit review. We agree the pages, workflow, provider access, acceptance checks and delivery dates in writing before payment. Sending a request does not book work or accept a quote.",
+    "overlap": "Use your package’s included pages, forms and ready service connections first. The same work is never charged twice; the proposal removes overlap and identifies the genuinely additional work.",
+    "payment": "When agreed with a new website, additions form part of the total project price and its 50% / 30% / 20% written-approval milestones. Standalone additions have their own written scope and payment schedule before booking. Monthly plan fees and annual discounts do not apply to these one-time additions.",
+    "support": "One consolidated refinement and checks are included for each agreed addition. New directions and extra functionality are separately priced. Work that does not match the agreement is corrected for 30 calendar days after delivery. Ongoing application support for a store, dashboard or portal is separately scoped; ordinary website care does not include it.",
+    "ownership": "You control the production accounts and own your paid custom work. Third-party tools retain their licenses. Paid files, setup notes, checks and account responsibilities are delivered within five business days after paid completion or settled cancellation.",
+    "providers": "You pay required hosting, domains, platform subscriptions, usage and transaction fees directly. Required plans, renewals, limits and support responsibilities are listed before booking. Tax is shown separately where applicable.",
+    "cancellation": "If work stops, completed work, approved committed costs and payments are itemized, with any unearned balance settled under the written agreement. A deposit is not automatically earned."
+  }
 }

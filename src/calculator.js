@@ -1,3 +1,4 @@
+import {normalizeAddonSelection} from './addons.mjs';
 import {calculateCost,money} from './shared.mjs';
 
 export function bindCostCalculator(calculator,prices,doc=document){
@@ -31,12 +32,13 @@ export function bindCostCalculator(calculator,prices,doc=document){
    invalid.push(...['external','hostingMonthly'].filter(name=>f.get(name)!==''&&(!Number.isFinite(Number(f.get(name)))||Number(f.get(name))<0||Number(f.get(name))>1000000)));
    if(invalid.length){for(const name of invalid)field(name).setAttribute('aria-invalid','true');throw Error('Invalid cost inputs');}
    if(hasHosting&&!noPlan&&Number(f.get('cycles'))>Number(f.get('hostingMonths'))){field('hostingMonths').setAttribute('aria-invalid','true');throw Error('Hosting period must include all monthly service months');}
-   const v=calculateCost(prices,{build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),external:f.get('external')===''?null:Number(f.get('external')),hostingMonthly:f.get('hostingMonthly')===''?null:Number(f.get('hostingMonthly')),hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
+   const v=calculateCost(prices,{add_ons:normalizeAddonSelection(Object.fromEntries((prices.add_ons||[]).filter(item=>f.has('addon_'+item.id)).map(item=>['addon_'+item.id,f.get('addon_'+item.id)]))),build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),external:f.get('external')===''?null:Number(f.get('external')),hostingMonthly:f.get('hostingMonthly')===''?null:Number(f.get('hostingMonthly')),hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
+   const summary=calculator.querySelector?.('[data-addon-summary]');if(summary){summary.hidden=!v.addonLines.length;summary.querySelector('[data-addon-names]').textContent=v.addonLines.map(item=>item.public_name).join('; ');summary.querySelector('[data-addon-total]').textContent=money(v.addonTotal);}
    const missing=[...(f.get('hostingMonthly')===''?['hosting']:[]),...(f.get('external')===''?['domain, email and other paid tools']:[])];
    const knownTotal=v.knownSubtotal;
    total.textContent=knownTotal===0?'Choose a website or service to see an estimate.':money(knownTotal)+(missing.length?' known costs':' estimated total');
-   breakdown.textContent=`${money(v.once)} one-time${v.baselineFee?` (including ${money(v.baselineFee)} Website Baseline)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
-   note.textContent=missing.length?`Includes my fees and any provider costs entered. Still to add: ${missing.join('; ')}. Taxes and approved additions are extra.`:'Includes my fees and the provider costs you entered. Taxes and approved additions are extra.';
+   breakdown.textContent=`${money(v.once)} one-time${v.addonTotal?` (including ${money(v.addonTotal)} selected additions)`:''}${v.baselineFee?` (including ${money(v.baselineFee)} Website Baseline)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
+   note.textContent=missing.length?`Includes my fees and any provider costs entered. Still to add: ${missing.join('; ')}. Selected additions are included once. Tax and unselected or out-of-scope work are extra.`:'Includes my fees and the provider costs you entered. Selected additions are included once. Tax and unselected or out-of-scope work are extra.';
    if(knownTotal===0){breakdown.textContent='';note.textContent='Choose a website or plan, or add known outside costs.';}
    errorBox.textContent='';
   }catch(error){
