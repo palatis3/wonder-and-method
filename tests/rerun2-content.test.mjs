@@ -319,9 +319,9 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.match(seoServiceContent(offers),/Accepted work delayed by the studio remains owed/);
 });
 
-test('all twenty-five counties retain distinct examples, worksheets and readable official sources',()=>{
+test('all sixty-two counties retain distinct examples, worksheets and readable official sources',()=>{
  const pages=countyPages(offers),counties=pages.filter(x=>x.path!=='/areas/');
- assert.equal(counties.length,24);assert.equal(new Set(counties.map(x=>x.path)).size,24);
+ assert.equal(counties.length,61);assert.equal(new Set(counties.map(x=>x.path)).size,61);
  for(const page of counties){
   const slug=page.path.split('/')[2].replace('-county',''),g=countyGeography[slug];
   assert.ok(page.body.includes('/assets/county-briefs/'+slug+'.txt'));
@@ -332,7 +332,7 @@ test('all twenty-five counties retain distinct examples, worksheets and readable
  }
  const erie=countyCoverage(geography,config,offers);
  assert.match(erie,/\/assets\/county-briefs\/erie\.txt/);assert.match(erie,/Erie County page topics/);assert.match(erie,/North Tonawanda/);
- assert.equal(new Set(counties.map(x=>x.body.match(/<section class="studio-section county-buyer-task"[\s\S]*?<h2>(.*?)<\/h2>/)[1])).size,24);
+ assert.equal(new Set(counties.map(x=>x.body.match(/<section class="studio-section county-buyer-task"[\s\S]*?<h2>(.*?)<\/h2>/)[1])).size,61);
 });
 
 test('worksheets, contractor scope and source handoff agree with the pages',()=>{
