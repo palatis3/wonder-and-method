@@ -2,6 +2,18 @@ import {test,expect} from './fixtures.mjs';
 import {inquiryResponseHtml} from '../../src/inquiry-response.mjs';
 import {validateInquiry} from '../../src/inquiry.mjs';
 
+test('all statewide county links remain usable without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/areas/?qa=1');
+ await expect(page.locator('[data-county-filter-controls]')).toBeHidden();
+ await expect(page.locator('[data-county-search]:visible')).toHaveCount(62);
+ await expect(page.getByRole('navigation',{name:'New York service regions'}).locator('a')).toHaveCount(10);
+ await page.locator('[data-county-search] a[href="/areas/st-lawrence-county/"]').click();
+ await expect(page.locator('main h1')).toContainText('St. Lawrence');
+ await page.locator('.county-faq summary').first().click();
+ await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
+});
+
 test('native additions prefill, correction and receipt preserve all selected work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  let calls=0;const payloads=[];

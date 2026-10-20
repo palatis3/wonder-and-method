@@ -1,0 +1,1317 @@
+{
+  "source": "https://nysgeohub.ny.gov/arcgis/rest/services/Boundaries/NYS_Civil_Boundaries/FeatureServer",
+  "publication": "March 2026",
+  "retrieved": "2026-10-20",
+  "countySlugs": [
+    "albany",
+    "allegany",
+    "bronx",
+    "broome",
+    "cattaraugus",
+    "cayuga",
+    "chautauqua",
+    "chemung",
+    "chenango",
+    "clinton",
+    "columbia",
+    "cortland",
+    "delaware",
+    "dutchess",
+    "erie",
+    "essex",
+    "franklin",
+    "fulton",
+    "genesee",
+    "greene",
+    "hamilton",
+    "herkimer",
+    "jefferson",
+    "kings",
+    "lewis",
+    "livingston",
+    "madison",
+    "monroe",
+    "montgomery",
+    "nassau",
+    "new-york",
+    "niagara",
+    "oneida",
+    "onondaga",
+    "ontario",
+    "orange",
+    "orleans",
+    "oswego",
+    "otsego",
+    "putnam",
+    "queens",
+    "rensselaer",
+    "richmond",
+    "rockland",
+    "saratoga",
+    "schenectady",
+    "schoharie",
+    "schuyler",
+    "seneca",
+    "st-lawrence",
+    "steuben",
+    "suffolk",
+    "sullivan",
+    "tioga",
+    "tompkins",
+    "ulster",
+    "warren",
+    "washington",
+    "wayne",
+    "westchester",
+    "wyoming",
+    "yates"
+  ],
+  "newCountySlugs": [
+    "allegany",
+    "cattaraugus",
+    "cayuga",
+    "chemung",
+    "chenango",
+    "clinton",
+    "columbia",
+    "cortland",
+    "delaware",
+    "essex",
+    "franklin",
+    "fulton",
+    "genesee",
+    "greene",
+    "hamilton",
+    "herkimer",
+    "jefferson",
+    "lewis",
+    "livingston",
+    "madison",
+    "montgomery",
+    "orleans",
+    "otsego",
+    "putnam",
+    "schoharie",
+    "schuyler",
+    "seneca",
+    "st-lawrence",
+    "steuben",
+    "sullivan",
+    "tioga",
+    "tompkins",
+    "warren",
+    "washington",
+    "wayne",
+    "wyoming",
+    "yates"
+  ],
+  "counties": {
+    "erie": {
+      "cities": [
+        "Buffalo",
+        "Lackawanna",
+        "Tonawanda"
+      ],
+      "towns": [
+        "Alden",
+        "Amherst",
+        "Aurora",
+        "Boston",
+        "Brant",
+        "Cheektowaga",
+        "Clarence",
+        "Colden",
+        "Collins",
+        "Concord",
+        "Eden",
+        "Elma",
+        "Evans",
+        "Grand Island",
+        "Hamburg",
+        "Holland",
+        "Lancaster",
+        "Marilla",
+        "Newstead",
+        "North Collins",
+        "Orchard Park",
+        "Sardinia",
+        "Tonawanda",
+        "Wales",
+        "West Seneca"
+      ],
+      "villages": [
+        "Akron",
+        "Alden",
+        "Angola",
+        "Blasdell",
+        "Depew",
+        "East Aurora",
+        "Farnham",
+        "Gowanda",
+        "Hamburg",
+        "Kenmore",
+        "Lancaster",
+        "North Collins",
+        "Orchard Park",
+        "Sloan",
+        "Springville",
+        "Williamsville"
+      ]
+    },
+    "allegany": {
+      "cities": [],
+      "towns": [
+        "Alfred",
+        "Allen",
+        "Alma",
+        "Almond",
+        "Amity",
+        "Andover",
+        "Angelica",
+        "Belfast",
+        "Birdsall",
+        "Bolivar",
+        "Burns",
+        "Caneadea",
+        "Centerville",
+        "Clarksville",
+        "Cuba",
+        "Friendship",
+        "Genesee",
+        "Granger",
+        "Grove",
+        "Hume",
+        "Independence",
+        "New Hudson",
+        "Rushford",
+        "Scio",
+        "Ward",
+        "Wellsville",
+        "West Almond",
+        "Willing",
+        "Wirt"
+      ],
+      "villages": [
+        "Alfred",
+        "Almond",
+        "Andover",
+        "Angelica",
+        "Belmont",
+        "Bolivar",
+        "Canaseraga",
+        "Cuba",
+        "Richburg",
+        "Wellsville"
+      ]
+    },
+    "cattaraugus": {
+      "cities": [
+        "Olean",
+        "Salamanca"
+      ],
+      "towns": [
+        "Allegany",
+        "Ashford",
+        "Carrollton",
+        "Coldspring",
+        "Conewango",
+        "Dayton",
+        "East Otto",
+        "Ellicottville",
+        "Farmersville",
+        "Franklinville",
+        "Freedom",
+        "Great Valley",
+        "Hinsdale",
+        "Humphrey",
+        "Ischua",
+        "Leon",
+        "Little Valley",
+        "Lyndon",
+        "Machias",
+        "Mansfield",
+        "Napoli",
+        "New Albion",
+        "Olean",
+        "Otto",
+        "Perrysburg",
+        "Persia",
+        "Portville",
+        "Randolph",
+        "Red House",
+        "Salamanca",
+        "South Valley",
+        "Yorkshire"
+      ],
+      "villages": [
+        "Allegany",
+        "Cattaraugus",
+        "Delevan",
+        "Ellicottville",
+        "Franklinville",
+        "Gowanda",
+        "Little Valley",
+        "Portville",
+        "South Dayton"
+      ]
+    },
+    "cayuga": {
+      "cities": [
+        "Auburn"
+      ],
+      "towns": [
+        "Aurelius",
+        "Brutus",
+        "Cato",
+        "Conquest",
+        "Fleming",
+        "Genoa",
+        "Ira",
+        "Ledyard",
+        "Locke",
+        "Mentz",
+        "Montezuma",
+        "Moravia",
+        "Niles",
+        "Owasco",
+        "Scipio",
+        "Sempronius",
+        "Sennett",
+        "Springport",
+        "Sterling",
+        "Summerhill",
+        "Throop",
+        "Venice",
+        "Victory"
+      ],
+      "villages": [
+        "Aurora",
+        "Cato",
+        "Cayuga",
+        "Fair Haven",
+        "Meridian",
+        "Moravia",
+        "Port Byron",
+        "Union Springs",
+        "Weedsport"
+      ]
+    },
+    "chemung": {
+      "cities": [
+        "Elmira"
+      ],
+      "towns": [
+        "Ashland",
+        "Baldwin",
+        "Big Flats",
+        "Catlin",
+        "Chemung",
+        "Elmira",
+        "Erin",
+        "Horseheads",
+        "Southport",
+        "Van Etten",
+        "Veteran"
+      ],
+      "villages": [
+        "Elmira Heights",
+        "Horseheads",
+        "Millport",
+        "Wellsburg"
+      ]
+    },
+    "chenango": {
+      "cities": [
+        "Norwich"
+      ],
+      "towns": [
+        "Afton",
+        "Bainbridge",
+        "Columbus",
+        "Coventry",
+        "German",
+        "Greene",
+        "Guilford",
+        "Lincklaen",
+        "McDonough",
+        "New Berlin",
+        "North Norwich",
+        "Norwich",
+        "Otselic",
+        "Oxford",
+        "Pharsalia",
+        "Pitcher",
+        "Plymouth",
+        "Preston",
+        "Sherburne",
+        "Smithville",
+        "Smyrna"
+      ],
+      "villages": [
+        "Afton",
+        "Bainbridge",
+        "Earlville",
+        "Greene",
+        "New Berlin",
+        "Oxford",
+        "Sherburne",
+        "Smyrna"
+      ]
+    },
+    "clinton": {
+      "cities": [
+        "Plattsburgh"
+      ],
+      "towns": [
+        "Altona",
+        "AuSable",
+        "Beekmantown",
+        "Black Brook",
+        "Champlain",
+        "Chazy",
+        "Clinton",
+        "Dannemora",
+        "Ellenburg",
+        "Mooers",
+        "Peru",
+        "Plattsburgh",
+        "Saranac",
+        "Schuyler Falls"
+      ],
+      "villages": [
+        "Champlain",
+        "Dannemora",
+        "Rouses Point"
+      ]
+    },
+    "columbia": {
+      "cities": [
+        "Hudson"
+      ],
+      "towns": [
+        "Ancram",
+        "Austerlitz",
+        "Canaan",
+        "Chatham",
+        "Claverack",
+        "Clermont",
+        "Copake",
+        "Gallatin",
+        "Germantown",
+        "Ghent",
+        "Greenport",
+        "Hillsdale",
+        "Kinderhook",
+        "Livingston",
+        "New Lebanon",
+        "Stockport",
+        "Stuyvesant",
+        "Taghkanic"
+      ],
+      "villages": [
+        "Chatham",
+        "Kinderhook",
+        "Philmont",
+        "Valatie"
+      ]
+    },
+    "cortland": {
+      "cities": [
+        "Cortland"
+      ],
+      "towns": [
+        "Cincinnatus",
+        "Cortlandville",
+        "Cuyler",
+        "Freetown",
+        "Harford",
+        "Homer",
+        "Lapeer",
+        "Marathon",
+        "Preble",
+        "Scott",
+        "Solon",
+        "Taylor",
+        "Truxton",
+        "Virgil",
+        "Willet"
+      ],
+      "villages": [
+        "Homer",
+        "Marathon",
+        "McGraw"
+      ]
+    },
+    "delaware": {
+      "cities": [],
+      "towns": [
+        "Andes",
+        "Bovina",
+        "Colchester",
+        "Davenport",
+        "Delhi",
+        "Deposit",
+        "Franklin",
+        "Hamden",
+        "Hancock",
+        "Harpersfield",
+        "Kortright",
+        "Masonville",
+        "Meredith",
+        "Middletown",
+        "Roxbury",
+        "Sidney",
+        "Stamford",
+        "Tompkins",
+        "Walton"
+      ],
+      "villages": [
+        "Delhi",
+        "Deposit",
+        "Fleischmanns",
+        "Franklin",
+        "Hancock",
+        "Hobart",
+        "Margaretville",
+        "Sidney",
+        "Stamford",
+        "Walton"
+      ]
+    },
+    "essex": {
+      "cities": [],
+      "towns": [
+        "Chesterfield",
+        "Crown Point",
+        "Elizabethtown",
+        "Essex",
+        "Jay",
+        "Keene",
+        "Lewis",
+        "Minerva",
+        "Moriah",
+        "Newcomb",
+        "North Elba",
+        "North Hudson",
+        "Schroon",
+        "St Armand",
+        "Ticonderoga",
+        "Westport",
+        "Willsboro",
+        "Wilmington"
+      ],
+      "villages": [
+        "Lake Placid",
+        "Saranac Lake"
+      ]
+    },
+    "franklin": {
+      "cities": [],
+      "towns": [
+        "Bangor",
+        "Bellmont",
+        "Bombay",
+        "Brandon",
+        "Brighton",
+        "Burke",
+        "Chateaugay",
+        "Constable",
+        "Dickinson",
+        "Duane",
+        "Fort Covington",
+        "Franklin",
+        "Harrietstown",
+        "Malone",
+        "Moira",
+        "Santa Clara",
+        "Tupper Lake",
+        "Waverly",
+        "Westville"
+      ],
+      "villages": [
+        "Brushton",
+        "Burke",
+        "Chateaugay",
+        "Malone",
+        "Saranac Lake",
+        "Tupper Lake"
+      ]
+    },
+    "fulton": {
+      "cities": [
+        "Gloversville",
+        "Johnstown"
+      ],
+      "towns": [
+        "Bleecker",
+        "Broadalbin",
+        "Caroga",
+        "Ephratah",
+        "Johnstown",
+        "Mayfield",
+        "Northampton",
+        "Oppenheim",
+        "Perth",
+        "Stratford"
+      ],
+      "villages": [
+        "Broadalbin",
+        "Dolgeville",
+        "Mayfield",
+        "Northville"
+      ]
+    },
+    "genesee": {
+      "cities": [
+        "Batavia"
+      ],
+      "towns": [
+        "Alabama",
+        "Alexander",
+        "Batavia",
+        "Bergen",
+        "Bethany",
+        "Byron",
+        "Darien",
+        "Elba",
+        "LeRoy",
+        "Oakfield",
+        "Pavilion",
+        "Pembroke",
+        "Stafford"
+      ],
+      "villages": [
+        "Alexander",
+        "Attica",
+        "Bergen",
+        "Corfu",
+        "Elba",
+        "LeRoy",
+        "Oakfield"
+      ]
+    },
+    "greene": {
+      "cities": [],
+      "towns": [
+        "Ashland",
+        "Athens",
+        "Cairo",
+        "Catskill",
+        "Coxsackie",
+        "Durham",
+        "Greenville",
+        "Halcott",
+        "Hunter",
+        "Jewett",
+        "Lexington",
+        "New Baltimore",
+        "Prattsville",
+        "Windham"
+      ],
+      "villages": [
+        "Athens",
+        "Catskill",
+        "Coxsackie",
+        "Hunter",
+        "Tannersville"
+      ]
+    },
+    "hamilton": {
+      "cities": [],
+      "towns": [
+        "Arietta",
+        "Benson",
+        "Hope",
+        "Indian Lake",
+        "Inlet",
+        "Lake Pleasant",
+        "Long Lake",
+        "Morehouse",
+        "Wells"
+      ],
+      "villages": [
+        "Speculator"
+      ]
+    },
+    "herkimer": {
+      "cities": [
+        "Little Falls"
+      ],
+      "towns": [
+        "Columbia",
+        "Danube",
+        "Fairfield",
+        "Frankfort",
+        "German Flatts",
+        "Herkimer",
+        "Litchfield",
+        "Little Falls",
+        "Manheim",
+        "Newport",
+        "Norway",
+        "Ohio",
+        "Russia",
+        "Salisbury",
+        "Schuyler",
+        "Stark",
+        "Warren",
+        "Webb",
+        "Winfield"
+      ],
+      "villages": [
+        "Cold Brook",
+        "Dolgeville",
+        "Frankfort",
+        "Herkimer",
+        "Ilion",
+        "Middleville",
+        "Mohawk",
+        "Newport",
+        "Poland",
+        "West Winfield"
+      ]
+    },
+    "jefferson": {
+      "cities": [
+        "Watertown"
+      ],
+      "towns": [
+        "Adams",
+        "Alexandria",
+        "Antwerp",
+        "Brownville",
+        "Cape Vincent",
+        "Champion",
+        "Clayton",
+        "Ellisburg",
+        "Henderson",
+        "Hounsfield",
+        "Le Ray",
+        "Lorraine",
+        "Lyme",
+        "Orleans",
+        "Pamelia",
+        "Philadelphia",
+        "Rodman",
+        "Rutland",
+        "Theresa",
+        "Watertown",
+        "Wilna",
+        "Worth"
+      ],
+      "villages": [
+        "Adams",
+        "Alexandria Bay",
+        "Antwerp",
+        "Black River",
+        "Brownville",
+        "Cape Vincent",
+        "Carthage",
+        "Chaumont",
+        "Clayton",
+        "Deferiet",
+        "Dexter",
+        "Ellisburg",
+        "Evans Mills",
+        "Glen Park",
+        "Mannsville",
+        "Philadelphia",
+        "Sackets Harbor",
+        "Theresa",
+        "West Carthage"
+      ]
+    },
+    "lewis": {
+      "cities": [],
+      "towns": [
+        "Croghan",
+        "Denmark",
+        "Diana",
+        "Greig",
+        "Harrisburg",
+        "Lewis",
+        "Leyden",
+        "Lowville",
+        "Lyonsdale",
+        "Martinsburg",
+        "Montague",
+        "New Bremen",
+        "Osceola",
+        "Pinckney",
+        "Turin",
+        "Watson",
+        "West Turin"
+      ],
+      "villages": [
+        "Castorland",
+        "Constableville",
+        "Copenhagen",
+        "Croghan",
+        "Lowville",
+        "Lyons Falls",
+        "Port Leyden",
+        "Turin"
+      ]
+    },
+    "livingston": {
+      "cities": [],
+      "towns": [
+        "Avon",
+        "Caledonia",
+        "Conesus",
+        "Geneseo",
+        "Groveland",
+        "Leicester",
+        "Lima",
+        "Livonia",
+        "Mount Morris",
+        "North Dansville",
+        "Nunda",
+        "Ossian",
+        "Portage",
+        "Sparta",
+        "Springwater",
+        "West Sparta",
+        "York"
+      ],
+      "villages": [
+        "Avon",
+        "Caledonia",
+        "Dansville",
+        "Geneseo",
+        "Leicester",
+        "Lima",
+        "Livonia",
+        "Mount Morris",
+        "Nunda"
+      ]
+    },
+    "madison": {
+      "cities": [
+        "Oneida"
+      ],
+      "towns": [
+        "Brookfield",
+        "Cazenovia",
+        "DeRuyter",
+        "Eaton",
+        "Fenner",
+        "Georgetown",
+        "Hamilton",
+        "Lebanon",
+        "Lenox",
+        "Lincoln",
+        "Madison",
+        "Nelson",
+        "Smithfield",
+        "Stockbridge",
+        "Sullivan"
+      ],
+      "villages": [
+        "Canastota",
+        "Cazenovia",
+        "Chittenango",
+        "DeRuyter",
+        "Earlville",
+        "Hamilton",
+        "Madison",
+        "Morrisville",
+        "Munnsville",
+        "Wampsville"
+      ]
+    },
+    "montgomery": {
+      "cities": [
+        "Amsterdam"
+      ],
+      "towns": [
+        "Amsterdam",
+        "Canajoharie",
+        "Charleston",
+        "Florida",
+        "Glen",
+        "Minden",
+        "Mohawk",
+        "Palatine",
+        "Root",
+        "St Johnsville"
+      ],
+      "villages": [
+        "Ames",
+        "Canajoharie",
+        "Fonda",
+        "Fort Plain",
+        "Fultonville",
+        "Hagaman",
+        "Nelliston",
+        "Palatine Bridge",
+        "St Johnsville"
+      ]
+    },
+    "orleans": {
+      "cities": [],
+      "towns": [
+        "Albion",
+        "Barre",
+        "Carlton",
+        "Clarendon",
+        "Gaines",
+        "Kendall",
+        "Murray",
+        "Ridgeway",
+        "Shelby",
+        "Yates"
+      ],
+      "villages": [
+        "Albion",
+        "Holley",
+        "Lyndonville",
+        "Medina"
+      ]
+    },
+    "otsego": {
+      "cities": [
+        "Oneonta"
+      ],
+      "towns": [
+        "Burlington",
+        "Butternuts",
+        "Cherry Valley",
+        "Decatur",
+        "Edmeston",
+        "Exeter",
+        "Hartwick",
+        "Laurens",
+        "Maryland",
+        "Middlefield",
+        "Milford",
+        "Morris",
+        "New Lisbon",
+        "Oneonta",
+        "Otego",
+        "Otsego",
+        "Pittsfield",
+        "Plainfield",
+        "Richfield",
+        "Roseboom",
+        "Springfield",
+        "Unadilla",
+        "Westford",
+        "Worcester"
+      ],
+      "villages": [
+        "Cherry Valley",
+        "Cooperstown",
+        "Gilbertsville",
+        "Laurens",
+        "Milford",
+        "Morris",
+        "Otego",
+        "Richfield Springs",
+        "Unadilla"
+      ]
+    },
+    "putnam": {
+      "cities": [],
+      "towns": [
+        "Carmel",
+        "Kent",
+        "Patterson",
+        "Philipstown",
+        "Putnam Valley",
+        "Southeast"
+      ],
+      "villages": [
+        "Brewster",
+        "Cold Spring",
+        "Nelsonville"
+      ]
+    },
+    "schoharie": {
+      "cities": [],
+      "towns": [
+        "Blenheim",
+        "Broome",
+        "Carlisle",
+        "Cobleskill",
+        "Conesville",
+        "Esperance",
+        "Fulton",
+        "Gilboa",
+        "Jefferson",
+        "Middleburgh",
+        "Richmondville",
+        "Schoharie",
+        "Seward",
+        "Sharon",
+        "Summit",
+        "Wright"
+      ],
+      "villages": [
+        "Cobleskill",
+        "Esperance",
+        "Middleburgh",
+        "Richmondville",
+        "Schoharie",
+        "Sharon Springs"
+      ]
+    },
+    "schuyler": {
+      "cities": [],
+      "towns": [
+        "Catharine",
+        "Cayuta",
+        "Dix",
+        "Hector",
+        "Montour",
+        "Orange",
+        "Reading",
+        "Tyrone"
+      ],
+      "villages": [
+        "Burdett",
+        "Montour Falls",
+        "Odessa",
+        "Watkins Glen"
+      ]
+    },
+    "seneca": {
+      "cities": [
+        "Geneva"
+      ],
+      "towns": [
+        "Covert",
+        "Fayette",
+        "Junius",
+        "Lodi",
+        "Ovid",
+        "Romulus",
+        "Seneca Falls",
+        "Tyre",
+        "Varick",
+        "Waterloo"
+      ],
+      "villages": [
+        "Interlaken",
+        "Lodi",
+        "Ovid",
+        "Waterloo"
+      ]
+    },
+    "st-lawrence": {
+      "cities": [
+        "Ogdensburg"
+      ],
+      "towns": [
+        "Brasher",
+        "Canton",
+        "Clare",
+        "Clifton",
+        "Colton",
+        "De Kalb",
+        "De Peyster",
+        "Edwards",
+        "Fine",
+        "Fowler",
+        "Gouverneur",
+        "Hammond",
+        "Hermon",
+        "Hopkinton",
+        "Lawrence",
+        "Lisbon",
+        "Louisville",
+        "Macomb",
+        "Madrid",
+        "Massena",
+        "Morristown",
+        "Norfolk",
+        "Oswegatchie",
+        "Parishville",
+        "Piercefield",
+        "Pierrepont",
+        "Pitcairn",
+        "Potsdam",
+        "Rossie",
+        "Russell",
+        "Stockholm",
+        "Waddington"
+      ],
+      "villages": [
+        "Canton",
+        "Gouverneur",
+        "Hammond",
+        "Heuvelton",
+        "Massena",
+        "Norwood",
+        "Potsdam",
+        "Rensselaer Falls",
+        "Richville",
+        "Waddington"
+      ]
+    },
+    "steuben": {
+      "cities": [
+        "Corning",
+        "Hornell"
+      ],
+      "towns": [
+        "Addison",
+        "Avoca",
+        "Bath",
+        "Bradford",
+        "Cameron",
+        "Campbell",
+        "Canisteo",
+        "Caton",
+        "Cohocton",
+        "Corning",
+        "Dansville",
+        "Erwin",
+        "Fremont",
+        "Greenwood",
+        "Hartsville",
+        "Hornby",
+        "Hornellsville",
+        "Howard",
+        "Jasper",
+        "Lindley",
+        "Prattsburgh",
+        "Pulteney",
+        "Rathbone",
+        "Thurston",
+        "Troupsburg",
+        "Tuscarora",
+        "Urbana",
+        "Wayland",
+        "Wayne",
+        "West Union",
+        "Wheeler",
+        "Woodhull"
+      ],
+      "villages": [
+        "Addison",
+        "Almond",
+        "Arkport",
+        "Avoca",
+        "Bath",
+        "Canisteo",
+        "Cohocton",
+        "Hammondsport",
+        "North Hornell",
+        "Painted Post",
+        "Riverside",
+        "Savona",
+        "South Corning",
+        "Wayland"
+      ]
+    },
+    "sullivan": {
+      "cities": [],
+      "towns": [
+        "Bethel",
+        "Callicoon",
+        "Cochecton",
+        "Delaware",
+        "Fallsburg",
+        "Forestburgh",
+        "Fremont",
+        "Highland",
+        "Liberty",
+        "Lumberland",
+        "Mamakating",
+        "Neversink",
+        "Rockland",
+        "Thompson",
+        "Tusten"
+      ],
+      "villages": [
+        "Ateres",
+        "Bloomingburg",
+        "Jeffersonville",
+        "Liberty",
+        "Monticello",
+        "Woodridge",
+        "Wurtsboro"
+      ]
+    },
+    "tioga": {
+      "cities": [],
+      "towns": [
+        "Barton",
+        "Berkshire",
+        "Candor",
+        "Newark Valley",
+        "Nichols",
+        "Owego",
+        "Richford",
+        "Spencer",
+        "Tioga"
+      ],
+      "villages": [
+        "Candor",
+        "Newark Valley",
+        "Nichols",
+        "Owego",
+        "Spencer",
+        "Waverly"
+      ]
+    },
+    "tompkins": {
+      "cities": [
+        "Ithaca"
+      ],
+      "towns": [
+        "Caroline",
+        "Danby",
+        "Dryden",
+        "Enfield",
+        "Groton",
+        "Ithaca",
+        "Lansing",
+        "Newfield",
+        "Ulysses"
+      ],
+      "villages": [
+        "Cayuga Heights",
+        "Dryden",
+        "Freeville",
+        "Groton",
+        "Lansing",
+        "Trumansburg"
+      ]
+    },
+    "warren": {
+      "cities": [
+        "Glens Falls"
+      ],
+      "towns": [
+        "Bolton",
+        "Chester",
+        "Hague",
+        "Horicon",
+        "Johnsburg",
+        "Lake George",
+        "Lake Luzerne",
+        "Queensbury",
+        "Stony Creek",
+        "Thurman",
+        "Warrensburg"
+      ],
+      "villages": [
+        "Lake George"
+      ]
+    },
+    "washington": {
+      "cities": [],
+      "towns": [
+        "Argyle",
+        "Cambridge",
+        "Dresden",
+        "Easton",
+        "Fort Ann",
+        "Fort Edward",
+        "Granville",
+        "Greenwich",
+        "Hampton",
+        "Hartford",
+        "Hebron",
+        "Jackson",
+        "Kingsbury",
+        "Putnam",
+        "Salem",
+        "White Creek",
+        "Whitehall"
+      ],
+      "villages": [
+        "Argyle",
+        "Cambridge",
+        "Fort Ann",
+        "Fort Edward",
+        "Granville",
+        "Greenwich",
+        "Hudson Falls",
+        "Whitehall"
+      ]
+    },
+    "wayne": {
+      "cities": [],
+      "towns": [
+        "Arcadia",
+        "Butler",
+        "Galen",
+        "Huron",
+        "Lyons",
+        "Macedon",
+        "Marion",
+        "Ontario",
+        "Palmyra",
+        "Rose",
+        "Savannah",
+        "Sodus",
+        "Walworth",
+        "Williamson",
+        "Wolcott"
+      ],
+      "villages": [
+        "Clyde",
+        "Newark",
+        "Palmyra",
+        "Red Creek",
+        "Sodus",
+        "Sodus Point",
+        "Wolcott"
+      ]
+    },
+    "wyoming": {
+      "cities": [],
+      "towns": [
+        "Arcade",
+        "Attica",
+        "Bennington",
+        "Castile",
+        "Covington",
+        "Eagle",
+        "Gainesville",
+        "Genesee Falls",
+        "Java",
+        "Middlebury",
+        "Orangeville",
+        "Perry",
+        "Pike",
+        "Sheldon",
+        "Warsaw",
+        "Wethersfield"
+      ],
+      "villages": [
+        "Arcade",
+        "Attica",
+        "Castile",
+        "Gainesville",
+        "Perry",
+        "Silver Springs",
+        "Warsaw",
+        "Wyoming"
+      ]
+    },
+    "yates": {
+      "cities": [],
+      "towns": [
+        "Barrington",
+        "Benton",
+        "Italy",
+        "Jerusalem",
+        "Middlesex",
+        "Milo",
+        "Potter",
+        "Starkey",
+        "Torrey"
+      ],
+      "villages": [
+        "Dresden",
+        "Dundee",
+        "Penn Yan",
+        "Rushville"
+      ]
+    }
+  }
+}

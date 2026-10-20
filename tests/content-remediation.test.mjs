@@ -38,7 +38,7 @@ test('county services precede optional worksheet and hub keeps one link per coun
   assert.ok(page.body.indexOf('id="services"')<page.body.indexOf('id="buyer-task"'),page.path);
   assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/web-design\/"/);
  }
- assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,25);
+ assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,62);
  assert.ok(hub.indexOf('/areas/erie-county/')<hub.indexOf('/areas/niagara-county/'));
  assert.match(pages.find(p=>p.path==='/areas/orange-county/').body,/Tuxedo Park remains a separate village/);
  assert.match(pages.find(p=>p.path==='/areas/albany-county/').body,/Green Island is a coterminous town and village/);

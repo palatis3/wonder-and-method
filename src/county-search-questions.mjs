@@ -1,4 +1,5 @@
 import {money} from './shared.mjs';
+import {statewideCountySearchQuestions} from './county-statewide-questions.mjs';
 
 // Buyer questions informed by Semrush phrase_questions research, October 20.
 // General US query estimates are not county-specific demand or ranking evidence.
@@ -89,5 +90,5 @@ export function countySearchQuestions(slug,o){
    ['What local SEO improvements would help customers understand my location?','Use accurate business details and clear service information, with Ontario County, New York stated where it resolves ambiguity. Canandaigua, Geneva and Victor references should describe actual coverage or a visit decision. The agreed work can improve those pages and their internal links, then record what changed.',...reporting]
   ]
  };
- return rows[slug]||[];
+ return rows[slug]||statewideCountySearchQuestions(slug,o);
 }

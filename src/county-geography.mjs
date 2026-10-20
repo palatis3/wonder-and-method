@@ -1,7 +1,9 @@
 import {expandedCountyGeography} from './county-expansion.mjs';
+import {statewideCountyGeography} from './county-statewide-geography.mjs';
 // Original geography reviewed October 16; additions reviewed October 20, 2026.
 // Sources are displayed on each county page.
 export const countyGeography = {
+  ...statewideCountyGeography,
   ...expandedCountyGeography,
   "monroe": {
     "municipalities": {

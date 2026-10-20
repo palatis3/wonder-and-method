@@ -3,6 +3,8 @@ import {escapeHtml as e,money} from './shared.mjs';
 import {countyProfiles} from './county-profiles.mjs';
 import {countyGeography} from './county-geography.mjs';
 import {countySearchQuestions} from './county-search-questions.mjs';
+import {countyRegions} from './county-regions.mjs';
+export {countyRegions} from './county-regions.mjs';
 
 const a=(url,label,cls='')=>`<a href="${e(url)}"${cls?` class="${cls}"`:''}>${e(label)}</a>`;
 const intro=(label,title,text)=>`<header class="page-intro"><p class="eyebrow">${e(label)}</p><h1>${e(title)}</h1><p class="lede">${e(text)}</p></header>`;
@@ -12,19 +14,12 @@ const names=values=>`<ul class="county-place-list">${values.map(x=>`<li>${e(x)}<
 const cards=items=>`<div class="county-cards">${items.map(([title,text,url])=>`<article><h3>${url?a(url,title):e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div>`;
 const countyLink=c=>a(path(c),`${c.name} County`);
 const countyLabel=c=>c.boroughLabel?`${c.boroughLabel} · ${c.name} County`:({kings:'Brooklyn · Kings County','new-york':'Manhattan · New York County',richmond:'Staten Island · Richmond County'})[c.slug]||`${c.name} County`;
-// Regional navigation groups are browsing aids, not separate local offices.
-export const countyRegions=[
- {id:'western-new-york',name:'Western New York',slugs:['erie','niagara','chautauqua']},
- {id:'finger-lakes',name:'Rochester & Finger Lakes',slugs:['monroe','ontario']},
- {id:'central-new-york',name:'Central New York & Mohawk Valley',slugs:['onondaga','oswego','oneida']},
- {id:'southern-tier',name:'Southern Tier',slugs:['broome']},
- {id:'capital-region',name:'Capital Region',slugs:['albany','saratoga','schenectady','rensselaer']},
- {id:'hudson-valley',name:'Hudson Valley',slugs:['orange','rockland','dutchess','ulster','westchester']},
- {id:'new-york-city',name:'New York City',slugs:['kings','queens','new-york','bronx','richmond']},
- {id:'long-island',name:'Long Island',slugs:['nassau','suffolk']}
-];
 const allCounties=()=>[{slug:'erie',name:'Erie',anchor:'Buffalo',displayName:'Buffalo & Erie County'},...countyProfiles];
 const regionCounties=region=>region.slugs.map(slug=>allCounties().find(c=>c.slug===slug)).filter(Boolean);
+function countySearchText(c,region){
+ const g=countyGeography[c.slug];
+ return [c.name,'County',c.displayName||'',c.anchor,region.name,...Object.values(g?.municipalities||{}).flat(),...(g?.communities||[]).map(place=>place.name)].join(' ');
+}
 export function serviceAreaLinks(){
  return `<section class="studio-section service-area-links" id="service-areas"><div class="section-heading"><p class="eyebrow">Across New York</p><h2>Work together online, wherever your business is based.</h2></div><p>Based in Buffalo, I provide web design, redesigns, SEO and website care online across New York. Explore a county guide for local planning examples, communities and the right service to start with.</p><details class="service-disclosure"><summary>Explore all ${allCounties().length} county service areas</summary><div class="coverage-region-grid">${countyRegions.map(region=>`<div><h3>${e(region.name)}</h3><ul>${regionCounties(region).map(c=>`<li>${a(path(c),c.slug==='erie'?'Buffalo & Erie County':countyLabel(c))}</li>`).join('')}</ul></div>`).join('')}</div></details><p>${a('/areas/','Browse New York service areas','text-link')}</p></section>`;
 }
@@ -75,11 +70,13 @@ function countyPage(c,o){
 }
 
 export function countyPages(o){
- const hub=intro('New York service areas','Websites for businesses across New York.','Wonder and Method is based in Buffalo. We work with businesses across New York online. Explore a county guide for practical website examples and local geography, then choose the help your business needs.')
- +`<nav class="page-jump county-region-nav" aria-label="New York service regions">${countyRegions.map(r=>a('#'+r.id,r.name)).join('')}</nav>`
- +`<div id="counties">${countyRegions.map(region=>section(region.id,'Find your area',region.name,`<div class="county-hub-grid">${regionCounties(region).map(c=>`<article><a class="county-hub-link" href="${path(c)}"><h3>${e(c.slug==='erie'?'Buffalo & Erie County':countyLabel(c))}</h3><p>${e(c.anchor)}</p></a></article>`).join('')}</div>`)).join('')}</div>`
+ const hub=intro('All 62 New York counties','Websites for businesses across New York.','Wonder and Method is based in Buffalo and works with businesses throughout New York online. Find your county for practical website planning, useful local examples, current service prices and answers to common questions.')
+ +`<div class="county-filter" data-county-filter-controls hidden><label for="county-search">Find a county or community</label><p id="county-search-help">Try a county, city, town, village or region. Shared place names may match more than one guide.</p><div class="county-filter-row"><input id="county-search" type="search" maxlength="100" autocomplete="off" placeholder="For example, Ithaca or St. Lawrence" aria-describedby="county-search-help" aria-controls="counties"><button type="button" class="button button-secondary" disabled>Clear search</button></div><p class="county-filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 62 county guides.</p></div>`
+ +`<nav class="page-jump county-region-nav" data-county-region-nav aria-label="New York service regions">${countyRegions.map(r=>a('#'+r.id,r.name)).join('')}</nav>`
+ +`<div id="counties" data-county-directory>${countyRegions.map(region=>section(region.id,'Find your area',region.name,`<div class="county-hub-grid">${regionCounties(region).map(c=>`<article data-county-search="${e(countySearchText(c,region))}"><a class="county-hub-link" href="${path(c)}"><h3>${e(c.slug==='erie'?'Buffalo & Erie County':countyLabel(c))}</h3><p>${e(c.anchor)}</p></a></article>`).join('')}</div>`)).join('')}</div>`
+ +`<div class="county-search-empty" data-county-empty hidden><h2>No county guides match that search.</h2><p>Try the county name or a nearby city, town or village. Clear the search to browse all 62 counties.</p></div>`
  +section('scope','Choose what helps','Build, improve or keep it working.',`<p>Websites from ${money(o.launch_site.public_price)} · Care from ${money(o.plans.keep_running.monthly_price)}/month · Reviews from ${money(o.baseline.one_time_price)} — ${a('/pricing/','compare all prices')}.</p>`)
- +section('working','Start with your business','Tell me what the website needs to do.',`<div class="county-reading"><p>Share your services, customers and the problem you want to solve. I agree the work, price and dates before booking. These pages describe online service areas, without claiming a branch or client history in each county.</p><p>Elsewhere in New York? The same online process may suit your project. ${a('/process/','See how projects work')}.</p><p>${a('/contact/?request_kind=question#inquiry','Discuss your project','button')}</p></div>`);
+ +section('working','Start with your business','Tell me what the website needs to do.',`<div class="county-reading"><p>Share your services, customers and the problem you want to solve. I agree the work, price and dates before booking. The same online process serves every county; your project scope depends on the work needed. ${a('/process/','See how projects work')}.</p><p>Each guide pairs official place references with an illustrative website-planning exercise and a downloadable worksheet. These are service-area guides, not claims of local offices, local client results or measured demand. ${a('/about/','Meet the Buffalo-based studio')}.</p><p>${a('/contact/?request_kind=question#inquiry','Discuss your project','button')}</p></div>`);
  return [{path:'/areas/',title:'New York Web Design & SEO Service Areas',description:`Web design, SEO and care across ${allCounties().length} New York counties, including NYC, Long Island, the Hudson Valley and Upstate NY. Buffalo-based, working online.`,body:hub},...countyProfiles.map(c=>countyPage(c,o))];
 }
 

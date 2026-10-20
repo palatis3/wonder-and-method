@@ -29,5 +29,5 @@ test('website cards use authoritative limits and canonical destinations without 
 
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{
  const checks=new Set(),titles=new Set();for(const [slug,c] of Object.entries(countyBuyerTasks)){checks.add(c.check);titles.add(c.title);const text=await readFile(new URL('../src/assets/county-briefs/'+slug+'.txt',import.meta.url),'utf8');assert.ok(text.includes(c.check));assert.ok(text.includes(c.output));assert.match(countyBuyerTask(slug),/Illustrative .* County example/);}
- assert.equal(checks.size,25);assert.equal(titles.size,25);
+ assert.equal(checks.size,62);assert.equal(titles.size,62);
 });
