@@ -11,7 +11,7 @@ import {readFile,writeFile,mkdir,cp,readdir,rm,stat} from 'node:fs/promises';
 import {resolve,dirname,basename,extname,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
 import {assertSiteOrigin,crawlFiles} from '../src/seo.mjs';
-import {privateRoute} from '../src/index-policy.mjs';
+import {buildEarlyHints,assertStaticHeaderLimits} from './static-headers.mjs';
 import {releaseFingerprint} from '../src/release.mjs';
 import {renderPages} from '../src/pages.mjs';
 import {transform,build as bundle} from 'esbuild';
@@ -166,8 +166,8 @@ await mkdir(resolve(output,'.well-known'),{recursive:true});
 await writeFile(resolve(output,'.well-known/security.txt'),'Contact: mailto:support@wonderandmethod.com\nExpires: 2027-04-17T00:00:00Z\nPreferred-Languages: en\nCanonical: https://wonderandmethod.com/.well-known/security.txt\n');
 await cp(resolve(output,'404/index.html'),resolve(output,'404.html'));
 // Static CSS hints only; no private, API, error or payment response is hinted.
-const earlyHints=pages.filter(page=>!privateRoute(page.path)&&!['/404/','/payments/'].includes(page.path)).map(page=>{const styles=[...page.html.matchAll(/<link rel="stylesheet" href="(\/assets\/[^"?]+\.css)"/g)].map(([,asset])=>`<${asset}?v=${assetVersions.get(asset)}>; rel=preload; as=style`);return styles.length?`${page.path}\n  Link: ${styles.join(', ')}\n`:'';}).join('\n');
-await writeFile(resolve(output,'_headers'),`/*
+const earlyHints=buildEarlyHints(pages,assetVersions);
+const staticHeaders=`/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
@@ -194,7 +194,9 @@ ${config.searchIndexing!==true?'  X-Robots-Tag: noindex, nofollow, noarchive, no
   ! Cache-Control
   Cache-Control: no-cache
 
-${earlyHints}`);
+${earlyHints}`;
+assertStaticHeaderLimits(staticHeaders);
+await writeFile(resolve(output,'_headers'),staticHeaders);
 const inventory=[];
 const {sourceSha256}=await releaseFingerprint(root);
 let commit=null,dirty=true;try{commit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();dirty=Boolean(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim());}catch{}

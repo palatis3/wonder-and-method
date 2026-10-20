@@ -15,6 +15,16 @@ test('edge missing pages use the branded static 404 and preserve status and stag
 });
 
 // Synthetic SQLite-backed fake D1. This verifies SQL and handler behavior, not Cloudflare or an inbox.
+test('edge removes inherited preload hints from errors and non-page responses',async()=>{
+ const hint='</assets/site.css?v=abc123>; rel=preload; as=style';
+ for(const [path,status,keep] of [['/areas/erie-county/',200,true],['/areas/missing/',404,false],['/areas/unavailable/',503,false],['/404/',200,false],['/payments/',200,false],['/assets/example.txt',200,false]]){
+  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',ASSETS:{fetch:async()=>new Response('fixture',{status,headers:{'Content-Type':'text/html',Link:hint}})}};
+  const response=await worker.fetch(new Request('https://example.test'+path),env,context());
+  assert.equal(response.headers.get('Link'),keep?hint:null,path);
+  if(status>=400)assert.equal(response.status,status,path);
+ }
+});
+
 const migration = await readFile(new URL('../deployment/migrations/0001_inquiries.sql', import.meta.url), 'utf8');
 function fakeD1() {
   const sqlite = new DatabaseSync(':memory:'); sqlite.exec(migration);

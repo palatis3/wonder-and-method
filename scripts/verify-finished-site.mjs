@@ -26,6 +26,8 @@ for(const route of build.routes){
  assert.ok(!/Public critique preview|Editorial draft — approval pending|This is a read-only preview/.test(html));
  const expected=await readFile(resolve(root,'dist','.'+route,'index.html'),'utf8');
  assert.equal(html,expected,`Deployed HTML matches build: ${route}`);
+ const styles=[...expected.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(match=>`<${match[1]}>; rel=preload; as=style`);
+ assert.equal(response.headers.get('Link'),['/404/','/payments/'].includes(route)?null:styles.join(', '),`Deployed CSS hints match page: ${route}`);
  pages.push({route,status:response.status,indexEligible:eligible,canonical:route!=='/404/',htmlMatches:true});
 }
 async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const path=resolve(dir,entry.name);if(entry.isDirectory())await walk(path);else assets.push(path);}}

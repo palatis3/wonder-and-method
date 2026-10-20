@@ -26,6 +26,8 @@ All service pages link to the complete regional directory. County pages link to 
 
 The build contains 120 HTML routes, of which 119 public routes are index-eligible and included in the sitemap. The error page, operational endpoints and private records retain their existing exclusions and access controls.
 
+Identical county-page CSS hints share one `/areas/*` header rule, keeping the generated file within Cloudflare's 100-rule limit. The build checks both the rule count and the 2,000-character line limit. Every public page's preload hints are checked against its actual versioned stylesheets locally and after deployment; error, private and payment responses discard inherited hints.
+
 Migration `0012_journey_statewide_counties.sql` adds only the 37 new aggregate page keys. It preserves all columns, other allowed dimensions, defaults, conflict keys and count bounds. Inquiry and delivery-resolution tables are unchanged. The previously deployed Worker is compatible with this expanded schema.
 
 Before migration, export the database privately and record the authenticated Worker version. Apply the migration using the pinned production configuration, export again, then verify existing inquiry rows, aggregate dimensions and foreign keys. Normal traffic may increase counts between snapshots. Follow the existing production runbook: clean pushed source, exact-source technical checks, successful CI, predeploy, deployment, live route/asset verification and responsive browser checks.

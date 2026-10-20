@@ -458,6 +458,8 @@ export default {
         if(location){const target=new URL(location,url);const cleanPath=url.pathname.endsWith('/index.html')?url.pathname.slice(0,-10):url.pathname.endsWith('.html')?url.pathname.slice(0,-5)+(url.pathname.startsWith('/assets/')?'':'/'):url.pathname+'/';permanentAssetRedirect=target.origin===url.origin && (target.pathname===cleanPath||target.pathname===cleanPath.slice(0,-1)) && target.search===url.search;if(permanentAssetRedirect){target.pathname=cleanPath;response=new Response(response.body,{status:response.status,headers:response.headers});response.headers.set('Location',target.href);}}
       }
       const result = new Response(response.body, {status:permanentAssetRedirect?308:response.status,statusText:permanentAssetRedirect?'Permanent Redirect':response.statusText,headers:response.headers});
+      // A family wildcard can match a missing URL; errors never preload page CSS.
+      if(result.status>=400||privateRoute(url.pathname)||url.pathname==='/payments/')result.headers.delete('Link');
       result.headers.set('X-Content-Type-Options', 'nosniff');
       if (!result.headers.has('Referrer-Policy')) result.headers.set('Referrer-Policy', url.pathname.startsWith('/api/') ? 'no-referrer' : 'strict-origin-when-cross-origin');
       result.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
