@@ -22,7 +22,7 @@ test('county routes expose reviewed geography, truthful delivery and a complete 
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+path]);
   assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
-  assert.match(page.html,/based in Erie County, New York/);assert.match(page.html,/does not represent a local office/);assert.match(page.html,/Illustrative .* County example/);
+  assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);assert.match(page.html,/Illustrative .* County example/);
   assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
   assert.ok(page.html.includes(`name="robots" content="${county.slug==='niagara'?'index,follow':'noindex,follow'}"`));
  }

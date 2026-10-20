@@ -15,6 +15,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
   const existing=field('build').value==='existing';
   const noPlan=field('plan').value==='none';
   field('cycles').disabled=noPlan;
+  const monthlyFields=calculator.querySelector?.('[data-monthly-cost-fields]');if(monthlyFields)monthlyFields.hidden=noPlan;
   field('billing').disabled=noPlan;
   field('cycles').readOnly=field('billing').value==='annual'&&!noPlan;
   field('baseline').disabled=!existing||field('sprint').checked;
@@ -35,7 +36,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
    const knownTotal=v.knownSubtotal;
    total.textContent=knownTotal===0?'Choose a website or service to see an estimate.':money(knownTotal)+(missing.length?' known costs':' estimated total');
    breakdown.textContent=`${money(v.once)} one-time${v.baselineFee?` (including ${money(v.baselineFee)} Website Baseline)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
-   note.textContent=missing.length?`Includes our fees and any provider costs entered. Still to add: ${missing.join('; ')}. Taxes and approved additions are extra.`:'Includes our fees and the provider costs you entered. Taxes and approved additions are extra.';
+   note.textContent=missing.length?`Includes my fees and any provider costs entered. Still to add: ${missing.join('; ')}. Taxes and approved additions are extra.`:'Includes my fees and the provider costs you entered. Taxes and approved additions are extra.';
    if(knownTotal===0){breakdown.textContent='';note.textContent='Choose a website or plan, or add known outside costs.';}
    errorBox.textContent='';
   }catch(error){

@@ -34,7 +34,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   const footer=await page.locator('footer').evaluate(el=>({height:el.getBoundingClientRect().height,reserved:parseFloat(getComputedStyle(el).paddingBottom)}));expect(footer.height-footer.reserved).toBeLessThan(700);expect(footer.reserved).toBeGreaterThanOrEqual(80);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
-  await expect(page.locator('.mobile-services-label')).toBeVisible();
+  await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(page.getByRole('button',{name:'Menu',exact:true})).toBeFocused();

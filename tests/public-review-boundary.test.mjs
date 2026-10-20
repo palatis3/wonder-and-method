@@ -35,7 +35,7 @@ test('current pages, every buyer pack, owned proof JSON and public text assets o
   for(const file of files.filter(file=>file.startsWith(output)&&extname(file)==='.html')){
    const html=await readFile(file,'utf8');
    assert.match(html,/href="\/assets\/site\.css\?v=[a-f0-9]{12}"/);
-   assert.match(html,/href="\/assets\/brand\.css\?v=[a-f0-9]{12}"/);
+   assert.doesNotMatch(html,/href="\/assets\/brand\.css/);
    assert.match(html,/class="wordmark brand-lockup"/);assert.match(html,/class="brand-emblem"/);
    assert.match(html,/<main id="main" tabindex="-1"/);assert.doesNotMatch(html,/semrush/i);
   }

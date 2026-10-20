@@ -86,3 +86,10 @@
 
 .studio-site .guide-decision{text-align:left;max-width:68ch;margin-inline:auto}
 .journal-byline .byline-date{display:block}
+/* Index rows contain text only; image-card tracks must not constrain their wrapper. */
+.studio-site .journal-index-list .journal-card-text{display:block;padding:1.25rem 0}
+.studio-site .journal-index-list .journal-card.journal-card-text :is(h2,h3){max-width:none;font-size:1.65rem;line-height:1.25;margin:0 0 .4rem}
+.studio-site .journal-index-list .journal-card-text .journal-card-description{grid-column:auto;max-width:68ch;margin:0!important;font-size:1rem;line-height:1.65}
+.studio-site .journal-index-list{margin:0 0 2rem}
+.studio-site .journal-group>h2{font-size:clamp(1.6rem,2.5vw,2rem);line-height:1.25}
+@media(max-width:767px){.studio-site .journal-index-list .journal-card.journal-card-text :is(h2,h3){font-size:1.5rem}}

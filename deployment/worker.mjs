@@ -4,7 +4,7 @@ import { timingSafeEqual } from 'node:crypto';
 import { validateInquiry } from '../src/inquiry.mjs';
 import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../src/shared.mjs';
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
-import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, inquiryRetentionPreview, followupInput } from './inquiry-maintenance.mjs';
+import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, hasInquiryResolutions, inquiryRetentionPreview, followupInput, inquiryResolutionInput } from './inquiry-maintenance.mjs';
 import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
 import { allowInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
@@ -45,6 +45,36 @@ function respond(request, status, message, reference = null, errors, service, ch
   headers['Content-Security-Policy'] = "default-src 'none'; style-src 'self'; font-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'";
   return new Response(inquiryResponseHtml({...data,status,retry,live:flags.live===true}), { status, headers });
 }
+
+async function unknownApiResponse(request, env) {
+  const headers = { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'Content-Type': 'text/plain; charset=utf-8' };
+  const html = (request.headers.get('Accept') || '').split(',').some(value =>
+    /^text\/html(?:\s*;|$)/i.test(value.trim()) && !/;\s*q=0(?:\.0*)?(?:\s*;|\s*$)/i.test(value));
+  if (['GET', 'HEAD'].includes(request.method) && html) {
+    try {
+      const page = await env.ASSETS.fetch(new Request(new URL('/404/', request.url), { method: request.method }));
+      if ((page.ok || page.status === 404) && /^text\/html(?:;|$)/i.test(page.headers.get('Content-Type') || '')) {
+        const resultHeaders = new Headers(page.headers);
+        resultHeaders.set('Cache-Control', 'no-store');
+        resultHeaders.set('Referrer-Policy', 'no-referrer');
+        if (request.method === 'HEAD') await page.body?.cancel();
+        return new Response(request.method === 'HEAD' ? null : page.body, { status: 404, headers: resultHeaders });
+      }
+      await page.body?.cancel();
+    } catch { /* Missing branded assets must not turn an unknown API path into a 503. */ }
+  }
+  if (request.method !== 'HEAD' && request.headers.get('Accept')?.includes('application/json')) {
+    return Response.json({ message: 'Not found.' }, { status: 404, headers: { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer' } });
+  }
+  return new Response(request.method === 'HEAD' ? null : 'Not found.', { status: 404, headers });
+}
+
+function inquiryWait(retryAfter) {
+  const minutes = Math.ceil(retryAfter / 60);
+  if (minutes <= 90) return `${minutes} minute${minutes === 1 ? '' : 's'}`;
+  const hours = Math.ceil(retryAfter / 3600);
+  return `${hours} hour${hours === 1 ? '' : 's'}`;
+}
 async function readLimited(stream, max = MAX_BODY) {
   if (!stream) return '';
   const reader = stream.getReader(); const chunks = []; let size = 0;
@@ -76,6 +106,12 @@ export async function notifyInquiry(env, id, send = fetch, now = Date.now(), {ow
   const record = await db.prepare('SELECT * FROM inquiries WHERE id = ?').bind(id).first();
   if (!record || record.synthetic) return { status: 'not-live-record', sent: false };
   if (record.delivery_status === 'accepted') return { status: 'accepted', sent: false };
+  // An owner resolution records handling outside this notification pipeline.
+  // It never resets delivery history, and no later retry may send it again.
+  if (await hasInquiryResolutions(db) &&
+      await db.prepare('SELECT inquiry_id FROM inquiry_delivery_resolutions WHERE inquiry_id = ?').bind(id).first()) {
+    return { status: 'manual_review_resolved', sent: false };
+  }
   // Leave a margin inside the provider's 24-hour idempotency horizon.
   if (record.attempts >= MAX_NOTIFICATION_ATTEMPTS ||
       (record.first_attempt_at !== null && now - record.first_attempt_at >= NOTIFICATION_WINDOW_MS) ||
@@ -167,7 +203,7 @@ async function submit(request, env, ctx) {
   let data;
   try { data = await parseBody(request); } catch { return respond(request, 400, 'Something in the form could not be read. Please return to the form, shorten a very long entry, or email support@wonderandmethod.com.'); }
   // Do not identify the trap field or claim that an unstored message was saved.
-  if (data && typeof data === 'object' && (data._faxcheck||data.company_url)) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
+  if (data && typeof data === 'object' && (data._wm_note||data._faxcheck||data.company_url)) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
   const { errors, value } = validateInquiry(data);
   if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value,{live:LIVE(env)});
   const recover=(status,message,flags={})=>respond(request,status,message,null,undefined,value.service,value,{retry:value,live:LIVE(env),...flags});
@@ -175,7 +211,7 @@ async function submit(request, env, ctx) {
   try {
   const now = Date.now();
   const rate=await allowInquiryRate(env,request.headers.get('CF-Connecting-IP')||'local-unknown',now,fingerprint);
-  if (!rate.allowed) return recover(429, `Several requests have been sent from this connection. Please wait about ${Math.ceil(rate.retryAfter/60)} minute${Math.ceil(rate.retryAfter/60)===1?'':'s'}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter:rate.retryAfter});
+  if (!rate.allowed) return recover(429, `Several requests have been sent from this connection. Please try again in about ${inquiryWait(rate.retryAfter)}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter:rate.retryAfter});
   const synthetic = !LIVE(env);
   const id = crypto.randomUUID();
   const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
@@ -240,12 +276,45 @@ async function operator(request, env) {
   if (url.pathname === base && request.method === 'GET') {
     const cursor = url.searchParams.get('after') || '';
     if (cursor && !/^[a-f0-9-]{36}$/.test(cursor)) return respond(request, 400, 'Invalid export cursor.');
-    const { results } = await env.DB.prepare('SELECT * FROM inquiries WHERE id > ? ORDER BY id LIMIT 100').bind(cursor).all();
+    const query = await hasInquiryResolutions(env.DB)
+      ? `SELECT i.*, r.resolved_at AS resolution_resolved_at, r.outcome AS resolution_outcome, r.evidence_reference AS resolution_evidence_reference
+          FROM inquiries i LEFT JOIN inquiry_delivery_resolutions r ON r.inquiry_id=i.id WHERE i.id > ? ORDER BY i.id LIMIT 100`
+      : 'SELECT * FROM inquiries WHERE id > ? ORDER BY id LIMIT 100';
+    const { results } = await env.DB.prepare(query).bind(cursor).all();
     return Response.json({ records: results, next_cursor: results.length === 100 ? results.at(-1).id : null }, { headers: { 'Cache-Control': 'no-store', 'Content-Disposition': 'attachment; filename="inquiries.json"', 'X-Content-Type-Options': 'nosniff' } });
   }
-  const match = url.pathname.match(/^\/api\/operator\/inquiries\/([a-f0-9-]{36})(\/(?:retry|followup))?$/);
+  const match = url.pathname.match(/^\/api\/operator\/inquiries\/([a-f0-9-]{36})(\/(?:retry|followup|resolve))?$/);
   if (!match) return respond(request, 404, 'Unknown operator action.');
   const id = match[1];
+  if (request.method === 'POST' && match[2] === '/resolve' && request.headers.get('X-Confirm-Resolve') === id) {
+    if (!await hasInquiryResolutions(env.DB)) return respond(request, 503, 'Inquiry resolution migration is required. No records were changed.');
+    let data;
+    try { data = await parseBody(request); } catch { return respond(request, 400, 'Use valid resolution fields.'); }
+    const value = inquiryResolutionInput(data);
+    if (!value) return respond(request, 422, 'Supply a reviewed outcome (handled_manually, duplicate_confirmed or spam_confirmed) and a nonpersonal evidence reference of 3–80 lowercase letters, numbers, dots, hyphens or underscores.');
+    const now = Date.now();
+    // Eligibility and the immutable first resolution are one write. A stale
+    // operator read cannot resolve a newly sending row or overwrite evidence.
+    const created = await env.DB.prepare(`INSERT INTO inquiry_delivery_resolutions (inquiry_id,resolved_at,outcome,evidence_reference)
+      SELECT id,?,?,? FROM inquiries
+      WHERE id=? AND synthetic=0 AND delivery_status='manual_review' AND (lease_until IS NULL OR lease_until<?)
+      ON CONFLICT(inquiry_id) DO NOTHING RETURNING *`).bind(now,value.outcome,value.evidence_reference,id,now).first();
+    let resolution = created;
+    if (!resolution) {
+      const row = await env.DB.prepare('SELECT synthetic,delivery_status,lease_until FROM inquiries WHERE id=?').bind(id).first();
+      if (!row) return respond(request, 404, 'Unknown inquiry reference.');
+      if (row.synthetic || row.delivery_status !== 'manual_review' || (row.lease_until !== null && row.lease_until >= now)) {
+        return respond(request, 409, 'Only a live manual-review record without an active delivery lease can be resolved. No inquiry was changed.');
+      }
+      resolution = await env.DB.prepare('SELECT * FROM inquiry_delivery_resolutions WHERE inquiry_id=?').bind(id).first();
+      if (!resolution || resolution.outcome !== value.outcome || resolution.evidence_reference !== value.evidence_reference) {
+        return respond(request, 409, 'No resolution recorded. Existing resolution evidence cannot be overwritten; reconcile the recorded outcome before any further action.');
+      }
+    }
+    return Response.json({ status:'manual_review_resolved', reference:id, resolution, already_resolved:!created,
+      message:'Owner resolution recorded. No notification sent; original delivery and retention records are unchanged.' },
+      { headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'} });
+  }
   if (request.method === 'POST' && match[2] === '/followup' && request.headers.get('X-Confirm-Followup') === id) {
     if (!await hasInquiryFollowup(env.DB)) return respond(request, 503, 'Inquiry follow-up migration is required. No records were changed.');
     const row = await env.DB.prepare('SELECT created_at FROM inquiries WHERE id = ?').bind(id).first();
@@ -353,7 +422,7 @@ export default {
       else if (url.pathname.startsWith('/api/operator/')) response = await operator(request, env);
       else if (url.pathname === '/api/journey-counts') response = await saveJourneyCount(request,env,{readLimited,fingerprint});
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);
-      else if (url.pathname.startsWith('/api/')) response = respond(request, 404, 'Not found.');
+      else if (url.pathname.startsWith('/api/')) response = await unknownApiResponse(request, env);
       else if(/^\/version\.json\/?$/i.test(decodeURIComponent(url.pathname)))response=new Response('Not found.',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}});
       else {
         let assetRequest=request;

@@ -538,7 +538,9 @@ html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bott
 /* Fixed corner tools enhance the native footer link after JavaScript is ready. */
 .page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
 .page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
-.page-tools-ready .studio-site footer{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
+.page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
+.page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.page-tools-ready .studio-site .site-footer--compact{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
 .page-tools-ready :is(.back-to-top,.support-chat-launch).is-obstructing-controls:not(:focus),
 .page-tools-ready.editing-form :is(.back-to-top,.support-chat-launch),
 .page-tools-ready.chat-is-open .back-to-top,
@@ -554,7 +556,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) caption{text-align:left;white-space:normal;font-size:1rem;padding:0 0 1rem;overflow-wrap:anywhere}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) td{font-variant-numeric:tabular-nums}
 .studio-site table.responsive-table{width:100%;min-width:0;table-layout:auto}
-@media(max-width:600px){
+@media(max-width:767px){
  /* Keep real headers available to assistive technology when rows become cards. */
  .studio-site :is(.table-scroll,.comparison-scroll,.payment-schedule,.journal-table-wrap):has(.responsive-table){overflow:visible;max-width:100%}
  .studio-site table.responsive-table{display:block;min-width:0;width:100%;max-width:100%}
@@ -570,7 +572,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 }
 /* One named, keyboard-accessible animation control over the image. */
 .studio-site .civic-hero{position:relative}
-.studio-site .civic-controls{position:absolute;right:max(1.5rem,calc((100% - 1120px)/2 + 1.5rem));bottom:1.5rem;z-index:3;min-height:0;padding:0;gap:0}
+.studio-site .civic-controls{position:relative;right:auto;bottom:auto;z-index:3;min-height:44px;max-width:1120px;margin:0 auto;padding:.5rem 1.5rem;gap:.5rem;justify-content:flex-end}
 .studio-site .civic-controls .civic-replay{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.55rem .85rem;border-radius:999px;font-size:.875rem;margin-right:.5rem;order:-1;background:var(--paper);color:var(--ink)}
 .studio-site .civic-controls .civic-replay[hidden]{display:none}
 .studio-site .civic-controls .civic-toggle{width:44px;height:44px;min-height:44px;padding:0;display:flex;align-items:center;justify-content:center;gap:0;font-size:0;border-radius:50%;box-shadow:0 2px 10px #0e1b2a20}
@@ -583,7 +585,52 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .inquiry-next h3{margin-bottom:.4rem}
 .studio-site .inquiry-next p{margin:.5rem 0}
 .studio-site .civic-hero[data-unavailable=true] .civic-controls{position:static;margin:1rem 0;justify-content:center}
+/* Components with their own columns use the available width, not the prose measure. */
+.studio-site main .studio-process>ol{max-width:none}
+.studio-site .work-gallery>:is(.work-inquiry,.owned-website-case){grid-column:1/-1;max-width:none}
+.studio-site .intro-evidence--text>a{display:block;max-width:48rem}
+.studio-site details>:is(.comparison-scroll,.table-scroll,.payment-schedule){max-width:none;width:100%}
+.studio-site :is(.pricing-group,.studio-section)>h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1}
+.studio-site .studio-closing h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1;max-width:24ch}
+.studio-site .journal-header{max-width:760px;text-align:left;margin-inline:auto}
+.studio-site .journal-header :is(h1,.lede){margin-inline:0;max-width:none}
+.studio-site .journal-byline{max-width:760px;margin-inline:auto;text-align:left}
+.studio-site .contact-layout .hint{margin-top:.4rem;margin-bottom:.7rem}
+.studio-site .contact-layout :is(input,textarea,select){margin-bottom:.4rem}
+.studio-site .contact-layout button[type=submit]{margin-top:.75rem;margin-bottom:1rem}
+.studio-site .buyer-pack-document .pack-glance{padding:1.25rem;background:var(--subtle);border:1px solid var(--line);margin:1.25rem 0}
 .studio-site .civic-hero[data-unavailable=true] .civic-status{position:static;width:auto;height:auto;clip-path:none;white-space:normal;font-size:1rem}
 
 
 .legacy-anchor{display:block;position:relative;scroll-margin-top:calc(var(--site-header-height) + 1rem)}
+.studio-site .starting-price{font-size:1.2rem;font-weight:650;margin-block:.75rem}
+.studio-site .payment-quick-summary{max-width:75ch;padding-left:1.3rem}
+.studio-site .payment-quick-summary li{margin-block:.8rem}
+.studio-site .payment-full-terms{margin-block:2rem;padding-block:1rem;border-block:1px solid var(--line)}
+.studio-site .payment-full-terms>summary{min-height:44px;align-content:center;font-size:1.15rem;font-weight:650;cursor:pointer}
+.studio-site .payment-full-terms .section{padding-block:2rem}
+.studio-site .work-item--secondary .work-preview{max-height:240px}
+.studio-site .work-item--secondary .work-preview img{object-fit:contain;max-height:240px}
+.studio-site .studio-concept-debrief>.button+p{margin-top:1rem}
+.studio-site .studio-concept-debrief>p>a,.studio-site .concept-studio-link>a{display:inline-flex;align-items:center;min-height:44px}
+.studio-site .inquiry-extra+.optional-choice{margin-block:1rem}
+.studio-site .cost-tool [hidden]{display:none!important}
+.studio-site .compact-offer{padding:1.25rem}
+.studio-site .compact-offer>p{margin-block:.5rem}
+.studio-site .compact-offer>ul{margin-block:.5rem 1rem}
+.studio-site .compact-offer>ul>li{margin-block:.4rem;line-height:1.55}
+.studio-site .checkout-request>h2{font-size:2rem;margin-bottom:.75rem}
+.studio-form .site-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.5rem clamp(20px,5vw,72px)}
+.studio-form .support-chat{position:static;max-width:none}
+.studio-form .page-tools .back-to-top{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none}
+@media(max-width:767px){
+ .studio-site .work-item--secondary .work-preview,.studio-site .work-item--secondary .work-preview img{max-height:180px}
+ .studio-site .checkout-intro{padding-bottom:1rem}
+ .studio-site .checkout-intro p{margin-block:.65rem}
+ .studio-site .checkout-intro .delivery-target{font-size:.9rem}
+}
+
+.page-tools-ready .studio-site.studio-form .site-tools{width:auto;margin:2rem 0;padding:1.5rem clamp(20px,5vw,72px);border-top:1px solid var(--line)}
+.studio-site.studio-form .page-tools .back-to-top{width:auto;height:auto;min-height:48px;padding:.65rem 1rem;gap:.65rem}
+.studio-site.studio-form .back-to-top>span:not(.back-to-top-icon){position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
+@media(min-width:768px){.studio-site table.website-allowance-table{table-layout:fixed}}

@@ -1,5 +1,14 @@
 // Keep navigation independent of optional form, calculator and measurement code.
 (() => {
+  const revealAnchor=()=>{
+    let target;try{target=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return;}
+    if(!target)return;
+    let details=target.closest('details'),opened=false;
+    while(details){if(!details.open){details.open=true;opened=true;}details=details.parentElement?.closest('details');}
+    if(opened)requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'instant'}));
+  };
+  revealAnchor();
+  window.addEventListener('hashchange',revealAnchor);
   // Native open disclosures remain fully usable when JavaScript is unavailable.
   const footerDesktop=matchMedia('(min-width:768px)');
   const syncFooter=()=>document.querySelectorAll('[data-responsive-footer]').forEach(group=>{group.open=footerDesktop.matches;});
@@ -18,7 +27,7 @@
     if(item.top<viewport.top)nav.scrollTop-=viewport.top-item.top;
     else if(item.bottom>viewport.bottom)nav.scrollTop+=item.bottom-viewport.bottom;
   };
-  const syncServices = () => { if (services) services.open = !desktop.matches; };
+  const syncServices = () => { if (services) services.open = false; };
   syncServices();
   const close = () => {
     menu.setAttribute('aria-expanded', 'false');

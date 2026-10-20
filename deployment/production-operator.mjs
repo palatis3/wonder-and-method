@@ -3,6 +3,7 @@ import {resolve,relative,isAbsolute,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {readProductionCredentials} from './production-credentials.mjs';
 import {inquiryChoices} from '../src/shared.mjs';
+import {inquiryResolutionInput} from './inquiry-maintenance.mjs';
 
 const root=resolve(import.meta.dirname,'..');
 const origin='https://wonderandmethod.com';
@@ -10,11 +11,13 @@ const referencePattern=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9
 
 export async function productionOperator(args,{workspace=root,fetchImpl=fetch,credentials=readProductionCredentials,now=()=>new Date()}={}){
  const [action,label,confirmation,...extra]=args;
- if((action==='followup'?extra.length!==1:extra.length)||!['status','export','retry','delete','measurement','retention-preview','followup','lookup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS]; lookup CODE; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
+ if(extra.length!==(action==='followup'?1:action==='resolve'?2:0)||!['status','export','retry','delete','measurement','retention-preview','followup','resolve','lookup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS]; lookup CODE; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; resolve REFERENCE CONFIRM_REFERENCE OUTCOME EVIDENCE_REFERENCE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
  if(action==='lookup'&&(confirmation||!/^WM-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$/i.test(label||'')))throw Error('Lookup needs the short WM-XXXX-XXXX-XXXX code.');
  if(['status','retention-preview'].includes(action)&&(label||confirmation))throw Error('Status takes no additional arguments.');
  if(action==='export'&&(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(label||'')||confirmation))throw Error('Export needs a lowercase filename label, not a path.');
- if(['retry','delete','followup'].includes(action)&&(!referencePattern.test(label||'')||confirmation!==label))throw Error('Supply the exact inquiry reference twice. Retry may send a notification; delete removes the active record.');
+ if(['retry','delete','followup','resolve'].includes(action)&&(!referencePattern.test(label||'')||confirmation!==label))throw Error('Supply the exact inquiry reference twice. Retry may send a notification; delete removes the active record; resolve records owner-reviewed handling without sending.');
+ const resolution=action==='resolve'?inquiryResolutionInput({outcome:extra[0],evidence_reference:extra[1]}):null;
+ if(action==='resolve'&&!resolution)throw Error('Resolution needs handled_manually, duplicate_confirmed or spam_confirmed and a nonpersonal 3–80 character evidence reference using lowercase letters, numbers, dots, hyphens or underscores.');
  if(action==='measurement'&&(confirmation||!Number.isInteger(Number(label||7))||Number(label||7)<1||Number(label||7)>90))throw Error('Measurement days must be an integer from 1 to 90.');
  const {OPERATOR_TOKEN}=credentials();
  const headers={Accept:'application/json',Authorization:`Bearer ${OPERATOR_TOKEN}`};
@@ -27,6 +30,10 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
  if(action==='lookup')return request('/api/operator/inquiries/lookup?code='+encodeURIComponent(label));
  if(action==='retention-preview')return request('/api/operator/inquiries/retention-preview');
  if(action==='status')return {origin,...await request('/api/operator/inquiries/status')};
+ if(action==='resolve'){
+  const result=await request('/api/operator/inquiries/'+label+'/resolve',{method:'POST',headers:{'X-Confirm-Resolve':label,'Content-Type':'application/json'},body:JSON.stringify(resolution)});
+  return {action,reference:label,status:result.status,resolution:result.resolution,already_resolved:result.already_resolved,message:result.message};
+ }
  if(action==='followup'){
   const file=await realpath(resolve(workspace,extra[0]));
   const privateRoot=await realpath(resolve(workspace,'.runtime'));

@@ -8,7 +8,7 @@ const pages=renderPages({config,offers,map,geography}),page=path=>pages.find(x=>
 test('saved content bookmarks and all ten county worksheets survive consolidation',()=>{
  for(const n of Array.from({length:12},(_,i)=>i+1))assert.ok(page('/privacy/').includes(`id="privacy-${n}"`),`privacy-${n}`);
  assert.match(page('/privacy/'),/<h2 id="privacy-2">Who is responsible/);
- assert.match(page('/privacy/'),/<h2 id="privacy-7">How long records stay/);
+ assert.match(page('/privacy/'),/<h2 id="privacy-7">How long I keep records/);
  assert.match(page('/pricing/'),/id="cost-calculator"/);assert.match(page('/pricing/'),/href="\/payments\/#cost-calculator"/);
  assert.match(page('/services/website-care/'),/id="annual-terms"/);
  for(const p of pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path))){const slug=p.path.match(/^\/areas\/(.+)-county\//)[1];assert.ok(p.html.includes('id="buyer-task"'),slug);assert.ok(p.html.includes(`/assets/county-briefs/${slug}.txt`),slug);if(slug!=='erie')for(const id of ['approach','search'])assert.ok(p.html.includes(`id="${id}"`),slug+id);}

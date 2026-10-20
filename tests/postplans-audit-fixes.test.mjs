@@ -6,7 +6,7 @@ import {journeyReportCoverage} from '../deployment/journey-counts.mjs';
 import {formatMeasurement} from '../deployment/production-operator.mjs';
 import {inquiryForm} from '../src/inquiry-form.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
-import {inquiryMessagePrompt} from '../src/shared.mjs';
+import {inquiryMessagePrompt,inquiryMessageHelp} from '../src/shared.mjs';
 import {routeIndexEligible} from '../src/index-policy.mjs';
 import {verifyWorkerVersion,verifyTechnicalManifest} from '../src/release-verification.mjs';
 
@@ -42,14 +42,14 @@ test('monthly prompts agree across static and query-prefilled forms, with useful
  for(const service of ['keep_running','improve','grow']){
   const initial=inquiryForm({live:false,privacyLink:'Privacy'},{service,checkout:true});
   const label=html=>html.match(/data-request-label>(.*?) <span[^>]*>/)[1];
-  assert.equal(label(initial),inquiryMessagePrompt(service));assert.match(label(initial),/existing website.*monthly help/);
+  assert.equal(label(initial),inquiryMessagePrompt(service));assert.equal(label(initial),"Your message");assert.match(initial,/website address above.*each month/);
   for(const query of ['?billing=annual','?request_kind=checkout&billing=monthly','?request_kind=question','?offer=launch_site&request_kind=checkout']){
    const html=prefillInquiryHtml(initial,new URL('https://example.test/checkout/'+service.replaceAll('_','-')+'/'+query));
    assert.equal(label(html),inquiryMessagePrompt(service,query.includes('request_kind=question')?'question':'checkout'));
   }
  }
- assert.match(inquiryMessagePrompt('launch_site'),/when do you need the website/);
- assert.match(inquiryMessagePrompt('audit_fix_sprint'),/What is broken/);
+ assert.match(inquiryMessageHelp('launch_site'),/pages you need and any deadline/);
+ assert.match(inquiryMessageHelp('audit_fix_sprint'),/what goes wrong and what should happen/);
 });
 
 test('current guide readiness agrees with current search eligibility',async()=>{

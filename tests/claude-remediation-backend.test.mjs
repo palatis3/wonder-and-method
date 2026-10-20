@@ -19,12 +19,12 @@ const migrations=await Promise.all((await readdir(dir)).filter(n=>n.endsWith('.s
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const base={name:'Synthetic Person',email:'synthetic@example.test',business:'',website:'',service:'unsure',request_kind:'question',message:'A synthetic question for testing.'};
 
-test('review proposals require a website or preserve a planned-site explanation',()=>{
+test('existing-site proposals require an address while general questions and new builds remain optional',()=>{
  for(const service of ['website_baseline','audit_fix_sprint','keep_running','improve','grow']){
   assert.ok(validateInquiry({...base,service,request_kind:'checkout'}).errors.website);
   for(const website of ['not yet','no website','not live yet']){
    const result=validateInquiry({...base,service,request_kind:'checkout',website});
-   assert.deepEqual(result.errors,{});assert.equal(result.value.website,website);
+   assert.ok(result.errors.website);
   }
   assert.deepEqual(validateInquiry({...base,service,request_kind:'question'}).errors,{});
  }
@@ -51,7 +51,7 @@ test('native query prefill uses the same first-value policy as enhanced URLSearc
   const html=prefillInquiryHtml(inquiryFormMarkup({live:true}),url);
   assert.match(html,new RegExp(`<option value="${url.searchParams.get('offer')}" selected>`));
   assert.match(html,new RegExp(`name="request_kind" value="${url.searchParams.get('request_kind')}"`));
-  assert.match(html,/<option value="search" selected>/);assert.doesNotMatch(html,/private@example\.test/);
+  assert.match(html,/type="hidden" id="goal" name="goal" value="search"/);assert.doesNotMatch(html,/private@example\.test/);
   const fixed=prefillInquiryHtml(inquiryFormMarkup({live:true},{checkout:true,service:'website_baseline'}),new URL(url.href.replace('/contact/','/checkout/website-baseline/')));
   assert.match(fixed,/type="hidden" id="service" name="service" value="website_baseline"/);
   assert.match(fixed,new RegExp(`name="request_kind" value="${firstKind}"`));
@@ -63,10 +63,10 @@ test('live receipts confirm the reply destination without promising a verified s
   const live=inquiryConfirmationHtml({...data,synthetic:false});
   assert.doesNotMatch(live,/My reply will come from/);assert.match(live,/I’ll reply to/);
   assert.ok(!live.includes(config.responseWindow));
-  assert.match(live,/How did you find us\?: Google or another search engine/);
+  assert.match(live,/How did you find me\?: Google or another search engine/);
   assert.doesNotMatch(inquiryConfirmationHtml({...data,synthetic:true}),/My reply will come from|one business day/);
  }
- assert.deepEqual(inquiryContextSummary({service:'unsure',found_via:'google'}),['How did you find us?: Google Search']);
+ assert.deepEqual(inquiryContextSummary({service:'unsure',found_via:'google'}),['How did you find me?: Google Search']);
 });
 test('optional service, social notes and advisory email correction preserve valid user intent',()=>{
  const value={...base,service:'',website:'@my-business on Instagram',email:'person@gmial.com'};
@@ -101,7 +101,7 @@ test('retention review remains distinct from delivery health and quota exhaustio
  }finally{e.DB.sqlite.close();}
 });
 test('resource migration preserves every historical source and total',()=>{
- const db=new DatabaseSync(':memory:');try{db.exec(migrations.slice(0,-1).join('\n'));const sources=['not_recorded','direct','internal','google','bing','ai_assistant','social','referral','campaign'];for(const source of sources)db.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?,?)').run('2026-10-19','page_view','unsure','home',source,7);db.exec(migrations.at(-1));assert.equal(db.prepare('SELECT SUM(total) n FROM journey_counts').get().n,63);db.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?,?)').run('2026-10-19','resource_select','grow','pricing','search',2);assert.equal(db.prepare('SELECT COUNT(*) n FROM journey_counts').get().n,10);}finally{db.close();}
+ const db=new DatabaseSync(':memory:');try{db.exec(migrations.slice(0,7).join('\n'));const sources=['not_recorded','direct','internal','google','bing','ai_assistant','social','referral','campaign'];for(const source of sources)db.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?,?)').run('2026-10-19','page_view','unsure','home',source,7);db.exec(migrations[7]);assert.equal(db.prepare('SELECT SUM(total) n FROM journey_counts').get().n,63);db.prepare('INSERT INTO journey_counts VALUES (?,?,?,?,?,?)').run('2026-10-19','resource_select','grow','pricing','search',2);assert.equal(db.prepare('SELECT COUNT(*) n FROM journey_counts').get().n,10);}finally{db.close();}
 });
 test('image embedding policy is narrowly scoped and does not enable CORS',async()=>{
  for(const [path,mime,policy] of [['/assets/brand/logo.png','image/png','cross-origin'],['/assets/social/card.webp','image/webp','cross-origin'],['/assets/brand/script.js','text/javascript','same-origin'],['/assets/other.png','image/png','same-origin']]){const response=await worker.fetch(new Request('https://example.test'+path),{ENVIRONMENT:'production',RELEASE_APPROVED:'true',ASSETS:{fetch:async()=>new Response('synthetic',{headers:{'Content-Type':mime}})}},ctx);assert.equal(response.headers.get('Cross-Origin-Resource-Policy'),policy);assert.equal(response.headers.get('Access-Control-Allow-Origin'),null);}

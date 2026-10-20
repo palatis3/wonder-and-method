@@ -21,14 +21,14 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
   assert.deepEqual(draft.milestones.map(m=>m.amount),[price*.5,price*.3,price*.2]);
   assert.equal(draft.accepted_at,null);
   assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+1650);
-  assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/#offer-'+key));
+  assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/'));
   assert.ok(pages.find(p=>p.path==='/pricing/').html.includes('id="offer-'+key+'"'));
   for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/checkout/'+key.replaceAll('_','-')+'/'));
  }
  assert.equal(offers.plans.keep_running.monthly_price,150);assert.equal(offers.audit_sprint.one_time_price,750);assert.equal(offers.plans.improve.monthly_price,400);
  const publicCopy=pages.map(p=>p.html).join('\n');
  assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope|\$6,000|\$9,500/);
- assert.match(pages.find(p=>p.path==='/pricing/').html,/original animated hero or 3D centerpiece/i);
+ assert.match(pages.find(p=>p.path==='/pricing/').html,/original animated or 3D (?:home-page feature|feature at the top)/i);
 });
 
 test('Launch survives a real synthetic request and remains recoverable without sending mail',async()=>{

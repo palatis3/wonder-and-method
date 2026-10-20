@@ -75,7 +75,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/does not report client outcomes/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
- for(const field of ['What’s going wrong','Evidence (link and date)','Useful content and accounts to keep','Platform and access check','Small fix to try and how to check it','Keep, fix or rebuild?'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
+ for(const field of ['What is going wrong','Evidence (link and date)','Useful content and accounts to keep','Platform and access check','Small fix to try and how to check it','Keep, fix or rebuild?'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
  assert.match(csv,/Example only:/);assert.match(csv,/No client result claimed/);assert.match(csv,/Try a small fix before deciding on a rebuild/);assert.doesNotMatch(csv,/Actual owned correction/);
  for(const row of csv.trim().split(/\r?\n/))assert.equal((row.match(/"(?:[^"]|"")*"/g)||[]).length,6,'Six usable worksheet fields on every row');
  const svg=await readFile(new URL('../src/assets/guides/repair-or-redesign.svg',import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);assert.match(svg,/record gaps and obtain authorized access/);assert.match(svg,/keep the useful site/);assert.match(svg,/fix and retest/);

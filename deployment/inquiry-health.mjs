@@ -1,4 +1,4 @@
-import {hasInquiryFollowup,RETENTION_DAYS} from './inquiry-maintenance.mjs';
+import {hasInquiryFollowup,hasInquiryResolutions,RETENTION_DAYS,RETENTION_REVIEW_DAYS} from './inquiry-maintenance.mjs';
 import {notificationBudget} from './notification-budget.mjs';
 const TEN_MINUTES = 600_000;
 
@@ -14,8 +14,11 @@ export async function recordRecoverySuccess(db, now = Date.now()) {
 // Aggregate-only operational signal. A provider acceptance is not inbox delivery.
 export async function inquiryStatus(env, now = Date.now()) {
   const {results} = await env.DB.prepare('SELECT delivery_status, COUNT(*) AS total FROM inquiries GROUP BY delivery_status').all();
+  const resolutionReady = await hasInquiryResolutions(env.DB);
+  const resolved = resolutionReady ? "EXISTS (SELECT 1 FROM inquiry_delivery_resolutions r WHERE r.inquiry_id=inquiries.id)" : '0';
   const attention = await env.DB.prepare(`SELECT
-    SUM(CASE WHEN delivery_status='manual_review' THEN 1 ELSE 0 END) AS manual_review,
+    SUM(CASE WHEN delivery_status='manual_review' AND NOT (${resolved}) THEN 1 ELSE 0 END) AS manual_review,
+    SUM(CASE WHEN delivery_status='manual_review' AND (${resolved}) THEN 1 ELSE 0 END) AS manual_review_resolved,
     SUM(CASE WHEN delivery_status IN ('pending','failed','uncertain','sending') AND created_at<=? THEN 1 ELSE 0 END) AS pending_over_ten_minutes,
     MIN(CASE WHEN delivery_status IN ('pending','failed','uncertain','sending') THEN created_at END) AS oldest_pending_at
     FROM inquiries WHERE synthetic=0`).bind(now-TEN_MINUTES).first();
@@ -31,17 +34,22 @@ export async function inquiryStatus(env, now = Date.now()) {
   const reasons = [];
   const retention=await hasInquiryFollowup(env.DB)?await env.DB.prepare(`SELECT
     SUM(CASE WHEN last_substantive_contact_at IS NOT NULL AND last_substantive_contact_at<=? THEN 1 ELSE 0 END) AS due,
-    SUM(CASE WHEN last_substantive_contact_at IS NULL AND created_at<=? THEN 1 ELSE 0 END) AS unconfirmed_old
-    FROM inquiries WHERE synthetic=0 AND is_client=0 AND retention_hold=0 AND delivery_status!='sending'`).bind(now-RETENTION_DAYS*86400_000,now-RETENTION_DAYS*86400_000).first():null;
+    SUM(CASE WHEN last_substantive_contact_at>? AND last_substantive_contact_at<=? THEN 1 ELSE 0 END) AS upcoming,
+    SUM(CASE WHEN last_substantive_contact_at IS NULL AND created_at<=? THEN 1 ELSE 0 END) AS unconfirmed_old,
+    SUM(CASE WHEN last_substantive_contact_at IS NULL AND created_at>? AND created_at<=? THEN 1 ELSE 0 END) AS unconfirmed_upcoming
+    FROM inquiries WHERE synthetic=0 AND is_client=0 AND retention_hold=0 AND delivery_status!='sending'`)
+    .bind(now-RETENTION_DAYS*86400_000,now-RETENTION_DAYS*86400_000,now-RETENTION_REVIEW_DAYS*86400_000,
+      now-RETENTION_DAYS*86400_000,now-RETENTION_DAYS*86400_000,now-RETENTION_REVIEW_DAYS*86400_000).first():null;
   if (live && !configured) reasons.push('notification_configuration_missing');
   if (live && stale) reasons.push('recovery_heartbeat_missing_or_stale');
   if (attention.manual_review) reasons.push('manual_review_required');
   if (attention.pending_over_ten_minutes) reasons.push('notification_backlog');
   if(live&&budget.used>=budget.limit)reasons.push('notification_budget_exhausted');
   else if(live&&budget.used>=budget.automaticLimit)reasons.push('automatic_notification_budget_exhausted');
-  const retentionReview=Boolean(retention?.due||retention?.unconfirmed_old);
+  const retentionReview=Boolean(retention?.due||retention?.upcoming||retention?.unconfirmed_old||retention?.unconfirmed_upcoming);
   return {total:results.reduce((sum,row)=>sum+row.total,0),delivery:Object.fromEntries(results.map(row=>[row.delivery_status,row.total])),
-    containsInquiryText:false, checked_at:now, attention:{manual_review:attention.manual_review||0,pending_over_ten_minutes:attention.pending_over_ten_minutes||0,oldest_pending_at:attention.oldest_pending_at,notification_budget:budget,retention:{due:retention?.due||0,unconfirmed_old:retention?.unconfirmed_old||0,review_required:retentionReview,reason:retentionReview?'retention_review_due':null}},
+    resolution:{migration_ready:resolutionReady,manual_review_resolved:attention.manual_review_resolved||0},
+    containsInquiryText:false, checked_at:now, attention:{manual_review:attention.manual_review||0,pending_over_ten_minutes:attention.pending_over_ten_minutes||0,oldest_pending_at:attention.oldest_pending_at,notification_budget:budget,retention:{retention_days:RETENTION_DAYS,review_starts_after_days:RETENTION_REVIEW_DAYS,due:retention?.due||0,upcoming:retention?.upcoming||0,unconfirmed_old:retention?.unconfirmed_old||0,unconfirmed_upcoming:retention?.unconfirmed_upcoming||0,review_required:retentionReview,reason:retentionReview?'retention_review_due':null}},
     health:{ok:reasons.length===0,reasons,live,notification_configured:configured,recovery:{migration_ready:migrationReady,last_success_at:heartbeat?.last_success_at??null,stale}},
-    note:'Delivery health and retention attention are separate. Retention review never implies records were deleted. Counts cover saved inquiries; provider acceptance does not prove inbox delivery. Check the owner mailbox and response obligations separately.'};
+    note:'Delivery health and retention attention are separate. Retention review never implies records were deleted. Delivery counts retain the original provider status; a manual-review resolution is an owner-recorded outcome, not provider acceptance or inbox receipt. Check the owner mailbox and response obligations separately.'};
 }

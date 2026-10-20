@@ -46,8 +46,8 @@ test('monthly packs gate new annual sales while retaining accepted annual cancel
   assert.ok(!p.sections.some(s=>s.title==='Annual prepayment'));
   const existing=paymentContent({contactEmail:'support@example.test'},offers);assert.match(existing,/id="annual-terms"/);
   for(const pattern of [/not an offer to enroll/,/within ten business days/,/Undisputed unearned amounts/,/refund the full annual service payment/,/unfinished work owed under your accepted project agreement/,/no automatic annual charge/,/No cancellation penalty, retained processing fee, discount clawback/,/no provider refund is promised/])assert.match(existing,pattern,id);
-  for(const pattern of [/no minimum term/,/Cancel before renewal/,/unused-work refund or credit/,/up to 12 marketing pages/,/still usable/,/no 24\/7 service/,/backups and restores/,/Canceling care does not disable your paid website/])assert.match(text,pattern,id);
-  assert.doesNotMatch(text,/30 calendar days after launch/);
+  for(const pattern of [/no minimum term/,/Cancel before renewal/,/up to 12 marketing pages/,/still usable/,/no 24\/7 service/,/backups and restores/,/Canceling care does not disable your paid website/])assert.match(text,pattern,id);
+  assert.match(text,id==='keep_running'?/refund or credit any unearned balance/:/unused-work refund or credit/);assert.doesNotMatch(text,/30 calendar days after launch/);
   const enabled=structuredClone(offers);enabled.annual_enrollment_gate.verified=true;
   const available=buyerPacks(enabled).find(p=>p.id===id);assert.equal(available.annual.upfront_price,upfront);assert.equal(available.annual.monthly_equivalent,equivalent);
   assert.ok(available.sections.some(s=>s.title==='Annual prepayment'));assert.equal(annualRefund(prices,{plan:id,completedCycles:4}),refund);

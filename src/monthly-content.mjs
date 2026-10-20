@@ -57,7 +57,7 @@ export function monthlyPlanDetails(o, id) {
   improvement
    ? 'Five business days before the next service period, we confirm useful improvement work and ready inputs. If none is agreed, the next monthly invoice pauses. Missing inputs receive notice. Before a pause, I agree with you in writing what happens to included care; there is no automatic replacement charge, and paid work remains due.'
    : 'The monthly fee covers the agreed checks even when you send no edits. If access prevents the agreed care, I notify you so we can agree the next step and settle any unearned work.',
-  'A charge without approved useful work receives an unused-work refund or credit. Begun work and any unearned balance are itemized; accepted work delayed by me remains owed.'
+  improvement ? 'A charge without approved useful improvement work receives an unused-work refund or credit. Begun work and any unearned balance are itemized; accepted work delayed by me remains owed.' : 'The agreed monitoring and checks are paid work, even if you send no edits. If I cannot provide the agreed care, I itemize completed work and refund or credit any unearned balance.'
  ];
  const exit = [
   o.monthly_terms.exit,
@@ -77,14 +77,14 @@ export function monthlyScopeTable(o) {
  const plans = ['keep_running', 'improve', 'grow'].map(id => o.plans[id]);
  const rows = [
   ['Monthly price', ...plans.map(p => money(p.monthly_price) + '/month')],
-  ['Checks and small edits', ...plans.map(p => `Checks + ${p.small_change_batches} round of small edits`)],
+
   ['Completed improvements', 'Not included', `${o.plans.improve.priorities} per month`, `${o.plans.grow.priorities} connected improvements per month`],
   ['Search research', 'Search warnings where access allows', 'One customer topic', 'Two topics and up to 3 competitors'],
-  ['Planning', '1 next step; quarterly website check', 'Topic list refreshed quarterly', 'Rolling 90-day content plan'],
+  ['Planning', 'One practical next step', 'Future-topic list, refreshed quarterly; one practical next step', 'Rolling 90-day plan, refreshed monthly, replaces the quarterly topic list; one practical next step'],
   ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', '1 extra graphic or short excerpt'],
-  ['Review', 'Monthly report; no standing call', '20-minute call or written review', '30-minute call or written review']
+  ['Report and review', 'Monthly report; no standing call', 'Monthly report and 20-minute call or written review', 'Monthly report and 30-minute call or written review, instead of the 20-minute review']
  ];
- return `<details class="pricing-detail-table" open><summary>Compare monthly plans</summary><div class="comparison-scroll" role="region" aria-label="Monthly plan comparison" tabindex="0"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
+ return `<details class="pricing-detail-table"><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Every plan includes automated monitoring, monthly website and contact-form checks, one round of supplied small edits, a quarterly website check and a monthly report.</p><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
 }
 
 export function monthlyCampaignExample(o) {

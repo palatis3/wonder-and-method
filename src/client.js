@@ -29,14 +29,14 @@ if(form){
   }
   const current={service,...context,request_kind:question?'question':'checkout'};
   const website=field('website'),websiteRequired=inquiryNeedsWebsite(current);
-  website.required=websiteRequired;
-  form.querySelector('#website-help').textContent=websiteRequired?'Please add the website address so I can check fit. If it is not live yet, enter “not live yet” in this field.':'A link, social handle or short note is fine. Leave blank if you do not have one.';
-  const websiteNote=form.querySelector('label[for=website] .field-note');if(websiteNote)websiteNote.textContent=websiteRequired?'(required)':'(optional)';
+  website.required=websiteRequired;website.placeholder=websiteRequired?'example.com':'example.com or @yourbusiness';
+  form.querySelector('#website-help').textContent=websiteRequired?'Use a website address, such as example.com. It can be offline or broken; I do not need passwords.':'A link, social handle or short note is fine. Leave blank if you do not have one.';
+  const websiteLabel=form.querySelector('label[for=website]'),websiteNote=websiteLabel?.querySelector('.field-note');if(websiteLabel&&websiteNote){websiteNote.textContent=websiteRequired?'(required)':'(optional)';websiteLabel.replaceChildren(document.createTextNode(websiteRequired?'Website to review ':'Website or social page '),websiteNote);}
   const label=form.querySelector('[data-request-label]');
   label.replaceChildren(document.createTextNode(inquiryMessagePrompt(service,current.request_kind,neutral)+' '));
   const required=document.createElement('span');required.className='field-note';required.textContent='(required)';label.append(required);
   document.querySelector('#message-help').textContent=inquiryMessageHelp(service,current.request_kind,context.goal,neutral);
-  form.querySelector('[data-request-submit]').textContent=neutral?'Send message':question?'Send question':'Request a proposal';
+  form.querySelector('[data-request-submit]').textContent='Send message';
   const nextStep=form.querySelector('[data-request-next]');if(nextStep)nextStep.textContent=neutral?'I read your message and reply by email.':question?'I read your question and reply by email.':'I review your project and email you about the work, price and available dates.';
   const wrapper=form.querySelector('.request-summary');if(wrapper)wrapper.hidden=!hasInquirySelection(current);
   const summary=document.querySelector('#request-summary');

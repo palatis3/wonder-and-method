@@ -7,7 +7,7 @@ import {brandWordmark} from '../src/brand.mjs';
 // Keep their reading layout simple, with no scripted menu or floating controls.
 export async function publicDocumentStyles(output){
  const links=[];
- for(const file of ['brand.css','site.css']){
+ for(const file of ['site.css']){
   const hash=createHash('sha256').update(await readFile(resolve(output,'assets',file))).digest('hex').slice(0,12);
   links.push(`<link rel="stylesheet" href="/assets/${file}?v=${hash}">`);
  }

@@ -8,7 +8,7 @@ const inViewport=async(locator)=>{
 
 // Persistent corner controls need no footer disclosure.
 const revealTools=async page=>{
- await page.evaluate(()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
+ if(await page.locator('body.studio-form').count())await page.locator('.site-tools').scrollIntoViewIfNeeded();else await page.evaluate(()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
  await inViewport(page.locator('.support-chat-launch'));
  await inViewport(page.locator('.back-to-top'));
 };
@@ -20,7 +20,7 @@ test('header contact and floating corner tools remain reachable across page type
   const contact=page.locator(isMobile?(path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).toBeHidden();
-  await revealTools(page);await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+  await revealTools(page);await expect(page.locator('.support-chat')).toHaveCSS('position',path==='/contact/'?'static':'fixed');
   await page.locator('.back-to-top').scrollIntoViewIfNeeded();await inViewport(page.locator('.back-to-top'));
   const separated=await page.evaluate(()=>{const a=document.querySelector('.back-to-top').getBoundingClientRect(),b=document.querySelector('.support-chat').getBoundingClientRect();return a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top;});
   expect(separated,path).toBe(true);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
@@ -81,7 +81,7 @@ test('blocked chat exposes a usable contact fallback and restores visible focus 
 test('floating tools yield to focused form fields and remain usable in landscape',async({page})=>{
  await page.setViewportSize({width:390,height:320});
  await page.goto('/contact/?qa=1');await page.locator('#email').focus();
- await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.back-to-top')).toBeHidden();
+ await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat')).toHaveCSS('position','static');const covered=await page.locator('#email').evaluate(el=>{const r=el.getBoundingClientRect();return !el.contains(document.elementFromPoint(r.left+8,r.top+8));});expect(covered).toBe(false);
  await page.locator('#main').focus();await revealTools(page);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  await page.setViewportSize({width:844,height:390});await allowMockChat(page);await page.route('https://embed.tawk.to/**',route=>route.abort('blockedbyclient'));
@@ -89,7 +89,7 @@ test('floating tools yield to focused form fields and remain usable in landscape
 });
 
 test('saved section links still reach consolidated tools, privacy details and county downloads',async({page})=>{
- await page.goto('/pricing/?qa=1#cost-calculator');await expect(page.locator('#cost-calculator')).toHaveAttribute('open','');await expect(page.locator('#cost-calculator a[href="/payments/#cost-calculator"]')).toBeVisible();
+ await page.goto('/pricing/?qa=1#cost-calculator');await expect(page.locator('#cost-calculator')).toBeVisible();await expect(page.locator('#cost-calculator a[href="/payments/#cost-calculator"]')).toBeVisible();
  await page.goto('/privacy/?qa=1#privacy-11');await expect(page.locator('#privacy-6')).toHaveAttribute('open','');await expect(page.locator('#privacy-11')).toBeVisible();
  await page.goto('/areas/erie-county/?qa=1#buyer-task');await expect(page.locator('#buyer-task')).toBeVisible();await expect(page.locator('a[href^="/assets/county-briefs/erie.txt"]')).toBeVisible();
 });

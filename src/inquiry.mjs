@@ -8,7 +8,24 @@ export function validEmail(email){
   return labels.length>=2&&labels.every(label=>/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$/.test(label));
 }
 export const serviceIds=inquiryChoices.map(([id])=>id);
+export function publicWebsiteAddress(input){
+ if(typeof input!=='string'||!input.trim()||/\s/.test(input))return null;
+ const text=input.trim();
+ if(/^[a-z][a-z0-9+.-]*:/i.test(text)&&!/^https?:\/\//i.test(text)&&!/^[^/:]+\.[^/:]+:\d+(?:[/?#]|$)/.test(text))return null;
+ try{
+  const url=new URL(/^https?:\/\//i.test(text)?text:'https://'+text);
+  if(!['http:','https:'].includes(url.protocol)||url.username||url.password)return null;
+  const host=url.hostname.toLowerCase().replace(/\.$/,'');
+  if(!host.includes('.')||/\.(?:localhost|local|internal|invalid|test|example)$/.test(host))return null;
+  if(/^[0-9.]+$/.test(host)){
+   const parts=host.split('.').map(Number);
+   if(parts.length!==4||parts.some(n=>n<0||n>255)||[0,10,127].includes(parts[0])||parts[0]>=224||parts[0]===169&&parts[1]===254||parts[0]===172&&parts[1]>=16&&parts[1]<=31||parts[0]===192&&parts[1]===168||parts[0]===100&&parts[1]>=64&&parts[1]<=127)return null;
+  }else if(!host.split('.').every(label=>/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(label))||!/^(?:[a-z]{2,}|xn--[a-z0-9-]+)$/.test(host.split('.').at(-1)))return null;
+  return url.href;
+ }catch{return null;}
+}
 export function inquiryFieldMessage(key,validity={}){
+ if(key==='website'&&validity.valueMissing)return 'Please add the website address, such as example.com. It can be offline or broken.';
  if(key==='email'&&(validity.valueMissing||validity.typeMismatch||validity.patternMismatch))return 'Please enter your full email, like name@business.com.';
  if(validity.valueMissing){if(key==='name')return 'Please add your name.';if(key==='message')return 'Please tell me a little about what you need (at least 10 characters).';return 'Please complete this field.';}
  if(validity.tooShort&&key==='message')return 'Please tell me a little about what you need (at least 10 characters).';
@@ -41,7 +58,11 @@ export function validateInquiry(data){
   }
   for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service))continue;value[key]=data[key];}
   if(!inquiryNeedsWebsite(value)&&/^(?:none|n\/?a|no website|not yet|-)?$/i.test(value.website))value.website='';
-  if(inquiryNeedsWebsite(value)&&!value.website)errors.website='Please add the website address, or a short note if it is not live yet.';
-  if(data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
+  if(inquiryNeedsWebsite(value)){
+   const address=publicWebsiteAddress(value.website);
+   if(!address)errors.website='Please add a public website address, such as example.com. It can be offline or broken; a social handle or note is not a website address.';
+   else value.website=address;
+  }
+  if(data._wm_note||data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
   return {errors,value};
 }

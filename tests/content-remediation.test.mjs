@@ -28,7 +28,7 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  const form=journalSections('/guides/contact-form-not-working/',offers);
  assert.equal(form[0].id,'five-minute-check');assert.equal(form[1].id,'platform-settings');
  const body=form.map(x=>x.body).join('');assert.match(body,/Some WordPress plugins.*do not save/);assert.match(body,/offer=audit_fix_sprint&amp;goal=fix/);assert.match(body,/SPF, DKIM and DMARC/);
- const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.equal(search[0].id,'inspection-steps');assert.match(search[0].body,/not a complete index report/);
+ const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['intent','discovery','inspection-steps']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/rollback/);assert.match(launch,/blocked, not passed/);assert.match(launch,/does not guarantee indexing/);
 });
 

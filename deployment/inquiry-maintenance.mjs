@@ -3,6 +3,20 @@ export const NOTIFICATION_WINDOW_MS = 22 * 60 * 60 * 1000;
 // A quota hold is not a provider attempt. Allow a bounded next-day recovery.
 export const UNSENT_NOTIFICATION_WINDOW_MS = 48 * 60 * 60 * 1000;
 export const RETENTION_DAYS = 90;
+// Weekly owner review needs a margin before the actual deletion deadline.
+export const RETENTION_REVIEW_DAYS = 80;
+
+export async function hasInquiryResolutions(db) {
+  return Boolean(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='inquiry_delivery_resolutions'").first());
+}
+
+export function inquiryResolutionInput(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data) ||
+      Object.keys(data).length !== 2 || !Object.hasOwn(data, 'outcome') || !Object.hasOwn(data, 'evidence_reference')) return null;
+  if (!['handled_manually', 'duplicate_confirmed', 'spam_confirmed'].includes(data.outcome) ||
+      typeof data.evidence_reference !== 'string' || !/^[a-z0-9][a-z0-9._-]{2,79}$/.test(data.evidence_reference)) return null;
+  return { outcome: data.outcome, evidence_reference: data.evidence_reference };
+}
 
 export async function hasInquiryFollowup(db) {
   const { results } = await db.prepare('PRAGMA table_info(inquiries)').all();
@@ -16,6 +30,7 @@ export async function hasInquiryFollowup(db) {
 export async function inquiryRetentionPreview(db, now = Date.now()) {
   if (!await hasInquiryFollowup(db)) return null;
   const cutoff = now - RETENTION_DAYS * 86400_000;
+  const reviewCutoff = now - RETENTION_REVIEW_DAYS * 86400_000;
   const { results } = await db.prepare(`
     SELECT id, last_substantive_contact_at,
       last_substantive_contact_at + ? AS retention_due_at, delivery_status
@@ -25,6 +40,15 @@ export async function inquiryRetentionPreview(db, now = Date.now()) {
       AND delivery_status != 'sending'
     ORDER BY last_substantive_contact_at, id LIMIT 100
   `).bind(RETENTION_DAYS * 86400_000, cutoff).all();
+  const upcoming = await db.prepare(`
+    SELECT id, last_substantive_contact_at,
+      last_substantive_contact_at + ? AS retention_due_at, delivery_status
+    FROM inquiries
+    WHERE synthetic = 0 AND is_client = 0 AND retention_hold = 0
+      AND last_substantive_contact_at > ? AND last_substantive_contact_at <= ?
+      AND delivery_status != 'sending'
+    ORDER BY last_substantive_contact_at, id LIMIT 100
+  `).bind(RETENTION_DAYS * 86400_000, cutoff, reviewCutoff).all();
   const unknown = await db.prepare(`
     SELECT count(*) AS total FROM inquiries
     WHERE synthetic = 0 AND last_substantive_contact_at IS NULL
@@ -34,12 +58,18 @@ export async function inquiryRetentionPreview(db, now = Date.now()) {
     WHERE synthetic=0 AND is_client=0 AND retention_hold=0 AND delivery_status!='sending'
       AND last_substantive_contact_at IS NULL AND created_at<=?
     ORDER BY created_at,id LIMIT 100`).bind(cutoff).all();
+  const unconfirmedUpcoming=await db.prepare(`SELECT id,created_at,delivery_status FROM inquiries
+    WHERE synthetic=0 AND is_client=0 AND retention_hold=0 AND delivery_status!='sending'
+      AND last_substantive_contact_at IS NULL AND created_at>? AND created_at<=?
+    ORDER BY created_at,id LIMIT 100`).bind(cutoff,reviewCutoff).all();
   return {
-    dry_run: true, retention_days: RETENTION_DAYS, due: results, limit: 100,
+    dry_run: true, retention_days: RETENTION_DAYS, review_starts_after_days: RETENTION_REVIEW_DAYS,
+    due: results, upcoming: upcoming.results, limit: 100,
     unknown_last_contact: unknown.total,
     holds_needing_review: holds.results,
     unconfirmed_old_needing_review: unconfirmed.results,
-    note: 'No records deleted. Reconcile substantive contact, client/hold status and mailbox, exports and backups before any existing confirmed manual deletion action.'
+    unconfirmed_upcoming_needing_review: unconfirmedUpcoming.results,
+    note: 'No records deleted. Advance review starts at day 80; the working-copy deadline remains day 90 after actual last substantive contact. Unknown contact dates require reconciliation, not a creation-date fallback. Reconcile client/hold status and mailbox, exports and backups before any existing confirmed manual deletion action.'
   };
 }
 

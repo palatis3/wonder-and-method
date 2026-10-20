@@ -28,4 +28,29 @@ export function contextualizeGuideBody(body,path){
   return `href="${e(target.pathname+target.search+(target.hash||'#inquiry'))}"`;
  });
 }
-export function guideAction(item,{compact=false}={}){const action=guideInquiry(item.path);if(compact)return `<p class="guide-help"><a href="${action.href}">${e(action.label)}</a></p>`;return `<div id="next-decision" class="journal-callout guide-ending"><h2>Need help with the next step?</h2><p>Send your website address and the question you want to resolve. I confirm the work and price before booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></div>`;}
+const endingPrompts={
+ 'website-maintenance-cost':'Share your website, the tools you pay for and the checks or updates you need help with.',
+ 'website-launch-checklist':'Share the launch plan, the pages and tools involved, and anything still untested. A current website is optional.',
+ 'ai-website-or-custom':'Share the draft or idea, what the website needs to do and who will update it.',
+ 'website-not-showing-on-google':'Share the page address, the search you expected it to appear for and any Search Console result you have.',
+ 'contact-form-not-working':'Share the form address, platform, test time and the first step that failed. Leave out passwords and customer records.',
+ 'service-area-pages':'Share your services, actual coverage and the customer question a new area page would answer.',
+ 'website-maintenance-checklist':'Share your website and which checks or updates are being missed.',
+ 'contractor-website-checklist':'Share your trade, accepted job types, service area and current website if you have one.',
+ 'website-project-cost':'Share the page list, needed features, editing plans and budget range. You do not need an existing website.',
+ 'website-redesign-brief':'Share your current website and the brief, including what should stay, what must change and who will edit it.',
+ 'local-seo-profile-eligibility':'Share how customers work with your business, the area you serve and the profile question you need to resolve.',
+ 'seo-work-and-reporting':'Share your website, the service you want to explain better and the work you could approve this month.',
+ 'website-migration-checklist':'Share the current website, planned destination, URL map if available and any account-access gaps.',
+ 'custom-website-or-template':'Share what the website needs to do, who will edit it and the options you are comparing.',
+ 'website-care-versus-seo':'Share your website and the specific check, update or improvement you need.',
+ 'website-audit-checklist':'Share your website and one customer task that fails, including the page and what happened.',
+ 'website-repair-or-redesign':'Share the current website, the problem and any new requirements the existing site cannot meet.'
+};
+export function guideAction(item,{compact=false}={}){
+ const action=guideInquiry(item.path);
+ if(compact)return `<p class="guide-help"><a href="#next-decision">Get help with this decision</a></p>`;
+ const prompt=endingPrompts[item.path.split('/').filter(Boolean).at(-1)];
+ if(!prompt)throw Error(`Missing guide ending: ${item.path}`);
+ return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(action.label)}</h2><p>${e(prompt)} I confirm fit, work and price before booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></div>`;
+}

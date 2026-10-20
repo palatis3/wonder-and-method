@@ -37,7 +37,7 @@ The private five-person usability kit under `evidence/preindex-improvements-2026
 
 Migration `0007_journey_sources.sql` preserves every historical row with source `not_recorded`. New events use a fixed key for each published route; old broad keys remain valid for cached pages. Checkout page views include the selected package. Adding a route requires updating the migration CHECK allowlist as well as the generated route inventory.
 
-The browser maps a campaign source or referrer host locally to direct, google, bing, ai_assistant, social, referral, campaign or internal. Only that category is sent, only on page views. Other events use not_recorded. This describes each page arrival, not the first visit or a person's original acquisition source. Raw referrers, campaign values and query strings never enter counts. Google country domains may be reported as referral. The CLI compares the requested current period with the preceding period and prints page totals; the API also returns daily totals and coarse source totals. History lasts 90 UTC dates, so previous-period comparisons become incomplete for windows over 45 days. No long-term Search Console history or lead conversion rate is inferred.
+The browser maps a campaign source or referrer host locally to direct, google, bing, search (other search engines), ai_assistant, social, referral, campaign or internal. Only that category is sent, only on page views. Other events use not_recorded. This describes each page arrival, not the first visit or a person's original acquisition source. Raw referrers, campaign values and query strings never enter counts. The CLI compares the requested current period with the preceding period and prints page totals; the API also returns daily totals and coarse source totals. History lasts 90 UTC dates, so previous-period comparisons become incomplete for windows over 45 days. No long-term Search Console history or lead conversion rate is inferred.
 
 ## Comparison coverage (October 18 correction)
 
@@ -48,6 +48,49 @@ The API still accepts 1–90 days for current totals. It returns UTC retained-st
 
 Migration `0008_journey_resource_intent.sql` preserves earlier aggregate rows and adds the Services overview, `resource_select`, five fixed goal events, and `search` for other search engines. Resource selection records a link click, not a completed download. Goal clicks are aggregate intent only and are not joined to identified inquiries. ChatGPT campaign variants and Google-app arrivals map to the reviewed coarse categories; no raw source values are stored. The operator report now includes source and offer-interest tables alongside page arrivals. The all-page regression checks every emitted page key against the migrated database constraints.
 
-The retired `/siteaudit-NTlhNWVhZD.txt` verification file is no longer copied into published output; its owning external account could not be established. Its source history remains recoverable. `/version.json` remains intentionally public: its commit/source fingerprints bind production to the tested artifact and contain no credentials or inquiry data. `routes` counts generated HTML page routes, not every asset or indexed URL.
+The retired `/siteaudit-NTlhNWVhZD.txt` verification file is no longer copied into published output; its owning external account could not be established. Its source history remains recoverable. `/version.json` is not published: public requests return 404 with no-store. Release identity is checked through the authenticated operator status endpoint, which reads the private build manifest internally and reports the runtime version. `routes` counts generated HTML page routes, not every asset or indexed URL.
 
-Independent heartbeat alert delivery, Bing account verification, mail-policy enforcement and optional external CSP reporting require their own account evidence. Local code checks do not establish those integrations.
+Healthchecks activation, a real scheduled receipt and owner Down/Up email receipt
+have dated October 19 evidence; ongoing receiver status remains an operational
+check. Bing was already verified through a CNAME: the October 19 dashboard showed
+the existing sitemap as Success, 41 discovered URLs, zero errors and zero warnings,
+with last crawl/submission October 17. This does not prove a newer release has
+been crawled or every page indexed. Preserve the existing property.
+
+DMARC has `p=none` and aggregate reporting configured. Legitimate reports still
+need to be observed and reviewed before an enforcement decision. A reporting
+address is not evidence that all real senders align. No weekly measurement
+emails or additional monitors are enabled; the authenticated report remains
+available on demand. Local code checks alone establish none of these provider
+observations. See `deployment/PRODUCTION.md` for the dated operating evidence.
+
+## Public URL redirects and release checks
+
+`deployment/public-route-canonical.mjs` owns the Worker's known-page path/case,
+index-file and configured public-origin redirects. It returns one 308 for
+GET/HEAD variants such as `/pricing`, `/PRICING/`, `/pricing/index.html`,
+`http://wonderandmethod.com/pricing/` and
+`https://www.wonderandmethod.com/pricing/`, targeting
+`https://wonderandmethod.com/pricing/` and preserving the query. Known buyer-pack
+`/assets/buyer-packs/<id>/` aliases target the extensionless document. Existing
+`.html` asset responses retain their asset-layer handling and cache policy.
+Unknown asset filenames keep their exact case; API paths and mutations never
+enter this public redirect flow. Staging authentication runs first.
+
+Cloudflare zone rules and HTTPS settings can run before the Worker. The read-only
+October 20, 2026 inventory verified zone ruleset
+`590b172d82eb4132986b26ab10e423f2`, version 8, in
+`http_request_dynamic_redirect`. Its seven enabled 301 rules canonicalize known
+public page origins/case, missing slashes, index aliases, HTML aliases, and the
+legacy content-editor route. They preserve query strings and apply only to
+GET/HEAD on the two public hosts; they exclude APIs and buyer-pack asset paths.
+The zone's Always Use HTTPS setting is on and its Page Rules list is empty.
+The Worker's matching 308 logic remains a fallback; the new buyer-pack slash
+redirect belongs to the Worker. No zone rules were changed during this review.
+During an authorized release,
+record each variant's first response, Location and final canonical response;
+check for one permanent hop and no loop, including query preservation. Keep
+local Worker test evidence distinct from live edge evidence, and document any
+verified upstream rule with its actual identifier and scope before changing it.
+API/error responses stay no-store; buyer-pack documents are revalidated with
+no-cache, independently of redirect permanence.

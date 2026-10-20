@@ -1,28 +1,22 @@
 export function escapeHtml(value='') { return String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(value)?0:2,maximumFractionDigits:2}).format(value);
 export const moneyExact=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
-export function inquiryNeedsWebsite(value){return value.request_kind==='checkout'&&['website_baseline','audit_fix_sprint','keep_running','improve','grow'].includes(value.service);}
+export function inquiryNeedsWebsite(value){return value.goal==='fix'&&!['launch_site','focused_site','signature_site'].includes(value.service)||value.request_kind==='checkout'&&['website_baseline','audit_fix_sprint','keep_running','improve','grow'].includes(value.service);}
 export function shortInquiryReference(reference){
  if(typeof reference!=='string'||!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(reference))return reference||'';
  return 'WM-'+reference.replaceAll('-','').slice(0,12).toUpperCase().match(/.{4}/g).join('-');
 }
 const cents=value=>{const n=Math.round((value+Number.EPSILON)*100);if(!Number.isSafeInteger(n))throw new Error('Invalid cost inputs');return n;};
-export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','Focused Website'],['signature_site','Signature Website'],['keep_running','Keep Running — website care'],['improve','Improve — monthly SEO and website improvement'],['grow','Grow — SEO and growth campaigns'],['audit_fix_sprint','Audit & Fix Sprint'],['website_baseline','Website Baseline'],['unsure','Help me choose']];
+export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','Focused Website'],['signature_site','Signature Website'],['keep_running','Keep Running — website care'],['improve','Improve — monthly SEO and website improvement'],['grow','Grow — monthly SEO and website improvements'],['audit_fix_sprint','Audit & Fix Sprint'],['website_baseline','Website Baseline'],['unsure','Help me choose']];
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 export function inquiryMessagePrompt(service='',requestKind='checkout',neutral=false){
- if(neutral)return 'How can I help?';
- if(requestKind==='question')return service&&service!=='unsure'?'Your question about this service':'Your question';
- if(['keep_running','improve','grow'].includes(resolveServiceId(service)))return 'What does your existing website need, and what would you like monthly help to achieve?';
- if(resolveServiceId(service)==='website_baseline')return 'What would you like your website to do better?';
- if(resolveServiceId(service)==='audit_fix_sprint')return 'What is broken, and what should happen instead?';
- if(['launch_site','focused_site','signature_site'].includes(resolveServiceId(service)))return 'What does your business do, and when do you need the website?';
- return 'What would you like help with, and are there any important dates?';
+ return 'Your message';
 }
 export function inquiryMessageHelp(service='',requestKind='checkout',goal='',neutral=false){
  const id=resolveServiceId(service);
  let hint=goal==='fix'?'Tell me what is broken, which platform your website uses (such as Wix, Squarespace or WordPress), and what you have already checked.':neutral?'Tell me what your business does and what you want to change, or ask a question.':requestKind==='question'?'Ask what you need to know about the service, scope, costs or next steps.'
-  :id==='website_baseline'?'Share your website address above and what you want the starting review to help you decide.'
+  :id==='website_baseline'?'Tell me what seems wrong, or what you want the Website Baseline review to help you decide.'
   :id==='audit_fix_sprint'||goal==='fix'?'Include the page address, what goes wrong and what should happen instead.'
   :['keep_running','improve','grow'].includes(id)?'Share your website address above and what you would like help with each month.'
   :['launch_site','focused_site','signature_site'].includes(id)?'For example: what you do, the area you serve, the pages you need and any deadline.'
@@ -33,7 +27,7 @@ export function inquiryMessageHelp(service='',requestKind='checkout',goal='',neu
 export const inquiryContextFields={
  concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
- found_via:{label:'How did you find us?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Google or another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
+ found_via:{label:'How did you find me?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Google or another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
  request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Ask a question']]},
  booking_choice:{label:'A booking or newsletter connection',services:['launch_site','focused_site','signature_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
  priority:{label:'First monthly improvement',services:['improve','grow'],options:[['page','Improve a service page or supported inquiry path'],['article','Research and write an article or customer guide'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
@@ -54,7 +48,7 @@ export function hasInquirySelection(value={}){return Boolean(value.service&&valu
 export function inquiryContextSummary(value={}){return Object.entries(selectedInquiryContext(value)).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]);}
 export function inquiryRequestSummary(value={}){
  const context=selectedInquiryContext(value),choice=inquiryChoices.find(([id])=>id===value.service);
- const parts=[value.request_kind==='question'?'Question':'Proposal request'];
+ const parts=[];
  if(choice&&choice[0]!=='unsure')parts.push(choice[1]);
  for(const key of ['goal','concept'])if(context[key]&&context[key]!=='unsure')parts.push(inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
  return parts.join(' · ');

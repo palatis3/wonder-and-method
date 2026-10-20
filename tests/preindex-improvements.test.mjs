@@ -23,8 +23,8 @@ test('route policy excludes transaction, policy, demo, asset and API variants an
 });
 test('website cards use authoritative limits and canonical destinations without duplicate posters',()=>{
  const pages=renderPages({config,offers,map,geography});const pricing=pages.find(p=>p.path==='/pricing/').html,home=pages.find(p=>p.path==='/').html;
- for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(new RegExp(`up to ${p.marketing_page_cap} (?:custom |marketing |custom marketing )?pages`,'i').test(compactComparison(offers)));assert.ok(home.includes('/pricing/#offer-'+id));assert.ok(pricing.includes('id="offer-'+id+'"'));assert.ok(pricing.includes('/assets/buyer-packs/'+id));}
- assert.doesNotMatch(home,/data-feature=/);assert.doesNotMatch(pricing,/package-visual-grid|data-feature=/);assert.match(home,/Compare website packages and payment terms/);
+ for(const id of ['launch_site','focused_site','signature_site']){const p=offers[id];assert.ok(new RegExp(`up to ${p.marketing_page_cap} (?:custom |marketing |custom marketing )?pages`,'i').test(compactComparison(offers)));assert.ok(home.includes('/pricing/'));assert.ok(pricing.includes('id="offer-'+id+'"'));assert.ok(pricing.includes('/assets/buyer-packs/'+id));}
+ assert.doesNotMatch(home,/data-feature=/);assert.doesNotMatch(pricing,/package-visual-grid|data-feature=/);assert.match(home,/Compare all packages and payment terms/);
 });
 
 test('each county has a distinct useful task and matching downloadable facts worksheet',async()=>{

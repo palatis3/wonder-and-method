@@ -16,7 +16,7 @@ test('one-off and recurring scopes and packets retain their own review, correcti
    assert.doesNotMatch(html,/consolidated design round|consolidated staging round|30 calendar days after launch|design review window|staging review window|target launch/);
    assert.ok(html.includes(scope.included_revisions),id+' revisions are rendered');
    if(recurring){
-    assert.match(scope.defect_window,/Our own defects and already-promised launch work are corrected or completed without using a paid allowance/);assert.match(scope.defect_window,/still owe it to you/);
+    assert.match(scope.defect_window,/My own defects and already-promised launch work are corrected or completed without using a paid allowance/);assert.match(scope.defect_window,/still owe it to you/);
     assert.doesNotMatch(scope.defect_window,/30 calendar days/);assert.equal(scope.paid_work_rights,offers.monthly_terms.exit);
     assert.equal(scope.schedule.service_end,null);
     if(id==='keep_running')assert.match(scope.included_revisions,/related small-change batch/);else assert.match(scope.included_revisions,/One consolidated refinement and QA per main improvement/);
