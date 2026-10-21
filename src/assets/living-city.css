@@ -196,7 +196,7 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 .is-city-playing .city-reveal[data-active=true],.is-city-playing .city-reveal[data-active=true] .city-reveal-gleam,.is-city-playing .city-reveal[data-active=true] .city-reveal-copy>*{animation-play-state:running}
 /* Keyboard focus must never hold a link inside its invisible entrance delay. */
 .city-reveal[data-settled=true],.city-reveal[data-settled=true] .city-reveal-copy>*{animation:none!important;transition:none;transform:none;opacity:1}
-@keyframes city-card-arrive{0%{opacity:0;transform:perspective(1400px) translate(var(--reveal-drift),55px) rotateY(-8deg) rotateZ(var(--reveal-turn)) scale(.9)}68%{opacity:1;transform:perspective(1400px) translate(0,-5px) rotateY(0) rotateZ(-.6deg) scale(1.008)}100%{opacity:1;transform:none}}
+@keyframes city-card-arrive{0%{opacity:0;transform:perspective(1400px) translate(var(--reveal-drift),16px) rotateY(-8deg) rotateZ(var(--reveal-turn)) scale(.9)}68%{opacity:1;transform:perspective(1400px) translate(0,-5px) rotateY(0) rotateZ(-.6deg) scale(1.008)}100%{opacity:1;transform:none}}
 @keyframes city-caption-arrive{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
 @keyframes city-card-gleam{0%{opacity:0;transform:translateX(-65%)}25%{opacity:.6}100%{opacity:0;transform:translateX(65%)}}
 @media(max-width:1023px){.city-stars{height:34%}.city-star:nth-child(3n+1)::before,.city-star:nth-child(3n+1)::after{width:12px}.city-reveal{--reveal-drift:12px;--reveal-turn:2deg}.city-reveal--northline{--reveal-drift:-12px;--reveal-turn:-2deg}}

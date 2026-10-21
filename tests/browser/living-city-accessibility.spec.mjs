@@ -57,6 +57,21 @@ test('homepage city film controls keep their own space at doubled text',async({p
   await page.locator('[data-city-play]').click();await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
   expect(await page.locator('[data-city-showcase=fieldwork]').evaluate(card=>card.getAnimations().every(animation=>animation.playState!=='running'))).toBe(true);
   await clearLayout(width,'paused');
+  // A pause can land on any entrance frame, including a frame a fast runner skips.
+  const card=page.locator('[data-city-showcase=fieldwork]');
+  // Restart the real CSS entrance while media is held, even if a slow runner
+  // reached the pause button after the original entrance had already finished.
+  const duration=await card.evaluate(node=>{
+   node.style.animationName='none';void node.offsetWidth;node.style.removeProperty('animation-name');
+   const animation=node.getAnimations().find(a=>a.animationName==='city-card-arrive');
+   if(!animation)throw Error('The active card must expose its entrance animation');
+   animation.pause();return animation.effect.getTiming().duration;
+  });
+  for(const progress of [0,.075,.19,.42,.68,.99]){
+   await card.evaluate((node,time)=>{node.getAnimations().find(a=>a.animationName==='city-card-arrive').currentTime=time;},duration*progress);
+   await clearLayout(width,'entrance '+Math.round(progress*100)+'%');
+  }
+  await card.evaluate(node=>node.getAnimations().find(a=>a.animationName==='city-card-arrive').finish());
   await page.locator('#city-film').evaluate(video=>video.playbackRate=4);await page.locator('[data-city-play]').click();await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-beat','ambient',{timeout:15000});
   await clearLayout(width,'ambient');
   await expect(page.locator('[data-city-replay]')).toBeVisible();
