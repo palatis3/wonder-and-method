@@ -70,7 +70,9 @@ test('enhanced form preserves county provenance, optional URL, selected extras a
  const html=prefillInquiryHtml(inquiryForm({live:false}),new URL('http://synthetic.test'+path));
  const network=await mount(page,html,formScript,{path});
  await expect(page.locator('#request-summary')).toContainText('From county page: Erie County, PA');await expect(page.locator('#message-help')).toContainText('when you tested it');
- await expect(page.locator('#website')).not.toHaveAttribute('required');await expect(page.locator('[data-addon-picker]')).toBeHidden();await expect(page.locator('#business')).toBeVisible();
+ await expect(page.locator('#website')).not.toHaveAttribute('required');
+ await expect(page.locator('[data-addon-picker]')).toBeVisible();await expect(page.locator('[data-addon-picker]')).not.toHaveAttribute('open');
+ await expect(page.locator('[data-addon-remove=standard_page]')).toBeVisible();await expect(page.locator('#business')).toBeVisible();
  await page.locator('#name').fill('Synthetic Person');await page.locator('#email').fill('synthetic@example.test');await page.locator('#business_location').fill('Fictional town');await page.locator('#message').fill('Synthetic drafted diagnostic details.');
  await page.locator('#service').selectOption('keep_running');await expect(page.locator('#message')).toHaveValue('Synthetic drafted diagnostic details.');await expect(page.locator('#county')).toHaveValue('pennsylvania/erie-county');
  await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#inquiry-confirmation')).toContainText('No email was sent');
