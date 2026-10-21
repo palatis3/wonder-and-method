@@ -50,6 +50,7 @@ export function mountLivingCity(root, env = globalThis) {
     for (const card of showcases) {
       const selected = card.dataset.cityShowcase === next;
       card.dataset.active = String(selected);
+      card.dataset.settled = 'false';
       card.inert = !selected;
       card.setAttribute('aria-hidden', String(!selected));
     }
@@ -77,7 +78,7 @@ export function mountLivingCity(root, env = globalThis) {
       replayButton.textContent = 'Replay introduction';
       replayButton.setAttribute('aria-label', 'Replay introduction');
     }
-    for (const card of showcases) for (const animation of card.getAnimations?.() || []) {
+    for (const card of showcases) for (const animation of card.getAnimations?.({subtree:true}) || []) {
       if (phase === 'playing' && animation.playState === 'paused') animation.play();
       else if (phase !== 'playing' && animation.playState === 'running') animation.pause();
     }
@@ -305,7 +306,11 @@ export function mountLivingCity(root, env = globalThis) {
     card.hidden = false;
     card.inert = true;
     card.setAttribute('aria-hidden', 'true');
-    listen(card, 'focusin', () => pause());
+    listen(card, 'focusin', () => {
+      // Finish this entrance for keyboard reading, including after focus leaves.
+      card.dataset.settled = 'true';
+      pause();
+    });
   }
 
   if (video && playButton) {
