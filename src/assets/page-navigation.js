@@ -15,6 +15,14 @@ if(header){
  if('ResizeObserver' in window)new ResizeObserver(updateHeader).observe(header);
  else window.addEventListener('resize',updateHeader,{passive:true});
  updateHeader();
+ if(document.body.classList.contains('edition-living-city')){
+  let headerQueued=false;
+  const updateCityHeader=()=>{headerQueued=false;header.classList.toggle('is-scrolled',scrollY>24);};
+  const scheduleCityHeader=()=>{if(!headerQueued){headerQueued=true;requestAnimationFrame(updateCityHeader);}};
+  updateCityHeader();
+  window.addEventListener('scroll',scheduleCityHeader,{passive:true});
+  window.addEventListener('pageshow',scheduleCityHeader);
+ }
  const topLink=document.querySelector('.back-to-top');
  if(topLink){
   root.classList.add('page-tools-ready');

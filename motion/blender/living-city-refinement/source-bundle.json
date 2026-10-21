@@ -1,0 +1,312 @@
+{
+  "packedRenderMaster": "C:\\Wonder and Method\\wonder-method\\output\\living-city-refinement\\living-city-refined-loop4.blend",
+  "packedRenderMasterSha256": "7963732b4c6adcdd8788e5b9a6852213f3a66bd35fb03d27b11481a72084a945",
+  "packedRenderMasterUnchanged": true,
+  "portableBlend": "C:\\Wonder and Method\\wonder-method\\motion\\blender\\living-city-refinement\\living-city-refined-loop4.blend",
+  "portableBlendSha256": "64925834722e8af2b2b6aefbd62534b9729cc99dcb0abf67987a89a71eaf8e7b",
+  "portableBlendBytes": 44820484,
+  "imageCount": 35,
+  "dependencies": [
+    {
+      "image": "aarfontein_dusk_2k.hdr",
+      "relativePath": "//textures/bb79f4621a1d-aarfontein_dusk_2k.hdr",
+      "bytes": 6291436,
+      "sha256": "bb79f4621a1d1f1ac237d6d2a303009e27f8ab24dd1459c6c738a270e9b21db6"
+    },
+    {
+      "image": "belfast_sunset_puresky_2k.hdr",
+      "relativePath": "//textures/273003109ca1-belfast_sunset_puresky_2k.hdr",
+      "bytes": 4563204,
+      "sha256": "273003109ca1cfb798ce6b96e09ac8440f763d0ef0c376bbe77492613540b4a3"
+    },
+    {
+      "image": "fieldwork-showcase-desktop.webp.001",
+      "relativePath": "//textures/0f48adf7856f-fieldwork-showcase-desktop.webp",
+      "bytes": 64118,
+      "sha256": "0f48adf7856f1251177d3912bf3045f34418f73cb9cfd7bd9780e2408cbe2959"
+    },
+    {
+      "image": "fieldwork-showcase-desktop.webp.002",
+      "relativePath": "//textures/0f48adf7856f-fieldwork-showcase-desktop.webp",
+      "bytes": 64118,
+      "sha256": "0f48adf7856f1251177d3912bf3045f34418f73cb9cfd7bd9780e2408cbe2959"
+    },
+    {
+      "image": "hearthside-showcase-desktop.webp.001",
+      "relativePath": "//textures/a509d8411584-hearthside-showcase-desktop.webp",
+      "bytes": 61062,
+      "sha256": "a509d841158420f14bc6260a770fa7f2c4282bb4feecdab37951f900f00bb739"
+    },
+    {
+      "image": "island_tree_01_branches_diff.png",
+      "relativePath": "//textures/fcfaaa1262cb-island_tree_01_branches_diff_2k.png",
+      "bytes": 19963299,
+      "sha256": "fcfaaa1262cb8f31327ca084e6f8d69cda0b6af0d1f065a68c5a47b906ec02ff"
+    },
+    {
+      "image": "island_tree_01_branches_nor_gl.png",
+      "relativePath": "//textures/2ee3ff83fdf8-island_tree_01_branches_nor_gl_2k.png",
+      "bytes": 20594936,
+      "sha256": "2ee3ff83fdf8f01cd9d26d5c4665b866bf69f2557e02582577f23d6d007f9c78"
+    },
+    {
+      "image": "island_tree_01_branches_rough.png",
+      "relativePath": "//textures/e6d3c688b07d-island_tree_01_branches_rough_2k.png",
+      "bytes": 4730461,
+      "sha256": "e6d3c688b07dea15344672516433d7ba681727f5149c8be446dc1a5bbed9afdc"
+    },
+    {
+      "image": "island_tree_01_diff.png",
+      "relativePath": "//textures/08df798e0cad-island_tree_01_diff_2k.jpg",
+      "bytes": 2954942,
+      "sha256": "08df798e0cadae17359d480bfda1dba59f757a7b1d03e288d3360c289dd28f78"
+    },
+    {
+      "image": "island_tree_01_leaves_alpha.png",
+      "relativePath": "//textures/30c36ae0d902-island_tree_01_leaves_alpha_2k.png",
+      "bytes": 139077,
+      "sha256": "30c36ae0d9023400035f0af9d336ed5f73a84bf8a88c8e2bec8faa07d725992b"
+    },
+    {
+      "image": "island_tree_01_leaves_diff.png",
+      "relativePath": "//textures/fca98db31845-island_tree_01_leaves_diff_2k.png",
+      "bytes": 6428036,
+      "sha256": "fca98db31845a92e6374fccd032d40d6134e2c80fdca8038b063897c8e8f0035"
+    },
+    {
+      "image": "island_tree_01_leaves_nor_gl.png",
+      "relativePath": "//textures/2d152d8530e7-island_tree_01_leaves_nor_gl_2k.png",
+      "bytes": 10109651,
+      "sha256": "2d152d8530e707056fce44303de71cf63503f5d95b80d0820dc7625c99d8d2d9"
+    },
+    {
+      "image": "island_tree_01_leaves_rough.png",
+      "relativePath": "//textures/eccee8f209c8-island_tree_01_leaves_rough_2k.png",
+      "bytes": 2723975,
+      "sha256": "eccee8f209c8dd869b478a209ec0b44a3de6bae11c9594700f7e201771a9eac2"
+    },
+    {
+      "image": "island_tree_01_nor_gl.png",
+      "relativePath": "//textures/8b6559dee2df-island_tree_01_nor_gl_2k.exr",
+      "bytes": 9051990,
+      "sha256": "8b6559dee2df66980c9a9f1e1fd1e6ae60054f200bab0648709529df6edbbe78"
+    },
+    {
+      "image": "island_tree_01_rough.png",
+      "relativePath": "//textures/db5c91ee3987-island_tree_01_rough_2k.exr",
+      "bytes": 3207496,
+      "sha256": "db5c91ee39874c8ee4760e5c9378ac08fb881b4ea8619c80603455beac182546"
+    },
+    {
+      "image": "northline-showcase-desktop.webp.001",
+      "relativePath": "//textures/22d15f78d47c-northline-showcase-desktop.webp",
+      "bytes": 55582,
+      "sha256": "22d15f78d47cae2823d1c8902161dacf2abbb1765f4ba6d3b160659568c2e738"
+    },
+    {
+      "image": "potted_plant_01_leaves_alpha.png",
+      "relativePath": "//textures/06f49590ff6e-potted_plant_01_leaves_alpha_2k.png",
+      "bytes": 199855,
+      "sha256": "06f49590ff6e0480528ded4b69c3e19eb4009cb81b3031e28b52c5a6e662bd8f"
+    },
+    {
+      "image": "potted_plant_01_leaves_diff.png.001",
+      "relativePath": "//textures/43970f143fb3-potted_plant_01_leaves_diff_2k.png",
+      "bytes": 12648810,
+      "sha256": "43970f143fb35553bd78f048acfce149b8152c5b9fdbcd90897403b519494192"
+    },
+    {
+      "image": "potted_plant_01_leaves_nor_gl.png.001",
+      "relativePath": "//textures/aa0d16ce0a08-potted_plant_01_leaves_nor_gl_2k.png",
+      "bytes": 14782653,
+      "sha256": "aa0d16ce0a0880370f37844408ca2d62af9a90cc30e29851bf8fabeb73bfac5c"
+    },
+    {
+      "image": "potted_plant_01_leaves_rough.png.001",
+      "relativePath": "//textures/dcbc6c5783fe-potted_plant_01_leaves_rough_2k.png",
+      "bytes": 3726462,
+      "sha256": "dcbc6c5783fe82107d8634d427270621eadad73ddebaf6d8a997ebd547ae4421"
+    },
+    {
+      "image": "potted_plant_01_pot_diff.png",
+      "relativePath": "//textures/9d31469c28c9-potted_plant_01_pot_diff_2k.png",
+      "bytes": 17994581,
+      "sha256": "9d31469c28c987e2ef9acb75b0e69de21d01ff172aa78745b0872a95cfd98166"
+    },
+    {
+      "image": "potted_plant_01_pot_nor_gl.png",
+      "relativePath": "//textures/e82e83dcfa82-potted_plant_01_pot_nor_gl_2k.png",
+      "bytes": 18083982,
+      "sha256": "e82e83dcfa821c8824e7a5b4f04f1a21739010d98f362ae88ed7e91bb840b561"
+    },
+    {
+      "image": "potted_plant_01_pot_rough.png",
+      "relativePath": "//textures/5198ca9cc098-potted_plant_01_pot_rough_2k.png",
+      "bytes": 5865763,
+      "sha256": "5198ca9cc09898c86c00af23d54ea331480bf1c4cfc19f4a92821fb96a2bd96d"
+    },
+    {
+      "image": "red_brick_diff_2k.jpg",
+      "relativePath": "//textures/a1ae5ba7e630-red_brick_diff_2k.jpg",
+      "bytes": 3169072,
+      "sha256": "a1ae5ba7e63026971ceaf68ebbcf8982d9c2dadde1c99996c49b8ac1160af995"
+    },
+    {
+      "image": "red_brick_disp_2k.png",
+      "relativePath": "//textures/733166c31b1b-red_brick_disp_2k.png",
+      "bytes": 6312343,
+      "sha256": "733166c31b1b7ba4fc772247edf3527a83f20d4d14d2571ab1674f0dfd28e12a"
+    },
+    {
+      "image": "red_brick_nor_gl_2k.png",
+      "relativePath": "//textures/e3ca21654988-red_brick_nor_gl_2k.png",
+      "bytes": 8907641,
+      "sha256": "e3ca21654988c8ee348fff4a71ccd57fce35073d6898902f185c1f86799e9ae1"
+    },
+    {
+      "image": "red_brick_rough_2k.jpg",
+      "relativePath": "//textures/b8b6b882b467-red_brick_rough_2k.jpg",
+      "bytes": 552848,
+      "sha256": "b8b6b882b467647162433914b3e4db16e91852a0bdf866e6bcea4a76683ea00d"
+    },
+    {
+      "image": "sandstone_blocks_08_diff_2k.jpg",
+      "relativePath": "//textures/da2f453c7c36-sandstone_blocks_08_diff_2k.jpg",
+      "bytes": 1129500,
+      "sha256": "da2f453c7c3683f5b01ca8b365ccf81ebce488afab7661adecd83208fc9aec97"
+    },
+    {
+      "image": "sandstone_blocks_08_disp_2k.png",
+      "relativePath": "//textures/5d4403656352-sandstone_blocks_08_disp_2k.png",
+      "bytes": 7409561,
+      "sha256": "5d4403656352fa08e6ee741bf5c92ef3a0f5cb8fd8670c8fd8fa4d342eafdf48"
+    },
+    {
+      "image": "sandstone_blocks_08_nor_gl_2k.png",
+      "relativePath": "//textures/16f2e2448f3e-sandstone_blocks_08_nor_gl_2k.png",
+      "bytes": 4549107,
+      "sha256": "16f2e2448f3e8ebb365c20de247400aecc4a6741d133b2ac1bdff7507ced08fb"
+    },
+    {
+      "image": "sandstone_blocks_08_rough_2k.jpg",
+      "relativePath": "//textures/676d9f00b54f-sandstone_blocks_08_rough_2k.jpg",
+      "bytes": 877815,
+      "sha256": "676d9f00b54f303dc19856123312110be3859066661b224dececc3bc857c8f21"
+    },
+    {
+      "image": "wood_planks_diff_2k.jpg",
+      "relativePath": "//textures/caa1e7180952-wood_planks_diff_2k.jpg",
+      "bytes": 2387732,
+      "sha256": "caa1e71809521050fe0753ee7c17aa2faf32055fe53aff013415bc459dd23ea7"
+    },
+    {
+      "image": "wood_planks_disp_2k.png",
+      "relativePath": "//textures/71c86b48ffa5-wood_planks_disp_2k.png",
+      "bytes": 5714809,
+      "sha256": "71c86b48ffa578b8b21af73c77264e6b0a89b3346ac097de07676916348113dc"
+    },
+    {
+      "image": "wood_planks_nor_gl_2k.png",
+      "relativePath": "//textures/322e30f9ccf7-wood_planks_nor_gl_2k.png",
+      "bytes": 23969660,
+      "sha256": "322e30f9ccf72979e81a69641b2fa4a3f5530a8fffa498a1a0d9f8512b1ea1f1"
+    },
+    {
+      "image": "wood_planks_rough_2k.jpg",
+      "relativePath": "//textures/56e3bafda8df-wood_planks_rough_2k.jpg",
+      "bytes": 1151798,
+      "sha256": "56e3bafda8dfbeb8730b10d59c7541e983cff43b5b74f58d6d2c437f2b9455a1"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Calibri Bold",
+      "packed": true,
+      "sha256": "0a8296747536ead27d5f48f67e911cc3b207742b3f704e66995251d12fd422e5"
+    },
+    {
+      "name": "Calibri Regular",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Calibri Regular.001",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Calibri Regular.002",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Calibri Regular.003",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Calibri Regular.004",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Calibri Regular.005",
+      "packed": true,
+      "sha256": "57e93ff143572bcc092c1f56202d43ddc07bb119aa104c6d7af163470fb551f6"
+    },
+    {
+      "name": "Georgia Italic",
+      "packed": true,
+      "sha256": "d3e4bad27651d120ac8f2cea42cf4b4f077264fb243f66b3caffcfd35465f49b"
+    },
+    {
+      "name": "Georgia Regular",
+      "packed": true,
+      "sha256": "38dffcaf1fac89492f7c56c600a14daf36ae42f7c21985cd4134ae113124a58f"
+    }
+  ],
+  "linkedLibraries": 0,
+  "structuralSnapshotSha256": "7247611b931c23c2c541a03814758b1a10cae798fdb4ef2345004440c8df8c5c",
+  "structuralSnapshotBeforeEqualsAfter": true,
+  "verifiedCategories": [
+    "objects",
+    "meshes",
+    "materials",
+    "cameras",
+    "lights",
+    "images",
+    "worlds",
+    "curves",
+    "scene",
+    "collections",
+    "actionNames"
+  ],
+  "imageBytesPreservedExactly": true,
+  "allPathsRelative": true,
+  "allIndividualFilesUnder100MB": true,
+  "visualGeometryOrMaterialsChanged": false,
+  "totalBundleBytes": 275193741,
+  "renderSpotCheck": {
+    "portableBlendSha256": "64925834722e8af2b2b6aefbd62534b9729cc99dcb0abf67987a89a71eaf8e7b",
+    "packedRenderMasterSha256": "7963732b4c6adcdd8788e5b9a6852213f3a66bd35fb03d27b11481a72084a945",
+    "view": "desktop",
+    "frame": 25,
+    "samples": 64,
+    "seed": 19,
+    "adaptiveThreshold": 0.025,
+    "renderSeconds": 30.369,
+    "crop": "C:\\Wonder and Method\\wonder-method\\output\\living-city-refinement\\portable-source-quarter-crop.png",
+    "reference": "C:\\Wonder and Method\\wonder-method\\output\\living-city-refinement\\crop-benchmark\\desktop\\0025.png",
+    "noOtherGpuJobDuringThisCheck": true,
+    "comparison": {
+      "width": 1440,
+      "height": 432,
+      "meanChannelDelta255": 0.008581425754458161,
+      "maximumChannelDelta255": 12,
+      "pixelIdentical": false,
+      "psnrDb": 67.26284462306573,
+      "p99ChannelDelta255": 0.0,
+      "pixelsWithAnyChannelChangeAbove2Percent": 0.051601080246913573
+    }
+  }
+}

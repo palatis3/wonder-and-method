@@ -1,4 +1,5 @@
-// One optional film, with separate camera exports. HTML remains usable before this mounts.
+// A twelve-second native introduction over a seamless rendered city loop.
+// Playback time advances the story, so pausing or leaving the page holds both.
 const mounted = new WeakMap();
 
 export function mountLivingCity(root, env = globalThis) {
@@ -14,6 +15,8 @@ export function mountLivingCity(root, env = globalThis) {
   const tablist = projects.querySelector('[role="tablist"]');
   const tabs = Array.from(projects.querySelectorAll('[data-city-project]'));
   const panels = Array.from(projects.querySelectorAll('[data-city-panel]'));
+  const showcases = Array.from(root.querySelectorAll('[data-city-showcase]'));
+  const choices = Array.from(root.querySelectorAll('[data-city-jump]'));
   const narrow = env.matchMedia?.('(max-width: 1023px)') || {matches: false};
   const reduced = env.matchMedia?.('(prefers-reduced-motion: reduce)') || {matches: false};
   const cleanups = [];
@@ -21,6 +24,11 @@ export function mountLivingCity(root, env = globalThis) {
   let intent = false, inView = true, pageInactive = false, loaded = false;
   let complete = false, failed = false, hasFrame = false, sourceKind = '';
   let epoch = 0, frameRequest = null, loadingTimer = null;
+  let storyTime = 0, lastMediaTime = 0, lastProgressTime = 0, activeShowcase = '';
+  const saveData = Boolean(env.navigator?.connection?.saveData);
+  const preferenceKey = 'wm.city.motion';
+  const rememberMotion = value => { try { env.sessionStorage?.setItem(preferenceKey, value); } catch { /* Storage may be unavailable. */ } };
+  const pausedBefore = (() => { try { return env.sessionStorage?.getItem(preferenceKey) === 'paused'; } catch { return false; } })();
 
   const listen = (target, type, handler) => {
     if (!target?.addEventListener) return;
@@ -33,26 +41,45 @@ export function mountLivingCity(root, env = globalThis) {
   const preferredKind = () => narrow.matches ? 'mobile' : 'desktop';
   const sourceFor = kind => kind === 'mobile' ? video?.dataset.mobileSrc : video?.dataset.desktopSrc;
 
+  const renderStory = () => {
+    const next = !hasFrame || reduced.matches || failed || complete ? '' : storyTime < 1.5 ? '' : storyTime < 4.5 ? 'fieldwork' : storyTime < 7.5 ? 'northline' : storyTime < 10.5 ? 'hearthside' : '';
+    root.dataset.cityBeat = complete ? 'ambient' : next || (storyTime >= 10.5 ? 'resolve' : 'arrival');
+    root.dataset.cityElapsed = storyTime.toFixed(2);
+    if (next === activeShowcase) return;
+    activeShowcase = next;
+    for (const card of showcases) {
+      const selected = card.dataset.cityShowcase === next;
+      card.dataset.active = String(selected);
+      card.inert = !selected;
+      card.setAttribute('aria-hidden', String(!selected));
+    }
+    for (const choice of choices) choice.dataset.active = String(choice.dataset.cityJump === next);
+  };
+
   const render = () => {
     root.dataset.cityState = phase;
     root.dataset.citySource = sourceKind || preferredKind();
     setClass('is-city-playing', phase === 'playing');
     setClass('is-city-complete', complete);
     setClass('has-city-frame', hasFrame);
+    renderStory();
     if (playButton && video) {
       playButton.hidden = false;
       playButton.disabled = reduced.matches;
-      const label = reduced.matches ? 'Scene motion off' : intent ? 'Pause scene' : failed ? 'Retry scene' : complete ? 'Replay scene' : loaded ? 'Resume scene' : 'Play scene';
+      const label = reduced.matches ? 'Motion off' : intent ? 'Pause motion' : failed ? 'Retry motion' : loaded ? 'Resume motion' : 'Play motion';
       playButton.textContent = label;
       playButton.setAttribute('aria-label', label);
       playButton.setAttribute('aria-pressed', String(intent));
     }
     if (replayButton) {
-      if (complete && doc.activeElement === replayButton) playButton?.focus({preventScroll:true});
-      replayButton.hidden = !loaded || reduced.matches || failed || complete;
+      replayButton.hidden = !loaded || reduced.matches || failed;
       replayButton.disabled = reduced.matches;
-      replayButton.textContent = 'Replay scene';
-      replayButton.setAttribute('aria-label', 'Replay scene from the beginning');
+      replayButton.textContent = 'Replay introduction';
+      replayButton.setAttribute('aria-label', 'Replay introduction');
+    }
+    for (const card of showcases) for (const animation of card.getAnimations?.() || []) {
+      if (phase === 'playing' && animation.playState === 'paused') animation.play();
+      else if (phase !== 'playing' && animation.playState === 'running') animation.pause();
     }
   };
 
@@ -91,7 +118,7 @@ export function mountLivingCity(root, env = globalThis) {
     pauseMedia();
     releaseSource();
     render();
-    announce('Scene unavailable. The still image is shown. You can try again.');
+    announce('Motion unavailable. Explore the websites below, or try again.');
   };
   const startLoadingTimer = token => {
     clearLoadingTimer();
@@ -99,13 +126,36 @@ export function mountLivingCity(root, env = globalThis) {
       if (token === epoch && intent && allowed() && phase === 'loading') fail();
     }, 15000);
   };
+  const sampleStory = () => {
+    if (!intent || !allowed() || video.paused || !hasFrame) return;
+    const current = video.currentTime || 0;
+    if (current !== lastProgressTime) {
+      lastProgressTime = current;
+      if (phase === 'loading') {
+        phase = 'playing';
+        clearLoadingTimer();
+        render();
+      }
+    }
+    if (complete) return;
+    let elapsed = current - lastMediaTime;
+    if (elapsed < 0 && Number.isFinite(video.duration)) elapsed += video.duration;
+    lastMediaTime = current;
+    if (elapsed >= 0) storyTime = Math.min(12, storyTime + elapsed);
+    if (storyTime > 12 - 1e-6) storyTime = 12;
+    complete = storyTime >= 12;
+    render();
+    if (complete) announce('Explore a website. The city keeps moving until you pause.');
+  };
   const revealFrame = token => {
-    if (hasFrame || frameRequest !== null) return;
+    if (frameRequest !== null || complete && hasFrame) return;
     const reveal = () => {
       frameRequest = null;
       if (token !== epoch || !intent || !allowed() || video.paused) return;
       hasFrame = true;
+      sampleStory();
       render();
+      if (video.requestVideoFrameCallback && !complete) revealFrame(token);
     };
     if (video.requestVideoFrameCallback) frameRequest = video.requestVideoFrameCallback(reveal);
     else reveal();
@@ -130,32 +180,48 @@ export function mountLivingCity(root, env = globalThis) {
       }
       render();
       startLoadingTimer(token);
+      for (const image of root.querySelectorAll('[data-city-preview-src]')) {
+        if (!image.getAttribute('src')) image.src = image.dataset.cityPreviewSrc;
+      }
       Promise.resolve(video.play()).then(() => {
         // An obsolete promise must not disturb a newer, explicitly requested play.
         if (!intent || !allowed()) pauseMedia();
-      }, () => {
-        if (token === epoch && intent && allowed()) fail();
+      }, error => {
+        if (token !== epoch || !intent || !allowed()) return;
+        if (error?.name === 'NotAllowedError') {
+          intent = false;
+          phase = 'blocked';
+          cancelPending();
+          pauseMedia();
+          render();
+          announce('Press Play motion to start the introduction.');
+        } else fail();
       });
     } catch {
       if (token === epoch) fail();
     }
   };
-  const pause = (message = true) => {
+  const pause = (message = true, remember = true) => {
     const wasRequested = intent;
     intent = false;
+    if (remember) rememberMotion('paused');
     cancelPending();
-    if (!complete && !failed && !reduced.matches) phase = loaded ? 'paused' : 'idle';
+    if (!failed && !reduced.matches) phase = loaded ? 'paused' : 'idle';
     pauseMedia();
     render();
-    if (message && wasRequested) announce('Scene paused.');
+    if (message && wasRequested) announce('Motion paused.');
   };
-  const play = (restart = false) => {
+  const play = (restart = false, remember = true) => {
     if (!video || !playButton || reduced.matches || destroyed) return;
-    if (restart || complete || failed) {
-      pause(false);
+    if (remember) rememberMotion('playing');
+    if (restart || failed) {
+      pause(false, false);
       complete = false;
       failed = false;
       hasFrame = false;
+      storyTime = 0;
+      lastMediaTime = 0;
+      lastProgressTime = 0;
       phase = 'idle';
       // A new camera is selected only at a deliberate restart, never mid-frame.
       if (loaded && sourceKind !== preferredKind()) releaseSource();
@@ -219,14 +285,32 @@ export function mountLivingCity(root, env = globalThis) {
       });
     });
     const initial = pairs.findIndex(({tab}) => tab.getAttribute('aria-selected') === 'true');
-    select(initial < 0 ? 0 : initial, false, false);
+    const hashIndex = pairs.findIndex(({panel}) => '#' + panel.id === env.location?.hash);
+    select(hashIndex < 0 ? initial < 0 ? 0 : initial : hashIndex, false, false);
+    for (const link of choices) listen(link, 'click', () => {
+      const index = pairs.findIndex(({tab}) => tab.dataset.cityProject === link.dataset.cityJump);
+      if (index >= 0) select(index);
+    });
+    listen(env, 'hashchange', () => {
+      const index = pairs.findIndex(({panel}) => '#' + panel.id === env.location?.hash);
+      if (index < 0 || root.dataset.cityProject === pairs[index].tab.dataset.cityProject) return;
+      select(index);
+      // A history fragment may target a panel that was hidden when native scrolling ran.
+      pairs[index].panel.scrollIntoView?.({block:'start'});
+    });
     tablist.hidden = false;
   }
   for (const link of root.querySelectorAll('[data-city-project-link]')) listen(link, 'click', () => pause());
+  for (const card of showcases) {
+    card.hidden = false;
+    card.inert = true;
+    card.setAttribute('aria-hidden', 'true');
+    listen(card, 'focusin', () => pause());
+  }
 
   if (video && playButton) {
     video.autoplay = false;
-    video.loop = false;
+    video.loop = true;
     video.muted = true;
     video.playsInline = true;
     video.preload = 'none';
@@ -251,16 +335,7 @@ export function mountLivingCity(root, env = globalThis) {
       render();
     });
     listen(video, 'error', () => { if (loaded && video.error) fail(); });
-    listen(video, 'ended', () => {
-      if (!loaded || !video.ended || failed || reduced.matches || destroyed) return;
-      intent = false;
-      complete = true;
-      phase = 'ended';
-      cancelPending();
-      pauseMedia();
-      render();
-      announce('Scene complete. Explore the projects below.');
-    });
+    listen(video, 'timeupdate', sampleStory);
     listen(doc, 'visibilitychange', reconcile);
     listen(env, 'pagehide', () => { pageInactive = true; reconcile(); });
     listen(env, 'pageshow', () => { pageInactive = false; reconcile(); });
@@ -272,11 +347,14 @@ export function mountLivingCity(root, env = globalThis) {
         intent = false;
         complete = false;
         failed = false;
+        storyTime = 0;
+        lastMediaTime = 0;
+        lastProgressTime = 0;
         phase = 'reduced';
         cancelPending();
         pauseMedia();
         releaseSource();
-        announce('Scene motion is off to match your device setting.');
+        announce('Motion is off to match your device setting.');
       } else { phase = 'idle'; announce(''); }
       render();
     });
@@ -295,13 +373,14 @@ export function mountLivingCity(root, env = globalThis) {
   root.dataset.cityReady = 'true';
   const controller = {destroy() {
     if (destroyed) return;
-    pause(false);
+    pause(false, false);
     destroyed = true;
     observer?.disconnect();
     cleanups.forEach(cleanup => cleanup());
     mounted.delete(root);
   }};
   mounted.set(root, controller);
+  if (video && playButton && !reduced.matches && !saveData && !pausedBefore) play(false, false);
   return controller;
 }
 

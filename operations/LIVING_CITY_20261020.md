@@ -4,8 +4,9 @@ The Living City edition pairs a rendered waterfront neighborhood with a native p
 
 ## Visitor experience
 
-- The homepage opens with a still. An explicit Play scene action loads one film, chosen for the current screen width. Desktop and phone use separately staged cameras in the same three-dimensional scene.
-- Pause, replay, offscreen and background-tab behavior preserve visitor intent. Reduced-motion settings keep the still and all navigation available. A loading or playback failure returns to the still with a retry action.
+- The homepage opens with a still, then starts a twelve-second introduction automatically when motion is allowed. One four-second seamless city film is chosen for the screen width. Native website previews appear in sequence: Fieldwork at 1.5 seconds, Northline at 4.5, Hearthside at 7.5, then an unobstructed city from 10.5 seconds. At twelve seconds the introduction ends and the subtle city ambience continues.
+- Pause and replay control both the previews and the city. Leaving the scene or backgrounding the tab suspends playback. A visitor's explicit play or pause choice is remembered for the current browser tab. Reduced-motion and data-saving settings retain the still without requesting the film automatically. A blocked autoplay exposes a play action; a loading or playback failure restores the still and offers retry.
+- The header blends with the opening scene and stays fixed while scrolling, switching to a readable paper background. Scene links reveal the matching project below the header, including when revisiting a fragment through browser history.
 - The portfolio sits below the scene and is available immediately. Keyboard arrows, Home and End select the matching business, screenshot and named destination together. Without JavaScript, all three concepts remain visible. Motion never forces a scroll or substitutes for a link.
 - Screenshots come from the actual concept pages. `scripts/capture-city-previews.mjs` records their capture dimensions and source fingerprints in `src/city-preview-captures.json`.
 
@@ -13,10 +14,10 @@ The Living City edition pairs a rendered waterfront neighborhood with a native p
 
 The previous Buffalo introduction and ambient film are preserved at `/work/buffalo-civic/`, reached through Work. Both use native playback controls. The original Buffalo media and editable sources remain in the repository or their original local preservation directories; the new edition does not overwrite them.
 
-Living City source is under `motion/blender/living-city/`. Generated frame sequences and working render assets stay under ignored `output/living-city/`. Publication consumes only the checked poster, film and end-frame exports from `public/living-city/manifest.json`; the builder verifies every file's byte count and SHA-256 hash as well as camera dimensions and film duration.
+The original Living City source is under `motion/blender/living-city/`. The refinement source and reproducible render scripts are under `motion/blender/living-city-refinement/`. Generated frame sequences and working render assets stay under ignored `output/`. Publication consumes only the checked poster, film and end-frame exports from `public/living-city/manifest.json`; the builder verifies every file's byte count and SHA-256 hash as well as camera dimensions and film duration. The twelve-second native introduction and four-second rendered loop are recorded separately.
 
 ## Release requirements
 
-The candidate adds the Buffalo Work route, taking the site to 286 HTML routes and 285 sitemap URLs. Migration `0016_journey_buffalo_work.sql` adds its fixed aggregate measurement category while preserving the previous schema and rows. Export production D1 before applying it, verify preservation, then deploy the candidate Worker. The preceding Worker remains compatible with the expanded category constraint.
+The first Living City release added the Buffalo Work route, taking the site to 286 HTML routes and 285 sitemap URLs. Migration `0016_journey_buffalo_work.sql` was applied for that release. This visual refinement keeps the same routes and schema and requires no new migration.
 
 Use the clean, pushed commit, exact technical-check manifest and production predeploy procedure in [PRODUCTION.md](../deployment/PRODUCTION.md). Final local visual comparisons, Buffalo preservation inventory, browser results, database backup verification and published runtime identity are private release evidence. Source implementation alone is not a claim of publication or a passed visual review.

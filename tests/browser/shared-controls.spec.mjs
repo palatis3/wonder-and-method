@@ -21,6 +21,7 @@ test('header contact and floating corner tools remain reachable across page type
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).toBeHidden();
   await revealTools(page);await expect(page.locator('.support-chat')).toHaveCSS('position',path==='/contact/'?'static':'fixed');
+  if(path==='/'){await inViewport(page.locator('.site-header'));await expect(page.locator('.site-header')).toHaveClass(/is-scrolled/);}
   await page.locator('.back-to-top').scrollIntoViewIfNeeded();await inViewport(page.locator('.back-to-top'));
   const separated=await page.evaluate(()=>{const a=document.querySelector('.back-to-top').getBoundingClientRect(),b=document.querySelector('.support-chat').getBoundingClientRect();return a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top;});
   expect(separated,path).toBe(true);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
@@ -94,14 +95,12 @@ test('saved section links still reach consolidated tools, privacy details and co
  await page.goto('/areas/erie-county/?qa=1#buyer-task');await expect(page.locator('#buyer-task')).toBeVisible();await expect(page.locator('a[href^="/assets/county-briefs/erie.txt"]')).toBeVisible();
 });
 
-test('homepage city film remains optional, pauses in place and replays',async({page},testInfo)=>{
+test('homepage starts its twelve-second tour, pauses in place and keeps the city looping',async({page},testInfo)=>{
  const requests=[];page.on('request',request=>{if(request.url().includes('/living-city/')&&request.url().includes('.mp4'))requests.push(request.url());});
  await page.goto('/?qa=1');await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-ready','true');
- expect(requests).toHaveLength(0);await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
  if(testInfo.project.name==='phone-reduced-motion'){
   await expect(page.locator('[data-city-play]')).toBeDisabled();expect(requests).toHaveLength(0);return;
  }
- await page.locator('[data-city-play]').click();
  await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
  await page.locator('[data-city-play]').click();
  await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
@@ -112,10 +111,12 @@ test('homepage city film remains optional, pauses in place and replays',async({p
  expect(await page.locator('#city-film').evaluate(video=>video.currentTime)).toBe(held);
  await page.locator('[data-city-play]').click();
  await page.locator('[data-city-replay]').focus();
- await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','ended',{timeout:15000});
- await expect(page.locator('[data-city-replay]')).toBeHidden();
- await expect(page.locator('[data-city-play]')).toBeFocused();
- await page.locator('[data-city-play]').click();
+ for(const id of ['fieldwork','northline','hearthside'])await expect(page.locator('[data-city-showcase="'+id+'"]')).toBeVisible({timeout:6000});
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-beat','ambient',{timeout:6000});
+ await expect(page.locator('#city-film')).toHaveJSProperty('paused',false);
+ await expect(page.locator('#city-film')).toHaveJSProperty('loop',true);
+ await expect(page.locator('[data-city-replay]')).toBeFocused();
+ await page.locator('[data-city-replay]').click();
  await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','playing');
  expect(await page.locator('#city-film').evaluate(video=>video.currentTime)).toBeLessThan(2);
  await page.locator('[data-city-play]').click();
@@ -129,20 +130,40 @@ test('city project tabs update the preview and destination together with keyboar
  await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/northline/');
  await page.keyboard.press('End');
  await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel','hearthside');
- await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveText(/Open Hearthside website/);
+ await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveText(/Explore Hearthside/);
  await page.locator('[data-city-panel]:visible .city-project-link').click();
  await expect(page).toHaveURL(/\/work\/hearthside\//);
+});
+
+test('city scene links and browser history reveal the matching project below the sticky header',async({page})=>{
+ await page.goto('/?qa=1');
+ for(const id of ['northline','hearthside']){
+  await page.locator('.city-choice--'+id).click();
+  await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel',id);
+  await expect.poll(()=>page.evaluate(()=>{const panel=document.querySelector('[data-city-panel]:not([hidden])').getBoundingClientRect(),header=document.querySelector('.site-header').getBoundingClientRect();return panel.top>=header.bottom-1&&panel.top<innerHeight;})).toBe(true);
+ }
+ await page.goBack();await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel','northline');
+ await page.goForward();await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel','hearthside');
+});
+
+test('a visitor pause choice survives reloading the homepage until motion is requested again',async({page},testInfo)=>{
+ test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion is already static');
+ await page.goto('/?qa=1');await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
+ await page.locator('[data-city-play]').click();await page.reload();
+ await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Play motion');
+ await expect(page.locator('#city-film')).not.toHaveAttribute('src',/./);
+ await page.locator('[data-city-play]').click();await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
 });
 
 test('a failed city film keeps the still and website links usable, then retries',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion never requests a film');
  const filmPattern='**/assets/living-city/*.mp4';
  await page.route(filmPattern,route=>route.abort('failed'));
- await page.goto('/?qa=1');await page.locator('[data-city-play]').click();
+ await page.goto('/?qa=1');
  await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','error');
  await expect(page.locator('[data-living-city]')).not.toHaveClass(/has-city-frame/);
  await expect(page.locator('.city-poster')).toBeVisible();
- await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry scene');
+ await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
  await expect(page.locator('.city-primary')).toHaveAttribute('href','/contact/?request_kind=checkout#inquiry');
  await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/fieldwork/');
  await page.unroute(filmPattern);await page.locator('[data-city-play]').click();

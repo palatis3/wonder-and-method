@@ -42,12 +42,23 @@ test('city publication rejects incomplete camera pairs, timing mismatches and un
   for(const path of ['/living-city/../secret.mp4','https://example.test/a.mp4','/living-city/asset.svg'])assert.throws(()=>livingCityPublicPath(path),/Invalid/);
  }finally{await f.close();}
 });
-test('initial city page provides all project destinations before enhancement and defers optional video',()=>{
+test('initial city page provides all project destinations before enhancement and defers video to preference-aware autoplay',()=>{
  const html=livingCityHome({livingCityMotionReady:true});
  assert.match(html,/data-city-stage/);assert.match(html,/role="tablist"[^>]*hidden/);
- assert.doesNotMatch(html,/<article[^>]+(?:hidden|inert)/);
+ assert.doesNotMatch(html,/<article[^>]+data-city-panel[^>]+(?:hidden|inert)/);
  assert.doesNotMatch(html,/<video[^>]+(?: autoplay| loop| src=)/);
  assert.match(html,/<video[^>]+data-desktop-src="\/assets\/living-city\/desktop-film.mp4"[^>]+preload="none"/);
  for(const id of ['fieldwork','northline','hearthside']){assert.match(html,new RegExp(`href="/work/${id}/"`));assert.match(html,new RegExp(`data-city-panel="${id}"`));}
- assert.match(html,/Fictional businesses/);assert.match(html,/Start a project/);
+ assert.match(html,/fictional businesses/);assert.match(html,/Start a project/);
+});
+
+test('loop publication distinguishes the native introduction from the encoded film duration',async()=>{
+ const f=await fixture();try{
+  f.manifest.playback={mode:'seamless-loop',introductionSeconds:12,loopSeconds:4};await f.save();
+  await assert.rejects(livingCityAssetState(f.root,{homeEdition:'living-city'}),/loop duration/);
+  for(const camera of ['desktop','mobile'])Object.assign(f.manifest.files[camera+'Video'],{frames:96,durationSeconds:4});await f.save();
+  assert.equal((await livingCityAssetState(f.root,{homeEdition:'living-city'})).livingCityMedia.playback.introductionSeconds,12);
+  f.manifest.playback.introductionSeconds=4;await f.save();
+  await assert.rejects(livingCityAssetState(f.root,{homeEdition:'living-city'}),/playback metadata/);
+ }finally{await f.close();}
 });
