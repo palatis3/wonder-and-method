@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "retrieved_at_utc": "2026-10-21T01:52:09.136073+00:00",
+  "provider": "Poly Haven",
+  "provider_url": "https://polyhaven.com",
+  "license": "CC0-1.0",
+  "license_source": "https://polyhaven.com/license",
+  "license_text_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_verification": "The two official asset pages explicitly identify CC0; the official asset license permits commercial use, modification and redistribution.",
+  "credit": "Foliage models and textures sourced from Poly Haven (CC0).",
+  "api_terms_source": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "download_method": "One-time official API lookup using a unique User-Agent. No website runtime API dependency.",
+  "execution": "Blender files were downloaded as opaque data. No embedded scripts or Blender code executed.",
+  "import_guidance": "Append only required objects/collections/materials via Blender data libraries with automatic Python script execution disabled. Keep textures/ alongside each .blend, or resolve image paths explicitly when appending.",
+  "resolution": "2k",
+  "budget_bytes": 250000000,
+  "assets": [
+    {
+      "id": "potted_plant_01",
+      "name": "Potted Plant 01",
+      "source_url": "https://polyhaven.com/a/potted_plant_01",
+      "api_info_url": "https://api.polyhaven.com/info/potted_plant_01",
+      "api_files_url": "https://api.polyhaven.com/files/potted_plant_01",
+      "license": "CC0-1.0",
+      "authors": {
+        "Rico Cilliers": "All"
+      },
+      "dimensions_mm": [
+        588.9185070991516,
+        636.6117596626282,
+        1350.7787585258484
+      ],
+      "triangles": 96030,
+      "lods_advertised": false,
+      "blend_path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\potted_plant_01_2k.blend",
+      "texture_directory": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures",
+      "total_bytes": 76086435,
+      "files": [
+        {
+          "usage": "blender_library",
+          "relative_path": "potted_plant_01/potted_plant_01_2k.blend",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\potted_plant_01_2k.blend",
+          "original_relative_path": "potted_plant_01_2k.blend",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/potted_plant_01/potted_plant_01_2k.blend",
+          "size": 2784329,
+          "md5": "1e318154c2828ac0b60c34feb5c4fa70",
+          "sha256": "2dfc6297b611f991e1847ffc20514dee561aa23b8fa064870a8cce48c3d52627"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_leaves_alpha_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_leaves_alpha_2k.png",
+          "original_relative_path": "textures/potted_plant_01_leaves_alpha_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_leaves_alpha_2k.png",
+          "size": 199855,
+          "md5": "faa685e1193102127220afd80dc3a84e",
+          "sha256": "06f49590ff6e0480528ded4b69c3e19eb4009cb81b3031e28b52c5a6e662bd8f"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_leaves_diff_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_leaves_diff_2k.png",
+          "original_relative_path": "textures/potted_plant_01_leaves_diff_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_leaves_diff_2k.png",
+          "size": 12648810,
+          "md5": "46e3b89070819838d5af57195082b2a3",
+          "sha256": "43970f143fb35553bd78f048acfce149b8152c5b9fdbcd90897403b519494192"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_leaves_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_leaves_nor_gl_2k.png",
+          "original_relative_path": "textures/potted_plant_01_leaves_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_leaves_nor_gl_2k.png",
+          "size": 14782653,
+          "md5": "2b3231d76221ce659b5f2fc07d46471e",
+          "sha256": "aa0d16ce0a0880370f37844408ca2d62af9a90cc30e29851bf8fabeb73bfac5c"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_leaves_rough_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_leaves_rough_2k.png",
+          "original_relative_path": "textures/potted_plant_01_leaves_rough_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_leaves_rough_2k.png",
+          "size": 3726462,
+          "md5": "382b623517e8f22345ebbf38078fbbcb",
+          "sha256": "dcbc6c5783fe82107d8634d427270621eadad73ddebaf6d8a997ebd547ae4421"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_pot_diff_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_pot_diff_2k.png",
+          "original_relative_path": "textures/potted_plant_01_pot_diff_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_pot_diff_2k.png",
+          "size": 17994581,
+          "md5": "8d2ac046017e7b7b5ea23a00a06e4cd0",
+          "sha256": "9d31469c28c987e2ef9acb75b0e69de21d01ff172aa78745b0872a95cfd98166"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_pot_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_pot_nor_gl_2k.png",
+          "original_relative_path": "textures/potted_plant_01_pot_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_pot_nor_gl_2k.png",
+          "size": 18083982,
+          "md5": "b572f77044505aaffec9f9a94ad62b5f",
+          "sha256": "e82e83dcfa821c8824e7a5b4f04f1a21739010d98f362ae88ed7e91bb840b561"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "potted_plant_01/textures/potted_plant_01_pot_rough_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\potted_plant_01\\textures\\potted_plant_01_pot_rough_2k.png",
+          "original_relative_path": "textures/potted_plant_01_pot_rough_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/potted_plant_01/potted_plant_01_pot_rough_2k.png",
+          "size": 5865763,
+          "md5": "e15fe95d137635b3173731be4b626818",
+          "sha256": "5198ca9cc09898c86c00af23d54ea331480bf1c4cfc19f4a92821fb96a2bd96d"
+        }
+      ]
+    },
+    {
+      "id": "island_tree_01",
+      "name": "Island Tree 01",
+      "source_url": "https://polyhaven.com/a/island_tree_01",
+      "api_info_url": "https://api.polyhaven.com/info/island_tree_01",
+      "api_files_url": "https://api.polyhaven.com/files/island_tree_01",
+      "license": "CC0-1.0",
+      "authors": {
+        "Rob Tuytel": "scanning, processing",
+        "Rico Cilliers": "cleanup, processing"
+      },
+      "dimensions_mm": [
+        12464.419603347778,
+        4818.506717681885,
+        5027.44660153985
+      ],
+      "triangles": 3729692,
+      "lods_advertised": true,
+      "blend_path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\island_tree_01_2k.blend",
+      "texture_directory": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures",
+      "total_bytes": 137981402,
+      "files": [
+        {
+          "usage": "blender_library",
+          "relative_path": "island_tree_01/island_tree_01_2k.blend",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\island_tree_01_2k.blend",
+          "original_relative_path": "island_tree_01_2k.blend",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/island_tree_01/island_tree_01_2k.blend",
+          "size": 58077539,
+          "md5": "8dfa9f536a47d4436a674c9e7cd8ffbb",
+          "sha256": "77de2c504a7aa9b6ae8acb5877dbcd155d4bda6eb156f761c492c48c843bdcd2"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_branches_diff_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_branches_diff_2k.png",
+          "original_relative_path": "textures/island_tree_01_branches_diff_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_branches_diff_2k.png",
+          "size": 19963299,
+          "md5": "f288bf34ce29dde5e1675374edb9cd04",
+          "sha256": "fcfaaa1262cb8f31327ca084e6f8d69cda0b6af0d1f065a68c5a47b906ec02ff"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_branches_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_branches_nor_gl_2k.png",
+          "original_relative_path": "textures/island_tree_01_branches_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_branches_nor_gl_2k.png",
+          "size": 20594936,
+          "md5": "98af2803beca2055fde16a4ca8f2151a",
+          "sha256": "2ee3ff83fdf8f01cd9d26d5c4665b866bf69f2557e02582577f23d6d007f9c78"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_branches_rough_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_branches_rough_2k.png",
+          "original_relative_path": "textures/island_tree_01_branches_rough_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_branches_rough_2k.png",
+          "size": 4730461,
+          "md5": "f2c70d75834aa97f7ef173c119f92f8d",
+          "sha256": "e6d3c688b07dea15344672516433d7ba681727f5149c8be446dc1a5bbed9afdc"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_diff_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_diff_2k.jpg",
+          "original_relative_path": "textures/island_tree_01_diff_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/island_tree_01/island_tree_01_diff_2k.jpg",
+          "size": 2954942,
+          "md5": "06808aa5ccbfbc2a7e2f99a23f412c17",
+          "sha256": "08df798e0cadae17359d480bfda1dba59f757a7b1d03e288d3360c289dd28f78"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_leaves_alpha_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_leaves_alpha_2k.png",
+          "original_relative_path": "textures/island_tree_01_leaves_alpha_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_leaves_alpha_2k.png",
+          "size": 139077,
+          "md5": "063774afef8fe1d35ce52d56bf41bf81",
+          "sha256": "30c36ae0d9023400035f0af9d336ed5f73a84bf8a88c8e2bec8faa07d725992b"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_leaves_diff_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_leaves_diff_2k.png",
+          "original_relative_path": "textures/island_tree_01_leaves_diff_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_leaves_diff_2k.png",
+          "size": 6428036,
+          "md5": "d54fd06a5611278810df55d427cc4b1b",
+          "sha256": "fca98db31845a92e6374fccd032d40d6134e2c80fdca8038b063897c8e8f0035"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_leaves_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_leaves_nor_gl_2k.png",
+          "original_relative_path": "textures/island_tree_01_leaves_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_leaves_nor_gl_2k.png",
+          "size": 10109651,
+          "md5": "3d3d53270e1a5d6be297307c7ab8629c",
+          "sha256": "2d152d8530e707056fce44303de71cf63503f5d95b80d0820dc7625c99d8d2d9"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_leaves_rough_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_leaves_rough_2k.png",
+          "original_relative_path": "textures/island_tree_01_leaves_rough_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/island_tree_01/island_tree_01_leaves_rough_2k.png",
+          "size": 2723975,
+          "md5": "a49ed311f1d7f504a17d917ffbc83bd1",
+          "sha256": "eccee8f209c8dd869b478a209ec0b44a3de6bae11c9594700f7e201771a9eac2"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_nor_gl_2k.exr",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_nor_gl_2k.exr",
+          "original_relative_path": "textures/island_tree_01_nor_gl_2k.exr",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/island_tree_01/island_tree_01_nor_gl_2k.exr",
+          "size": 9051990,
+          "md5": "3ef4f98f3204008a3a11cdab1eed6a6f",
+          "sha256": "8b6559dee2df66980c9a9f1e1fd1e6ae60054f200bab0648709529df6edbbe78"
+        },
+        {
+          "usage": "required_texture",
+          "relative_path": "island_tree_01/textures/island_tree_01_rough_2k.exr",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\models\\island_tree_01\\textures\\island_tree_01_rough_2k.exr",
+          "original_relative_path": "textures/island_tree_01_rough_2k.exr",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/island_tree_01/island_tree_01_rough_2k.exr",
+          "size": 3207496,
+          "md5": "048f8e3338f99232e74a4ca50d599125",
+          "sha256": "db5c91ee39874c8ee4760e5c9378ac08fb881b4ea8619c80603455beac182546"
+        }
+      ]
+    }
+  ],
+  "total_bytes": 214067837
+}

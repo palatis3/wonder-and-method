@@ -1,6 +1,8 @@
 # Production website
 
-Current source revision: [practical content and planning tools](../operations/CONTENT_GAPS_20261020.md): six new guides, nine downloads, expanded guidance and a browser-only ROI calculator. The candidate preserves all prior routes and contains 285 pages, 284 sitemap URLs and 23 guides. Use the private `content-implementation-20261020` release record for its deployed identity and Google submission result.
+Current source revision: [Living City homepage and Buffalo Work archive](../operations/LIVING_CITY_20261020.md): a new rendered city, optional film and native concept selector, with the preserved Buffalo animation on its own Work page. The candidate preserves all prior routes and contains 286 pages, 285 sitemap URLs and 23 guides. Migration 0016 adds the Buffalo aggregate category. Use the private Living City release record for verified publication identity.
+
+Previous source revision: [practical content and planning tools](../operations/CONTENT_GAPS_20261020.md): six new guides, nine downloads, expanded guidance and a browser-only ROI calculator. That release contained 285 pages and 284 sitemap URLs. Its private `content-implementation-20261020` release record retains its deployed identity and Google submission result.
 
 Earlier source revision: [top-ten buyer journey and verification improvements](../operations/TOP10_IMPLEMENTATION_20261018.md). Earlier revision: [post-plan audit repairs and owner evidence](../operations/AUDIT_CLOSURE_20261018.md), preserving [monthly care, SEO and growth plans](../operations/MONTHLY_PLANS_20261018.md) and offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use the private build manifest, authenticated runtime identity and the private `evidence/postplans-audit-fixes-20261018/` release record for deployed identity.
 

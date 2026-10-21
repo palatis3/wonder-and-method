@@ -1,4 +1,5 @@
 import {websiteProof,homeStartingPoints} from './home-proof.mjs';
+import {livingCityHome} from './living-city.mjs';
 import {compactComparison} from './buyer-journey.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {workGallery} from './work-gallery.mjs';
@@ -25,7 +26,7 @@ function hero(config,offersForHero) {
 }
 
 function home({config, offers:o}) {
-  return `${hero(config,o)}<div class="home-content">${websiteProof()}${homeStartingPoints(o)}
+  return `${config.homeEdition==='living-city'?livingCityHome(config):hero(config,o)}<div class="home-content">${config.homeEdition==='living-city'?'':websiteProof()}${homeStartingPoints(o)}
   ${founderStrip(config)}<section class="studio-section studio-process"><p class="eyebrow">A clear working relationship</p><h2>From the first conversation<br>to a useful website.</h2><ol>${projectSummary.map(([name,text])=>`<li><h3>${name}</h3><p>${text}</p></li>`).join('')}</ol>${link('/process/', 'See the full project process')}</section>
   <section class="studio-section home-faq"><h2>Before we talk.</h2><details><summary>Can I update the website myself?</summary><p>There is no drag-and-drop editor. Updates require coding skills, a developer or optional monthly care. Keep Running includes one round of small supplied text, photo or link edits each month. <a href="/work/source-handoff/#code-editing">See how updates work</a>.</p></details><details><summary>Does the website include SEO?</summary><p>Yes: research, complete writing, page titles, search descriptions and launch checks. Focused includes 2 original guides and Signature includes 4; these count toward the page total. <a href="/services/seo/">Ongoing SEO is optional</a>. Rankings and leads are not guaranteed.</p></details><details><summary>Do I need an ongoing subscription?</summary><p>No. You own the custom website work once it is paid for; third-party materials keep their license terms. You pay domain, hosting and paid tools directly to providers. <a href="/services/website-care/">Monthly studio help is optional</a>.</p></details><details><summary>How long will the project take?</summary><p>${e(config.projectTiming)} <a href="/process/">See the project steps</a>.</p></details></section>${close()}</div>`;
 

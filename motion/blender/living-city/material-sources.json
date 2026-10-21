@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "retrieved_at_utc": "2026-10-20T21:13:01.87877-04:00",
+  "provider": "Poly Haven",
+  "provider_url": "https://polyhaven.com",
+  "license": "CC0-1.0",
+  "license_source": "https://polyhaven.com/license",
+  "license_text_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_verification": "Official Poly Haven asset license states its HDRIs, textures and models are CC0 and permits commercial use, modification and redistribution.",
+  "api_terms_source": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "api_usage": "One-time asset preparation with a unique User-Agent; no API calls in the public website. Downloaded assets are self-hosted CC0 files.",
+  "credit": "Materials and environment sourced from Poly Haven (CC0).",
+  "budget_bytes": 100000000,
+  "assets": [
+    {
+      "id": "wood_planks",
+      "name": "Wood Planks",
+      "role": "weathered_timber",
+      "source_url": "https://polyhaven.com/a/wood_planks",
+      "api_files_url": "https://api.polyhaven.com/files/wood_planks",
+      "license": "CC0-1.0",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "dimensions_mm": [
+        1499.999761581421,
+        1499.999761581421
+      ],
+      "selection_note": "Closest weathered warm timber match; species is unspecified by the source, not verified oak.",
+      "files": [
+        {
+          "map": "Diffuse",
+          "usage": "base_color",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "sRGB",
+          "relative_path": "wood_planks/wood_planks_diff_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\wood_planks\\wood_planks_diff_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_planks/wood_planks_diff_2k.jpg",
+          "size": 2387732,
+          "md5": "29f2d08d585433fb54034a0e8fa79adc",
+          "sha256": "caa1e71809521050fe0753ee7c17aa2faf32055fe53aff013415bc459dd23ea7"
+        },
+        {
+          "map": "nor_gl",
+          "usage": "normal_opengl",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "wood_planks/wood_planks_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\wood_planks\\wood_planks_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/wood_planks/wood_planks_nor_gl_2k.png",
+          "size": 23969660,
+          "md5": "4ab4d4467eed17ab3770a316cfd8210a",
+          "sha256": "322e30f9ccf72979e81a69641b2fa4a3f5530a8fffa498a1a0d9f8512b1ea1f1"
+        },
+        {
+          "map": "Rough",
+          "usage": "roughness",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "Non-Color",
+          "relative_path": "wood_planks/wood_planks_rough_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\wood_planks\\wood_planks_rough_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_planks/wood_planks_rough_2k.jpg",
+          "size": 1151798,
+          "md5": "461754cb0181e562be384e2acc2fc8d2",
+          "sha256": "56e3bafda8dfbeb8730b10d59c7541e983cff43b5b74f58d6d2c437f2b9455a1"
+        },
+        {
+          "map": "Displacement",
+          "usage": "displacement",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "wood_planks/wood_planks_disp_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\wood_planks\\wood_planks_disp_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/wood_planks/wood_planks_disp_2k.png",
+          "size": 5714809,
+          "md5": "be34616bdd1c45522cdd0ac03f4fc8d2",
+          "sha256": "71c86b48ffa578b8b21af73c77264e6b0a89b3346ac097de07676916348113dc"
+        }
+      ]
+    },
+    {
+      "id": "sandstone_blocks_08",
+      "name": "Sandstone Blocks 08",
+      "role": "pale_buff_stone",
+      "source_url": "https://polyhaven.com/a/sandstone_blocks_08",
+      "api_files_url": "https://api.polyhaven.com/files/sandstone_blocks_08",
+      "license": "CC0-1.0",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "dimensions_mm": [
+        3000,
+        3000
+      ],
+      "selection_note": "Pale buff sandstone selected as the closest verified alternative to limestone; shallow joints and restrained tool marks.",
+      "files": [
+        {
+          "map": "Diffuse",
+          "usage": "base_color",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "sRGB",
+          "relative_path": "sandstone_blocks_08/sandstone_blocks_08_diff_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\sandstone_blocks_08\\sandstone_blocks_08_diff_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/sandstone_blocks_08/sandstone_blocks_08_diff_2k.jpg",
+          "size": 1129500,
+          "md5": "2bd2a87974f1870fad58e25da35ed706",
+          "sha256": "da2f453c7c3683f5b01ca8b365ccf81ebce488afab7661adecd83208fc9aec97"
+        },
+        {
+          "map": "nor_gl",
+          "usage": "normal_opengl",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "sandstone_blocks_08/sandstone_blocks_08_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\sandstone_blocks_08\\sandstone_blocks_08_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandstone_blocks_08/sandstone_blocks_08_nor_gl_2k.png",
+          "size": 4549107,
+          "md5": "fbf53ab86b84bafc0ff5abf087861d1a",
+          "sha256": "16f2e2448f3e8ebb365c20de247400aecc4a6741d133b2ac1bdff7507ced08fb"
+        },
+        {
+          "map": "Rough",
+          "usage": "roughness",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "Non-Color",
+          "relative_path": "sandstone_blocks_08/sandstone_blocks_08_rough_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\sandstone_blocks_08\\sandstone_blocks_08_rough_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/sandstone_blocks_08/sandstone_blocks_08_rough_2k.jpg",
+          "size": 877815,
+          "md5": "1f6cd4b874436929d438f8f5ba8818d9",
+          "sha256": "676d9f00b54f303dc19856123312110be3859066661b224dececc3bc857c8f21"
+        },
+        {
+          "map": "Displacement",
+          "usage": "displacement",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "sandstone_blocks_08/sandstone_blocks_08_disp_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\sandstone_blocks_08\\sandstone_blocks_08_disp_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandstone_blocks_08/sandstone_blocks_08_disp_2k.png",
+          "size": 7409561,
+          "md5": "75f870b789c7f6d7da26d7fff934ce48",
+          "sha256": "5d4403656352fa08e6ee741bf5c92ef3a0f5cb8fd8670c8fd8fa4d342eafdf48"
+        }
+      ]
+    },
+    {
+      "id": "red_brick",
+      "name": "Red Brick",
+      "role": "warm_red_brick",
+      "source_url": "https://polyhaven.com/a/red_brick",
+      "api_files_url": "https://api.polyhaven.com/files/red_brick",
+      "license": "CC0-1.0",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "dimensions_mm": [
+        1399.999976158142,
+        1399.999976158142
+      ],
+      "selection_note": "Weathered warm red masonry with recessed grey mortar and subtle chipped edges.",
+      "files": [
+        {
+          "map": "Diffuse",
+          "usage": "base_color",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "sRGB",
+          "relative_path": "red_brick/red_brick_diff_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\red_brick\\red_brick_diff_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/red_brick/red_brick_diff_2k.jpg",
+          "size": 3169072,
+          "md5": "d38aaa7b2c8533c033919bc566c62c37",
+          "sha256": "a1ae5ba7e63026971ceaf68ebbcf8982d9c2dadde1c99996c49b8ac1160af995"
+        },
+        {
+          "map": "nor_gl",
+          "usage": "normal_opengl",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "red_brick/red_brick_nor_gl_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\red_brick\\red_brick_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/red_brick/red_brick_nor_gl_2k.png",
+          "size": 8907641,
+          "md5": "4602a931ef31b2ab63f93543dce17289",
+          "sha256": "e3ca21654988c8ee348fff4a71ccd57fce35073d6898902f185c1f86799e9ae1"
+        },
+        {
+          "map": "Rough",
+          "usage": "roughness",
+          "resolution": "2k",
+          "format": "jpg",
+          "color_space": "Non-Color",
+          "relative_path": "red_brick/red_brick_rough_2k.jpg",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\red_brick\\red_brick_rough_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/red_brick/red_brick_rough_2k.jpg",
+          "size": 552848,
+          "md5": "30d1018e087a2ee81328b331edefb2d5",
+          "sha256": "b8b6b882b467647162433914b3e4db16e91852a0bdf866e6bcea4a76683ea00d"
+        },
+        {
+          "map": "Displacement",
+          "usage": "displacement",
+          "resolution": "2k",
+          "format": "png",
+          "color_space": "Non-Color",
+          "relative_path": "red_brick/red_brick_disp_2k.png",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\red_brick\\red_brick_disp_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/red_brick/red_brick_disp_2k.png",
+          "size": 6312343,
+          "md5": "6f59ffbd6ef53153afac554fcc9dc970",
+          "sha256": "733166c31b1b7ba4fc772247edf3527a83f20d4d14d2571ab1674f0dfd28e12a"
+        }
+      ]
+    },
+    {
+      "id": "aarfontein_dusk",
+      "name": "Aarfontein Dusk",
+      "role": "cool_dusk_environment",
+      "source_url": "https://polyhaven.com/a/aarfontein_dusk",
+      "api_files_url": "https://api.polyhaven.com/files/aarfontein_dusk",
+      "license": "CC0-1.0",
+      "authors": {
+        "Dario Barresi": "All"
+      },
+      "dimensions_mm": null,
+      "selection_note": "Soft cool overcast dusk with subtle horizon glow; use for lighting and reflections, with exposure and orientation set by the scene.",
+      "files": [
+        {
+          "map": "hdri",
+          "usage": "environment",
+          "resolution": "2k",
+          "format": "hdr",
+          "color_space": "Linear",
+          "relative_path": "aarfontein_dusk/aarfontein_dusk_2k.hdr",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\aarfontein_dusk\\aarfontein_dusk_2k.hdr",
+          "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/aarfontein_dusk_2k.hdr",
+          "size": 6291436,
+          "md5": "33d4db02c5901c9f909e1278eda74e8c",
+          "sha256": "bb79f4621a1d1f1ac237d6d2a303009e27f8ab24dd1459c6c738a270e9b21db6"
+        }
+      ]
+    },
+    {
+      "id": "belfast_sunset_puresky",
+      "name": "Belfast Sunset (Pure Sky)",
+      "role": "camera_cloud_environment",
+      "source_url": "https://polyhaven.com/a/belfast_sunset_puresky",
+      "api_files_url": "https://api.polyhaven.com/files/belfast_sunset_puresky",
+      "license": "CC0-1.0",
+      "authors": {
+        "Jarod Guest": "Sky edits",
+        "Greg Zaal": "Processing",
+        "Dimitrios Savva": "Photography"
+      },
+      "selection_note": "Photographed pure-sky environment with soft cloud banks, graded to deep petrol for camera rays; original dusk map supplies reflection lighting.",
+      "files": [
+        {
+          "map": "HDRI",
+          "usage": "camera_environment",
+          "resolution": "2k",
+          "format": "hdr",
+          "color_space": "Linear",
+          "relative_path": "belfast_sunset_puresky/belfast_sunset_puresky_2k.hdr",
+          "path": "C:\\Wonder and Method\\wonder-method\\output\\living-city\\textures\\belfast_sunset_puresky\\belfast_sunset_puresky_2k.hdr",
+          "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/belfast_sunset_puresky_2k.hdr",
+          "size": 4563204,
+          "md5": "4bb56d6163ef1c7ec762e4a7ef8ede81",
+          "sha256": "273003109ca1cfb798ce6b96e09ac8440f763d0ef0c376bbe77492613540b4a3"
+        }
+      ]
+    }
+  ],
+  "total_bytes": 76986526.0
+}

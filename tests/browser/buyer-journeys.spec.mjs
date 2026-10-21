@@ -16,8 +16,9 @@ test('mobile menu traps focus and Escape returns to its trigger',async({page,isM
  await page.keyboard.press('Escape');await expect(menu).toHaveAttribute('aria-expanded','false');await expect(menu).toBeFocused();
 });
 
-test('neutral contact opens a question while explicit offer requests preserve proposal intent',async({page})=>{
+test('neutral contact opens a question while explicit offer requests preserve proposal intent',async({page,isMobile})=>{
  await page.goto('/?qa=1');
+ if(isMobile)await page.locator('.menu-toggle').click();
  const contact=page.locator('.site-header a[href="/contact/#inquiry"]:visible').first();
  await contact.click();await expect(page.locator('#request_kind')).toHaveValue('question');await expect(page.locator('.request-summary')).toBeHidden();await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
  await page.goto('/pricing/?qa=1');
@@ -131,7 +132,7 @@ test('main buying pages fit small viewports and reduced motion stays honored',as
  }
  if(testInfo.project.name==='phone-reduced-motion'){
   await page.goto('/?qa=1');expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
-  await expect(page.locator('.civic-motion--intro')).toHaveJSProperty('paused',true);
+  await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
  }
 });
 

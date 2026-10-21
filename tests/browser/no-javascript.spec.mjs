@@ -1,4 +1,19 @@
 import {test,expect} from './fixtures.mjs';
+
+test('homepage projects and Buffalo films remain available without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/?qa=1');
+ await expect(page.locator('.city-tabs')).toBeHidden();
+ await expect(page.locator('[data-city-play]')).toBeHidden();
+ for(const id of ['fieldwork','northline','hearthside']){
+  const panel=page.locator('[data-city-panel="'+id+'"]');
+  await expect(panel).toBeVisible();
+  await expect(panel.locator('.city-project-link')).toHaveAttribute('href','/work/'+id+'/');
+ }
+ await page.goto('/work/buffalo-civic/?qa=1');
+ await expect(page.locator('video[controls]')).toHaveCount(2);
+ await expect(page.locator('#buffalo-intro')).toHaveJSProperty('paused',true);
+});
 import {inquiryResponseHtml} from '../../src/inquiry-response.mjs';
 import {validateInquiry} from '../../src/inquiry.mjs';
 

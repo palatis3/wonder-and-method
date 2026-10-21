@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "revision": "living-city-v1",
+  "openingPosterBytes": 341860,
+  "files": {
+    "desktopPoster": {
+      "path": "/living-city/desktop-poster.webp",
+      "bytes": 167164,
+      "sha256": "d8f3695814558f7778f5eebbd4692de8f6bbb008cff54267e4ecae769597be67",
+      "width": 1440,
+      "height": 960,
+      "decodedVideoFrame": 1,
+      "pixelIdenticalToDecodedFrame": false,
+      "encoding": "webp-lossy",
+      "quality": 90,
+      "sourceDecodedRgbSha256": "4512c1657e2eae8c43f7f967f35e3415241cee9830c040ce481cf5fe002664d2",
+      "psnrToDecodedFrame": 41.422
+    },
+    "desktopEnd": {
+      "path": "/living-city/desktop-end.webp",
+      "bytes": 170804,
+      "sha256": "8bb9463e49b98fd608a1f72fcae5f5114cc67313f880cede6c590c894f1a3d7e",
+      "width": 1440,
+      "height": 960,
+      "decodedVideoFrame": 101,
+      "pixelIdenticalToDecodedFrame": false,
+      "encoding": "webp-lossy",
+      "quality": 92,
+      "sourceDecodedRgbSha256": "094648628fde0c999400409a9f66fcd601c696d02e9ca02c9232a8be0a94858e",
+      "psnrToDecodedFrame": 42.111
+    },
+    "desktopSmallPoster": {
+      "path": "/living-city/desktop-small-poster.webp",
+      "bytes": 69796,
+      "sha256": "0aad6244ed89a4de89b5330f58f00f48369323b0f0427b5027ec0586d920f671",
+      "width": 960,
+      "height": 640,
+      "decodedVideoFrame": 1,
+      "encoding": "webp-lossy",
+      "quality": 85,
+      "psnrToResizedDecodedFrame": 37.997
+    },
+    "desktopVideo": {
+      "path": "/living-city/desktop-film.mp4",
+      "bytes": 1185820,
+      "sha256": "21fe9b448e1af92174032253e80cea96c2ff825fe8b19a638b06630863b4167a",
+      "width": 1440,
+      "height": 960,
+      "fps": 24,
+      "frames": 101,
+      "durationSeconds": 4.208333333333333
+    },
+    "mobilePoster": {
+      "path": "/living-city/mobile-poster.webp",
+      "bytes": 82780,
+      "sha256": "5a9bf36d27f6e3a7f771d0f2a842b0d1814f67d124fbed5b7649107b756cd128",
+      "width": 828,
+      "height": 1216,
+      "decodedVideoFrame": 1,
+      "pixelIdenticalToDecodedFrame": false,
+      "encoding": "webp-lossy",
+      "quality": 90,
+      "sourceDecodedRgbSha256": "9fa1e673c2be5e0e5c40221ee601fd9faafd635277b1481e567930dd74581d64",
+      "psnrToDecodedFrame": 42.747
+    },
+    "mobileEnd": {
+      "path": "/living-city/mobile-end.webp",
+      "bytes": 63142,
+      "sha256": "4110521f1d5c6b730b1487477868b22cddb8c0e944013075e5d444d4b513c2f2",
+      "width": 828,
+      "height": 1216,
+      "decodedVideoFrame": 72,
+      "pixelIdenticalToDecodedFrame": false,
+      "encoding": "webp-lossy",
+      "quality": 92,
+      "sourceDecodedRgbSha256": "558a220681dba56b0df55319a64e46da0f6faef878174e813e86e14e1385df7d",
+      "psnrToDecodedFrame": 44.872
+    },
+    "mobileSmallPoster": {
+      "path": "/living-city/mobile-small-poster.webp",
+      "bytes": 22120,
+      "sha256": "0e9ce011bc5bfc22713c5048aeaca1a6a2e9a13447593340a4e004f9e5ef1f59",
+      "width": 414,
+      "height": 608,
+      "decodedVideoFrame": 1,
+      "encoding": "webp-lossy",
+      "quality": 85,
+      "psnrToResizedDecodedFrame": 38.602
+    },
+    "mobileVideo": {
+      "path": "/living-city/mobile-film.mp4",
+      "bytes": 520292,
+      "sha256": "b7387927e0ccb98985a8542497ff95e2ee6ae932b9106604c4bde87403d5502b",
+      "width": 828,
+      "height": 1216,
+      "fps": 24,
+      "frames": 72,
+      "durationSeconds": 3.0
+    }
+  }
+}

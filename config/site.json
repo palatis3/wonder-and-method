@@ -208,7 +208,7 @@
     "analytics": "I count page views; package, service, question and contact-link clicks; goal choices; form starts and saved-confirmation events; guide and full-details download clicks; email-link clicks; and choices to open live chat. A count contains the UTC day, a fixed event, service and page identifier, a total, and a broad source category for page views (such as Google, Bing, social, AI assistant, referral, campaign, internal or direct). The browser classifies the referring site or campaign parameter locally; it never sends the raw referrer, campaign value or full URL in the count. These are events, not unique people or linked visitor journeys. We do not attach names, emails, messages, visitor IDs or session IDs. Global Privacy Control, Do Not Track and the owner opt-out suppress collection. An explicit owner opt-out saves only that preference in local storage. Obvious bot signatures are filtered, but counts can still include automated traffic or omit blocked events. Separate keyed rate controls expire after 20 minutes and are cleared hourly. Aggregate totals are removed after 90 days; provider recovery copies can remain longer. Email and chat actions do not prove that a message was sent.",
     "workbench": "The optional lead-workbench demonstration uses fictional sample records. Changes remain in memory unless you choose to keep them in this browser. That choice writes unprotected local storage available to this website on this browser, until you reset the workbench or clear site data. No demo records are sent to the studio. Downloaded CSV files remain wherever you save them; reset does not remove those files. Do not put real customer information in the demo."
   },
-  "homeEdition": "civic-sculpture",
+  "homeEdition": "living-city",
   "supportChat": {
     "enabled": true,
     "provider": "tawk",
@@ -232,5 +232,6 @@
   "projectTiming": "Build-time target: Launch 3–5 days, Focused 5–8 days and Signature 7–10 days. From the confirmed start, with the page list agreed and your business facts, assets and access ready. Complete writing is included. The work may take a few extra days; delayed inputs, reviews or added scope can extend the schedule further. Your proposal confirms the dates, including review and written approval.",
   "founderPublicName": "Terrance Ciszek",
   "founderProfile": "https://www.linkedin.com/in/terrance-ciszek-3ba01a402/",
-  "firstConversation": "We start by email. Terry replies to the address you provide. If a call would help, we arrange one together; you do not need to book a call before sending your question or project details."
+  "firstConversation": "We start by email. Terry replies to the address you provide. If a call would help, we arrange one together; you do not need to book a call before sending your question or project details.",
+  "civicWorkArchive": true
 }

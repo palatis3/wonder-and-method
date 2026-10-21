@@ -3,6 +3,7 @@ import {resolve,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {civicAssetState} from './build-civic-assets.mjs';
+import {livingCityAssetState} from './build-living-city-assets.mjs';
 import {verifyLocalReferences} from './verify-local-references.mjs';
 import {renderPages} from '../src/pages.mjs';
 import {selectedEdition} from '../src/editions.mjs';
@@ -12,6 +13,7 @@ const root=resolve(import.meta.dirname,'..'),site=resolve(root,'.runtime/experie
 const json=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'));
 const [config,offers,map,tokens,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/design-tokens.json','authority/v5/geography.json'].map(json));
 Object.assign(config,await civicAssetState(root,config));
+Object.assign(config,await livingCityAssetState(root,config));
 const preview={...config,mode:'staging',formMode:'synthetic',reviewOnly:false,searchIndexing:false};
 const expected=renderPages({config:preview,offers,map,tokens,geography}),routes=expected.map(p=>p.path);
 const observed=(await readdir(site,{recursive:true})).filter(p=>/(?:^|[\\/])index\.html$/.test(p)&&!p.replaceAll('\\','/').startsWith('assets/')).map(p=>'/'+p.replaceAll('\\','/').replace(/index\.html$/,''));
@@ -42,11 +44,17 @@ if(art.id==='civic-sculpture'){
  if(config.civicAmbientReady){assert.match(html,/id="civic-ambient"/);assert.ok(html.includes(`data-src="${art.ambientMotion}"`));if(art.mobileAmbientMotion)assert.ok(html.includes(`data-mobile-src="${art.mobileAmbientMotion}"`));}
  for(const source of config.civicAssetFiles){const asset='assets/'+source.slice('public/'.length),bytes=await readFile(resolve(site,asset));assert.ok(bytes.length>0,asset);assert.equal(hash(bytes),hash(await readFile(resolve(root,source))),asset);media.push({asset,bytes:bytes.length,sha256:hash(bytes)});}
  for(const extension of ['css','js'])assert.equal(hash(await readFile(resolve(site,`assets/civic-sculpture-preview.${extension}`))),hash(await readFile(resolve(root,`motion/civic-sculpture-preview.${extension}`))),'Current motion controller/styles');
+}else if(art.id==='living-city'){
+ assert.match(html,/data-city-film/);assert.match(html,/data-city-project="fieldwork"/);assert.match(html,/living-city\.js/);
+ assert.equal(hash(await readFile(resolve(site,'assets/living-city.js'))),hash(await readFile(resolve(root,'motion/living-city.js'))),'Current city motion controller');
+ assert.equal(hash(await readFile(resolve(site,'assets/living-city.css'))),hash(await readFile(resolve(root,'src/assets/living-city.css'))),'Current city styles');
+ for(const source of config.livingCityAssetFiles){const asset='assets/'+source.slice(7),bytes=await readFile(resolve(site,asset));assert.equal(hash(bytes),hash(await readFile(resolve(root,source))),asset);media.push({asset,bytes:bytes.length,sha256:hash(bytes)});}
 }else{
  assert.ok(html.includes(`data-src="${art.motion}"`));assert.match(html,/class="motion-toggle"/);
  for(const asset of [art.still,art.motion])assert.ok((await stat(resolve(site,'.'+asset))).size>0,asset);
 }
 const sourceHashes={};for(const p of ['config/offers.json','src/premium-site.mjs','src/service-content.mjs','src/audit-content.mjs','src/assets/premium.css','src/editions.mjs','src/client.js','src/shared.mjs','scripts/build-experience.mjs','scripts/verify-experience.mjs','scripts/build-civic-assets.mjs'])sourceHashes[p]=hash(await readFile(resolve(root,p)));
-const evidence={checkedAt:new Date().toISOString(),scope:'Current premium experience artifact; static parity, routes, references and motion assets',routeCount:routes.length,references,edition:art.id,pricingSource:'config/offers.json',commercialVersion:offers.version,noindex:true,inquiry:'synthetic preview; no inquiry or email sent',motion:{readiness:config.civicReadiness??null,deferredSource:true,stillAndControls:true,media},sourceHashes,limits:'Static verification does not prove browser playback, physical-device behavior, inbox delivery, or client results. Motion behavior has separate automated and browser checks.'};
+if(art.id==='living-city')for(const p of ['src/living-city.mjs','src/assets/living-city.css','src/city-preview-captures.json','motion/living-city.js','scripts/build-living-city-assets.mjs','public/living-city/manifest.json'])sourceHashes[p]=hash(await readFile(resolve(root,p)));
+const evidence={checkedAt:new Date().toISOString(),scope:'Current premium experience artifact; static parity, routes, references and motion assets',routeCount:routes.length,references,edition:art.id,pricingSource:'config/offers.json',commercialVersion:offers.version,noindex:true,inquiry:'synthetic preview; no inquiry or email sent',motion:{readiness:art.id==='living-city'?config.livingCityMedia.status:config.civicReadiness??null,deferredSource:true,stillAndControls:true,media},sourceHashes,limits:'Static verification does not prove browser playback, physical-device behavior, inbox delivery, or client results. Motion behavior has separate automated and browser checks.'};
 const out=resolve(root,'evidence/experience-verification.json');await mkdir(dirname(out),{recursive:true});await writeFile(out,JSON.stringify(evidence,null,2)+'\n');
 console.log(`Experience verified: ${routes.length} current routes, ${references.references} local references, configured prices, exact noindex, synthetic inquiry and ${media.length} verified ${art.id} media assets.`);

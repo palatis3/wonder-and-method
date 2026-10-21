@@ -55,7 +55,7 @@ test('Civic edition keeps full-word images, local metadata and deferred once-onl
  const pending=renderPages({config:{...civicConfig,civicMotionReady:false},offers,map,geography}).find(x=>x.path==='/').html;
  assert.doesNotMatch(pending,/<video[^>]+data-src=/);
  assert.match(pending,/<img class="civic-poster"[^>]+src=/);
- assert.equal(saved.homeEdition,'civic-sculpture');
+ assert.equal(saved.homeEdition,'living-city');
  assert.equal(DEFAULT_EDITION,'buffalo-dusk');
  assert.equal(selectedEdition({}).id,'buffalo-dusk');
  const prices=html=>[...html.matchAll(/\$[\d,]+/g)].map(x=>x[0]);

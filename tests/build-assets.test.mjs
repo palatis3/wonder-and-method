@@ -27,6 +27,8 @@ test('plan pages reuse shared CSS without changing the existing cascade',async()
  assert.match(html,/<p>Keep content<\/p>/);
  const ordinary=applyCssBundles(`<head>${styles(['brand','journal','premium'])}</head>`,'');
  assert.deepEqual([...ordinary.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]),['/assets/site-guides.css','/assets/site.css']);
+ const city=applyCssBundles(`<head>${styles(['brand','premium','layout-components','living-city'])}</head>`,'');
+ assert.deepEqual([...city.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]),['/assets/site.css','/assets/living-city.css'],'City typography keeps its override position after shared styles');
 });
 
 test('pruning preserves references in emitted documents, dynamic edition paths and unlisted archives',async()=>{

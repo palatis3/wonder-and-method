@@ -14,7 +14,7 @@ const optionalKeys=['mobileVideo','mobileAmbientVideo','smallPoster'];
 
 // One manifest/readiness policy for local, production/review builds and fingerprints.
 export async function civicAssetState(root,config){
-  if(config.homeEdition!=='civic-sculpture')return {};
+  if(config.homeEdition!=='civic-sculpture'&&!config.civicWorkArchive)return {};
   const manifestPath='public/civic-sculpture/manifest.json';
   const active=await optionalJson(root,manifestPath);
   const sourceFiles=new Set();
@@ -63,7 +63,7 @@ export async function civicAssetState(root,config){
   return {civicMotionReady:videoReady,civicAmbientReady:Boolean(videoReady&&ambient),civicMedia:media,civicAssetFiles:assetFiles,civicSourceFiles:[...sourceFiles].sort(),civicReadiness:{requestedRevision:active?.revision??'v1',selectedRevision:manifest.revision??'v1',pipelineState:selected.pipeline?.state??'missing',videoReady,mobileReady,smallPosterReady}};
 }
 export async function copyCivicAssets(root,output,config){
-  if(config.homeEdition!=='civic-sculpture')return;
+  if(config.homeEdition!=='civic-sculpture'&&!config.civicWorkArchive)return;
   const state=config.civicAssetFiles?config:await civicAssetState(root,config);
   for(const path of state.civicAssetFiles){
     const destination=resolve(output,'assets',path.slice('public/'.length));

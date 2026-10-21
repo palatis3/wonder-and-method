@@ -7,6 +7,7 @@ import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
+import {livingCityAssetState,copyLivingCityAssets} from './build-living-city-assets.mjs';
 import {readFile,writeFile,mkdir,cp,readdir,rm,stat} from 'node:fs/promises';
 import {resolve,dirname,basename,extname,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
@@ -30,13 +31,15 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
 export function applyCssBundles(html,boot){
  const plans=html.includes('href="/assets/package-visuals.css"');
  const guides=html.includes('href="/assets/journal.css"');
+ const city=html.includes('href="/assets/living-city.css"');
  html=html.replace('<script src="/assets/boot.js"></script>',`<script>${boot}</script>`)
   .replace(/<link rel="stylesheet" href="\/assets\/(?:brand|style|journal|premium|site-refresh|layout-components|support-chat)\.css">/g,'');
+ if(city)html=html.replace('<link rel="stylesheet" href="/assets/living-city.css">','');
  if(plans)html=html.replace(/<link rel="stylesheet" href="\/assets\/(?:brand|package-visuals)\.css">/g,'');
  // Package selectors do not target the identity. Brand rules now lead the shared
  // cascade, preserving their position before the general layout overrides.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css"></head>`);
+ return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}</head>`);
 }
 
 export async function buildBrowserBundles(root,config){
@@ -117,6 +120,7 @@ const map=await readJSON('authority/v5/site-map.json');
 const tokens=await readJSON('authority/v5/design-tokens.json');
 const geography=await readJSON('authority/v5/geography.json');
 Object.assign(config,await civicAssetState(root,config));
+Object.assign(config,await livingCityAssetState(root,config));
 assertSiteOrigin(config);
 const pages=renderPages({config,offers,map,tokens,geography});
 assertPageDates(pages,await readJSON('config/page-dates.json'));
@@ -134,6 +138,12 @@ const browserBundles=await buildBrowserBundles(root,config);
 await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
 await writeFile(resolve(output,'assets/calculator.js'),browserBundles.calculator);
 await copyCivicAssets(root,output,config);
+await copyLivingCityAssets(root,output,config);
+if(config.homeEdition==='living-city'){
+ const cityBundle=await bundle({entryPoints:[resolve(root,'motion/living-city.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16']});
+ await writeFile(resolve(output,'assets/living-city.js'),cityBundle.outputFiles[0].contents);
+}
+await writeFile(resolve(output,'assets/living-city.css'),(await transform(await readFile(resolve(root,'src/assets/living-city.css'),'utf8'),{loader:'css',minify:true,target:['chrome110','safari16']})).code);
 if(config.homeEdition==='civic-sculpture'){
  const civicScript=resolve(output,'assets/civic-sculpture-preview.js');
  await writeFile(civicScript,(await transform(await readFile(civicScript,'utf8'),{loader:'js',minify:true,target:['chrome110','safari16']})).code);

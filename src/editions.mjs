@@ -1,5 +1,18 @@
 export const DEFAULT_EDITION = 'buffalo-dusk';
 export const editions = Object.freeze({
+  'living-city': Object.freeze({
+    id:'living-city',name:'Living City',
+    alt:'A waterfront neighborhood at dusk, with Fieldwork’s greenhouse, Northline’s remodeling studio and Hearthside’s pizzeria.',
+    still:'/assets/living-city/desktop-poster.webp',
+    srcset:'/assets/living-city/desktop-poster.webp 1440w',
+    motion:'/assets/living-city/desktop-film.mp4',duration:4.2,width:1440,height:960,
+    projectAlt:'The Living City neighborhood created for the Wonder and Method website',
+    socialAlt:'Three small businesses on a warmly lit waterfront — Wonder and Method',
+    workDescription:'Explore my studio website: an original three-dimensional neighborhood, clear service choices and three working website concepts.',
+    identityCopy:'Newsreader display type, a quiet Manrope interface and warm ivory against a deep blue evening give the website its character.',
+    motionCopy:'An optional short film brings three business website concepts into view. The page, project selector and links remain available throughout, with pause, replay and still-image alternatives.',
+    sceneCopy:'An original three-dimensional neighborhood connects Fieldwork, Northline and Hearthside: three fictional businesses with working website concepts.',
+  }),
   'buffalo-dusk': Object.freeze({
     id: 'buffalo-dusk',
     name: 'Buffalo, at dusk',

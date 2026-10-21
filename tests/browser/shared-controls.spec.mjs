@@ -17,7 +17,7 @@ test('header contact and floating corner tools remain reachable across page type
  if(isMobile)await page.setViewportSize({width:320,height:844});
  for(const path of ['/','/pricing/','/contact/','/work/fieldwork/','/services/seo/','/areas/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
-  const contact=page.locator(isMobile?(path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
+  const contact=page.locator(isMobile?(path==='/'?'.city-primary':path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).toBeHidden();
   await revealTools(page);await expect(page.locator('.support-chat')).toHaveCSS('position',path==='/contact/'?'static':'fixed');
@@ -94,17 +94,73 @@ test('saved section links still reach consolidated tools, privacy details and co
  await page.goto('/areas/erie-county/?qa=1#buyer-task');await expect(page.locator('#buyer-task')).toBeVisible();await expect(page.locator('a[href^="/assets/county-briefs/erie.txt"]')).toBeVisible();
 });
 
-test('homepage animation can replay its opening after reaching ambient motion',async({page})=>{
- await page.goto('/?qa=1');await page.locator('.civic-stage').scrollIntoViewIfNeeded();
- await page.locator('.civic-toggle').click();
- await expect.poll(()=>page.locator('#civic-motion').evaluate(video=>Number.isFinite(video.duration)&&video.duration>0&&!video.paused)).toBe(true);
- await expect(page.locator('.civic-hero')).toHaveAttribute('data-phase','ambient',{timeout:20000});
- await expect(page.getByRole('button',{name:'Replay animation',exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Replay animation',exact:true}).click();
- await expect(page.locator('.civic-hero')).toHaveAttribute('data-phase','intro');
- await expect(page.locator('.civic-toggle')).toBeFocused();
- expect(await page.locator('#civic-motion').evaluate(video=>video.currentTime)).toBeLessThan(2);
- await page.locator('.civic-toggle').click();
+test('homepage city film remains optional, pauses in place and replays',async({page},testInfo)=>{
+ const requests=[];page.on('request',request=>{if(request.url().includes('/living-city/')&&request.url().includes('.mp4'))requests.push(request.url());});
+ await page.goto('/?qa=1');await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-ready','true');
+ expect(requests).toHaveLength(0);await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
+ if(testInfo.project.name==='phone-reduced-motion'){
+  await expect(page.locator('[data-city-play]')).toBeDisabled();expect(requests).toHaveLength(0);return;
+ }
+ await page.locator('[data-city-play]').click();
+ await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
+ await page.locator('[data-city-play]').click();
+ await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
+ const held=await page.locator('#city-film').evaluate(video=>video.currentTime);
+ await page.locator('#website-examples').scrollIntoViewIfNeeded();
+ await page.locator('[data-city-play]').scrollIntoViewIfNeeded();
+ await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
+ expect(await page.locator('#city-film').evaluate(video=>video.currentTime)).toBe(held);
+ await page.locator('[data-city-play]').click();
+ await page.locator('[data-city-replay]').focus();
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','ended',{timeout:15000});
+ await expect(page.locator('[data-city-replay]')).toBeHidden();
+ await expect(page.locator('[data-city-play]')).toBeFocused();
+ await page.locator('[data-city-play]').click();
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','playing');
+ expect(await page.locator('#city-film').evaluate(video=>video.currentTime)).toBeLessThan(2);
+ await page.locator('[data-city-play]').click();
+});
+
+test('city project tabs update the preview and destination together with keyboard access',async({page})=>{
+ await page.goto('/?qa=1');await page.getByRole('tab',{name:'Fieldwork',exact:true}).focus();
+ await page.keyboard.press('ArrowRight');
+ await expect(page.getByRole('tab',{name:'Northline',exact:true})).toBeFocused();
+ await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel','northline');
+ await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/northline/');
+ await page.keyboard.press('End');
+ await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel','hearthside');
+ await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveText(/Open Hearthside website/);
+ await page.locator('[data-city-panel]:visible .city-project-link').click();
+ await expect(page).toHaveURL(/\/work\/hearthside\//);
+});
+
+test('a failed city film keeps the still and website links usable, then retries',async({page},testInfo)=>{
+ test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion never requests a film');
+ const filmPattern='**/assets/living-city/*.mp4';
+ await page.route(filmPattern,route=>route.abort('failed'));
+ await page.goto('/?qa=1');await page.locator('[data-city-play]').click();
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','error');
+ await expect(page.locator('[data-living-city]')).not.toHaveClass(/has-city-frame/);
+ await expect(page.locator('.city-poster')).toBeVisible();
+ await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry scene');
+ await expect(page.locator('.city-primary')).toHaveAttribute('href','/contact/?request_kind=checkout#inquiry');
+ await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/fieldwork/');
+ await page.unroute(filmPattern);await page.locator('[data-city-play]').click();
+ await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
+ await page.getByRole('tab',{name:'Northline',exact:true}).click();
+ await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
+ await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/northline/');
+});
+
+test('Buffalo Work archive preserves playable reveal and ambient films',async({page})=>{
+ await page.goto('/work/?qa=1');await page.getByRole('link',{name:'Play the Buffalo animation',exact:true}).click();
+ await expect(page).toHaveURL(/\/work\/buffalo-civic\//);
+ for(const id of ['buffalo-intro','buffalo-ambient']){
+  const film=page.locator('#'+id);await expect(film).toHaveJSProperty('paused',true);
+  await film.evaluate(video=>video.play());
+  await expect.poll(()=>film.evaluate(video=>Number.isFinite(video.duration)&&video.duration>0&&!video.paused)).toBe(true);
+  await film.evaluate(video=>video.pause());await expect(film).toHaveJSProperty('paused',true);
+ }
 });
 
 test('ordinary scrolling keeps corner tools steady and retains every page section',async({page})=>{
