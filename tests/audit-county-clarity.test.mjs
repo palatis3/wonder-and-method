@@ -100,7 +100,7 @@ test('county pages retain local detail, one fictional-example notice, downloads,
   const page=byPath.get(countyPath(county,state));if(!page)continue;
   assert.ok(page.body.match(/<h1>(.*?)<\/h1>/)[1].endsWith(', '+state.abbreviation),page.path);
   assert.ok(page.body.includes(`${county.name} County`),page.path);
-  assert.equal((page.body.match(/The examples below are fictional, not client projects\./g)||[]).length,1,page.path);
+  assert.equal((page.body.match(/More planning examples \(made up\)/g)||[]).length,1,page.path);
   assert.match(page.body,/class="county-planning-details"/);
   for(const [title,text] of county.briefs){assert.ok(page.body.includes(e(title)),page.path);assert.ok(page.body.includes(e(text)),page.path);}
   assert.match(page.body,/download>Download the planning worksheet \(TXT\)/);
@@ -144,6 +144,6 @@ test('all 217 public worksheets preserve the exact task, decisions, checks and s
  for(const [slug,task] of rows){
   const text=await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8');
   for(const value of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(text.includes(value),slug+' task text');
-  for(const value of ['YOUR BUSINESS FACTS','DECISIONS','VISITOR TASK TO CHECK','KEEP IT ACCURATE','Your answer:','Do not include passwords or sensitive personal information.','Official place sources are linked'])assert.ok(text.includes(value),slug+' '+value);
+  for(const value of ['YOUR BUSINESS','QUESTIONS TO ANSWER','TRY IT AS A CUSTOMER','KEEP IT ACCURATE','Your answer:','Do not include passwords or sensitive personal information.','Official place sources are linked'])assert.ok(text.includes(value),slug+' '+value);
  }
 });

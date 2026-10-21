@@ -10,7 +10,7 @@ export const statewideCountyBuyerTasks = {
   },
   cattaraugus:{
     name:'Cattaraugus', title:'Separate rental, instruction and purchase before asking for a date.',
-    scenario:'A Ellicottville business shows equipment that can be rented, purchased or used during instruction.',
+    scenario:'An Ellicottville business shows equipment that can be rented, purchased or used during instruction.',
     decision:'Create a compact comparison showing what the customer receives, what is included, the applicable location and the next step for each option. Keep the policies specific to the selected offer. If an Olean collection point is used, identify it separately from the activity location.',
     questions:['Is the customer buying, hiring or booking instruction?','Which equipment and support are included in that choice?','Where does collection, attendance or return happen?'],
     output:'An offer comparison with distinct calls to action and owner-approved inclusion notes.',
@@ -162,7 +162,7 @@ export const statewideCountyBuyerTasks = {
   },
   montgomery:{
     name:'Montgomery', title:'Bring an Amsterdam brochure’s essential facts onto the website.',
-    scenario:'A Amsterdam supplier puts its service descriptions and contact address inside a downloadable brochure only.',
+    scenario:'An Amsterdam supplier puts its service descriptions and contact address inside a downloadable brochure only.',
     decision:'Identify the facts a buyer needs to choose a service and place them in readable page content. Keep the more detailed document available with a descriptive label, file type and revision. Assign one owner to review the page and document together when specifications change.',
     questions:['Which facts are required before a buyer can decide to contact you?','What useful detail belongs in the downloadable document?','How will conflicting revisions be detected and corrected?'],
     output:'A usable service page and a clearly labeled, maintained document link.',
@@ -172,7 +172,7 @@ export const statewideCountyBuyerTasks = {
     name:'Orleans', title:'Separate a Medina business’s opening hours from its appointment calendar.',
     scenario:'A Medina shop is open for browsing but requires appointments for a specialist service.',
     decision:'Publish browsing hours and appointment requirements as different facts. Connect the specialist offer to its approved booking route and describe what happens when no slot is available. Include a review process for short-term closures so exceptions do not become permanent notices.',
-    questions:['What can customers do during ordinary opening hours?','Which service needs a confirmed appointment?','Who approves and later removes temporary exceptions?'],
+    questions:['What ca customers do during ordinary opening hours?','Which service needs a confirmed appointment?','Who approves and later removes temporary exceptions?'],
     output:'Distinct opening and appointment information with a dated notice process.',
     check:'A visitor understands that an open shop does not guarantee an immediate specialist appointment.'
   },
@@ -242,7 +242,7 @@ export const statewideCountyBuyerTasks = {
   },
   tioga:{
     name:'Tioga', title:'Separate the base offer from optional installation.',
-    scenario:'A Owego supplier advertises an item that some customers also want delivered and installed.',
+    scenario:'An Owego supplier advertises an item that some customers also want delivered and installed.',
     decision:'Explain what the published item price or quote covers. Identify delivery and installation as separate choices when they are genuinely optional, and list the site facts needed to assess them. Confirm the actual New York or Pennsylvania destination before applying the provider’s approved service terms.',
     questions:['What exactly is included in the base offer?','Which additions are optional and which costs are required?','What information is needed before installation can be quoted?'],
     output:'A transparent inclusion list and an installation-assessment inquiry.',
@@ -250,7 +250,7 @@ export const statewideCountyBuyerTasks = {
   },
   tompkins:{
     name:'Tompkins', title:'Make an Ithaca capability page useful to a second reviewer.',
-    scenario:'A Ithaca specialist’s prospective client sends the service page to a colleague who missed the introductory call.',
+    scenario:'An Ithaca specialist’s prospective client sends the service page to a colleague who missed the introductory call.',
     decision:'Bring the problem, deliverables, required inputs, review stages and approved evidence together on the page. Define essential technical terms. Clearly distinguish fictional examples from completed client work, and avoid implying a university relationship from an Ithaca address.',
     questions:['What will the client receive and what decisions remain theirs?','Which inputs and approvals are needed to proceed?','What evidence can be published accurately and with permission?'],
     output:'A self-contained capability page with a useful proposal checklist.',
@@ -290,7 +290,7 @@ export const statewideCountyBuyerTasks = {
   },
   yates:{
     name:'Yates', title:'Build a Penn Yan page map from decisions, not spare page slots.',
-    scenario:'A Penn Yan business is choosing its first website package and considering a page for every nearby lake.',
+    scenario:'A Penn Ya business is choosing its first website package and considering a page for every nearby lake.',
     decision:'List the customer questions and group those that share the same answer. Give distinct offers their own pages when their requirements or inquiry paths differ. Use Seneca, Keuka or Canandaigua references to explain the actual destination, and assign an owner to facts that change.',
     questions:['Which decisions must a customer make before contacting the business?','Which questions belong together on one useful page?','Who maintains dates, availability and location information after launch?'],
     output:'A purposeful page map with content responsibilities and update notes.',

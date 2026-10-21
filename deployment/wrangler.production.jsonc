@@ -21,9 +21,9 @@
     "NOTIFICATION_TO": "palatis3@gmail.com",
     "SEARCH_INDEXING": "true",
     "PUBLIC_ORIGIN": "https://wonderandmethod.com",
-    "JOURNEY_COUNTS": "aggregate"
-    ,"NOTIFICATION_DAILY_LIMIT": "50"
-    ,"NOTIFICATION_RESERVED_LIMIT": "10"
+    "JOURNEY_COUNTS": "aggregate",
+    "NOTIFICATION_DAILY_LIMIT": "50",
+    "NOTIFICATION_RESERVED_LIMIT": "10"
   },
   "d1_databases": [
     {
@@ -40,7 +40,7 @@
   },
   "observability": {
     "enabled": true,
-    "head_sampling_rate": 0.1,
+    "head_sampling_rate": 1,
     "logs": {
       "invocation_logs": false
     }
@@ -60,5 +60,15 @@
   ],
   "version_metadata": {
     "binding": "CF_VERSION_METADATA"
-  }
+  },
+  "ratelimits": [
+    {
+      "name": "INQUIRY_FAILURE_RATE_LIMITER",
+      "namespace_id": "20261021",
+      "simple": {
+        "limit": 1,
+        "period": 60
+      }
+    }
+  ]
 }

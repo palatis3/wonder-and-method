@@ -1,3 +1,4 @@
+import {pageDisplayNames} from './display-names.mjs';
 import {escapeHtml} from './shared.mjs';
 
 export function breadcrumbTrail(path,title){
@@ -22,7 +23,7 @@ export function breadcrumbTrail(path,title){
  const guide=path.match(/^\/guides\/([^/]+)\/$/);
  const checkoutName=path.startsWith('/checkout/')?title.replace(/^Request /,'').replace(/ Website$/,''):null;
  const countyName=county?(({'mckean':'McKean','st-lawrence':'St. Lawrence'})[county[1]]||county[1].split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '))+' County':null;
- const name=checkoutName||stateName||(path==='/services/'?'Services':null)||conceptLabel||shortNames[path]||(guide?title:null)||countyName||title;
+ const name=checkoutName||stateName||(path==='/services/'?'Services':null)||conceptLabel||pageDisplayNames[path]||shortNames[path]||(guide?guideNames[guide[1]]||title:null)||countyName||title;
  trail.push({path,name});return trail;
 }
 
@@ -33,7 +34,7 @@ export function breadcrumbSchema(trail,origin){
 
 export function breadcrumbMarkup(trail){
  if(trail.length<2)return '';
- return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${trail.map((item,i)=>`<li>${i?'<span class="breadcrumb-separator" aria-hidden="true">/</span>':''}${i===trail.length-1?`<span aria-current="page">${escapeHtml(item.name)}</span>`:`<a href="${escapeHtml(item.path)}">${escapeHtml(item.name)}</a>`}</li>`).join('')}</ol></nav>`;
+ return `<nav class="breadcrumb" aria-label="Breadcrumb"><a class="breadcrumb-parent" href="${escapeHtml(trail.at(-2).path)}"><span aria-hidden="true">← </span>Back to ${escapeHtml(trail.at(-2).name)}</a><ol>${trail.map((item,i)=>`<li>${i?'<span class="breadcrumb-separator" aria-hidden="true">/</span>':''}${i===trail.length-1?`<span aria-current="page">${escapeHtml(item.name)}</span>`:`<a href="${escapeHtml(item.path)}">${escapeHtml(item.name)}</a>`}</li>`).join('')}</ol></nav>`;
 }
 
 export const backToTopMarkup=()=>'<div class="page-tools"><a class="back-to-top" href="#page-top" aria-label="Back to top"><span class="back-to-top-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></span><span>Back to top</span></a></div>';

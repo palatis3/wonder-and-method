@@ -34,7 +34,7 @@ test('all nine concept routes remain, with disabled submit controls and honest p
   assert.equal((form.match(/type="submit"/g)||[]).length,(disabled.match(/type="submit"/g)||[]).length);
   assert.match(page.body,/nothing is sent or saved/i);
   assert.match(page.body,/Demo complete · Nothing sent/);
-  assert.match(page.title,id==='hearthside'?/^Order form/:/^Request form/);
+  assert.match(page.title,id==='hearthside'?/^Preview your order/:/^Request an estimate/);
   assert.match(page.body,id==='hearthside'?/See my order/:/See my request/);
   assert.doesNotMatch(page.body,/<form[^>]+(?:action|method)=|confirm by text|within 10 minutes|free in-home estimate/i);
  }
@@ -60,7 +60,7 @@ test('Work keeps every project and both films with a useful early inquiry route'
 
 test('the page-planning example describes its real contents and preserves saved section links',()=>{
  const {title,body}=studioSearchStudy;
- assert.equal(title,'How I planned this site’s main pages');
+ assert.equal(title,'How I decide which pages a website needs');
  assert.equal(workItems({}).find(item=>item.id==='search').title,title);
  assert.doesNotMatch(body,/Before, my homepage|Now it says what I do/);
  for(const id of ['search-page-map','owned-search-receipt','search-brief','search-change','search-verification'])assert.ok(body.includes(`id="${id}"`));

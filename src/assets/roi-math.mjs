@@ -42,3 +42,11 @@ export function calculateWebsiteRoi(input){
  const monthlyNet=monthlyContribution-monthlyCost;
  return {ok:true,values,totalCost,totalContribution,net,roiPercent:totalCost>0?net/totalCost*100:null,expectedJobs:inquiries*closeRate/100*months,monthlyNet,paybackMonths:monthlyNet>0?oneTime/monthlyNet:null,breakEvenInquiries:totalCost===0?0:contributionPerInquiry>0?totalCost/(months*contributionPerInquiry):null};
 }
+
+// Round a reachable threshold upward; absorb only floating-point noise at exact tenths.
+export function breakEvenDisplayBound(value){
+ if(value===null)return null;
+ if(!Number.isFinite(value)||value<0)throw Error('Invalid break-even threshold');
+ const scaled=value*10,nearest=Math.round(scaled),noise=Number.EPSILON*Math.max(1,Math.abs(scaled))*4;
+ return Math.ceil(Math.abs(scaled-nearest)<=noise?nearest:scaled)/10;
+}

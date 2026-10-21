@@ -56,7 +56,7 @@ test('HTML and TXT content use one section sequence with plain visible headings'
    const tag=section.disclosure?'summary':'h2';
    assert.equal(count(html,`<${tag}>${escapeHtml(packSectionTitle(section))}</${tag}>`),1,pack.id+' heading '+section.title);
    for(const item of section.items){
-    const shown=item.replace('https://wonderandmethod.com/services/website-addons/','wonderandmethod.com/services/website-addons/');
+    const shown=item.replace('https://wonderandmethod.com/services/website-addons/','the website add-ons price list');
     assert.equal(count(visible,shown),1,pack.id+' repeated or missing item: '+shown.slice(0,70));
    }
   }
@@ -85,10 +85,10 @@ test('build packs retain numeric scope and approval, correction, cancellation an
   assert.ok(text.includes(offers[id].training));
   assert.ok(text.includes(offers[id].correction));
   assert.ok(text.includes(offers.ownership_and_billing.build_cancellation));
-  assert.ok(text.includes(offers.ownership_and_billing.late_payment));
+  for(const rule of [/notice before pausing new unpaid work/,/assets and account access stay available/,/do not disable your paid website over an unrelated service invoice/])assert.match(text,rule);
   if(articles)assert.match(text,new RegExp('Includes '+articles+' researched articles or guides.*within that total'));
   if(photos){assert.match(text,new RegExp(graphics+' distinct designs total'));assert.match(text,new RegExp(photos+' supplied-photo edits'));assert.match(text,/Resizing does not count as another graphic/);}
-  for(const pattern of [/policy pages are outside the limit; legal writing is separate/,/six agreed fields, one receiving destination and one confirmation/,/Sensitive information and file uploads need separate assessment/,/Two review rounds cover the design and finished website/,/five business days per round unless agreed otherwise/,/Silence never counts as approval or triggers payment/,/Missing inputs or reviews receive notice and revised dates/,/You own paid custom work/,/control production accounts from the start/,/No studio subscription is required/,/Within five business days after paid completion or settling an early cancellation/,/Connected services and passwords require separate/,/Correcting faults does not use a review round/])assert.match(text,pattern,id);
+  for(const pattern of [/policy pages are outside the limit; legal writing is separate/,/six agreed fields, one receiving inbox and one confirmation/,/Sensitive information and file uploads need separate assessment/,/Two review rounds cover the design and finished website/,/five business days per round unless agreed otherwise/,/Silence never counts as approval or triggers payment/,/Missing inputs or reviews receive notice and revised dates/,/You own paid custom work/,/control production accounts from the start/,/No studio subscription is required/,/Within five business days after paid completion or settling an early cancellation/,/Connected services and passwords require separate/,/Correcting faults does not use a review round/])assert.match(text,pattern,id);
  }
  const signature=body(packs.find(pack=>pack.id==='signature_site'));
  for(const pattern of [/one concept, scene and final web output/,/mobile, still and reduced-motion/,/duration and performance limits/,/Complex simulations, characters, multiple productions and custom interactive 3D are separate/])assert.match(signature,pattern);
@@ -99,9 +99,9 @@ test('monthly packs state the starting review once and retain work, renewal and 
   const pack=packs.find(pack=>pack.id===id),text=body(pack);
   assert.equal(count(text,baselineEnrollmentNote(offers)),1,id);
   for(const exclusion of offers.monthly_terms.excluded)assert.ok(text.includes(exclusion),id+' exclusion');
-  for(const pattern of [/no minimum term/,/up to 12 marketing pages/,/still usable/,/no 24\/7 service/,/The same work is never counted twice/,/My mistakes and already-promised launch work do not use paid monthly work/,/Unused supplied edits do not carry over/,/Cancel before renewal/,/Unfinished work you approved remains owed/,/Canceling care does not disable your paid website/,/unrelated unpaid invoice cannot justify disabling/])assert.match(text,pattern,id);
+  for(const pattern of [/no minimum term/,/up to 12 agreed main pages/,/still usable/,/no 24\/7 service/,/The same work is never counted twice/,/My mistakes and already-promised launch work do not use paid monthly work/,/Unused supplied edits do not carry over/,/Cancel before renewal/,/Unfinished work you approved remains owed/,/Canceling care does not disable your paid website/,/unrelated unpaid invoice cannot justify disabling/])assert.match(text,pattern,id);
   if(id==='keep_running'){
-   assert.match(text,/No main improvement is included/);
+   assert.match(text,/Keep Running does not include an SEO improvement/);
    assert.match(text,/fee covers the agreed checks even without supplied edits/);
    assert.match(text,/refund or credit any unearned balance/);
   }else{
@@ -109,7 +109,7 @@ test('monthly packs state the starting review once and retain work, renewal and 
    assert.match(text,new RegExp('One '+(id==='grow'?30:20)+'-minute call'));
    assert.ok(text.includes(offers.plans[id].search_scope.method));
    assert.ok(text.includes(offers.plans[id].search_scope.metrics));
-   for(const pattern of [/Public posting or email sending needs your explicit approval/,/Five business days before renewal/,/next monthly invoice pauses/,/included care in writing/,/no automatic replacement charge/,/unused-work refund or credit/,/inquiry clicks are not confirmed leads/])assert.match(text,pattern,id);
+   for(const pattern of [/Public posting or email sending needs your explicit approval/,/Five business days before renewal/,/next monthly invoice pauses/,/agree with you in writing whether its basic care continues/,/do not automatically charge for a different plan/,/unused-work refund or credit/,/inquiry clicks are not confirmed leads/])assert.match(text,pattern,id);
   }
  }
  const grow=body(packs.find(pack=>pack.id==='grow'));
@@ -119,7 +119,7 @@ test('monthly packs state the starting review once and retain work, renewal and 
 test('one-off packs retain safe-fit limits, the conditional fix and written completion and refund rights',()=>{
  for(const id of ['website_baseline','audit_fix_sprint']){
   const text=body(packs.find(pack=>pack.id===id));
-  for(const pattern of [/up to 12 marketing pages/,/Before any payment/,/no platform is automatically covered/,/not a promise to fix every finding/,/specialist certification are separate/,/One round of these changes and the quality checks are included/,/Silence is not approval/,/30 calendar days after your written approval of its completion/,/unearned amount to be refunded/,/does not include or require a new year of hosting/])assert.match(text,pattern,id);
+  for(const pattern of [/up to 12 agreed main pages/,/Before payment/,/no platform is automatically covered/,/not a promise to fix every finding/,/specialist certification are separate/,/One round of these changes and the quality checks are included/,/Silence is not approval/,/30 calendar days after your written approval of its completion/,/unearned amount to be refunded/,/does not include or require a new year of hosting/])assert.match(text,pattern,id);
   assert.ok(text.includes(offers.one_off_terms.remedy));
   assert.ok(text.includes(offers.one_off_terms.ownership));
  }

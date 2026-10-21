@@ -47,7 +47,7 @@ export const ohioRegions = [
   },
   {
     "id": "west",
-    "name": "West Ohio",
+    "name": "West Ohio (Dayton, Springfield)",
     "slugs": [
       "auglaize",
       "champaign",

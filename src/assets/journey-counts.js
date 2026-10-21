@@ -10,11 +10,11 @@ function sourceCategory(){
   if(['chatgpt.com','openai.com','perplexity.ai','claude.ai','copilot.microsoft.com','gemini.google.com'].some(is))return 'ai_assistant';
   if(/(?:^|\.)google\.(?:com|[a-z]{2}|(?:co|com)\.[a-z]{2})$/.test(host)||host==='com.google.android.googlequicksearchbox')return 'google';
   if(is('bing.com'))return 'bing';
-  if(['duckduckgo.com','yahoo.com','ecosia.org'].some(is))return 'search';
-  if(['linkedin.com','facebook.com','instagram.com','twitter.com','x.com','t.co'].some(is))return 'social';
+  if(['duckduckgo.com','yahoo.com','ecosia.org','search.brave.com','startpage.com'].some(is))return 'search';
+  if(['linkedin.com','lnkd.in','facebook.com','instagram.com','twitter.com','x.com','t.co'].some(is))return 'social';
   return '';
  };
- if(campaign){if(source==='google'||source==='bing')return source;if(['chatgpt','openai','perplexity','claude','copilot','gemini'].includes(source))return 'ai_assistant';if(['duckduckgo','yahoo','ecosia'].includes(source))return 'search';if(['linkedin','facebook','instagram','twitter','x'].includes(source))return 'social';return classify(source)||'campaign';}
+ if(campaign){if(source==='google'||source==='bing')return source;if(['chatgpt','openai','perplexity','claude','copilot','gemini'].includes(source))return 'ai_assistant';if(['duckduckgo','yahoo','ecosia','brave','startpage'].includes(source))return 'search';if(['linkedin','facebook','instagram','twitter','x'].includes(source))return 'social';return classify(source)||'campaign';}
  let host;try{host=new URL(document.referrer||'').hostname.toLowerCase();}catch{return 'direct';}
  if(host===location.hostname)return 'internal';
  return classify(host)||'referral';
@@ -44,10 +44,10 @@ document.addEventListener('click',event=>{
  const url=new URL(a.href,location.href);
  if(url.protocol==='mailto:'){countJourney('email_click');return;}
  if(url.origin!==location.origin)return;
- const pack=url.pathname.match(/^\/assets\/buyer-packs\/([a-z_-]+)(?:\.html)?\/?$/)?.[1];
+ const pack=url.pathname.match(/^\/assets\/buyer-packs\/([a-z_-]+)(?:\.(?:html|txt|json))?\/?$/)?.[1];
  const packService=pack?.replaceAll('-','_');
- if(pack&&(services.includes(packService)&&packService!=='unsure'||pack==='owned-audit-two-fixes')){countJourney('resource_select',services.includes(packService)?packService:'unsure',url.pathname);return;}
- if(/^\/assets\/(?:guides|downloads)\/[a-z0-9-]+\.(?:csv|txt)$/i.test(url.pathname)){countJourney('resource_select','unsure',url.pathname);return;}
+ if(pack&&(services.includes(packService)&&packService!=='unsure'||['owned-audit-two-fixes','website-addons'].includes(pack))){countJourney('resource_select',services.includes(packService)?packService:'unsure',url.pathname);return;}
+ if(/^\/assets\/(?:guides|downloads|county-briefs|audit-implementation)\/[a-z0-9-]+\.(?:csv|txt|json)$/i.test(url.pathname)){countJourney('resource_select','unsure',url.pathname);return;}
  const match=url.pathname.match(/^\/checkout\/([a-z-]+)\/$/);
  if(match)countJourney('offer_select',match[1].replaceAll('-','_'));
  else if(url.pathname==='/contact/'&&url.searchParams.get('request_kind')==='question')countJourney('question_select',url.searchParams.get('offer'));

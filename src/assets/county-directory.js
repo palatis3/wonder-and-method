@@ -17,9 +17,13 @@ export function parseCountyQuery(value){
  return {query,state,type};
 }
 export function countyMatchScore(card,search,selectedState=''){
- if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return 0;
- if(!search.query)return 1;
- let score=0;
+ return countyMatch(card,search,selectedState).score;
+}
+const typeLabels={y:'county',c:'city',t:'town',v:'village',b:'borough',s:'township',a:'place',p:'place or region'};
+export function countyMatch(card,search,selectedState=''){
+ if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return {score:0};
+ if(!search.query)return {score:1,name:'',type:'state'};
+ let result={score:0};
  for(const entry of card.terms){
   const colon=entry.indexOf(':'),type=colon<0?'p':entry.slice(0,colon),name=colon<0?entry:entry.slice(colon+1);
   if(search.type&&!type.includes(placeTypes[search.type]))continue;
@@ -27,9 +31,10 @@ export function countyMatchScore(card,search,selectedState=''){
   // the start of any word, so Erie cannot accidentally match Deferiet.
   const exact=name===search.query;
   const match=exact||(!search.type&&(name.startsWith(search.query)||name.includes(' '+search.query)));
-  if(match)score=Math.max(score,exact?(type.includes('y')?6:type.includes('a')?5:type.includes('c')?4:3):type.includes('y')||type.includes('a')?2:1);
+  const score=match?(exact?(type.includes('y')?6:type.includes('a')?5:type.includes('c')?4:3):type.includes('y')||type.includes('a')?2:1):0;
+  if(score>result.score)result={score,name,type:search.type||typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place'};
  }
- return score;
+ return result;
 }
 export function bindCountyDirectory(root=document){
  const directory=root.querySelector('[data-county-directory]');
@@ -40,12 +45,23 @@ export function bindCountyDirectory(root=document){
  if(!controls||!input||!clear||!status||!empty)return;
  const cards=[...directory.querySelectorAll('[data-county-search]')].map((element,index)=>({element,index,state:element.dataset.countyState,terms:element.dataset.countySearch.split('|')}));
  const sections=[...directory.querySelectorAll('.county-section')];
+ const results=root.querySelector('[data-county-results]');
+ const bestList=results?.querySelector('[data-county-best]'),moreList=results?.querySelector('[data-county-more]');
+ const moreDetails=moreList?.closest('details');
+ const stateLabels={'new-york':'New York',pennsylvania:'Pennsylvania',ohio:'Ohio'};
+ const makeResult=card=>{
+  const row=root.createElement('li'),link=card.element.querySelector('a').cloneNode(true),why=root.createElement('p');
+  link.removeAttribute('aria-hidden');
+  why.className='county-match-reason';
+  why.textContent=stateLabels[card.state]+(card.match.name?' · Matched '+card.match.type+': '+card.match.name: ' · County in this state');
+  row.append(link,why);return row;
+ };
  let filtering=false,openBeforeSearch=new Set();
  const update=()=>{
   const search=parseCountyQuery(input.value),state=stateFilter?.value||'',active=Boolean(input.value.trim()||state);
   if(active&&!filtering)openBeforeSearch=new Set(sections.filter(section=>section.open));
   let count=0;
-  for(const card of cards){card.score=countyMatchScore(card,search,state);card.element.hidden=!card.score;if(card.score)count++;}
+  for(const card of cards){card.match=countyMatch(card,search,state);card.score=card.match.score;card.element.hidden=!card.score;if(card.score)count++;}
   for(const section of sections){
    const localCards=cards.filter(card=>section.contains(card.element));
    section.hidden=!localCards.some(card=>card.score);
@@ -55,7 +71,14 @@ export function bindCountyDirectory(root=document){
    if(list)for(const card of localCards.sort((a,b)=>active?b.score-a.score||a.index-b.index:a.index-b.index))list.append(card.element);
   }
   filtering=active;empty.hidden=count!==0;clear.disabled=!active;
-  if(navigation)navigation.hidden=active;
+  if(results&&bestList&&moreList){
+   const ordered=cards.filter(card=>card.score).sort((a,b)=>b.score-a.score||a.index-b.index);
+   const best=ordered.filter(card=>card.score===ordered[0]?.score),more=ordered.filter(card=>card.score!==ordered[0]?.score);
+   bestList.replaceChildren(...(active?best.map(makeResult):[]));moreList.replaceChildren(...(active?more.map(makeResult):[]));
+   results.hidden=!active||!count;directory.hidden=active;
+   if(moreDetails){moreDetails.hidden=!more.length;moreDetails.querySelector('summary').textContent='Other matching counties ('+more.length+')';if(!active)moreDetails.open=false;}
+  }
+  if(navigation)navigation.hidden=active||!navigation.children.length;
   const stateName=state?stateFilter.selectedOptions[0].textContent:'';
   status.textContent=input.value.trim()?`${count} ${count===1?'county matches':'counties match'} your search${stateName?' in '+stateName:''}.`:stateName?`Showing ${count} ${stateName} counties.`:`Showing all ${cards.length} counties.`;
  };

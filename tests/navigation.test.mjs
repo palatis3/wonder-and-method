@@ -24,11 +24,11 @@ test('breadcrumb labels escape markup while structured names retain their actual
 test('contact-form guide uses its visible title in the breadcrumb and Article headline',()=>{
  const page=pages.find(page=>page.path==='/guides/contact-form-not-working/'),heading=page.html.match(/<h1\b[^>]*>([^<]+)<\/h1>/)?.[1];assert.ok(heading);
  const trail=breadcrumbTrail(page.path,heading);
- assert.equal(trail.at(-1).name,heading);
- assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,heading);
- assert.ok(breadcrumbMarkup(trail).includes(`aria-current="page">${heading}</span>`));
+ assert.equal(trail.at(-1).name,'Contact form help');
+ assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,trail.at(-1).name);
+ assert.ok(breadcrumbMarkup(trail).includes(`aria-current="page">${trail.at(-1).name}</span>`));
  const graph=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
- assert.equal(graph.find(node=>node['@type']==='BreadcrumbList').itemListElement.at(-1).name,heading);
+ assert.equal(graph.find(node=>node['@type']==='BreadcrumbList').itemListElement.at(-1).name,trail.at(-1).name);
  assert.equal(graph.find(node=>node['@type']==='Article').headline,heading);
 });
 test('rendered navigation section jumps resolve and back-to-top has a native target across every page',()=>{

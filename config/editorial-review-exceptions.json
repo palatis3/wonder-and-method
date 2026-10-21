@@ -1,0 +1,13 @@
+{
+  "purpose": "Reviewed context exceptions for the report-only copy check; never automatic replacements or build failures.",
+  "exceptions": [
+    {"phrase": "canonical", "reason": "Keep the exact setting name in technical migration instructions; explain its effect for a business owner."},
+    {"phrase": "redirect", "reason": "Keep when an old address must lead to the correct replacement page; do not erase a URL-preservation obligation."},
+    {"phrase": "coverage", "reason": "Keep where it distinguishes an actual service area from a business address, or accurately quotes a source."},
+    {"phrase": "scope", "reason": "Keep in quoted proposal terms, download titles and precise limits; prefer agreed work in general explanations."},
+    {"phrase": "approved", "reason": "Keep wherever the customer's consent controls payment, publication, work or access."},
+    {"phrase": "provider", "reason": "Keep when referring to an actual host, mail service or other outside supplier; name the business in owner-facing examples."},
+    {"phrase": "evidence", "reason": "Keep in technical records and attributed source explanations; name the photo, check or record in ordinary instructions."},
+    {"phrase": "municipality", "reason": "Keep for legally typed places in sourced directories; do not relabel boroughs, villages or townships as towns."}
+  ]
+}

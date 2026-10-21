@@ -29,8 +29,8 @@ test('every guide has an ordered section definition and unique rendered bookmark
 test('consolidation keeps historical section bookmarks at their final reading positions',()=>{
  assert.equal(sections('website-project-cost')[0].id,'dated-price-example');
  assert.match(sections('website-project-cost')[0].body,/^<span id="start-with-scope"><\/span>/);
- assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['plain-search-terms','inspection-steps','specific-index-checks']);
- assert.match(sections('website-not-showing-on-google')[1].body,/^<span id="index"><\/span><span id="intent"><\/span>/);
+ assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['define','plain-search-terms','inspection-steps']);
+ assert.match(sections('website-not-showing-on-google').find(section=>section.id==='inspection-steps').body,/^<span id="index"><\/span><span id="intent"><\/span>/);
  assert.match(sections('website-not-showing-on-google').find(section=>section.id==='define').body,/^<span id="discovery"><\/span>/);
  assert.deepEqual(sections('contact-form-not-working').slice(0,5).map(section=>section.id),['five-minute-check','page','platform-settings','verify','review-options']);
  assert.match(sections('contact-form-not-working')[0].body,/^<span id="trace"><\/span><span id="inbox"><\/span>/);
@@ -87,13 +87,13 @@ test('review and monthly plan prices and pluralization use each render’s confi
  }
  const review=body('contact-form-not-working',changed);
  for(const price of [383,887])assert.ok(review.includes(money(price)));
- assert.ok(review.includes('13 main pages'));
+ assert.ok(review.includes('13 agreed main pages'));
  assert.match(body('website-care-versus-seo',changed),/no automatic \$177 care charge/);
- assert.ok(body('seo-work-and-reporting',changed).includes('3 complete improvements'));
+ assert.ok(body('seo-work-and-reporting',changed).includes('3 completed improvements'));
  changed.plans.improve.priorities=1;
  const single=sections('seo-work-and-reporting',changed).find(section=>section.id==='scope').body;
- assert.ok(single.includes('1 complete improvement'));
- assert.ok(!single.includes('1 complete improvements'));
+ assert.ok(single.includes('1 completed improvement'));
+ assert.ok(!single.includes('1 completed improvements'));
 });
 
 test('article download links retain download behavior and file type labels',()=>{
@@ -103,7 +103,7 @@ test('article download links retain download behavior and file type labels',()=>
   for(const match of html.matchAll(/<a\b([^>]*href="[^"]+\.(csv|txt)"[^>]*)>([^<]*)<\/a>/gi)){
    downloads++;
    assert.match(match[1],/\bdownload(?:[=>\s]|$)/i,item.path);
-   assert.ok(match[3].toUpperCase().includes(match[2].toUpperCase()),item.path);
+   assert.match(match[3],match[2].toLowerCase()==='csv'?/spreadsheet/:/text file/,item.path);
   }
  }
  assert.ok(downloads>=17,'All existing guide downloads remain reachable');

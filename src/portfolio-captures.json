@@ -1,58 +1,58 @@
 {
-  "capturedAt": "2026-10-21T15:29:55.001Z",
+  "capturedAt": "2026-10-21T19:11:48.001Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
   },
   "sourceHashes": {
-    "src/premium-site.mjs": "be035469d47648d8bd5560b18d7910b115bb38bf080bb898e63b3f9f92bb777b",
-    "src/home-proof.mjs": "c5b8cb8fea4e41306c897af522eee45f85be7959d0e1cffe9e2f3538e652cb26",
-    "src/site-chrome.mjs": "69e86c7d4451b02e368f261d659b14a72a1cb5004797280ddce3ecb1f7e75692",
-    "src/assets/layout-components.css": "8209b5cb41887aed0af2206d15a7ce8a363e0bd216b1e2c13bccd18fd3578361",
-    "src/assets/site-refresh.css": "64ac87734af6ba654402109f9a9087de0af6176c7b021f91264059fee78096e3",
-    "src/living-city.mjs": "b14f5245c17bd9718f1448fb024458a66215e991e9622be0fddec851c4d3c85d",
-    "src/assets/living-city.css": "0d26e4ee23215fd1ffd2fab3cb4e42a0279c554b2152bc214b80418aab2f0d1b",
-    "src/city-preview-captures.json": "9577ba52b51a795b9bc96f10e6c3b0fd5b4f3ce1316a19c58c2ae47f1ce7de84",
+    "src/premium-site.mjs": "d5e96e600996c67903e12d2e1dbcfb4e6fb7d6f6cc4a2ed7909f1e2ccfea70aa",
+    "src/home-proof.mjs": "e12b40d7b7a2653227fc38fba7cfb87c467ba65c05f64ab761038fe125d30e99",
+    "src/site-chrome.mjs": "42fd7a03b504e73e916eb35e642c776c2333b59ec2d249a13bf67600b0d2a324",
+    "src/assets/layout-components.css": "47a55a96f7ab4fe4d9b1246fc2a324d880b2cf52f46086991d534a749b9c01ff",
+    "src/assets/site-refresh.css": "ab23fdd4c10cf1c20a3b38cfe3e6985c2b5276fd3927da3c7069310072339725",
+    "src/living-city.mjs": "3c3c69c2a17ff31beb6611ee7655137a643daa4b8e05e90aa49c9edbb0b927b7",
+    "src/assets/living-city.css": "4549085fb501603db1e3287dc34bb59c9f3c7fb0ec80463ca909596e9d424368",
+    "src/city-preview-captures.json": "0fb6b2be12ac9cb82e3db86cd6ae982eeab4d8a9d0f4a3a79841aa9601657599",
     "public/living-city/manifest.json": "8c2bf9b9ebcd601a46613ce3ecaf80b41527885b10b534b508d1eedc43335305"
   },
   "homeCapture": {
     "path": "/assets/work/studio-website.webp",
     "width": 1425,
     "height": 990,
-    "bytes": 227680,
-    "sha256": "42396ea0c5df80a3daa9ced7a9f8f2c5dbcff59309e9a99c419d53cd106a31a9",
+    "bytes": 209066,
+    "sha256": "d09dd8ebaaef8971325dcb11abd1f404ab94a3370ea39535d2203ea82a111e45",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/studio-website-240.webp",
         "width": 240,
         "height": 167,
-        "bytes": 10248,
-        "sha256": "12b20063dcfe9802ba7ff48bca08d4476ce657a1ca2fcb29445918dfc9c8b17e",
+        "bytes": 9942,
+        "sha256": "344bc54562308e21410cdd02ed293f0cb7d96b716aaf5525f7ec870decdb9a27",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-480.webp",
         "width": 480,
         "height": 333,
-        "bytes": 32088,
-        "sha256": "d8556be4786b9c0b0deaca6f8a8abdf958fae2105e110368b17a34cb9cf4ea04",
+        "bytes": 30194,
+        "sha256": "00b39b16c0bfb420c4f69894eadb6f9a952f5e0afa92bdc4f07f8f825abc7574",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640,
         "height": 445,
-        "bytes": 49414,
-        "sha256": "1f21ba86bd9ef86670eababb7d17ca92148caefaab774efc55fb7c89e1bfe7ed",
+        "bytes": 45156,
+        "sha256": "d114f2772da8b5814d74b1bb612e0eb8ca7c974559bd5120fc283b459d2fb387",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-960.webp",
         "width": 960,
         "height": 667,
-        "bytes": 85564,
-        "sha256": "43cc06916a3f57d4ea344b326ac1a3716b467f550a2a1bfc9fa6fb7b461e7b97",
+        "bytes": 79950,
+        "sha256": "d8d53a4658b90e8e95b9073e7e4fb6f88fbad0031b67107e6061df2160b75a6b",
         "quality": 82
       }
     ],
@@ -60,11 +60,64 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "5d450ec2b117a4e7792126a2bb776d6c6d332363b0accd81a01653aca0104b1e"
+      "sha256": "c99d47babe7852892e1674fa623e390b8738aa8ca7c865f24544b4f34979bb9d"
     },
     "builtStyles": {
-      "dist/assets/site-family-home.css": "72866494dc61f4acb8f2e68f8b4a384716c05d573c23e022dd1507f5f91a4089",
-      "dist/assets/living-city.css": "fff5cd3af5337a6a61e5aeaf15d8ddb75283c4f4c8aab12da103619d50cc134f"
+      "dist/assets/site-family-home.css": "f4c0346d911fc1960f5bbc54188a24b9f3d08eef1ab3c1b4aabc034ac7fdc452",
+      "dist/assets/living-city.css": "763e5ca552b08aef81916bcdcb27e9dc8fb72a041113e167d7c6b9debbd16131"
+    }
+  },
+  "trackerCapture": {
+    "path": "/assets/work/lead-workbench.webp",
+    "width": 1200,
+    "height": 900,
+    "bytes": 65776,
+    "sha256": "f28cec5b7f126e4b03adcf7d8a97bf123258184d59eb30d877682d38c74fda55",
+    "quality": 92,
+    "variants": [
+      {
+        "path": "/assets/work/lead-workbench-240.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 3548,
+        "sha256": "823014cb357c0309fcdc44d44506411da5f2d3bca6448bb1e9633d45f5df4096",
+        "quality": 82
+      },
+      {
+        "path": "/assets/work/lead-workbench-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10866,
+        "sha256": "596f4d454d2329006a646b6a15b80cf29353e7ec8c4b53d382d60e7e3b14e15c",
+        "quality": 82
+      },
+      {
+        "path": "/assets/work/lead-workbench-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 17756,
+        "sha256": "7fef115656dc22937b82353561bb5c474fbd2bf21ac4a2f145b09f57ba027eef",
+        "quality": 82
+      },
+      {
+        "path": "/assets/work/lead-workbench-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 32772,
+        "sha256": "b647314f0ab6b22b6e2648782de5061cd95821752486656658aab3554a5a116a",
+        "quality": 82
+      }
+    ],
+    "sourceRoute": "/work/lead-workbench/",
+    "viewport": {
+      "width": 1200,
+      "height": 900
+    },
+    "sample": "Built-in fictional sample added through the demo controls; no persistence enabled.",
+    "sourceHashes": {
+      "src/lead-workbench.mjs": "bf62475f966a54cb746906be127c73eda3332c478bc4cbf9c468ed12c4a3b7e4",
+      "src/assets/lead-workbench.js": "05092cc9e50b2655246c4a6bfecbce4ebfee6f0ff4ee8812f8a93ec275648a34",
+      "src/assets/lead-workbench.css": "80d791b0bde5f445bcc471bf1738d1bc8a62086854a4898601c40b0c68a2a1ee"
     }
   }
 }

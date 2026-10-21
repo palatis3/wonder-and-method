@@ -74,7 +74,7 @@ export const pennsylvaniaTasksD = {
   },
   venango: {
     name: 'Venango', title: 'Select a small set of project examples that can be substantiated.',
-    scenario: 'A Oil City business has years of images but little information about permission, scope or which examples represent its current work.',
+    scenario: 'An Oil City business has years of images but little information about permission, scope or which examples represent its current work.',
     decision: 'Review a manageable shortlist. For each example, record publication permission, date, actual business role, relevant service and any claim that needs evidence. Select examples that explain different useful decisions. Label demonstrations separately and leave unapproved work unpublished. Draft a caption that distinguishes the business’s contribution from other work visible in the photograph. Record existing URLs before reorganizing an online archive.',
     questions: ['What may the business publish about this project?', 'Which part of the work did it actually perform?', 'What does this example help a prospective customer decide?'],
     output: 'An approved portfolio shortlist with factual captions, service links and unresolved permissions clearly identified.',
@@ -83,7 +83,7 @@ export const pennsylvaniaTasksD = {
   warren: {
     name: 'Warren', title: 'Route collection, repair and new work to the right instructions.',
     scenario: 'A Warren shop handles ready items, repair assessments and new project inquiries through one service desk.',
-    decision: 'List the information and next step for each of the three tasks. Decide whether one reason field can serve the receiving team or whether materially different questions justify separate forms. Keep collection readiness distinct from ordinary shop hours. Give existing customers a route to ask about earlier work without creating another estimate request. Confirm all publishing and form changes against the agreed technical scope.',
+    decision: 'List the information and next step for each of the three tasks. Decide whether one reason field can serve the receiving team or whether different required details justify separate forms. Keep collection readiness distinct from ordinary shop hours. Give existing customers a route to ask about earlier work without creating another estimate request. Confirm all publishing and form changes against the agreed technical scope.',
     questions: ['What proves an item is ready to collect?', 'What does the repair assessment require?', 'What information starts a genuinely new project?'],
     output: 'Three task descriptions, appropriate contact choices and clear receipt wording.',
     check: 'Try one sample journey for each task and verify that a collection customer can find instructions, a repair customer can request assessment and a new customer can describe the project.'
@@ -123,7 +123,7 @@ export const pennsylvaniaTasksD = {
   york: {
     name: 'York', title: 'Give each proposed page a purpose and an owner.',
     scenario: 'A York service business wants more pages while its team is still deciding who approves new offer details and handles inquiries.',
-    decision: 'List the proposed pages and assign each a distinct customer question, required facts, factual approver, inquiry recipient and update owner. Compare the list with existing content and combine overlapping ideas. Select the first page that has a real purpose and ready inputs. Confirm whether a different receiving path needs additional form or routing work before publishing. Keep York City and York Township destinations precise where they matter.',
+    decision: 'List the proposed pages and assign each a distinct customer question, required facts, factual approver, inquiry recipient and update owner. Compare the list with existing content and combine overlapping ideas. Select the first page that has a real purpose and ready inputs. Before publishing, confirm whether sending requests to a different inbox needs an extra form or separately agreed routing work. Keep York City and York Township destinations precise where they matter.',
     questions: ['Which unanswered customer decision justifies this page?', 'Who approves the facts and keeps them current?', 'Who receives and acts on the resulting inquiry?'],
     output: 'A prioritized content plan with named responsibilities and one ready-to-publish service brief.',
     check: 'Trace a sample inquiry from the proposed page to its responsible person and confirm that the team can explain the offer, accept the request and maintain the page.'

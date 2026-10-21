@@ -21,7 +21,7 @@ export const ohioTasksC = {
     scenario:'A business moves from Elyria to Lorain, but an old download and appointment email still send visitors to its former location.',
     decision:'Create one approved record of the new address, effective date and arrival arrangement. List every website page, download, map link, receipt and authorized external listing that uses location information. Record the change needed, responsible person and completion evidence for each. Distinguish a mailing address from a customer entrance. Keep any temporary relocation notice dated and identify third-party changes still awaiting confirmation.',
     questions:['Which destination applies before, during and after the move?','Where can a customer encounter the old address outside the contact page?','Who verifies the actual entrance and approves the instructions?'],
-    output:'A relocation checklist with an location record and pending updates.',
+    output:'A relocation checklist with a location record and pending updates.',
     check:'Start from an old appointment email, follow its links and explain where to go today. Repeat from a service page and the current contact page.'
   },
   lucas:{

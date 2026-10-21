@@ -26,3 +26,5 @@
 .studio-site [data-chat-open][hidden]{display:none!important}
 .support-chat-fallback{font-size:1rem}
 .support-chat-fallback a{display:inline-flex;align-items:center;min-height:44px}
+
+.studio-site .footer-chat-help [data-chat-open]{display:inline-flex;align-items:center;padding:0;background:none;border:0;border-radius:0;color:inherit;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}

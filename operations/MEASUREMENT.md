@@ -86,7 +86,29 @@ legacy content-editor route. They preserve query strings and apply only to
 GET/HEAD on the two public hosts; they exclude APIs and buyer-pack asset paths.
 The zone's Always Use HTTPS setting is on and its Page Rules list is empty.
 The Worker's matching 308 logic remains a fallback; the new buyer-pack slash
-redirect belongs to the Worker. No zone rules were changed during this review.
+redirect belongs to the Worker. That inventory is historical.
+
+On October 21, the follow-up implementation added three independently reviewed
+county rules, retaining the seven existing rules. New York
+`4aabe93ce6b546c29287d5fb18e3153a` covers 62 known county slugs and their
+`/areas/new-york/` aliases; Pennsylvania `e8877b5a5c254c66ad8e12d6902b7efd`
+covers 67, and Ohio `4b9621565980476dbfe379ebe239ae38` covers 88. All ten are
+enabled. Each new rule accepts only GET/HEAD on the two public hosts, exact known
+slugs and directory, HTML or index suffixes; query preservation is enabled.
+The expression lengths are 3,195, 2,010 and 2,309 characters. Their suffix guard
+prevents unknown paths from becoming aliases, and canonical paths do not loop.
+
+Live checks confirmed the previously failing HTTP/www/mixed-case Pennsylvania
+Erie URL and representative variants across all three states now take one 301 hop
+to the final 200 page. The private record retains 46 passing edge/exclusion cases
+and a separately characterized encoded-slash case. That HTTPS-apex `%2F` case
+returned a relative 307, consistent with the existing static-asset fallback;
+the new rules emit only absolute 301 targets. The canonical helper itself does
+not decode reserved slashes and passes that request unchanged to assets. Do not
+claim that all encoded URLs avoid platform redirects. Unreserved-encoded and
+doubled internal-slash forms remain outside the new edge-rule guarantee and use
+the existing Worker/platform behavior. No API, asset or mutation method is added
+to the county rules.
 During an authorized release,
 record each variant's first response, Location and final canonical response;
 check for one permanent hop and no loop, including query preservation. Keep

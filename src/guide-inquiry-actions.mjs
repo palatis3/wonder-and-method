@@ -29,6 +29,7 @@ export function contextualizeGuideBody(body,path){
   return `href="${e(target.pathname+target.search+(target.hash||'#inquiry'))}"`;
  });
 }
+const endingHeadings={'website-project-cost':'Plan a budget around your actual work','contact-form-not-working':'Get help with the failed step','website-redesign-brief':'Turn your brief into a clear proposal','website-not-generating-leads':'Find the next useful change','website-care-versus-seo':'Choose help for the work you need','website-content-template':'Bring your facts and rough notes'};
 const endingPrompts={
  'website-maintenance-cost':'Share your website, the tools you pay for and the checks or updates you need help with.',
  'website-launch-checklist':'Share your launch plan and anything not yet tested.',
@@ -54,5 +55,5 @@ export function guideAction(item,{compact=false,offers}={}){
  const slug=item.path.split('/').filter(Boolean).at(-1);const prompt=researchGuideDetails[slug]?.prompt||endingPrompts[slug];
  if(!prompt)throw Error(`Missing guide ending: ${item.path}`);
  const buttonLabel=slug==='contact-form-not-working'&&offers?`Ask about the ${money(offers.baseline.one_time_price)} Website Baseline`:action.label;
- return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(action.label)}</h2><p>${e(prompt)} I confirm the work, access and price before booking or payment.</p><a class="button" href="${action.href}">${e(buttonLabel)}</a></div>`;
+ return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(endingHeadings[slug]||'Talk through your next step')}</h2><p>${e(prompt)} I confirm the work, access and price before booking or payment.</p><a class="button" href="${action.href}">${e(buttonLabel)}</a></div>`;
 }

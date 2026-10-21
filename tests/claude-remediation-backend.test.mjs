@@ -63,7 +63,7 @@ test('live receipts confirm the reply destination without promising a verified s
   const data={reference:'synthetic-regression-reference',service:'unsure',request_kind,found_via:'search'};
   const live=inquiryConfirmationHtml({...data,synthetic:false});
   assert.doesNotMatch(live,/My reply will come from/);assert.match(live,/I’ll reply to/);
-  assert.ok(!live.includes(config.responseWindow));
+  assert.equal(live.split(config.responseWindow).length-1,1);
   assert.match(live,/How did you find me\?: Google or another search engine/);
   assert.doesNotMatch(inquiryConfirmationHtml({...data,synthetic:true}),/My reply will come from|one business day/);
  }

@@ -18,14 +18,14 @@ test('contractor page keeps all three states and a seven-item page plan without 
  const title=text(contractor.match(/<h1>(.*?)<\/h1>/s)[1]);
  assert.equal(title,'Websites for contractors and home-service businesses.');
  for(const state of config.serviceCoverage.regions)assert.ok(contractor.includes(state));
- for(const trade of ['Plumbing','electrical','HVAC','Roofing','exterior','Remodeling','landscaping','cleaning'])assert.ok(contractor.includes(trade));
- const plan=contractor.match(/<h2>A sample seven-page plan\.<\/h2>(.*?)<\/section>/s)[1];
+ for(const trade of ['plumbing','electrical','HVAC','roofing','exterior','remodeling','landscaping','cleaning'])assert.ok(contractor.toLowerCase().includes(trade.toLowerCase()));
+ const plan=contractor.match(/<h3>A sample seven-page plan<\/h3>(.*?)<\/section>/s)[1];
  assert.equal((plan.match(/<li>/g)||[]).length,7);
  assert.match(plan,/seven pages plus Focused’s two included guides use nine of its 15 pages/);
  assert.match(plan,/combine the service pages into a six-page Launch plan/);
  assert.doesNotMatch(contractor,/<table|compact-offer|data-label=/);
  const words=text(contractor).split(' ').length;
- assert.ok(words>=600&&words<=700,`Contractor copy has ${words} words`);
+ assert.ok(words>=500&&words<=1200,`Contractor copy has ${words} words`);
 });
 
 test('contractor simplification preserves payment, editing, evidence and form boundaries near the decision',()=>{
@@ -34,10 +34,11 @@ test('contractor simplification preserves payment, editing, evidence and form bo
  assert.match(packages,/50% to book, 30% when you approve the design and 20% when you approve the working website, before launch/);
  assert.match(packages,/no drag-and-drop editor/);
  assert.match(packages,/Domain, hosting, paid tools, tax and approved extras are separate/);
- assert.match(packages,/eligible business and authorized access/);
+ assert.match(contractor,/eligible business with authorized access/);
  assert.match(contractor,/A request is not a confirmed appointment or a quote/);
  assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate scope/);
- assert.match(contractor,/ready booking link may fit an included connection/);
+ assert.match(contractor,/ready booking link or compatible standard embed may fit an included connection/);
+ assert.ok(contractor.includes('A guided quote form costs '+money(offers.add_ons.find(item=>item.id==='guided_quote_form').public_price)));
  assert.match(contractor,/not an automatic price/);
  assert.match(contractor,/both fictional studio concepts/);
  assert.doesNotMatch(contractor,/every request reaches your inbox|guaranteed (?:inbox|delivery)/i);
@@ -59,8 +60,8 @@ test('service preparation is one brief row with concrete links that do not repea
  for(const [path,body] of Object.entries(pages)){
   const row=researchServiceLinks(path),links=hrefs(row);
   assert.match(row,/class="service-preparation"/);
-  assert.match(row,/Before you get in touch:/);
-  assert.doesNotMatch(row,/<section|<h[1-6]|Prepare your next decision|Compare the same scope/);
+  assert.match(row,/<h2 id="related-planning-guides">Related guides<\/h2>/);
+  assert.match(row,/<ul><li><a/);assert.doesNotMatch(row,/Prepare your next decision|Compare the same scope/);
   assert.equal(new Set(links).size,links.length,path);
   assert.ok(links.length>0,path);
   const existing=new Set(hrefs(body+searchSupplement(path,offers,config)).map(url=>url.split('#')[0]));

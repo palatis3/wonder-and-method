@@ -29,7 +29,7 @@ test('service navigation marks only listed current pages and keeps secondary ser
  const secondary=['/services/contractor-websites/','/services/website-addons/'];
  for(const path of ['/services/','/services/web-design/','/services/website-redesign/',...secondary,'/services/seo/','/services/website-care/','/services/website-audit/']){
   const html=siteHeader(path),current=[...html.matchAll(/<a href="([^"]+)" aria-current="(?:page|location)"/g)].map(match=>match[1]);
-  assert.deepEqual(current,secondary.includes(path)?[]:[path]);
+  assert.deepEqual(current,[path]);
   assert.match(html,/class="service-navigation is-current"/);
   if(secondary.includes(path))assert.ok(siteFooter().includes(`href="${path}"`),path);
  }
@@ -64,9 +64,9 @@ function calculatorFixture(annual=true){
 test('calculator includes known hosting while naming other unknown costs',()=>{
  const f=calculatorFixture();try{
   assert.equal(f.output['calculator-error'].textContent,'');
-  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$11,450/);
+  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$11,425/);
   assert.match(f.output['external-note'].textContent,/Still to add: domain, email and other paid tools/);
-  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$11,500/);
+  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$11,475/);
  }finally{f.restore();}
 });
 test('annual toggling restores unedited defaults and preserves edited monthly counts',()=>{

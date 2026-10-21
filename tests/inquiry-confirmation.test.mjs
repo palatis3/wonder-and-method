@@ -10,7 +10,7 @@ test('public receipts use a short code with the complete reference in an optiona
  assert.match(html,/<p class="inquiry-reference"><strong>Your reference<\/strong><code>WM-ABCD-EF12-3456<\/code>/);
  assert.match(html,new RegExp('<details><summary>Full reference</summary><code>'+reference+'</code>'));
  assert.match(html,/I’ll reply to <strong>person@example.test<\/strong>/);
- assert.doesNotMatch(html,/My reply will come from|one business day/);
+ assert.doesNotMatch(html,/My reply will come from/);assert.equal((html.match(/one business day/g)||[]).length,1);
 });
 
 function fixture(fetch, overrides={}){

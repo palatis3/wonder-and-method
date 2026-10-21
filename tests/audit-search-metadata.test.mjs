@@ -17,7 +17,7 @@ test('home, Buffalo web design and service navigation describe distinct visitor 
  const paths=['/','/services/web-design/','/services/'];
  assert.equal(new Set(paths.map(path=>searchMetadata[path].title)).size,3);
  assert.match(searchMetadata['/'].title,/Small Businesses/);assert.match(description('/'),/Buffalo.*New York, Pennsylvania,? and Ohio/);
- assert.match(searchMetadata['/services/web-design/'].title,/Buffalo Web Design/);assert.match(description('/services/web-design/'),/writing, research, SEO and original graphics/);
+ assert.match(searchMetadata['/services/web-design/'].title,/Small Business Web Design/);assert.match(description('/services/web-design/'),/writing, research, SEO and original graphics/);
  assert.match(description('/services/'),/^Compare .*Find the right service/);
  for(const path of paths){assert.equal(page(path).title,searchMetadata[path].title);assert.equal(page(path).description,description(path));}
 });

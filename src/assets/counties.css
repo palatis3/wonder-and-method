@@ -56,3 +56,15 @@ ul.county-hub-grid .county-hub-link{display:flex;flex-wrap:wrap;align-items:cent
  .studio-site .breadcrumb,.county-sources,.county-example-label{font-size:1rem}
  .county-sources a{display:inline-flex;align-items:center;min-height:32px;padding-block:.25rem}
 }
+
+/* A single reading column for county buying decisions; place data stays browseable. */
+.studio-site .county-section:not(.county-region){display:block;max-width:900px;margin-inline:auto}
+.studio-site .county-section>.section-heading{margin-bottom:1.25rem}
+.county-section .county-cards{grid-template-columns:minmax(0,1fr);gap:1rem;margin-block:1rem}
+.county-section .county-cards article{padding-top:1rem}.county-section .county-cards h3{margin-bottom:.35rem}
+.county-search-control{min-width:0}.county-search-control label{margin-bottom:.5rem}
+.county-search-results[hidden],[data-county-directory][hidden]{display:none}
+.county-result-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 2rem}
+.county-result-list li{border-top:1px solid var(--line);padding-block:.75rem}
+.county-result-list a{display:inline-flex;align-items:center;min-height:44px}.county-match-reason{font-size:.9375rem;margin:0;color:var(--slate)}
+@media(max-width:600px){.county-result-list{grid-template-columns:1fr}.county-filter:has(.county-state-filter){row-gap:1rem}}

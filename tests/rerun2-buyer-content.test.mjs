@@ -37,7 +37,7 @@ test('editorial dates ignore layout and shared navigation but follow text, desti
  const original='<main class="old"><nav class="breadcrumb">Home</nav><p class="journal-byline">Oct 1</p><h1>Keep this guide</h1><p>A useful answer.</p><a href="/worksheet.csv?v=abcdef123456">Worksheet</a><img src="/old.webp" alt="Form steps"><section class="founder-strip">Old shared footer</section><p class="service-intro-action">Old prompt</p></main>';
  const styled=original.replace('class="old"','class="new"').replace('Oct 1','Oct 20').replace('>Home<','>New navigation<').replace('old.webp','new.webp').replace('Old shared footer','New shared footer').replace('Old prompt','New prompt').replace('?v=abcdef123456','?v=123456abcdef');
  assert.equal(contentHash(original),contentHash(styled));
- const old={'/guide/':{modifiedAt:'2026-10-01',sha256:contentHash(original),contentHashVersion:2}};
+ const old={'/guide/':{modifiedAt:'2026-10-01',sha256:contentHash(original),contentHashVersion:3}};
  assert.deepEqual(nextPageDates([{path:'/guide/',html:styled}],old,'2026-10-20'),old);
  for(const changed of [original.replace('useful answer','updated answer'),original.replace('/worksheet.csv','/other.csv'),original.replace('alt="Form steps"','alt="Different steps"')]){
   assert.notEqual(contentHash(original),contentHash(changed));
@@ -66,7 +66,7 @@ test('monthly first-payment alternatives and website editing limits appear befor
  }
  for(const slug of ['launch-site','focused-site','signature-site']){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  assert.match(page.slice(0,page.indexOf('<form')),/drag-and-drop editor is not included/);
+  assert.match(page.slice(0,page.indexOf('<form')),/no drag-and-drop editor/);
   assert.match(page,/name="request_kind" value="checkout"/);
  }
 });

@@ -11,7 +11,7 @@ function fixture(t){
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'wm-form-test-'));
   t.after(()=>{assert.equal(path.dirname(fs.realpathSync(dir)),fs.realpathSync(os.tmpdir()));assert(path.basename(dir).startsWith('wm-form-test-'));fs.rmSync(dir,{recursive:true,force:true});});
   for(const sub of ['deployment','scripts','src','evidence','config'])fs.mkdirSync(path.join(dir,sub));
-  for(const file of ['scripts/test-form-delivery.mjs','deployment/form-delivery-test.json','src/inquiry.mjs','src/shared.mjs','src/addons.mjs','config/offers.json'])fs.copyFileSync(new URL(file==='deployment/form-delivery-test.json'?'./fixtures/form-delivery-test.json':'../'+file,import.meta.url),path.join(dir,file));
+  for(const file of ['scripts/test-form-delivery.mjs','deployment/form-delivery-test.json','src/inquiry.mjs','src/shared.mjs','src/addons.mjs','src/approved-rerun-county-context.mjs','config/offers.json'])fs.copyFileSync(new URL(file==='deployment/form-delivery-test.json'?'./fixtures/form-delivery-test.json':'../'+file,import.meta.url),path.join(dir,file));
   const draft=JSON.parse(fs.readFileSync(path.join(dir,'deployment/form-delivery-test.json')));
   // Isolate the canonical first-attempt paths used by these fake-network tests.
   draft.reference='wm-protected-form-test-2026-10-14-01';

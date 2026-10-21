@@ -35,8 +35,8 @@ test('published guides have unique metadata, visible authorship and matching art
   assert.equal(guide.dateModified,pageDates[guide.path].modifiedAt);
   assert.ok(html.includes(`Published <time datetime="${guide.datePublished}">`));
   if(guide.datePublished===guide.dateModified)assert.doesNotMatch(html,/ · Updated/);else assert.ok(html.includes('Updated <time datetime="'+guide.dateModified+'">'));
-  if(guide.diagram){assert.ok(html.includes(`/assets/guides/${guide.image}.svg`));const figure=html.match(/<figure class="journal-hero journal-diagram">(.*?)<\/figure>/s)?.[1];assert.ok(figure);assert.match(figure,/alt="[^"]+"/);assert.doesNotMatch(figure,/<figcaption>|alt="Decision diagram:/);}
-  else{assert.match(html,/<figure class="journal-hero"><img[^>]+width="1200" height="800"[^>]+alt="[^"]+"[^>]+loading="lazy"[^>]*><\/figure>/);assert.ok(html.includes(`${guideIllustration(guide)}-640.webp 640w`));}
+   if(guide.image==='repair-or-redesign'){assert.ok(html.includes(`/assets/guides/${guide.image}.svg`));assert.match(html,/<figure class="journal-hero journal-diagram">[\s\S]*?alt="[^"]+"[\s\S]*?<figcaption>/);}
+   else assert.doesNotMatch(html,/<figure class="journal-hero/,guide.path+' uses text or responsive steps');
   const image=config.origin+journalImage(guide);assert.deepEqual(article.image,guide.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(guide)+'-'+ratio+'.png'));assert.ok(html.includes(`property="og:image" content="${image}"`));
   const crumbs=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;assert.equal(crumbs.at(-1).item,article.mainEntityOfPage);assert.equal(crumbs[1].item,config.origin+'/guides/');
   assertArticleOutsideDisclosures(html,guide.path);
@@ -88,7 +88,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
 test('care comparison uses current configured service fees and finite units',()=>{
  const revised=structuredClone(offers);revised.plans.keep_running.monthly_price=207;revised.plans.improve.priorities=3;
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
- assert.match(html,/Keep Running — \$207\/month/);assert.match(html,/3 complete improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
+ assert.match(html,/Keep Running — \$207\/month/);assert.match(html,/3 completed improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
  assert.match(html,/five business days before renewal, the improvement month pauses/);assert.match(html,/We agree in writing whether care also pauses or continues/);assert.match(html,/no automatic \$207 care charge/);
  const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/If I delay approved work, we agree a new date or refund/);
  const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/I never count the same work twice/);assert.match(seo,/If I delay accepted work, I still owe it/);
@@ -120,8 +120,8 @@ test('edge noindex covers public assets, rejected API requests and unavailable s
 test('the cost-guide examples distinguish pages and creative scope with source-code handoff',()=>{
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
  assert.match(html,/Focused adds more service detail, two forms, two original guides and up to two ready connections/);
- assert.match(html,/Signature adds a larger page plan, four original guides and an original animated hero or 3D centerpiece/);
- assert.match(html,/Every package includes.*source files and written handoff instructions/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
+ assert.match(html,/Signature adds a larger page plan, four original guides and one original animated homepage feature or one 3D centerpiece/);
+ assert.match(html,/Every package includes.*source files, written handoff instructions and an optional handoff call of up to 30 minutes/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
 });
 

@@ -71,10 +71,10 @@ test('new guides contain individual planning exercises and complete downloadable
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);
   focus.add(c.focus);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
   assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);
-  assert.ok(page.html.includes('The examples below are fictional, not client projects.'));assert.ok(page.html.includes('<p class="eyebrow">Example</p>'));
+  assert.ok(page.html.includes('More planning examples (made up)'));assert.ok(page.html.includes('<p class="eyebrow">Example (made up)</p>'));
   const worksheet=await readFile(new URL('../src/assets/county-briefs/'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
-  assert.match(worksheet,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
+  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);
   assert.ok(page.html.includes(`href="/assets/county-briefs/${c.slug}.txt"`));
  }
  assert.equal(focus.size,37);assert.equal(decisions.size,37);assert.equal(localQuestions.size,74);

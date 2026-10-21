@@ -59,7 +59,7 @@ test('CSV neutralizes formula-like prefixes including whitespace and preserves o
 });
 
 test('workbench discloses local synthetic limits and contains no native submission path',()=>{
- const html=leadWorkbench();assert.doesNotMatch(html,/<form\b|type="submit"/);assert.match(html,/Made-up details only/);assert.match(html,/Saved browser data is unprotected/);assert.match(html,/sample inquiries and notes are not sent/);assert.match(html,/no sign-in and is not for real customer data/);assert.match(html,/hidden><h2 id="workbench-heading"/);
+ const html=leadWorkbench();assert.doesNotMatch(html,/<form\b|type="submit"/);assert.match(html,/Use made-up data only/);assert.match(html,/anyone using this browser can open its saved data/);assert.match(html,/Entered inquiries and notes are not sent/);assert.match(html,/no sign-in; anyone using this browser can open its saved data/);assert.match(html,/hidden><h2 id="workbench-heading"/);
  for(const id of ['sample-inquiry','remember-samples','sample-search','sample-filter','sample-stage','sample-notes'])assert.ok(html.includes(`for="${id}"`),id);
  assert.match(html,/role="status" aria-live="polite" aria-atomic="true"/);assert.match(html,/<noscript>/);
 });

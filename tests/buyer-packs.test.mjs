@@ -29,11 +29,11 @@ test('eight decision packs carry acceptance, payments, costs, limits and the exa
   assert.match(text,/50%/);assert.match(text,/30%/);assert.match(text,/20%/);assert.match(text,/approve the design in writing/);
   assert.match(text,/dated list of completed work, outside costs you approved and payments received/);assert.match(text,/five business days after paid completion or settling an early cancellation/);
   assert.match(text,/30 calendar days after launch/);assert.match(text,/receive your paid files without waiting/i);
-  assert.match(text,/No disabling a paid client-owned website/);
+  assert.match(text,/I do not disable your paid website/);
  }
  for(const id of ['audit_fix_sprint','website_baseline']){
   const text=JSON.stringify(packs.find(p=>p.id===id).sections);
-  assert.match(text,/up to 12 marketing pages/);assert.match(text,/Before any payment, I confirm supported technology/);
+  assert.match(text,/up to 12 agreed main pages/);assert.match(text,/Before payment, I check that I can safely work on the site/);
   assert.match(text,/unearned amount to be refunded/);assert.match(text,/30 calendar days after your written approval of its completion/);
   assert.match(text,/does not include or require a new year of hosting/);assert.match(text,/specialist certification are separate/);
  }
@@ -46,7 +46,7 @@ test('monthly packs gate new annual sales while retaining accepted annual cancel
   assert.ok(!p.sections.some(s=>s.title==='Annual prepayment'));
   const existing=paymentContent({contactEmail:'support@example.test'},offers);assert.match(existing,/id="annual-terms"/);
   for(const pattern of [/not an offer to enroll/,/within ten business days/,/Undisputed unearned amounts/,/refund the full annual service payment/,/unfinished work owed under your accepted project agreement/,/no automatic annual charge/,/No cancellation penalty, retained processing fee, discount clawback/,/no provider refund is promised/])assert.match(existing,pattern,id);
-  for(const pattern of [/no minimum term/,/Cancel before renewal/,/up to 12 marketing pages/,/still usable/,/no 24\/7 service/,/backups and restores/,/Canceling care does not disable your paid website/])assert.match(text,pattern,id);
+  for(const pattern of [/no minimum term/,/Cancel before renewal/,/up to 12 agreed main pages/,/still usable/,/no 24\/7 service/,/backups and restores/,/Canceling care does not disable your paid website/])assert.match(text,pattern,id);
   assert.match(text,id==='keep_running'?/refund or credit any unearned balance/:/unused-work refund or credit/);assert.doesNotMatch(text,/30 calendar days after launch/);
   const enabled=structuredClone(offers);enabled.annual_enrollment_gate.verified=true;
   const available=buyerPacks(enabled).find(p=>p.id===id);assert.equal(available.annual.upfront_price,upfront);assert.equal(available.annual.monthly_equivalent,equivalent);

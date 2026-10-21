@@ -43,20 +43,20 @@ test('annual prepayment and refunds preserve twelve cycles and distinguish curre
 
 test('packs and card summaries keep zero/one/two priorities and lower-build exclusions truthful',()=>{
  const packs=buyerPacks(offers),keep=packs.find(p=>p.id==='keep_running');
- const text=JSON.stringify(keep.sections);assert.match(text,/No main improvement is included/);assert.doesNotMatch(text,/Choose one defined priority|before a priority starts/);
+ const text=JSON.stringify(keep.sections);assert.match(text,/Keep Running does not include an SEO improvement/);assert.doesNotMatch(text,/Choose one defined priority|before a priority starts/);
  for(const [id,count] of [['keep_running',0],['improve',1],['grow',2]])assert.equal(offers.plans[id].priorities,count);
  const launch=packs.find(p=>p.id==='launch_site'),launchWork=launch.sections.filter(s=>['What the fee buys','How completion is accepted'].includes(s.title)).flatMap(s=>s.items).join(' ');
  assert.doesNotMatch(launchWork,/selected Signature|chosen workflow|follow-up articles|after day 90|90-day/);
  const focused=offers.focused_site;for(const key of ['page_scope','form_limit','revisions','functionality'])assert.doesNotMatch(focused[key],/selected Signature|chosen Signature|chosen workflow/);
  const builds=packageChoice(offers,true);assert.equal((builds.match(/Illustrative example:/g)||[]).length,3);assert.match(builds,/source-code handoff/);assert.doesNotMatch(builds,/3 articles total|CMS\/blog editing/);assert.doesNotMatch(builds,/hosting credit/);
- const monthly=planCards(offers);assert.equal((monthly.match(/class="compact-offer"/g)||[]).length,3);assert.match(monthly,/One researched, completed website improvement each month/);assert.match(monthly,/two completed improvements each month/);assert.match(monthly,/what’s included/);
+ const monthly=planCards(offers);assert.equal((monthly.match(/class="compact-offer"/g)||[]).length,3);assert.match(monthly,/One researched, completed website improvement each month/);assert.match(monthly,/two completed improvements each month/);assert.match(monthly,/full details/i);
 });
 
 test('native pricing links to a separate estimator and explains directly paid provider costs',()=>{
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
- assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);assert.match(html,/<p\b[^>]*\bid="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these providers and any tools directly/);assert.match(html,/confirm the actual prices and renewals before booking/);assert.match(html,/No minimum term/);
+ assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);assert.match(html,/<p\b[^>]*\bid="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay the domain company, host and paid tools directly/);assert.match(html,/confirm the actual prices and renewals before booking/);assert.match(html,/No minimum term/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);assert.doesNotMatch(calculator,/value="annual"/);
- const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/what’s included/);assert.match(overview,/\/services\/website-care\//);
+ const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/full details/i);assert.match(overview,/\/services\/website-care\//);
 });
 
 test('all builds snapshot explicit icon, sharing, sitemap and HTTPS acceptance without inventing proof',async()=>{
@@ -108,7 +108,7 @@ test('current pricing has eight live-text offers and no stale poster publication
  const details={launch_site:'/services/web-design/#offer-launch_site',focused_site:'/services/web-design/#offer-focused_site',signature_site:'/services/web-design/#offer-signature_site',keep_running:'/services/website-care/#offer-keep_running',improve:'/services/seo/#offer-improve',grow:'/services/seo/#offer-grow',website_baseline:'/services/website-audit/#offer-website_baseline',audit_fix_sprint:'/services/website-audit/#offer-audit_fix_sprint'};
  for(const [id,destination]of Object.entries(details)){
   const card=html.match(new RegExp('<article class="compact-offer" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1];assert.ok(card,id);
-  assert.ok(card.includes('href="'+destination+'"'),id+' details');
+  assert.ok(card.includes('href="/assets/buyer-packs/'+id+'"'),id+' details');
   const monthly=['keep_running','improve','grow'].includes(id);assert.ok(card.includes('href="/checkout/'+id.replaceAll('_','-')+'/'+(monthly?'?billing=monthly':'')+'"'),id+' request');
  }
  assert.match(html,/one small fix if it is safe and practical/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/I do not charge for the same review twice/);

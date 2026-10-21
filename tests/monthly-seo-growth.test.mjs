@@ -47,7 +47,7 @@ test('monthly research and reuse changes invalidate artwork rather than leaving 
 test('monthly sales pages state included work while full research and reuse scope remains accessible',()=>{
  const pages=renderPages({config,offers,map,geography});
  for(const path of ['/pricing/','/services/seo/','/guides/seo-work-and-reporting/']){const html=pages.find(p=>p.path===path).html;assert.match(html,/research/i);assert.match(html,/90-day/);}
- const care=pages.find(p=>p.path==='/services/website-care/').html;assert.match(care,/Keep Running/);assert.match(care,/small text, photo or link changes you send/);assert.match(care,/one set of related changes together.*update the existing pages/);assert.match(care,/href="\/services\/seo\/"/);assert.doesNotMatch(care,/Two substantial connected improvements/);
+ const care=pages.find(p=>p.path==='/services/website-care/').html;assert.match(care,/Keep Running/);assert.match(care,/small text, photo or link changes you send/);assert.match(care,/One set of small text, photo or link changes each month.*Send related changes together.*update existing parts of the site/);assert.match(care,/href="\/services\/seo\/"/);assert.doesNotMatch(care,/Two substantial connected improvements/);
  const packs=buyerPacks(offers);
  for(const [id,candidates] of [['improve',3],['grow',6]]){
   const pack=JSON.stringify(packs.find(p=>p.id===id).sections);assert.match(pack,new RegExp('Review up to '+candidates+' possible search opportunities'));assert.match(pack,/research/i);

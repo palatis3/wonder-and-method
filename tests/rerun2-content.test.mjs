@@ -302,7 +302,7 @@ test('all published guides preserve existing bookmarks and downloadable resource
   for(const download of item.downloads)assert.ok(hrefs(html).includes(download),item.path+' missing '+download);
   for(const target of hrefs(html).filter(x=>x.startsWith('#')))assert.ok(found.includes(target.slice(1)),item.path+' broken '+target);
   assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);
-  assert.ok(html.includes('href="#next-decision">'+e(guideInquiry(item.path).label)),item.path+' topic-specific jump to its ending action');
+  assert.ok(html.includes('id="next-decision"'),item.path+' existing ending bookmark');assert.ok(html.includes(guideInquiry(item.path).href),item.path+' contextual inquiry destination');
  }
 });
 
@@ -316,7 +316,7 @@ test('download labels are explicit and existing files remain available',()=>{
   for(const match of html.matchAll(/<a\b([^>]*href="(\/assets\/[^"?]+\.(csv|txt))"[^>]*)>([^<]*)<\/a>/gi)){
    assert.ok(existsSync(new URL('../src'+match[2],import.meta.url)),match[2]);
    assert.match(match[1],/\bdownload(?:[=>\s]|$)/i,item.path);
-   assert.match(match[4],match[3].toLowerCase()==='csv'?/CSV spreadsheet; opens in Excel or Google Sheets/:/TXT plain text/,item.path);
+   assert.match(match[4],match[3].toLowerCase()==='csv'?/spreadsheet/:/text file/,item.path);
   }
   const download=guideDownload(item.path);
   if(!download)continue;
@@ -325,8 +325,8 @@ test('download labels are explicit and existing files remain available',()=>{
   assert.ok(existsSync(new URL('../src'+download,import.meta.url))||existsSync(new URL('../public'+download,import.meta.url)),download);
  }
  for(const [slug,download] of [['website-launch-checklist','/assets/guides/website-launch-checklist.csv'],['website-maintenance-cost','/assets/guides/website-maintenance-budget.csv'],['ai-website-or-custom','/assets/guides/website-approach.csv'],['website-redesign-brief','/assets/guides/website-redesign-brief.txt']])assert.ok(hrefs(article(slug)).includes(download),slug+' links its canonical download');
- assert.match(article('website-project-cost'),/Download the website budget checklist \(TXT plain text\)/);
- assert.match(article('local-seo-profile-eligibility'),/Download the local-search checklist \(TXT plain text\)/);
+ assert.match(article('website-project-cost'),/Download the website budget checklist \(text file\)/);
+ assert.match(article('local-seo-profile-eligibility'),/Download the local-search checklist \(text file\)/);
  assert.ok(hrefs(article('website-care-versus-seo')).includes('/assets/guides/website-care-versus-seo-worksheet.csv'));
  assert.match(seoServiceContent(offers),/href="\/assets\/guides\/sample-monthly-report\.txt" download/);
  assert.ok(read('src/assets/guides/sample-monthly-report.txt').length>300);
@@ -336,8 +336,8 @@ test('review choices preserve prices, caps, a full service comparison and contex
  for(const [html,offer,goal] of [[article('contact-form-not-working'),'website_baseline','fix'],[article('website-audit-checklist'),'unsure','fix'],[article('website-repair-or-redesign'),'unsure','unsure'],[redesignPage(offers).body,'unsure','redesign']]){
   const targets=hrefs(html).filter(x=>x.startsWith('/contact/')).map(x=>new URL(x,'https://wonderandmethod.com'));
   assert.ok(targets.some(x=>x.searchParams.get('offer')===offer&&x.searchParams.get('goal')===goal&&x.searchParams.get('request_kind')==='question'&&x.hash==='#inquiry'),offer+' / '+goal);
-  assert.ok(hrefs(html).includes('/services/website-audit/'),'Full review comparison remains reachable');
-  assert.match(html,/\$399/);assert.match(html,/\$750/);assert.match(html,/up to 12 main pages/);
+  assert.ok(hrefs(html).some(url=>url.split('#')[0]==='/services/website-audit/'),'Full review comparison remains reachable');
+  assert.match(html,/\$399/);assert.match(html,/\$750/);assert.match(html,/up to 12 agreed main pages/);
   assert.match(html,/up to two small fixes in total/);assert.match(html,/safe and practical/);
  }
  const choices=hrefs(auditContent(offers));
@@ -353,7 +353,7 @@ test('form and search guides start with owner checks and preserve the deeper dia
  assert.match(form,/A site may not store a separate inquiry record/);
  assert.match(form,/<details><summary>Trace receiving-system and email-delivery failures/);
  const search=journalSections('/guides/website-not-showing-on-google/',offers);
- assert.deepEqual(search.slice(0,3).map(x=>x.id),['plain-search-terms','inspection-steps','specific-index-checks']);
+ assert.deepEqual(search.slice(0,3).map(x=>x.id),['define','plain-search-terms','inspection-steps']);
  assert.match(search.map(x=>x.body).join(''),/Test live URL/);assert.match(search.map(x=>x.body).join(''),/Request indexing/);
  assert.match(search.map(x=>x.body).join(''),/Distinguish robots.txt crawling restrictions from noindex/);assert.match(search.map(x=>x.body).join(''),/Preserve private-preview controls/);
 });
@@ -363,7 +363,7 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.equal((article('website-project-cost').match(/<caption>Current studio website prices<\/caption>/g)||[]).length,1);
  assert.match(article('website-project-cost'),/Illustrative first-year budget — replace the provider assumptions/);assert.match(article('website-project-cost'),/Replace \$20\/month hosting and \$120\/year other bills with your actual renewal prices/);
  const scope=journalSections('/guides/seo-work-and-reporting/',offers).find(section=>section.id==='scope').body;
- assert.match(scope,/Improve — \$400\/month:.*1 complete improvement each month/);assert.match(scope,/Grow — \$800\/month:.*2 connected improvements/);
+ assert.match(scope,/Improve — \$400\/month:.*1 completed improvement each month/);assert.match(scope,/Grow — \$800\/month:.*2 connected improvements/);
  assert.match(article('website-maintenance-checklist'),/plans exclude CMS, plugin and theme updates, backups, restores and malware cleanup/);assert.match(article('website-maintenance-checklist'),/Monitoring is automated and is not staffed 24\/7/);assert.ok(hrefs(article('website-maintenance-checklist')).includes('/services/website-care/'));
  assert.match(careContent(offers),/no 24\/7 staffing or guaranteed repair time/);
  assert.match(seoServiceContent(offers),/href="\/services\/website-care\/">Keep Running/);assert.match(careContent(offers),/Keep Running is \$150\/month/);

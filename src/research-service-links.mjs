@@ -6,4 +6,4 @@ const choices={
  '/services/website-care/':[['/guides/website-maintenance-checklist/#monthly-record','Use the monthly website checklist'],['/guides/website-handover-checklist/','Check website accounts and files']],
  '/services/contractor-websites/':[['/guides/contractor-website-checklist/#annotated-examples','Explore contractor page examples'],['/guides/website-content-template/','Prepare your service facts']]
 };
-export function researchServiceLinks(path){const links=choices[path];return links?`<p class="service-preparation"><strong>Before you get in touch:</strong> ${links.map(([url,label])=>`<a href="${url}">${label}</a>`).join(' <span aria-hidden="true">·</span> ')}</p>`:'';}
+export function researchServiceLinks(path){const links=choices[path];return links?`<section class="service-preparation" aria-labelledby="related-planning-guides"><h2 id="related-planning-guides">Related guides</h2><ul>${links.map(([url,label])=>`<li><a href="${url}">${label}</a></li>`).join('')}</ul></section>`:'';}

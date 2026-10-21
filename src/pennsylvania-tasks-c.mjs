@@ -34,7 +34,7 @@ export const pennsylvaniaTasksC = {
   },
   lehigh:{
     name:'Lehigh', title:'Write a coverage rule that survives the county line.',
-    scenario:'A Allentown provider serves some nearby requests on site and others online, but its website lists every place as a location.',
+    scenario:'An Allentown provider serves some nearby requests on site and others online, but its website lists every place as a location.',
     decision:'Choose one service and describe where it is delivered, how requests outside the usual area are reviewed and when travel is confirmed. Separate customer attendance at real location from places the provider visits. Include a Bethlehem example to check whether a county distinction matters to the actual operating rule; the city crosses Lehigh and Northampton counties. Remove office wording where there is no office.',
     questions:['Which boundary changes the service or its travel arrangements?','What does the customer need to supply for an exception review?','Which listed place is an actual location customers may attend?'],
     output:'One clear coverage statement, an exception process and a verified location list.',
@@ -106,8 +106,8 @@ export const pennsylvaniaTasksC = {
   },
   northampton:{
     name:'Northampton', title:'Match each customer task to one verified destination.',
-    scenario:'A Easton business uses one general map for online consultations, collection and on-site service inquiries across the Bethlehem area.',
-    decision:'List the customer tasks and mark whether each needs attendance, an online connection or a reviewed service address. Give every attendance task an destination and entrance instruction. Distinguish Bethlehem City, which crosses into Lehigh County, from Bethlehem Township in Northampton County. Record coverage separately so one actual location does not become multiple claimed offices in the page plan.',
+    scenario:'An Easton business uses one general map for online consultations, collection and on-site service inquiries across the Bethlehem area.',
+    decision:'List the customer tasks and mark whether each needs attendance, an online connection or a reviewed service address. Give every attendance task a destination and entrance instruction. Distinguish Bethlehem City, which crosses into Lehigh County, from Bethlehem Township in Northampton County. Record coverage separately so one actual location does not become multiple claimed offices in the page plan.',
     questions:['Which step requires the customer to travel anywhere?','Does the Bethlehem reference identify the city or the township?','Which address and entrance belong to the selected visit or collection?'],
     output:'A task-to-destination table and a single verified record for each real location.',
     check:'A visitor planning collection reaches its address, while an online consultation does not misleadingly send the same visitor to a general location map.'

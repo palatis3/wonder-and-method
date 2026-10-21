@@ -41,8 +41,9 @@ The approved Healthchecks.io receiver is active with a one-hour period, a
 fifteen-minute grace period and email alerts independent of Resend. A real
 production scheduled receipt and the owner's Down/Up alert emails were verified
 on October 19, 2026. These are dated observations, not proof of later receipts
-or a completed owner mailbox review. Preserve the existing receiver; do not
-create another monitor or send a manual ping as a substitute for a scheduled run.
+or a completed owner mailbox review. Preserve this delivery receiver. The approved
+submission and retention checks below have separate purposes; no manual ping
+substitutes for a genuine scheduled receipt.
 The production release gate requires the `HEALTHCHECK_URL` secret. Never commit
 or print its value. The request has no inquiry payload,
 uses a five-second timeout and refuses redirects. A ping occurs only in live mode
@@ -54,6 +55,67 @@ aggregate health, using the procedure in `deployment/PRODUCTION.md`. A receiver
 replacement needs its own approved setup and alert-delivery evidence. The current
 code change does not renew the October 19 evidence. Manual mailbox and status
 checks remain necessary.
+
+## Separate submission and retention alerts
+
+Migration `0017_operation_attention.sql` stores fixed submission failure codes and
+counts, never inquiry content. The `INQUIRY_SUBMISSION_HEALTHCHECK_URL` and
+`RETENTION_HEALTHCHECK_URL` secrets identify distinct checks, separate from
+`HEALTHCHECK_URL`. All three use the existing owner email integration. Record
+commissioning and actual inbox receipt separately in the private release record;
+creating a check or receiving HTTP 200 does not establish alert delivery.
+
+Submission is a failure latch: keep it **paused and armed** while idle, with
+Healthchecks' default automatic resume on incoming pings (`manual_resume=false`).
+Accept POST without body keyword filters. A submission failure sends an empty
+`/fail` request and resumes the check in Down state. There are no automatic
+submission success pings: a healthy database cannot prove an earlier outage-only
+failure was investigated. The separate delivery heartbeat detects missing hourly
+execution. Paused and armed does not mean the last incident has been resolved.
+
+Retention uses a one-hour period and fifteen-minute grace period. Hourly execution
+sends success only when current retention attention is clear; day-80 advance work,
+due work, unknown dates needing review or an unreadable status sends failure.
+Recording a review does not clear outstanding work, change contact dates, or
+delete anything. Do not leave its timer running before the production producer
+has been deployed. After deployment verify a genuine scheduled receipt.
+
+### Guarded submission re-arm
+
+1. Investigate the fixed failure codes and exact counts in fresh authenticated
+   status, the independent receiver's failure events and unsampled Worker logs.
+   Record the reviewed counts, log interval and receiver event cursor/count with
+   UTC times in the private incident record. Include outage-only failures that D1
+   could not store. Do not close the incident while any evidence is unavailable.
+2. Submit only the exact reviewed code/count snapshot to the authenticated
+   `POST /api/operator/inquiries/submission-failures/acknowledge` endpoint with
+   `confirm: "reviewed-submission-failures"` and `incidents` containing `code` and
+   `occurrences`. Inspect returned attention, then re-read current status after
+   **either 200 or 409**. A 200 can leave omitted/new incidents outstanding. A
+   multi-row 409 can follow successful acknowledgement of earlier rows; it is not
+   an atomic rollback. Neither status permits pausing on its own.
+3. Once the reviewed evidence is reconciled, pause the receiver **once** and record
+   the boundary time. Immediately re-read its event history and fresh database
+   attention. Reconcile the log tail through that boundary, accounting for log
+   delivery delay. Compare against the recorded event cursor and counts.
+4. Any new or unreviewed failure, changed count or uncertain boundary keeps the
+   incident open. If pausing hid such a failure, send one empty `/fail` signal
+   through the private receiver to restore Down. Never pause a newly Down check
+   again as cleanup. A failure arriving after pause automatically reopens it.
+5. Record closure only after the post-pause review establishes that every event
+   through the boundary was reviewed and the check remains paused/armed. Never
+   send a success ping to clear this latch.
+
+The fixed `inquiry_submission_signal_failed` log code means an attempted receiver
+request was not acknowledged. Intentional database or edge throttling does not
+produce that code. If D1 and the receiver fail together, the design has no durable
+external event to replay: review unsampled logs and the original failure codes
+across the outage. Keep `observability` enabled and retain the private incident
+evidence. This channel does not guarantee durable delivery or continuously prove
+that the owner email integration works. Verify the owner alert destination and
+an explicitly labeled, content-free alert at commissioning, after integration
+changes and during the monthly operations review. Do not submit test inquiries
+to the public production form or production database for that check.
 
 A daily notification-budget hold preserves the saved row, attempt count and prior
 frozen body. An inquiry with no provider attempt can recover for 48 hours after

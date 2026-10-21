@@ -15,9 +15,9 @@ test('all 23 guides lead their prose with an answer, show useful contents and fu
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
   assert.match(html,/<div class="journal-prose"><div class="guide-decision"><h2>The short answer<\/h2>/,item.path);
-  assert.ok(html.indexOf('The short answer')<html.indexOf('<figure class="journal-hero'),item.path);
+  assert.ok(html.indexOf('The short answer')<html.indexOf('<section id="'),item.path);
   assert.equal((html.match(/class="journal-toc"/g)||[]).length,journalSections(item.path,offers).length>=6?1:0,item.path);
-  assert.equal((html.match(/<figure class="journal-hero/g)||[]).length,1,item.path);
+  assert.equal((html.match(/<figure class="journal-hero/g)||[]).length,item.image==='repair-or-redesign'?1:0,item.path);
   assert.doesNotMatch(html,/class="journal-visual"/,item.path+' illustration is visible, not a disclosure');
   assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1,item.path);
   const ids=[...html.matchAll(/ id="([^"]+)"/g)].map(m=>m[1]);
@@ -34,8 +34,8 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  const body=form.map(x=>x.body).join('');assert.match(body,/A site may not store a separate inquiry record/);assert.match(body,/WordPress:.*identify the form plugin/);assert.match(body,/SPF, DKIM and DMARC/);
  const rendered=journalArticle(journal.find(item=>item.path==='/guides/contact-form-not-working/'),offers,journal);
  assert.match(rendered,/offer=website_baseline&amp;goal=fix&amp;request_kind=question#inquiry/);assert.match(body,/Audit &amp; Fix Sprint.*up to two small fixes in total/);
- const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['plain-search-terms','inspection-steps','specific-index-checks']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
- const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/rollback/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
+ const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['define','plain-search-terms','inspection-steps']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
+ const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
 test('county services precede optional worksheet and hub keeps one link per county',()=>{
@@ -64,41 +64,24 @@ test('guide index is text-only while related cards use responsive WebP derivativ
  const index=journalIndex(journal);
  assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,23);
  assert.doesNotMatch(index,/<img\b/);for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'));
- const media=new Set();
  for(const item of journal){
   const card=journalCard(item);
-  assert.match(card,/sizes="\(max-width:767px\) calc\(100vw - 40px\), 406px"/);
-  assert.match(card,/alt="" loading="lazy"/);
-  assert.doesNotMatch(card,/-thumb\.png|-illustration-640\.webp/);
+  assert.doesNotMatch(card,/<img|srcset=/,item.path+' related reading remains text-first');
+  assert.ok(card.includes('href="'+item.path+'"'));
   const description=card.match(/class="journal-card-description">([^<]+)</)?.[1];
-  assert.ok(description?.endsWith('.'),item.path+' summary must be a complete sentence');
-  assert.notEqual(description,item.description,item.path+' uses its concise card summary');
-  for(const match of card.matchAll(/(?:src|srcset)="([^"]+)"/g))for(const candidate of match[1].split(','))media.add(candidate.trim().split(/\s+/)[0]);
- }
- assert.equal(media.size,69);
- for(const path of media){
-  assert.match(path,/-card-(480|720|1080)\.webp$/);
-  const bytes=await readFile(new URL('../src'+path,import.meta.url));
-  assert.equal(bytes.toString('ascii',0,4),'RIFF',path);assert.equal(bytes.toString('ascii',8,12),'WEBP',path);
+  assert.ok(description?.endsWith('.'),item.path+' summary is a complete sentence');
  }
 });
 
-test('diagram alternatives retain the decisions and limitations without duplicate captions',()=>{
- const required={
-  'google-visibility-flow':['private pages','discovery, indexing and relevance','Maps eligibility','not guaranteed'],
-  'contact-form-flow':['authorized test','receipt, notification, inbox and reply','does not prove delivery'],
-  'service-area-decision':['Confirm coverage','existing page','separate page'],
-  'maintenance-cycle':['record results','corrections and retest','responsibilities'],
-  'contractor-inquiry':['real evidence','confirm coverage','not a quote'],
-  'care-versus-seo':['Care keeps the site working','search work','not promised growth'],
-  'audit-checklist':['evidence','retest','missing account access'],
-  'repair-or-redesign':['Keep what works','small problem','Missing access pauses']
- };
- for(const item of journal.filter(x=>x.diagram)){
-  const html=journalArticle(item,offers,journal),figure=html.match(/<figure class="journal-hero journal-diagram">(.*?)<\/figure>/s)?.[1];
-  assert.ok(figure,item.path);assert.doesNotMatch(figure,/<figcaption>/);
-  assert.ok(figure.includes(`/assets/guides/${item.image}.svg`));
-  const alt=figure.match(/alt="([^"]+)"/)?.[1];
-  for(const phrase of (required[item.image]||researchGuideDetails[item.path.split('/').at(-2)].steps.flat()))assert.ok(alt?.includes(phrase),item.path+' '+phrase);
+test('responsive guide steps retain every decision, and the branching diagram keeps its description',()=>{
+ for(const item of journal){
+  const html=journalArticle(item,offers,journal),details=researchGuideDetails[item.path.split('/').filter(Boolean).at(-1)];
+  if(details){
+   const steps=html.match(/<ol class="guide-steps"[^>]*>([\s\S]*?)<\/ol>/)?.[1];assert.ok(steps,item.path);
+   for(const phrase of details.steps.flat())assert.ok(steps.includes(phrase.replaceAll('&','&amp;')),item.path+' '+phrase);
+   assert.ok(html.indexOf('class="guide-steps"')>html.indexOf('</section>'));
+  }else if(item.image==='repair-or-redesign'){
+   assert.match(html,/<figure class="journal-hero journal-diagram">/);assert.match(html,/alt="[^"]*Keep what works/);assert.match(html,/<figcaption>/);
+  }else assert.doesNotMatch(html,/<figure class="journal-hero/,item.path+' redundant figure omitted');
  }
 });

@@ -36,12 +36,12 @@ export function inquiryFieldMessage(key,validity={}){
 export function validateInquiry(data){
   const errors={},value={};
   if(!data||typeof data!=='object'||Array.isArray(data))return {errors:{name:'Provide inquiry fields.'},value};
-  for(const [key,max] of Object.entries({name:100,email:254,business:160,website:500,service:40,message:3000})){
-    if(data[key]!==undefined&&typeof data[key]!=='string'){errors[key]='Use plain text.';value[key]='';continue;}
+  for(const [key,max] of Object.entries({name:100,email:254,business:160,business_location:160,website:500,service:40,message:3000})){
+    if(data[key]!==undefined&&typeof data[key]!=='string'){errors[key]='Enter text in this field.';value[key]='';continue;}
     value[key]=(data[key]||'').trim();
-    if(!['website','business','service'].includes(key)&&!value[key])errors[key]=inquiryFieldMessage(key,{valueMissing:true});
+    if(!['website','business','business_location','service'].includes(key)&&!value[key])errors[key]=inquiryFieldMessage(key,{valueMissing:true});
     if(value[key].length>max)errors[key]=key==='message'?inquiryFieldMessage(key,{tooLong:true}):`Use no more than ${max} characters.`;
-    if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Remove unsupported control characters.';
+    if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Please retype this entry or paste it as plain text to remove hidden formatting.';
   }
   if(!validEmail(value.email))errors.email=inquiryFieldMessage('email',{typeMismatch:true});
   value.service=resolveServiceId(value.service)||'unsure';
@@ -66,6 +66,9 @@ export function validateInquiry(data){
   }
   try{const ids=normalizeAddonSelection(data);if(ids.length)value.add_ons=ids;}
   catch(error){errors.add_ons=error.message;}
+  // Preserve the normalized payload of legacy forms when no location was supplied,
+  // so a deployment cannot turn an identical ten-minute retry into a new inquiry.
+  if(!value.business_location)delete value.business_location;
   if(data._wm_note||data._faxcheck||data.company_url)errors.company_url='Unable to accept this submission.';
   return {errors,value};
 }

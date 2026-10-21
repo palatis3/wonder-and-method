@@ -98,14 +98,14 @@ test('Pennsylvania guides have distinct planning decisions, useful worksheets an
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);assert.equal(task.questions.length,3);
   focus.add(c.focus);titles.add(task.title);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
   assert.match(html,/from Buffalo/);assert.match(html,/online/);
-  assert.ok(html.includes('The examples below are fictional, not client projects.'));assert.ok(html.includes('<p class="eyebrow">Example</p>'));
+  assert.ok(html.includes('More planning examples (made up)'));assert.ok(html.includes('<p class="eyebrow">Example (made up)</p>'));
   const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.equal((faq.match(/<summary>/g)||[]).length,5,c.slug);
   for(const [q,answer,url,label] of pennsylvaniaSearchQuestions(c.slug,offers)){
    assert.ok(answer.trim().length>90,c.slug);assert.ok(label?.trim(),c.slug);assert.ok(byPath.has(url),c.slug+' -> '+url);searchQuestions.add(q);
   }
   const worksheet=await readFile(new URL('../src/assets/county-briefs/pennsylvania-'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
-  assert.match(worksheet,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
+  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);
   assert.ok(html.includes(`href="/assets/county-briefs/pennsylvania-${c.slug}.txt"`));
  }
  assert.equal(focus.size,67);assert.equal(titles.size,67);assert.equal(decisions.size,67);assert.equal(localQuestions.size,134);assert.equal(searchQuestions.size,201);
@@ -117,7 +117,7 @@ test('county prices follow current offers, including website review and care as 
  changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
  for(const slug of expectedSlugs){
-  const html=rendered.get(path(slug));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Care is \$187\/month/);assert.match(html,/Website Baseline \(\$499\)/);assert.match(html,/Audit &amp; Fix Sprint \(\$975\)/);
+  const html=rendered.get(path(slug));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Keep Running \$187\/month/);assert.match(html,/Website Baseline \$499/);assert.match(html,/Audit &amp; Fix Sprint \$975/);
   const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
   assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/,slug);
  }

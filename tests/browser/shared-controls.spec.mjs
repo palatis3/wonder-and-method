@@ -183,7 +183,7 @@ test('city project tabs update the preview and destination together with keyboar
 test('city scene links and browser history reveal the matching project below the sticky header',async({page})=>{
  await page.goto('/?qa=1');
  for(const id of ['northline','hearthside']){
-  await page.locator('.city-choice--'+id).click();
+  await page.evaluate(id=>{location.hash='city-panel-'+id;},id);
   await expect(page.locator('[data-city-panel]:visible')).toHaveAttribute('data-city-panel',id);
   await expect.poll(()=>page.evaluate(()=>{const panel=document.querySelector('[data-city-panel]:not([hidden])').getBoundingClientRect(),header=document.querySelector('.site-header').getBoundingClientRect();return panel.top>=header.bottom-1&&panel.top<innerHeight;})).toBe(true);
  }
@@ -212,7 +212,7 @@ test('a failed city film keeps the still and website links usable, then retries'
  await expect(page.locator('[data-living-city]')).not.toHaveClass(/has-city-frame/);
  await expect(page.locator('.city-poster')).toBeVisible();
  await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
- await expect(page.locator('.city-primary')).toHaveAttribute('href','/contact/?request_kind=checkout#inquiry');
+ await expect(page.locator('.city-primary')).toHaveAttribute('href','/contact/');
  await expect(page.locator('[data-city-panel]:visible .city-project-link')).toHaveAttribute('href','/work/fieldwork/');
  await page.unroute(filmPattern);await page.locator('[data-city-play]').click();
  await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);

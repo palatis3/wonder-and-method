@@ -93,8 +93,18 @@
 .journal-byline .byline-date{display:block}
 /* Index rows contain text only; image-card tracks must not constrain their wrapper. */
 .studio-site .journal-index-list .journal-card-text{display:block;padding:1.25rem 0}
-.studio-site .journal-index-list .journal-card.journal-card-text :is(h2,h3){max-width:none;font-size:1.65rem;line-height:1.25;margin:0 0 .4rem}
+.studio-site .journal-index-list .journal-card.journal-card-text :is(h2,h3){max-width:none;font-size:1.45rem;line-height:1.3;margin:0 0 .4rem}
 .studio-site .journal-index-list .journal-card-text .journal-card-description{grid-column:auto;max-width:68ch;margin:0!important;font-size:1rem;line-height:1.65}
 .studio-site .journal-index-list{margin:0 0 2rem}
-.studio-site .journal-group>h2{font-size:clamp(1.6rem,2.5vw,2rem);line-height:1.25}
+.studio-site .journal-group>h2{font-size:clamp(1.85rem,2.8vw,2.3rem);line-height:1.25;margin-bottom:1.25rem}
 @media(max-width:767px){.studio-site .journal-index-list .journal-card.journal-card-text :is(h2,h3){font-size:1.5rem}}
+.guide-start{margin:0 0 2rem;padding:1.5rem;background:var(--subtle)}
+.guide-start h2{font-size:1.6rem;margin:0 0 .75rem}
+.guide-start ul{margin:0;padding-left:1.25rem}
+.guide-start li+li{margin-top:.5rem}
+.guide-steps{padding:1.25rem 1.25rem 1.25rem 2.75rem;background:var(--subtle);margin:2rem 0}
+.guide-steps li+li{margin-top:1rem}
+.guide-steps span{display:block}
+.journal-related .journal-card-text{border-top:1px solid var(--line);padding-top:1.25rem}
+.journal-related .journal-card-text h3{font-size:1.65rem;line-height:1.3}
+@media(min-width:1000px){.studio-site .journal-index-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem}.guide-start ul{display:flex;flex-wrap:wrap;gap:.5rem 2.5rem}.guide-start li+li{margin-top:0}}

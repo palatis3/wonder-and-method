@@ -1,6 +1,6 @@
 /* Higher specificity keeps the shared identity stable in both build stylesheets. */
 .studio-site .site-header .wordmark.brand-lockup,.studio-site .footer-top .wordmark.brand-lockup{display:inline-flex;align-items:center;gap:12px;white-space:normal;min-width:0;overflow-wrap:anywhere;max-width:100%}
-.studio-site .wordmark.brand-lockup .brand-emblem{display:block;width:28px;height:22px;flex:0 0 28px;object-fit:contain}
+.studio-site .wordmark.brand-lockup .brand-emblem{display:block;width:28px;height:auto;flex:0 0 28px;object-fit:contain}
 .studio-site .wordmark.brand-lockup .brand-name{display:block;min-width:0;font:inherit;letter-spacing:inherit;line-height:1.12;white-space:normal;overflow-wrap:anywhere}
 .studio-site .site-header .wordmark.brand-lockup{font-size:clamp(1.75rem,2.55vw,2.35rem)}
 .studio-site .footer-top .wordmark.brand-lockup{flex-shrink:0;font-size:2.35rem}

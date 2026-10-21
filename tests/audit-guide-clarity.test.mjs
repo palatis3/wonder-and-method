@@ -294,7 +294,7 @@ test('all 23 guides, historical bookmarks and existing download files survive',(
   for(const match of html.matchAll(/<a\b([^>]*href="(\/assets\/[^"?]+\.(csv|txt))"[^>]*)>([^<]*)<\/a>/gi)){
    assert.ok(existsSync(file(match[2])),match[2]);
    assert.match(match[1],/\bdownload(?:[=>\s]|$)/i,item.path);
-   assert.match(match[4],match[3].toLowerCase()==='csv'?/CSV spreadsheet; opens in Excel or Google Sheets/:/TXT plain text/);
+   assert.match(match[4],match[3].toLowerCase()==='csv'?/spreadsheet/:/text file/);
   }
  }
  for(const url of existingDownloads)assert.ok(existsSync(file(url)),url);
@@ -310,15 +310,15 @@ test('form troubleshooting finishes owner checks before help and points to the B
  assert.doesNotMatch(body('contact-form-not-working'),/applicable agreement|additional contact-form scope|quarantine|approved retention/);
  assert.match(html,/Ask about the \$399 Website Baseline/);
  assert.match(guideInquiry(path('contact-form-not-working')).href,/offer=website_baseline&amp;goal=fix/);
- assert.match(sections('contact-form-not-working').find(x=>x.id==='review-options').body,/href="\/services\/website-audit\/"/);
+ assert.match(sections('contact-form-not-working').find(x=>x.id==='review-options').body,/href="\/services\/website-audit\/#offer-website_baseline"/);
  assert.match(sections('contact-form-not-working').at(-1).body,/^<details>/);
 });
 
 test('Google diagnosis defines terms, gives the first check, and keeps server detail closed',()=>{
  const content=sections('website-not-showing-on-google');
- assert.deepEqual(content.slice(0,3).map(x=>x.id),['plain-search-terms','inspection-steps','specific-index-checks']);
- assert.match(content[0].body,/Google’s free tool/);
- assert.match(content[1].body,/leave it hidden/);
+ assert.deepEqual(content.slice(0,3).map(x=>x.id),['define','plain-search-terms','inspection-steps']);
+ assert.match(content[0].body,/page.*search.*date/i);assert.match(content.find(x=>x.id==='plain-search-terms').body,/Google’s free tool/);
+ assert.match(content.find(x=>x.id==='inspection-steps').body,/leave it hidden/);
  assert.doesNotMatch(content.slice(0,-1).map(x=>x.body).join(''),/X-Robots-Tag|HTML robots directive/);
  assert.match(content.at(-1).body,/^<details><summary>/);
  assert.match(content.at(-1).body,/X-Robots-Tag/);
@@ -357,7 +357,7 @@ test('timeline uses configuration, names both review windows, and preserves the 
  assert.doesNotMatch(handover,/five business days (?:of|after) final payment/);
  const stages=sections('website-redesign-timeline').find(x=>x.id==='sequence').body;
  const rows=csvRows(readFileSync(file('/assets/guides/website-redesign-schedule.csv'),'utf8'));
- assert.equal(rows.length,7);
+ assert.equal(rows.length,9);
  for(const row of rows.slice(1))for(const cell of row.slice(0,3))assert.ok(stages.includes(cell),cell);
 });
 
@@ -383,16 +383,16 @@ test('monthly care retains exclusions, the current review requirement and writte
 test('guide figures remain fully present, short answers align with prose, and navigation is focused',()=>{
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
-  assert.ok(html.indexOf('class="guide-decision"')<html.indexOf('<figure class="journal-hero'));
-  assert.ok(html.indexOf('<figure class="journal-hero')<html.indexOf('<section id="'));
+  assert.ok(html.indexOf('class="guide-decision"')<html.indexOf('<section id="'));
+  for(const marker of ['<figure class="journal-hero','<ol class="guide-steps'])if(html.includes(marker))assert.ok(html.indexOf(marker)>html.indexOf('</section>'),item.path+' owner step precedes the supporting visual');
   assert.doesNotMatch(html,/journal-visual|Get help with this decision/);
   assert.equal(html.includes('class="journal-toc"'),journalSections(item.path,offers).length>=6,item.path);
-  assert.equal((html.match(/<article class="journal-card">/g)||[]).length,2,item.path);
-  assert.match(item.category,/Solve a website problem|Choose your next project|Plan the work|Understand care and search/);
+  assert.equal((html.match(/<article class="journal-card journal-card-text">/g)||[]).length,2,item.path);
+  assert.match(item.category,/Fix a problem|Plan a website|Search visibility|Ongoing care/);
  }
  const index=journalIndex(journal);
  assert.match(index,/href="#planning-tools">Planning tool/);
- for(const item of journal)assert.ok(index.includes(item.title.replaceAll('&','&amp;')),item.path);
+ for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'),item.path);
 });
 
 test('guide worksheets remain rectangular and use understandable statuses and headers',()=>{

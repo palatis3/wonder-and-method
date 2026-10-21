@@ -3,6 +3,7 @@ import {inquiryChoices} from '../src/shared.mjs';
 
 const routes=new Map(Object.keys(pageDates).filter(path=>path!=='/404/').map(path=>[path.toLowerCase(),path]));
 const aliases=new Map([['/work/content-editor/','/work/source-handoff/'],['/assets/audit-implementation/illustrative-url-map.csv/','/assets/downloads/website-url-map.csv']]);
+for(const path of routes.values())if(/^\/areas\/[^/]+-county\/$/.test(path))aliases.set(path.replace('/areas/','/areas/new-york/'),path);
 const buyerPackIds=new Set([...inquiryChoices.map(([id])=>id).filter(id=>id!=='unsure'),'website-addons']);
 function unreserved(path){return path.replace(/%([0-9a-f]{2})/gi,(escape,hex)=>{const character=String.fromCharCode(parseInt(hex,16));return /^[A-Za-z0-9._~-]$/.test(character)?character:escape;});}
 

@@ -35,10 +35,20 @@
   },
   "observability": {
     "enabled": true,
-    "head_sampling_rate": 0.1,
+    "head_sampling_rate": 1,
     "logs": {
       "invocation_logs": false
     }
   },
-  "account_id": "4fc7ad8717e64e119476c2dcf8f0666e"
+  "account_id": "4fc7ad8717e64e119476c2dcf8f0666e",
+  "ratelimits": [
+    {
+      "name": "INQUIRY_FAILURE_RATE_LIMITER",
+      "namespace_id": "20261022",
+      "simple": {
+        "limit": 1,
+        "period": 60
+      }
+    }
+  ]
 }

@@ -109,7 +109,7 @@ test('Save-Data starts with native content and an exact poster, without automati
   const f = fixture();
   assert.equal(f.video.src, undefined);
   assert.equal(f.video.loads, 0);
-  assert.equal(f.video.poster, '/desktop-first.webp');
+  assert.equal(f.video.poster, undefined, 'hidden video has no poster request before playback');
   assert.equal(f.video.autoplay, false);
   assert.equal(f.video.loop, true);
   assert.equal(f.video.preload, 'none');
@@ -245,7 +245,7 @@ test('desktop autoplay and a remembered phone play choice start the correct mute
 test('a first phone visit never loads a film or reveal previews until explicit play', async () => {
   const f=fixture({autoplay:true,mobile:true});await flush();
   assert.equal(f.video.src,undefined);assert.equal(f.video.loads,0);assert.equal(f.video.playCalls,0);
-  assert.equal(f.button.textContent,'Play motion');assert.equal(f.video.poster,'/mobile-first.webp');
+  assert.equal(f.button.textContent,'Play motion');assert.equal(f.video.poster,undefined,'hidden video waits for explicit play');
   assert.ok(f.previews.every(image=>!image.src&&!image.srcset));
   f.view(false);f.visible(false);f.env.emit('pagehide');f.resize(false);
   f.visible(true);f.view(true);f.env.emit('pageshow');f.resize(true);await flush();

@@ -29,7 +29,7 @@ export const expandedCountyProfiles = [
     focusTitle: 'Let customers describe their location naturally.',
     focus: 'An inquiry that says Astoria, Jamaica or Long Island City should not force a customer into an inaccurate city dropdown. I plan service coverage and contact fields around the information your team actually needs. A neighborhood name can start the conversation; the address, job type and appointment arrangement establish whether the request fits. The website can explain that distinction without a geography lesson.',
     briefs: [
-      ['An appointment service in Astoria', 'For a Astoria business, the first decision is which service and appointment type the customer needs. Show the location beside that choice and explain what to prepare. If you offer support in several languages, publish only the languages your team can actually handle and assign someone to review translated content.'],
+      ['An appointment service in Astoria', 'For an Astoria business, the first decision is which service and appointment type the customer needs. Show the location beside that choice and explain what to prepare. If you offer support in several languages, publish only the languages your team can actually handle and assign someone to review translated content.'],
       ['A team receiving installation requests', 'For a Jamaica installation business, a useful inquiry asks about the item or work, the neighborhood and the requested timing. Detailed site information can follow after an initial review. The form should explain when a request becomes a confirmed appointment, so a submission does not look like a guaranteed visit.']
     ],
     search: 'For a Queens business, I check that neighborhood references support a real service or visit decision. Existing pages may need clearer headings, an accurate address or links to the right service. Similar neighborhood phrases can often be answered on one substantial coverage page.',
@@ -92,7 +92,7 @@ export const expandedCountyProfiles = [
     search: 'For a Bronx SEO review, I follow the route from the service page to the call or inquiry. I check service names, neighborhood coverage and missing answers that make customers hesitate. The agreed work can improve a small number of useful pages before considering additional location content.',
     geographyNote: 'Bronx County is the New York City borough of the Bronx. The directory lists selected neighborhoods, including City Island; these are not separate cities, towns or villages.',
     questions: [
-      ['Can customers choose between calling and using a form?', 'Yes. I can make both routes easy to find and explain when each is appropriate. You approve the published phone details and response expectations. The form fields should support the same service process rather than ask customers to repeat unnecessary information.'],
+      ['Ca customers choose between calling and using a form?', 'Yes. I can make both routes easy to find and explain when each is appropriate. You approve the published phone details and response expectations. The form fields should support the same service process rather than ask customers to repeat unnecessary information.'],
       ['Can a Bronx site describe work across several neighborhoods?', 'Yes. We can name the actual area and explain any service-specific restrictions. One useful coverage section may be sufficient. Separate neighborhood pages need substantial differences that help a customer choose or prepare for the service.']
     ]
   },
@@ -162,7 +162,7 @@ export const expandedCountyProfiles = [
     focusTitle: 'Ask for a useful project brief before a detailed specification.',
     focus: 'A specialist business may need more than a contact name to assess fit, but a first inquiry should not require a customer to assemble every project file. I organize the capabilities, accepted work and essential questions into a manageable first step. Buyers in Binghamton and neighboring communities can then understand whether the work involves a visit, delivery, collection or remote collaboration.',
     briefs: [
-      ['A supplier evaluating a custom request', 'For a Endicott specialist, a capability page can explain the types of work accepted and the information needed for an initial estimate. Ask for intended use, approximate requirements and timing. Detailed drawings or confidential files can follow through an agreed channel after the team has reviewed the request.'],
+      ['A supplier evaluating a custom request', 'For an Endicott specialist, a capability page can explain the types of work accepted and the information needed for an initial estimate. Ask for intended use, approximate requirements and timing. Detailed drawings or confidential files can follow through an agreed channel after the team has reviewed the request.'],
       ['A service business offering collection or visits', 'For a Binghamton business serving Vestal and Johnson City, the website should distinguish work brought to the business from work performed at a customer’s location. Show the requirements for each route and who confirms the arrangement. A submitted form should not imply that collection or a site visit is already scheduled.']
     ],
     search: 'For Binghamton SEO work, I check whether a service page names the actual deliverable and explains the next step. Broome County references can clarify coverage beyond the city. Approved capability examples and links to related services should help a buyer evaluate fit without a large collection of repetitive location pages.',
@@ -220,7 +220,7 @@ export const expandedCountyProfiles = [
     focus: 'An address might be your office, a customer’s project site or a venue used for a particular appointment. Labeling those roles prevents a visitor from heading to the wrong place or assuming a permanent branch. I organize service information around the work and its delivery location, with enough New York and county context to resolve familiar names that occur elsewhere.',
     briefs: [
       ['A provider delivering work at a venue', 'For a Troy business offering workshops at booked venues, each offering can show the confirmed date, location and participation requirements. Keep the business contact address separate from the event destination. If the venue changes, identify every page and external booking link that needs checking before the updated information is published.'],
-      ['A team arranging on-site estimates', 'For a East Greenbush business serving Brunswick and Schodack, a request form can ask for the project location and type of work. Explain the review that comes before an estimate visit. A countywide description should not silently promise every service at every address or imply that a date has been reserved.']
+      ['A team arranging on-site estimates', 'For an East Greenbush business serving Brunswick and Schodack, a request form can ask for the project location and type of work. Explain the review that comes before an estimate visit. A countywide description should not silently promise every service at every address or imply that a date has been reserved.']
     ],
     search: 'For Troy SEO work, I check whether service pages make the New York location and actual offer clear. Rensselaer can mean the city or county, so headings and contact information should remove that ambiguity. Useful directions, service boundaries and current venue details belong on the relevant pages.',
     geographyNote: 'Troy and Rensselaer are cities. Nassau is a town and village in Rensselaer County, distinct from Nassau County on Long Island. Valley Falls spans Pittstown and Schaghticoke.',
@@ -355,7 +355,7 @@ export const expandedCountyBuyerTasks = {
   },
   broome: {
     name: 'Broome', title: 'Start a specialist quote with the facts needed for a first review.',
-    scenario: 'A Endicott provider receives a custom-work inquiry from a buyer in Binghamton who has detailed project files.',
+    scenario: 'An Endicott provider receives a custom-work inquiry from a buyer in Binghamton who has detailed project files.',
     decision: 'Ask first for the intended use, broad requirements and timing. Explain how suitable projects move to a more detailed exchange. This lets the buyer understand the quotation process without sending confidential material through an unplanned upload field or assuming that a quick description produces a final price.',
     questions: ['Which three or four facts are enough to assess initial fit?', 'Which specifications can wait until the team accepts a detailed review?', 'Will the work involve collection, shipment, a site visit or remote delivery?'],
     output: 'A capability page and initial quote request with a clear route for later technical details.',

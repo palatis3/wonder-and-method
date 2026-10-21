@@ -3,7 +3,7 @@ export const researchGuideDetails = {
     "slug": "website-not-generating-leads",
     "path": "/guides/website-not-generating-leads/",
     "title": "Website not bringing in inquiries?",
-    "description": "Find whether the problem is visibility, visitor fit, the page, the inquiry route or follow-up. Use a practical diagnosis worksheet before buying more traffic.",
+    "description": "Check how people find you, choose your service, send an inquiry and get a reply. Use a practical diagnosis worksheet before buying more traffic.",
     "category": "Websites",
     "indexTitle": "Website not bringing in inquiries?",
     "indexDescription": "Work through the visitor journey and choose one evidence-based next step.",
@@ -11,7 +11,7 @@ export const researchGuideDetails = {
     "detail": "Follow those steps in order. Check the earliest one that is failing before paying for more traffic or a new website.",
     "goal": "fix",
     "action": "Discuss missing website inquiries",
-    "prompt": "Share the website, the service you want inquiries for and the first step you cannot verify. Leave out customer records.",
+    "prompt": "Share the website, the service you want inquiries for and where you think people stop.",
     "download": "/assets/guides/website-lead-diagnosis.csv",
     "downloadLabel": "Download the lead diagnosis worksheet",
     "related": [
@@ -21,18 +21,22 @@ export const researchGuideDetails = {
     ],
     "steps": [
       [
-        "Find the visitor",
-        "Relevant visits, service and location"
+            "People find you",
+            "Check relevant search results and website visits."
       ],
       [
-        "Check the decision",
-        "Clear offer, proof and next step"
+            "They understand and choose your service",
+            "Check accepted work, coverage, examples and the next step."
       ],
       [
-        "Trace the inquiry",
-        "Submission, receipt and follow-up"
+            "Their inquiry reaches you",
+            "Check submission, any saved record and the business inbox."
+      ],
+      [
+            "You reply and assess or book the work",
+            "Check who replies, suitability and what happened next."
       ]
-    ]
+]
   },
   "how-to-choose-a-web-designer": {
     "slug": "how-to-choose-a-web-designer",
@@ -40,7 +44,7 @@ export const researchGuideDetails = {
     "title": "How to choose a web designer or agency",
     "description": "Compare providers using the same brief, useful work samples, clear ownership and an agreed scope. Includes a practical quote-comparison worksheet.",
     "category": "Planning",
-    "indexTitle": "How to choose a web designer or agency",
+    "indexTitle": "Choose a web designer",
     "indexDescription": "Compare the scope, evidence, working relationship and handoff before booking.",
     "answer": "Compare the same job before comparing the price.",
     "detail": "A useful proposal explains who the website serves, what will be delivered, how it will be checked and what you will control afterward. Ask a freelancer, studio or agency to answer the same questions.",
@@ -75,10 +79,10 @@ export const researchGuideDetails = {
     "title": "A website content template for your small business",
     "description": "Write clearer Home, Service, About and Contact pages using prompts, an original worked example and a downloadable template for verified business facts.",
     "category": "Planning",
-    "indexTitle": "A website content template for your small business",
+    "indexTitle": "Website content template",
     "indexDescription": "Turn verified business facts into useful page copy, with a fill-in template.",
     "answer": "Start with the facts a customer needs to make a decision.",
-    "detail": "Describe who the service is for, the work you accept, the evidence you can show and what happens after someone contacts you. The template helps you prepare; you do not need polished copy to work with this studio.",
+    "detail": "Describe who the service is for, the work you accept, the evidence you can show and what happens after someone contacts you. My website packages include writing from your approved business facts. Use this template to gather those facts; finished copy is not required.",
     "goal": "new_website",
     "action": "Discuss your website content",
     "prompt": "Share your service list, rough notes and the questions customers ask. Finished writing is not required.",
@@ -108,9 +112,9 @@ export const researchGuideDetails = {
     "slug": "website-redesign-timeline",
     "path": "/guides/website-redesign-timeline/",
     "title": "Website redesign timeline and common delays",
-    "description": "Plan the build days, two review windows and launch checks, with a six-stage schedule you can fill in.",
+    "description": "Plan the build days, two review windows and launch checks, with a schedule that separates design, build and both approvals.",
     "category": "Planning",
-    "indexTitle": "Website redesign timeline and common delays",
+    "indexTitle": "Website redesign timeline",
     "indexDescription": "Map the work, inputs, approvals and checks that determine a realistic launch.",
     "answer": "Allow for the build days and your review time.",
     "detail": "Have your page list, facts, photos and account access ready. Each of the two review rounds allows up to five business days; the proposal confirms exact dates.",
@@ -145,10 +149,10 @@ export const researchGuideDetails = {
     "title": "One-page or multi-page website? An SEO decision guide",
     "description": "Choose one page or several for your services and customer questions. Compare two page maps and use the worksheet to plan your website.",
     "category": "Websites",
-    "indexTitle": "One-page or multi-page website? An SEO decision guide",
+    "indexTitle": "One page or several?",
     "indexDescription": "Match the page structure to the services and decisions your customers need.",
     "answer": "Use the smallest page structure that answers the real questions well.",
-    "detail": "A focused offer may fit one page. Distinct services may need their own explanations and addresses. Neither a single page nor a larger page count guarantees search visibility.",
+    "detail": "A focused offer may fit one page. Distinct services may need their own pages. Neither a single page nor a larger page count guarantees search visibility.",
     "goal": "new_website",
     "action": "Discuss your website page plan",
     "prompt": "Share the services you offer, the questions customers ask and the page structure you are considering.",
@@ -180,7 +184,7 @@ export const researchGuideDetails = {
     "title": "Website handover checklist: accounts, files and control",
     "description": "Check the accounts, source files, licenses, renewal dates and recovery notes needed to run your website or change providers. Includes an owner checklist.",
     "category": "Planning",
-    "indexTitle": "Website handover checklist: accounts, files and control",
+    "indexTitle": "Website handover checklist",
     "indexDescription": "Verify access, files, renewals and responsibilities before closing the project.",
     "answer": "Make sure you can sign in to your domain, hosting and form accounts yourself.",
     "detail": "Before closing a project or switching providers, check that you have the website files you paid for and clear instructions for making a change. Agree when the files are due, then check the delivery.",

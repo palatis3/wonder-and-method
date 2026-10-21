@@ -52,12 +52,12 @@ test('explicit decision-pack requests stay proposals without JavaScript and reta
   if(pack.id.endsWith('_site')){
    const text=pack.sections.flatMap(section=>section.items).join(' '),graphics=offers[pack.id].graphic_counts;
    assert.match(text,new RegExp(graphics.launch+' announcement graphics?'));
-   for(const pattern of [/mobile.*reduced-motion/,/browser-tab icon, default branded sharing image from approved assets and page-sharing checks/,/Extra variants, identity redesign and original photography are separate/])assert.match(text,pattern,pack.id);
+   for(const pattern of [/mobile.*reduced-motion/,/browser-tab icon, branded image for shared page links from approved assets and page-sharing checks/,/Extra variants, identity redesign and original photography are separate/])assert.match(text,pattern,pack.id);
    if(graphics.promotional){
     assert.match(text,new RegExp(graphics.promotional+' promotional graphics for agreed uses \\('+graphics.total+' distinct designs total\\)'));
     assert.match(text,new RegExp(graphics.supplied_photo_edits+' supplied-photo edits'));
     for(const pattern of [/color-and-font guide, clean existing-logo files and a social profile picture/,/Resizing does not count as another graphic/,/final images are included, editing templates and presentation decks are separate/])assert.match(text,pattern,pack.id);
-   }else assert.match(text,/compact color, type and style guide/);
+   }else assert.match(text,/simple color-and-font guide/);
    if(pack.id==='signature_site'){
     for(const pattern of [/One custom animated homepage feature or 3D centerpiece: one concept, scene and final web output/,/lightweight mobile, still and reduced-motion versions/,/Agree references, duration and performance limits before production/,/the same two review rounds cover it/,/Complex simulations, characters, multiple productions and custom interactive 3D are separate/])assert.match(text,pattern,pack.id);
    }else{

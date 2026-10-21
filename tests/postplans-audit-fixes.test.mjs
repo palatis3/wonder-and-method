@@ -48,8 +48,8 @@ test('monthly prompts agree across static and query-prefilled forms, with useful
    assert.equal(label(html),inquiryMessagePrompt(service,query.includes('request_kind=question')?'question':'checkout'));
   }
  }
- assert.match(inquiryMessageHelp('launch_site'),/pages you need and any deadline/);
- assert.match(inquiryMessageHelp('audit_fix_sprint'),/what goes wrong and what should happen/);
+ assert.match(inquiryMessageHelp('launch_site'),/what should your new website help people do.*deadline/);
+ assert.match(inquiryMessageHelp('audit_fix_sprint'),/what goes wrong and what should happen instead/);
 });
 
 test('current guide readiness agrees with current search eligibility',async()=>{

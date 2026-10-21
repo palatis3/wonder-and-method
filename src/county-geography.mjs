@@ -915,7 +915,7 @@ export const countyGeography = {
         "name": "Sanborn",
         "type": "hamlet",
         "town": "Lewiston",
-        "source": "https://www.niagaracountybusiness.com/file-library/100213/town_lewiston_comprehensive_plan_update.pdf"
+        "source": "https://www.townoflewistonny.gov/visiting-lewiston"
       }
     ]
   }

@@ -68,7 +68,7 @@ export function mountLivingCity(root, env = globalThis) {
     if (playButton && video) {
       playButton.hidden = false;
       playButton.disabled = reduced.matches;
-      const label = reduced.matches ? 'Motion off' : intent ? 'Pause motion' : failed ? 'Retry motion' : loaded ? 'Resume motion' : 'Play motion';
+      const label = reduced.matches ? 'Motion off' : intent ? 'Pause motion' : failed ? 'Retry motion' : phase === 'blocked' ? 'Play motion' : loaded ? 'Resume motion' : 'Play motion';
       playButton.textContent = label;
       playButton.setAttribute('aria-label', label);
       playButton.setAttribute('aria-pressed', String(intent));
@@ -97,7 +97,8 @@ export function mountLivingCity(root, env = globalThis) {
   };
   const pauseMedia = () => { if (video && !video.paused) video.pause(); };
   const updatePoster = () => {
-    const kind = sourceKind || preferredKind();
+    if (!sourceKind) return; // The responsive picture is the initial still.
+    const kind = sourceKind;
     const poster = kind === 'mobile' ? video?.dataset.mobilePoster : video?.dataset.desktopPoster;
     if (poster) video.poster = poster;
   };
@@ -184,7 +185,7 @@ export function mountLivingCity(root, env = globalThis) {
       startLoadingTimer(token);
       for (const image of root.querySelectorAll('[data-city-preview-src]')) {
         if (image.dataset.cityPreviewSrcset) {image.srcset=image.dataset.cityPreviewSrcset;image.sizes='(max-width:767px) 90vw, (max-width:1023px) 600px, 46vw';}
-        if (!image.getAttribute('src')) image.src = image.dataset.cityPreviewSrc;
+        if (image.getAttribute('src') !== image.dataset.cityPreviewSrc) image.src = image.dataset.cityPreviewSrc;
       }
       Promise.resolve(video.play()).then(() => {
         // An obsolete promise must not disturb a newer, explicitly requested play.
@@ -292,7 +293,7 @@ export function mountLivingCity(root, env = globalThis) {
     select(hashIndex < 0 ? initial < 0 ? 0 : initial : hashIndex, false, false);
     for (const link of choices) listen(link, 'click', () => {
       const index = pairs.findIndex(({tab}) => tab.dataset.cityProject === link.dataset.cityJump);
-      if (index >= 0) select(index);
+      if (index >= 0) { select(index); root.querySelector('[data-city-projects]')?.scrollIntoView?.({block:'start'}); }
     });
     listen(env, 'hashchange', () => {
       const index = pairs.findIndex(({panel}) => '#' + panel.id === env.location?.hash);

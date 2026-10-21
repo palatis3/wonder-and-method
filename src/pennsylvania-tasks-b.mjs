@@ -57,10 +57,10 @@ export const pennsylvaniaTasksB = {
     check:'Choose a nonstandard material-and-finish combination and confirm that the customer reaches a review request rather than an apparent accepted order.'
   },
   erie:{
-    name:'Erie', title:'Distinguish Erie, Pennsylvania from New York at each decision point.',
-    scenario:'A Erie business serves customers across state lines, but its site mixes a general Erie label with unclear office and service-area wording.',
+    name:'Erie', title:'Separate the business address from where the service is available.',
+    scenario:'An Erie business serves customers across state lines, but its site mixes a general Erie label with unclear office and service-area wording.',
     decision:'List the real location, supported delivery methods and actual coverage separately. Add Pennsylvania context to titles and service introductions where it resolves ambiguity. Check contact details, map links and confirmation messages against the address. Use a full destination for North East collection instructions, since the borough and township are separate. Keep the designer’s Buffalo base distinct from the client’s location.',
-    questions:['Where is the business physically located?','Which work is delivered remotely, at the location or elsewhere?','Where could a reader reasonably mistake Pennsylvania for New York?'],
+    questions:['Where is the business physically located?','Which work is delivered remotely, at the location or elsewhere?','Can a customer tell where to visit or which location details to send?'],
     output:'A consistent location statement and a checked set of contact and coverage details.',
     check:'Open the page without its navigation and identify the state, actual location and delivery method without relying on a search-engine snippet.'
   },
@@ -114,7 +114,7 @@ export const pennsylvaniaTasksB = {
   },
   indiana:{
     name:'Indiana', title:'Resolve the state and municipality in Indiana business details.',
-    scenario:'A Indiana County business uses “Indiana” throughout its site, while a collection address and service-area description leave visitors unsure which state it serves.',
+    scenario:'An Indiana County business uses “Indiana” throughout its site, while a collection address and service-area description leave visitors unsure which state it serves.',
     decision:'Check the main title, service introduction, contact details and downloads for sufficient Pennsylvania context. Separate the actual postal address from the service area. If the location is in White Township, use the address and clarify the municipality where helpful. Keep Indiana Borough, Indiana County and the state of Indiana distinct without forcing the same phrase into every sentence.',
     questions:['Where could a first-time visitor misunderstand the state?','Does the published address identify the actual collection destination?','Which service-area claim is supported by the business’s real operations?'],
     output:'A checked location statement and a list of corrected titles, links and address details.',

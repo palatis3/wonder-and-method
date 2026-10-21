@@ -10,7 +10,7 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('every route exposes the same primary journey and local type system',()=>{
- const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
+ const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-addons/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   assert.ok(primary,path);

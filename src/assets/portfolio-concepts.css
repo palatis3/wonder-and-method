@@ -28,3 +28,6 @@
  .portfolio-concept .concept-hero-copy{padding:1.25rem}
  .portfolio-concept h1{font-size:clamp(2.3rem,9vw,3.2rem);max-width:15ch}
 }
+
+/* The real studio action remains outside every fictional business frame. */
+.concept-studio-link{max-width:1240px;margin:3rem auto;padding:clamp(1.3rem,4vw,3rem);box-sizing:border-box;border-top:1px solid var(--line,#b8c5b8);background:#eef2e9}.concept-studio-link h2{max-width:25ch}.concept-studio-link p{max-width:66ch}.studio-concept-debrief{box-sizing:border-box;max-width:1240px;margin-inline:auto!important}

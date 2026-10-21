@@ -44,7 +44,7 @@ test('monthly documents distinguish ongoing care, main improvements and Grow-onl
  const keep = text(packs.find(p => p.id === 'keep_running'));
  const improve = text(packs.find(p => p.id === 'improve'));
  const grow = text(packs.find(p => p.id === 'grow'));
- assert.match(keep, /No main improvement is included/);
+ assert.match(keep, /Keep Running does not include an SEO improvement/);
  assert.match(keep, /monthly fee covers the agreed checks even without supplied edits/);
  assert.doesNotMatch(keep, /Grow|second accepted improvement|small reuse task|30-day|30 calendar days/);
  assert.doesNotMatch(improve, /second accepted improvement|additional small graphic|30-day|30 calendar days/);
@@ -69,7 +69,7 @@ test('baseline first payments retain supported-site cap and qualified reuse rule
  const html = paymentContent(config, offers);
  for (const amount of ['$549', '$799', '$1,199']) assert.ok(html.includes(amount), amount);
  const note = baselineEnrollmentNote(offers);
- assert.match(note, /supported existing website with up to 12 marketing pages/);
+ assert.match(note, /supported existing website with up to 12 agreed main pages/);
  assert.match(note, /when its review is still usable/);
  assert.match(note, /safe and feasible/);
  assert.match(note, /Larger existing sites.*assessment/);
@@ -125,10 +125,10 @@ test('process and handoff avoid stale schedules and premature final-payment trig
 test('examples use current limits and do not imply included production commerce', async () => {
  const brief = await readFile(new URL('../src/assets/audit-implementation/illustrative-completed-brief.txt', import.meta.url), 'utf8');
  const report = await readFile(new URL('../src/assets/audit-implementation/work-receipt-template.txt', import.meta.url), 'utf8');
- assert.match(brief, /up to 6 marketing pages.*example uses 3/);
+ assert.match(brief, /up to six marketing pages.*example uses three/);
  assert.match(report, /Keep Running \/ Improve \/ Grow/);
  assert.match(report, /Grow only/);
- assert.match(report, /Blank example/);
+ assert.match(report, /Blank template/);
  const demo = conceptDebrief('hearthside');
  assert.match(demo, /A link to an ordering service you already use can be included/);
  assert.match(demo, /Building the custom order preview shown here, creating an ordering system or setting up the outside account is separate work/);

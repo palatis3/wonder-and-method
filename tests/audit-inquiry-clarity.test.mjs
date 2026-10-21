@@ -40,10 +40,10 @@ test('all checkouts show price, written payment steps and open scope before the 
  for(const page of pages){
   const id=page.path.split('/')[2].replaceAll('-','_'),offer=shared.inquiryOffer(id),formStart=page.body.indexOf('<form');
   const before=page.body.slice(0,formStart),header=before.split('</header>')[0],scope=before.match(/<aside class="checkout-summary">([\s\S]*?)<\/aside>/)?.[1];
-  assert.ok(scope,id);assert.match(header,new RegExp('<h1>Request '+shared.escapeHtml(offer.name)+'</h1>'));
+  assert.ok(scope,id);const serviceType={keep_running:' website care',improve:' monthly SEO',grow:' monthly SEO'}[id]||'';assert.match(header,new RegExp('<h1>Request '+shared.escapeHtml(offer.name)+serviceType+'</h1>'));
   assert.ok(header.includes(shared.money(offer.price)));assert.ok(page.title.includes(shared.money(offer.price)));
   assert.ok(scope.indexOf('What you get')<scope.indexOf('<details'));assert.ok(scope.indexOf('checkout-highlights')<scope.indexOf('<details'));
-  assert.match(scope,/<details class="checkout-detail"><summary>More about this package<\/summary>/);
+  assert.match(scope,new RegExp('<details class="checkout-detail"><summary>More about this '+(monthly.includes(id)?'plan':builds.includes(id)?'package':'review')+'</summary>'));
   assert.equal(page.body.split(site.responseWindow).length-1,1,id);
   assert.doesNotMatch(page.body,/data-checkout-question|A request for review, with no payment or booking/);
   assert.ok(visibleText(before).split(/\s+/).length<=220,id+' retains a concise introduction with important costs and limits visible');
@@ -51,13 +51,13 @@ test('all checkouts show price, written payment steps and open scope before the 
   if(builds.includes(id)){
    for(const milestone of offers[id].payment_schedule)assert.ok(header.includes(shared.money(milestone.amount)));
    assert.match(header,/written scope approval/);assert.match(header,/written design approval/);assert.match(header,/written approval of the working site, before launch/);
-   assert.match(scope,/drag-and-drop editor is not included/);assert.match(scope,/30 calendar days after launch/);
+   assert.match(scope,/There is no drag-and-drop editor/);assert.match(scope,/30 calendar days after launch/);
   }
   if(monthly.includes(id)){
    assert.ok(header.includes(shared.money(offers.baseline.one_time_price+offer.price)));
    assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);
    assert.match(header,/do not pay for it twice/);assert.match(header,/New studio websites include this review/);
-   assert.match(visibleText(scope),/Not included in monthly care:.*updates, backups, restores and malware cleanup/);
+   assert.match(visibleText(scope),/Not included in monthly care:.*updates.*backups, restores and malware cleanup/);
   }
  }
 });
@@ -66,7 +66,7 @@ test('contact exposes priced service choices after Email, six optional source ch
  const html=inquiryFormMarkup({live:true});
  assert.ok(html.indexOf('id="email"')<html.indexOf('id="service"'));
  assert.ok(html.indexOf('id="service"')<html.indexOf('id="website"'));
- assert.doesNotMatch(html.match(/<details class="inquiry-extra">([\s\S]*?)<\/details>/)[1],/id="service"/);
+ assert.doesNotMatch(html,/<details class="inquiry-extra">/);assert.ok(html.indexOf('id="business"')>html.indexOf('id="email"'));assert.ok(html.indexOf('id="business"')<html.indexOf('id="service"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));
  assert.match(html,/one SEO improvement a month/);assert.match(html,/two SEO improvements a month/);
  const source=html.match(/<select id="found_via"[^>]*>([\s\S]*?)<\/select>/)[1];
@@ -94,7 +94,7 @@ test('only actual Baseline and Sprint proposals require a website in native mark
  for(const service of monthly){
   const html=inquiryFormMarkup({live:true},{service,checkout:true});
   assert.match(html,/Your website <span class="field-note">\(if you have one\)<\/span>/);
-  assert.match(html,/No website yet, or I’m building it\?/);
+  assert.match(html,/No website yet, or I’m building your site\?/);
   assert.match(html,/What would you like help with each month\?/);
  }
 });

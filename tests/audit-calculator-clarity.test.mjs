@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {runInNewContext} from 'node:vm';
 import offers from '../config/offers.json' with {type:'json'};
-import {calculateWebsiteRoi,parseMoneyInput,roiFields} from '../src/assets/roi-math.mjs';
+import {calculateWebsiteRoi,parseMoneyInput,roiFields,breakEvenDisplayBound} from '../src/assets/roi-math.mjs';
 import {websiteRoiPage} from '../src/website-roi.mjs';
 import {costCalculator} from '../src/audit-content.mjs';
 import {bindCostCalculator} from '../src/calculator.js';
@@ -52,16 +52,16 @@ function costFixture(initial={}){
  class Data{constructor(){this.values=new Map(Object.entries(fields).filter(([name,field])=>!field.disabled&&(!['baseline','sprint'].includes(name)||field.checked)).map(([name,field])=>[name,field.value]));}get(name){return this.values.get(name)??null;}has(name){return this.values.has(name);}}
  const original=globalThis.FormData;globalThis.FormData=Data;
  const update=bindCostCalculator(calculator,priceList(offers),{querySelector:selector=>output[selector.slice(1)]});
- return {fields,output,disclosure,update,restore:()=>{globalThis.FormData=original;}};
+ return {fields,output,disclosure,update,listeners,restore:()=>{globalThis.FormData=original;}};
 }
 
 test('cost estimate itemizes entered domain/tools and keeps dollars and cents in the total',()=>{
  const app=costFixture();try{
   assert.equal(app.output['cost-total'].textContent,'Estimated total: $7,290');
-  assert.equal(app.output['cost-breakdown'].textContent,'$2,350 one-time + 12 monthly payments of $400. Direct hosting: $120. Domain, email and tools: $20.');
+  assert.equal(app.output['cost-breakdown'].textContent,'$2,350 one-time + 12 monthly payments of $400. Direct hosting (12 months): $120. Domain, email and tools: $20.');
   app.fields.external.value='$2,350.50';app.fields.hostingMonthly.value='$10.25';app.update();
-  assert.equal(app.output['cost-total'].textContent,'Estimated total: $9,623.50');assert.match(app.output['cost-breakdown'].textContent,/Direct hosting: \$123\. Domain, email and tools: \$2,350.50\./);
-  app.fields.external.value=' ';app.update();assert.match(app.output['cost-total'].textContent,/Your estimate so far: \$7,273 \(domain, email and other paid tools not added yet\)/);assert.doesNotMatch(app.output['cost-breakdown'].textContent,/Domain, email and tools:/);
+  assert.equal(app.output['cost-total'].textContent,'Estimated total: $9,623.50');assert.match(app.output['cost-breakdown'].textContent,/Direct hosting \(12 months\): \$123\. Domain, email and tools: \$2,350.50\./);
+  app.fields.external.value=' ';app.update();assert.match(app.output['cost-total'].textContent,/Your estimate so far: \$7,273/);assert.doesNotMatch(app.output['cost-breakdown'].textContent,/Domain, email and tools:/);
  }finally{app.restore();}
 });
 
@@ -71,7 +71,7 @@ test('cost inputs show individual errors and reveal invalid fields inside outsid
   assert.equal(app.output['cost-total'].textContent,'Check the highlighted fields');assert.equal(app.disclosure.open,true);
   for(const name of ['hostingMonthly','external','cycles'])assert.equal(app.fields[name].attributes['aria-invalid'],'true');
   assert.match(app.output['cost-hostingMonthly-error'].textContent,/Enter an amount like/);assert.match(app.output['cost-external-error'].textContent,/whole dollars or cents/);assert.match(app.output['cost-cycles-error'].textContent,/whole number of months/);
-  app.fields.hostingMonthly.value='20';app.fields.external.value='0';app.fields.cycles.value='12';app.fields.hostingMonths.value='11';app.update();assert.match(app.output['cost-hostingMonths-error'].textContent,/cover all selected months/);
+  app.fields.hostingMonthly.value='20';app.fields.external.value='0';app.fields.cycles.value='12';app.fields.hostingMonths.value='11';app.listeners.input({target:app.fields.hostingMonths});assert.match(app.output['cost-hostingMonths-error'].textContent,/cover all selected months/);
   app.fields.hostingMonths.value='12';app.update();assert.equal(app.output['calculator-error'].textContent,'');for(const name of ['hostingMonthly','external','cycles','hostingMonths']){assert.equal(app.fields[name].attributes['aria-invalid'],undefined);assert.equal(app.output['cost-'+name+'-error'].textContent,'');}
  }finally{app.restore();}
 });
@@ -87,15 +87,16 @@ test('ROI controller renders complete scenarios, individual errors and reset wit
  const source=(await readFile(new URL('../src/assets/website-roi.js',import.meta.url),'utf8')).replace(/^import [^\n]+\n/,'');
  const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:'',innerHTML:'',attributes:{},focus(){this.focused=true;},setAttribute(name,value){this.attributes[name]=value;},removeAttribute(name){delete this.attributes[name];},replaceChildren(){this.innerHTML='';}});return nodes.get(id);};
  const form=get('website-roi'),listeners={};form.elements=Object.fromEntries(Object.entries(scenario).map(([key,value])=>[key,Object.assign(get('roi-'+key),{value:String(value)})]));form.addEventListener=(type,handler)=>{listeners[type]=handler;};
- runInNewContext(source,{calculateWebsiteRoi,roiFields,Intl,document:{getElementById:get}});
+ const timers=[];runInNewContext(source,{calculateWebsiteRoi,roiFields,breakEvenDisplayBound,Intl,setTimeout:fn=>{timers.push(fn);return timers.length;},clearTimeout(){},document:{getElementById:get}});
+ assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-results-title').focused,undefined);
  form.elements.oneTime.value='$2,350';listeners.submit({preventDefault(){}});
  assert.equal(get('roi-results').hidden,false);assert.match(get('roi-output').innerHTML,/Money left after website costs/);assert.match(get('roi-output').innerHTML,/\$1,490/);assert.match(get('roi-output').innerHTML,/scope="col">Inquiries/);assert.match(get('roi-output').innerHTML,/scope="col">Net/);
- form.elements.oneTime.value='$2,35';listeners.input();assert.equal(get('roi-results').hidden,true);listeners.submit({preventDefault(){}});assert.equal(form.elements.oneTime.attributes['aria-invalid'],'true');assert.equal(form.elements.oneTime.focused,true);
- listeners.reset();assert.equal(get('roi-results').hidden,true);assert.equal(get('roi-output').innerHTML,'');assert.equal(form.elements.oneTime.attributes['aria-invalid'],undefined);
+ form.elements.oneTime.value='$2,35';listeners.input();assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-stale').hidden,false);listeners.submit({preventDefault(){}});assert.equal(form.elements.oneTime.attributes['aria-invalid'],'true');assert.equal(form.elements.oneTime.focused,true);
+ form.elements.oneTime.value='2350';listeners.reset();timers.at(-1)();assert.equal(get('roi-results').hidden,false);assert.match(get('roi-output').innerHTML,/\$1,490/);assert.equal(form.elements.oneTime.attributes['aria-invalid'],undefined);
 });
 
 test('inquiry tracker keeps storage and download boundaries and links to relevant add-ons',async()=>{
  const html=leadWorkbench(),controller=await readFile(new URL('../src/assets/lead-workbench.js',import.meta.url),'utf8');
- assert.match(html,/<h1>Inquiry tracker demo/);assert.match(html,/Saved browser data is unprotected/);assert.match(html,/not for real customer data/);assert.match(html,/Reset does not delete files you already downloaded/);assert.match(html,/href="\/services\/website-addons\/"/);assert.doesNotMatch(html,/Try it in three steps/);
- assert.doesNotMatch(controller,/synthetic records|Synthetic changes/);assert.match(controller,/a.download='synthetic-lead-workbench.csv'/);
+ assert.match(html,/<h1>Inquiry tracker demo/);assert.match(html,/anyone using this browser can open its saved data/);assert.match(html,/Use made-up data only/);assert.match(html,/Reset clears the demo’s browser data; it does not delete downloaded copies/);assert.match(html,/href="\/services\/website-addons\/"/);assert.doesNotMatch(html,/Try it in three steps/);
+ assert.doesNotMatch(controller,/synthetic records|Synthetic changes/);assert.match(controller,/a.download='inquiry-tracker-demo.csv'/);
 });

@@ -1,5 +1,6 @@
 import {normalizeAddonSelection,priceAddons} from './addons.mjs';
 import offers from '../config/offers.json' with {type:'json'};
+import {countyContextOptions} from './approved-rerun-county-context.mjs';
 
 export function escapeHtml(value='') { return String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(value)?0:2,maximumFractionDigits:2}).format(value);
@@ -8,10 +9,10 @@ export function inquiryNeedsWebsite(value={}){return value.request_kind==='check
 export function inquiryWebsiteField(value={}){
  const required=inquiryNeedsWebsite(value),monthly=['keep_running','improve','grow'].includes(resolveServiceId(value.service));
  return required?{label:'Website to review',note:'required',required,placeholder:'example.com',help:'Use a website address, such as example.com. It can be offline or broken; I do not need passwords.'}
-  :monthly?{label:'Your website',note:'if you have one',required,placeholder:'example.com',help:'No website yet, or I’m building it? Leave blank and say so in your message.'}
+ :monthly?{label:'Your website',note:'if you have one',required,placeholder:'example.com',help:'No website yet, or I’m building your site? Leave blank and say so in your message.'}
   :{label:'Website or social page',note:'optional',required,placeholder:'example.com or @yourbusiness',help:'A link, social handle or short note is fine. Leave blank if you do not have one.'};
 }
-export function inquiryFieldNames(value={}){return {name:'Your name',email:'Email',business:'Business name',website:inquiryWebsiteField(value).label,service:'What do you need help with?',add_ons:'Website add-ons',message:'Your message'};}
+export function inquiryFieldNames(value={}){return {name:'Your name',email:'Email',business:'Business name',business_location:'Business location',website:inquiryWebsiteField(value).label,service:'What do you need help with?',add_ons:'Website add-ons',message:'Your message'};}
 export function shortInquiryReference(reference){
  if(typeof reference!=='string'||!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(reference))return reference||'';
  return 'WM-'+reference.replaceAll('-','').slice(0,12).toUpperCase().match(/.{4}/g).join('-');
@@ -42,18 +43,17 @@ export function inquiryMessagePrompt(service='',requestKind='checkout',neutral=f
 }
 export function inquiryMessageHelp(service='',requestKind='checkout',goal='',neutral=false){
  const id=resolveServiceId(service);
- let hint=neutral?'Ask a question, or tell me what you’d like to change.':requestKind==='question'?'Ask what you need to know about the service, scope, costs or next steps.'
-  :goal==='fix'&&!['keep_running','improve','grow'].includes(id)?'Tell me what is broken, which platform your website uses (such as Wix, Squarespace or WordPress), and what you have already checked.'
+ let hint=goal==='fix'?'Which page or tool is affected? Include its address if you can, what happened, when you tested it, the platform and any checks you tried.'
+  :requestKind==='question'?'Ask about the service, costs or next steps.'
   :id==='website_baseline'?'Tell me what seems wrong, or what you want the Website Baseline review to help you decide.'
   :id==='audit_fix_sprint'?'Include the page address, what goes wrong and what should happen instead.'
   :['keep_running','improve','grow'].includes(id)?'What would you like help with each month?'
-  :['launch_site','focused_site','signature_site'].includes(id)?'For example: what you do, the area you serve, the pages you need and any deadline.'
-  :'Tell me a little about your business, what you need and any important dates.';
- if(requestKind==='checkout')hint='Questions are welcome here too — just write them in your message. '+hint;
- if(['launch_site','focused_site','signature_site'].includes(id)&&requestKind!=='question')hint+=' Interested in monthly care or SEO after launch? Mention the plan or ask me to recommend one.';
- return hint+' No passwords, payment details or sensitive information. Use 10–3,000 characters.';
+  :['launch_site','focused_site','signature_site'].includes(id)?'What do you do, where do you work and what should your new website help people do? Add a deadline if you have one.'
+  :neutral?'Ask a question, or tell me what you’d like to change.':'Tell me what you need and any important dates.';
+ return hint+(requestKind==='checkout'?' Questions are welcome here too.':'')+' No passwords, payment details or sensitive information. Use 10–3,000 characters.';
 }
 export const inquiryContextFields={
+ county:{label:'County page you came from (not your business address)',services:inquiryChoices.map(([id])=>id),options:countyContextOptions},
  concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — menu and order preview']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
  found_via:{label:'How did you find me?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Google or another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
@@ -73,13 +73,13 @@ export function publicInquiryContext(value={},annualEnabled=false){
  if(!['launch_site','focused_site','signature_site','unsure'].includes(resolveServiceId(value.service))||['fix','care'].includes(result.goal))delete result.concept;
  return result;
 }
-export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.add_ons?.length);}
+export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.county||value.add_ons?.length);}
 export function inquiryContextSummary(value={}){const {add_ons=[],...context}=selectedInquiryContext(value);const additions=priceAddons(add_ons);return [...Object.entries(context).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]),...additions.lines.map(item=>'Addition requested: '+item.public_name+' — '+money(item.public_price)),...(additions.ids.length?['One-time additions subtotal: '+money(additions.total)+'; subject to fit and written scope.']:[])];}
 export function inquiryRequestSummary(value={}){
  const context=selectedInquiryContext(value),offer=inquiryOffer(value.service);
  const parts=[];
  if(offer)parts.push(`${offer.name} (${money(offer.price)}${offer.monthly?'/month':offer.id==='website_baseline'?', paid only after I confirm fit':''})`);
- for(const key of ['goal','concept'])if(context[key]&&context[key]!=='unsure')parts.push(inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
+ for(const key of ['goal','concept','county'])if(context[key]&&context[key]!=='unsure')parts.push((key==='county'?'From county page: ':'')+inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
  if(context.add_ons?.length)parts.push(priceAddons(context.add_ons).lines.map(item=>`${item.public_name} (${money(item.public_price)} extra)`).join(', '));
  return (context.add_ons?.length&&!offer?'Asking about: ':'')+parts.join(' · ');
 }
@@ -115,6 +115,7 @@ export function calculateCost(prices,{build='launch',plan='none',baseline=false,
  if(prices.provider_model!=='client_owned_direct_billing')throw new Error('Use the explicit legacy calculator with a saved historical snapshot');
  if(!['launch','focused','signature','existing'].includes(build)||!['none','keep_running','improve','grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
+ if(plan!=='none'&&cycles<1)throw new Error('Monthly plans require at least one month');
  if(hostingMonthly!==null&&plan!=='none'&&cycles>hostingMonths)throw new Error('Hosting period must include all monthly service months');
  const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:prices[plan];
  const baselineFee=baseline&&build==='existing'&&!sprint?prices.baseline:0;
@@ -124,6 +125,16 @@ export function calculateCost(prices,{build='launch',plan='none',baseline=false,
  const knownSubtotalCents=serviceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
  if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents,knownSubtotalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
  return {once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
+}
+
+export function costEstimateCopy(v,{plan='none',prices={},external=null}={}){
+ const empty=v.once===0&&plan==='none'&&v.grossHosting===null&&external===null;
+ const missing=v.missingComponents.map(key=>key==='hosting'?'hosting':'domain, email and other paid tools');
+ const total=empty?'Choose work or enter provider costs to estimate a total.':`${v.complete?'Estimated total':'Your estimate so far'}: ${money(v.knownSubtotal)}`;
+ const onceDetails=[...(v.addonTotal?['selected additions: '+money(v.addonTotal)]:[]),...(v.baselineFee&&v.baselineFee!==v.once?['website review: '+money(v.baselineFee)]:[])];
+ const breakdown=empty?'':`${money(v.once)} one-time${onceDetails.length?' (including '+onceDetails.join('; ')+')':''}`+(plan==='none'?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[plan]*12)}; annual savings ${money(prices[plan]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payment${v.cycles===1?'':'s'} of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting (${v.hostingMonths} month${v.hostingMonths===1?'':'s'}): ${money(v.grossHosting)}.`)+(external===null?'':` Domain, email and tools: ${money(external)}.`);
+ const note=(missing.length?`Still to add: ${missing.join('; ')}. `:'')+'Tax and unselected or out-of-scope work are extra.';
+ return {total,breakdown,note};
 }
 
 export function annualRefund(prices,{plan,completedCycles}){if(!Object.hasOwn(prices.annual,plan)||!Number.isInteger(completedCycles)||completedCycles<0||completedCycles>12)throw new Error('Invalid annual refund inputs');return cents(prices.annual[plan])*(12-completedCycles)/12/100;}

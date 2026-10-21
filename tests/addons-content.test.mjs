@@ -147,7 +147,7 @@ test('standalone download landing page retains complete TXT and index scopes wit
   assert.doesNotMatch(html,/<current>/);
   for(const id of baseIds){
    const baseTxt=await readFile(join(folder,'assets/buyer-packs/'+id+'.txt'),'utf8');
-   assert.match(baseTxt,/OPTIONAL WEBSITE ADD-ONS/);
+   assert.match(baseTxt,/NEED MORE THAN THIS INCLUDES?/);
    assert.ok(baseTxt.includes(addonPath));
   }
  }finally{

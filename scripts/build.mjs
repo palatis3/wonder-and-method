@@ -2,6 +2,8 @@ import {execFileSync} from 'node:child_process';
 import {assertPageDates} from './page-dates.mjs';
 import {verifyLocalReferences} from './verify-local-references.mjs';
 import {writeBuyerPacks} from './build-buyer-packs.mjs';
+import {writeCountyBriefs} from './build-county-briefs.mjs';
+import {writeDownloadAliases} from './build-download-aliases.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
@@ -80,7 +82,7 @@ export async function pruneObsoleteBuildAssets(output){
  await walk(outputRoot);
  // These dated exports have been replaced by current cards/bundles. Only prune
  // their emitted copies, and still require no reference in any emitted document.
- const retiredPatterns=/^assets\/(?:editorial\/[^/]+\.webp|fonts\/font-[12]\.woff2|guides\/[^/]+(?:-card-240\.webp|-(?:thumb|social)\.png)|audit-implementation\/studio-(?:desktop|phone)\.webp|waterfront\/(?:hero-mobile(?:-450)?|concrete-detail(?:-180|-360)?|water-detail(?:-180|-360)?|grain-model|film-poster-portrait)\.webp)$/;
+ const retiredPatterns=/^assets\/(?:editorial\/[^/]+\.webp|fonts\/font-[12]\.woff2|guides\/[^/]+(?:-card-(?:240|480|720|1080)\.webp|-illustration-(?:640|1200)\.webp|-(?:thumb|social)\.png)|audit-implementation\/studio-(?:desktop|phone)\.webp|waterfront\/(?:hero-mobile(?:-450)?|concrete-detail(?:-180|-360)?|water-detail(?:-180|-360)?|grain-model|film-poster-portrait)\.webp)$/;
  const candidates=[...obsoleteBuildAssets,...files.map(file=>relative(outputRoot,file).split(sep).join('/')).filter(file=>retiredPatterns.test(file)).map(file=>({file,dynamic:[]}))];
  const documents=await Promise.all(files.filter(file=>!['media-sizes.json','responsive-images.json'].includes(basename(file))&&['.html','.css','.js','.mjs','.json','.svg','.xml','.txt'].includes(extname(file).toLowerCase())).map(async file=>({file,text:(await readFile(file,'utf8')).replace(/\\\//g,'/').replace(/\\u([\da-f]{4})|\\x([\da-f]{2})/gi,(_match,unicode,hex)=>String.fromCharCode(parseInt(unicode||hex,16)))})));
  const removed=[],retained=[];
@@ -137,6 +139,8 @@ if(output!==resolve(root,'dist')) throw new Error('Invalid output');
 await mkdir(output,{recursive:true});
 for(const name of await readdir(output)){const target=resolve(output,name);if(!target.startsWith(output+'\\')&&!target.startsWith(output+'/'))throw Error('Invalid build child');await rm(target,{recursive:true,force:true});}
 await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
+await writeCountyBriefs(output);
+await writeDownloadAliases(output);
 const workbenchStateVersion=createHash('sha256').update(await readFile(resolve(output,'assets/lead-workbench-state.js'))).digest('hex').slice(0,12);
 const workbenchScript=resolve(output,'assets/lead-workbench.js');
 await writeFile(workbenchScript,(await readFile(workbenchScript,'utf8')).replace(/lead-workbench-state\.js\?v=[^'"]+/,`lead-workbench-state.js?v=${workbenchStateVersion}`));

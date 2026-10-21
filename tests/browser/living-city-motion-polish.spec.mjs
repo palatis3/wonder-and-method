@@ -41,7 +41,7 @@ test('card entrances settle into crisp text and pause their entire animation',as
  expect(await card.evaluate(node=>node.getAnimations({subtree:true}).every(animation=>animation.playState!=='running'))).toBe(true);
  await page.locator('[data-city-play]').click();
  await expect.poll(()=>card.evaluate(node=>getComputedStyle(node).transform)).toBe('none');
- await expect.poll(()=>card.locator('h2').evaluate(node=>getComputedStyle(node).transform)).toBe('none');
+ await expect.poll(()=>card.locator('.city-reveal-title').evaluate(node=>getComputedStyle(node).transform)).toBe('none');
  await page.locator('[data-city-play]').click();
  const bounds=await card.evaluate(node=>{const rect=node.getBoundingClientRect();return {inside:rect.left>=0&&rect.right<=innerWidth,opaque:getComputedStyle(node).opacity};});
  expect(bounds).toEqual({inside:true,opaque:'1'});

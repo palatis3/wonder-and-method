@@ -77,10 +77,10 @@ test('failed moon and film assets keep the homepage copy and project navigation 
  }
  await expect(page.getByRole('heading',{name:'Web design & SEO. Built for small businesses.'})).toBeVisible();
  await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving New York, Pennsylvania, and Ohio.');
- await expect(page.locator('.home-starting-points')).toContainText('$1,400 Launch');
- await expect(page.locator('#seo-services')).toContainText('Improve $400/month');
+ await expect(page.locator('.home-starting-points')).toContainText('From $1,400');
+ await expect(page.locator('#seo-services')).toContainText('From $400/month');await expect(page.locator('#seo-services')).toContainText('Improve includes one agreed, researched website improvement');
  await expect(page.locator('.home-service-intro')).toContainText('Once paid in full, your custom website files belong to you.');
- await page.locator('.city-choice--northline').click();
+ await page.getByRole('tab',{name:'Northline',exact:true}).click();
  await expect(page.locator('#city-panel-northline')).toBeVisible();
  await expect(page.locator('#city-panel-northline a[data-city-project-link]').first()).toHaveAttribute('href','/work/northline/');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);

@@ -66,7 +66,7 @@ test('borough geography and downloaded planning exercises stay useful and accura
   }else assert.ok(Object.values(g.municipalities).flat().length>=6,slug);
   const file=await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(file.includes(text),slug);
-  assert.match(file,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
+  assert.match(file,/EXAMPLE \(MADE UP\)/);
   taskText.add(task.decision);
  }
  assert.equal(taskText.size,15);

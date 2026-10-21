@@ -10,7 +10,7 @@ export const statewideCountyProfiles = [
     focus:'Alfred names both a town and a village; an initial location label may not identify a job site. Start with the work requested, a short description and the community. Ask for the full service address when it is needed to assess travel or prepare a visit. Keep measurements and photographs optional unless your actual estimating process requires them.',
     briefs:[
       ['A repair request in Wellsville','A repair business can list the items it accepts and ask for the model and problem. Explain whether the next step is a conversation, inspection or written estimate. A form receipt should not imply that a price or appointment has been accepted.'],
-      ['A maker comparing two commissions','For a Alfred maker, a small project brief can ask about intended use, approximate dimensions and a needed date. Publish examples only with permission, and identify which choices need discussion before a quote. An upload feature requires its own agreed scope.']
+      ['A maker comparing two commissions','For an Alfred maker, a small project brief can ask about intended use, approximate dimensions and a needed date. Publish examples only with permission, and identify which choices need discussion before a quote. An upload feature requires its own agreed scope.']
     ],
     search:'Useful search content can explain accepted work and estimate requirements in the same terms customers use. Review whether an existing page answers those questions before adding another location page. A documented change to a service explanation is more useful than repeatedly inserting Wellsville or Alfred into unrelated headings.',
     geographyNote:'Allegany County is in western New York. Alfred, Wellsville and several other names refer to both a town and a village; use the approved street address when a precise destination matters.',
@@ -27,8 +27,8 @@ export const statewideCountyProfiles = [
     focusTitle:'Separate buying an item from reserving an experience.',
     focus:'Olean and Salamanca are separate cities, while Ellicottville provides another distinct destination within the county. If your business offers equipment, lessons or appointments at different places, show which location applies to each choice. A product photograph alone cannot explain whether an item is for sale, available for hire or included in a booked service.',
     briefs:[
-      ['Equipment with optional instruction','A Ellicottville operator can give rental and instruction separate descriptions, with what is included, owner-approved requirements and return arrangements. Link each to the correct existing reservation destination when that connection is in scope.'],
-      ['A showroom and an appointment service','For a Olean business, browsing opening hours may differ from consultation availability. Put the appointment requirement beside the consultation offer and explain whether bringing an item is necessary. A Salamanca service area should not be presented as another showroom.']
+      ['Equipment with optional instruction','An Ellicottville operator can give rental and instruction separate descriptions, with what is included, owner-approved requirements and return arrangements. Link each to the correct existing reservation destination when that connection is in scope.'],
+      ['A showroom and an appointment service','For an Olea business, browsing opening hours may differ from consultation availability. Put the appointment requirement beside the consultation offer and explain whether bringing an item is necessary. A Salamanca service area should not be presented as another showroom.']
     ],
     search:'Review the words that distinguish the offers: purchase, rental, lesson, consultation and repair may represent different customer intentions. Pages should explain the relevant choice and location. Search reporting can then distinguish interest in each service without claiming that every county visitor wants the same thing.',
     geographyNote:'Olean and Salamanca are cities in Cattaraugus County. Gowanda crosses into Erie County; use the job address to confirm the county.',
@@ -46,7 +46,7 @@ export const statewideCountyProfiles = [
     focus:'Cayuga County reaches Lake Ontario as well as Cayuga and Owasco lakes. “At the lake” leaves too much unresolved for a visitor planning a pickup or appointment. Connect each offering to its approved street address, entrance or meeting point, and distinguish that destination from the business’s mailing address.',
     briefs:[
       ['A waterfront appointment','A Fair Haven operator can show the meeting point, required arrival time and a contact route beside the booking link. Instructions should come from the operator. Link to current official notices where relevant instead of copying conditions that may change.'],
-      ['A service with collection and delivery','For a Auburn business, collection instructions belong with the selected service. If delivery is also offered, explain how the destination and charge are confirmed. A map pin is helpful context, but it does not replace a written address or the service’s arrival instructions.']
+      ['A service with collection and delivery','For an Auburn business, collection instructions belong with the selected service. If delivery is also offered, explain how the destination and charge are confirmed. A map pin is helpful context, but it does not replace a written address or the service’s arrival instructions.']
     ],
     search:'A useful landing page names the actual offering and explains how the customer receives it. Lake names should distinguish relevant locations, not inflate the page with destinations you do not serve. Check that search visitors can reach the current meeting instructions without relying on an old event announcement.',
     geographyNote:'Owasco Lake lies within Cayuga County; Cayuga Lake forms part of its western boundary and Lake Ontario its northern boundary. The county name is not a complete waterfront destination.',
@@ -64,7 +64,7 @@ export const statewideCountyProfiles = [
     focus:'Elmira names a city and a separate town, and Elmira Heights is another place again. Give customers an exact drop-off destination, then explain the service stages: initial inquiry, assessment, customer approval and collection. Avoid presenting an estimated turnaround as a guaranteed completion date before the item has been reviewed.',
     briefs:[
       ['An item awaiting assessment','A Horseheads repair shop can explain what to bring, whether a diagnostic fee applies under its actual policy and when the customer receives an estimate. Approval of that estimate should be distinct from submitting the original inquiry.'],
-      ['A returning customer requesting an update','For a Elmira business, a visible existing-job contact route can ask for a non-sensitive job reference. This keeps status requests understandable without promising a custom tracking portal. Publish response expectations only when the team can maintain them.']
+      ['A returning customer requesting an update','For an Elmira business, a visible existing-job contact route can ask for a non-sensitive job reference. This keeps status requests understandable without promising a custom tracking portal. Publish response expectations only when the team can maintain them.']
     ],
     search:'Start with missing answers about accepted items, assessment and collection. Those explanations can improve an existing service page and reduce ambiguous inquiries. Titles and links should send customers to the relevant repair category, while the correct location address resolves the different Elmira place names.',
     geographyNote:'Chemung County includes the City of Elmira, Town of Elmira and Elmira Heights. Use the complete address for visits rather than treating these names as interchangeable.',
@@ -82,12 +82,12 @@ export const statewideCountyProfiles = [
     focus:'For a supplier serving Norwich, Oxford or Greene, a repeat order should not require the customer to reconstruct a full specification. Offer a simple reference field alongside a separate route for new work. If delivery is involved, confirm the actual destination: Norwich is both a city and a town, and a familiar place name may be incomplete.',
     briefs:[
       ['A first request for a made-to-order item','A Norwich supplier can explain available materials, minimum information for a quote and how a sample is approved. Ask about intended use and quantity before requesting detailed files. Published examples should not imply that every past variation is still available.'],
-      ['A repeat customer changing one detail','For a Oxford business, a reorder inquiry can accept an existing reference and a description of what changed. Explain that revised quantities, materials or destinations require confirmation. Receipt of the reference is not acceptance of the old price.']
+      ['A repeat customer changing one detail','For an Oxford business, a reorder inquiry can accept an existing reference and a description of what changed. Explain that revised quantities, materials or destinations require confirmation. Receipt of the reference is not acceptance of the old price.']
     ],
     search:'New-buyer pages should explain capabilities and specification requirements; repeat-customer instructions can stay concise. Review whether product family names are consistent across pages and downloads. Search work can improve those explanations without publishing confidential customer specifications or an unsupported live inventory claim.',
     geographyNote:'Norwich is both a city and a town in Chenango County. Earlville spans Chenango and Madison counties; confirm the destination when county-specific delivery rules matter.',
     questions:[
-      ['Can customers reorder through a simple inquiry form?','Yes, if a request is sufficient for your process. Ask for an existing reference and any changes, then confirm price, availability and delivery separately. Automatic reordering or account-specific pricing is a different feature.'],
+      ['Ca customers reorder through a simple inquiry form?','Yes, if a request is sufficient for your process. Ask for an existing reference and any changes, then confirm price, availability and delivery separately. Automatic reordering or account-specific pricing is a different feature.'],
       ['Should all our specifications be public?','Publish what buyers need and what you have permission to share. Keep confidential drawings and customer records out of ordinary public pages and forms. A separate process can handle detailed material after the initial fit review.']
     ]
   },
@@ -262,12 +262,12 @@ export const statewideCountyProfiles = [
     focus:'Hamilton County lies entirely within the Adirondack Park. A visitor planning an arrival in Indian Lake, Long Lake or Lake Pleasant benefits from a clear written summary of the actual destination and arrangements. Put address, contact details and approved arrival information in ordinary text, with maps and imagery as supporting material. Avoid making a video or large download the only way to learn what to do.',
     briefs:[
       ['Arrival information a customer can save','A Long Lake host can provide a concise page with the address, arrival window and contact route. A print-friendly layout can preserve those details without requiring an account. Private entry instructions should use an appropriate separate channel.'],
-      ['A service with changing opening dates','For a Indian Lake business, put current dates and exceptions near the service explanation. Assign someone to approve changes and test the published page on a phone. A beautiful seasonal photograph cannot communicate whether the business is open.']
+      ['A service with changing opening dates','For an Indian Lake business, put current dates and exceptions near the service explanation. Assign someone to approve changes and test the published page on a phone. A beautiful seasonal photograph cannot communicate whether the business is open.']
     ],
     search:'Prioritize useful text, descriptive service names and current arrival information. Review large images and unnecessary embeds where they delay access to the main task. Performance checks identify specific issues; they do not establish a claim about local network coverage or guarantee every visitor’s connection.',
     geographyNote:'Hamilton County is entirely within the Adirondack Park. Indian Lake, Lake Pleasant, Long Lake and Inlet are distinct places, so the actual service destination should remain explicit.',
     questions:[
-      ['Can customers save the essential arrival information?','A clear text page can be bookmarked, printed or saved by the customer. We can check a useful print layout within scope. An offline application or automatic downloadable itinerary is separate functionality.'],
+      ['Ca customers save the essential arrival information?','A clear text page can be bookmarked, printed or saved by the customer. We can check a useful print layout within scope. An offline application or automatic downloadable itinerary is separate functionality.'],
       ['Does a lightweight page mean avoiding all photographs?','No. Use images that help the customer, prepare them for the intended size and keep essential instructions available as text. The goal is a usable page with a clear task, not an arbitrary limit on visual content.']
     ]
   },
@@ -316,7 +316,7 @@ export const statewideCountyProfiles = [
     focus:'Lowville is both a town and village, while Lyons Falls is a separate destination. A producer taking retail and wholesale inquiries should connect quantities with the correct collection or delivery arrangements. Show units, pack sizes and the owner’s actual minimums; explain when availability is confirmed instead of treating a product photograph as a stock promise.',
     briefs:[
       ['A producer receiving a trade inquiry','A Lowville producer can ask for the product, pack size, quantity and intended delivery area. A trade request should explain the next review step and whether published prices apply. Account-specific terms require a separate agreement.'],
-      ['A customer choosing pickup','For a Croghan business, a pickup page can state the location, ordering cutoff and collection window. Keep walk-in opening hours distinct from the time a prepared order can be collected. A submitted request is not necessarily a confirmed order.']
+      ['A customer choosing pickup','For a Crogha business, a pickup page can state the location, ordering cutoff and collection window. Keep walk-in opening hours distinct from the time a prepared order can be collected. A submitted request is not necessarily a confirmed order.']
     ],
     search:'Useful product and wholesale pages describe the actual units a buyer orders. Check whether search visitors can distinguish retail quantities from trade requirements and find the correct contact path. Consistent product names and current fulfillment details often matter more than adding another general location paragraph.',
     geographyNote:'Lowville names a town and village in Lewis County. Lyons Falls, Copenhagen and Croghan are separate places; a pickup instruction should specify the actual business address.',
@@ -352,7 +352,7 @@ export const statewideCountyProfiles = [
     focus:'The City of Oneida is in Madison County, which is distinct from Oneida County. Keep that location clear when describing a program or venue. For services that review applicants, explain the criteria, required information, decision process and confirmation step. Avoid a button or receipt that implies acceptance before the review has happened.',
     briefs:[
       ['A program with limited places','A Hamilton organizer can separate an expression of interest from a full application and an accepted place. Publish approved deadlines and explain how applicants hear back. A waitlist needs its own expectations rather than an optimistic “you are booked” message.'],
-      ['A vendor or participant application','For a Oneida event, give applicants the event location, participation requirements and what the organizer reviews. Collect ordinary business details first; documents or payment workflows require a defined handling process and scope.']
+      ['A vendor or participant application','For an Oneida event, give applicants the event location, participation requirements and what the organizer reviews. Collect ordinary business details first; documents or payment workflows require a defined handling process and scope.']
     ],
     search:'A useful application page answers the questions behind the search: suitability, requirements, dates and decision steps. Keep current program information separate from past application rounds. Correct Oneida–Madison location details help both visitors and the site’s internal links point to the right place.',
     geographyNote:'The City of Oneida is in Madison County. Hamilton here is a Madison County place, not Hamilton County; Earlville crosses Madison and Chenango counties.',
@@ -369,7 +369,7 @@ export const statewideCountyProfiles = [
     focusTitle:'Put the decision-making facts on the page itself.',
     focus:'Amsterdam names both a city and a town in Montgomery County. A brochure serving the wider Mohawk Valley may leave the exact location unclear. Bring service descriptions, approved specifications and location details into readable web pages, then offer a dated download for buyers who need a document to share. Give both versions an owner and a review date.',
     briefs:[
-      ['A supplier with a long product PDF','A Amsterdam business can introduce product families on the website and show the specifications buyers need to select a category. A linked technical sheet can carry further detail, with its file type and revision identified.'],
+      ['A supplier with a long product PDF','An Amsterdam business can introduce product families on the website and show the specifications buyers need to select a category. A linked technical sheet can carry further detail, with its file type and revision identified.'],
       ['A capability sheet sent with proposals','For a Canajoharie firm, the website and downloadable sheet should agree on services, contact details and approved credentials. A change to one should trigger a check of the other. Old documents should not silently contradict the current offer.']
     ],
     search:'Readable service pages give visitors context before a download. Review headings, descriptive document links and outdated files that still receive traffic. Preserve useful URLs or agree relevant redirects when documents are replaced, and check that the published revision is the one a buyer receives.',
@@ -388,7 +388,7 @@ export const statewideCountyProfiles = [
     focus:'The Erie Canal runs east to west through Orleans County. A visitor planning a stop in Albion or Medina needs the business’s current access and service information, not a general assumption about seasonal activity. Show ordinary opening hours, exceptional closures and appointment requirements separately. If availability lives in another system, name that system’s booking step clearly.',
     briefs:[
       ['A shop offering appointments during opening hours','A Medina business can explain that visitors may browse during published hours while consultations require booking. The appointment link should open the correct service, and the page should not imply that every opening hour has an available slot.'],
-      ['An unexpected closure notice','For a Albion business, a dated notice should state the affected service and approved next step. Update other business-controlled listings when included in scope. Remove or revise the notice when it no longer applies.']
+      ['An unexpected closure notice','For an Albion business, a dated notice should state the affected service and approved next step. Update other business-controlled listings when included in scope. Remove or revise the notice when it no longer applies.']
     ],
     search:'Accurate opening and appointment information supports the service page visitors find in search. Review stale notices, conflicting hours and unclear booking labels. A useful maintenance process assigns someone to approve changes and checks the published contact path afterward.',
     geographyNote:'The Erie Canal crosses Orleans County, including the Albion and Medina area. Canal geography does not establish a business’s opening season, public entrance or reservation availability.',
@@ -406,7 +406,7 @@ export const statewideCountyProfiles = [
     focus:'Otsego County includes Oneonta and Cooperstown, home to the National Baseball Hall of Fame. A business serving visitors can explain its own group offer without implying a relationship with an attraction. State the group size, duration, included services, location and decision deadline that affect your proposal. Distinguish a requested date from a held or confirmed booking.',
     briefs:[
       ['A group asking about several dates','A Cooperstown provider can accept preferred and alternative dates, group size and the type of service required. Explain who confirms availability and whether any hold expires. Publish only the business’s actual terms.'],
-      ['A proposal reviewed by several people','For a Oneonta business, a concise package comparison can show inclusions, optional additions and information still needed. The organizer should be able to share that page without exposing private participant details or presenting an indicative price as final.']
+      ['A proposal reviewed by several people','For an Oneonta business, a concise package comparison can show inclusions, optional additions and information still needed. The organizer should be able to share that page without exposing private participant details or presenting an indicative price as final.']
     ],
     search:'Useful group-planning content answers practical questions about fit, inclusions and the booking process. Relevant attraction references should orient visitors and remain factually accurate, without borrowing logos or implying endorsement. Track changes to the proposal route as well as search landing pages.',
     geographyNote:'Oneonta and Cooperstown are separate Otsego County destinations. The National Baseball Hall of Fame is in Cooperstown; proximity does not imply that a local business is affiliated with it.',
@@ -478,7 +478,7 @@ export const statewideCountyProfiles = [
     focus:'Seneca County lies between Seneca and Cayuga lakes. A lake name alone does not tell a visitor which address, duration or booking option applies. Present experiences around the customer’s decision: what happens, how long to allow, group limits under your policy and whether advance booking is required. Keep the actual venue beside each option.',
     briefs:[
       ['A walk-in option and a reserved session','A Waterloo business can compare the standard visit with a longer appointment. Explain what is included in each, which times are published and who confirms a reservation. Avoid implying that a walk-in policy guarantees immediate space.'],
-      ['A group selecting a format','For a Ovid provider, a simple comparison can distinguish a private session from a shared activity. Ask for approximate group size and preferred timing, then explain how the business confirms the final format and terms.']
+      ['A group selecting a format','For an Ovid provider, a simple comparison can distinguish a private session from a shared activity. Ask for approximate group size and preferred timing, then explain how the business confirms the final format and terms.']
     ],
     search:'Review whether experience names and descriptions answer different visitor intentions. Clear comparisons, useful preparation answers and links to the correct booking destination can improve the existing pages. Separate lake or town pages need substantive differences, not identical packages under different headings.',
     geographyNote:'Seneca County sits between Seneca and Cayuga lakes. Seneca Falls, Waterloo and Ovid are distinct destinations; the lake reference should support, rather than replace, the venue address.',
@@ -549,7 +549,7 @@ export const statewideCountyProfiles = [
     focusTitle:'Explain what changes a quote before discussing a final price.',
     focus:'Tioga County is directly north of Pennsylvania, with the Susquehanna River crossing the state line. A business accepting requests around Owego or Waverly should confirm the actual service destination before applying its terms. Then distinguish the core work, optional additions, customer-supplied inputs and conditions that require a revised quote.',
     briefs:[
-      ['A service with optional installation','A Owego supplier can show whether its base offer covers the item only, delivery or installation. Explain the site information needed before installation is priced. A single headline amount should not conceal a required extra.'],
+      ['A service with optional installation','An Owego supplier can show whether its base offer covers the item only, delivery or installation. Explain the site information needed before installation is priced. A single headline amount should not conceal a required extra.'],
       ['A project whose requirements change','For a Newark Valley provider, describe how the customer approves a change to materials, quantity or work. The website can explain the process without attempting to generate a binding quote from incomplete details.']
     ],
     search:'Service pages should answer pricing-intent questions with real inclusions and quote factors, even when a final figure requires assessment. Review whether options and coverage are clear before adding more county phrases. Keep any published starting price tied to the exact offer it represents.',
@@ -567,7 +567,7 @@ export const statewideCountyProfiles = [
     focusTitle:'Make the service clear enough for someone who missed the first call.',
     focus:'Ithaca is both a city and a separate town in Tompkins County, with Lansing and Dryden among the other local destinations. For a specialist serving organizations, location should be precise while the offer remains understandable beyond the area. Explain deliverables, necessary inputs, review stages and approved evidence in language a buyer can share with a colleague.',
     briefs:[
-      ['A technical service with several buyers','A Ithaca consultancy can describe the problem addressed, what the client receives and which decisions remain with the client. Define technical terms as they arise. Do not use nearby university names to imply clients, partnerships or credentials.'],
+      ['A technical service with several buyers','An Ithaca consultancy can describe the problem addressed, what the client receives and which decisions remain with the client. Define technical terms as they arise. Do not use nearby university names to imply clients, partnerships or credentials.'],
       ['A proposal requiring operational approval','For a Lansing supplier, list the information needed to assess scope and the person responsible for answering a request. Approved capability documents can support the page, while confidential requirements move to an appropriate later exchange.']
     ],
     search:'Prioritize the service questions that a buyer must answer before sharing or approving a proposal. Specific deliverables, approved examples and descriptive internal links give search visitors useful context. A technical term belongs where it helps explain the offer, not as a substitute for that explanation.',

@@ -167,7 +167,7 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 @media(max-width:1023px){
  .studio-site .site-header--compact{flex-wrap:nowrap;gap:.5rem;min-height:64px;padding:.5rem 1rem}
  .studio-site .site-header--compact .wordmark.brand-lockup{font-size:1.15rem;gap:6px;max-width:none;margin-right:auto;flex:1;min-width:0}
- .studio-site .site-header--compact .brand-emblem{width:22px;height:20px;flex-basis:22px}
+ .studio-site .site-header--compact .brand-emblem{width:22px;height:auto;flex-basis:22px}
  .studio-site .site-header--compact .brand-name{overflow-wrap:normal}
  .studio-site .site-header--compact .header-contact{width:auto;order:0;flex:none;min-height:44px;padding:.5rem .65rem;font-size:.875rem}
  .studio-site .site-header--compact .menu-toggle{order:1;flex:none;min-width:54px;padding:.5rem .65rem;font-size:.875rem}

@@ -41,13 +41,19 @@ if(form){
   const current={service,...context};
   const additions=priceAddons(normalizeAddonSelection(values));
   const isBuild=['launch_site','focused_site','signature_site'].includes(service);
-  const picker=form.querySelector('[data-inquiry-addons]');if(picker)picker.hidden=!(isBuild||additions.ids.length);
-  const alternative=form.querySelector('[data-addon-alternative]');if(alternative)alternative.hidden=Boolean(picker&&!picker.hidden);
+  const picker=form.querySelector('[data-inquiry-addons]');if(picker){picker.hidden=!(isBuild&&!question||additions.ids.length);const catalogue=picker.querySelector?.('[data-addon-picker]');if(catalogue)catalogue.hidden=!(isBuild&&!question||!form.dataset.fixedService&&additions.ids.length);}
+  const alternative=form.querySelector('[data-addon-alternative]');if(alternative)alternative.hidden=isBuild&&!question;
   const addonSummary=form.querySelector('[data-addon-summary]');
   if(addonSummary){
    addonSummary.hidden=!additions.ids.length;
    addonSummary.querySelector('[data-addon-names]').textContent=additions.lines.map(item=>item.public_name).join('; ');
    addonSummary.querySelector('[data-addon-total]').textContent=money(additions.total);
+   const removalList=addonSummary.querySelector('[data-addon-removals]');
+   if(removalList){
+    removalList.replaceChildren(...additions.lines.map(item=>{
+     const button=document.createElement('button');button.type='button';button.dataset.addonRemove=item.id;button.textContent='Remove '+item.public_name;return button;
+    }));
+   }
    const project=addonSummary.querySelector('[data-addon-project-total]'),payments=addonSummary.querySelector('[data-addon-payments]'),base=inquiryOffer(service);
    if(project)project.textContent=additions.ids.length&&isBuild?'Package + selected additions: '+money(base.price+additions.total)+' in one-time studio fees.':'';
    if(payments)payments.textContent=additions.ids.length&&isBuild?addonBuildPayments(base.price+additions.total):'';
@@ -76,6 +82,12 @@ if(form){
  form.querySelector('[data-clear-addons]')?.addEventListener('click',event=>{
   event.preventDefault();for(const input of form.querySelectorAll('input[name^="addon_"]'))input.checked=false;
   updateRequestSummary();field('service').focus();
+ });
+ form.addEventListener('click',event=>{
+  const remove=event.target.closest?.('[data-addon-remove]');if(!remove||!form.contains(remove))return;
+  const input=field('addon_'+remove.dataset.addonRemove);if(!input)return;
+  input.checked=false;updateRequestSummary();
+  const next=form.querySelector('[data-addon-remove]')||form.querySelector('[data-inquiry-addons]:not([hidden]) [data-addon-picker]:not([hidden]) summary')||(form.dataset.fixedService?field('name'):field('service'));next?.focus();
  });
  form.addEventListener('input',()=>{if(form.dataset.mode==='live')countJourney(field('request_kind').value==='question'?'question_start':'request_start',field('service').value);});
  form.addEventListener('change',event=>{if(Object.hasOwn(inquiryContextFields,event.target.name)||event.target.name==='service'||event.target.name.startsWith('addon_'))updateRequestSummary();});

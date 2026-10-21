@@ -1,10 +1,23 @@
 import {escapeHtml as e, money} from './shared.mjs';
 
+export const monthlyDisplayLabels=Object.freeze({smallChanges:'set of small text, photo or link changes',futureTopics:'future-topic list',growthPlan:'rolling 90-day plan'});
+export function monthlySmallChanges(o,id){const count=o.plans[id].small_change_batches;return `${count} ${count===1?monthlyDisplayLabels.smallChanges:monthlyDisplayLabels.smallChanges.replace(/^set /,'sets ')} you send each month`;}
+export function monthlyGuidePlanSummaries(o){
+ return ['keep_running','improve','grow'].map(id=>{
+  const p=o.plans[id],grow=id==='grow';
+  const work=id==='keep_running'?`Automated availability and security-certificate monitoring; monthly website, form and agreed-tool checks, including available search warnings; plus ${monthlySmallChanges(o,id)}; a monthly report and quarterly website check. Recurring keyword research and new content are separate.`:`The same care plus ${grow?'deeper ':''}research and ${p.priorities} ${grow?'connected ':'completed '}improvement${p.priorities===1?'':'s'} each month. ${grow?`A ${monthlyDisplayLabels.growthPlan}, refreshed monthly, and one extra graphic or newsletter excerpt.`:`A ${monthlyDisplayLabels.futureTopics}, refreshed quarterly.`} ${p.advisor}`;
+  return {id,name:p.public_name,price:p.monthly_price,work};
+ });
+}
+export const monthlyGuidePlanLines=o=>monthlyGuidePlanSummaries(o).map(p=>`<strong>${e(p.name)} — ${money(p.price)}/month:</strong> ${e(p.work)}`);
+
+export function monthlyPauseSummary(o){return 'Five business days before renewal, we confirm useful work and ready inputs. If none is agreed, the next monthly invoice pauses. Missing inputs receive notice. '+o.monthly_terms.pause;}
+
 export const annualEnrollmentAvailable = o => o.annual_enrollment_gate?.verified === true;
 export const standardCareExclusion = 'CMS, plugin and theme software updates, backups and restores, and malware cleanup are not included in standard care. These need a separate suitability assessment or a specialist.';
 
 export function baselineEnrollmentNote(o) {
- return `The ${money(o.baseline.one_time_price)} Website Baseline covers a supported existing website with up to ${o.baseline.page_cap} marketing pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous Website Baseline, studio build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
+ return `The ${money(o.baseline.one_time_price)} Website Baseline covers a supported existing website with up to ${o.baseline.page_cap} agreed main pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous Website Baseline, studio build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
 }
 
 // Current sales copy and existing accepted annual agreements are separate.
@@ -26,7 +39,7 @@ export function monthlyPlanDetails(o, id) {
  if (!p) throw Error('Unknown monthly plan');
  const grow = id === 'grow', improvement = p.priorities > 0;
  const included = [
-  `${p.small_change_batches} set of small text, photo or link changes you send each month, in existing parts of your website. Send related changes together; unrelated changes across the website are separate.`,
+  `${monthlySmallChanges(o,id)}, in existing parts of your website. Send related changes together; unrelated changes across the website are separate.`,
   'Automated website availability and security-certificate monitoring, a monthly check of the main contact path and agreed website tools, and search-health warnings where access allows.',
   'A quarterly website check of the agreed areas, not a new full audit.'
  ];
@@ -34,7 +47,7 @@ export function monthlyPlanDetails(o, id) {
   included.push(
    `${p.priorities} completed ${grow ? 'connected improvements' : 'improvement'} each month, chosen from your business needs and search research. Website writing, relevant page titles and descriptions, internal links, publication, one round of changes and checks are included for each selected improvement.`,
    p.search_scope.method,
-   grow ? 'A rolling 90-day plan refreshed monthly; this replaces the quarterly topic list.' : 'A list of future topics, refreshed quarterly.',
+   grow ? `A ${monthlyDisplayLabels.growthPlan} refreshed monthly; this replaces the quarterly topic list.` : `A ${monthlyDisplayLabels.futureTopics}, refreshed quarterly.`,
    o.monthly_terms.priority,
    p.search_scope.metrics,
    `One ${grow ? 30 : 20}-minute call each month, or an equivalent written review. Research, planning, reporting and this review support the improvements; they do not replace them.`
@@ -55,7 +68,7 @@ export function monthlyPlanDetails(o, id) {
  const renewal = [
   `${money(p.monthly_price)}/month, billed in advance with no minimum term. Your proposal records the exact renewal time and timezone, payment date and written cancellation route. Cancel before renewal to stop the next invoice.`,
   improvement
-   ? 'Five business days before the next service period, we confirm useful improvement work and ready inputs. If none is agreed, the next monthly invoice pauses. Missing inputs receive notice. Before a pause, I agree with you in writing what happens to included care; there is no automatic replacement charge, and paid work remains due.'
+   ? monthlyPauseSummary(o)
    : 'The monthly fee covers the agreed checks even when you send no edits. If access prevents the agreed care, I notify you so we can agree the next step and settle any unearned work.',
   improvement ? 'A charge without approved useful improvement work receives an unused-work refund or credit. Begun work and any unearned balance are itemized; accepted work delayed by me remains owed.' : 'The agreed monitoring and checks are paid work, even if you send no edits. If I cannot provide the agreed care, I itemize completed work and refund or credit any unearned balance.'
  ];
@@ -84,7 +97,7 @@ export function monthlyScopeTable(o) {
   ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', '1 extra graphic or short excerpt'],
   ['Report and review', 'Monthly report; no standing call', 'Monthly report and 20-minute call or written review', 'Monthly report and 30-minute call or written review']
  ];
- return `<details class="pricing-detail-table"><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Every plan includes automated monitoring, monthly website and contact-form checks, one set of small changes you send, a quarterly website check and a monthly report.</p><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
+ return `<details class="pricing-detail-table" open><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Every plan includes automated monitoring, monthly website and contact-form checks, one set of small changes you send, a quarterly website check and a monthly report.</p><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p></details>`;
 }
 
 export function monthlyCampaignExample(o) {

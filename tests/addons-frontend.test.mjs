@@ -47,7 +47,7 @@ test('native link prefill, validation recovery and receipts retain the complete 
  const html=prefillInquiryHtml(initial,new URL('https://example.com/contact/?addons=contact_form,booking_setup&request_kind=checkout&name=INJECTED'));
  for(const id of selected)assert.match(html,new RegExp(`name="addon_${id}"[^>]* checked`));
  assert.match(html,/\$600/);
- assert.match(html,/<details class="addon-picker" data-addon-picker open>/);
+ assert.match(html,/<details class="addon-picker" data-addon-picker(?: hidden)?>/);assert.doesNotMatch(html,/<details class="addon-picker"[^>]* open/);
  assert.doesNotMatch(html,/INJECTED/);
  const context=selectedInquiryContext({service:'grow',addon_contact_form:'1',addon_booking_setup:'1'});
  assert.deepEqual(context.add_ons,selected);

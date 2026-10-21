@@ -26,7 +26,7 @@ export const ohioTasksA = {
   },
   ashtabula: {
     name: 'Ashtabula', title: 'Reconcile one seasonal visit’s operating details',
-    scenario: 'Consider a Ashtabula County operator whose service page, seasonal announcement and booking destination show different visit information.',
+    scenario: 'Consider an Ashtabula County operator whose service page, seasonal announcement and booking destination show different visit information.',
     decision: 'Choose one visit and record its normal dates, approved exception process and actual arrival point. Mark where each fact appears and who supplies updates. Decide where the current status is authoritative and how other pages lead to it. Write the visitor’s next step when conditions change without promising automatic alerts that the business does not provide.',
     questions: ['Which dates describe the season and which describe an exception?', 'Who decides whether the visit proceeds?', 'Do the page and confirmation route use the same arrival point?'],
     output: 'One approved visit record with a list of conflicting details and responsible update owners.',
@@ -42,7 +42,7 @@ export const ohioTasksA = {
   },
   auglaize: {
     name: 'Auglaize', title: 'Separate a photo review from a physical assessment',
-    scenario: 'Consider a Auglaize County restoration business whose gallery makes initial photographs look sufficient for a final quotation.',
+    scenario: 'Consider an Auglaize County restoration business whose gallery makes initial photographs look sufficient for a final quotation.',
     decision: 'Choose an authorized project example and describe what was visible initially, what required inspection and what work was approved. Identify the limits of an initial review and the next arrangement needed to resolve them. Write captions that explain those stages without predicting the same outcome for a new item. Assess any proposed upload feature separately from an ordinary inquiry.',
     questions: ['What can the first photographs actually establish?', 'Which unknowns require an in-person inspection?', 'What does the customer approve after receiving the assessment?'],
     output: 'A staged example and an accurate explanation of the initial review’s limits.',
@@ -170,7 +170,7 @@ export const ohioTasksA = {
   },
   erie: {
     name: 'Erie', title: 'Follow a reservation into its external destination',
-    scenario: 'Consider a Erie County operator whose website describes one offer while its booking button opens a general reservation list.',
+    scenario: 'Consider an Erie County operator whose website describes one offer while its booking button opens a general reservation list.',
     decision: 'Choose one offer and record the date choices, party details, inclusions and ready provider destination. Identify what the visitor must select again after leaving the site. Check approved limits before the button and explain who confirms the booking. Record which parts of the external account the operator maintains and which website connection is included in the agreed work.',
     questions: ['Does the button open the intended offer or a broader selection?', 'Which date and party details must be entered again?', 'What evidence confirms a reservation rather than an outbound click?'],
     output: 'A checked reservation handoff with accurate action wording and account responsibilities.',

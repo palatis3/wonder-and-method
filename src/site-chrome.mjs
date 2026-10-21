@@ -1,8 +1,10 @@
+import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e} from './shared.mjs';
+import {supportChatConfig} from './support-chat.mjs';
 import {brandWordmark} from './brand.mjs';
 import {serviceCoverage} from './service-area.mjs';
 
-const services=[['/services/','All services'],['/services/web-design/','New website'],['/services/website-redesign/','Website redesign'],['/services/seo/','Monthly SEO'],['/services/website-care/','Website care'],['/services/website-audit/','Website reviews & fixes']];
+const services=serviceNavigationPaths.map(path=>[path,pageDisplayNames[path]]);
 const navLink=(path,url,label)=>`<a href="${url==='/contact/'?'/contact/#inquiry':url}"${path===url?' aria-current="page"':!url.startsWith('/services/')&&url!=='/'&&path.startsWith(url)?' aria-current="location"':''}>${e(label)}</a>`;
 
 export function siteHeader(path,config={}){
@@ -11,7 +13,7 @@ export function siteHeader(path,config={}){
 }
 
 export function siteFooter(config={}){
- const groups=[['Studio',[['/work/','Work'],['/about/','About'],['/process/','Process'],['/contact/','Contact'],['/guides/','Guides']]],['Services',[...services,['/services/website-addons/','Add-ons'],['/services/contractor-websites/','Contractor websites'],['/pricing/','Pricing']]],['Areas',[['/areas/','Service areas'],['/areas/new-york/','New York'],['/areas/pennsylvania/','Pennsylvania'],['/areas/ohio/','Ohio']]],['Information',[['/payments/','Payments & cancellation'],['/privacy/','Privacy'],['/terms/','Website terms'],['/accessibility/','Accessibility']]]];
+ const groups=[['Studio',[['/work/','Work'],['/about/','About'],['/process/','Process'],['/contact/','Contact'],['/guides/','Guides']]],['Services',[...services,['/pricing/','Pricing']]],['Areas',[['/areas/','Service areas'],['/areas/new-york/','New York'],['/areas/pennsylvania/','Pennsylvania'],['/areas/ohio/','Ohio']]],['Information',[['/payments/',pageDisplayNames['/payments/']],['/privacy/','Privacy'],['/terms/','Website terms'],['/accessibility/','Accessibility']]]];
  const email=config.contactEmail||'support@wonderandmethod.com';
- return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p>Based in ${e(serviceCoverage(config).base)}. Serving ${e(serviceCoverage(config).region)} online.<br><a href="mailto:${e(email)}">Email the studio</a></p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<section class="footer-group${label==='Information'?' footer-information':''}" aria-labelledby="footer-${label.toLowerCase()}-heading"><p id="footer-${label.toLowerCase()}-heading" class="footer-heading">${label}</p><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></section>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span><a href="#page-top">Back to top</a></div></footer>`;
+ return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p>Based in ${e(serviceCoverage(config).base)}. Serving ${e(serviceCoverage(config).region)} online.<br><a href="mailto:${e(email)}">Email Terry</a>${supportChatConfig(config)?'<span class="footer-chat-help"> · <button type="button" class="text-link" data-chat-open aria-describedby="support-chat-description" hidden>Chat with Terry</button></span>':''}</p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<section class="footer-group${label==='Information'?' footer-information':''}" aria-labelledby="footer-${label.toLowerCase()}-heading"><p id="footer-${label.toLowerCase()}-heading" class="footer-heading">${label}</p><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></section>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span><a href="#page-top">Back to top</a></div></footer>`;
 }

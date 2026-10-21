@@ -1,8 +1,9 @@
+import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 
 export function serviceNavigation(path) {
   const item=(url,label)=>`<a href="${url}"${path===url?' aria-current="page"':url==='/work/'&&path.startsWith('/work/')?' aria-current="location"':''}>${label}</a>`;
-  const services=[['/services/web-design/','Web design'],['/services/website-redesign/','Website redesign'],['/services/contractor-websites/','Contractor websites'],['/services/seo/','SEO'],['/services/website-care/','Website care'],['/services/website-audit/','Website reviews & fixes']];
+  const services=serviceNavigationPaths.map(path=>[path,pageDisplayNames[path]]);
   return `${item('/work/','Work')}<details class="service-navigation${path.startsWith('/services/')?' is-current':''}"><summary>Services</summary><div class="service-links">${services.map(([url,label])=>item(url,label)).join('')}</div></details>${item('/pricing/','Pricing')}${item('/guides/','Guides')}${item('/about/','About')}${item('/contact/','Contact')}`;
 }
 

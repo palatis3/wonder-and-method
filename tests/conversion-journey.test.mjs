@@ -6,8 +6,9 @@ import {guideInquiry,contextualizeGuideBody} from '../src/guide-inquiry-actions.
 import {routeIndexEligible} from '../src/index-policy.mjs';
 test('core inquiry fields precede one optional detail disclosure and preserve contract',()=>{
  const html=inquiryForm({live:false,privacyLink:'Privacy'});
- assert.ok(html.indexOf('id="message"')<html.indexOf('<details class="inquiry-extra">'));
- assert.ok(html.indexOf('id="business"')>html.indexOf('<details class="inquiry-extra">'));
+ assert.ok(html.indexOf('id="email"')<html.indexOf('id="business"'));
+ assert.ok(html.indexOf('id="business"')<html.indexOf('id="message"'));
+ assert.doesNotMatch(html,/<input[^>]+name="business(?:_location)?"[^>]* required/);
  assert.equal((html.match(/name="service"/g)||[]).length,1);
  assert.match(html,/value="unsure" selected/);assert.match(html,/action="\/api\/inquiries"/);
 });

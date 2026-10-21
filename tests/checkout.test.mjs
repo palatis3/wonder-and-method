@@ -13,12 +13,12 @@ test('monthly checkout states setup plus the first cycle and the baseline waiver
  const pages=checkoutPages(offers,intakeContent(config));
  for(const [slug,total] of [['keep-running','$549'],['improve','$799'],['grow','$1,199']]){
   const body=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  const header=body.split('</header>')[0];assert.ok(header.includes(total));assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);assert.match(body,/up to 12 marketing pages/);assert.match(body,/updates, backups.*restores.*malware cleanup/);assert.ok(body.includes(total));assert.match(body,/\$399.*Website Baseline/);assert.match(body,/do not pay for it twice/);
+  const header=body.split('</header>')[0];assert.ok(header.includes(total));assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);assert.match(body,/up to 12 agreed main pages/);assert.match(body,/updates.*backups.*restores.*malware cleanup/);assert.ok(body.includes(total));assert.match(body,/\$399.*Website Baseline/);assert.match(body,/do not pay for it twice/);
  }
 });
 test('all eight offers have request-only checkout with the exact service preserved without JavaScript',()=>{
  const pages=checkoutPages(offers,intakeContent(config));assert.equal(pages.length,8);assert.equal(new Set(pages.map(p=>p.path)).size,8);
- for(const page of pages){const id=page.path.split('/')[2].replaceAll('-','_');assert.match(page.body,new RegExp(`name="service" value="${id}"`));assert.match(page.body,/name="request_kind" value="checkout"/);assert.match(page.body,/No payment yet/);assert.match(page.body,/action="\/api\/inquiries"/);assert.doesNotMatch(page.body,/buy\.stripe\.com|invoice\.stripe\.com|name="(?:card|cvc|card_number)"/);}
+ for(const page of pages){const id=page.path.split('/')[2].replaceAll('-','_');assert.match(page.body,new RegExp(`name="service" value="${id}"`));assert.match(page.body,/name="request_kind" value="checkout"/);assert.match(page.body,/Nothing is booked or charged when you send this/);assert.match(page.body,/action="\/api\/inquiries"/);assert.doesNotMatch(page.body,/buy\.stripe\.com|invoice\.stripe\.com|name="(?:card|cvc|card_number)"/);}
  assert.match(pages.find(p=>p.path.includes('audit-fix-sprint')).body,/\$375/);assert.match(pages.find(p=>p.path.includes('website-baseline')).body,/\$399/);assert.match(pages.find(p=>p.path.includes('focused-site')).body,/\$1,175/);
 });
 test('checkout and service-question context survives validation, status and native correction',()=>{
@@ -36,7 +36,7 @@ test('offer actions separate checkout requests from questions and retain privacy
 
 test('checkout explains the email reply and preserves synthetic-preview boundaries',()=>{
  const live=checkoutPages(offers,intakeContent(config),config);
- for(const page of live){assert.ok(page.body.includes(config.responseWindow));assert.match(page.body,/Nothing is booked or charged until you approve the written proposal, including work, price and dates/);assert.equal(page.body.split(config.responseWindow).length-1,1);}
+ for(const page of live){assert.ok(page.body.includes(config.responseWindow));const nearSend=page.body.slice(page.body.indexOf('<div class="inquiry-next">'),page.body.indexOf('<button type="submit"'));assert.match(nearSend,/Nothing is booked or charged when you send this/);assert.match(nearSend,/You approve the written proposal, including work, price and dates, before payment/);assert.equal(page.body.split(config.responseWindow).length-1,1);}
  const synthetic={...config,mode:'staging',formMode:'synthetic'};
  for(const page of checkoutPages(offers,intakeContent(synthetic),synthetic)){assert.match(page.body,/Synthetic test form/);assert.match(page.body,/invented details only/);assert.match(page.body,/does not send email/);}
  const preview={...config,reviewOnly:true};
@@ -47,7 +47,7 @@ test('checkout explains the email reply and preserves synthetic-preview boundari
 test('build checkout keeps editing limits in the package details before the form and outside costs accessible',()=>{
  for(const page of checkoutPages(offers,intakeContent(config)).filter(p=>/-site\/$/.test(p.path))){
   const beforeForm=page.body.slice(0,page.body.indexOf('<form'));
-  assert.match(beforeForm,/drag-and-drop editor is not included/);assert.match(beforeForm,/coding skills, a developer or optional monthly care/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
-  assert.ok(page.body.indexOf('drag-and-drop editor is not included')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
+  assert.match(beforeForm,/no drag-and-drop editor/);assert.match(beforeForm,/send changes to me or use your own developer/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
+  assert.ok(page.body.indexOf('no drag-and-drop editor')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
  }
 });

@@ -16,7 +16,7 @@ test('a question retains useful context and the public price without adopting bi
   assert.doesNotMatch(html,/<details class="inquiry-extra" open/);
   assert.doesNotMatch(html,/name="concept" value="fieldwork"/);assert.doesNotMatch(html,/value="annual"/);assert.match(html,/name="request_kind" value="question"/);
   assert.ok(html.indexOf('id="request-summary"')<html.indexOf('id="name"'));
-  assert.ok(html.indexOf('id="request-summary"')<html.indexOf('class="inquiry-extra"'));
+  assert.ok(html.indexOf('id="request-summary"')<html.indexOf('id="business"'));
   assert.match(html,/Send message/);
 });
 

@@ -170,7 +170,7 @@ export const ohioTasksB = {
   },
   lawrence:{
     name:'Lawrence', title:'Set honest expectations for an Ironton time-sensitive request.',
-    scenario:'A Ironton business has an “urgent request” form but no explanation of contact hours or who confirms that a deadline can be met.',
+    scenario:'An Ironton business has an “urgent request” form but no explanation of contact hours or who confirms that a deadline can be met.',
     decision:'Have the owner approve the checked contact channel, operating hours and review process. State whether any response timing is a target or an accepted commitment. Write a receipt that acknowledges the message without accepting the work or deadline. For a South Point customer writing after hours, give only a real approved alternative or the normal next review step. Compare the phone link, service page and automated reply for contradictions.',
     questions:['When and through which channel is this request actually reviewed?','Who confirms whether the work and deadline can be accepted?','What should a customer understand if they contact the business outside those hours?'],
     output:'Consistent contact-hour wording, request labels and an accurate receipt.',

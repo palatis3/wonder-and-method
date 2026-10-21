@@ -29,6 +29,7 @@ test('neutral contact stays unclassified while explicit offer requests preserve 
   await expect(page.locator('#request_kind')).toHaveValue('checkout');
   await expect(page.locator('#request-summary')).toHaveCount(0);
   await expect(page.locator('#service')).not.toHaveValue('unsure');
+  await expect(page.locator('.inquiry-next')).toContainText('You approve the written proposal, including work, price and dates, before payment.');
   await expect(page.getByRole('button',{name:inquirySubmitLabel(await page.locator('#service').inputValue(),true,'checkout'),exact:true})).toBeVisible();
  }
  await page.goto('/contact/?request_kind=question#inquiry');
@@ -38,8 +39,8 @@ test('neutral contact stays unclassified while explicit offer requests preserve 
 
 test('checkout keeps its fixed offer and priorities while welcoming questions in the same form',async({page})=>{
  await page.goto('/checkout/grow/?offer=launch_site&priority=page&priority_two=article&billing=monthly#inquiry');
- await expect(page.getByRole('heading',{name:'Request Grow',exact:true})).toBeVisible();
- await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.checkout-reassurance')).toContainText('one business day');
+ await expect(page.getByRole('heading',{name:'Request Grow monthly SEO',exact:true})).toBeVisible();
+ await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.inquiry-next')).toContainText('one business day');
  await expect(page.locator('#service')).toHaveValue('grow');
  await expect(page.locator('#request_kind')).toHaveValue('checkout');
  await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.locator('#message-help')).toContainText('What would you like help with each month?');
@@ -75,12 +76,12 @@ test('payments estimator preserves provider costs, setup exceptions and the clos
  await page.locator('#plan').selectOption('improve');await expect(page.locator('#cycles')).toHaveValue('12');
  await page.locator('#build').selectOption('existing');await page.locator('#plan').selectOption('improve');
  await expect(page.locator('#cycles')).toHaveValue('12');
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+' (hosting; domain, email and other paid tools not added yet)');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+'');
  await page.locator('input[name="baseline"]').uncheck();
  const studio=12*offers.plans.improve.monthly_price;
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio)+' (hosting; domain, email and other paid tools not added yet)');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio)+'');
  await page.locator('.provider-estimate summary').click();await page.locator('#hosting-monthly').fill('25');
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio+300)+' (domain, email and other paid tools not added yet)');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio+300)+'');
  await expect(page.locator('#external-note')).toContainText('Still to add: domain, email and other paid tools');
  await page.locator('#external').fill('50');await expect(page.locator('#cost-total')).toHaveText('Estimated total: '+money(studio+350));
  await expect(page.locator('#billing option[value="annual"]')).toHaveCount(0);

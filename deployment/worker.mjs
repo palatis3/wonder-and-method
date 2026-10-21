@@ -5,11 +5,12 @@ import { validateInquiry } from '../src/inquiry.mjs';
 import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../src/shared.mjs';
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
 import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, hasInquiryResolutions, inquiryRetentionPreview, followupInput, inquiryResolutionInput } from './inquiry-maintenance.mjs';
-import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
+import { inquiryStatus, inquiryRetentionStatus, recordRecoverySuccess } from './inquiry-health.mjs';
 import { allowInquiryRate, inquiryNetwork, refundInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
 import {publicRouteRedirect} from './public-route-canonical.mjs';
 import {notificationBudget} from './notification-budget.mjs';
+import {recordSubmissionFailure,acknowledgeSubmissionAttention,retentionAttentionPing,attentionResponse,submissionAttention,signalSubmissionAttention} from './approved-rerun-attention.mjs';
 
 const encoder = new TextEncoder();
 // URL-encoded Unicode needs up to nine bytes per UTF-16 code unit. The legal
@@ -171,6 +172,7 @@ function notificationMessage(env, id, inquiry) {
     subject: `[${inquiry.request_kind==='question'?'Question':inquiry.request_kind==='checkout'?'Proposal request':'Message'}] ${service} — ${subjectName}`,
     text: ['Website inquiry', `Reference: ${id}`, `Name: ${inquiry.name}`, `Email: ${inquiry.email}`,
       `Business: ${inquiry.business || 'Not supplied'}`, `Website: ${inquiry.website || 'Not supplied'}`,
+      `Business location (visitor supplied): ${inquiry.business_location || 'Not supplied'}`,
       `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`, 'Owner: reply from the studio support mailbox. A provider acceptance is not proof of inbox delivery.'].join('\n\n')
   };
 }
@@ -209,7 +211,9 @@ async function submit(request, env, ctx) {
   const { errors, value } = validateInquiry(data);
   if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value,{live:LIVE(env)});
   const recover=(status,message,flags={})=>respond(request,status,message,null,undefined,value.service,value,{retry:value,live:LIVE(env),...flags});
-  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return recover(503, 'Your inquiry could not be saved. Your entries are kept here. Please try again or email support@wonderandmethod.com.');
+  const reportFailure=code=>{if(LIVE(env))ctx.waitUntil(recordSubmissionFailure(env,code).catch(()=>{}));};
+  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32){reportFailure('inquiry_configuration_unavailable');return recover(503, 'Your inquiry could not be saved. Your entries are kept here. Please try again or email support@wonderandmethod.com.');}
+  let failureCode='inquiry_pre_save_failed';
   try {
   const now = Date.now();
   const synthetic = !LIVE(env);
@@ -244,12 +248,14 @@ async function submit(request, env, ctx) {
   const dedupe = await fingerprint(env.FINGERPRINT_SECRET, `duplicate:${synthetic}:${id}`);
   // One SQLite write makes the rolling-window check and insert atomic. Comparing
   // normalized payloads also recognizes records saved by the previous release.
+  failureCode='inquiry_storage_outcome_unknown';
   await env.DB.prepare(`INSERT INTO inquiries (id, created_at, payload, dedupe_key, synthetic, delivery_status)
     SELECT ?, ?, ?, ?, ?, ? WHERE NOT EXISTS
       (SELECT 1 FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ?)`)
     .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now-INQUIRY_DUPLICATE_WINDOW_MS, payload, syntheticFlag).run();
   const record=await recent();
   if (!record) throw new Error('storage-incomplete');
+  failureCode='inquiry_receipt_failed';
   if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiry(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
   if(network!=='unknown'){
     // Opaque, short-lived receipt; no IP or payload is stored in rate_limits.
@@ -261,7 +267,7 @@ async function submit(request, env, ctx) {
   }
   return accepted(record);
   } catch {
-    console.error('inquiry_storage_failed');
+    reportFailure(failureCode);
     return recover(503,'Your request could not be confirmed as saved. Your entries are kept here; please try again or email support@wonderandmethod.com.');
   }
 }
@@ -290,6 +296,17 @@ async function operator(request, env) {
   }
   if(url.pathname==='/api/operator/journey-counts'&&request.method==='GET'){const {results}=await env.DB.prepare("SELECT day,event,service,page,source,total FROM journey_counts WHERE day>=date('now','-89 days') ORDER BY day DESC,event,service,page,source LIMIT 5000").all();return Response.json({counts:results,limit:5000,note:'Aggregate event counts, not unique visitors or linked conversions. Client-reported; bots, blockers and privacy preferences affect totals.'},{headers:{'Cache-Control':'no-store'}});}
   const base = '/api/operator/inquiries';
+  if(url.pathname===`${base}/submission-failures/acknowledge`&&request.method==='POST'){
+    let data;try{data=await parseBody(request);}catch{return respond(request,400,'Use a reviewed operational snapshot.');}
+    return attentionResponse(await acknowledgeSubmissionAttention(env,data));
+  }
+  if(url.pathname===`${base}/retention/acknowledge`&&request.method==='POST'){
+    let data;try{data=await parseBody(request);}catch{return respond(request,400,'Use a retention review acknowledgement.');}
+    if(!data||Object.keys(data).length!==1||data.confirm!=='reviewed-retention-attention')return respond(request,422,'Confirm reviewed-retention-attention after reviewing all working copies.');
+    if(!await hasInquiryFollowup(env.DB))return respond(request,503,'Inquiry follow-up migration is required.');
+    await env.DB.prepare("INSERT INTO operation_health (name,last_success_at) VALUES ('inquiry-retention-reviewed',?) ON CONFLICT(name) DO UPDATE SET last_success_at=excluded.last_success_at").bind(Date.now()).run();
+    return respond(request,200,'Review acknowledged. No inquiry, retention clock, hold or deletion status changed; attention remains active until the underlying records are reconciled.');
+  }
   if (url.pathname === `${base}/status` && request.method === 'GET') {
     let release=null;
     try{const asset=await env.ASSETS.fetch(new Request(new URL('/version.json',url)));if(asset.ok)release=await asset.json();else await asset.body?.cancel();}catch{}
@@ -550,7 +567,7 @@ export default {
 
 // Each job is independent. Logs contain only fixed codes, never inquiry data.
 export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clock=Date.now,logger=console.error}={}){
-  if(!env.DB)return {ok:false,codes:['scheduled_database_missing']};
+  if(!env.DB){await signalSubmissionAttention(env,{send,logger});await retentionAttentionPing(env,null,{send});return {ok:false,codes:['scheduled_database_missing']};}
   const codes=[];
   const fail=code=>{codes.push(code);logger(code);};
   const step=async(code,fn)=>{try{return await fn();}catch{fail(code);return null;}};
@@ -560,7 +577,7 @@ export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clo
   await step('scheduled_rate_cleanup_failed',()=>env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(now).run());
   await step('scheduled_aggregate_cleanup_failed',()=>cleanJourneyCounts(env.DB,now));
   if(env.HEALTHCHECK_URL && LIVE(env) && codes.length===0){
-    const health=await step('scheduled_health_status_failed',()=>inquiryStatus(env,now));
+    const health=await step('scheduled_health_status_failed',()=>inquiryStatus(env,now,{includeAttention:false}));
     if(health && !health.health.ok)fail('scheduled_delivery_unhealthy');
     if(health?.health.ok){
       const url=await step('scheduled_healthcheck_config_invalid',async()=>{
@@ -580,6 +597,20 @@ export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clo
           try{await response.body?.cancel();}catch{}
         }
       }
+    }
+  }
+  // Retention has its own check, after delivery's heartbeat decision. A due
+  // review, unavailable migration or retention receiver cannot mask delivery.
+  if(env.RETENTION_HEALTHCHECK_URL&&LIVE(env)){
+    const status=await step('scheduled_retention_status_failed',()=>inquiryRetentionStatus(env,now));
+    const attention=await retentionAttentionPing(env,status,{send});
+    if(!attention.acknowledged)fail('scheduled_retention_signal_failed');
+  }
+  if(env.INQUIRY_SUBMISSION_HEALTHCHECK_URL&&LIVE(env)){
+    const attention=await step('scheduled_submission_attention_failed',()=>submissionAttention(env.DB));
+    if(!attention?.migration_ready||attention.review_required){
+      const signal=await signalSubmissionAttention(env,{send,logger});
+      if(!signal.acknowledged&&!signal.edge_limited)fail('scheduled_submission_signal_failed');
     }
   }
   return {ok:codes.length===0,codes};

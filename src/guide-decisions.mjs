@@ -33,7 +33,7 @@ export function guideDecision(path,o){
 
 export function guideDownload(path){
  const slug=path.split('/').filter(Boolean).at(-1);
- const special={'website-repair-or-redesign':'/assets/guides/website-repair-or-redesign-worksheet.csv','website-care-versus-seo':'/assets/guides/website-care-versus-seo-worksheet.csv','website-audit-checklist':'/assets/guides/website-audit-checklist.csv','website-migration-checklist':'/assets/downloads/website-url-map.csv','website-redesign-brief':'/assets/guides/website-redesign-brief.txt'};
+ const special={'seo-work-and-reporting':'/assets/guides/seo-provider-questions.txt','website-repair-or-redesign':'/assets/guides/website-repair-or-redesign-worksheet.csv','website-care-versus-seo':'/assets/guides/website-care-versus-seo-worksheet.csv','website-audit-checklist':'/assets/guides/website-audit-checklist.csv','website-migration-checklist':'/assets/downloads/website-url-map.csv','website-redesign-brief':'/assets/guides/website-redesign-brief.txt'};
  return researchGuideDetails[slug]?.download||special[slug]||(decisions[slug]?`/assets/audit-implementation/${slug}-checklist.txt`:null);
 }
 
@@ -43,7 +43,7 @@ export function guideDownloadLabel(path){
   'website-project-cost':'Download the website budget checklist',
   'website-redesign-brief':'Download the redesign brief',
   'local-seo-profile-eligibility':'Download the local-search checklist',
-  'seo-work-and-reporting':'Download the SEO work and reporting checklist',
+  'seo-work-and-reporting':'Download the SEO provider questions',
   'website-migration-checklist':'Download the URL map worksheet',
   'custom-website-or-template':'Download the website approach checklist',
   'website-care-versus-seo':'Download the care and SEO decision worksheet',

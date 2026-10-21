@@ -31,7 +31,7 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'Search counties or towns'})).toBeDisabled();
+ await expect(page.getByRole('searchbox',{name:'County, city or town'})).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every county.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-county-search]')).toHaveCount(count);
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(0);
@@ -45,7 +45,7 @@ test('all statewide county links remain usable without JavaScript',async({page},
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/new-york/?qa=1');
  await openNativeCountyLists(page,62);
- await expect(page.getByRole('navigation',{name:'New York service regions'}).locator('a')).toHaveCount(10);
+ await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
  await page.locator('[data-county-search] a[href="/areas/st-lawrence-county/"]').click();
  await expect(page.locator('main h1')).toContainText('St. Lawrence');
  await page.locator('.county-faq summary').first().click();
@@ -58,7 +58,7 @@ test('state directories and Pennsylvania county details work without JavaScript'
  await openNativeCountyLists(page,217);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await openNativeCountyLists(page,67);
- await expect(page.getByRole('navigation',{name:'Pennsylvania service regions'}).locator('a')).toHaveCount(10);
+ await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
  await page.locator('[data-county-search] a[href="/areas/pennsylvania/columbia-county/"]').click();
  await expect(page.locator('main h1')).toContainText('Columbia');
  await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Bloomsburg');
@@ -72,7 +72,7 @@ test('Ohio directory, municipalities and FAQs work without JavaScript',async({pa
  await page.goto('/areas/?qa=1');
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Ohio',exact:true}).click();
  await openNativeCountyLists(page,88);
- await expect(page.getByRole('navigation',{name:'Ohio service regions'}).locator('a')).toHaveCount(7);
+ await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(7);
  await page.locator('[data-county-search] a[href="/areas/ohio/greene-county/"]').click();
  await expect(page.locator('main h1')).toContainText('Greene');
  await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Yellow Springs');
@@ -93,6 +93,7 @@ test('native additions prefill, correction and receipt preserve all selected wor
  await expect(page.locator('#inquiry-addon-standard_page')).toBeChecked();
  await expect(page.locator('#inquiry-addon-booking_setup')).toBeChecked();
  await expect(page.locator('[data-addon-total]')).toHaveText('$650');
+ await page.locator('[data-addon-picker] > summary').click();
  await page.locator('#inquiry-addon-contact_form').check();
  await page.locator('#name').fill('Native additions fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic request for several agreed additions.');
  await page.getByRole('button',{name:'Send message',exact:true}).click();

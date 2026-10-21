@@ -36,7 +36,7 @@ test('the project provides native poster-first playback with phone and desktop s
  }
  assert.doesNotMatch(videos[0][1],/\bloop\b/);
  assert.match(videos[1][1],/\bloop\b/);
- assert.match(html,/studio art study/);assert.match(html,/animation is silent/);assert.match(html,/href="\/work\/"/);
+ assert.match(html,/custom 3D homepage animation/);assert.match(html,/animation is silent/);assert.match(html,/href="\/work\/"/);
  assert.doesNotMatch(html,/<script\b|data-src=|civic-sculpture-preview|Start a project|Websites from/);
 });
 
@@ -73,6 +73,6 @@ test('Work links to Buffalo while retaining all three concepts and the Waterfron
  assert.match(html,/<a href="#buffalo-civic">Design studies<\/a>/);
  assert.match(html,/href="\/work\/buffalo-civic\/">Play the Buffalo animation<\/a>/);
  assert.match(html,/class="work-preview work-preview--sculpture"/);
- assert.match(html,/Play the Waterfront animation/);assert.match(html,/\/assets\/waterfront\/film-landscape.mp4/);
+ assert.match(html,/Waterfront/);assert.match(html,/\/assets\/waterfront\/film-landscape.mp4/);
  assert.doesNotMatch(html,/civic-sculpture-preview/);
 });

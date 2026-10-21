@@ -10,7 +10,7 @@ export const ohioTasksD = {
   },
   preble: {
     name: 'Preble', title: 'Follow one service choice into the outside scheduler.',
-    scenario: 'A Eaton business uses an outside booking provider, but its website buttons all open a general calendar.',
+    scenario: 'An Eaton business uses an outside booking provider, but its website buttons all open a general calendar.',
     decision: 'Select one service and record the expected appointment name, location and next action. Open the link on a phone and compare the provider page with those expectations. Mark every choice the visitor must repeat. If the provider supports a reliable direct link, assess that setup; otherwise write a short instruction beside the button. Record who controls the outside account and who confirms the appointment. Stop a test before creating a real booking unless a test has been arranged.',
     questions: ['Does the chosen service survive the transition?', 'Which location does the provider display?', 'What message actually confirms the appointment?'],
     output: 'A checked booking path with clear button wording and a named account owner.',
@@ -18,7 +18,7 @@ export const ohioTasksD = {
   },
   putnam: {
     name: 'Putnam', title: 'Write the delivery and collection paths side by side.',
-    scenario: 'A Ottawa business offers collection and reviewed delivery, but explains both through one general contact form.',
+    scenario: 'An Ottawa business offers collection and reviewed delivery, but explains both through one general contact form.',
     decision: 'Choose a representative request and write two paths for receiving it. For each, identify the relevant address, requested timing, acceptance step and approved charge explanation. Keep collection opening hours separate from an agreed collection time. Mark any delivery rule that still needs the owner’s decision. Compare the form and receipt against each path so neither option inherits the other’s instructions. Publish the accepted differences beside the choice itself.',
     questions: ['Which destination matters for each option?', 'What timing is requested and what timing is confirmed?', 'Who accepts the final fulfillment arrangement?'],
     output: 'A concise comparison and separate, accurate confirmation wording for both options.',
@@ -82,7 +82,7 @@ export const ohioTasksD = {
   },
   summit: {
     name: 'Summit', title: 'Record one observable obstacle in a service inquiry path.',
-    scenario: 'A Akron business suspects its service page is difficult to use but has not identified the specific obstacle.',
+    scenario: 'An Akron business suspects its service page is difficult to use but has not identified the specific obstacle.',
     decision: 'Choose a visitor task and start at the relevant entry page. Follow the offer to its inquiry on a phone and with a keyboard, using an authorized test where submission is needed. Record the exact step that becomes unclear or fails, with the visible result. Separate that observation from a theory about lost sales. Propose one contained change and name the same task as its acceptance check. Add analytics context only when available and appropriate.',
     questions: ['What is the visitor trying to accomplish?', 'Which observable step blocks or confuses the task?', 'What result would demonstrate that the proposed change works?'],
     output: 'A reproducible issue, a scoped improvement and a clear acceptance task.',
@@ -170,7 +170,7 @@ export const ohioTasksD = {
   },
   wyandot: {
     name: 'Wyandot', title: 'Rehearse the first ordinary update during website handoff.',
-    scenario: 'A Upper Sandusky business needs a new staff member to keep service and contact information current after launch.',
+    scenario: 'An Upper Sandusky business needs a new staff member to keep service and contact information current after launch.',
     decision: 'Choose a likely text update and identify its approved source, editor, checking step and publishing method. List the domain, hosting and connected services separately from the website files, with an owner and renewal responsibility for each. Record the instructions and licenses needed to run the site, plus known limits or unfinished items. Arrange account access securely; do not put passwords in the handoff checklist. Confirm who will handle later updates before assuming the business can publish them itself.',
     questions: ['Where is the current editable content?', 'Who controls each account needed to operate the site?', 'How is an approved change checked and published?'],
     output: 'A usable handoff inventory and a documented update path.',
