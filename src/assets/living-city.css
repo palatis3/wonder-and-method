@@ -146,6 +146,31 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 .city-star:nth-child(18){--star-x:77%;--star-y:14%;--star-period:5.4s;--star-delay:-2.1s}
 .is-city-playing .city-star{animation-play-state:running}
 @keyframes city-twinkle{0%,100%{opacity:.18;transform:scale(.6)}35%{opacity:.35;transform:scale(.85)}52%{opacity:1;transform:scale(1.5)}70%{opacity:.3;transform:scale(.8)}}
+/* The sky continues after the introduction; every effect shares the playback state. */
+.city-night{position:absolute;z-index:0;top:-55px;left:-20%;width:90%;max-width:450px;height:150px;pointer-events:none}
+.city-moon{position:absolute;right:0;top:-6px;width:100px;height:100px}
+.city-moon-surface{position:absolute;inset:0;background:url('/assets/living-city-night/crescent-moon.webp') center/contain no-repeat;filter:drop-shadow(0 0 8px #ffe8b94d)}
+.city-moon-halo{position:absolute;inset:-28%;border-radius:50%;background:radial-gradient(ellipse,#b9dcf21c 0%,#b9dcf20a 35%,transparent 67%);opacity:.6}
+.city-constellations{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.city-star-route{stroke:#b9d9e7;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;opacity:.24}
+.city-map-stars{fill:#fff2d6;filter:drop-shadow(0 0 3px #dfebff);opacity:.8}
+.city-star-glint{stroke:#e9f5ff;stroke-width:.75;stroke-linecap:round;opacity:.55;filter:drop-shadow(0 0 3px #d4e9ff)}
+.city-constellation--two{--night-delay:-7s;--glimmer-delay:-3s}
+.city-meteor{position:absolute;left:10%;top:12%;width:108px;height:2px;border-radius:50%;background:linear-gradient(90deg,transparent,#b9dcf266 65%,#fff6dc);box-shadow:4px 0 8px -2px #f2f7ff;opacity:0;transform:translate(0,0) rotate(24deg);transform-origin:right center;--meteor-x:320px;--meteor-y:130px}
+.city-meteor::after{content:'';position:absolute;right:0;top:-1px;width:4px;height:4px;border-radius:50%;background:#fff9e9;box-shadow:0 0 8px 2px #dceeff80}
+.city-meteor--two{left:44%;top:4%;width:75px;--meteor-x:220px;--meteor-y:96px}
+.is-city-complete .city-moon-halo{animation:city-moon-glow 9s ease-in-out infinite;animation-play-state:paused}
+.is-city-complete .city-star-route{animation:city-constellation-trace 18s ease-in-out var(--night-delay,0s) infinite;animation-play-state:paused}
+.is-city-complete .city-map-stars,.is-city-complete .city-star-glint{animation:city-map-glimmer 6.5s ease-in-out var(--glimmer-delay,0s) infinite;animation-play-state:paused}
+.is-city-complete .city-meteor--one{animation:city-shooting-star 17s linear infinite;animation-play-state:paused}
+.is-city-complete .city-meteor--two{animation:city-shooting-star 23s 7s linear infinite;animation-play-state:paused}
+.is-city-complete.is-city-playing .city-night *{animation-play-state:running}
+@keyframes city-moon-glow{0%,100%{opacity:.45;transform:scale(.9)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes city-constellation-trace{0%{stroke-dashoffset:1;opacity:0}12%{opacity:.45}32%,65%{stroke-dashoffset:0;opacity:.45}84%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes city-map-glimmer{0%,100%{opacity:.4}38%{opacity:.6}55%{opacity:1}76%{opacity:.55}}
+@keyframes city-shooting-star{0%,5%{opacity:0;transform:translate(0,0) rotate(24deg) scaleX(.35)}6.5%{opacity:1}13%{opacity:0;transform:translate(var(--meteor-x),var(--meteor-y)) rotate(24deg) scaleX(1)}100%{opacity:0;transform:translate(var(--meteor-x),var(--meteor-y)) rotate(24deg) scaleX(1)}}
+@media(max-width:1023px){.city-night{top:0;left:0;width:100%;max-width:none;height:180px}.city-moon{right:2%;top:-8px;width:106px;height:106px}}
+@media(max-width:767px){.city-night{height:150px}.city-moon{right:0;top:-6px;width:86px;height:86px}.city-constellations{width:91%;height:126px;left:-1%;top:20px}.city-meteor{left:3%;top:8%;width:75px;--meteor-x:185px;--meteor-y:82px}.city-meteor--two{left:24%;top:4%;width:56px;--meteor-x:150px;--meteor-y:66px}}
 /* Each real website turns into view, then rests flat so its type stays sharp. */
 .city-reveal{--reveal-ink:#233e32;--reveal-light:#bfd6a9;--reveal-turn:4deg;--reveal-drift:34px;border-color:#f8f6ef80;border-radius:15px;box-shadow:0 32px 80px -18px #00141ff2,0 0 36px -20px var(--reveal-light);transform-origin:50% 65%;transform:translateY(-18px) scale(.97);transition:opacity .38s ease,transform .5s ease,visibility .4s}
 .city-reveal--northline{--reveal-ink:#203944;--reveal-light:#b8d5e4;--reveal-turn:-4deg;--reveal-drift:-30px}

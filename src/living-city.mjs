@@ -13,6 +13,16 @@ const sourceSet=(media,key,small,fallback,width)=>{
  return `${variant?`/assets${variant.path} ${variant.width}w, `:''}${full} ${media?.files?.[key]?.width||width}w`;
 };
 
+// Decorative star maps are original patterns, with no interactive or spoken content.
+const nightSky=`<div class="city-night" aria-hidden="true">
+ <span class="city-moon"><span class="city-moon-halo"></span><span class="city-moon-surface"></span></span>
+ <svg class="city-constellations" viewBox="0 0 520 180" fill="none" focusable="false">
+  <g class="city-constellation city-constellation--one"><path class="city-star-route" pathLength="1" d="M26 92 73 58 119 78 151 33 191 49 221 23"/><g class="city-map-stars"><circle cx="26" cy="92" r="1.7"/><circle cx="73" cy="58" r="2.5"/><circle cx="119" cy="78" r="1.8"/><circle cx="151" cy="33" r="2.5"/><circle cx="191" cy="49" r="1.6"/><circle cx="221" cy="23" r="2"/></g><path class="city-star-glint" d="M73 50v16m-8-8h16M151 26v14m-7-7h14"/></g>
+  <g class="city-constellation city-constellation--two"><path class="city-star-route" pathLength="1" d="M260 116 292 87 332 101 350 143 306 153 292 87M332 101 381 78"/><g class="city-map-stars"><circle cx="260" cy="116" r="1.6"/><circle cx="292" cy="87" r="2.3"/><circle cx="332" cy="101" r="1.7"/><circle cx="350" cy="143" r="2"/><circle cx="306" cy="153" r="1.5"/><circle cx="381" cy="78" r="2.3"/></g><path class="city-star-glint" d="M292 80v14m-7-7h14M381 71v14m-7-7h14"/></g>
+ </svg>
+ <span class="city-meteor city-meteor--one"></span><span class="city-meteor city-meteor--two"></span>
+</div>`;
+
 export function livingCityHome(config={}){
  const media=config.livingCityMedia;
  const desktop=url(media,'desktopPoster','desktop-poster.webp');
@@ -24,9 +34,10 @@ export function livingCityHome(config={}){
    <source media="(max-width:1023px)" srcset="${sourceSet(media,'mobilePoster','mobileSmallPoster','mobile-poster.webp',828)}" sizes="100vw" width="828" height="1216">
    <img class="city-poster" src="${desktop}" srcset="${sourceSet(media,'desktopPoster','desktopSmallPoster','desktop-poster.webp',1440)}" sizes="100vw" width="1440" height="960" alt="A waterfront neighborhood at dusk: Fieldwork’s glass greenhouse, Northline’s timber and stone studio, and Hearthside’s warmly lit pizzeria." fetchpriority="high" decoding="async">
   </picture><video id="city-film" class="city-film" data-city-film${config.livingCityMotionReady?` data-desktop-src="${url(media,'desktopVideo','desktop-film.mp4')}" data-mobile-src="${url(media,'mobileVideo','mobile-film.mp4')}"`:''} data-desktop-poster="${desktop}" data-mobile-poster="${mobile}" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
-  <div class="city-copy"><p class="city-eyebrow"><span class="city-independent">Independent </span>web design &amp; SEO</p><h1 id="hero-heading">Small businesses.<br>Extraordinary<br>websites.</h1><p class="city-lede">Custom design, complete writing,<br class="city-desktop-break"> and SEO to help people find you.</p><div class="city-actions"><a class="city-primary" href="/contact/?request_kind=checkout#inquiry">Start a project <span aria-hidden="true">⟶</span></a><a class="city-explore" href="#website-examples">See the websites</a></div><p class="city-location">Based in Buffalo. Working with you online.</p>
+  <div class="city-copy"><p class="city-eyebrow"><span class="city-independent">Independent </span>web design &amp; SEO</p><h1 id="hero-heading">Small businesses.<br>Extraordinary<br>websites.</h1><p class="city-lede">Custom design, complete writing,<br class="city-desktop-break"> and SEO to help people find you.</p><div class="city-actions"><a class="city-primary" href="/contact/?request_kind=checkout#inquiry">Start a project <span aria-hidden="true">⟶</span></a><a class="city-explore" href="#website-examples">See the websites</a></div><p class="city-location">Based in Buffalo. Serving New York, Pennsylvania, and Ohio.</p>
   <div class="city-controls"><button type="button" data-city-play aria-controls="city-film" hidden>Play motion</button><button type="button" data-city-replay aria-controls="city-film" hidden>Replay introduction</button><span class="city-status" data-city-status role="status" aria-live="polite"></span></div></div>
   <div class="city-showcase" role="group" aria-label="A closer look at the website concepts">
+   ${nightSky}
    ${conceptCatalog.map((item,index)=>{const copy=projectCopy[item.id],capture=captures.records.find(c=>c.id===item.id&&c.camera==='desktop');return `<article class="city-reveal city-reveal--${item.id}" data-city-showcase="${item.id}" hidden><div class="city-reveal-bar" aria-hidden="true"><span class="city-reveal-dots">● ● ●</span><span>${e(item.name.toLowerCase())} / website concept</span><span>0${index+1} / 03</span></div><div class="city-reveal-window"><img data-city-preview-src="${capture.path}" width="${capture.width}" height="${capture.height}" alt="" decoding="async"><span class="city-reveal-gleam" aria-hidden="true"></span></div><div class="city-reveal-copy"><p class="city-reveal-category">${e(copy.stage)}</p><h2>${e(item.name)}</h2><p>${e(copy.detail)}</p><a href="#city-panel-${item.id}" data-city-jump="${item.id}">See ${e(item.name)} details <span aria-hidden="true">↗</span></a></div></article>`;}).join('')}
   </div>
   <nav class="city-chooser" aria-label="Explore the website concepts"><p>Choose a website concept <span>Three fictional businesses. Three custom concepts.</span></p><div>${conceptCatalog.map(item=>`<a href="#city-panel-${item.id}" data-city-jump="${item.id}" class="city-choice city-choice--${item.id}"><span class="city-choice-dot" aria-hidden="true"></span>${e(item.name)}<span aria-hidden="true">↗</span></a>`).join('')}</div></nav>
