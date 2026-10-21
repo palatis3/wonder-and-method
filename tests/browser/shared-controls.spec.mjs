@@ -6,17 +6,9 @@ const inViewport=async(locator)=>{
  expect(fits).toBe(true);
 };
 
-// Find a clear resting position; corner tools yield over reading content.
-const clockInstalled=new WeakSet();
+// Chat must be discoverable where the visitor is, without searching scroll gaps.
 const revealTools=async page=>{
- if(!clockInstalled.has(page)){await page.clock.install();clockInstalled.add(page);}
- const max=await page.evaluate(()=>document.documentElement.scrollHeight-innerHeight);
- for(const y of [max,...Array.from({length:Math.ceil(max/300)},(_,i)=>i*300)]){
-  await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},y);
-  await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-  if(await page.locator('.support-chat-launch').isVisible()){await inViewport(page.locator('.support-chat-launch'));return;}
- }
- throw Error('Chat must remain reachable in a clear page position');
+ await inViewport(page.locator('.support-chat-launch'));
 };
 
 test('shared header contact and native footer top link remain reachable across page types',async({page,isMobile})=>{
@@ -34,7 +26,7 @@ test('shared header contact and native footer top link remain reachable across p
    await expect(page.locator('.support-chat-launch')).toHaveCount(0);
    await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
   }else await revealTools(page);
-  if(isMobile)await expect(page.locator('.back-to-top')).toBeHidden();
+  await page.evaluate(()=>scrollTo({top:650,behavior:'instant'}));await inViewport(page.locator('.back-to-top'));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
   const top=page.locator('footer a[href="#page-top"]');await top.scrollIntoViewIfNeeded();await inViewport(top);await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  }
@@ -236,7 +228,7 @@ test('Buffalo Work archive preserves playable reveal and ambient films',async({p
  }
 });
 
-test('ordinary scrolling preserves every page section while tools yield to content',async({page})=>{
+test('ordinary scrolling preserves every page section and reachable tools',async({page})=>{
  for(const path of ['/','/pricing/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
   const sections=()=>page.locator('main section').evaluateAll(xs=>xs.map(x=>({id:x.id,hidden:x.hidden,display:getComputedStyle(x).display,text:x.textContent.length})));
@@ -249,7 +241,7 @@ test('ordinary scrolling preserves every page section while tools yield to conte
  }
 });
 
-test('chat does not repeatedly reappear during a continuous scroll and the desktop top link sits on the left',async({page,isMobile})=>{
+test('chat stays visible through scrolling and the top link sits on the left on desktop and phone',async({page})=>{
  await page.goto('/pricing/?qa=1');await page.evaluate(()=>document.fonts.ready);
  const samples=await page.evaluate(async()=>{
   const launcher=document.querySelector('.support-chat-launch'),samples=[];
@@ -262,12 +254,15 @@ test('chat does not repeatedly reappear during a continuous scroll and the deskt
   return samples;
  });
  const reappearances=samples.slice(1).filter((sample,index)=>sample.visible&&!samples[index].visible);
- expect(reappearances,'A chat control that yields must stay settled until scrolling stops').toEqual([]);
- if(!isMobile){
+ expect(reappearances,'Chat must not flicker in and out while scrolling').toEqual([]);
+ expect(samples.every(sample=>sample.visible),'Chat stays available at every sampled scroll position').toBe(true);
+ {
   const top=page.locator('.back-to-top');await expect(top).toBeVisible();
   expect(await top.evaluate(node=>{const r=node.getBoundingClientRect();return r.left>=0&&r.right<innerWidth/2&&r.bottom<=innerHeight;})).toBe(true);
   await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  }
+ await page.evaluate(()=>scrollTo({top:800,behavior:'instant'}));
+ await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(800);
  await revealTools(page);await expect(page.locator('.support-chat-launch')).toBeVisible();
  const launcher=page.locator('.support-chat-launch');await launcher.focus();
  const focusedScroll=await page.evaluate(async()=>{
@@ -275,9 +270,23 @@ test('chat does not repeatedly reappear during a continuous scroll and the deskt
   for(const delta of [80,20,100,0]){
    scrollTo({top:Math.max(0,start-delta),behavior:'instant'});
    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-   samples.push(document.activeElement===launcher&&launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true}));
+   samples.push({y:scrollY,focusedAndVisible:document.activeElement===launcher&&launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})});
   }
   return samples;
  });
- expect(focusedScroll,'Keyboard focus keeps chat visible through scroll reversals').toEqual([true,true,true,true]);
+ expect(focusedScroll,'Keyboard focus keeps chat visible through real scroll reversals').toEqual([720,780,700,800].map(y=>({y,focusedAndVisible:true})));
+});
+
+test('chat is visible on arrival and both floating tools remain available after scrolling',async({page})=>{
+ for(const path of ['/','/pricing/']){
+  await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
+  const chat=page.locator('.support-chat-launch'),top=page.locator('.back-to-top');
+  await inViewport(chat);await expect(top).toBeHidden();
+  for(const y of [680,1200,760]){
+   await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
+   await inViewport(chat);await inViewport(top);
+  }
+  await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
+  await expect(top).toBeHidden();await inViewport(chat);
+ }
 });

@@ -1,26 +1,18 @@
 import {test,expect} from './fixtures.mjs';
 
-// Independent rendered-text geometry, not the production collision heuristic.
+// Keep controls discoverable during reading, while independently checking that
+// they yield to keyboard targets instead of hiding over every text block.
 function coveredContent(){
  const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(node=>node.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})).map(node=>({name:node.className,r:node.getBoundingClientRect()}));
  const hits=[],overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
- for(const root of document.querySelectorAll('main,footer')){
-  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
-  while(walker.nextNode()){
-   const node=walker.currentNode;
-   if(!node.textContent.trim()||!node.parentElement.checkVisibility({checkVisibilityCSS:true})||node.parentElement.closest('script,style,svg,[aria-hidden=true]'))continue;
-   const range=document.createRange();range.selectNodeContents(node);
-   for(const rect of range.getClientRects())for(const control of floats)if(overlaps(rect,control.r)){hits.push(control.name+' / '+node.textContent.trim().slice(0,80));break;}
-  }
- }
- for(const node of document.querySelectorAll('main a[href],main button,main input,main select,main textarea,main summary,footer a[href]')){
+ for(const node of document.querySelectorAll('main :focus,footer :focus')){
   if(!node.checkVisibility({checkVisibilityCSS:true}))continue;
   for(const control of floats)if(overlaps(node.getBoundingClientRect(),control.r))hits.push(control.name+' / '+node.tagName+' '+node.textContent.trim().slice(0,80));
  }
- return {hits,visible:floats.length};
+ return {hits,visible:floats.length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1||r.top<0||r.bottom>innerHeight+1).map(({name})=>name)};
 }
 
-for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`resting page tools leave rendered content clear at ${width}x${height}`,async({page},testInfo)=>{
+for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`page tools stay available and leave keyboard targets clear at ${width}x${height}`,async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});
  await page.clock.install();
@@ -32,7 +24,15 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
   for(const y of stops){
    await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},y);
    await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-   const result=await page.evaluate(coveredContent);expect(result.hits,`${path} at ${y}`).toEqual([]);visible+=result.visible;
+   await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
+   if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
+   const result=await page.evaluate(coveredContent);expect(result.hits,`${path} at ${y}`).toEqual([]);expect(result.outside).toEqual([]);visible+=result.visible;
+   const focused=await page.evaluate(()=>{
+    const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect());
+    const target=[...document.querySelectorAll('main a[href],main button,main summary,footer a[href]')].find(n=>{if(!n.checkVisibility({checkVisibilityCSS:true}))return false;const r=n.getBoundingClientRect();return floats.some(f=>Math.min(r.right,f.right)>Math.max(r.left,f.left)+1&&Math.min(r.bottom,f.bottom)>Math.max(r.top,f.top)+1);});
+    if(!target)return false;target.focus({preventScroll:true});return true;
+   });
+   if(focused){await expect.poll(async()=>(await page.evaluate(coveredContent)).hits).toEqual([]);await page.evaluate(()=>document.activeElement.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();}
   }
   expect(visible,path+' retains reachable chat positions').toBeGreaterThan(0);
  }
@@ -42,7 +42,7 @@ test('home hero controls remain clear and short screens fit the project action',
  test.skip(testInfo.project.name!=='desktop','One viewport matrix');await page.emulateMedia({reducedMotion:'reduce'});
  for(const [width,height] of [[1280,720],[1366,768],[1440,900],[844,390],[683,328]]){
   await page.setViewportSize({width,height});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
-  await expect(page.locator('.support-chat-launch')).toBeHidden();
+  await expect(page.locator('.support-chat-launch')).toBeVisible();
   const primary=await page.locator('.city-primary').boundingBox();expect(primary.y+primary.height,`${width} project action`).toBeLessThanOrEqual(height);
   const controls=await page.locator('.city-primary,.city-explore,.city-choice').evaluateAll(nodes=>nodes.filter(node=>{const r=node.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}).map(node=>{const r=node.getBoundingClientRect();return {name:node.textContent.trim(),clear:node.contains(document.elementFromPoint(r.left+r.width/2,r.top+r.height/2))};}));
   expect(controls.filter(item=>!item.clear)).toEqual([]);

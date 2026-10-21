@@ -18,7 +18,6 @@
  .support-chat-launch :is(span,small){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 .support-chat-launch[aria-disabled=true]{cursor:progress}
-.support-chat--hero-visible .support-chat-launch:not(:focus),.support-chat-launch.is-tucked:not(:focus){visibility:hidden;pointer-events:none}
 .support-chat--inline{position:static!important;right:auto;bottom:auto;max-width:none}
 .support-chat--inline .support-chat-fallback{max-width:48rem;margin:1rem auto}
 .studio-site [data-chat-open]{min-height:44px;font:inherit}

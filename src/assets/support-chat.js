@@ -70,24 +70,5 @@ if(chatRoot){
    timeout=setTimeout(unavailable,15000);document.head.append(script);
   });
  }
- if(launcher){
-  const hero=document.querySelector('.city-hero');
-  if(hero){
-   const updateHero=()=>{const r=hero.getBoundingClientRect();chatRoot.classList.toggle('support-chat--hero-visible',r.bottom>0&&r.top<innerHeight);toolsChanged();};
-   updateHero();
-   if('IntersectionObserver' in window)new IntersectionObserver(updateHero).observe(hero);
-   else {window.addEventListener('scroll',updateHero,{passive:true});window.addEventListener('resize',updateHero,{passive:true});}
-  }
-  const compact=matchMedia('(max-width:767px), (max-height:520px)');
-  let idle;
-  const untuck=()=>{clearTimeout(idle);launcher.classList.remove('is-tucked');toolsChanged();};
-  window.addEventListener('scroll',()=>{
-   if(!compact.matches||document.activeElement===launcher){untuck();return;}
-   launcher.classList.add('is-tucked');
-   clearTimeout(idle);idle=setTimeout(untuck,300);
-  },{passive:true});
-  compact.addEventListener('change',untuck);
-  launcher.addEventListener('focus',untuck);
- }
  toolsChanged();
 }

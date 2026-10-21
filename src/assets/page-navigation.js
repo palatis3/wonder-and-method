@@ -19,44 +19,27 @@ if(header){
   root.classList.add('page-tools-ready');
   topLink.hidden=true;
   const floating=[topLink,document.querySelector('.support-chat-launch')].filter(Boolean);
-  const reading='a[href],button,input:not([type="hidden"]),textarea,select,summary,video,audio,p,li,dt,dd,h1,h2,h3,h4,h5,h6,label,legend,th,td,figcaption,blockquote';
-  const blocked=control=>{
+  const blocked=(control,active)=>{
+   if(!active?.matches('a[href],button,summary,video,audio,[tabindex]:not([tabindex="-1"])')||active===control||active.closest('.support-chat,.site-tools'))return false;
    if(control.hidden||getComputedStyle(control).display==='none')return false;
-   const r=control.getBoundingClientRect();
-   if(!r.width||!r.height)return false;
-   // A bounded local hit test works for dynamic content without walking the
-   // full document on every scroll. Whole text blocks yield conservatively.
-   const left=Math.max(0,r.left-4),right=Math.min(innerWidth-1,r.right+4),top=Math.max(0,r.top-4),bottom=Math.min(innerHeight-1,r.bottom+4);
-   const cols=Math.ceil((right-left)/20),rows=Math.ceil((bottom-top)/12);
-   for(let y=0;y<=rows;y++)for(let x=0;x<=cols;x++){
-    for(const hit of document.elementsFromPoint(left+(right-left)*x/Math.max(1,cols),top+(bottom-top)*y/Math.max(1,rows))){
-     if(hit.closest('.support-chat,.site-tools,.site-header')||!hit.closest('main,footer'))continue;
-     const content=hit.closest(reading);
-     if(content)return true;
-     if([...hit.childNodes].some(node=>node.nodeType===3&&node.textContent.trim()))return true;
-    }
-   }
-   return false;
+   const r=control.getBoundingClientRect(),target=active.getBoundingClientRect();
+   return Math.min(r.right,target.right)>Math.max(r.left,target.left)-4&&Math.min(r.bottom,target.bottom)>Math.max(r.top,target.top)-4;
   };
-  let queued=false,scrolling=false,scrollIdle;
+  let queued=false;
   const updateTools=()=>{
    queued=false;
    const active=document.activeElement;
    // Separate show/hide thresholds prevent chatter near the top boundary.
    if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
    root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
-   // Once a control yields, keep it hidden for the rest of this scroll gesture.
-   // Reappearing in every gap between text lines caused visible flicker.
-   const states=floating.map(control=>active!==control&&((scrolling&&control.classList.contains('is-obstructing-controls'))||blocked(control)));
+   // Keep tools discoverable during ordinary reading and scrolling. Yield only
+   // to the visitor's focused control; content hit tests hid chat on most pages.
+   const states=floating.map(control=>blocked(control,active));
    floating.forEach((control,index)=>control.classList.toggle('is-obstructing-controls',states[index]));
   };
   const scheduleTools=()=>{if(!queued){queued=true;requestAnimationFrame(updateTools);}};
   updateTools();
-  window.addEventListener('scroll',()=>{
-   scrolling=true;clearTimeout(scrollIdle);
-   scrollIdle=setTimeout(()=>{scrolling=false;scheduleTools();},300);
-   scheduleTools();
-  },{passive:true});
+  window.addEventListener('scroll',scheduleTools,{passive:true});
   if('ResizeObserver' in window){const sizes=new ResizeObserver(scheduleTools);floating.forEach(control=>sizes.observe(control));}
   window.addEventListener('resize',scheduleTools,{passive:true});
   window.visualViewport?.addEventListener('resize',scheduleTools,{passive:true});

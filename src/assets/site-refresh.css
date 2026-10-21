@@ -550,7 +550,6 @@ html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bott
 .page-tools-ready.chat-is-open .back-to-top,
 html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back-to-top{visibility:hidden;pointer-events:none}
 @media(max-width:767px),(max-height:520px){
- .page-tools-ready .back-to-top{display:none!important}
  .studio-site main{padding-bottom:5rem}
 }
 /* Every retained financial table shares the same column alignment. */
