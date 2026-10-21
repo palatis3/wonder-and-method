@@ -111,8 +111,27 @@ export function mountLivingCity(root, env = globalThis) {
     if (video && wasLoaded) { video.removeAttribute('src'); video.load(); }
     updatePoster();
   };
+  const applyReducedMotion = () => {
+    if (destroyed || !reduced.matches) return false;
+    // Media callbacks can observe a preference before its change event arrives.
+    // Apply the whole policy, including controls and source cleanup, in that case.
+    if (phase === 'reduced') { pauseMedia(); return true; }
+    intent = false;
+    complete = false;
+    failed = false;
+    storyTime = 0;
+    lastMediaTime = 0;
+    lastProgressTime = 0;
+    phase = 'reduced';
+    cancelPending();
+    pauseMedia();
+    releaseSource();
+    announce('Motion is off to match your device setting.');
+    render();
+    return true;
+  };
   const fail = () => {
-    if (destroyed || reduced.matches) return;
+    if (destroyed || applyReducedMotion()) return;
     intent = false;
     failed = true;
     complete = false;
@@ -130,6 +149,7 @@ export function mountLivingCity(root, env = globalThis) {
     }, 15000);
   };
   const sampleStory = () => {
+    if (applyReducedMotion()) return;
     if (!intent || !allowed() || video.paused || !hasFrame) return;
     const current = video.currentTime || 0;
     if (current !== lastProgressTime) {
@@ -154,6 +174,7 @@ export function mountLivingCity(root, env = globalThis) {
     if (frameRequest !== null || complete && hasFrame) return;
     const reveal = () => {
       frameRequest = null;
+      if (applyReducedMotion()) return;
       if (token !== epoch || !intent || !allowed() || video.paused) return;
       hasFrame = true;
       sampleStory();
@@ -188,6 +209,7 @@ export function mountLivingCity(root, env = globalThis) {
         if (image.getAttribute('src') !== image.dataset.cityPreviewSrc) image.src = image.dataset.cityPreviewSrc;
       }
       Promise.resolve(video.play()).then(() => {
+        if (applyReducedMotion()) return;
         // An obsolete promise must not disturb a newer, explicitly requested play.
         if (!intent || !allowed()) pauseMedia();
       }, error => {
@@ -216,7 +238,7 @@ export function mountLivingCity(root, env = globalThis) {
     if (message && wasRequested) announce('Motion paused.');
   };
   const play = (restart = false, remember = true) => {
-    if (!video || !playButton || reduced.matches || destroyed) return;
+    if (!video || !playButton || destroyed || applyReducedMotion()) return;
     if (remember) rememberMotion('playing');
     if (restart || failed) {
       pause(false, false);
@@ -239,6 +261,7 @@ export function mountLivingCity(root, env = globalThis) {
     else { phase = 'paused'; render(); }
   };
   const reconcile = () => {
+    if (applyReducedMotion()) return;
     if (destroyed || !intent) return;
     if (!allowed()) {
       phase = 'paused';
@@ -326,6 +349,7 @@ export function mountLivingCity(root, env = globalThis) {
     listen(playButton, 'click', () => intent ? pause() : play());
     listen(replayButton, 'click', () => play(true));
     listen(video, 'playing', () => {
+      if (applyReducedMotion()) return;
       if (!intent || !allowed() || !loaded) { pauseMedia(); return; }
       phase = 'playing';
       clearLoadingTimer();
@@ -337,6 +361,7 @@ export function mountLivingCity(root, env = globalThis) {
       if (video.paused && !video.ended && intent && allowed() && (phase === 'playing' || phase === 'loading')) pause();
     });
     for (const event of ['waiting', 'stalled']) listen(video, event, () => {
+      if (applyReducedMotion()) return;
       if (!intent || !allowed() || !loaded) return;
       phase = 'loading';
       startLoadingTimer(epoch);
@@ -351,19 +376,8 @@ export function mountLivingCity(root, env = globalThis) {
       if (!loaded) { updatePoster(); render(); }
     });
     listen(reduced, 'change', () => {
-      if (reduced.matches) {
-        intent = false;
-        complete = false;
-        failed = false;
-        storyTime = 0;
-        lastMediaTime = 0;
-        lastProgressTime = 0;
-        phase = 'reduced';
-        cancelPending();
-        pauseMedia();
-        releaseSource();
-        announce('Motion is off to match your device setting.');
-      } else { phase = 'idle'; announce(''); }
+      if (applyReducedMotion()) return;
+      phase = 'idle'; announce('');
       render();
     });
     if (env.IntersectionObserver) {

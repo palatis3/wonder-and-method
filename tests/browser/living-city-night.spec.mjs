@@ -57,13 +57,22 @@ test('night effects survive rapid replay and pause, offscreen suspension, and pa
 });
 
 test('reduced motion has a static moon and star map with no shooting stars',async({page},testInfo)=>{
- if(testInfo.project.name==='phone-reduced-motion')await page.goto('/?qa=1');
- else {await reachNight(page);await page.emulateMedia({reducedMotion:'reduce'});}
- await expect(page.locator('[data-city-play]')).toBeDisabled();
- expect(await page.locator('.city-night').evaluate(node=>node.getAnimations({subtree:true}).length)).toBe(0);
- expect(await page.locator('.city-meteor').evaluateAll(nodes=>nodes.every(node=>getComputedStyle(node).opacity==='0'))).toBe(true);
- await expect(page.locator('.city-moon')).toBeVisible();
- await expect(page.locator('#city-film')).not.toHaveAttribute('src',/./);
+ try {
+  if(testInfo.project.name==='phone-reduced-motion')await page.goto('/?qa=1');
+  else {await reachNight(page);await page.emulateMedia({reducedMotion:'reduce'});}
+  await expect(page.locator('[data-city-play]')).toBeDisabled();
+  expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+  expect(await page.locator('.city-night').evaluate(node=>node.getAnimations({subtree:true}).length)).toBe(0);
+  expect(await page.locator('.city-meteor').evaluateAll(nodes=>nodes.every(node=>getComputedStyle(node).opacity==='0'))).toBe(true);
+  await expect(page.locator('.city-moon')).toBeVisible();
+  await expect(page.locator('#city-film')).not.toHaveAttribute('src',/./);
+ } finally {
+  const state=await page.evaluate(()=>{
+   const root=document.querySelector('[data-living-city]'),video=document.querySelector('#city-film'),button=document.querySelector('[data-city-play]');
+   return {reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,visibility:document.visibilityState,cityState:root?.dataset.cityState,cityBeat:root?.dataset.cityBeat,buttonDisabled:button?.disabled,buttonLabel:button?.textContent,video:video&&{paused:video.paused,readyState:video.readyState,networkState:video.networkState,hasSource:video.hasAttribute('src')}};
+  });
+  await testInfo.attach('reduced-motion-state',{body:JSON.stringify(state,null,2),contentType:'application/json'});
+ }
 });
 
 test('failed moon and film assets keep the homepage copy and project navigation usable',async({page},testInfo)=>{

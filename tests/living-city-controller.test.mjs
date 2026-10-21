@@ -347,6 +347,33 @@ test('reduced motion never loads video, keeps selector instant, and changing pre
   assert.equal(f.video.playCalls, 1);
 });
 
+test('media callbacks apply reduced motion even before the preference change event arrives', async () => {
+  for (const trigger of ['timeupdate', 'playing', 'play-settlement', 'waiting']) {
+    const f=fixture({pending:trigger==='play-settlement'});
+    f.click(); f.video.emit('playing'); f.video.presentFrame();
+    if(trigger!=='play-settlement') { await flush(); finish(f); }
+    f.env.matchMedia('(prefers-reduced-motion: reduce)').matches=true;
+    if(trigger==='play-settlement') { f.video.requests[0].resolve(); await flush(); }
+    else f.video.emit(trigger);
+    assert.equal(f.root.dataset.cityState,'reduced',trigger);
+    assert.equal(f.button.disabled,true,trigger);
+    assert.equal(f.button.textContent,'Motion off',trigger);
+    assert.equal(f.video.paused,true,trigger);
+    assert.equal(f.video.src,'',trigger);
+    assert.equal(f.root.classes.has('has-city-frame'),false,trigger);
+    assert.equal(f.root.classes.has('is-city-complete'),false,trigger);
+    assert.equal(f.root.dataset.cityElapsed,'0.00',trigger);
+    const plays=f.video.playCalls;
+    f.video.emit('playing'); f.video.emit('timeupdate'); f.video.presentFrame();
+    f.visible(false); f.visible(true); f.click(); await flush();
+    assert.equal(f.video.playCalls,plays,trigger);
+    assert.equal(f.root.dataset.cityState,'reduced',trigger);
+    f.reduce(false); f.visible(false); f.visible(true); await flush();
+    assert.equal(f.video.playCalls,plays,trigger);
+    f.click(); assert.equal(f.video.playCalls,plays+1,trigger);
+  }
+});
+
 test('missing or failed media restores poster with retry and does not affect project links', async () => {
   for (const mode of ['missing', 'reject', 'media-error', 'timeout']) {
     const f = fixture({missing: mode === 'missing', reject: mode === 'reject', pending: mode === 'timeout'});
