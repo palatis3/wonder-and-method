@@ -541,7 +541,7 @@ form>.optional-choice{margin:1.25rem 0}
 html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
 /* Fixed corner tools enhance the native footer link after JavaScript is ready. */
 .page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
-.page-tools-ready .back-to-top{position:fixed;left:auto;right:max(1rem,env(safe-area-inset-right));bottom:calc(5rem + env(safe-area-inset-bottom));z-index:50}
+.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));right:auto;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
 .page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
 .page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .page-tools-ready .studio-site .site-footer--compact{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}

@@ -248,3 +248,36 @@ test('ordinary scrolling preserves every page section while tools yield to conte
   await revealTools(page);
  }
 });
+
+test('chat does not repeatedly reappear during a continuous scroll and the desktop top link sits on the left',async({page,isMobile})=>{
+ await page.goto('/pricing/?qa=1');await page.evaluate(()=>document.fonts.ready);
+ const samples=await page.evaluate(async()=>{
+  const launcher=document.querySelector('.support-chat-launch'),samples=[];
+  const positions=[...Array.from({length:81},(_,i)=>i*40),...Array.from({length:60},(_,i)=>3160-i*40)];
+  for(const y of positions){
+   scrollTo({top:y,behavior:'instant'});
+   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+   samples.push({y,visible:launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})});
+  }
+  return samples;
+ });
+ const reappearances=samples.slice(1).filter((sample,index)=>sample.visible&&!samples[index].visible);
+ expect(reappearances,'A chat control that yields must stay settled until scrolling stops').toEqual([]);
+ if(!isMobile){
+  const top=page.locator('.back-to-top');await expect(top).toBeVisible();
+  expect(await top.evaluate(node=>{const r=node.getBoundingClientRect();return r.left>=0&&r.right<innerWidth/2&&r.bottom<=innerHeight;})).toBe(true);
+  await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
+ }
+ await revealTools(page);await expect(page.locator('.support-chat-launch')).toBeVisible();
+ const launcher=page.locator('.support-chat-launch');await launcher.focus();
+ const focusedScroll=await page.evaluate(async()=>{
+  const launcher=document.querySelector('.support-chat-launch'),start=scrollY,samples=[];
+  for(const delta of [80,20,100,0]){
+   scrollTo({top:Math.max(0,start-delta),behavior:'instant'});
+   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+   samples.push(document.activeElement===launcher&&launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true}));
+  }
+  return samples;
+ });
+ expect(focusedScroll,'Keyboard focus keeps chat visible through scroll reversals').toEqual([true,true,true,true]);
+});

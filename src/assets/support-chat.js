@@ -79,13 +79,12 @@ if(chatRoot){
    else {window.addEventListener('scroll',updateHero,{passive:true});window.addEventListener('resize',updateHero,{passive:true});}
   }
   const compact=matchMedia('(max-width:767px), (max-height:520px)');
-  let lastY=scrollY,idle;
+  let idle;
   const untuck=()=>{clearTimeout(idle);launcher.classList.remove('is-tucked');toolsChanged();};
   window.addEventListener('scroll',()=>{
-   const direction=scrollY-lastY;lastY=scrollY;
    if(!compact.matches||document.activeElement===launcher){untuck();return;}
-   if(direction>4)launcher.classList.add('is-tucked');else if(direction< -4)untuck();
-   clearTimeout(idle);idle=setTimeout(untuck,3000);
+   launcher.classList.add('is-tucked');
+   clearTimeout(idle);idle=setTimeout(untuck,300);
   },{passive:true});
   compact.addEventListener('change',untuck);
   launcher.addEventListener('focus',untuck);

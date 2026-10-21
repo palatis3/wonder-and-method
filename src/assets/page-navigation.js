@@ -38,19 +38,25 @@ if(header){
    }
    return false;
   };
-  let queued=false;
+  let queued=false,scrolling=false,scrollIdle;
   const updateTools=()=>{
    queued=false;
    const active=document.activeElement;
    // Separate show/hide thresholds prevent chatter near the top boundary.
    if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
    root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
-   const states=floating.map(control=>active!==control&&blocked(control));
+   // Once a control yields, keep it hidden for the rest of this scroll gesture.
+   // Reappearing in every gap between text lines caused visible flicker.
+   const states=floating.map(control=>active!==control&&((scrolling&&control.classList.contains('is-obstructing-controls'))||blocked(control)));
    floating.forEach((control,index)=>control.classList.toggle('is-obstructing-controls',states[index]));
   };
   const scheduleTools=()=>{if(!queued){queued=true;requestAnimationFrame(updateTools);}};
   updateTools();
-  window.addEventListener('scroll',scheduleTools,{passive:true});
+  window.addEventListener('scroll',()=>{
+   scrolling=true;clearTimeout(scrollIdle);
+   scrollIdle=setTimeout(()=>{scrolling=false;scheduleTools();},300);
+   scheduleTools();
+  },{passive:true});
   if('ResizeObserver' in window){const sizes=new ResizeObserver(scheduleTools);floating.forEach(control=>sizes.observe(control));}
   window.addEventListener('resize',scheduleTools,{passive:true});
   window.visualViewport?.addEventListener('resize',scheduleTools,{passive:true});

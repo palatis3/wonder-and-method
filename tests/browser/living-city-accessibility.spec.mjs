@@ -18,6 +18,40 @@ function cityHeadingLayout(){
  return {splitWords,columns:style.display==='grid'?style.gridTemplateColumns.split(' ').length:1,overflow:document.documentElement.scrollWidth>innerWidth+1};
 }
 
+test('phone artwork keeps its full proportions and sky effects stay above the roofs',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='phone','One phone viewport matrix covers the composition');
+ test.setTimeout(90_000);
+ await page.emulateMedia({reducedMotion:'reduce'});
+ const inspect=async label=>{
+  const layout=await page.evaluate(()=>{
+   const rect=s=>document.querySelector(s).getBoundingClientRect();
+   const art=document.querySelector('.city-poster'),scene=rect('.city-scene'),copy=rect('.city-copy');
+   // The highest building roof begins at 59.5% of this 828 × 1216 artwork.
+   const roof=scene.top+scene.height*.595,sky=rect('.city-night'),moon=rect('.city-moon');
+   return {ratio:scene.width/scene.height,sourceRatio:art.naturalWidth/art.naturalHeight,copyClearance:roof-copy.bottom,moonClearance:roof-moon.bottom,skyClearance:roof-sky.bottom,skyAfterCopy:sky.top-copy.bottom,overflow:document.documentElement.scrollWidth>innerWidth+1};
+  });
+  expect(layout.ratio,label).toBeCloseTo(layout.sourceRatio,2);
+  expect(layout.copyClearance,label).toBeGreaterThan(20);
+  expect(layout.moonClearance,label).toBeGreaterThan(2);
+  expect(layout.skyClearance,label).toBeGreaterThan(2);
+  expect(layout.skyAfterCopy,label).toBeGreaterThan(-1);
+  expect(layout.overflow,label).toBe(false);
+ };
+ for(const width of [320,390,430,768,1023]){
+  await page.setViewportSize({width,height:1100});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  await inspect(String(width));
+  await testInfo.attach('mobile-composition-'+width,{body:await page.screenshot(),contentType:'image/png'});
+ }
+ await page.setViewportSize({width:390,height:1100});await page.emulateMedia({reducedMotion:'no-preference'});await page.reload();
+ await page.locator('[data-city-play]').click();await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
+ await page.locator('#city-film').evaluate(video=>video.playbackRate=6);
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-beat','ambient');
+ await page.locator('[data-city-play]').click();await inspect('ambient film');
+ const videoRatio=await page.locator('#city-film').evaluate(video=>({source:video.videoWidth/video.videoHeight,rendered:video.clientWidth/video.clientHeight}));
+ expect(videoRatio.rendered).toBeCloseTo(videoRatio.source,2);
+ await testInfo.attach('mobile-composition-ambient',{body:await page.screenshot(),contentType:'image/png'});
+});
+
 test('city heading keeps whole words in two columns across wide desktops',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the desktop composition');
  await page.emulateMedia({reducedMotion:'reduce'});
