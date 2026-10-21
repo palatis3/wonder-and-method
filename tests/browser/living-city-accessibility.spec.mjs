@@ -18,38 +18,51 @@ function cityHeadingLayout(){
  return {splitWords,columns:style.display==='grid'?style.gridTemplateColumns.split(' ').length:1,overflow:document.documentElement.scrollWidth>innerWidth+1};
 }
 
-test('phone artwork keeps its full proportions and sky effects stay above the roofs',async({page},testInfo)=>{
- test.skip(testInfo.project.name!=='phone','One phone viewport matrix covers the composition');
+test('artwork and sky stay aligned above the roofs across desktop and phone crops',async({page},testInfo)=>{
+ test.skip(!['phone','desktop'].includes(testInfo.project.name),'Desktop and phone matrices cover the composition');
  test.setTimeout(90_000);
  await page.emulateMedia({reducedMotion:'reduce'});
  const inspect=async label=>{
-  const layout=await page.evaluate(()=>{
+  const layout=await page.evaluate(async()=>{
    const rect=s=>document.querySelector(s).getBoundingClientRect();
-   const art=document.querySelector('.city-poster'),scene=rect('.city-scene'),copy=rect('.city-copy');
-   // The highest building roof begins at 59.5% of this 828 × 1216 artwork.
-   const roof=scene.top+scene.height*.595,sky=rect('.city-night'),moon=rect('.city-moon');
-   return {ratio:scene.width/scene.height,sourceRatio:art.naturalWidth/art.naturalHeight,copyClearance:roof-copy.bottom,moonClearance:roof-moon.bottom,skyClearance:roof-sky.bottom,skyAfterCopy:sky.top-copy.bottom,overflow:document.documentElement.scrollWidth>innerWidth+1};
+   const art=document.querySelector('.city-poster'),scene=rect('.city-scene'),copy=rect('.city-copy'),plane=rect('.city-atmosphere');
+   // Srcset density correction rounds natural dimensions; decode the selected
+   // source directly so that this geometry uses its actual pixel aspect ratio.
+   const source=new Image();source.src=art.currentSrc;await source.decode();
+   const scale=Math.max(scene.width/source.naturalWidth,scene.height/source.naturalHeight),width=source.naturalWidth*scale,height=source.naturalHeight*scale;
+   const position=getComputedStyle(art).objectPosition.split(' ').map(value=>parseFloat(value)/100);
+   const left=scene.left+(scene.width-width)*position[0],top=scene.top+(scene.height-height)*position[1],narrow=innerWidth<=1023;
+   // Conservative roof lines measured from the desktop and mobile source frames.
+   const roof=top+height*(narrow?.595:.295),sky=rect('.city-night'),moon=rect('.city-moon'),stars=rect('.city-stars');
+   return {narrow,planeWidth:plane.width,alignmentError:Math.max(Math.abs(plane.left-left),Math.abs(plane.top-top),Math.abs(plane.width-width),Math.abs(plane.height-height)),ratio:scene.width/scene.height,sourceRatio:source.naturalWidth/source.naturalHeight,copyClearance:roof-copy.bottom,moonClearance:roof-moon.bottom,skyClearance:roof-sky.bottom,starsClearance:roof-stars.bottom,skyAfterCopy:sky.top-copy.bottom,overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
-  expect(layout.ratio,label).toBeCloseTo(layout.sourceRatio,2);
-  expect(layout.copyClearance,label).toBeGreaterThan(20);
-  expect(layout.moonClearance,label).toBeGreaterThan(2);
-  expect(layout.skyClearance,label).toBeGreaterThan(2);
-  expect(layout.skyAfterCopy,label).toBeGreaterThan(-1);
+  expect(layout.planeWidth,label).toBeGreaterThan(100);
+  expect(layout.alignmentError,label).toBeLessThan(1);
+  if(layout.narrow){
+   expect(layout.ratio,label).toBeCloseTo(layout.sourceRatio,2);
+   expect(layout.copyClearance,label).toBeGreaterThan(20);
+   expect(layout.skyAfterCopy,label).toBeGreaterThan(-1);
+  }
+  expect(layout.moonClearance,label).toBeGreaterThan(5);
+  expect(layout.skyClearance,label).toBeGreaterThan(5);
+  expect(layout.starsClearance,label).toBeGreaterThan(5);
   expect(layout.overflow,label).toBe(false);
  };
- for(const width of [320,390,430,768,1023]){
+ for(const width of testInfo.project.name==='phone'?[320,390,430,768,1023]:[1024,1199,1440,1521,1920,2560]){
   await page.setViewportSize({width,height:1100});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
   await inspect(String(width));
-  await testInfo.attach('mobile-composition-'+width,{body:await page.screenshot(),contentType:'image/png'});
+  await testInfo.attach('sky-composition-'+width,{body:await page.screenshot(),contentType:'image/png'});
  }
- await page.setViewportSize({width:390,height:1100});await page.emulateMedia({reducedMotion:'no-preference'});await page.reload();
- await page.locator('[data-city-play]').click();await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
+ await page.setViewportSize({width:testInfo.project.name==='phone'?390:1521,height:1100});await page.emulateMedia({reducedMotion:'no-preference'});await page.reload();
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-ready','true');
+ if(await page.locator('[data-living-city]').getAttribute('data-city-state')==='idle')await page.locator('[data-city-play]').click();
+ await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
  await page.locator('#city-film').evaluate(video=>video.playbackRate=6);
  await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-beat','ambient');
  await page.locator('[data-city-play]').click();await inspect('ambient film');
- const videoRatio=await page.locator('#city-film').evaluate(video=>({source:video.videoWidth/video.videoHeight,rendered:video.clientWidth/video.clientHeight}));
- expect(videoRatio.rendered).toBeCloseTo(videoRatio.source,2);
- await testInfo.attach('mobile-composition-ambient',{body:await page.screenshot(),contentType:'image/png'});
+ const video=await page.locator('#city-film').evaluate(video=>{const poster=document.querySelector('.city-poster');return {source:video.videoWidth/video.videoHeight,posterSource:poster.naturalWidth/poster.naturalHeight,widthDifference:video.clientWidth-poster.clientWidth,heightDifference:video.clientHeight-poster.clientHeight};});
+ expect(video.source).toBeCloseTo(video.posterSource,2);expect(video.widthDifference).toBe(0);expect(video.heightDifference).toBe(0);
+ await testInfo.attach('sky-composition-ambient',{body:await page.screenshot(),contentType:'image/png'});
 });
 
 test('city heading keeps whole words in two columns across wide desktops',async({page},testInfo)=>{
