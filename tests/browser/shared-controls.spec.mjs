@@ -23,6 +23,10 @@ test('shared header contact and native footer top link remain reachable across p
  if(isMobile)await page.setViewportSize({width:320,height:844});
  for(const path of ['/','/pricing/','/contact/','/work/fieldwork/','/services/seo/','/areas/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
+  if(path==='/pricing/'){
+   await expect(page.locator('.breadcrumb-parent')).toBeVisible({visible:isMobile});
+   await expect(page.locator('.breadcrumb > ol')).toBeVisible({visible:!isMobile});
+  }
   const contact=page.locator(isMobile?(path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).toBeHidden();

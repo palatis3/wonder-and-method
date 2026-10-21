@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-21T19:11:48.001Z",
+  "capturedAt": "2026-10-21T19:43:07.943Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
@@ -9,7 +9,7 @@
     "src/home-proof.mjs": "e12b40d7b7a2653227fc38fba7cfb87c467ba65c05f64ab761038fe125d30e99",
     "src/site-chrome.mjs": "42fd7a03b504e73e916eb35e642c776c2333b59ec2d249a13bf67600b0d2a324",
     "src/assets/layout-components.css": "47a55a96f7ab4fe4d9b1246fc2a324d880b2cf52f46086991d534a749b9c01ff",
-    "src/assets/site-refresh.css": "ab23fdd4c10cf1c20a3b38cfe3e6985c2b5276fd3927da3c7069310072339725",
+    "src/assets/site-refresh.css": "7790bda101e8ca558f1d6d22d0314648696385155e974aeb0c06dccee1bd48a5",
     "src/living-city.mjs": "3c3c69c2a17ff31beb6611ee7655137a643daa4b8e05e90aa49c9edbb0b927b7",
     "src/assets/living-city.css": "4549085fb501603db1e3287dc34bb59c9f3c7fb0ec80463ca909596e9d424368",
     "src/city-preview-captures.json": "0fb6b2be12ac9cb82e3db86cd6ae982eeab4d8a9d0f4a3a79841aa9601657599",
@@ -60,10 +60,10 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "c99d47babe7852892e1674fa623e390b8738aa8ca7c865f24544b4f34979bb9d"
+      "sha256": "de4f23b85448847219298a758d89c45b0c7780b2cbdade9ea8880e617a891cc1"
     },
     "builtStyles": {
-      "dist/assets/site-family-home.css": "f4c0346d911fc1960f5bbc54188a24b9f3d08eef1ab3c1b4aabc034ac7fdc452",
+      "dist/assets/site-family-home.css": "4682f0d0ebb0654dc0e751cc62454d3b69c029a83005746f59a011ff00fbdb4e",
       "dist/assets/living-city.css": "763e5ca552b08aef81916bcdcb27e9dc8fb72a041113e167d7c6b9debbd16131"
     }
   },
@@ -71,40 +71,40 @@
     "path": "/assets/work/lead-workbench.webp",
     "width": 1200,
     "height": 900,
-    "bytes": 65776,
-    "sha256": "f28cec5b7f126e4b03adcf7d8a97bf123258184d59eb30d877682d38c74fda55",
+    "bytes": 65782,
+    "sha256": "63d39900fb0d474bbc39f84db3e0c83589c6cd1254fd5d2e5fc4879f187b658e",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/lead-workbench-240.webp",
         "width": 240,
         "height": 180,
-        "bytes": 3548,
-        "sha256": "823014cb357c0309fcdc44d44506411da5f2d3bca6448bb1e9633d45f5df4096",
+        "bytes": 3554,
+        "sha256": "093531f7994da28495c5f769118dbd90b585879af851e2c55b2531f8b153d043",
         "quality": 82
       },
       {
         "path": "/assets/work/lead-workbench-480.webp",
         "width": 480,
         "height": 360,
-        "bytes": 10866,
-        "sha256": "596f4d454d2329006a646b6a15b80cf29353e7ec8c4b53d382d60e7e3b14e15c",
+        "bytes": 10884,
+        "sha256": "70d9da177b4f83c495f717871b7444fe14f98e6291c1504ef48f6b0b8e03eaff",
         "quality": 82
       },
       {
         "path": "/assets/work/lead-workbench-640.webp",
         "width": 640,
         "height": 480,
-        "bytes": 17756,
-        "sha256": "7fef115656dc22937b82353561bb5c474fbd2bf21ac4a2f145b09f57ba027eef",
+        "bytes": 17878,
+        "sha256": "80cc6ab985dc4bfd755bbd9224413c7a0a1c006de8575d42b0eadfed66e3f7af",
         "quality": 82
       },
       {
         "path": "/assets/work/lead-workbench-960.webp",
         "width": 960,
         "height": 720,
-        "bytes": 32772,
-        "sha256": "b647314f0ab6b22b6e2648782de5061cd95821752486656658aab3554a5a116a",
+        "bytes": 32664,
+        "sha256": "c0ec51617ed70bafd3cbf36f913d1142176450e66be5dfa6b8a5068e9cf1b884",
         "quality": 82
       }
     ],
