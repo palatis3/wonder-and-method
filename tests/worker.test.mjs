@@ -110,11 +110,12 @@ test('synthetic: HTML fallback escapes submitted content and URL-encoded form wo
   const duplicated = new URLSearchParams(valid); duplicated.append('name', 'second');
   assert.equal((await worker.fetch(request(duplicated.toString(), { 'Content-Type': 'application/x-www-form-urlencoded' }), env, context())).status, 400);
 });
-test('synthetic: duplicates reuse a reference; fourth valid attempt is rate limited', async () => {
+test('synthetic: duplicates reuse a reference; the fourth distinct inquiry is rate limited', async () => {
   const env = environment(); const first = await record(env);
   for (let i = 0; i < 2; i++) assert.equal(await record(env), first);
-  assert.equal((await worker.fetch(request(), env, context())).status, 429);
-  assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n, 1);
+  for(let i=1;i<=2;i++)assert.equal((await worker.fetch(request({...valid,message:valid.message+' Follow-up '+i+'.'}),env,context())).status,202);
+  assert.equal((await worker.fetch(request({...valid,message:valid.message+' Fourth distinct message.'}), env, context())).status, 429);
+  assert.equal(env.DB.sqlite.prepare('SELECT count(*) AS n FROM inquiries').get().n, 3);
   const row = env.DB.sqlite.prepare('SELECT * FROM rate_limits').get(); assert.equal(row.key.length, 64); assert.equal(JSON.stringify(row).includes('192.0.2.1'), false);
 });
 test('synthetic: storage failure never reports saved and never sends', async () => {

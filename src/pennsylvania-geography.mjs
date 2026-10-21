@@ -56,7 +56,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "allegheny": {
     "municipalities": {
@@ -213,7 +213,7 @@ export const pennsylvaniaGeography = {
       "Town of McCandless government and home-rule history",
       "Municipality of Bethel Park home-rule charter"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: McDonald, Trafford. McCandless is styled Town of McCandless under its home-rule charter and remains in DCED's township group. Bethel Park uses Municipality of Bethel Park and remains in the borough group. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: McDonald, Trafford. McCandless is styled Town of McCandless under its home-rule charter and remains in DCED's township group. Bethel Park uses Municipality of Bethel Park and remains in the borough group."
   },
   "armstrong": {
     "municipalities": {
@@ -281,7 +281,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "beaver": {
     "municipalities": {
@@ -358,7 +358,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Ellwood City. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Ellwood City."
   },
   "bedford": {
     "municipalities": {
@@ -418,7 +418,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "berks": {
     "municipalities": {
@@ -514,7 +514,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Adamstown. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Adamstown."
   },
   "blair": {
     "municipalities": {
@@ -562,7 +562,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Tunnelhill. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Tunnelhill."
   },
   "bradford": {
     "municipalities": {
@@ -635,7 +635,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "bucks": {
     "municipalities": {
@@ -718,7 +718,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Bristol Township history"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Telford. Levittown extends across Bristol, Falls and Middletown townships and Tullytown Borough; it is shown as a community rather than an additional municipality. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Telford. Levittown extends across Bristol, Falls and Middletown townships and Tullytown Borough; it is shown as a community rather than an additional municipality. Selected communities are not a complete neighborhood or village inventory."
   },
   "butler": {
     "municipalities": {
@@ -798,7 +798,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "cambria": {
     "municipalities": {
@@ -884,7 +884,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Tunnelhill. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Tunnelhill."
   },
   "cameron": {
     "municipalities": {
@@ -913,7 +913,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "carbon": {
     "municipalities": {
@@ -958,7 +958,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "centre": {
     "municipalities": {
@@ -1015,7 +1015,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "chester": {
     "municipalities": {
@@ -1111,7 +1111,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "clarion": {
     "municipalities": {
@@ -1168,7 +1168,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Emlenton. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Emlenton."
   },
   "clearfield": {
     "municipalities": {
@@ -1241,7 +1241,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "City of DuBois consolidation notice"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Sandy Township and the former City of DuBois consolidated as the new City of DuBois on January 5, 2026; Sandy is not listed as a separate current township. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Sandy Township and the former City of DuBois consolidated as the new City of DuBois on January 5, 2026; Sandy is not listed as a separate current township."
   },
   "clinton": {
     "municipalities": {
@@ -1292,7 +1292,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "columbia": {
     "municipalities": {
@@ -1349,7 +1349,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Ashland. Bloomsburg is the incorporated town. Ashland also extends into Schuylkill County. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Ashland. Bloomsburg is the incorporated town. Ashland also extends into Schuylkill County."
   },
   "crawford": {
     "municipalities": {
@@ -1423,7 +1423,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "cumberland": {
     "municipalities": {
@@ -1478,7 +1478,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Shippensburg. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Shippensburg."
   },
   "dauphin": {
     "municipalities": {
@@ -1548,7 +1548,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Derry Township: Downtown Hershey master plan"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Hershey is a community within Derry Township, not an additional incorporated town. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Hershey is a community within Derry Township, not an additional incorporated town. Selected communities are not a complete neighborhood or village inventory."
   },
   "delaware": {
     "municipalities": {
@@ -1627,7 +1627,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Newtown Township official information"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Newtown Square is used as a community and postal name by Newtown Township; it is not an additional incorporated municipality. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Newtown Square is used as a community and postal name by Newtown Township; it is not an additional incorporated municipality. Selected communities are not a complete neighborhood or village inventory."
   },
   "elk": {
     "municipalities": {
@@ -1662,7 +1662,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "erie": {
     "municipalities": {
@@ -1723,7 +1723,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "fayette": {
     "municipalities": {
@@ -1789,7 +1789,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Seven Springs. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Seven Springs."
   },
   "forest": {
     "municipalities": {
@@ -1820,7 +1820,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "franklin": {
     "municipalities": {
@@ -1864,7 +1864,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Shippensburg. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Shippensburg."
   },
   "fulton": {
     "municipalities": {
@@ -1899,7 +1899,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "greene": {
     "municipalities": {
@@ -1947,7 +1947,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "huntingdon": {
     "municipalities": {
@@ -2017,7 +2017,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "indiana": {
     "municipalities": {
@@ -2077,7 +2077,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "jefferson": {
     "municipalities": {
@@ -2133,7 +2133,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "juniata": {
     "municipalities": {
@@ -2172,7 +2172,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "lackawanna": {
     "municipalities": {
@@ -2235,7 +2235,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. The DCED row labelled Waverly Township (Abington Township) is listed once as Waverly; it does not identify two current municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Waverly Township was formerly named Abington Township; it is one municipality."
   },
   "lancaster": {
     "municipalities": {
@@ -2320,7 +2320,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "City of Lancaster home-rule charter, effective January 1, 2025"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Adamstown. Lancaster city and Lancaster Township are separate municipalities. The city began operating under its home-rule charter on January 1, 2025. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Adamstown. Lancaster city and Lancaster Township are separate municipalities. The city began operating under its home-rule charter on January 1, 2025."
   },
   "lawrence": {
     "municipalities": {
@@ -2376,7 +2376,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Lawrence County Planning Commission, January 14, 2026"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Ellwood City. South New Castle merged into Shenango Township in January 2026; it appears only as a community here. The July 2026 PennDOT layer still contains its former borough, so the current DCED directory and county records take precedence. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Ellwood City. South New Castle merged into Shenango Township in January 2026; it appears only as a community here. The July 2026 PennDOT layer still contains its former borough, so the current DCED directory and county records take precedence. Selected communities are not a complete neighborhood or village inventory."
   },
   "lebanon": {
     "municipalities": {
@@ -2425,7 +2425,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "lehigh": {
     "municipalities": {
@@ -2473,7 +2473,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Bethlehem. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Bethlehem."
   },
   "luzerne": {
     "municipalities": {
@@ -2572,7 +2572,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "lycoming": {
     "municipalities": {
@@ -2647,7 +2647,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "mckean": {
     "municipalities": {
@@ -2692,7 +2692,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "mercer": {
     "municipalities": {
@@ -2771,7 +2771,7 @@ export const pennsylvaniaGeography = {
       "City of Hermitage: Wheatland merger effective January 1, 2024",
       "Greenville charter, name and boundaries, amended July 31, 2025"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Wheatland became part of Hermitage on January 1, 2024 and is shown only as a community. Greenville remains in the borough group; its current charter uses Borough of Greenville despite older Town of Greenville references. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Wheatland became part of Hermitage on January 1, 2024 and is shown only as a community. Greenville remains in the borough group; its current charter uses Borough of Greenville despite older Town of Greenville references. Selected communities are not a complete neighborhood or village inventory."
   },
   "mifflin": {
     "municipalities": {
@@ -2809,7 +2809,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "monroe": {
     "municipalities": {
@@ -2851,7 +2851,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "montgomery": {
     "municipalities": {
@@ -2956,7 +2956,7 @@ export const pennsylvaniaGeography = {
       "Municipality of Norristown: home-rule status",
       "Upper Merion Township: Community Profile, March 2003"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Telford. Norristown is a home-rule municipality retained in DCED's borough group. King of Prussia, Gulph Mills, Swedeland and Swedesburg are selected communities within Upper Merion Township, not separate incorporated municipalities. Selected communities are not a complete neighborhood or village inventory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Telford. Norristown is a home-rule municipality retained in DCED's borough group. King of Prussia, Gulph Mills, Swedeland and Swedesburg are selected communities within Upper Merion Township, not separate incorporated municipalities. Selected communities are not a complete neighborhood or village inventory."
   },
   "montour": {
     "municipalities": {
@@ -2989,7 +2989,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "northampton": {
     "municipalities": {
@@ -3050,7 +3050,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Bethlehem. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Bethlehem."
   },
   "northumberland": {
     "municipalities": {
@@ -3109,7 +3109,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "perry": {
     "municipalities": {
@@ -3163,7 +3163,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Bloomfield Borough official website"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Bloomfield Borough uses New Bloomfield in its postal address; these names do not identify two separate municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Bloomfield Borough uses New Bloomfield in its postal address; these names do not identify two separate municipalities."
   },
   "philadelphia": {
     "municipalities": {
@@ -3185,7 +3185,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Philadelphia is the sole municipality listed for Philadelphia County. Neighborhood names are not separate incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Philadelphia is the sole municipality listed for Philadelphia County. Neighborhood names are not separate incorporated municipalities."
   },
   "pike": {
     "municipalities": {
@@ -3220,7 +3220,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "potter": {
     "municipalities": {
@@ -3272,7 +3272,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "schuylkill": {
     "municipalities": {
@@ -3364,7 +3364,7 @@ export const pennsylvaniaGeography = {
       "Pennsylvania DCED: home-rule reference, April 2023",
       "Pennsylvania PUC: Upper Mahantongo Township"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Ashland. Upper Mahantongo uses the PennDOT and Pennsylvania PUC spelling; the DCED table spells it Upper Mahantango. Mahanoy City is classified as a borough despite City in its name. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Ashland. Upper Mahantongo uses the PennDOT and Pennsylvania PUC spelling; the DCED table spells it Upper Mahantango. Mahanoy City is classified as a borough despite City in its name."
   },
   "snyder": {
     "municipalities": {
@@ -3407,7 +3407,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "somerset": {
     "municipalities": {
@@ -3478,7 +3478,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Seven Springs. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Seven Springs."
   },
   "sullivan": {
     "municipalities": {
@@ -3513,7 +3513,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "susquehanna": {
     "municipalities": {
@@ -3575,7 +3575,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "tioga": {
     "municipalities": {
@@ -3636,7 +3636,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "union": {
     "municipalities": {
@@ -3672,7 +3672,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "venango": {
     "municipalities": {
@@ -3726,7 +3726,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Emlenton. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Emlenton."
   },
   "warren": {
     "municipalities": {
@@ -3776,7 +3776,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "washington": {
     "municipalities": {
@@ -3865,7 +3865,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: McDonald. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: McDonald."
   },
   "wayne": {
     "municipalities": {
@@ -3915,7 +3915,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "westmoreland": {
     "municipalities": {
@@ -4007,7 +4007,7 @@ export const pennsylvaniaGeography = {
       "City of Latrobe home-rule charter",
       "Municipality of Murrysville: name and government change"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Cross-county municipalities are listed in each county they touch: Trafford. Latrobe is styled City of Latrobe and Murrysville is styled Municipality of Murrysville under their home-rule charters; both remain in DCED's borough group for this directory. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below. Cross-county municipalities are listed in each county they touch: Trafford. Latrobe is styled City of Latrobe and Murrysville is styled Municipality of Murrysville under their home-rule charters; both remain in DCED's borough group for this directory."
   },
   "wyoming": {
     "municipalities": {
@@ -4052,7 +4052,7 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   },
   "york": {
     "municipalities": {
@@ -4147,6 +4147,6 @@ export const pennsylvaniaGeography = {
       "PennDOT municipal boundaries, July 2026",
       "Pennsylvania DCED: home-rule reference, April 2023"
     ],
-    "directoryNote": "Municipal groups follow Pennsylvania DCED classifications, including home-rule municipalities whose charter names may differ. Reviewed October 20, 2026."
+    "directoryNote": "Place list from Pennsylvania’s official municipal directory, checked October 2026. Home-rule names may differ from the groups below."
   }
 };

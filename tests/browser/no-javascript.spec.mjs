@@ -19,15 +19,32 @@ import {validateInquiry} from '../../src/inquiry.mjs';
 
 test('ROI worked example and guide templates stay useful without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
- await page.goto('/tools/website-roi-calculator/?qa=1');await expect(page.locator('#website-roi')).toBeHidden();await expect(page.locator('#worked-example')).toContainText('$1,800');await expect(page.getByText('The interactive calculator needs JavaScript. The worked example and formulas below remain available.',{exact:true})).toBeVisible();
- await page.goto('/guides/website-content-template/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();await expect(page.locator('a[href^="/assets/guides/website-content-template.txt"]').first()).toBeVisible();
+ await page.goto('/tools/website-roi-calculator/?qa=1');await expect(page.locator('#website-roi')).toBeHidden();
+ await expect(page.getByText('The interactive calculator needs JavaScript. Open “How this is calculated” below for the example and formulas.',{exact:true})).toBeVisible();
+ await page.locator('#worked-example summary').click();await expect(page.locator('#worked-example details')).toHaveAttribute('open','');
+ await expect(page.getByRole('heading',{name:'The example, step by step',exact:true})).toBeVisible();
+ for(const value of ['$4,510','$1,490','33%','7.3 months'])await expect(page.locator('#worked-example')).toContainText(value);
+ await page.goto('/guides/website-content-template/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();
+ const template=page.locator('a[href^="/assets/guides/website-content-template.txt"]').first();await expect(template).toBeVisible();await expect(template).toHaveAttribute('download','');
+ const download=await page.request.get(await template.getAttribute('href'));expect(download.status()).toBe(200);expect((await download.text()).length).toBeGreaterThan(300);
 });
+
+async function openNativeCountyLists(page,count){
+ await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
+ await expect(page.getByRole('searchbox',{name:'Search counties or towns'})).toBeDisabled();
+ await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every county.',{exact:true})).toBeVisible();
+ await expect(page.locator('[data-county-search]')).toHaveCount(count);
+ await expect(page.locator('[data-county-search]:visible')).toHaveCount(0);
+ for(const summary of await page.locator('[data-county-directory] > details > summary').all()){
+  await summary.click();await expect(summary.locator('..')).toHaveAttribute('open','');
+ }
+ await expect(page.locator('[data-county-search]:visible')).toHaveCount(count);
+}
 
 test('all statewide county links remain usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/new-york/?qa=1');
- await expect(page.locator('[data-county-filter-controls]')).toBeHidden();
- await expect(page.locator('[data-county-search]:visible')).toHaveCount(62);
+ await openNativeCountyLists(page,62);
  await expect(page.getByRole('navigation',{name:'New York service regions'}).locator('a')).toHaveCount(10);
  await page.locator('[data-county-search] a[href="/areas/st-lawrence-county/"]').click();
  await expect(page.locator('main h1')).toContainText('St. Lawrence');
@@ -38,9 +55,9 @@ test('all statewide county links remain usable without JavaScript',async({page},
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(217);
+ await openNativeCountyLists(page,217);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
- await expect(page.locator('[data-county-search]:visible')).toHaveCount(67);
+ await openNativeCountyLists(page,67);
  await expect(page.getByRole('navigation',{name:'Pennsylvania service regions'}).locator('a')).toHaveCount(10);
  await page.locator('[data-county-search] a[href="/areas/pennsylvania/columbia-county/"]').click();
  await expect(page.locator('main h1')).toContainText('Columbia');
@@ -54,7 +71,7 @@ test('Ohio directory, municipalities and FAQs work without JavaScript',async({pa
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Ohio',exact:true}).click();
- await expect(page.locator('[data-county-filter-controls]')).toBeHidden();await expect(page.locator('[data-county-search]:visible')).toHaveCount(88);
+ await openNativeCountyLists(page,88);
  await expect(page.getByRole('navigation',{name:'Ohio service regions'}).locator('a')).toHaveCount(7);
  await page.locator('[data-county-search] a[href="/areas/ohio/greene-county/"]').click();
  await expect(page.locator('main h1')).toContainText('Greene');
@@ -89,14 +106,16 @@ test('native additions prefill, correction and receipt preserve all selected wor
  expect(payloads[1].add_ons).toEqual(['booking_setup','contact_form','standard_page']);
 });
 
-test('native checkout question link carries the chosen additions and current package',async({page},testInfo)=>{
+test('native checkout retains chosen additions and welcomes questions without another form',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/checkout/launch-site/?addons=contact_form,booking_setup#inquiry');
  await expect(page.locator('[data-addon-project-total]')).toContainText('$2,000');
  await expect(page.locator('[data-addon-payments]')).toContainText('$1,000 to book (50%)');
- await page.locator('[data-checkout-question]').click();
+ await expect(page.locator('[data-checkout-question]')).toHaveCount(0);
+ await expect(page.locator('#message-help')).toContainText('Questions are welcome here too');
  await expect(page.locator('#service')).toHaveValue('launch_site');
- await expect(page.locator('#request_kind')).toHaveValue('question');
+ await expect(page.locator('#request_kind')).toHaveValue('checkout');
+ await expect(page.getByRole('button',{name:'Request my Launch proposal',exact:true})).toBeVisible();
  await expect(page.locator('#inquiry-addon-contact_form')).toBeChecked();
  await expect(page.locator('#inquiry-addon-booking_setup')).toBeChecked();
 });
@@ -106,7 +125,7 @@ test('server-rendered proposal, general question and fixed monthly context work 
  for(const [path,service,kind,label] of [
   ['/contact/?request_kind=checkout#inquiry','unsure','checkout','Send message'],
   ['/contact/?request_kind=question#inquiry','unsure','question','Send message'],
-  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Send message']
+  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Request my Grow start']
  ]){
   await page.goto(path);await expect(page.locator('#service')).toHaveValue(service);await expect(page.locator('#request_kind')).toHaveValue(kind);
   await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();
@@ -120,6 +139,6 @@ test('server-rendered proposal, general question and fixed monthly context work 
   submitted=Object.fromEntries(new URLSearchParams(route.request().postData()));
   await route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><html lang="en"><title>Synthetic receipt</title><h1>Test request received</h1><p>No email sent.</p></html>'});
  });
- await page.getByRole('button',{name:'Send message',exact:true}).click();
+ await page.getByRole('button',{name:'Request my Grow start',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test request received'})).toBeVisible();expect(submitted).toMatchObject({service:'grow',request_kind:'checkout',priority:'article',website:'https://example.com/'});
 });

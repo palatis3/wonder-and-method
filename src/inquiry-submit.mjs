@@ -62,15 +62,15 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
     try{
       const response=await fetch(form.action,{method:'POST',signal:controller.signal,headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(submitted)});
       let result;
-      try{result=await response.json();}catch{throw new Error('We could not confirm this submission. Your entries remain here; please try again or contact the studio.');}
+      try{result=await response.json();}catch{throw new Error('I couldn’t confirm that your message was saved. Your entries are kept here. Please try again, or email support@wonderandmethod.com.');}
       if(!response.ok){
         for(const [key,message] of Object.entries(result?.errors||{})){
           const input=form.elements.namedItem(key),error=document.getElementById(key+'-error');
           if(input&&error){error.textContent=message;input.setAttribute('aria-invalid','true');first??=input;}
         }
-        throw new Error(result?.message||'The inquiry could not be saved. Your entries remain here; please try again.');
+        throw new Error(result?.message||'I couldn’t save your message. Your entries are kept here. Please try again, or email support@wonderandmethod.com.');
       }
-      if(typeof result?.reference!=='string'||!result.reference.trim()||typeof result.synthetic!=='boolean')throw new Error('We could not confirm this submission. Your entries remain here; please contact the studio before sending again.');
+      if(typeof result?.reference!=='string'||!result.reference.trim()||typeof result.synthetic!=='boolean')throw new Error('I couldn’t confirm that your message was saved. Your entries are kept here. Please email support@wonderandmethod.com before sending again.');
       const realSaved=form.dataset.mode==='live'&&result.synthetic===false&&!/synthetic/i.test(result.message||'');
       confirmation.innerHTML=inquiryConfirmationHtml({reference:result.reference,synthetic:!realSaved,email:submitted.email,service:submitted.service,...selectedInquiryContext(submitted)});
       confirmation.hidden=false;
@@ -81,7 +81,7 @@ export function bindInquirySubmission(form, {countJourney=()=>{}, document=globa
       // Measurement must never interrupt a receipt that is already confirmed.
       if(realSaved){try{countJourney(submitted.request_kind==='question'?'question_saved':'inquiry_saved',submitted.service);}catch{}}
     }catch(error){
-      status.textContent=error.name==='AbortError'?'The connection took too long to confirm. Your entries remain here; please try again or contact the studio.':error instanceof TypeError?'Connection failed. Your entries are still here; please try again or email support@wonderandmethod.com.':error.message;
+      status.textContent=error.name==='AbortError'?'I couldn’t confirm your message before the connection timed out. Your entries are kept here. Please try again, or email support@wonderandmethod.com.':error instanceof TypeError?'I couldn’t connect to save your message. Your entries are kept here. Please try again, or email support@wonderandmethod.com.':error.message;
       if(!status.textContent.includes('support@wonderandmethod.com'))status.textContent+=' For help, email support@wonderandmethod.com.';
       if(first)focusInvalid(first);else status.focus();
     }finally{

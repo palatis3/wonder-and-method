@@ -5,6 +5,8 @@ import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
+import {fingerprintStaticAssets,versionAssetReferences} from './version-static-assets.mjs';
+import {pageStyleFamily,pageFamilyStyles} from './page-family-styles.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
 import {livingCityAssetState,copyLivingCityAssets} from './build-living-city-assets.mjs';
@@ -28,7 +30,7 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
  return {shared:await minify(shared),plans:await minify(plans),guides:await minify(guides)};
 }
 
-export function applyCssBundles(html,boot){
+export function applyCssBundles(html,boot,{family}={}){
  const plans=html.includes('href="/assets/package-visuals.css"');
  const guides=html.includes('href="/assets/journal.css"');
  const city=html.includes('href="/assets/living-city.css"');
@@ -39,19 +41,25 @@ export function applyCssBundles(html,boot){
  // Package selectors do not target the identity. Brand rules now lead the shared
  // cascade, preserving their position before the general layout overrides.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}</head>`);
+ return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/${family?'site-family-'+family:'site'}.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}</head>`);
 }
 
 export async function buildBrowserBundles(root,config){
  const journeyVersion=createHash('sha256').update(await readFile(resolve(root,'src/assets/journey-counts.js'))).digest('hex').slice(0,12);
- const client=await bundle({entryPoints:[resolve(root,'src/client.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[{name:'client-public-inputs',setup(build){
+ const offers=JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8'));
+ const fields=(item,names)=>Object.fromEntries(names.map(name=>[name,item[name]]));
+ const publicOffers={...Object.fromEntries(['launch_site','focused_site','signature_site'].map(id=>[id,fields(offers[id],['public_name','public_price'])])),plans:Object.fromEntries(['keep_running','improve','grow'].map(id=>[id,fields(offers.plans[id],['public_name','monthly_price'])])),baseline:fields(offers.baseline,['public_name','one_time_price']),audit_sprint:fields(offers.audit_sprint,['public_name','one_time_price']),add_ons:offers.add_ons.map(item=>fields(item,['id','public_name','public_price']))};
+ const publicInputs=()=>({name:'browser-public-inputs',setup(build){
   // Match the HTML script URL exactly so there is one module instance and one
   // aggregate event deduplication set on pages with an inquiry form.
   build.onResolve({filter:/^\.\/journey-counts\.js$/},()=>({path:`/assets/journey-counts.js?v=${journeyVersion}`,external:true}));
   build.onLoad({filter:/[\\/]config[\\/]site\.json$/},()=>({loader:'json',contents:JSON.stringify({responseWindow:config.responseWindow,contactEmail:config.contactEmail})}));
- }}]});
- const calculator=await bundle({entryPoints:[resolve(root,'src/calculator.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16']});
- return {client:client.outputFiles[0].contents,calculator:calculator.outputFiles[0].contents,journeyVersion};
+  build.onLoad({filter:/[\\/]config[\\/]offers\.json$/},()=>({loader:'json',contents:JSON.stringify(publicOffers)}));
+ }});
+ const client=await bundle({entryPoints:[resolve(root,'src/client.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[publicInputs()]});
+ const calculator=await bundle({entryPoints:[resolve(root,'src/calculator.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[publicInputs()]});
+ const roi=await bundle({entryPoints:[resolve(root,'src/assets/website-roi.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16']});
+ return {client:client.outputFiles[0].contents,calculator:calculator.outputFiles[0].contents,roi:roi.outputFiles[0].contents,journeyVersion};
 }
 
 // Explicit build-only candidates, not a general unused-asset sweep. Artwork used
@@ -137,6 +145,7 @@ await cp(resolve(root,'src/assets/brand/favicon.ico'),resolve(output,'favicon.ic
 const browserBundles=await buildBrowserBundles(root,config);
 await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
 await writeFile(resolve(output,'assets/calculator.js'),browserBundles.calculator);
+await writeFile(resolve(output,'assets/website-roi.js'),browserBundles.roi);
 await copyCivicAssets(root,output,config);
 await copyLivingCityAssets(root,output,config);
 if(config.homeEdition==='living-city'){
@@ -154,20 +163,26 @@ const css=await buildCssBundles(resolve(root,'src/assets'),{includeChat:Boolean(
 await writeFile(resolve(output,'assets/site.css'),css.shared);
 await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
 await writeFile(resolve(output,'assets/site-guides.css'),css.guides);
-for(const page of pages)page.html=applyCssBundles(page.html,boot);
+const dynamicStyles=(await Promise.all((await readdir(resolve(output,'assets'),{recursive:true})).filter(file=>/\.(?:js|mjs)$/.test(file)).map(file=>readFile(resolve(output,'assets',file),'utf8')))).join('\n');
+const styleFamilies={};
+for(const family of new Set(pages.map(page=>pageStyleFamily(page.path)))){
+ const filtered=pageFamilyStyles(css.shared,pages.filter(page=>pageStyleFamily(page.path)===family).map(page=>page.html).join('\n'),dynamicStyles);
+ const file='site-family-'+family+'.css';await writeFile(resolve(output,'assets',file),filtered.css);
+ styleFamilies[family]={bytes:Buffer.byteLength(filtered.css),removedRules:filtered.removedRules};
+}
+for(const page of pages)page.html=applyCssBundles(page.html,boot,{family:pageStyleFamily(page.path)});
 const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
 await writeBuyerPacks(output,offers);
 await writeOwnedProof(root,output,offers);
+const assetVersions=await fingerprintStaticAssets(output);
 const documentVersions=new Map();
 for(const name of await readdir(resolve(output,'assets/buyer-packs'))){
  if(!name.endsWith('.html'))continue;
  const path='/assets/buyer-packs/'+name,file=resolve(output,'.'+path);
- await writeFile(file,await versionPublicDocumentLinks(await readFile(file,'utf8'),output,path,documentVersions));
+ await writeFile(file,await versionPublicDocumentLinks(versionAssetReferences(await readFile(file,'utf8'),path,assetVersions),output,path,documentVersions));
 }
-const assetVersions=new Map();
-for(const page of pages)for(const match of page.html.matchAll(/(?:src|href)="(\/assets\/[^"?]+\.(?:css|js))"/g))if(!assetVersions.has(match[1]))assetVersions.set(match[1],createHash('sha256').update(await readFile(resolve(output,'.'+match[1]))).digest('hex').slice(0,12));
-for(const page of pages){const file=resolve(output,`.${page.path}index.html`);await mkdir(dirname(file),{recursive:true});const html=page.html.replace(/((?:src|href)=")(\/assets\/[^"?]+\.(?:css|js))"/g,(_match,prefix,asset)=>`${prefix}${asset}?v=${assetVersions.get(asset)}"`);await writeFile(file,await versionPublicDocumentLinks(html,output,page.path,documentVersions));}
+for(const page of pages){const file=resolve(output,`.${page.path}index.html`);await mkdir(dirname(file),{recursive:true});const html=versionAssetReferences(page.html,page.path,assetVersions);await writeFile(file,await versionPublicDocumentLinks(html,output,page.path,documentVersions));if(page.description.length>160)console.warn(`Description exceeds 160 characters: ${page.path} (${page.description.length})`);}
 const crawl=crawlFiles(config,pages);
 await writeFile(resolve(output,'sitemap.xml'),crawl.sitemap);
 await writeFile(resolve(output,'robots.txt'),crawl.robots);
@@ -199,10 +214,12 @@ ${config.searchIndexing!==true?'  X-Robots-Tag: noindex, nofollow, noarchive, no
 /assets/*.csv
   ! Cache-Control
   Cache-Control: no-cache
+  Content-Disposition: attachment
 
 /assets/*.txt
   ! Cache-Control
   Cache-Control: no-cache
+  Content-Disposition: attachment
 
 ${earlyHints}`;
 assertStaticHeaderLimits(staticHeaders);
@@ -226,6 +243,9 @@ for(const [path,entry] of Object.entries(responsiveIndex)){
  entry.variants=(await Promise.all(entry.variants.map(async variant=>await exists(variant.path)?variant:null))).filter(Boolean);
 }
 await writeFile(resolve(output,'assets/responsive-images.json'),JSON.stringify(responsiveIndex,null,2)+'\n');
+const assetHashes={};
+for(const [path,hash] of assetVersions)if(await exists(path))assetHashes[path]=hash;
+await writeFile(resolve(output,'assets/asset-hashes.json'),JSON.stringify(assetHashes));
 // Validate the finished, pruned artifact, including social cards and srcsets.
 await verifyLocalReferences(output,pages.map(page=>'.'+page.path+'index.html'));
 for(const name of await readdir(resolve(root,'authority/v5'))){const bytes=await readFile(resolve(root,'authority/v5',name)); inventory.push({file:name,sha256:createHash('sha256').update(bytes).digest('hex')});}
@@ -234,7 +254,7 @@ await writeFile(resolve(root,'evidence/authority-hashes.json'),JSON.stringify(in
 await writeFile(resolve(root,'evidence/build.json'),JSON.stringify({builtAt:new Date().toISOString(),mode:config.mode,routes:pages.map(p=>p.path),pageDates:Object.fromEntries(pages.filter(p=>p.modifiedAt).map(p=>[p.path,p.modifiedAt])),prices,source:'config/offers.json',gated:['/services/website-care/',...map.pages.filter(p=>p.stage==='launch_if_evidence_ready').map(p=>p.url)].filter(path=>!pages.some(p=>p.path===path)),guideReason:config.guideApprovals?.length?'Dated editorial review and owner publication instruction recorded in config/site.json':'Dated editorial evidence review required before publication',careReason:config.careReady?'Actual coverage and review recorded':'Actual staffed coverage, recipient and escalation must be agreed before enrollment'},null,2));
 console.log(`Built ${pages.length} HTML routes (${config.mode}); source plan and operating records excluded from dist.`);
 console.log(`Removed ${assetPruning.removed.length} unreferenced build assets (${assetPruning.bytesRemoved} bytes); retained ${assetPruning.retained.length} referenced candidates.`);
-return {routes:pages.length,assetPruning,retiredPlanArtwork,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans)}};
+return {routes:pages.length,assetPruning,retiredPlanArtwork,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans),families:styleFamilies}};
 }
 
 if(process.argv[1]&&resolve(process.argv[1])===resolve(import.meta.filename))await buildSite();

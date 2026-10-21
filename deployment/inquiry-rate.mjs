@@ -13,13 +13,20 @@ export function inquiryNetwork(ip){
 }
 
 export async function allowInquiryRate(env,ip,now,fingerprint){
-  const network=inquiryNetwork(ip);
+  const network=inquiryNetwork(ip),chargedKeys=[];
   for(const [period,limit] of [[3600_000,3],[86400_000,10]]){
     const bucket=Math.floor(now/period);
     const key=await fingerprint(env.FINGERPRINT_SECRET,`inquiry:${network}:${period}:${bucket}`);
     const row=await env.DB.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<? RETURNING hits')
       .bind(key,(bucket+2)*period,limit).first();
-    if(!row)return {allowed:false,retryAfter:Math.max(1,Math.ceil(((bucket+1)*period-now)/1000))};
+    if(!row)return {allowed:false,chargedKeys,retryAfter:Math.max(1,Math.ceil(((bucket+1)*period-now)/1000))};
+    chargedKeys.push(key);
   }
-  return {allowed:true};
+  return {allowed:true,chargedKeys};
+}
+
+// Release only charges made by this request after a same-network saved receipt
+// proves that a concurrent request already paid for the identical inquiry.
+export async function refundInquiryRate(env,chargedKeys){
+  for(const key of chargedKeys||[])await env.DB.prepare('UPDATE rate_limits SET hits=hits-1 WHERE key=? AND hits>0').bind(key).run();
 }

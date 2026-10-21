@@ -1,16 +1,16 @@
 WONDER AND METHOD
 https://wonderandmethod.com/
 SAMPLE HANDOFF INDEX
-Version 2026-10-18.1
+Updated October 21, 2026
 Source: https://wonderandmethod.com/assets/audit-implementation/sample-handoff-index.txt
-Blank example, updated October 17, 2026. No client or account information.
+Blank example. No client or account information.
 
 1. Accepted project: scope, approver, version, written acceptance date.
 2. Paid deliverables: source location, content, media, unfinished/unpaid items and status.
 3. Rights: bespoke work ownership, reusable component license, third-party license inventory.
 4. Accounts: actual provider, client owner, delegated access, payer. Never put passwords here.
-5. Renewals: actual date/time/timezone, fee, usage limit, overage, cancellation route.
-6. Build/release: exact build steps, destination, authorization, restore copy, rollback procedure.
+5. Renewals: actual date/time/timezone, fee, usage limit, extra usage charge, cancellation route.
+6. Build/release: exact build steps, destination, authorization, restore copy, how to undo a bad update.
 7. Inquiries: saved-record recovery, notification limitations, privacy retention and deletion responsibilities.
 8. Editing and care: source-code editing owner, build/check/publish instructions, known limitations and any optional monthly plan.
 9. Verification: test record, failures and limitations, unresolved items and owner.
@@ -18,4 +18,4 @@ Blank example, updated October 17, 2026. No client or account information.
 11. Handoff support: written guide and one optional call of up to 30 minutes; record whether requested.
 12. Correction: launch date and 30-calendar-day defect window against approved scope.
 
-The delivery folder or ZIP contains the Start Here guide, website-source/, ready-to-host/ where applicable, docs/ and verification/. Existing paid source/content/media, license/account map, build/deploy instructions and known unfinished items are provided within five business days on completion or reconciled termination. New migration labor is separate; client accounts stay accessible.
+The delivery folder or ZIP contains the Start Here guide, website-source/, ready-to-host/ where applicable, docs/ and verification/. Existing paid source/content/media, license/account map, build/deploy instructions and known unfinished items are provided within five business days after paid work is finished or a cancelled account is settled. New migration labor is separate; client accounts stay accessible.

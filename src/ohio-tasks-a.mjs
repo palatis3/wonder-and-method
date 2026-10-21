@@ -10,7 +10,7 @@ export const ohioTasksA = {
   },
   allen: {
     name: 'Allen', title: 'Define the minimum useful capability inquiry',
-    scenario: 'Consider an illustrative Lima supplier receiving drawings without the material, quantity or intended use needed for an initial capability review.',
+    scenario: 'Consider a Lima supplier receiving drawings without the material, quantity or intended use needed for an initial capability review.',
     decision: 'Choose one approved capability and list what the business can state publicly about it. Separate established limits from conditions that require individual assessment. Draft a short inquiry with only the facts needed to route the request, then describe how detailed specifications are exchanged. Have a technical approver check every capability and tolerance claim before the page is designed.',
     questions: ['Which material or process claims are approved for publication?', 'What information makes an initial review possible?', 'Who confirms feasibility, schedule and quotation after that review?'],
     output: 'An approved capability summary and a concise first-contact specification brief.',
@@ -26,7 +26,7 @@ export const ohioTasksA = {
   },
   ashtabula: {
     name: 'Ashtabula', title: 'Reconcile one seasonal visit’s operating details',
-    scenario: 'Consider an illustrative Ashtabula County operator whose service page, seasonal announcement and booking destination show different visit information.',
+    scenario: 'Consider a Ashtabula County operator whose service page, seasonal announcement and booking destination show different visit information.',
     decision: 'Choose one visit and record its normal dates, approved exception process and actual arrival point. Mark where each fact appears and who supplies updates. Decide where the current status is authoritative and how other pages lead to it. Write the visitor’s next step when conditions change without promising automatic alerts that the business does not provide.',
     questions: ['Which dates describe the season and which describe an exception?', 'Who decides whether the visit proceeds?', 'Do the page and confirmation route use the same arrival point?'],
     output: 'One approved visit record with a list of conflicting details and responsible update owners.',
@@ -42,7 +42,7 @@ export const ohioTasksA = {
   },
   auglaize: {
     name: 'Auglaize', title: 'Separate a photo review from a physical assessment',
-    scenario: 'Consider an illustrative Auglaize County restoration business whose gallery makes initial photographs look sufficient for a final quotation.',
+    scenario: 'Consider a Auglaize County restoration business whose gallery makes initial photographs look sufficient for a final quotation.',
     decision: 'Choose an authorized project example and describe what was visible initially, what required inspection and what work was approved. Identify the limits of an initial review and the next arrangement needed to resolve them. Write captions that explain those stages without predicting the same outcome for a new item. Assess any proposed upload feature separately from an ordinary inquiry.',
     questions: ['What can the first photographs actually establish?', 'Which unknowns require an in-person inspection?', 'What does the customer approve after receiving the assessment?'],
     output: 'A staged example and an accurate explanation of the initial review’s limits.',
@@ -58,9 +58,9 @@ export const ohioTasksA = {
   },
   brown: {
     name: 'Brown', title: 'Trace a sample into an approved order',
-    scenario: 'Consider an illustrative Brown County maker whose gallery presents options for discussion but uses the same action label as a finished item for sale.',
+    scenario: 'Consider a Brown County maker whose gallery presents options for discussion but uses the same action label as a finished item for sale.',
     decision: 'Choose one product family. Identify the sample’s role, the choices requiring discussion and the point where specification, price and fulfillment are approved. Write an action for each stage and clarify whether the first contact is an inquiry or purchase. Confirm who updates examples when an option is no longer offered and how collection readiness is communicated.',
-    questions: ['Does the image show an available item or an illustrative sample?', 'Which choices must be settled before the order is accepted?', 'What confirms the final specification and fulfillment arrangement?'],
+    questions: ['Does the image show an available item or a sample?', 'Which choices must be settled before the order is accepted?', 'What confirms the final specification and fulfillment arrangement?'],
     output: 'A sample-to-order sequence with approved labels, decision points and fulfillment wording.',
     check: 'Ask someone to explain what they would receive after clicking the sample’s button. Their answer should match the business’s actual next step.'
   },
@@ -74,7 +74,7 @@ export const ohioTasksA = {
   },
   carroll: {
     name: 'Carroll', title: 'Organize equipment inquiries around observable symptoms',
-    scenario: 'Consider an illustrative Carroll County equipment service whose contact form requires a fault code that many customers cannot identify.',
+    scenario: 'Consider a Carroll County equipment service whose contact form requires a fault code that many customers cannot identify.',
     decision: 'Gather a few approved examples of how customers describe problems. Group them in plain language and connect them to supported equipment types. Decide which identifier or history is necessary at first contact and what qualified staff determines later. Write the next review step and remove any suggestion that choosing a symptom confirms its technical cause.',
     questions: ['What can the customer describe accurately without testing the equipment?', 'Which item details are needed to route the request?', 'How does the next contact establish the assessment arrangement?'],
     output: 'A symptom-led service outline and a short inquiry with approved information requirements.',
@@ -90,7 +90,7 @@ export const ohioTasksA = {
   },
   clark: {
     name: 'Clark', title: 'Compare inspection, repair and replacement by output',
-    scenario: 'Consider an illustrative Springfield provider whose three service labels make it difficult to tell whether an assessment includes any subsequent work.',
+    scenario: 'Consider a Springfield provider whose three service labels make it difficult to tell whether an assessment includes any subsequent work.',
     decision: 'Create a comparison with purpose, included work, customer preparation, output and next approval. Ask the owner to verify each entry and any stated charges. Identify an assessment route for customers who cannot choose a technical option themselves. Keep the initial inquiry, recommended work and customer approval separate throughout the page and receipt wording.',
     questions: ['What does each service deliver before another decision is needed?', 'Which option can an uncertain customer reasonably request?', 'Where does the customer approve additional work?'],
     output: 'A verified three-service comparison with an appropriate action for each stage.',
@@ -106,7 +106,7 @@ export const ohioTasksA = {
   },
   clinton: {
     name: 'Clinton', title: 'Prepare a useful group-training brief',
-    scenario: 'Consider an illustrative Wilmington trainer who receives requests for “a team session” without knowing the group’s experience or desired outcome.',
+    scenario: 'Consider a Wilmington trainer who receives requests for “a team session” without knowing the group’s experience or desired outcome.',
     decision: 'Choose one training subject. Draft a brief that asks for the audience, approximate size, current experience, intended outcome and preferred format. Explain how the trainer reviews that information before discussing a proposal. Keep a desired date separate from availability and show what customization, if any, needs its own agreed scope.',
     questions: ['What should participants be able to practice after the session?', 'How does their current experience affect the starting point?', 'Which format and preparation arrangements require confirmation?'],
     output: 'A concise organizer brief and an approved explanation of the next proposal stage.',
@@ -122,7 +122,7 @@ export const ohioTasksA = {
   },
   coshocton: {
     name: 'Coshocton', title: 'Confirm collection suitability before the handover',
-    scenario: 'Consider an illustrative Coshocton County provider receiving collection requests that omit the item size and who will be present at handover.',
+    scenario: 'Consider a Coshocton County provider receiving collection requests that omit the item size and who will be present at handover.',
     decision: 'List the item and location facts required to assess collection. Separate the requested window from an accepted slot, then describe when preparation and handover instructions are agreed. Identify the responsible contact if the requester will not be present. Have the operator approve any unattended-handover wording and remove it if the service does not support that arrangement.',
     questions: ['What facts establish whether the item can be collected?', 'Which message confirms the collection slot?', 'Who receives and follows the final handover instructions?'],
     output: 'An approved collection-request sequence with suitability, scheduling and handover clearly separated.',
@@ -138,8 +138,8 @@ export const ohioTasksA = {
   },
   cuyahoga: {
     name: 'Cuyahoga', title: 'Separate shared offers from real location differences',
-    scenario: 'Consider an illustrative Cuyahoga County business with two genuine premises whose copied service pages now disagree about available work and contact details.',
-    decision: 'Choose one shared offer and name its authoritative description. For each real location, record approved services, access, hours, appointment rules and inquiry destination. Remove unsupported office claims and identify the person responsible for each changing fact. Link location-specific instructions to the shared offer instead of maintaining several competing descriptions of the same work.',
+    scenario: 'Consider a Cuyahoga County business with two real locations whose copied service pages now disagree about available work and contact details.',
+    decision: 'Choose one shared offer and name its main service page. For each real location, record services, access, hours, appointment rules and inquiry destination. Remove unsupported office claims and identify the person responsible for each changing fact. Link location-specific instructions to the shared offer instead of maintaining several competing descriptions of the same work.',
     questions: ['Which offer facts should stay identical across locations?', 'What differences affect a customer’s choice or visit?', 'Does each contact action reach the appropriate team with enough context?'],
     output: 'A shared-offer record and a verified location comparison with update owners.',
     check: 'Arrive directly on each location page and find the available service, visiting instructions and correct contact route without returning to the home page.'
@@ -154,7 +154,7 @@ export const ohioTasksA = {
   },
   defiance: {
     name: 'Defiance', title: 'Assess an item and its delivery destination together',
-    scenario: 'Consider an illustrative Defiance County supplier whose website promises delivery before staff know the item dimensions or the destination’s access arrangements.',
+    scenario: 'Consider a Defiance County supplier whose website promises delivery before staff know the item dimensions or the destination’s access arrangements.',
     decision: 'Choose one item group and record the approved delivery limits. Identify the item, destination and access facts needed for review, then write when timing and charges are confirmed. Label a requested date as a preference where appropriate. Keep the delivery address distinct from billing details and assign a person to approve the final arrangement.',
     questions: ['Which item characteristics affect whether delivery is possible?', 'What destination information is needed before confirming the route?', 'Which message accepts the delivery terms and date?'],
     output: 'A realistic delivery inquiry with approved constraints and a clear confirmation stage.',
@@ -170,7 +170,7 @@ export const ohioTasksA = {
   },
   erie: {
     name: 'Erie', title: 'Follow a reservation into its external destination',
-    scenario: 'Consider an illustrative Erie County operator whose website describes one offer while its booking button opens a general reservation list.',
+    scenario: 'Consider a Erie County operator whose website describes one offer while its booking button opens a general reservation list.',
     decision: 'Choose one offer and record the date choices, party details, inclusions and ready provider destination. Identify what the visitor must select again after leaving the site. Check approved limits before the button and explain who confirms the booking. Record which parts of the external account the operator maintains and which website connection is included in the agreed work.',
     questions: ['Does the button open the intended offer or a broader selection?', 'Which date and party details must be entered again?', 'What evidence confirms a reservation rather than an outbound click?'],
     output: 'A checked reservation handoff with accurate action wording and account responsibilities.',

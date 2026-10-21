@@ -39,13 +39,13 @@ test('Ohio adds exactly one state directory and 88 guides while preserving every
  assert.equal((sitemap.match(/<loc>/g)||[]).length,285);
  for(const [route,count] of [['/areas/',217],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
-  assert.ok(html.includes('data-county-filter-controls hidden'));
+  assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
  }
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
   for(const hub of ['/areas/',state.path])assert.ok(byPath.get(hub).html.includes(`href="${route}"`),hub+' -> '+route);
   assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`),route);
-  for(const service of pages.filter(p=>p.path.startsWith('/services/')))assert.ok(service.html.includes(`href="${route}"`),service.path+' -> '+route);
+  for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
  }
 });
 
@@ -100,21 +100,21 @@ test('Ohio municipality classifications and cross-county names retain verified g
  }
 });
 
-test('Ohio guides have distinct planning decisions, useful worksheets and six visible FAQs',async()=>{
+test('Ohio guides have distinct planning decisions, useful worksheets and five useful FAQs',async()=>{
  const focus=new Set(),titles=new Set(),decisions=new Set(),localQuestions=new Set(),searchQuestions=new Set();
  for(const c of ohioProfiles){
   const task=ohioBuyerTasks[c.slug],html=byPath.get(path(c.slug)).html;
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);assert.equal(task.questions.length,3);
   focus.add(c.focus);titles.add(task.title);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
-  assert.match(html,/based in Buffalo/);assert.match(html,/online/);
-  assert.ok(html.includes('Illustrative '+c.name+' County, OH example'));
-  const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.equal((faq.match(/<summary>/g)||[]).length,6,c.slug);
+  assert.match(html,/from Buffalo/);assert.match(html,/online/);
+  assert.ok(html.includes('The examples below are fictional, not client projects.'));assert.ok(html.includes('<p class="eyebrow">Example</p>'));
+  const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.equal((faq.match(/<summary>/g)||[]).length,5,c.slug);
   for(const [q,answer,url,label] of ohioSearchQuestions(c.slug,offers)){
    assert.ok(answer.trim().length>90,c.slug);assert.ok(label?.trim(),c.slug);assert.ok(byPath.has(url),c.slug+' -> '+url);searchQuestions.add(q);
   }
   const worksheet=await readFile(new URL('../src/assets/county-briefs/ohio-'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
-  assert.match(worksheet,/ILLUSTRATIVE EXAMPLE, NOT A CLIENT RESULT OR LOCAL-DEMAND STUDY/);
+  assert.match(worksheet,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
   assert.ok(html.includes(`href="/assets/county-briefs/ohio-${c.slug}.txt"`));
  }
  assert.equal(focus.size,88);assert.equal(titles.size,88);assert.equal(decisions.size,88);assert.equal(localQuestions.size,176);assert.equal(searchQuestions.size,264);
@@ -126,7 +126,7 @@ test('county prices follow current offers, including website review and care as 
  changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
  for(const slug of expectedSlugs){
-  const html=rendered.get(path(slug));assert.match(html,/Website builds from \$1,887/);assert.match(html,/care starts at \$187\/month/);assert.match(html,/\$499 review/);assert.match(html,/\$975 Sprint/);
+  const html=rendered.get(path(slug));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Care is \$187\/month/);assert.match(html,/Website Baseline \(\$499\)/);assert.match(html,/Audit &amp; Fix Sprint \(\$975\)/);
   const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
   assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/,slug);
  }

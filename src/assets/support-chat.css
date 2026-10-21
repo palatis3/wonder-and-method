@@ -18,9 +18,11 @@
  .support-chat-launch :is(span,small){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 .support-chat-launch[aria-disabled=true]{cursor:progress}
+.support-chat--hero-visible .support-chat-launch:not(:focus),.support-chat-launch.is-tucked:not(:focus){visibility:hidden;pointer-events:none}
+.support-chat--inline{position:static!important;right:auto;bottom:auto;max-width:none}
+.support-chat--inline .support-chat-fallback{max-width:48rem;margin:1rem auto}
+.studio-site [data-chat-open]{min-height:44px;font:inherit}
+.studio-site [data-chat-open][aria-disabled=true]{cursor:progress}
+.studio-site [data-chat-open][hidden]{display:none!important}
 .support-chat-fallback{font-size:1rem}
 .support-chat-fallback a{display:inline-flex;align-items:center;min-height:44px}
-.studio-form .support-chat-launch{display:grid;width:auto;height:auto;min-height:48px;padding:.65rem 1rem;gap:.25rem .65rem;border-radius:20px}
-.studio-form .support-chat-launch :is(span,small){position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
-
-.studio-site.studio-form .support-chat:has(.support-chat-launch,.support-chat-fallback){position:static;right:auto;bottom:auto;max-width:none}

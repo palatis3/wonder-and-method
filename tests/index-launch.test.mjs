@@ -12,7 +12,7 @@ test('native question selection survives a real form POST and durable storage',a
  const runtime=await mkdtemp(join(tmpdir(),'wm-launch-'));
  const {server,url}=await createServer({runtime,port:0});
  try{
-  const html=await (await fetch(url+'/contact/')).text();
+  const html=await (await fetch(url+'/contact/?request_kind=question')).text();
   assert.match(html,/<input[^>]*type="hidden"[^>]*name="request_kind"[^>]*value="question"/);
   assert.doesNotMatch(html,/<select[^>]*name="request_kind"/);
   const body=new URLSearchParams({name:'Synthetic launch test',email:'fixture@example.invalid',business:'Synthetic only',service:'improve',request_kind:'question',billing:'annual',message:'Synthetic question about annual service scope; do not contact.'});

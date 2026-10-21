@@ -3,6 +3,8 @@ import {test,expect} from './fixtures.mjs';
 const rootSelector='[data-living-city]';
 async function reachNight(page){
  await page.goto('/?qa=1');
+ await expect(page.locator(rootSelector)).toHaveAttribute('data-city-ready','true');
+ if(page.viewportSize().width<=1023)await page.locator('[data-city-play]').click();
  await expect(page.locator(rootSelector)).toHaveAttribute('data-city-state','playing');
  await page.locator('#city-film').evaluate(video=>video.playbackRate=6);
  await expect(page.locator(rootSelector)).toHaveAttribute('data-city-beat','ambient');
@@ -65,17 +67,18 @@ test('reduced motion has a static moon and star map with no shooting stars',asyn
 });
 
 test('failed moon and film assets keep the homepage copy and project navigation usable',async({page},testInfo)=>{
- await page.route('**/crescent-moon.webp',route=>route.abort('failed'));
- await page.route('**/living-city/*.mp4',route=>route.abort('failed'));
+ await page.route(/\/crescent-moon\.webp(?:\?.*)?$/,route=>route.abort('failed'));
+ await page.route(/\/living-city\/[^/?]+\.mp4(?:\?.*)?$/,route=>route.abort('failed'));
  await page.goto('/?qa=1');
  if(testInfo.project.name!=='phone-reduced-motion'){
+  if(page.viewportSize().width<=1023)await page.locator('[data-city-play]').click();
   await expect(page.locator(rootSelector)).toHaveAttribute('data-city-state','error');
   await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
  }
  await expect(page.getByRole('heading',{name:'Small businesses. Extraordinary websites.'})).toBeVisible();
- await expect(page.locator('.city-location')).toHaveText('Based in Buffalo. Serving New York, Pennsylvania, and Ohio.');
- await expect(page.locator('.home-starting-points')).toContainText('From $1,400');
- await expect(page.locator('#seo-services')).toContainText('From $400/month');
+ await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving New York, Pennsylvania, and Ohio.');
+ await expect(page.locator('.home-starting-points')).toContainText('$1,400 Launch');
+ await expect(page.locator('#seo-services')).toContainText('Improve $400/month');
  await expect(page.locator('.home-service-intro')).toContainText('Once paid in full, your custom website files belong to you.');
  await page.locator('.city-choice--northline').click();
  await expect(page.locator('#city-panel-northline')).toBeVisible();

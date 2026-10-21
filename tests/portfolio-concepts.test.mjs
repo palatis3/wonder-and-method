@@ -35,13 +35,13 @@ test('local demo validates useful sample inputs',()=>{
  assert.deepEqual(validateDemo({name:'Sample',email:'sample@example.test',message:'A fictional request with enough detail.'}),{});
 });
 function element(value=''){return {value,hidden:false,textContent:'',attributes:{},listeners:{},focus(){this.focused=true;},setAttribute(k,v){this.attributes[k]=v;},removeAttribute(k){delete this.attributes[k];},addEventListener(k,fn){this.listeners[k]=fn;}};}
-function fixture(){
- const controls=Object.fromEntries(['name','email','message','service'].map(k=>[k,element()]));controls.service.options=[{value:'Example service'}];controls.service.value='Example service';
+function fixture({concept='example',services=['Example service']}={}){
+ const controls=Object.fromEntries(['name','email','message','service'].map(k=>[k,element()]));controls.service.options=services.map(value=>({value}));controls.service.value=services[0];
  const sample=element(),reset=element(),fieldset={disabled:true};
  const outputs=Object.fromEntries(['name','email','message','service'].map(k=>[k,element()]));
  const errors=Object.fromEntries(['name','email','message'].map(k=>[`concept-${k}-error`,element()]));
  const confirmation=element();confirmation.hidden=true;confirmation.querySelector=s=>s==='[data-demo-reset]'?reset:outputs[s.match(/data-demo-(\w+)/)[1]];
- const form=element();Object.assign(form,{dataset:{concept:'example'},elements:{namedItem:k=>controls[k]},parentElement:{querySelector:()=>confirmation},querySelector:s=>s==='.concept-sample'?sample:fieldset,reset(){for(const field of Object.values(controls))field.value='';controls.service.value='Example service';}});
+ const form=element();Object.assign(form,{dataset:{concept},elements:{namedItem:k=>controls[k]},parentElement:{querySelector:()=>confirmation},querySelector:s=>s==='.concept-sample'?sample:fieldset,reset(){for(const field of Object.values(controls))field.value='';controls.service.value=services[0];}});
  return {form,controls,sample,reset,fieldset,outputs,errors,confirmation,doc:{getElementById:id=>errors[id]}};
 }
 test('demo blocks native submit, reports errors, shows safe text and clears ephemeral data',()=>{
@@ -57,6 +57,20 @@ test('demo module has no networking or persistence capabilities',async()=>{
  const source=await readFile(new URL('../src/assets/portfolio-concepts.js',import.meta.url),'utf8');
  assert.doesNotMatch(source,/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|localStorage|sessionStorage|indexedDB|sendBeacon)\b/);
  assert.doesNotMatch(source,/\.innerHTML\s*=|\.submit\s*\(/);
+});
+test('an old Northline service link selects the new label and survives resetting the preview',t=>{
+ const previous=Object.getOwnPropertyDescriptor(globalThis,'location');
+ Object.defineProperty(globalThis,'location',{value:{search:'?service=Interior%20layout%20conversation'},configurable:true});
+ t.after(()=>{if(previous)Object.defineProperty(globalThis,'location',previous);else delete globalThis.location;});
+ const f=fixture({concept:'northline',services:['Kitchen remodeling','Bathroom remodeling','Interior layout changes']});
+ bindConceptDemo(f.form,f.doc);
+ assert.equal(f.controls.service.value,'Interior layout changes');
+ f.sample.listeners.click();f.form.listeners.submit({preventDefault(){}});
+ assert.equal(f.outputs.service.textContent,'Interior layout changes');
+ f.reset.listeners.click();
+ assert.equal(f.controls.service.value,'Interior layout changes');
+ assert.equal(f.outputs.service.textContent,'');
+ assert.equal(f.fieldset.disabled,false);
 });
 test('original concept illustrations remain self-contained accessible SVGs',async()=>{
  for(const item of conceptCatalog){

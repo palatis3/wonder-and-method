@@ -19,8 +19,8 @@ const migrations=await Promise.all((await readdir(dir)).filter(n=>n.endsWith('.s
 function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
 const base={name:'Synthetic Person',email:'synthetic@example.test',business:'',website:'',service:'unsure',request_kind:'question',message:'A synthetic question for testing.'};
 
-test('existing-site proposals require an address while general questions and new builds remain optional',()=>{
- for(const service of ['website_baseline','audit_fix_sprint','keep_running','improve','grow']){
+test('Baseline and Sprint proposals require an address while questions, monthly help and new builds remain optional',()=>{
+ for(const service of ['website_baseline','audit_fix_sprint']){
   assert.ok(validateInquiry({...base,service,request_kind:'checkout'}).errors.website);
   for(const website of ['not yet','no website','not live yet']){
    const result=validateInquiry({...base,service,request_kind:'checkout',website});
@@ -29,6 +29,7 @@ test('existing-site proposals require an address while general questions and new
   assert.deepEqual(validateInquiry({...base,service,request_kind:'question'}).errors,{});
  }
  assert.deepEqual(validateInquiry({...base,service:'launch_site',request_kind:'checkout'}).errors,{});
+ for(const service of ['keep_running','improve','grow'])assert.deepEqual(validateInquiry({...base,service,request_kind:'checkout',goal:'fix'}).errors,{});
 });
 const env=()=>({DB:fixture(),ENVIRONMENT:'production',INQUIRY_MODE:'synthetic',RELEASE_APPROVED:'true',FINGERPRINT_SECRET:'synthetic-32-character-fingerprint-secret'});
 const request=(value,origin='https://example.test')=>new Request('https://example.test/api/inquiries',{method:'POST',headers:{Origin:origin,Accept:'text/html','Content-Type':'application/x-www-form-urlencoded','CF-Connecting-IP':'192.0.2.2'},body:new URLSearchParams(value)});
@@ -77,8 +78,8 @@ test('optional service, social notes and advisory email correction preserve vali
  for(const website of ['javascript:alert(1)','data:text/html,hello','vbscript:msgbox(1)','file:///private'])assert.ok(validateInquiry({...base,website}).errors.website,website);
  assert.ok(validateInquiry({...base,website:'https://user:pass@example.test'}).errors.website);
 });
-test('plain contact starts with a question and fixed proposal keeps choices without inactive annual',()=>{
- const plain=inquiryFormMarkup({live:true});assert.match(plain,/name="request_kind" value="question"/);assert.match(plain,/<select id="service"[^>]*>/);assert.doesNotMatch(plain,/<select id="service"[^>]*required/);
+test('plain contact remains neutral and fixed proposal keeps choices without inactive annual',()=>{
+ const plain=inquiryFormMarkup({live:true});assert.match(plain,/name="request_kind" value=""/);assert.match(plain,/<select id="service"[^>]*>/);assert.doesNotMatch(plain,/<select id="service"[^>]*required/);
  assert.match(plain,/class="request-summary"[^>]* hidden>/);assert.doesNotMatch(plain,/<select[^>]*name="request_kind"/);
  const fixed=inquiryFormMarkup({live:true},{checkout:true,service:'grow',value:{billing:'annual',priority:'graphic'},annualEnabled:false});assert.match(fixed,/type="hidden" id="service" name="service" value="grow"/);assert.match(fixed,/name="priority" value="graphic"/);assert.doesNotMatch(fixed,/value="annual"/);
  assert.doesNotMatch(fixed,/class="request-summary"|<select[^>]*name="request_kind"/);assert.match(fixed,/name="request_kind" value="checkout"/);
@@ -92,7 +93,7 @@ test('native storage failures preserve escaped text while foreign-origin respons
  const e=env(),value={...base,name:'<b>Synthetic</b>'};try{const res=await worker.fetch(request(value),{...e,DB:undefined},ctx);assert.equal(res.status,503);assert.match(await res.text(),/value="&lt;b&gt;Synthetic&lt;\/b&gt;"/);const foreign=await worker.fetch(request(value,'https://foreign.test'),e,ctx);assert.equal(foreign.status,403);assert.doesNotMatch(await foreign.text(),/Synthetic/);}finally{e.DB.sqlite.close();}
 });
 test('native rate rejection preserves the fourth inquiry and supplies a bounded retry interval',async()=>{
- const e=env();try{for(let i=0;i<3;i++)assert.equal((await worker.fetch(request(base),e,ctx)).status,202);const response=await worker.fetch(request({...base,message:'Please keep this fourth question intact.'}),e,ctx);assert.equal(response.status,429);assert.ok(Number(response.headers.get('Retry-After'))>0);assert.ok(Number(response.headers.get('Retry-After'))<=3600);assert.match(await response.text(),/Please keep this fourth question intact\./);assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) n FROM inquiries').get().n,1);}finally{e.DB.sqlite.close();}
+ const e=env();try{for(let i=0;i<3;i++)assert.equal((await worker.fetch(request({...base,message:base.message+' Distinct request '+i+'.'}),e,ctx)).status,202);const response=await worker.fetch(request({...base,message:'Please keep this fourth question intact.'}),e,ctx);assert.equal(response.status,429);assert.ok(Number(response.headers.get('Retry-After'))>0);assert.ok(Number(response.headers.get('Retry-After'))<=3600);assert.match(await response.text(),/Please keep this fourth question intact\./);assert.equal(e.DB.sqlite.prepare('SELECT COUNT(*) n FROM inquiries').get().n,3);}finally{e.DB.sqlite.close();}
 });
 test('retention review remains distinct from delivery health and quota exhaustion is immediately unhealthy',async()=>{
  const e=env(),now=Date.now();Object.assign(e,{INQUIRY_MODE:'live',RESEND_API_KEY:'synthetic',NOTIFICATION_FROM:'from@example.test',NOTIFICATION_TO:'to@example.test',NOTIFICATION_DAILY_LIMIT:2});

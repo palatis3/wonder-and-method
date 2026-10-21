@@ -16,6 +16,7 @@ export function contentHash(html) {
  if(!main)throw Error('Page date tracking requires a main element.');
  const stable=main
   .replace(/<p class="journal-byline">[\s\S]*?<\/p>/g,'')
+  .replace(/<p\b[^>]*class="[^"]*\bpolicy-review-date\b[^"]*"[^>]*>[\s\S]*?<\/p>/g,'')
   .replace(/<nav\b[^>]*class="[^"]*\bbreadcrumb\b[^"]*"[^>]*>[\s\S]*?<\/nav>/g,'')
   .replace(/<section\b[^>]*class="[^"]*\bfounder-strip\b[^"]*"[^>]*>[\s\S]*?<\/section>/g,'')
   .replace(/<p\b[^>]*class="[^"]*\bservice-intro-action\b[^"]*"[^>]*>[\s\S]*?<\/p>/g,'')

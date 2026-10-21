@@ -29,6 +29,7 @@ export function mountLivingCity(root, env = globalThis) {
   const preferenceKey = 'wm.city.motion';
   const rememberMotion = value => { try { env.sessionStorage?.setItem(preferenceKey, value); } catch { /* Storage may be unavailable. */ } };
   const pausedBefore = (() => { try { return env.sessionStorage?.getItem(preferenceKey) === 'paused'; } catch { return false; } })();
+  const playedBefore = (() => { try { return env.sessionStorage?.getItem(preferenceKey) === 'playing'; } catch { return false; } })();
 
   const listen = (target, type, handler) => {
     if (!target?.addEventListener) return;
@@ -182,6 +183,7 @@ export function mountLivingCity(root, env = globalThis) {
       render();
       startLoadingTimer(token);
       for (const image of root.querySelectorAll('[data-city-preview-src]')) {
+        if (image.dataset.cityPreviewSrcset) {image.srcset=image.dataset.cityPreviewSrcset;image.sizes='(max-width:767px) 90vw, (max-width:1023px) 600px, 46vw';}
         if (!image.getAttribute('src')) image.src = image.dataset.cityPreviewSrc;
       }
       Promise.resolve(video.play()).then(() => {
@@ -385,7 +387,9 @@ export function mountLivingCity(root, env = globalThis) {
     mounted.delete(root);
   }};
   mounted.set(root, controller);
-  if (video && playButton && !reduced.matches && !saveData && !pausedBefore) play(false, false);
+  // A first visit on a small screen shows the poster without fetching a film.
+  // An explicit play choice can resume on later pages in the same tab.
+  if (video && playButton && !reduced.matches && !saveData && !pausedBefore && (!narrow.matches || playedBefore)) play(false, false);
   return controller;
 }
 

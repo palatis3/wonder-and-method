@@ -10,12 +10,15 @@ import {commercialOffers,offersForService} from '../src/schema.mjs';
 import {privateRoute,routeIndexEligible} from '../src/index-policy.mjs';
 import {guideIllustrationAlt} from '../src/guide-art.mjs';
 
-test('all 17 guide answers precede contents and optional art, with one ending action and valid anchors',()=>{
+test('all 23 guides lead their prose with an answer, show useful contents and full art, and keep one ending action',()=>{
  assert.equal(journal.length,23);
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
-  assert.ok(html.indexOf('The short answer')<html.indexOf('class="journal-toc"'),item.path);
-  assert.ok(html.indexOf('class="journal-toc"')<html.indexOf('class="journal-visual"'),item.path);
+  assert.match(html,/<div class="journal-prose"><div class="guide-decision"><h2>The short answer<\/h2>/,item.path);
+  assert.ok(html.indexOf('The short answer')<html.indexOf('<figure class="journal-hero'),item.path);
+  assert.equal((html.match(/class="journal-toc"/g)||[]).length,journalSections(item.path,offers).length>=6?1:0,item.path);
+  assert.equal((html.match(/<figure class="journal-hero/g)||[]).length,1,item.path);
+  assert.doesNotMatch(html,/class="journal-visual"/,item.path+' illustration is visible, not a disclosure');
   assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1,item.path);
   const ids=[...html.matchAll(/ id="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,item.path);
@@ -27,10 +30,12 @@ test('all 17 guide answers precede contents and optional art, with one ending ac
 
 test('owner checks come first and diagnostic offers preserve correct intent',()=>{
  const form=journalSections('/guides/contact-form-not-working/',offers);
- assert.equal(form[0].id,'five-minute-check');assert.equal(form[1].id,'platform-settings');
- const body=form.map(x=>x.body).join('');assert.match(body,/Some WordPress plugins.*do not save/);assert.match(body,/offer=audit_fix_sprint&amp;goal=fix/);assert.match(body,/SPF, DKIM and DMARC/);
- const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['intent','discovery','inspection-steps']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
- const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/rollback/);assert.match(launch,/blocked, not passed/);assert.match(launch,/does not guarantee indexing/);
+ assert.deepEqual(form.slice(0,5).map(x=>x.id),['five-minute-check','page','platform-settings','verify','review-options']);
+ const body=form.map(x=>x.body).join('');assert.match(body,/A site may not store a separate inquiry record/);assert.match(body,/WordPress:.*identify the form plugin/);assert.match(body,/SPF, DKIM and DMARC/);
+ const rendered=journalArticle(journal.find(item=>item.path==='/guides/contact-form-not-working/'),offers,journal);
+ assert.match(rendered,/offer=website_baseline&amp;goal=fix&amp;request_kind=question#inquiry/);assert.match(body,/Audit &amp; Fix Sprint.*up to two small fixes in total/);
+ const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['plain-search-terms','inspection-steps','specific-index-checks']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
+ const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/rollback/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
 test('county services precede optional worksheet and hub keeps one link per county',()=>{

@@ -12,15 +12,16 @@ test('the approved twelve addition prices are consistent in catalogues and nativ
  assert.deepEqual(Object.fromEntries(offers.add_ons.map(item=>[item.id,item.public_price])),expected);
  for(const detailed of [false,true]){
   const html=addonCatalogue(offers,{detailed});
-  assert.equal((html.match(/class="addon-item"/g)||[]).length,12);
+  assert.equal((html.match(/class="addon-item"/g)||[]).length,detailed?12:0);
   assert.doesNotMatch(html,/class="compact-offer"/);
-  for(const item of offers.add_ons)assert.ok(html.includes('addons='+item.id));
+  for(const item of offers.add_ons)assert.ok(html.includes(detailed?'addons='+item.id:'id="addon-'+item.id+'"'));
+  if(!detailed)assert.match(html,/href="\/services\/website-addons\/"/);
  }
  const form=addonPicker(offers);
  assert.equal((form.match(/type="checkbox"/g)||[]).length,12);
  assert.equal(new Set([...form.matchAll(/name="([^"]+)"/g)].map(match=>match[1])).size,12);
- assert.match(form,/included pages, forms and ready connections first/);
- assert.match(form,/application support is separately scoped/);
+ assert.match(form,/more than your package includes/);
+ assert.match(form,/Ongoing support for stores, dashboards and portals is priced separately/);
 });
 
 test('selected additions enter the one-time subtotal once and never receive an annual discount',()=>{

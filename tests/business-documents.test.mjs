@@ -6,6 +6,7 @@ import {paymentContent} from '../src/payment-content.mjs';
 import {monthlyPlanDetails, monthlyScopeTable, baselineEnrollmentNote} from '../src/monthly-content.mjs';
 import {projectCalendar, conceptDebrief} from '../src/buyer-experience.mjs';
 import {sourceHandoff} from '../src/source-handoff.mjs';
+import {money} from '../src/shared.mjs';
 
 const offers = JSON.parse(await readFile(new URL('../config/offers.json', import.meta.url), 'utf8'));
 const text = pack => pack.sections.flatMap(s => s.items).join(' ');
@@ -44,13 +45,13 @@ test('monthly documents distinguish ongoing care, main improvements and Grow-onl
  const improve = text(packs.find(p => p.id === 'improve'));
  const grow = text(packs.find(p => p.id === 'grow'));
  assert.match(keep, /No main improvement is included/);
- assert.match(keep, /checks even when you send no edits/);
+ assert.match(keep, /monthly fee covers the agreed checks even without supplied edits/);
  assert.doesNotMatch(keep, /Grow|second accepted improvement|small reuse task|30-day|30 calendar days/);
  assert.doesNotMatch(improve, /second accepted improvement|additional small graphic|30-day|30 calendar days/);
  assert.match(improve, /1 completed improvement/);
- assert.match(improve, /full promotional graphic or newsletter draft\/setup/);
+ assert.match(improve, /full promotional graphic or newsletter draft and setup can replace an improvement by agreement/);
  assert.match(improve, /20-minute call.*equivalent written review/);
- assert.match(grow, /2 completed connected improvements/);
+ assert.match(grow, /2 completed related improvements/);
  assert.match(grow, /second accepted improvement.*remain owed/);
  assert.match(grow, /30-minute call.*equivalent written review/);
  for (const pack of packs.filter(p => ['keep_running', 'improve', 'grow'].includes(p.id))) {
@@ -85,16 +86,17 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
   assert.equal(pack.price, price);
   assert.match(body, new RegExp('Up to ' + cap + ' pages'));
   assert.doesNotMatch(body, /Supplied plain policy pages are separate/);
-  assert.match(body, /policy pages.*(?:beyond|outside).*(?:cap|count)/);
-  assert.match(body, /approved committed costs/);
+  assert.match(body, /policy pages.*(?:beyond|outside).*(?:cap|count|limit)/);
+  assert.match(body, /completed work and unavoidable approved costs/);
+  assert.match(body, /any unearned amount is refunded under your signed agreement/);
   assert.match(body, /Silence.*(?:acceptance|approval)/);
   assert.match(body, /licenses|licences/);
   assert.match(body, /30 calendar days after launch/);
-  assert.match(body, /test message reached the receiving inbox/);
+  assert.match(body, /contact-form checks record results, including delivery to the receiving inbox/);
   assert.match(body, /one optional|optional.*call/i);
   assert.doesNotMatch(body, /refund.*within ten business days/i);
-  const actual = pack.sections.find(s => s.title === 'Payments and outside costs').items;
-  for (const stage of offers[id].payment_schedule) assert.ok(actual.some(line => line.includes(stage.event) && line.includes(stage.percent + '%')));
+  const actual = pack.sections.flatMap(section => section.items);
+  for (const stage of offers[id].payment_schedule) assert.ok(actual.some(line => line.includes(money(stage.amount)) && line.includes(stage.event) && line.includes(stage.percent + '%')));
  }
  for (const id of ['website_baseline', 'audit_fix_sprint']) {
   const body = text(packs.find(p => p.id === id));
@@ -103,16 +105,17 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
   assert.match(body, /unearned amount to be refunded/);
   assert.match(body, /30 calendar days after your written approval of its completion/);
  }
- assert.match(text(packs.find(p => p.id === 'audit_fix_sprint')), /up to 2 fixes total, not a Baseline fix plus 2 more/);
+ assert.match(text(packs.find(p => p.id === 'audit_fix_sprint')), /up to two agreed small fixes in total; this is not a Baseline fix plus two more/);
 });
 
 test('process and handoff avoid stale schedules and premature final-payment trigger', () => {
  const calendar = projectCalendar(), handoff = sourceHandoff();
- assert.match(calendar, /3–5 days for Launch, 5–8 days for Focused and 7–10 days for Signature/);
+ assert.match(calendar, /3–5 business days for Launch, 5–8 business days for Focused and 7–10 business days for Signature/);
  assert.match(calendar, /I write the content/);
- assert.match(calendar, /full windows.*can move the launch beyond the package’s build-time target/);
+ assert.match(calendar, /Add your review time: two rounds, each allowing up to five business days/);
+ assert.match(calendar, /Missing information or extra work can move them; I agree any revised dates with you/);
  assert.doesNotMatch(calendar, /April|2027|four working weeks|ten production days/);
- assert.match(handoff, /five business days after paid completion or settled cancellation/);
+ assert.match(handoff, /five business days after the paid work is finished, or after settling the account if the project stops early/);
  assert.doesNotMatch(handoff, /five business days.*final payment/);
  assert.match(handoff, /no drag-and-drop editor/);
  assert.match(handoff, /ZIP does not transfer them automatically/);
@@ -127,8 +130,8 @@ test('examples use current limits and do not imply included production commerce'
  assert.match(report, /Grow only/);
  assert.match(report, /Blank example/);
  const demo = conceptDebrief('hearthside');
- assert.match(demo, /ready ordering service you already use/);
- assert.match(demo, /Building an ordering system or setting up that outside account is separate work/);
+ assert.match(demo, /A link to an ordering service you already use can be included/);
+ assert.match(demo, /Building the custom order preview shown here, creating an ordering system or setting up the outside account is separate work/);
  assert.match(demo, /places no order and takes no payment/);
 });
 

@@ -1,5 +1,10 @@
 import {test,expect} from './fixtures.mjs';
 
+async function playOnPhone(page){
+ await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-ready','true');
+ if(page.viewportSize().width<=1023)await page.locator('[data-city-play]').click();
+}
+
 test('stars visibly twinkle in a loop and obey pause and reduced motion',async({page},testInfo)=>{
  await page.goto('/?qa=1');
  const stars=page.locator('.city-star');
@@ -9,6 +14,7 @@ test('stars visibly twinkle in a loop and obey pause and reduced motion',async({
   expect(await stars.evaluateAll(nodes=>nodes.every(node=>node.getAnimations().length===0))).toBe(true);
   return;
  }
+ await playOnPhone(page);
  await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','playing');
  const sample=()=>stars.evaluateAll(nodes=>nodes.map(node=>({opacity:Number(getComputedStyle(node).opacity),time:node.getAnimations()[0]?.currentTime,state:node.getAnimations()[0]?.playState,iterations:node.getAnimations()[0]?.effect.getTiming().iterations})));
  const first=await sample();
@@ -28,6 +34,7 @@ test('stars visibly twinkle in a loop and obey pause and reduced motion',async({
 test('card entrances settle into crisp text and pause their entire animation',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='phone-reduced-motion','The tour is disabled when reduced motion is requested');
  await page.goto('/?qa=1');
+ await playOnPhone(page);
  const card=page.locator('[data-city-showcase=fieldwork]');
  await expect(card).toHaveAttribute('data-active','true');
  await page.locator('[data-city-play]').click();
@@ -43,6 +50,7 @@ test('card entrances settle into crisp text and pause their entire animation',as
 test('keyboard focus during an entrance reveals the complete card before holding it',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='phone-reduced-motion','The tour is disabled when reduced motion is requested');
  await page.goto('/?qa=1');
+ await playOnPhone(page);
  const card=page.locator('[data-city-showcase=fieldwork]');
  await expect(card).toHaveAttribute('data-active','true');
  await card.locator('a').focus();

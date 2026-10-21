@@ -28,6 +28,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site .studio-section{padding:4rem 0}
 .studio-site .eyebrow{color:#4b574e;font-size:.72rem}
 .studio-site .page-jump{margin:1.5rem 0 0;gap:.5rem 1.75rem}
+.studio-site .page-intro+.page-jump{border-top:0}
 .studio-site .page-jump a{font-size:.87rem;min-height:44px}
 .studio-site .page-jump a:hover{text-decoration-thickness:2px}
 .studio-site summary{padding-top:.2rem;padding-bottom:.2rem;min-height:44px}
@@ -36,6 +37,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site .steps.long>li>span{color:var(--moss)}
 .studio-site .intent-example,.studio-site .baseline-note{background:var(--subtle);border-color:var(--line)}
 .work-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4rem 2.5rem;padding:3rem 0 4rem}
+@media(min-width:1024px){.work-gallery{grid-template-columns:repeat(6,minmax(0,1fr))}.work-gallery>.work-item{grid-column:span 2}.work-gallery>.work-item#websites{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:2.5rem}.work-gallery>.work-item:is(#buffalo-civic,#studies){grid-column:span 3}}
 .work-item{min-width:0;scroll-margin-top:2rem}
 .work-preview{display:block;background:var(--subtle);aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line)}
 .work-preview img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .3s ease}
@@ -534,10 +536,13 @@ form>.optional-choice{margin:1.25rem 0}
 .link-row{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1.25rem;list-style:none;margin:1rem 0;padding:0}
 .link-row li{margin:0;padding:0}
 .link-row a,.studio-site :is(.buyer-pack-links,.checkout-alternatives) a{display:inline-flex;align-items:center;min-height:44px;padding-block:.6rem;font-size:1rem}
+@media(max-width:767px){.studio-site main :is(p>a:only-child,a.text-link,th>a){display:inline-flex;align-items:center;min-height:44px}}
+.studio-site :is(.actions,p:has(>.button+.text-link)){display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center}
+.studio-site .error{font-size:1rem;line-height:1.5}
 html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
 /* Fixed corner tools enhance the native footer link after JavaScript is ready. */
 .page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
-.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
+.page-tools-ready .back-to-top{position:fixed;left:auto;right:max(1rem,env(safe-area-inset-right));bottom:calc(5rem + env(safe-area-inset-bottom));z-index:50}
 .page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
 .page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .page-tools-ready .studio-site .site-footer--compact{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
@@ -546,16 +551,20 @@ html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bott
 .page-tools-ready.chat-is-open .back-to-top,
 html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back-to-top{visibility:hidden;pointer-events:none}
 @media(max-width:767px),(max-height:520px){
- .page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
- .page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .page-tools-ready .back-to-top{display:none!important}
+ .studio-site main{padding-bottom:5rem}
 }
 /* Every retained financial table shares the same column alignment. */
+.studio-site :is(.responsive-table,.table-scroll){margin-bottom:2rem}
+.studio-site .table-scroll>.responsive-table{margin-bottom:0}
 .studio-site :is(.payment-schedule,.table-scroll,.comparison-scroll) table{border-collapse:collapse}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) :is(th,td){text-align:left;padding:1rem;border-bottom:1px solid var(--line);vertical-align:top;white-space:normal;font-size:1rem;overflow-wrap:anywhere}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) thead{background:var(--subtle)}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) caption{text-align:left;white-space:normal;font-size:1rem;padding:0 0 1rem;overflow-wrap:anywhere}
 .studio-site :is(.website-payment-table,.website-yearly-table,.website-allowance-table,.pricing-comparison,.responsive-table) td{font-variant-numeric:tabular-nums}
 .studio-site table.responsive-table{width:100%;min-width:0;table-layout:auto}
+.studio-site .journal-table-wrap :is(th,td){overflow-wrap:normal;hyphens:auto}
+@media(min-width:768px){.studio-site .journal-table-wrap th:first-child{min-width:8.5rem}}
 @media(max-width:767px){
  /* Keep real headers available to assistive technology when rows become cards. */
  .studio-site :is(.table-scroll,.comparison-scroll,.payment-schedule,.journal-table-wrap):has(.responsive-table){overflow:visible;max-width:100%}
@@ -582,7 +591,13 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .compact-comparison:has(>article:only-child){grid-template-columns:minmax(0,1fr);max-width:48rem}
 .studio-site .related-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center}
 .studio-site .related-links a{display:inline-flex;align-items:center;min-height:44px}
-.studio-site .inquiry-next h3{margin-bottom:.4rem}
+.studio-site .inquiry-next :is(h2,h3){font-size:1.5rem;margin-bottom:.4rem}
+.studio-site .checkout-price{font-size:1.25rem;line-height:1.5;font-weight:650}
+.studio-site .checkout-price span{display:block;font-size:1rem;font-weight:400}
+.studio-site .checkout-payment-steps{padding-left:1.25rem;line-height:1.6}
+.studio-site .checkout-payment-steps li{margin-block:.65rem}
+.studio-site .checkout-first-payment{padding:1rem;border-left:3px solid var(--green,#334739);background:var(--subtle,#edf0e8);font-size:1.1rem}
+.studio-site .checkout-reassurance{margin-block:1rem;font-size:1rem}
 .studio-site .inquiry-next p{margin:.5rem 0}
 .studio-site .civic-hero[data-unavailable=true] .civic-controls{position:static;margin:1rem 0;justify-content:center}
 /* Components with their own columns use the available width, not the prose measure. */
@@ -592,6 +607,11 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site details>:is(.comparison-scroll,.table-scroll,.payment-schedule){max-width:none;width:100%}
 .studio-site :is(.pricing-group,.studio-section)>h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1}
 .studio-site .studio-closing h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.1;max-width:24ch}
+.studio-site .studio-closing .service-preparation{max-width:72ch;margin-top:1rem;font-size:1rem;line-height:1.8}
+.studio-site .service-preparation a{text-underline-offset:.2em}
+.studio-site:is(.studio-service,.studio-pricing) :is(.studio-section,.pricing-group,.section-heading)>h2{font-size:clamp(2rem,3vw,2.5rem);line-height:1.15}
+.studio-site:is(.studio-service,.studio-pricing) .studio-closing h2{font-size:clamp(2rem,3.5vw,3rem)}
+.studio-site .continuing-grid:has(>article:only-child){grid-template-columns:minmax(0,1fr);max-width:48rem}
 .studio-site .journal-header{max-width:760px;text-align:left;margin-inline:auto}
 .studio-site .journal-header :is(h1,.lede){margin-inline:0;max-width:none}
 .studio-site .journal-byline{max-width:760px;margin-inline:auto;text-align:left}
@@ -620,9 +640,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .compact-offer>ul{margin-block:.5rem 1rem}
 .studio-site .compact-offer>ul>li{margin-block:.4rem;line-height:1.55}
 .studio-site .checkout-request>h2{font-size:2rem;margin-bottom:.75rem}
-.studio-form .site-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.5rem clamp(20px,5vw,72px)}
-.studio-form .support-chat{position:static;max-width:none}
-.studio-form .page-tools .back-to-top{position:static;opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.studio-form .site-tools{display:block;padding:0}
 @media(max-width:767px){
  .studio-site .work-item--secondary .work-preview,.studio-site .work-item--secondary .work-preview img{max-height:180px}
  .studio-site .checkout-intro{padding-bottom:1rem}
@@ -630,9 +648,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
  .studio-site .checkout-intro .delivery-target{font-size:.9rem}
 }
 
-.page-tools-ready .studio-site.studio-form .site-tools{width:auto;margin:2rem 0;padding:1.5rem clamp(20px,5vw,72px);border-top:1px solid var(--line)}
-.studio-site.studio-form .page-tools .back-to-top{width:auto;height:auto;min-height:48px;padding:.65rem 1rem;gap:.65rem}
-.studio-site.studio-form .back-to-top>span:not(.back-to-top-icon){position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
+.page-tools-ready .studio-site.studio-form .site-tools{width:auto;margin:0;padding:0;border:0}
 @media(min-width:768px){.studio-site table.website-allowance-table{table-layout:fixed}}
 
 /* Optional additions use a distinct catalogue; the core package cards stay compact. */
@@ -640,11 +656,12 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .addon-group{margin-block:2rem}
 .studio-site .addon-group>h3{font-size:1.3rem;margin-bottom:1rem}
 .studio-site .addon-price-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+.studio-site .addon-price-list>.addon-item:last-child:nth-child(odd){grid-column:1/-1}
 .studio-site .addon-item{min-width:0;padding:1.25rem 0;border-top:1px solid var(--line,#ced2c7)}
 .studio-site .addon-title{display:flex;justify-content:space-between;align-items:start;gap:1rem}
 .studio-site .addon-title h4{margin:0;font:650 1.1rem/1.45 var(--font-body,Manrope,sans-serif);max-width:26ch}
 .studio-site .addon-price{flex-shrink:0;margin:0;text-align:right;font-size:1.25rem;font-weight:650;font-variant-numeric:tabular-nums}
-.studio-site .addon-price span{display:block;font-size:.75rem;font-weight:400}
+.studio-site .addon-price span{display:block;font-size:.875rem;font-weight:400}
 .studio-site .addon-item>p{margin:.5rem 0}
 .studio-site .addon-item>.text-link{display:inline-flex;align-items:center;min-height:44px;gap:.5rem}
 .studio-site .addon-scope>summary,.studio-site .addon-picker>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:650}
@@ -653,9 +670,9 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .addon-picker{margin-block:1.25rem;border-block:1px solid var(--line,#ced2c7);padding:.5rem 0}
 .studio-site .addon-picker fieldset{min-width:0;margin:1rem 0;padding:0;border:0}
 .studio-site .addon-picker legend{font-weight:650;font-size:.95rem;padding-block:.5rem}
-.studio-site .addon-picker label.addon-choice{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:start;gap:.75rem;margin:0;padding:.85rem 0;border-top:1px solid var(--line,#ced2c7);cursor:pointer;min-height:44px;font-size:.9rem;font-weight:400}
+.studio-site .addon-picker label.addon-choice{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:start;gap:.75rem;margin:0;padding:.85rem 0;border-top:1px solid var(--line,#ced2c7);cursor:pointer;min-height:44px;font-size:1rem;font-weight:400}
 .studio-site .addon-picker .addon-choice input{width:20px;height:20px;margin:.15rem 0 0;accent-color:#334739}
-.studio-site .addon-choice small{display:block;margin-top:.25rem;font-size:.8rem;line-height:1.55;font-weight:400}
+.studio-site .addon-choice small{display:block;margin-top:.25rem;font-size:.9375rem;line-height:1.55;font-weight:400}
 .studio-site .addon-choice-price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:650}
 .studio-site .addon-selection-summary{padding:.75rem 1rem;background:#edf0e8;border-radius:6px;margin:1rem 0}
 .studio-site .addon-selection-summary p{margin:.5rem 0}
@@ -667,4 +684,5 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
  .studio-site .addon-price{font-size:1.15rem}
  .studio-site .addon-picker label.addon-choice{grid-template-columns:22px minmax(0,1fr);gap:.5rem}
  .studio-site .addon-choice-price{grid-column:2}
+ .studio-site .addon-choice small{font-size:1rem}
 }

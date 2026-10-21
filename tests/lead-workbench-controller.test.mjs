@@ -28,18 +28,18 @@ test('controller retains failed-write warning through subsequent saves/adds unti
  assert.equal(app.get('remember-samples').checked,true);app.edit('First unsaved synthetic edit');assertUnresolved(app);assert.match(app.note(),/saving failed/);
  app.edit('Second unsaved synthetic edit');assertUnresolved(app);app.add();assertUnresolved(app);app.edit('New sample unsaved edit');assertUnresolved(app);
  assert.equal(fixture.read(),original);assert.match(app.get('workbench-status').textContent,/storage needs attention/);
- const reloaded=mount(fixture.storage);assert.equal(reloaded.get('sample-count').textContent,'1 of 1 synthetic records shown.');assert.equal(reloaded.get('sample-notes').value,'');
+ const reloaded=mount(fixture.storage);assert.equal(reloaded.get('sample-count').textContent,'1 of 1 sample inquiries shown.');assert.equal(reloaded.get('sample-notes').value,'');
  fixture.faults.write=false;app.remember(true);assert.doesNotMatch(app.note(),/older saved copy|saving failed/);assert.match(app.note(),/changes are saved/);
- const recovered=mount(fixture.storage);assert.equal(recovered.get('sample-count').textContent,'2 of 2 synthetic records shown.');assert.equal(recovered.get('sample-notes').value,'Second unsaved synthetic edit');
+ const recovered=mount(fixture.storage);assert.equal(recovered.get('sample-count').textContent,'2 of 2 sample inquiries shown.');assert.equal(recovered.get('sample-notes').value,'Second unsaved synthetic edit');
 });
 
 for(const action of ['disable','reset'])test(`controller retains failed-${action} clear warning through edits/adds until a successful clear`,()=>{
  const fixture=storageFixture();fixture.faults.clear=true;const app=mount(fixture.storage),original=fixture.read();
  if(action==='disable')app.remember(false);else app.click('reset-samples');
  assertUnresolved(app);assert.match(app.note(),/could not be cleared/);app.add();assertUnresolved(app);app.edit('Later synthetic edit');assertUnresolved(app);app.add();assertUnresolved(app);
- assert.equal(fixture.read(),original);assert.equal(mount(fixture.storage).get('sample-count').textContent,'1 of 1 synthetic records shown.');
+ assert.equal(fixture.read(),original);assert.equal(mount(fixture.storage).get('sample-count').textContent,'1 of 1 sample inquiries shown.');
  fixture.faults.clear=false;app.click('reset-samples');assert.equal(fixture.read(),null);assert.match(app.note(),/^Memory only:/);assert.doesNotMatch(app.note(),/could not be cleared|older saved copy/);
- app.add();app.edit('After successful clear');assert.match(app.note(),/^Memory only:/);assert.equal(mount(fixture.storage).get('sample-count').textContent,'0 of 0 synthetic records shown.');
+ app.add();app.edit('After successful clear');assert.match(app.note(),/^Memory only:/);assert.equal(mount(fixture.storage).get('sample-count').textContent,'0 of 0 sample inquiries shown.');
 });
 
 test('successful overwrite resolves a failed-clear warning and successful clear resolves a failed-write warning',()=>{

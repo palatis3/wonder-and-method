@@ -20,14 +20,15 @@ test('existing-site requests accept public addresses without requesting the webs
  }
  for(const website of ['not yet','@social','ftp://example.com','https://user:secret@example.com','localhost','https://127.1/','http://2130706433/','http://0x7f000001/','http://192.168.2.1/','http://169.254.169.254/','https://internal.local/','a..com']){
   assert.equal(publicWebsiteAddress(website),null,website);
-  assert.ok(validateInquiry({...inquiry,service:'improve',website}).errors.website,website);
+  assert.ok(validateInquiry({...inquiry,service:'website_baseline',website}).errors.website,website);
  }
 });
-test('general questions retain social notes while repair intent requires a website',()=>{
+test('general questions retain social notes while an actual paid review request requires a website',()=>{
  for(const website of ['', 'not yet','@mybusiness','Instagram: @mybusiness']){
   assert.deepEqual(validateInquiry({...inquiry,service:'launch_site',goal:'fix',website}).errors,{});
   assert.deepEqual(validateInquiry({...inquiry,service:'improve',request_kind:'question',website}).errors,{});
-  assert.ok(validateInquiry({...inquiry,service:'unsure',request_kind:'question',goal:'fix',website}).errors.website);
+  assert.deepEqual(validateInquiry({...inquiry,service:'unsure',request_kind:'question',goal:'fix',website}).errors,{});
+  assert.ok(validateInquiry({...inquiry,service:'website_baseline',goal:'fix',website}).errors.website);
  }
  for(const trap of ['_wm_note','_faxcheck','company_url'])
   assert.ok(validateInquiry({...inquiry,service:'launch_site',[trap]:'filled'}).errors.company_url);
@@ -61,7 +62,7 @@ test('monthly first-payment alternatives and website editing limits appear befor
  const pages=checkoutPages(offers,intakeContent(config));
  for(const [slug,first,repeat]of [['keep-running','$549','$150'],['improve','$799','$400'],['grow','$1,199','$800']]){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body,header=page.slice(0,page.indexOf('<form'));
-  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/usable previous review/);assert.match(header,/No minimum term/);
+  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);assert.match(header,/No minimum term/);
  }
  for(const slug of ['launch-site','focused-site','signature-site']){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body;

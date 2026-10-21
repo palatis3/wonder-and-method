@@ -13,7 +13,8 @@ const json=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'
 const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(json));
 const pages=renderPages({config,offers,map,geography});
 function assertArticleOutsideDisclosures(html,label){
-  assert.match(html,/<\/nav><\/details><div class="journal-prose">/,label+' article must sit outside collapsed contents');
+  if(html.includes('class="journal-toc"'))assert.match(html,/<\/nav><\/details><div class="journal-prose">/,label+' article must sit outside collapsed contents');
+  else assert.match(html,/class="journal-layout journal-layout-no-toc"><div class="journal-prose">/,label+' a short guide has visible prose without a contents disclosure');
   const disclosures=[];for(const tag of html.matchAll(/<\/?details\b[^>]*>|<div class="journal-prose">/g)){
    if(tag[0]==='<div class="journal-prose">')assert.equal(disclosures.length,0,label+' article hidden in disclosure');
    else if(tag[0].startsWith('</'))assert.ok(disclosures.pop(),label+' unexpected details close');
@@ -39,7 +40,7 @@ test('published guides have unique metadata, visible authorship and matching art
   const image=config.origin+journalImage(guide);assert.deepEqual(article.image,guide.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(guide)+'-'+ratio+'.png'));assert.ok(html.includes(`property="og:image" content="${image}"`));
   const crumbs=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;assert.equal(crumbs.at(-1).item,article.mainEntityOfPage);assert.equal(crumbs[1].item,config.origin+'/guides/');
   assertArticleOutsideDisclosures(html,guide.path);
-  assert.match(html,/aria-label="In this guide"/);assert.match(html,/class="journal-byline"/);
+  assert.equal(html.includes('aria-label="In this guide"'),journalSections(guide.path,offers).length>=6,guide.path);assert.match(html,/class="journal-byline"/);
   for(const match of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${match[1]}"`),match[1]);
  }
 });
@@ -52,7 +53,8 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
  for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
  assert.ok(pages.find(x=>x.path==='/services/website-audit/').html.includes(`href="${audit}"`));
  const cost=pages.find(x=>x.path===comparison).html,checklist=pages.find(x=>x.path===audit).html;
- for(const target of ['/services/website-care/','/services/seo/','/services/website-audit/','/pricing/#after-launch','/guides/seo-work-and-reporting/'])assert.ok(cost.includes(`href="${target}"`),target);
+ for(const target of ['/services/website-care/','/services/seo/','/services/website-audit/','/pricing/#payments','/guides/seo-work-and-reporting/'])assert.ok(cost.includes(`href="${target}"`),target);
+ assert.ok(pages.find(page=>page.path==='/pricing/').html.includes('id="payments"'),'The replacement billing link has a real target');
  for(const target of ['/services/website-audit/','/work/','/services/seo/','/guides/website-redesign-brief/','/contact/'])assert.ok(checklist.includes(`href="${target}"`),target);
  for(const slug of ['care-versus-seo','audit-checklist']){
   const svg=await readFile(new URL(`../src/assets/guides/${slug}.svg`,import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);assert.match(svg,/<title id="title">/);assert.match(svg,/<desc id="desc">/);
@@ -63,8 +65,8 @@ test('new guides keep publication gates, distinct downloads and reciprocal servi
  assert.equal((worksheet.match(/"Example only:/g)||[]).length,3);assert.match(worksheet,/do not count the same work twice/);assert.doesNotMatch(worksheet,/Actual owned content-change record/);
  const csv=await readFile(new URL('../src/assets/guides/website-audit-checklist.csv',import.meta.url),'utf8');
  for(const field of ['What to check','What should happen','Result','Evidence (link and date)','Fix needed / who','Next check'])assert.ok(csv.split('\n')[0].includes(`"${field}"`));
- assert.equal((csv.match(/"Untested"/g)||[]).length,16);assert.match(csv,/check confirmation, any saved record, inbox or spam, and your reply separately/);
- assert.doesNotMatch(checklist,/CA-01|CA-04/);assert.match(checklist,/confirm receipt and inbox arrival/);assert.match(checklist,/hypothetical/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
+ assert.equal((csv.match(/"Not checked"/g)||[]).length,16);assert.match(csv,/check confirmation, any saved record, inbox or spam, and your reply separately/);
+ assert.doesNotMatch(checklist,/CA-01|CA-04/);assert.match(checklist,/look for it in the form tool’s saved submissions/);assert.match(checklist,/confirm that it reaches the inbox and reply to your test address/);assert.match(checklist,/hypothetical/);assert.doesNotMatch(checklist,/97\/100|100\/100|Lighthouse score/);
 });
 
 test('repair-or-redesign guide supports the earlier decision with bounded owned evidence and a distinct worksheet',async()=>{
@@ -72,23 +74,24 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  const hidden=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!==path)},offers,map,geography});assert.ok(!hidden.some(page=>page.path===path));
  for(const target of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/','/guides/website-project-cost/','/work/','/assets/buyer-packs/owned-audit-two-fixes'])assert.ok(html.includes(`href="${target}"`),target);
  for(const source of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/'])assert.ok(pages.find(page=>page.path===source).html.includes(`href="${path}"`),source);
- assert.match(html,/No new project is a valid decision/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/does not report client outcomes/);assert.doesNotMatch(html,/CA-03/);
+ assert.match(html,/Doing nothing is fine if the site works/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/Illustrative examples/);assert.match(html,/two real fixes I made to my own website/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
  for(const field of ['What is going wrong','Evidence (link and date)','Useful content and accounts to keep','Platform and access check','Small fix to try and how to check it','Keep, fix or rebuild?'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);
- assert.match(csv,/Example only:/);assert.match(csv,/No client result claimed/);assert.match(csv,/Try a small fix before deciding on a rebuild/);assert.doesNotMatch(csv,/Actual owned correction/);
+ assert.match(csv,/Example only:/);assert.match(html,/Replace the fictional example with your own website/);assert.match(csv,/Try a small fix before deciding on a rebuild/);assert.doesNotMatch(csv,/Actual owned correction/);
  for(const row of csv.trim().split(/\r?\n/))assert.equal((row.match(/"(?:[^"]|"")*"/g)||[]).length,6,'Six usable worksheet fields on every row');
  const svg=await readFile(new URL('../src/assets/guides/repair-or-redesign.svg',import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);assert.match(svg,/record gaps and obtain authorized access/);assert.match(svg,/keep the useful site/);assert.match(svg,/fix and retest/);
  const png=await readFile(new URL('../src/assets/guides/repair-or-redesign-social.png',import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
- const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/https:\/\/developers.google.com\/search\/docs\/fundamentals\/ai-optimization-guide/);assert.match(seo,/must be indexed and able to show a search snippet/);assert.match(seo,/No special AI file or extra schema guarantees visibility/);assert.match(seo,/relevant Search Console inclusion setting/);
+ const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/https:\/\/developers.google.com\/search\/docs\/fundamentals\/ai-optimization-guide/);assert.match(seo,/an indexed page eligible for a search snippet/);assert.match(seo,/A special AI file or extra schema is not a shortcut to visibility/);assert.match(seo,/Search Console setting for AI inclusion must also permit it/);assert.match(seo,/No ranking, traffic, inquiry, revenue or AI-citation result is guaranteed/);
 });
 
 test('care comparison uses current configured service fees and finite units',()=>{
  const revised=structuredClone(offers);revised.plans.keep_running.monthly_price=207;revised.plans.improve.priorities=3;
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
- assert.match(html,/Keep Running is \$207/);assert.match(html,/3 complete improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
- assert.match(html,/it is still one correction/);assert.match(html,/next invoice pauses/);
- const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/Accepted work delayed by me remains owed/);
+ assert.match(html,/Keep Running — \$207\/month/);assert.match(html,/3 complete improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
+ assert.match(html,/five business days before renewal, the improvement month pauses/);assert.match(html,/We agree in writing whether care also pauses or continues/);assert.match(html,/no automatic \$207 care charge/);
+ const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/If I delay approved work, we agree a new date or refund/);
+ const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/I never count the same work twice/);assert.match(seo,/If I delay accepted work, I still owe it/);
 });
 
 test('only pages containing Civic artwork load Civic styles and alternate hero code stays absent',()=>{
@@ -118,7 +121,7 @@ test('the cost-guide examples distinguish pages and creative scope with source-c
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
  assert.match(html,/Focused adds more service detail, two forms, two original guides and up to two ready connections/);
  assert.match(html,/Signature adds a larger page plan, four original guides and an original animated hero or 3D centerpiece/);
- assert.match(html,/Every studio website package includes.*source files and a written handoff/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
+ assert.match(html,/Every package includes.*source files and written handoff instructions/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
 });
 
@@ -128,6 +131,10 @@ test('guide structure verifier rejects a missing contents-disclosure closing tag
  const broken=html.replace('</nav></details><div class="journal-prose">','</nav><div class="journal-prose">');
  assert.notEqual(broken,html,'mutation must remove the contents closing tag');
  assert.throws(()=>assertArticleOutsideDisclosures(broken,'broken guide'),/article must sit outside collapsed contents/);
+ const short=pages.find(page=>page.path==='/guides/website-maintenance-checklist/').html;
+ assertArticleOutsideDisclosures(short,'short guide without contents');
+ const hidden=short.replace('<div class="journal-prose">','<details><div class="journal-prose">');
+ assert.notEqual(hidden,short);assert.throws(()=>assertArticleOutsideDisclosures(hidden,'hidden short guide'));
 });
 
 test('guide publication retains approval gates',()=>{

@@ -21,11 +21,15 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
 test('breadcrumb labels escape markup while structured names retain their actual text',()=>{
  const trail=breadcrumbTrail('/services/test/','A <better> & "clearer" page');assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'A <better> & "clearer" page');assert.match(breadcrumbMarkup(trail),/A &lt;better&gt; &amp; &quot;clearer&quot; page/);
 });
-test('contact-form guide uses a concise breadcrumb with matching structured data',()=>{
- const trail=breadcrumbTrail('/guides/contact-form-not-working/','Contact form not working? Trace the missing inquiry.');
- assert.equal(trail.at(-1).name,'Contact form help');
- assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'Contact form help');
- assert.match(breadcrumbMarkup(trail),/aria-current="page">Contact form help<\/span>/);
+test('contact-form guide uses its visible title in the breadcrumb and Article headline',()=>{
+ const page=pages.find(page=>page.path==='/guides/contact-form-not-working/'),heading=page.html.match(/<h1\b[^>]*>([^<]+)<\/h1>/)?.[1];assert.ok(heading);
+ const trail=breadcrumbTrail(page.path,heading);
+ assert.equal(trail.at(-1).name,heading);
+ assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,heading);
+ assert.ok(breadcrumbMarkup(trail).includes(`aria-current="page">${heading}</span>`));
+ const graph=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+ assert.equal(graph.find(node=>node['@type']==='BreadcrumbList').itemListElement.at(-1).name,heading);
+ assert.equal(graph.find(node=>node['@type']==='Article').headline,heading);
 });
 test('rendered navigation section jumps resolve and back-to-top has a native target across every page',()=>{
  let jumps=0;

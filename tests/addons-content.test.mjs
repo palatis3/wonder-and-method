@@ -26,7 +26,7 @@ test('add-on service is discoverable, indexable and separate from all eight base
  assert.deepEqual(pages.filter(page=>page.path.startsWith('/checkout/')).map(page=>page.path).sort(),baseIds.map(id=>'/checkout/'+id.replaceAll('_','-')+'/').sort());
  assert.equal((pricing.html.match(/class="compact-offer"/g)||[]).length,8);
  assert.match(catalogue.html,/<h1>Add what your<br>website needs\.<\/h1>/);
- assert.match(catalogue.html,/class="founder-strip"/);
+ assert.match(catalogue.html,/class="studio-contact-note"/);
  assert.match(catalogue.html,/class="back-to-top"/);
  assert.match(catalogue.html,/class="support-chat/);
  assert.ok(crawlFiles(config,pages).sitemap.includes(config.origin+addonPath));
@@ -51,7 +51,7 @@ test('add-on service is discoverable, indexable and separate from all eight base
 
 test('relevant service and guide copy links to the complete scope without replacing base allowances',()=>{
  const pages=render();
- for(const path of ['/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-care/','/services/seo/','/services/website-audit/','/work/source-handoff/','/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/contractor-website-checklist/','/guides/service-area-pages/','/guides/seo-work-and-reporting/']){
+ for(const path of ['/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-care/','/services/seo/','/services/website-audit/','/work/source-handoff/','/guides/website-project-cost/','/guides/contractor-website-checklist/','/guides/service-area-pages/']){
   const main=pages.find(page=>page.path===path)?.html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
   assert.ok(main?.includes('href="'+addonPath),path);
  }
@@ -67,8 +67,8 @@ test('relevant service and guide copy links to the complete scope without replac
  for(const pack of packs){
   const section=pack.sections.find(item=>item.title==='Optional website add-ons');
   assert.ok(section,pack.id);
-  assert.ok(section.items.includes(offers.add_on_terms.overlap),pack.id);
-  assert.match(packBody(pack),/href="\/assets\/buyer-packs\/website-addons"/);
+  assert.match(section.items.join(' '),/included work (?:remains|stays) included|included work is never charged again|overlap/i,pack.id);
+  assert.match(packBody(pack),/href="(?:https:\/\/wonderandmethod\.com)?\/services\/website-addons\/"/);
   assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');
  }
 });
@@ -88,19 +88,19 @@ test('guide examples and public catalogue evaluate the supplied catalogue prices
   assert.ok(page.html.includes(e(item.scope)),item.id);
  }
  const cost=guideContentSections('/guides/website-project-cost/',changed).map(section=>section.body).join('');
- for(const id of ['standard_page','three_page_bundle','campaign_landing_page','contact_form','guided_quote_form']){
+ for(const id of ['standard_page','three_page_bundle','contact_form','guided_quote_form']){
   const item=changed.add_ons.find(item=>item.id===id);
   assert.ok(cost.includes(money(item.public_price)),id);
   assert.ok(cost.includes(item.public_name),id);
  }
- assert.ok(cost.includes(money(changed.add_ons.find(item=>item.id==='standard_page').public_price+changed.add_ons.find(item=>item.id==='contact_form').public_price)));
- for(const [slug,id] of [['contact-form-not-working','contact_form'],['contractor-website-checklist','guided_quote_form'],['service-area-pages','standard_page'],['seo-work-and-reporting','reporting_dashboard']]){
+ assert.ok(cost.includes('/services/website-addons/'));
+ for(const [slug,id] of [['contractor-website-checklist','guided_quote_form'],['service-area-pages','standard_page']]){
   assert.ok(guideContentSections('/guides/'+slug+'/',changed).some(section=>section.body.includes(money(changed.add_ons.find(item=>item.id===id).public_price))));
  }
  assert.equal(JSON.stringify(offers),original);
 });
 
-test('standalone HTML, TXT and index catalogue carry all twelve current scopes without an aggregate package price',async()=>{
+test('standalone download landing page retains complete TXT and index scopes without an aggregate package price',async()=>{
  const folder=await mkdtemp(join(tmpdir(),'wm-addons-content-'));
  try{
   await mkdir(join(folder,'assets'),{recursive:true});
@@ -133,9 +133,8 @@ test('standalone HTML, TXT and index catalogue carry all twelve current scopes w
    assert.equal(record.scope,item.scope);
    assert.deepEqual(record.exclusions,item.exclusions);
    assert.deepEqual(record.acceptance,item.acceptance);
-   assert.ok(html.includes(e(item.public_name)),item.id);
-   assert.ok(html.includes(money(item.public_price)),item.id);
-   assert.ok(html.includes(e(item.scope)),item.id);
+   assert.match(html,/href="\/services\/website-addons\/"/);
+   assert.doesNotMatch(html,/class="addon-item"/);
    assert.ok(txt.includes(item.public_name.toUpperCase()),item.id);
    assert.ok(txt.includes(money(item.public_price)),item.id);
    assert.ok(txt.includes(item.scope),item.id);
@@ -149,7 +148,7 @@ test('standalone HTML, TXT and index catalogue carry all twelve current scopes w
   for(const id of baseIds){
    const baseTxt=await readFile(join(folder,'assets/buyer-packs/'+id+'.txt'),'utf8');
    assert.match(baseTxt,/OPTIONAL WEBSITE ADD-ONS/);
-   assert.ok(baseTxt.includes(packPath+'.txt'));
+   assert.ok(baseTxt.includes(addonPath));
   }
  }finally{
   assert.ok(resolve(folder).startsWith(resolve(tmpdir())+'\\')||resolve(folder).startsWith(resolve(tmpdir())+'/'));

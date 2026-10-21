@@ -9,11 +9,11 @@ export const pennsylvaniaTasksA = {
     check: 'On a phone, choose the departure and find its meeting instructions without returning to the home page.'
   },
   allegheny: {
-    name: 'Allegheny', title: 'Match every service to its delivery arrangement',
-    scenario: 'Consider an Allegheny County specialist offering premises appointments, online consultations and selected visits. A single contact page currently makes all three look interchangeable.',
-    decision: 'List the actual services and mark each as premises, remote or on-site. Add the facts needed to choose: address, supported format, preparation or coverage review. Where a service supports two arrangements, explain the difference and identify the correct contact or booking destination. Confirm the wording with the business before describing any location as an office.',
+    name: 'Allegheny', title: 'Match every service to how customers receive it',
+    scenario: 'Consider an Allegheny County specialist offering location appointments, online consultations and selected visits. A single contact page currently makes all three look interchangeable.',
+    decision: 'List the actual services and mark each as location, remote or on-site. Add the facts needed to choose: address, supported format, preparation or coverage review. Where a service supports two arrangements, explain the difference and identify the correct contact or booking destination. Confirm the wording with the business before describing any location as an office.',
     questions: ['Which services require the customer to travel?', 'What location detail is needed to review an on-site visit?', 'Where does the customer choose the delivery format?'],
-    output: 'A service-and-delivery table with approved location wording and one next step for each arrangement.',
+    output: 'A service-and-delivery table with location wording and one next step for each arrangement.',
     check: 'Ask someone to arrange an online consultation from the page and explain whether they must visit a Pittsburgh address.'
   },
   armstrong: {
@@ -91,7 +91,7 @@ export const pennsylvaniaTasksA = {
   cameron: {
     name: 'Cameron', title: 'Check the essential task before the extras load',
     scenario: 'Imagine a Cameron County small-business website whose first screen relies on a large gallery and an outside map. A visitor only needs the accepted service and contact details.',
-    decision: 'Choose one essential task and list the text and controls it requires. Put those facts in the page itself, with a clear reading order and descriptive action labels. Identify what remains usable if the map, gallery or external booking tool is slow. Test that condition without making claims about the county’s internet service.',
+    decision: 'Choose one essential task and list the text and controls it requires. Put those facts in the page itself, with a clear reading order and descriptive action labels. Identify what remains usable if the map, gallery or external booking tool is slow. Check that customers can still read your phone number and services if an image or map loads slowly.',
     questions: ['Can the visitor understand the service without the gallery?', 'Is the written destination available without the map?', 'What useful route remains if the booking tool fails to load?'],
     output: 'An essential-content outline and a short list of mobile or loading problems to address.',
     check: 'Using a narrow screen and a deliberately slower test connection, find the service, address and inquiry action before opening any optional media.'
@@ -122,8 +122,8 @@ export const pennsylvaniaTasksA = {
   },
   clarion: {
     name: 'Clarion', title: 'Prepare the first trade inquiry before discussing terms',
-    scenario: 'Imagine a Clarion County supplier whose wholesale prospects use a general retail form. The team then has to ask which product, quantity and delivery arrangement they meant.',
-    decision: 'Choose one product family and list the approved capabilities a trade buyer can read publicly. Identify the details needed to discuss an order, including any quantity-dependent terms. Write a distinct trade contact route and explain what happens after submission. Keep account-specific pricing and unapproved minimums out of the public description.',
+    scenario: 'Imagine a Clarion County supplier whose wholesale prospects use a general retail form. The team then has to ask which product, quantity and delivery option they meant.',
+    decision: 'Choose one product family and list the capabilities a trade buyer can read publicly. Identify the details needed to discuss an order, including any quantity-dependent terms. Write a distinct trade contact route and explain what happens after submission. Keep account-specific pricing and unapproved minimums out of the public description.',
     questions: ['Which capability facts help a trade buyer decide to inquire?', 'Does a minimum order vary by product or arrangement?', 'Who receives the request and confirms the next step?'],
     output: 'A trade-page outline and a minimal wholesale inquiry that supports the actual review process.',
     check: 'Follow the trade route from a product page and confirm that submitting a request does not imply an account or order has already been accepted.'
@@ -133,7 +133,7 @@ export const pennsylvaniaTasksA = {
     scenario: 'Imagine a Clearfield County business with saved directions mentioning Sandy Township and current pages describing DuBois. Customers still use both versions.',
     decision: 'Select one affected page or document. Verify its actual address and arrival instructions with the business, then check the current municipal context. Decide whether older wording should be corrected, retained as an explained historical reference or removed. Review any linked downloads and important old URLs so the update remains consistent.',
     questions: ['Which location fact has been verified and which still needs confirmation?', 'Does the familiar older term help a customer find the real destination?', 'Would changing the page address improve anything for the visitor?'],
-    output: 'A before-and-after location note, approved address and list of related pages or links to check.',
+    output: 'A before-and-after location note, address and list of related pages or links to check.',
     check: 'Open the old shared route and confirm that it leads to current, understandable directions without assuming that municipal consolidation changed the postal address.'
   }
 };

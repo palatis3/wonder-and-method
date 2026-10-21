@@ -23,7 +23,7 @@ test('county routes expose reviewed geography, truthful delivery and a complete 
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+'/areas/new-york/',config.origin+path]);
   assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
-  assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);assert.match(page.html,/Illustrative .* County example/);
+  assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);assert.match(page.html,/The examples below are fictional, not client projects/);
   assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
   assert.ok(page.html.includes('name="robots" content="index,follow"'));
  }
@@ -55,7 +55,7 @@ test('supporting guide approvals gate every incoming link and retain distinct re
   const svg=await readFile(new URL(`../src/assets/guides/${guide.image}.svg`,import.meta.url),'utf8');assert.match(svg,/role="img" aria-labelledby="title desc"/);
   const png=await readFile(new URL(`../src/assets/guides/${guide.image}-social.png`,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
- const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/"Result"/);assert.equal((maintenance.match(/"Untested"/g)||[]).length,5);assert.match(maintenance,/confirmation, inbox\/spam and reply/);
+ const maintenance=await readFile(new URL('../src/assets/guides/website-maintenance-log.csv',import.meta.url),'utf8');assert.match(maintenance,/Status: Not checked \/ Works \/ Needs fixing \/ Need access/);assert.equal((maintenance.match(/"Not checked"/g)||[]).length,6);assert.match(maintenance,/The test reaches the right person and a reply arrives/);
  const contractor=await readFile(new URL('../src/assets/guides/contractor-website-worksheet.csv',import.meta.url),'utf8');assert.match(contractor,/"Approved photos and facts"/);assert.match(contractor,/"Page and inquiry details needed"/);assert.match(contractor,/Example only:/);
 });
 

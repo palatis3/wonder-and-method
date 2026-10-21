@@ -20,19 +20,21 @@ test('chat requires actual identifiers, verified delivery and privacy, and stays
 });
 
 const source=await readFile(new URL('../src/assets/support-chat.js',import.meta.url),'utf8');
-function browser(){
- const events={},dismissEvents={},appended=[],timeouts=new Map();
- let focused='';
- const link={focus:()=>focused='fallback'},status={textContent:''};
- const label={textContent:'Message us'},fallback={hidden:true,querySelector:()=>link};
+function browser({inline=false}={}){
+ const events={},dismissEvents={},appended=[],timeouts=new Map();let focused='';
+ const classList={add(){},remove(){},toggle(){}};
+ const status={textContent:''},label={textContent:'Chat with Terry'};
+ const link={focus:()=>{focused='fallback';document.activeElement=link;}};
+ const fallback={hidden:true,querySelector:()=>link};
  const dismiss={addEventListener:(name,callback)=>dismissEvents[name]=callback};
- const root={hidden:false,querySelector:s=>s==='.support-chat-fallback'?fallback:s==='.support-chat-status'?status:dismiss};
- const launcher={hidden:true,attributes:{},setAttribute(k,v){this.attributes[k]=v;},focus:()=>focused='launcher',dataset:{chatScript:'https://embed.tawk.to/0123456789abcdef01234567/12345abcde'},closest:()=>root,querySelector:()=>label,addEventListener:(name,callback)=>events[name]=callback};
- const window={};let nextTimer=0,maximized=0,hidden=0;
- const document={body:{},activeElement:null,querySelector:s=>s==='#support-chat-status'?status:launcher,querySelectorAll:()=>[],createElement:()=>({events:{},addEventListener(name,callback){this.events[name]=callback;}}),head:{append:el=>appended.push(el)}};
- runInNewContext(source,{window,document,MutationObserver:class{observe(){}disconnect(){}},setTimeout:fn=>{timeouts.set(++nextTimer,fn);return nextTimer;},clearTimeout:id=>timeouts.delete(id)});
+ const trigger={hidden:true,classList,attributes:{},setAttribute(k,v){this.attributes[k]=v;},focus:()=>{focused='opener';document.activeElement=trigger;},getClientRects:()=>[{}],querySelector:()=>label,addEventListener:(name,callback)=>events[name]=callback};
+ const root={hidden:false,classList,dataset:{chatScript:'https://embed.tawk.to/0123456789abcdef01234567/12345abcde'},querySelector:s=>s==='.support-chat-fallback'?fallback:s==='.support-chat-launch'?(inline?null:trigger):dismiss};
+ const footerLink={hidden:false,getClientRects:()=>[{}],focus:()=>focused='footer'};
+ const window={addEventListener(){}};let nextTimer=0,maximized=0,hidden=0;
+ const document={body:{},activeElement:null,documentElement:{classList},dispatchEvent(){},querySelector:s=>s==='.support-chat'?root:s==='#support-chat-status'?status:s==='footer a[href="#page-top"]'?footerLink:null,querySelectorAll:s=>s==='[data-chat-open]'&&inline?[trigger]:[],createElement:()=>({events:{},addEventListener(name,callback){this.events[name]=callback;}}),head:{append:el=>appended.push(el)}};
+ runInNewContext(source,{window,document,Event:class{},getComputedStyle:()=>({visibility:'visible',display:'block'}),matchMedia:()=>({matches:false,addEventListener(){}}),scrollY:0,MutationObserver:class{observe(){}disconnect(){}},setTimeout:fn=>{timeouts.set(++nextTimer,fn);return nextTimer;},clearTimeout:id=>timeouts.delete(id)});
  const load=()=>{window.Tawk_API.maximize=()=>maximized++;window.Tawk_API.hideWidget=()=>hidden++;window.Tawk_API.onBeforeLoad();window.Tawk_API.onLoad();};
- return {launcher,label,fallback,root,status,focus:()=>focused,appended,timeouts,click:()=>{document.activeElement=launcher;events.click();},moveFocus:()=>{document.activeElement={};},dismiss:()=>dismissEvents.click(),load,counts:()=>({maximized,hidden})};
+ return {launcher:trigger,label,fallback,root,status,focus:()=>focused,appended,timeouts,click:()=>{document.activeElement=trigger;events.click();},moveFocus:()=>{document.activeElement={};},dismiss:()=>dismissEvents.click(),load,counts:()=>({maximized,hidden})};
 }
 test('chat has no external request until clicked and loads once before opening',()=>{
  const b=browser();assert.equal(b.launcher.hidden,false);assert.equal(b.appended.length,0);
@@ -53,4 +55,12 @@ test('chat connection failure exposes the contact fallback and dismissal prevent
 test('delayed chat failure does not steal focus after the visitor moves elsewhere',()=>{
  const b=browser();b.click();b.moveFocus();[...b.timeouts.values()][0]();
  assert.equal(b.fallback.hidden,false);assert.equal(b.focus(),'');assert.match(b.status.textContent,/could not connect/);
+});
+
+test('form pages omit the floating launcher and inline chat keeps the same consent boundary',()=>{
+ const markup=supportChatMarkup(config(),{formPage:true});
+ assert.doesNotMatch(markup,/class="support-chat-launch"/);assert.match(markup,/support-chat--inline/);
+ const b=browser({inline:true});assert.equal(b.appended.length,0);b.click();b.click();assert.equal(b.appended.length,1);
+ b.appended[0].events.error();assert.equal(b.focus(),'fallback');b.dismiss();assert.equal(b.focus(),'opener');
+ b.click();assert.equal(b.fallback.hidden,false);assert.equal(b.root.hidden,false);assert.equal(b.appended.length,1);
 });

@@ -33,7 +33,7 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
  assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope/);
  // The ROI tool contains labeled hypothetical contribution amounts, not package prices.
  assert.doesNotMatch(pages.filter(p=>p.path!=='/tools/website-roi-calculator/').map(p=>p.html).join('\n'),/\$6,000|\$9,500/);
- assert.match(pages.find(p=>p.path==='/pricing/').html,/original animated or 3D (?:home-page feature|feature at the top)/i);
+ assert.match(pages.find(p=>p.path==='/pricing/').html,/animated or 3D (?:home-page feature|homepage feature|feature at the top)/i);
 });
 
 test('Launch survives a real synthetic request and remains recoverable without sending mail',async()=>{
@@ -61,12 +61,12 @@ test('published decisions include the real review framework, exclusions and insp
  assert.equal(offers.review_standard.sections.reduce((sum,s)=>sum+s.weight,0),100);
  assert.match(page('/services/website-audit/'),/Website Baseline/);assert.match(page('/services/website-audit/'),/Audit &amp; Fix Sprint/);
  const seo=page('/services/seo/');assert.match(seo,/<h3>Not included<\/h3><ul>/);
- assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/Example only — no client outcome claimed/);
+ assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/Example: rewriting a service page/);
  assert.match(page('/guides/website-redesign-brief/'),/illustrative-completed-brief\.txt/);
  assert.match(page('/guides/website-migration-checklist/'),/\/assets\/downloads\/website-url-map\.csv/);
  for(const id of ['keep_running','improve','grow','audit_fix_sprint'])assert.match(page('/contact/'),new RegExp('value="'+id+'"'));
- assert.match(offers.signature_site.creative,/one creative concept, one scene/);
- assert.match(offers.signature_site.creative,/two existing design\/staging review rounds/);
+ assert.match(offers.signature_site.creative,/one creative concept, one scene/i);
+ assert.match(offers.signature_site.creative,/two.*(?:design.*working|design\/staging).*review rounds/i);
  assert.doesNotMatch(page('/pricing/'),/Blender|Remotion|800 words|600 words|3,000 words|completely new 3D scene/);
 });
 
@@ -130,11 +130,11 @@ test('source-handoff scopes survive quote drafting with clear agreed delivery li
  const html=pages.map(p=>p.html).join(' ');
  assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);
  const web=pages.find(p=>p.path==='/services/web-design/').html;
- assert.match(web,/paid website files, approved assets and publishing instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
+ assert.match(web,/website files, approved text and images, publishing instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
  assert.match(web,/one initial launch/i);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
  assert.ok(pages.find(p=>p.path==='/services/seo/').html.includes('20-minute call or written review'));
- assert.match(pages.find(p=>p.path==='/services/seo/').html,/already-promised launch work.*(?:does not|do not).*paid/i);
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/(?:already-promised|unfinished) launch work.*(?:does not|do not).*paid/i);
 });
 
 test('historical snapshot: provider cents survive hosting credits, overlap and the displayed estimate exactly',()=>{

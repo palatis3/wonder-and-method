@@ -1,6 +1,4 @@
-import {countyProfiles} from './county-profiles.mjs';
-import {pennsylvaniaProfiles} from './pennsylvania-content.mjs';
-import {ohioProfiles} from './ohio-content.mjs';
+import {serviceCoverage} from './service-area.mjs';
 // Schema.org accepts a Date or a DateTime. Keep the precision actually recorded.
 export function articleDateSchema(article) {
   return Object.fromEntries(['datePublished', 'dateModified'].flatMap(key => {
@@ -11,14 +9,12 @@ export function articleDateSchema(article) {
   }));
 }
 
-export const serviceAreas = () => [
-  {'@type': 'City', name: 'Buffalo, New York'},
-  ...['Erie County, New York', ...countyProfiles.map(c=>`${c.name} County, New York`), 'New York State',...pennsylvaniaProfiles.map(c=>`${c.name} County, Pennsylvania`),'Pennsylvania',...ohioProfiles.map(c=>`${c.name} County, Ohio`),'Ohio'].map(name => ({'@type': 'AdministrativeArea', name}))
-];
+// Broad studio services cover states; county-page Service nodes keep their own county.
+export const serviceAreas = config => serviceCoverage(config).regions.map(name => ({'@type':'State',name}));
 
 export function organizationSchema(config, logo) {
   const origin = config.origin;
-  return {'@context': 'https://schema.org', '@type': 'Organization', '@id': origin + '/#studio', name: config.name, alternateName: 'Wonder & Method', url: origin + '/', logo: {'@type':'ImageObject','@id':origin+'/#logo',url:origin+logo,contentUrl:origin+logo,width:512,height:512,caption:config.name+' logo'}, image: origin + '/assets/brand/social-card.png', legalName: config.businessIdentity, email: config.contactEmail, description: 'Independent Buffalo web studio offering fixed-scope websites, SEO, website care and audits, delivered online across New York, Pennsylvania and Ohio.', founder: {'@id': origin + '/about/#terry'}, location: {'@type': 'Place', name: 'Buffalo, New York', address: {'@type': 'PostalAddress', addressLocality: 'Buffalo', addressRegion: 'NY', addressCountry: 'US'}}, areaServed: serviceAreas(), hasOfferCatalog: {'@id': origin + '/pricing/#offers'}, contactPoint: {'@type': 'ContactPoint', contactType: 'Project inquiries and support', email: config.contactEmail, availableLanguage: 'English'}};
+  return {'@context': 'https://schema.org', '@type': 'Organization', '@id': origin + '/#studio', name: config.name, alternateName: 'Wonder & Method', url: origin + '/', logo: {'@type':'ImageObject','@id':origin+'/#logo',url:origin+logo,contentUrl:origin+logo,width:512,height:512,caption:config.name+' logo'}, image: origin + '/assets/brand/social-card.png', legalName: config.businessIdentity, email: config.contactEmail, description: 'Independent Buffalo web studio offering fixed-scope websites, SEO, website care and audits, delivered online across New York, Pennsylvania and Ohio.', founder: {'@id': origin + '/about/#terry'}, location: {'@type': 'Place', name: 'Buffalo, New York', address: {'@type': 'PostalAddress', addressLocality: 'Buffalo', addressRegion: 'NY', addressCountry: 'US'}}, areaServed: serviceAreas(config), hasOfferCatalog: {'@id': origin + '/pricing/#offers'}, contactPoint: {'@type': 'ContactPoint', contactType: 'Project inquiries and support', email: config.contactEmail, availableLanguage: 'English'}};
 }
 
 export function commercialOffers(config, o) {

@@ -48,6 +48,7 @@ function fixture({autoplay = false, storage = new Map(), mobile = false, reduced
     return tab;
   });
   const links = keys.map(() => new Element());
+  const previews = keys.map(key => new Element({cityPreviewSrc:`/${key}-1240.webp`,cityPreviewSrcset:`/${key}-480.webp 480w, /${key}-960.webp 960w, /${key}-1240.webp 1240w`}));
   const showcases = keys.map(key => { const card = new Element({cityShowcase:key}); card.hidden = true; return card; });
   const choices = keys.map(key => new Element({cityJump:key}));
   projects.querySelector = selector => selector === '[role="tablist"]' ? tablist : null;
@@ -71,7 +72,7 @@ function fixture({autoplay = false, storage = new Map(), mobile = false, reduced
   }
   video.presentFrame = () => { const pendingFrames = [...video.frameCallbacks.values()]; video.frameCallbacks.clear(); pendingFrames.forEach(callback => callback()); };
   root.querySelector = selector => ({'[data-city-film]': videoPresent ? video : null, '[data-city-play]': button, '[data-city-replay]': replay, '[data-city-status]': status, '[data-city-projects]': projects, '[data-city-stage]': stage}[selector] || null);
-  root.querySelectorAll = selector => ({'[data-city-project-link]':links,'[data-city-showcase]':showcases,'[data-city-jump]':choices}[selector] || []);
+  root.querySelectorAll = selector => ({'[data-city-project-link]':links,'[data-city-showcase]':showcases,'[data-city-jump]':choices,'[data-city-preview-src]':previews}[selector] || []);
   doc.hidden = false;
   const queries = {};
   for (const [query, matches] of [['(max-width: 1023px)', mobile], ['(prefers-reduced-motion: reduce)', reduced]]) {
@@ -94,7 +95,7 @@ function fixture({autoplay = false, storage = new Map(), mobile = false, reduced
   const resize = value => { queries['(max-width: 1023px)'].matches = value; queries['(max-width: 1023px)'].emit('change'); };
   const reduce = value => { queries['(prefers-reduced-motion: reduce)'].matches = value; queries['(prefers-reduced-motion: reduce)'].emit('change'); };
   const visible = value => { doc.hidden = !value; doc.emit('visibilitychange'); };
-  return {root, video, button, replay, showcases, choices, status, doc, env, tabs, panels, links, tablist, controller, resize, reduce, visible,
+  return {root, video, button, replay, showcases, choices, previews, status, doc, env, tabs, panels, links, tablist, controller, resize, reduce, visible,
     view: value => intersect?.([{isIntersecting: value, intersectionRatio: value ? 1 : 0}]),
     click: () => button.emit('click'),
     tickTimeout: () => { const callbacks = [...timers.values()]; timers.clear(); callbacks.forEach(callback => callback()); },
@@ -230,14 +231,41 @@ test('twelve seconds complete the story while the city continues looping without
   assert.equal(f.root.classes.has('is-city-complete'),false);
 });
 
-test('autoplay starts muted in each camera; blocked autoplay can be resumed without an error fallback', async () => {
+test('desktop autoplay and a remembered phone play choice start the correct muted camera', async () => {
   for (const mobile of [false,true]) {
-    const f=fixture({autoplay:true,mobile}); await flush();
+    const storage=new Map(mobile?[['wm.city.motion','playing']]:[]);
+    const f=fixture({autoplay:true,mobile,storage}); await flush();
     assert.equal(f.video.playCalls,1); assert.equal(f.video.muted,true);
     assert.equal(f.video.src,mobile?'/city-mobile.mp4':'/city-desktop.mp4');
     assert.equal(f.root.classes.has('has-city-frame'),false);
     f.video.presentFrame(); assert.equal(f.root.classes.has('has-city-frame'),true);
   }
+});
+
+test('a first phone visit never loads a film or reveal previews until explicit play', async () => {
+  const f=fixture({autoplay:true,mobile:true});await flush();
+  assert.equal(f.video.src,undefined);assert.equal(f.video.loads,0);assert.equal(f.video.playCalls,0);
+  assert.equal(f.button.textContent,'Play motion');assert.equal(f.video.poster,'/mobile-first.webp');
+  assert.ok(f.previews.every(image=>!image.src&&!image.srcset));
+  f.view(false);f.visible(false);f.env.emit('pagehide');f.resize(false);
+  f.visible(true);f.view(true);f.env.emit('pageshow');f.resize(true);await flush();
+  assert.equal(f.video.playCalls,0,'scroll, restore and resizing must not manufacture a play choice');
+  f.click();await flush();f.video.presentFrame();
+  assert.equal(f.video.src,'/city-mobile.mp4');assert.equal(f.video.loads,1);assert.equal(f.root.dataset.cityState,'playing');
+  for(const image of f.previews){assert.equal(image.src,image.dataset.cityPreviewSrc);assert.equal(image.srcset,image.dataset.cityPreviewSrcset);assert.match(image.sizes,/90vw/);}
+});
+
+test('paused, Save-Data and reduced-motion preferences block automatic films in both cameras', async () => {
+  for(const mobile of [false,true])for(const preference of ['paused','save-data','reduce']){
+    const storage=new Map([['wm.city.motion',preference==='paused'?'paused':'playing']]);
+    const f=fixture({mobile,storage,autoplay:preference!=='save-data',reduced:preference==='reduce'});await flush();
+    f.view(false);f.view(true);f.visible(false);f.visible(true);f.env.emit('pageshow');await flush();
+    assert.equal(f.video.playCalls,0,`${mobile?'phone':'desktop'} ${preference}`);assert.equal(f.video.loads,0);
+    if(preference!=='reduce'){f.click();await flush();assert.equal(f.video.playCalls,1,'explicit play remains usable');}
+  }
+});
+
+test('blocked autoplay can be resumed without an error fallback', async () => {
   const blocked=Object.assign(new Error('gesture needed'),{name:'NotAllowedError'});
   const f=fixture({autoplay:true,reject:blocked}); await flush();
   assert.equal(f.root.dataset.cityState,'blocked');

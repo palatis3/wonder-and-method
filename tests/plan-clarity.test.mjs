@@ -54,7 +54,7 @@ test('packs and card summaries keep zero/one/two priorities and lower-build excl
 
 test('native pricing links to a separate estimator and explains directly paid provider costs',()=>{
  const html=pricingContent(offers);for(const id of ['website-packages','after-launch','audit-sprint']){assert.ok(html.includes('href="#'+id+'"'));assert.ok(html.includes('id="'+id+'"'));}
- assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);assert.match(html,/<p\b[^>]*\bid="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these companies and any chosen tools directly/);assert.match(html,/actual provider price/);assert.match(html,/No minimum term/);
+ assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);assert.match(html,/<p\b[^>]*\bid="cost-calculator"/);assert.match(html,/href="\/payments\/#cost-calculator"/);assert.match(html,/You pay these providers and any tools directly/);assert.match(html,/confirm the actual prices and renewals before booking/);assert.match(html,/No minimum term/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/serviceStart|service-start|hosting-credit|hosting credit|overlap discount/);assert.doesNotMatch(calculator,/value="annual"/);
  const overview=ongoingOverview(offers);assert.equal((overview.match(/class="compact-offer"/g)||[]).length,3);assert.doesNotMatch(overview,/package-visual-grid|data-feature=/);assert.match(overview,/what’s included/);assert.match(overview,/\/services\/website-care\//);
 });
@@ -105,8 +105,13 @@ test('archived artwork guards retain their exact dated source and reject current
 
 test('current pricing has eight live-text offers and no stale poster publication',()=>{
  const html=pricingContent(offers);assert.equal((html.match(/class="compact-offer"/g)||[]).length,8);assert.doesNotMatch(html,/package-visual-grid|assets\/package-visuals/);
- for(const id of ['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint']){assert.ok(html.includes('id="offer-'+id+'"'));assert.ok(html.includes('/assets/buyer-packs/'+id));}
- assert.match(html,/one small fix if it is safe and practical/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/you do not pay for it twice/);
+ const details={launch_site:'/services/web-design/#offer-launch_site',focused_site:'/services/web-design/#offer-focused_site',signature_site:'/services/web-design/#offer-signature_site',keep_running:'/services/website-care/#offer-keep_running',improve:'/services/seo/#offer-improve',grow:'/services/seo/#offer-grow',website_baseline:'/services/website-audit/#offer-website_baseline',audit_fix_sprint:'/services/website-audit/#offer-audit_fix_sprint'};
+ for(const [id,destination]of Object.entries(details)){
+  const card=html.match(new RegExp('<article class="compact-offer" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1];assert.ok(card,id);
+  assert.ok(card.includes('href="'+destination+'"'),id+' details');
+  const monthly=['keep_running','improve','grow'].includes(id);assert.ok(card.includes('href="/checkout/'+id.replaceAll('_','-')+'/'+(monthly?'?billing=monthly':'')+'"'),id+' request');
+ }
+ assert.match(html,/one small fix if it is safe and practical/);assert.match(html,/up to two agreed small fixes in total/i);assert.match(html,/I do not charge for the same review twice/);
 });
 
 test('archived feature headings remain semantically valid in a disclosure',()=>{

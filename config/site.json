@@ -202,10 +202,10 @@
         "policyUrl": "https://stripe.com/privacy"
       }
     ],
-    "chat": "Chat is optional. Choosing “Chat with Terry” loads tawk.to and may set cookies or local storage before its own consent screen. Use the contact form or email if you do not want to load chat. tawk.to receives your messages, any supplied name or email, the page address, IP address and browser details. I read and answer chats through its dashboard or app. A returning-visitor cookie may last six months; other storage lasts for the session. I do not use AI chat agents. Avoid passwords, payment details and sensitive information.",
+    "chat": "Chat is optional. Choosing “Chat with Terry” loads tawk.to and may set cookies or local storage before its own consent screen. Use the contact form or email if you do not want to load chat. tawk.to receives your messages, any supplied name or email, the page address, IP address and browser details. Chat may load an emoji file from jsDelivr. I read and answer chats through its dashboard or app. A returning-visitor cookie may last six months; other storage lasts for the session. I do not use AI chat agents. Avoid passwords, payment details and sensitive information.",
     "payments": "For agreed work, Stripe hosts the payment page and processes payment details. We provide the customer contact, invoice description, amount and related billing information needed for that transaction. We receive invoice and payment status and limited payment-method information for reconciliation and support; our website does not collect full card numbers. Please do not send payment details through our inquiry form, email or chat.",
     "paymentRetention": "Client scopes, invoices and payment records are separate from unsuccessful inquiries. We retain the records needed to deliver the agreed work, keep accounts, meet applicable legal obligations and resolve disputes; the 90-day unsuccessful-inquiry period does not apply to these records. Stripe also retains information under its own policy and applicable requirements. You can contact us about access, correction or deletion, and we will explain any records we must retain.",
-    "analytics": "I count page views; package, service, question and contact-link clicks; goal choices; form starts and saved-confirmation events; guide and full-details download clicks; email-link clicks; and choices to open live chat. A count contains the UTC day, a fixed event, service and page identifier, a total, and a broad source category for page views (such as Google, Bing, social, AI assistant, referral, campaign, internal or direct). The browser classifies the referring site or campaign parameter locally; it never sends the raw referrer, campaign value or full URL in the count. These are events, not unique people or linked visitor journeys. We do not attach names, emails, messages, visitor IDs or session IDs. Global Privacy Control, Do Not Track and the owner opt-out suppress collection. An explicit owner opt-out saves only that preference in local storage. Obvious bot signatures are filtered, but counts can still include automated traffic or omit blocked events. Separate keyed rate controls expire after 20 minutes and are cleared hourly. Aggregate totals are removed after 90 days; provider recovery copies can remain longer. Email and chat actions do not prove that a message was sent.",
+    "analytics": "I count page views; package, service, question and contact-link clicks; goal choices; form starts and saved-confirmation events; guide and full-details download clicks; email-link clicks; and choices to open live chat. A count contains the UTC day, a fixed event, service and page identifier, a total, and a broad source category for page views (such as Google, Bing, social, AI assistant, referral, campaign, internal or direct). The browser classifies the referring site or campaign parameter locally; it never sends the raw referrer, campaign value or full URL in the count. These are events, not unique people or linked visitor journeys. We do not attach names, emails, messages, visitor IDs or session IDs. Global Privacy Control and Do Not Track suppress collection. I also exclude my own testing visits; the private testing preference can be stored in my browser. Obvious bot signatures are filtered, but counts can still include automated traffic or omit blocked events. Separate keyed rate controls expire after 20 minutes and are cleared hourly. Aggregate totals are removed after 90 days; provider recovery copies can remain longer. Email and chat actions do not prove that a message was sent.",
     "workbench": "The optional lead-workbench demonstration uses fictional sample records. Changes remain in memory unless you choose to keep them in this browser. That choice writes unprotected local storage available to this website on this browser, until you reset the workbench or clear site data. No demo records are sent to the studio. Downloaded CSV files remain wherever you save them; reset does not remove those files. Do not put real customer information in the demo."
   },
   "homeEdition": "living-city",
@@ -220,7 +220,11 @@
   "serviceCoverage": {
     "base": "Buffalo",
     "region": "New York, Pennsylvania, and Ohio",
-    "regions": ["New York", "Pennsylvania", "Ohio"],
+    "regions": [
+      "New York",
+      "Pennsylvania",
+      "Ohio"
+    ],
     "country": "United States"
   },
   "searchConsole": {
@@ -229,7 +233,7 @@
     "verifiedAt": "2026-10-16",
     "evidenceReference": "evidence/index-launch-20261016/search-console-verification.json"
   },
-  "projectTiming": "Build-time target: Launch 3–5 days, Focused 5–8 days and Signature 7–10 days. From the confirmed start, with the page list agreed and your business facts, assets and access ready. Complete writing is included. The work may take a few extra days; delayed inputs, reviews or added scope can extend the schedule further. Your proposal confirms the dates, including review and written approval.",
+  "projectTiming": "Planned build work: Launch 3–5 business days, Focused 5–8 and Signature 7–10, once your page list, facts, photos and account access are ready. Add your review time: two rounds, each allowing up to five business days. Your proposal confirms the start and launch dates; missing information or extra work can move them.",
   "founderPublicName": "Terrance Ciszek",
   "founderProfile": "https://www.linkedin.com/in/terrance-ciszek-3ba01a402/",
   "firstConversation": "We start by email. Terry replies to the address you provide. If a call would help, we arrange one together; you do not need to book a call before sending your question or project details.",

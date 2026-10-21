@@ -2,6 +2,32 @@ import {test,expect} from './fixtures.mjs';
 import {readFile} from 'node:fs/promises';
 const axe=await readFile(new URL('../../node_modules/axe-core/axe.min.js',import.meta.url),'utf8');
 
+// Measure each word's rendered line boxes, rather than assuming a fitting element
+// means its text has stayed intact under the shared overflow-wrap rule.
+function cityHeadingLayout(){
+ const heading=document.querySelector('.city-copy h1'),hero=document.querySelector('.city-hero');
+ const walker=document.createTreeWalker(heading,NodeFilter.SHOW_TEXT),splitWords=[];
+ while(walker.nextNode()){
+  if(walker.currentNode.parentElement.closest('.sr-only,[hidden]'))continue;
+  for(const match of walker.currentNode.textContent.matchAll(/\S+/g)){
+  const range=document.createRange();range.setStart(walker.currentNode,match.index);range.setEnd(walker.currentNode,match.index+match[0].length);
+  if(range.getClientRects().length>1)splitWords.push(match[0]);
+  }
+ }
+ const style=getComputedStyle(hero);
+ return {splitWords,columns:style.display==='grid'?style.gridTemplateColumns.split(' ').length:1,overflow:document.documentElement.scrollWidth>innerWidth+1};
+}
+
+test('city heading keeps whole words in two columns across wide desktops',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the desktop composition');
+ await page.emulateMedia({reducedMotion:'reduce'});
+ for(const width of [1024,1199,1440,1600,1920,2560]){
+  await page.setViewportSize({width,height:1140});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  expect(await page.evaluate(cityHeadingLayout),String(width)).toEqual({splitWords:[],columns:2,overflow:false});
+  if(width===1920)await testInfo.attach('desktop-heading-1920',{body:await page.screenshot(),contentType:'image/png'});
+ }
+});
+
 test('the city homepage and Buffalo archive have no detected WCAG A or AA violations',async({page})=>{
  await page.route('**/__test-city-axe.js',route=>route.fulfill({status:200,contentType:'text/javascript',body:axe}));
  for(const path of ['/','/work/buffalo-civic/']){
@@ -18,27 +44,35 @@ test('city copy and controls survive doubled text across phone, tablet and deskt
  for(const width of [320,768,1024,1440]){
   await page.setViewportSize({width,height:1000});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
   await page.addStyleTag({url:'/__test-city-text.css'});
+  const heading=await page.evaluate(cityHeadingLayout);
+  expect(heading.columns,String(width)).toBe(1);
+  // At 320px, emergency wrapping retains the enlarged type without horizontal
+  // scrolling; tablet and desktop have room to keep every word on one line.
+  if(width>320)expect(heading.splitWords,String(width)).toEqual([]);
   const layout=await page.evaluate(()=>{
    const rect=selector=>document.querySelector(selector).getBoundingClientRect();
    const hero=rect('.city-hero'),copy=rect('.city-copy'),eyebrow=rect('.city-eyebrow'),brand=rect('.brand-lockup');
    const buttons=['.city-primary','.city-explore','[data-city-play]'].map(selector=>({selector,r:rect(selector)}));
    const controls=buttons.map(({selector,r})=>({selector,insideHero:r.top>=hero.top&&r.bottom<=hero.bottom+1&&r.left>=0&&r.right<=innerWidth+1}));
-   const visibleHeader=[...document.querySelectorAll('.site-header .brand-lockup,.site-header #main-nav>a,.site-header .service-navigation>summary')].filter(node=>node.getClientRects().length).map(node=>({selector:node.textContent.trim(),r:node.getBoundingClientRect()}));
+   const visibleHeader=[...document.querySelectorAll('.site-header .brand-lockup,.site-header .header-contact,.site-header .menu-toggle,.site-header #main-nav>a,.site-header .service-navigation>summary')].filter(node=>node.getClientRects().length).map(node=>({selector:node.textContent.trim(),r:node.getBoundingClientRect()}));
    const allControls=[...buttons,...visibleHeader];
    const overlaps=allControls.flatMap((a,i)=>allControls.slice(i+1).filter(b=>Math.min(a.r.right,b.r.right)>Math.max(a.r.left,b.r.left)+1&&Math.min(a.r.bottom,b.r.bottom)>Math.max(a.r.top,b.r.top)+1).map(b=>a.selector+' / '+b.selector));
    const clippedChoices=[...document.querySelectorAll('.city-choice')].filter(node=>node.scrollWidth>node.clientWidth+1).map(node=>node.textContent.trim());
-   return {overflow:document.documentElement.scrollWidth>innerWidth+1,copyInside:copy.bottom<=hero.bottom+1,brandClear:brand.bottom<=eyebrow.top+1,controls,overlaps,clippedChoices};
+   const clippedHeader=visibleHeader.filter(({r})=>r.left<0||r.right>innerWidth+1).map(({selector})=>selector);
+   return {overflow:document.documentElement.scrollWidth>innerWidth+1,copyInside:copy.bottom<=hero.bottom+1,brandClear:brand.bottom<=eyebrow.top+1,controls,overlaps,clippedChoices,clippedHeader};
   });
   expect(layout.overflow,String(width)).toBe(false);expect(layout.copyInside,String(width)).toBe(true);expect(layout.brandClear,String(width)).toBe(true);
   for(const control of layout.controls)expect(control.insideHero,width+' '+control.selector).toBe(true);
   expect(layout.overlaps,String(width)).toEqual([]);
   expect(layout.clippedChoices,String(width)).toEqual([]);
+  expect(layout.clippedHeader,String(width)).toEqual([]);
   await testInfo.attach('doubled-text-'+width,{body:await page.screenshot(),contentType:'image/png'});
  }
 });
 
-test('homepage city film controls keep their own space at doubled text',async({page},testInfo)=>{
- test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the real-film enlarged-text states');
+test('homepage city film controls keep their own space across desktop and doubled text',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the real-film responsive states');
+ test.setTimeout(90_000);
  await page.route('**/__test-city-text.css',route=>route.fulfill({status:200,contentType:'text/css',body:':root{font-size:200%}'}));
  const clearLayout=async(width,state)=>{
   const result=await page.evaluate(()=>{
@@ -50,13 +84,18 @@ test('homepage city film controls keep their own space at doubled text',async({p
   });
   expect(result.overlaps,width+' '+state).toEqual([]);expect(result.outside,width+' '+state).toEqual([]);
  };
- for(const width of [320,768,1024]){
-  await page.setViewportSize({width,height:1500});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);await page.addStyleTag({url:'/__test-city-text.css'});
+ const sizes=[...[1024,1199,1440,1600,1920,2560].map(width=>({width,doubled:false})),...[320,768,1024,1440].map(width=>({width,doubled:true}))];
+ for(const {width,doubled} of sizes){
+  const label=width+(doubled?' at 200% text':' at normal text');
+  await page.setViewportSize({width,height:1500});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  if(doubled)await page.addStyleTag({url:'/__test-city-text.css'});
+  await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-ready','true');
+  if(await page.locator('[data-living-city]').getAttribute('data-city-state')==='idle')await page.locator('[data-city-play]').click();
   await expect(page.locator('[data-living-city]')).toHaveClass(/has-city-frame/);
   await expect(page.locator('[data-city-showcase=fieldwork]')).toHaveAttribute('data-active','true');
   await page.locator('[data-city-play]').click();await expect(page.locator('#city-film')).toHaveJSProperty('paused',true);
   expect(await page.locator('[data-city-showcase=fieldwork]').evaluate(card=>card.getAnimations().every(animation=>animation.playState!=='running'))).toBe(true);
-  await clearLayout(width,'paused');
+  await clearLayout(label,'paused');
   // A pause can land on any entrance frame, including a frame a fast runner skips.
   const card=page.locator('[data-city-showcase=fieldwork]');
   // Restart the real CSS entrance while media is held, even if a slow runner
@@ -69,13 +108,13 @@ test('homepage city film controls keep their own space at doubled text',async({p
   });
   for(const progress of [0,.075,.19,.42,.68,.99]){
    await card.evaluate((node,time)=>{node.getAnimations().find(a=>a.animationName==='city-card-arrive').currentTime=time;},duration*progress);
-   await clearLayout(width,'entrance '+Math.round(progress*100)+'%');
+   await clearLayout(label,'entrance '+Math.round(progress*100)+'%');
   }
   await card.evaluate(node=>node.getAnimations().find(a=>a.animationName==='city-card-arrive').finish());
   await page.locator('#city-film').evaluate(video=>video.playbackRate=4);await page.locator('[data-city-play]').click();await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-beat','ambient',{timeout:15000});
-  await clearLayout(width,'ambient');
+  await clearLayout(label,'ambient');
   await expect(page.locator('[data-city-replay]')).toBeVisible();
   await page.locator('[data-city-replay]').click();await expect(page.locator('[data-living-city]')).toHaveAttribute('data-city-state','playing');
-  await clearLayout(width,'replaying');
+  await clearLayout(label,'replaying');
  }
 });

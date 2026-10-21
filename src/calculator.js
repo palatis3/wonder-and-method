@@ -1,5 +1,6 @@
 import {normalizeAddonSelection} from './addons.mjs';
 import {calculateCost,money} from './shared.mjs';
+import {parseMoneyInput} from './assets/roi-math.mjs';
 
 export function bindCostCalculator(calculator,prices,doc=document){
  const field=name=>calculator.elements.namedItem(name);
@@ -24,26 +25,34 @@ export function bindCostCalculator(calculator,prices,doc=document){
   const projectFields=field('sprint').closest?.('fieldset');if(projectFields)projectFields.hidden=!existing;
   const baselineLabel=field('baseline').closest?.('label');
   if(baselineLabel)baselineLabel.hidden=!existing;
-  for(const name of ['cycles','hostingMonths','external','hostingMonthly'])field(name).removeAttribute('aria-invalid');
+  const inputErrors={};
+  const markError=(name,message)=>{inputErrors[name]=message;field(name).setAttribute('aria-invalid','true');const output=doc.querySelector('#cost-'+name+'-error');if(output)output.textContent=message;};
+  for(const name of ['cycles','hostingMonths','external','hostingMonthly']){field(name).removeAttribute('aria-invalid');const output=doc.querySelector('#cost-'+name+'-error');if(output)output.textContent='';}
   const f=new FormData(calculator);
   try{
-   const hasHosting=f.get('hostingMonthly')!=='';
-   const invalid=[...(hasHosting?['hostingMonths']:[]),...(noPlan?[]:['cycles'])].filter(name=>f.get(name)===''||!Number.isInteger(Number(f.get(name)))||Number(f.get(name))<0||Number(f.get(name))>120);
-   invalid.push(...['external','hostingMonthly'].filter(name=>f.get(name)!==''&&(!Number.isFinite(Number(f.get(name)))||Number(f.get(name))<0||Number(f.get(name))>1000000)));
-   if(invalid.length){for(const name of invalid)field(name).setAttribute('aria-invalid','true');throw Error('Invalid cost inputs');}
-   if(hasHosting&&!noPlan&&Number(f.get('cycles'))>Number(f.get('hostingMonths'))){field('hostingMonths').setAttribute('aria-invalid','true');throw Error('Hosting period must include all monthly service months');}
-   const v=calculateCost(prices,{add_ons:normalizeAddonSelection(Object.fromEntries((prices.add_ons||[]).filter(item=>f.has('addon_'+item.id)).map(item=>['addon_'+item.id,f.get('addon_'+item.id)]))),build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),external:f.get('external')===''?null:Number(f.get('external')),hostingMonthly:f.get('hostingMonthly')===''?null:Number(f.get('hostingMonthly')),hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
+   const amounts={};
+   for(const name of ['external','hostingMonthly']){
+    const raw=f.get(name),parsed=parseMoneyInput(raw,{max:1000000});
+    if(parsed.ok)amounts[name]=parsed.value;
+    else if(parsed.reason==='empty')amounts[name]=null;
+    else markError(name,parsed.reason==='precision'?'Use whole dollars or cents only.':parsed.reason==='range'?'Enter an amount from $0 to $1,000,000.':'Enter an amount like 2350 or $2,350.00, or leave it blank if unknown.');
+   }
+   const hasHosting=amounts.hostingMonthly!==null;
+   for(const name of [...(hasHosting?['hostingMonths']:[]),...(noPlan?[]:['cycles'])])if(!/^\d+$/.test(f.get(name)?.trim()??'')||Number(f.get(name))>120)markError(name,'Enter a whole number of months from 0 to 120.');
+   if(Object.keys(inputErrors).length)throw Error('Invalid cost inputs');
+   if(hasHosting&&!noPlan&&Number(f.get('cycles'))>Number(f.get('hostingMonths'))){markError('hostingMonths','Hosting months must cover all selected months of monthly help.');throw Error('Hosting period must include all monthly service months');}
+   const v=calculateCost(prices,{add_ons:normalizeAddonSelection(Object.fromEntries((prices.add_ons||[]).filter(item=>f.has('addon_'+item.id)).map(item=>['addon_'+item.id,f.get('addon_'+item.id)]))),build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),...amounts,hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
    const summary=calculator.querySelector?.('[data-addon-summary]');if(summary){summary.hidden=!v.addonLines.length;summary.querySelector('[data-addon-names]').textContent=v.addonLines.map(item=>item.public_name).join('; ');summary.querySelector('[data-addon-total]').textContent=money(v.addonTotal);}
-   const missing=[...(f.get('hostingMonthly')===''?['hosting']:[]),...(f.get('external')===''?['domain, email and other paid tools']:[])];
+   const missing=[...(amounts.hostingMonthly===null?['hosting']:[]),...(amounts.external===null?['domain, email and other paid tools']:[])];
    const knownTotal=v.knownSubtotal;
-   total.textContent=knownTotal===0?'Choose a website or service to see an estimate.':money(knownTotal)+(missing.length?' known costs':' estimated total');
-   breakdown.textContent=`${money(v.once)} one-time${v.addonTotal?` (including ${money(v.addonTotal)} selected additions)`:''}${v.baselineFee?` (including ${money(v.baselineFee)} Website Baseline)`:''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`);
+   total.textContent=missing.length?`Your estimate so far: ${money(knownTotal)} (${missing.join('; ')} not added yet)`:`Estimated total: ${money(knownTotal)}`;
+   const onceDetails=[...(v.addonTotal?['selected additions: '+money(v.addonTotal)]:[]),...(v.baselineFee&&v.baselineFee!==v.once?['website review: '+money(v.baselineFee)]:[])];
+   breakdown.textContent=`${money(v.once)} one-time${onceDetails.length?' (including '+onceDetails.join('; ')+')':''}`+(noPlan?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[f.get('plan')]*12)}; annual savings ${money(prices[f.get('plan')]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payments of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting: ${money(v.grossHosting)}.`)+(amounts.external===null?'':` Domain, email and tools: ${money(amounts.external)}.`);
    note.textContent=missing.length?`Includes my fees and any provider costs entered. Still to add: ${missing.join('; ')}. Selected additions are included once. Tax and unselected or out-of-scope work are extra.`:'Includes my fees and the provider costs you entered. Selected additions are included once. Tax and unselected or out-of-scope work are extra.';
-   if(knownTotal===0){breakdown.textContent='';note.textContent='Choose a website or plan, or add known outside costs.';}
    errorBox.textContent='';
   }catch(error){
    for(const input of calculator.querySelectorAll('[aria-invalid="true"]')){let disclosure=input.closest('details');while(disclosure){disclosure.open=true;disclosure=disclosure.parentElement?.closest('details');}}
-   errorBox.textContent=error.message==='Hosting period must include all monthly service months'?'Hosting months must cover all selected months of monthly help.':error.message==='Annual billing requires one plan and twelve cycles'?'Annual prepayment covers exactly 12 monthly cycles.':'Enter whole month counts from 0 to 120 and outside costs from $0 to $1,000,000.';
+   errorBox.textContent=Object.keys(inputErrors).length?'Check the highlighted fields. '+Object.entries(inputErrors).map(([name,message])=>({cycles:'Months of monthly help',hostingMonths:'Months of hosting',hostingMonthly:'Monthly hosting price',external:'Domain, email and tools'}[name])+': '+message).join(' '):error.message==='Annual billing requires one plan and twelve cycles'?'Annual prepayment covers exactly 12 monthly cycles.':'The estimate could not be calculated. Check your choices and try again.';
    total.textContent='Check the highlighted fields';breakdown.textContent='';note.textContent='The estimate will return when the inputs are valid.';
   }
  };

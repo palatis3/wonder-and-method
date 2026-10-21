@@ -123,6 +123,21 @@
       "frames": 96,
       "durationSeconds": 4.0,
       "hasAudio": false
+    },
+    "mobileWebPoster": {
+      "path": "/living-city/mobile-web-poster.webp",
+      "bytes": 52866,
+      "sha256": "aacccda66c5d147f4e904c2dc84eba2f273ce541b7feb92d183d93d7d948deca",
+      "width": 828,
+      "height": 1216,
+      "encoding": "webp-lossy",
+      "quality": 82,
+      "derivedFrom": {
+        "path": "/living-city/mobile-poster.webp",
+        "sha256": "148548f9eb9a3fe39c86a214b48a86fcf8ca96ae7444b18b78485eb8e71a72bf"
+      },
+      "psnrToSourcePoster": 41.123,
+      "purpose": "Initial mobile picture; original video poster and film remain unchanged."
     }
   }
 }

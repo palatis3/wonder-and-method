@@ -84,7 +84,12 @@
 .journal-diagram{padding:.5rem}
 }
 
-.studio-site .guide-decision{text-align:left;max-width:68ch;margin-inline:auto}
+.studio-site .guide-decision{text-align:left;max-width:none;margin:0 0 1.5rem;padding:1.25rem 1.5rem;background:#edf0e8;border-left:3px solid #315b48}
+.studio-site .guide-decision h2{font-size:1.6rem;line-height:1.25;margin-bottom:1rem}
+.studio-site .guide-decision p:last-child{margin-bottom:0}
+.journal-layout-no-toc{display:block;max-width:760px}
+.journal-table-wrap :is(th,td){overflow-wrap:normal;hyphens:auto}
+@media(min-width:768px){.journal-table-wrap th:first-child{min-width:8.5rem}.journal-related .journal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .journal-byline .byline-date{display:block}
 /* Index rows contain text only; image-card tracks must not constrain their wrapper. */
 .studio-site .journal-index-list .journal-card-text{display:block;padding:1.25rem 0}

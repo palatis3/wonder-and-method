@@ -22,13 +22,16 @@ test('compact chrome preserves service, pricing, process and contact navigation'
  for(const path of ['/privacy/','/terms/','/accessibility/','/payments/','/pricing/'])assert.ok(footer.includes(`href="${path}"`));
  assert.match(footer,/Example &amp; Co/);
  assert.equal(breadcrumbTrail('/services/seo/','SEO')[1].path,'/services/');
- assert.equal(breadcrumbTrail('/work/hearthside/request/','Long title').at(-1).name,'Order preview');
+ assert.equal(breadcrumbTrail('/work/hearthside/request/','Long title').at(-1).name,'Order form');
 });
 
-test('service navigation marks only the exact service as the current page',()=>{
- for(const path of ['/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/']){
+test('service navigation marks only listed current pages and keeps secondary services reachable',()=>{
+ const secondary=['/services/contractor-websites/','/services/website-addons/'];
+ for(const path of ['/services/','/services/web-design/','/services/website-redesign/',...secondary,'/services/seo/','/services/website-care/','/services/website-audit/']){
   const html=siteHeader(path),current=[...html.matchAll(/<a href="([^"]+)" aria-current="(?:page|location)"/g)].map(match=>match[1]);
-  assert.deepEqual(current,[path]);
+  assert.deepEqual(current,secondary.includes(path)?[]:[path]);
+  assert.match(html,/class="service-navigation is-current"/);
+  if(secondary.includes(path))assert.ok(siteFooter().includes(`href="${path}"`),path);
  }
 });
 
@@ -61,9 +64,9 @@ function calculatorFixture(annual=true){
 test('calculator includes known hosting while naming other unknown costs',()=>{
  const f=calculatorFixture();try{
   assert.equal(f.output['calculator-error'].textContent,'');
-  assert.match(f.output['cost-total'].textContent,/\$11,450 known costs/);
+  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$11,450/);
   assert.match(f.output['external-note'].textContent,/Still to add: domain, email and other paid tools/);
-  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/\$11,500 estimated total/);
+  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$11,500/);
  }finally{f.restore();}
 });
 test('annual toggling restores unedited defaults and preserves edited monthly counts',()=>{

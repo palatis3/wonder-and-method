@@ -7,14 +7,14 @@ import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 import {renderPages} from '../src/pages.mjs';
 import {buyerPacks} from '../src/buyer-packs.mjs';
 
-test('a question retains useful context without adopting proposal prices or opening optional controls',()=>{
+test('a question retains useful context and the public price without adopting billing choices or opening optional controls',()=>{
   const value={service:'improve',request_kind:'question',goal:'search',concept:'fieldwork',billing:'annual',priority:'article'};
-  const summary=inquiryRequestSummary(value,{price:400,priceLabel:'monthly',annual:{upfront_price:4000},baselineFee:399});
+  const summary=inquiryRequestSummary(value);
   assert.match(summary,/Improve/);assert.match(summary,/Help customers find my business/);assert.match(summary,/Fieldwork/);
-  assert.doesNotMatch(summary,/^(Question|Proposal request) ·/);assert.doesNotMatch(summary,/\$|prepaid|First monthly priority|Billing/);
+  assert.match(summary,/Improve \(\$400\/month\)/);assert.doesNotMatch(summary,/^(Question|Proposal request) ·/);assert.doesNotMatch(summary,/prepaid|First monthly priority|Billing/);
   const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'}),new URL('https://example.test/contact/?offer=improve&request_kind=question&goal=search&concept=fieldwork&billing=annual&priority=article'));
   assert.doesNotMatch(html,/<details class="inquiry-extra" open/);
-  assert.doesNotMatch(html,/name="concept" value="fieldwork"/);assert.doesNotMatch(html,/value="annual"/);
+  assert.doesNotMatch(html,/name="concept" value="fieldwork"/);assert.doesNotMatch(html,/value="annual"/);assert.match(html,/name="request_kind" value="question"/);
   assert.ok(html.indexOf('id="request-summary"')<html.indexOf('id="name"'));
   assert.ok(html.indexOf('id="request-summary"')<html.indexOf('class="inquiry-extra"'));
   assert.match(html,/Send message/);
@@ -22,8 +22,8 @@ test('a question retains useful context without adopting proposal prices or open
 
 test('proposal summaries stay concise while hidden selected details remain available to submit',()=>{
   const value={service:'grow',request_kind:'checkout',billing:'monthly',priority:'page',priority_two:'article'};
-  const summary=inquiryRequestSummary(value,{price:800,priceLabel:'monthly',baselineFee:399});
-  assert.match(summary,/^Grow/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/\$|payment|scope|billing/i);
+  const summary=inquiryRequestSummary(value);
+  assert.match(summary,/^Grow \(\$800\/month\)/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/payment|scope|billing/i);
   assert.equal(inquiryRequestSummary({service:'unsure',request_kind:'question'}),'');
   const html=inquiryForm({live:true},{checkout:true,service:'grow',value});
   assert.match(html,/type="hidden" id="service" name="service" value="grow"/);assert.match(html,/name="priority_two" value="article"/);
@@ -33,20 +33,21 @@ test('proposal summaries stay concise while hidden selected details remain avail
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- assert.match(config.projectTiming,/Build-time target: Launch 3–5 days, Focused 5–8 days and Signature 7–10 days/);assert.match(config.projectTiming,/page list agreed.*business facts, assets and access ready/);
- assert.match(config.projectTiming,/Complete writing is included/);assert.match(config.projectTiming,/few extra days.*delayed inputs, reviews or added scope can extend the schedule/);assert.match(config.projectTiming,/proposal confirms the dates/);
+ assert.match(config.projectTiming,/Planned build work: Launch 3–5 business days, Focused 5–8 and Signature 7–10/);assert.match(config.projectTiming,/page list, facts, photos and account access are ready/);
+ assert.match(config.projectTiming,/Add your review time: two rounds, each allowing up to five business days/);assert.match(config.projectTiming,/missing information or extra work can move them/);assert.match(config.projectTiming,/proposal confirms the start and launch dates/);
  const pages=renderPages({config,offers,map,geography});
- const home=pages.find(page=>page.path==='/').html;assert.ok(home.includes(config.projectTiming));
- assert.ok(pages.find(page=>page.path==='/process/').html.includes(config.projectTiming));const pricing=pages.find(page=>page.path==='/pricing/').html;for(const range of ['3–5 days','5–8 days','7–10 days'])assert.ok(pricing.includes(range));assert.match(pricing,/page list, facts, assets and access are ready/);assert.match(pricing,/Reviews or added work can extend the dates/);
- const ranges={launch_site:'3–5 days',focused_site:'5–8 days',signature_site:'7–10 days'};
+ const home=pages.find(page=>page.path==='/').html;assert.ok(home.includes(config.projectTiming));assert.match(home,/complete writing/i);
+ assert.ok(pages.find(page=>page.path==='/process/').html.includes(config.projectTiming));const pricing=pages.find(page=>page.path==='/pricing/').html;for(const range of ['3–5 business days','5–8 business days','7–10 business days'])assert.ok(pricing.includes(range));assert.match(pricing,/complete writing/i);assert.match(pricing,/Both reviews allow up to five business days, added to the build work/);assert.match(pricing,/href="\/process\/#project-calendar"/);
+ const ranges={launch_site:'3–5 business days',focused_site:'5–8 business days',signature_site:'7–10 business days'};
  for(const [id,range] of Object.entries(ranges)){
   assert.equal(offers[id].delivery_average,range);
-  assert.equal(offers[id].delivery_target,`Build-time target: ${range}. ${offers.delivery_conditions}`);
+  assert.ok(offers[id].delivery_target.includes(range));assert.ok(offers[id].delivery_target.includes(offers.delivery_conditions));
+  assert.match(offers[id].delivery_target,/plus your review time/);assert.match(offers[id].delivery_target,/Build work starts once the page list, business facts, photos and account access are ready/);
   const pack=buyerPacks(offers).find(pack=>pack.id===id);
-  assert.ok(JSON.stringify(pack.sections).includes(offers[id].delivery_target),id);
+  const detail=pack.sections.flatMap(section=>section.items).join(' ');assert.ok(detail.includes(range),id);assert.match(detail,/once pages, facts, photos and access are ready/);assert.match(detail,/review time is additional/);assert.match(detail,/five business days per round unless agreed otherwise/);assert.match(detail,/written proposal sets start and launch dates/);assert.match(detail,/Added work can move these dates/);
   const checkout=pages.find(page=>page.path===`/checkout/${id.replaceAll('_','-')}/`).html;
-  assert.ok(checkout.includes('Build-time target: '+range),id+' selected package timing');assert.match(checkout,/once inputs are ready; reviews or added work may extend it/);
-  for(const other of Object.keys(ranges).filter(key=>key!==id))assert.ok(!checkout.includes(offers[other].delivery_target),id+' must not inherit '+other+' timing');
+  assert.ok(checkout.includes('Planned build work: '+range),id+' selected package timing');assert.match(checkout,/once your pages, facts, photos and access are ready/);assert.match(checkout,/Add two review windows of up to five business days each/);assert.match(checkout,/Your proposal confirms the launch date/);
+  for(const other of Object.keys(ranges).filter(key=>key!==id))assert.ok(!checkout.includes(ranges[other]),id+' must not inherit '+other+' timing');
  }
  for(const page of pages)assert.doesNotMatch(page.html,/seven.day target|7.day target|delivery in 7 days|target is seven days/i,page.path);
  const process=pages.find(page=>page.path==='/process/').html;

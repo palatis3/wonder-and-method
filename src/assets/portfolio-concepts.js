@@ -8,6 +8,13 @@ export function validateDemo(values){
  return errors;
 }
 export function demoOrderTotal(service,quantity){const price=service.startsWith('Classic cheese')?16:service.startsWith('Pepperoni')?19:18;return '$'+(price*Number(quantity)).toFixed(2);}
+export function resolveDemoService(concept,requested,options){
+ const aliases={'Kitchen remodeling conversation':'Kitchen remodeling','Bathroom remodeling conversation':'Bathroom remodeling','Interior layout conversation':'Interior layout changes'};
+ const choice=concept==='northline'&&Object.hasOwn(aliases,requested)?aliases[requested]:requested;
+ if(options.includes(choice))return choice;
+ const pizza=concept==='hearthside'&&['Classic cheese','Pepperoni','Garden'].find(name=>choice?.startsWith(name));
+ return pizza?options.find(option=>option.startsWith(pizza))||null:null;
+}
 export function bindConceptDemo(form,doc=globalThis.document){
  const confirmation=form.parentElement.querySelector('.concept-confirmation');
  if(!confirmation)return;
@@ -17,8 +24,7 @@ export function bindConceptDemo(form,doc=globalThis.document){
  const errorNames=['name','email','message',...(extraNames.includes('quantity')?['quantity']:[])];
  const requested=new URLSearchParams(globalThis.location?.search||'').get('service');
  const options=[...fields.namedItem('service').options];
- const legacyPizza=form.dataset.concept==='hearthside'&&['Classic cheese','Pepperoni','Garden'].find(name=>requested?.startsWith(name));
- const selected=options.find(option=>option.value===requested)?.value||(legacyPizza?options.find(option=>option.value.startsWith(legacyPizza))?.value:null);
+ const selected=resolveDemoService(form.dataset.concept,requested,options.map(option=>option.value));
  const restoreChoice=()=>{if([...fields.namedItem('service').options].some(o=>o.value===selected))fields.namedItem('service').value=selected;};
  const clearErrors=()=>{for(const key of errorNames){fields.namedItem(key).removeAttribute('aria-invalid');doc.getElementById(`concept-${key}-error`).textContent='';}};
  form.addEventListener('submit',event=>{

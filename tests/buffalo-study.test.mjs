@@ -73,6 +73,6 @@ test('Work links to Buffalo while retaining all three concepts and the Waterfron
  assert.match(html,/<a href="#buffalo-civic">Design studies<\/a>/);
  assert.match(html,/href="\/work\/buffalo-civic\/">Play the Buffalo animation<\/a>/);
  assert.match(html,/class="work-preview work-preview--sculpture"/);
- assert.match(html,/Play the earlier Waterfront animation/);assert.match(html,/\/assets\/waterfront\/film-landscape.mp4/);
+ assert.match(html,/Play the Waterfront animation/);assert.match(html,/\/assets\/waterfront\/film-landscape.mp4/);
  assert.doesNotMatch(html,/civic-sculpture-preview/);
 });

@@ -6,7 +6,7 @@ import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../sr
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
 import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, hasInquiryResolutions, inquiryRetentionPreview, followupInput, inquiryResolutionInput } from './inquiry-maintenance.mjs';
 import { inquiryStatus, recordRecoverySuccess } from './inquiry-health.mjs';
-import { allowInquiryRate } from './inquiry-rate.mjs';
+import { allowInquiryRate, inquiryNetwork, refundInquiryRate } from './inquiry-rate.mjs';
 import { hasInquiryQuery, prefillInquiryHtml } from '../src/inquiry-prefill.mjs';
 import {publicRouteRedirect} from './public-route-canonical.mjs';
 import {notificationBudget} from './notification-budget.mjs';
@@ -15,6 +15,8 @@ const encoder = new TextEncoder();
 // URL-encoded Unicode needs up to nine bytes per UTF-16 code unit. The legal
 // 3,000-character message plus all bounded fields fits below this hard limit.
 const MAX_BODY = 40_000;
+const INQUIRY_DUPLICATE_WINDOW_MS = 600_000;
+const MAX_RECEIPT_CONFIRMATIONS = 10;
 const LIVE = env => env.INQUIRY_MODE === 'live' && env.RELEASE_APPROVED === 'true';
 function withTransportPolicy(response,request,env){
   const url=new URL(request.url);
@@ -166,7 +168,7 @@ function notificationMessage(env, id, inquiry) {
   const subjectName = String(inquiry.business || inquiry.name || '').replace(/[\r\n\u0000-\u001f]/g, ' ').slice(0, 100);
   return {
     from: env.NOTIFICATION_FROM, to: [env.NOTIFICATION_TO], reply_to: inquiry.email,
-    subject: `[${inquiry.request_kind==='question'?'Question':'Proposal request'}] ${service} — ${subjectName}`,
+    subject: `[${inquiry.request_kind==='question'?'Question':inquiry.request_kind==='checkout'?'Proposal request':'Message'}] ${service} — ${subjectName}`,
     text: ['Website inquiry', `Reference: ${id}`, `Name: ${inquiry.name}`, `Email: ${inquiry.email}`,
       `Business: ${inquiry.business || 'Not supplied'}`, `Website: ${inquiry.website || 'Not supplied'}`,
       `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`, 'Owner: reply from the studio support mailbox. A provider acceptance is not proof of inbox delivery.'].join('\n\n')
@@ -207,28 +209,60 @@ async function submit(request, env, ctx) {
   const { errors, value } = validateInquiry(data);
   if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value,{live:LIVE(env)});
   const recover=(status,message,flags={})=>respond(request,status,message,null,undefined,value.service,value,{retry:value,live:LIVE(env),...flags});
-  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return recover(503, 'We could not save your inquiry. Your entries are kept here. Please try again or email support@wonderandmethod.com.');
+  if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32) return recover(503, 'Your inquiry could not be saved. Your entries are kept here. Please try again or email support@wonderandmethod.com.');
   try {
   const now = Date.now();
-  const rate=await allowInquiryRate(env,request.headers.get('CF-Connecting-IP')||'local-unknown',now,fingerprint);
-  if (!rate.allowed) return recover(429, `Several requests have been sent from this connection. Please try again in about ${inquiryWait(rate.retryAfter)}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter:rate.retryAfter});
   const synthetic = !LIVE(env);
-  const id = crypto.randomUUID();
   const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
+  const ip=request.headers.get('CF-Connecting-IP')||'local-unknown',network=inquiryNetwork(ip);
+  const recent=()=>env.DB.prepare('SELECT id, created_at, delivery_status FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ? ORDER BY created_at, id LIMIT 1').bind(now-INQUIRY_DUPLICATE_WINDOW_MS,payload,syntheticFlag).first();
+  const receiptKey=record=>fingerprint(env.FINGERPRINT_SECRET,`inquiry-receipt:${network}:${synthetic}:${record.id}`);
+  const accepted=record=>respond(request,202,synthetic?'Synthetic test recorded. No email was sent and no inbox receipt is claimed.':(value.request_kind==='question'?'Thank you. Your question is saved for the studio to review. Keep this reference for your records.':value.request_kind==='checkout'?'Thank you. Your project details are saved for the studio to review. Keep this reference for your records.':'Thank you. Your message is saved for the studio to review. Keep this reference for your records.'),record.id,undefined,value.service,value,{synthetic});
+  const limited=retryAfter=>recover(429,`Several requests have been sent from this connection. Please try again in about ${inquiryWait(retryAfter)}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter});
+  const confirmedRetry=async()=>{
+    if(network==='unknown')return null;
+    const record=await recent();
+    if(!record)return null;
+    const key=await receiptKey(record);
+    const receipt=await env.DB.prepare('SELECT expires_at FROM rate_limits WHERE key=? AND expires_at>?').bind(key,now).first();
+    if(!receipt)return null;
+    const claimed=await env.DB.prepare('UPDATE rate_limits SET hits=hits+1 WHERE key=? AND expires_at>? AND hits<? RETURNING hits').bind(key,now,MAX_RECEIPT_CONFIRMATIONS).first();
+    return claimed?{record}:{retryAfter:Math.max(1,Math.ceil((receipt.expires_at-now)/1000))};
+  };
+  // A payload match alone is not proof of a previous send from this connection.
+  // Legacy rows and another network's matches still pass the normal rate gate.
+  const retry=await confirmedRetry();
+  if(retry)return retry.record?accepted(retry.record):limited(retry.retryAfter);
+  const rate=await allowInquiryRate(env,ip,now,fingerprint);
+  if(!rate.allowed){
+    // Another request may have finished while this one was checking its budget.
+    const completed=await confirmedRetry();
+    if(completed?.record){await refundInquiryRate(env,rate.chargedKeys);return accepted(completed.record);}
+    return limited(rate.retryAfter);
+  }
+  const id = crypto.randomUUID();
   const dedupe = await fingerprint(env.FINGERPRINT_SECRET, `duplicate:${synthetic}:${id}`);
   // One SQLite write makes the rolling-window check and insert atomic. Comparing
   // normalized payloads also recognizes records saved by the previous release.
   await env.DB.prepare(`INSERT INTO inquiries (id, created_at, payload, dedupe_key, synthetic, delivery_status)
     SELECT ?, ?, ?, ?, ?, ? WHERE NOT EXISTS
       (SELECT 1 FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ?)`)
-    .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now - 600_000, payload, syntheticFlag).run();
-  const record = await env.DB.prepare('SELECT id, delivery_status FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ? ORDER BY created_at, id LIMIT 1').bind(now - 600_000, payload, syntheticFlag).first();
+    .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now-INQUIRY_DUPLICATE_WINDOW_MS, payload, syntheticFlag).run();
+  const record=await recent();
   if (!record) throw new Error('storage-incomplete');
   if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiry(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
-  return respond(request, 202, synthetic ? 'Synthetic test recorded. No email was sent and no inbox receipt is claimed.' : (value.request_kind==='question'?'Thank you. Your question is saved for the studio to review. Keep this reference for your records.':'Thank you. Your project details are saved for the studio to review. Keep this reference for your records.'), record.id, undefined, value.service, value, { synthetic });
+  if(network!=='unknown'){
+    // Opaque, short-lived receipt; no IP or payload is stored in rate_limits.
+    // Anchoring expiry to the original save prevents retries extending the window.
+    const receipt=await env.DB.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<? AND expires_at>? RETURNING hits')
+      .bind(await receiptKey(record),record.created_at+INQUIRY_DUPLICATE_WINDOW_MS,MAX_RECEIPT_CONFIRMATIONS,now).first();
+    if(!receipt||receipt.hits>1)await refundInquiryRate(env,rate.chargedKeys);
+    if(!receipt)return limited(Math.max(1,Math.ceil((record.created_at+INQUIRY_DUPLICATE_WINDOW_MS-now)/1000)));
+  }
+  return accepted(record);
   } catch {
     console.error('inquiry_storage_failed');
-    return recover(503,'We could not confirm that your request was saved. Your entries are kept here; please try again or email support@wonderandmethod.com.');
+    return recover(503,'Your request could not be confirmed as saved. Your entries are kept here; please try again or email support@wonderandmethod.com.');
   }
 }
 
@@ -470,15 +504,31 @@ export default {
         const publicShareImage=/^\/assets\/(?:brand|social)\/[^/]+\.(?:png|jpe?g|webp|avif|svg)$/i.test(url.pathname)&&/^image\//i.test(type||'');
         result.headers.set('Cross-Origin-Resource-Policy', publicShareImage?'cross-origin':'same-origin');
         // Scope, price and worksheet documents must be revalidated even at an
-        // unversioned address. Media and versioned code retain their short cache.
+        // unversioned address. Unversioned media and code retain their short cache.
         const publicDocument=/^(?:text\/(?:html|plain|csv)|application\/json)(?:;|$)/i.test(type||'')||/\.(?:html|txt|csv|json)$/i.test(url.pathname)||url.pathname.startsWith('/assets/buyer-packs/');
         if ((result.status >= 200 && result.status < 300) || result.status === 304) result.headers.set('Cache-Control',publicDocument?'no-cache':'public, max-age=3600, must-revalidate');
         // A query hash is immutable only when it names the bytes being served.
         // Old/unknown hashes on a mutable path must never pin different content.
         const version=url.searchParams.get('v');
-        if(!publicDocument&&/\.(?:css|js)$/.test(url.pathname)&&request.method==='GET'&&result.status===200&&/^[a-f0-9]{12}$/.test(version||'')){
-          const bytes=await result.clone().arrayBuffer();
-          const actual=hex(await crypto.subtle.digest('SHA-256',bytes)).slice(0,12);
+        if(!publicDocument&&/\.(?:css|js|mjs|woff2|gif|png|jpe?g|svg|webp|avif|mp4)$/i.test(url.pathname)&&['GET','HEAD'].includes(request.method)&&[200,206,304].includes(result.status)&&/^[a-f0-9]{12}$/.test(version||'')){
+          let actual=null;
+          if(url.searchParams.getAll('v').length===1){
+            if(/\.(?:css|js)$/i.test(url.pathname)&&request.method==='GET'&&result.status===200){
+              // Preserve byte verification for the existing small code assets.
+              const bytes=await result.clone().arrayBuffer();
+              actual=hex(await crypto.subtle.digest('SHA-256',bytes)).slice(0,12);
+            }else{
+              // The manifest is generated from this deployment's final asset bytes.
+              // Do not buffer films/fonts/images, or read a body for HEAD/304/ranges.
+              try{
+                const index=await env.ASSETS.fetch(new Request(new URL('/assets/asset-hashes.json',url),{headers:{'Accept-Encoding':'identity'}}));
+                if(index.ok){
+                  const hashes=await index.json();
+                  if(hashes&&typeof hashes==='object'&&!Array.isArray(hashes)&&Object.hasOwn(hashes,url.pathname))actual=hashes[url.pathname];
+                }else await index.body?.cancel();
+              }catch{} // Older builds lack the manifest: require revalidation.
+            }
+          }
           result.headers.set('Cache-Control',actual===version?'public, max-age=31536000, immutable':'no-cache');
         }
       }

@@ -27,13 +27,13 @@ test('eight decision packs carry acceptance, payments, costs, limits and the exa
  for(const p of packs.filter(p=>p.id.endsWith('_site'))){
   const text=JSON.stringify(p.sections);
   assert.match(text,/50%/);assert.match(text,/30%/);assert.match(text,/20%/);assert.match(text,/approve the design in writing/);
-  assert.match(text,/dated ledger of completed work/);assert.match(text,/paid work is finished, or after settling the account if the project stops early/);
+  assert.match(text,/dated list of completed work, outside costs you approved and payments received/);assert.match(text,/five business days after paid completion or settling an early cancellation/);
   assert.match(text,/30 calendar days after launch/);assert.match(text,/receive your paid files without waiting/i);
   assert.match(text,/No disabling a paid client-owned website/);
  }
  for(const id of ['audit_fix_sprint','website_baseline']){
   const text=JSON.stringify(packs.find(p=>p.id===id).sections);
-  assert.match(text,/up to 12 marketing pages/);assert.match(text,/Before any payment, confirm supported technology/);
+  assert.match(text,/up to 12 marketing pages/);assert.match(text,/Before any payment, I confirm supported technology/);
   assert.match(text,/unearned amount to be refunded/);assert.match(text,/30 calendar days after your written approval of its completion/);
   assert.match(text,/does not include or require a new year of hosting/);assert.match(text,/specialist certification are separate/);
  }
@@ -70,7 +70,7 @@ test('annual estimator charges twelve cycles upfront and keeps refunds distinct 
 test('annual and one-off quote snapshots retain their actual payment and exit terms',async()=>{
  const annual=await draftScope('improve','synthetic-annual',{billing:'annual'});assert.equal(annual.fixed_price,4560);assert.equal(annual.milestones.length,1);assert.equal(annual.milestones[0].amount,4560);assert.equal(annual.service_period.cycles,12);assert.equal(annual.service_period.start,null);assert.equal(annual.accepted_at,null);assert.match(annual.commercial_boundaries.annual_terms.renewal,/no automatic annual charge/);assert.match(renderJobPacket(annual,{},offers),/\$4,560\.00/);
  assert.equal(annual.commercial_boundaries.enrollment_gate.verified,false);assert.match(JSON.stringify(annual.commercial_boundaries.enrollment_gate),/independent buffer/);
- const sprint=await draftScope('audit_fix_sprint','synthetic-sprint');assert.deepEqual(sprint.milestones.map(m=>m.amount),[375,375]);assert.match(sprint.milestones[1].event,/written completion acceptance/);
+ const sprint=await draftScope('audit_fix_sprint','synthetic-sprint');assert.deepEqual(sprint.milestones.map(m=>m.amount),[375,375]);assert.match(sprint.milestones[1].event,/After you approve the finished work in writing/);assert.equal(sprint.milestones[1].approval_reference,null);assert.equal(sprint.milestones[1].payment_confirmed,false);
  const baseline=await draftScope('website_baseline','synthetic-baseline');assert.equal(baseline.milestones[0].amount,399);assert.match(baseline.commercial_boundaries.acceptance,/review and ordered fix list either way/);assert.match(baseline.commercial_boundaries.terms.remedy,/unearned amount to be refunded/);
  await assert.rejects(()=>draftScope('launch_site','synthetic-invalid',{billing:'annual'}),/only available/);
 });

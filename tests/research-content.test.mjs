@@ -40,15 +40,28 @@ test('ROI rejects missing, nonfinite and out-of-bound assumptions and keeps vali
 
 test('six distinct guides are complete, linked, approved, downloadable and individually gateable',async()=>{
  const index=pages.find(x=>x.path==='/guides/').html;
+ const conciseGuides={
+  '/guides/website-redesign-timeline/':['start','ready','sequence','example','reviews','studio'],
+  '/guides/website-handover-checklist/':['meaning','accounts','files','register','verification','example']
+ };
  for(const guide of researchGuides){
   const detail=researchGuideDetails[guide.path.split('/').at(-2)],sections=journalSections(guide.path,offers),html=pages.find(x=>x.path===guide.path).html;
-  assert.ok(sections.length>=6);assert.ok(sections.map(x=>x.body.replace(/<[^>]*>/g,' ')).join(' ').split(/\s+/).length>=700,guide.path);assert.equal(new Set(sections.map(s=>s.id)).size,sections.length);
+  const body=sections.map(x=>x.body).join(' '),minimumWords=conciseGuides[guide.path]?600:700;
+  assert.ok(sections.length>=6);assert.ok(body.replace(/<[^>]*>/g,' ').split(/\s+/).length>=minimumWords,guide.path);assert.equal(new Set(sections.map(s=>s.id)).size,sections.length);
+  if(conciseGuides[guide.path])assert.deepEqual(sections.map(section=>section.id),conciseGuides[guide.path],guide.path+' retains every practical topic after the clarity edit');
+  if(guide.path==='/guides/website-redesign-timeline/'){
+   for(const id of ['launch_site','focused_site','signature_site'])assert.ok(body.includes(offers[id].delivery_target.match(/\d+[–-]\d+/)[0]+' business days'),id);
+   assert.match(body,/two review rounds, each allowing up to five business days/);assert.match(body,/Reviews, late inputs and added work extend the elapsed schedule/);
+  }
+  if(guide.path==='/guides/website-handover-checklist/'){
+   assert.match(body,/source files, images, configuration notes and build instructions/);assert.match(body,/within five business days after the paid work is finished, or after a cancelled account is settled/);assert.match(body,/Your accounts stay under your control throughout/);
+  }
   assert.ok(index.includes(`href="${guide.path}"`));assert.ok(html.includes(detail.download));assert.ok((await read('src'+detail.download)).length>300);
   const png=await readFile(new URL('../src/assets/social/guides-'+detail.slug+'.png',import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
   const held=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!==guide.path)},offers,map,geography});assert.ok(!held.some(x=>x.path===guide.path));for(const page of held)assert.ok(!page.html.includes(`href="${guide.path}`),page.path+' links held '+guide.path);
  }
  const prior=JSON.parse(await read('config/page-dates.json'));assert.ok(routes.every(path=>prior[path]));
- const calculator=pages.find(x=>x.path===routes.at(-1)).html;assert.match(calculator,/A worked example/);assert.match(calculator,/id="website-roi" hidden/);assert.doesNotMatch(calculator,/<input[^>]+type="(?:email|password)"/);
+ const calculator=pages.find(x=>x.path===routes.at(-1)).html;assert.match(calculator,/id="worked-example"/);assert.match(calculator,/<summary>How this is calculated<\/summary>/);assert.match(calculator,/<h2>The example, step by step<\/h2>/);assert.match(calculator,/id="website-roi" hidden/);assert.doesNotMatch(calculator,/<input[^>]+type="(?:email|password)"/);
 });
 
 test('content migration preserves previous categories, aggregate rows, inquiries and fixed validation',async t=>{

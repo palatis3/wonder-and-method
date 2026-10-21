@@ -40,7 +40,7 @@ test('all 62 official counties occur once in the directory, region navigation an
   assert.ok(hub.includes(`href="${route}"`));assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));
   assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
   assert.match(page.html,/<meta name="robots" content="index,follow"/);
-  for(const service of pages.filter(p=>p.path.startsWith('/services/')))assert.ok(service.html.includes(`href="${route}"`),service.path+' -> '+route);
+  for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
  }
 });
 
@@ -71,10 +71,10 @@ test('new guides contain individual planning exercises and complete downloadable
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);
   focus.add(c.focus);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
   assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);
-  assert.ok(page.html.includes('Illustrative '+c.name+' County example'));
+  assert.ok(page.html.includes('The examples below are fictional, not client projects.'));assert.ok(page.html.includes('<p class="eyebrow">Example</p>'));
   const worksheet=await readFile(new URL('../src/assets/county-briefs/'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
-  assert.match(worksheet,/ILLUSTRATIVE EXAMPLE, NOT A CLIENT RESULT OR LOCAL-DEMAND STUDY/);
+  assert.match(worksheet,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
   assert.ok(page.html.includes(`href="/assets/county-briefs/${c.slug}.txt"`));
  }
  assert.equal(focus.size,37);assert.equal(decisions.size,37);assert.equal(localQuestions.size,74);
@@ -87,7 +87,7 @@ test('new FAQs answer researched buyer questions with working links and current 
  for(const slug of newSlugs){
   const answers=statewideCountySearchQuestions(slug,changed);assert.equal(answers.length,3,slug);
   const faq=rendered.get(path(slug)).match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
-  assert.equal((faq.match(/<summary>/g)||[]).length,6,slug);
+  assert.equal((faq.match(/<summary>/g)||[]).length,5,slug);
   for(const [q,answer,url,label] of answers){
    assert.ok(answer.trim().length>90,slug);assert.ok(label?.trim(),slug);
    assert.ok(byPath.has(url),slug+' -> '+url);questions.add(q);

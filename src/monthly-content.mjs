@@ -26,7 +26,7 @@ export function monthlyPlanDetails(o, id) {
  if (!p) throw Error('Unknown monthly plan');
  const grow = id === 'grow', improvement = p.priorities > 0;
  const included = [
-  `${p.small_change_batches} round of small text, photo or link edits you supply each month, in existing parts of your website. Send related changes together; unrelated changes across the website are separate.`,
+  `${p.small_change_batches} set of small text, photo or link changes you send each month, in existing parts of your website. Send related changes together; unrelated changes across the website are separate.`,
   'Automated website availability and security-certificate monitoring, a monthly check of the main contact path and agreed website tools, and search-health warnings where access allows.',
   'A quarterly website check of the agreed areas, not a new full audit.'
  ];
@@ -47,9 +47,9 @@ export function monthlyPlanDetails(o, id) {
  const acceptance = [
   improvement
    ? `Before work starts, agree each improvement${grow ? ' and the additional small graphic or newsletter excerpt' : ''}, the affected area, supplied facts, completion check and one round of changes. Record the published website change or delivered draft/asset, approval status, checks and any unresolved access. Silence is not acceptance.`
-   : 'Agree the round of small edits and covered checks. Record what changed, the check results and any unresolved access. Silence is not acceptance.',
+   : 'Agree the set of small changes and covered checks. Record what changed, the check results and any unresolved access. Silence is not acceptance.',
   'The same work is never counted twice. Correcting my own mistakes or completing already-promised launch work does not use paid monthly work.',
-  'An unused round of supplied edits does not carry over. Accepted work delayed by me remains owed; we agree a new date or refund.',
+  'An unused set of small changes does not carry over. Accepted work delayed by me remains owed; we agree a new date or refund.',
   ...(grow ? ['The second accepted improvement and accepted extra graphic or excerpt remain owed if earlier work is delayed; neither is silently dropped.'] : [])
  ];
  const renewal = [
@@ -80,11 +80,11 @@ export function monthlyScopeTable(o) {
 
   ['Completed improvements', 'Not included', `${o.plans.improve.priorities} per month`, `${o.plans.grow.priorities} connected improvements per month`],
   ['Search research', 'Search warnings where access allows', 'One customer topic', 'Two topics and up to 3 competitors'],
-  ['Planning', 'One practical next step', 'Future-topic list, refreshed quarterly; one practical next step', 'Rolling 90-day plan, refreshed monthly, replaces the quarterly topic list; one practical next step'],
+  ['Planning', 'One practical next step', 'Future topics, updated quarterly', '90-day plan, updated monthly'],
   ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', '1 extra graphic or short excerpt'],
-  ['Report and review', 'Monthly report; no standing call', 'Monthly report and 20-minute call or written review', 'Monthly report and 30-minute call or written review, instead of the 20-minute review']
+  ['Report and review', 'Monthly report; no standing call', 'Monthly report and 20-minute call or written review', 'Monthly report and 30-minute call or written review']
  ];
- return `<details class="pricing-detail-table"><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Every plan includes automated monitoring, monthly website and contact-form checks, one round of supplied small edits, a quarterly website check and a monthly report.</p><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
+ return `<details class="pricing-detail-table"><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Every plan includes automated monitoring, monthly website and contact-form checks, one set of small changes you send, a quarterly website check and a monthly report.</p><p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. Grow’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p><p>${e(standardCareExclusion)}</p></details>`;
 }
 
 export function monthlyCampaignExample(o) {

@@ -27,10 +27,12 @@ test('every guide has an ordered section definition and unique rendered bookmark
 });
 
 test('consolidation keeps historical section bookmarks at their final reading positions',()=>{
- assert.equal(sections('website-project-cost')[1].id,'dated-price-example');
- assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['intent','discovery','inspection-steps']);
- assert.match(sections('website-not-showing-on-google')[2].body,/^<span id="index"><\/span>/);
- assert.deepEqual(sections('contact-form-not-working').slice(0,3).map(section=>section.id),['five-minute-check','platform-settings','review-options']);
+ assert.equal(sections('website-project-cost')[0].id,'dated-price-example');
+ assert.match(sections('website-project-cost')[0].body,/^<span id="start-with-scope"><\/span>/);
+ assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['plain-search-terms','inspection-steps','specific-index-checks']);
+ assert.match(sections('website-not-showing-on-google')[1].body,/^<span id="index"><\/span><span id="intent"><\/span>/);
+ assert.match(sections('website-not-showing-on-google').find(section=>section.id==='define').body,/^<span id="discovery"><\/span>/);
+ assert.deepEqual(sections('contact-form-not-working').slice(0,5).map(section=>section.id),['five-minute-check','page','platform-settings','verify','review-options']);
  assert.match(sections('contact-form-not-working')[0].body,/^<span id="trace"><\/span><span id="inbox"><\/span>/);
  const technical=sections('contact-form-not-working').at(-1);
  assert.equal(technical.id,'specific-form-checks');
@@ -85,7 +87,8 @@ test('review and monthly plan prices and pluralization use each render’s confi
  }
  const review=body('contact-form-not-working',changed);
  for(const price of [383,887])assert.ok(review.includes(money(price)));
- assert.ok(review.includes('13 marketing pages'));
+ assert.ok(review.includes('13 main pages'));
+ assert.match(body('website-care-versus-seo',changed),/no automatic \$177 care charge/);
  assert.ok(body('seo-work-and-reporting',changed).includes('3 complete improvements'));
  changed.plans.improve.priorities=1;
  const single=sections('seo-work-and-reporting',changed).find(section=>section.id==='scope').body;

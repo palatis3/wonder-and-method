@@ -32,7 +32,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  const footer=await page.locator('footer').evaluate(el=>({height:el.getBoundingClientRect().height,reserved:parseFloat(getComputedStyle(el).paddingBottom)}));expect(footer.height-footer.reserved).toBeLessThan(700);expect(footer.reserved).toBeGreaterThanOrEqual(80);
+  await expect(page.locator('footer .footer-group')).toHaveCount(4);await expect(page.locator('footer details')).toHaveCount(0);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -100,7 +100,7 @@ test('without scripts navigation and footer disclose natively while demo fields 
 test('enlarged text keeps the full chat launcher clear of underlying links',async({page})=>{
  await fixture(page,{width:1024,height:900});
  await page.addStyleTag({content:'html{font-size:32px}#last-link{position:fixed;right:40px;bottom:115px;z-index:1}'});
- await expect(page.locator('.support-chat-launch')).toBeVisible();
+ await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
  await page.locator('#last-link').focus();await expect(page.locator('#last-link')).toBeFocused();
  await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
  const unobstructed=await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.right-5,r.top+5));});expect(unobstructed).toBe(true);

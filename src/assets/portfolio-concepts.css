@@ -13,6 +13,10 @@
 .portfolio-concept:not(.concept-northline) .concept-wordmark,.concept-hearthside h1{font-weight:400}
 .portfolio-concept h1{max-width:15ch;text-wrap:balance}
 .portfolio-concept .concept-confirmation dt{font-size:.875rem}
+/* Sample requests need one readable form column, without invented business promises. */
+.portfolio-concept .concept-request-layout{grid-template-columns:minmax(0,1fr);max-width:736px;margin-inline:auto;gap:1.5rem}
+.portfolio-concept .concept-request-layout>div{min-width:0}
+.portfolio-concept .concept-request-layout .concept-text-link{margin-top:.5rem}
 .studio-site .portfolio-concept :is(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #152432}
 @media(max-width:760px){
  .portfolio-concept .concept-notice{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.25rem 1rem}

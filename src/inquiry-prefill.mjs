@@ -23,7 +23,8 @@ export function prefillInquiryHtml(html,url){
   const {add_ons:questionAddons=[],...questionContext}=publicInquiryContext(value,annualEnabled);
   const query=new URLSearchParams({offer:service,...questionContext,request_kind:'question',...(questionAddons.length?{addons:questionAddons.join(',')}:{})});
   questionHref='/contact/?'+query.toString()+'#inquiry';
-  return inquiryFormMarkup({live:form.includes('data-mode="live"'),privacyLink:'Privacy notice'},{checkout:Boolean(fixed),service,value,annualEnabled});
+  const headingLevel=Number(form.match(/data-heading-level="([23])"/)?.[1]||(fixed?3:2));
+  return inquiryFormMarkup({live:form.includes('data-mode="live"'),privacyLink:'Privacy notice'},{checkout:Boolean(fixed),service,value,annualEnabled,headingLevel});
  });
  return questionHref?markup.replace(/<a\b[^>]*\bdata-checkout-question\b[^>]*>/g,tag=>tag.replace(/\bhref="[^"]*"/,()=>`href="${e(questionHref)}"`)):markup;
 }

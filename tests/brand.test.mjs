@@ -12,7 +12,7 @@ const [config,offers,map,geography]=await Promise.all(['config/site.json','confi
 
 test('every current page has an accessible full-name identity and real icon fallbacks',()=>{
  for(const {html,path} of renderPages({config,offers,map,geography})){
-  assert.match(html,/<a href="\/" class="wordmark brand-lockup" aria-label="Wonder &amp; Method home"><img[^>]+alt="" aria-hidden="true"><span class="brand-name">Wonder &amp; Method<\/span><\/a>/,path);
+  assert.match(html,/<a href="\/" class="wordmark brand-lockup" aria-label="Wonder and Method home"><img[^>]+alt="" aria-hidden="true"><span class="brand-name">Wonder &amp; Method<\/span><\/a>/,path);
   assert.match(html,/<p class="wordmark brand-lockup"><img[^>]+alt="" aria-hidden="true"><span class="brand-name">Wonder &amp; Method<\/span><\/p>/,path);
   assert.match(html,/href="\/favicon.ico" sizes="16x16 32x32 48x48"/);
   assert.match(html,/href="\/assets\/brand\/favicon-96.png" sizes="96x96"/);

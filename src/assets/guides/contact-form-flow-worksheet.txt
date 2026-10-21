@@ -1,25 +1,26 @@
 WONDER AND METHOD
 https://wonderandmethod.com/
-CONTACT FORM TEST WORKSHEET
-Version 2026-10-20.1
+CONTACT FORM TEST CHECKLIST
+Updated October 21, 2026
 Source: https://wonderandmethod.com/assets/guides/contact-form-flow-worksheet.txt
-Use fictional message content, an authorized test and an address you control.
-Never paste passwords, tokens or real customer records here.
 
-Test label / date / time / timezone:
-Page URL / device / browser:
-Expected receiving destination:
-Responsible person watching for the test:
-1. Page submission: action / visible result / time:
-2. Saved record, if your platform keeps one: found where / identifier / time / not supported / unknown:
-3. Email notification: recipient in form settings / actual status / time:
-4. Inbox: found where / time / missing evidence:
-5. Reply: expected address / received / time:
-First failed step, or step where evidence is unavailable:
-Authorized maintainer / next diagnostic action:
-Agreed correction and recovery route:
-Retest observations for all five steps:
-Remaining limitations / next review:
-Test-record cleanup under approved retention practice:
+Use made-up details and an email address you control. Keep passwords and customer records out of this file.
+Status: Not checked / Works / Needs fixing / Need access / Not applicable / Blocked
+Page address / phone or computer / browser:
+Test date and time:
 
-A browser success message alone does not prove inbox receipt.
+1. Send one message labeled Website test.
+   What happened / time / status:
+2. Find the saved message if your form tool keeps one.
+   Where I looked / what happened / time / status:
+3. Check which email address receives form notifications.
+   Recipient / what happened / time / status:
+4. Look in that inbox and its spam folder.
+   What happened / time / status:
+5. Reply to the test message and check the reply arrives.
+   What happened / time / status:
+
+First step that failed or needs access:
+Who I sent the page address, time and result to:
+Change made / retest date and result:
+Delete test messages afterwards:

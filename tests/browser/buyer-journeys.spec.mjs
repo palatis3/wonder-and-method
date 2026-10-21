@@ -1,6 +1,6 @@
 import {test,expect} from './fixtures.mjs';
 import offers from '../../config/offers.json' with {type:'json'};
-import {money} from '../../src/shared.mjs';
+import {money,inquirySubmitLabel} from '../../src/shared.mjs';
 
 test('mobile menu traps focus and Escape returns to its trigger',async({page,isMobile})=>{
  test.skip(!isMobile,'Phone navigation');
@@ -16,11 +16,11 @@ test('mobile menu traps focus and Escape returns to its trigger',async({page,isM
  await page.keyboard.press('Escape');await expect(menu).toHaveAttribute('aria-expanded','false');await expect(menu).toBeFocused();
 });
 
-test('neutral contact opens a question while explicit offer requests preserve proposal intent',async({page,isMobile})=>{
+test('neutral contact stays unclassified while explicit offer requests preserve proposal intent',async({page,isMobile})=>{
  await page.goto('/?qa=1');
  if(isMobile)await page.locator('.menu-toggle').click();
  const contact=page.locator('.site-header a[href="/contact/#inquiry"]:visible').first();
- await contact.click();await expect(page.locator('#request_kind')).toHaveValue('question');await expect(page.locator('.request-summary')).toBeHidden();await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
+ await contact.click();await expect(page.locator('#request_kind')).toHaveValue('');await expect(page.locator('.request-summary')).toBeHidden();await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
  await page.goto('/pricing/?qa=1');
  const destinations=await page.locator('main a[href^="/checkout/"]').evaluateAll(links=>links.map(link=>link.getAttribute('href')));
  expect(new Set(destinations).size).toBe(8);
@@ -29,22 +29,23 @@ test('neutral contact opens a question while explicit offer requests preserve pr
   await expect(page.locator('#request_kind')).toHaveValue('checkout');
   await expect(page.locator('#request-summary')).toHaveCount(0);
   await expect(page.locator('#service')).not.toHaveValue('unsure');
-  await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:inquirySubmitLabel(await page.locator('#service').inputValue(),true,'checkout'),exact:true})).toBeVisible();
  }
  await page.goto('/contact/?request_kind=question#inquiry');
  await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');
  await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
 });
 
-test('checkout keeps its fixed offer and priorities while a named question link changes intent',async({page})=>{
+test('checkout keeps its fixed offer and priorities while welcoming questions in the same form',async({page})=>{
  await page.goto('/checkout/grow/?offer=launch_site&priority=page&priority_two=article&billing=monthly#inquiry');
- await expect(page.getByRole('heading',{name:'Grow.',exact:true})).toBeVisible();
- await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.inquiry-response-time')).toContainText('one business day');
+ await expect(page.getByRole('heading',{name:'Request Grow',exact:true})).toBeVisible();
+ await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.checkout-reassurance')).toContainText('one business day');
  await expect(page.locator('#service')).toHaveValue('grow');
  await expect(page.locator('#request_kind')).toHaveValue('checkout');
- await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.locator('#message-help')).toContainText('website address above');
+ await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.locator('#message-help')).toContainText('What would you like help with each month?');
  await expect(page.locator('#priority')).toHaveValue('page');await expect(page.locator('#priority_two')).toHaveValue('article');
- await page.locator('[data-checkout-question]').click();
+ await expect(page.locator('#message-help')).toContainText('Questions are welcome here too');await expect(page.locator('[data-checkout-question]')).toHaveCount(0);
+ await page.goto('/contact/?offer=grow&priority=page&priority_two=article&request_kind=question#inquiry');
  await expect(page.locator('#request_kind')).toHaveValue('question');await expect(page.locator('#service')).toHaveValue('grow');
  await expect(page.locator('#request-summary')).toContainText('Grow');await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
 });
@@ -74,14 +75,14 @@ test('payments estimator preserves provider costs, setup exceptions and the clos
  await page.locator('#plan').selectOption('improve');await expect(page.locator('#cycles')).toHaveValue('12');
  await page.locator('#build').selectOption('existing');await page.locator('#plan').selectOption('improve');
  await expect(page.locator('#cycles')).toHaveValue('12');
- await expect(page.locator('#cost-total')).toHaveText(money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+' known costs');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(offers.baseline.one_time_price+12*offers.plans.improve.monthly_price)+' (hosting; domain, email and other paid tools not added yet)');
  await page.locator('input[name="baseline"]').uncheck();
  const studio=12*offers.plans.improve.monthly_price;
- await expect(page.locator('#cost-total')).toHaveText(money(studio)+' known costs');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio)+' (hosting; domain, email and other paid tools not added yet)');
  await page.locator('.provider-estimate summary').click();await page.locator('#hosting-monthly').fill('25');
- await expect(page.locator('#cost-total')).toHaveText(money(studio+300)+' known costs');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: '+money(studio+300)+' (domain, email and other paid tools not added yet)');
  await expect(page.locator('#external-note')).toContainText('Still to add: domain, email and other paid tools');
- await page.locator('#external').fill('50');await expect(page.locator('#cost-total')).toHaveText(money(studio+350)+' estimated total');
+ await page.locator('#external').fill('50');await expect(page.locator('#cost-total')).toHaveText('Estimated total: '+money(studio+350));
  await expect(page.locator('#billing option[value="annual"]')).toHaveCount(0);
  await page.locator('#build').selectOption('launch');await expect(page.locator('#cycles')).toHaveValue('12');
  await page.locator('#cycles').fill('8');await page.locator('#build').selectOption('existing');await expect(page.locator('#cycles')).toHaveValue('8');
@@ -114,8 +115,8 @@ test('portfolio previews, SEO topic navigation and early process overview work b
  const request=page.getByRole('link',{name:'Request Improve',exact:true});await request.focus();await page.keyboard.press('Enter');
  await expect(page).toHaveURL(/\/checkout\/improve\/\?billing=monthly/);await expect(page.locator('#service')).toHaveValue('improve');
  await page.goto('/services/seo/?qa=1');
- const limits=page.locator('summary').filter({hasText:'Research and task limits'});await limits.focus();await page.keyboard.press('Enter');
- await expect(limits.locator('..')).toHaveAttribute('open','');await expect(limits.locator('..')).toContainText('research limits, not promised new pages or rankings');
+ const limits=page.locator('summary').filter({hasText:'Research and other work you can choose'});await limits.focus();await page.keyboard.press('Enter');
+ await expect(limits.locator('..')).toHaveAttribute('open','');await expect(limits.locator('..')).toContainText('These limits describe research, not promised new pages.');await expect(page.locator('main')).toContainText('No ranking, traffic, inquiry, revenue or AI-citation result is guaranteed.');
  await page.goto('/process/?qa=1');
  const firstStep=page.getByRole('heading',{name:'Start with the business',exact:true});await expect(firstStep).toBeVisible();
  const box=await firstStep.boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
@@ -142,8 +143,8 @@ test('review request rejects notes and accepts a public website address without 
  await page.goto('/checkout/website-baseline/?qa=planned-site');
  await page.locator('#name').fill('Synthetic planned-site fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('The website is still being prepared. This is a synthetic fixture.');
  await expect(page.locator('#website')).toHaveAttribute('required','');await expect(page.locator('#website-help')).toContainText('website address');
- await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#website')).toBeFocused();expect(payload).toBeUndefined();
- await page.locator('#website').fill('not yet');await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#website')).toBeFocused();await expect(page.locator('#website-error')).toContainText('public website address');expect(payload).toBeUndefined();await page.locator('#website').fill('example.com');await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#inquiry-confirmation')).toBeFocused();expect(payload.website).toBe('https://example.com/');
+ await page.getByRole('button',{name:'Request my Website Baseline',exact:true}).click();await expect(page.locator('#website')).toBeFocused();expect(payload).toBeUndefined();
+ await page.locator('#website').fill('not yet');await page.getByRole('button',{name:'Request my Website Baseline',exact:true}).click();await expect(page.locator('#website')).toBeFocused();await expect(page.locator('#website-error')).toContainText('public website address');expect(payload).toBeUndefined();await page.locator('#website').fill('example.com');await page.getByRole('button',{name:'Request my Website Baseline',exact:true}).click();await expect(page.locator('#inquiry-confirmation')).toBeFocused();expect(payload.website).toBe('https://example.com/');
  await page.goto('/contact/?offer=website_baseline&request_kind=question');await expect(page.locator('#website')).not.toHaveAttribute('required','');
 });
 
@@ -158,10 +159,12 @@ test('long message paste preserves existing text and explains the email alternat
 test('changing the selected offer keeps the website label and requirement in sync',async({page})=>{
  for(const query of ['?request_kind=checkout','?request_kind=question&goal=fix']){
   await page.goto('/contact/'+query);
-  await page.locator('.inquiry-extra > summary').click();
   await page.locator('#service').selectOption('improve');
-  await expect(page.locator('label[for="website"]')).toHaveText('Website to review (required)');
-  await expect(page.locator('#website')).toHaveAttribute('required','');
+  await expect(page.locator('label[for="website"]')).toHaveText('Your website (if you have one)');
+  await expect(page.locator('#website')).not.toHaveAttribute('required','');
+  await page.locator('#service').selectOption('website_baseline');
+  if(query.includes('request_kind=checkout'))await expect(page.locator('#website')).toHaveAttribute('required','');
+  else await expect(page.locator('#website')).not.toHaveAttribute('required','');
   await page.locator('#service').selectOption('launch_site');
   await expect(page.locator('label[for="website"]')).toHaveText('Website or social page (optional)');
   await expect(page.locator('#website')).not.toHaveAttribute('required','');

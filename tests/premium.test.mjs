@@ -10,11 +10,13 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('every route exposes the same primary journey and local type system',()=>{
- const expected=['/work/','/pricing/','/services/','/services/web-design/','/services/website-redesign/','/services/website-addons/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/process/','/guides/','/about/','/contact/#inquiry'];
+ const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/seo/','/services/website-care/','/services/website-audit/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   assert.ok(primary,path);
   assert.deepEqual([...primary.matchAll(/href="([^"]+)"/g)].map(x=>x[1]),expected,path);
+  const footer=html.match(/<nav aria-label="Footer">(.*?)<\/nav>/s)?.[1];assert.ok(footer,path);
+  for(const secondary of ['/services/website-addons/','/services/contractor-websites/']){assert.ok(footer.includes(`href="${secondary}"`),path+' -> '+secondary);assert.ok(pages.some(page=>page.path===secondary),secondary);}
   assert.match(html,/\/assets\/premium\/newsreader-regular\.woff2/);
   assert.doesNotMatch(html,/<link[^>]+rel="preload"[^>]+manrope/);
   assert.doesNotMatch(html,/<iframe|my\.spline\.design|opening\.mp4|\/assets\/experience\.js/);

@@ -1,4 +1,5 @@
 import {escapeHtml as e} from './shared.mjs';
+import {normalizeCountyQuery} from './assets/county-directory.js';
 import {countyProfiles} from './county-profiles.mjs';
 import {countyGeography} from './county-geography.mjs';
 import {countyRegions} from './county-regions.mjs';
@@ -22,29 +23,36 @@ export function serviceAreaDataForPath(path){
  return null;
 }
 const a=(path,label)=>`<a href="${e(path)}">${e(label)}</a>`;
-function searchText(county,state,region){
+export function countySearchText(county,state,region){
  const g=state.geography[county.slug];
- const types={cities:'City',towns:'Town',villages:'Village',boroughs:'Borough',townships:'Township'};
- const municipalities=Object.entries(g?.municipalities||{}).flatMap(([group,names])=>names.flatMap(name=>[name,`${name} ${types[group]}`,`${types[group]} of ${name}`]));
- const places=[county.name,`${county.name} County`,county.displayName||'',county.anchor,...municipalities,...(g?.communities||[]).map(place=>place.name)];
- return [state.name,state.abbreviation,region?.name||'',...places.flatMap(place=>[place,`${place} ${state.abbreviation}`,`${place} ${state.name}`])].join(' | ');
+ const types={cities:'c',towns:'t',villages:'v',boroughs:'b',townships:'s'};
+ const terms=new Map();
+ const add=(name,type)=>{const value=normalizeCountyQuery(name||'');if(value)terms.set(value,[...new Set((terms.get(value)||'')+type)].join(''));};
+ add(county.name,'y');
+ for(const [group,names] of Object.entries(g?.municipalities||{}))for(const name of names)add(name,types[group]||'p');
+ for(const anchor of (county.anchor||'').split(/\s*(?:,|&)\s*/))add(anchor,'a');
+ for(const place of [county.displayName,county.anchor,region?.name,...(g?.communities||[]).map(item=>item.name)]){
+  const value=normalizeCountyQuery(place||'');if(value&&!terms.has(value))add(value,'p');
+ }
+ return [...terms].map(([name,types])=>`${types}:${name}`).join('|');
 }
 function cards(state,counties){
- return `<div class="county-hub-grid">${counties.map(county=>{
+ return `<ul class="county-hub-grid">${counties.map(county=>{
   const region=state.regions.find(item=>item.slugs.includes(county.slug));
-  return `<article data-county-state="${state.id}" data-county-search="${e(searchText(county,state,region))}"><a class="county-hub-link" href="${countyPath(county,state)}"><span class="eyebrow">${e(state.name)}</span><h3>${e(county.slug==='erie'&&state.id==='new-york'?'Buffalo & Erie County':countyLabel(county))}</h3><p>${e(county.anchor)}</p></a></article>`;
- }).join('')}</div>`;
+  const anchor=county.anchor&&county.anchor!==county.name?` <span class="county-anchor">(${e(county.anchor)})</span>`:'';
+  return `<li data-county-state="${state.id}" data-county-search="${e(countySearchText(county,state,region))}"><a class="county-hub-link" href="${countyPath(county,state)}">${e(county.name)} County${anchor}</a></li>`;
+ }).join('')}</ul>`;
 }
 export function directoryControls(state){
  const count=state?state.counties.length:serviceStates.reduce((total,item)=>total+item.counties.length,0);
- return `<div class="county-filter" data-county-filter-controls hidden><label for="county-search">Find a county or community</label><p id="county-search-help">${state?.id==='pennsylvania'?'Try a county, city, borough, township or community.':state?.id==='ohio'?'Try a county, city, village, township or region.':state?'Try a county, city, town, village or region.':'Try a county or community; add NY, PA or OH when a name is shared.'} Shared place names may match more than one guide.</p>${state?'':`<div class="county-state-filter"><label for="county-state">Filter by state</label><select id="county-state" data-county-state-filter aria-controls="counties"><option value="">All three states</option>${serviceStates.map(item=>`<option value="${item.id}">${item.name}</option>`).join('')}</select></div>`}<div class="county-filter-row"><input id="county-search" type="search" maxlength="100" autocomplete="off" placeholder="${state?.id==='pennsylvania'?'For example, Harrisburg or State College':state?.id==='ohio'?'For example, Toledo or Yellow Springs':state?'For example, Ithaca or St. Lawrence':'For example, Erie OH or Ithaca'}" aria-describedby="county-search-help" aria-controls="counties"><button type="button" class="button button-secondary" disabled>Clear search</button></div><p class="county-filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all ${count} county guides.</p></div>`;
+ return `<div class="county-filter" data-county-filter-controls><label for="county-search">Search counties or towns</label><p id="county-search-help">Type a county, city or town; ZIP codes aren't supported.${state?'':' Add NY, PA or OH when a name is shared.'} Shared names may match more than one county.</p>${state?'':`<div class="county-state-filter"><label for="county-state">State</label><select id="county-state" data-county-state-filter aria-controls="counties" disabled><option value="">All three states</option>${serviceStates.map(item=>`<option value="${item.id}">${item.name}</option>`).join('')}</select></div>`}<div class="county-filter-row"><input id="county-search" type="search" maxlength="100" autocomplete="off" placeholder="${state?.id==='pennsylvania'?'For example, Harrisburg or State College':state?.id==='ohio'?'For example, Toledo or Yellow Springs':state?'For example, Ithaca or St. Lawrence':'For example, Erie OH or Ithaca'}" aria-describedby="county-search-help" aria-controls="counties" disabled><button type="button" class="button button-secondary" disabled>Clear</button></div><p class="county-filter-status" role="status" aria-live="polite" aria-atomic="true">Browse all ${count} counties below.</p><noscript><p>Search needs JavaScript. Open the lists below to browse every county.</p></noscript></div>`;
 }
 export function countyDirectory(state){
  const states=state?[state]:serviceStates;
  const navigation=state?state.regions.map(region=>a('#'+region.id,region.name)):states.map(item=>a('#'+item.id,item.name));
- const sections=state?state.regions.map(region=>({id:region.id,label:'Find your area',name:region.name,html:cards(state,regionCounties(state,region))})):states.map(item=>({id:item.id,label:`${item.counties.length} county guides`,name:item.name,html:cards(item,[...item.counties].sort((a,b)=>a.name.localeCompare(b.name)))}));
- return directoryControls(state)+`<nav class="page-jump county-region-nav" data-county-region-nav aria-label="${state?e(state.name)+' service regions':'Service states'}">${navigation.join('')}</nav><div id="counties" data-county-directory>${sections.map(section=>`<section class="section county-section" id="${section.id}"><div class="section-heading"><p class="eyebrow">${e(section.label)}</p><h2>${e(section.name)}</h2></div>${section.html}</section>`).join('')}</div><div class="county-search-empty" data-county-empty hidden><h2>No county guides match that search.</h2><p>Try a county name or a nearby community${state?'':', or choose a different state'}. Clear the search to browse ${state?'the '+state.name:'all three states’'} county guides.</p></div>`;
+ const sections=state?state.regions.map(region=>({id:region.id,name:region.name,count:region.slugs.length,html:cards(state,regionCounties(state,region))})):states.map(item=>({id:item.id,name:item.name,count:item.counties.length,html:cards(item,[...item.counties].sort((a,b)=>a.name.localeCompare(b.name)))}));
+ return directoryControls(state)+`<nav class="page-jump county-region-nav" data-county-region-nav aria-label="${state?e(state.name)+' service regions':'Service states'}">${navigation.join('')}</nav><div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} counties)</summary>${section.html}</details>`).join('')}</div><div class="county-search-empty" data-county-empty hidden><p><strong>No counties match that search.</strong></p><p>Try a county name or a nearby community${state?'':', or choose a different state'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name:'all three states’'} counties.</p></div>`;
 }
 export function serviceStateCards(){
- return `<div class="state-area-cards">${serviceStates.map(state=>`<article><p class="eyebrow">${state.counties.length} county guides</p><h2>${a(state.path,state.name)}</h2><p>${({'new-york':'From Buffalo and the Finger Lakes to the Hudson Valley, New York City and Long Island.',pennsylvania:'From Erie and Pittsburgh to central Pennsylvania, the Lehigh Valley and Philadelphia.',ohio:'From Cleveland and Toledo to Columbus, Cincinnati, Dayton and communities across Ohio.'})[state.id]}</p><p>${a(state.path,'Explore '+state.name)}</p></article>`).join('')}</div>`;
+ return `<div class="state-area-cards">${serviceStates.map(state=>`<article><p class="eyebrow">${state.counties.length} counties</p><h2>${e(state.name)}</h2><p>${({'new-york':'From Buffalo and the Finger Lakes to the Hudson Valley, New York City and Long Island.',pennsylvania:'From Erie and Pittsburgh to central Pennsylvania, the Lehigh Valley and Philadelphia.',ohio:'From Cleveland and Toledo to Columbus, Cincinnati, Dayton and communities across Ohio.'})[state.id]}</p><p>${a(state.path,'Explore '+state.name)}</p></article>`).join('')}</div>`;
 }

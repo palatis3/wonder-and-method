@@ -42,7 +42,7 @@ test('monthly prompts agree across static and query-prefilled forms, with useful
  for(const service of ['keep_running','improve','grow']){
   const initial=inquiryForm({live:false,privacyLink:'Privacy'},{service,checkout:true});
   const label=html=>html.match(/data-request-label>(.*?) <span[^>]*>/)[1];
-  assert.equal(label(initial),inquiryMessagePrompt(service));assert.equal(label(initial),"Your message");assert.match(initial,/website address above.*each month/);
+  assert.equal(label(initial),inquiryMessagePrompt(service));assert.equal(label(initial),"Your message");assert.match(initial,/What would you like help with each month\?/);assert.doesNotMatch(initial,/Share your website address above/);
   for(const query of ['?billing=annual','?request_kind=checkout&billing=monthly','?request_kind=question','?offer=launch_site&request_kind=checkout']){
    const html=prefillInquiryHtml(initial,new URL('https://example.test/checkout/'+service.replaceAll('_','-')+'/'+query));
    assert.equal(label(html),inquiryMessagePrompt(service,query.includes('request_kind=question')?'question':'checkout'));

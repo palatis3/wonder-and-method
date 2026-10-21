@@ -45,7 +45,9 @@ test('city publication rejects incomplete camera pairs, timing mismatches and un
 test('initial city page provides all project destinations before enhancement and defers video to preference-aware autoplay',()=>{
  const html=livingCityHome({livingCityMotionReady:true});
  assert.match(html,/data-city-stage/);assert.match(html,/role="tablist"[^>]*hidden/);
- assert.doesNotMatch(html,/<article[^>]+data-city-panel[^>]+(?:hidden|inert)/);
+ const panels=[...html.matchAll(/<[^>]+data-city-panel="[^"]+"[^>]*>/g)].map(match=>match[0]);
+ assert.equal(panels.length,3,'all original concept panels exist before scripts run');
+ for(const panel of panels)assert.doesNotMatch(panel,/\s(?:hidden|inert)(?:\s|=|>)/);
  assert.doesNotMatch(html,/<video[^>]+(?: autoplay| loop| src=)/);
  assert.match(html,/<video[^>]+data-desktop-src="\/assets\/living-city\/desktop-film.mp4"[^>]+preload="none"/);
  for(const id of ['fieldwork','northline','hearthside']){assert.match(html,new RegExp(`href="/work/${id}/"`));assert.match(html,new RegExp(`data-city-panel="${id}"`));}

@@ -4,6 +4,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {validEmail,validateInquiry} from '../src/inquiry.mjs';
 import {inquiryNetwork,allowInquiryRate} from '../deployment/inquiry-rate.mjs';
 import {inquiryConfirmationHtml} from '../src/inquiry-confirmation.mjs';
+import {escapeHtml} from '../src/shared.mjs';
 const valid={name:'Synthetic Owner',email:'synthetic@example.test',business:'',website:'',service:'launch_site',message:'A synthetic inquiry only.'};
 
 test('email addresses cannot inject another recipient, while ordinary aliases remain valid',()=>{
@@ -42,11 +43,28 @@ test('explicit decision-pack requests stay proposals without JavaScript and reta
  const {inquiryForm}=await import('../src/inquiry-form.mjs');
  const {prefillInquiryHtml}=await import('../src/inquiry-prefill.mjs');
  const {default:offers}=await import('../config/offers.json',{with:{type:'json'}});
+ const labels={launch_site:'Request my Launch proposal',focused_site:'Request my Focused proposal',signature_site:'Request my Signature proposal',keep_running:'Request my Keep Running start',improve:'Request my Improve start',grow:'Request my Grow start',website_baseline:'Request my Website Baseline',audit_fix_sprint:'Request my Audit & Fix proposal'};
  for(const pack of buyerPacks(offers)){
   assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'},{checkout:true,service:pack.id}),new URL(pack.request,'https://example.test'));
   assert.match(html,/name="request_kind" value="checkout"/);
-  assert.match(html,/<button type="submit" data-request-submit>Send message<\/button>/);
-  if(pack.id.endsWith('_site'))assert.ok(JSON.stringify(pack.sections).includes(offers[pack.id].creative));
+  assert.ok(html.includes('<button type="submit" data-request-submit>'+escapeHtml(labels[pack.id])+'</button>'),pack.id+' named request');
+  assert.ok(html.includes('type="hidden" id="service" name="service" value="'+pack.id+'"'));
+  if(pack.id.endsWith('_site')){
+   const text=pack.sections.flatMap(section=>section.items).join(' '),graphics=offers[pack.id].graphic_counts;
+   assert.match(text,new RegExp(graphics.launch+' announcement graphics?'));
+   for(const pattern of [/mobile.*reduced-motion/,/browser-tab icon, default branded sharing image from approved assets and page-sharing checks/,/Extra variants, identity redesign and original photography are separate/])assert.match(text,pattern,pack.id);
+   if(graphics.promotional){
+    assert.match(text,new RegExp(graphics.promotional+' promotional graphics for agreed uses \\('+graphics.total+' distinct designs total\\)'));
+    assert.match(text,new RegExp(graphics.supplied_photo_edits+' supplied-photo edits'));
+    for(const pattern of [/color-and-font guide, clean existing-logo files and a social profile picture/,/Resizing does not count as another graphic/,/final images are included, editing templates and presentation decks are separate/])assert.match(text,pattern,pack.id);
+   }else assert.match(text,/compact color, type and style guide/);
+   if(pack.id==='signature_site'){
+    for(const pattern of [/One custom animated homepage feature or 3D centerpiece: one concept, scene and final web output/,/lightweight mobile, still and reduced-motion versions/,/Agree references, duration and performance limits before production/,/the same two review rounds cover it/,/Complex simulations, characters, multiple productions and custom interactive 3D are separate/])assert.match(text,pattern,pack.id);
+   }else{
+    assert.match(text,/Custom design and purposeful interface animation/);
+    assert.match(text,/A custom animated homepage feature or 3D centerpiece is separate/);
+   }
+  }
  }
 });
 

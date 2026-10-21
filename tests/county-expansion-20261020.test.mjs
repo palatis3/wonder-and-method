@@ -23,14 +23,14 @@ const migration=await readFile(new URL('0011_journey_county_expansion.sql',direc
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 const oldSchema=prior.at(-1);
 
-test('all fifteen additions are reachable from the area hub and every service page',()=>{
+test('all fifteen additions remain in the area hub reached from service pages',()=>{
  assert.equal(pages.length,286);
  const servicePages=pages.filter(p=>p.path.startsWith('/services/'));
  assert.ok(servicePages.length>=7);
  for(const slug of slugs){
   const path=`/areas/${slug}-county/`,page=byPath.get(path);
   assert.ok(page,path);
-  for(const source of [byPath.get('/areas/'),byPath.get('/areas/erie-county/'),...servicePages])assert.ok(source.html.includes(`href="${path}"`),`${source.path} missing ${path}`);
+  assert.ok(byPath.get('/areas/').html.includes(`href="${path}"`),`Directory missing ${path}`);for(const source of [byPath.get('/areas/erie-county/'),...servicePages])assert.ok(source.html.includes('href="/areas/"'),`${source.path} missing county directory`);
   assert.match(page.html,/href="\/services\/seo\/"/);
   assert.match(page.html,/href="\/services\/web-design\/"/);
   assert.ok(page.html.includes('id="buyer-task"'));
@@ -66,7 +66,7 @@ test('borough geography and downloaded planning exercises stay useful and accura
   }else assert.ok(Object.values(g.municipalities).flat().length>=6,slug);
   const file=await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(file.includes(text),slug);
-  assert.match(file,/ILLUSTRATIVE EXAMPLE, NOT A CLIENT RESULT OR LOCAL-DEMAND STUDY/);
+  assert.match(file,/EXAMPLE ONLY, NOT A CLIENT PROJECT/);
   taskText.add(task.decision);
  }
  assert.equal(taskText.size,15);
@@ -84,7 +84,7 @@ test('research-informed county answers remain visible, linked and consistent wit
  for(const slug of slugs){
   const path=`/areas/${slug}-county/`,body=changedPages.get(path);
   const faq=body.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
-  assert.equal((faq.match(/<summary>/g)||[]).length,6,slug);
+  assert.equal((faq.match(/<summary>/g)||[]).length,5,slug);
   for(const [question,answer,url] of countySearchQuestions(slug,changed)){
    questionSet.add(question);assert.ok(body.includes(question.replaceAll('&','&amp;')),slug);
    assert.ok(answer.length>=120,slug);assert.ok(byPath.has(url),slug+' -> '+url);

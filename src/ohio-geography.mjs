@@ -54,15 +54,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "allen": {
     "municipalities": {
@@ -115,15 +115,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "ashland": {
     "municipalities": {
@@ -179,15 +179,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "ashtabula": {
     "municipalities": {
@@ -261,15 +261,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "athens": {
     "municipalities": {
@@ -335,15 +335,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "auglaize": {
     "municipalities": {
@@ -397,15 +397,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "belmont": {
     "municipalities": {
@@ -494,15 +494,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "brown": {
     "municipalities": {
@@ -558,15 +558,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "butler": {
     "municipalities": {
@@ -653,15 +653,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "carroll": {
     "municipalities": {
@@ -708,15 +708,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "champaign": {
     "municipalities": {
@@ -757,15 +757,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "clark": {
     "municipalities": {
@@ -837,15 +837,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "clermont": {
     "municipalities": {
@@ -937,15 +937,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "clinton": {
     "municipalities": {
@@ -983,15 +983,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "columbiana": {
     "municipalities": {
@@ -1090,15 +1090,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Fairfield and Perry townships each extend into Mahoning County."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Fairfield and Perry townships each extend into Mahoning County."
   },
   "coshocton": {
     "municipalities": {
@@ -1154,15 +1154,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "crawford": {
     "municipalities": {
@@ -1212,15 +1212,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "cuyahoga": {
     "municipalities": {
@@ -1295,15 +1295,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "darke": {
     "municipalities": {
@@ -1365,15 +1365,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Ithaca is classified as a Census-designated place in the January 2026 inventory and is listed with communities."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Ithaca is classified as a Census-designated place in the January 2026 inventory and is listed with communities."
   },
   "defiance": {
     "municipalities": {
@@ -1411,15 +1411,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "delaware": {
     "municipalities": {
@@ -1475,15 +1475,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Washington Township is the county portion of the township also extending across Franklin and Union counties."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Washington Township is the county portion of the township also extending across Franklin and Union counties."
   },
   "erie": {
     "municipalities": {
@@ -1548,15 +1548,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "fairfield": {
     "municipalities": {
@@ -1620,15 +1620,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "fayette": {
     "municipalities": {
@@ -1671,15 +1671,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "franklin": {
     "municipalities": {
@@ -1765,15 +1765,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Washington Township extends into Delaware and Union counties."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Washington Township extends into Delaware and Union counties."
   },
   "fulton": {
     "municipalities": {
@@ -1824,15 +1824,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "gallia": {
     "municipalities": {
@@ -1879,15 +1879,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "geauga": {
     "municipalities": {
@@ -1950,15 +1950,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Aquilla is classified as a Census-designated place following its village dissolution and is listed with communities."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Aquilla is classified as a Census-designated place following its village dissolution and is listed with communities."
   },
   "greene": {
     "municipalities": {
@@ -2015,15 +2015,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "guernsey": {
     "municipalities": {
@@ -2083,15 +2083,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "hamilton": {
     "municipalities": {
@@ -2413,15 +2413,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "hancock": {
     "municipalities": {
@@ -2467,15 +2467,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "hardin": {
     "municipalities": {
@@ -2521,15 +2521,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "harrison": {
     "municipalities": {
@@ -2575,15 +2575,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "henry": {
     "municipalities": {
@@ -2627,15 +2627,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "highland": {
     "municipalities": {
@@ -2692,15 +2692,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "hocking": {
     "municipalities": {
@@ -2757,15 +2757,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "holmes": {
     "municipalities": {
@@ -2827,15 +2827,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "huron": {
     "municipalities": {
@@ -2901,15 +2901,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "jackson": {
     "municipalities": {
@@ -2941,15 +2941,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "jefferson": {
     "municipalities": {
@@ -3018,15 +3018,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "knox": {
     "municipalities": {
@@ -3093,15 +3093,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "lake": {
     "municipalities": {
@@ -3146,15 +3146,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "lawrence": {
     "municipalities": {
@@ -3202,15 +3202,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "licking": {
     "municipalities": {
@@ -3308,15 +3308,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "logan": {
     "municipalities": {
@@ -3378,15 +3378,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "lorain": {
     "municipalities": {
@@ -3447,15 +3447,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "lucas": {
     "municipalities": {
@@ -3509,15 +3509,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "madison": {
     "municipalities": {
@@ -3569,15 +3569,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "mahoning": {
     "municipalities": {
@@ -3674,15 +3674,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Fairfield and Perry townships are county portions of townships also extending into Columbiana County."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Fairfield and Perry townships are county portions of townships also extending into Columbiana County."
   },
   "marion": {
     "municipalities": {
@@ -3721,15 +3721,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "medina": {
     "municipalities": {
@@ -3785,15 +3785,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Canaan Township is the county portion of the township also extending into Wayne County."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Canaan Township is the county portion of the township also extending into Wayne County."
   },
   "meigs": {
     "municipalities": {
@@ -3831,15 +3831,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "mercer": {
     "municipalities": {
@@ -3884,15 +3884,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "miami": {
     "municipalities": {
@@ -3940,15 +3940,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "monroe": {
     "municipalities": {
@@ -4002,15 +4002,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "montgomery": {
     "municipalities": {
@@ -4073,15 +4073,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "morgan": {
     "municipalities": {
@@ -4120,15 +4120,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "morrow": {
     "municipalities": {
@@ -4184,15 +4184,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "muskingum": {
     "municipalities": {
@@ -4275,15 +4275,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "noble": {
     "municipalities": {
@@ -4319,15 +4319,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "ottawa": {
     "municipalities": {
@@ -4379,15 +4379,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "paulding": {
     "municipalities": {
@@ -4425,15 +4425,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "perry": {
     "municipalities": {
@@ -4485,15 +4485,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Rendville remains listed as an incorporated village by the Census Bureau, with inactive governmental status."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Rendville remains listed as an incorporated village by the Census Bureau, with inactive governmental status."
   },
   "pickaway": {
     "municipalities": {
@@ -4550,15 +4550,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "pike": {
     "municipalities": {
@@ -4601,15 +4601,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "portage": {
     "municipalities": {
@@ -4675,15 +4675,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "preble": {
     "municipalities": {
@@ -4728,15 +4728,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "putnam": {
     "municipalities": {
@@ -4787,15 +4787,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "richland": {
     "municipalities": {
@@ -4851,15 +4851,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "ross": {
     "municipalities": {
@@ -4920,15 +4920,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "sandusky": {
     "municipalities": {
@@ -4997,15 +4997,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "scioto": {
     "municipalities": {
@@ -5093,15 +5093,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "seneca": {
     "municipalities": {
@@ -5176,15 +5176,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "shelby": {
     "municipalities": {
@@ -5230,15 +5230,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "stark": {
     "municipalities": {
@@ -5355,15 +5355,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "summit": {
     "municipalities": {
@@ -5436,15 +5436,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "trumbull": {
     "municipalities": {
@@ -5577,15 +5577,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "tuscarawas": {
     "municipalities": {
@@ -5658,15 +5658,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "union": {
     "municipalities": {
@@ -5715,15 +5715,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Union County has its own Washington Township and a separate Washington Township portion administered with the Franklin County-based township. The latter is labeled with a Franklin County qualifier to distinguish the two governments."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Union County has its own Washington Township and a separate Washington Township portion administered with the Franklin County-based township. The latter is labeled with a Franklin County qualifier to distinguish the two governments."
   },
   "van-wert": {
     "municipalities": {
@@ -5761,15 +5761,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "vinton": {
     "municipalities": {
@@ -5800,15 +5800,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "warren": {
     "municipalities": {
@@ -5883,15 +5883,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "washington": {
     "municipalities": {
@@ -5967,15 +5967,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "wayne": {
     "municipalities": {
@@ -6039,15 +6039,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Canaan Township extends into Medina County."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Canaan Township extends into Medina County."
   },
   "williams": {
     "municipalities": {
@@ -6110,15 +6110,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "wood": {
     "municipalities": {
@@ -6190,15 +6190,15 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt"
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html"
     ],
     "sourceNames": [
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file"
+      "U.S. Census Bureau: 2026 geographic reference files (overview)"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties."
   },
   "wyandot": {
     "municipalities": {
@@ -6242,7 +6242,7 @@ export const ohioGeography = {
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cousub_oh.html",
       "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_oh.html",
-      "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_39.txt",
+      "https://www.census.gov/geographies/reference-files/2026/geo/geo-reference-files.html",
       "https://tims.dot.state.oh.us/ags/rest/services/Boundaries/Cities_and_Villages/MapServer/0",
       "https://www2.census.gov/geo/pdfs/reference/bndrychange/ohio.pdf",
       "https://codelibrary.amlegal.com/codes/forest/latest/forest_oh/0-0-0-433"
@@ -6251,11 +6251,11 @@ export const ohioGeography = {
       "U.S. Census Bureau: Ohio incorporated places, January 1, 2026",
       "U.S. Census Bureau: Ohio county subdivisions, January 1, 2026",
       "U.S. Census Bureau: Ohio Census-designated places, January 1, 2026",
-      "U.S. Census Bureau: 2026 Ohio geographic relationship file",
+      "U.S. Census Bureau: 2026 geographic reference files (overview)",
       "Ohio DOT: current city and village boundaries",
       "U.S. Census Bureau: Forest annexation into Wyandot County, June 19, 2008",
       "Village of Forest: codified annexation table, ordinance 1757"
     ],
-    "directoryNote": "Names and municipal classifications follow the U.S. Census January 1, 2026 inventory. Townships are listed separately from incorporated cities and villages. Cross-county places appear in each applicable county. Communities are Census-designated places, not incorporated municipalities. Reviewed October 20, 2026. Forest is also listed here because Ohio DOT boundaries and its documented 2008 annexation show a Wyandot County portion. That portion is omitted from the January 2026 Census boundary file."
+    "directoryNote": "Communities are Census-designated places, listed separately from municipalities. Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties. Forest is also listed here because Ohio DOT boundaries and its documented 2008 annexation show a Wyandot County portion. That portion is omitted from the January 2026 Census boundary file."
   }
 };
