@@ -1,0 +1,114 @@
+{
+  "assembled": "2026-10-22",
+  "scope": "18 states and Washington, DC; 950 counties and equivalents excluding New York",
+  "counts": {
+    "states": 19,
+    "areas": 950,
+    "areasWithRetainedSemrush": 950,
+    "retainedMappedUniquePhrases": 5659,
+    "priorCountyBriefs": 155
+  },
+  "sourceSummary": [
+    {
+      "path": "northern-expansion-20261022/research/keyword-to-page-map.json",
+      "date": "2026-10-22",
+      "records": 1025
+    },
+    {
+      "path": "virginia-expansion-20261022/research/keyword-to-page-map.json",
+      "date": "2026-10-22",
+      "records": 1268
+    },
+    {
+      "path": "virginia-expansion-20261022/michigan-dc-research/keyword-to-page-map.json",
+      "date": "2026-10-22",
+      "records": 774
+    },
+    {
+      "path": "virginia-expansion-20261022/in-ky-tn-nc-research/keyword-to-page-map.json",
+      "date": "2026-10-22",
+      "records": 3212
+    },
+    {
+      "path": "pennsylvania-expansion-20261020/semrush-county-briefs.json",
+      "date": "2026-10-20",
+      "records": 67,
+      "counts": {
+        "reportCalls": 74,
+        "exactBulkCalls": 43,
+        "discoveryCalls": 31,
+        "noDataReportCalls": 12,
+        "requestedExactUniqueKeywords": 3701,
+        "returnedExactUniqueKeywords": 310,
+        "unavailableExactUniqueKeywords": 3391,
+        "returnedExactZeroVolumeKeywords": 117,
+        "rawReturnedRows": 1090,
+        "uniqueReturnedKeywords": 1029,
+        "usableServiceKeywordCount": 693,
+        "excludedFromServiceAssignment": 336,
+        "counties": 67,
+        "countiesWithPositiveQualifiedOrSharedData": 38,
+        "countiesWithoutPositiveQualifiedOrSharedData": 29,
+        "usableSourceQuestions": 158,
+        "completedReportResponses": 74,
+        "failedRequestAttempts": 2,
+        "totalExecuteReportAttempts": 76
+      }
+    },
+    {
+      "path": "ohio-expansion-20261020/semrush-county-briefs.json",
+      "date": "2026-10-20",
+      "records": 88,
+      "counts": {
+        "reportCalls": 111,
+        "exactBulkCalls": 89,
+        "discoveryCalls": 22,
+        "requestedExactUniqueKeywords": 4007,
+        "returnedExactUniqueKeywords": 184,
+        "unavailableExactUniqueKeywords": 3823,
+        "returnedExactZeroVolumeKeywords": 79,
+        "rawReturnedRows": 762,
+        "uniqueReturnedKeywords": 596,
+        "usableServiceKeywordCount": 482,
+        "excludedFromServiceAssignment": 113,
+        "counties": 88,
+        "countiesWithPositiveQualifiedOrSharedData": 32,
+        "usableSourceQuestions": 166,
+        "countyFAQAssignments": 264,
+        "unclassifiedReturnedKeywords": 1,
+        "countiesWithoutPositiveQualifiedOrSharedData": 56,
+        "noDataReportCalls": 42,
+        "quotaErrorCalls": 0,
+        "completedReportResponses": 111,
+        "failedRequestAttempts": 0,
+        "totalExecuteReportAttempts": 111
+      }
+    }
+  ],
+  "limits": "Retained geography and fictional planning examples do not establish distinct local commercial pages. Semrush US estimates are not county-resident demand, variants are not additive, and missing or unqueried results are never zero. PA/OH full source reports and coverage ledgers remain authoritative; this package retains their brief summaries without pretending they use the same query set as other states.",
+  "newTopicReport": {
+    "retrievedAt": "2026-10-22T23:05:46.496Z",
+    "report": "phrase_these",
+    "params": {
+      "database": "us",
+      "phrase": "campground website design;marina website design;tour booking software;boat rental booking software;event venue website design;catering website design;wholesale website design;workshop booking system;farm ecommerce;museum website design",
+      "export_columns": [
+        "keyword",
+        "volume",
+        "keyword_difficulty",
+        "intent"
+      ]
+    },
+    "scope": "US task/sector context only; not local county demand or proof an article deserves publication.",
+    "result": {
+      "data": "Keyword;Search Volume;Keyword Difficulty Index;Intent\ncampground website design;260;10;1\nmarina website design;90;3;1\ntour booking software;480;23;1\nboat rental booking software;110;20;1,0\nevent venue website design;10;0;\ncatering website design;90;20;1\nwholesale website design;140;9;0\nworkshop booking system;20;0;\nfarm ecommerce;20;0;\nmuseum website design;110;12;1\n",
+      "metadata": {
+        "format": "csv",
+        "url": "https://www.semrush.com/analytics/keywordoverview/?db=us&export_columns=keyword%2Cvolume%2Ckeyword_difficulty%2Cintent&q=campground+website+design%3Bmarina+website+design%3Btour+booking+software%3Bboat+rental+booking+software%3Bevent+venue+website+design%3Bcatering+website+design%3Bwholesale+website+design%3Bworkshop+booking+system%3Bfarm+ecommerce%3Bmuseum+website+design",
+        "usage": {
+          "api_units": 100
+        }
+      }
+    }
+  }
+}

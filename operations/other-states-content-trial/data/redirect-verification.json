@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-10-22T23:16:24.256Z",
+  "httpsEvidenceTime": "2026-10-22T23:13:09.606Z",
+  "zoneAlwaysUseHttps": {
+    "value": "on",
+    "verifiedViaCloudflareApi": true,
+    "modifiedOn": "2026-10-16T20:35:31.796977Z"
+  },
+  "httpsDirect": {
+    "requests": 1182,
+    "passed": 1182
+  },
+  "httpUpgradeChains": {
+    "requests": 394,
+    "passed": 394
+  },
+  "destinations": [
+    {
+      "path": "/areas/new-york/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 61,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/pennsylvania/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 67,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/ohio/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 88,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/new-jersey/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 21,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/connecticut/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 9,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/rhode-island/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 5,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/massachusetts/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 14,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/delaware/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 3,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/vermont/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 14,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/new-hampshire/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 10,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/maine/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 16,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/maryland/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 24,
+      "missing": [],
+      "pass": true
+    },
+    {
+      "path": "/areas/erie-county/",
+      "status": 200,
+      "redirect": null,
+      "anchors": 0,
+      "missing": [],
+      "pass": true
+    }
+  ],
+  "controls": [
+    {
+      "url": "https://wonderandmethod.com/",
+      "status": 200,
+      "location": null,
+      "pass": true
+    },
+    {
+      "url": "https://wonderandmethod.com/contact/",
+      "status": 200,
+      "location": null,
+      "pass": true
+    },
+    {
+      "url": "https://www.wonderandmethod.com/PRICING/index.html",
+      "status": 301,
+      "location": "https://wonderandmethod.com/pricing/",
+      "pass": true
+    },
+    {
+      "url": "https://wonderandmethod.com/pricing/",
+      "status": 200,
+      "location": null,
+      "pass": true
+    }
+  ],
+  "allPassed": true
+}

@@ -1,0 +1,803 @@
+[
+  {
+    "slug": "ferry-booking-status",
+    "title": "A ferry ticket, a vehicle reservation and priority boarding are different promises",
+    "ids": [
+      2,
+      8,
+      11,
+      12,
+      22
+    ],
+    "audience": "Island accommodation, equipment-rental and service businesses whose customers depend on ferry travel.",
+    "opening": "An arrival form with a single “ferry booked” checkbox hides several different states. A guest may have paid for passenger travel while still lacking vehicle space; another may have priority boarding without a reserved departure. The business needs the uncertainty that affects its own check-in, delivery or appointment, without trying to operate the ferry reservation.",
+    "reasoning": [
+      [
+        "Ask what the booking actually secures",
+        "Start with travel mode, route and whether a vehicle is necessary for the customer’s plan. For a vehicle-dependent job, an unreserved car crossing remains a timing dependency even if the passengers have tickets. Keep operator rules attached to the selected route; none of these examples establishes a universal island policy."
+      ],
+      [
+        "Keep two businesses’ changes separate",
+        "A ferry cancellation does not establish the accommodation’s refund policy, and an accommodation cancellation does not change a ferry booking. A disruption message should identify the action with each business, who has confirmed it, and what remains unresolved. Do not describe an email to the accommodation as a ferry change request."
+      ],
+      [
+        "Avoid false precision",
+        "Link current fares and schedules instead of publishing a combined fare calculator without the operator’s complete rules. If a customer selects standby or enhanced boarding, show that the intended arrival is provisional. Ask for an arrival range only as planning information; do not turn it into a guaranteed sailing."
+      ]
+    ],
+    "columns": [
+      "Field or state",
+      "Proposed display",
+      "Staff action"
+    ],
+    "rows": [
+      [
+        "Travel mode",
+        "Foot passenger / bringing a vehicle / undecided",
+        "Resolve car-dependent property or delivery needs."
+      ],
+      [
+        "Operator and route",
+        "Select the actual service; link its current conditions",
+        "Apply that service’s rules, not an island-wide assumption."
+      ],
+      [
+        "Transport status",
+        "Reserved departure / vehicle standby / ticket without reserved departure / not arranged",
+        "Keep uncertain arrivals visible."
+      ],
+      [
+        "Party and vehicle fares",
+        "Confirm whether passenger tickets are separate from vehicle space",
+        "Do not quote one component as the full journey price."
+      ],
+      [
+        "Disruption",
+        "Contact the ferry operator for travel changes; contact us separately about [our arrangement]",
+        "Record both confirmations before promising a revised arrival."
+      ]
+    ],
+    "test": "A customer selects Shepler’s enhanced boarding and a tightly timed activity. The form must not record a guaranteed sailing. A second customer has a Block Island vehicle reservation but no passenger tickets; the checklist must still show the separate passenger step.",
+    "obtain": "The business’s actual arrival flexibility, cancellation terms, supported transport routes and current operator policies. Store only travel details needed for the arrangement, never payment information for another provider.",
+    "distinct": "The five operators supply conflicting booking semantics. A single generic “book the ferry” instruction cannot accurately cover them.",
+    "relation": "Extend the reservation-ownership collection alongside the NY Hamilton guide; this comparison should remain one article, not five county service pages."
+  },
+  {
+    "slug": "ferry-route-and-last-mile",
+    "title": "Finish the arrival plan after the ferry terminal",
+    "ids": [
+      4,
+      9,
+      5,
+      27
+    ],
+    "audience": "Accommodation and activity businesses publishing directions for foot passengers or seasonal island arrivals.",
+    "opening": "A ferry arrival is not necessarily an arrival at the customer’s destination. The correct ticket, terminal, connecting service and final stop can each change with the trip. A useful website asks which journey the visitor is making before offering a booking link.",
+    "reasoning": [
+      [
+        "Choose the destination product first",
+        "The Seastreak example distinguishes a Sandy Hook beach journey from travel for the Sandbox venue, with another step for a multi-day camper’s return. A generic operator logo cannot make that choice for the customer. Show the actual destination and return arrangement before the link."
+      ],
+      [
+        "Separate each connection",
+        "Cape May and Lewes are two sides of one crossing but have different onward arrangements. Keep the seasonal shuttle, transit connection and property-specific last mile separate. A bus serving the terminal does not prove that it serves a particular accommodation or has a workable connection on the selected date."
+      ],
+      [
+        "Give seasonal uncertainty a visible state",
+        "The reviewed Sandy Hook page describes a finished 2026 season. NCDOT’s passenger-ferry page contains inconsistent seasonal wording. Until the current season is confirmed, show a planning link and a “service dates to confirm” state; do not build an automatic itinerary from those dates. This draft deliberately supplies no live timetable."
+      ]
+    ],
+    "columns": [
+      "Step",
+      "What the proposed page should establish",
+      "When unresolved"
+    ],
+    "rows": [
+      [
+        "Destination and return",
+        "Exact destination, day trip or multi-day stay, required return date",
+        "Ask before selecting a ticket product."
+      ],
+      [
+        "Crossing mode",
+        "Passenger service or vehicle service and its actual arrival terminal",
+        "Link the operator’s route comparison."
+      ],
+      [
+        "Connection",
+        "Named shuttle or transit route, booking owner and season",
+        "Do not imply that a connection is included."
+      ],
+      [
+        "Final leg",
+        "Verified stop-to-property directions and realistic transport option",
+        "Owner supplies a workable route."
+      ],
+      [
+        "Service status",
+        "Confirmed dates / ended season / dates awaiting confirmation",
+        "Suppress unverified book-now instructions."
+      ]
+    ],
+    "test": "Select a Cape May foot-passenger arrival outside a confirmed shuttle season. The page must not promise that shuttle. Select a multi-day Sandy Hook camp: the return-date action must remain visible after the ticket handoff.",
+    "obtain": "Current dates directly from each operator, a real property’s address and connection, and the property’s actual pickup or transport offer if any. Resolve NCDOT’s inconsistent date text before using it in customer instructions.",
+    "distinct": "This is a route-and-connection model, separate from whether a ticket reserves space. Cape May and Sussex belong in the same comparison, avoiding duplicate versions of a cross-bay journey.",
+    "relation": "Combine with the NY Niagara transport-reference approach; retain one maintained source of transport instructions."
+  },
+  {
+    "slug": "experience-product-choice",
+    "title": "Compare the experience customers will actually receive",
+    "ids": [
+      0,
+      10,
+      21
+    ],
+    "audience": "Tour operators, accommodation businesses and itinerary sellers linking to several variants of an experience.",
+    "opening": "A more expensive ticket can change something more consequential than duration. It may change access to an interior, the return journey, seating or restroom availability. Put the practical differences before the purchase handoff so a customer can choose a suitable product.",
+    "reasoning": [
+      [
+        "Use decision-making differences",
+        "Fallingwater’s tour types make interior access, party age and booking channel relevant. Rail Explorers’ routes differ in return transport and picnic arrangements. The Cass example makes carriage layout and restroom access part of the choice. These distinctions deserve space beside each option; an undifferentiated list of “local attractions” does not help a buyer."
+      ],
+      [
+        "Treat a request as a request",
+        "A private tour or telephone-only arrangement should use a request or contact action. Do not give it the same “book confirmed space” label as an immediately purchasable departure. The business referring a customer must identify whose inventory and confirmation the customer is relying on."
+      ],
+      [
+        "Leave unresolved details unresolved",
+        "The Rail Explorers page gives conflicting Northern Ramble durations. Omit a definitive duration until the operator clarifies it. Retain the sourced return-mode distinction while clearly marking the missing scheduling fact. Dates and equipment for a seasonal Christmas service also need a current check before use."
+      ]
+    ],
+    "columns": [
+      "Example choice",
+      "Information beside the option",
+      "Proposed action"
+    ],
+    "rows": [
+      [
+        "Fallingwater interior or grounds experience",
+        "What is entered, current age condition and reservation owner",
+        "View this operator’s specific tour."
+      ],
+      [
+        "Fallingwater Family Field Trip",
+        "Exterior-only private arrangement, telephone reservation",
+        "Contact operator to arrange."
+      ],
+      [
+        "Rail Explorers route",
+        "Rail return with picnic stop or shuttle return without that picnic area; duration pending clarification",
+        "Choose route, then view current departures."
+      ],
+      [
+        "Christmas at Cass carriage",
+        "Seat arrangement and restroom constraints for that carriage",
+        "Review carriage before selecting tickets."
+      ],
+      [
+        "Passenger count",
+        "Count all required ticket holders, including infants where the operator requires it",
+        "Confirm party details against this service’s rules."
+      ]
+    ],
+    "test": "A family chooses the Cass caboose assuming a restroom is accessible during the trip. The difference must appear before checkout. A family seeking Fallingwater interior access must not be routed to an exterior-only experience just because it permits their party’s ages.",
+    "obtain": "Current operator eligibility, dates, carriage availability and the referring business’s actual booking relationship. Resolve the Rail Explorers duration conflict; do not invent a compromise duration.",
+    "distinct": "The examples change the product itself, rather than merely changing a county name or contact address.",
+    "relation": "Combine the three comparisons in one product-choice guide. They do not establish county-wide rules or actual reseller authority."
+  },
+  {
+    "slug": "departure-address",
+    "title": "Send customers to the departure point, not just the landmark",
+    "ids": [
+      1,
+      16,
+      24
+    ],
+    "audience": "Accommodation, tour and itinerary businesses whose customers must reach a specific departure point.",
+    "opening": "The landmark that sells the experience may be the wrong place to begin it. A search result or map pin can be accurate for a house, mountain or attraction and still send a ticket holder to the wrong check-in location. Directions should start from the selected product and arrival arrangement.",
+    "reasoning": [
+      [
+        "Separate the attraction from the boarding address",
+        "Miller House visitors begin at the Visitors Center and travel with the tour. The Cog Railway warns about a wrong-side mountain approach. These are strong reasons to label a boarding address explicitly, rather than use the most recognizable landmark as the destination for every link."
+      ],
+      [
+        "Branch parking instructions",
+        "Gettysburg’s reserved guided car-tour arrival differs from a bus, trailer or RV visit. The relevant confirmation needs the correct parking category and the operator’s current fallback. Do not combine the fallback into a second unlabeled map pin that the guest must interpret."
+      ],
+      [
+        "Check the selected season and access route",
+        "The Cog’s winter destination is Waumbek rather than the summit. A correct boarding pin alone would still leave a false expectation if the offer promises a summit journey. At Miller House, the advance telephone route for wheelchair arrangements belongs before the ordinary purchase link, so a customer can resolve that arrangement first."
+      ]
+    ],
+    "columns": [
+      "Confirmation item",
+      "Illustrative label",
+      "Required evidence"
+    ],
+    "rows": [
+      [
+        "Product",
+        "Your selected tour and operating season",
+        "Current product description."
+      ],
+      [
+        "Destination reached",
+        "For the reviewed Cog winter service: Waumbek",
+        "Current seasonal operator confirmation."
+      ],
+      [
+        "Where to begin",
+        "Board/check in at [operator’s actual base or Visitors Center]",
+        "Verified departure address and map link."
+      ],
+      [
+        "Vehicle or parking branch",
+        "Private guided car tour / coach or large vehicle / general visit",
+        "Operator-specific directions and fallback."
+      ],
+      [
+        "Advance arrangement",
+        "Contact the operator to arrange the required access booking",
+        "Current contact route and lead time."
+      ]
+    ],
+    "test": "A Miller House visitor tries to navigate directly to the house. The confirmation should redirect their planning to the Visitors Center and explain the return arrangement. A winter Cog customer should see Waumbek before booking, not learn the destination at boarding.",
+    "obtain": "Current departure coordinates, season dates, parking and access arrangements from the actual operator. No inference that a referring accommodation can provide transport or guarantee accessibility.",
+    "distinct": "The source facts change where a customer must physically begin and, for the Cog, what destination the ticket reaches.",
+    "relation": "Add to the NY Franklin and Niagara arrival collection; one guide can hold these different failure cases without separate county landing pages."
+  },
+  {
+    "slug": "timed-booking-handoff",
+    "title": "Show the check-in time, ticket step and time zone before the booking handoff",
+    "ids": [
+      3,
+      6,
+      26
+    ],
+    "supporting": [
+      7,
+      17,
+      18,
+      25,
+      29,
+      35
+    ],
+    "audience": "Experience sellers and accommodation businesses assembling itineraries around timed activities.",
+    "opening": "A departure time is not always the time a visitor should arrive, and an order confirmation is not always the ticket used to board. A useful itinerary preserves those distinctions across the website, the external booking system and the customer’s confirmation.",
+    "reasoning": [
+      [
+        "Keep preparation on the selected product",
+        "Hocking Hills Canopy Tours has an earlier arrival requirement and a separate group-rate contact path. Essex Steam Train distinguishes the train-only and train-and-boat products, and requires physical ticket collection. Product selection should carry its duration, inclusions, check-in and booking channel into the handoff."
+      ],
+      [
+        "Name the time zone",
+        "Mammoth Cave operates in Central Time. Display the zone alongside the event time in both the itinerary and confirmation; do not assume a visitor’s device time or another Kentucky stop uses the same zone. Only calculate a travel plan after the actual starting point and selected activities are known."
+      ],
+      [
+        "Model entitlement separately from inventory",
+        "A membership, pass or daytime admission can be different from a timed reservation or special-event ticket. The supporting cases below are useful tests for this same guide, rather than six reasons to create more articles. A group booking also needs the group route, not advice intended for an individual walk-up."
+      ]
+    ],
+    "columns": [
+      "Proposed booking card",
+      "Display or behavior",
+      "Review rule"
+    ],
+    "rows": [
+      [
+        "Selected experience",
+        "Exact product, duration and inclusions from the operator",
+        "A bundle must remain distinct from its base option."
+      ],
+      [
+        "Time",
+        "Departure or entry: [time] [named zone]",
+        "Do not silently convert without retaining the operator’s zone."
+      ],
+      [
+        "Earlier action",
+        "Check in or collect tickets: [deadline and location]",
+        "Put this before the departure in chronological order."
+      ],
+      [
+        "Proof",
+        "Physical ticket collection / downloaded ticket / other operator instruction",
+        "Do not call every email a boarding ticket."
+      ],
+      [
+        "Booking status",
+        "Requested / confirmed by [operator] / separate admission still needed",
+        "Only the actual confirmation establishes a reservation."
+      ],
+      [
+        "Special channel",
+        "Group or other arrangement: contact [operator route]",
+        "Preserve a telephone or group-only route when required."
+      ]
+    ],
+    "test": "A visitor schedules a second activity immediately after the shorter Essex train-only trip but selects train-and-boat during purchase. The itinerary must be reviewed for the changed duration. A Mammoth Cave reservation must retain Central Time even when the visitor planned the trip elsewhere.",
+    "obtain": "The selected operator’s current check-in instructions, late-arrival policy, product duration and ticket proof. Confirm any group or member entitlement before using a custom booking flow.",
+    "distinct": "These cases expose different objects in a booking flow: product, arrival deadline, departure time, time zone, proof and entitlement. Each can be tested independently.",
+    "relation": "Extend the NY Essex and Hamilton separate-reservation guides. Supporting cases should be short examples within the collection, not separate county essays."
+  },
+  {
+    "slug": "photography-location-confirmation",
+    "title": "Keep the photography session and the location approval separate",
+    "ids": [
+      13,
+      32
+    ],
+    "audience": "Photographers and commercial production businesses offering work at third-party properties.",
+    "opening": "A photographer can be available on a date while the proposed property is unavailable or has not approved the intended use. A location-specific inquiry should identify both decisions before the customer treats a session quote as permission to shoot there.",
+    "reasoning": [
+      [
+        "Start with session type and intended use",
+        "Winterthur’s portrait reservation is not commercial approval: promotional shoots are generally prohibited, with rare exceptions handled through its pressroom. Wedding photography is limited to weddings hosted there. Route those requests separately from an ordinary portrait reservation. Mount Vernon requires at least four weeks to process media requests. These are particular property policies, not universal photography rules or legal conclusions."
+      ],
+      [
+        "Track approval by the correct party",
+        "The photographer confirms staffing, scope and its own quote. The property confirms the requested location and activity under its rules. Record those confirmations separately, and disclose any property admission or fee that remains outside the photographer’s quote."
+      ],
+      [
+        "Do not advertise an unconfirmed location as included",
+        "Until the actual request is approved, describe the location as proposed. A substitute location requires a new conversation about the customer’s needs and any permission required there. Avoid implying an affiliation with either named property."
+      ]
+    ],
+    "columns": [
+      "Inquiry field",
+      "Proposed copy or options",
+      "Decision it supports"
+    ],
+    "rows": [
+      [
+        "Session",
+        "Portrait / wedding / commercial production / describe another request",
+        "Choose the relevant property process."
+      ],
+      [
+        "Intended use",
+        "How and where will the photographs or film be used?",
+        "Prepare the actual permission request."
+      ],
+      [
+        "Property restriction",
+        "A restricted request cannot proceed through an ordinary portrait reservation",
+        "Use the property’s distinct exception or hosted-event process if applicable."
+      ],
+      [
+        "Proposed location and date",
+        "Location requested; subject to property confirmation and current request lead time",
+        "Keep photographer availability distinct."
+      ],
+      [
+        "Party and equipment",
+        "Approximate people and production needs",
+        "Gather the property’s requested planning details."
+      ],
+      [
+        "Status before payment",
+        "Photographer confirmed: [status]. Property confirmed: [status]. Admission/fees: [responsibility]",
+        "Prevent a quote being read as location permission."
+      ]
+    ],
+    "test": "A portrait client selects Winterthur and a date for which the photographer is free. The inquiry must remain location-pending until the property confirms. A promotional shoot there must instead stop at the commercial restriction and separate exception process; portrait admission cannot approve it. A Mount Vernon media request must account for its published lead time.",
+    "obtain": "Current written property instructions and project-specific permission, the photographer’s actual services, a clear fee breakdown and responsibility for submitting requests. This is workflow analysis of published property policies, not legal advice.",
+    "distinct": "The website needs two approvals by different parties, with different information requirements and no automatic substitution between them.",
+    "relation": "Combine these two cases in one location-approval guide; a county name alone does not justify a new commercial photography or web-design page."
+  },
+  {
+    "slug": "class-take-home",
+    "title": "Plan what leaves with the student after a baking class",
+    "ids": [
+      14
+    ],
+    "audience": "In-person class businesses and accommodation providers helping guests plan a class visit.",
+    "opening": "A class can end before the customer’s logistical problem ends. Students may leave with products that need to travel with them while the rest of their day continues. The confirmation should explain the handoff and help the customer prepare without inventing storage services.",
+    "reasoning": [
+      [
+        "Separate supplied materials from post-class support",
+        "The King Arthur example distinguishes tools and ingredients supplied during class from storage the school cannot provide afterward. A simple “everything included” label could obscure this boundary. Describe the supplied lesson materials and take-home responsibility in separate sentences."
+      ],
+      [
+        "Make the class category explicit",
+        "Change and cancellation windows differ by class category in the reviewed policy. Store the actual category with the booking and link its applicable terms. Do not attach one universal cancellation summary to every course because their booking buttons look alike."
+      ],
+      [
+        "Do not invent an accommodation solution",
+        "A nearby lodging page could tell guests to consider how they will transport their baked goods. It cannot promise refrigeration, early room access or school storage unless the responsible provider actually offers it. Keep any request for accommodation assistance separate from the class booking."
+      ]
+    ],
+    "columns": [
+      "Confirmation section",
+      "Proposed display",
+      "Owner check"
+    ],
+    "rows": [
+      [
+        "Class",
+        "In-person [title], [location], [single-day or other actual category]",
+        "Exclude online-class policies."
+      ],
+      [
+        "Provided during class",
+        "Tools and ingredients included as confirmed by the school",
+        "Do not imply after-class storage."
+      ],
+      [
+        "Take-home preparation",
+        "Plan to take your baked goods with you; review the school’s transport advice",
+        "Use current provider instructions."
+      ],
+      [
+        "Changes",
+        "View the terms for this class category",
+        "Verify the correct policy branch."
+      ],
+      [
+        "Accommodation request",
+        "Ask us about [actual available support]",
+        "Leave this out if no service exists."
+      ]
+    ],
+    "test": "A student plans a long outing after class and assumes the school will hold their products. The confirmation should expose that assumption before the day of the class. A multi-day booking must not inherit a single-day change deadline.",
+    "obtain": "Current class terms and the business’s real take-home, storage and support arrangements. Do not derive food-safety advice from this workflow example.",
+    "distinct": "The local class example adds a physical post-class handoff to the digital reservation, with a separate policy branch for class category.",
+    "relation": "Use as a focused workshop-confirmation note. It may eventually combine with other class fulfillment examples when they add a different decision."
+  },
+  {
+    "slug": "shipping-date-and-quote",
+    "title": "Ask for a shipping date without promising an arrival date",
+    "ids": [
+      15
+    ],
+    "audience": "Small producers selling physical products whose shipping options or packing limits constrain checkout.",
+    "opening": "A customer’s desired arrival date is a request, while a selected shipping date is an operational instruction. Treating the two as interchangeable can make a checkout promise the producer cannot fulfill. A useful order flow preserves both and makes uncertainty visible before payment.",
+    "reasoning": [
+      [
+        "Name the date field accurately",
+        "Shelburne Farms distinguishes requested ship dates from delivery timing. If a business offers a date field, label the event it controls. Put any desired-arrival request in a separate field and explain when the seller will confirm whether it can meet it. Do not relabel an estimate as a guarantee."
+      ],
+      [
+        "Offer only real service levels",
+        "The source describes one shipping method per destination, rather than customer-selected expedited tiers. A generic ecommerce template with Standard, Express and Overnight would misrepresent that operation. Show the method actually available after the destination is known."
+      ],
+      [
+        "Route packing exceptions to a quote",
+        "Shelburne’s above-29-pound calculated-weight threshold is a rule for its own multi-box pricing. It is useful evidence that a cart can require a different ordering path. Another producer must derive its threshold from its own packing and carrier arrangements; copying 29 pounds would not make the implementation accurate."
+      ]
+    ],
+    "columns": [
+      "Checkout condition",
+      "Proposed interface",
+      "Result"
+    ],
+    "rows": [
+      [
+        "Date choice",
+        "Requested ship date: [date]",
+        "Record dispatch intent."
+      ],
+      [
+        "Arrival request",
+        "Desired arrival date, if relevant: [date]; timing subject to confirmation",
+        "Record the customer’s need separately."
+      ],
+      [
+        "Destination",
+        "Show the method available for this destination",
+        "Do not offer nonexistent expedited choices."
+      ],
+      [
+        "Quote threshold",
+        "This order needs a shipping quote. Contact [approved route] to confirm packing and cost",
+        "Do not invent a standard shipping charge."
+      ],
+      [
+        "Final confirmation",
+        "Ship date, service and any confirmed timing shown distinctly",
+        "Keep estimates and commitments distinguishable."
+      ]
+    ],
+    "test": "An order requests arrival on a Friday while selecting Friday as its ship date. The interface must expose the different meanings. In a model of the cited operator, a calculated weight above its threshold must reach a shipping-pricing conversation, not a misleading default rate.",
+    "obtain": "Actual fulfillment days, destination restrictions, packaging calculation, carrier service, exception threshold and customer communication process. Product handling requirements come from the producer, not this article.",
+    "distinct": "The source changes the checkout data model and pricing path. A generic “farm ecommerce” paragraph would miss both constraints.",
+    "relation": "This is a fulfillment guide with a Chittenden County example, not evidence that all county producers share the same shipping practice."
+  },
+  {
+    "slug": "custom-print-order",
+    "title": "Make a custom print inquiry distinct from an accepted production order",
+    "ids": [
+      20
+    ],
+    "audience": "Custom printers, makers and studios whose orders need specification and feasibility review.",
+    "opening": "An attractive contact form can create the wrong expectation if customers believe sending it reserves production time. A custom-order website should first establish whether the job is feasible, then identify the actual submission route and the evidence that the order has been accepted.",
+    "reasoning": [
+      [
+        "Qualify the deadline before the artwork",
+        "Hatch Show Print publishes a typical turnaround of ten weeks or longer. That is not a guaranteed completion date, but it is useful early context for a rush customer. Present the timing expectation near the inquiry and ask for the required in-hand date before encouraging extensive specification work."
+      ],
+      [
+        "Collect the details that change the quote",
+        "Quantity, color count and artwork preparation affect the cited process. A useful intake explains which inputs are ready, which need discussion, and whether a supplied logo requires production preparation. Avoid quoting a universal price from a short marketing description."
+      ],
+      [
+        "Respect the real ordering channel",
+        "The reviewed Hatch page directs custom-order submission through its order form by fax, mail or drop-off, rather than electronic or telephone orders. An article about website planning must not invent an online checkout on Hatch’s behalf. Another studio should expose its own accepted channel just as clearly."
+      ]
+    ],
+    "columns": [
+      "Planning step",
+      "Proposed field or message",
+      "Status"
+    ],
+    "rows": [
+      [
+        "Timing",
+        "Required in-hand date and intended event date, if different",
+        "Feasibility request only."
+      ],
+      [
+        "Specification",
+        "Quantity, colors and intended print format",
+        "Inputs for review, not a final price."
+      ],
+      [
+        "Artwork",
+        "Available artwork and preparation questions",
+        "Confirm the studio’s actual file requirements."
+      ],
+      [
+        "Submission",
+        "Use [the studio’s accepted order route]",
+        "Sending a website inquiry is not automatically an order."
+      ],
+      [
+        "Acceptance",
+        "We will confirm specification, price and schedule through [actual process]",
+        "Production is accepted only when that process completes."
+      ]
+    ],
+    "test": "A customer needs prints next month and submits an inquiry. The confirmation must not say their production slot is booked. A customer sends a logo without suitable production artwork; the process should flag the preparation decision before final pricing.",
+    "obtain": "The studio’s real lead times, capacity, accepted ordering route, artwork requirements, deposits and approval process. No claim that this research changed Hatch’s website or improved its sales.",
+    "distinct": "The source establishes a concrete mismatch between a generic digital contact form and the real production-order process.",
+    "relation": "A useful maker-order guide based on a Davidson County example; combine only with examples that add a different order decision."
+  },
+  {
+    "slug": "personalization-preview",
+    "title": "Preview the monogram customers will receive",
+    "ids": [
+      30
+    ],
+    "audience": "Retailers and makers selling personalized products with style-dependent text layout.",
+    "opening": "A personalization form has two different jobs: collect the customer’s intended letters and show the arrangement that will be manufactured. When a style changes the position or size of initials, text entry alone does not prove the customer understands the finished result.",
+    "reasoning": [
+      [
+        "Keep input order separate from visual order",
+        "The L.L.Bean example tells customers to enter initials in normal name order while certain styles place the surname initial in the center. Explain that rule beside the input and preview. Otherwise a customer may rearrange the letters manually and have the system rearrange them a second time."
+      ],
+      [
+        "Validate against the selected product",
+        "Character limits depend on the product and style. Keep the constraint with that selection rather than apply one global limit. If the style changes, regenerate the preview and ask the customer to review it again; a previous approval should not silently survive a different arrangement."
+      ],
+      [
+        "Carry the approved choice into fulfillment",
+        "The order summary should preserve entered text, style and resulting layout, plus the actual additional processing time. This is a proposed implementation pattern, not a claim about the retailer’s internal systems. The seller must establish which production record is authoritative and how a change is accepted."
+      ]
+    ],
+    "columns": [
+      "Proposed component",
+      "Behavior",
+      "Customer evidence"
+    ],
+    "rows": [
+      [
+        "Style selector",
+        "Show supported layouts for the chosen product",
+        "A visible example of letter position."
+      ],
+      [
+        "Input instruction",
+        "Enter initials in [the seller’s specified order]",
+        "Clear distinction from displayed arrangement."
+      ],
+      [
+        "Validation",
+        "Apply this product/style’s character limit",
+        "Explain the specific correction needed."
+      ],
+      [
+        "Preview",
+        "Render the actual proposed arrangement; invalidate on relevant change",
+        "Review the visible result before approval."
+      ],
+      [
+        "Order summary",
+        "Preserve text, style, layout and current processing estimate",
+        "Let the buyer check what will be made."
+      ]
+    ],
+    "test": "A customer selects a surname-centered style and then switches to another style. The preview and approval must update together. A product change with a smaller character limit must not silently truncate approved text.",
+    "obtain": "The merchant’s actual production conventions, product limits, preview accuracy, processing times and change policy. The cited national retailer is a Maine example, not evidence of a county-wide retail workflow.",
+    "distinct": "This problem concerns the transformation from customer input to manufactured output, rather than the quote and accepted-order states in the custom-print guide.",
+    "relation": "Keep this as a personalization design note with a Cumberland County source example; do not package it as generic local web-design sales copy."
+  },
+  {
+    "slug": "itinerary-dependency-review",
+    "title": "Check the third-party service before keeping an itinerary on sale",
+    "ids": [
+      31,
+      23
+    ],
+    "audience": "Outfitters, lodging businesses and tour sellers whose advertised experiences depend on another operator’s access or transport.",
+    "opening": "An itinerary can become inaccurate even when the seller’s own service has not changed. A train policy, dock closure or altered return service can break the arrangement. The page needs a way to identify that dependency and withdraw an unsupported promise while the owner verifies it.",
+    "reasoning": [
+      [
+        "Identify the claim that relies on someone else",
+        "The Western Maryland Scenic Railroad FAQ says bikes are not currently allowed, while older reviews describe bike carriage. A trail package should rely on confirmed current policy rather than a historical customer story. An overnight extension also needs an actual next-day return service."
+      ],
+      [
+        "Treat conflicting status as a reason to investigate",
+        "The reviewed NPS Manitou page combines closure information with stale forward-looking wording. This is evidence of a verification problem, not reliable proof of an indefinite closure. Do not reproduce that state as a permanent destination fact or automatically switch bookings based only on the page."
+      ],
+      [
+        "Keep a small dependency register",
+        "For each affected offer, record the external requirement, authoritative source, person who checks it and the action when it cannot be confirmed. The useful output is a changed customer promise: pause the dependent option, explain what remains available if known, or handle a request manually. A date stamp without that decision is not enough."
+      ]
+    ],
+    "columns": [
+      "Dependency record",
+      "Illustrative entry",
+      "Action before publishing"
+    ],
+    "rows": [
+      [
+        "Offer",
+        "Train-assisted cycling itinerary",
+        "Confirm bike carriage directly with the operator."
+      ],
+      [
+        "Return",
+        "Overnight extension from Frostburg",
+        "Confirm a suitable next-day service exists."
+      ],
+      [
+        "Access",
+        "Manitou island trip requiring dock or boat access",
+        "Resolve current status with NPS and the transport provider."
+      ],
+      [
+        "Evidence conflict",
+        "Current policy differs from older review or stale page text",
+        "Hold the disputed promise pending verification."
+      ],
+      [
+        "Customer status",
+        "This arrangement is awaiting confirmation; contact us before relying on it",
+        "Use only if the business can actually handle that inquiry."
+      ]
+    ],
+    "test": "An old review says bicycles were carried. The owner must not approve a train-and-bike offer solely from that review when the current FAQ says otherwise. A dock notice with stale dates must trigger direct confirmation, not a permanent “closed” article.",
+    "obtain": "Current direct operator confirmation for any sellable dependent itinerary, a named maintenance owner and a real response plan for affected customers. These drafts do not establish live inventory or access.",
+    "distinct": "The original analysis concerns conflict resolution and retiring unsupported promises, not another destination description.",
+    "relation": "Combine these two cases with future changed-service examples. Keep the Leelanau example explicitly verification-pending rather than a newly confirmed access guide."
+  },
+  {
+    "slug": "river-section-and-release",
+    "title": "Match the river section and release date to the trip being sold",
+    "ids": [
+      28,
+      33
+    ],
+    "audience": "Rafting operators and accommodation businesses referring customers to release-dependent river trips.",
+    "opening": "A river name is not a complete product specification. Sections can differ in difficulty, operating dates, inclusions and suitability for a party. A useful selection page identifies the actual section before it presents a departure or combines activities into an itinerary.",
+    "reasoning": [
+      [
+        "Keep each section’s product distinct",
+        "OAR distinguishes separately controlled Ocoee sections and describes its Full River product as Upper plus Middle with lunch. Its Lower-river alternatives are different activities, not simply a quieter version of the same departure. The page should not swap one for another without explaining the change."
+      ],
+      [
+        "Use the calendar as a dependency",
+        "NPS describes a planned seasonal Gauley release pattern and different sections. Planned releases are not a guarantee of flows, operating conditions or the seller’s available places. Keep the current calendar linked to the selected section and let the operator confirm the actual trip."
+      ],
+      [
+        "Let the operator define participation requirements",
+        "The page can ask for party details needed to select an appropriate product, but the business must supply and approve its actual eligibility rules. Do not borrow another outfitter’s age limits or turn general regional information into individualized safety advice."
+      ]
+    ],
+    "columns": [
+      "Trip chooser",
+      "Proposed behavior",
+      "Confirmation needed"
+    ],
+    "rows": [
+      [
+        "Section and product",
+        "Named section, or a clearly defined combined trip",
+        "Operator’s actual route and inclusions."
+      ],
+      [
+        "Preferred date",
+        "Check the current section-specific release calendar",
+        "Availability and operating decision remain with operator."
+      ],
+      [
+        "Party",
+        "Collect only details the operator needs for its participation rules",
+        "Owner approves eligibility wording."
+      ],
+      [
+        "Alternative activity",
+        "Describe tubing or another offered option as a different product",
+        "Do not silently substitute it for whitewater."
+      ],
+      [
+        "Status",
+        "Requested / confirmed departure / operating update",
+        "Keep planned calendar and confirmed service separate."
+      ]
+    ],
+    "test": "A date supports one section but not the combined product the customer selected. The website must require a new choice or a conversation. A family considering a lower-river alternative should see its different activity and inclusions before agreeing.",
+    "obtain": "Current releases, actual trip inventory, meeting points, participation requirements and disruption communication from the responsible operator. Regional river access can cross county boundaries; it does not prove a business is based in Fayette County.",
+    "distinct": "The examples change product composition and the date-to-product relationship. They belong together rather than in parallel Ocoee and Gauley county essays.",
+    "relation": "Treat as one operator-planning guide. County attribution is regional context, not a claim of exclusive service territory."
+  },
+  {
+    "slug": "island-payment-preparation",
+    "title": "Explain payment and parking before guests leave the mainland",
+    "ids": [
+      19
+    ],
+    "audience": "Island accommodation, tour and activity businesses whose guests must prepare before a crossing.",
+    "opening": "A payment instruction is useful only while the customer can still act on it. For an island visit, the place to explain cash needs or mainland parking may be the booking confirmation, before the traveler boards, rather than a sign at the business.",
+    "reasoning": [
+      [
+        "Describe the actual merchant’s payment methods",
+        "Smith Island’s visitor information places the nearest bank or ATM in Crisfield while noting that some island businesses accept cards or payment apps. That supports preparation advice, not a statement that the island is cash-only. Each business should list the methods it really accepts and any remaining payment."
+      ],
+      [
+        "Tie parking instructions to the chosen option",
+        "The reviewed mainland parking options have different payment arrangements. Identify the relevant lot and authoritative current instructions rather than give a single cash amount for every arrival. A general island travel page does not prove which lot is best for a specific guest’s operator or trip."
+      ],
+      [
+        "Separate preparation from collection",
+        "The confirmation can explain what the guest may need to bring without collecting bank details or asking them to pay another merchant through the accommodation’s form. Keep each payment owner and timing visible. Refresh the note when the business changes its payment methods."
+      ]
+    ],
+    "columns": [
+      "Pre-departure card",
+      "Proposed message",
+      "Owner supplies"
+    ],
+    "rows": [
+      [
+        "Our payment methods",
+        "We accept [actual methods] for [remaining amount or service]",
+        "Current merchant policy."
+      ],
+      [
+        "Mainland preparation",
+        "Review cash needs before leaving Crisfield; the island visitor source identifies the nearest ATM there",
+        "Only relevant preparation, not a cash-only claim."
+      ],
+      [
+        "Parking choice",
+        "Use [selected lot] and its current payment instructions",
+        "Correct lot and source link."
+      ],
+      [
+        "Separate charges",
+        "Your crossing, parking and our service are paid to [respective providers]",
+        "Accurate inclusions and responsibility."
+      ],
+      [
+        "Uncertain plan",
+        "Contact [the responsible business] before travel",
+        "A monitored support route."
+      ]
+    ],
+    "test": "A guest has prepaid lodging but still needs to arrange mainland parking. The confirmation must distinguish what has been paid from what remains. A card-accepting island merchant must not inherit a generic cash-only warning.",
+    "obtain": "The real business’s payment methods, amounts still due, intended departure operator and appropriate parking option. Recheck the visitor source before launch; no current prices are reproduced here.",
+    "distinct": "The constraint changes when customer information must appear: before departure while mainland facilities remain available.",
+    "relation": "Use as a short operational-payment guide beside island arrival planning, not a Somerset County commercial landing page."
+  }
+]
