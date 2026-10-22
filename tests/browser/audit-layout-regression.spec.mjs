@@ -64,7 +64,8 @@ test('navigation order, mobile Services alignment and in-flow footer links agree
     expect(Math.abs(metrics.a-metrics.s)).toBeLessThanOrEqual(1);expect(metrics.font).toBeGreaterThanOrEqual(15);expect(metrics.height).toBeGreaterThanOrEqual(44);
     await page.keyboard.press('Escape');
    }
-   await expect(page.locator('footer .footer-group')).toHaveCount(4);await expect(page.locator('footer details')).toHaveCount(0);await expect(page.locator('footer a[href="#page-top"]')).toBeVisible();
+   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
+   await page.locator('footer').scrollIntoViewIfNeeded();await expect(page.locator('a.back-to-top[href="#page-top"]')).toBeVisible();
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }
  }

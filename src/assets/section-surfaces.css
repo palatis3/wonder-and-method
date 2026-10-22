@@ -14,6 +14,7 @@
  content:"";position:absolute;inset:0 calc(-1 * var(--section-gutter));background:var(--section-surface,var(--surface-sage));z-index:-1;pointer-events:none
 }
 .studio-home main>section{--section-gutter:0px}
+.studio-home.edition-living-city .home-content{--section-gutter:min(5vw,4.5rem)}
 .studio-site .journal-prose>section{--section-gutter:1rem}
 .studio-site .journal-prose>section:nth-of-type(4n){--section-surface:var(--surface-stone)}
 .studio-site .journal-prose>section:nth-of-type(even)::before{border-radius:12px}
@@ -23,7 +24,7 @@
 .studio-site .site-footer--compact .footer-location{margin:0;max-width:none;color:var(--slate)}
 .studio-site .site-footer--compact nav{gap:.75rem;align-items:start}
 .studio-site .site-footer--compact .footer-group{border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:clip}
-.studio-site .site-footer--compact .footer-group summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none;margin:0;padding:.85rem 1rem;min-height:52px;color:var(--ink);font:600 1rem/1.5 Manrope,Arial,sans-serif}
+.studio-site .site-footer--compact .footer-group summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none;margin:0;padding:.85rem 1rem;min-height:52px;color:var(--ink);font:600 1rem/1.5 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
 .studio-site .site-footer--compact .footer-group summary::-webkit-details-marker{display:none}
 .studio-site .site-footer--compact .footer-group summary:hover{background:var(--surface-sage)}
 .studio-site .site-footer--compact .footer-group summary:focus-visible{outline:2px solid var(--moss);outline-offset:-5px;border-radius:12px}
@@ -35,6 +36,7 @@
 .studio-site .site-footer--compact .footer-bottom{margin-top:1.25rem;padding-top:1rem}
 @media(max-width:767px){
  .studio-site{--section-gutter:1.25rem}
+ .studio-home.edition-living-city .home-content{--section-gutter:min(1.25rem,6.4vw)}
  .studio-site .site-footer--compact .footer-top{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding-bottom:1rem}
  .studio-site .site-footer--compact .footer-top>p+p{margin:0}
  .studio-site .site-footer--compact .footer-group summary{padding:.75rem;gap:.5rem}

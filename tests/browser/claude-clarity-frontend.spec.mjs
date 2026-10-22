@@ -4,9 +4,11 @@ import {siteHeader,siteFooter} from '../../src/site-chrome.mjs';
 import {supportChatMarkup} from '../../src/support-chat.mjs';
 import {backToTopMarkup} from '../../src/navigation.mjs';
 import {conceptPages} from '../../src/portfolio-concepts.mjs';
+import {normalizeOfferCatalog} from '../../src/offer-catalog.mjs';
 
 const read=path=>readFile(new URL('../../'+path,import.meta.url),'utf8');
-const css=(await Promise.all(['style','journal','premium','site-refresh','layout-components','support-chat'].map(name=>read(`src/assets/${name}.css`)))).join('\n');
+const offers=normalizeOfferCatalog(JSON.parse(await read('config/offers.json')));
+const css=(await Promise.all(['style','journal','premium','site-refresh','layout-components','support-chat','section-surfaces'].map(name=>read(`src/assets/${name}.css`)))).join('\n');
 const brand=await read('src/assets/brand.css');
 const navigation=await read('src/assets/site-navigation.js');
 const tools=await read('src/assets/page-navigation.js');
@@ -32,7 +34,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await expect(page.locator('footer .footer-group')).toHaveCount(4);await expect(page.locator('footer details')).toHaveCount(0);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
+  await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -83,7 +85,7 @@ test('without scripts navigation and footer disclose natively while demo fields 
   const page=await context.newPage();
   await page.route('**/__frontend-component-fixture',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html></html>'}));
   await page.goto('http://127.0.0.1:4187/__frontend-component-fixture');
-  const concept=conceptPages({config:{},offers:{}}).find(p=>p.path==='/work/hearthside/request/').body.replace(/<script[\s\S]*?<\/script>/g,'');
+  const concept=conceptPages({config:{},offers}).find(p=>p.path==='/work/hearthside/request/').body.replace(/<script[\s\S]*?<\/script>/g,'');
   await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body class="studio-site">${siteHeader('/work/hearthside/request/')}<main>${concept}</main>${supportChatMarkup(chatConfig)}${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
   await expect(page.locator('#main-nav')).toBeVisible();
   await page.locator('.service-navigation>summary').click();
@@ -91,6 +93,7 @@ test('without scripts navigation and footer disclose natively while demo fields 
   await expect(page.locator('.concept-demo-form fieldset')).toHaveAttribute('disabled','');
   await expect(page.locator('#concept-name')).toBeDisabled();
   await expect(page.locator('.concept-demo-form button[type=submit]')).toBeDisabled();
+  await page.locator('footer summary').filter({hasText:'Information'}).click();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.locator('.support-chat noscript a').click();
   await expect(page).toHaveURL(/\/contact\/#inquiry$/);

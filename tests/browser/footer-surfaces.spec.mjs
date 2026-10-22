@@ -29,3 +29,19 @@ test('section surfaces alternate without covering text or expanding the viewport
   for(const surface of result.surfaces){expect(['rgb(238, 241, 233)','rgb(241, 238, 230)']).toContain(surface.background);expect(surface.pointerEvents).toBe('none');expect(surface.zIndex).toBe('-1');}
  }
 });
+
+test('enlarged text keeps section backgrounds and footer labels within the page',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='desktop','One complete text-resize matrix');
+ await page.route('**/__test-footer-text.css',route=>route.fulfill({contentType:'text/css',body:':root{font-size:200%}'}));
+ for(const width of [320,390,768,1440]){
+  await page.setViewportSize({width,height:1000});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  await page.addStyleTag({url:'/__test-footer-text.css'});
+  for(const summary of await page.locator('footer summary').all())await summary.click();
+  const layout=await page.evaluate(()=>({
+   pageWidth:document.documentElement.scrollWidth,
+   clipped:[...document.querySelectorAll('footer summary,footer a')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>el.textContent.trim())
+  }));
+  expect(layout.pageWidth,`${width}px at 200% text`).toBeLessThanOrEqual(width+1);
+  expect(layout.clipped,`${width}px footer text`).toEqual([]);
+ }
+});
