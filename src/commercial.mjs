@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog} from './offer-catalog.mjs';
 import {normalizeAddonSelection,priceAddons} from './addons.mjs';
 
 const builds=['launch_site','focused_site','signature_site'];
@@ -60,6 +61,7 @@ function composeAddons(offers,id,base,ids,paymentSchedule){
 }
 
 export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_schedule}={}){
+ offers=normalizeOfferCatalog(offers);
  const ids=normalizeAddonSelection({add_ons},offers.add_ons||[]);
  if(id==='website_additions'){
   requireValue(billing!=='annual','Standalone additions are one-time work, not an annual plan.');

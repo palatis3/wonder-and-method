@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog} from '../src/offer-catalog.mjs';
 import {siteHeader,siteFooter} from '../src/site-chrome.mjs';
 import {breadcrumbMarkup} from '../src/navigation.mjs';
 import {publicDocumentStyles,publicDocumentSocial} from './public-document-shell.mjs';
@@ -22,6 +23,7 @@ async function writeAddonPack(folder,documentStyles,offers){
  return {id:addonPackId,name,kind:'addon-catalogue',summary:'Twelve optional additions with individual fixed prices and scopes.',path,download:path+'.txt',request,items,terms};
 }
 export async function writeBuyerPacks(output,offers){
+ offers=normalizeOfferCatalog(offers);
  const documentStyles=await publicDocumentStyles(output);
  const folder=resolve(output,'assets/buyer-packs');await mkdir(folder,{recursive:true});
  const samplePath='/assets/buyer-packs/keep-running-sample';

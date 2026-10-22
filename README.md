@@ -24,7 +24,7 @@ The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `
 - `motion/`: current Civic sources plus historical studies.
 - `evidence/` and `output/`: ignored local checks and generated artifacts.
 
-Before deployment, commit and push the candidate, run `npm run technical:check`, then run `npm run predeploy` without changing source or rebuilding afterward. Predeploy verifies the clean tree, upstream commit and exact successfully tested source/artifact hashes. The separate technical and release gates remain in force. Run `npm run check:citations` for an opt-in public reference check; blocked sources require manual review.
+Before deployment, commit and push the candidate, wait for both GitHub **verify** and **visual** jobs, run `npm run technical:check`, then run `npm run predeploy` without changing source or rebuilding afterward. Predeploy verifies the clean tree, upstream commit, exact successfully tested source/artifact hashes and latest exact-commit GitHub checks. See [quality checks](operations/QUALITY_CHECKS.md) for content preservation, screenshot review and shared-control coverage, and [offer updates](operations/OFFER_UPDATES.md) for changing future prices and plan details. The separate technical and release gates remain in force. Run `npm run check:citations` for an opt-in public reference check; blocked sources require manual review.
 
 ## Rebuild and check
 

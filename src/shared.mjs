@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog,countWords} from './offer-catalog.mjs';
 import {normalizeAddonSelection,priceAddons} from './addons.mjs';
 import offers from '../config/offers.json' with {type:'json'};
 import {countyContextOptions} from './approved-rerun-county-context.mjs';
@@ -18,25 +19,25 @@ export function shortInquiryReference(reference){
  return 'WM-'+reference.replaceAll('-','').slice(0,12).toUpperCase().match(/.{4}/g).join('-');
 }
 const cents=value=>{const n=Math.round((value+Number.EPSILON)*100);if(!Number.isSafeInteger(n))throw new Error('Invalid cost inputs');return n;};
-export const inquiryChoices=[['launch_site','Launch Website'],['focused_site','Focused Website'],['signature_site','Signature Website'],['keep_running','Keep Running — website care'],['improve','Improve — monthly SEO and website improvement'],['grow','Grow — monthly SEO and website improvements'],['audit_fix_sprint','Audit & Fix Sprint'],['website_baseline','Website Baseline'],['unsure','Help me choose']];
+export const inquiryChoices=[['launch_site',offers.launch_site.public_name],['focused_site',offers.focused_site.public_name],['signature_site',offers.signature_site.public_name],['keep_running',offers.plans.keep_running.public_name+' — website care'],['improve',offers.plans.improve.public_name+' — monthly SEO and website improvement'],['grow',offers.plans.grow.public_name+' — monthly SEO and website improvements'],['audit_fix_sprint',offers.audit_sprint.public_name],['website_baseline','Website Baseline'],['unsure','Help me choose']];
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 // The browser build projects offers.json to these public names and prices only.
-export function inquiryOffer(service){
+export function inquiryOffer(service,o=offers){
  const id=resolveServiceId(service),monthly=['keep_running','improve','grow'].includes(id);
- const offer=['launch_site','focused_site','signature_site'].includes(id)?offers[id]:monthly?offers.plans[id]:id==='website_baseline'?offers.baseline:id==='audit_fix_sprint'?offers.audit_sprint:null;
+ const offer=['launch_site','focused_site','signature_site'].includes(id)?o[id]:monthly?o.plans[id]:id==='website_baseline'?o.baseline:id==='audit_fix_sprint'?o.audit_sprint:null;
  return offer?{id,name:offer.public_name,price:monthly?offer.monthly_price:offer.public_price??offer.one_time_price,monthly}:null;
 }
-export function inquiryChoiceLabel(service){
- const offer=inquiryOffer(service);if(!offer)return 'Not sure — help me choose';
- const monthly={keep_running:'website care',improve:'one SEO improvement a month',grow:'two SEO improvements a month'};
+export function inquiryChoiceLabel(service,o=offers){
+ const offer=inquiryOffer(service,o);if(!offer)return 'Not sure — help me choose';
+ const monthly={keep_running:'website care',improve:`${countWords(o.plans.improve.priorities)} SEO improvement${o.plans.improve.priorities===1?'':'s'} a month`,grow:`${countWords(o.plans.grow.priorities)} SEO improvement${o.plans.grow.priorities===1?'':'s'} a month`};
  return offer.monthly?`${offer.name} — ${monthly[offer.id]} (${money(offer.price)}/mo)`:`${offer.name} — ${money(offer.price)}${offer.id==='website_baseline'?' review':''}`;
 }
-export function inquirySubmitLabel(service='',checkout=false,requestKind=''){
+export function inquirySubmitLabel(service='',checkout=false,requestKind='',o=offers){
  if(!checkout)return 'Send message';
- const offer=inquiryOffer(service);if(!offer)return 'Request my proposal';
+ const offer=inquiryOffer(service,o);if(!offer)return 'Request my proposal';
  if(requestKind==='question')return `Send my ${offer.name} question`;
- return offer.monthly?`Request my ${offer.name} start`:offer.id==='website_baseline'?'Request my Website Baseline':offer.id==='audit_fix_sprint'?'Request my Audit & Fix proposal':`Request my ${offer.name.replace(' Website','')} proposal`;
+ return offer.monthly?`Request my ${offer.name} start`:offer.id==='website_baseline'?`Request my ${offer.name}`:offer.id==='audit_fix_sprint'?`Request my ${offer.name.replace(' Sprint','')} proposal`:`Request my ${offer.name.replace(' Website','')} proposal`;
 }
 export function inquiryMessagePrompt(service='',requestKind='checkout',neutral=false){
  return 'Your message';
@@ -75,15 +76,15 @@ export function publicInquiryContext(value={},annualEnabled=false){
 }
 export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.county||value.add_ons?.length);}
 export function inquiryContextSummary(value={}){const {add_ons=[],...context}=selectedInquiryContext(value);const additions=priceAddons(add_ons);return [...Object.entries(context).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]),...additions.lines.map(item=>'Addition requested: '+item.public_name+' — '+money(item.public_price)),...(additions.ids.length?['One-time additions subtotal: '+money(additions.total)+'; subject to fit and written scope.']:[])];}
-export function inquiryRequestSummary(value={}){
- const context=selectedInquiryContext(value),offer=inquiryOffer(value.service);
+export function inquiryRequestSummary(value={},o=offers){
+ const context=selectedInquiryContext(value),offer=inquiryOffer(value.service,o);
  const parts=[];
  if(offer)parts.push(`${offer.name} (${money(offer.price)}${offer.monthly?'/month':offer.id==='website_baseline'?', paid only after I confirm fit':''})`);
  for(const key of ['goal','concept','county'])if(context[key]&&context[key]!=='unsure')parts.push((key==='county'?'From county page: ':'')+inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
- if(context.add_ons?.length)parts.push(priceAddons(context.add_ons).lines.map(item=>`${item.public_name} (${money(item.public_price)} extra)`).join(', '));
+ if(context.add_ons?.length)parts.push(priceAddons(context.add_ons,o.add_ons).lines.map(item=>`${item.public_name} (${money(item.public_price)} extra)`).join(', '));
  return (context.add_ons?.length&&!offer?'Asking about: ':'')+parts.join(' · ');
 }
-export const priceList=o=>({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});
+export const priceList=input=>{const o=input.provider_policy?normalizeOfferCatalog(input):input;return ({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});};
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {
  if(!prices.hosting_credit||prices.provider_model)throw new Error('Legacy calculation requires a saved hosting-credit snapshot');

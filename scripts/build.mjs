@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog,publicOfferProjection} from '../src/offer-catalog.mjs';
 import {execFileSync} from 'node:child_process';
 import {assertPageDates} from './page-dates.mjs';
 import {verifyLocalReferences} from './verify-local-references.mjs';
@@ -26,7 +27,7 @@ const readJSON=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'))
 export async function buildCssBundles(assets,{includeChat=false}={}){
  const readStyles=async names=>(await Promise.all(names.map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
  const minify=async css=>(await transform(css,{loader:'css',minify:true,target:['chrome110','safari16']})).code;
- const shared=await readStyles(['brand.css','style.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])]);
+ const shared=await readStyles(['brand.css','style.css','premium.css','site-refresh.css','layout-components.css','section-surfaces.css',...(includeChat?['support-chat.css']:[])]);
  const guides=await readStyles(['journal.css']);
  const plans=await readStyles(['package-visuals.css']);
  return {shared:await minify(shared),plans:await minify(plans),guides:await minify(guides)};
@@ -48,9 +49,8 @@ export function applyCssBundles(html,boot,{family}={}){
 
 export async function buildBrowserBundles(root,config){
  const journeyVersion=createHash('sha256').update(await readFile(resolve(root,'src/assets/journey-counts.js'))).digest('hex').slice(0,12);
- const offers=JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8'));
- const fields=(item,names)=>Object.fromEntries(names.map(name=>[name,item[name]]));
- const publicOffers={...Object.fromEntries(['launch_site','focused_site','signature_site'].map(id=>[id,fields(offers[id],['public_name','public_price'])])),plans:Object.fromEntries(['keep_running','improve','grow'].map(id=>[id,fields(offers.plans[id],['public_name','monthly_price'])])),baseline:fields(offers.baseline,['public_name','one_time_price']),audit_sprint:fields(offers.audit_sprint,['public_name','one_time_price']),add_ons:offers.add_ons.map(item=>fields(item,['id','public_name','public_price']))};
+ const offers=normalizeOfferCatalog(JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8')));
+ const publicOffers=publicOfferProjection(offers);
  const publicInputs=()=>({name:'browser-public-inputs',setup(build){
   // Match the HTML script URL exactly so there is one module instance and one
   // aggregate event deduplication set on pages with an inquiry form.
@@ -71,7 +71,7 @@ const obsoleteBuildAssets=[
  ...['motion-1280.mp4','still-1536.webp','still-960.webp','still-640.webp'].map(name=>({file:`assets/editions/buffalo-dusk/${name}`,dynamic:['buffalo-dusk','editions/']})),
  {file:'assets/package-visuals/feature-guides.json',dynamic:['feature-guides']},
  {file:'assets/package-visuals/manifest.json',dynamic:['package-visuals/manifest']},
- ...['brand.css','boot.js','journey-counts.js','fonts.css','journal.css','package-visuals.css','support-chat.css','style.css','premium.css','site-refresh.css','layout-components.css','site-plans.css','waterfront.css','film.js','premium.js','study-controls.js'].map(name=>({file:`assets/${name}`,dynamic:[]}))
+ ...['brand.css','boot.js','journey-counts.js','fonts.css','journal.css','package-visuals.css','support-chat.css','style.css','premium.css','site-refresh.css','layout-components.css','section-surfaces.css','site-plans.css','waterfront.css','film.js','premium.js','study-controls.js'].map(name=>({file:`assets/${name}`,dynamic:[]}))
 ];
 export async function pruneObsoleteBuildAssets(output){
  const outputRoot=resolve(output),files=[];
@@ -125,7 +125,7 @@ const config=await readJSON('config/site.json');
 const captures=await readJSON('src/portfolio-captures.json');
 for(const [file,sha] of Object.entries(captures.sourceHashes))if(createHash('sha256').update(await readFile(resolve(root,file))).digest('hex')!==sha)console.warn('Portfolio homepage screenshot may be stale: '+file+' changed since '+captures.capturedAt+'.');
 const chatCsp=supportChatCsp(config);
-const offers=await readJSON('config/offers.json');
+const offers=normalizeOfferCatalog(await readJSON('config/offers.json'));
 const map=await readJSON('authority/v5/site-map.json');
 const tokens=await readJSON('authority/v5/design-tokens.json');
 const geography=await readJSON('authority/v5/geography.json');

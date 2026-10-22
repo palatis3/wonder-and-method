@@ -11,7 +11,7 @@ test('plan pages reuse shared CSS without changing the existing cascade',async()
  const assets=new URL('../src/assets/',import.meta.url);
  for(const includeChat of [false,true]){
   const css=await buildCssBundles(fileURLToPath(assets),{includeChat});
-  const source=(await Promise.all(['package-visuals.css','brand.css','style.css','premium.css','site-refresh.css','layout-components.css',...(includeChat?['support-chat.css']:[])].map(name=>readFile(new URL(name,assets),'utf8')))).join('\n');
+  const source=(await Promise.all(['package-visuals.css','brand.css','style.css','premium.css','site-refresh.css','layout-components.css','section-surfaces.css',...(includeChat?['support-chat.css']:[])].map(name=>readFile(new URL(name,assets),'utf8')))).join('\n');
   const minify=value=>transform(value,{loader:'css',minify:true,target:['chrome110','safari16']});
   // Package artwork rules precede the shared bundle; brand rules lead that bundle.
   // Preserve every declaration in the intended cascade.

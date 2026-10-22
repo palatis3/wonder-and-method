@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog} from './offer-catalog.mjs';
 import {createHash} from 'node:crypto';
 import {quotedOffer,assertAddonCommercialSnapshot,canonicalCommercialJson} from './commercial.mjs';
 
@@ -33,10 +34,11 @@ export function assertAddonAcceptance(scope,{allowDraft=false}={}){
 }
 
 export function paymentCatalog(offers){
+ offers=normalizeOfferCatalog(offers);
  return offerIds.map(id=>{
   const recurring=Object.hasOwn(offers.plans,id),offer=quotedOffer(offers,id);
   const prices=recurring?['monthly','annual'].map(billing=>({key:billing,amount:cents(quotedOffer(offers,id,billing).public_price),label:billing==='annual'?'Twelve prepaid cycles; manual renewal only':'One agreed monthly service cycle'})):offer.payment_schedule.map((milestone,index)=>({key:`milestone-${index+1}`,amount:cents(milestone.amount),label:milestone.event}));
-  return {id,name:labels[id],version:offers.version,currency:'usd',prices:prices.map(price=>({...price,lookup_key:`wm_${id}_${price.key}_${digest([offers.version,price.amount]).slice(0,12)}`}))};
+  return {id,name:offer.public_name,version:offers.version,currency:'usd',prices:prices.map(price=>({...price,lookup_key:`wm_${id}_${price.key}_${digest([offers.version,price.amount]).slice(0,12)}`}))};
  });
 }
 
@@ -82,7 +84,7 @@ export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={})
   }
  }
  const immutable={client_id:scope.client_id,scope_version:scope.version,commercial_version:scope.commercial_version,scope_hash:digest(scope),milestone:milestoneIndex+1,mode:billing.mode,account:billing.account_id,customer:billing.customer_id,amount:cents(milestone.amount),currency:'usd',due_date:Math.floor(Date.parse(billing.due_at)/1000),tax_rates:taxRates,service_period:plan?scope.service_period:null};
- return {...immutable,id:`wm-${digest(immutable).slice(0,40)}`,obligation:`wm-${digest([scope.client_id,milestoneIndex+1,plan?scope.service_period.start:null]).slice(0,40)}`,description:`${labels[scope.offer_id]} — ${milestone.event}`,offer_id:scope.offer_id,approval_reference:milestone.approval_reference,prior_milestones:original.slice(0,milestoneIndex).map((previous,index)=>({milestone:index+1,amount:cents(previous.amount),obligation:`wm-${digest([scope.client_id,index+1,null]).slice(0,40)}`})),manual_collection:true};
+ return {...immutable,id:`wm-${digest(immutable).slice(0,40)}`,obligation:`wm-${digest([scope.client_id,milestoneIndex+1,plan?scope.service_period.start:null]).slice(0,40)}`,description:`${snapshot.offer.public_name||labels[scope.offer_id]} — ${milestone.event}`,offer_id:scope.offer_id,approval_reference:milestone.approval_reference,prior_milestones:original.slice(0,milestoneIndex).map((previous,index)=>({milestone:index+1,amount:cents(previous.amount),obligation:`wm-${digest([scope.client_id,index+1,null]).slice(0,40)}`})),manual_collection:true};
 }
 
 export function assertInvoiceMatches(invoice,plan,{finalizing=false}={}){

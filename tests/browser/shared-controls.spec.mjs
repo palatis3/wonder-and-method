@@ -11,7 +11,7 @@ const revealTools=async page=>{
  await inViewport(page.locator('.support-chat-launch'));
 };
 
-test('shared header contact and native footer top link remain reachable across page types',async({page,isMobile})=>{
+test('shared header contact and the single floating top link remain reachable across page types',async({page,isMobile})=>{
  if(isMobile)await page.setViewportSize({width:320,height:844});
  for(const path of ['/','/pricing/','/contact/','/work/fieldwork/','/services/seo/','/areas/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
@@ -28,7 +28,8 @@ test('shared header contact and native footer top link remain reachable across p
   }else await revealTools(page);
   await page.evaluate(()=>scrollTo({top:650,behavior:'instant'}));await inViewport(page.locator('.back-to-top'));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
-  const top=page.locator('footer a[href="#page-top"]');await top.scrollIntoViewIfNeeded();await inViewport(top);await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
+  await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
+  const top=page.locator('.back-to-top');await inViewport(top);await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  }
 });
 
@@ -74,11 +75,13 @@ test('chat loads only on click and hands focus to the mocked provider',async({pa
 test('blocked chat exposes a usable contact fallback and restores visible focus on dismissal',async({page})=>{
  await allowMockChat(page);
  await page.route('https://embed.tawk.to/**',route=>route.abort('blockedbyclient'));
- await page.goto('/?qa=1');await revealTools(page);await page.locator('.support-chat-launch').click();
- const contact=page.locator('.support-chat-fallback a');await inViewport(contact);await expect(contact).toBeFocused();
- await expect(contact).toHaveAttribute('href','/contact/');
- await page.locator('.support-chat-dismiss').click();
- await expect(page.locator('.support-chat')).toBeHidden();expect(await page.evaluate(()=>document.activeElement.matches('.back-to-top,footer a[href="#page-top"]'))).toBe(true);
+ for(const scroll of [0,900]){
+  await page.goto('/?qa=1');await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),scroll);await revealTools(page);await page.locator('.support-chat-launch').click();
+  const contact=page.locator('.support-chat-fallback a');await inViewport(contact);await expect(contact).toBeFocused();
+  await expect(contact).toHaveAttribute('href','/contact/');
+  await page.locator('.support-chat-dismiss').click();await expect(page.locator('.support-chat')).toBeHidden();
+  const target=page.locator(scroll?'.back-to-top':'.site-header .wordmark');await expect(target).toBeFocused();await inViewport(target);
+ }
 });
 
 test('form pages use inline chat without covering focused fields in landscape',async({page})=>{

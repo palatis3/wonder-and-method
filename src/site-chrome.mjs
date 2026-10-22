@@ -1,6 +1,5 @@
 import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e} from './shared.mjs';
-import {supportChatConfig} from './support-chat.mjs';
 import {brandWordmark} from './brand.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
@@ -15,6 +14,5 @@ export function siteHeader(path,config={}){
 
 export function siteFooter(config={}){
  const groups=[['Studio',[['/work/','Work'],['/about/','About'],['/process/','Process'],['/contact/','Contact'],['/guides/','Guides']]],['Services',[...services,['/pricing/','Pricing']]],['Areas',[['/areas/','Service areas'],...serviceStateInfo.map(state=>[state.path,state.name])]],['Information',[['/payments/',pageDisplayNames['/payments/']],['/privacy/','Privacy'],['/terms/','Website terms'],['/accessibility/','Accessibility']]]];
- const email=config.contactEmail||'support@wonderandmethod.com';
- return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p>Based in ${e(serviceCoverage(config).base)}. Working online across ${e(serviceCoverage(config).shortRegion)}.<br><a href="mailto:${e(email)}">Email Terry</a>${supportChatConfig(config)?'<span class="footer-chat-help"> · <button type="button" class="text-link" data-chat-open aria-describedby="support-chat-description" hidden>Chat with Terry</button></span>':''}</p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<section class="footer-group${label==='Information'?' footer-information':''}" aria-labelledby="footer-${label.toLowerCase()}-heading"><p id="footer-${label.toLowerCase()}-heading" class="footer-heading">${label}</p><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></section>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span><a href="#page-top">Back to top</a></div></footer>`;
+ return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p class="footer-location">Based in ${e(serviceCoverage(config).base)}.</p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<details class="footer-group"><summary id="footer-${label.toLowerCase()}-heading">${label}<svg class="footer-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></details>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span></div></footer>`;
 }

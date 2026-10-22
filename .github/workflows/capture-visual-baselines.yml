@@ -1,0 +1,29 @@
+name: Capture visual candidates
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Produce candidates for human visual review
+        run: npm run test:visual -- --update-snapshots=all
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: visual-candidates-${{ github.sha }}
+          path: tests/visual/baselines/linux/
+          if-no-files-found: error
+          retention-days: 14
+# This workflow never publishes, commits, or satisfies the production CI gate.
+# A reviewer must inspect and commit approved candidates; normal checks cannot
+# create or update their own baseline.

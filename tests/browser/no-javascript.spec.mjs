@@ -1,4 +1,15 @@
 import {test,expect} from './fixtures.mjs';
+
+test('footer disclosures and single back-to-top link work without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');await page.goto('/?qa=1');
+ const footer=page.locator('footer');
+ for(const label of ['Studio','Services','Areas','Information']){
+  const summary=footer.locator('summary').filter({hasText:label});await summary.click();
+  await expect(summary.locator('..')).toHaveAttribute('open','');await expect(summary.locator('..').locator('a').first()).toBeVisible();
+ }
+ await page.locator('.back-to-top').click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
+ await expect(footer.locator('a[href="#page-top"]')).toHaveCount(0);
+});
 test('new guide examples and contact intent are usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  for(const [slug,goal]of [['ai-search-visibility','search'],['ai-website-content-review','search'],['local-seo-audit','search'],['slow-website-on-mobile','fix']]){

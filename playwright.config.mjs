@@ -6,7 +6,7 @@ export default defineConfig({
  timeout:30_000,
  // The regression suite also visits all 125 expansion routes at three widths.
  // Keep per-test bounds while allowing the complete 375-view matrix to finish.
- globalTimeout:900_000,
+ globalTimeout:1_800_000,
  expect:{timeout:7000},
  workers:1,
  fullyParallel:false,

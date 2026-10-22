@@ -1,3 +1,4 @@
+import offers from '../config/offers.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -5,7 +6,7 @@ import {conceptPages,conceptCatalog} from '../src/portfolio-concepts.mjs';
 import {validateDemo,bindConceptDemo} from '../src/assets/portfolio-concepts.js';
 
 test('every concept has an overview, a service and a request with resolvable internal links',()=>{
- const pages=conceptPages({config:{},offers:{}}),paths=new Set(pages.map(p=>p.path));
+ const pages=conceptPages({config:{},offers}),paths=new Set(pages.map(p=>p.path));
  assert.equal(pages.length,9);
  assert.equal(new Set(pages.map(p=>p.description)).size,pages.length);
  assert.equal(paths.size,conceptCatalog.length*3);

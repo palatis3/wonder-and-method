@@ -34,7 +34,10 @@
     "setup:tools": "node scripts/setup-tools.mjs",
     "predeploy": "node scripts/predeploy.mjs",
     "check:citations": "node scripts/check-citations.mjs",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "test:visual": "playwright test --config=playwright.visual.config.mjs",
+    "check:content": "node scripts/site-contract.mjs",
+    "baseline:content": "node scripts/site-contract.mjs --accept"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

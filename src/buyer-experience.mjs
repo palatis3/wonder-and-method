@@ -1,3 +1,4 @@
+import defaultOffers from '../config/offers.json' with {type:'json'};
 import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 
@@ -34,13 +35,13 @@ export function projectCalendar() {
   return `<section class="studio-section" id="project-calendar"><h2>How reviews affect the launch date</h2><p>Planned build work takes 3–5 business days for Launch, 5–8 business days for Focused and 7–10 business days for Signature, once the page list, business facts, photos and account access are ready. I write the content; you approve its accuracy and review the design and working website.</p><p>Add your review time: two rounds, each allowing up to five business days. Your written proposal confirms the start, review and launch dates. Missing information or extra work can move them; I agree any revised dates with you. Silence is not approval.</p><p>I send the paid website files and publishing instructions within five business days after the paid work is finished, or after settling the account if the project stops early. The separate 30-day correction period for build defects does not delay delivery.</p></section>`;
 }
 
-const conceptNotes={
- fieldwork:{name:'Fieldwork',problem:'The service pages help a homeowner choose a garden service, then fill in that choice on the request form.',scope:'This 3-page example fits within Launch ($1,400, up to 6 pages). You receive the website files so you or a developer can change them later. For your real website, I set up and test the agreed contact form.'},
- northline:{name:'Northline',problem:'The site explains remodeling decisions before asking the homeowner to describe the room and preferred timing.',scope:'This 3-page example fits within Launch ($1,400, up to 6 pages). A remodeler with more services may choose Focused ($2,350, up to 15 pages). Your actual pages and features determine the package.'},
- hearthside:{name:'Hearthside',problem:'The menu puts ingredients and sample prices together. Choose a pizza to preview the quantity, pickup time and subtotal.',scope:'A three-page restaurant website can fit within Launch ($1,400, up to 6 pages). A link to an ordering service you already use can be included. Building the custom order preview shown here, creating an ordering system or setting up the outside account is separate work. The demo places no order and takes no payment.'}
-};
-export function conceptDebrief(id) {
- const c=conceptNotes[id];
+const conceptNotes=o=>({
+ fieldwork:{name:'Fieldwork',problem:'The service pages help a homeowner choose a garden service, then fill in that choice on the request form.',scope:`This 3-page example fits within ${e(o.launch_site.public_name)} (${money(o.launch_site.public_price)}, up to ${o.launch_site.marketing_page_cap} pages). You receive the website files so you or a developer can change them later. For your real website, I set up and test the agreed contact form.`},
+ northline:{name:'Northline',problem:'The site explains remodeling decisions before asking the homeowner to describe the room and preferred timing.',scope:`This 3-page example fits within ${e(o.launch_site.public_name)} (${money(o.launch_site.public_price)}, up to ${o.launch_site.marketing_page_cap} pages). A remodeler with more services may choose ${e(o.focused_site.public_name)} (${money(o.focused_site.public_price)}, up to ${o.focused_site.marketing_page_cap} pages). Your actual pages and features determine the package.`},
+ hearthside:{name:'Hearthside',problem:'The menu puts ingredients and sample prices together. Choose a pizza to preview the quantity, pickup time and subtotal.',scope:`A three-page restaurant website can fit within ${e(o.launch_site.public_name)} (${money(o.launch_site.public_price)}, up to ${o.launch_site.marketing_page_cap} pages). A link to an ordering service you already use can be included. Building the custom order preview shown here, creating an ordering system or setting up the outside account is separate work. The demo places no order and takes no payment.`}
+});
+export function conceptDebrief(id,o=defaultOffers) {
+ const c=conceptNotes(o)[id];
  if(!c)throw Error('Unknown concept');
  return `<section class="studio-concept-debrief" aria-labelledby="${id}-debrief"><p class="eyebrow">${c.name} · Design decisions</p><h2 id="${id}-debrief">What this example shows</h2><p>${c.problem}</p><p>${c.scope}</p><a class="button" href="/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question&amp;concept=${id}#inquiry">Ask about a website like ${c.name}</a><p><a href="/pricing/#website-packages">Compare website packages</a></p></section>`;
 }

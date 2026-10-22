@@ -4,6 +4,8 @@ Updated October 22, 2026. [BUILD_STATUS.md](BUILD_STATUS.md) identifies the veri
 
 ## Daily inquiry handling
 
+For website changes, follow [quality checks](operations/QUALITY_CHECKS.md), including content and screenshot review, shared-control checks and the exact-commit GitHub gate. Future prices and plan details use the [central offer workflow](operations/OFFER_UPDATES.md).
+
 Review website inquiry and scope-request notifications in the owner's `palatis3@gmail.com` inbox. Support mail remains in Fastmail and tawk.to notifications remain unchanged, per the owner’s October 17 choice. The attempted Fastmail forwarding rule was rejected because forwarding is unavailable on its trial plan; no forwarding rule was saved. Continue reviewing those channels each business day. Reply within one business day, Monday–Friday Eastern. Chat presence should reflect actual availability; the response commitment does not imply instant chat coverage. The owner confirmed phone chat notification/reply on October 16; historical setup notes that say it is pending are superseded.
 
 Check saved inquiry status independently of email receipt:

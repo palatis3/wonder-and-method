@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog} from './offer-catalog.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 
 export const monthlyDisplayLabels=Object.freeze({smallChanges:'set of small text, photo or link changes',futureTopics:'future-topic list',growthPlan:'rolling 90-day plan'});
@@ -17,7 +18,7 @@ export const annualEnrollmentAvailable = o => o.annual_enrollment_gate?.verified
 export const standardCareExclusion = 'CMS, plugin and theme software updates, backups and restores, and malware cleanup are not included in standard care. These need a separate suitability assessment or a specialist.';
 
 export function baselineEnrollmentNote(o) {
- return `The ${money(o.baseline.one_time_price)} Website Baseline covers a supported existing website with up to ${o.baseline.page_cap} agreed main pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous Website Baseline, studio build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
+ return `The ${money(o.baseline.one_time_price)} ${o.baseline.public_name} covers a supported existing website with up to ${o.baseline.page_cap} agreed main pages. It includes a review, an ordered fix list and a first small fix if one is safe and feasible. A new paid studio build includes its baseline; a previous Website Baseline, studio build or Audit & Fix Sprint can remove this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and separately agreed review scope.`;
 }
 
 // Current sales copy and existing accepted annual agreements are separate.
@@ -35,6 +36,7 @@ export function acceptedAnnualTerms(o) {
 }
 
 export function monthlyPlanDetails(o, id) {
+ o=normalizeOfferCatalog(o);
  const p = o.plans[id];
  if (!p) throw Error('Unknown monthly plan');
  const grow = id === 'grow', improvement = p.priorities > 0;
@@ -45,12 +47,12 @@ export function monthlyPlanDetails(o, id) {
  ];
  if (improvement) {
   included.push(
-   `${p.priorities} completed ${grow ? 'connected improvements' : 'improvement'} each month, chosen from your business needs and search research. Website writing, relevant page titles and descriptions, internal links, publication, one round of changes and checks are included for each selected improvement.`,
+   `${p.priorities} completed ${grow ? 'connected ' : ''}improvement${p.priorities===1?'':'s'} each month, chosen from your business needs and search research. Website writing, relevant page titles and descriptions, internal links, publication, one round of changes and checks are included for each selected improvement.`,
    p.search_scope.method,
-   grow ? `A ${monthlyDisplayLabels.growthPlan} refreshed monthly; this replaces the quarterly topic list.` : `A ${monthlyDisplayLabels.futureTopics}, refreshed quarterly.`,
+   grow ? `A rolling ${p.growth_plan.days}-day plan refreshed monthly; this replaces the quarterly topic list.` : `A ${monthlyDisplayLabels.futureTopics}, refreshed quarterly.`,
    o.monthly_terms.priority,
    p.search_scope.metrics,
-   `One ${grow ? 30 : 20}-minute call each month, or an equivalent written review. Research, planning, reporting and this review support the improvements; they do not replace them.`
+   `One ${p.review_minutes}-minute call each month, or an equivalent written review. Research, planning, reporting and this review support the improvements; they do not replace them.`
   );
   if (grow) included.push(p.promotion_reuse.scope);
   included.push(p.reporting);

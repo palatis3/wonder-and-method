@@ -1,11 +1,12 @@
+import {normalizeOfferCatalog} from '../src/offer-catalog.mjs';
 import {quotedOffer} from '../src/commercial.mjs';
 import {addonSelectionFromQuery} from '../src/addons.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(import.meta.dirname,'..');
-export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule}={}){
- const offers=JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8'));
+export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule,catalog}={}){
+ const offers=normalizeOfferCatalog(catalog??JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8')));
  if(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(clientId))throw new Error('Use a simple lowercase client ID, without personal information.');
  const {add_on_quote,...offer}=quotedOffer(offers,offerId,billing,{add_ons,payment_schedule}),scope=JSON.parse(await readFile(resolve(root,'operations/templates/accepted-scope.json'),'utf8'));
  const commercialSnapshot={version:offers.version,offer_id:offerId,billing,offer,provider_policy:offers.provider_policy,ownership_and_billing:offers.ownership_and_billing,...(add_on_quote?{add_on_quote}:{}),...(Object.hasOwn(offers.plans,offerId)?{monthly_terms:offers.monthly_terms,...(billing==='annual'?{annual_terms:offers.annual_terms}:{}),priority_menu:offer.priorities?offers.priority_menu:[]}:{one_off_terms:offers.one_off_terms})};

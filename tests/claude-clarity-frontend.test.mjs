@@ -41,7 +41,7 @@ test('pizza note is optional while real inquiry-like demos retain useful message
  assert.ok(validateDemo({...sample,concept:'fieldwork'}).message);
  assert.ok(validateDemo({...sample,quantity:'1.5'}).quantity);
  assert.equal(demoOrderTotal('Classic cheese ($16)',2),'$32.00');
- const pages=conceptPages({config:{},offers:{}});
+ const pages=conceptPages({config:{},offers});
  const pizza=pages.find(page=>page.path==='/work/hearthside/request/').body;
  assert.match(pizza,/Order note \(optional\)/);
  assert.doesNotMatch(pizza.match(/<textarea[^>]+>/)[0],/required|minlength/);

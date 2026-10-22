@@ -1,3 +1,4 @@
+import {normalizeOfferCatalog} from './offer-catalog.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 import {annualEnrollmentAvailable, acceptedAnnualTerms, baselineEnrollmentNote, monthlyPlanDetails, monthlyPauseSummary} from './monthly-content.mjs';
 import {offerSummary} from './offer-summary.mjs';
@@ -57,6 +58,7 @@ function monthlyInclusions(o, id, terms) {
 }
 
 export function buyerPacks(o) {
+ o=normalizeOfferCatalog(o);
  return ids.map(id => {
   const build = id.endsWith('_site'), monthly = Object.hasOwn(o.plans, id);
   const p = build ? o[id] : monthly ? o.plans[id] : id === 'audit_fix_sprint' ? o.audit_sprint : o.baseline;

@@ -45,8 +45,8 @@ test('all nine concept routes remain, with disabled submit controls and honest p
 
 test('Work keeps every project and both films with a useful early inquiry route',()=>{
  const items=workItems({homeEdition:'living-city'}),html=workGallery({homeEdition:'living-city'});
- assert.deepEqual(items.map(item=>item.id),['fieldwork','northline','hearthside','websites','search','handoff','workflow','buffalo-civic','studies']);
- assert.equal(new Set(items.slice(0,3).map(item=>item.details)).size,3);
+ assert.deepEqual(items.map(item=>item.id),['assetrounds','fieldwork','northline','hearthside','websites','search','handoff','workflow','buffalo-civic','studies']);
+ assert.equal(new Set(items.slice(1,4).map(item=>item.details)).size,3);
  assert.equal((html.match(/class="work-group"/g)||[]).length,3);
  assert.ok(html.indexOf('goal=new_website')<html.indexOf('id="fieldwork"'));
  for(const id of ['website-decisions','creative-samples','buffalo-civic','studies'])assert.match(html,new RegExp(`id="${id}"`));

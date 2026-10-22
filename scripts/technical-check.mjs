@@ -16,10 +16,10 @@ assert.equal(site.formMode,'live','Public build uses the live intake');
 assert.equal(site.privacyReviewed,true,'Published privacy review');
 // These are website checks. Business enrollment and provider recovery gates
 // remain separately enforced by release:check; this command cannot approve them.
-const steps=[['scripts/build.mjs'],['--test','tests/*.test.mjs'],['scripts/verify.mjs'],['node_modules/@playwright/test/cli.js','test'],['node_modules/wrangler/bin/wrangler.js','deploy','--config','wrangler.production.jsonc','--dry-run','--outdir','dry-run-technical']];
+const steps=[['scripts/build.mjs'],['--test','tests/*.test.mjs'],['scripts/verify.mjs'],['scripts/site-contract.mjs'],['node_modules/@playwright/test/cli.js','test'],['node_modules/wrangler/bin/wrangler.js','deploy','--config','wrangler.production.jsonc','--dry-run','--outdir','dry-run-technical']];
 let verifiedInput;
 for(const [i,args] of steps.entries()){
- const result=spawnSync(process.execPath,args,{cwd:i===4?resolve(root,'deployment'):root,stdio:'inherit',env:process.env});
+ const result=spawnSync(process.execPath,args,{cwd:i===5?resolve(root,'deployment'):root,stdio:'inherit',env:process.env});
  if(result.status!==0)process.exit(result.status||1);
  if(i===0)verifiedInput={...await releaseFingerprint(root),commit:git('rev-parse','HEAD'),dirty:!!git('status','--porcelain')};
 }

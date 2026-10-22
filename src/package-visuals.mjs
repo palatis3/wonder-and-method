@@ -25,9 +25,9 @@ function featureList(p){
 function quickComparison(o,kind){
  if(kind==='existing')return '';
  const rows=kind==='website'?[
-  ['Launch',`Up to ${o.launch_site.marketing_page_cap} marketing pages; one ready service connection and source-code handoff.`],
-  ['Focused',`Up to ${o.focused_site.marketing_page_cap} marketing pages including two launch guides; six finished graphics and deeper research.`],
-  ['Signature',`Up to ${o.signature_site.marketing_page_cap} marketing pages including four launch guides; twelve finished graphics and an original animated centerpiece.`]
+  [o.launch_site.public_name,`Up to ${o.launch_site.marketing_page_cap} marketing pages; ${o.launch_site.external_connection_limit} ready service connection${o.launch_site.external_connection_limit===1?'':'s'} and source-code handoff.`],
+  [o.focused_site.public_name,`Up to ${o.focused_site.marketing_page_cap} marketing pages including ${o.focused_site.launch_content.articles} launch guides; ${o.focused_site.graphic_counts.total} finished graphics and deeper research.`],
+  [o.signature_site.public_name,`Up to ${o.signature_site.marketing_page_cap} marketing pages including ${o.signature_site.launch_content.articles} launch guides; ${o.signature_site.graphic_counts.total} finished graphics and an original animated centerpiece.`]
  ]:Object.values(o.plans).map(plan=>[plan.public_name,plan.buyer_summary.outcomes.join(' ')]);
  return `<dl class="package-quick-comparison" aria-label="${kind==='website'?'Website':'Monthly'} plan differences">${rows.map(([name,copy])=>`<div><dt>${e(name)}</dt><dd>${e(copy)}</dd></div>`).join('')}</dl>`;
 }
