@@ -1,0 +1,1194 @@
+{
+  "accessedDate": "2026-10-22",
+  "status": "all_counties_researched",
+  "scope": "Research candidates, not publishable county landing pages",
+  "methodology": "One primary-source indexed extract reviewed per county. Facts are paraphrases of retrieved extracts, not live operational verification. Candidate means a plausible owner-workflow connection, not sufficient evidence for publication. Limited means local evidence or owner connection remains too generic, old or unverified. All proposed website tasks are editorial inferences and require the actual business owner’s service details.",
+  "counties": [
+    {
+      "slug": "albany",
+      "name": "Albany",
+      "sources": [
+        {
+          "url": "https://www.albany.org/blog/guide-to-albany-county-craft-beverage-trail/",
+          "title": "Guide to Albany County Craft Beverage Trail",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The current tourism guide describes a purchasable Albany County Craft Beverage Trail pass.",
+          "verification": "Parent researcher directly opened redesigned tourism guide and narrowed obsolete indexed wording."
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "For a participating producer, explain the verified pass-redemption process separately from ordinary reservations."
+      },
+      "uncertainty": "Site redesigned or redirected; earlier indexed mobile-passport and tasting-flight wording is not supported by the current page. Confirm participation and exact benefits with the producer.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "allegany",
+      "name": "Allegany",
+      "sources": [
+        {
+          "url": "https://www.alleganyco.gov/departments/planning/",
+          "title": "Planning | Allegany County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "Planning reports a county-wide trails master plan completed December 2025, GIS support for river access and trails, and work toward four Trail Towns: Belfast, Cuba, Caneadea and Hume.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "For lodging serving trail users, distinguish existing access from planned connections on an arrival page."
+      },
+      "uncertainty": "Planning activity is not proof a trail is open; requires route-level verification.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "bronx",
+      "name": "Bronx",
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/mayors-office/news/2022/06/mayor-adams-hunts-point-community-leaders-release-comprehensive-plan-create-economic",
+          "title": "Hunts Point comprehensive plan",
+          "authority": "City government",
+          "accessedDate": "2026-10-22",
+          "facts": "Hunts Point planning includes connections between residents and industrial jobs through SBS and Food Distribution Center tenants.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A local food distributor could separate buyer ordering from recruitment and describe its actual distribution capabilities."
+      },
+      "uncertainty": "Source establishes food-distribution context, not any supplier certification or buyer specification.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "broome",
+      "name": "Broome",
+      "sources": [
+        {
+          "url": "https://visitbinghamton.org/wp-content/uploads/2024/08/2024-Group-Tour-Planner.pdf",
+          "title": "2024 Group Tour Planner",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Six restored antique carousels are located in parks across Greater Binghamton. The historical planner describes free rides, differing hours and capacity, and weather-related closures.",
+          "verification": "Web search indexed extract reviewed"
+        },
+        {
+          "url": "https://www.broomecountyny.gov/community/carousels",
+          "title": "Broome County carousel directory",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The directory identifies separate city, town and village authorities for carousel locations; these are not all county-operated parks.",
+          "verification": "Direct source reviewed by independent editorial reviewer"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "For a group-tour business, create a carousel itinerary request with group size, chosen parks and wet-weather alternatives instead of a single guaranteed daily schedule."
+      },
+      "uncertainty": "2024 guide is historical; recheck operating parks and hours before publication.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "cattaraugus",
+      "name": "Cattaraugus",
+      "sources": [
+        {
+          "url": "https://amishtrail.com/what-see",
+          "title": "What to See | Amish Trail",
+          "authority": "County tourism trail",
+          "accessedDate": "2026-10-22",
+          "facts": "Most of the Amish Trail lies in Cattaraugus County; the trail directory organizes visitor stops.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "Build a stop-specific shopping itinerary only after verifying each business location, opening days and payment arrangements."
+      },
+      "uncertainty": "Retrieved evidence is too general to support claims about Sunday hours or payment methods.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "cayuga",
+      "name": "Cayuga",
+      "sources": [
+        {
+          "url": "https://www.tourcayuga.com/things-to-do/outdoor-recreation/on-the-water/",
+          "title": "Water Adventures in Cayuga County",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Frontenac Park in Union Springs has an adaptive kayak launch serving as an access point for the Cayuga County Blueway Trail.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An outfitter page should distinguish launching at Frontenac from equipment delivery and explain who supplies transfer assistance, based on its actual service."
+      },
+      "uncertainty": "Do not infer accessible rental equipment or assistance from the public dock.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "chautauqua",
+      "name": "Chautauqua",
+      "sources": [
+        {
+          "url": "https://www.tourchautauqua.com/play/snowmobiling",
+          "title": "Snowmobiling | Chautauqua County Visitors Bureau",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism directs visitors to local snowmobile clubs for a county-wide trail map and trail support.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A trail-facing lodging site should link the relevant club condition report and state its verified trail connection, rather than promise riding from a generic snowfall forecast."
+      },
+      "uncertainty": "Actual trail opening and direct lodging access require checking.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "chemung",
+      "name": "Chemung",
+      "sources": [
+        {
+          "url": "https://www.chemungcountyny.gov/DocumentCenter/View/19872/Appendix-M9---Economy-and-Tourism-Memo",
+          "title": "Comprehensive Plan: Economy and Tourism Inventory",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county economy and tourism memorandum identifies manufacturing as a substantial source of regional employment.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "Investigate manufacturer-specific quotation information such as part drawings, quantities and lead times before writing a local supplier guide."
+      },
+      "uncertainty": "Insufficient evidence of specialization or purchasing requirements; do not publish a county manufacturing claim beyond the source.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "chenango",
+      "name": "Chenango",
+      "sources": [
+        {
+          "url": "https://www.chenangocounty.org/recreation.php",
+          "title": "Chenango County Visitor Guide: Recreation",
+          "authority": "County visitor guide",
+          "accessedDate": "2026-10-22",
+          "facts": "The guide describes state lands and trails used for hiking, horseback riding, cross-country skiing and snowmobiling.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An outdoor lodging page could provide separate verified trail access by activity instead of treating all trails as multi-use."
+      },
+      "uncertainty": "Broad recreation context only; route permissions and current conditions not established.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "clinton",
+      "name": "Clinton",
+      "sources": [
+        {
+          "url": "https://www.clintoncountyny.gov/economic-development",
+          "title": "Economic Development | Clinton County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The economic-development office specifically identifies transportation manufacturing among county industries.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A local manufacturer capability page could organize verified transportation-related processes, materials and sample deliverables for industrial buyers."
+      },
+      "uncertainty": "Source does not establish an individual firm’s capabilities, certifications or procurement standards.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "columbia",
+      "name": "Columbia",
+      "sources": [
+        {
+          "url": "https://columbiacountytourism.org/business/smith-farms/",
+          "title": "Smith Farms | Columbia County Tourism",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism lists pick-your-own peaches, nectarines, raspberries, sweet and sour cherries, and apples at Smith Farms.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "For that operator or a verified comparable producer, separate a crop-availability update from the permanent visit page and distinguish picking from retail purchase."
+      },
+      "uncertainty": "Listing is not live crop availability; other farms need individual evidence.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "cortland",
+      "name": "Cortland",
+      "sources": [
+        {
+          "url": "https://www.experiencecortland.com/partners/fishing",
+          "title": "Fishing | Cortland County Convention & Visitors Bureau",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The visitor bureau directs readers to accessible fishing piers, platforms and launches in the county and Central New York.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A fishing service could publish access-point details and distinguish shore fishing from boat trips after inspecting the actual departure location."
+      },
+      "uncertainty": "Regional pointers are insufficient to establish specific facility accessibility.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "delaware",
+      "name": "Delaware",
+      "sources": [
+        {
+          "url": "https://greatwesterncatskills.com/listings/pepacton-reservoir/",
+          "title": "Pepacton Reservoir | Great Western Catskills",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Pepacton is part of the New York City water-supply system; the listing says access requires a permit.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A reservoir outing page should put the official access-preparation link before its booking button and explain what the operator helps arrange."
+      },
+      "uncertainty": "Confirm current DEP requirements; do not replace agency instructions with legal advice.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "dutchess",
+      "name": "Dutchess",
+      "sources": [
+        {
+          "url": "https://beta.dutchesstourism.com/listingsv/fishkill-farms2503",
+          "title": "Fishkill Farms | Dutchess Tourism",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Fishkill Farms is listed as a participant in the free digital Farm Finder Ag-Adventure Trail passport, which includes farm visits and shops.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating farm should explain passport check-in separately from any paid picking or event reservation."
+      },
+      "uncertainty": "Beta listing; verify production URL, continued participation and actual reservation rules.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "erie",
+      "name": "Erie",
+      "sources": [
+        {
+          "url": "https://visitbuffalo.com/accessibility/",
+          "title": "Accessibility Guide to Buffalo",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The guide describes reserved accessible visitor parking and wheelchair access for much of the Martin House tour, and designated wheelchair seating at Shea’s.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A visitor itinerary should provide attraction-specific access links and booking contacts rather than label the entire trip accessible."
+      },
+      "uncertainty": "Confirm individual access details with venues; no universal accessibility guarantee.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "essex",
+      "name": "Essex",
+      "sources": [
+        {
+          "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract",
+          "title": "Adirondack Mountain Reserve Conservation Easement Tract",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "DEC locates AMR in Keene, Essex County, and explains reservations for public trail access through the property, including access to Noonmark and Round Mountain.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A hiking-oriented lodging page should ask whether the guest itinerary uses AMR and direct them to the official reservation system before travel."
+      },
+      "uncertainty": "Reservation periods and exemptions must be rechecked against current DEC guidance.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "franklin",
+      "name": "Franklin",
+      "sources": [
+        {
+          "url": "https://dec.ny.gov/places/saint-regis-canoe-area",
+          "title": "Saint Regis Canoe Area",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "DEC describes a 1.1-mile carry from Floodwood Crossing parking to the Long Pond hand launch.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An outfitter quoting this launch should ask about boat transport and carrying assistance and distinguish delivery to parking from delivery to water."
+      },
+      "uncertainty": "Verify route conditions and the business’s actual carry service.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "fulton",
+      "name": "Fulton",
+      "sources": [
+        {
+          "url": "https://www.fultoncountyny.gov/things-do",
+          "title": "Things to Do | Fulton County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county provides boat-launch information among its outdoor recreation resources.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A boat-rental owner should identify the actual launch it serves and the delivery boundary before adding a booking option."
+      },
+      "uncertainty": "Directory-level evidence only; no specific launch or access condition established.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "genesee",
+      "name": "Genesee",
+      "sources": [
+        {
+          "url": "https://www.gcedc.com/stampmegasite",
+          "title": "STAMP Mega-Site",
+          "authority": "County economic development",
+          "accessedDate": "2026-10-22",
+          "facts": "GCEDC owns and develops STAMP; its page distinguishes a semiconductor equipment manufacturer under construction from an announced data-center facility.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A supplier capability page should distinguish demonstrated equipment-manufacturing support from prospective data-center work and request project-specific requirements."
+      },
+      "uncertainty": "Announcements are not operating customer relationships or proof of demand for any individual supplier.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "greene",
+      "name": "Greene",
+      "sources": [
+        {
+          "url": "https://dec.ny.gov/things-to-do/hiking/catskill-backcountry-information",
+          "title": "Catskill Backcountry Information",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "DEC identifies Kaaterskill Falls approaches from Laurel House Road, Schutt Road and North South Lake Campground.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A guided outing booking should specify its exact meeting approach and link current agency access information rather than send all guests to a generic falls pin."
+      },
+      "uncertainty": "Access arrangements may change; do not present a proposed timed-entry program as implemented.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "sources": [
+        {
+          "url": "https://dec.ny.gov/places/indian-lake-islands-campground-and-day-use-area",
+          "title": "Indian Lake Islands Campground and Day Use Area",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "Indian Lake Islands is a boat-access-only campground on the southern shore of Indian Lake.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An equipment rental booking for campers should ask campsite destination, boat capacity, baggage needs and whether the customer needs transport, separately from campsite booking."
+      },
+      "uncertainty": "Do not imply a rental includes a campsite or transport unless the operator confirms it.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "herkimer",
+      "name": "Herkimer",
+      "sources": [
+        {
+          "url": "https://www.herkimercountychamber.com/waterways/",
+          "title": "Waterways | Herkimer County Chamber",
+          "authority": "Local tourism chamber",
+          "accessedDate": "2026-10-22",
+          "facts": "The tourism page describes 20 miles of Erie Canal in Herkimer County and three locks.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A canal cruise seller should state its actual boarding point and whether lock passage depends on canal operations."
+      },
+      "uncertainty": "Lock-specific schedule needs the Canal Corporation; directory does not establish individual cruise availability.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "jefferson",
+      "name": "Jefferson",
+      "sources": [
+        {
+          "url": "https://www.jeffersoncountyny.gov/departments/planning/nys-certified-agricultural-districts",
+          "title": "Agriculture | Jefferson County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "County Planning works with farms, municipalities and regional partners on maintaining the agricultural sector and productive farmland.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "Interview a farm service business about its actual customer intake before deciding whether agricultural service forms differ from ordinary homeowner requests."
+      },
+      "uncertainty": "Agricultural context is too general for a distinct website recommendation without owner evidence.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "lewis",
+      "name": "Lewis",
+      "sources": [
+        {
+          "url": "https://lewiscountyny.gov/departments/recreation-forestry-and-parks/",
+          "title": "Recreation, Forestry and Parks",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county recreation department operates trail-permit support and directs permit issues to its trails team.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An OHV rental booking should separate rental purchase from county trail access and link the official current permit process before checkout."
+      },
+      "uncertainty": "Check current program and trail availability; no legal interpretation or automatic permit inclusion.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "livingston",
+      "name": "Livingston",
+      "sources": [
+        {
+          "url": "https://parks.ny.gov/sites/default/files/Letchworth2025LetchworthParkMap.pdf",
+          "title": "Letchworth State Park Map and Trail Guide 2025",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "The park map labels multiple entrances, visitor facilities and separate south-end detail.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A lodging owner should give directions to its specific property and the relevant park entrance separately, rather than use a park-wide navigation pin."
+      },
+      "uncertainty": "Park spans Livingston and Wyoming; not a unique Livingston business need; verify seasonal roads.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "madison",
+      "name": "Madison",
+      "sources": [
+        {
+          "url": "https://www.visitopenfarmday.com/",
+          "title": "Open Farm Day | CCE Madison County",
+          "authority": "Public cooperative extension event",
+          "accessedDate": "2026-10-22",
+          "facts": "CCE Madison County coordinates an annual one-day event when participating farms open to visitors.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating farm website should clearly separate Open Farm Day visitor hours and activities from its usual shop or appointment availability."
+      },
+      "uncertainty": "Confirm current event date and participation; event access does not imply routine public access.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "monroe",
+      "name": "Monroe",
+      "sources": [
+        {
+          "url": "https://www.monroecounty.gov/sotc2024-economic",
+          "title": "2024 State of the County: Economic and Workforce Development",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county report identifies photonics and semiconductors and a state-grant match for expanding MCC’s optics program.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An optics supplier can investigate a capability matrix covering its measured fabrication and inspection services before designing an RFQ upload form."
+      },
+      "uncertainty": "The report does not establish local buyer specifications or capabilities of an individual firm.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "montgomery",
+      "name": "Montgomery",
+      "sources": [
+        {
+          "url": "https://visitmontgomerycountyny.com/outdoors/",
+          "title": "Outdoors | Visit Montgomery County",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism describes roughly 40 miles of Erie Canalway Trail bikeway through the county.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A cycling accommodation should document its actual trail access, bike storage and check-in arrangements for through-riders."
+      },
+      "uncertainty": "Route context alone does not demonstrate those amenities; owner inspection needed.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "nassau",
+      "name": "Nassau",
+      "sources": [
+        {
+          "url": "https://archive.nassaucountyny.gov/agencies/filmcom/",
+          "title": "Nassau County Film Office",
+          "authority": "County government archive",
+          "accessedDate": "2026-10-22",
+          "facts": "The archived film-office page offers location-finding help for mansions, beaches, waterfront parks, preserves and villages.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A location venue could develop a production inquiry asking crew size, load-in and required spaces after confirming it accepts shoots."
+      },
+      "uncertainty": "Archived source is old; current film-office services and venue availability unverified.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "sources": [
+        {
+          "url": "https://www.nyc.gov/office-of-the-mayor/news/610-18/de-blasio-administration-city-council-garment-center-steering-committee-passage-of",
+          "title": "Support Package for Fashion Production",
+          "authority": "City government",
+          "accessedDate": "2026-10-22",
+          "facts": "The 2018 city announcement describes preserving fashion-production space in Midtown Manhattan as part of a manufacturing strategy.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A garment producer could separate sample development from production inquiries and request the technical pack and quantity appropriate to its actual services."
+      },
+      "uncertainty": "Historical context does not establish current service mix or manufacturer specifications.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "niagara",
+      "name": "Niagara",
+      "sources": [
+        {
+          "url": "https://www.niagarafallsusa.com/planning-tools/transportation/trolleys/",
+          "title": "Trolley Transportation Options",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism distinguishes the Discover Niagara Shuttle, Niagara Falls Scenic Trolley and Metro trolley; it describes the shuttle as seasonal and free.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A hotel arrival page should identify the actual service and nearby stop, with a season-aware alternative arrival option."
+      },
+      "uncertainty": "Recheck operating dates and stop locations; do not conflate three services.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "oneida",
+      "name": "Oneida",
+      "sources": [
+        {
+          "url": "https://oneidacountyny.gov/departments/airport/uas-test-site/",
+          "title": "FAA-Designated NY UAS Test Site",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county-owned UAS test site at Griffiss in Rome is an instrumented testing facility within a 50-mile Rome-to-Syracuse traffic-management corridor.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A UAS engineering service can separate test-support inquiries from ordinary aerial-image bookings, asking which test objective and facility coordination are needed."
+      },
+      "uncertainty": "Source does not establish the firm’s authorization, capabilities or access to the site.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "onondaga",
+      "name": "Onondaga",
+      "sources": [
+        {
+          "url": "https://onondagagrown.com/",
+          "title": "Onondaga Grown",
+          "authority": "County agriculture marketing program",
+          "accessedDate": "2026-10-22",
+          "facts": "The program promotes businesses that grow, sell or serve Onondaga Grown food and publishes information about ON Farm Fest.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating food business should distinguish farm-grown products from other locally sourced goods and separate event visitation from ordinary ordering."
+      },
+      "uncertainty": "Verify participation and provenance item by item; no blanket local-origin claim.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "ontario",
+      "name": "Ontario",
+      "sources": [
+        {
+          "url": "https://www.visitfingerlakes.com/articles/post/visitor-experience-fund/",
+          "title": "Visitor Experience Accessibility Grants",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The 2019 tourism announcement describes grants for tourism nonprofits and difficulties finding accessible services and booking suitable rooms.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A lodging owner can inventory room-level access information and make specific requests possible before booking."
+      },
+      "uncertainty": "Old program announcement; broadly applicable need and no current grant availability established.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "orleans",
+      "name": "Orleans",
+      "sources": [
+        {
+          "url": "https://www.orleanscountytourism.com/fish-pages/fishing-report/2026-fishing-report/september-2026-reports",
+          "title": "September 2026 Fishing Reports",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "September reports distinguish tributary flow, canal-water feed and Lake Ontario fishing conditions rather than present one county-wide condition.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A fishing guide should identify the booked water and put a dated conditions/contact step into trip confirmation, with its real rescheduling policy."
+      },
+      "uncertainty": "Reports are time-specific; no catch guarantee or present-condition claim.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "oswego",
+      "name": "Oswego",
+      "sources": [
+        {
+          "url": "https://visitoswegocounty.com/brochures/",
+          "title": "Brochures and Fishing Reports | Visit Oswego",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The county points to fishing reports for Lake Ontario, the Oswego and Salmon rivers, Oneida Lake and Sandy Pond.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A charter request should identify lake versus river service and the actual departure location so the operator can match the request to the right trip."
+      },
+      "uncertainty": "The source is a report directory; individual guide services and equipment require owner input.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "otsego",
+      "name": "Otsego",
+      "sources": [
+        {
+          "url": "https://www.thisiscooperstown.com/things-to-do/",
+          "title": "Things to Do in Cooperstown and Otsego County",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism identifies summer youth tournaments at Cooperstown Dreams Park and Cooperstown All Star Village and group rental at Doubleday Field.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A lodging or caterer inquiry should ask which tournament venue, dates and adult/child party size rather than a single generic Cooperstown event field."
+      },
+      "uncertainty": "Confirm venue dates and actual group capacity; no affiliation with tournaments implied.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "orange",
+      "name": "Orange",
+      "sources": [
+        {
+          "url": "https://www.orangecountygov.com/DocumentCenter/View/16749/OCT-Farms-List-r2?bidId=",
+          "title": "Orange County Tourism and Film Farms List",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county tourism publication lists farm businesses with addresses and contact details, including Back to the Future Farm in Westtown.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A farm owner can reconcile the public directory destination with its actual customer pickup or visitor entrance and clarify which address accepts visitors."
+      },
+      "uncertainty": "Historical directory only; no specific current opening, product or visitor rule established.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "putnam",
+      "name": "Putnam",
+      "sources": [
+        {
+          "url": "https://www.putnamcountyny.gov/transportation/",
+          "title": "Transportation | Putnam County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "PART operates three year-round fixed routes, a seasonal Cold Spring trolley and a commuter shuttle to Croton Falls station.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An appointment-based visitor business should distinguish its year-round transit arrival instructions from seasonal trolley instructions and offer its own verified last-mile directions."
+      },
+      "uncertainty": "Check current timetables and proximity; transit presence does not imply a business is served.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "kings",
+      "name": "Kings",
+      "sources": [
+        {
+          "url": "https://edc.nyc/leasing",
+          "title": "Leasing | Brooklyn Army Terminal",
+          "authority": "City economic development",
+          "accessedDate": "2026-10-22",
+          "facts": "The Annex Building at Brooklyn Army Terminal is a food-manufacturing hub with space reserved for food manufacturing uses.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A tenant producer website should distinguish its production address from public pickup or retail service and state actual fulfillment options."
+      },
+      "uncertainty": "Being in a production hub does not establish walk-in access or customer pickup.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "queens",
+      "name": "Queens",
+      "sources": [
+        {
+          "url": "https://www.queensny.org/programs/the-entrepreneur-space",
+          "title": "The Entrepreneur Space | QEDC",
+          "authority": "Local economic development",
+          "accessedDate": "2026-10-22",
+          "facts": "QEDC operates a food-business incubator in Long Island City.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A food startup using shared production space should publish its own order lead time and pickup/delivery location, separating that from the incubator address."
+      },
+      "uncertainty": "No evidence of any individual brand’s participation or permission to receive customers.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "rensselaer",
+      "name": "Rensselaer",
+      "sources": [
+        {
+          "url": "https://www.rensco.com/DocumentCenter/View/989/Farm-Map-PDF",
+          "title": "Rensselaer County Farm Map",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The map distinguishes product categories, U-pick and days/hours; Gold Krest Enterprise is listed with seasonal operation.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating farm should separate current crop and U-pick availability from its published seasonal shop hours and keep directory information synchronized."
+      },
+      "uncertainty": "Map date and actual harvest availability must be checked.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "richmond",
+      "name": "Richmond",
+      "sources": [
+        {
+          "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02299",
+          "title": "Staten Island Ferry | NYC311",
+          "authority": "City government",
+          "accessedDate": "2026-10-22",
+          "facts": "The Staten Island Ferry connects Staten Island with Lower Manhattan.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A St. George-area business can provide a verified walk-from-terminal arrival option alongside driving directions."
+      },
+      "uncertainty": "Only route context verified; no evidence the business is within walking distance.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "rockland",
+      "name": "Rockland",
+      "sources": [
+        {
+          "url": "https://www.rocklandcountyny.gov/departments/economic-development-tourism-and-film",
+          "title": "Economic Development, Tourism and Film",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "Rockland operates a combined economic development, tourism and film department and directs visitors to Explore Rockland.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A prospective filming venue should collect production requirements separately from ordinary event inquiries only after confirming a real shoot offering."
+      },
+      "uncertainty": "Department existence is too generic to establish a distinct venue workflow or active film demand.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "saratoga",
+      "name": "Saratoga",
+      "sources": [
+        {
+          "url": "https://www.saratoga.org/live/top-10-things-to-do-in-saratoga/",
+          "title": "Top Things to Do in Saratoga",
+          "authority": "County chamber tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The county chamber promotes a self-guided farm tour and area farmers markets.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating farm should distinguish visitor access from sales at off-site markets, with actual dates and locations."
+      },
+      "uncertainty": "Broad promotion alone does not establish specific participation or availability.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "schenectady",
+      "name": "Schenectady",
+      "sources": [
+        {
+          "url": "https://www.discoverschenectady.com/meetings/",
+          "title": "Meetings | Discover Schenectady",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The designated county tourism agency offers meeting-planner resources, complimentary services and an RFP submission path.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A meeting venue can make its own inquiry capture date, room layout and lodging needs, and clarify when it refers multi-property requests to the tourism agency."
+      },
+      "uncertainty": "RFP availability is sourced; individual venue capacities and services are not.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "schoharie",
+      "name": "Schoharie",
+      "sources": [
+        {
+          "url": "https://visitschohariecounty.com/taste-the-seasons",
+          "title": "Taste the Seasons | Visit Schoharie County",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism separates farm stands, a seasonal Sunday farmers market, farm stays and a craft-beverage loop.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A producer selling through several channels should publish separate farm-stand, market-pickup and farm-stay information rather than one universal opening time."
+      },
+      "uncertainty": "Verify which channels the business actually uses and current market dates.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "schuyler",
+      "name": "Schuyler",
+      "sources": [
+        {
+          "url": "https://parks.ny.gov/parks/142/?os=f",
+          "title": "Watkins Glen State Park",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "State Parks lists a shuttle bus operating between park entrances only.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An excursion seller should specify its own pickup and drop-off and explain whether the park entrance shuttle is separate from its service."
+      },
+      "uncertainty": "Check current shuttle season and availability; it is not transport to hotels or attractions.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "seneca",
+      "name": "Seneca",
+      "sources": [
+        {
+          "url": "https://www.discoverseneca.com/food-drink-dining/winery-craft-beverage",
+          "title": "Winery and Craft Beverage | Discover Seneca",
+          "authority": "County chamber tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The tourism directory includes the Cayuga Lake Wine Trail and individual wineries and breweries.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A tasting business should confirm its actual wine-trail participation and define group reservation requirements before using trail branding on a booking page."
+      },
+      "uncertainty": "Directory alone provides no specific reservation rule or evidence of membership.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "steuben",
+      "name": "Steuben",
+      "sources": [
+        {
+          "url": "https://exploresteuben.com/stories/artsy-workshops-in-steuben-county/",
+          "title": "Artsy Workshops in Steuben County",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The tourism article distinguishes boatbuilding workshops from glass experiences and says Hands-On Glass offers scheduled appointments to make objects including ornaments and paperweights.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A glass workshop booking should identify the object selected and appointment, then publish the operator’s actual age, duration and finished-piece collection arrangements."
+      },
+      "uncertainty": "Source supports appointment/object choice; age, duration and collection need operator confirmation.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "suffolk",
+      "name": "Suffolk",
+      "sources": [
+        {
+          "url": "https://gis.suffolkcountyny.gov/server/rest/services/LocalGovernmentSQLData/FarmstandPoint/FeatureServer",
+          "title": "Suffolk Farmstand Point Data",
+          "authority": "County government GIS",
+          "accessedDate": "2026-10-22",
+          "facts": "The county maintains hours, websites and addresses for farm stands, farmers markets, oyster markets, fish markets and flower shops.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A direct-sale producer should distinguish its pickup outlet from production site and reconcile public hours with its order confirmation."
+      },
+      "uncertainty": "Dataset description does not establish individual listing freshness or available inventory.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "st-lawrence",
+      "name": "St. Lawrence",
+      "sources": [
+        {
+          "url": "https://dec.ny.gov/places/fishing-and-canoeing-the-raquette-river",
+          "title": "Fishing and Canoeing the Raquette River",
+          "authority": "State agency",
+          "accessedDate": "2026-10-22",
+          "facts": "DEC provides a St. Lawrence County section and points to county boat launches and accessible recreation information.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "An outfitter should identify the specific river segment and departure/return access in the quote rather than treat the whole Raquette River as one pickup location."
+      },
+      "uncertainty": "Specific route constraints and transport requirements not established by retrieved extract.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "sullivan",
+      "name": "Sullivan",
+      "sources": [
+        {
+          "url": "https://sullivancatskills.com/travel-blog/hotels-with-fly-fishing-stays-in-the-sullivan-catskills/",
+          "title": "Hotels With Fly Fishing Stays",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The article distinguishes fishing with one’s own gear from booking a local-guide lesson, with a seasonal lesson window for a featured stay.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A fishing-focused lodging site should separate room booking, access to fishing and a paid guided lesson, stating who confirms each reservation."
+      },
+      "uncertainty": "Do not generalize a featured property’s season or access to all lodging.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "tioga",
+      "name": "Tioga",
+      "sources": [
+        {
+          "url": "https://gis.tiogacountyny.gov/programs-agencies/soil-and-water/",
+          "title": "Soil and Water | Tioga County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county district participates in the Agricultural Resource Group and provides educational activities at Sundaes at the Farm and the county fair.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A farm hosting a public educational event should distinguish that event’s visitor information from ordinary farm operations."
+      },
+      "uncertainty": "No host farm, current date or regular visitor access established; inadequate for substantial county content alone.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "tompkins",
+      "name": "Tompkins",
+      "sources": [
+        {
+          "url": "https://www.visitithaca.com/blog/post/best-fall-hikes/",
+          "title": "Fall Hikes in Ithaca",
+          "authority": "Designated tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "Tourism describes different routes, including a universally accessible boardwalk across Six Mile Creek and a flat paved half-mile round-trip Lower Falls loop.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A guided walk seller should name its actual route and explain surface, distance and access features before the customer chooses an outing."
+      },
+      "uncertainty": "Verify which route each description refers to; do not use accessible as a blanket package claim.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "ulster",
+      "name": "Ulster",
+      "sources": [
+        {
+          "url": "https://www.ulstercountyny.gov/Departments/Tourism/Film-Office/Permitting",
+          "title": "Film Permitting | Ulster County",
+          "authority": "County government",
+          "accessedDate": "2026-10-22",
+          "facts": "The county film office helps determine relevant location jurisdiction and connect productions with authorities.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A filming-location inquiry should capture the exact property and proposed use and direct permit questions to the film office before confirming a shoot."
+      },
+      "uncertainty": "This is workflow routing, not a statement of permit requirements or legal advice.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "warren",
+      "name": "Warren",
+      "sources": [
+        {
+          "url": "https://cdta.org/trolleys",
+          "title": "Trolleys | CDTA",
+          "authority": "Public transit authority",
+          "accessedDate": "2026-10-22",
+          "facts": "CDTA distinguishes route 876 between Glens Falls and Lake George from route 877 between Lake George and Bolton, serving different destinations.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A hotel or attraction should name the actual route/stop for arrival and publish a timetable link with the booking confirmation."
+      },
+      "uncertainty": "Verify current operating season, stop location and walking connection.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "washington",
+      "name": "Washington",
+      "sources": [
+        {
+          "url": "https://washingtoncounty.fun/the-county-bounty-tour/",
+          "title": "County Bounty Tour: September 12–13, 2026",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "The dated agricultural tour lists participating stops and specific vendor activity, including on-site cheese sampling.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating producer should separate special tour-day sampling from normal retail opening and archive expired event details after the date."
+      },
+      "uncertainty": "2026 event has passed; not evidence of future tour dates or routine sampling.",
+      "evidenceStatus": "candidate"
+    },
+    {
+      "slug": "wayne",
+      "name": "Wayne",
+      "sources": [
+        {
+          "url": "https://www.waynecountytourism.com/2026/09/30/28-years-of-apple-touring-in-wayne-county/",
+          "title": "29th Annual Apple Tasting Tour",
+          "authority": "County tourism",
+          "accessedDate": "2026-10-22",
+          "facts": "County tourism published a September 2026 Apple Tasting Tour announcement directing visitors to the tour’s details.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A participating orchard should separate tour activities from regular U-pick or retail hours and link current event details in its seasonal visit page."
+      },
+      "uncertainty": "Specific activity, dates and participation need verification; stale URL wording is not the event title.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "westchester",
+      "name": "Westchester",
+      "sources": [
+        {
+          "url": "https://www.visitwestchesterny.com/film/filmed-in-westchester/",
+          "title": "Filmed in Westchester",
+          "authority": "County tourism and film",
+          "accessedDate": "2026-10-22",
+          "facts": "The county film office describes sound stages in Yonkers and a range of filming locations around the county.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A production venue can distinguish studio rental from location scouting and publish its actual load-in, available rooms and crew-service information."
+      },
+      "uncertainty": "Source does not prove an individual venue’s availability, production capability or credits.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "wyoming",
+      "name": "Wyoming",
+      "sources": [
+        {
+          "url": "https://www.governor.ny.gov/news/governor-hochul-announces-grand-opening-innovative-autism-nature-trail-letchworth-state-park",
+          "title": "Autism Nature Trail at Letchworth State Park Opens",
+          "authority": "State government",
+          "accessedDate": "2026-10-22",
+          "facts": "The 2021 announcement locates the trail near Humphrey Nature Center with parking, restrooms and Wi-Fi and describes its accessible design.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A nearby accommodation can link the exact trail visitor information and separately state its own sensory and physical access features for guests comparing stays."
+      },
+      "uncertainty": "An attraction’s design does not establish suitability of lodging or a clinical benefit; current facilities need checking.",
+      "evidenceStatus": "limited"
+    },
+    {
+      "slug": "yates",
+      "name": "Yates",
+      "sources": [
+        {
+          "url": "https://business.yatesny.com/list/member/yates-county-cooperative-penn-yan-farm-craft-market-823",
+          "title": "Yates County Cooperative Penn Yan Farm and Craft Market",
+          "authority": "County chamber tourism directory",
+          "accessedDate": "2026-10-22",
+          "facts": "The chamber directory locates the cooperative farm and craft market on Main Street in Penn Yan.",
+          "verification": "Web search indexed extract reviewed"
+        }
+      ],
+      "editorialInference": {
+        "websiteTask": "A market vendor should offer the correct collection location and market-day fulfillment option separately from farm pickup."
+      },
+      "uncertainty": "Listing does not establish current market dates or vendor participation; insufficient on its own.",
+      "evidenceStatus": "limited"
+    }
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "created": "2026-10-22",
+  "status": "Seven worked planning drafts plus one supporting example; independent review corrections applied; not published",
+  "method": "Source facts are separately attributed. Website recommendations are original planning analysis, not field observations, completed client projects or measured outcomes.",
+  "drafts": [
+    {
+      "slug": "cayuga",
+      "title": "A public adaptive launch is only one part of a rental booking",
+      "audience": "Paddlesport rental and guiding businesses that actually serve Frontenac Park in Union Springs.",
+      "sourceFact": "Cayuga County Tourism identifies an adaptive kayak launch at Frontenac Park, an access point for the Cayuga County Blueway Trail.",
+      "sourceUrls": [
+        "https://www.tourcayuga.com/things-to-do/outdoor-recreation/on-the-water/"
+      ],
+      "opening": "A customer can find an accessible public dock and still be unable to tell whether a rental company can supply a suitable boat, deliver it to that dock, or help with a transfer. For a Cayuga County outfitter serving this location, the website needs to describe the whole offered service. The dock’s features do not establish the rental company’s equipment or staffing.",
+      "sections": [
+        {
+          "heading": "Describe the handoff at Frontenac",
+          "text": "Make the booking choice explicit: equipment pickup, delivery to an agreed meeting point, or a guided session. Show the exact location where the customer meets staff, with a written description beside the map. Then identify what the customer receives there. An equipment photograph should show the model actually supplied; a photograph of the public launch cannot stand in for that information."
+        },
+        {
+          "heading": "Offer a practical access conversation",
+          "text": "Give customers a way to ask about equipment, the route from parking, and assistance before paying. Ask what arrangements would help, rather than requesting a diagnosis. Staff should confirm what they can provide and identify anything still unresolved. If a request needs a conversation, explain that the submission is an availability inquiry and say when the business normally replies."
+        },
+        {
+          "heading": "Keep the decision with the booking",
+          "text": "After arrangements are agreed, include them in the confirmation: meeting point, equipment, assistance supplied, responsible contact and the business’s actual change policy. Avoid leaving a critical agreement in a social-media conversation that the person handing over the boat will never see."
+        }
+      ],
+      "worksheet": [
+        [
+          "Service choice",
+          "Pickup, delivery or guided session; list only options actually offered."
+        ],
+        [
+          "Arrival point",
+          "Exact meeting place and written route from the relevant parking area."
+        ],
+        [
+          "Equipment and assistance",
+          "What is available, what needs confirmation, and whom to contact."
+        ],
+        [
+          "Confirmation",
+          "Carry the agreed arrangements into the customer and staff copies."
+        ]
+      ],
+      "reviewCheck": "Ask someone unfamiliar with the business to plan a rental using the page. Can they distinguish public dock features from services supplied by the outfitter, and ask for an arrangement without completing payment?",
+      "proofNeeded": "Owner-confirmed launch access, current equipment, photographs the owner can use, and staff-confirmed assistance. This is a planning recommendation, not an accessibility certification or a claim about an existing client.",
+      "distinctReason": "The page solves the boundary between a named public adaptive launch and a private rental handoff; it is narrower than a county-wide accessibility claim.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed access-information panel",
+        "intro": "Illustrative copy structure; the operator supplies the bracketed facts before use. None of the placeholders is a statement about an actual rental company.",
+        "columns": [
+          "Panel element",
+          "Proposed content"
+        ],
+        "rows": [
+          [
+            "Public facility",
+            "Frontenac Park has an adaptive public launch. Read the linked facility information for its features."
+          ],
+          [
+            "Our meeting point",
+            "Meet at [specific location]. The route from [parking area] is [verified description]."
+          ],
+          [
+            "Equipment we supply",
+            "For this booking we can provide [confirmed model and relevant features]."
+          ],
+          [
+            "Assistance",
+            "We provide [confirmed assistance]. Please contact [business contact] before payment if you want to discuss an arrangement."
+          ],
+          [
+            "Confirmation",
+            "Your agreed equipment, handoff point and assistance will be repeated in the booking confirmation."
+          ]
+        ],
+        "check": "Keep the public-facility statement visually separate from the operator’s equipment and assistance. Remove every unfilled placeholder before a real site uses the copy."
+      }
+    },
+    {
+      "slug": "essex",
+      "title": "Put AMR access preparation before the lodging confirmation",
+      "audience": "Essex County accommodation providers whose guests plan hikes through the Adirondack Mountain Reserve.",
+      "sourceFact": "DEC identifies the AMR tract in Keene and states that advance reservations for access through it are required during the listed seasonal reservation period. DEC’s page explains exceptions and access conditions.",
+      "sourceUrls": [
+        "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+      ],
+      "opening": "A confirmed room does not establish access to a guest’s planned hike. If a lodging website recommends an AMR itinerary, the guest needs to discover that separate preparation while planning the stay. A large list of nearby peaks is less useful than a clear handoff to the organization that controls access.",
+      "sections": [
+        {
+          "heading": "Build an itinerary check, not a second reservation system",
+          "text": "Place a short question beside the property’s hiking information: does the planned route enter through AMR? Link the specific DEC access page and the official reservation service it identifies. Keep trail access separate from room availability. Do not label a room package as including hiking access unless the business can establish the exact arrangement it is selling."
+        },
+        {
+          "heading": "Use two confirmation tracks",
+          "text": "The accommodation confirmation should state what the business has reserved. A separate preparation section can ask the guest to check their own hiking access and review the current agency instructions. Do not collect reservation account passwords or copy a guest’s access credentials into the property’s general contact form. If the business offers itinerary advice, identify the contact and scope of that help."
+        },
+        {
+          "heading": "Make maintenance a small, assigned job",
+          "text": "A staff member should check the official links before the seasonal campaign goes live and when an agency notice changes. Keep a reviewed date on the property’s information. Avoid copying every exception and time window into several pages: a compact explanation plus the authoritative source is easier to maintain. If a guest cannot obtain their preferred access, direct them to a conversation about alternatives; do not substitute an unverified route automatically."
+        }
+      ],
+      "worksheet": [
+        [
+          "Room confirmation",
+          "What the lodging reservation actually includes."
+        ],
+        [
+          "Separate access step",
+          "Official AMR guidance and reservation link, clearly labeled external."
+        ],
+        [
+          "Guest help",
+          "Who can discuss itinerary questions and what assistance is available."
+        ],
+        [
+          "Owner review",
+          "Named person, next check date and current source URL."
+        ]
+      ],
+      "reviewCheck": "Try a fictional room booking for a guest who has never heard of AMR reservations. Before payment, can they tell that the lodging booking does not reserve their hike?",
+      "proofNeeded": "The owner’s actual hiking recommendations and current DEC guidance. Seasonal dates, exceptions and any claimed arrangement must be checked before publication.",
+      "distinctReason": "The local access dependency changes the sequence of a lodging website and its confirmation, rather than merely adding a nearby attraction.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed booking-preparation panel",
+        "intro": "Illustrative accommodation copy. Link the live official instructions and verify the current reservation period instead of turning this example into a complete access-rules summary.",
+        "columns": [
+          "Where it appears",
+          "Proposed message or action"
+        ],
+        "rows": [
+          [
+            "Hiking information before booking",
+            "Planning a route through AMR? Check DEC’s current access guidance and the reservation service linked there before finalizing your itinerary."
+          ],
+          [
+            "Room confirmation",
+            "Your accommodation is reserved. This confirmation does not reserve access through AMR."
+          ],
+          [
+            "Preparation link",
+            "Check official AMR access guidance — clearly label the external destination."
+          ],
+          [
+            "Guest needs help",
+            "Contact [the property’s actual advice contact] to discuss your plans. Do not promise a reservation or unverified alternative route."
+          ],
+          [
+            "Maintenance entry",
+            "Source link; date checked; staff owner; next seasonal review."
+          ]
+        ],
+        "check": "Review a room confirmation with the outdoor advice collapsed. The separate-access statement should still be visible and understandable."
+      }
+    },
+    {
+      "slug": "franklin",
+      "title": "Quote the carry to Long Pond, not just the drive to a map pin",
+      "audience": "Franklin County canoe outfitters offering delivery or trip support around the Saint Regis Canoe Area.",
+      "sourceFact": "DEC lists two different Long Pond access carries: 1.1 miles from Floodwood Crossing parking and 0.3 mile from Long Pond parking. These are different starting points.",
+      "sourceUrls": [
+        "https://dec.ny.gov/places/saint-regis-canoe-area"
+      ],
+      "opening": "“Deliver to Long Pond” leaves an important part of an outfitter’s job undefined. A vehicle can reach a parking area while the customer still has equipment to carry to the water. The website’s quote request should identify the access point and the service boundary before the owner estimates time, staffing or price.",
+      "sections": [
+        {
+          "heading": "Name each offered access point",
+          "text": "Use the parking-area names customers will see in official directions. Put the corresponding launch information beside each option, and include an “I need help choosing” choice. Avoid using one general Long Pond pin for several pickup or delivery arrangements. The source’s distance describes the route; it does not tell a customer how long their own party will need."
+        },
+        {
+          "heading": "Define where responsibility changes",
+          "text": "For each offered option, state whether staff deliver equipment to parking, carry it to the water, accompany the party, or only meet them for pickup. If carry assistance is available by arrangement, ask about it before taking a final payment. The quote should identify the boat and other equipment involved, the handoff location, the return arrangement and any item the customer must provide."
+        },
+        {
+          "heading": "Test the uncomfortable case",
+          "text": "A useful review case is a customer who selects the longer carry but assumes the booking includes delivery to the water. The website should surface that assumption early enough to correct the order. Another case is a customer who changes access points after receiving a quote. Make that a request to the operator, because the change may alter the work; do not silently keep an old price and meeting instruction."
+        }
+      ],
+      "worksheet": [
+        [
+          "Access point",
+          "Named parking area, official directions link, or help choosing."
+        ],
+        [
+          "Handoff",
+          "Parking, water or another explicitly agreed location."
+        ],
+        [
+          "Carry service",
+          "Customer carries, staff assistance requested, or guided arrangement."
+        ],
+        [
+          "Return plan",
+          "Collection point and how to request a change."
+        ]
+      ],
+      "reviewCheck": "Can a reader distinguish the two access points and identify who carries the boat, without calling to decode the word “delivery”?",
+      "proofNeeded": "Current access conditions and the outfitter’s actual routes, equipment, assistance and prices. Distances are sourced; service recommendations are original planning analysis.",
+      "distinctReason": "Two documented approaches to the same waterbody produce different quotation and confirmation requirements.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed Long Pond inquiry layout",
+        "intro": "Illustrative form specification, not an existing operator’s offer. Enable only services the outfitter actually provides.",
+        "columns": [
+          "Visible field or message",
+          "Proposed copy or options",
+          "What the operator receives"
+        ],
+        "rows": [
+          [
+            "Starting point",
+            "Floodwood Crossing parking — DEC lists a 1.1-mile carry; Long Pond parking — DEC lists a 0.3-mile carry; I need help choosing.",
+            "The named access point, never only “Long Pond.”"
+          ],
+          [
+            "Equipment handoff",
+            "At parking; at the water if offered; help deciding.",
+            "The requested handoff, kept separate from the selected access point."
+          ],
+          [
+            "Carry arrangements",
+            "I plan to carry the equipment; I want to ask about assistance.",
+            "A request for a conversation when help is needed, not an automatically promised service."
+          ],
+          [
+            "Proposed message before sending",
+            "This is a trip-support inquiry. We will confirm the meeting point, available assistance and price before you book.",
+            "The response must settle those three items before payment."
+          ],
+          [
+            "Change request after quoting",
+            "My access point or carry arrangements have changed.",
+            "A new review of the work and quote, with the prior arrangement visible to staff."
+          ]
+        ],
+        "check": "Review case: choose Floodwood Crossing and request handoff at the water. A valid response must confirm whether that longer carry is included and who performs it. It must not treat parking delivery as water delivery."
+      }
+    },
+    {
+      "slug": "hamilton",
+      "title": "Separate the campsite, boat and transport reservations at Indian Lake",
+      "audience": "Hamilton County rental and transport operators serving Indian Lake Islands campers.",
+      "sourceFact": "DEC describes Indian Lake Islands as a campground reached by boat only and directs campers to register at the launch next to Lewey Lake Public Campground.",
+      "sourceUrls": [
+        "https://dec.ny.gov/places/indian-lake-islands-campground-and-day-use-area"
+      ],
+      "opening": "For an island camping trip, hiring a boat and securing a campsite are different transactions. A rental website that treats every booking as a short paddle can miss the destination, overnight return arrangements and the customer’s need to move camping equipment. The intake needs to establish what the business is actually being asked to provide.",
+      "sections": [
+        {
+          "heading": "Start with the intended use",
+          "text": "Offer an overnight camping branch only if the operator supports it. Ask for the destination, dates, party size and whether the customer has arranged the campsite separately. A customer who has not yet reserved a site should see the official campground link and a clear explanation of whether the business can hold equipment while plans are unresolved. Never let the rental confirmation imply that it creates a campsite reservation."
+        },
+        {
+          "heading": "Separate hire from transport",
+          "text": "The page should explain whether the customer will operate the rented boat or is requesting a transport service. Staff need to confirm a suitable arrangement for passengers and gear using their actual equipment and operating limits. A simple web form should collect the planning information and route it to the operator; it should not manufacture a safety or capacity decision from a guessed formula."
+        },
+        {
+          "heading": "Close the loop for the return",
+          "text": "Show where the customer registers for the campground, where the business meets them, and where equipment returns. These can be separate places. Put the agreed return date and contact method in both the customer confirmation and the staff schedule. Explain the business’s real procedure when weather or a changed camping plan affects the rental; do not copy a generic cancellation paragraph that contradicts the booking terms."
+        }
+      ],
+      "worksheet": [
+        [
+          "Trip type",
+          "Day use or supported overnight camping."
+        ],
+        [
+          "Separate reservation",
+          "Campsite arrangements and official campground reference."
+        ],
+        [
+          "Requested service",
+          "Equipment hire, transport inquiry, or both if actually offered."
+        ],
+        [
+          "Handoff and return",
+          "Distinct meeting, registration and return locations."
+        ]
+      ],
+      "reviewCheck": "Walk through a fictional customer who has hired a boat but has no campsite. The website should expose the missing arrangement before presenting the trip as fully booked.",
+      "proofNeeded": "Owner-confirmed equipment, supported services, operating limits, current campground directions and actual cancellation terms.",
+      "distinctReason": "Boat-only access creates a three-part booking dependency that an ordinary day-rental form does not resolve.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed three-part reservation checklist",
+        "intro": "Illustrative planning record for an operator to complete with the customer. It does not reserve a campsite, approve boat capacity or offer transport.",
+        "columns": [
+          "Arrangement",
+          "Status choices",
+          "What must be explicit"
+        ],
+        "rows": [
+          [
+            "Campsite",
+            "Reserved separately; not yet arranged; destination changed.",
+            "A rental booking alone does not create the campsite reservation."
+          ],
+          [
+            "Equipment",
+            "Requested; suitable arrangement confirmed by operator; booked.",
+            "Which equipment, hire dates and agreed handoff are included."
+          ],
+          [
+            "Transport, if offered",
+            "Not requested; requested but unconfirmed; separately confirmed.",
+            "Who operates the boat and whether passenger or gear transport is included."
+          ],
+          [
+            "Locations",
+            "Campground registration; business meeting point; equipment return.",
+            "Three labeled locations, even if two happen to coincide."
+          ],
+          [
+            "Customer-facing confirmation",
+            "Only the items marked booked or confirmed above are arranged.",
+            "List unresolved arrangements and the next contact step."
+          ]
+        ],
+        "check": "Review case: equipment is booked, campsite is not yet arranged and transport was requested. The confirmation must show one completed transaction and two unresolved arrangements; it must not describe a fully reserved camping trip."
+      }
+    },
+    {
+      "slug": "niagara",
+      "title": "Name the trolley before promising hotel transportation",
+      "audience": "Niagara County lodging businesses explaining how guests reach attractions without using a car.",
+      "sourceFact": "Destination Niagara USA distinguishes the Discover Niagara Shuttle, the Niagara Falls Scenic Trolley within the state park, and NFTA’s Niagara Falls Trolley. Its guide describes seasonal operation and different coverage and fare arrangements.",
+      "sourceUrls": [
+        "https://www.niagarafallsusa.com/planning-tools/transportation/trolleys/"
+      ],
+      "opening": "“The trolley is nearby” can mean several different services around Niagara Falls. A guest deciding whether to bring a car needs to know which service the property means, where to board it and whether it runs during the stay. A hotel’s arrival page can answer that without becoming a copy of three transportation websites.",
+      "sections": [
+        {
+          "heading": "Connect the property to the correct service",
+          "text": "Start with the property’s actual address and verified boarding point. Name the operator and service in the link text. Distinguish transportation between destinations from a trolley operating inside an attraction. If a hotel advertises a guest pass, verify participation and explain where the guest obtains it; the availability of a public service does not establish that the property provides a pass."
+        },
+        {
+          "heading": "Show the seasonal dependency",
+          "text": "Put the operator’s current timetable link beside the transport claim, not only in a general resources footer. If the lodging booking dates fall outside verified service dates, avoid a blanket year-round “car-free stay” promise. A simpler site can state the operating season and require a current schedule check without attempting to calculate itineraries. Give guests the property’s real alternative arrival information."
+        },
+        {
+          "heading": "Keep directions consistent after booking",
+          "text": "The confirmation should use the same service name and boarding location as the arrival page. Staff should be able to update this information in one maintained place. Do not duplicate timetable times across room descriptions, offer pages and automated emails unless the business has a reliable update process. Include a written description of the boarding point so that an embedded map is not the only usable instruction."
+        }
+      ],
+      "worksheet": [
+        [
+          "Named service",
+          "Operator and route name; avoid the generic label “trolley.”"
+        ],
+        [
+          "Property connection",
+          "Verified stop and written directions from the lodging."
+        ],
+        [
+          "Season and ticket",
+          "Current operator link and any verified hotel-pass arrangement."
+        ],
+        [
+          "Fallback arrival",
+          "The property’s actual alternative when the service is unavailable."
+        ]
+      ],
+      "reviewCheck": "Test one in-season stay and one winter stay. Can both guests determine which transport information applies, without assuming the state-park trolley serves their hotel?",
+      "proofNeeded": "Current operator schedules, stop verification and any property participation. The tourism overview supports the distinction between services, not a claim about a particular hotel.",
+      "distinctReason": "Three differently scoped local services make a generic transportation promise materially ambiguous.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed transport reference panel",
+        "intro": "A content layout based on the tourism agency’s distinctions. The hotel must verify its own connection and use current operator information before adapting it.",
+        "columns": [
+          "Service",
+          "Sourced distinction",
+          "Property-specific field to complete"
+        ],
+        "rows": [
+          [
+            "Discover Niagara Shuttle",
+            "County attractions shuttle; described as seasonal and free in the tourism guide.",
+            "Verified boarding stop, current operator timetable link and walking directions from the property."
+          ],
+          [
+            "Niagara Falls Scenic Trolley",
+            "Operates within Niagara Falls State Park.",
+            "Explain how the guest reaches the park; do not use it as the hotel-arrival option unless independently established."
+          ],
+          [
+            "NFTA Niagara Falls Trolley",
+            "A separate service; the guide describes passes for participating hotel guests.",
+            "Confirm whether this property participates and how guests obtain any included pass."
+          ],
+          [
+            "Maintenance record",
+            "Owner-maintained information, not a timetable copied from the guide.",
+            "Checked by; checked date; applicable season; next review date; fallback arrival link."
+          ]
+        ],
+        "check": "Proposed panel heading: “Which service helps you get here?” Show only verified services relevant to the property. Keep the other distinctions in a short explanation if they prevent confusion. The guide’s general fare information should not become an unverified hotel benefit."
+      }
+    },
+    {
+      "slug": "otsego",
+      "title": "Ask which baseball venue before quoting a group stay",
+      "audience": "Otsego County lodging providers handling tournament-family or team-group inquiries.",
+      "sourceFact": "Otsego County’s tourism organization identifies Cooperstown Dreams Park and Cooperstown All Star Village as separate youth tournament destinations and points visitors to a tournament changeover schedule.",
+      "sourceUrls": [
+        "https://www.thisiscooperstown.com/things-to-do/"
+      ],
+      "opening": "A form that asks only for a “Cooperstown week” can hide the details a lodging owner needs to assess a group request. Different families may mean different venues and arrival dates. The website should obtain those facts without making the customer describe the entire team’s travel plans in an empty message box.",
+      "sections": [
+        {
+          "heading": "Establish the venue and actual nights",
+          "text": "Offer the named venues only when they are relevant to the property, alongside “another event” and “not decided.” Ask for check-in and check-out dates separately from the tournament label. A link to the official changeover information helps a customer check their plans, but should not silently set their room nights. Travel before or after an event may differ from the event dates."
+        },
+        {
+          "heading": "Count the people who will stay",
+          "text": "Ask how many adults and children need accommodation at the property and how many rooms or units are being considered. Do not assume the entire team sleeps there. If multiple households will pay separately, identify that early and explain whether the owner can hold a group allocation, accept separate reservations or only quote a single booking. Publish only the arrangements the business actually offers."
+        },
+        {
+          "heading": "Return a usable group answer",
+          "text": "The confirmation or proposal should repeat the venue, nights, accommodation allocation and payment arrangement. Distinguish an inquiry, a temporary hold and a confirmed booking using the owner’s actual terms. Give the group organizer a clear next action. Avoid a generic “near all baseball” claim or a single drive-time number unless the route and conditions behind that estimate have been checked."
+        }
+      ],
+      "worksheet": [
+        [
+          "Venue",
+          "Dreams Park, All Star Village, another event or undecided."
+        ],
+        [
+          "Stay dates",
+          "Actual arrival and departure, separate from tournament dates."
+        ],
+        [
+          "Guests and rooms",
+          "People staying at this property and requested unit allocation."
+        ],
+        [
+          "Booking structure",
+          "One payer or multiple households; inquiry, hold or confirmation."
+        ]
+      ],
+      "reviewCheck": "Test two fictional groups using different venues and overlapping dates. The owner should receive enough information to distinguish the requests and respond without guessing who needs a bed.",
+      "proofNeeded": "Property capacity, supported group arrangements, current venue information and the owner’s reservation terms. No tournament affiliation or client results are claimed.",
+      "distinctReason": "The venue and tournament schedule affect the booking data; “Cooperstown” alone does not describe the stay.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed tournament-family request",
+        "intro": "Illustrative inquiry fields; these are not a reservation form for either tournament organization.",
+        "columns": [
+          "Field",
+          "Proposed options or purpose"
+        ],
+        "rows": [
+          [
+            "Destination",
+            "Cooperstown Dreams Park; Cooperstown All Star Village; another event; undecided."
+          ],
+          [
+            "Actual stay",
+            "Arrival date and departure date, not a single “tournament week” field."
+          ],
+          [
+            "Staying at this property",
+            "Adults; children; rooms or units requested. Do not collect children’s names for initial scoping."
+          ],
+          [
+            "Who is booking",
+            "One household; one organizer for several households; help deciding."
+          ],
+          [
+            "Payment arrangement",
+            "One payer; separate household reservations if offered; needs discussion."
+          ],
+          [
+            "After submission",
+            "Request received. Availability and any hold are confirmed only under the property’s stated terms."
+          ]
+        ],
+        "check": "Review case: a team organizer wants rooms for six accompanying households, while the players have separate arrangements. The form must count the actual lodging guests without automatically treating the full team as staying at the property."
+      }
+    },
+    {
+      "slug": "oneida",
+      "title": "A short scoping example for a UAS test-support supplier",
+      "audience": "Oneida County engineering suppliers that can substantiate services related to uncrewed aircraft testing.",
+      "sourceFact": "Oneida County describes a UAS testing facility at Griffiss International Airport in Rome within the Rome-to-Syracuse corridor. The facility’s existence does not establish any private supplier’s access or authorization.",
+      "sourceUrls": [
+        "https://oneidacountyny.gov/departments/airport/uas-test-site/",
+        "https://nyuastestsite.com/"
+      ],
+      "opening": "The county-owned testing facility at Griffiss provides a real local reference, but it does not prove that a nearby supplier has a distinct purchasing process. This shorter example shows how a firm with documented test-support work could describe its role without borrowing the facility’s credentials.",
+      "sections": [
+        {
+          "heading": "State the supplier’s demonstrated role",
+          "text": "Describe the specific work the firm can substantiate and the output the buyer receives. A county facility reference should explain context, not imply a partnership, authorization or access entitlement. Keep aerial photography inquiries separate if the company also offers that service."
+        },
+        {
+          "heading": "Use a modest initial inquiry",
+          "text": "Ask for a non-confidential project objective, the desired output and dates, and whether the customer has arranged facility coordination. State what the supplier will review next. Agree a suitable exchange method before requesting technical files. This is general inquiry-design advice applied to the sourced local context; it is not evidence of unmet Oneida County demand."
+        }
+      ],
+      "worksheet": [
+        [
+          "Customer objective",
+          "What is the buyer trying to test or obtain?"
+        ],
+        [
+          "Supplier contribution",
+          "Which documented deliverable is being requested?"
+        ],
+        [
+          "Other arrangements",
+          "Who is responsible for facility coordination and permissions?"
+        ],
+        [
+          "Next exchange",
+          "Who replies, and how will additional information be exchanged?"
+        ]
+      ],
+      "reviewCheck": "Can an engineer tell what the supplier provides, what remains with the facility operator, and how to begin without uploading confidential plans?",
+      "proofNeeded": "Owner-approved capability evidence and exact relationships. Any regulatory or operational statement requires its own current authoritative verification; this draft makes no permission claim.",
+      "distinctReason": "The facility establishes local context. The evidence is not strong enough for this example to stand alone as a distinct Oneida commercial article.",
+      "format": "Supporting example"
+    },
+    {
+      "slug": "onondaga",
+      "title": "Keep ON Farm Fest visitor information separate from everyday farm shopping",
+      "audience": "Onondaga County farms participating in ON Farm Fest or maintaining a past-event page.",
+      "sourceFact": "The Onondaga County Agriculture Council describes ON Farm Fest as a special event at selected farms. Its host page lists the September 19, 2026 event and says applying does not guarantee selection.",
+      "sourceUrls": [
+        "https://onondagagrown.com/about/host-farm/",
+        "https://onondagagrown.com/"
+      ],
+      "opening": "An annual open-farm event can bring people to a website that normally serves shop customers, wholesale buyers or appointment visitors. If the event details are blended into ordinary hours, the website can continue inviting visitors after the event has ended. The useful distinction is between the farm’s regular business and its confirmed role on a specific event date.",
+      "sections": [
+        {
+          "heading": "Create a dated event module",
+          "text": "Show the year, confirmed participation, arrival instructions and activities the farm has agreed to offer. Link the organizer’s event page for the wider program. Keep regular shop hours and purchase options in their own section. Applying to host is not the same as being selected, so an unconfirmed application should never become a public invitation."
+        },
+        {
+          "heading": "Plan the day after the event",
+          "text": "For the 2026 event, the date has already passed as of this research. A useful page would now say the event has ended and direct visitors to the farm’s current shopping or appointment options. It should not roll the year forward automatically or reuse last year’s participation claim for 2027. Preserve useful photographs or a factual recap when the farm owns the rights, but remove expired registration prompts."
+        },
+        {
+          "heading": "Give each event state different copy",
+          "text": "A confirmed upcoming invitation needs the approved date, activities and arrival details. An ended event needs an explicit end state and a route back to the farm’s ordinary business. Unconfirmed future participation needs no visitor invitation. Treat these as three editorial states so the page can change without silently claiming a new year’s approval. Keep the regular shop page available throughout; the end of a special event does not mean the farm has stopped trading."
+        }
+      ],
+      "worksheet": [
+        [
+          "Event state",
+          "Confirmed upcoming event, ended event, or participation unconfirmed."
+        ],
+        [
+          "Event-only details",
+          "Date, approved activities and arrival instructions."
+        ],
+        [
+          "Normal business",
+          "Current shop hours, ordering and appointment options."
+        ],
+        [
+          "Update owner",
+          "Person responsible for ending the invitation and checking next year."
+        ]
+      ],
+      "reviewCheck": "Open the page the day after the event. Can a first-time visitor tell that the special invitation ended and understand how to buy from or visit the farm now?",
+      "proofNeeded": "Current organizer information, confirmed farm participation, approved activities and product provenance. No future host selection is assumed.",
+      "distinctReason": "A documented county program and its selection process change the lifecycle of a farm’s event content and everyday trading information.",
+      "format": "Worked guide",
+      "artifact": {
+        "title": "Proposed event-state copy",
+        "intro": "Illustrative page states, researched October 22, 2026. Confirm the farm’s participation before using any past or future participation claim.",
+        "columns": [
+          "State",
+          "Proposed visible copy",
+          "Page behavior"
+        ],
+        "rows": [
+          [
+            "Confirmed future participation",
+            "We are a confirmed host for [year and date]. Here are our approved activities and arrival details.",
+            "Publish the invitation only after confirmation; link current organizer information."
+          ],
+          [
+            "The 2026 event has ended",
+            "The September 19, 2026 ON Farm Fest has ended. For current shopping or visits, see our regular business information.",
+            "Remove event booking or visit prompts; preserve only a truthful, rights-cleared recap if useful."
+          ],
+          [
+            "Future participation unconfirmed",
+            "Our participation in a future ON Farm Fest has not been confirmed.",
+            "Do not reuse the old invitation or automatically change the year."
+          ],
+          [
+            "Regular trading",
+            "Current shop hours and appointment information.",
+            "Keep these separate from event-only hours and update them independently."
+          ]
+        ],
+        "check": "Assign the change from upcoming to ended when the invitation is published. Review the visible heading, any action button and linked social announcements after the event."
+      }
+    }
+  ]
+}
