@@ -19,10 +19,19 @@ jobs:
       - name: Produce candidates for human visual review
         run: npm run test:visual -- --update-snapshots=all
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
           name: visual-candidates-${{ github.sha }}
           path: tests/visual/baselines/linux/
           if-no-files-found: error
+          retention-days: 14
+      - name: Retain capture failures for diagnosis
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: visual-capture-diagnostics
+          path: output/visual/
+          if-no-files-found: ignore
           retention-days: 14
 # This workflow never publishes, commits, or satisfies the production CI gate.
 # A reviewer must inspect and commit approved candidates; normal checks cannot

@@ -1,11 +1,18 @@
 import {test,expect} from '../browser/fixtures.mjs';
 
 async function settle(page){
+ const city=page.locator('[data-living-city]');
+ if(await city.count()){
+  await expect(city).toHaveAttribute('data-city-ready','true');
+  await expect(city).toHaveAttribute('data-city-state','reduced');
+ }
  await page.evaluate(async()=>{
   document.querySelectorAll('img').forEach(img=>img.loading='eager');
   document.querySelectorAll('video').forEach(video=>video.pause());
   await document.fonts.ready;
-  await Promise.all([...document.images].map(img=>img.complete?Promise.resolve():new Promise(resolve=>{img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});setTimeout(resolve,7000);}))); 
+  await Promise.all([...document.images].map(img=>img.complete?Promise.resolve():new Promise(resolve=>{img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});setTimeout(resolve,7000);})));
+  await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));
+  await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
  });
  await page.mouse.move(0,0);
 }
