@@ -42,6 +42,14 @@ Visual inspection included the actual home capture and continuous views of eight
 
 The October 22 Search Console inspection found no reported manual actions or security issues. The available indexing report was dated October 15 and predates the latest public-indexing changes; its counts cannot establish coverage of this release. The short performance history is a baseline, not evidence that consolidation has improved rankings.
 
+## Published result and search follow-up
+
+The release gates above subsequently passed for source `8cc50574fa430bf8397b63d3e0663e6b57ed9460`, published as authenticated runtime `44c1d2ff-b39b-4493-8b3c-2a1b6286ae0c`. The complete local check passed 683 unit tests and 274 browser tests, with 151 intentional project skips. GitHub technical and visual checks passed; 34 screenshot references were reviewed. Live verification matched all 91 HTML routes and 1,040 assets, checked all 332 redirects with GET and HEAD, and passed 72 browser journeys. Migration 0020 preserved every pre-migration inquiry and aggregate row. The private `evidence/regional-cleanup-20261022/release-record.json` retains the exact results and rollback record.
+
+The October 22 follow-up resubmitted the existing `https://wonderandmethod.com/sitemap.xml` in Search Console. Google confirmed successful submission and changed its discovered-page count from 414 to 90. The public sitemap matched the tested build byte for byte. This establishes successful sitemap receipt and reported discovery, not indexing or rankings. Receipt screenshots and the authenticated live follow-up are under `evidence/search-followup-20261022/`. [BUILD_STATUS.md](../BUILD_STATUS.md) identifies the deployed version independently of later documentation commits.
+
+Google's smartphone live inspection of `/areas/virginia/` at 5:51 PM Eastern on October 22 fetched the page successfully, allowed crawling and indexing, reported the intended self-canonical, and detected one valid Breadcrumbs item. Its separate indexed-state report still identified this newly published URL as unknown to Google. The live test establishes availability for that tested URL; it does not establish indexing, Google's eventual canonical selection or coverage of every new hub.
+
 ## Official guidance consulted
 
 - [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)

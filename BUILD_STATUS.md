@@ -1,23 +1,23 @@
 # Implementation status — October 22, 2026
 
-The website is published and verified. The latest application release is the [long-tail content update](operations/LONGTAIL_CONTENT_20261022.md), following the [nine-state expansion](operations/NORTHEAST_EXPANSION_20261022.md). This status distinguishes the deployed application from later documentation commits and from the remaining requirements for accepting client work.
+The website is published and verified. The latest application release is the [regional content consolidation and desktop-header fix](operations/REGIONAL_CONTENT_REVIEW_20261022.md), following the long-tail content and service-area expansions. This status distinguishes the deployed application from later documentation commits and from the remaining requirements for accepting client work.
 
 ## Current published website
 
 | Item | Verified October 22, 2026 |
 |---|---|
 | Origin | https://wonderandmethod.com |
-| Published source | `14dfa494062a636953a56830c1ac47ef13607f2a` |
-| Authenticated runtime | `17d7370c-8b5d-41b8-992c-3a2e899c1526` |
-| Content | 415 HTML routes; 414 sitemap URLs; 27 buyer guides; 333 county/equivalent guides across twelve states |
-| Technical validation | 661 unit tests and 235 browser tests passed; 120 intentional browser project skips; exact-commit CI and predeploy passed |
-| Live verification | All 415 HTML routes and 1,027 asset hashes match the tested build; 16 new-guide live journeys passed |
+| Published source | `8cc50574fa430bf8397b63d3e0663e6b57ed9460` |
+| Authenticated runtime | `44c1d2ff-b39b-4493-8b3c-2a1b6286ae0c` |
+| Content | 91 HTML routes including the error page; 90 sitemap URLs; 27 buyer guides; 1,012 area entries across 19 states and Washington, DC; the custom Buffalo/Erie page retained |
+| Technical validation | 683 unit tests and 274 browser tests passed; 151 intentional browser project skips; 34 reviewed screenshot references; exact-commit CI and predeploy passed |
+| Live verification | All 91 HTML routes and 1,040 asset hashes match the tested build; all 332 permanent redirects verified with GET and HEAD; 72 live browser journeys passed, including desktop resizing and no-JavaScript navigation |
 | Independent review | Editorial, source and release-evidence reviews passed with no unresolved issue |
-| Database | Migrations through 0019; four new fixed page categories; existing aggregate keys/totals and all four inquiry records preserved |
-| Search | Indexing enabled; Google accepted sitemap resubmission. Its report still displayed 410 discovered pages immediately afterward, so processing/indexing of the four new URLs is unverified |
-| Monitoring | Authenticated operational health was healthy. The scheduled recovery timestamp advanced after deployment, and delivery/retention monitors received fresh pings; all three alerts use the existing support-email integration |
+| Database | Migrations through 0020; eight new fixed hub categories; all 419 pre-migration aggregate rows and all four inquiry records preserved; restored database integrity and foreign-key checks passed |
+| Search | Indexing enabled; Google accepted the updated sitemap on October 22 and reports Success with 90 discovered URLs. Discovery does not establish indexing or rankings |
+| Monitoring | Authenticated operational health was healthy at the October 22 follow-up, with no submission, delivery or retention attention required. Existing monitor setup and earlier provider receipts remain dated evidence; no new external alert-receiver receipt is claimed |
 
-The private release report is `C:/Wonder and Method/longtail-content-20261022/RELEASE-REPORT.md`. It links the exact technical manifest, CI, live HTTP/browser results, database preservation checks, independent reviews and provider observations. The preceding area expansion has its own report under `C:/Wonder and Method/northern-expansion-20261022/`.
+The private release record is `evidence/regional-cleanup-20261022/release-record.json`, with the matching technical manifest, live HTTP/browser results, redirect checks, database preservation results and backup evidence. [GitHub release checks](https://github.com/palatis3/wonder-and-method/actions/runs/39854235358) passed for the published source. The sitemap receipt and subsequent live check are under `evidence/search-followup-20261022/`. Earlier release reports remain historical evidence.
 
 Deployment identity comes from the authenticated operator response and the private build manifest. Public `/version.json` returns 404. Do not infer the running version from the latest repository commit or an old screenshot. Follow [PRODUCTION.md](deployment/PRODUCTION.md) for publication and verification.
 
