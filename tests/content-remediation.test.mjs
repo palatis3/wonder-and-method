@@ -1,3 +1,5 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
+import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
 import {researchGuideDetails} from '../src/research-guides.mjs';
 import {readFile} from 'node:fs/promises';
 import test from 'node:test';
@@ -38,16 +40,25 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
-test('county services precede optional worksheet and hub keeps one link per county',()=>{
+test('state directories lead with places, retain service links and give each of 1012 areas one destination',()=>{
  const pages=countyPages(offers),hub=pages.find(p=>p.path==='/areas/').body;
- for(const page of pages.filter(p=>/-(?:county|planning-region|city)\/$/.test(p.path))){
-  assert.ok(page.body.indexOf('id="services"')<page.body.indexOf('id="buyer-task"'),page.path);
-  assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/web-design\/"/);
+ assert.equal(pages.length,21);
+ for(const page of pages){
+  assert.ok(page.body.indexOf('id="counties"')>=0,page.path);
+  assert.ok(page.body.indexOf('id="counties"')<page.body.indexOf('id="scope"'),page.path);
+  for(const route of ['/pricing/','/services/'])assert.ok(page.body.includes(`href="${route}"`),page.path+' '+route);
+  assert.match(page.body,/href="\/contact\/\?request_kind=question#inquiry"/);
+  assert.doesNotMatch(page.body,/class="county-buyer-task"|class="county-planning-details"/);
  }
- assert.equal((hub.match(/href="\/areas\/[^"]+-(?:county|planning-region|city)\/"/g)||[]).length,333);
- assert.ok(hub.indexOf('/areas/erie-county/')<hub.indexOf('/areas/niagara-county/'));
- assert.match(pages.find(p=>p.path==='/areas/orange-county/').body,/Tuxedo Park remains a separate village/);
- assert.match(pages.find(p=>p.path==='/areas/albany-county/').body,/Green Island is a coterminous town and village/);
+ const destinations=[...hub.matchAll(/data-county-link href="([^"]+)"/g)].map(match=>match[1]);
+ assert.equal(destinations.length,1012);assert.equal(new Set(destinations).size,1012);
+ assert.deepEqual(destinations.slice().sort(),serviceStates.flatMap(state=>state.counties.map(county=>countyPath(county,state))).sort());
+ assert.equal(Object.keys(retiredCountyRoutes).length,332);
+ for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!destinations.includes(retired),retired);assert.ok(destinations.includes(destination),destination);}
+ assert.ok(destinations.indexOf('/areas/erie-county/')<destinations.indexOf('/areas/new-york/#niagara'));
+ const ny=pages.find(p=>p.path==='/areas/new-york/').body;
+ assert.match(ny.slice(ny.indexOf('id="orange"')).split('</details>')[0],/Tuxedo Park remains a separate village/);
+ assert.match(ny.slice(ny.indexOf('id="albany"')).split('</details>')[0],/Green Island is a coterminous town and village/);
 });
 
 test('catalog monthly entities match their services; public payment information and inquiry forms are indexable',()=>{

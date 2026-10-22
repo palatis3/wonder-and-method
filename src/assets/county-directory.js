@@ -34,8 +34,10 @@ export function unpackCountyNames(value){
  let previous='';
  return value.split('|').map(packed=>{const colon=packed.indexOf(':');previous=previous.slice(0,parseInt(packed.slice(0,colon),36))+packed.slice(colon+1);return previous;});
 }
-const placeTypes={city:'c',town:'t',village:'v',borough:'b',township:'s',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m'};
-const stateNames=Object.fromEntries(serviceStateInfo.flatMap(state=>[[state.name.toLowerCase(),state.id],[state.abbreviation.toLowerCase(),state.id]]));
+const placeTypes={city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w','federal district':'d','census designated place':'x',cdp:'x'};
+const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
+const typedPrefix=new RegExp('^('+typePattern+') of (.+)$'),typedSuffix=new RegExp('^(.+?) ('+typePattern+')$');
+const stateNames=Object.fromEntries(serviceStateInfo.flatMap(state=>[state.name,state.abbreviation,...(state.aliases||[])].map(name=>[normalizeCountyQuery(name),state.id])).sort((a,b)=>b[0].length-a[0].length));
 export function parseCountyQuery(value){
  let query=normalizeCountyQuery(value),state='',type='';
  for(const [name,id] of Object.entries(stateNames)){
@@ -44,8 +46,8 @@ export function parseCountyQuery(value){
  }
  // City is part of this shared borough-region name, not a place-type suffix.
  if(query==='new york city')return {query,state,type};
- const prefix=query.match(/^(city|town|village|borough|township|county|planning region|independent city|plantation|municipality) of (.+)$/);
- const suffix=query.match(/^(.+) (independent city)$/)||query.match(/^(.+) (city|town|village|borough|township|county|planning region|plantation|municipality)$/);
+ const prefix=query.match(typedPrefix)||query.match(/^(ward) (.+)$/);
+ const suffix=query.match(typedSuffix);
  if(prefix){type=prefix[1];query=prefix[2];}
  else if(suffix){type=suffix[2];query=suffix[1];}
  return {query,state,type};
@@ -53,7 +55,7 @@ export function parseCountyQuery(value){
 export function countyMatchScore(card,search,selectedState=''){
  return countyMatch(card,search,selectedState).score;
 }
-const typeLabels={y:'county',r:'planning region',i:'independent city',c:'city',t:'town',v:'village',b:'borough',s:'township',l:'plantation',m:'municipality',a:'place',p:'place or region'};
+const typeLabels={y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',x:'Census-designated place',a:'place',p:'place or region'};
 export function countyMatch(card,search,selectedState=''){
  if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return {score:0};
  if(!search.query)return {score:1,name:'',type:'state'};
@@ -65,7 +67,7 @@ export function countyMatch(card,search,selectedState=''){
   // the start of any word, so Erie cannot accidentally match Deferiet.
   const exact=name===search.query;
   const match=exact||(!search.type&&(name.startsWith(search.query)||name.includes(' '+search.query)));
-  const isArea=/[yri]/.test(type);
+  const isArea=/[yrid]/.test(type);
   const score=match?(exact?(isArea?6:type.includes('a')?5:type.includes('c')?4:3):isArea||type.includes('a')?2:1):0;
   if(score>result.score)result={score,name,type:search.type||typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place'};
  }
@@ -88,10 +90,10 @@ export function bindCountyDirectory(root=document){
  const stateLabels=Object.fromEntries(serviceStateInfo.map(state=>[state.id,state.name]));
  const areaPlural=controls.dataset.areaPlural||'areas';
  const makeResult=card=>{
-  const row=root.createElement('li'),link=card.element.querySelector('a').cloneNode(true),why=root.createElement('p');
+  const row=root.createElement('li'),link=card.element.querySelector('[data-county-link]').cloneNode(true),why=root.createElement('p');
   link.removeAttribute('aria-hidden');
   why.className='county-match-reason';
-  why.textContent=stateLabels[card.state]+(card.match.name?' · Matched '+card.match.type+': '+card.match.name: ' · Service area in this state');
+  why.textContent=stateLabels[card.state]+(card.match.name?' · Matched '+card.match.type+': '+card.match.name: ' · Service area');
   row.append(link,why);return row;
  };
  let filtering=false,openBeforeSearch=new Set();
@@ -123,10 +125,37 @@ export function bindCountyDirectory(root=document){
  };
  input.addEventListener('input',update);stateFilter?.addEventListener('change',update);
  clear.addEventListener('click',()=>{input.value='';if(stateFilter)stateFilter.value='';update();input.focus();});
- // In-page region links also expand the native disclosure they point to.
- const openTarget=()=>{const id=root.defaultView?.location.hash.slice(1);const section=sections.find(item=>item.id===id);if(section)section.open=true;};
- navigation?.addEventListener('click',event=>{const link=event.target.closest('a');const section=sections.find(item=>'#'+item.id===link?.getAttribute('href'));if(section)section.open=true;});
- root.defaultView?.addEventListener('hashchange',openTarget);
+ // Result links and saved fragments reveal both the area and its enclosing
+ // browse group. Clear filtering before navigating to a now-hidden source card.
+ const openTarget=(hash=root.defaultView?.location.hash,focus=false)=>{
+  let id;try{id=decodeURIComponent((hash||'').slice(1));}catch{return;}
+  const target=id&&root.getElementById(id);if(!target)return;
+  if(directory.contains(target)&&filtering){input.value='';if(stateFilter)stateFilter.value='';update();}
+  for(let element=target;element;element=element.parentElement)if(element.matches?.('details'))element.open=true;
+  if(focus){
+   const control=target.querySelector?.(':scope > summary,a[href]')||target;
+   if(!control.matches('a[href],summary,button,input,select,textarea,[tabindex]'))control.tabIndex=-1;
+   control.focus({preventScroll:true});
+  }
+  target.scrollIntoView({block:'start'});
+ };
+ root.addEventListener('click',event=>{
+  if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  const link=event.target.closest('a[href]');if(!link)return;
+  const url=new URL(link.href,root.defaultView.location.href),location=root.defaultView.location;
+  if(url.origin===location.origin&&url.pathname===location.pathname&&url.hash){
+   let target;try{target=root.getElementById(decodeURIComponent(url.hash.slice(1)));}catch{return;}
+   // Ordinary anchors (including the skip link) keep browser-native focus.
+   if(!target||(!directory.contains(target)&&!target.closest('.county-reference-library')))return;
+   // Native fragment navigation can move focus back from the summary after
+   // filtering removes the clicked result. Complete this same-page navigation
+   // ourselves so keyboard users arrive at the opened county or source entry.
+   event.preventDefault();
+   if(url.href!==location.href)root.defaultView.history.pushState(null,'',url.href);
+   openTarget(url.hash,true);
+  }
+ });
+ root.defaultView?.addEventListener('hashchange',()=>openTarget());
  input.disabled=false;if(stateFilter)stateFilter.disabled=false;controls.hidden=false;update();openTarget();
 }
 if(typeof document!=='undefined')bindCountyDirectory();

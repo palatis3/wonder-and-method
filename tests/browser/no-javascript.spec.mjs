@@ -50,7 +50,7 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'County, region, city or town'})).toBeDisabled();
+ await expect(page.getByRole('searchbox',{name:'County, region or community'})).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-county-search]')).toHaveCount(count);
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(0);
@@ -60,59 +60,76 @@ async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(count);
 }
 
-test('all statewide county links remain usable without JavaScript',async({page},testInfo)=>{
+async function openNativeCountyEntry(page,slug,place){
+ const entry=page.locator(`[data-county-area][id="${slug}"]`),summary=entry.locator(':scope > summary');
+ await summary.focus();await page.keyboard.press('Enter');
+ await expect(entry).toHaveAttribute('open','');await expect(summary).toBeFocused();
+ await expect(entry.locator('.county-directory')).toBeVisible();
+ await expect(entry.locator('.county-place-list')).toContainText([place]);
+ const referenceId=await entry.getByRole('link',{name:'Place definitions and sources',exact:true}).getAttribute('href');
+ await page.locator('.county-reference-sets > summary').click();
+ await entry.getByRole('link',{name:'Place definitions and sources',exact:true}).click();
+ await expect(page.locator(referenceId)).toBeVisible();
+ const source=page.locator(referenceId).locator('a[href^="#geography-source-"]').first(),sourceId=await source.getAttribute('href');
+ await page.locator('.county-source-index > summary').click();await source.click();
+ await expect(page.locator(sourceId)).toBeVisible();
+ await expect(page.locator(sourceId+' a')).toHaveAttribute('href',/^https:\/\//);
+ return entry;
+}
+
+test('New York county places and source references remain usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/new-york/?qa=1');
  await openNativeCountyLists(page,62);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
- await page.locator('[data-county-search] a[href="/areas/st-lawrence-county/"]').click();
- await expect(page.locator('main h1')).toContainText('St. Lawrence');
- await page.locator('.county-faq summary').first().click();
- await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
+ const entry=await openNativeCountyEntry(page,'st-lawrence','Ogdensburg');
+ await expect(entry.getByRole('heading',{name:'Cities',exact:true})).toBeVisible();
+ await expect(entry.locator('.county-geography-note')).toContainText('Canton');
+ await expect(entry.locator('[data-county-link]')).toHaveAttribute('href','/areas/new-york/#st-lawrence');
 });
 
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,333);
+ await openNativeCountyLists(page,1012);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
- await page.locator('[data-county-search] a[href="/areas/pennsylvania/columbia-county/"]').click();
- await expect(page.locator('main h1')).toContainText('Columbia');
- await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Bloomsburg');
- await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
- await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toBeVisible();
- await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/pennsylvania-columbia\.txt(?:\?v=[a-f0-9]+)?$/);
+ const entry=await openNativeCountyEntry(page,'columbia','Bloomsburg');
+ await expect(entry.getByRole('heading',{name:'Towns',exact:true})).toBeVisible();
+ await expect(entry.locator('.county-geography-note')).toContainText('incorporated town');
+ const download=entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true});
+ await expect(download).toBeVisible();
+ await expect(download).toHaveAttribute('href',/^\/assets\/county-briefs\/pennsylvania-columbia\.txt(?:\?v=[a-f0-9]+)?$/);
+ expect((await page.request.get(await download.getAttribute('href'))).status()).toBe(200);
 });
 
-test('Ohio directory, municipalities and FAQs work without JavaScript',async({page},testInfo)=>{
+test('Ohio directory, typed municipalities and worksheet work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Ohio',exact:true}).click();
  await openNativeCountyLists(page,88);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(7);
- await page.locator('[data-county-search] a[href="/areas/ohio/greene-county/"]').click();
- await expect(page.locator('main h1')).toContainText('Greene');
- await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Yellow Springs');
- await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
- await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/ohio-greene\.txt(?:\?v=[a-f0-9]+)?$/);
+ const entry=await openNativeCountyEntry(page,'greene','Yellow Springs');
+ await expect(entry.getByRole('heading',{name:'Villages',exact:true})).toBeVisible();
+ await expect(entry.getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();
+ await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/ohio-greene\.txt(?:\?v=[a-f0-9]+)?$/);
 });
 
-test('new state hubs and county-equivalent inquiry context work without JavaScript',async({page},testInfo)=>{
+test('state hubs and independent-city entries work without JavaScript or inferred inquiry context',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ test.setTimeout(90_000);
  for(const [state,count] of [['new-jersey',21],['connecticut',9],['rhode-island',5],['massachusetts',14],['delaware',3],['vermont',14],['new-hampshire',10],['maine',16],['maryland',24]]){
   await page.goto(`/areas/${state}/?qa=1`);await openNativeCountyLists(page,count);
  }
- await page.locator('[data-county-search] a[href="/areas/maryland/baltimore-city/"]').click();
- await expect(page.locator('main h1')).toContainText('Baltimore City, MD');
- await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Baltimore');
- const download=page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true});
+ const entry=await openNativeCountyEntry(page,'baltimore-city','Baltimore');
+ await expect(entry.locator('.county-area-content')).toContainText('Independent city; separate from surrounding counties.');
+ const download=entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true});
  await expect(download).toHaveAttribute('href',/^\/assets\/county-briefs\/maryland-baltimore-city\.txt(?:\?v=[a-f0-9]+)?$/);
- await page.locator('.page-intro a.button').click();
- await expect(page.locator('input[name="county"]')).toHaveValue('maryland/baltimore-city');
+ await page.locator('.county-state-switch').getByRole('link',{name:'Discuss your website',exact:true}).click();
+ await expect(page.locator('input[name="county"]')).toHaveValue('');
  await expect(page.locator('input[name="business_location"]')).toHaveValue('');
- await expect(page.locator('main')).toContainText('Baltimore City, MD');
+ await expect(page.locator('#request_kind')).toHaveValue('question');
 });
 
 test('native additions prefill, correction and receipt preserve all selected work without JavaScript',async({page},testInfo)=>{

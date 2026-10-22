@@ -5,13 +5,14 @@ import {readProductionCredentials} from './production-credentials.mjs';
 import {inquiryChoices} from '../src/shared.mjs';
 import {inquiryResolutionInput} from './inquiry-maintenance.mjs';
 import pageDates from '../config/page-dates.json' with {type:'json'};
+import {retiredCountyRoutes} from './retired-county-routes.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import {serviceStateInfo} from '../src/assets/service-state-info.js';
 
 const root=resolve(import.meta.dirname,'..');
 const origin='https://wonderandmethod.com';
 const referencePattern=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/;
-const countyCatalog=Object.keys(pageDates).flatMap(path=>{
+const countyCatalog=[...new Set([...Object.keys(pageDates),...Object.keys(retiredCountyRoutes)])].flatMap(path=>{
  const match=path.match(/^\/areas\/(?:([a-z-]+)\/)?[^/]+-(?:county|planning-region)\/$/)||(path==='/areas/maryland/baltimore-city/'?[path,'maryland']:null);
  const state=match&&serviceStateInfo.find(item=>item.id===(match[1]||'new-york'));
  return state?[{state:state.abbreviation,page:journeyPageKey(path)}]:[];

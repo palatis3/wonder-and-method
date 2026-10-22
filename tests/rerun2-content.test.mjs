@@ -1,3 +1,7 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
+import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
+import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {countyBuyerTasks} from '../src/county-buyer-tasks.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
@@ -370,20 +374,36 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.match(seoServiceContent(offers),/If I delay accepted work, I still owe it; we agree a new date or refund/);
 });
 
-test('all sixty-two counties retain distinct examples, worksheets and readable official sources',()=>{
- const pages=countyPages(offers),counties=pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path));
- assert.equal(counties.length,61);assert.equal(new Set(counties.map(x=>x.path)).size,61);
- for(const page of counties){
-  const slug=page.path.split('/')[2].replace('-county',''),g=countyGeography[slug];
-  assert.ok(page.body.includes('/assets/county-briefs/'+slug+'.txt'));
-  assert.match(page.body,/href="\/services\/website-care\/"/);assert.match(page.body,/href="\/services\/seo\/"/);
-  for(const url of [...g.sources,...g.communities.map(x=>x.source)])assert.ok(hrefs(page.body).includes(url),slug+' missing source');
-  assert.doesNotMatch(page.body,/reference \d+|undefined|qualification path|expiry rule/);
-  assert.match(page.body,/Official sources for these places/);
+test('all sixty-two New York entries retain complete place lists, applicable sources and general-planning worksheets',()=>{
+ const pages=countyPages(offers),state=serviceStates.find(state=>state.id==='new-york'),hub=pages.find(page=>page.path===state.path).body;
+ assert.equal(pages.length,21);assert.equal(state.counties.length,62);
+ const ids=[...hub.matchAll(/class="county-area-detail" id="([^"]+)"/g)].map(match=>match[1]);
+ assert.equal(ids.length,62);assert.equal(new Set(ids).size,62);assert.deepEqual(ids.slice().sort(),state.counties.map(county=>county.slug).sort());
+ const sources=new Map([...hub.matchAll(/<li id="(geography-source-\d+)"><a href="([^"]+)">([^<]+)<\/a>/g)].map(([,id,url,label])=>[url.replaceAll('&amp;','&'),{id,label}]));
+ assert.ok(sources.size>0);
+ const titles=new Set();
+ for(const county of state.counties){
+  const {slug}=county,g=countyGeography[slug],entry=hub.slice(hub.indexOf(`id="${slug}"`)).split('</details>')[0],task=countyBuyerTasks[slug];
+  const note=countyLocalNotes['new-york/'+slug]||county.geographyNote;if(note)assert.ok(entry.includes(e(note)),slug+' local distinction');
+  for(const name of [...Object.values(g.municipalities).flat(),...g.communities.map(place=>place.name)])assert.ok(entry.includes(e(name)),slug+' place '+name);
+  const reference=entry.match(/href="#(geography-reference-\d+)"/);assert.ok(reference,slug+' source reference');
+  const referenceEntry=hub.slice(hub.indexOf(`id="${reference[1]}"`)).split('</li>')[0];
+  for(const url of [...g.sources,...g.communities.map(place=>place.source)].filter(Boolean)){
+   const source=sources.get(url);assert.ok(source,slug+' source '+url);
+   assert.ok(source.label.trim());assert.doesNotMatch(source.label,/^https?:\/\//);
+   assert.ok(referenceEntry.includes(`href="#${source.id}"`),slug+' applicable source '+url);
+  }
+  const destination=countyPath(county,state),worksheet=read('src/assets/county-briefs/'+slug+'.txt');
+  assert.ok(worksheet.includes(config.origin+destination),slug+' worksheet destination');
+  assert.match(worksheet,/General website planning with a fictional example/);assert.match(worksheet,/EXAMPLE \(MADE UP\)/);
+  assert.match(worksheet,/Official place sources are linked from the area directory/);
+  for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),slug+' authored worksheet content');
+  titles.add(task.title);
+  if(slug==='erie')assert.equal(destination,'/areas/erie-county/');else assert.equal(retiredCountyRoutes[`/areas/${slug}-county/`],destination);
  }
+ assert.equal(titles.size,62);assert.doesNotMatch(hub,/undefined|qualification path|expiry rule/);assert.match(hub,/Place types and official sources/);
  const erie=countyCoverage(geography,config,offers);
  assert.match(erie,/\/assets\/county-briefs\/erie\.txt/);assert.match(erie,/Erie County page topics/);assert.match(erie,/North Tonawanda/);
- assert.equal(new Set(counties.map(x=>x.body.match(/<section class="studio-section county-buyer-task"[\s\S]*?<h2>(.*?)<\/h2>/)[1])).size,61);
 });
 
 test('worksheets, contractor scope and source handoff agree with the pages',()=>{

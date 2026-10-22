@@ -8,6 +8,7 @@ import {fileURLToPath} from 'node:url';
 import {validateInquiry} from '../src/inquiry.mjs';
 import {escapeHtml,selectedInquiryContext} from '../src/shared.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
+import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 const root=resolve(import.meta.dirname,'..');
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png','.ico':'image/x-icon','.mp4':'video/mp4','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
 const security={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",'Cache-Control':'no-store'};
@@ -25,6 +26,8 @@ export async function createServer({runtime=resolve(root,'.runtime'),port=4183,s
   let recovery;
   const reply=(status,payload,retry)=>{const json=req.headers.accept?.includes('application/json');res.writeHead(status,{...security,...(status===429?{'Retry-After':'60'}:{}),'Content-Type':json?'application/json':'text/html; charset=utf-8'});res.end(json?JSON.stringify(payload):inquiryResponseHtml({...payload,status,retry,live:false}));};
   try{
+   const canonicalTarget=publicRouteRedirect(url,req.method);
+   if(canonicalTarget){res.writeHead(308,{...security,Location:canonicalTarget});res.end();return;}
    if(url.pathname==='/api/inquiries'){
     if(req.method!=='POST'){reply(405,{message:'Use POST for inquiries.'});return;}
     const origin=req.headers.origin;

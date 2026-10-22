@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -11,10 +12,14 @@ const read=path=>readFile(new URL('../'+path,import.meta.url),'utf8');
 const [config,offers,map,geography,previous]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json','tests/fixtures/pre-longtail-routes.json'].map(async p=>JSON.parse(await read(p))));
 const expected=['ai-search-visibility','ai-website-content-review','local-seo-audit','slow-website-on-mobile'].map(x=>'/guides/'+x+'/');
 const pages=renderPages({config,offers,map,geography});
-test('four distinct guides preserve all 411 prior routes and can be individually withheld',()=>{
- assert.equal(previous.length,411);assert.equal(pages.length,415);
- assert.ok(previous.every(path=>pages.some(page=>page.path===path)));
- assert.deepEqual(pages.filter(page=>!previous.includes(page.path)).map(page=>page.path).sort(),expected.slice().sort());
+test('four distinct guides retain approval gates while the historical 411 routes resolve through live pages or county redirects',()=>{
+ assert.equal(previous.length,411);assert.equal(pages.length,91);
+ for(const route of previous){
+  const destination=retiredCountyRoutes[route];
+  if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);assert.ok(pages.find(page=>page.path===hub)?.html.includes(`id="${slug}"`),destination);}
+  else assert.ok(pages.some(page=>page.path===route),route);
+ }
+ assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&page.path.startsWith('/guides/')).map(page=>page.path).sort(),expected.slice().sort());
  const index=pages.find(p=>p.path==='/guides/').html;
  for(const path of expected){
   const detail=longtailGuideDetails[path.split('/').at(-2)],page=pages.find(p=>p.path===path),body=journalSections(path,offers).map(s=>s.body).join('');

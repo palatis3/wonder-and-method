@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -8,7 +9,10 @@ import {countyGeography} from '../src/county-geography.mjs';
 import {countyBuyerTasks} from '../src/county-buyer-tasks.mjs';
 import {statewideCountyProfiles} from '../src/county-statewide-profiles.mjs';
 import {statewideCountySearchQuestions} from '../src/county-statewide-questions.mjs';
-import {countyPages,countyRegions} from '../src/service-counties.mjs';
+import {countyRegions} from '../src/service-counties.mjs';
+import {escapeHtml} from '../src/shared.mjs';
+import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {socialCardPath} from '../src/social-cards.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import worker from '../deployment/worker.mjs';
@@ -26,19 +30,21 @@ const priorSql=await Promise.all(priorFiles.map(name=>readFile(new URL(name,migr
 const migration=await readFile(new URL('0012_journey_statewide_counties.sql',migrationFolder),'utf8');
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
-test('all 62 official counties occur once in the directory, region navigation and public sitemap',()=>{
+test('all 62 official counties remain in the state directory and retired URLs resolve to their preserved entries',()=>{
  assert.deepEqual(['erie',...countyProfiles.map(c=>c.slug)].sort(),official.countySlugs);
  assert.deepEqual(statewideCountyProfiles.map(c=>c.slug).sort(),newSlugs);
  assert.equal(countyRegions.length,10);
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
  const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,415);assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
+ assert.equal(pages.length,91);assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
  assert.equal((hub.match(/data-county-search=/g)||[]).length,62);
  for(const slug of official.countySlugs){
-  const route=path(slug),page=byPath.get(route);assert.ok(page,route);
-  assert.ok(hub.includes(`href="${route}"`));assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));
-  assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
+  const retired=path(slug),destination=slug==='erie'?retired:'/areas/new-york/#'+slug;
+  if(slug==='erie')assert.ok(byPath.has(retired));else {assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!byPath.has(retired));}
+  assert.ok(hub.includes(`href="${destination}"`));assert.ok(hub.includes(`id="${slug}"`));
+  const route=destination.split('#')[0],page=byPath.get(route);
+  assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
   assert.match(page.html,/<meta name="robots" content="index,follow"/);
   for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
  }
@@ -64,30 +70,28 @@ test('county directories retain official municipality types and villages crossin
  }
 });
 
-test('new guides contain individual planning exercises and complete downloadable worksheets',async()=>{
+test('historical statewide worksheets preserve their authored exercises and point to consolidated entries',async()=>{
  const focus=new Set(),decisions=new Set(),localQuestions=new Set();
  for(const c of statewideCountyProfiles){
-  const task=countyBuyerTasks[c.slug],page=byPath.get(path(c.slug));
+  const task=countyBuyerTasks[c.slug];
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);
   focus.add(c.focus);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
-  assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);
-  assert.ok(page.html.includes('More planning examples (made up)'));assert.ok(page.html.includes('<p class="eyebrow">Example (made up)</p>'));
   const worksheet=await readFile(new URL('../src/assets/county-briefs/'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
   assert.match(worksheet,/EXAMPLE \(MADE UP\)/);
-  assert.ok(page.html.includes(`href="/assets/county-briefs/${c.slug}.txt"`));
+  assert.ok(worksheet.includes(config.origin+'/areas/new-york/#'+c.slug),c.slug+' destination');
+  assert.match(worksheet,/general.*(?:planning|guidance)|(?:planning|guidance).*general/i);
  }
  assert.equal(focus.size,37);assert.equal(decisions.size,37);assert.equal(localQuestions.size,74);
 });
 
-test('new FAQs answer researched buyer questions with working links and current offer prices',()=>{
+test('retained authored answers keep research links and derive prices from the current offer configuration',()=>{
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1887;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.plans.keep_running.monthly_price=187;
- const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body])),questions=new Set();
+ const questions=new Set();
  for(const slug of newSlugs){
   const answers=statewideCountySearchQuestions(slug,changed);assert.equal(answers.length,3,slug);
-  const faq=rendered.get(path(slug)).match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
-  assert.equal((faq.match(/<summary>/g)||[]).length,5,slug);
+  const faq=answers.map(answer=>answer[1]).join(' ');
   for(const [q,answer,url,label] of answers){
    assert.ok(answer.trim().length>90,slug);assert.ok(label?.trim(),slug);
    assert.ok(byPath.has(url),slug+' -> '+url);questions.add(q);
@@ -99,21 +103,17 @@ test('new FAQs answer researched buyer questions with working links and current 
  assert.deepEqual(statewideCountySearchQuestions('not-a-county',offers),[]);
 });
 
-test('new page metadata is distinct and matches its social card and structured service location',async()=>{
- const titles=new Set(),descriptions=new Set();
- for(const slug of newSlugs){
-  const page=byPath.get(path(slug)),c=statewideCountyProfiles.find(c=>c.slug===slug);
-  titles.add(page.title);descriptions.add(page.description);
-  const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  const service=schema.find(item=>item['@type']==='Service');
-  assert.equal(service.areaServed.name,c.name+' County, New York');
-  assert.equal(service.provider['@id'],config.origin+'/#studio');
-  assert.ok(!schema.some(item=>item['@type']==='LocalBusiness'),'No invented local branch');
-  assert.ok(!schema.some(item=>item['@type']==='FAQPage'),'Visible questions do not need FAQ rich-result markup');
-  const image='/assets/social/areas-'+slug+'-county.png';assert.ok(page.html.includes(config.origin+image));
-  const png=await readFile(new URL('../src'+image,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
+test('the consolidated New York hub preserves factual entries and publishes state metadata without invented branches',async()=>{
+ const page=byPath.get('/areas/new-york/'),schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+ assert.ok(page.title.includes('New York'));assert.ok(page.description.trim());
+ assert.ok(!schema.some(item=>['LocalBusiness','FAQPage'].includes(item['@type'])));
+ const org=schema.find(item=>item['@type']==='Organization');assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
+ for(const c of statewideCountyProfiles){
+  assert.equal(retiredCountyRoutes[path(c.slug)],page.path+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)));
+  assert.ok(page.html.includes(`id="${c.slug}"`));assert.ok(page.html.includes(escapeHtml(countyLocalNotes['new-york/'+c.slug]||c.geographyNote)),c.slug);
  }
- assert.equal(titles.size,37);assert.equal(descriptions.size,37);
+ const image=socialCardPath(page.path);assert.ok(image);assert.ok(page.html.includes(config.origin+image));
+ const png=await readFile(new URL('../src'+image,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
 });
 
 test('statewide migration adds only 37 page keys and preserves stored inquiries and aggregate history',t=>{

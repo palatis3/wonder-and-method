@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import {longtailGuides} from '../src/longtail-guides.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -15,10 +16,14 @@ const pages=renderPages({config,offers,map,geography});
 const inputs={oneTime:3000,monthlyCost:100,months:12,inquiries:4,closeRate:25,contribution:500};
 const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/'];
 
-test('all 278 prior routes are preserved and exactly seven content routes are added',async()=>{
+test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,415);
- assert.ok(previous.every(path=>pages.some(page=>page.path===path)));
+ assert.equal(previous.length,278);assert.equal(pages.length,91);
+ for(const route of previous){
+  const destination=retiredCountyRoutes[route];
+  if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);assert.ok(pages.find(page=>page.path===hub)?.html.includes(`id="${slug}"`),destination);}
+  else assert.ok(pages.some(page=>page.path===route),route);
+ }
  assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
 });
 

@@ -100,7 +100,7 @@
 @media(max-width:1023px){.studio-site.menu-open .header-contact{display:none}}
 @media(max-width:1023px){html:not(.nav-ready) .studio-site .header-contact{display:none}}
 @media(max-width:1023px){.studio-site .contact-layout{grid-template-columns:minmax(0,1fr)}}
-@media(max-height:500px) and (orientation:landscape){.studio-site .site-header{position:relative}}
+@media(max-height:500px) and (orientation:landscape) and (hover:none) and (pointer:coarse){.studio-site .site-header{position:relative}}
 html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 @media(max-width:1023px){.studio-site .contact-layout{gap:2rem}}
 @media(max-width:1023px){.studio-site .contact-layout form label{font-size:1rem}}
@@ -111,6 +111,8 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .service-navigation>summary:after{content:'';width:.42rem;height:.42rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-.2rem}
 .service-navigation[open]>summary:after{transform:rotate(225deg);margin-top:.2rem}
 .service-links{position:absolute;top:calc(100% + .8rem);left:-1.2rem;width:270px;padding:.65rem;background:var(--paper);border:1px solid var(--line);border-radius:5px;box-shadow:0 16px 34px #152b201a}
+/* Resized desktop windows keep the header in view and the full menu reachable. */
+@media(min-width:1024px){.service-links{max-height:calc(100dvh - var(--site-header-height,100px) - 1.5rem);overflow-y:auto;overscroll-behavior:contain}}
 .studio-site .site-header #main-nav .service-links a{display:flex;justify-content:flex-start;white-space:normal;min-height:48px;padding:.7rem .85rem;border-radius:3px;background:transparent;color:var(--ink);font-weight:500;font-size:.86rem}
 .studio-site .site-header #main-nav .service-links a:hover{background:var(--subtle);color:var(--ink)}
 .studio-site .site-header #main-nav .service-links a[aria-current]{background:var(--subtle);color:var(--ink)}

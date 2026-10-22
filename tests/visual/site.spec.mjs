@@ -21,13 +21,20 @@ for(const [name,path] of [
  ['monthly-seo','/services/seo/'],['care','/services/website-care/'],
  ['work','/work/'],['contact','/contact/'],['scope-request','/checkout/focused-site/'],
  ['guide','/guides/ai-search-visibility/'],['county','/areas/erie-county/'],
- ['about','/about/'],['concept','/work/fieldwork/']
+ ['about','/about/'],['concept','/work/fieldwork/'],
+ ['regional-directory','/areas/virginia/'],['district-directory','/areas/district-of-columbia/']
 ]){
  test(`${name} approved layout`,async({page})=>{
   const response=await page.goto(path+'?qa=1');expect(response.status()).toBe(200);await settle(page);
   await expect(page).toHaveScreenshot(name+'.png',{fullPage:true});
  });
 }
+
+test('county entry preserves readable local facts and place lists',async({page})=>{
+ await page.goto('/areas/new-york/?qa=1#monroe');await settle(page);
+ const entry=page.locator('#monroe');await expect(entry).toHaveAttribute('open','');
+ await expect(entry).toHaveScreenshot('county-entry.png');
+});
 test('footer collapsed and expanded layouts',async({page})=>{
  await page.goto('/?qa=1');await settle(page);const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
  const footerOnly={style:'.site-header,.back-to-top,.support-chat{visibility:hidden!important}'};

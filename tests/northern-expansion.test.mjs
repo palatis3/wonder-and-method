@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -61,41 +62,44 @@ test('northern official municipality types retain plantations, independent citie
  assert.ok(md.montgomery.aliases.some(a=>a.name==='Chevy Chase, Village of, Section 5'&&a.canonicalName==='Chevy Chase Section Five'));
 });
 
-test('53 northern routes preserve all 358 earlier pages and publish 333 crawlable service areas',async()=>{
+test('three northern hubs preserve 50 entries and historical routes resolve through live pages or redirects',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,415);assert.equal(byPath.size,415);assert.equal(serviceStates.length,12);
+ assert.equal(pages.length,91);assert.equal(byPath.size,91);assert.equal(serviceStates.length,20);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
- assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&p.path.startsWith('/areas/')).map(p=>p.path).sort(),[...newRoutes].sort());
- for(const route of prior)assert.ok(byPath.has(route),route);
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
- assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,333);
+ assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
+ for(const route of prior){
+  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
+  else assert.ok(byPath.has(route),route);
+ }
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
+ assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1012);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
   const html=byPath.get(`/areas/${s.id}/`).html;
   assert.equal((html.match(/data-county-search=/g)||[]).length,s.areas.length);
   assert.match(html,/<noscript>/);assert.match(html,/<details class="county-region county-section"/);assert.doesNotMatch(html,/<div id="counties"[^>]*\bhidden/);
-  for(const a of s.areas){const route=areaPath(s,a);for(const hub of [html,byPath.get('/areas/').html])assert.ok(hub.includes(`href="${route}"`));assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));}
+  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;assert.equal(retiredCountyRoutes[areaPath(s,a)],destination);assert.ok(!byPath.has(areaPath(s,a)));for(const hub of [html,byPath.get('/areas/').html])assert.ok(hub.includes(`href="${destination}"`));assert.ok(html.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
  }
 });
 
-test('northern titles, H1s and structured data distinguish Baltimore City from Baltimore County without mojibake',async()=>{
+test('northern state metadata and anchored entries distinguish Baltimore City from Baltimore County',async()=>{
  const {byPath}=await runtime(),titles=new Set(),descriptions=new Set();
- for(const s of fixture.states)for(const a of [null,...s.areas]){
-  const route=a?areaPath(s,a):`/areas/${s.id}/`,page=byPath.get(route),data=schema(page),name=a?label(a):s.name;
-  assert.ok(page.title.includes(a?.name||s.name),route);if(a)assert.ok(page.title.includes(s.abbreviation));
-  assert.ok(page.html.match(/<h1[^>]*>(.*?)<\/h1>/s)[1].includes(escapeHtml(name)),route);
+ for(const s of fixture.states){
+  const route=`/areas/${s.id}/`,page=byPath.get(route),data=schema(page);
+  assert.ok(page.title.includes(s.name));assert.ok(page.html.match(/<h1[^>]*>(.*?)<\/h1>/s)[1].includes(escapeHtml(s.name)));
   assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));assert.match(page.html,/<meta name="robots" content="index,follow"/);
   const headings=[...page.html.matchAll(/<h[1-6]\b[^>]*>(.*?)<\/h[1-6]>/gs)].map(m=>m[1]).join('\n');
   assert.doesNotMatch(headings,/\uFFFD|Ã.|Â.|â€|â†|ðŸ/,route);assert.doesNotMatch(page.title,/\uFFFD|Ã.|Â.|â€/);
-  const expected=a?['/','/areas/',`/areas/${s.id}/`,route]:['/','/areas/',route];
-  assert.deepEqual(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),expected.map(p=>config.origin+p));
-  if(a){assert.equal(data.find(x=>x['@type']==='Service').areaServed.name,name+', '+s.name);assert.equal(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.at(-1).name,name);}
+  assert.deepEqual(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),['/','/areas/',route].map(p=>config.origin+p));
   assert.ok(!data.some(x=>['FAQPage','LocalBusiness'].includes(x['@type'])));
   const org=data.find(x=>x['@type']==='Organization');assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
+  for(const a of s.areas){assert.ok(page.html.includes(`id="${a.slug}"`));assert.ok(page.html.includes(escapeHtml(label(a))),s.id+'/'+a.slug);}
   titles.add(page.title);descriptions.add(page.description);assert.ok(page.description.trim());
  }
- assert.equal(titles.size,53);assert.equal(descriptions.size,53);
+ assert.equal(titles.size,3);assert.equal(descriptions.size,3);
+ assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-city/'],'/areas/maryland/#baltimore-city');
+ assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-county/'],'/areas/maryland/#baltimore');
  assert.ok(!byPath.has('/areas/maryland/baltimore-city-county/'));assert.ok(!byPath.has('/areas/maryland/baltimore-city-independent-city/'));
 });
 
@@ -114,13 +118,13 @@ test('typed northern search handles state abbreviations, plantations, accented a
   ['Towson city MD',[]],['Towson MD',['maryland/baltimore']],['Port Tobacco MD',['maryland/charles']],
   ['Chevy Chase, Village of, Section 5 MD',['maryland/montgomery']]
  ])assert.deepEqual(matches(query),expected,query);
- assert.equal(cards.length,333);
+ assert.equal(cards.length,1012);
 });
 
 test('333 fixed inquiry contexts roundtrip as page provenance and reject invented city or county identities',async()=>{
  const [{serviceStates,countyPath},{countyContextOptions},{inquiryFormMarkup},{prefillInquiryHtml},{validateInquiry},{selectedInquiryContext,inquiryContextSummary,escapeHtml}]=await Promise.all([runtime(),import('../src/approved-rerun-county-context.mjs'),import('../src/inquiry-form.mjs'),import('../src/inquiry-prefill.mjs'),import('../src/inquiry.mjs'),import('../src/shared.mjs')]);
  assert.equal(countyContextOptions.length,333);
- assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),serviceStates.flatMap(s=>s.counties.map(c=>countyPath(c,s).slice(7,-1))).sort());
+ assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),[...Object.keys(retiredCountyRoutes),'/areas/erie-county/'].map(route=>route.slice(7,-1)).sort());
  const template=inquiryFormMarkup({live:true}),input={name:'Synthetic person',email:'owner@example.test',business:'Synthetic company',service:'unsure',message:'Synthetic validation only. Never send.'};
  for(const [county,text] of countyContextOptions){
   const html=prefillInquiryHtml(template,new URL('https://example.test/contact/?county='+encodeURIComponent(county)+'&business_location=FORGED'));
@@ -133,18 +137,17 @@ test('333 fixed inquiry contexts roundtrip as page provenance and reject invente
  for(const county of ['maryland/baltimore-city-county','maine/drew-county','new-hampshire/livermore-county','<script>alert(1)</script>','../../contact','a'.repeat(5000)])assert.ok(validateInquiry({...input,county}).errors.county,county);
 });
 
-test('50 northern guides have matching worksheets and six visible FAQs with independent research provenance',async()=>{
+test('50 historical northern worksheets preserve authored decisions and independent question provenance',async()=>{
  const {byPath,northeastProfiles,northeastBuyerTasks,northeastSearchQuestions,northeastQuestionSources}=await runtime();
  const sources=northeastQuestionSources(offers).filter(x=>fixture.states.some(s=>s.id===x.stateId));assert.equal(sources.length,150);
  const keys=new Set(sources.map(s=>`${s.stateId}/${s.slug}/${s.index}`));assert.equal(keys.size,150);
  for(const s of fixture.states)for(const a of s.areas){
-  const profile=northeastProfiles[s.id].find(p=>p.slug===a.slug),task=northeastBuyerTasks[s.id][a.slug],html=byPath.get(areaPath(s,a)).html;
+  const profile=northeastProfiles[s.id].find(p=>p.slug===a.slug),task=northeastBuyerTasks[s.id][a.slug];
   assert.equal(profile.briefs.length,2);assert.equal(profile.questions.length,3);assert.equal(task.questions.length,3);
   const worksheet=await readFile(new URL(`../src/assets/county-briefs/${s.id}-${a.slug}.txt`,import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(text?.trim()&&worksheet.includes(text),s.id+'/'+a.slug);
-  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);assert.ok(html.includes(`href="/assets/county-briefs/${s.id}-${a.slug}.txt"`));
-  const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.equal((faq.match(/<summary>/g)||[]).length,6);
-  assert.match(faq,/online/i);assert.match(faq,/Buffalo/);
+  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);assert.ok(worksheet.includes(`${config.origin}/areas/${s.id}/#${a.slug}`));
+  assert.match(worksheet,/general.*(?:planning|guidance)|(?:planning|guidance).*general/i);
   const questions=northeastSearchQuestions(s.id,a.slug,offers);assert.equal(questions.length,3);
   for(const [index,[question,answer,guide,text]] of questions.entries()){
    assert.ok(question.trim()&&answer.trim().length>90&&text.trim());assert.ok(byPath.has(guide));
@@ -154,11 +157,15 @@ test('50 northern guides have matching worksheets and six visible FAQs with inde
  }
 });
 
-test('northern pages use current offer values instead of fixed prices',async()=>{
- const {countyPages}=await runtime(),changed=structuredClone(offers);
+test('northern state hubs and retained question answers use current offer values',async()=>{
+ const {countyPages,northeastSearchQuestions}=await runtime(),changed=structuredClone(offers);
  changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
- for(const s of fixture.states)for(const a of s.areas){const html=rendered.get(areaPath(s,a));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Keep Running \$187\/month/);assert.match(html,/Website Baseline \$499/);assert.match(html,/Audit &amp; Fix Sprint \$975/);const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/);}
+ for(const s of fixture.states){
+  const html=rendered.get(`/areas/${s.id}/`);assert.ok(html);
+  for(const price of ['$1,887','$187/month','$499','$686'])assert.ok(html.includes(price),s.id+' '+price);
+  for(const a of s.areas){const answers=northeastSearchQuestions(s.id,a.slug,changed);assert.equal(answers.length,3);assert.doesNotMatch(answers.map(answer=>answer[1]).join(' '),/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/);}
+ }
 });
 
 test('extended 0018 admits exactly 125 additions and all 53 northern Worker events against synthetic SQLite',async t=>{

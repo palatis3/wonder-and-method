@@ -1,3 +1,6 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
+import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {escapeHtml} from '../src/shared.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -13,23 +16,28 @@ const [config,offers,map,geography,research]=await Promise.all(['config/site.jso
 const render=(c=config,o=offers)=>renderPages({config:c,offers:o,map,geography});
 const pages=render();
 
-test('county routes expose reviewed geography, truthful delivery and a complete hierarchy',()=>{
+test('retired New York county routes resolve to reviewed place entries within the state hierarchy',()=>{
  assert.deepEqual(countyProfiles.slice(0,research.order.length).map(c=>c.name),research.order);
- const hub=pages.find(p=>p.path==='/areas/');assert.ok(hub);
+ assert.equal(countyProfiles.length,61);
+ const hub=pages.find(p=>p.path==='/areas/'),state=pages.find(p=>p.path==='/areas/new-york/');assert.ok(hub);assert.ok(state);
+ const schema=JSON.parse(state.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+ assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),['/','/areas/','/areas/new-york/'].map(path=>config.origin+path));
+ const organization=schema.find(x=>x['@type']==='Organization');assert.equal(organization.location.address.addressLocality,'Buffalo');assert.equal(organization.location.address.addressRegion,'NY');
+ assert.ok(!schema.some(x=>x['@type']==='LocalBusiness'));
+ assert.match(state.html,/Buffalo/);assert.match(state.html,/online/);assert.match(state.html,/Place types and official sources/);
+ assert.ok(state.html.includes('name="robots" content="index,follow"'));assert.ok(state.html.includes('href="/areas/"'));
  for(const county of countyProfiles){
-  const path=`/areas/${county.slug}-county/`,page=pages.find(p=>p.path===path);assert.ok(page,path);
+  const retired=`/areas/${county.slug}-county/`,destination=state.path+'#'+county.slug;
+  assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!pages.some(page=>page.path===retired),retired);
   const original=research.counties.find(c=>c.county===county.name);
   if(original)assert.deepEqual(countyGeography[county.slug].municipalities,original.municipalities);
-  const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  assert.deepEqual(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),[config.origin+'/',config.origin+'/areas/',config.origin+'/areas/new-york/',config.origin+path]);
-  assert.equal(schema.find(x=>x['@type']==='Service').areaServed.name,county.name+' County, New York');
-  assert.match(page.html,/Buffalo/);assert.match(page.html,/online/);assert.match(page.html,/More planning examples \(made up\)/);
-  assert.ok(hub.html.includes(`href="${path}"`));assert.ok(page.html.includes('href="/areas/"'));
-  assert.ok(page.html.includes('name="robots" content="index,follow"'));
+  assert.ok(state.html.includes(`id="${county.slug}"`),destination);
+  assert.ok(state.html.includes(escapeHtml(countyLocalNotes['new-york/'+county.slug]||county.geographyNote)),county.slug);
+  assert.ok(hub.html.includes(`href="${destination}"`));
  }
  const publicConfig={...config,searchIndexing:true},sitemap=crawlFiles(publicConfig,render(publicConfig)).sitemap;
- for(const county of countyProfiles)assert.ok(sitemap.includes(config.origin+`/areas/${county.slug}-county/`));
- assert.ok(sitemap.includes(config.origin+'/areas/erie-county/'));assert.ok(sitemap.includes(config.origin+'/areas/'));
+ for(const county of countyProfiles)assert.ok(!sitemap.includes(`<loc>${config.origin}/areas/${county.slug}-county/</loc>`));
+ for(const route of ['/areas/new-york/','/areas/erie-county/','/areas/'])assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));
  const held={...config,searchIndexing:false};assert.doesNotMatch(crawlFiles(held,render(held)).sitemap,/<loc>/);
 });
 

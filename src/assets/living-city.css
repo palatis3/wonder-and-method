@@ -212,7 +212,7 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 @media(max-width:767px){.city-reveal{border-radius:12px}.city-reveal-bar{padding:9px 11px}.city-reveal-copy{padding:18px 20px}.city-reveal-copy .city-reveal-title{font-size:2rem}.city-reveal-copy a{margin-top:12px;padding:7px 13px}.city-star{width:2px;height:2px}.city-star:nth-child(4){--star-x:94%;--star-y:40%}.city-star:nth-child(7){--star-x:89%;--star-y:73%}.city-star:nth-child(10){--star-x:4%;--star-y:87%}.city-star:nth-child(13){--star-x:96%;--star-y:95%}.city-star:nth-child(16){--star-x:51%;--star-y:18%}}
 /* Short screens retain the complete scene below a compact, readable first view. */
 @media(max-height:520px){
- .studio-home.edition-living-city .site-header{position:absolute;min-height:58px;padding-block:6px}
+ .studio-home.edition-living-city .site-header{min-height:58px;padding-block:6px}
  .city-hero{padding-top:calc(var(--site-header-height,58px) + 6px)}
  .city-copy{padding-top:0}
  .city-copy h1{font-size:clamp(2.2rem,7vh,2.4rem);line-height:.94;margin-bottom:8px}
@@ -220,5 +220,6 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
  .city-copy .city-lede{font-size:1rem;line-height:1.35;margin-bottom:8px}
  .city-actions{gap:6px 20px}
 }
+@media(max-height:520px) and (hover:none) and (pointer:coarse){.studio-home.edition-living-city .site-header{position:absolute}}
 @media(prefers-reduced-motion:reduce){.living-city *,.studio-home.edition-living-city .site-header{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.studio-home.edition-living-city .site-header{position:relative;background:#052b3b}.city-controls,.city-tabs{display:none!important}.city-project[hidden]{display:grid}.city-film{display:none}.city-hero{min-height:0;aspect-ratio:3/2}.city-copy{padding-top:40px}.city-projects{break-before:page}}

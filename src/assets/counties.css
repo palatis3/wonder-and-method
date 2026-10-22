@@ -68,3 +68,27 @@ ul.county-hub-grid .county-link{display:flex;flex-wrap:wrap;align-items:center;g
 .county-result-list li{border-top:1px solid var(--line);padding-block:.75rem}
 .county-result-list a{display:inline-flex;align-items:center;min-height:44px}.county-match-reason{font-size:.9375rem;margin:0;color:var(--slate)}
 @media(max-width:600px){.county-result-list{grid-template-columns:1fr}.county-filter:has(.county-state-filter){row-gap:1rem}}
+
+/* Hub entries carry the place directory; each remains a native disclosure. */
+.studio-site main ul.county-area-grid{grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:1rem}
+.county-area-detail>summary{min-height:44px;padding:.85rem .5rem;font-size:1.05rem;font-weight:600;cursor:pointer;line-height:1.5}
+.county-area-detail[open]>summary{border-bottom:1px solid var(--line,#bac2c2)}
+.county-area-detail:target>summary{background:var(--paper,#f8f7f1);outline:2px solid currentColor;outline-offset:2px}
+.county-area-content{padding:.5rem .5rem 1.5rem;min-width:0}
+.county-area-content .county-directory{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+.county-area-content .county-directory>div{min-width:0;grid-column:auto}
+.county-area-content .county-directory h3{font-size:1.1rem;line-height:1.5}
+.county-area-content .county-place-list{grid-template-columns:minmax(0,1fr)}
+.county-area-content .county-place-note{display:block;color:var(--slate,#526362);font-size:.9375rem;line-height:1.6;margin-top:.25rem}
+.county-area-content a.county-link{display:inline;min-height:0;padding:0;font:inherit}
+.county-reference-library{margin-block:3rem;max-width:900px}
+.county-reference-library p{max-width:80ch;line-height:1.75}
+.county-reference-library summary,.county-general-guidance>summary{cursor:pointer;font-weight:650;line-height:1.5;min-height:44px;padding:1rem 0}
+.county-reference-library li{margin-block:.75rem}
+.county-reference-library a,.county-place-list li{overflow-wrap:anywhere}
+.county-reference-library :is([id],details),.county-area-detail{scroll-margin-top:calc(var(--site-header-height,80px) + 1rem)}
+.county-reference-library li:target{outline:2px solid currentColor;outline-offset:4px}
+.county-general-guidance{max-width:900px;margin:2rem auto;border-block:1px solid var(--line,#bac2c2)}
+.county-general-guidance>p{max-width:75ch;line-height:1.8}
+.county-general-guidance .county-section{padding-block:2rem}
+@media(max-width:700px){.county-area-content .county-directory{grid-template-columns:minmax(0,1fr)}.county-area-content{padding-inline:0}.county-area-detail>summary{padding-inline:0}}

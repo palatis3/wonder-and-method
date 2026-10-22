@@ -11,5 +11,21 @@ export const serviceStateInfo = [
  {id:'vermont',name:'Vermont',abbreviation:'VT'},
  {id:'new-hampshire',name:'New Hampshire',abbreviation:'NH'},
  {id:'maine',name:'Maine',abbreviation:'ME'},
- {id:'maryland',name:'Maryland',abbreviation:'MD'}
-].map(state=>({...state,path:`/areas/${state.id}/`,areaPlural:state.id==='connecticut'?'planning regions':state.id==='maryland'?'service areas':'counties'}));
+ {id:'maryland',name:'Maryland',abbreviation:'MD'},
+ {id:'virginia',name:'Virginia',abbreviation:'VA'},
+ {id:'west-virginia',name:'West Virginia',abbreviation:'WV'},
+ {id:'michigan',name:'Michigan',abbreviation:'MI'},
+ {id:'district-of-columbia',name:'Washington, DC',abbreviation:'DC',kind:'district',aliases:['District of Columbia','Washington DC','Washington D C','D C']},
+ {id:'indiana',name:'Indiana',abbreviation:'IN'},
+ {id:'kentucky',name:'Kentucky',abbreviation:'KY'},
+ {id:'tennessee',name:'Tennessee',abbreviation:'TN'},
+ {id:'north-carolina',name:'North Carolina',abbreviation:'NC'}
+].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia'].includes(state.id)?'service areas':'counties'}));
+
+export function serviceRegionSummary(regions){
+ const district=regions.some(name=>/^(?:Washington,? DC|District of Columbia)$/i.test(name));
+ const count=regions.length-(district?1:0);
+ if(district)return (count?`${count} ${count===1?'state':'states'} and `:'')+'Washington, DC';
+ return regions.length>3?`${regions.length} states`:new Intl.ListFormat('en-US',{style:'long',type:'conjunction'}).format(regions);
+}
+export const serviceRegionLabel=serviceRegionSummary(serviceStateInfo.map(state=>state.name));

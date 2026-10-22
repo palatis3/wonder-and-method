@@ -92,7 +92,7 @@ export const expandedCountyProfiles = [
     search: 'For a Bronx SEO review, I follow the route from the service page to the call or inquiry. I check service names, neighborhood coverage and missing answers that make customers hesitate. The agreed work can improve a small number of useful pages before considering additional location content.',
     geographyNote: 'Bronx County is the New York City borough of the Bronx. The directory lists selected neighborhoods, including City Island; these are not separate cities, towns or villages.',
     questions: [
-      ['Ca customers choose between calling and using a form?', 'Yes. I can make both routes easy to find and explain when each is appropriate. You approve the published phone details and response expectations. The form fields should support the same service process rather than ask customers to repeat unnecessary information.'],
+      ['Can customers choose between calling and using a form?', 'Yes. I can make both routes easy to find and explain when each is appropriate. You approve the published phone details and response expectations. The form fields should support the same service process rather than ask customers to repeat unnecessary information.'],
       ['Can a Bronx site describe work across several neighborhoods?', 'Yes. We can name the actual area and explain any service-specific restrictions. One useful coverage section may be sufficient. Separate neighborhood pages need substantial differences that help a customer choose or prepare for the service.']
     ]
   },

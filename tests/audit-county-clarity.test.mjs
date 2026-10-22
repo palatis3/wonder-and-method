@@ -1,3 +1,5 @@
+import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -18,19 +20,20 @@ const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:stat
 const matches=(query,state='')=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query),state)).map(card=>`${card.state}/${card.slug}`);
 const e=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
-test('all 333 county and planning-region routes remain index eligible and crawlable without JavaScript',()=>{
+test('all 1012 area entries resolve to indexable pages and remain crawlable without JavaScript',()=>{
  const directory=countyDirectory();
- assert.equal(cards.length,333);
- assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24]);
+ const stateDirectories=new Map(serviceStates.map(state=>[state.id,countyDirectory(state)]));
+ assert.equal(cards.length,1012);
+ assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24,133,55,83,1,92,120,95,100]);
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
-  assert.ok(routeIndexEligible(route),route);
+  assert.ok(routeIndexEligible(route.split('#')[0]),route);
   assert.ok(directory.includes(`href="${route}"`),route);
-  assert.ok(countyDirectory(state).includes(`href="${route}"`),route);
-  if(route!=='/areas/erie-county/')assert.ok(byPath.has(route),route);
+  assert.ok(stateDirectories.get(state.id).includes(`href="${route}"`),route);
+  if(route!=='/areas/erie-county/')assert.ok(byPath.has(route.split('#')[0]),route);
  }
- assert.equal((directory.match(/data-county-search=/g)||[]).length,333);
- assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,12);
+ assert.equal((directory.match(/data-county-search=/g)||[]).length,1012);
+ assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,20);
  assert.doesNotMatch(directory,/data-county-filter-controls hidden/);
  assert.match(directory,/<noscript>.*Open the lists below to browse every service area/s);
  assert.equal((directory.match(/for="county-search"/g)||[]).length,1);
@@ -87,8 +90,8 @@ test('New York City keeps its five-borough alias while typed counties and state 
  assert.deepEqual(matches('Sandusky city OH'),['ohio/erie']);
 });
 
-test('search names are normalized and deduplicated while directory remains under 150 KB',()=>{
- assert.ok(Buffer.byteLength(countyDirectory())<150_000);
+test('search names are normalized and deduplicated with less than 350 bytes per area entry',()=>{
+ assert.ok(Buffer.byteLength(countyDirectory())/cards.length<350);
  for(const card of cards){
   const names=card.terms.map(term=>term.slice(term.indexOf(':')+1));
   assert.equal(new Set(names).size,names.length,card.state+'/'+card.slug);
@@ -96,47 +99,44 @@ test('search names are normalized and deduplicated while directory remains under
  }
 });
 
-test('county pages retain local detail, one fictional-example notice, downloads, state identity and bounded related links',()=>{
- for(const state of serviceStates)for(const county of state.counties){
-  const page=byPath.get(countyPath(county,state));if(!page)continue;
-  assert.ok(page.body.match(/<h1>(.*?)<\/h1>/)[1].endsWith(', '+state.abbreviation),page.path);
-  const areaLabel=county.areaType==='Independent City'?`${county.name} City`:`${county.name} ${county.areaType||'County'}`;
-  assert.ok(page.body.includes(e(areaLabel)),page.path);
-  assert.equal((page.body.match(/More planning examples \(made up\)/g)||[]).length,1,page.path);
-  assert.match(page.body,/class="county-planning-details"/);
-  for(const [title,text] of county.briefs){assert.ok(page.body.includes(e(title)),page.path);assert.ok(page.body.includes(e(text)),page.path);}
-  assert.match(page.body,/download>Download the planning worksheet \(TXT\)/);
-  assert.match(page.body,/>Official sources for these places<\/summary>/);
-  assert.match(page.body,/>Plan your own coverage pages<\/a>/);
-  assert.ok(page.description.length<=155,page.path);
-  assert.doesNotMatch(page.description,/scoped|honest|without (?:inventing|promising)/i,page.path);
-  assert.ok(page.title.length<=60,page.path);
-  const related=page.body.match(/<p><strong>More [\s\S]*?<\/p>/)?.[0]||'';
-  assert.ok((related.match(/<a /g)||[]).length<=4,page.path);
+test('state hubs retain all place facts and distinguish borough aliases while Erie keeps its custom page',()=>{
+ assert.equal(pages.length,21);assert.equal(byPath.size,21);
+ let entries=0;
+ for(const state of serviceStates){
+  const page=byPath.get(state.path);assert.ok(page,state.path);
+  assert.ok(page.body.includes(e(state.name)),state.path);
+  assert.match(page.body,/Place types and official sources/);
+  assert.doesNotMatch(page.body,/class="county-buyer-task"|class="county-planning-details"/);
+  for(const county of state.counties){
+   entries++;
+   assert.ok(page.body.includes(`id="${county.slug}"`),state.id+'/'+county.slug);
+   if(county.geographyNote)assert.ok(page.body.includes(e(countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote)),state.id+'/'+county.slug+' local distinction');
+  }
  }
- const vinton=byPath.get('/areas/ohio/vinton-county/').body;
- assert.match(vinton,/>View villages and townships<\/summary>/);
- assert.doesNotMatch(vinton,/Communities are Census-designated/);
- const kings=byPath.get('/areas/kings-county/');
- assert.match(kings.body,/<h1>Web design &amp; SEO in Kings County \(Brooklyn\), NY<\/h1>/);
+ assert.equal(entries,1012);
+ const ny=byPath.get('/areas/new-york/').body;
+ for(const name of ['Brooklyn','Manhattan','Staten Island'])assert.ok(ny.includes(name),name);
  const erie=countyCoverage(erieGeography,config,offers);
  assert.match(erie,/<h1>Web design &amp; SEO in Erie County \(Buffalo\), NY<\/h1>/);
  assert.equal((erie.match(/Use your usual community name/g)||[]).length,1);
  assert.equal((erie.match(/North Tonawanda is in Niagara County/g)||[]).length,1);
 });
 
-test('county prices and names follow configuration and safe-fix and monthly starting rules stay explicit',()=>{
+test('all 332 retired county routes point to preserved entries and public hub prices follow current offers',()=>{
+ assert.equal(Object.keys(retiredCountyRoutes).length,332);
+ assert.ok(!retiredCountyRoutes['/areas/erie-county/']);
+ for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
+  assert.ok(!byPath.has(retired),retired);
+  const [route,fragment]=destination.split('#'),page=byPath.get(route);
+  assert.ok(page&&fragment,retired+' -> '+destination);
+  assert.ok(page.body.includes(`id="${fragment}"`),destination);
+ }
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
- changed.baseline.public_name='Website Check';changed.audit_sprint.public_name='Review & Fix';
- for(const page of countyPages(changed).filter(page=>/-(?:county|planning-region)\/$/.test(page.path))){
-  for(const text of ['$1,777','$477','$877','$177/month','Website Check','Review &amp; Fix','one small fix if it is safe and practical','current usable','studio build'])assert.ok(page.body.includes(text),page.path+' '+text);
-  assert.doesNotMatch(page.body,/one safe first fix when access allows|Care (?:is |starts at )?from/);
- }
+ const rendered=countyPages(changed);assert.equal(rendered.length,21);
+ for(const page of rendered)for(const text of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(text),page.path+' '+text);
  const links=serviceAreaLinks();
- assert.equal((links.match(/href=/g)||[]).length,13);
- assert.match(links,/href="\/areas\/"/);
- assert.doesNotMatch(links,/-county\//);
+ assert.equal((links.match(/href=/g)||[]).length,21);assert.match(links,/href="\/areas\/"/);assert.doesNotMatch(links,/-county\//);
 });
 
 test('all 333 public worksheets preserve the exact task, decisions, checks and safe note fields',async()=>{

@@ -9,12 +9,12 @@ export function articleDateSchema(article) {
   }));
 }
 
-// Broad studio services cover states; county-page Service nodes keep their own county.
-export const serviceAreas = config => serviceCoverage(config).regions.map(name => ({'@type':'State',name}));
+// DC is a federal district; county-page Service nodes keep their own area.
+export const serviceAreas = config => serviceCoverage(config).regions.map(name => ({'@type':/^(?:Washington,? DC|District of Columbia)$/i.test(name)?'AdministrativeArea':'State',name}));
 
 export function organizationSchema(config, logo) {
   const origin = config.origin;
-  return {'@context': 'https://schema.org', '@type': 'Organization', '@id': origin + '/#studio', name: config.name, alternateName: 'Wonder & Method', url: origin + '/', logo: {'@type':'ImageObject','@id':origin+'/#logo',url:origin+logo,contentUrl:origin+logo,width:512,height:512,caption:config.name+' logo'}, image: origin + '/assets/brand/social-card.png', legalName: config.businessIdentity, email: config.contactEmail, description: 'Independent Buffalo web studio offering fixed-scope websites, SEO, website care and audits, delivered online across twelve states.', founder: {'@id': origin + '/about/#terry'}, location: {'@type': 'Place', name: 'Buffalo, New York', address: {'@type': 'PostalAddress', addressLocality: 'Buffalo', addressRegion: 'NY', addressCountry: 'US'}}, areaServed: serviceAreas(config), hasOfferCatalog: {'@id': origin + '/pricing/#offers'}, contactPoint: {'@type': 'ContactPoint', contactType: 'Project inquiries and support', email: config.contactEmail, availableLanguage: 'English'}};
+  return {'@context': 'https://schema.org', '@type': 'Organization', '@id': origin + '/#studio', name: config.name, alternateName: 'Wonder & Method', url: origin + '/', logo: {'@type':'ImageObject','@id':origin+'/#logo',url:origin+logo,contentUrl:origin+logo,width:512,height:512,caption:config.name+' logo'}, image: origin + '/assets/brand/social-card.png', legalName: config.businessIdentity, email: config.contactEmail, description: `Independent Buffalo web studio offering fixed-scope websites, SEO, website care and audits, delivered online across ${serviceCoverage(config).shortRegion}.`, founder: {'@id': origin + '/about/#terry'}, location: {'@type': 'Place', name: 'Buffalo, New York', address: {'@type': 'PostalAddress', addressLocality: 'Buffalo', addressRegion: 'NY', addressCountry: 'US'}}, areaServed: serviceAreas(config), hasOfferCatalog: {'@id': origin + '/pricing/#offers'}, contactPoint: {'@type': 'ContactPoint', contactType: 'Project inquiries and support', email: config.contactEmail, availableLanguage: 'English'}};
 }
 
 export function commercialOffers(config, o) {

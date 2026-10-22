@@ -1,3 +1,4 @@
+import {serviceRegionLabel} from './assets/service-state-info.js';
 import {guideIllustration,guideIllustrationAlt} from './guide-art.mjs';
 import {socialCardPath} from './social-cards.mjs';
 import {accessibleGuideTables} from './guide-practical-steps.mjs';
@@ -27,7 +28,7 @@ export const journal=[
  ...newGuides,
  ...searchGuides,
  ...ongoingGuides,
- {path:'/guides/website-project-cost/',title:'Small business website costs: plan the full budget',category:'Planning',image:'website-budget',alt:'Illustrated website proposal showing Design, Content and Build beside a premium website mockup',description:'Plan a small business website or redesign budget with current studio prices, ongoing costs, migration work and a practical quote checklist. Based in Buffalo; serving twelve states.',minutes:6,fallback:'/pricing/'},
+ {path:'/guides/website-project-cost/',title:'Small business website costs: plan the full budget',category:'Planning',image:'website-budget',alt:'Illustrated website proposal showing Design, Content and Build beside a premium website mockup',description:`Plan a small business website or redesign budget with current studio prices, ongoing costs, migration work and a practical quote checklist. Based in Buffalo; serving ${serviceRegionLabel}.`,minutes:6,fallback:'/pricing/'},
  {path:'/guides/website-redesign-brief/',title:'A website redesign brief that gets useful answers',category:'Planning',image:'redesign-brief',alt:'A redesign brief with customer, pages, content and next-step questions beside home and contact page concepts',description:'Prepare a redesign brief for your service business, with a download covering pages, facts, account ownership and launch checks.',minutes:5,fallback:'/services/web-design/'},
  {path:'/guides/local-seo-profile-eligibility/',title:'Google Business Profile eligibility: local SEO starts with the business you actually run',category:'Search',image:'local-search',alt:'An illustrated Buffalo local-search map with service, area and website cards against a stylized waterfront skyline',description:'Local SEO and Google Business Profile eligibility for small service businesses: online-only work, service areas, address choices and useful website content.',minutes:5,fallback:'/services/seo/'},
  {path:'/guides/seo-work-and-reporting/',title:'What monthly SEO work includes',category:'Search',image:'seo-report',alt:'An illustrative monthly SEO review organized into work completed, what changed and the next decision',description:'See how search research becomes a finished page improvement, what the monthly plans include and how to read the report.',minutes:6,fallback:'/services/seo/'},
@@ -167,8 +168,8 @@ export const relatedGuides=(item,available)=>{
  return paths.map(slug=>available.find(page=>page.path===`/guides/${slug}/`)).filter(Boolean).slice(0,2);
 };
 const friendlyDownloads=body=>body.replace(/(<a\b[^>]*href="[^"]+\.(csv|txt)"[^>]*>)([^<]*)(<\/a>)/gi,(_match,open,ext,label,close)=>{
- const clean=label.replace(/\s*\((?:CSV|TXT)\)/gi,'').replace(/^Download\s+(?:the\s+)?/i,'').trim();
- return open+'Download '+clean+(ext.toLowerCase()==='csv'?' (spreadsheet)':' (text file)')+close;
+ const clean=label.replace(/\s*\((?:CSV|TXT)\)/gi,'').trim();
+ return open+clean+(ext.toLowerCase()==='csv'?' (spreadsheet)':' (text file)')+close;
 });
 export function journalArticle(item,offers,available){
  const sections=journalSections(item.path,offers).map(section=>({...section,body:friendlyDownloads(accessibleGuideTables(contextualizeGuideBody(section.body,item.path)))}));

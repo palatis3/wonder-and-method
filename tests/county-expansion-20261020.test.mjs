@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -24,28 +25,28 @@ const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)
 const oldSchema=prior.at(-1);
 
 test('all fifteen additions remain in the area hub reached from service pages',()=>{
- assert.equal(pages.length,415);
+ assert.equal(pages.length,91);
  const servicePages=pages.filter(p=>p.path.startsWith('/services/'));
  assert.ok(servicePages.length>=7);
  for(const slug of slugs){
-  const path=`/areas/${slug}-county/`,page=byPath.get(path);
-  assert.ok(page,path);
+  const path='/areas/new-york/#'+slug,page=byPath.get('/areas/new-york/');
+  assert.equal(retiredCountyRoutes[`/areas/${slug}-county/`],path);assert.ok(!byPath.has(`/areas/${slug}-county/`));assert.ok(page.html.includes(`id="${slug}"`));
   assert.ok(byPath.get('/areas/').html.includes(`href="${path}"`),`Directory missing ${path}`);for(const source of [byPath.get('/areas/erie-county/'),...servicePages])assert.ok(source.html.includes('href="/areas/"'),`${source.path} missing county directory`);
   assert.match(page.html,/href="\/services\/seo\/"/);
   assert.match(page.html,/href="\/services\/web-design\/"/);
-  assert.ok(page.html.includes('id="buyer-task"'));
+  assert.match(page.html,/Place types and official sources/);
  }
- assert.match(byPath.get('/areas/kings-county/').title,/Brooklyn/);
- assert.match(byPath.get('/areas/new-york-county/').title,/Manhattan/);
- assert.match(byPath.get('/areas/richmond-county/').title,/Staten Island/);
+ assert.match(byPath.get('/areas/new-york/').html,/Brooklyn/);
+ assert.match(byPath.get('/areas/new-york/').html,/Manhattan/);
+ assert.match(byPath.get('/areas/new-york/').html,/Staten Island/);
 });
 
-test('county pages have individual search metadata and all public pages enter the sitemap',()=>{
+test('public pages retain distinct metadata and only live pages enter the sitemap',()=>{
  const titles=pages.map(p=>p.title),descriptions=pages.map(p=>p.description);
  assert.equal(new Set(titles).size,titles.length);
  assert.equal(new Set(descriptions).size,descriptions.length);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
  for(const page of pages){
   if(page.path==='/404/')continue;
   assert.match(page.html,/<meta name="robots" content="index,follow"/,page.path);
@@ -76,25 +77,23 @@ test('borough geography and downloaded planning exercises stay useful and accura
  for(const dissolved of ['Cherry Creek','Forestville'])assert.ok(!chautauqua.villages.includes(dissolved));
 });
 
-test('research-informed county answers remain visible, linked and consistent with changed commercial prices',()=>{
+test('retained research answers preserve valid links and dynamic prices while the public hub uses current costs',()=>{
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1887;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.plans.keep_running.monthly_price=187;
  const changedPages=new Map(countyPages(changed).map(p=>[p.path,p.body]));
  const questionSet=new Set();
  for(const slug of slugs){
-  const path=`/areas/${slug}-county/`,body=changedPages.get(path);
-  const faq=body.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
-  assert.equal((faq.match(/<summary>/g)||[]).length,5,slug);
+  const answers=countySearchQuestions(slug,changed);assert.equal(answers.length,3,slug);
+  const faq=answers.map(answer=>answer[1]).join(' ');
   for(const [question,answer,url] of countySearchQuestions(slug,changed)){
-   questionSet.add(question);assert.ok(body.includes(question.replaceAll('&','&amp;')),slug);
+   questionSet.add(question);
    assert.ok(answer.length>=120,slug);assert.ok(byPath.has(url),slug+' -> '+url);
   }
   assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month/,slug);
   if(faq.includes('$487/month'))assert.match(faq,/Both include Keep Running care checks.*Keep Running is also available on its own/);
  }
  assert.equal(questionSet.size,45);
- assert.match(changedPages.get('/areas/kings-county/'),/\$1,887/);
- assert.match(changedPages.get('/areas/new-york-county/'),/\$487\/month.*\$887\/month.*\$187\/month/s);
+ const hub=changedPages.get('/areas/new-york/');assert.ok(hub);assert.match(hub,/\$1,887/);assert.match(hub,/\$187\/month/);
 });
 
 test('county migration changes only the fifteen page categories and preserves all stored records',t=>{

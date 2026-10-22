@@ -1,3 +1,5 @@
+import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -7,6 +9,7 @@ import {ohioProfiles,ohioBuyerTasks,ohioSearchQuestions,ohioQuestionSources} fro
 import {ohioGeography} from '../src/ohio-geography.mjs';
 import {ohioRegions} from '../src/ohio-regions.mjs';
 import {countyPages} from '../src/service-counties.mjs';
+import {escapeHtml} from '../src/shared.mjs';
 import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import {crawlFiles} from '../src/seo.mjs';
@@ -27,48 +30,45 @@ const priorSql=await Promise.all(priorFiles.map(name=>readFile(new URL(name,migr
 const migration=await readFile(new URL('0014_journey_ohio.sql',migrationFolder),'utf8');
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
-test('Ohio adds exactly one state directory and 88 guides while preserving every prior route',()=>{
- assert.equal(priorRoutes.length,189);assert.equal(pages.length,415);assert.equal(byPath.size,415);
- assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),newRoutes.sort());
- for(const route of priorRoutes)assert.ok(byPath.has(route),route);
+test('Ohio retains all 88 county entries and historical routes resolve to live destinations',()=>{
+ assert.equal(priorRoutes.length,189);assert.equal(pages.length,91);assert.equal(byPath.size,91);
+ assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),["/areas/ohio/"].sort());
+ for(const route of priorRoutes){
+  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route),route);assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
+  else assert.ok(byPath.has(route),route);
+ }
  assert.deepEqual(ohioProfiles.map(c=>c.slug).sort(),expectedSlugs);
  assert.deepEqual(Object.keys(ohioGeography).sort(),expectedSlugs);
  assert.equal(ohioRegions.length,7);
  assert.deepEqual(ohioRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
- for(const [route,count] of [['/areas/',333],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
+ for(const [route,count] of [['/areas/',1012],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
  }
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
   for(const hub of ['/areas/',state.path])assert.ok(byPath.get(hub).html.includes(`href="${route}"`),hub+' -> '+route);
-  assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`),route);
+  assert.ok(sitemap.includes(`<loc>${config.origin+route.split('#')[0]}</loc>`),route);
   for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
  }
 });
 
-test('county and state identity remain correct for duplicate county names and breadcrumbs',()=>{
+test('county identity survives in anchored state entries with truthful Buffalo provider metadata',()=>{
+ const route='/areas/ohio/',page=byPath.get(route),data=schemas(page),org=data.find(x=>x['@type']==='Organization');
+ assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
+ assert.ok(!data.some(x=>['LocalBusiness','FAQPage'].includes(x['@type'])));
+ assert.deepEqual(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),['/','/areas/',route].map(path=>config.origin+path));
+ assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));assert.match(page.html,/<meta name="robots" content="index,follow"/);
  for(const c of ohioProfiles){
-  const page=byPath.get(path(c.slug)),data=schemas(page),service=data.find(x=>x['@type']==='Service');
-  assert.equal(service.areaServed.name,c.name+' County, Ohio');
-  assert.equal(service.provider['@id'],config.origin+'/#studio');
-  const org=data.find(x=>x['@type']==='Organization');
-  assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
-  assert.ok(!data.some(x=>['LocalBusiness','FAQPage'].includes(x['@type'])));
-  const trail=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;
-  assert.deepEqual(trail.map(x=>x.item),['/','/areas/','/areas/ohio/',path(c.slug)].map(route=>config.origin+route));
-  assert.equal(trail.at(-1).name,c.name+' County');
-  assert.ok(page.html.includes(`rel="canonical" href="${config.origin+path(c.slug)}"`));
-  assert.match(page.html,/<meta name="robots" content="index,follow"/);
-  const pa=byPath.get(`/areas/pennsylvania/${c.slug}-county/`);if(pa){assert.equal(schemas(pa).find(x=>x['@type']==='Service').areaServed.name,c.name+' County, Pennsylvania');assert.notEqual(pa.path,page.path);}
-  const ny=byPath.get(`/areas/${c.slug}-county/`);
-  if(ny){assert.equal(schemas(ny).find(x=>x['@type']==='Service').areaServed.name,c.name+' County, New York');assert.notEqual(ny.path,page.path);}
+  assert.equal(retiredCountyRoutes[path(c.slug)],route+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)),path(c.slug));
+  assert.ok(page.html.includes(`id="${c.slug}"`),c.slug);assert.ok(page.html.includes(escapeHtml(c.name+' County')),c.slug);
+  assert.ok(page.html.includes(escapeHtml(countyLocalNotes['ohio/'+c.slug]||c.geographyNote)),c.slug+' local distinction');
  }
- for(const route of ['/areas/erie-county/','/areas/st-lawrence-county/']){
-  assert.equal(schemas(byPath.get(route)).find(x=>x['@type']==='BreadcrumbList').itemListElement[2].item,config.origin+'/areas/new-york/');
- }
+ assert.equal(retiredCountyRoutes['/areas/ohio/erie-county/'],route+'#erie');
+ assert.equal(retiredCountyRoutes['/areas/st-lawrence-county/'],'/areas/new-york/#st-lawrence');
+ assert.equal(schemas(byPath.get('/areas/erie-county/')).find(x=>x['@type']==='Service').areaServed.name,'Erie County, New York');
 });
 
 test('Ohio municipality classifications and cross-county names retain verified geography',()=>{
@@ -95,52 +95,50 @@ test('Ohio municipality classifications and cross-county names retain verified g
  for(const [slug,g] of Object.entries(ohioGeography)){
   assert.deepEqual(Object.keys(g.municipalities).sort(),['cities','townships','villages']);
   assert.ok(g.sources.length>=2,slug);assert.ok(g.directoryNote?.trim(),slug);
-  assert.match(byPath.get(path(slug)).html,/Official sources for these places/);
-  for(const url of [...g.sources,...g.communities.map(x=>x.source)])assert.ok(byPath.get(path(slug)).html.includes(url.replaceAll('&','&amp;')),slug+' -> '+url);
+  assert.match(byPath.get('/areas/ohio/').html,/Place types and official sources/);
+  for(const url of [...g.sources,...g.communities.map(x=>x.source)])assert.ok(byPath.get('/areas/ohio/').html.includes(url.replaceAll('&','&amp;')),slug+' -> '+url);
  }
 });
 
-test('Ohio guides have distinct planning decisions, useful worksheets and five useful FAQs',async()=>{
+test('Ohio historical worksheets retain their authored decisions and research provenance',async()=>{
  const focus=new Set(),titles=new Set(),decisions=new Set(),localQuestions=new Set(),searchQuestions=new Set();
  for(const c of ohioProfiles){
-  const task=ohioBuyerTasks[c.slug],html=byPath.get(path(c.slug)).html;
+  const task=ohioBuyerTasks[c.slug];
   assert.ok(task,c.slug);assert.equal(c.briefs.length,2);assert.equal(c.questions.length,2);assert.equal(task.questions.length,3);
   focus.add(c.focus);titles.add(task.title);decisions.add(task.decision);c.questions.forEach(([q])=>localQuestions.add(q));
-  assert.match(html,/from Buffalo/);assert.match(html,/online/);
-  assert.ok(html.includes('More planning examples (made up)'));assert.ok(html.includes('<p class="eyebrow">Example (made up)</p>'));
-  const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.equal((faq.match(/<summary>/g)||[]).length,5,c.slug);
   for(const [q,answer,url,label] of ohioSearchQuestions(c.slug,offers)){
    assert.ok(answer.trim().length>90,c.slug);assert.ok(label?.trim(),c.slug);assert.ok(byPath.has(url),c.slug+' -> '+url);searchQuestions.add(q);
   }
   const worksheet=await readFile(new URL('../src/assets/county-briefs/ohio-'+c.slug+'.txt',import.meta.url),'utf8');
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),c.slug);
   assert.match(worksheet,/EXAMPLE \(MADE UP\)/);
-  assert.ok(html.includes(`href="/assets/county-briefs/ohio-${c.slug}.txt"`));
+  assert.ok(worksheet.includes(config.origin+'/areas/ohio/#'+c.slug),c.slug+' worksheet links its final directory entry');
+  assert.match(worksheet,/general.*(?:planning|guidance)|(?:planning|guidance).*general/i);
  }
  assert.equal(focus.size,88);assert.equal(titles.size,88);assert.equal(decisions.size,88);assert.equal(localQuestions.size,176);assert.equal(searchQuestions.size,264);
  const sources=ohioQuestionSources(offers);assert.equal(sources.length,264);assert.ok(sources.every(x=>sourceQueries.includes(x.sourceQuery)), 'Every adapted question retains an exact verified research source');
 });
 
-test('county prices follow current offers, including website review and care as separate services',()=>{
+test('state-directory prices and retained authored answers follow current offer configuration',()=>{
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
- const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
+ const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body])),html=rendered.get('/areas/ohio/');assert.ok(html);
+ for(const price of ['$1,887','$187/month','$499','$686'])assert.ok(html.includes(price),price);
  for(const slug of expectedSlugs){
-  const html=rendered.get(path(slug));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Keep Running \$187\/month/);assert.match(html,/Website Baseline \$499/);assert.match(html,/Audit &amp; Fix Sprint \$975/);
-  const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];
-  assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/,slug);
+  const answers=ohioSearchQuestions(slug,changed);assert.equal(answers.length,3);
+  assert.doesNotMatch(answers.map(answer=>answer[1]).join(' '),/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/,slug);
  }
  assert.deepEqual(ohioSearchQuestions('not-a-county',offers),[]);
 });
 
-test('new metadata and social assets are distinct and complete',async()=>{
+test('live state-hub metadata and social assets are complete',async()=>{
  const titles=new Set(),descriptions=new Set();
- for(const route of newRoutes){
+ for(const route of ["/areas/ohio/"]){
   const page=byPath.get(route);titles.add(page.title);descriptions.add(page.description);
   assert.match(page.description,/\S/);assert.ok(page.html.includes(config.origin+socialCardPath(route)));
   const png=await readFile(new URL('../src'+socialCardPath(route),import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
  }
- assert.equal(titles.size,89);assert.equal(descriptions.size,89);
+ assert.equal(titles.size,1);assert.equal(descriptions.size,1);
 });
 
 test('Ohio migration preserves all historical rows, constraints and old Worker compatibility',t=>{

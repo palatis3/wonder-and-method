@@ -14,7 +14,7 @@ const contractor=contractorService(offers,config);
 const text=html=>html.replace(/<[^>]*>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const hrefs=html=>[...html.matchAll(/href="([^"]+)"/g)].map(match=>match[1]);
 
-test('contractor page keeps all twelve states and a seven-item page plan without mobile table cards',()=>{
+test('contractor page keeps all states and the district and a seven-item page plan without mobile table cards',()=>{
  const title=text(contractor.match(/<h1>(.*?)<\/h1>/s)[1]);
  assert.equal(title,'Websites for contractors and home-service businesses.');
  for(const state of config.serviceCoverage.regions)assert.ok(contractor.includes(state));

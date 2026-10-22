@@ -28,7 +28,7 @@ export const statewideCountyProfiles = [
     focus:'Olean and Salamanca are separate cities, while Ellicottville provides another distinct destination within the county. If your business offers equipment, lessons or appointments at different places, show which location applies to each choice. A product photograph alone cannot explain whether an item is for sale, available for hire or included in a booked service.',
     briefs:[
       ['Equipment with optional instruction','An Ellicottville operator can give rental and instruction separate descriptions, with what is included, owner-approved requirements and return arrangements. Link each to the correct existing reservation destination when that connection is in scope.'],
-      ['A showroom and an appointment service','For an Olea business, browsing opening hours may differ from consultation availability. Put the appointment requirement beside the consultation offer and explain whether bringing an item is necessary. A Salamanca service area should not be presented as another showroom.']
+      ['A showroom and an appointment service','For an Olean business, browsing opening hours may differ from consultation availability. Put the appointment requirement beside the consultation offer and explain whether bringing an item is necessary. A Salamanca service area should not be presented as another showroom.']
     ],
     search:'Review the words that distinguish the offers: purchase, rental, lesson, consultation and repair may represent different customer intentions. Pages should explain the relevant choice and location. Search reporting can then distinguish interest in each service without claiming that every county visitor wants the same thing.',
     geographyNote:'Olean and Salamanca are cities in Cattaraugus County. Gowanda crosses into Erie County; use the job address to confirm the county.',
@@ -87,7 +87,7 @@ export const statewideCountyProfiles = [
     search:'New-buyer pages should explain capabilities and specification requirements; repeat-customer instructions can stay concise. Review whether product family names are consistent across pages and downloads. Search work can improve those explanations without publishing confidential customer specifications or an unsupported live inventory claim.',
     geographyNote:'Norwich is both a city and a town in Chenango County. Earlville spans Chenango and Madison counties; confirm the destination when county-specific delivery rules matter.',
     questions:[
-      ['Ca customers reorder through a simple inquiry form?','Yes, if a request is sufficient for your process. Ask for an existing reference and any changes, then confirm price, availability and delivery separately. Automatic reordering or account-specific pricing is a different feature.'],
+      ['Can customers reorder through a simple inquiry form?','Yes, if a request is sufficient for your process. Ask for an existing reference and any changes, then confirm price, availability and delivery separately. Automatic reordering or account-specific pricing is a different feature.'],
       ['Should all our specifications be public?','Publish what buyers need and what you have permission to share. Keep confidential drawings and customer records out of ordinary public pages and forms. A separate process can handle detailed material after the initial fit review.']
     ]
   },
@@ -267,7 +267,7 @@ export const statewideCountyProfiles = [
     search:'Prioritize useful text, descriptive service names and current arrival information. Review large images and unnecessary embeds where they delay access to the main task. Performance checks identify specific issues; they do not establish a claim about local network coverage or guarantee every visitor’s connection.',
     geographyNote:'Hamilton County is entirely within the Adirondack Park. Indian Lake, Lake Pleasant, Long Lake and Inlet are distinct places, so the actual service destination should remain explicit.',
     questions:[
-      ['Ca customers save the essential arrival information?','A clear text page can be bookmarked, printed or saved by the customer. We can check a useful print layout within scope. An offline application or automatic downloadable itinerary is separate functionality.'],
+      ['Can customers save the essential arrival information?','A clear text page can be bookmarked, printed or saved by the customer. We can check a useful print layout within scope. An offline application or automatic downloadable itinerary is separate functionality.'],
       ['Does a lightweight page mean avoiding all photographs?','No. Use images that help the customer, prepare them for the intended size and keep essential instructions available as text. The goal is a usable page with a clear task, not an arbitrary limit on visual content.']
     ]
   },

@@ -1,3 +1,4 @@
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -32,8 +33,8 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
  for(const scope of [undefined,...serviceStates]){
   const html=countyDirectory(scope),names=unpackCountyNames(JSON.parse(html.match(/data-county-place-names>(.*?)<\/script>/s)[1]));
   assert.equal(new Set(names).size,names.length);
-  const cards=[...html.matchAll(/data-county-search="([^"]+)"><a class="county-link" href="([^"]+)"/g)];
-  assert.equal(cards.length,scope?scope.counties.length:333);
+  const cards=[...html.matchAll(/data-county-search="([^"]+)">[\s\S]*?<a class="county-link" data-county-link href="([^"]+)"/g)];
+  assert.equal(cards.length,scope?scope.counties.length:1012);
   for(const [,packed,route] of cards){
    const {county,state}=serviceAreaDataForPath(route);
    const original=countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug)));
@@ -42,12 +43,16 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
  }
 });
 
-test('six states add precisely 72 routes, preserve 286 old routes and expose all 333 areas without JavaScript',()=>{
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,415);assert.equal(byPath.size,415);
- assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),[...newRoutes].sort());
- for(const route of priorRoutes)assert.ok(byPath.has(route),route);
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
- assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,333);
+test('six state hubs retain all 66 original entries while historical routes resolve to preserved destinations',()=>{
+ assert.equal(newRoutes.length,72,'the historical six-hub and 66-area route fixture remains intact');
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,91);assert.equal(byPath.size,91);
+ assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
+ for(const route of priorRoutes){
+  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
+  else assert.ok(byPath.has(route),route);
+ }
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
+ assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1012);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
   assert.deepEqual(Object.keys(northeastGeography[s.id]).sort(),s.areas.map(a=>a.slug).sort());
@@ -55,29 +60,23 @@ test('six states add precisely 72 routes, preserve 286 old routes and expose all
   assert.equal((hub.match(/data-county-search=/g)||[]).length,s.areas.length);
   assert.match(hub,/<noscript>/);assert.match(hub,/<details class="county-region county-section"/);
   assert.doesNotMatch(hub,/<div id="counties"[^>]*\bhidden/);
-  for(const a of s.areas){const route=path(s,a);for(const html of [hub,byPath.get('/areas/').html])assert.ok(html.includes(`href="${route}"`),route);assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));}
+  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;assert.equal(retiredCountyRoutes[path(s,a)],destination);assert.ok(!byPath.has(path(s,a)));for(const html of [hub,byPath.get('/areas/').html])assert.ok(html.includes(`href="${destination}"`),destination);assert.ok(hub.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
  }
 });
 
-test('each new route has correct title, H1, canonical identity, breadcrumbs and truthful Buffalo provider schema',()=>{
+test('six live state hubs have correct metadata, canonical identity and truthful Buffalo organization schema',()=>{
  const titles=new Set(),descriptions=new Set();
- for(const s of fixture.states)for(const [route,label] of [[`/areas/${s.id}/`,s.name],...s.areas.map(a=>[path(s,a),`${a.name} ${s.areaType}`])]){
-  const page=byPath.get(route),data=schema(page);titles.add(page.title);descriptions.add(page.description);
-  const area=s.areas.find(a=>path(s,a)===route);
-  assert.ok(page.title.includes(area?.name||s.name),route);
-  if(area)assert.ok(page.title.includes(s.abbreviation),route);
-  assert.ok(page.description.trim());
-  const h1=page.html.match(/<h1[^>]*>(.*?)<\/h1>/s);assert.ok(h1,route);assert.ok(h1[1].includes(label),route);
-  assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
-  assert.match(page.html,/<meta name="robots" content="index,follow"/);
+ for(const s of fixture.states){
+  const route=`/areas/${s.id}/`,page=byPath.get(route),data=schema(page);titles.add(page.title);descriptions.add(page.description);
+  assert.ok(page.title.includes(s.name),route);assert.ok(page.description.trim());
+  assert.ok(page.html.match(/<h1[^>]*>(.*?)<\/h1>/s)[1].includes(s.name),route);
+  assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));assert.match(page.html,/<meta name="robots" content="index,follow"/);
   assert.ok(!data.some(x=>['FAQPage','LocalBusiness'].includes(x['@type'])));
-  const organization=data.find(x=>x['@type']==='Organization');
-  assert.equal(organization.location.address.addressLocality,'Buffalo');assert.equal(organization.location.address.addressRegion,'NY');
-  const expected=route===`/areas/${s.id}/`?['/','/areas/',route]:['/','/areas/',`/areas/${s.id}/`,route];
-  assert.deepEqual(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),expected.map(p=>config.origin+p));
-  if(expected.length===4)assert.equal(data.find(x=>x['@type']==='Service').areaServed.name,`${label}, ${s.name}`);
+  const org=data.find(x=>x['@type']==='Organization');assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
+  assert.deepEqual(data.find(x=>x['@type']==='BreadcrumbList').itemListElement.map(x=>x.item),['/','/areas/',route].map(p=>config.origin+p));
+  for(const a of s.areas){assert.ok(page.html.includes(`id="${a.slug}"`));assert.ok(page.html.includes(escapeHtml(`${a.name} ${s.areaType}`)),s.id+'/'+a.slug);}
  }
- assert.equal(titles.size,72);assert.equal(descriptions.size,72);
+ assert.equal(titles.size,6);assert.equal(descriptions.size,6);
 });
 
 test('official state totals, Connecticut town territories and municipality type exceptions are retained',()=>{
@@ -123,11 +122,11 @@ test('typed searches distinguish states, counties, current regions and same-name
   ['Clayton town DE',['delaware/kent','delaware/new-castle']],['Milford city DE',['delaware/kent','delaware/sussex']],
   ['Rutland city VT',['vermont/rutland']],['Rutland town VT',['vermont/rutland']]
  ])assert.deepEqual(matches(query),expected,query);
- assert.equal(cards.length,333);
+ assert.equal(cards.length,1012);
 });
 
 test('all 333 provenance contexts roundtrip without accepting invented areas or business locations',()=>{
- const expected=serviceStates.flatMap(s=>s.counties.map(c=>countyPath(c,s).slice('/areas/'.length,-1))).sort();
+ const expected=[...Object.keys(retiredCountyRoutes),'/areas/erie-county/'].map(route=>route.slice('/areas/'.length,-1)).sort();
  assert.equal(countyContextOptions.length,333);assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),expected);
  const template=inquiryFormMarkup({live:true}),input={name:'Synthetic person',email:'owner@example.test',business:'Synthetic company',service:'unsure',message:'Synthetic validation only. Never send.'};
  for(const [county,label] of countyContextOptions){
@@ -143,16 +142,16 @@ test('all 333 provenance contexts roundtrip without accepting invented areas or 
  }
 });
 
-test('all 66 guides have matching buyer worksheets and FAQ answers tied to independent source queries',async()=>{
+test('all 66 historical worksheets preserve their authored decisions and independent question provenance',async()=>{
  const sources=northeastQuestionSources(offers).filter(source=>fixture.states.some(state=>state.id===source.stateId));assert.equal(sources.length,198);
  const identities=new Set();
  for(const s of fixture.states)for(const a of s.areas){
-  const c=northeastProfiles[s.id].find(c=>c.slug===a.slug),task=northeastBuyerTasks[s.id][a.slug],html=byPath.get(path(s,a)).html;
+  const c=northeastProfiles[s.id].find(c=>c.slug===a.slug),task=northeastBuyerTasks[s.id][a.slug];
   assert.equal(c.briefs.length,2);assert.equal(c.questions.length,3);assert.equal(task.questions.length,3);
   const worksheet=await readFile(new URL(`../src/assets/county-briefs/${s.id}-${a.slug}.txt`,import.meta.url),'utf8');
   for(const value of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(value?.trim()&&worksheet.includes(value),s.id+'/'+a.slug);
-  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);assert.ok(html.includes(`href="/assets/county-briefs/${s.id}-${a.slug}.txt"`));
-  assert.equal((html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1].match(/<summary>/g)||[]).length,6);
+  assert.match(worksheet,/EXAMPLE \(MADE UP\)/);assert.ok(worksheet.includes(`${config.origin}/areas/${s.id}/#${a.slug}`));
+  assert.match(worksheet,/general.*(?:planning|guidance)|(?:planning|guidance).*general/i);
   const questions=northeastSearchQuestions(s.id,a.slug,offers);assert.equal(questions.length,3);
   questions.forEach(([question,answer,guide,label],index)=>{
    assert.ok(question.trim()&&answer.trim().length>90&&label.trim());assert.ok(byPath.has(guide));
@@ -165,8 +164,12 @@ test('all 66 guides have matching buyer worksheets and FAQ answers tied to indep
  assert.deepEqual(northeastSearchQuestions('new-jersey','invented',offers),[]);
 });
 
-test('new guide and FAQ prices follow offer configuration',()=>{
+test('six live state hubs and retained question answers derive prices from current offers',()=>{
  const changed=structuredClone(offers);changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
- for(const s of fixture.states)for(const a of s.areas){const html=rendered.get(path(s,a));assert.match(html,/Website builds from \$1,887/);assert.match(html,/Keep Running \$187\/month/);assert.match(html,/Website Baseline \$499/);assert.match(html,/Audit &amp; Fix Sprint \$975/);const faq=html.match(/<div class="county-faq">([\s\S]*?)<\/div>/)[1];assert.doesNotMatch(faq,/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/);}
+ for(const s of fixture.states){
+  const html=rendered.get(`/areas/${s.id}/`);assert.ok(html);
+  for(const price of ['$1,887','$187/month','$499','$686'])assert.ok(html.includes(price),s.id+' '+price);
+  for(const a of s.areas){const answers=northeastSearchQuestions(s.id,a.slug,changed);assert.equal(answers.length,3);assert.doesNotMatch(answers.map(answer=>answer[1]).join(' '),/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/);}
+ }
 });

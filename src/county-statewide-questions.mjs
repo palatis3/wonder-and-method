@@ -24,7 +24,7 @@ function questionRows(o){
     ],
     cattaraugus:[
       ['What does responsive design mean for a rental or appointment website?','The comparison and booking path should remain usable on a phone as well as a larger screen. For an Ellicottville offer, check that rental inclusions, requirements and the correct location stay readable before the booking action. Test the task, not just whether the page fits the screen.','choosing','what is responsive web design'],
-      ['When should an Olea business redesign a site with several offers?','Review whether customers can distinguish buying, renting and booking instruction or a service. A clearer menu or comparison may solve the problem. A redesign is more appropriate when page structure, writing and contact routes all need to change; retain useful content that already explains the offers.','repair','when is it time to redesign your website'],
+      ['When should an Olean business redesign a site with several offers?','Review whether customers can distinguish buying, renting and booking instruction or a service. A clearer menu or comparison may solve the problem. A redesign is more appropriate when page structure, writing and contact routes all need to change; retain useful content that already explains the offers.','repair','when is it time to redesign your website'],
       ['What does monthly website care cost for a Cattaraugus County business?',`${care} For a business with equipment and appointments, supplied changes might clarify current inclusions or collection details. New inventory rules or a replacement booking system require separate scope; domain, hosting and provider subscriptions are paid separately.`,'pricing','how much does website maintenance cost per month']
     ],
     cayuga:[
