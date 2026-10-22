@@ -1,0 +1,3 @@
+/* Isolated element captures exclude floating page chrome. Whole-page captures
+   and browser interaction tests continue to cover these controls. */
+.site-header,.skip,.back-to-top,.support-chat{visibility:hidden!important}

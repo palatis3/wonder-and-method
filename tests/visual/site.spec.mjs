@@ -1,4 +1,7 @@
 import {test,expect} from '../browser/fixtures.mjs';
+import {fileURLToPath} from 'node:url';
+
+const contentOnly={stylePath:fileURLToPath(new URL('./content-only.css',import.meta.url))};
 
 async function settle(page){
  const city=page.locator('[data-living-city]');
@@ -33,12 +36,11 @@ for(const [name,path] of [
 test('county entry preserves readable local facts and place lists',async({page})=>{
  await page.goto('/areas/new-york/?qa=1#monroe');await settle(page);
  const entry=page.locator('#monroe');await expect(entry).toHaveAttribute('open','');
- await expect(entry).toHaveScreenshot('county-entry.png');
+  await expect(entry).toHaveScreenshot('county-entry.png',contentOnly);
 });
 test('footer collapsed and expanded layouts',async({page})=>{
  await page.goto('/?qa=1');await settle(page);const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
- const footerOnly={style:'.site-header,.back-to-top,.support-chat{visibility:hidden!important}'};
- await expect(footer).toHaveScreenshot('footer-closed.png',footerOnly);
+ await expect(footer).toHaveScreenshot('footer-closed.png',contentOnly);
  for(const summary of await footer.locator('summary').all())await summary.click();
- await expect(footer).toHaveScreenshot('footer-open.png',footerOnly);
+ await expect(footer).toHaveScreenshot('footer-open.png',contentOnly);
 });

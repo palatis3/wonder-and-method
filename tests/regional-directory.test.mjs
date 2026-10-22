@@ -54,7 +54,8 @@ test('hub entries expose every recorded place and distinct government type with 
    }
    assert.match(entry,/href="#geography-reference-\d+"/);
    for(const url of g.sources)assert.ok(html.includes(`href="${e(url)}"`),state.id+' source '+url);
-   assert.ok(html.includes(e(g.directoryNote)),state.id+' place definitions');
+   const shared=Object.values(state.geography).find(other=>other.directoryNote&&g.directoryNote.startsWith(other.directoryNote+' '));
+   assert.ok(html.includes(e(g.directoryNote))||(shared&&html.includes(e(shared.directoryNote))&&html.includes(e(g.directoryNote.slice(shared.directoryNote.length+1)))),state.id+' complete place definitions, with a shared prefix printed once');
   }
  }
  assert.match(directories.get('michigan'),/>Charter townships<\/h3>/);
