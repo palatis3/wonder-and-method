@@ -1,7 +1,9 @@
 {
   "status": "Blank planning snapshots from existing invoicing/bookkeeping; never a second invoice/payment ledger",
-  "existing_invoice_provider": null,
+  "existing_invoice_provider": "Stripe hosted invoicing",
   "bookkeeping_reference": null,
+  "prepared_bookkeeping_starter": "C:/Wonder and Method/outputs/01a1372f-80d0-7bf0-b8dc-c159ebe59991/wonder-and-method-bookkeeping.xlsx",
+  "bookkeeping_status": "Blank local starter prepared October 22. Owner has no bookkeeping system or clients yet and deferred further bookkeeping work. No actual transactions or balances entered; adoption and reconciliation remain unverified.",
   "months": [],
   "month_template": {
     "calendar_month": null,
@@ -80,6 +82,9 @@
     "minimum_balance": null,
     "required_monthly_owner_pay": null,
     "interpretation": "Qualitative cash constraint; monetary amounts remain unknown. Existing spending approvals remain scoped.",
-    "recorded_at": "2026-10-14T16:38:21.081Z"
+    "recorded_at": "2026-10-14T16:38:21.081Z",
+    "owner_pay_preference": "October 22: owner is open to any monthly pay at this stage; no numeric minimum was selected. This does not mean a confirmed zero requirement or an approved draw.",
+    "bookkeeping_preference": "October 22: no current bookkeeping system and no client yet. Starter prepared; further bookkeeping work deferred at owner request.",
+    "latest_preference_date": "2026-10-22"
   }
 }

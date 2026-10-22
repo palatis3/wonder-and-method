@@ -1,41 +1,44 @@
-# Implementation status — October 18, 2026
+# Implementation status — October 22, 2026
 
-Current source revision: [monthly care, SEO and growth plans](operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
+The website is published and verified. The latest application release is the [long-tail content update](operations/LONGTAIL_CONTENT_20261022.md), following the [nine-state expansion](operations/NORTHEAST_EXPANSION_20261022.md). This status distinguishes the deployed application from later documentation commits and from the remaining requirements for accepting client work.
 
-The October 18 audit-fix update is **published and verified**. That release used `config/offers.json` version `2026-10-18-audit-name`; the current authority is linked above. Public copy and the four affected posters now use “Website audit” without a fixed count; all checklist sections and native features remain. New website plans deliver custom code, one initial launch, a source folder/ZIP, written notes and one optional 30-minute handoff call. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. Client-facing copy states the agreed scope affirmatively; additional work is assessed and priced before commitment. Marketing-page examples distinguish pages from sections. Client instructions are plain text. Existing prices, page caps, creative/motion scope, two reviews, payments and 30-day defect correction remain unchanged; accepted historical scopes and optional monthly services retain their terms.
+## Current published website
 
-The source-handoff command and fictional starter are documented in [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md). The packager passes 27 targeted tests, and the final fictional ZIP passes independent extraction, checksum and source-rebuild checks. This does not prove an actual client launch or form/email delivery.
+| Item | Verified October 22, 2026 |
+|---|---|
+| Origin | https://wonderandmethod.com |
+| Published source | `14dfa494062a636953a56830c1ac47ef13607f2a` |
+| Authenticated runtime | `17d7370c-8b5d-41b8-992c-3a2e899c1526` |
+| Content | 415 HTML routes; 414 sitemap URLs; 27 buyer guides; 333 county/equivalent guides across twelve states |
+| Technical validation | 661 unit tests and 235 browser tests passed; 120 intentional browser project skips; exact-commit CI and predeploy passed |
+| Live verification | All 415 HTML routes and 1,027 asset hashes match the tested build; 16 new-guide live journeys passed |
+| Independent review | Editorial, source and release-evidence reviews passed with no unresolved issue |
+| Database | Migrations through 0019; four new fixed page categories; existing aggregate keys/totals and all four inquiry records preserved |
+| Search | Indexing enabled; Google accepted sitemap resubmission. Its report still displayed 410 discovered pages immediately afterward, so processing/indexing of the four new URLs is unverified |
+| Monitoring | Authenticated operational health was healthy. The scheduled recovery timestamp advanced after deployment, and delivery/retention monitors received fresh pings; all three alerts use the existing support-email integration |
 
-Current evidence is in `evidence/audit-fixes-20261018/`. The 33-item closure ledger records all 15 confirmed defects fixed, ten improvements implemented, three improvements partially addressed and five operating requirements advanced but still awaiting real evidence. See `C:/Wonder and Method/site-improvements-20261018/completion-report.html` and [OWNER_READINESS.md](operations/OWNER_READINESS.md). The original full-site audit remains a dated baseline.
+The private release report is `C:/Wonder and Method/longtail-content-20261022/RELEASE-REPORT.md`. It links the exact technical manifest, CI, live HTTP/browser results, database preservation checks, independent reviews and provider observations. The preceding area expansion has its own report under `C:/Wonder and Method/northern-expansion-20261022/`.
 
-Current release evidence is summarized below. Earlier buyer-experience work remains historical where noted; the new source-handoff model supersedes the former bundled editor demonstration.
+Deployment identity comes from the authenticated operator response and the private build manifest. Public `/version.json` returns 404. Do not infer the running version from the latest repository commit or an old screenshot. Follow [PRODUCTION.md](deployment/PRODUCTION.md) for publication and verification.
 
-| Area | Current verified release evidence |
-| --- | --- |
-| Production | Audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74`; 66 routes, 42 index-eligible pages, 17 guides |
-| Technical validation | 300 tests pass; 292 clean-source output files match; static verifier, dry run and private GitHub CI pass; 66 live pages and 218 asset hashes match; bounded Astra logic and visual reviews clear |
-| Search | Indexing ON. Google sitemap submission succeeded October 17, with 41 discovered pages. Homepage inspection says indexed. New manual recrawl request failed because Google's reCAPTCHA service could not connect. |
-| Source recovery | Private GitHub repository `palatis3/wonder-and-method`; sanitized source, secret scan, clean staged-checkout rebuild and CI recorded. This does not establish lost-device credential recovery. |
-| Database | Migrations through 0006 applied with private pre-migration backups; latest inquiry and aggregate counts unchanged. Current-schema synthetic restore preserves frozen payloads and hold protection. No real inquiry deletion or inferred contact-date backfill. |
-| Provider settings | DMARC monitoring record added; DNSSEC public chain and minimum TLS1.2 verified. Auto-renew remains OFF by explicit owner choice; domain expires October14,2027. |
-| Media | Civic Sculpture finale-v2 retained. Launch, Keep Running, Existing-site baseline and Audit & Fix Sprint posters and their responsive derivatives updated to remove the fixed audit count; remaining commercial terms preserved. |
+## Offers and daily operation
 
-The earlier buyer-experience release's ten improvements covered shorter contextual questions, earlier pricing choices, explicit production/review timing, compact proposal pages, an actual content-editor walkthrough, concept debriefs with relevant inquiries, service navigation, existing-site compatibility guidance, email-first contact and 3/7/12-page examples. Its offer version included editable paid source subject to disclosed licenses and provider export limits, with a scoped browser editor in Focused and Signature. That historical inclusion does not apply to new source-handoff quotes. The Decap walkthrough used a fictional local sample and did not claim client authentication or production deployment. Browser evidence for that release included phone, desktop, keyboard, no-JavaScript and short-height reflow checks; literal browser 200% zoom and screen-reader testing were not performed.
+New scopes use [config/offers.json](config/offers.json), currently version `2026-10-21-clarity-review`; accepted historical scopes retain their exact saved terms. Launch, Focused and Signature remain $1,400 / $2,350 / $3,700 with 6 / 15 / 30 pages. Use the current catalogue and written scope for inclusions, additions and dates; older V5 prices and planning assumptions are historical.
 
-Previous verified release evidence: `evidence/next10-implementation-20261018/`. The private D1 export and compatible prior Worker version were recorded; that release required no schema migration.
+Use [HANDOFF.md](HANDOFF.md) for daily operation, [WORKFLOWS.md](operations/WORKFLOWS.md) for a client job, [PAYMENTS.md](operations/PAYMENTS.md) for private Stripe invoicing, and [CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for source delivery. Website notifications go to the owner's Gmail inbox; public support mail remains in Fastmail and chat remains in tawk.to. Monitoring does not prove mailbox review or a buyer reply.
 
-The preceding strict-audit follow-up implements 13 of 18 actions, partially addresses three and prepares two that require outside evidence. It adds hold-safe deletion, rolling duplicate handling, bounded retention deadlines, aggregate health/status, large exports, native form context, real website previews, shorter care/SEO pages, approved founder-profile links, ownership-cost examples and an owned SEO case. The 130 automated desktop/phone route checks found zero violations or overflow; raw manual-review nodes and field/assistive-technology gaps remain explicit. Daily monitoring still requires actual owner coverage. No approved client case or prospect-session result is invented. See `evidence/strict-audit-fixes-20261017/implementation-status.json`, [client-case preparation](operations/CLIENT_CASE_STUDY.md) and [prospect test preparation](operations/PROSPECT_USABILITY.md).
+The actual private board is `.runtime/operations/weekly-board.json`; the tracked `operations/weekly-board.json` is a blank template. The October 22 report contained zero recorded buyers. That is a board observation, not proof that no inquiries exist elsewhere. Use `npm run leads -- report` for a fresh report.
 
-The earlier top-ten improvement batch is published: three complete fictional business concepts, earlier website proof, shorter homepage, core inquiry fields first, stacked pricing comparisons, plain-language offer summaries, separate finite/ongoing SEO inquiry paths, proposal-stage wording, contextual guide actions and a private lead pipeline. Concepts remain excluded from search; the main work page stays eligible. `evidence/top10-improvements-20261017/` records market selection, independent review fixes, local browser checks, exact live verification and recovery evidence. The actual lead board starts empty; no demand, paid client result or conversion lift is inferred.
+## Remaining business requirements
 
-Website inquiry and scope notifications now go directly to the owner’s Gmail inbox. A test notification arrived in Gmail, and the live release is verified in `evidence/gmail-routing-20261017/`. Fastmail rejected forwarding on its trial plan; the owner chose to leave support-mail and tawk.to routing unchanged.
+[OWNER_READINESS.md](operations/OWNER_READINESS.md) and the existing per-job checks remain in force. The following do not become complete because website tests pass:
 
-The inquiry receipt fix is verified in `evidence/inquiry-confirmation-20261017/`: 231 tests, local desktop/mobile/native receipts, and 55 live routes plus 196 matching asset hashes. No new live inquiry or email was sent.
+- Actual dated capacity, correction coverage, cash floor, required owner compensation and bookkeeping.
+- October 22 owner clarification: no clients or bookkeeping system yet; monthly pay is flexible with no numeric minimum selected. A blank local bookkeeping starter is available through `operations/cash-worksheet.json`; actual books and balances remain unverified, and further bookkeeping work is deferred.
+- Reviewed agreement, tax/invoicing treatment, assumed-name/name-rights and insurance/coverage decisions where applicable.
+- Resolution of Stripe's owner tax-ID task. The October 22 read-only API reports charges and payouts enabled; it does not expose or clear the Dashboard requirement observed October 18.
+- Actual funded annual-service reserves and the separate provider refund rehearsal before annual enrollment.
+- Independent access/recovery without this Windows profile, including production credentials and provider/mailbox accounts.
+- Sustained mailbox/chat/reply coverage, genuine client evidence and observed end-to-end delivery time before broader capacity or outcome claims.
 
-Prior audit evidence is in `evidence/claude-audit-20261017/`: live-http, release, migration-verification, provider-checks, google-notification, responsive-final, completion-ledger and reassessment. Independent scores retain Claude's 24 definitions and weights but are an Astra estimate, not a new Claude score or certification.
-
-The owner confirmed Buffalo, a one-business-day reply Monday–Friday Eastern, and typical production of 7–10 working days after the agreed start and ready inputs, plus agreed client review windows. First contact is email, with a call arranged if useful. No phone, profile, testimonial or paid-client result is invented.
-
-Remaining business dependencies include real project proof/reviews, approved client agreements and cancellation decisions, assumed-name verification, appropriate off-site profiles, provider billing/recovery checks and staffed Care coverage. The all-sections-80 target is not claimed complete. Original historical release folders remain evidence of their dates, not current operating instructions.
-
-Homepage SEO and menu update: `evidence/seo-positioning-20261017/` records the published headline, SEO emphasis, regional links and single mobile header CTA. The earlier Claude reassessment remains a dated audit snapshot.
+Historical release records remain evidence of their dates and scopes. The October 18 [audit closure](operations/AUDIT_CLOSURE_20261018.md), October 21 [clarity audit](operations/CLAUDE_AUDIT_20261021.md) and [follow-up audit](operations/CLAUDE_RERUN_20261021.md) retain their original findings and limitations. This update does not declare the entire business complete.

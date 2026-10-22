@@ -2,15 +2,15 @@
 
 Current website packages: [expanded Launch, Focused and Signature](operations/EXPANDED_PACKAGES_20261018.md), approved October 18, 2026.
 
-Current source revision: [top-ten buyer journey and verification improvements](operations/TOP10_IMPLEMENTATION_20261018.md). Earlier revision: [monthly care, SEO and growth plans](operations/MONTHLY_PLANS_20261018.md), offer version `2026-10-18-monthly-seo-growth`. Dated release results below remain historical; use `/version.json` and the private release record for deployed identity.
+Current published application: [October 22 long-tail content](operations/LONGTAIL_CONTENT_20261022.md), following the [nine-state expansion](operations/NORTHEAST_EXPANSION_20261022.md). [BUILD_STATUS.md](BUILD_STATUS.md) records the verified source/runtime, release evidence and remaining business dependencies. Deployment identity comes from authenticated operator status and the private build manifest; public `/version.json` returns 404.
 
-Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 18, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
+Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 22, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 
 Production is https://wonderandmethod.com, served by Cloudflare Workers assets with D1 inquiry storage. Search indexing has been on since October 16: keep `config/site.json` `searchIndexing: true` and production `SEARCH_INDEXING: "true"`. `src/index-policy.mjs` selects index-eligible routes and the generated sitemap; private/API/utility routes retain their own restrictions.
 
 Historical release: the October 18 audit-fix update `16ca8b9a-d503-48f6-a362-e7f0d004ed74` (66 routes, 42 index-eligible routes, 17 guides). All 15 confirmed defects are fixed; ten of thirteen improvements are implemented, and three still require genuine client/local/authorship evidence. All five operating requirements have concrete procedures, checks or safeguards, with actual funding, calendar, sustained operation and independent recovery evidence still pending. All 300 tests, a clean-source rebuild of 292 byte-identical output files, the deployment dry run and private GitHub CI passed. All 66 live pages and 218 asset hashes match. Bounded independent Astra logic and visual reviews have no open actionable findings. Evidence is under `evidence/audit-fixes-20261018/`. A private D1 export and compatible previous Worker were recorded before publication; no migration was required.
 
-New quotes use `config/offers.json` version `2026-10-18-audit-name`; accepted agreements retain their saved terms. The source-code handoff example is live at https://wonderandmethod.com/work/source-handoff/.
+New quotes use the current `config/offers.json` version (`2026-10-21-clarity-review` at this update); accepted agreements retain their saved terms. The source-code handoff example is live at https://wonderandmethod.com/work/source-handoff/.
 
 The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `npm run leads -- report` shows current stages by service and stated source. See [operations/LEAD_PIPELINE.md](operations/LEAD_PIPELINE.md). Actual buyer records stay out of Git and public assets. Gmail inquiry routing remains as verified in the prior release.
 
@@ -24,7 +24,7 @@ The private lead pipeline is ready in `.runtime/operations/weekly-board.json`; `
 - `motion/`: current Civic sources plus historical studies.
 - `evidence/` and `output/`: ignored local checks and generated artifacts.
 
-Before deployment run `npm run predeploy` after committing, pushing and rebuilding. It verifies the clean tree, upstream commit and built source fingerprint. The separate technical and release gates remain in force. Run `npm run check:citations` for an opt-in public reference check; blocked sources require manual review.
+Before deployment, commit and push the candidate, run `npm run technical:check`, then run `npm run predeploy` without changing source or rebuilding afterward. Predeploy verifies the clean tree, upstream commit and exact successfully tested source/artifact hashes. The separate technical and release gates remain in force. Run `npm run check:citations` for an opt-in public reference check; blocked sources require manual review.
 
 ## Rebuild and check
 
@@ -54,13 +54,13 @@ The owner confirmed a reply within one business day, Monday–Friday Eastern, an
 
 Current offer facts come from `config/offers.json`: Launch / Focused / Signature $1,400 / $2,350 / $3,700; Keep Running / Improve / Grow $150 / $400 / $800 monthly; Baseline $399; Sprint $750. Original V5 material remains preserved in `authority/`; accepted historical scopes retain their original terms. Start actual job records with `operations/WORKFLOWS.md`, keeping buyer facts and approvals explicit.
 
-All new website plans deliver custom code, one initial launch, a client source folder/ZIP, written build/publishing notes and one optional handoff call of up to 30 minutes. The expanded packages include 6/15/30 marketing pages, 0/2/4 original launch guides within those totals, keyword and competitor research in every tier, and 1/6/12 distinct finished launch/promotional graphics. Focused adds three finished promotional graphics; Signature adds six. Two review rounds, prices, payments and 30-day defect correction are unchanged. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. The client supplies ready-to-use services. CMS/browser editors or editor accounts, applications/portals/stores/CRM, booking/newsletter account configuration, tracking-number setup and scheduled post-launch growth work are separate scope. Monthly services remain optional.
+All new website plans deliver custom code, one initial launch, a client source folder/ZIP, written build/publishing notes and one optional handoff call of up to 30 minutes. The expanded packages include 6/15/30 marketing pages, 0/2/4 original launch guides within those totals, keyword and competitor research in every tier, and 1/6/12 distinct finished launch/promotional graphics. Two review rounds, prices, payments and 30-day defect correction are unchanged. Launch includes up to one ready-service link or compatible standard embed; Focused and Signature include up to two. The client supplies ready-to-use services. CMS/browser editors or editor accounts, applications/portals/stores/CRM, booking/newsletter account configuration, tracking-number setup and scheduled post-launch growth work are separate scope. Monthly services remain optional.
 
 Prepare a client handoff from its dedicated source folder with `node scripts/prepare-client-handoff.mjs --source "PATH/TO/CLIENT-FOLDER"`. See [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for the starter, explicit file allowlist, required Node/Python/Gitleaks tooling and verification. With no `--source`, the command packages a fictional sample. It does not launch a site, configure accounts, send submissions or send the ZIP.
 
 ## Operations and recovery
 
-Complete the actual prerequisites in [operations/OWNER_READINESS.md](operations/OWNER_READINESS.md) before booking or annual enrollment. The eight remaining evidence items are recorded in the audit-fix completion ledger.
+Complete the actual prerequisites in [operations/OWNER_READINESS.md](operations/OWNER_READINESS.md) before booking or annual enrollment. The current unresolved requirements are summarized in [BUILD_STATUS.md](BUILD_STATUS.md); older audit ledgers retain their dated scope.
 
 - [HANDOFF.md](HANDOFF.md): daily inbox, operator and recovery workflow.
 - [operations/CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md): portable source-folder and ZIP preparation.

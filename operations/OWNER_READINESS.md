@@ -1,6 +1,6 @@
 # Before the first booking
 
-Prepared October 18, 2026. This is a short completion list for actual evidence,
+Prepared October 18 and reconciled October 22, 2026. This is a short completion list for actual evidence,
 not a declaration that the business is ready to accept every service.
 
 1. **Available dates.** Start with `capacity-draft-2026-10-19.json`. Confirm real
@@ -12,13 +12,21 @@ not a declaration that the business is ready to accept every service.
    review, launch, handoff and correction time in that job's existing receipt.
    Reconcile overruns and unused time before accepting the next start.
 
-2. **Stripe and cash.** The October 18 API reports charges and payouts enabled.
-   The owner Dashboard separately confirms an active “Provide a tax ID for
-   Wonder and Method” task. Payouts will pause on November 15, 2026 or when
-   volume reaches $600.00. Complete that task using the actual business details
-   and requested evidence; record the resolved status and date privately. The
-   Dashboard displayed a $0.00 balance. Do not treat enabled payouts or pending
-   payouts as funded reserves. The existing cash/acceptance gate remains in force.
+2. **Stripe and cash.** The October 22 read-only API reports charges and payouts
+   enabled. It does not expose or clear owner Dashboard requirements. The last
+   Dashboard observation, October 18, showed “Provide a tax ID for Wonder and
+   Method,” with payouts due to pause November 15, 2026 or at $600.00 in volume,
+   and a $0.00 balance. Those are dated observations, not a fresh balance or
+   resolved-task claim. Review the current task using the actual business details
+   and requested evidence; record its resolved status and date privately. Do not
+   treat enabled payouts or pending payouts as funded reserves. The existing
+   cash/acceptance gate remains in force.
+
+   On October 22 the owner confirmed no clients or bookkeeping system yet and
+   flexible monthly pay, with no numeric minimum selected. The cash floor is
+   still unknown. A blank local cash-record workbook is prepared; its path is in
+   `cash-worksheet.json`. Actual transactions, balances and reconciliation remain
+   unverified. Further bookkeeping work is deferred at the owner's request.
 
 3. **Annual service.** Keep annual enrollment on hold until the actual funded
    gross unearned balance, separate fee buffer and accepted undelivered work are
