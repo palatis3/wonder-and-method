@@ -1,0 +1,506 @@
+{
+  "provenance": "Explicit official county roster checked against Census ACS26 county files; CT town memberships independently extracted from OPM region list. See private geography README, October 22 2026.",
+  "states": [
+    {
+      "id": "new-jersey",
+      "abbreviation": "NJ",
+      "name": "New Jersey",
+      "areaType": "County",
+      "areas": [
+        {
+          "name": "Atlantic",
+          "slug": "atlantic"
+        },
+        {
+          "name": "Bergen",
+          "slug": "bergen"
+        },
+        {
+          "name": "Burlington",
+          "slug": "burlington"
+        },
+        {
+          "name": "Camden",
+          "slug": "camden"
+        },
+        {
+          "name": "Cape May",
+          "slug": "cape-may"
+        },
+        {
+          "name": "Cumberland",
+          "slug": "cumberland"
+        },
+        {
+          "name": "Essex",
+          "slug": "essex"
+        },
+        {
+          "name": "Gloucester",
+          "slug": "gloucester"
+        },
+        {
+          "name": "Hudson",
+          "slug": "hudson"
+        },
+        {
+          "name": "Hunterdon",
+          "slug": "hunterdon"
+        },
+        {
+          "name": "Mercer",
+          "slug": "mercer"
+        },
+        {
+          "name": "Middlesex",
+          "slug": "middlesex"
+        },
+        {
+          "name": "Monmouth",
+          "slug": "monmouth"
+        },
+        {
+          "name": "Morris",
+          "slug": "morris"
+        },
+        {
+          "name": "Ocean",
+          "slug": "ocean"
+        },
+        {
+          "name": "Passaic",
+          "slug": "passaic"
+        },
+        {
+          "name": "Salem",
+          "slug": "salem"
+        },
+        {
+          "name": "Somerset",
+          "slug": "somerset"
+        },
+        {
+          "name": "Sussex",
+          "slug": "sussex"
+        },
+        {
+          "name": "Union",
+          "slug": "union"
+        },
+        {
+          "name": "Warren",
+          "slug": "warren"
+        }
+      ]
+    },
+    {
+      "id": "connecticut",
+      "abbreviation": "CT",
+      "name": "Connecticut",
+      "areaType": "Planning Region",
+      "areas": [
+        {
+          "name": "Capitol",
+          "slug": "capitol"
+        },
+        {
+          "name": "Greater Bridgeport",
+          "slug": "greater-bridgeport"
+        },
+        {
+          "name": "Lower Connecticut River Valley",
+          "slug": "lower-connecticut-river-valley"
+        },
+        {
+          "name": "Naugatuck Valley",
+          "slug": "naugatuck-valley"
+        },
+        {
+          "name": "Northeastern Connecticut",
+          "slug": "northeastern-connecticut"
+        },
+        {
+          "name": "Northwest Hills",
+          "slug": "northwest-hills"
+        },
+        {
+          "name": "South Central Connecticut",
+          "slug": "south-central-connecticut"
+        },
+        {
+          "name": "Southeastern Connecticut",
+          "slug": "southeastern-connecticut"
+        },
+        {
+          "name": "Western Connecticut",
+          "slug": "western-connecticut"
+        }
+      ]
+    },
+    {
+      "id": "rhode-island",
+      "abbreviation": "RI",
+      "name": "Rhode Island",
+      "areaType": "County",
+      "areas": [
+        {
+          "name": "Bristol",
+          "slug": "bristol"
+        },
+        {
+          "name": "Kent",
+          "slug": "kent"
+        },
+        {
+          "name": "Newport",
+          "slug": "newport"
+        },
+        {
+          "name": "Providence",
+          "slug": "providence"
+        },
+        {
+          "name": "Washington",
+          "slug": "washington"
+        }
+      ]
+    },
+    {
+      "id": "massachusetts",
+      "abbreviation": "MA",
+      "name": "Massachusetts",
+      "areaType": "County",
+      "areas": [
+        {
+          "name": "Barnstable",
+          "slug": "barnstable"
+        },
+        {
+          "name": "Berkshire",
+          "slug": "berkshire"
+        },
+        {
+          "name": "Bristol",
+          "slug": "bristol"
+        },
+        {
+          "name": "Dukes",
+          "slug": "dukes"
+        },
+        {
+          "name": "Essex",
+          "slug": "essex"
+        },
+        {
+          "name": "Franklin",
+          "slug": "franklin"
+        },
+        {
+          "name": "Hampden",
+          "slug": "hampden"
+        },
+        {
+          "name": "Hampshire",
+          "slug": "hampshire"
+        },
+        {
+          "name": "Middlesex",
+          "slug": "middlesex"
+        },
+        {
+          "name": "Nantucket",
+          "slug": "nantucket"
+        },
+        {
+          "name": "Norfolk",
+          "slug": "norfolk"
+        },
+        {
+          "name": "Plymouth",
+          "slug": "plymouth"
+        },
+        {
+          "name": "Suffolk",
+          "slug": "suffolk"
+        },
+        {
+          "name": "Worcester",
+          "slug": "worcester"
+        }
+      ]
+    },
+    {
+      "id": "delaware",
+      "abbreviation": "DE",
+      "name": "Delaware",
+      "areaType": "County",
+      "areas": [
+        {
+          "name": "Kent",
+          "slug": "kent"
+        },
+        {
+          "name": "New Castle",
+          "slug": "new-castle"
+        },
+        {
+          "name": "Sussex",
+          "slug": "sussex"
+        }
+      ]
+    },
+    {
+      "id": "vermont",
+      "abbreviation": "VT",
+      "name": "Vermont",
+      "areaType": "County",
+      "areas": [
+        {
+          "name": "Addison",
+          "slug": "addison"
+        },
+        {
+          "name": "Bennington",
+          "slug": "bennington"
+        },
+        {
+          "name": "Caledonia",
+          "slug": "caledonia"
+        },
+        {
+          "name": "Chittenden",
+          "slug": "chittenden"
+        },
+        {
+          "name": "Essex",
+          "slug": "essex"
+        },
+        {
+          "name": "Franklin",
+          "slug": "franklin"
+        },
+        {
+          "name": "Grand Isle",
+          "slug": "grand-isle"
+        },
+        {
+          "name": "Lamoille",
+          "slug": "lamoille"
+        },
+        {
+          "name": "Orange",
+          "slug": "orange"
+        },
+        {
+          "name": "Orleans",
+          "slug": "orleans"
+        },
+        {
+          "name": "Rutland",
+          "slug": "rutland"
+        },
+        {
+          "name": "Washington",
+          "slug": "washington"
+        },
+        {
+          "name": "Windham",
+          "slug": "windham"
+        },
+        {
+          "name": "Windsor",
+          "slug": "windsor"
+        }
+      ]
+    }
+  ],
+  "connecticutTerritories": {
+    "capitol": [
+      "Andover",
+      "Avon",
+      "Berlin",
+      "Bloomfield",
+      "Bolton",
+      "Canton",
+      "Columbia",
+      "Coventry",
+      "East Granby",
+      "East Hartford",
+      "East Windsor",
+      "Ellington",
+      "Enfield",
+      "Farmington",
+      "Glastonbury",
+      "Granby",
+      "Hartford",
+      "Hebron",
+      "Manchester",
+      "Mansfield",
+      "Marlborough",
+      "New Britain",
+      "Newington",
+      "Plainville",
+      "Rocky Hill",
+      "Simsbury",
+      "Somers",
+      "Southington",
+      "South Windsor",
+      "Stafford",
+      "Suffield",
+      "Tolland",
+      "Vernon",
+      "West Hartford",
+      "Wethersfield",
+      "Willington",
+      "Windsor",
+      "Windsor Locks"
+    ],
+    "naugatuck-valley": [
+      "Ansonia",
+      "Beacon Falls",
+      "Bethlehem",
+      "Bristol",
+      "Cheshire",
+      "Derby",
+      "Middlebury",
+      "Naugatuck",
+      "Oxford",
+      "Plymouth",
+      "Prospect",
+      "Seymour",
+      "Shelton",
+      "Southbury",
+      "Thomaston",
+      "Waterbury",
+      "Watertown",
+      "Wolcott",
+      "Woodbury"
+    ],
+    "northeastern-connecticut": [
+      "Ashford",
+      "Brooklyn",
+      "Canterbury",
+      "Chaplin",
+      "Eastford",
+      "Hampton",
+      "Killingly",
+      "Plainfield",
+      "Pomfret",
+      "Putnam",
+      "Scotland",
+      "Sterling",
+      "Thompson",
+      "Union",
+      "Voluntown",
+      "Woodstock"
+    ],
+    "northwest-hills": [
+      "Barkhamsted",
+      "Burlington",
+      "Canaan",
+      "Colebrook",
+      "Cornwall",
+      "Goshen",
+      "Hartland",
+      "Harwinton",
+      "Kent",
+      "Litchfield",
+      "Morris",
+      "New Hartford",
+      "Norfolk",
+      "North Canaan",
+      "Roxbury",
+      "Salisbury",
+      "Sharon",
+      "Torrington",
+      "Warren",
+      "Washington",
+      "Winchester"
+    ],
+    "south-central-connecticut": [
+      "Bethany",
+      "Branford",
+      "East Haven",
+      "Guilford",
+      "Hamden",
+      "Madison",
+      "Meriden",
+      "Milford",
+      "New Haven",
+      "North Branford",
+      "North Haven",
+      "Orange",
+      "Wallingford",
+      "West Haven",
+      "Woodbridge"
+    ],
+    "western-connecticut": [
+      "Bethel",
+      "Bridgewater",
+      "Brookfield",
+      "Danbury",
+      "Darien",
+      "Greenwich",
+      "New Canaan",
+      "New Fairfield",
+      "New Milford",
+      "Newtown",
+      "Norwalk",
+      "Redding",
+      "Ridgefield",
+      "Sherman",
+      "Stamford",
+      "Weston",
+      "Westport",
+      "Wilton"
+    ],
+    "southeastern-connecticut": [
+      "Bozrah",
+      "Colchester",
+      "East Lyme",
+      "Franklin",
+      "Griswold",
+      "Groton",
+      "Lebanon",
+      "Ledyard",
+      "Lisbon",
+      "Montville",
+      "New London",
+      "North Stonington",
+      "Norwich",
+      "Preston",
+      "Salem",
+      "Sprague",
+      "Stonington",
+      "Waterford",
+      "Windham"
+    ],
+    "greater-bridgeport": [
+      "Bridgeport",
+      "Easton",
+      "Fairfield",
+      "Monroe",
+      "Stratford",
+      "Trumbull"
+    ],
+    "lower-connecticut-river-valley": [
+      "Chester",
+      "Clinton",
+      "Cromwell",
+      "Deep River",
+      "Durham",
+      "East Haddam",
+      "East Hampton",
+      "Essex",
+      "Haddam",
+      "Killingworth",
+      "Lyme",
+      "Middlefield",
+      "Middletown",
+      "Old Lyme",
+      "Old Saybrook",
+      "Portland",
+      "Westbrook"
+    ]
+  }
+}

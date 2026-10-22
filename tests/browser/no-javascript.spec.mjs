@@ -31,8 +31,8 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'County, city or town'})).toBeDisabled();
- await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every county.',{exact:true})).toBeVisible();
+ await expect(page.getByRole('searchbox',{name:'County, region, city or town'})).toBeDisabled();
+ await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-county-search]')).toHaveCount(count);
  await expect(page.locator('[data-county-search]:visible')).toHaveCount(0);
  for(const summary of await page.locator('[data-county-directory] > details > summary').all()){
@@ -55,7 +55,7 @@ test('all statewide county links remain usable without JavaScript',async({page},
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,217);
+ await openNativeCountyLists(page,333);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
@@ -78,6 +78,22 @@ test('Ohio directory, municipalities and FAQs work without JavaScript',async({pa
  await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Yellow Springs');
  await page.locator('.county-faq summary').first().click();await expect(page.locator('.county-faq details').first()).toHaveAttribute('open','');
  await expect(page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/ohio-greene\.txt(?:\?v=[a-f0-9]+)?$/);
+});
+
+test('new state hubs and county-equivalent inquiry context work without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ for(const [state,count] of [['new-jersey',21],['connecticut',9],['rhode-island',5],['massachusetts',14],['delaware',3],['vermont',14],['new-hampshire',10],['maine',16],['maryland',24]]){
+  await page.goto(`/areas/${state}/?qa=1`);await openNativeCountyLists(page,count);
+ }
+ await page.locator('[data-county-search] a[href="/areas/maryland/baltimore-city/"]').click();
+ await expect(page.locator('main h1')).toContainText('Baltimore City, MD');
+ await page.locator('.county-communities summary').click();await expect(page.locator('.county-communities')).toContainText('Baltimore');
+ const download=page.getByRole('link',{name:'Download the planning worksheet (TXT)',exact:true});
+ await expect(download).toHaveAttribute('href',/^\/assets\/county-briefs\/maryland-baltimore-city\.txt(?:\?v=[a-f0-9]+)?$/);
+ await page.locator('.page-intro a.button').click();
+ await expect(page.locator('input[name="county"]')).toHaveValue('maryland/baltimore-city');
+ await expect(page.locator('input[name="business_location"]')).toHaveValue('');
+ await expect(page.locator('main')).toContainText('Baltimore City, MD');
 });
 
 test('native additions prefill, correction and receipt preserve all selected work without JavaScript',async({page},testInfo)=>{

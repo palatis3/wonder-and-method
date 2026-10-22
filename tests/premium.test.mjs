@@ -18,7 +18,9 @@ test('every route exposes the same primary journey and local type system',()=>{
   const footer=html.match(/<nav aria-label="Footer">(.*?)<\/nav>/s)?.[1];assert.ok(footer,path);
   for(const secondary of ['/services/website-addons/','/services/contractor-websites/']){assert.ok(footer.includes(`href="${secondary}"`),path+' -> '+secondary);assert.ok(pages.some(page=>page.path===secondary),secondary);}
   assert.match(html,/\/assets\/premium\/newsreader-regular\.woff2/);
-  assert.doesNotMatch(html,/<link[^>]+rel="preload"[^>]+manrope/);
+  // Area directories need the navigation font before paint to avoid link-wrap shifts.
+  if(path.startsWith('/areas/'))assert.match(html,/<link[^>]+rel="preload"[^>]+manrope/);
+  else assert.doesNotMatch(html,/<link[^>]+rel="preload"[^>]+manrope/);
   assert.doesNotMatch(html,/<iframe|my\.spline\.design|opening\.mp4|\/assets\/experience\.js/);
  }
 });

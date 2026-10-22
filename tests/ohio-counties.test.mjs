@@ -28,16 +28,16 @@ const migration=await readFile(new URL('0014_journey_ohio.sql',migrationFolder),
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
 test('Ohio adds exactly one state directory and 88 guides while preserving every prior route',()=>{
- assert.equal(priorRoutes.length,189);assert.equal(pages.length,286);assert.equal(byPath.size,286);
- assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/')).map(p=>p.path).sort(),newRoutes.sort());
+ assert.equal(priorRoutes.length,189);assert.equal(pages.length,411);assert.equal(byPath.size,411);
+ assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),newRoutes.sort());
  for(const route of priorRoutes)assert.ok(byPath.has(route),route);
  assert.deepEqual(ohioProfiles.map(c=>c.slug).sort(),expectedSlugs);
  assert.deepEqual(Object.keys(ohioGeography).sort(),expectedSlugs);
  assert.equal(ohioRegions.length,7);
  assert.deepEqual(ohioRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,285);
- for(const [route,count] of [['/areas/',217],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,410);
+ for(const [route,count] of [['/areas/',333],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
  }

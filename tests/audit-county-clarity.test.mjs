@@ -12,15 +12,16 @@ import {routeIndexEligible} from '../src/index-policy.mjs';
 import {countyBuyerTasks} from '../src/county-buyer-tasks.mjs';
 import {pennsylvaniaBuyerTasks} from '../src/pennsylvania-content.mjs';
 import {ohioBuyerTasks} from '../src/ohio-content.mjs';
+import {northeastBuyerTasks} from '../src/northeast-content.mjs';
 const pages=countyPages(offers),byPath=new Map(pages.map(page=>[page.path,page]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=(query,state='')=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query),state)).map(card=>`${card.state}/${card.slug}`);
 const e=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
-test('all 217 county routes remain index eligible and crawlable without JavaScript',()=>{
+test('all 333 county and planning-region routes remain index eligible and crawlable without JavaScript',()=>{
  const directory=countyDirectory();
- assert.equal(cards.length,217);
- assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88]);
+ assert.equal(cards.length,333);
+ assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24]);
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
   assert.ok(routeIndexEligible(route),route);
@@ -28,10 +29,10 @@ test('all 217 county routes remain index eligible and crawlable without JavaScri
   assert.ok(countyDirectory(state).includes(`href="${route}"`),route);
   if(route!=='/areas/erie-county/')assert.ok(byPath.has(route),route);
  }
- assert.equal((directory.match(/data-county-search=/g)||[]).length,217);
- assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,3);
+ assert.equal((directory.match(/data-county-search=/g)||[]).length,333);
+ assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,12);
  assert.doesNotMatch(directory,/data-county-filter-controls hidden/);
- assert.match(directory,/<noscript>.*Open the lists below to browse every county/s);
+ assert.match(directory,/<noscript>.*Open the lists below to browse every service area/s);
  assert.equal((directory.match(/for="county-search"/g)||[]).length,1);
  assert.equal((directory.match(/>Clear<\/button>/g)||[]).length,1);
  assert.match(directory,/ZIP codes aren't supported/);
@@ -61,7 +62,7 @@ test('compact search retains typed places, state qualifiers, shared county porti
  assert.deepEqual(matches('14221'),[]);
  for(const state of serviceStates){
   for(const county of state.counties){
-   const query=`${county.name} County ${state.abbreviation}`;
+   const query=`${county.name} ${county.areaType||'County'} ${state.abbreviation}`;
    const result=matches(query);
    assert.ok(result.includes(`${state.id}/${county.slug}`),query);
    assert.ok(result.every(path=>path.startsWith(state.id+'/')),query+' cannot cross state');
@@ -99,7 +100,8 @@ test('county pages retain local detail, one fictional-example notice, downloads,
  for(const state of serviceStates)for(const county of state.counties){
   const page=byPath.get(countyPath(county,state));if(!page)continue;
   assert.ok(page.body.match(/<h1>(.*?)<\/h1>/)[1].endsWith(', '+state.abbreviation),page.path);
-  assert.ok(page.body.includes(`${county.name} County`),page.path);
+  const areaLabel=county.areaType==='Independent City'?`${county.name} City`:`${county.name} ${county.areaType||'County'}`;
+  assert.ok(page.body.includes(e(areaLabel)),page.path);
   assert.equal((page.body.match(/More planning examples \(made up\)/g)||[]).length,1,page.path);
   assert.match(page.body,/class="county-planning-details"/);
   for(const [title,text] of county.briefs){assert.ok(page.body.includes(e(title)),page.path);assert.ok(page.body.includes(e(text)),page.path);}
@@ -127,20 +129,20 @@ test('county prices and names follow configuration and safe-fix and monthly star
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
  changed.baseline.public_name='Website Check';changed.audit_sprint.public_name='Review & Fix';
- for(const page of countyPages(changed).filter(page=>page.path.endsWith('-county/'))){
+ for(const page of countyPages(changed).filter(page=>/-(?:county|planning-region)\/$/.test(page.path))){
   for(const text of ['$1,777','$477','$877','$177/month','Website Check','Review &amp; Fix','one small fix if it is safe and practical','current usable','studio build'])assert.ok(page.body.includes(text),page.path+' '+text);
   assert.doesNotMatch(page.body,/one safe first fix when access allows|Care (?:is |starts at )?from/);
  }
  const links=serviceAreaLinks();
- assert.equal((links.match(/href=/g)||[]).length,4);
+ assert.equal((links.match(/href=/g)||[]).length,13);
  assert.match(links,/href="\/areas\/"/);
  assert.doesNotMatch(links,/-county\//);
 });
 
-test('all 217 public worksheets preserve the exact task, decisions, checks and safe note fields',async()=>{
- const rows=[...Object.entries(countyBuyerTasks),...Object.entries(pennsylvaniaBuyerTasks).map(([slug,task])=>['pennsylvania-'+slug,task]),...Object.entries(ohioBuyerTasks).map(([slug,task])=>['ohio-'+slug,task])];
+test('all 333 public worksheets preserve the exact task, decisions, checks and safe note fields',async()=>{
+ const rows=[...Object.entries(countyBuyerTasks),...Object.entries(pennsylvaniaBuyerTasks).map(([slug,task])=>['pennsylvania-'+slug,task]),...Object.entries(ohioBuyerTasks).map(([slug,task])=>['ohio-'+slug,task]),...Object.entries(northeastBuyerTasks).flatMap(([state,tasks])=>Object.entries(tasks).map(([slug,task])=>[state+'-'+slug,task]))];
  const files=(await readdir(new URL('../src/assets/county-briefs/',import.meta.url))).filter(file=>file.endsWith('.txt'));
- assert.equal(rows.length,217);assert.equal(files.length,217);
+ assert.equal(rows.length,333);assert.equal(files.length,333);
  for(const [slug,task] of rows){
   const text=await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8');
   for(const value of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(text.includes(value),slug+' task text');

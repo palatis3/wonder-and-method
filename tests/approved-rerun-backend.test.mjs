@@ -11,7 +11,7 @@ import {countyContextOptions} from '../src/approved-rerun-county-context.mjs';
 import {inquiryFormMarkup} from '../src/inquiry-form.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 import {validateInquiry} from '../src/inquiry.mjs';
-import {selectedInquiryContext,inquiryMessageHelp,inquiryContextSummary,calculateCost,costEstimateCopy,priceList} from '../src/shared.mjs';
+import {selectedInquiryContext,inquiryMessageHelp,inquiryContextSummary,calculateCost,costEstimateCopy,priceList,escapeHtml} from '../src/shared.mjs';
 import {breakEvenDisplayBound,calculateWebsiteRoi} from '../src/assets/roi-math.mjs';
 import offers from '../config/offers.json' with {type:'json'};
 
@@ -146,12 +146,12 @@ test('operator acknowledgements require authentication and preserve all inquiry 
  assert.equal((await worker.fetch(action('submission-failures',{confirm:'reviewed-submission-failures',incidents:[]}),env,context())).status,200);db.sqlite.close();
 });
 
-test('all217 county contexts roundtrip as page provenance, with optional separately supplied location',()=>{
- assert.equal(countyContextOptions.length,217);
+test('all333 county contexts roundtrip as page provenance, with optional separately supplied location',()=>{
+ assert.equal(countyContextOptions.length,333);
  const template=inquiryFormMarkup({live:true});
  for(const [county,label] of countyContextOptions){
   const html=prefillInquiryHtml(template,new URL('https://example.test/contact/?county='+encodeURIComponent(county)+'&business_location=FORGED'));
-  assert.ok(html.includes('name="county" value="'+county+'"'));assert.ok(html.includes(label));assert.doesNotMatch(html,/FORGED/);
+  assert.ok(html.includes('name="county" value="'+county+'"'));assert.ok(html.includes(escapeHtml(label)),county);assert.doesNotMatch(html,/FORGED/);
   const result=validateInquiry({...input,county});assert.deepEqual(result.errors,{});assert.equal(selectedInquiryContext(result.value).county,county);assert.ok(inquiryContextSummary(result.value).some(line=>line.includes('not your business address')));
  }
  assert.ok(validateInquiry({...input,county:'<script>'}).errors.county);assert.ok(validateInquiry({...input,county:'a'.repeat(5000)}).errors.county);

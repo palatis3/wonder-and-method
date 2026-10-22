@@ -36,8 +36,8 @@
 @media(max-width:1000px){.county-directory{grid-template-columns:1fr 1fr}.county-directory>div:first-child{grid-column:1/-1}.county-cards{gap:1rem}}
 @media(max-width:700px){.county-cards,.county-directory,.county-hub-grid{grid-template-columns:1fr}.county-directory>div:first-child{grid-column:auto}.county-directory{gap:.8rem}.county-cards article{padding-top:1.2rem}.county-place-list{columns:2}.county-section{padding-block:2.4rem}.county-intro-copy,.county-reading{font-size:1rem}.county-hub-grid article{padding-block:1.5rem}.county-jump{gap:.7rem 1rem}}
 
-.county-hub-link{display:block;height:100%;padding:1rem;text-decoration:none}.county-hub-link h3{font-size:1.5rem;text-decoration:underline;text-underline-offset:.16em}.county-hub-link:hover h3{text-decoration-thickness:2px}.county-hub-link p{color:var(--muted);font-size:1rem}.county-hub-link .eyebrow{display:block}.county-page .section-top{display:block}
-@media(max-width:700px){.county-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem}.county-hub-grid article{padding-block:.6rem}.county-hub-link{padding:.6rem 0}.county-hub-link h3{font-size:1.15rem;line-height:1.3;margin:.25rem 0}.county-hub-link p{margin:.4rem 0;font-size:1rem}}
+.county-link{display:block;height:100%;padding:1rem;text-decoration:none}.county-link h3{font-size:1.5rem;text-decoration:underline;text-underline-offset:.16em}.county-link:hover h3{text-decoration-thickness:2px}.county-link p{color:var(--muted);font-size:1rem}.county-link .eyebrow{display:block}.county-page .section-top{display:block}
+@media(max-width:700px){.county-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem}.county-hub-grid article{padding-block:.6rem}.county-link{padding:.6rem 0}.county-link h3{font-size:1.15rem;line-height:1.3;margin:.25rem 0}.county-link p{margin:.4rem 0;font-size:1rem}}
 
 @media(min-width:601px) and (max-width:900px){.state-area-cards{grid-template-columns:1fr;gap:1rem}.state-area-cards article{padding-block:1.4rem}}
 
@@ -46,8 +46,8 @@
 .county-region>summary{font-size:1.15rem;font-weight:650;line-height:1.5;min-height:44px;padding:1rem 0;cursor:pointer}
 .studio-site main ul.county-hub-grid{max-width:none;list-style:none;padding:0;margin:0 0 1.5rem;gap:0 1.5rem}
 ul.county-hub-grid>li{margin:0;border-top:1px solid #bac2c2;min-width:0}
-ul.county-hub-grid .county-hub-link{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem;padding:.7rem 0;min-height:44px;font-size:1rem;text-decoration:underline;text-underline-offset:.2em}
-.county-anchor{font-size:.9375rem;color:var(--slate)}
+ul.county-hub-grid .county-link{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem;padding:.7rem 0;min-height:44px;font-size:1rem;text-decoration:underline;text-underline-offset:.2em}
+.county-link span{font-size:.9375rem;color:var(--slate)}
 .county-planning-details>summary{min-height:44px;padding:.75rem 0;font-weight:650;cursor:pointer}
 .county-section .section-heading h2{max-width:26ch;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;overflow-wrap:normal}
 .county-page .page-intro h1{overflow-wrap:normal}

@@ -170,7 +170,7 @@ test('measurement ranks aggregated pages, retains a full view, and reports catal
  report.arrivals=Array.from({length:20},(_,i)=>({page:'guides_example_'+i,source:'search',service:'unsure',total:i+1}));
  report.arrivals.push({page:'guides_example_0',source:'direct',service:'grow',total:100});
  const before=JSON.stringify(report),output=formatMeasurement(report);
- const views=output.split('Page views by page')[1].split('County pages')[0];
+ const views=output.split('Page views by page')[1].split('County and equivalent-area pages')[0];
  const arrivals=output.split('Landing pages')[1].split('Page views by page')[0];
  assert.ok(views.indexOf('Area — Ohio: 99')<views.indexOf('Guide — Example 19: 20'));
  assert.equal((views.match(/: \d+/g)||[]).length,15);assert.doesNotMatch(views,/Guide — Example 0:/);

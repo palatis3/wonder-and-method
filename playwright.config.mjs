@@ -4,9 +4,9 @@ export default defineConfig({
  testDir:'./tests/browser',
  outputDir:'output/playwright/results',
  timeout:30_000,
- // The expanded 227-case matrix takes about five to six minutes on this
- // workstation. Keep per-test timeouts strict and allow the full matrix to finish.
- globalTimeout:480_000,
+ // The regression suite also visits all 125 expansion routes at three widths.
+ // Keep per-test bounds while allowing the complete 375-view matrix to finish.
+ globalTimeout:900_000,
  expect:{timeout:7000},
  workers:1,
  fullyParallel:false,

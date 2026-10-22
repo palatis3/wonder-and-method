@@ -3,7 +3,7 @@ import {escapeHtml as e, money} from './shared.mjs';
 
 // Intent owners, not a list of keyword permutations. Prices remain offer-driven.
 export const searchMetadata = {
- '/': {title:'Web Design & SEO for Small Businesses',description:(o,config)=>`Small business websites from ${money(o.launch_site.public_price)} with writing, research and original graphics. Buffalo-based, working online across ${serviceCoverage(config).region}.`},
+ '/': {title:'Web Design & SEO for Small Businesses',description:(o,config)=>`Small business websites from ${money(o.launch_site.public_price)} with writing, research and original graphics. Buffalo-based, working online across ${serviceCoverage(config).shortRegion}.`},
  '/services/': {title:'Website Services for Small Businesses',description:'Compare website design, redesign, SEO, monthly care and repairs. Find the right service, see prices and choose the next step for your business.'},
  '/services/web-design/': {title:'Small Business Web Design',description:o=>`Custom websites from ${money(o.launch_site.public_price)}. Work with a Buffalo designer on writing, research, SEO and original graphics for a ${o.launch_site.marketing_page_cap}-, ${o.focused_site.marketing_page_cap}- or ${o.signature_site.marketing_page_cap}-page website.`},
  '/services/website-redesign/': {title:'Website Redesign for Small Businesses',description:o=>`Rebuild a website around clear services, useful content and a working inquiry path. Packages from ${money(o.launch_site.public_price)}; review the existing site first.`},

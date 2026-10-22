@@ -1,6 +1,8 @@
 # Production website
 
-Current candidate: [October 21 follow-up clarity and reliability work](../operations/CLAUDE_RERUN_20261021.md). The 145 current recommendations and six supplemental recommendations have a separate implementation ledger. This revision preserves all routes, typed county directories, guides, bookmarks and downloads. Migration 0017 adds fixed-code operational attention, with separate submission and retention monitoring and a native alert limiter. The private release record, exact-commit technical manifest and authenticated runtime identity establish publication; this paragraph does not.
+Current candidate: [October 22 nine-state service-area expansion](../operations/NORTHEAST_EXPANSION_20261022.md). The candidate adds 116 county/equivalent guides and nine state hubs, for 411 HTML routes, 410 sitemap entries and 333 area guides across twelve states. Migration 0018 extends the fixed anonymous page categories while preserving existing aggregate and inquiry records. The private release record, exact-commit technical manifest and authenticated runtime identity establish publication; this paragraph does not.
+
+Previous source revision: [October 21 follow-up clarity and reliability work](../operations/CLAUDE_RERUN_20261021.md). Its 145 recommendations and six supplemental recommendations have a separate implementation ledger. Migration 0017 adds fixed-code operational attention, with separate submission and retention monitoring and a native alert limiter.
 
 Homepage copy refinement, October 21: the main heading now names web design, SEO and small businesses. The supporting introduction explains the included copywriting, built-in SEO, customer purpose and Buffalo origin. The homepage portfolio image reflects the updated copy. No pricing, routes, search policy, motion behavior or database schema changes are required. Private publication evidence is under `evidence/homepage-h1-20261021/`.
 

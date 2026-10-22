@@ -40,11 +40,11 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
 
 test('county services precede optional worksheet and hub keeps one link per county',()=>{
  const pages=countyPages(offers),hub=pages.find(p=>p.path==='/areas/').body;
- for(const page of pages.filter(p=>/-county\/$/.test(p.path))){
+ for(const page of pages.filter(p=>/-(?:county|planning-region|city)\/$/.test(p.path))){
   assert.ok(page.body.indexOf('id="services"')<page.body.indexOf('id="buyer-task"'),page.path);
   assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/web-design\/"/);
  }
- assert.equal((hub.match(/href="\/areas\/[^"]+-county\/"/g)||[]).length,217);
+ assert.equal((hub.match(/href="\/areas\/[^"]+-(?:county|planning-region|city)\/"/g)||[]).length,333);
  assert.ok(hub.indexOf('/areas/erie-county/')<hub.indexOf('/areas/niagara-county/'));
  assert.match(pages.find(p=>p.path==='/areas/orange-county/').body,/Tuxedo Park remains a separate village/);
  assert.match(pages.find(p=>p.path==='/areas/albany-county/').body,/Green Island is a coterminous town and village/);

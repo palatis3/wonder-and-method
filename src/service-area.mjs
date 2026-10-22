@@ -9,5 +9,5 @@ export function serviceCoverage(config=siteConfig){
   if(!base||!country||!Array.isArray(regions)||!regions.length||regions.some(region=>typeof region!=='string'||!region.trim()))throw new Error('Service coverage needs a base, region and country.');
   const region=new Intl.ListFormat('en-US',{style:'long',type:'conjunction'}).format(regions);
   const areas=regions.map(name=>({'@type':'AdministrativeArea',name:`${name}, ${country}`}));
-  return {base,region,regions,country,statement:`Based in ${base}, serving businesses across ${region} online.`,areaServed:areas.length===1?areas[0]:areas};
+  return {base,region,regions,shortRegion:regions.length>3?`${regions.length} states`:region,country,statement:`Based in ${base}, serving businesses across ${region} online.`,areaServed:areas.length===1?areas[0]:areas};
 }

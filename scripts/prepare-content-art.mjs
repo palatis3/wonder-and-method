@@ -8,7 +8,7 @@ import {socialCardPath} from '../src/social-cards.mjs';
 import {guideArt} from '../src/guide-art.mjs';
 const require = createRequire(import.meta.url), sharp = require(process.argv[2] || 'sharp');
 const root = resolve(import.meta.dirname, '..');
-const route = process.argv[3];
+const routes = new Set(process.argv.slice(3));
 const read = async path => JSON.parse(await readFile(resolve(root, path), 'utf8'));
 const [config, offers, map, geography] = await Promise.all(['config/site.json', 'config/offers.json', 'authority/v5/site-map.json', 'authority/v5/geography.json'].map(read));
 const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
@@ -23,13 +23,13 @@ function wrap(text, max) {
 await mkdir(resolve(root, 'src/assets/social'), {recursive: true});
 const emblem=(await readFile(resolve(root,'src/assets/brand/emblem.svg'),'utf8')).replace('<svg ','<svg x="1010" y="85" width="92" height="60" ');
 for (const page of renderPages({config, offers, map, geography})) {
-  if (route && page.path !== route) continue;
+  if (routes.size && !routes.has(page.path)) continue;
   const output = socialCardPath(page.path); if (!output) continue;
   const lines = wrap(page.title.replace(/<[^>]+>/g, ''), 32);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f2f2e8"/><rect x="42" y="42" width="1116" height="546" rx="4" fill="none" stroke="#a1afa0"/>${emblem}<text x="86" y="121" font-family="Arial,sans-serif" font-size="24" letter-spacing="2" fill="#38564a">WONDER AND METHOD</text>${lines.map((line, index) => `<text x="86" y="${237 + index * 73}" font-family="Georgia,serif" font-size="62" fill="#1d3029">${escape(line)}</text>`).join('')}<path d="M86 490h1028" stroke="#a1afa0"/><text x="86" y="542" font-family="Arial,sans-serif" font-size="24" fill="#38564a">Buffalo web studio · wonderandmethod.com</text></svg>`;
   await sharp(Buffer.from(svg)).png({compressionLevel: 9}).toFile(resolve(root, 'src' + output));
 }
-if (route) { console.log(`Prepared social card for ${route}.`); process.exit(0); }
+if (routes.size) { console.log(`Prepared social cards for ${routes.size} requested routes.`); process.exit(0); }
 for (const [slug, rows] of Object.entries(guideArt)) {
   function diagram(width, height) {
     const scale = height / 800, left = 60, cardWidth = width - 120, rowHeight = 186 * scale;

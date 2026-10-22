@@ -16,7 +16,7 @@ const schema=path=>JSON.parse(page(path).html.match(/<script type="application\/
 test('home, Buffalo web design and service navigation describe distinct visitor needs',()=>{
  const paths=['/','/services/web-design/','/services/'];
  assert.equal(new Set(paths.map(path=>searchMetadata[path].title)).size,3);
- assert.match(searchMetadata['/'].title,/Small Businesses/);assert.match(description('/'),/Buffalo.*New York, Pennsylvania,? and Ohio/);
+ assert.match(searchMetadata['/'].title,/Small Businesses/);assert.match(description('/'),/Buffalo.*12 states/);
  assert.match(searchMetadata['/services/web-design/'].title,/Small Business Web Design/);assert.match(description('/services/web-design/'),/writing, research, SEO and original graphics/);
  assert.match(description('/services/'),/^Compare .*Find the right service/);
  for(const path of paths){assert.equal(page(path).title,searchMetadata[path].title);assert.equal(page(path).description,description(path));}
@@ -37,8 +37,8 @@ test('Erie metadata and county Service distinguish New York from Pennsylvania an
  assert.match(schema('/areas/erie-county/').find(node=>node['@type']==='Service').name,/Buffalo & Erie County, NY/);
 });
 
-test('broad service coverage has three real states and preserves the studio identity',()=>{
- const states=['New York','Pennsylvania','Ohio'].map(name=>({'@type':'State',name}));
+test('broad service coverage has nine real states and preserves the studio identity',()=>{
+ const states=['New York','Pennsylvania','Ohio','New Jersey','Connecticut','Rhode Island','Massachusetts','Delaware','Vermont','New Hampshire','Maine','Maryland'].map(name=>({'@type':'State',name}));
  assert.deepEqual(serviceAreas(),states);assert.deepEqual(serviceAreas(config),states);
  const org=organizationSchema(config,'/assets/brand/emblem.svg');assert.deepEqual(org.areaServed,states);assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');assert.equal(org.legalName,config.businessIdentity);assert.equal(org.founder['@id'],config.origin+'/about/#terry');
  for(const item of pages){const graph=JSON.parse(item.html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);assert.deepEqual(graph.find(node=>node['@type']==='Organization').areaServed,states,item.path);}
@@ -48,11 +48,11 @@ test('broad service coverage has three real states and preserves the studio iden
 
 test('metadata and schema edits preserve all public routes and approved guides',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,286);assert.equal((sitemap.match(/<loc>/g)||[]).length,285);
+ assert.equal(pages.length,411);assert.equal((sitemap.match(/<loc>/g)||[]).length,410);
  assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,23);
- const counties=pages.filter(item=>/^\/areas\/(?:pennsylvania\/|ohio\/)?[^/]+-county\/$/.test(item.path));assert.equal(counties.length,217);
+ const counties=pages.filter(item=>/^\/areas\/(?:[a-z-]+\/)?[^/]+-(?:county|planning-region)\/$/.test(item.path)||item.path==='/areas/maryland/baltimore-city/');assert.equal(counties.length,333);
  for(const item of counties){assert.match(item.html,/name="robots" content="index,follow"/);assert.ok(sitemap.includes(config.origin+item.path));}
- assert.equal(new Set(pages.map(item=>item.path)).size,286);
+ assert.equal(new Set(pages.map(item=>item.path)).size,411);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

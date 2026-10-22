@@ -1,0 +1,276 @@
+{
+  "provenance": "Explicit official state county rosters corroborated against retained Census January 2026 county data and Maryland SDAT county list, October 22 2026. Baltimore City is independent and has FIPS 24510.",
+  "states": [
+    {
+      "id": "new-hampshire",
+      "name": "New Hampshire",
+      "abbreviation": "NH",
+      "areas": [
+        {
+          "name": "Belknap",
+          "slug": "belknap",
+          "areaType": "County"
+        },
+        {
+          "name": "Carroll",
+          "slug": "carroll",
+          "areaType": "County"
+        },
+        {
+          "name": "Cheshire",
+          "slug": "cheshire",
+          "areaType": "County"
+        },
+        {
+          "name": "Coos",
+          "slug": "coos",
+          "areaType": "County"
+        },
+        {
+          "name": "Grafton",
+          "slug": "grafton",
+          "areaType": "County"
+        },
+        {
+          "name": "Hillsborough",
+          "slug": "hillsborough",
+          "areaType": "County"
+        },
+        {
+          "name": "Merrimack",
+          "slug": "merrimack",
+          "areaType": "County"
+        },
+        {
+          "name": "Rockingham",
+          "slug": "rockingham",
+          "areaType": "County"
+        },
+        {
+          "name": "Strafford",
+          "slug": "strafford",
+          "areaType": "County"
+        },
+        {
+          "name": "Sullivan",
+          "slug": "sullivan",
+          "areaType": "County"
+        }
+      ]
+    },
+    {
+      "id": "maine",
+      "name": "Maine",
+      "abbreviation": "ME",
+      "areas": [
+        {
+          "name": "Androscoggin",
+          "slug": "androscoggin",
+          "areaType": "County"
+        },
+        {
+          "name": "Aroostook",
+          "slug": "aroostook",
+          "areaType": "County"
+        },
+        {
+          "name": "Cumberland",
+          "slug": "cumberland",
+          "areaType": "County"
+        },
+        {
+          "name": "Franklin",
+          "slug": "franklin",
+          "areaType": "County"
+        },
+        {
+          "name": "Hancock",
+          "slug": "hancock",
+          "areaType": "County"
+        },
+        {
+          "name": "Kennebec",
+          "slug": "kennebec",
+          "areaType": "County"
+        },
+        {
+          "name": "Knox",
+          "slug": "knox",
+          "areaType": "County"
+        },
+        {
+          "name": "Lincoln",
+          "slug": "lincoln",
+          "areaType": "County"
+        },
+        {
+          "name": "Oxford",
+          "slug": "oxford",
+          "areaType": "County"
+        },
+        {
+          "name": "Penobscot",
+          "slug": "penobscot",
+          "areaType": "County"
+        },
+        {
+          "name": "Piscataquis",
+          "slug": "piscataquis",
+          "areaType": "County"
+        },
+        {
+          "name": "Sagadahoc",
+          "slug": "sagadahoc",
+          "areaType": "County"
+        },
+        {
+          "name": "Somerset",
+          "slug": "somerset",
+          "areaType": "County"
+        },
+        {
+          "name": "Waldo",
+          "slug": "waldo",
+          "areaType": "County"
+        },
+        {
+          "name": "Washington",
+          "slug": "washington",
+          "areaType": "County"
+        },
+        {
+          "name": "York",
+          "slug": "york",
+          "areaType": "County"
+        }
+      ]
+    },
+    {
+      "id": "maryland",
+      "name": "Maryland",
+      "abbreviation": "MD",
+      "areas": [
+        {
+          "name": "Allegany",
+          "slug": "allegany",
+          "areaType": "County"
+        },
+        {
+          "name": "Anne Arundel",
+          "slug": "anne-arundel",
+          "areaType": "County"
+        },
+        {
+          "name": "Baltimore",
+          "slug": "baltimore",
+          "areaType": "County"
+        },
+        {
+          "name": "Calvert",
+          "slug": "calvert",
+          "areaType": "County"
+        },
+        {
+          "name": "Caroline",
+          "slug": "caroline",
+          "areaType": "County"
+        },
+        {
+          "name": "Carroll",
+          "slug": "carroll",
+          "areaType": "County"
+        },
+        {
+          "name": "Cecil",
+          "slug": "cecil",
+          "areaType": "County"
+        },
+        {
+          "name": "Charles",
+          "slug": "charles",
+          "areaType": "County"
+        },
+        {
+          "name": "Dorchester",
+          "slug": "dorchester",
+          "areaType": "County"
+        },
+        {
+          "name": "Frederick",
+          "slug": "frederick",
+          "areaType": "County"
+        },
+        {
+          "name": "Garrett",
+          "slug": "garrett",
+          "areaType": "County"
+        },
+        {
+          "name": "Harford",
+          "slug": "harford",
+          "areaType": "County"
+        },
+        {
+          "name": "Howard",
+          "slug": "howard",
+          "areaType": "County"
+        },
+        {
+          "name": "Kent",
+          "slug": "kent",
+          "areaType": "County"
+        },
+        {
+          "name": "Montgomery",
+          "slug": "montgomery",
+          "areaType": "County"
+        },
+        {
+          "name": "Prince George's",
+          "slug": "prince-georges",
+          "areaType": "County"
+        },
+        {
+          "name": "Queen Anne's",
+          "slug": "queen-annes",
+          "areaType": "County"
+        },
+        {
+          "name": "St. Mary's",
+          "slug": "st-marys",
+          "areaType": "County"
+        },
+        {
+          "name": "Somerset",
+          "slug": "somerset",
+          "areaType": "County"
+        },
+        {
+          "name": "Talbot",
+          "slug": "talbot",
+          "areaType": "County"
+        },
+        {
+          "name": "Washington",
+          "slug": "washington",
+          "areaType": "County"
+        },
+        {
+          "name": "Wicomico",
+          "slug": "wicomico",
+          "areaType": "County"
+        },
+        {
+          "name": "Worcester",
+          "slug": "worcester",
+          "areaType": "County"
+        },
+        {
+          "name": "Baltimore",
+          "slug": "baltimore-city",
+          "areaType": "Independent City"
+        }
+      ]
+    }
+  ]
+}
