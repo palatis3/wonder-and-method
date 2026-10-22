@@ -3,7 +3,9 @@ import {socialCardPath} from './social-cards.mjs';
 import {accessibleGuideTables} from './guide-practical-steps.mjs';
 import {pageDate} from './page-dates.mjs';
 import {guideAction,contextualizeGuideBody} from './guide-inquiry-actions.mjs';
-import {researchGuides,researchGuideDetails} from './research-guides.mjs';
+import {researchGuides} from './research-guides.mjs';
+import {guideDetails as researchGuideDetails} from './guide-details.mjs';
+import {longtailGuides} from './longtail-guides.mjs';
 import {newGuides} from './audit-guide-updates.mjs';
 import {ongoingGuides} from './ongoing-guides.mjs';
 import {serviceCoverage} from './service-area.mjs';
@@ -16,10 +18,11 @@ export {journalSections};
 
 // Original publication is recorded in evidence/editorial-release.json.
 // The October 15 revision reconciled offers and added explanatory illustrations.
-const guideGroups=[{"id":"diagnose","title":"Fix a problem","paths":["website-not-generating-leads","contact-form-not-working","website-repair-or-redesign","website-audit-checklist"]},{"id":"plan","title":"Plan a website","paths":["website-project-cost","how-to-choose-a-web-designer","one-page-website-seo","custom-website-or-template","ai-website-or-custom","website-content-template","website-redesign-brief","website-redesign-timeline","contractor-website-checklist","website-migration-checklist","website-launch-checklist","website-handover-checklist"]},{"id":"search","title":"Search visibility","paths":["website-not-showing-on-google","service-area-pages","local-seo-profile-eligibility","seo-work-and-reporting"]},{"id":"care-search","title":"Ongoing care","paths":["website-care-versus-seo","website-maintenance-checklist","website-maintenance-cost"]}];
+const guideGroups=[{"id":"diagnose","title":"Fix a problem","paths":["slow-website-on-mobile","website-not-generating-leads","contact-form-not-working","website-repair-or-redesign","website-audit-checklist"]},{"id":"plan","title":"Plan a website","paths":["ai-website-content-review","website-project-cost","how-to-choose-a-web-designer","one-page-website-seo","custom-website-or-template","ai-website-or-custom","website-content-template","website-redesign-brief","website-redesign-timeline","contractor-website-checklist","website-migration-checklist","website-launch-checklist","website-handover-checklist"]},{"id":"search","title":"Search visibility","paths":["ai-search-visibility","local-seo-audit","website-not-showing-on-google","service-area-pages","local-seo-profile-eligibility","seo-work-and-reporting"]},{"id":"care-search","title":"Ongoing care","paths":["website-care-versus-seo","website-maintenance-checklist","website-maintenance-cost"]}];
 const guideCategory=item=>guideGroups.find(group=>group.paths.includes(item.path.split('/').filter(Boolean).at(-1)))?.title||item.category;
 
 export const journal=[
+ ...longtailGuides,
  ...researchGuides,
  ...newGuides,
  ...searchGuides,

@@ -63,11 +63,11 @@ test('northern official municipality types retain plantations, independent citie
 
 test('53 northern routes preserve all 358 earlier pages and publish 333 crawlable service areas',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,411);assert.equal(byPath.size,411);assert.equal(serviceStates.length,12);
+ assert.equal(pages.length,415);assert.equal(byPath.size,415);assert.equal(serviceStates.length,12);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
- assert.deepEqual(pages.filter(p=>!prior.includes(p.path)).map(p=>p.path).sort(),[...newRoutes].sort());
+ assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&p.path.startsWith('/areas/')).map(p=>p.path).sort(),[...newRoutes].sort());
  for(const route of prior)assert.ok(byPath.has(route),route);
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,410);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,333);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){

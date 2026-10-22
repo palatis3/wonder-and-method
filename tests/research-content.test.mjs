@@ -1,3 +1,4 @@
+import {longtailGuides} from '../src/longtail-guides.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -16,9 +17,9 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('all 278 prior routes are preserved and exactly seven content routes are added',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,411);
+ assert.equal(previous.length,278);assert.equal(pages.length,415);
  assert.ok(previous.every(path=>pages.some(page=>page.path===path)));
- assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
+ assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
 });
 
 test('ROI example reconciles costs, contribution, payback and break-even',()=>{

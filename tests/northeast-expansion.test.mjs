@@ -43,10 +43,10 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
 });
 
 test('six states add precisely 72 routes, preserve 286 old routes and expose all 333 areas without JavaScript',()=>{
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,411);assert.equal(byPath.size,411);
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,415);assert.equal(byPath.size,415);
  assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),[...newRoutes].sort());
  for(const route of priorRoutes)assert.ok(byPath.has(route),route);
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,410);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,333);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());

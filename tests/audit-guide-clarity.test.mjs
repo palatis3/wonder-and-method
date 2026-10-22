@@ -285,12 +285,12 @@ const file=url=>new URL('../src'+url,import.meta.url);
 const csvRows=text=>text.trim().split(/\r?\n/).filter(Boolean).map(line=>[...line.matchAll(/(?:^|,)"((?:[^"]|"")*)"/g)].map(match=>match[1].replaceAll('""','"')));
 
 test('all 23 guides, historical bookmarks and existing download files survive',()=>{
- assert.deepEqual(journal.map(x=>x.path).sort(),Object.keys(historic).sort());
+ assert.deepEqual(journal.filter(x=>historic[x.path]).map(x=>x.path).sort(),Object.keys(historic).sort());
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);
   assert.equal(new Set(ids).size,ids.length,`${item.path}: duplicate bookmark`);
-  for(const id of historic[item.path])assert.ok(ids.includes(id),`${item.path}#${id}`);
+  for(const id of historic[item.path]||[])assert.ok(ids.includes(id),`${item.path}#${id}`);
   for(const match of html.matchAll(/<a\b([^>]*href="(\/assets\/[^"?]+\.(csv|txt))"[^>]*)>([^<]*)<\/a>/gi)){
    assert.ok(existsSync(file(match[2])),match[2]);
    assert.match(match[1],/\bdownload(?:[=>\s]|$)/i,item.path);

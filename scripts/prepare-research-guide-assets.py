@@ -1,11 +1,12 @@
 """Reproduce the original diagrams, social cards and related-guide thumbnails."""
 from pathlib import Path
-import json, html, textwrap
+import json, html, textwrap, sys, subprocess
 from PIL import Image, ImageDraw, ImageFont
 
 root = Path(__file__).resolve().parents[1]
 source = (root / 'src/research-guides.mjs').read_text(encoding='utf-8')
-guides = json.loads(source.split(' = ', 1)[1].split('\n};', 1)[0] + '\n}')
+longtail = '--longtail' in sys.argv
+guides = json.loads(subprocess.check_output(['node','--input-type=module','-e',"import {longtailGuideDetails} from './src/longtail-guides.mjs'; console.log(JSON.stringify(longtailGuideDetails));"],cwd=root,text=True,encoding='utf-8')) if longtail else json.loads(source.split(' = ', 1)[1].split('\n};', 1)[0] + '\n}')
 assets = root / 'src/assets'
 ink, paper, pale, line = '#193b30', '#f8f7f2', '#e6ecdf', '#b9c8b3'
 
@@ -63,7 +64,8 @@ for slug,item in guides.items():
         canvas.paste(scaled,(0,(canvas.height-scaled.height)//2))
         canvas.save(assets/'guides'/f'{slug}-card-{width}.webp','WEBP',quality=88)
 
-card('Website ROI calculator for small businesses',[('Set the assumptions','Cost, inquiries and contribution'),('Compare scenarios','See what changes the result'),('Check the decision','Break-even and simple payback')],assets/'social/tools-website-roi-calculator.png')
-card('Small business website and redesign costs: plan the full budget',[('Scope the build','Pages, writing and functionality'),('Include the move','Content, URLs and account access'),('Plan ongoing costs','Provider bills and optional help')],assets/'social/guides-website-project-cost.png')
-card('Website and SEO guides for small businesses',[('Solve a problem','Find the first missing step'),('Plan the work','Useful templates and checklists'),('Choose the next step','Costs, structure and ongoing care')],assets/'social/guides.png')
-print('Created six original diagram sets and nine social cards.')
+if not longtail:
+    card('Website ROI calculator for small businesses',[('Set the assumptions','Cost, inquiries and contribution'),('Compare scenarios','See what changes the result'),('Check the decision','Break-even and simple payback')],assets/'social/tools-website-roi-calculator.png')
+    card('Small business website and redesign costs: plan the full budget',[('Scope the build','Pages, writing and functionality'),('Include the move','Content, URLs and account access'),('Plan ongoing costs','Provider bills and optional help')],assets/'social/guides-website-project-cost.png')
+    card('Website and SEO guides for small businesses',[('Solve a problem','Find the first missing step'),('Plan the work','Useful templates and checklists'),('Choose the next step','Costs, structure and ongoing care')],assets/'social/guides.png')
+print(f'Created {len(guides)} original diagram sets and their social cards.')

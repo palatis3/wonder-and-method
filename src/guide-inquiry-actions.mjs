@@ -1,4 +1,4 @@
-import {researchGuideDetails} from './research-guides.mjs';
+import {guideDetails as researchGuideDetails} from './guide-details.mjs';
 import {escapeHtml as e,money} from './shared.mjs';
 // Deliberate reader intent, independent of the fallback service used for navigation.
 export const guideInquiryActions={

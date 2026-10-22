@@ -2,6 +2,8 @@ import {monthlyGuidePlanLines,monthlyGuidePlanSummaries} from './monthly-content
 import {money,escapeHtml as e} from './shared.mjs';
 import {researchGuideContent} from './research-guide-content.mjs';
 import {researchGuideExpansions} from './research-guide-expansions.mjs';
+import {longtailGuideContent} from './longtail-guide-content.mjs';
+import {expandLongtailSections} from './longtail-guide-expansions.mjs';
 import {careBoundary} from './offer-summary.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {guideReviewChoices} from './guide-practical-steps.mjs';
@@ -200,6 +202,6 @@ const guideContent={
 };
 
 export function guideContentSections(path,offers){
- const authored=researchGuideContent[path];
- return formatGuideSections([...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])]);
+ const authored=longtailGuideContent[path]||researchGuideContent[path];
+ return formatGuideSections(expandLongtailSections(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])]));
 }

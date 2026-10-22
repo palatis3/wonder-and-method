@@ -1,4 +1,12 @@
 import {test,expect} from './fixtures.mjs';
+test('new guide examples and contact intent are usable without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ for(const [slug,goal]of [['ai-search-visibility','search'],['ai-website-content-review','search'],['local-seo-audit','search'],['slow-website-on-mobile','fix']]){
+  await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('#worked-example, #completed-example')).toBeVisible();
+  const download=page.locator('.journal-prose a[download]').first();expect((await page.request.get(await download.getAttribute('href'))).status()).toBe(200);
+  await page.locator('#next-decision .button').click();await expect(page.locator('#goal')).toHaveValue(goal);await expect(page.locator('#request_kind')).toHaveValue('question');
+ }
+});
 
 test('homepage projects and Buffalo films remain available without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');

@@ -48,11 +48,11 @@ test('broad service coverage has nine real states and preserves the studio ident
 
 test('metadata and schema edits preserve all public routes and approved guides',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,411);assert.equal((sitemap.match(/<loc>/g)||[]).length,410);
- assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,23);
+ assert.equal(pages.length,415);assert.equal((sitemap.match(/<loc>/g)||[]).length,414);
+ assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,27);
  const counties=pages.filter(item=>/^\/areas\/(?:[a-z-]+\/)?[^/]+-(?:county|planning-region)\/$/.test(item.path)||item.path==='/areas/maryland/baltimore-city/');assert.equal(counties.length,333);
  for(const item of counties){assert.match(item.html,/name="robots" content="index,follow"/);assert.ok(sitemap.includes(config.origin+item.path));}
- assert.equal(new Set(pages.map(item=>item.path)).size,411);
+ assert.equal(new Set(pages.map(item=>item.path)).size,415);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

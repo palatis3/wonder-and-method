@@ -1,6 +1,8 @@
 # Production website
 
-Current candidate: [October 22 nine-state service-area expansion](../operations/NORTHEAST_EXPANSION_20261022.md). The candidate adds 116 county/equivalent guides and nine state hubs, for 411 HTML routes, 410 sitemap entries and 333 area guides across twelve states. Migration 0018 extends the fixed anonymous page categories while preserving existing aggregate and inquiry records. The private release record, exact-commit technical manifest and authenticated runtime identity establish publication; this paragraph does not.
+Current candidate: [October 22 long-tail buyer content](../operations/LONGTAIL_CONTENT_20261022.md). Four new guides bring the site to 415 HTML routes, 414 sitemap entries and 27 buyer guides, while retaining 333 area guides across twelve states. Migration 0019 adds four fixed anonymous page categories and preserves existing records. The private release record, exact-commit technical manifest and authenticated runtime identity establish publication; this paragraph does not.
+
+Previous published release: [October 22 nine-state service-area expansion](../operations/NORTHEAST_EXPANSION_20261022.md), source `bb39a87110335c9a05d873f9320aa3b2f9c9a8e6`, runtime `1740adc9-aee1-4aee-b8c2-1f4db81850cf`. It added 116 county/equivalent guides and nine state hubs. Migration 0018, all 411 live routes and 1,015 asset hashes were verified; Search Console accepted the sitemap with 410 discovered URLs. The private `northern-expansion-20261022/RELEASE-REPORT.md` retains the exact evidence.
 
 Previous source revision: [October 21 follow-up clarity and reliability work](../operations/CLAUDE_RERUN_20261021.md). Its 145 recommendations and six supplemental recommendations have a separate implementation ledger. Migration 0017 adds fixed-code operational attention, with separate submission and retention monitoring and a native alert limiter.
 

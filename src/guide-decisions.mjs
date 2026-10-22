@@ -1,5 +1,5 @@
 import {money} from './shared.mjs';
-import {researchGuideDetails} from './research-guides.mjs';
+import {guideDetails as researchGuideDetails} from './guide-details.mjs';
 import {guideBuildTiming} from './research-guide-more.mjs';
 
 const decisions={
