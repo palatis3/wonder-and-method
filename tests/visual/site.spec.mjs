@@ -1,7 +1,14 @@
 import {test,expect} from '../browser/fixtures.mjs';
-import {fileURLToPath} from 'node:url';
+import {readFileSync} from 'node:fs';
 
-const contentOnly={stylePath:fileURLToPath(new URL('./content-only.css',import.meta.url))};
+const contentOnlyCss=readFileSync(new URL('./content-only.css',import.meta.url),'utf8');
+async function isolateContent(page){
+ // The real CSP blocks screenshot APIs' inline styles. Serve a test-only
+ // same-origin stylesheet, and verify it applied before capturing the element.
+ await page.route('**/__visual-content-only.css',route=>route.fulfill({contentType:'text/css',body:contentOnlyCss}));
+ await page.addStyleTag({url:'/__visual-content-only.css'});
+ await expect(page.locator('.site-header')).toBeHidden();
+}
 
 async function settle(page){
  const city=page.locator('[data-living-city]');
@@ -36,11 +43,11 @@ for(const [name,path] of [
 test('county entry preserves readable local facts and place lists',async({page})=>{
  await page.goto('/areas/new-york/?qa=1#monroe');await settle(page);
  const entry=page.locator('#monroe');await expect(entry).toHaveAttribute('open','');
-  await expect(entry).toHaveScreenshot('county-entry.png',contentOnly);
+  await isolateContent(page);await expect(entry).toHaveScreenshot('county-entry.png');
 });
 test('footer collapsed and expanded layouts',async({page})=>{
  await page.goto('/?qa=1');await settle(page);const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
- await expect(footer).toHaveScreenshot('footer-closed.png',contentOnly);
+ await isolateContent(page);await expect(footer).toHaveScreenshot('footer-closed.png');
  for(const summary of await footer.locator('summary').all())await summary.click();
- await expect(footer).toHaveScreenshot('footer-open.png',contentOnly);
+ await expect(footer).toHaveScreenshot('footer-open.png');
 });
