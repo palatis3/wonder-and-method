@@ -69,7 +69,7 @@ test('runtime identity mismatch or a missing binding fails release verification'
 
 test('technical manifest rejects changed artifacts or incomplete checks without approving business gates',()=>{
  const current={commit:'a'.repeat(40),sourceSha256:'b'.repeat(64),artifactSha256:'c'.repeat(64)};
- const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+ const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
  assert.equal(verifyTechnicalManifest(manifest,current),true);
  assert.throws(()=>verifyTechnicalManifest(manifest,{...current,artifactSha256:'d'.repeat(64)}),/artifactSha256/);
  assert.throws(()=>verifyTechnicalManifest({...manifest,dirty:true},current),/clean source/);

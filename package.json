@@ -34,6 +34,7 @@
     "setup:tools": "node scripts/setup-tools.mjs",
     "predeploy": "node scripts/predeploy.mjs",
     "check:citations": "node scripts/check-citations.mjs",
+    "check:quality": "node scripts/check-site-quality.mjs",
     "test:browser": "playwright test",
     "test:visual": "playwright test --config=playwright.visual.config.mjs",
     "check:content": "node scripts/site-contract.mjs",

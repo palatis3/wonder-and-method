@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-export const technicalChecks=['build','tests','static-verification','content-preservation','browser-journeys','worker-dry-run'];
+export const technicalChecks=['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run'];
 
 export function verifyWorkerVersion(expectedWorkerVersion,observedWorkerVersion){
  const uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;

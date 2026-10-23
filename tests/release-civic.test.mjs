@@ -12,7 +12,7 @@ const config={homeEdition:'civic-sculpture'};
 test('changing Worker routing or retired destinations invalidates an exact technical approval',async()=>{
  const f=await fixture();try{
   const current={commit:'a'.repeat(40),...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
   assert.equal(verifyTechnicalManifest(manifest,current),true);
   for(const file of ['deployment/public-route-canonical.mjs','deployment/retired-county-routes.mjs']){
   await f.put(file,'changed canonical routing');
@@ -28,9 +28,10 @@ test('predeploy manifest rejects a changed dist byte even when source and commit
  const f=await fixture();
  try{
   const commit='a'.repeat(40),current={commit,...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
   assert.equal(verifyTechnicalManifest(manifest,current),true);
   assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!=='browser-journeys')},current),/Incomplete technical check sequence/);
+  assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!=='site-quality')},current),/Incomplete technical check sequence/);
   await f.put('dist/index.html','Fixture');
   const changed={commit,...await releaseFingerprint(f.root)};
   assert.equal(changed.sourceSha256,current.sourceSha256);

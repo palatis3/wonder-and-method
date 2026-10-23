@@ -59,7 +59,8 @@ ul.county-hub-grid .county-link{display:flex;flex-wrap:wrap;align-items:center;g
 
 /* A single reading column for county buying decisions; place data stays browseable. */
 .studio-site .county-section:not(.county-region){display:block;max-width:900px;margin-inline:auto}
-.studio-site .county-section>.section-heading{margin-bottom:1.25rem}
+.studio-site .county-section>.section-heading{display:block;margin-bottom:1.25rem}
+.studio-site .county-section>.section-heading .eyebrow{padding-top:0;margin:0 0 .75rem}
 .county-section .county-cards{grid-template-columns:minmax(0,1fr);gap:1rem;margin-block:1rem}
 .county-section .county-cards article{padding-top:1rem}.county-section .county-cards h3{margin-bottom:.35rem}
 .location-scope-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin:2rem 0}

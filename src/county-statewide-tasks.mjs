@@ -290,7 +290,7 @@ export const statewideCountyBuyerTasks = {
   },
   yates:{
     name:'Yates', title:'Build a Penn Yan page map from decisions, not spare page slots.',
-    scenario:'A Penn Ya business is choosing its first website package and considering a page for every nearby lake.',
+    scenario:'A Penn Yan business is choosing its first website package and considering a page for every nearby lake.',
     decision:'List the customer questions and group those that share the same answer. Give distinct offers their own pages when their requirements or inquiry paths differ. Use Seneca, Keuka or Canandaigua references to explain the actual destination, and assign an owner to facts that change.',
     questions:['Which decisions must a customer make before contacting the business?','Which questions belong together on one useful page?','Who maintains dates, availability and location information after launch?'],
     output:'A purposeful page map with content responsibilities and update notes.',

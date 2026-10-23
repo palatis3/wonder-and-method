@@ -1,0 +1,5354 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-23T14:12:57.973627+00:00",
+  "provenance": {
+    "preConsolidationCommit": "7ecc23c86bf51dfbb6b84078e19c9291e40ceab6",
+    "originalBaselinePath": "tests/baselines/site-content.json",
+    "originalBaselineSha256": "53f1524a36129e137f77fa3cd8765ee51c9525c5b0cd45b0164a8c9c69b76c61",
+    "originalRendererPath": "src/service-counties.mjs",
+    "originalRendererSha256": "5a9c47ff0a577100fa307e76f48b6987c3468fbe0701436c5002e8ed87ccaafa",
+    "inventorySha256": "f7f5ed9e68c6aafd98e6cd0e2ef64d32a0d8ead7c693ce33a68c3b92cd137583",
+    "candidateSourceSha256": "1c4d4e73e486f75d9275c69c5d7b33257b2519e2d7fb75a6c226373b778a2ae8",
+    "derivation": "Paths independently derived from the geographic inventory and intersected with pre-consolidation page dates. Content IDs read from the old immutable contract; destinations derived from area identity. Current redirect maps and fixtures were compared only after expectations were built."
+  },
+  "meaning": {
+    "services": "Current website offers, prices and scope comparison.",
+    "local-planning": "County-specific customer task and planning examples.",
+    "buyer-task": "County-specific customer task and planning examples.",
+    "search-plan": "SEO-related website planning or ongoing SEO information.",
+    "coverage": "Local area coverage and link to the county directory.",
+    "questions": "Questions to clarify a prospective website project.",
+    "next": "The next step to discuss a website project.",
+    "search": "SEO-related website planning or ongoing SEO information.",
+    "approach": "How the studio works with the client."
+  },
+  "routes": [
+    {
+      "from": "/areas/albany-county/",
+      "to": "/areas/albany-county/",
+      "areaId": "new-york/albany",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/allegany-county/",
+      "to": "/areas/allegany-county/",
+      "areaId": "new-york/allegany",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/bronx-county/",
+      "to": "/areas/bronx-county/",
+      "areaId": "new-york/bronx",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/broome-county/",
+      "to": "/areas/broome-county/",
+      "areaId": "new-york/broome",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/cattaraugus-county/",
+      "to": "/areas/cattaraugus-county/",
+      "areaId": "new-york/cattaraugus",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/cayuga-county/",
+      "to": "/areas/cayuga-county/",
+      "areaId": "new-york/cayuga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/chautauqua-county/",
+      "to": "/areas/chautauqua-county/",
+      "areaId": "new-york/chautauqua",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/chemung-county/",
+      "to": "/areas/chemung-county/",
+      "areaId": "new-york/chemung",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/chenango-county/",
+      "to": "/areas/chenango-county/",
+      "areaId": "new-york/chenango",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/clinton-county/",
+      "to": "/areas/clinton-county/",
+      "areaId": "new-york/clinton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/columbia-county/",
+      "to": "/areas/columbia-county/",
+      "areaId": "new-york/columbia",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/capitol-planning-region/",
+      "to": "/areas/connecticut/capitol-planning-region/",
+      "areaId": "connecticut/capitol",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "to": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "areaId": "connecticut/greater-bridgeport",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/lower-connecticut-river-valley-planning-region/",
+      "to": "/areas/connecticut/lower-connecticut-river-valley-planning-region/",
+      "areaId": "connecticut/lower-connecticut-river-valley",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/naugatuck-valley-planning-region/",
+      "to": "/areas/connecticut/naugatuck-valley-planning-region/",
+      "areaId": "connecticut/naugatuck-valley",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/northeastern-connecticut-planning-region/",
+      "to": "/areas/connecticut/northeastern-connecticut-planning-region/",
+      "areaId": "connecticut/northeastern-connecticut",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/northwest-hills-planning-region/",
+      "to": "/areas/connecticut/northwest-hills-planning-region/",
+      "areaId": "connecticut/northwest-hills",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/south-central-connecticut-planning-region/",
+      "to": "/areas/connecticut/south-central-connecticut-planning-region/",
+      "areaId": "connecticut/south-central-connecticut",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/southeastern-connecticut-planning-region/",
+      "to": "/areas/connecticut/southeastern-connecticut-planning-region/",
+      "areaId": "connecticut/southeastern-connecticut",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/connecticut/western-connecticut-planning-region/",
+      "to": "/areas/connecticut/western-connecticut-planning-region/",
+      "areaId": "connecticut/western-connecticut",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/cortland-county/",
+      "to": "/areas/cortland-county/",
+      "areaId": "new-york/cortland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/delaware-county/",
+      "to": "/areas/delaware-county/",
+      "areaId": "new-york/delaware",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/delaware/kent-county/",
+      "to": "/areas/delaware/kent-county/",
+      "areaId": "delaware/kent",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/delaware/new-castle-county/",
+      "to": "/areas/delaware/new-castle-county/",
+      "areaId": "delaware/new-castle",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/delaware/sussex-county/",
+      "to": "/areas/delaware/sussex-county/",
+      "areaId": "delaware/sussex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/dutchess-county/",
+      "to": "/areas/dutchess-county/",
+      "areaId": "new-york/dutchess",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/essex-county/",
+      "to": "/areas/essex-county/",
+      "areaId": "new-york/essex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/franklin-county/",
+      "to": "/areas/franklin-county/",
+      "areaId": "new-york/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/fulton-county/",
+      "to": "/areas/fulton-county/",
+      "areaId": "new-york/fulton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/genesee-county/",
+      "to": "/areas/genesee-county/",
+      "areaId": "new-york/genesee",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/greene-county/",
+      "to": "/areas/greene-county/",
+      "areaId": "new-york/greene",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/hamilton-county/",
+      "to": "/areas/hamilton-county/",
+      "areaId": "new-york/hamilton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/herkimer-county/",
+      "to": "/areas/herkimer-county/",
+      "areaId": "new-york/herkimer",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/jefferson-county/",
+      "to": "/areas/jefferson-county/",
+      "areaId": "new-york/jefferson",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/kings-county/",
+      "to": "/areas/kings-county/",
+      "areaId": "new-york/kings",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/lewis-county/",
+      "to": "/areas/lewis-county/",
+      "areaId": "new-york/lewis",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/livingston-county/",
+      "to": "/areas/livingston-county/",
+      "areaId": "new-york/livingston",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/madison-county/",
+      "to": "/areas/madison-county/",
+      "areaId": "new-york/madison",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/androscoggin-county/",
+      "to": "/areas/maine/androscoggin-county/",
+      "areaId": "maine/androscoggin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/aroostook-county/",
+      "to": "/areas/maine/aroostook-county/",
+      "areaId": "maine/aroostook",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/cumberland-county/",
+      "to": "/areas/maine/cumberland-county/",
+      "areaId": "maine/cumberland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/franklin-county/",
+      "to": "/areas/maine/franklin-county/",
+      "areaId": "maine/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/hancock-county/",
+      "to": "/areas/maine/hancock-county/",
+      "areaId": "maine/hancock",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/kennebec-county/",
+      "to": "/areas/maine/kennebec-county/",
+      "areaId": "maine/kennebec",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/knox-county/",
+      "to": "/areas/maine/knox-county/",
+      "areaId": "maine/knox",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/lincoln-county/",
+      "to": "/areas/maine/lincoln-county/",
+      "areaId": "maine/lincoln",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/oxford-county/",
+      "to": "/areas/maine/oxford-county/",
+      "areaId": "maine/oxford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/penobscot-county/",
+      "to": "/areas/maine/penobscot-county/",
+      "areaId": "maine/penobscot",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/piscataquis-county/",
+      "to": "/areas/maine/piscataquis-county/",
+      "areaId": "maine/piscataquis",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/sagadahoc-county/",
+      "to": "/areas/maine/sagadahoc-county/",
+      "areaId": "maine/sagadahoc",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/somerset-county/",
+      "to": "/areas/maine/somerset-county/",
+      "areaId": "maine/somerset",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/waldo-county/",
+      "to": "/areas/maine/waldo-county/",
+      "areaId": "maine/waldo",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/washington-county/",
+      "to": "/areas/maine/washington-county/",
+      "areaId": "maine/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maine/york-county/",
+      "to": "/areas/maine/york-county/",
+      "areaId": "maine/york",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/allegany-county/",
+      "to": "/areas/maryland/allegany-county/",
+      "areaId": "maryland/allegany",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/anne-arundel-county/",
+      "to": "/areas/maryland/anne-arundel-county/",
+      "areaId": "maryland/anne-arundel",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/baltimore-city/",
+      "to": "/areas/maryland/baltimore-area/",
+      "areaId": "maryland/baltimore-city",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/baltimore-county/",
+      "to": "/areas/maryland/baltimore-area/",
+      "areaId": "maryland/baltimore",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/calvert-county/",
+      "to": "/areas/maryland/calvert-county/",
+      "areaId": "maryland/calvert",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/caroline-county/",
+      "to": "/areas/maryland/caroline-county/",
+      "areaId": "maryland/caroline",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/carroll-county/",
+      "to": "/areas/maryland/carroll-county/",
+      "areaId": "maryland/carroll",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/cecil-county/",
+      "to": "/areas/maryland/cecil-county/",
+      "areaId": "maryland/cecil",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/charles-county/",
+      "to": "/areas/maryland/charles-county/",
+      "areaId": "maryland/charles",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/dorchester-county/",
+      "to": "/areas/maryland/dorchester-county/",
+      "areaId": "maryland/dorchester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/frederick-county/",
+      "to": "/areas/maryland/frederick-county/",
+      "areaId": "maryland/frederick",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/garrett-county/",
+      "to": "/areas/maryland/garrett-county/",
+      "areaId": "maryland/garrett",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/harford-county/",
+      "to": "/areas/maryland/harford-county/",
+      "areaId": "maryland/harford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/howard-county/",
+      "to": "/areas/maryland/howard-county/",
+      "areaId": "maryland/howard",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/kent-county/",
+      "to": "/areas/maryland/kent-county/",
+      "areaId": "maryland/kent",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/montgomery-county/",
+      "to": "/areas/maryland/montgomery-county/",
+      "areaId": "maryland/montgomery",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/prince-georges-county/",
+      "to": "/areas/maryland/prince-georges-county/",
+      "areaId": "maryland/prince-georges",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/queen-annes-county/",
+      "to": "/areas/maryland/queen-annes-county/",
+      "areaId": "maryland/queen-annes",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/somerset-county/",
+      "to": "/areas/maryland/somerset-county/",
+      "areaId": "maryland/somerset",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/st-marys-county/",
+      "to": "/areas/maryland/st-marys-county/",
+      "areaId": "maryland/st-marys",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/talbot-county/",
+      "to": "/areas/maryland/talbot-county/",
+      "areaId": "maryland/talbot",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/washington-county/",
+      "to": "/areas/maryland/washington-county/",
+      "areaId": "maryland/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/wicomico-county/",
+      "to": "/areas/maryland/wicomico-county/",
+      "areaId": "maryland/wicomico",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/maryland/worcester-county/",
+      "to": "/areas/maryland/worcester-county/",
+      "areaId": "maryland/worcester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/barnstable-county/",
+      "to": "/areas/massachusetts/barnstable-county/",
+      "areaId": "massachusetts/barnstable",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/berkshire-county/",
+      "to": "/areas/massachusetts/berkshire-county/",
+      "areaId": "massachusetts/berkshire",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/bristol-county/",
+      "to": "/areas/massachusetts/bristol-county/",
+      "areaId": "massachusetts/bristol",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/dukes-county/",
+      "to": "/areas/massachusetts/dukes-county/",
+      "areaId": "massachusetts/dukes",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/essex-county/",
+      "to": "/areas/massachusetts/essex-county/",
+      "areaId": "massachusetts/essex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/franklin-county/",
+      "to": "/areas/massachusetts/franklin-county/",
+      "areaId": "massachusetts/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/hampden-county/",
+      "to": "/areas/massachusetts/hampden-county/",
+      "areaId": "massachusetts/hampden",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/hampshire-county/",
+      "to": "/areas/massachusetts/hampshire-county/",
+      "areaId": "massachusetts/hampshire",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/middlesex-county/",
+      "to": "/areas/massachusetts/middlesex-county/",
+      "areaId": "massachusetts/middlesex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/nantucket-county/",
+      "to": "/areas/massachusetts/nantucket-county/",
+      "areaId": "massachusetts/nantucket",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/norfolk-county/",
+      "to": "/areas/massachusetts/norfolk-county/",
+      "areaId": "massachusetts/norfolk",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/plymouth-county/",
+      "to": "/areas/massachusetts/plymouth-county/",
+      "areaId": "massachusetts/plymouth",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/suffolk-county/",
+      "to": "/areas/massachusetts/suffolk-county/",
+      "areaId": "massachusetts/suffolk",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/massachusetts/worcester-county/",
+      "to": "/areas/massachusetts/worcester-county/",
+      "areaId": "massachusetts/worcester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/monroe-county/",
+      "to": "/areas/monroe-county/",
+      "areaId": "new-york/monroe",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/montgomery-county/",
+      "to": "/areas/montgomery-county/",
+      "areaId": "new-york/montgomery",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/nassau-county/",
+      "to": "/areas/nassau-county/",
+      "areaId": "new-york/nassau",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/belknap-county/",
+      "to": "/areas/new-hampshire/belknap-county/",
+      "areaId": "new-hampshire/belknap",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/carroll-county/",
+      "to": "/areas/new-hampshire/carroll-county/",
+      "areaId": "new-hampshire/carroll",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/cheshire-county/",
+      "to": "/areas/new-hampshire/cheshire-county/",
+      "areaId": "new-hampshire/cheshire",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/coos-county/",
+      "to": "/areas/new-hampshire/coos-county/",
+      "areaId": "new-hampshire/coos",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/grafton-county/",
+      "to": "/areas/new-hampshire/grafton-county/",
+      "areaId": "new-hampshire/grafton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/hillsborough-county/",
+      "to": "/areas/new-hampshire/hillsborough-county/",
+      "areaId": "new-hampshire/hillsborough",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/merrimack-county/",
+      "to": "/areas/new-hampshire/merrimack-county/",
+      "areaId": "new-hampshire/merrimack",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/rockingham-county/",
+      "to": "/areas/new-hampshire/rockingham-county/",
+      "areaId": "new-hampshire/rockingham",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/strafford-county/",
+      "to": "/areas/new-hampshire/strafford-county/",
+      "areaId": "new-hampshire/strafford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-hampshire/sullivan-county/",
+      "to": "/areas/new-hampshire/sullivan-county/",
+      "areaId": "new-hampshire/sullivan",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/atlantic-county/",
+      "to": "/areas/new-jersey/atlantic-county/",
+      "areaId": "new-jersey/atlantic",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/bergen-county/",
+      "to": "/areas/new-jersey/bergen-county/",
+      "areaId": "new-jersey/bergen",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/burlington-county/",
+      "to": "/areas/new-jersey/burlington-county/",
+      "areaId": "new-jersey/burlington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/camden-county/",
+      "to": "/areas/new-jersey/camden-county/",
+      "areaId": "new-jersey/camden",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/cape-may-county/",
+      "to": "/areas/new-jersey/cape-may-county/",
+      "areaId": "new-jersey/cape-may",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/cumberland-county/",
+      "to": "/areas/new-jersey/cumberland-county/",
+      "areaId": "new-jersey/cumberland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/essex-county/",
+      "to": "/areas/new-jersey/essex-county/",
+      "areaId": "new-jersey/essex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/gloucester-county/",
+      "to": "/areas/new-jersey/gloucester-county/",
+      "areaId": "new-jersey/gloucester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/hudson-county/",
+      "to": "/areas/new-jersey/hudson-county/",
+      "areaId": "new-jersey/hudson",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/hunterdon-county/",
+      "to": "/areas/new-jersey/hunterdon-county/",
+      "areaId": "new-jersey/hunterdon",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/mercer-county/",
+      "to": "/areas/new-jersey/mercer-county/",
+      "areaId": "new-jersey/mercer",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/middlesex-county/",
+      "to": "/areas/new-jersey/middlesex-county/",
+      "areaId": "new-jersey/middlesex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/monmouth-county/",
+      "to": "/areas/new-jersey/monmouth-county/",
+      "areaId": "new-jersey/monmouth",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/morris-county/",
+      "to": "/areas/new-jersey/morris-county/",
+      "areaId": "new-jersey/morris",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/ocean-county/",
+      "to": "/areas/new-jersey/ocean-county/",
+      "areaId": "new-jersey/ocean",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/passaic-county/",
+      "to": "/areas/new-jersey/passaic-county/",
+      "areaId": "new-jersey/passaic",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/salem-county/",
+      "to": "/areas/new-jersey/salem-county/",
+      "areaId": "new-jersey/salem",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/somerset-county/",
+      "to": "/areas/new-jersey/somerset-county/",
+      "areaId": "new-jersey/somerset",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/sussex-county/",
+      "to": "/areas/new-jersey/sussex-county/",
+      "areaId": "new-jersey/sussex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/union-county/",
+      "to": "/areas/new-jersey/union-county/",
+      "areaId": "new-jersey/union",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-jersey/warren-county/",
+      "to": "/areas/new-jersey/warren-county/",
+      "areaId": "new-jersey/warren",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/new-york-county/",
+      "to": "/areas/new-york-county/",
+      "areaId": "new-york/new-york",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/niagara-county/",
+      "to": "/areas/niagara-county/",
+      "areaId": "new-york/niagara",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/adams-county/",
+      "to": "/areas/ohio/adams-county/",
+      "areaId": "ohio/adams",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/allen-county/",
+      "to": "/areas/ohio/allen-county/",
+      "areaId": "ohio/allen",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/ashland-county/",
+      "to": "/areas/ohio/ashland-county/",
+      "areaId": "ohio/ashland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/ashtabula-county/",
+      "to": "/areas/ohio/ashtabula-county/",
+      "areaId": "ohio/ashtabula",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/athens-county/",
+      "to": "/areas/ohio/athens-county/",
+      "areaId": "ohio/athens",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/auglaize-county/",
+      "to": "/areas/ohio/auglaize-county/",
+      "areaId": "ohio/auglaize",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/belmont-county/",
+      "to": "/areas/ohio/belmont-county/",
+      "areaId": "ohio/belmont",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/brown-county/",
+      "to": "/areas/ohio/brown-county/",
+      "areaId": "ohio/brown",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/butler-county/",
+      "to": "/areas/ohio/butler-county/",
+      "areaId": "ohio/butler",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/carroll-county/",
+      "to": "/areas/ohio/carroll-county/",
+      "areaId": "ohio/carroll",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/champaign-county/",
+      "to": "/areas/ohio/champaign-county/",
+      "areaId": "ohio/champaign",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/clark-county/",
+      "to": "/areas/ohio/clark-county/",
+      "areaId": "ohio/clark",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/clermont-county/",
+      "to": "/areas/ohio/clermont-county/",
+      "areaId": "ohio/clermont",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/clinton-county/",
+      "to": "/areas/ohio/clinton-county/",
+      "areaId": "ohio/clinton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/columbiana-county/",
+      "to": "/areas/ohio/columbiana-county/",
+      "areaId": "ohio/columbiana",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/coshocton-county/",
+      "to": "/areas/ohio/coshocton-county/",
+      "areaId": "ohio/coshocton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/crawford-county/",
+      "to": "/areas/ohio/crawford-county/",
+      "areaId": "ohio/crawford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/cuyahoga-county/",
+      "to": "/areas/ohio/cuyahoga-county/",
+      "areaId": "ohio/cuyahoga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/darke-county/",
+      "to": "/areas/ohio/darke-county/",
+      "areaId": "ohio/darke",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/defiance-county/",
+      "to": "/areas/ohio/defiance-county/",
+      "areaId": "ohio/defiance",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/delaware-county/",
+      "to": "/areas/ohio/delaware-county/",
+      "areaId": "ohio/delaware",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/erie-county/",
+      "to": "/areas/ohio/erie-county/",
+      "areaId": "ohio/erie",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/fairfield-county/",
+      "to": "/areas/ohio/fairfield-county/",
+      "areaId": "ohio/fairfield",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/fayette-county/",
+      "to": "/areas/ohio/fayette-county/",
+      "areaId": "ohio/fayette",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/franklin-county/",
+      "to": "/areas/ohio/franklin-county/",
+      "areaId": "ohio/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/fulton-county/",
+      "to": "/areas/ohio/fulton-county/",
+      "areaId": "ohio/fulton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/gallia-county/",
+      "to": "/areas/ohio/gallia-county/",
+      "areaId": "ohio/gallia",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/geauga-county/",
+      "to": "/areas/ohio/geauga-county/",
+      "areaId": "ohio/geauga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/greene-county/",
+      "to": "/areas/ohio/greene-county/",
+      "areaId": "ohio/greene",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/guernsey-county/",
+      "to": "/areas/ohio/guernsey-county/",
+      "areaId": "ohio/guernsey",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/hamilton-county/",
+      "to": "/areas/ohio/hamilton-county/",
+      "areaId": "ohio/hamilton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/hancock-county/",
+      "to": "/areas/ohio/hancock-county/",
+      "areaId": "ohio/hancock",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/hardin-county/",
+      "to": "/areas/ohio/hardin-county/",
+      "areaId": "ohio/hardin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/harrison-county/",
+      "to": "/areas/ohio/harrison-county/",
+      "areaId": "ohio/harrison",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/henry-county/",
+      "to": "/areas/ohio/henry-county/",
+      "areaId": "ohio/henry",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/highland-county/",
+      "to": "/areas/ohio/highland-county/",
+      "areaId": "ohio/highland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/hocking-county/",
+      "to": "/areas/ohio/hocking-county/",
+      "areaId": "ohio/hocking",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/holmes-county/",
+      "to": "/areas/ohio/holmes-county/",
+      "areaId": "ohio/holmes",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/huron-county/",
+      "to": "/areas/ohio/huron-county/",
+      "areaId": "ohio/huron",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/jackson-county/",
+      "to": "/areas/ohio/jackson-county/",
+      "areaId": "ohio/jackson",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/jefferson-county/",
+      "to": "/areas/ohio/jefferson-county/",
+      "areaId": "ohio/jefferson",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/knox-county/",
+      "to": "/areas/ohio/knox-county/",
+      "areaId": "ohio/knox",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/lake-county/",
+      "to": "/areas/ohio/lake-county/",
+      "areaId": "ohio/lake",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/lawrence-county/",
+      "to": "/areas/ohio/lawrence-county/",
+      "areaId": "ohio/lawrence",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/licking-county/",
+      "to": "/areas/ohio/licking-county/",
+      "areaId": "ohio/licking",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/logan-county/",
+      "to": "/areas/ohio/logan-county/",
+      "areaId": "ohio/logan",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/lorain-county/",
+      "to": "/areas/ohio/lorain-county/",
+      "areaId": "ohio/lorain",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/lucas-county/",
+      "to": "/areas/ohio/lucas-county/",
+      "areaId": "ohio/lucas",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/madison-county/",
+      "to": "/areas/ohio/madison-county/",
+      "areaId": "ohio/madison",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/mahoning-county/",
+      "to": "/areas/ohio/mahoning-county/",
+      "areaId": "ohio/mahoning",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/marion-county/",
+      "to": "/areas/ohio/marion-county/",
+      "areaId": "ohio/marion",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/medina-county/",
+      "to": "/areas/ohio/medina-county/",
+      "areaId": "ohio/medina",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/meigs-county/",
+      "to": "/areas/ohio/meigs-county/",
+      "areaId": "ohio/meigs",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/mercer-county/",
+      "to": "/areas/ohio/mercer-county/",
+      "areaId": "ohio/mercer",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/miami-county/",
+      "to": "/areas/ohio/miami-county/",
+      "areaId": "ohio/miami",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/monroe-county/",
+      "to": "/areas/ohio/monroe-county/",
+      "areaId": "ohio/monroe",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/montgomery-county/",
+      "to": "/areas/ohio/montgomery-county/",
+      "areaId": "ohio/montgomery",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/morgan-county/",
+      "to": "/areas/ohio/morgan-county/",
+      "areaId": "ohio/morgan",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/morrow-county/",
+      "to": "/areas/ohio/morrow-county/",
+      "areaId": "ohio/morrow",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/muskingum-county/",
+      "to": "/areas/ohio/muskingum-county/",
+      "areaId": "ohio/muskingum",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/noble-county/",
+      "to": "/areas/ohio/noble-county/",
+      "areaId": "ohio/noble",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/ottawa-county/",
+      "to": "/areas/ohio/ottawa-county/",
+      "areaId": "ohio/ottawa",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/paulding-county/",
+      "to": "/areas/ohio/paulding-county/",
+      "areaId": "ohio/paulding",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/perry-county/",
+      "to": "/areas/ohio/perry-county/",
+      "areaId": "ohio/perry",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/pickaway-county/",
+      "to": "/areas/ohio/pickaway-county/",
+      "areaId": "ohio/pickaway",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/pike-county/",
+      "to": "/areas/ohio/pike-county/",
+      "areaId": "ohio/pike",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/portage-county/",
+      "to": "/areas/ohio/portage-county/",
+      "areaId": "ohio/portage",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/preble-county/",
+      "to": "/areas/ohio/preble-county/",
+      "areaId": "ohio/preble",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/putnam-county/",
+      "to": "/areas/ohio/putnam-county/",
+      "areaId": "ohio/putnam",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/richland-county/",
+      "to": "/areas/ohio/richland-county/",
+      "areaId": "ohio/richland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/ross-county/",
+      "to": "/areas/ohio/ross-county/",
+      "areaId": "ohio/ross",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/sandusky-county/",
+      "to": "/areas/ohio/sandusky-county/",
+      "areaId": "ohio/sandusky",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/scioto-county/",
+      "to": "/areas/ohio/scioto-county/",
+      "areaId": "ohio/scioto",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/seneca-county/",
+      "to": "/areas/ohio/seneca-county/",
+      "areaId": "ohio/seneca",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/shelby-county/",
+      "to": "/areas/ohio/shelby-county/",
+      "areaId": "ohio/shelby",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/stark-county/",
+      "to": "/areas/ohio/stark-county/",
+      "areaId": "ohio/stark",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/summit-county/",
+      "to": "/areas/ohio/summit-county/",
+      "areaId": "ohio/summit",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/trumbull-county/",
+      "to": "/areas/ohio/trumbull-county/",
+      "areaId": "ohio/trumbull",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/tuscarawas-county/",
+      "to": "/areas/ohio/tuscarawas-county/",
+      "areaId": "ohio/tuscarawas",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/union-county/",
+      "to": "/areas/ohio/union-county/",
+      "areaId": "ohio/union",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/van-wert-county/",
+      "to": "/areas/ohio/van-wert-county/",
+      "areaId": "ohio/van-wert",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/vinton-county/",
+      "to": "/areas/ohio/vinton-county/",
+      "areaId": "ohio/vinton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/warren-county/",
+      "to": "/areas/ohio/warren-county/",
+      "areaId": "ohio/warren",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/washington-county/",
+      "to": "/areas/ohio/washington-county/",
+      "areaId": "ohio/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/wayne-county/",
+      "to": "/areas/ohio/wayne-county/",
+      "areaId": "ohio/wayne",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/williams-county/",
+      "to": "/areas/ohio/williams-county/",
+      "areaId": "ohio/williams",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/wood-county/",
+      "to": "/areas/ohio/wood-county/",
+      "areaId": "ohio/wood",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ohio/wyandot-county/",
+      "to": "/areas/ohio/wyandot-county/",
+      "areaId": "ohio/wyandot",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/oneida-county/",
+      "to": "/areas/oneida-county/",
+      "areaId": "new-york/oneida",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/onondaga-county/",
+      "to": "/areas/onondaga-county/",
+      "areaId": "new-york/onondaga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ontario-county/",
+      "to": "/areas/ontario-county/",
+      "areaId": "new-york/ontario",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/orange-county/",
+      "to": "/areas/orange-county/",
+      "areaId": "new-york/orange",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/orleans-county/",
+      "to": "/areas/orleans-county/",
+      "areaId": "new-york/orleans",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/oswego-county/",
+      "to": "/areas/oswego-county/",
+      "areaId": "new-york/oswego",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/otsego-county/",
+      "to": "/areas/otsego-county/",
+      "areaId": "new-york/otsego",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/adams-county/",
+      "to": "/areas/pennsylvania/adams-county/",
+      "areaId": "pennsylvania/adams",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/allegheny-county/",
+      "to": "/areas/pennsylvania/allegheny-county/",
+      "areaId": "pennsylvania/allegheny",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/armstrong-county/",
+      "to": "/areas/pennsylvania/armstrong-county/",
+      "areaId": "pennsylvania/armstrong",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/beaver-county/",
+      "to": "/areas/pennsylvania/beaver-county/",
+      "areaId": "pennsylvania/beaver",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/bedford-county/",
+      "to": "/areas/pennsylvania/bedford-county/",
+      "areaId": "pennsylvania/bedford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/berks-county/",
+      "to": "/areas/pennsylvania/berks-county/",
+      "areaId": "pennsylvania/berks",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/blair-county/",
+      "to": "/areas/pennsylvania/blair-county/",
+      "areaId": "pennsylvania/blair",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/bradford-county/",
+      "to": "/areas/pennsylvania/bradford-county/",
+      "areaId": "pennsylvania/bradford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/bucks-county/",
+      "to": "/areas/pennsylvania/bucks-county/",
+      "areaId": "pennsylvania/bucks",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/butler-county/",
+      "to": "/areas/pennsylvania/butler-county/",
+      "areaId": "pennsylvania/butler",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/cambria-county/",
+      "to": "/areas/pennsylvania/cambria-county/",
+      "areaId": "pennsylvania/cambria",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/cameron-county/",
+      "to": "/areas/pennsylvania/cameron-county/",
+      "areaId": "pennsylvania/cameron",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/carbon-county/",
+      "to": "/areas/pennsylvania/carbon-county/",
+      "areaId": "pennsylvania/carbon",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/centre-county/",
+      "to": "/areas/pennsylvania/centre-county/",
+      "areaId": "pennsylvania/centre",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/chester-county/",
+      "to": "/areas/pennsylvania/chester-county/",
+      "areaId": "pennsylvania/chester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/clarion-county/",
+      "to": "/areas/pennsylvania/clarion-county/",
+      "areaId": "pennsylvania/clarion",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/clearfield-county/",
+      "to": "/areas/pennsylvania/clearfield-county/",
+      "areaId": "pennsylvania/clearfield",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/clinton-county/",
+      "to": "/areas/pennsylvania/clinton-county/",
+      "areaId": "pennsylvania/clinton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/columbia-county/",
+      "to": "/areas/pennsylvania/columbia-county/",
+      "areaId": "pennsylvania/columbia",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/crawford-county/",
+      "to": "/areas/pennsylvania/crawford-county/",
+      "areaId": "pennsylvania/crawford",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/cumberland-county/",
+      "to": "/areas/pennsylvania/cumberland-county/",
+      "areaId": "pennsylvania/cumberland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/dauphin-county/",
+      "to": "/areas/pennsylvania/dauphin-county/",
+      "areaId": "pennsylvania/dauphin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/delaware-county/",
+      "to": "/areas/pennsylvania/delaware-county/",
+      "areaId": "pennsylvania/delaware",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/elk-county/",
+      "to": "/areas/pennsylvania/elk-county/",
+      "areaId": "pennsylvania/elk",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/erie-county/",
+      "to": "/areas/pennsylvania/erie-county/",
+      "areaId": "pennsylvania/erie",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/fayette-county/",
+      "to": "/areas/pennsylvania/fayette-county/",
+      "areaId": "pennsylvania/fayette",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/forest-county/",
+      "to": "/areas/pennsylvania/forest-county/",
+      "areaId": "pennsylvania/forest",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/franklin-county/",
+      "to": "/areas/pennsylvania/franklin-county/",
+      "areaId": "pennsylvania/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/fulton-county/",
+      "to": "/areas/pennsylvania/fulton-county/",
+      "areaId": "pennsylvania/fulton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/greene-county/",
+      "to": "/areas/pennsylvania/greene-county/",
+      "areaId": "pennsylvania/greene",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/huntingdon-county/",
+      "to": "/areas/pennsylvania/huntingdon-county/",
+      "areaId": "pennsylvania/huntingdon",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/indiana-county/",
+      "to": "/areas/pennsylvania/indiana-county/",
+      "areaId": "pennsylvania/indiana",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/jefferson-county/",
+      "to": "/areas/pennsylvania/jefferson-county/",
+      "areaId": "pennsylvania/jefferson",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/juniata-county/",
+      "to": "/areas/pennsylvania/juniata-county/",
+      "areaId": "pennsylvania/juniata",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lackawanna-county/",
+      "to": "/areas/pennsylvania/lackawanna-county/",
+      "areaId": "pennsylvania/lackawanna",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lancaster-county/",
+      "to": "/areas/pennsylvania/lancaster-county/",
+      "areaId": "pennsylvania/lancaster",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lawrence-county/",
+      "to": "/areas/pennsylvania/lawrence-county/",
+      "areaId": "pennsylvania/lawrence",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lebanon-county/",
+      "to": "/areas/pennsylvania/lebanon-county/",
+      "areaId": "pennsylvania/lebanon",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lehigh-county/",
+      "to": "/areas/pennsylvania/lehigh-county/",
+      "areaId": "pennsylvania/lehigh",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/luzerne-county/",
+      "to": "/areas/pennsylvania/luzerne-county/",
+      "areaId": "pennsylvania/luzerne",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/lycoming-county/",
+      "to": "/areas/pennsylvania/lycoming-county/",
+      "areaId": "pennsylvania/lycoming",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/mckean-county/",
+      "to": "/areas/pennsylvania/mckean-county/",
+      "areaId": "pennsylvania/mckean",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/mercer-county/",
+      "to": "/areas/pennsylvania/mercer-county/",
+      "areaId": "pennsylvania/mercer",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/mifflin-county/",
+      "to": "/areas/pennsylvania/mifflin-county/",
+      "areaId": "pennsylvania/mifflin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/monroe-county/",
+      "to": "/areas/pennsylvania/monroe-county/",
+      "areaId": "pennsylvania/monroe",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/montgomery-county/",
+      "to": "/areas/pennsylvania/montgomery-county/",
+      "areaId": "pennsylvania/montgomery",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/montour-county/",
+      "to": "/areas/pennsylvania/montour-county/",
+      "areaId": "pennsylvania/montour",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/northampton-county/",
+      "to": "/areas/pennsylvania/northampton-county/",
+      "areaId": "pennsylvania/northampton",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/northumberland-county/",
+      "to": "/areas/pennsylvania/northumberland-county/",
+      "areaId": "pennsylvania/northumberland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/perry-county/",
+      "to": "/areas/pennsylvania/perry-county/",
+      "areaId": "pennsylvania/perry",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/philadelphia-county/",
+      "to": "/areas/pennsylvania/philadelphia-county/",
+      "areaId": "pennsylvania/philadelphia",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/pike-county/",
+      "to": "/areas/pennsylvania/pike-county/",
+      "areaId": "pennsylvania/pike",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/potter-county/",
+      "to": "/areas/pennsylvania/potter-county/",
+      "areaId": "pennsylvania/potter",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/schuylkill-county/",
+      "to": "/areas/pennsylvania/schuylkill-county/",
+      "areaId": "pennsylvania/schuylkill",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/snyder-county/",
+      "to": "/areas/pennsylvania/snyder-county/",
+      "areaId": "pennsylvania/snyder",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/somerset-county/",
+      "to": "/areas/pennsylvania/somerset-county/",
+      "areaId": "pennsylvania/somerset",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/sullivan-county/",
+      "to": "/areas/pennsylvania/sullivan-county/",
+      "areaId": "pennsylvania/sullivan",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/susquehanna-county/",
+      "to": "/areas/pennsylvania/susquehanna-county/",
+      "areaId": "pennsylvania/susquehanna",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/tioga-county/",
+      "to": "/areas/pennsylvania/tioga-county/",
+      "areaId": "pennsylvania/tioga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/union-county/",
+      "to": "/areas/pennsylvania/union-county/",
+      "areaId": "pennsylvania/union",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/venango-county/",
+      "to": "/areas/pennsylvania/venango-county/",
+      "areaId": "pennsylvania/venango",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/warren-county/",
+      "to": "/areas/pennsylvania/warren-county/",
+      "areaId": "pennsylvania/warren",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/washington-county/",
+      "to": "/areas/pennsylvania/washington-county/",
+      "areaId": "pennsylvania/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/wayne-county/",
+      "to": "/areas/pennsylvania/wayne-county/",
+      "areaId": "pennsylvania/wayne",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/westmoreland-county/",
+      "to": "/areas/pennsylvania/westmoreland-county/",
+      "areaId": "pennsylvania/westmoreland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/wyoming-county/",
+      "to": "/areas/pennsylvania/wyoming-county/",
+      "areaId": "pennsylvania/wyoming",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/pennsylvania/york-county/",
+      "to": "/areas/pennsylvania/york-county/",
+      "areaId": "pennsylvania/york",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/putnam-county/",
+      "to": "/areas/putnam-county/",
+      "areaId": "new-york/putnam",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/queens-county/",
+      "to": "/areas/queens-county/",
+      "areaId": "new-york/queens",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rensselaer-county/",
+      "to": "/areas/rensselaer-county/",
+      "areaId": "new-york/rensselaer",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rhode-island/bristol-county/",
+      "to": "/areas/rhode-island/bristol-county/",
+      "areaId": "rhode-island/bristol",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rhode-island/kent-county/",
+      "to": "/areas/rhode-island/kent-county/",
+      "areaId": "rhode-island/kent",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rhode-island/newport-county/",
+      "to": "/areas/rhode-island/newport-county/",
+      "areaId": "rhode-island/newport",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rhode-island/providence-county/",
+      "to": "/areas/rhode-island/providence-county/",
+      "areaId": "rhode-island/providence",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rhode-island/washington-county/",
+      "to": "/areas/rhode-island/washington-county/",
+      "areaId": "rhode-island/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/richmond-county/",
+      "to": "/areas/richmond-county/",
+      "areaId": "new-york/richmond",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/rockland-county/",
+      "to": "/areas/rockland-county/",
+      "areaId": "new-york/rockland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/saratoga-county/",
+      "to": "/areas/saratoga-county/",
+      "areaId": "new-york/saratoga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/schenectady-county/",
+      "to": "/areas/schenectady-county/",
+      "areaId": "new-york/schenectady",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/schoharie-county/",
+      "to": "/areas/schoharie-county/",
+      "areaId": "new-york/schoharie",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/schuyler-county/",
+      "to": "/areas/schuyler-county/",
+      "areaId": "new-york/schuyler",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/seneca-county/",
+      "to": "/areas/seneca-county/",
+      "areaId": "new-york/seneca",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/st-lawrence-county/",
+      "to": "/areas/st-lawrence-county/",
+      "areaId": "new-york/st-lawrence",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/steuben-county/",
+      "to": "/areas/steuben-county/",
+      "areaId": "new-york/steuben",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/suffolk-county/",
+      "to": "/areas/suffolk-county/",
+      "areaId": "new-york/suffolk",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/sullivan-county/",
+      "to": "/areas/sullivan-county/",
+      "areaId": "new-york/sullivan",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/tioga-county/",
+      "to": "/areas/tioga-county/",
+      "areaId": "new-york/tioga",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/tompkins-county/",
+      "to": "/areas/tompkins-county/",
+      "areaId": "new-york/tompkins",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/ulster-county/",
+      "to": "/areas/ulster-county/",
+      "areaId": "new-york/ulster",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/addison-county/",
+      "to": "/areas/vermont/addison-county/",
+      "areaId": "vermont/addison",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/bennington-county/",
+      "to": "/areas/vermont/bennington-county/",
+      "areaId": "vermont/bennington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/caledonia-county/",
+      "to": "/areas/vermont/caledonia-county/",
+      "areaId": "vermont/caledonia",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/chittenden-county/",
+      "to": "/areas/vermont/chittenden-county/",
+      "areaId": "vermont/chittenden",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/essex-county/",
+      "to": "/areas/vermont/essex-county/",
+      "areaId": "vermont/essex",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/franklin-county/",
+      "to": "/areas/vermont/franklin-county/",
+      "areaId": "vermont/franklin",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/grand-isle-county/",
+      "to": "/areas/vermont/grand-isle-county/",
+      "areaId": "vermont/grand-isle",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/lamoille-county/",
+      "to": "/areas/vermont/lamoille-county/",
+      "areaId": "vermont/lamoille",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/orange-county/",
+      "to": "/areas/vermont/orange-county/",
+      "areaId": "vermont/orange",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/orleans-county/",
+      "to": "/areas/vermont/orleans-county/",
+      "areaId": "vermont/orleans",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/rutland-county/",
+      "to": "/areas/vermont/rutland-county/",
+      "areaId": "vermont/rutland",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/washington-county/",
+      "to": "/areas/vermont/washington-county/",
+      "areaId": "vermont/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/windham-county/",
+      "to": "/areas/vermont/windham-county/",
+      "areaId": "vermont/windham",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/vermont/windsor-county/",
+      "to": "/areas/vermont/windsor-county/",
+      "areaId": "vermont/windsor",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/warren-county/",
+      "to": "/areas/warren-county/",
+      "areaId": "new-york/warren",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/washington-county/",
+      "to": "/areas/washington-county/",
+      "areaId": "new-york/washington",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/wayne-county/",
+      "to": "/areas/wayne-county/",
+      "areaId": "new-york/wayne",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/westchester-county/",
+      "to": "/areas/westchester-county/",
+      "areaId": "new-york/westchester",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/wyoming-county/",
+      "to": "/areas/wyoming-county/",
+      "areaId": "new-york/wyoming",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/yates-county/",
+      "to": "/areas/yates-county/",
+      "areaId": "new-york/yates",
+      "retainedIds": [
+        "services",
+        "local-planning",
+        "buyer-task",
+        "search-plan",
+        "coverage",
+        "questions",
+        "next",
+        "search",
+        "approach"
+      ]
+    },
+    {
+      "from": "/areas/erie-county/",
+      "to": "/areas/erie-county/",
+      "areaId": "new-york/erie",
+      "retainedIds": [
+        "buyer-task",
+        "choose-a-service",
+        "coverage",
+        "local-questions",
+        "remote-project",
+        "service-areas",
+        "start-a-project"
+      ],
+      "derivation": "Seven public content destinations from the same immutable pre-consolidation baseline. Footer/navigation/hidden support UI identifiers are outside this content-fragment contract."
+    }
+  ]
+}

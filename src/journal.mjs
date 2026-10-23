@@ -49,7 +49,7 @@ const readableDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US
 const guideDiagramAlts={
  'google-visibility-flow':'Keep private pages excluded. For public pages, check discovery, indexing and relevance; assess Maps eligibility separately. Search placement is not guaranteed.',
  'contact-form-flow':'Trace one authorized test through submission and any saved receipt, notification, inbox and reply. Investigate the first missing step; a success message alone does not prove delivery.',
- 'service-area-decision':'Confirm coverage and a distinct customer question. Use an existing page when it answers the question; create and maintain a separate page only when useful.',
+ 'service-area-decision':'Confirm coverage and the visitor’s need. Use an existing page when it does the job; create and maintain a separate page only when it adds substantial help.',
  'maintenance-cycle':'Choose important website tasks, check them, record results, agree corrections and retest. Set the schedule and responsibilities for your actual site.',
  'contractor-inquiry':'Explain accepted work, show real evidence, confirm coverage, collect job details and acknowledge the request. A request is not a quote or confirmed appointment.',
  'care-versus-seo':'Care keeps the site working; search work improves its answer to a customer question. Both end with a verified, dated change record, not promised growth.',

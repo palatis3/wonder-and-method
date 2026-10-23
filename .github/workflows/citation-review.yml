@@ -1,0 +1,44 @@
+name: Citation reachability review
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: Declared citation inventory to check
+        type: choice
+        options: [business, geography, all]
+        default: business
+      changed_since:
+        description: Optional Git ref; check only added or changed business source records since it
+        type: string
+        required: false
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Check citations without treating blocked access as a dead source
+        env:
+          CITATION_SCOPE: ${{ inputs.scope }}
+          CITATION_BASE: ${{ inputs.changed_since }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--scope "$CITATION_SCOPE" --max-seconds 900)
+          if [[ -n "$CITATION_BASE" ]]; then args+=(--changed-since "$CITATION_BASE"); fi
+          node scripts/check-citations.mjs "${args[@]}"
+      - name: Retain citation review and access limitations
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: citation-review
+          path: evidence/citation-review.json
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,3287 @@
+{
+  "version": 1,
+  "origin": "https://wonderandmethod.com",
+  "provenance": {
+    "preConsolidationCommit": "7ecc23c86bf51dfbb6b84078e19c9291e40ceab6",
+    "originalBaselinePath": "tests/baselines/site-content.json",
+    "originalBaselineSha256": "53f1524a36129e137f77fa3cd8765ee51c9525c5b0cd45b0164a8c9c69b76c61",
+    "originalRendererPath": "src/service-counties.mjs",
+    "originalRendererSha256": "5a9c47ff0a577100fa307e76f48b6987c3468fbe0701436c5002e8ed87ccaafa",
+    "inventorySha256": "f7f5ed9e68c6aafd98e6cd0e2ef64d32a0d8ead7c693ce33a68c3b92cd137583",
+    "candidateSourceSha256": "1c4d4e73e486f75d9275c69c5d7b33257b2519e2d7fb75a6c226373b778a2ae8",
+    "derivation": "Paths independently derived from the geographic inventory and intersected with pre-consolidation page dates. Content IDs read from the old immutable contract; destinations derived from area identity. Current redirect maps and fixtures were compared only after expectations were built."
+  },
+  "query": "?qa=1&redirect_audit=20261023&value=two%2Fparts&value=keep+space&literal=%2B&empty=&flag",
+  "pageVariants": [
+    "exact",
+    "head",
+    "www",
+    "http",
+    "no-slash",
+    "html",
+    "index-html",
+    "index",
+    "uppercase",
+    "double-slash",
+    "unreserved-escape"
+  ],
+  "assetAliasVariants": [
+    "exact",
+    "head",
+    "www",
+    "http"
+  ],
+  "variantDefinitions": {
+    "exact": "GET the exact from path",
+    "head": "HEAD the exact from path",
+    "www": "GET from path at https://www.wonderandmethod.com",
+    "http": "GET from path at http://wonderandmethod.com",
+    "no-slash": "GET from without the final slash",
+    "html": "GET from without the final slash, then append .html",
+    "index-html": "GET from plus index.html",
+    "index": "GET from plus index",
+    "uppercase": "GET uppercase from path",
+    "double-slash": "GET from replacing /areas/ with /areas// (unchanged for the legacy /work/ alias)",
+    "unreserved-escape": "GET from replacing its first ASCII letter with a percent-encoded byte"
+  },
+  "expectations": {
+    "candidateRedirectStatus": 308,
+    "finalStatus": 200,
+    "finalCanonical": "origin plus destination path for HTML pages/documents",
+    "query": "Preserve the exact query bytes before any destination fragment.",
+    "fragment": "When no explicit fragment is supplied by Location, the browser retains the input fragment.",
+    "liveHttpEdge": "Live HTTP may first 301 to the same HTTPS path and query before the Worker 308.",
+    "indexing": "Service and hub pages must be indexable; downloads intentionally retain noindex.",
+    "unknownPaths": "Return actual 404 with noindex; never funnel unknown counties to a hub."
+  },
+  "routes": [
+    {
+      "from": "/areas/albany-county/",
+      "to": "/areas/albany-county/",
+      "kind": "historical",
+      "areaId": "new-york/albany",
+      "areaName": "Albany County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/allegany-county/",
+      "to": "/areas/allegany-county/",
+      "kind": "historical",
+      "areaId": "new-york/allegany",
+      "areaName": "Allegany County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/bronx-county/",
+      "to": "/areas/bronx-county/",
+      "kind": "historical",
+      "areaId": "new-york/bronx",
+      "areaName": "Bronx County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/broome-county/",
+      "to": "/areas/broome-county/",
+      "kind": "historical",
+      "areaId": "new-york/broome",
+      "areaName": "Broome County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/cattaraugus-county/",
+      "to": "/areas/cattaraugus-county/",
+      "kind": "historical",
+      "areaId": "new-york/cattaraugus",
+      "areaName": "Cattaraugus County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/cayuga-county/",
+      "to": "/areas/cayuga-county/",
+      "kind": "historical",
+      "areaId": "new-york/cayuga",
+      "areaName": "Cayuga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/chautauqua-county/",
+      "to": "/areas/chautauqua-county/",
+      "kind": "historical",
+      "areaId": "new-york/chautauqua",
+      "areaName": "Chautauqua County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/chemung-county/",
+      "to": "/areas/chemung-county/",
+      "kind": "historical",
+      "areaId": "new-york/chemung",
+      "areaName": "Chemung County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/chenango-county/",
+      "to": "/areas/chenango-county/",
+      "kind": "historical",
+      "areaId": "new-york/chenango",
+      "areaName": "Chenango County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/clinton-county/",
+      "to": "/areas/clinton-county/",
+      "kind": "historical",
+      "areaId": "new-york/clinton",
+      "areaName": "Clinton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/columbia-county/",
+      "to": "/areas/columbia-county/",
+      "kind": "historical",
+      "areaId": "new-york/columbia",
+      "areaName": "Columbia County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/connecticut/capitol-planning-region/",
+      "to": "/areas/connecticut/capitol-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/capitol",
+      "areaName": "Capitol Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "to": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/greater-bridgeport",
+      "areaName": "Greater Bridgeport Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/lower-connecticut-river-valley-planning-region/",
+      "to": "/areas/connecticut/lower-connecticut-river-valley-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/lower-connecticut-river-valley",
+      "areaName": "Lower Connecticut River Valley Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/naugatuck-valley-planning-region/",
+      "to": "/areas/connecticut/naugatuck-valley-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/naugatuck-valley",
+      "areaName": "Naugatuck Valley Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/northeastern-connecticut-planning-region/",
+      "to": "/areas/connecticut/northeastern-connecticut-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/northeastern-connecticut",
+      "areaName": "Northeastern Connecticut Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/northwest-hills-planning-region/",
+      "to": "/areas/connecticut/northwest-hills-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/northwest-hills",
+      "areaName": "Northwest Hills Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/south-central-connecticut-planning-region/",
+      "to": "/areas/connecticut/south-central-connecticut-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/south-central-connecticut",
+      "areaName": "South Central Connecticut Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/southeastern-connecticut-planning-region/",
+      "to": "/areas/connecticut/southeastern-connecticut-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/southeastern-connecticut",
+      "areaName": "Southeastern Connecticut Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/connecticut/western-connecticut-planning-region/",
+      "to": "/areas/connecticut/western-connecticut-planning-region/",
+      "kind": "historical",
+      "areaId": "connecticut/western-connecticut",
+      "areaName": "Western Connecticut Planning Region",
+      "state": "Connecticut"
+    },
+    {
+      "from": "/areas/cortland-county/",
+      "to": "/areas/cortland-county/",
+      "kind": "historical",
+      "areaId": "new-york/cortland",
+      "areaName": "Cortland County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/delaware-county/",
+      "to": "/areas/delaware-county/",
+      "kind": "historical",
+      "areaId": "new-york/delaware",
+      "areaName": "Delaware County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/delaware/kent-county/",
+      "to": "/areas/delaware/kent-county/",
+      "kind": "historical",
+      "areaId": "delaware/kent",
+      "areaName": "Kent County",
+      "state": "Delaware"
+    },
+    {
+      "from": "/areas/delaware/new-castle-county/",
+      "to": "/areas/delaware/new-castle-county/",
+      "kind": "historical",
+      "areaId": "delaware/new-castle",
+      "areaName": "New Castle County",
+      "state": "Delaware"
+    },
+    {
+      "from": "/areas/delaware/sussex-county/",
+      "to": "/areas/delaware/sussex-county/",
+      "kind": "historical",
+      "areaId": "delaware/sussex",
+      "areaName": "Sussex County",
+      "state": "Delaware"
+    },
+    {
+      "from": "/areas/dutchess-county/",
+      "to": "/areas/dutchess-county/",
+      "kind": "historical",
+      "areaId": "new-york/dutchess",
+      "areaName": "Dutchess County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/essex-county/",
+      "to": "/areas/essex-county/",
+      "kind": "historical",
+      "areaId": "new-york/essex",
+      "areaName": "Essex County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/franklin-county/",
+      "to": "/areas/franklin-county/",
+      "kind": "historical",
+      "areaId": "new-york/franklin",
+      "areaName": "Franklin County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/fulton-county/",
+      "to": "/areas/fulton-county/",
+      "kind": "historical",
+      "areaId": "new-york/fulton",
+      "areaName": "Fulton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/genesee-county/",
+      "to": "/areas/genesee-county/",
+      "kind": "historical",
+      "areaId": "new-york/genesee",
+      "areaName": "Genesee County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/greene-county/",
+      "to": "/areas/greene-county/",
+      "kind": "historical",
+      "areaId": "new-york/greene",
+      "areaName": "Greene County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/hamilton-county/",
+      "to": "/areas/hamilton-county/",
+      "kind": "historical",
+      "areaId": "new-york/hamilton",
+      "areaName": "Hamilton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/herkimer-county/",
+      "to": "/areas/herkimer-county/",
+      "kind": "historical",
+      "areaId": "new-york/herkimer",
+      "areaName": "Herkimer County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/jefferson-county/",
+      "to": "/areas/jefferson-county/",
+      "kind": "historical",
+      "areaId": "new-york/jefferson",
+      "areaName": "Jefferson County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/kings-county/",
+      "to": "/areas/kings-county/",
+      "kind": "historical",
+      "areaId": "new-york/kings",
+      "areaName": "Kings County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/lewis-county/",
+      "to": "/areas/lewis-county/",
+      "kind": "historical",
+      "areaId": "new-york/lewis",
+      "areaName": "Lewis County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/livingston-county/",
+      "to": "/areas/livingston-county/",
+      "kind": "historical",
+      "areaId": "new-york/livingston",
+      "areaName": "Livingston County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/madison-county/",
+      "to": "/areas/madison-county/",
+      "kind": "historical",
+      "areaId": "new-york/madison",
+      "areaName": "Madison County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/maine/androscoggin-county/",
+      "to": "/areas/maine/androscoggin-county/",
+      "kind": "historical",
+      "areaId": "maine/androscoggin",
+      "areaName": "Androscoggin County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/aroostook-county/",
+      "to": "/areas/maine/aroostook-county/",
+      "kind": "historical",
+      "areaId": "maine/aroostook",
+      "areaName": "Aroostook County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/cumberland-county/",
+      "to": "/areas/maine/cumberland-county/",
+      "kind": "historical",
+      "areaId": "maine/cumberland",
+      "areaName": "Cumberland County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/franklin-county/",
+      "to": "/areas/maine/franklin-county/",
+      "kind": "historical",
+      "areaId": "maine/franklin",
+      "areaName": "Franklin County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/hancock-county/",
+      "to": "/areas/maine/hancock-county/",
+      "kind": "historical",
+      "areaId": "maine/hancock",
+      "areaName": "Hancock County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/kennebec-county/",
+      "to": "/areas/maine/kennebec-county/",
+      "kind": "historical",
+      "areaId": "maine/kennebec",
+      "areaName": "Kennebec County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/knox-county/",
+      "to": "/areas/maine/knox-county/",
+      "kind": "historical",
+      "areaId": "maine/knox",
+      "areaName": "Knox County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/lincoln-county/",
+      "to": "/areas/maine/lincoln-county/",
+      "kind": "historical",
+      "areaId": "maine/lincoln",
+      "areaName": "Lincoln County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/oxford-county/",
+      "to": "/areas/maine/oxford-county/",
+      "kind": "historical",
+      "areaId": "maine/oxford",
+      "areaName": "Oxford County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/penobscot-county/",
+      "to": "/areas/maine/penobscot-county/",
+      "kind": "historical",
+      "areaId": "maine/penobscot",
+      "areaName": "Penobscot County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/piscataquis-county/",
+      "to": "/areas/maine/piscataquis-county/",
+      "kind": "historical",
+      "areaId": "maine/piscataquis",
+      "areaName": "Piscataquis County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/sagadahoc-county/",
+      "to": "/areas/maine/sagadahoc-county/",
+      "kind": "historical",
+      "areaId": "maine/sagadahoc",
+      "areaName": "Sagadahoc County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/somerset-county/",
+      "to": "/areas/maine/somerset-county/",
+      "kind": "historical",
+      "areaId": "maine/somerset",
+      "areaName": "Somerset County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/waldo-county/",
+      "to": "/areas/maine/waldo-county/",
+      "kind": "historical",
+      "areaId": "maine/waldo",
+      "areaName": "Waldo County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/washington-county/",
+      "to": "/areas/maine/washington-county/",
+      "kind": "historical",
+      "areaId": "maine/washington",
+      "areaName": "Washington County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maine/york-county/",
+      "to": "/areas/maine/york-county/",
+      "kind": "historical",
+      "areaId": "maine/york",
+      "areaName": "York County",
+      "state": "Maine"
+    },
+    {
+      "from": "/areas/maryland/allegany-county/",
+      "to": "/areas/maryland/allegany-county/",
+      "kind": "historical",
+      "areaId": "maryland/allegany",
+      "areaName": "Allegany County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/anne-arundel-county/",
+      "to": "/areas/maryland/anne-arundel-county/",
+      "kind": "historical",
+      "areaId": "maryland/anne-arundel",
+      "areaName": "Anne Arundel County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/baltimore-city/",
+      "to": "/areas/maryland/baltimore-area/",
+      "kind": "historical",
+      "areaId": "maryland/baltimore-city",
+      "areaName": "Baltimore City",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/baltimore-county/",
+      "to": "/areas/maryland/baltimore-area/",
+      "kind": "historical",
+      "areaId": "maryland/baltimore",
+      "areaName": "Baltimore County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/calvert-county/",
+      "to": "/areas/maryland/calvert-county/",
+      "kind": "historical",
+      "areaId": "maryland/calvert",
+      "areaName": "Calvert County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/caroline-county/",
+      "to": "/areas/maryland/caroline-county/",
+      "kind": "historical",
+      "areaId": "maryland/caroline",
+      "areaName": "Caroline County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/carroll-county/",
+      "to": "/areas/maryland/carroll-county/",
+      "kind": "historical",
+      "areaId": "maryland/carroll",
+      "areaName": "Carroll County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/cecil-county/",
+      "to": "/areas/maryland/cecil-county/",
+      "kind": "historical",
+      "areaId": "maryland/cecil",
+      "areaName": "Cecil County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/charles-county/",
+      "to": "/areas/maryland/charles-county/",
+      "kind": "historical",
+      "areaId": "maryland/charles",
+      "areaName": "Charles County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/dorchester-county/",
+      "to": "/areas/maryland/dorchester-county/",
+      "kind": "historical",
+      "areaId": "maryland/dorchester",
+      "areaName": "Dorchester County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/frederick-county/",
+      "to": "/areas/maryland/frederick-county/",
+      "kind": "historical",
+      "areaId": "maryland/frederick",
+      "areaName": "Frederick County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/garrett-county/",
+      "to": "/areas/maryland/garrett-county/",
+      "kind": "historical",
+      "areaId": "maryland/garrett",
+      "areaName": "Garrett County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/harford-county/",
+      "to": "/areas/maryland/harford-county/",
+      "kind": "historical",
+      "areaId": "maryland/harford",
+      "areaName": "Harford County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/howard-county/",
+      "to": "/areas/maryland/howard-county/",
+      "kind": "historical",
+      "areaId": "maryland/howard",
+      "areaName": "Howard County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/kent-county/",
+      "to": "/areas/maryland/kent-county/",
+      "kind": "historical",
+      "areaId": "maryland/kent",
+      "areaName": "Kent County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/montgomery-county/",
+      "to": "/areas/maryland/montgomery-county/",
+      "kind": "historical",
+      "areaId": "maryland/montgomery",
+      "areaName": "Montgomery County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/prince-georges-county/",
+      "to": "/areas/maryland/prince-georges-county/",
+      "kind": "historical",
+      "areaId": "maryland/prince-georges",
+      "areaName": "Prince George's County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/queen-annes-county/",
+      "to": "/areas/maryland/queen-annes-county/",
+      "kind": "historical",
+      "areaId": "maryland/queen-annes",
+      "areaName": "Queen Anne's County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/somerset-county/",
+      "to": "/areas/maryland/somerset-county/",
+      "kind": "historical",
+      "areaId": "maryland/somerset",
+      "areaName": "Somerset County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/st-marys-county/",
+      "to": "/areas/maryland/st-marys-county/",
+      "kind": "historical",
+      "areaId": "maryland/st-marys",
+      "areaName": "St. Mary's County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/talbot-county/",
+      "to": "/areas/maryland/talbot-county/",
+      "kind": "historical",
+      "areaId": "maryland/talbot",
+      "areaName": "Talbot County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/washington-county/",
+      "to": "/areas/maryland/washington-county/",
+      "kind": "historical",
+      "areaId": "maryland/washington",
+      "areaName": "Washington County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/wicomico-county/",
+      "to": "/areas/maryland/wicomico-county/",
+      "kind": "historical",
+      "areaId": "maryland/wicomico",
+      "areaName": "Wicomico County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/maryland/worcester-county/",
+      "to": "/areas/maryland/worcester-county/",
+      "kind": "historical",
+      "areaId": "maryland/worcester",
+      "areaName": "Worcester County",
+      "state": "Maryland"
+    },
+    {
+      "from": "/areas/massachusetts/barnstable-county/",
+      "to": "/areas/massachusetts/barnstable-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/barnstable",
+      "areaName": "Barnstable County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/berkshire-county/",
+      "to": "/areas/massachusetts/berkshire-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/berkshire",
+      "areaName": "Berkshire County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/bristol-county/",
+      "to": "/areas/massachusetts/bristol-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/bristol",
+      "areaName": "Bristol County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/dukes-county/",
+      "to": "/areas/massachusetts/dukes-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/dukes",
+      "areaName": "Dukes County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/essex-county/",
+      "to": "/areas/massachusetts/essex-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/essex",
+      "areaName": "Essex County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/franklin-county/",
+      "to": "/areas/massachusetts/franklin-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/franklin",
+      "areaName": "Franklin County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/hampden-county/",
+      "to": "/areas/massachusetts/hampden-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/hampden",
+      "areaName": "Hampden County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/hampshire-county/",
+      "to": "/areas/massachusetts/hampshire-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/hampshire",
+      "areaName": "Hampshire County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/middlesex-county/",
+      "to": "/areas/massachusetts/middlesex-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/middlesex",
+      "areaName": "Middlesex County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/nantucket-county/",
+      "to": "/areas/massachusetts/nantucket-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/nantucket",
+      "areaName": "Nantucket County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/norfolk-county/",
+      "to": "/areas/massachusetts/norfolk-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/norfolk",
+      "areaName": "Norfolk County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/plymouth-county/",
+      "to": "/areas/massachusetts/plymouth-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/plymouth",
+      "areaName": "Plymouth County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/suffolk-county/",
+      "to": "/areas/massachusetts/suffolk-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/suffolk",
+      "areaName": "Suffolk County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/massachusetts/worcester-county/",
+      "to": "/areas/massachusetts/worcester-county/",
+      "kind": "historical",
+      "areaId": "massachusetts/worcester",
+      "areaName": "Worcester County",
+      "state": "Massachusetts"
+    },
+    {
+      "from": "/areas/monroe-county/",
+      "to": "/areas/monroe-county/",
+      "kind": "historical",
+      "areaId": "new-york/monroe",
+      "areaName": "Monroe County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/montgomery-county/",
+      "to": "/areas/montgomery-county/",
+      "kind": "historical",
+      "areaId": "new-york/montgomery",
+      "areaName": "Montgomery County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/nassau-county/",
+      "to": "/areas/nassau-county/",
+      "kind": "historical",
+      "areaId": "new-york/nassau",
+      "areaName": "Nassau County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-hampshire/belknap-county/",
+      "to": "/areas/new-hampshire/belknap-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/belknap",
+      "areaName": "Belknap County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/carroll-county/",
+      "to": "/areas/new-hampshire/carroll-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/carroll",
+      "areaName": "Carroll County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/cheshire-county/",
+      "to": "/areas/new-hampshire/cheshire-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/cheshire",
+      "areaName": "Cheshire County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/coos-county/",
+      "to": "/areas/new-hampshire/coos-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/coos",
+      "areaName": "Coos County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/grafton-county/",
+      "to": "/areas/new-hampshire/grafton-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/grafton",
+      "areaName": "Grafton County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/hillsborough-county/",
+      "to": "/areas/new-hampshire/hillsborough-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/hillsborough",
+      "areaName": "Hillsborough County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/merrimack-county/",
+      "to": "/areas/new-hampshire/merrimack-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/merrimack",
+      "areaName": "Merrimack County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/rockingham-county/",
+      "to": "/areas/new-hampshire/rockingham-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/rockingham",
+      "areaName": "Rockingham County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/strafford-county/",
+      "to": "/areas/new-hampshire/strafford-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/strafford",
+      "areaName": "Strafford County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-hampshire/sullivan-county/",
+      "to": "/areas/new-hampshire/sullivan-county/",
+      "kind": "historical",
+      "areaId": "new-hampshire/sullivan",
+      "areaName": "Sullivan County",
+      "state": "New Hampshire"
+    },
+    {
+      "from": "/areas/new-jersey/atlantic-county/",
+      "to": "/areas/new-jersey/atlantic-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/atlantic",
+      "areaName": "Atlantic County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/bergen-county/",
+      "to": "/areas/new-jersey/bergen-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/bergen",
+      "areaName": "Bergen County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/burlington-county/",
+      "to": "/areas/new-jersey/burlington-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/burlington",
+      "areaName": "Burlington County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/camden-county/",
+      "to": "/areas/new-jersey/camden-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/camden",
+      "areaName": "Camden County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/cape-may-county/",
+      "to": "/areas/new-jersey/cape-may-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/cape-may",
+      "areaName": "Cape May County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/cumberland-county/",
+      "to": "/areas/new-jersey/cumberland-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/cumberland",
+      "areaName": "Cumberland County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/essex-county/",
+      "to": "/areas/new-jersey/essex-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/essex",
+      "areaName": "Essex County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/gloucester-county/",
+      "to": "/areas/new-jersey/gloucester-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/gloucester",
+      "areaName": "Gloucester County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/hudson-county/",
+      "to": "/areas/new-jersey/hudson-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/hudson",
+      "areaName": "Hudson County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/hunterdon-county/",
+      "to": "/areas/new-jersey/hunterdon-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/hunterdon",
+      "areaName": "Hunterdon County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/mercer-county/",
+      "to": "/areas/new-jersey/mercer-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/mercer",
+      "areaName": "Mercer County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/middlesex-county/",
+      "to": "/areas/new-jersey/middlesex-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/middlesex",
+      "areaName": "Middlesex County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/monmouth-county/",
+      "to": "/areas/new-jersey/monmouth-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/monmouth",
+      "areaName": "Monmouth County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/morris-county/",
+      "to": "/areas/new-jersey/morris-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/morris",
+      "areaName": "Morris County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/ocean-county/",
+      "to": "/areas/new-jersey/ocean-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/ocean",
+      "areaName": "Ocean County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/passaic-county/",
+      "to": "/areas/new-jersey/passaic-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/passaic",
+      "areaName": "Passaic County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/salem-county/",
+      "to": "/areas/new-jersey/salem-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/salem",
+      "areaName": "Salem County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/somerset-county/",
+      "to": "/areas/new-jersey/somerset-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/somerset",
+      "areaName": "Somerset County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/sussex-county/",
+      "to": "/areas/new-jersey/sussex-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/sussex",
+      "areaName": "Sussex County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/union-county/",
+      "to": "/areas/new-jersey/union-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/union",
+      "areaName": "Union County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-jersey/warren-county/",
+      "to": "/areas/new-jersey/warren-county/",
+      "kind": "historical",
+      "areaId": "new-jersey/warren",
+      "areaName": "Warren County",
+      "state": "New Jersey"
+    },
+    {
+      "from": "/areas/new-york-county/",
+      "to": "/areas/new-york-county/",
+      "kind": "historical",
+      "areaId": "new-york/new-york",
+      "areaName": "New York County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/niagara-county/",
+      "to": "/areas/niagara-county/",
+      "kind": "historical",
+      "areaId": "new-york/niagara",
+      "areaName": "Niagara County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/ohio/adams-county/",
+      "to": "/areas/ohio/adams-county/",
+      "kind": "historical",
+      "areaId": "ohio/adams",
+      "areaName": "Adams County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/allen-county/",
+      "to": "/areas/ohio/allen-county/",
+      "kind": "historical",
+      "areaId": "ohio/allen",
+      "areaName": "Allen County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/ashland-county/",
+      "to": "/areas/ohio/ashland-county/",
+      "kind": "historical",
+      "areaId": "ohio/ashland",
+      "areaName": "Ashland County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/ashtabula-county/",
+      "to": "/areas/ohio/ashtabula-county/",
+      "kind": "historical",
+      "areaId": "ohio/ashtabula",
+      "areaName": "Ashtabula County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/athens-county/",
+      "to": "/areas/ohio/athens-county/",
+      "kind": "historical",
+      "areaId": "ohio/athens",
+      "areaName": "Athens County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/auglaize-county/",
+      "to": "/areas/ohio/auglaize-county/",
+      "kind": "historical",
+      "areaId": "ohio/auglaize",
+      "areaName": "Auglaize County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/belmont-county/",
+      "to": "/areas/ohio/belmont-county/",
+      "kind": "historical",
+      "areaId": "ohio/belmont",
+      "areaName": "Belmont County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/brown-county/",
+      "to": "/areas/ohio/brown-county/",
+      "kind": "historical",
+      "areaId": "ohio/brown",
+      "areaName": "Brown County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/butler-county/",
+      "to": "/areas/ohio/butler-county/",
+      "kind": "historical",
+      "areaId": "ohio/butler",
+      "areaName": "Butler County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/carroll-county/",
+      "to": "/areas/ohio/carroll-county/",
+      "kind": "historical",
+      "areaId": "ohio/carroll",
+      "areaName": "Carroll County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/champaign-county/",
+      "to": "/areas/ohio/champaign-county/",
+      "kind": "historical",
+      "areaId": "ohio/champaign",
+      "areaName": "Champaign County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/clark-county/",
+      "to": "/areas/ohio/clark-county/",
+      "kind": "historical",
+      "areaId": "ohio/clark",
+      "areaName": "Clark County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/clermont-county/",
+      "to": "/areas/ohio/clermont-county/",
+      "kind": "historical",
+      "areaId": "ohio/clermont",
+      "areaName": "Clermont County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/clinton-county/",
+      "to": "/areas/ohio/clinton-county/",
+      "kind": "historical",
+      "areaId": "ohio/clinton",
+      "areaName": "Clinton County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/columbiana-county/",
+      "to": "/areas/ohio/columbiana-county/",
+      "kind": "historical",
+      "areaId": "ohio/columbiana",
+      "areaName": "Columbiana County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/coshocton-county/",
+      "to": "/areas/ohio/coshocton-county/",
+      "kind": "historical",
+      "areaId": "ohio/coshocton",
+      "areaName": "Coshocton County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/crawford-county/",
+      "to": "/areas/ohio/crawford-county/",
+      "kind": "historical",
+      "areaId": "ohio/crawford",
+      "areaName": "Crawford County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/cuyahoga-county/",
+      "to": "/areas/ohio/cuyahoga-county/",
+      "kind": "historical",
+      "areaId": "ohio/cuyahoga",
+      "areaName": "Cuyahoga County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/darke-county/",
+      "to": "/areas/ohio/darke-county/",
+      "kind": "historical",
+      "areaId": "ohio/darke",
+      "areaName": "Darke County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/defiance-county/",
+      "to": "/areas/ohio/defiance-county/",
+      "kind": "historical",
+      "areaId": "ohio/defiance",
+      "areaName": "Defiance County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/delaware-county/",
+      "to": "/areas/ohio/delaware-county/",
+      "kind": "historical",
+      "areaId": "ohio/delaware",
+      "areaName": "Delaware County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/erie-county/",
+      "to": "/areas/ohio/erie-county/",
+      "kind": "historical",
+      "areaId": "ohio/erie",
+      "areaName": "Erie County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/fairfield-county/",
+      "to": "/areas/ohio/fairfield-county/",
+      "kind": "historical",
+      "areaId": "ohio/fairfield",
+      "areaName": "Fairfield County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/fayette-county/",
+      "to": "/areas/ohio/fayette-county/",
+      "kind": "historical",
+      "areaId": "ohio/fayette",
+      "areaName": "Fayette County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/franklin-county/",
+      "to": "/areas/ohio/franklin-county/",
+      "kind": "historical",
+      "areaId": "ohio/franklin",
+      "areaName": "Franklin County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/fulton-county/",
+      "to": "/areas/ohio/fulton-county/",
+      "kind": "historical",
+      "areaId": "ohio/fulton",
+      "areaName": "Fulton County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/gallia-county/",
+      "to": "/areas/ohio/gallia-county/",
+      "kind": "historical",
+      "areaId": "ohio/gallia",
+      "areaName": "Gallia County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/geauga-county/",
+      "to": "/areas/ohio/geauga-county/",
+      "kind": "historical",
+      "areaId": "ohio/geauga",
+      "areaName": "Geauga County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/greene-county/",
+      "to": "/areas/ohio/greene-county/",
+      "kind": "historical",
+      "areaId": "ohio/greene",
+      "areaName": "Greene County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/guernsey-county/",
+      "to": "/areas/ohio/guernsey-county/",
+      "kind": "historical",
+      "areaId": "ohio/guernsey",
+      "areaName": "Guernsey County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/hamilton-county/",
+      "to": "/areas/ohio/hamilton-county/",
+      "kind": "historical",
+      "areaId": "ohio/hamilton",
+      "areaName": "Hamilton County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/hancock-county/",
+      "to": "/areas/ohio/hancock-county/",
+      "kind": "historical",
+      "areaId": "ohio/hancock",
+      "areaName": "Hancock County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/hardin-county/",
+      "to": "/areas/ohio/hardin-county/",
+      "kind": "historical",
+      "areaId": "ohio/hardin",
+      "areaName": "Hardin County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/harrison-county/",
+      "to": "/areas/ohio/harrison-county/",
+      "kind": "historical",
+      "areaId": "ohio/harrison",
+      "areaName": "Harrison County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/henry-county/",
+      "to": "/areas/ohio/henry-county/",
+      "kind": "historical",
+      "areaId": "ohio/henry",
+      "areaName": "Henry County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/highland-county/",
+      "to": "/areas/ohio/highland-county/",
+      "kind": "historical",
+      "areaId": "ohio/highland",
+      "areaName": "Highland County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/hocking-county/",
+      "to": "/areas/ohio/hocking-county/",
+      "kind": "historical",
+      "areaId": "ohio/hocking",
+      "areaName": "Hocking County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/holmes-county/",
+      "to": "/areas/ohio/holmes-county/",
+      "kind": "historical",
+      "areaId": "ohio/holmes",
+      "areaName": "Holmes County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/huron-county/",
+      "to": "/areas/ohio/huron-county/",
+      "kind": "historical",
+      "areaId": "ohio/huron",
+      "areaName": "Huron County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/jackson-county/",
+      "to": "/areas/ohio/jackson-county/",
+      "kind": "historical",
+      "areaId": "ohio/jackson",
+      "areaName": "Jackson County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/jefferson-county/",
+      "to": "/areas/ohio/jefferson-county/",
+      "kind": "historical",
+      "areaId": "ohio/jefferson",
+      "areaName": "Jefferson County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/knox-county/",
+      "to": "/areas/ohio/knox-county/",
+      "kind": "historical",
+      "areaId": "ohio/knox",
+      "areaName": "Knox County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/lake-county/",
+      "to": "/areas/ohio/lake-county/",
+      "kind": "historical",
+      "areaId": "ohio/lake",
+      "areaName": "Lake County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/lawrence-county/",
+      "to": "/areas/ohio/lawrence-county/",
+      "kind": "historical",
+      "areaId": "ohio/lawrence",
+      "areaName": "Lawrence County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/licking-county/",
+      "to": "/areas/ohio/licking-county/",
+      "kind": "historical",
+      "areaId": "ohio/licking",
+      "areaName": "Licking County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/logan-county/",
+      "to": "/areas/ohio/logan-county/",
+      "kind": "historical",
+      "areaId": "ohio/logan",
+      "areaName": "Logan County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/lorain-county/",
+      "to": "/areas/ohio/lorain-county/",
+      "kind": "historical",
+      "areaId": "ohio/lorain",
+      "areaName": "Lorain County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/lucas-county/",
+      "to": "/areas/ohio/lucas-county/",
+      "kind": "historical",
+      "areaId": "ohio/lucas",
+      "areaName": "Lucas County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/madison-county/",
+      "to": "/areas/ohio/madison-county/",
+      "kind": "historical",
+      "areaId": "ohio/madison",
+      "areaName": "Madison County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/mahoning-county/",
+      "to": "/areas/ohio/mahoning-county/",
+      "kind": "historical",
+      "areaId": "ohio/mahoning",
+      "areaName": "Mahoning County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/marion-county/",
+      "to": "/areas/ohio/marion-county/",
+      "kind": "historical",
+      "areaId": "ohio/marion",
+      "areaName": "Marion County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/medina-county/",
+      "to": "/areas/ohio/medina-county/",
+      "kind": "historical",
+      "areaId": "ohio/medina",
+      "areaName": "Medina County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/meigs-county/",
+      "to": "/areas/ohio/meigs-county/",
+      "kind": "historical",
+      "areaId": "ohio/meigs",
+      "areaName": "Meigs County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/mercer-county/",
+      "to": "/areas/ohio/mercer-county/",
+      "kind": "historical",
+      "areaId": "ohio/mercer",
+      "areaName": "Mercer County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/miami-county/",
+      "to": "/areas/ohio/miami-county/",
+      "kind": "historical",
+      "areaId": "ohio/miami",
+      "areaName": "Miami County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/monroe-county/",
+      "to": "/areas/ohio/monroe-county/",
+      "kind": "historical",
+      "areaId": "ohio/monroe",
+      "areaName": "Monroe County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/montgomery-county/",
+      "to": "/areas/ohio/montgomery-county/",
+      "kind": "historical",
+      "areaId": "ohio/montgomery",
+      "areaName": "Montgomery County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/morgan-county/",
+      "to": "/areas/ohio/morgan-county/",
+      "kind": "historical",
+      "areaId": "ohio/morgan",
+      "areaName": "Morgan County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/morrow-county/",
+      "to": "/areas/ohio/morrow-county/",
+      "kind": "historical",
+      "areaId": "ohio/morrow",
+      "areaName": "Morrow County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/muskingum-county/",
+      "to": "/areas/ohio/muskingum-county/",
+      "kind": "historical",
+      "areaId": "ohio/muskingum",
+      "areaName": "Muskingum County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/noble-county/",
+      "to": "/areas/ohio/noble-county/",
+      "kind": "historical",
+      "areaId": "ohio/noble",
+      "areaName": "Noble County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/ottawa-county/",
+      "to": "/areas/ohio/ottawa-county/",
+      "kind": "historical",
+      "areaId": "ohio/ottawa",
+      "areaName": "Ottawa County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/paulding-county/",
+      "to": "/areas/ohio/paulding-county/",
+      "kind": "historical",
+      "areaId": "ohio/paulding",
+      "areaName": "Paulding County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/perry-county/",
+      "to": "/areas/ohio/perry-county/",
+      "kind": "historical",
+      "areaId": "ohio/perry",
+      "areaName": "Perry County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/pickaway-county/",
+      "to": "/areas/ohio/pickaway-county/",
+      "kind": "historical",
+      "areaId": "ohio/pickaway",
+      "areaName": "Pickaway County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/pike-county/",
+      "to": "/areas/ohio/pike-county/",
+      "kind": "historical",
+      "areaId": "ohio/pike",
+      "areaName": "Pike County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/portage-county/",
+      "to": "/areas/ohio/portage-county/",
+      "kind": "historical",
+      "areaId": "ohio/portage",
+      "areaName": "Portage County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/preble-county/",
+      "to": "/areas/ohio/preble-county/",
+      "kind": "historical",
+      "areaId": "ohio/preble",
+      "areaName": "Preble County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/putnam-county/",
+      "to": "/areas/ohio/putnam-county/",
+      "kind": "historical",
+      "areaId": "ohio/putnam",
+      "areaName": "Putnam County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/richland-county/",
+      "to": "/areas/ohio/richland-county/",
+      "kind": "historical",
+      "areaId": "ohio/richland",
+      "areaName": "Richland County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/ross-county/",
+      "to": "/areas/ohio/ross-county/",
+      "kind": "historical",
+      "areaId": "ohio/ross",
+      "areaName": "Ross County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/sandusky-county/",
+      "to": "/areas/ohio/sandusky-county/",
+      "kind": "historical",
+      "areaId": "ohio/sandusky",
+      "areaName": "Sandusky County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/scioto-county/",
+      "to": "/areas/ohio/scioto-county/",
+      "kind": "historical",
+      "areaId": "ohio/scioto",
+      "areaName": "Scioto County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/seneca-county/",
+      "to": "/areas/ohio/seneca-county/",
+      "kind": "historical",
+      "areaId": "ohio/seneca",
+      "areaName": "Seneca County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/shelby-county/",
+      "to": "/areas/ohio/shelby-county/",
+      "kind": "historical",
+      "areaId": "ohio/shelby",
+      "areaName": "Shelby County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/stark-county/",
+      "to": "/areas/ohio/stark-county/",
+      "kind": "historical",
+      "areaId": "ohio/stark",
+      "areaName": "Stark County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/summit-county/",
+      "to": "/areas/ohio/summit-county/",
+      "kind": "historical",
+      "areaId": "ohio/summit",
+      "areaName": "Summit County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/trumbull-county/",
+      "to": "/areas/ohio/trumbull-county/",
+      "kind": "historical",
+      "areaId": "ohio/trumbull",
+      "areaName": "Trumbull County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/tuscarawas-county/",
+      "to": "/areas/ohio/tuscarawas-county/",
+      "kind": "historical",
+      "areaId": "ohio/tuscarawas",
+      "areaName": "Tuscarawas County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/union-county/",
+      "to": "/areas/ohio/union-county/",
+      "kind": "historical",
+      "areaId": "ohio/union",
+      "areaName": "Union County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/van-wert-county/",
+      "to": "/areas/ohio/van-wert-county/",
+      "kind": "historical",
+      "areaId": "ohio/van-wert",
+      "areaName": "Van Wert County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/vinton-county/",
+      "to": "/areas/ohio/vinton-county/",
+      "kind": "historical",
+      "areaId": "ohio/vinton",
+      "areaName": "Vinton County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/warren-county/",
+      "to": "/areas/ohio/warren-county/",
+      "kind": "historical",
+      "areaId": "ohio/warren",
+      "areaName": "Warren County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/washington-county/",
+      "to": "/areas/ohio/washington-county/",
+      "kind": "historical",
+      "areaId": "ohio/washington",
+      "areaName": "Washington County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/wayne-county/",
+      "to": "/areas/ohio/wayne-county/",
+      "kind": "historical",
+      "areaId": "ohio/wayne",
+      "areaName": "Wayne County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/williams-county/",
+      "to": "/areas/ohio/williams-county/",
+      "kind": "historical",
+      "areaId": "ohio/williams",
+      "areaName": "Williams County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/wood-county/",
+      "to": "/areas/ohio/wood-county/",
+      "kind": "historical",
+      "areaId": "ohio/wood",
+      "areaName": "Wood County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/ohio/wyandot-county/",
+      "to": "/areas/ohio/wyandot-county/",
+      "kind": "historical",
+      "areaId": "ohio/wyandot",
+      "areaName": "Wyandot County",
+      "state": "Ohio"
+    },
+    {
+      "from": "/areas/oneida-county/",
+      "to": "/areas/oneida-county/",
+      "kind": "historical",
+      "areaId": "new-york/oneida",
+      "areaName": "Oneida County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/onondaga-county/",
+      "to": "/areas/onondaga-county/",
+      "kind": "historical",
+      "areaId": "new-york/onondaga",
+      "areaName": "Onondaga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/ontario-county/",
+      "to": "/areas/ontario-county/",
+      "kind": "historical",
+      "areaId": "new-york/ontario",
+      "areaName": "Ontario County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/orange-county/",
+      "to": "/areas/orange-county/",
+      "kind": "historical",
+      "areaId": "new-york/orange",
+      "areaName": "Orange County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/orleans-county/",
+      "to": "/areas/orleans-county/",
+      "kind": "historical",
+      "areaId": "new-york/orleans",
+      "areaName": "Orleans County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/oswego-county/",
+      "to": "/areas/oswego-county/",
+      "kind": "historical",
+      "areaId": "new-york/oswego",
+      "areaName": "Oswego County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/otsego-county/",
+      "to": "/areas/otsego-county/",
+      "kind": "historical",
+      "areaId": "new-york/otsego",
+      "areaName": "Otsego County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/pennsylvania/adams-county/",
+      "to": "/areas/pennsylvania/adams-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/adams",
+      "areaName": "Adams County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/allegheny-county/",
+      "to": "/areas/pennsylvania/allegheny-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/allegheny",
+      "areaName": "Allegheny County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/armstrong-county/",
+      "to": "/areas/pennsylvania/armstrong-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/armstrong",
+      "areaName": "Armstrong County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/beaver-county/",
+      "to": "/areas/pennsylvania/beaver-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/beaver",
+      "areaName": "Beaver County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/bedford-county/",
+      "to": "/areas/pennsylvania/bedford-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/bedford",
+      "areaName": "Bedford County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/berks-county/",
+      "to": "/areas/pennsylvania/berks-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/berks",
+      "areaName": "Berks County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/blair-county/",
+      "to": "/areas/pennsylvania/blair-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/blair",
+      "areaName": "Blair County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/bradford-county/",
+      "to": "/areas/pennsylvania/bradford-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/bradford",
+      "areaName": "Bradford County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/bucks-county/",
+      "to": "/areas/pennsylvania/bucks-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/bucks",
+      "areaName": "Bucks County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/butler-county/",
+      "to": "/areas/pennsylvania/butler-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/butler",
+      "areaName": "Butler County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/cambria-county/",
+      "to": "/areas/pennsylvania/cambria-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/cambria",
+      "areaName": "Cambria County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/cameron-county/",
+      "to": "/areas/pennsylvania/cameron-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/cameron",
+      "areaName": "Cameron County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/carbon-county/",
+      "to": "/areas/pennsylvania/carbon-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/carbon",
+      "areaName": "Carbon County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/centre-county/",
+      "to": "/areas/pennsylvania/centre-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/centre",
+      "areaName": "Centre County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/chester-county/",
+      "to": "/areas/pennsylvania/chester-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/chester",
+      "areaName": "Chester County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/clarion-county/",
+      "to": "/areas/pennsylvania/clarion-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/clarion",
+      "areaName": "Clarion County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/clearfield-county/",
+      "to": "/areas/pennsylvania/clearfield-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/clearfield",
+      "areaName": "Clearfield County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/clinton-county/",
+      "to": "/areas/pennsylvania/clinton-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/clinton",
+      "areaName": "Clinton County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/columbia-county/",
+      "to": "/areas/pennsylvania/columbia-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/columbia",
+      "areaName": "Columbia County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/crawford-county/",
+      "to": "/areas/pennsylvania/crawford-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/crawford",
+      "areaName": "Crawford County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/cumberland-county/",
+      "to": "/areas/pennsylvania/cumberland-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/cumberland",
+      "areaName": "Cumberland County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/dauphin-county/",
+      "to": "/areas/pennsylvania/dauphin-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/dauphin",
+      "areaName": "Dauphin County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/delaware-county/",
+      "to": "/areas/pennsylvania/delaware-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/delaware",
+      "areaName": "Delaware County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/elk-county/",
+      "to": "/areas/pennsylvania/elk-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/elk",
+      "areaName": "Elk County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/erie-county/",
+      "to": "/areas/pennsylvania/erie-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/erie",
+      "areaName": "Erie County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/fayette-county/",
+      "to": "/areas/pennsylvania/fayette-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/fayette",
+      "areaName": "Fayette County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/forest-county/",
+      "to": "/areas/pennsylvania/forest-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/forest",
+      "areaName": "Forest County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/franklin-county/",
+      "to": "/areas/pennsylvania/franklin-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/franklin",
+      "areaName": "Franklin County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/fulton-county/",
+      "to": "/areas/pennsylvania/fulton-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/fulton",
+      "areaName": "Fulton County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/greene-county/",
+      "to": "/areas/pennsylvania/greene-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/greene",
+      "areaName": "Greene County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/huntingdon-county/",
+      "to": "/areas/pennsylvania/huntingdon-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/huntingdon",
+      "areaName": "Huntingdon County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/indiana-county/",
+      "to": "/areas/pennsylvania/indiana-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/indiana",
+      "areaName": "Indiana County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/jefferson-county/",
+      "to": "/areas/pennsylvania/jefferson-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/jefferson",
+      "areaName": "Jefferson County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/juniata-county/",
+      "to": "/areas/pennsylvania/juniata-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/juniata",
+      "areaName": "Juniata County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lackawanna-county/",
+      "to": "/areas/pennsylvania/lackawanna-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lackawanna",
+      "areaName": "Lackawanna County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lancaster-county/",
+      "to": "/areas/pennsylvania/lancaster-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lancaster",
+      "areaName": "Lancaster County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lawrence-county/",
+      "to": "/areas/pennsylvania/lawrence-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lawrence",
+      "areaName": "Lawrence County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lebanon-county/",
+      "to": "/areas/pennsylvania/lebanon-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lebanon",
+      "areaName": "Lebanon County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lehigh-county/",
+      "to": "/areas/pennsylvania/lehigh-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lehigh",
+      "areaName": "Lehigh County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/luzerne-county/",
+      "to": "/areas/pennsylvania/luzerne-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/luzerne",
+      "areaName": "Luzerne County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/lycoming-county/",
+      "to": "/areas/pennsylvania/lycoming-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/lycoming",
+      "areaName": "Lycoming County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/mckean-county/",
+      "to": "/areas/pennsylvania/mckean-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/mckean",
+      "areaName": "McKean County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/mercer-county/",
+      "to": "/areas/pennsylvania/mercer-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/mercer",
+      "areaName": "Mercer County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/mifflin-county/",
+      "to": "/areas/pennsylvania/mifflin-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/mifflin",
+      "areaName": "Mifflin County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/monroe-county/",
+      "to": "/areas/pennsylvania/monroe-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/monroe",
+      "areaName": "Monroe County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/montgomery-county/",
+      "to": "/areas/pennsylvania/montgomery-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/montgomery",
+      "areaName": "Montgomery County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/montour-county/",
+      "to": "/areas/pennsylvania/montour-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/montour",
+      "areaName": "Montour County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/northampton-county/",
+      "to": "/areas/pennsylvania/northampton-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/northampton",
+      "areaName": "Northampton County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/northumberland-county/",
+      "to": "/areas/pennsylvania/northumberland-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/northumberland",
+      "areaName": "Northumberland County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/perry-county/",
+      "to": "/areas/pennsylvania/perry-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/perry",
+      "areaName": "Perry County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/philadelphia-county/",
+      "to": "/areas/pennsylvania/philadelphia-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/philadelphia",
+      "areaName": "Philadelphia County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/pike-county/",
+      "to": "/areas/pennsylvania/pike-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/pike",
+      "areaName": "Pike County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/potter-county/",
+      "to": "/areas/pennsylvania/potter-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/potter",
+      "areaName": "Potter County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/schuylkill-county/",
+      "to": "/areas/pennsylvania/schuylkill-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/schuylkill",
+      "areaName": "Schuylkill County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/snyder-county/",
+      "to": "/areas/pennsylvania/snyder-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/snyder",
+      "areaName": "Snyder County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/somerset-county/",
+      "to": "/areas/pennsylvania/somerset-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/somerset",
+      "areaName": "Somerset County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/sullivan-county/",
+      "to": "/areas/pennsylvania/sullivan-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/sullivan",
+      "areaName": "Sullivan County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/susquehanna-county/",
+      "to": "/areas/pennsylvania/susquehanna-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/susquehanna",
+      "areaName": "Susquehanna County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/tioga-county/",
+      "to": "/areas/pennsylvania/tioga-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/tioga",
+      "areaName": "Tioga County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/union-county/",
+      "to": "/areas/pennsylvania/union-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/union",
+      "areaName": "Union County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/venango-county/",
+      "to": "/areas/pennsylvania/venango-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/venango",
+      "areaName": "Venango County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/warren-county/",
+      "to": "/areas/pennsylvania/warren-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/warren",
+      "areaName": "Warren County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/washington-county/",
+      "to": "/areas/pennsylvania/washington-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/washington",
+      "areaName": "Washington County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/wayne-county/",
+      "to": "/areas/pennsylvania/wayne-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/wayne",
+      "areaName": "Wayne County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/westmoreland-county/",
+      "to": "/areas/pennsylvania/westmoreland-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/westmoreland",
+      "areaName": "Westmoreland County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/wyoming-county/",
+      "to": "/areas/pennsylvania/wyoming-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/wyoming",
+      "areaName": "Wyoming County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/pennsylvania/york-county/",
+      "to": "/areas/pennsylvania/york-county/",
+      "kind": "historical",
+      "areaId": "pennsylvania/york",
+      "areaName": "York County",
+      "state": "Pennsylvania"
+    },
+    {
+      "from": "/areas/putnam-county/",
+      "to": "/areas/putnam-county/",
+      "kind": "historical",
+      "areaId": "new-york/putnam",
+      "areaName": "Putnam County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/queens-county/",
+      "to": "/areas/queens-county/",
+      "kind": "historical",
+      "areaId": "new-york/queens",
+      "areaName": "Queens County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/rensselaer-county/",
+      "to": "/areas/rensselaer-county/",
+      "kind": "historical",
+      "areaId": "new-york/rensselaer",
+      "areaName": "Rensselaer County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/rhode-island/bristol-county/",
+      "to": "/areas/rhode-island/bristol-county/",
+      "kind": "historical",
+      "areaId": "rhode-island/bristol",
+      "areaName": "Bristol County",
+      "state": "Rhode Island"
+    },
+    {
+      "from": "/areas/rhode-island/kent-county/",
+      "to": "/areas/rhode-island/kent-county/",
+      "kind": "historical",
+      "areaId": "rhode-island/kent",
+      "areaName": "Kent County",
+      "state": "Rhode Island"
+    },
+    {
+      "from": "/areas/rhode-island/newport-county/",
+      "to": "/areas/rhode-island/newport-county/",
+      "kind": "historical",
+      "areaId": "rhode-island/newport",
+      "areaName": "Newport County",
+      "state": "Rhode Island"
+    },
+    {
+      "from": "/areas/rhode-island/providence-county/",
+      "to": "/areas/rhode-island/providence-county/",
+      "kind": "historical",
+      "areaId": "rhode-island/providence",
+      "areaName": "Providence County",
+      "state": "Rhode Island"
+    },
+    {
+      "from": "/areas/rhode-island/washington-county/",
+      "to": "/areas/rhode-island/washington-county/",
+      "kind": "historical",
+      "areaId": "rhode-island/washington",
+      "areaName": "Washington County",
+      "state": "Rhode Island"
+    },
+    {
+      "from": "/areas/richmond-county/",
+      "to": "/areas/richmond-county/",
+      "kind": "historical",
+      "areaId": "new-york/richmond",
+      "areaName": "Richmond County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/rockland-county/",
+      "to": "/areas/rockland-county/",
+      "kind": "historical",
+      "areaId": "new-york/rockland",
+      "areaName": "Rockland County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/saratoga-county/",
+      "to": "/areas/saratoga-county/",
+      "kind": "historical",
+      "areaId": "new-york/saratoga",
+      "areaName": "Saratoga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/schenectady-county/",
+      "to": "/areas/schenectady-county/",
+      "kind": "historical",
+      "areaId": "new-york/schenectady",
+      "areaName": "Schenectady County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/schoharie-county/",
+      "to": "/areas/schoharie-county/",
+      "kind": "historical",
+      "areaId": "new-york/schoharie",
+      "areaName": "Schoharie County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/schuyler-county/",
+      "to": "/areas/schuyler-county/",
+      "kind": "historical",
+      "areaId": "new-york/schuyler",
+      "areaName": "Schuyler County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/seneca-county/",
+      "to": "/areas/seneca-county/",
+      "kind": "historical",
+      "areaId": "new-york/seneca",
+      "areaName": "Seneca County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/st-lawrence-county/",
+      "to": "/areas/st-lawrence-county/",
+      "kind": "historical",
+      "areaId": "new-york/st-lawrence",
+      "areaName": "St. Lawrence County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/steuben-county/",
+      "to": "/areas/steuben-county/",
+      "kind": "historical",
+      "areaId": "new-york/steuben",
+      "areaName": "Steuben County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/suffolk-county/",
+      "to": "/areas/suffolk-county/",
+      "kind": "historical",
+      "areaId": "new-york/suffolk",
+      "areaName": "Suffolk County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/sullivan-county/",
+      "to": "/areas/sullivan-county/",
+      "kind": "historical",
+      "areaId": "new-york/sullivan",
+      "areaName": "Sullivan County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/tioga-county/",
+      "to": "/areas/tioga-county/",
+      "kind": "historical",
+      "areaId": "new-york/tioga",
+      "areaName": "Tioga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/tompkins-county/",
+      "to": "/areas/tompkins-county/",
+      "kind": "historical",
+      "areaId": "new-york/tompkins",
+      "areaName": "Tompkins County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/ulster-county/",
+      "to": "/areas/ulster-county/",
+      "kind": "historical",
+      "areaId": "new-york/ulster",
+      "areaName": "Ulster County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/vermont/addison-county/",
+      "to": "/areas/vermont/addison-county/",
+      "kind": "historical",
+      "areaId": "vermont/addison",
+      "areaName": "Addison County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/bennington-county/",
+      "to": "/areas/vermont/bennington-county/",
+      "kind": "historical",
+      "areaId": "vermont/bennington",
+      "areaName": "Bennington County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/caledonia-county/",
+      "to": "/areas/vermont/caledonia-county/",
+      "kind": "historical",
+      "areaId": "vermont/caledonia",
+      "areaName": "Caledonia County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/chittenden-county/",
+      "to": "/areas/vermont/chittenden-county/",
+      "kind": "historical",
+      "areaId": "vermont/chittenden",
+      "areaName": "Chittenden County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/essex-county/",
+      "to": "/areas/vermont/essex-county/",
+      "kind": "historical",
+      "areaId": "vermont/essex",
+      "areaName": "Essex County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/franklin-county/",
+      "to": "/areas/vermont/franklin-county/",
+      "kind": "historical",
+      "areaId": "vermont/franklin",
+      "areaName": "Franklin County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/grand-isle-county/",
+      "to": "/areas/vermont/grand-isle-county/",
+      "kind": "historical",
+      "areaId": "vermont/grand-isle",
+      "areaName": "Grand Isle County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/lamoille-county/",
+      "to": "/areas/vermont/lamoille-county/",
+      "kind": "historical",
+      "areaId": "vermont/lamoille",
+      "areaName": "Lamoille County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/orange-county/",
+      "to": "/areas/vermont/orange-county/",
+      "kind": "historical",
+      "areaId": "vermont/orange",
+      "areaName": "Orange County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/orleans-county/",
+      "to": "/areas/vermont/orleans-county/",
+      "kind": "historical",
+      "areaId": "vermont/orleans",
+      "areaName": "Orleans County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/rutland-county/",
+      "to": "/areas/vermont/rutland-county/",
+      "kind": "historical",
+      "areaId": "vermont/rutland",
+      "areaName": "Rutland County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/washington-county/",
+      "to": "/areas/vermont/washington-county/",
+      "kind": "historical",
+      "areaId": "vermont/washington",
+      "areaName": "Washington County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/windham-county/",
+      "to": "/areas/vermont/windham-county/",
+      "kind": "historical",
+      "areaId": "vermont/windham",
+      "areaName": "Windham County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/vermont/windsor-county/",
+      "to": "/areas/vermont/windsor-county/",
+      "kind": "historical",
+      "areaId": "vermont/windsor",
+      "areaName": "Windsor County",
+      "state": "Vermont"
+    },
+    {
+      "from": "/areas/warren-county/",
+      "to": "/areas/warren-county/",
+      "kind": "historical",
+      "areaId": "new-york/warren",
+      "areaName": "Warren County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/washington-county/",
+      "to": "/areas/washington-county/",
+      "kind": "historical",
+      "areaId": "new-york/washington",
+      "areaName": "Washington County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/wayne-county/",
+      "to": "/areas/wayne-county/",
+      "kind": "historical",
+      "areaId": "new-york/wayne",
+      "areaName": "Wayne County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/westchester-county/",
+      "to": "/areas/westchester-county/",
+      "kind": "historical",
+      "areaId": "new-york/westchester",
+      "areaName": "Westchester County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/wyoming-county/",
+      "to": "/areas/wyoming-county/",
+      "kind": "historical",
+      "areaId": "new-york/wyoming",
+      "areaName": "Wyoming County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/yates-county/",
+      "to": "/areas/yates-county/",
+      "kind": "historical",
+      "areaId": "new-york/yates",
+      "areaName": "Yates County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/albany-county/",
+      "to": "/areas/albany-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/albany",
+      "areaName": "Albany County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/allegany-county/",
+      "to": "/areas/allegany-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/allegany",
+      "areaName": "Allegany County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/bronx-county/",
+      "to": "/areas/bronx-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/bronx",
+      "areaName": "Bronx County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/broome-county/",
+      "to": "/areas/broome-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/broome",
+      "areaName": "Broome County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/cattaraugus-county/",
+      "to": "/areas/cattaraugus-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/cattaraugus",
+      "areaName": "Cattaraugus County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/cayuga-county/",
+      "to": "/areas/cayuga-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/cayuga",
+      "areaName": "Cayuga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/chautauqua-county/",
+      "to": "/areas/chautauqua-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/chautauqua",
+      "areaName": "Chautauqua County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/chemung-county/",
+      "to": "/areas/chemung-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/chemung",
+      "areaName": "Chemung County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/chenango-county/",
+      "to": "/areas/chenango-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/chenango",
+      "areaName": "Chenango County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/clinton-county/",
+      "to": "/areas/clinton-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/clinton",
+      "areaName": "Clinton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/columbia-county/",
+      "to": "/areas/columbia-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/columbia",
+      "areaName": "Columbia County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/cortland-county/",
+      "to": "/areas/cortland-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/cortland",
+      "areaName": "Cortland County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/delaware-county/",
+      "to": "/areas/delaware-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/delaware",
+      "areaName": "Delaware County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/dutchess-county/",
+      "to": "/areas/dutchess-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/dutchess",
+      "areaName": "Dutchess County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/erie-county/",
+      "to": "/areas/erie-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/erie",
+      "areaName": "Erie County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/essex-county/",
+      "to": "/areas/essex-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/essex",
+      "areaName": "Essex County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/franklin-county/",
+      "to": "/areas/franklin-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/franklin",
+      "areaName": "Franklin County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/fulton-county/",
+      "to": "/areas/fulton-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/fulton",
+      "areaName": "Fulton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/genesee-county/",
+      "to": "/areas/genesee-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/genesee",
+      "areaName": "Genesee County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/greene-county/",
+      "to": "/areas/greene-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/greene",
+      "areaName": "Greene County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/hamilton-county/",
+      "to": "/areas/hamilton-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/hamilton",
+      "areaName": "Hamilton County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/herkimer-county/",
+      "to": "/areas/herkimer-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/herkimer",
+      "areaName": "Herkimer County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/jefferson-county/",
+      "to": "/areas/jefferson-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/jefferson",
+      "areaName": "Jefferson County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/kings-county/",
+      "to": "/areas/kings-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/kings",
+      "areaName": "Kings County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/lewis-county/",
+      "to": "/areas/lewis-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/lewis",
+      "areaName": "Lewis County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/livingston-county/",
+      "to": "/areas/livingston-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/livingston",
+      "areaName": "Livingston County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/madison-county/",
+      "to": "/areas/madison-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/madison",
+      "areaName": "Madison County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/monroe-county/",
+      "to": "/areas/monroe-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/monroe",
+      "areaName": "Monroe County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/montgomery-county/",
+      "to": "/areas/montgomery-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/montgomery",
+      "areaName": "Montgomery County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/nassau-county/",
+      "to": "/areas/nassau-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/nassau",
+      "areaName": "Nassau County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/new-york-county/",
+      "to": "/areas/new-york-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/new-york",
+      "areaName": "New York County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/niagara-county/",
+      "to": "/areas/niagara-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/niagara",
+      "areaName": "Niagara County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/oneida-county/",
+      "to": "/areas/oneida-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/oneida",
+      "areaName": "Oneida County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/onondaga-county/",
+      "to": "/areas/onondaga-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/onondaga",
+      "areaName": "Onondaga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/ontario-county/",
+      "to": "/areas/ontario-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/ontario",
+      "areaName": "Ontario County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/orange-county/",
+      "to": "/areas/orange-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/orange",
+      "areaName": "Orange County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/orleans-county/",
+      "to": "/areas/orleans-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/orleans",
+      "areaName": "Orleans County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/oswego-county/",
+      "to": "/areas/oswego-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/oswego",
+      "areaName": "Oswego County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/otsego-county/",
+      "to": "/areas/otsego-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/otsego",
+      "areaName": "Otsego County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/putnam-county/",
+      "to": "/areas/putnam-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/putnam",
+      "areaName": "Putnam County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/queens-county/",
+      "to": "/areas/queens-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/queens",
+      "areaName": "Queens County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/rensselaer-county/",
+      "to": "/areas/rensselaer-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/rensselaer",
+      "areaName": "Rensselaer County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/richmond-county/",
+      "to": "/areas/richmond-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/richmond",
+      "areaName": "Richmond County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/rockland-county/",
+      "to": "/areas/rockland-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/rockland",
+      "areaName": "Rockland County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/saratoga-county/",
+      "to": "/areas/saratoga-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/saratoga",
+      "areaName": "Saratoga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/schenectady-county/",
+      "to": "/areas/schenectady-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/schenectady",
+      "areaName": "Schenectady County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/schoharie-county/",
+      "to": "/areas/schoharie-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/schoharie",
+      "areaName": "Schoharie County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/schuyler-county/",
+      "to": "/areas/schuyler-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/schuyler",
+      "areaName": "Schuyler County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/seneca-county/",
+      "to": "/areas/seneca-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/seneca",
+      "areaName": "Seneca County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/st-lawrence-county/",
+      "to": "/areas/st-lawrence-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/st-lawrence",
+      "areaName": "St. Lawrence County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/steuben-county/",
+      "to": "/areas/steuben-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/steuben",
+      "areaName": "Steuben County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/suffolk-county/",
+      "to": "/areas/suffolk-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/suffolk",
+      "areaName": "Suffolk County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/sullivan-county/",
+      "to": "/areas/sullivan-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/sullivan",
+      "areaName": "Sullivan County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/tioga-county/",
+      "to": "/areas/tioga-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/tioga",
+      "areaName": "Tioga County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/tompkins-county/",
+      "to": "/areas/tompkins-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/tompkins",
+      "areaName": "Tompkins County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/ulster-county/",
+      "to": "/areas/ulster-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/ulster",
+      "areaName": "Ulster County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/warren-county/",
+      "to": "/areas/warren-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/warren",
+      "areaName": "Warren County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/washington-county/",
+      "to": "/areas/washington-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/washington",
+      "areaName": "Washington County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/wayne-county/",
+      "to": "/areas/wayne-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/wayne",
+      "areaName": "Wayne County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/westchester-county/",
+      "to": "/areas/westchester-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/westchester",
+      "areaName": "Westchester County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/wyoming-county/",
+      "to": "/areas/wyoming-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/wyoming",
+      "areaName": "Wyoming County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/new-york/yates-county/",
+      "to": "/areas/yates-county/",
+      "kind": "new-york-alias",
+      "areaId": "new-york/yates",
+      "areaName": "Yates County",
+      "state": "New York"
+    },
+    {
+      "from": "/areas/erie-county/",
+      "to": "/areas/erie-county/",
+      "kind": "preserved-buffalo",
+      "areaId": "new-york/erie",
+      "areaName": "Erie County",
+      "state": "New York"
+    },
+    {
+      "from": "/work/content-editor/",
+      "to": "/work/source-handoff/",
+      "kind": "legacy-work-alias"
+    },
+    {
+      "from": "/assets/audit-implementation/illustrative-url-map.csv",
+      "to": "/assets/downloads/website-url-map.csv",
+      "kind": "legacy-download-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/audit_fix_sprint/",
+      "to": "/assets/buyer-packs/audit_fix_sprint",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/focused_site/",
+      "to": "/assets/buyer-packs/focused_site",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/grow/",
+      "to": "/assets/buyer-packs/grow",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/improve/",
+      "to": "/assets/buyer-packs/improve",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/keep_running/",
+      "to": "/assets/buyer-packs/keep_running",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/launch_site/",
+      "to": "/assets/buyer-packs/launch_site",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/signature_site/",
+      "to": "/assets/buyer-packs/signature_site",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/website-addons/",
+      "to": "/assets/buyer-packs/website-addons",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/website_baseline/",
+      "to": "/assets/buyer-packs/website_baseline",
+      "kind": "buyer-pack-alias"
+    },
+    {
+      "from": "/assets/buyer-packs/website-addons.html",
+      "to": "/assets/buyer-packs/website-addons",
+      "kind": "buyer-pack-html-alias"
+    }
+  ],
+  "unknownPaths": [
+    "/areas/not-a-real-county/",
+    "/areas/ohio/not-a-real-county/",
+    "/areas/connecticut/hartford-county/",
+    "/areas/ohio/albany-county/",
+    "/this-page-never-existed/",
+    "/404/"
+  ]
+}

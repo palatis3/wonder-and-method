@@ -43,7 +43,8 @@ jobs:
       - run: npm ci --prefix deployment
       - name: Install pinned Chromium and system dependencies
         run: npx playwright install --with-deps chromium
-      - run: npm run technical:check
+      - name: Check build, behavior, content, historical routes and browser journeys
+        run: npm run technical:check
       - name: Retain browser checks and failure traces
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -53,6 +54,7 @@ jobs:
             output/playwright/
             output/site-contract/
             evidence/technical-check.json
+            evidence/site-quality.json
           if-no-files-found: ignore
           retention-days: 14
   visual:

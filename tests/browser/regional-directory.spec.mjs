@@ -97,7 +97,8 @@ test('entry references reveal the applicable source set and historic county book
   if(currentLocationPaths.includes(oldPath)||oldPath==='/areas/maryland/baltimore-city/'){
    const restored=currentLocationPaths.includes(oldPath);
    await expect(page).toHaveURL(url=>url.pathname===(restored?oldPath:'/areas/maryland/baltimore-area/')&&url.search==='?qa=1&utm_source=bookmark'&&url.hash==='#'+fragment);
-   await expect(page.locator('#buyer-task')).toBeVisible();
+   await expect(page.locator('#'+fragment)).toBeVisible();
+   await expect(page.locator('#'+fragment)).not.toBeEmpty();
    await expect(page.locator('main').getByRole('link',{name:'Discuss your website',exact:true}).first()).toBeVisible();
    continue;
   }

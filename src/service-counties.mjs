@@ -19,6 +19,24 @@ export const countyServiceCards=o=>cards([
 ])+`<p>New websites include the starting review. An existing website may need a ${money(o.baseline.one_time_price)} ${e(o.baseline.public_name)} for up to ${o.baseline.page_cap} agreed main pages, listed before payment; larger reviews are quoted separately. I check whether a previous ${e(o.baseline.public_name)}, studio build or ${e(o.audit_sprint.public_name)} still provides a current usable review, so it is not charged twice. With a new review, monthly first payments are ${e(o.plans.keep_running.public_name)} ${money(o.plans.keep_running.monthly_price+o.baseline.one_time_price)}, ${e(o.plans.improve.public_name)} ${money(o.plans.improve.monthly_price+o.baseline.one_time_price)}, or ${e(o.plans.grow.public_name)} ${money(o.plans.grow.monthly_price+o.baseline.one_time_price)}; otherwise the monthly price.</p><ul class="link-row"><li>${a('/services/website-redesign/','Redesign an existing site')}</li><li>${a('/services/website-care/','Care and its limits')}</li><li>${a('/services/seo/','Monthly SEO')}</li><li>${a('/pricing/','All prices and payment terms')}</li></ul><p>Domain, hosting, paid tools, tax and approved extras cost separately.</p>`;
 
 
+function planningExamples(){
+ const groups=[
+  ['Classes and booking',[
+   ['/areas/indiana/brown-county/','Explain a second making visit and later delivery'],
+   ['/areas/pennsylvania/monroe-county/','Compare a single pottery visit with a longer course']]],
+  ['Project quotes and product choices',[
+   ['/areas/florida/baker-county/','Explain a partial cabinet update and project coordination'],
+   ['/areas/michigan/cass-county/','Show what a cabinet supplier contributed to a room']]],
+  ['Repair and aftercare',[
+   ['/areas/kentucky/union-county/','Separate equipment brands sold from repairs accepted'],
+   ['/areas/columbia-county/','Prepare a furniture-restoration inquiry']]],
+  ['Coverage and visit planning',[
+   ['/areas/kentucky/owsley-county/','Make operator arrival instructions easy to find'],
+   ['/areas/schuyler-county/','Compare a tasting-room visit, production visit and vineyard walk']]]
+ ];
+ return section('examples','Browse by customer task','Find a useful website-planning example.',`<div class="county-reading"><p>These briefs use public business examples to explain website choices. The lessons can apply beyond the named area; choose the customer task that matches your own business.</p></div><div class="county-cards">${groups.map(([title,links])=>`<article><h3>${e(title)}</h3><ul>${links.map(([path,label])=>`<li>${a(path,label)}</li>`).join('')}</ul></article>`).join('')}</div>`)
+ +section('research','About this collection','How the examples are prepared and corrected.',`<div class="county-reading"><p>This collection uses AI-assisted research, writing and review. Cited public material supports the observations, while the proposed website scopes and worked examples are the studio’s planning recommendations. Separate review passes assess usefulness, factual attribution and links; automated checks test the generated pages and routes.</p><p>Named businesses are public examples, not studio clients, partners or endorsements. The pages describe the same remote studio service and prices. They do not claim local offices or first-hand project experience with those businesses.</p><p>A source-review date records a check, not a promise that the source is unchanged. Terry is responsible for the studio’s published content and corrections. ${a('/contact/?request_kind=question#inquiry','Report an inaccurate fact or a changed source')}, including the page address and the detail that needs attention.</p></div>`);
+}
 function directoryClosing(o){
  return section('scope','Choose what helps','Build, improve or keep it working.',`<p>Websites from ${money(o.launch_site.public_price)} · Care ${money(o.plans.keep_running.monthly_price)}/month (${money(o.plans.keep_running.monthly_price+o.baseline.one_time_price)} first payment if a new review is needed) · Reviews from ${money(o.baseline.one_time_price)} — ${a('/pricing/','compare prices and starting requirements')}.</p>`)
  +section('working','Your next step','Plan a website for your business.',`<div class="county-reading"><p>Share your services and what you need to change. I agree the work, price and dates before booking. ${a('/process/','See the project steps')}.</p><p>The directory identifies places and the sources behind their classifications. Want to know who you would work with? ${a('/about/','Meet the Buffalo-based studio')}.</p><p>${a('/contact/?request_kind=question#inquiry','Discuss your project','button')}</p></div>`);
@@ -56,7 +74,7 @@ function statePage(state,o){
 }
 export function countyPages(o){
  const hub=intro('Online from Buffalo',`Websites for businesses across ${serviceRegionLabel}.`,'Find a county, planning region, independent city or Washington, DC by searching a familiar community name. Wonder and Method provides website design, redesigns, SEO and care online from Buffalo, New York.')
- +`<p>Browse ${serviceStates.reduce((total,state)=>total+state.counties.length,0)} areas across ${serviceRegionLabel}. Open a result for place lists and official sources, or go directly to ${a('/services/','website services')}, ${a('/pricing/','prices and scope')} or ${a('/contact/?request_kind=question#inquiry','a project question')}.</p>`+countyDirectory()+serviceStateCards()+directoryClosing(o);
+ +`<p>Browse ${serviceStates.reduce((total,state)=>total+state.counties.length,0)} areas across ${serviceRegionLabel}. Open a result for place lists and official sources, or go directly to ${a('/services/','website services')}, ${a('/pricing/','prices and scope')} or ${a('/contact/?request_kind=question#inquiry','a project question')}. You can also ${a('#examples','browse examples by customer task')} or read ${a('#research','how the examples are prepared')}.</p>`+countyDirectory()+planningExamples()+serviceStateCards()+directoryClosing(o);
  return [{path:'/areas/',title:'Web Design & SEO Service Areas',description:`Find places across ${serviceRegionLabel}, with typed directories and sources. Web design, SEO and website care delivered online from Buffalo.`,body:hub},...serviceStates.map(state=>statePage(state,o))];
 }
 export const countyServiceArea=route=>{const data=serviceAreaDataForPath(route);return data?{name:data.county.name,areaLabel:areaName(data.county),areaType:data.county.areaType||'County',state:data.state.name,abbreviation:data.state.abbreviation}:null;};
