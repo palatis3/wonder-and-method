@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23",
+  "reviewedHead": "14fd2b2e36064891b854c3f5b2a727202d71a247",
+  "reviewer": "Independent Astra extra-high editorial closure",
+  "scope": "Two existing guide associations only, after reviewed source-link corrections.",
+  "overallDecision": "RETAIN_BOTH",
+  "decisions": [
+    {
+      "areaId": "kentucky/lawrence",
+      "from": "/areas/kentucky/lawrence-county/",
+      "to": "/guides/website-content-template/",
+      "decision": "RETAIN",
+      "label": "Gather approved website facts",
+      "labelDecision": "RETAIN",
+      "reason": "The guide helps the recreation-business reader gather owner-approved facts for the separate boat and cabin offers: current reservation links, dates, arrival locations, confirmation responsibilities and the meaning of each inquiry. Its confirmed/needs-approval/not-available claim states are especially relevant now that the Messer example is explicitly historical. The brief still requires current owner-supplied instructions rather than treating archived booking arrangements as current policy.",
+      "guideEvidence": [
+        "Gather the facts before polishing the words: mark each claim confirmed, needing approval or unavailable, and identify its approver.",
+        "Build a service page around fit and scope: explain what is needed first, the work sequence and the next responsible person.",
+        "Contact page: name the request and clarify human review before booking is confirmed."
+      ],
+      "boundary": "The guide does not verify current Messer availability or combine two reservations. It helps prepare accurate present-day business facts for the proposed website.",
+      "fullCurrentLocationRead": true,
+      "completeCurrentGuideRead": true,
+      "guideFile": "dist/guides/website-content-template/index.html",
+      "recordCanonicalSha256": "547e916dcec9bbc3701ec136d35096f5ff13cacd684a14e91e9c48f05ba01289",
+      "priorLocationPurposeSha256": "86d0a29b8568078b2c93466ae638b2af40a72f61751ce0e3ecaef6f61a7cacc1",
+      "currentLocationPurposeSha256": "32c58a804132d77a930fcea384959d01c6381768b2ea91f217803ce4bb6b1623",
+      "guidePurposeSha256": "4e64b143c6e7ba920d3846bb7f153867ea09b64eecba468287ca564fd82eee7c",
+      "guideFingerprintUnchanged": true,
+      "reconstructedPriorLocationMatchesLedger": true,
+      "purposeFieldsChanged": [
+        "decision"
+      ],
+      "correctionEditChecks": [
+        {
+          "path": [
+            "sources",
+            0,
+            "url"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            0,
+            "label"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            0,
+            "observation"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "coverageNote"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            1,
+            "url"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            1,
+            "label"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            1,
+            "observation"
+          ],
+          "currentMatchesReviewedCorrection": true
+        }
+      ],
+      "proposedLedgerRow": {
+        "from": "/areas/kentucky/lawrence-county/",
+        "to": "/guides/website-content-template/",
+        "label": "Gather approved website facts",
+        "reason": "The guide helps the recreation-business reader gather owner-approved facts for the separate boat and cabin offers: current reservation links, dates, arrival locations, confirmation responsibilities and the meaning of each inquiry. Its confirmed/needs-approval/not-available claim states are especially relevant now that the Messer example is explicitly historical. The brief still requires current owner-supplied instructions rather than treating archived booking arrangements as current policy.",
+        "reviewedAt": "2026-10-23",
+        "reviewMethod": "Independent AI reread of the complete current location record and complete target guide after source-link corrections; compared correction provenance and actual exported purpose fingerprints",
+        "reviewPart": 1,
+        "locationPurposeSha256": "32c58a804132d77a930fcea384959d01c6381768b2ea91f217803ce4bb6b1623",
+        "guidePurposeSha256": "4e64b143c6e7ba920d3846bb7f153867ea09b64eecba468287ca564fd82eee7c"
+      }
+    },
+    {
+      "areaId": "michigan/otsego",
+      "from": "/areas/michigan/otsego-county/",
+      "to": "/guides/repair-authorization-form/",
+      "decision": "RETAIN",
+      "label": "Separate an equipment inspection request from approval to repair",
+      "labelDecision": "RETAIN",
+      "reason": "The guide remains a useful repair-process analogy for the strand-service brief: identify the particular piece, describe observed condition, preserve uncertain service history and explain when assessment becomes approved work. This directly supports the intact inherited strand and broken-strand scenarios, which leave diagnosis and suitable work to the jeweler. The narrower source claim that restringing is listed does not remove that proposed customer decision. The equipment-specific requirements are examples to adapt, not jewelry intake policies to copy.",
+      "guideEvidence": [
+        "Describe the intake your business actually uses: name what the first request means, identify the item and record the observed problem.",
+        "Show the decision before the customer incurs it: a general request for help is not agreement to unspecified repair; assessment and authorization must be explained.",
+        "Sources and scope / preparation instructions: adapt actual approved policies and leave technical acceptance to responsible specialists."
+      ],
+      "boundary": "This is an equipment-to-jewelry workflow analogy. RMA, purchase-order, industrial shipping and multi-unit policies are not asserted to apply to jewelry; the actual guide title in the link label makes its equipment focus visible.",
+      "fullCurrentLocationRead": true,
+      "completeCurrentGuideRead": true,
+      "guideFile": "dist/guides/repair-authorization-form/index.html",
+      "recordCanonicalSha256": "af0af369a5c32b181e3ad0331c755b2741890e403a9ccb7de60ef411623e5e28",
+      "priorLocationPurposeSha256": "e959fa840c75b195f3b20cb11ad38b777227da1953d08937454ffe1651af9c68",
+      "currentLocationPurposeSha256": "9f87925f8514deba5dab86aec189e2065b1d789bae748fa1d10aa5ffd54cdc76",
+      "guidePurposeSha256": "98c14c3fa43f77a824f6cf4c757d9f847a301385db37291b92f07d4d435097a5",
+      "guideFingerprintUnchanged": true,
+      "reconstructedPriorLocationMatchesLedger": true,
+      "purposeFieldsChanged": [
+        "decision"
+      ],
+      "correctionEditChecks": [
+        {
+          "path": [
+            "sources",
+            0,
+            "url"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            0,
+            "label"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "sources",
+            0,
+            "observation"
+          ],
+          "currentMatchesReviewedCorrection": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "currentMatchesReviewedCorrection": true
+        }
+      ],
+      "proposedLedgerRow": {
+        "from": "/areas/michigan/otsego-county/",
+        "to": "/guides/repair-authorization-form/",
+        "label": "Separate an equipment inspection request from approval to repair",
+        "reason": "The guide remains a useful repair-process analogy for the strand-service brief: identify the particular piece, describe observed condition, preserve uncertain service history and explain when assessment becomes approved work. This directly supports the intact inherited strand and broken-strand scenarios, which leave diagnosis and suitable work to the jeweler. The narrower source claim that restringing is listed does not remove that proposed customer decision. The equipment-specific requirements are examples to adapt, not jewelry intake policies to copy.",
+        "reviewedAt": "2026-10-23",
+        "reviewMethod": "Independent AI reread of the complete current location record and complete target guide after source-link corrections; compared correction provenance and actual exported purpose fingerprints",
+        "reviewPart": 2,
+        "locationPurposeSha256": "9f87925f8514deba5dab86aec189e2065b1d789bae748fa1d10aa5ffd54cdc76",
+        "guidePurposeSha256": "98c14c3fa43f77a824f6cf4c757d9f847a301385db37291b92f07d4d435097a5"
+      }
+    }
+  ],
+  "proposedLedgerEntries": [
+    {
+      "from": "/areas/kentucky/lawrence-county/",
+      "to": "/guides/website-content-template/",
+      "label": "Gather approved website facts",
+      "reason": "The guide helps the recreation-business reader gather owner-approved facts for the separate boat and cabin offers: current reservation links, dates, arrival locations, confirmation responsibilities and the meaning of each inquiry. Its confirmed/needs-approval/not-available claim states are especially relevant now that the Messer example is explicitly historical. The brief still requires current owner-supplied instructions rather than treating archived booking arrangements as current policy.",
+      "reviewedAt": "2026-10-23",
+      "reviewMethod": "Independent AI reread of the complete current location record and complete target guide after source-link corrections; compared correction provenance and actual exported purpose fingerprints",
+      "reviewPart": 1,
+      "locationPurposeSha256": "32c58a804132d77a930fcea384959d01c6381768b2ea91f217803ce4bb6b1623",
+      "guidePurposeSha256": "4e64b143c6e7ba920d3846bb7f153867ea09b64eecba468287ca564fd82eee7c"
+    },
+    {
+      "from": "/areas/michigan/otsego-county/",
+      "to": "/guides/repair-authorization-form/",
+      "label": "Separate an equipment inspection request from approval to repair",
+      "reason": "The guide remains a useful repair-process analogy for the strand-service brief: identify the particular piece, describe observed condition, preserve uncertain service history and explain when assessment becomes approved work. This directly supports the intact inherited strand and broken-strand scenarios, which leave diagnosis and suitable work to the jeweler. The narrower source claim that restringing is listed does not remove that proposed customer decision. The equipment-specific requirements are examples to adapt, not jewelry intake policies to copy.",
+      "reviewedAt": "2026-10-23",
+      "reviewMethod": "Independent AI reread of the complete current location record and complete target guide after source-link corrections; compared correction provenance and actual exported purpose fingerprints",
+      "reviewPart": 2,
+      "locationPurposeSha256": "9f87925f8514deba5dab86aec189e2065b1d789bae748fa1d10aa5ffd54cdc76",
+      "guidePurposeSha256": "98c14c3fa43f77a824f6cf4c757d9f847a301385db37291b92f07d4d435097a5"
+    }
+  ],
+  "fingerprintMethod": "Imported current locationPurposeFingerprint and guidePurposeFingerprint directly from scripts/site-quality-rules.mjs. Full-record SHA-256 uses recursively sorted JSON keys; file hashes use raw bytes.",
+  "inputSha256": {
+    "src/location-service-data.json": "625508f3a015c14da74f746769932dadc1956d7f01273a717385d53285bf05a6",
+    "operations/google-quality-audit-20261023/related-guide-review.json": "fc9e0646c009506df158b1f7413cfe1c6566fbaebe05899de81de7c773535522",
+    "operations/ci-checks-20261023/source-link-corrections.json": "9c7816cc7d1e23bd811d1b72802dfc059cdd08d5be0dfcd26c712050350c1412",
+    "scripts/site-quality-rules.mjs": "6674aa86a93915eea34217ed0fd8dfcde9549289320842f0f77274d712c0702e",
+    "dist/guides/website-content-template/index.html": "9d050af132b97d68b203da62c198822ed1aa4a9a3ef2b19148739fbfc69102e0",
+    "dist/guides/repair-authorization-form/index.html": "6525af34e577bd08e494d39b2cc9fcca171fbf2fce14562110151c01152aca81"
+  },
+  "requiredSourceOrLinkChanges": [],
+  "actionsPerformed": {
+    "ledgerEdited": false,
+    "publicSourceEdited": false,
+    "publicBrowsing": false,
+    "build": false,
+    "fullTests": false,
+    "productionActions": false
+  },
+  "limits": [
+    "This is contextual editorial closure, not a new verification of external primary-source truth or current operator terms.",
+    "Retain decisions are tied to the exact current record and guide fingerprints; changes to either purpose require renewed review.",
+    "Root applies the proposed ledger entries and runs the existing release checks."
+  ]
+}
