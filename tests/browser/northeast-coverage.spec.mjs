@@ -112,7 +112,7 @@ test('planning-region entry supports keyboard use, optional worksheet and genera
  const download=await downloadPromise;expect(download.suggestedFilename()).toBe('connecticut-lower-connecticut-river-valley.txt');
  const stream=await download.createReadStream();let text='';for await(const chunk of stream)text+=chunk.toString();
  expect(text).toContain('LOWER CONNECTICUT RIVER VALLEY PLANNING REGION, CONNECTICUT');expect(text).toContain('EXAMPLE (MADE UP)');
- expect(text).toContain('/areas/connecticut/#lower-connecticut-river-valley');
+ expect(text).toContain('/areas/connecticut/lower-connecticut-river-valley-planning-region/');
  await page.locator('.county-state-switch').getByRole('link',{name:'Discuss your website',exact:true}).click();await expect(page).toHaveURL(url=>url.pathname==='/contact/'&&!url.searchParams.has('county')&&url.searchParams.get('request_kind')==='question'&&url.searchParams.get('qa')==='1'&&url.hash==='#inquiry');
  await expect(page.locator('input[name="county"]')).toHaveValue('');
  await expect(page.locator('input[name="business_location"]')).toHaveValue('');

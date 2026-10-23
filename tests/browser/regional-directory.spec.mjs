@@ -1,5 +1,6 @@
 import {test,expect} from './fixtures.mjs';
 import {retiredCountyRoutes} from '../../deployment/retired-county-routes.mjs';
+import currentLocationPaths from '../fixtures/current-location-paths.mjs';
 
 const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval']];
 const searchbox=page=>page.getByRole('searchbox',{name:'County, region or community',exact:true});
@@ -93,8 +94,8 @@ test('entry references reveal the applicable source set and historic county book
   ['/areas/maryland/baltimore-city/','maryland','baltimore-city','buyer-task']
  ]){
   await page.goto(`${oldPath}?qa=1&utm_source=bookmark#${fragment}`);
-  if(oldPath==='/areas/monroe-county/'||oldPath==='/areas/maryland/baltimore-city/'){
-   const restored=oldPath==='/areas/monroe-county/';
+  if(currentLocationPaths.includes(oldPath)||oldPath==='/areas/maryland/baltimore-city/'){
+   const restored=currentLocationPaths.includes(oldPath);
    await expect(page).toHaveURL(url=>url.pathname===(restored?oldPath:'/areas/maryland/baltimore-area/')&&url.search==='?qa=1&utm_source=bookmark'&&url.hash==='#'+fragment);
    await expect(page.locator('#buyer-task')).toBeVisible();
    await expect(page.locator('main').getByRole('link',{name:'Discuss your website',exact:true}).first()).toBeVisible();
