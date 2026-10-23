@@ -26686,7 +26686,7 @@ export const michiganDcGeography = {
           "governmentTypeBasis": "Census geography cross-checked against the Michigan Townships Association charter roster and documented local-government sources.",
           "governmentTypeSources": [
             "https://michigantownships.org/wp-content/uploads/Charter-Township-List-2024_June-19-2024.pdf",
-            "https://cms1files.revize.com/eastchinatownship/10_7_2024_min.pdf"
+            "https://eastchinatownship.org/Documents/Government/Clerks%20Office/Board%20Meeting%20Agendas%20and%20Minutes/2024/Minutes/10_7_2024_min.pdf"
           ],
           "note": "Current local-government charter status supersedes the generic township suffix in Census geography."
         },
@@ -27058,7 +27058,7 @@ export const michiganDcGeography = {
         "https://www.michigan.gov/dtmb/services/maps/mgf-data-hub/boundaries-and-mgf",
         "https://michigantownships.org/wp-content/uploads/Charter-Township-List-2024_June-19-2024.pdf",
         "https://chinatwp.net/home/foia/",
-        "https://cms1files.revize.com/eastchinatownship/10_7_2024_min.pdf"
+        "https://eastchinatownship.org/Documents/Government/Clerks%20Office/Board%20Meeting%20Agendas%20and%20Minutes/2024/Minutes/10_7_2024_min.pdf"
       ],
       "reviewedAt": "2026-10-22",
       "sourceVintage": "2026-01-01",

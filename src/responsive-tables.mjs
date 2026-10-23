@@ -1,6 +1,7 @@
 import {escapeHtml} from './shared.mjs';
 
-// Keep native table relationships explicit when the phone layout stacks rows.
+// Preserve the table container when the phone layout stacks rows. Native
+// tr/th/td semantics remain intact in supported browsers without extra roles.
 export function responsiveTables(html){
  return html.replace(/<table\b([^>]*)>([\s\S]*?)<\/table>/g,(_table,attrs,content)=>{
   const headers=[...(content.match(/<thead\b[^>]*>([\s\S]*?)<\/thead>/)?.[1]||'').matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map(m=>m[1].replace(/<[^>]+>/g,'').replaceAll('&amp;','&').replaceAll('&#39;',"'").replaceAll('&quot;','"').trim());
@@ -13,11 +14,10 @@ export function responsiveTables(html){
    let index=0;
    const row=cells.replace(/<(th|td)\b([^>]*)>([\s\S]*?)<\/\1>/g,(_cell,tag,props,text)=>{
     const label=headers[index++];
-    if(!/\brole=/.test(props))props+=' role="'+(tag==='td'?'cell':/scope="row"/.test(props)?'rowheader':'columnheader')+'"';
     if(tag==='td'&&!/\bdata-label=/.test(props)&&label)props+=' data-label="'+escapeHtml(label)+'"';
     return `<${tag}${props}>${text}</${tag}>`;
    });
-   return `<tr${a}${/\brole=/.test(a)?'':' role="row"'}>${row}</tr>`;
+   return `<tr${a}>${row}</tr>`;
   });
   return `<table${attrs}>${content}</table>`;
  });

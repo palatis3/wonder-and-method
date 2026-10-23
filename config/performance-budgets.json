@@ -1,0 +1,6 @@
+{
+  "runs": 3,
+  "paths": ["/", "/pricing/", "/contact/", "/payments/", "/guides/website-content-template/", "/areas/south-carolina/"],
+  "budgets": {"largest-contentful-paint": 2500, "cumulative-layout-shift": 0.1, "total-blocking-time": 200},
+  "minimumPerformanceScore": 0.9
+}

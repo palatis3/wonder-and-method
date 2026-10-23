@@ -57,6 +57,117 @@ jobs:
             evidence/site-quality.json
           if-no-files-found: ignore
           retention-days: 14
+  standards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Compare every emitted file across two clean builds
+        run: npm run check:reproducible
+      - name: Validate every generated HTML document with Nu
+        run: npm run check:html
+      - name: Retain build comparison and HTML diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: standards-reports
+          path: output/ci/
+          if-no-files-found: error
+          retention-days: 14
+  cross-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps firefox webkit
+      - run: npm run build
+      - name: Verify Firefox and WebKit buying, form, navigation and footer journeys
+        run: npm run test:cross-browser
+      - name: Retain cross-browser results and failure traces
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cross-browser-journeys
+          path: output/cross-browser/
+          if-no-files-found: error
+          retention-days: 14
+  performance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Measure three cold mobile Lighthouse runs per representative page
+        run: npm run check:performance
+      - name: Retain measured metrics and Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: performance-reports
+          path: output/ci/performance/
+          if-no-files-found: error
+          retention-days: 14
+  dependencies:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            deployment/package-lock.json
+      - run: npm ci
+      - run: npm ci --prefix deployment
+      - name: Audit site tooling and deployment dependencies
+        run: npm run check:dependencies
+      - name: Retain all vulnerability findings
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dependency-reports
+          path: output/ci/dependencies/
+          if-no-files-found: error
+          retention-days: 14
+  links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Check all rendered source and outbound links, including redirect chains
+        run: npm run check:links
+      - name: Retain every link, affected page and redirect hop
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: outbound-links
+          path: output/ci/links/
+          if-no-files-found: error
+          retention-days: 30
   visual:
     runs-on: ubuntu-24.04
     timeout-minutes: 20

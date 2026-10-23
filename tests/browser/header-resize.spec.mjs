@@ -29,7 +29,7 @@ for(const path of ['/','/pricing/','/services/web-design/','/areas/michigan/','/
  });
 }
 
-test('short desktop menus scroll and recover across the navigation breakpoint',async({page,isMobile})=>{
+test('short desktop menus scroll and recover across the navigation breakpoint',async({page,isMobile,browserName})=>{
  test.skip(isMobile,'Desktop resize and keyboard navigation');
  await page.goto('/pricing/?qa=1');await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));
  await page.setViewportSize({width:1200,height:320});
@@ -39,7 +39,11 @@ test('short desktop menus scroll and recover across the navigation breakpoint',a
  // Tab through every service so the native scroll container must reveal each.
  await summary.focus();
  for(let index=0;index<await links.count();index++){
-  await page.keyboard.press('Tab');await expect(links.nth(index)).toBeFocused();await reachable(links.nth(index));
+  await page.keyboard.press('Tab');
+  // Firefox exposes the native scrollable group as one additional keyboard
+  // stop. Require that exact group, then continue to the first service link.
+  if(index===0&&browserName==='firefox'&&await services.locator('.service-links').evaluate(el=>el===document.activeElement))await page.keyboard.press('Tab');
+  await expect(links.nth(index)).toBeFocused();await reachable(links.nth(index));
  }
  await page.keyboard.press('Escape');await expect(summary).toBeFocused();
  await page.setViewportSize({width:900,height:480});

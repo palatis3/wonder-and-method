@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T18:43:29.408Z",
+  "priorReview": "evidence/ci-expansion-20261023/ci-implementation-review.json",
+  "scope": "Targeted independent closure review of performance validation, aggregation and orchestration. Only this JSON and companion TXT are written. No source edits, full build, browser, local listener or external request.",
+  "result": "PASS: CI-1 (P2) is closed. No remaining actionable finding in the targeted change.",
+  "closedFinding": {
+    "id": "CI-1",
+    "priority": "P2",
+    "status": "CLOSED",
+    "reason": "Configuration validation runs before output directory creation, temporary runtime creation, server startup or Chromium launch. It requires at least three integer runs, nonempty unique local paths, exactly the required finite nonnegative metric budgets, and a finite score threshold in [0,1]. Sample counts must equal configured runs; every sample and every median must have valid finite metrics and score. Completed results must cover every configured path."
+  },
+  "findings": [],
+  "checks": [
+    {
+      "name": "Focused contract tests",
+      "command": "node --test tests/performance-contract.test.mjs",
+      "result": "PASS",
+      "tests": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "Syntax checks",
+      "result": "PASS",
+      "files": [
+        "scripts/check-performance.mjs",
+        "scripts/performance-contract.mjs",
+        "tests/performance-contract.test.mjs"
+      ],
+      "method": "node --check each file; no module execution"
+    },
+    {
+      "name": "Actual script body integration probes",
+      "result": "PASS",
+      "method": "The actual check-performance.mjs body was executed with imports rebound to in-memory stubs for all server/browser/network/filesystem-write dependencies. The real validation and aggregation exports were used. No browser, server, ports or external requests.",
+      "configurationCasesRejectedBeforeAnySideEffect": [
+        "empty paths",
+        "zero runs",
+        "two runs",
+        "fractional runs",
+        "missing run count",
+        "null paths",
+        "duplicate paths",
+        "remote path",
+        "missing budget",
+        "nonfinite budget serialized to null",
+        "missing score threshold",
+        "nonfinite threshold serialized to null",
+        "malformed JSON",
+        "null configuration"
+      ],
+      "measurementCasesRejected": [
+        "null score",
+        "nonfinite score",
+        "missing LCP",
+        "negative TBT",
+        "no Lighthouse report"
+      ],
+      "validCase": {
+        "configuredPaths": 6,
+        "configuredRunsPerPath": 3,
+        "lighthouseCalls": 18,
+        "resultCount": 6,
+        "failureCount": 0
+      }
+    },
+    {
+      "name": "Additional aggregation assertions",
+      "result": "PASS",
+      "cases": [
+        "0, 2 and 4 samples rejected for configured run count 3",
+        "Even-run median remains valid",
+        "Overflowed even-run aggregate is rejected"
+      ]
+    },
+    {
+      "name": "Prior full-review input hashes",
+      "result": "PASS",
+      "priorInputCount": 20,
+      "unchangedCount": 19,
+      "differences": [
+        {
+          "path": "scripts/check-performance.mjs",
+          "beforeSha256": "73ab260d9226e694fb6074ba90348d6d28a085afddca5ec29c8fcea03f4ebdd6",
+          "afterSha256": "7ff6b6bdcea0717dd01ad2888e63dab1faaf2c4cdb6701f2fca51e4d48ebc60c"
+        }
+      ],
+      "expectedChangedPaths": [
+        "scripts/check-performance.mjs"
+      ],
+      "unexpectedChangedPaths": [],
+      "newReviewInputs": [
+        "scripts/performance-contract.mjs",
+        "tests/performance-contract.test.mjs"
+      ]
+    },
+    {
+      "name": "Review freshness",
+      "result": "PASS",
+      "details": "All three targeted input hashes matched at review and immediately before evidence writing; prior unchanged inputs were checked again."
+    }
+  ],
+  "limitations": [
+    "This review establishes fail-closed validation and aggregation behavior; it does not establish measured Lighthouse performance results.",
+    "The listener-based compression harness was outside this targeted no-ports review and was not rerun.",
+    "The unchanged 19 prior-review inputs retain their previous conclusions and limitations; this was not a new full review."
+  ],
+  "reviewedInputs": [
+    {
+      "path": "scripts/check-performance.mjs",
+      "sha256": "7ff6b6bdcea0717dd01ad2888e63dab1faaf2c4cdb6701f2fca51e4d48ebc60c"
+    },
+    {
+      "path": "scripts/performance-contract.mjs",
+      "sha256": "09ce981420178875b47bdfceed8182bd1ca860ab94d8a88d04f19d89b8d5f2eb"
+    },
+    {
+      "path": "tests/performance-contract.test.mjs",
+      "sha256": "bf8c0228174d490c202e9e96a73b354d8710320ba2d6019543a7480159c1fcd6"
+    }
+  ],
+  "priorReviewCurrentInputs": [
+    {
+      "path": ".github/workflows/site-checks.yml",
+      "sha256": "24e36905f007473cf4e04cd8984c0768055de2e9c299cbce1ee49f143d9a3656"
+    },
+    {
+      "path": "playwright.cross-browser.config.mjs",
+      "sha256": "7b9cd3dc8acdf4ecff50f1980fed2269a0580fee5833b69f0c94912d14bc13fc"
+    },
+    {
+      "path": "config/performance-budgets.json",
+      "sha256": "35d05e3d4547c2d9983559cc7d7c88b317557d1c30bf8f43ee04730b6b4cce0e"
+    },
+    {
+      "path": "package.json",
+      "sha256": "6b51194bea9e1e5784ff2e0e5b2a7d332dbd56de790ced9b150228eaaff4c084"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a4a25357b2be06784b438152c950ab757b4de418d005077fcc9f3254dded07b1"
+    },
+    {
+      "path": "scripts/check-html.mjs",
+      "sha256": "2948cb76a8db5906dee549cf42d56b2016524b0e7ea632acf36ecaf24e1ff7a6"
+    },
+    {
+      "path": "scripts/check-links.mjs",
+      "sha256": "da648451412d8576ed7b9798a36ab3038a8d565d56201754356cd833ddd04f0f"
+    },
+    {
+      "path": "scripts/check-dependencies.mjs",
+      "sha256": "1c2ed5a193f1fc0c07627c3090cb0627917a758e13f7e6d8170d397902622997"
+    },
+    {
+      "path": "scripts/check-reproducible.mjs",
+      "sha256": "44105d007d065cdae0bb888439c264b66ba83625f7df0c35dc969c8043da8622"
+    },
+    {
+      "path": "scripts/check-performance.mjs",
+      "sha256": "7ff6b6bdcea0717dd01ad2888e63dab1faaf2c4cdb6701f2fca51e4d48ebc60c"
+    },
+    {
+      "path": "scripts/ci-files.mjs",
+      "sha256": "8afff83c8583af3c1067380c726d446ea648369701f1502d25f4a4f9ec53b588"
+    },
+    {
+      "path": "scripts/verify-github-checks.mjs",
+      "sha256": "0cac73830409ffbdeb5a44ebece960ff73ac8643f37600952b3207a2d6e23e88"
+    },
+    {
+      "path": "scripts/predeploy.mjs",
+      "sha256": "18bd179b4f4082b1af39c629ff71a8820e281ed9874bec07773247a7ae84e5be"
+    },
+    {
+      "path": "scripts/server.mjs",
+      "sha256": "2dbd1765b01fa19beb6d7a9c416ee6b61de3a7de6565b8ab5cecd5e397655160"
+    },
+    {
+      "path": "tests/link-checks.test.mjs",
+      "sha256": "a36e3d86a2541e2781ce9887c7229971f7122aed4e50cbffabec143550e4cc0b"
+    },
+    {
+      "path": "tests/performance-harness.test.mjs",
+      "sha256": "e3ab5a0f2b176717ea2926e3bad5d95bf27a2ba631de63549d757910422a8c09"
+    },
+    {
+      "path": "tests/github-release-checks.test.mjs",
+      "sha256": "36b5a230e823276241d3c0e85facc9d51734c2195f6da5d8690fd80aaed72d89"
+    },
+    {
+      "path": "tests/browser/table-semantics.spec.mjs",
+      "sha256": "7d2b7cb94590669f8e0068bd2dba41ffe08a6f1006f6e0224cb6f1caffb7c0b4"
+    },
+    {
+      "path": "tests/browser/buyer-journeys.spec.mjs",
+      "sha256": "3147711a32417b0063b66b8ec5efd7f365792c24facf20f6673966d785c9d288"
+    },
+    {
+      "path": "tests/browser/header-resize.spec.mjs",
+      "sha256": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918"
+    }
+  ]
+}

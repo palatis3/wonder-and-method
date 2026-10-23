@@ -152,7 +152,9 @@ test('review request rejects notes and accepts a public website address without 
 test('long message paste preserves existing text and explains the email alternative',async({page})=>{
  await page.goto('/contact/?qa=paste-boundary');const message=page.locator('#message');await message.fill('A short synthetic question.');await expect(page.locator('#message-counter')).toBeHidden();
  const existing='a'.repeat(2600);await message.fill(existing);await expect(page.locator('#message-counter')).toContainText('400 characters remaining');
- const paste=async(text,start,end)=>message.evaluate((el,{text,start,end})=>{el.setSelectionRange(start,end);const clipboardData=new DataTransfer();clipboardData.setData('text',text);return el.dispatchEvent(new ClipboardEvent('paste',{clipboardData,bubbles:true,cancelable:true}));},{text,start,end});
+  // Firefox discards clipboardData passed to the synthetic ClipboardEvent
+  // constructor. Supply the test payload explicitly; no system clipboard used.
+  const paste=async(text,start,end)=>message.evaluate((el,{text,start,end})=>{el.setSelectionRange(start,end);const clipboardData=new DataTransfer();clipboardData.setData('text/plain',text);const event=new ClipboardEvent('paste',{bubbles:true,cancelable:true});Object.defineProperty(event,'clipboardData',{value:clipboardData});return el.dispatchEvent(event);},{text,start,end});
  expect(await paste('b'.repeat(401),2600,2600)).toBe(false);await expect(message).toHaveValue(existing);await expect(page.locator('#message-error')).toContainText('kept your existing text');await expect(page.locator('#message-error')).toContainText('support@wonderandmethod.com');
  expect(await paste('b'.repeat(400),2600,2600)).toBe(true);expect(await paste('b'.repeat(1000),0,1000)).toBe(true);
 });

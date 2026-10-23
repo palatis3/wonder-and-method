@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T18:39:47.423Z",
+  "scope": "Read-only independent review of exactly the requested CI files. No source research, builds, browser launches, local listeners, full external link scan, or screenshots.",
+  "result": "One actionable P2 finding; no additional actionable issues identified in reviewed inputs.",
+  "findings": [
+    {
+      "id": "CI-1",
+      "priority": "P2",
+      "file": "scripts/check-performance.mjs",
+      "line": 9,
+      "title": "Reject configurations that disable every performance measurement",
+      "description": "The configuration is parsed without validation. With paths:[] the script records zero results; with runs:0 it records six results whose metric and score values are undefined. Both cases finish successfully with failures:[] and no Lighthouse calls, because the comparison expressions do not reject missing aggregates.",
+      "evidence": [
+        {
+          "configurationChange": "paths: []",
+          "scriptResult": "success",
+          "lighthouseCalls": 0,
+          "resultCount": 0,
+          "failures": 0
+        },
+        {
+          "configurationChange": "runs: 0",
+          "scriptResult": "success",
+          "lighthouseCalls": 0,
+          "resultCount": 6,
+          "failures": 0
+        }
+      ],
+      "recommendation": "Validate configuration before creating the server or launching Chromium: require a nonempty list of local page paths, a positive integer run count (at least three if the stated three-run policy is intended), finite nonnegative limits for the required metrics, and a finite performance-score threshold between zero and one. Before accepting each page, require the expected sample count and finite aggregate metrics/score. Add bounded failure-case coverage for empty paths, zero runs, invalid thresholds, and missing results.",
+      "currentConfiguration": "The committed configuration currently contains six paths, three runs, valid LCP/CLS/TBT budgets and score0.9; this finding concerns the gate failing open when its configuration is malformed."
+    }
+  ],
+  "checks": [
+    {
+      "name": "Bounded link and exact-commit release unit tests",
+      "command": "node --test tests/link-checks.test.mjs tests/github-release-checks.test.mjs",
+      "result": "PASS",
+      "tests": 4
+    },
+    {
+      "name": "JavaScript syntax",
+      "result": "PASS",
+      "files": 16,
+      "method": "node --check only; modules not executed"
+    },
+    {
+      "name": "Workflow YAML and required-job coverage",
+      "result": "PASS",
+      "method": "Installed js-yaml parser; push/pull_request triggers; exactly verify, visual, standards, cross-browser, performance, dependencies, links; no continue-on-error bypasses"
+    },
+    {
+      "name": "Package lock consistency",
+      "result": "PASS",
+      "details": "Direct declarations match lockfile;99 new dependency entries; no existing installed-package version changes; resolved packages use npm registry HTTPS URLs."
+    },
+    {
+      "name": "Performance false-pass reproduction",
+      "result": "CONFIRMED",
+      "method": "Execute the actual script body with imports and all server/browser/filesystem-write/network dependencies stubbed in memory. No listener, browser, disk mutation, or external request."
+    },
+    {
+      "name": "HTML and artifact coverage",
+      "result": "SOURCE VERIFIED",
+      "details": "The recursive file walker includes every emitted file and rejects unexpected non-files. Nu receives the full dist directory with skip-non-html, retains raw diagnostics, and fails on exit status or reported errors. The reproducibility comparison includes complete paths and hashes, including version.json."
+    },
+    {
+      "name": "Synthetic behavior",
+      "result": "SOURCE VERIFIED",
+      "details": "Browser fixtures restrict traffic to the synthetic loopback origin and mock unhandled API calls. The server stores only synthetic local SQLite records and has no email integration. Performance uses a temporary loopback runtime and blocks external HTTPS; all cleanup is in finally after setup."
+    }
+  ],
+  "limitations": [
+    "The compression test starts an ephemeral HTTP listener and was not run under the no-ports constraint; its source was reviewed.",
+    "Linux CI must establish the authoritative Firefox/WebKit execution result. The known Windows WebKit keyboard behavior was not bypassed or retested.",
+    "Role locators and ariaSnapshot establish DOM/ARIA expectations, not a manual VoiceOver platform-navigation result.",
+    "A full actionlint executable was unavailable; YAML parsing plus workflow structure and command review were completed."
+  ],
+  "inputs": [
+    {
+      "path": ".github/workflows/site-checks.yml",
+      "sha256": "24e36905f007473cf4e04cd8984c0768055de2e9c299cbce1ee49f143d9a3656"
+    },
+    {
+      "path": "playwright.cross-browser.config.mjs",
+      "sha256": "7b9cd3dc8acdf4ecff50f1980fed2269a0580fee5833b69f0c94912d14bc13fc"
+    },
+    {
+      "path": "config/performance-budgets.json",
+      "sha256": "35d05e3d4547c2d9983559cc7d7c88b317557d1c30bf8f43ee04730b6b4cce0e"
+    },
+    {
+      "path": "package.json",
+      "sha256": "6b51194bea9e1e5784ff2e0e5b2a7d332dbd56de790ced9b150228eaaff4c084"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a4a25357b2be06784b438152c950ab757b4de418d005077fcc9f3254dded07b1"
+    },
+    {
+      "path": "scripts/check-html.mjs",
+      "sha256": "2948cb76a8db5906dee549cf42d56b2016524b0e7ea632acf36ecaf24e1ff7a6"
+    },
+    {
+      "path": "scripts/check-links.mjs",
+      "sha256": "da648451412d8576ed7b9798a36ab3038a8d565d56201754356cd833ddd04f0f"
+    },
+    {
+      "path": "scripts/check-dependencies.mjs",
+      "sha256": "1c2ed5a193f1fc0c07627c3090cb0627917a758e13f7e6d8170d397902622997"
+    },
+    {
+      "path": "scripts/check-reproducible.mjs",
+      "sha256": "44105d007d065cdae0bb888439c264b66ba83625f7df0c35dc969c8043da8622"
+    },
+    {
+      "path": "scripts/check-performance.mjs",
+      "sha256": "73ab260d9226e694fb6074ba90348d6d28a085afddca5ec29c8fcea03f4ebdd6"
+    },
+    {
+      "path": "scripts/ci-files.mjs",
+      "sha256": "8afff83c8583af3c1067380c726d446ea648369701f1502d25f4a4f9ec53b588"
+    },
+    {
+      "path": "scripts/verify-github-checks.mjs",
+      "sha256": "0cac73830409ffbdeb5a44ebece960ff73ac8643f37600952b3207a2d6e23e88"
+    },
+    {
+      "path": "scripts/predeploy.mjs",
+      "sha256": "18bd179b4f4082b1af39c629ff71a8820e281ed9874bec07773247a7ae84e5be"
+    },
+    {
+      "path": "scripts/server.mjs",
+      "sha256": "2dbd1765b01fa19beb6d7a9c416ee6b61de3a7de6565b8ab5cecd5e397655160"
+    },
+    {
+      "path": "tests/link-checks.test.mjs",
+      "sha256": "a36e3d86a2541e2781ce9887c7229971f7122aed4e50cbffabec143550e4cc0b"
+    },
+    {
+      "path": "tests/performance-harness.test.mjs",
+      "sha256": "e3ab5a0f2b176717ea2926e3bad5d95bf27a2ba631de63549d757910422a8c09"
+    },
+    {
+      "path": "tests/github-release-checks.test.mjs",
+      "sha256": "36b5a230e823276241d3c0e85facc9d51734c2195f6da5d8690fd80aaed72d89"
+    },
+    {
+      "path": "tests/browser/table-semantics.spec.mjs",
+      "sha256": "7d2b7cb94590669f8e0068bd2dba41ffe08a6f1006f6e0224cb6f1caffb7c0b4"
+    },
+    {
+      "path": "tests/browser/buyer-journeys.spec.mjs",
+      "sha256": "3147711a32417b0063b66b8ec5efd7f365792c24facf20f6673966d785c9d288"
+    },
+    {
+      "path": "tests/browser/header-resize.spec.mjs",
+      "sha256": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918"
+    }
+  ],
+  "reviewedHashes": {
+    "scripts/check-performance.mjs": "73ab260d9226e694fb6074ba90348d6d28a085afddca5ec29c8fcea03f4ebdd6",
+    "scripts/check-links.mjs": "da648451412d8576ed7b9798a36ab3038a8d565d56201754356cd833ddd04f0f",
+    "tests/browser/table-semantics.spec.mjs": "7d2b7cb94590669f8e0068bd2dba41ffe08a6f1006f6e0224cb6f1caffb7c0b4",
+    "tests/browser/buyer-journeys.spec.mjs": "3147711a32417b0063b66b8ec5efd7f365792c24facf20f6673966d785c9d288",
+    "tests/browser/header-resize.spec.mjs": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918"
+  },
+  "stalePaths": []
+}

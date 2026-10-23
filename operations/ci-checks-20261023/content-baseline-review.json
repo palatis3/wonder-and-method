@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T18:42:51.725Z",
+  "baselineBeforeSha256": "4546616821474c188f5d4764d0becb78301de9daab5e69c05971f6523254d594",
+  "pages": 1219,
+  "downloads": 430,
+  "changedPages": 1087,
+  "roleOnlyPages": 1082,
+  "roleOnlyVerification": "Reinstating exactly the prior tr/th/td role attributes restores the accepted HTML hash for every page outside the five reviewed source corrections.",
+  "sourceCorrections": "operations/ci-checks-20261023/source-link-corrections.json",
+  "sourceChanges": [
+    {
+      "path": "areas/kentucky/lawrence-county/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "links"
+      ]
+    },
+    {
+      "path": "areas/michigan/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "links"
+      ]
+    },
+    {
+      "path": "areas/michigan/otsego-county/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "links"
+      ]
+    },
+    {
+      "path": "areas/tennessee/hawkins-county/index.html",
+      "fields": [
+        "htmlSha256",
+        "links"
+      ]
+    },
+    {
+      "path": "areas/west-virginia/kanawha-county/index.html",
+      "fields": [
+        "htmlSha256",
+        "links"
+      ]
+    }
+  ],
+  "preserved": "All routes, titles, descriptions, canonicals, robots, headings, IDs, media, styles, structured data, downloads and other assets are unchanged."
+}

@@ -7,6 +7,7 @@ import {locationServices} from '../src/location-service-index.mjs';
 import baseline from './fixtures/south-carolina-preservation.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 import paths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
+import linkCorrections from '../operations/ci-checks-20261023/source-link-corrections.json' with {type:'json'};
 const identities=serviceStates.flatMap(s=>s.counties.map(c=>s.id+'/'+c.slug));
 test('SC adds exactly 46 identities while retaining every historical identity and service record',()=>{
  assert.equal(identities.length,1125);assert.equal(new Set(identities).size,1125);
@@ -14,7 +15,17 @@ test('SC adds exactly 46 identities while retaining every historical identity an
  const existing=locationServices.filter(x=>!x.path.startsWith('/areas/south-carolina/'));
  assert.deepEqual(existing.map(row=>row.path).sort(),baseline.recordPaths);
  assert.deepEqual(Object.keys(baseline.recordHashes).sort(),baseline.recordPaths);
- for(const row of existing)assert.equal(createHash('sha256').update(JSON.stringify(row)).digest('hex'),baseline.recordHashes[row.path],row.path+' unchanged record');
+ // Keep the historical baseline immutable. Replay only the separately reviewed
+ // source-link corrections, checking both their exact new fields and old hash.
+ for(const row of existing){
+  const correction=linkCorrections.records.find(record=>record.path===row.path),restored=structuredClone(row);
+  if(correction){
+   assert.equal(createHash('sha256').update(JSON.stringify(row)).digest('hex'),correction.afterSha256,row.path+' reviewed correction');
+   assert.equal(correction.beforeSha256,baseline.recordHashes[row.path]);
+   for(const edit of correction.edits){let target=restored;for(const key of edit.path.slice(0,-1))target=target[key];const key=edit.path.at(-1);assert.equal(target[key],edit.after);target[key]=edit.before;}
+  }
+  assert.equal(createHash('sha256').update(JSON.stringify(restored)).digest('hex'),baseline.recordHashes[row.path],row.path+' preserved outside reviewed corrections');
+ }
  assert.equal(serviceStates.length,22);assert.equal(serviceStates.filter(s=>s.kind==='district').length,1);
  assert.deepEqual(Object.keys(dates).filter(p=>!paths.includes(p)).sort(),baseline.routes);
 });

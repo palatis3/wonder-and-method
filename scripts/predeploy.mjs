@@ -18,7 +18,7 @@ if(version.sourceSha256!==current.sourceSha256)throw Error('Built source fingerp
 const manifest=JSON.parse(await readFile(resolve(root,'evidence/technical-check.json'),'utf8'));
 verifyTechnicalManifest(manifest,{commit,...current});
 const github=requireGithubChecks(root,commit);
-console.log(`Exact-commit GitHub technical and visual checks passed: ${github.url}`);
+console.log(`Exact-commit GitHub checks passed (${github.checks.join(', ')}): ${github.url}`);
 const secrets=JSON.parse(execFileSync(process.execPath,[resolve(root,'deployment/node_modules/wrangler/bin/wrangler.js'),'secret','list','--config',resolve(root,'deployment/wrangler.production.jsonc')],{cwd:root,encoding:'utf8',windowsHide:true,stdio:['ignore','pipe','pipe']}));
 assertProductionSecrets(secrets);
 console.log(`Predeploy source and tested-artifact check passed: ${commit}. Business enrollment gates remain separate.`);
