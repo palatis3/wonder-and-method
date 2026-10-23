@@ -32,7 +32,7 @@ const migration=await readFile(new URL('0014_journey_ohio.sql',migrationFolder),
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
 test('Ohio retains all 88 county entries and historical routes resolve to live destinations',()=>{
- assert.equal(priorRoutes.length,189);assert.equal(pages.length,389);assert.equal(byPath.size,389);
+ assert.equal(priorRoutes.length,189);assert.equal(pages.length,581);assert.equal(byPath.size,581);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),["/areas/ohio/"].sort());
  for(const route of priorRoutes){
   if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route),route);assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
@@ -43,7 +43,7 @@ test('Ohio retains all 88 county entries and historical routes resolve to live d
  assert.equal(ohioRegions.length,7);
  assert.deepEqual(ohioRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,388);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,580);
  for(const [route,count] of [['/areas/',1079],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
@@ -68,7 +68,8 @@ test('county identity survives in anchored state entries with truthful Buffalo p
   assert.ok(page.html.includes(escapeHtml(countyLocalNotes['ohio/'+c.slug]||c.geographyNote)),c.slug+' local distinction');
  }
  assert.equal(retiredCountyRoutes['/areas/ohio/erie-county/'],route+'#erie');
- assert.equal(retiredCountyRoutes['/areas/st-lawrence-county/'],'/areas/new-york/#st-lawrence');
+ assert.equal(retiredCountyRoutes['/areas/st-lawrence-county/'],undefined);
+ assert.deepEqual(schemas(byPath.get('/areas/st-lawrence-county/')).find(x=>x['@type']==='Service').areaServed,[{'@type':'AdministrativeArea',name:'St. Lawrence County, New York'}]);
  assert.equal(schemas(byPath.get('/areas/erie-county/')).find(x=>x['@type']==='Service').areaServed.name,'Erie County, New York');
 });
 

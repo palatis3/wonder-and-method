@@ -11,8 +11,17 @@ const root=resolve(import.meta.dirname,'..'),read=async path=>JSON.parse(await r
 const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(read));
 const pages=renderPages({config,offers,map,geography});
 const privateMechanics=/weighted(?:\s|_|-)*(?:score|total|rating)|(?:section|area|audit|review)\s+weights?|weighting|rubric|74\.55|scoreLimit|weightedScoreOutOf100|"(?:weight|score|scoreLimit|weightedScoreOutOf100)"\s*:|\b\d+(?:\.\d+)?\s*(?:\/|out of)\s*100\b|\b\d+(?:\.\d+)?\s*(?:\/|out of)\s*10\b/gi;
-function publicSafe(name,text){const matches=[...text.matchAll(privateMechanics)].map(match=>match[0]);assert.deepEqual(matches,[],name);}
+function publicSafe(name,text){
+ // Dated source-document paths are citations, not private numerical ratings.
+ const withoutUrlDates=text.replace(/https?:\/\/[^\s"'<>]+/g,url=>url.replace(/\/\d{4}\/(?:0[1-9]|1[0-2])(?=\/)/g,'/SOURCE-DATE/'));
+ const matches=[...withoutUrlDates.matchAll(privateMechanics)].map(match=>match[0]);assert.deepEqual(matches,[],name);
+}
 async function textFiles(folder){const result=[];for(const entry of await readdir(folder,{withFileTypes:true})){const path=join(folder,entry.name);if(entry.isDirectory())result.push(...await textFiles(path));else if(['.html','.json','.txt','.csv','.js','.mjs'].includes(extname(path)))result.push(path);}return result;}
+
+test('private-score detection permits dated source URLs while retaining rating and metadata checks',()=>{
+ publicSafe('dated citation','<a href="https://example.com/uploads/2025/10/application.pdf">Application</a>');
+ for(const text of ['8/10','87 out of 100','2025/10','{"score":8}','weightedScoreOutOf100','https://example.com/uploads/2025/10/weightedScoreOutOf100.pdf','<a href="https://example.com/uploads/2025/10/application.pdf">8/10</a>'])assert.throws(()=>publicSafe('private scoring',text),assert.AssertionError);
+});
 
 test('public review exposes all 22 useful area names and descriptions through a strict allowlist',()=>{
  const areas=publicReviewAreas(offers);assert.equal(areas.length,22);assert.deepEqual(areas.map(x=>x.id),offers.review_standard.sections.map(x=>x.id));

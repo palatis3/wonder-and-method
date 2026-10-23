@@ -26,7 +26,7 @@ const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)
 const oldSchema=prior.at(-1);
 
 test('all fifteen additions remain in the area hub reached from service pages',()=>{
- assert.equal(pages.length,389);
+ assert.equal(pages.length,581);
  const servicePages=pages.filter(p=>p.path.startsWith('/services/'));
  assert.ok(servicePages.length>=7);
  for(const slug of slugs){
@@ -47,7 +47,7 @@ test('public pages retain distinct metadata and only live pages enter the sitema
  assert.equal(new Set(titles).size,titles.length);
  assert.equal(new Set(descriptions).size,descriptions.length);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,388);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,580);
  for(const page of pages){
   if(page.path==='/404/')continue;
   assert.match(page.html,/<meta name="robots" content="index,follow"/,page.path);
