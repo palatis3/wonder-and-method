@@ -3,6 +3,7 @@ import {money,escapeHtml as e} from './shared.mjs';
 import {researchGuideContent} from './research-guide-content.mjs';
 import {researchGuideExpansions} from './research-guide-expansions.mjs';
 import {longtailGuideContent} from './longtail-guide-content.mjs';
+import {operatingGuideContent} from './operating-guide-content.mjs';
 import {expandLongtailSections} from './longtail-guide-expansions.mjs';
 import {careBoundary} from './offer-summary.mjs';
 import {serviceCoverage} from './service-area.mjs';
@@ -202,6 +203,6 @@ const guideContent={
 };
 
 export function guideContentSections(path,offers){
- const authored=longtailGuideContent[path]||researchGuideContent[path];
+ const authored=operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
  return formatGuideSections(expandLongtailSections(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])]));
 }

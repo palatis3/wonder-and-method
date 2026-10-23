@@ -1,0 +1,15 @@
+# Editorial and implementation review — October 22, 2026
+
+The owner explicitly requested research, writing, suitable redirects and publication. The resulting collection contains 27 original website-planning articles: five focused local cases and 22 shared business workflows. All have attributed public sources, an original planning worksheet, a difficult review case and a defined reader. Sixty-one directory entries link to relevant articles. The all-area decision register explains why the other areas retain their directory treatment.
+
+An independent Astra review read all 27 rendered articles and checked their index, local links, related articles and downloads. The reviewer also revisited primary evidence for Philadelphia, Alexandria, Keeneland, NCX, McBroom and Primitives By Kathy. The first 13 articles preserve their independently reviewed trial analysis and worksheets. The review supports the articles' distinct purposes; it does not certify Google compliance or predict ranking gains.
+
+The review identified an internal research note in six supporting examples in the booking-confirmation article. Those entries now identify each operator's documented distinction, its website consequence and its source. Internal inventory instructions, a publication-planning aside and a repeated paragraph were removed. The independent recheck accepted the rewritten examples and found no blocking content or integration issues. The final minor publication aside was then removed as requested.
+
+The 332 retired county routes retain their state-directory anchor destinations. A focused editorial article is not a substitute for the broad service-area intent of those URLs. The earlier Cloudflare redirect-chain repair is preserved. No county sales pages, local offices, client relationships, first-hand visits or customer results were invented.
+
+New article paths use the existing aggregate `guide` category. Historical analytics keys and the database schema are unchanged. Page-level search analysis remains available through Search Console. Every new source/article link, worksheet and directory key was checked; existing approval gates remain in place.
+
+The expanded build exposed Cloudflare's 100-rule static-header limit. Identical guide stylesheet hints now share a `/guides/*` rule, matching the existing area-family approach. Different or absent stylesheet sets still use individual rules. The independent recheck and targeted tests confirmed that behavior. Security and index policies are unchanged.
+
+Local desktop and phone inspection covered a manufacturing article, its responsive worksheet, the Philadelphia directory-to-article path, guide-index sections and the inquiry link. The link retained `goal=new_website` and `request_kind=question`; no inquiry was submitted. Metadata descriptions fit the existing 160-character editorial budget and index summaries fit the existing 14-word budget. The ordinary source verifier checked 118 HTML routes. Final exact-commit CI, deployment, backup and live checks are recorded separately in the release report.

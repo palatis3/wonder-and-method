@@ -13,7 +13,7 @@ import {privateRoute,routeIndexEligible} from '../src/index-policy.mjs';
 import {guideIllustrationAlt} from '../src/guide-art.mjs';
 
 test('all 27 guides lead their prose with an answer, show useful contents and full art, and keep one ending action',()=>{
- assert.equal(journal.length,27);
+ assert.equal(journal.length,54);
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
   assert.match(html,/<div class="journal-prose"><div class="guide-decision"><h2>The short answer<\/h2>/,item.path);
@@ -73,7 +73,7 @@ test('catalog monthly entities match their services; public payment information 
 
 test('guide index is text-only while related cards use responsive WebP derivatives',async()=>{
  const index=journalIndex(journal);
- assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,27);
+ assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,54);
  assert.doesNotMatch(index,/<img\b/);for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'));
  for(const item of journal){
   const card=journalCard(item);

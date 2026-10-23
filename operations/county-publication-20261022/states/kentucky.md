@@ -1,0 +1,130 @@
+# Kentucky: every area decision
+
+All 120 counties/equivalents have a dated two-phrase Semrush check and retained-source review. Targeted fresh process research is identified in the complete register; a missing estimate is not zero or evidence that an article cannot be useful.
+
+| Area | County-qualified estimates (web design / SEO) | Publication decision | Relevant guides |
+|---|---|---|---|
+| Adair County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#adair) |
+| Allen County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#allen) |
+| Anderson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#anderson) |
+| Ballard County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#ballard) |
+| Barren County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#barren) |
+| Bath County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#bath) |
+| Bell County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#bell) |
+| Boone County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#boone) |
+| Bourbon County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#bourbon) |
+| Boyd County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#boyd) |
+| Boyle County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#boyle) |
+| Bracken County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#bracken) |
+| Breathitt County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#breathitt) |
+| Breckinridge County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#breckinridge) |
+| Bullitt County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#bullitt) |
+| Butler County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#butler) |
+| Caldwell County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#caldwell) |
+| Calloway County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#calloway) |
+| Campbell County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#campbell) |
+| Carlisle County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#carlisle) |
+| Carroll County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#carroll) |
+| Carter County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#carter) |
+| Casey County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#casey) |
+| Christian County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#christian) |
+| Clark County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#clark) |
+| Clay County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#clay) |
+| Clinton County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#clinton) |
+| Crittenden County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#crittenden) |
+| Cumberland County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#cumberland) |
+| Daviess County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#daviess) |
+| Edmonson County | unavailable / unavailable | Use combined task guide | [Booking confirmations: check-in time, ticket collection and time zones](https://wonderandmethod.com/guides/timed-booking-handoff/) |
+| Elliott County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#elliott) |
+| Estill County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#estill) |
+| Fayette County | unavailable / unavailable | Use combined task guide | [Keep a buyer account separate from permission to purchase](https://wonderandmethod.com/guides/approved-buyer-account-flow/) |
+| Fleming County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#fleming) |
+| Floyd County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#floyd) |
+| Franklin County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#franklin) |
+| Fulton County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#fulton) |
+| Gallatin County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#gallatin) |
+| Garrard County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#garrard) |
+| Grant County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#grant) |
+| Graves County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#graves) |
+| Grayson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#grayson) |
+| Green County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#green) |
+| Greenup County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#greenup) |
+| Hancock County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#hancock) |
+| Hardin County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#hardin) |
+| Harlan County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#harlan) |
+| Harrison County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#harrison) |
+| Hart County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#hart) |
+| Henderson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#henderson) |
+| Henry County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#henry) |
+| Hickman County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#hickman) |
+| Hopkins County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#hopkins) |
+| Jackson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#jackson) |
+| Jefferson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#jefferson) |
+| Jessamine County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#jessamine) |
+| Johnson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#johnson) |
+| Kenton County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#kenton) |
+| Knott County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#knott) |
+| Knox County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#knox) |
+| Larue County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#larue) |
+| Laurel County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#laurel) |
+| Lawrence County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#lawrence) |
+| Lee County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#lee) |
+| Leslie County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#leslie) |
+| Letcher County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#letcher) |
+| Lewis County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#lewis) |
+| Lincoln County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#lincoln) |
+| Livingston County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#livingston) |
+| Logan County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#logan) |
+| Lyon County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#lyon) |
+| Madison County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#madison) |
+| Magoffin County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#magoffin) |
+| Marion County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#marion) |
+| Marshall County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#marshall) |
+| Martin County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#martin) |
+| Mason County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#mason) |
+| McCracken County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#mccracken) |
+| McCreary County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#mccreary) |
+| McLean County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#mclean) |
+| Meade County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#meade) |
+| Menifee County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#menifee) |
+| Mercer County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#mercer) |
+| Metcalfe County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#metcalfe) |
+| Monroe County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#monroe) |
+| Montgomery County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#montgomery) |
+| Morgan County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#morgan) |
+| Muhlenberg County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#muhlenberg) |
+| Nelson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#nelson) |
+| Nicholas County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#nicholas) |
+| Ohio County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#ohio) |
+| Oldham County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#oldham) |
+| Owen County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#owen) |
+| Owsley County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#owsley) |
+| Pendleton County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#pendleton) |
+| Perry County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#perry) |
+| Pike County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#pike) |
+| Powell County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#powell) |
+| Pulaski County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#pulaski) |
+| Robertson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#robertson) |
+| Rockcastle County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#rockcastle) |
+| Rowan County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#rowan) |
+| Russell County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#russell) |
+| Scott County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#scott) |
+| Shelby County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#shelby) |
+| Simpson County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#simpson) |
+| Spencer County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#spencer) |
+| Taylor County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#taylor) |
+| Todd County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#todd) |
+| Trigg County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#trigg) |
+| Trimble County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#trimble) |
+| Union County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#union) |
+| Warren County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#warren) |
+| Washington County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#washington) |
+| Wayne County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#wayne) |
+| Webster County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#webster) |
+| Whitley County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#whitley) |
+| Wolfe County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#wolfe) |
+| Woodford County | unavailable / unavailable | Retain directory; no separate article supported | [Current area entry](https://wonderandmethod.com/areas/kentucky/#woodford) |
+
+Exact phrases, source dates, retained city/sector evidence, rationale, source URLs and remaining gaps are in [the complete decision register](../data/county-decisions.json). The selection does not assert that unselected counties have no potential.
+
+[Publication review](../README.md)

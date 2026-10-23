@@ -1,0 +1,25 @@
+Ecommerce checkout: separate shipping dates, arrival requests and quotes
+Wonder and Method — planning worksheet
+Source article: https://wonderandmethod.com/guides/shipping-date-and-quote/
+
+Use your actual business details. This worksheet is not an operator reservation, approval or quote.
+
+Checkout condition | Proposed interface | Result
+Date choice | Requested ship date: [date] | Record dispatch intent.
+Arrival request | Desired arrival date, if relevant: [date]; timing subject to confirmation | Record the customer’s need separately.
+Destination | Show the method available for this destination | Do not offer nonexistent expedited choices.
+Quote threshold | This order needs a shipping quote. Contact [approved route] to confirm packing and cost | Do not invent a standard shipping charge.
+Final confirmation | Ship date, service and any confirmed timing shown distinctly | Keep estimates and commitments distinguishable.
+
+Review case
+An order requests arrival on a Friday while selecting Friday as its ship date. The interface must expose the different meanings. In a model of the cited operator, a calculated weight above its threshold must reach a shipping-pricing conversation, not a misleading default rate.
+
+Facts to confirm
+Actual fulfillment days, destination restrictions, packaging calculation, carrier service, exception threshold and customer communication process. Product handling requirements come from the producer, not this article.
+
+Your business:
+Customer task:
+Information owner:
+Source checked and date:
+Change to make:
+Result of checking the full customer task:

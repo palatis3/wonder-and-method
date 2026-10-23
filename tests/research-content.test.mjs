@@ -1,4 +1,5 @@
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
+import {operatingGuidePaths} from '../src/operating-guide-paths.mjs';
 import {longtailGuides} from '../src/longtail-guides.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -18,13 +19,13 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,91);
+ assert.equal(previous.length,278);assert.equal(pages.length,118);
  for(const route of previous){
   const destination=retiredCountyRoutes[route];
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);assert.ok(pages.find(page=>page.path===hub)?.html.includes(`id="${slug}"`),destination);}
   else assert.ok(pages.some(page=>page.path===route),route);
  }
- assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
+ assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
 });
 
 test('ROI example reconciles costs, contribution, payback and break-even',()=>{

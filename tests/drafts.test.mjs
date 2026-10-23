@@ -8,7 +8,7 @@ const o=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.ur
 test('private editorial preview renders all conditional drafts without creating approvals',()=>{
  const config={mode:'staging',guideApprovals:[],careReady:false};
  const pages=approvedConditionalPages(config,o,{previewDrafts:true});
- assert.equal(pages.length,28);
+ assert.equal(pages.length,55);
  assert.ok(pages.every(p=>/draft/i.test(p.body)));
  assert.ok(pages.find(p=>p.path==='/services/website-care/').body.includes('Not yet confirmed'));
  assert.deepEqual(config.guideApprovals,[]);

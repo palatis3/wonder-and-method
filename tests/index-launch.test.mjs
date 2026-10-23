@@ -39,15 +39,17 @@ test('built public preload hints exactly match each route’s versioned styleshe
  assert.equal(count,build.routes.filter(route=>!privateRoute(route)&&!['/404/','/payments/'].includes(route)).length);assert.ok(headers.includes('/work/fieldwork/\n'));
 });
 
-test('county preload grouping preserves differing styles and excluded pages',()=>{
+test('county and guide preload grouping preserves differing styles and excluded pages',()=>{
  const versions=new Map([['/assets/site.css','abc123'],['/assets/extra.css','def456']]);
  const html='<link rel="stylesheet" href="/assets/site.css">';
- const pages=[{path:'/areas/',html},{path:'/areas/erie-county/',html}];
- assert.equal(buildEarlyHints(pages,versions),'/areas/*\n  Link: </assets/site.css?v=abc123>; rel=preload; as=style\n');
- const varied=buildEarlyHints([...pages,{path:'/areas/example/',html:html+'<link rel="stylesheet" href="/assets/extra.css">'}],versions);
- assert.ok(!varied.includes('/areas/*'));assert.ok(varied.includes('/areas/example/\n'));assert.ok(varied.includes('/assets/extra.css?v=def456'));
- const empty=buildEarlyHints([...pages,{path:'/areas/no-styles/',html:''}],versions);
- assert.ok(!empty.includes('/areas/*'));assert.ok(!empty.includes('/areas/no-styles/'));
+ for(const family of ['/areas/','/guides/']){
+  const pages=[{path:family,html},{path:family+'example/',html}];
+  assert.equal(buildEarlyHints(pages,versions),family+'*\n  Link: </assets/site.css?v=abc123>; rel=preload; as=style\n');
+  const varied=buildEarlyHints([...pages,{path:family+'different/',html:html+'<link rel="stylesheet" href="/assets/extra.css">'}],versions);
+  assert.ok(!varied.includes(family+'*'));assert.ok(varied.includes(family+'different/\n'));assert.ok(varied.includes('/assets/extra.css?v=def456'));
+  const empty=buildEarlyHints([...pages,{path:family+'no-styles/',html:''}],versions);
+  assert.ok(!empty.includes(family+'*'));assert.ok(!empty.includes(family+'no-styles/'));
+ }
  for(const path of ['/404/','/api/example/','/assets/example/','/payments/'])assert.equal(buildEarlyHints([{path,html}],versions),'');
 });
 

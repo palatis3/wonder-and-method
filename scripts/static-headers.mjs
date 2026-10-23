@@ -10,15 +10,18 @@ export function buildEarlyHints(pages,assetVersions){
  }));
  // Only share a family rule when every emitted member has the same hints.
  // A future page with different styles falls back to exact rules.
- const areas=entries.filter(entry=>entry.path.startsWith('/areas/'));
- const groupAreas=areas.length>1&&Boolean(areas[0].link)&&areas.every(entry=>entry.link===areas[0].link);
- let areaRuleWritten=false;
+ const families=['/areas/','/guides/'].filter(prefix=>{
+  const members=entries.filter(entry=>entry.path.startsWith(prefix));
+  return members.length>1&&Boolean(members[0].link)&&members.every(entry=>entry.link===members[0].link);
+ });
+ const written=new Set();
  return entries.flatMap(entry=>{
   if(!entry.link)return [];
-  if(groupAreas&&entry.path.startsWith('/areas/')){
-   if(areaRuleWritten)return [];
-   areaRuleWritten=true;
-   return [`/areas/*\n  Link: ${entry.link}\n`];
+  const family=families.find(prefix=>entry.path.startsWith(prefix));
+  if(family){
+   if(written.has(family))return [];
+   written.add(family);
+   return [`${family}*\n  Link: ${entry.link}\n`];
   }
   return [`${entry.path}\n  Link: ${entry.link}\n`];
  }).join('\n');

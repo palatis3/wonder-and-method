@@ -1,0 +1,185 @@
+{
+  "summary": {
+    "createdAt": "2026-10-22T23:40:20.890Z",
+    "areas": 1012,
+    "phrases": 2024,
+    "positive": 45,
+    "zero": 21,
+    "unavailable": 1958,
+    "reports": 21,
+    "noDataReports": 10,
+    "usageNote": "Provider usage metadata includes negative figures and unexpectedly varied counts. Preserve raw reported values; do not present their sum as reliable consumption or cost.",
+    "limits": "Two county/equivalent-qualified phrases per area are a consistent sample, not total demand. US estimates are not county-resident counts; absent data is not zero. Earlier city, sector and related-query research remains complementary."
+  },
+  "reports": [
+    {
+      "id": "county-exact-01",
+      "requested": 100,
+      "returned": 14,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 2140
+      }
+    },
+    {
+      "id": "county-exact-02",
+      "requested": 100,
+      "returned": 11,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 280
+      }
+    },
+    {
+      "id": "county-exact-03",
+      "requested": 100,
+      "returned": 3,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 1170
+      }
+    },
+    {
+      "id": "county-exact-04",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-05",
+      "requested": 100,
+      "returned": 23,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": -490
+      }
+    },
+    {
+      "id": "county-exact-06",
+      "requested": 100,
+      "returned": 2,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 1050
+      }
+    },
+    {
+      "id": "county-exact-07",
+      "requested": 100,
+      "returned": 2,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 1050
+      }
+    },
+    {
+      "id": "county-exact-08",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-09",
+      "requested": 100,
+      "returned": 1,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 4010
+      }
+    },
+    {
+      "id": "county-exact-10",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-11",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-12",
+      "requested": 100,
+      "returned": 3,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": -970
+      }
+    },
+    {
+      "id": "county-exact-13",
+      "requested": 100,
+      "returned": 2,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 1020
+      }
+    },
+    {
+      "id": "county-exact-14",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-15",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-16",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-17",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-18",
+      "requested": 100,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    },
+    {
+      "id": "county-exact-19",
+      "requested": 100,
+      "returned": 3,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 50
+      }
+    },
+    {
+      "id": "county-exact-20",
+      "requested": 100,
+      "returned": 2,
+      "status": "data",
+      "reportedUsage": {
+        "api_units": 3020
+      }
+    },
+    {
+      "id": "county-exact-21",
+      "requested": 24,
+      "returned": 0,
+      "status": "no_data",
+      "reportedUsage": null
+    }
+  ]
+}

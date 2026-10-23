@@ -297,7 +297,7 @@ const historicalDownloads=[
 ];
 
 test('all published guides preserve existing bookmarks and downloadable resources',()=>{
- assert.equal(journal.length,27);
+ assert.equal(journal.length,54);
  assert.ok(before.every(old=>journal.some(item=>item.path===old.path)),'Every historical guide remains published');
  for(const item of before){
   const html=journalArticle(journal.find(x=>x.path===item.path),offers,journal),found=ids(html);
@@ -429,6 +429,6 @@ test('guide hub keeps all routes with concise copy and original article titles',
   assert.ok(journalArticle(item,offers,journal).includes('<h1>'+item.title.replaceAll('&','&amp;')+'</h1>'));
  }
  const descriptions=[...hub.matchAll(/class="journal-card-description">([^<]+)<\/p>/g)].map(x=>x[1]);
- assert.equal(descriptions.length,27);
+ assert.equal(descriptions.length,54);
  for(const text of descriptions)assert.ok(text.split(/\s+/).length<=14,text);
 });

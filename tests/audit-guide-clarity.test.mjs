@@ -388,7 +388,7 @@ test('guide figures remain fully present, short answers align with prose, and na
   assert.doesNotMatch(html,/journal-visual|Get help with this decision/);
   assert.equal(html.includes('class="journal-toc"'),journalSections(item.path,offers).length>=6,item.path);
   assert.equal((html.match(/<article class="journal-card journal-card-text">/g)||[]).length,2,item.path);
-  assert.match(item.category,/Fix a problem|Plan a website|Search visibility|Ongoing care/);
+  assert.match(item.category,/Fix a problem|Plan a website|Search visibility|Ongoing care|Business workflows|Local website cases/);
  }
  const index=journalIndex(journal);
  assert.match(index,/href="#planning-tools">Planning tool/);

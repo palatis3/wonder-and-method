@@ -64,14 +64,14 @@ test('northern official municipality types retain plantations, independent citie
 
 test('three northern hubs preserve 50 entries and historical routes resolve through live pages or redirects',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,91);assert.equal(byPath.size,91);assert.equal(serviceStates.length,20);
+ assert.equal(pages.length,118);assert.equal(byPath.size,118);assert.equal(serviceStates.length,20);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
  assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of prior){
   if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,90);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,117);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1012);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){
