@@ -1,23 +1,23 @@
 # Implementation status — October 23, 2026
 
-The website is published and verified. The latest release adds [six further location services](operations/location-followup-20261023/RELEASE.md), following the earlier 59-page batch. The broader county and city reassessment remains underway. Deployed application identity remains separate from later documentation commits and requirements for accepting client work.
+The website is published and verified. The latest release adds [eight further location services](operations/location-next-regions-20261023/RELEASE.md), following the earlier 59-page and six-page batches. Individual county and city review remains underway. The user has authorized parallel research workers to complete the remaining assessments. Deployed application identity remains separate from later documentation commits and requirements for accepting client work.
 
 ## Current published website
 
 | Item | Verified October 23, 2026 |
 |---|---|
 | Origin | https://wonderandmethod.com |
-| Published source | `e2733670d2d21344e1017064b92cb9018a8f7a9f` |
-| Authenticated runtime | `926b95bb-59d2-4593-9c88-21b6cc234df3` |
-| Content | 189 HTML routes including the error page; 188 sitemap URLs; 59 guides; 65 commercial location pages for 75 directory identities; all 1,079 entries across 20 states and Washington, DC retained; custom Buffalo/Erie page retained |
-| Technical validation | 689 unit tests and 281 browser checks passed; 163 intentional project skips; 34 reviewed screenshot references; exact-commit GitHub verify/visual and predeploy passed |
-| Live verification | All 189 HTML routes and 1,121 asset hashes match; all 30 new-route and hub-link checks passed. Historical routing is unchanged; its earlier 1,576-check live evidence is retained |
-| Independent review | Six-page content and implementation reviews have no unresolved findings; prior release reviews remain valid for the unchanged 59 pages |
-| Database | Migrations through 0023; six fixed page keys added, all 439 old keys retained; 456 prior aggregate rows and all 4 prior inquiries preserved; restored integrity and foreign-key checks passed |
-| Search | Google reports Success with 188 discovered pages; discovery does not establish indexing or rankings |
-| Monitoring | Authenticated health was healthy after publication. Latest observed scheduled success was 2026-10-23T05:17:29.804Z; a new scheduled run after this deployment has not been observed. No new external receiver receipt is claimed |
+| Published source | `7ced8bd52e428d46fee9b72344d06d38a4d3ef6a` |
+| Authenticated runtime | `d9a3fef4-ad7a-4485-8f2c-fcb43a159f01` |
+| Content | 197 HTML routes including the error page; 196 sitemap URLs; 59 guides; 73 commercial collection pages for 83 directory identities; 74 direct service pages for 84 identities when Buffalo/Erie is included; all 1,079 entries across 20 states and Washington, DC retained |
+| Technical validation | 690 unit tests and 283 browser checks passed; 164 intentional project skips; 34 reviewed screenshot references; exact-commit GitHub verify/visual and predeploy passed |
+| Live verification | All 197 HTML routes and 1,129 asset hashes match; all 40 new-route and hub-link checks passed. Historical routing is unchanged; its earlier 1,576-check live evidence is retained |
+| Independent review | Eight-page content and implementation reviews have no unresolved findings; prior release reviews remain valid for the unchanged 65 pages |
+| Database | Migrations through 0024; eight fixed page keys added, all 445 old keys retained, 453 total; 459 prior aggregate rows and all 4 prior inquiries preserved; restored integrity and foreign-key checks passed |
+| Search | Google reports Success with 196 discovered pages; discovery does not establish indexing or rankings |
+| Monitoring | Authenticated health was healthy after publication. Latest observed scheduled success was 2026-10-23T09:17:29.844Z; a new scheduled run after this deployment has not been observed. No new external receiver receipt is claimed |
 
-The private release record is `evidence/location-services-followup-20261023/release-record.json`, alongside the authentic technical manifest, live HTTP checks, new-route checks, backup/preservation results and Google receipt. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39903920233) passed. Earlier release reports remain historical evidence; the earlier historical-URL matrix was not rerun because its inputs are unchanged.
+The private release record is `evidence/location-next-regions-20261023/release-record.json`, alongside the authentic technical manifest, live HTTP checks, new-route checks, backup/preservation results and Google receipt. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39908668095) passed. The first live probes observed the preceding Worker on some requests during deployment propagation; repeated checks then passed without source or configuration changes. Earlier release reports remain historical evidence; the historical-URL matrix was not rerun because its inputs are unchanged.
 
 Deployment identity comes from the authenticated operator response and the private build manifest. Public `/version.json` returns 404. Do not infer the running version from the latest repository commit or an old screenshot. Follow [PRODUCTION.md](deployment/PRODUCTION.md) for publication and verification.
 

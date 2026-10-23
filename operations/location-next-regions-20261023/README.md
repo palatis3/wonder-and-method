@@ -1,6 +1,6 @@
 # Eight further location services — October 23, 2026
 
-This reviewed candidate adds eight commercial website-design pages after the [six-page release](../location-followup-20261023/RELEASE.md). Each page helps a buyer choose between a focused content improvement and a fuller service introduction, names owner inputs and gives a concrete acceptance case. The established page presentation identifies Wonder and Method as a Buffalo studio working remotely and the public business sources as research examples.
+This published release adds eight commercial website-design pages after the [six-page release](../location-followup-20261023/RELEASE.md). Each page helps a buyer choose between a focused content improvement and a fuller service introduction, names owner inputs and gives a concrete acceptance case. The established page presentation identifies Wonder and Method as a Buffalo studio working remotely and the public business sources as research examples.
 
 | Audience | Website-buying decision |
 |---|---|
@@ -19,7 +19,7 @@ Geographic and factual boundaries are retained. Inhabitect's office remains in C
 
 ## Preservation and local validation
 
-The 65 published location-page records and rendered bodies remain identical. The candidate collection has 73 pages covering 83 directory identities, alongside the existing Buffalo/Erie service page. All 59 guides, 1,079 directory entries, 333 county worksheets and 430 downloadable artifacts remain available. The historical 332-route fixture, 283 redirects and canonical routing implementation are unchanged. Four state hubs link to the additions; content-date changes are limited to those hubs and the new pages.
+The 65 published location-page records and rendered bodies remain identical. The published collection has 73 pages covering 83 directory identities, alongside the existing Buffalo/Erie service page. All 59 guides, 1,079 directory entries, 333 county worksheets and 430 downloadable artifacts remain available. The historical 332-route fixture, 283 redirects and canonical routing implementation are unchanged. Four state hubs link to the additions; content-date changes are limited to those hubs and the new pages.
 
 Migration 0024 adds eight fixed analytics page keys, retaining all 445 earlier keys and expanding the allowlist to 453. Its local database test preserves every earlier key, representative inquiry and resolution records, aggregate rows, constraints, defaults and uniqueness behavior, then sends every supported page key through the actual Worker handler. Historical migration tests retain their fixed counts and accept later additive runtime keys. Inquiry provenance remains the existing 333-option allowlist.
 
@@ -29,4 +29,4 @@ Migration 0024 adds eight fixed analytics page keys, retaining all 445 earlier k
 - All eight desktop table screenshots, two representative phone tables and the longest social-card title were inspected. No shared renderer or stylesheet change was needed.
 - The accepted content contract contains 209 HTML files because it includes twelve existing sample-handoff files. Its 23 intended changes are eight pages, four state hubs, eight social cards, the sitemap, the text index and the asset-hash manifest. No existing page body or download was removed.
 
-The independent [implementation review](reviews/implementation.md) records the technical checkpoint. Complete exact-source CI, backup and production preservation, deployment, live parity and Google submission remain release steps until separately recorded. The wider individual market reassessment and existing business-enrollment and recovery requirements remain open.
+The independent [implementation review](reviews/implementation.md) records the technical checkpoint. Complete exact-source CI, backup and production preservation, deployment, live parity and Google submission passed and are recorded in the [publication report](RELEASE.md). The wider individual market reassessment and existing business-enrollment and recovery requirements remain open.
