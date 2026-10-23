@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T19:56:28.868857+00:00",
+  "sourceCommit": "a6289745cda08852cb95457a485249a43b06f9f5",
+  "captureRun": 40014251738,
+  "result": "PASS",
+  "reviewedImageCount": 6,
+  "reviewedCropCount": 17,
+  "findings": [],
+  "scope": "Independent read-only visual checkpoint of exactly six Ubuntu screenshots and their existing Linux baseline counterparts, using every provided before/after crop. No source, baseline, build, browser, database or deployment changes.",
+  "manifest": {
+    "path": "evidence/semrush-content-opportunities-20261023/candidate-review/manifest.json",
+    "sha256": "f0ed394f1279f7a0fc8acddcec6b7239ceec02d75d58076322398927cf081f66"
+  },
+  "method": [
+    "Visually inspected all 17 JPEG comparison crops at original displayed detail, including every changed region through the final footer.",
+    "Decoded all 12 exact PNG inputs read-only to verify dimensions and unchanged leading pixels; verified candidate SHA-256 against the review manifest.",
+    "Compared preceding and following content for omissions, clipping, overlapping or unreadable text, CTA damage and footer regression.",
+    "Rechecked HEAD, manifest, six baseline hashes, six candidate hashes and 17 crop hashes immediately before writing this report."
+  ],
+  "acceptedVisualChanges": [
+    "Added service-copy example and relocation of its content-template link.",
+    "Added three fictional monthly-plan cases using the existing offers.",
+    "Added the five-request task-owner table; its rows stack as labeled cards on phone.",
+    "Downstream sections move lower and their alternating background tints shift after insertion. These visible changes do not obscure content or alter CTA/footer legibility."
+  ],
+  "images": [
+    {
+      "file": "desktop/care.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/desktop/care.png",
+      "baselineSha256": "f0b09b974aa452b190f699ff0915d88356777b4e3cb87eb3605dbdd1767c8793",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/desktop/care.png",
+      "candidateSha256": "c2e980d305f8a911bb4812b2a104c008c655447b8ef86e8eac5fe7981729b2bf",
+      "baselineSize": [
+        1440,
+        4605
+      ],
+      "candidateSize": [
+        1440,
+        5652
+      ],
+      "reviewedCropCount": 2,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-care-1.jpg",
+          "sha256": "d2f9661984f5251263c4c100e732de02ab8774f2ae93440b842f26297ede0903",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-care-2.jpg",
+          "sha256": "f0e41ca50395a6ff59c315f0dc14915f598c9d640eb71f3e35e0071c727ce7dc",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "The five-request table has readable, separated columns and complete row text.",
+        "Existing-site review, monthly report, billing, upgrade, related-guide and service-area content remain present.",
+        "Closing care CTA and footer retain their content, alignment and spacing."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 1850,
+        "identicalBottomAlignedSuffixRows": 189,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    },
+    {
+      "file": "desktop/monthly-seo.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/desktop/monthly-seo.png",
+      "baselineSha256": "b7d7ec7eb851a11c3aa6b491124e248198ffe09c905a2eb4bb14474055821f17",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/desktop/monthly-seo.png",
+      "candidateSha256": "5b94c55180aa584db93fb7e204f3b4c68c7b4bd002aeda2e3c27c639585fdc63",
+      "baselineSize": [
+        1440,
+        5096
+      ],
+      "candidateSize": [
+        1440,
+        6064
+      ],
+      "reviewedCropCount": 2,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-monthly-seo-1.jpg",
+          "sha256": "83fc64f1d57cdc7453e189f1fc91d9de078a0f981859ef1826e5f4a5019529ce",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-monthly-seo-2.jpg",
+          "sha256": "93abb4f1c5b2574532022576c5cde33818f711fa3f0c1c871a91b10a5a215915",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "All three fictional plan-selection cases fit the three-column table without overlap.",
+        "The fictional-example notice, counts, review boundary and completed-report link are readable.",
+        "Existing process, example, payment limits, accordion, service-area links, CTA and footer remain present."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 2140,
+        "identicalBottomAlignedSuffixRows": 221,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    },
+    {
+      "file": "desktop/web-design.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/desktop/web-design.png",
+      "baselineSha256": "f192593ee3462526e4ecf4f68751debf3fa4dba5111eea1b29ae72a4d818d4aa",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/desktop/web-design.png",
+      "candidateSha256": "4e8d591cb9425f38cdfefb8bcb5ce69688bce1155125d874623ac15c9a7829c7",
+      "baselineSize": [
+        1440,
+        6282
+      ],
+      "candidateSize": [
+        1440,
+        6863
+      ],
+      "reviewedCropCount": 2,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-web-design-1.jpg",
+          "sha256": "a8dd5e2f3741f06aa518c4fb5eb2ecad510c1da77c9883ed2abc86053745d260",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/desktop-web-design-2.jpg",
+          "sha256": "9063ccba0a3ac99df4b3d336cf4531c009e31c154b81259e9652a84e869c132b",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "Owner notes, possible paragraph, approval boundary and annotated-template link are readable and separated.",
+        "The prior Included, files, add-ons, existing-site and planning sections remain present.",
+        "The content-template link moves out of Related guides into the new example as expected; the two remaining guide links, closing CTA and footer retain their layout."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 3124,
+        "identicalBottomAlignedSuffixRows": 189,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    },
+    {
+      "file": "phone/care.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/phone/care.png",
+      "baselineSha256": "affdf3518ee79017f58888c157bf589f93ae58dbda024d4bd1a06ed1c7e3d4c4",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/phone/care.png",
+      "candidateSha256": "62b6d014cb9f63adf5eaaf4f702d8391602074276496304e9fd439a5a2fca34b",
+      "baselineSize": [
+        390,
+        5795
+      ],
+      "candidateSize": [
+        390,
+        8210
+      ],
+      "reviewedCropCount": 4,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-care-1.jpg",
+          "sha256": "bcb140451c570cce3e2e82787ebaafe0520314d2eaa202f2da0925ba227176fa",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-care-2.jpg",
+          "sha256": "9fce6406b6930892f095f6ab0b504067f4146c0e195cd0ff78ff3b006d3df4c5",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-care-3.jpg",
+          "sha256": "320271c38afc106b656c0d1ae1ef722591fd78443a2394857c6468b7aeacde8c",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-care-4.jpg",
+          "sha256": "a19c3891b031cfc0e9363011f051bb4f29d2139acb3f69baf115d811707bf4a1",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "All five requests stack into complete cards with Studio scope and Owner or next step labels.",
+        "Long exclusions and ownership text wrap inside the card; no overlap or horizontal clipping is visible.",
+        "Earlier sections, closing care CTA and two-column footer remain complete."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 2236,
+        "identicalBottomAlignedSuffixRows": 189,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    },
+    {
+      "file": "phone/monthly-seo.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/phone/monthly-seo.png",
+      "baselineSha256": "d65c5814899caf61be57ffb5e9147c339d510663cab1466b06eca3616b41fceb",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/phone/monthly-seo.png",
+      "candidateSha256": "002f204f629d4237a7ae28f8f6445356a227a40b547c9e45b9cacc8b646decdc",
+      "baselineSize": [
+        390,
+        7163
+      ],
+      "candidateSize": [
+        390,
+        9213
+      ],
+      "reviewedCropCount": 4,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-monthly-seo-1.jpg",
+          "sha256": "6d5e4cfb286c46975b31dd93d5bfadaccf020314518ff7e675ede8db78652a67",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-monthly-seo-2.jpg",
+          "sha256": "b60fe51e9bd6e352add5770d97488a3669765133b099616c0d48c7fed87a6359",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-monthly-seo-3.jpg",
+          "sha256": "6e99cac6a0963356c4d4ebee15714f4a63427544e79fffc5aabf8163fa290be7",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-monthly-seo-4.jpg",
+          "sha256": "0d6ffeb69c5b2bd7e31c1a1c7b16b9b840ea4843ed3ef998139df0249621b3fb",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "The three cases stack into labeled cards; complete Improve, Grow and Keep Running text is readable.",
+        "The longest counting label and body paragraphs wrap without overflow or hidden text.",
+        "Earlier process and limits content, closing CTA and footer remain complete."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 3140,
+        "identicalBottomAlignedSuffixRows": 189,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    },
+    {
+      "file": "phone/web-design.png",
+      "result": "PASS",
+      "findings": [],
+      "baselinePath": "tests/visual/baselines/linux/phone/web-design.png",
+      "baselineSha256": "6f1831b2810340351a85f250b9b3800ec1fd37e7bd071fe21af974fa1c10cf32",
+      "candidatePath": "evidence/semrush-content-opportunities-20261023/linux-review-inputs/phone/web-design.png",
+      "candidateSha256": "1f7add0ff11463adb89c3af419bd3d77b18cb405df93fd56e3e2c69e6380f3a9",
+      "baselineSize": [
+        390,
+        11227
+      ],
+      "candidateSize": [
+        390,
+        12067
+      ],
+      "reviewedCropCount": 3,
+      "reviewedCrops": [
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-web-design-1.jpg",
+          "sha256": "dc7cfa2b5b81c3c7707e1324755d66957b415746f2b14a1cbde964ba7f02cc63",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-web-design-2.jpg",
+          "sha256": "d6c8dd327b2e92474497d32a77c7ddbbd2bb1839fff744d46f3f77137a93aaff",
+          "reviewed": true
+        },
+        {
+          "path": "evidence/semrush-content-opportunities-20261023/candidate-review/phone-web-design-3.jpg",
+          "sha256": "b1966a9051c30797efaa1bd9ee870c29a0db9d1ba10544c7facb77dffa6327ee",
+          "reviewed": true
+        }
+      ],
+      "observations": [
+        "The owner notes and example paragraph wrap within the existing phone content width without clipping.",
+        "The notes-to-copy link is readable in its new section; the other earlier content remains present.",
+        "The shorter Related guides list is intentional; closing CTA and footer remain complete and aligned."
+      ],
+      "pixelVerification": {
+        "method": "Pillow RGB ImageChops difference on all overlapping pixels, followed by independent bottom-aligned comparison. Dimensions and candidate hashes were verified against the manifest.",
+        "identicalPrefixRows": 7266,
+        "identicalBottomAlignedSuffixRows": 189,
+        "headerRegression": "No changed pixels above the stated insertion point; header and preceding content are identical."
+      }
+    }
+  ],
+  "limitations": [
+    "Visual PASS applies only to the exact SHA-256 inputs recorded here.",
+    "This checkpoint does not replace behavioral, accessibility, content, link or release-job checks.",
+    "The parent must match the dedicated capture workflow 40014869671 artifacts to these six candidate hashes, confirm the other 28 references are unchanged, and obtain all seven release-job passes before release."
+  ],
+  "ownedOutputs": [
+    "evidence/semrush-content-opportunities-20261023/visual-review.json",
+    "evidence/semrush-content-opportunities-20261023/visual-review.txt"
+  ]
+}

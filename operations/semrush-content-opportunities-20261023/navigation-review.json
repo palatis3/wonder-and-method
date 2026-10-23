@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T20:03:55.332Z",
+  "status": "PASS",
+  "scope": "Independent bounded review of generalizing navigation initialization before main and preloading Manrope on all shared public layouts; no source mutation or test execution.",
+  "head": "a6289745cda08852cb95457a485249a43b06f9f5",
+  "workingTreeSourceSha256": "98c2837627f35317d5fa4ffd09137f72249d492192a22a3c3241b0a20159dcf8",
+  "newTestSha256": "8f9ab07b790aa6364efaca2ba9b1c7a7040a31b1a2557721ca2179668f907cbb",
+  "inputHashes": {
+    "src/pages.mjs": {
+      "sha256": "98c2837627f35317d5fa4ffd09137f72249d492192a22a3c3241b0a20159dcf8",
+      "bytes": 31401
+    },
+    "src/assets/site-navigation.js": {
+      "sha256": "e2943c6a0a52fdbf4dc1ceaf8ff47c8679d5e8e4fac85d69ab27843245ab1830",
+      "bytes": 4015
+    },
+    "src/assets/layout-components.css": {
+      "sha256": "b3d2be24bf457c1cb156482e3f73d2abd0fe33c513afdc0fe1ddc2cdce4afbbe",
+      "bytes": 20525
+    },
+    "src/assets/premium.css": {
+      "sha256": "6ad9ab44d97febd1bddec136eb97ecbae2b21f3bf147088d4913568358e68477",
+      "bytes": 30963
+    },
+    "tests/browser/navigation-loading.spec.mjs": {
+      "sha256": "8f9ab07b790aa6364efaca2ba9b1c7a7040a31b1a2557721ca2179668f907cbb",
+      "bytes": 2269
+    },
+    "tests/browser/header-resize.spec.mjs": {
+      "sha256": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918",
+      "bytes": 3579
+    },
+    "tests/browser/footer-surfaces.spec.mjs": {
+      "sha256": "81e9fb04f4001c90253e9d9da4b2273f849135d38f7cfb0ac5fe73c13d369c2d",
+      "bytes": 3604
+    },
+    "tests/browser/no-javascript.spec.mjs": {
+      "sha256": "3f275abd8d0b28ceae47c4063ffb0c0dc9a5b467c0e0f7b25c39214dbac1e711",
+      "bytes": 16008
+    },
+    "tests/browser/regional-directory.spec.mjs": {
+      "sha256": "7eb030a97f555fbef54a8a01edc74cae9bbe03b03219b91cba4a0e2fffff86a9",
+      "bytes": 9837
+    },
+    "tests/browser/fixtures.mjs": {
+      "sha256": "1ad324c0a863dabdbbd18f55e015189d103471649b4f3915a229b70f4bd62fd6",
+      "bytes": 707
+    },
+    "playwright.config.mjs": {
+      "sha256": "cb4a83cee0a35786fbc61555da983d8669c521ae154e749c9ae9896451b27b6a",
+      "bytes": 1330
+    },
+    "scripts/site-contract.mjs": {
+      "sha256": "fabeb1aa5cbeb8e02768701e2a6843a42b3b1b6f67d6710b0fdd488a688976c7",
+      "bytes": 5200
+    },
+    "evidence/semrush-content-opportunities-20261023/review-navigation-contract.mjs": {
+      "sha256": "cae1e74dc27d6fdeee400781b040704a9227e5aa5f5be4577df9202594adb940",
+      "bytes": 2677
+    },
+    "evidence/semrush-content-opportunities-20261023/navigation-content-review.json": {
+      "sha256": "f90c74ac18a3466522cdfdbeb89fd1ef2f9064a939965309c903628a859d4f30",
+      "bytes": 91713
+    },
+    "evidence/semrush-content-opportunities-20261023/linux-performance/summary.json": {
+      "sha256": "8b77e45641f24d233867b3fcec8ecd87bf254379fa30255da2ea316902e9bb8c",
+      "bytes": 6645
+    },
+    "evidence/semrush-content-opportunities-20261023/pricing-cls-probe.log": {
+      "sha256": "53e5aa503dfdddbdb84e9340b78e954f041c11825e03ada9e1e94c07c23f2d9f",
+      "bytes": 6116
+    },
+    "evidence/semrush-content-opportunities-20261023/navigation-regression.log": {
+      "sha256": "98fd28d608aa693cac6cfcf8053d6f165398f7e2de7bcd6baba6b22796c2fb19",
+      "bytes": 6269
+    },
+    "evidence/semrush-content-opportunities-20261023/performance-navigation.log": {
+      "sha256": "e57681c2b48b0267aeafdeef9af8b3df485d23b11edfd478c98742ec8f5ee287",
+      "bytes": 817
+    },
+    "dist/index.html": {
+      "sha256": "acb396c965c0b4fb0d884a85332fc9103dd8109ce8ccd61f755a82fbb17630d3",
+      "bytes": 35025
+    },
+    "dist/pricing/index.html": {
+      "sha256": "ff148bf051aaebed3f276d5b9f3c6afbe14fcc1f09f1248df9d688aadf8bc1f9",
+      "bytes": 48808
+    },
+    "dist/areas/south-carolina/index.html": {
+      "sha256": "f0acc9b1fd1a7b77041aff904f669f80b55d8b0fed3973167c6fc9181753fdda",
+      "bytes": 73051
+    }
+  },
+  "findings": [],
+  "unresolvedCodeIssues": [],
+  "reviewedChanges": [
+    {
+      "file": "src/pages.mjs",
+      "line": 118,
+      "change": "Manrope font preload becomes unconditional; head navigation preload and the same classic navigation script immediately after header become unconditional."
+    },
+    {
+      "file": "tests/browser/navigation-loading.spec.mjs",
+      "line": 3,
+      "change": "Delay the navigation response by 500ms on four routes, measure main layout-shift contributions, and verify menu/Escape behavior."
+    },
+    {
+      "file": "tests/browser/navigation-loading.spec.mjs",
+      "line": 30,
+      "change": "Abort the navigation resource on home and pricing, verify six visible native links, usable service disclosure, and no horizontal overflow."
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Parse timing",
+      "result": "PASS",
+      "evidence": "src/assets/site-navigation.js reads only the already-parsed header for synchronous setup. document.body exists, nav-ready is added after controls/listeners are bound, and optional modules remain deferred. afterParse() gates initial revealAnchor and syncFooter on DOMContentLoaded when the document is loading."
+    },
+    {
+      "topic": "Initial anchors and footer",
+      "result": "PASS",
+      "evidence": "The shared script is byte-identical to HEAD. Initial anchor/ancestor-details reveal and footer media state wait for completed parsing; hashchange and media-query listeners remain intact. The broader suite already contains initial regional-fragment and dedicated no-JavaScript journeys, for the parent final CI gate."
+    },
+    {
+      "topic": "Native fallback",
+      "result": "PASS",
+      "evidence": "No unconditional nav-ready marker was added to HTML. A disabled or failed navigation script retains existing native links/disclosures and hides the nonfunctional menu toggle through unchanged CSS. New failed-resource tests passed in all three Chromium projects."
+    },
+    {
+      "topic": "Preload correctness",
+      "result": "PASS",
+      "evidence": "Built home, pricing and South Carolina hub each contain exactly one navigation execution after </header> and before <main>, with an identical versioned preload URL. The Manrope font preload uses as=font, font/woff2 and crossorigin, matching the existing self-hosted CSS font used by .studio-site."
+    },
+    {
+      "topic": "Content preservation",
+      "result": "PASS",
+      "evidence": "Reviewed the inverse-only proof implementation and its PASS record: all 1,214 changed HTML files reproduce the accepted normalized hashes after reversing only these loading-order edits; 11 auxiliary HTML files and all assets/downloads are unchanged. Current src/pages.mjs SHA-256 matches the proof input."
+    },
+    {
+      "topic": "Regression quality",
+      "result": "PASS",
+      "evidence": "The new observer measures the diagnosed main movement rather than inspecting implementation strings. Its delayed-resource and failed-resource cases both passed in desktop, phone and reduced-motion projects. The complete scoped run records 20 passed and 16 existing project-specific skips; skip conditions match the seven desktop-only resize cases and one text-resize case in each phone project."
+    }
+  ],
+  "evidence": {
+    "navigationJsUnchangedFromHead": true,
+    "sourceMatchesContentProof": true,
+    "initialLinuxPricing": {
+      "score": 0.97,
+      "cls": 0.1000084471666241
+    },
+    "controlledPricing": [
+      {
+        "candidate": false,
+        "cls": 0.1000381619266437,
+        "shiftValues": [
+          0.08157457915577217,
+          0.018463582770871543
+        ]
+      },
+      {
+        "candidate": true,
+        "cls": 0.018463582770871543,
+        "shiftValues": [
+          0.018463582770871543
+        ]
+      }
+    ],
+    "scopedRegression": {
+      "passed": 20,
+      "skipped": 16,
+      "newCaseExecutions": 6,
+      "logConfirms": true
+    },
+    "currentLocalLighthouse": [
+      {
+        "path": "/",
+        "score": 0.98,
+        "largest-contentful-paint": 2333.6075,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      {
+        "path": "/pricing/",
+        "score": 0.99,
+        "largest-contentful-paint": 1806.2556,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      {
+        "path": "/contact/",
+        "score": 0.99,
+        "largest-contentful-paint": 1956.0693,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 17
+      },
+      {
+        "path": "/payments/",
+        "score": 0.99,
+        "largest-contentful-paint": 1955.3741,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      {
+        "path": "/guides/website-content-template/",
+        "score": 0.99,
+        "largest-contentful-paint": 1805.8546999999999,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      {
+        "path": "/areas/south-carolina/",
+        "score": 0.99,
+        "largest-contentful-paint": 2104.8045,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    ],
+    "contentProof": {
+      "reviewedHtmlChanges": 1214,
+      "unchangedAuxiliaryHtml": 11,
+      "assetAndDownloadBytesPreserved": true
+    }
+  },
+  "remainingReleaseGates": [
+    "Parent-owned exact final screenshot parity and Linux visual baseline acceptance.",
+    "Parent-owned complete seven-check CI run against the final commit, including initial-fragment and no-JavaScript journeys."
+  ],
+  "limits": [
+    "This review did not run browsers, builds, Lighthouse, or full tests. Existing source, tests, proof scripts and recorded evidence were read only.",
+    "A parser-blocking navigation response gates main parsing; preloading starts its transfer in head. Current six-route local Lighthouse results remain within all reported budgets, including LCP. Final Linux CI remains a separate release gate."
+  ],
+  "ownership": {
+    "writtenFiles": [
+      "evidence/semrush-content-opportunities-20261023/navigation-review.json",
+      "evidence/semrush-content-opportunities-20261023/navigation-review.txt"
+    ],
+    "otherFilesModified": false,
+    "parentPerformanceSessionTouched": false,
+    "subagentsSpawned": false
+  }
+}

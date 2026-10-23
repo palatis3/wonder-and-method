@@ -1,0 +1,285 @@
+{
+  "checkedAt": "2026-10-23T20:06:26.815Z",
+  "status": "PASS",
+  "captureCommit": "a6289745cda08852cb95457a485249a43b06f9f5",
+  "captureRun": 40014869671,
+  "reviewRun": 40014251738,
+  "changedImages": 6,
+  "unchangedImages": 28,
+  "independentReview": "visual-review.json",
+  "loadingOrderPixelProof": "navigation-pixel-parity.json",
+  "files": [
+    {
+      "file": "desktop/about.png",
+      "beforeSha256": "9bd4bc8af8f8281af5768ea874cafafe67df62c8ffa807922a558c0456bbcdac",
+      "afterSha256": "9bd4bc8af8f8281af5768ea874cafafe67df62c8ffa807922a558c0456bbcdac",
+      "candidateSha256": "9bd4bc8af8f8281af5768ea874cafafe67df62c8ffa807922a558c0456bbcdac",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/care.png",
+      "beforeSha256": "f0b09b974aa452b190f699ff0915d88356777b4e3cb87eb3605dbdd1767c8793",
+      "afterSha256": "c2e980d305f8a911bb4812b2a104c008c655447b8ef86e8eac5fe7981729b2bf",
+      "candidateSha256": "c2e980d305f8a911bb4812b2a104c008c655447b8ef86e8eac5fe7981729b2bf",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/concept.png",
+      "beforeSha256": "03e6b02acc307ac921685c59e8769fc81416fe668b1d7045913caa3ffd1ae8ad",
+      "afterSha256": "03e6b02acc307ac921685c59e8769fc81416fe668b1d7045913caa3ffd1ae8ad",
+      "candidateSha256": "03e6b02acc307ac921685c59e8769fc81416fe668b1d7045913caa3ffd1ae8ad",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/contact.png",
+      "beforeSha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2",
+      "afterSha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2",
+      "candidateSha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/county-entry.png",
+      "beforeSha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145",
+      "afterSha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145",
+      "candidateSha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/county.png",
+      "beforeSha256": "232e487d6c002fb55a0e60e46f7c753aa487c86ad82007a787b24e511aa8932f",
+      "afterSha256": "232e487d6c002fb55a0e60e46f7c753aa487c86ad82007a787b24e511aa8932f",
+      "candidateSha256": "232e487d6c002fb55a0e60e46f7c753aa487c86ad82007a787b24e511aa8932f",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/district-directory.png",
+      "beforeSha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433",
+      "afterSha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433",
+      "candidateSha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/footer-closed.png",
+      "beforeSha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef",
+      "afterSha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef",
+      "candidateSha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/footer-open.png",
+      "beforeSha256": "5ec63396e81572ea1c210ec33430df564078f0a0e02d4d2505d07008d6472578",
+      "afterSha256": "5ec63396e81572ea1c210ec33430df564078f0a0e02d4d2505d07008d6472578",
+      "candidateSha256": "5ec63396e81572ea1c210ec33430df564078f0a0e02d4d2505d07008d6472578",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/guide.png",
+      "beforeSha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1",
+      "afterSha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1",
+      "candidateSha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/home.png",
+      "beforeSha256": "58d8a55d9ef1a8a25dc22f2406298a8f1e67f4719ad80004470a9dfdd0917bde",
+      "afterSha256": "58d8a55d9ef1a8a25dc22f2406298a8f1e67f4719ad80004470a9dfdd0917bde",
+      "candidateSha256": "58d8a55d9ef1a8a25dc22f2406298a8f1e67f4719ad80004470a9dfdd0917bde",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/monthly-seo.png",
+      "beforeSha256": "b7d7ec7eb851a11c3aa6b491124e248198ffe09c905a2eb4bb14474055821f17",
+      "afterSha256": "5b94c55180aa584db93fb7e204f3b4c68c7b4bd002aeda2e3c27c639585fdc63",
+      "candidateSha256": "5b94c55180aa584db93fb7e204f3b4c68c7b4bd002aeda2e3c27c639585fdc63",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/pricing.png",
+      "beforeSha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549",
+      "afterSha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549",
+      "candidateSha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/regional-directory.png",
+      "beforeSha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c",
+      "afterSha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c",
+      "candidateSha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/scope-request.png",
+      "beforeSha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3",
+      "afterSha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3",
+      "candidateSha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/web-design.png",
+      "beforeSha256": "f192593ee3462526e4ecf4f68751debf3fa4dba5111eea1b29ae72a4d818d4aa",
+      "afterSha256": "4e8d591cb9425f38cdfefb8bcb5ce69688bce1155125d874623ac15c9a7829c7",
+      "candidateSha256": "4e8d591cb9425f38cdfefb8bcb5ce69688bce1155125d874623ac15c9a7829c7",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "desktop/work.png",
+      "beforeSha256": "486a2196b27a443c53f4d7308bc6ca53f7928c2a6ef156bf562eaa4df5501884",
+      "afterSha256": "486a2196b27a443c53f4d7308bc6ca53f7928c2a6ef156bf562eaa4df5501884",
+      "candidateSha256": "486a2196b27a443c53f4d7308bc6ca53f7928c2a6ef156bf562eaa4df5501884",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/about.png",
+      "beforeSha256": "52b198086e9955750d24e998dc979d61ca4659aac1c4b56e3ee462a5a7520431",
+      "afterSha256": "52b198086e9955750d24e998dc979d61ca4659aac1c4b56e3ee462a5a7520431",
+      "candidateSha256": "52b198086e9955750d24e998dc979d61ca4659aac1c4b56e3ee462a5a7520431",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/care.png",
+      "beforeSha256": "affdf3518ee79017f58888c157bf589f93ae58dbda024d4bd1a06ed1c7e3d4c4",
+      "afterSha256": "62b6d014cb9f63adf5eaaf4f702d8391602074276496304e9fd439a5a2fca34b",
+      "candidateSha256": "62b6d014cb9f63adf5eaaf4f702d8391602074276496304e9fd439a5a2fca34b",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/concept.png",
+      "beforeSha256": "80f84c40387170ca9eb3ec2f03347131d61e1daa9cc416f16335682fedebb630",
+      "afterSha256": "80f84c40387170ca9eb3ec2f03347131d61e1daa9cc416f16335682fedebb630",
+      "candidateSha256": "80f84c40387170ca9eb3ec2f03347131d61e1daa9cc416f16335682fedebb630",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/contact.png",
+      "beforeSha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e",
+      "afterSha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e",
+      "candidateSha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/county-entry.png",
+      "beforeSha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "afterSha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "candidateSha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/county.png",
+      "beforeSha256": "e99d38f2a88b5f45d96b7f9580d2f37b9ae58befd2ccf44aa52701c6a79ade53",
+      "afterSha256": "e99d38f2a88b5f45d96b7f9580d2f37b9ae58befd2ccf44aa52701c6a79ade53",
+      "candidateSha256": "e99d38f2a88b5f45d96b7f9580d2f37b9ae58befd2ccf44aa52701c6a79ade53",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/district-directory.png",
+      "beforeSha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f",
+      "afterSha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f",
+      "candidateSha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/footer-closed.png",
+      "beforeSha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8",
+      "afterSha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8",
+      "candidateSha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/footer-open.png",
+      "beforeSha256": "345fd3389967d5639f20d14261f26849edf113e9c849667481f5cf530fbba662",
+      "afterSha256": "345fd3389967d5639f20d14261f26849edf113e9c849667481f5cf530fbba662",
+      "candidateSha256": "345fd3389967d5639f20d14261f26849edf113e9c849667481f5cf530fbba662",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/guide.png",
+      "beforeSha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4",
+      "afterSha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4",
+      "candidateSha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/home.png",
+      "beforeSha256": "d11b17efce3676757d73bbf6c1b2db0c84bf82aa8e0b8ea22b35bf78c01b60fa",
+      "afterSha256": "d11b17efce3676757d73bbf6c1b2db0c84bf82aa8e0b8ea22b35bf78c01b60fa",
+      "candidateSha256": "d11b17efce3676757d73bbf6c1b2db0c84bf82aa8e0b8ea22b35bf78c01b60fa",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/monthly-seo.png",
+      "beforeSha256": "d65c5814899caf61be57ffb5e9147c339d510663cab1466b06eca3616b41fceb",
+      "afterSha256": "002f204f629d4237a7ae28f8f6445356a227a40b547c9e45b9cacc8b646decdc",
+      "candidateSha256": "002f204f629d4237a7ae28f8f6445356a227a40b547c9e45b9cacc8b646decdc",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/pricing.png",
+      "beforeSha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425",
+      "afterSha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425",
+      "candidateSha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/regional-directory.png",
+      "beforeSha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691",
+      "afterSha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691",
+      "candidateSha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/scope-request.png",
+      "beforeSha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b",
+      "afterSha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b",
+      "candidateSha256": "2772b3ab071ceac7c2c3410abbabfa33be4845e2b19b2c1cba3b88db9831c432",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 1006
+    },
+    {
+      "file": "phone/web-design.png",
+      "beforeSha256": "6f1831b2810340351a85f250b9b3800ec1fd37e7bd071fe21af974fa1c10cf32",
+      "afterSha256": "1f7add0ff11463adb89c3af419bd3d77b18cb405df93fd56e3e2c69e6380f3a9",
+      "candidateSha256": "1f7add0ff11463adb89c3af419bd3d77b18cb405df93fd56e3e2c69e6380f3a9",
+      "changed": true,
+      "unchangedCandidateDifferencePixels": 0
+    },
+    {
+      "file": "phone/work.png",
+      "beforeSha256": "27aaa98eae9d2ac8db9ff789481621139d8b1851d4a868aec323444cc35db82e",
+      "afterSha256": "27aaa98eae9d2ac8db9ff789481621139d8b1851d4a868aec323444cc35db82e",
+      "candidateSha256": "27aaa98eae9d2ac8db9ff789481621139d8b1851d4a868aec323444cc35db82e",
+      "changed": false,
+      "unchangedCandidateDifferencePixels": 0
+    }
+  ]
+}

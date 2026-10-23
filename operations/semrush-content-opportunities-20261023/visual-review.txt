@@ -1,0 +1,59 @@
+Visual checkpoint: PASS
+Source: a6289745cda08852cb95457a485249a43b06f9f5
+Capture run: 40014251738
+Reviewed: 6 PNG comparisons, all 17 before/after crops.
+No actionable visual findings. No clipping, unreadable or overlapping table text, missing earlier content, header regression, or CTA/footer regression was observed.
+
+Accepted changes: the three requested content additions, relocated web-design content-template link, resulting vertical movement and downstream alternating section tints.
+
+desktop/care.png - PASS - 2 crops
+Candidate SHA-256: c2e980d305f8a911bb4812b2a104c008c655447b8ef86e8eac5fe7981729b2bf
+Baseline SHA-256: f0b09b974aa452b190f699ff0915d88356777b4e3cb87eb3605dbdd1767c8793
+Pixel-identical header/preceding prefix: 1850 rows.
+- The five-request table has readable, separated columns and complete row text.
+- Existing-site review, monthly report, billing, upgrade, related-guide and service-area content remain present.
+- Closing care CTA and footer retain their content, alignment and spacing.
+
+desktop/monthly-seo.png - PASS - 2 crops
+Candidate SHA-256: 5b94c55180aa584db93fb7e204f3b4c68c7b4bd002aeda2e3c27c639585fdc63
+Baseline SHA-256: b7d7ec7eb851a11c3aa6b491124e248198ffe09c905a2eb4bb14474055821f17
+Pixel-identical header/preceding prefix: 2140 rows.
+- All three fictional plan-selection cases fit the three-column table without overlap.
+- The fictional-example notice, counts, review boundary and completed-report link are readable.
+- Existing process, example, payment limits, accordion, service-area links, CTA and footer remain present.
+
+desktop/web-design.png - PASS - 2 crops
+Candidate SHA-256: 4e8d591cb9425f38cdfefb8bcb5ce69688bce1155125d874623ac15c9a7829c7
+Baseline SHA-256: f192593ee3462526e4ecf4f68751debf3fa4dba5111eea1b29ae72a4d818d4aa
+Pixel-identical header/preceding prefix: 3124 rows.
+- Owner notes, possible paragraph, approval boundary and annotated-template link are readable and separated.
+- The prior Included, files, add-ons, existing-site and planning sections remain present.
+- The content-template link moves out of Related guides into the new example as expected; the two remaining guide links, closing CTA and footer retain their layout.
+
+phone/care.png - PASS - 4 crops
+Candidate SHA-256: 62b6d014cb9f63adf5eaaf4f702d8391602074276496304e9fd439a5a2fca34b
+Baseline SHA-256: affdf3518ee79017f58888c157bf589f93ae58dbda024d4bd1a06ed1c7e3d4c4
+Pixel-identical header/preceding prefix: 2236 rows.
+- All five requests stack into complete cards with Studio scope and Owner or next step labels.
+- Long exclusions and ownership text wrap inside the card; no overlap or horizontal clipping is visible.
+- Earlier sections, closing care CTA and two-column footer remain complete.
+
+phone/monthly-seo.png - PASS - 4 crops
+Candidate SHA-256: 002f204f629d4237a7ae28f8f6445356a227a40b547c9e45b9cacc8b646decdc
+Baseline SHA-256: d65c5814899caf61be57ffb5e9147c339d510663cab1466b06eca3616b41fceb
+Pixel-identical header/preceding prefix: 3140 rows.
+- The three cases stack into labeled cards; complete Improve, Grow and Keep Running text is readable.
+- The longest counting label and body paragraphs wrap without overflow or hidden text.
+- Earlier process and limits content, closing CTA and footer remain complete.
+
+phone/web-design.png - PASS - 3 crops
+Candidate SHA-256: 1f7add0ff11463adb89c3af419bd3d77b18cb405df93fd56e3e2c69e6380f3a9
+Baseline SHA-256: 6f1831b2810340351a85f250b9b3800ec1fd37e7bd071fe21af974fa1c10cf32
+Pixel-identical header/preceding prefix: 7266 rows.
+- The owner notes and example paragraph wrap within the existing phone content width without clipping.
+- The notes-to-copy link is readable in its new section; the other earlier content remains present.
+- The shorter Related guides list is intentional; closing CTA and footer remain complete and aligned.
+
+All input hashes and HEAD were unchanged when the report was written.
+This is a visual checkpoint only. Parent must match capture workflow 40014869671 to these exact six candidate hashes, verify the other 28 references are unchanged, and obtain all seven release-job passes.
+Only visual-review.json and visual-review.txt were written.

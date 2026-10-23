@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23T20:00:25.689Z",
+  "config": {
+    "runs": 3,
+    "paths": [
+      "/",
+      "/pricing/",
+      "/contact/",
+      "/payments/",
+      "/guides/website-content-template/",
+      "/areas/south-carolina/"
+    ],
+    "budgets": {
+      "largest-contentful-paint": 2500,
+      "cumulative-layout-shift": 0.1,
+      "total-blocking-time": 200
+    },
+    "minimumPerformanceScore": 0.9
+  },
+  "results": [
+    {
+      "path": "/",
+      "score": 0.98,
+      "metrics": {
+        "largest-contentful-paint": 2333.6075,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 2333.6075,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.98
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2333.9290499999997,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.98
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2258.77005,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.98
+        }
+      ]
+    },
+    {
+      "path": "/pricing/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1806.2556,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 1806.3146000000002,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 1
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1805.4398999999999,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1806.2556,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        }
+      ]
+    },
+    {
+      "path": "/contact/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1956.0693,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 17
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 1955.0493000000001,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 17
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1956.0693,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 18
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1957.223,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        }
+      ]
+    },
+    {
+      "path": "/payments/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1955.3741,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 1955.8426999999997,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1955.3741,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1955.1601999999998,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        }
+      ]
+    },
+    {
+      "path": "/guides/website-content-template/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1805.8546999999999,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 1806.0415,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1805.8546999999999,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 1805.0349,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        }
+      ]
+    },
+    {
+      "path": "/areas/south-carolina/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 2104.8045,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 2104.8045,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2105.5696,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2104.449,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.99
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limits": "Three cold mobile lab runs per page, median metrics, pinned Lighthouse and Chromium. Local synthetic server with gzip text transfer; third-party HTTPS requests blocked. These are repeatable lab budgets, not field Core Web Vitals or an indexing guarantee."
+}

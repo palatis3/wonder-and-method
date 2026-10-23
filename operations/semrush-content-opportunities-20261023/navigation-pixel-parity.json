@@ -1,0 +1,187 @@
+{
+  "checkedAt": "2026-10-23T20:06:26.647Z",
+  "status": "PASS",
+  "method": "Twenty full-page Playwright captures after fonts/images settle, comparing current HTML with the previous script placement and font-preload behavior. Every decoded pixel and page/header/main rectangle is identical for five pages at two widths.",
+  "comparisons": [
+    {
+      "path": "/",
+      "viewportWidth": 390,
+      "pixelDimensions": {
+        "width": 390,
+        "height": 6315
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-390-home-previous.png",
+        "sha256": "e97301da92f3f7152091f6aff1102c5a70009661f0f29239f66ee668b5dc0d89"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-390-home-current.png",
+        "sha256": "e97301da92f3f7152091f6aff1102c5a70009661f0f29239f66ee668b5dc0d89"
+      }
+    },
+    {
+      "path": "/pricing/",
+      "viewportWidth": 390,
+      "pixelDimensions": {
+        "width": 390,
+        "height": 16233
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-390-pricing-previous.png",
+        "sha256": "f790a01165773574db5a68097e2438f10ddb0f8d48c66cf93dac87cbdc7b31a6"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-390-pricing-current.png",
+        "sha256": "f790a01165773574db5a68097e2438f10ddb0f8d48c66cf93dac87cbdc7b31a6"
+      }
+    },
+    {
+      "path": "/services/web-design/",
+      "viewportWidth": 390,
+      "pixelDimensions": {
+        "width": 390,
+        "height": 12032
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-390-web-design-previous.png",
+        "sha256": "2d5b9ea791bf6a97af2a8e31c7401cd9bba2a15e620fdc26c11799fa10bc9db9"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-390-web-design-current.png",
+        "sha256": "2d5b9ea791bf6a97af2a8e31c7401cd9bba2a15e620fdc26c11799fa10bc9db9"
+      }
+    },
+    {
+      "path": "/services/seo/",
+      "viewportWidth": 390,
+      "pixelDimensions": {
+        "width": 390,
+        "height": 9266
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-390-monthly-seo-previous.png",
+        "sha256": "a45b6f253582cea2d54c1dbd3664edb79d6518c67e38c0136432f36067e7219f"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-390-monthly-seo-current.png",
+        "sha256": "a45b6f253582cea2d54c1dbd3664edb79d6518c67e38c0136432f36067e7219f"
+      }
+    },
+    {
+      "path": "/services/website-care/",
+      "viewportWidth": 390,
+      "pixelDimensions": {
+        "width": 390,
+        "height": 8210
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-390-care-previous.png",
+        "sha256": "3e0603d838e140663e3089fbb07904582a9c48cddb2052d2d2936b1d2f752d1e"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-390-care-current.png",
+        "sha256": "3e0603d838e140663e3089fbb07904582a9c48cddb2052d2d2936b1d2f752d1e"
+      }
+    },
+    {
+      "path": "/",
+      "viewportWidth": 1440,
+      "pixelDimensions": {
+        "width": 1440,
+        "height": 5216
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-1440-home-previous.png",
+        "sha256": "21c441066dba0e2cc3de3872d9fcb7ce470d28cb945b62f8e104686ad85154e8"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-1440-home-current.png",
+        "sha256": "21c441066dba0e2cc3de3872d9fcb7ce470d28cb945b62f8e104686ad85154e8"
+      }
+    },
+    {
+      "path": "/pricing/",
+      "viewportWidth": 1440,
+      "pixelDimensions": {
+        "width": 1440,
+        "height": 7876
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-1440-pricing-previous.png",
+        "sha256": "6b9ec453d90f81f81c83522de89c5b1264c433d06114562c60f5efb369fc2007"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-1440-pricing-current.png",
+        "sha256": "6b9ec453d90f81f81c83522de89c5b1264c433d06114562c60f5efb369fc2007"
+      }
+    },
+    {
+      "path": "/services/web-design/",
+      "viewportWidth": 1440,
+      "pixelDimensions": {
+        "width": 1440,
+        "height": 6945
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-1440-web-design-previous.png",
+        "sha256": "1ebd238c3882624fdb54f1081e5fe8b9d20295482025f41fdbd3f5c7589a587d"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-1440-web-design-current.png",
+        "sha256": "1ebd238c3882624fdb54f1081e5fe8b9d20295482025f41fdbd3f5c7589a587d"
+      }
+    },
+    {
+      "path": "/services/seo/",
+      "viewportWidth": 1440,
+      "pixelDimensions": {
+        "width": 1440,
+        "height": 6091
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-1440-monthly-seo-previous.png",
+        "sha256": "ce25dd24a19e12db6aee6506b6632a586c8be6ea6dab793f2ad47e22a21cf3ba"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-1440-monthly-seo-current.png",
+        "sha256": "ce25dd24a19e12db6aee6506b6632a586c8be6ea6dab793f2ad47e22a21cf3ba"
+      }
+    },
+    {
+      "path": "/services/website-care/",
+      "viewportWidth": 1440,
+      "pixelDimensions": {
+        "width": 1440,
+        "height": 5680
+      },
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/navigation-parity-1440-care-previous.png",
+        "sha256": "22b8f50959b56cb3f5566034607e8af06fc3ff64b2d0eb5a3ed7e5dc706d7455"
+      },
+      "current": {
+        "path": "output/playwright/navigation-parity-1440-care-current.png",
+        "sha256": "22b8f50959b56cb3f5566034607e8af06fc3ff64b2d0eb5a3ed7e5dc706d7455"
+      }
+    }
+  ],
+  "inputFiles": [
+    {
+      "path": "src/pages.mjs",
+      "sha256": "98c2837627f35317d5fa4ffd09137f72249d492192a22a3c3241b0a20159dcf8"
+    },
+    {
+      "path": "output/playwright/navigation-pixel-parity.js",
+      "sha256": "4cfc52e49054227a7a5525e42bb81f8134483261eca6a31d376fea731e5b6ed3"
+    }
+  ]
+}

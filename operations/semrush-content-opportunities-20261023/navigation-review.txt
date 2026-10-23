@@ -1,0 +1,22 @@
+PASS — independent navigation loading-order review
+Reviewed 2026-10-23T20:03:55.332Z; base HEAD a6289745cda08852cb95457a485249a43b06f9f5.
+
+No blocking findings or unresolved code issues.
+
+The shared layout now preloads Manrope and navigation on every public page, then executes the same navigation script immediately after the header. Header binding uses only markup already parsed. Existing afterParse() waits for DOMContentLoaded before initial anchor/detail and footer work; hashchange/media listeners remain intact. Failed or disabled JavaScript retains the native links and disclosures through unchanged CSS.
+
+Current source matches the content-preservation proof input. The inverse-only proof restores all 1,214 changed HTML hashes; 11 auxiliary pages and asset/download bytes remain unchanged. Built sample pages have one matching navigation preload/execution URL, with execution before main.
+
+Evidence reviewed:
+- Initial Linux pricing median CLS: 0.1000084472; controlled navigation-only change: 0.1000381619 to 0.0184635828.
+- Scoped browser regression: 20 passed, 16 preexisting project-specific skips. All six executions of the two new navigation cases passed.
+- Updated local Lighthouse: all six routes CLS 0; scores 98/99, LCP 1,805.9–2,333.6ms, maximum TBT 17ms.
+
+SHA-256 inputs:
+src/pages.mjs: 98c2837627f35317d5fa4ffd09137f72249d492192a22a3c3241b0a20159dcf8
+tests/browser/navigation-loading.spec.mjs: 8f9ab07b790aa6364efaca2ba9b1c7a7040a31b1a2557721ca2179668f907cbb
+All reviewed source, tests, evidence, proof and representative built-page hashes are recorded in navigation-review.json.
+
+Remaining release gates: parent-owned exact screenshot parity/Linux visual acceptance and the complete seven-check CI run on the final commit. The new parser-blocking resource gates main parsing until its response; the head preload and current measured performance support this tradeoff.
+
+Only navigation-review.json and navigation-review.txt were written. No browser/build/test runs, source changes, parent session interaction, or subagents.
