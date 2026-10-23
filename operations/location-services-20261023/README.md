@@ -13,7 +13,7 @@ This batch adds 59 commercial website-design pages for 69 county and independent
 | Virginia | 9 | 18 |
 | Total | 59 | 69 |
 
-The [reviewed route and evidence register](data/reviewed-locations.json) records every release candidate, its directory identities, project decision, scope trigger and public sources. The content is implemented in src/location-service-data.json; shared offer wording reads the current offer configuration.
+The [reviewed route and evidence register](data/reviewed-locations.json) records every published page, its directory identities, project decision, scope trigger and public sources. The content is implemented in src/location-service-data.json; shared offer wording reads the current offer configuration.
 
 ## Coverage and compatibility
 
@@ -38,7 +38,7 @@ The independent content reviews are retained under [reviews](reviews/): New York
 
 The content-preservation contract counts 195 HTML files because it also includes twelve existing sample-handoff HTML files. The site's public route count is 183. All 430 downloadable artifacts remain present; no artifact was removed by this batch.
 
-Exact-commit CI, reviewed Linux visual candidates, production migration/deployment and live verification are recorded separately in the release receipt after they occur. This document does not claim publication, indexing, rankings, actual email delivery or full business readiness.
+The [publication receipt](RELEASE.md) records successful exact-commit CI, the reviewed Linux visual references, production migration/deployment, full live verification and Google submission. The broader individual market reassessment remains open. Publication does not establish indexing, rankings, actual email delivery or full business readiness.
 
 ## Linux visual review
 
