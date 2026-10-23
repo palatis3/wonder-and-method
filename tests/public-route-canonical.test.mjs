@@ -1,5 +1,5 @@
 import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
-import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
@@ -67,11 +67,13 @@ test('unknown/private paths, legacy downloads and inquiry context retain their r
  assert.equal(unknownApi.status,404);assert.equal(unknownApi.headers.get('Location'),null);
 });
 
-test('native browser-test server serves the same county redirects without a generated retired page',async t=>{
+test('native browser-test server serves county redirects and restored canonical pages',async t=>{
  const directory=await mkdtemp(join(tmpdir(),'wm-retired-routes-'));
  const siteDir=join(directory,'site');
  await mkdir(join(siteDir,'areas','new-york'),{recursive:true});
- await writeFile(join(siteDir,'areas','new-york','index.html'),'<main><details id="albany"><summary>Albany</summary></details></main>');
+ await writeFile(join(siteDir,'areas','new-york','index.html'),'<main><details id="chenango"><summary>Chenango</summary></details></main>');
+ await mkdir(join(siteDir,'areas','albany-county'),{recursive:true});
+ await writeFile(join(siteDir,'areas','albany-county','index.html'),'<main id="albany">Reviewed Albany service page</main>');
  const {server,url}=await createServer({runtime:join(directory,'runtime'),siteDir,port:0});
  t.after(async()=>{
   server.closeAllConnections();await new Promise(done=>server.close(done));
@@ -84,6 +86,8 @@ test('native browser-test server serves the same county redirects without a gene
  }
  const followed=await fetch(url+'/areas/new-york/ALBANY-COUNTY/index.html'+query);
  assert.equal(followed.status,200);assert.match(await followed.text(),/id="albany"/);
+ const retiredFollowed=await fetch(url+'/areas/chenango-county/'+query);
+ assert.equal(retiredFollowed.status,200);assert.match(await retiredFollowed.text(),/id="chenango"/);
  const api=await fetch(url+'/api/inquiries',{redirect:'manual'});assert.equal(api.status,405);assert.equal(api.headers.get('Location'),null);
  const mutation=await fetch(url+'/areas/albany-county/',{method:'POST',redirect:'manual'});assert.equal(mutation.status,405);assert.equal(mutation.headers.get('Location'),null);
 });

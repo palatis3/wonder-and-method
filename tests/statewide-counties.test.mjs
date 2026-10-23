@@ -1,4 +1,4 @@
-import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -38,7 +38,7 @@ test('all 62 official counties remain in the state directory and retired URLs re
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
  const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,197);assert.equal((sitemap.match(/<loc>/g)||[]).length,196);
+ assert.equal(pages.length,245);assert.equal((sitemap.match(/<loc>/g)||[]).length,244);
  assert.equal((hub.match(/data-county-search=/g)||[]).length,62);
  for(const slug of official.countySlugs){
   const retired=path(slug),destination=slug==='erie'?retired:'/areas/new-york/#'+slug;

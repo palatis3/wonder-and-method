@@ -110,7 +110,7 @@ test('entry references reveal the applicable source set and historic county book
 test('all retired county URLs permanently redirect while preserving query bytes and the Erie page remains live',async({request},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One complete HTTP redirect matrix');
  test.setTimeout(60_000);
- const routes=Object.entries(retiredCountyRoutes);expect(routes).toHaveLength(283);
+ const routes=Object.entries(retiredCountyRoutes);expect(routes).toHaveLength(265);
  const query='?qa=1&utm_source=old%20bookmark&tag=a&tag=b&literal=%2B';
  for(const [oldPath,destination] of routes){
   const response=await request.get(oldPath+query,{maxRedirects:0});

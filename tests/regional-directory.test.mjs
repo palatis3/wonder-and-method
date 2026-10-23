@@ -108,7 +108,7 @@ test('compact page-local search data round-trips and bounded hubs do not repeat 
  }
 });
 
-test('the original 333 areas preserve their facts in state hubs, alongside approved service pages and 283 redirects',()=>{
+test('the original 333 areas preserve their facts in state hubs, alongside approved service pages and 265 redirects',()=>{
  const originalStates=serviceStates.filter(state=>!regionalProfiles[state.id]);assert.equal(originalStates.length,12);
  let count=0;
  for(const state of originalStates){
@@ -129,7 +129,7 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
   for(const route of ['/services/','/pricing/'])assert.ok(page.body.includes(`href="${route}"`),state.path+' '+route);
   assert.ok(page.title.length<=60,state.path);assert.ok(page.description.length<=160,state.path);
  }
- assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,283);
+ assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,265);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
  const changed=countyPages(altered);assert.equal(changed.length,22);

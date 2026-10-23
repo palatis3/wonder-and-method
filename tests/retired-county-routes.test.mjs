@@ -8,13 +8,13 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import pageDates from '../config/page-dates.json' with {type:'json'};
 import worker from '../deployment/worker.mjs';
 import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
-import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 
 const historicStates={'new-york':61,pennsylvania:67,ohio:88,'new-jersey':21,connecticut:9,massachusetts:14,delaware:3,'rhode-island':5,vermont:14,maine:16,maryland:24,'new-hampshire':10};
 
 test('all 332 historical county paths remain either approved pages or explicit useful redirects',async()=>{
  const {serviceStates}=await import('../src/service-area-directory.mjs');
- assert.equal(Object.keys(retiredCountyRoutes).length,283);
+ assert.equal(Object.keys(retiredCountyRoutes).length,265);
  assert.ok(Object.isFrozen(retiredCountyRoutes));
  const expected={};
  for(const [id,total] of Object.entries(historicStates)){
@@ -30,7 +30,7 @@ test('all 332 historical county paths remain either approved pages or explicit u
  assert.deepEqual(historicCountyRoutes,expected);
  const redirects=Object.fromEntries(Object.entries(expected).filter(([path])=>!approvedLocationPaths.includes(path)));
  for(const path of ['/areas/maryland/baltimore-city/','/areas/maryland/baltimore-county/'])redirects[path]='/areas/maryland/baltimore-area/';
- assert.equal(Object.keys(expected).filter(path=>approvedLocationPaths.includes(path)).length,49);
+ assert.equal(Object.keys(expected).filter(path=>approvedLocationPaths.includes(path)).length,67);
  assert.deepEqual(retiredCountyRoutes,redirects);
  assert.ok(Object.hasOwn(pageDates,'/areas/erie-county/'));
  assert.ok(!Object.hasOwn(retiredCountyRoutes,'/areas/erie-county/'));

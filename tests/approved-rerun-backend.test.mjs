@@ -1,4 +1,4 @@
-import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';

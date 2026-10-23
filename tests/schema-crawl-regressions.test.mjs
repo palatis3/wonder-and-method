@@ -5,6 +5,7 @@ import {renderPages} from '../src/pages.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import {contentHash, nextPageDates, assertPageDates} from '../scripts/page-dates.mjs';
 import worker from '../deployment/worker.mjs';
+import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 
 const read = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const [config, offers, map, geography, dates] = await Promise.all(['config/site.json', 'config/offers.json', 'authority/v5/site-map.json', 'authority/v5/geography.json', 'config/page-dates.json'].map(read));
@@ -33,7 +34,8 @@ test('public sitemap and directory include every published page except the error
   const crawl = crawlFiles(config, pages), urls = [...crawl.sitemap.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod><\/url>/g)];
   assert.equal(urls.length, pages.length-1);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(urls.some(([,url])=>url===config.origin+'/payments/'));
   for (const [, url, date] of urls) assert.equal(date, dates[new URL(url).pathname].modifiedAt);
-  assert.match(crawl.llms, /\/pricing\//);assert.match(crawl.llms, /\/checkout\//);assert.match(crawl.llms, /\/areas\/new-york\//);assert.doesNotMatch(crawl.llms,/\/areas\/albany-county\/|\/404\/|\/api\/operator/);
+  assert.match(crawl.llms, /\/pricing\//);assert.match(crawl.llms, /\/checkout\//);assert.match(crawl.llms, /\/areas\/new-york\//);assert.match(crawl.llms,/\/areas\/albany-county\//);assert.doesNotMatch(crawl.llms,/\/404\/|\/api\/operator/);
+  for(const path of Object.keys(retiredCountyRoutes))assert.ok(!crawl.llms.includes(config.origin+path),path+' remains redirected');
   const missing = pages.find(page => page.path === '/404/');
   assert.doesNotMatch(missing.html, /rel="canonical"|property="og:url"/);
 });

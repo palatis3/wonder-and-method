@@ -124,8 +124,8 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
  assert.equal((erie.match(/North Tonawanda is in Niagara County/g)||[]).length,1);
 });
 
-test('all 283 remaining retired county routes point to preserved entries and public hub prices follow current offers',()=>{
- assert.equal(Object.keys(retiredCountyRoutes).length,283);
+test('all 265 remaining retired county routes point to preserved entries and public hub prices follow current offers',()=>{
+ assert.equal(Object.keys(retiredCountyRoutes).length,265);
  assert.ok(!retiredCountyRoutes['/areas/erie-county/']);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
   assert.ok(!byPath.has(retired),retired);

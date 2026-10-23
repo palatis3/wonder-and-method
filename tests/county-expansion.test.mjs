@@ -1,4 +1,4 @@
-import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
 import {escapeHtml} from '../src/shared.mjs';
