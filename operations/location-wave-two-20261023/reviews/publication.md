@@ -6,7 +6,7 @@ Reviewed October 23, 2026. **No actionable findings.** The publication record ac
 
 - Application source: `31b461e4d8a6bfb29d109dd1c67aa6241b1b47e9`.
 - Later documentation commit: `8de20dfd8bc11c27082af50bb64601884cc1b3a0`.
-- Authenticated runtime: `c8fde114-4e59-4881-91a0-349d16a327ec`.
+- Deployed Worker version: `c8fde114-4e59-4881-91a0-349d16a327ec`.
 - CI: [run 39945861611](https://github.com/palatis3/wonder-and-method/actions/runs/39945861611), with successful verify and visual jobs at the application commit.
 
 Reviewed `operations/location-wave-two-20261023/README.md` and `RELEASE.md`, plus the current sections of `BUILD_STATUS.md`, `HANDOFF.md` and `deployment/PRODUCTION.md`. They consistently distinguish the deployed source from the documentation commit and the continuing market-review work. The documentation commit changes only those five documentation files.
