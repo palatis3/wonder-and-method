@@ -1,3 +1,4 @@
+import {floridaAreaGuideLinks} from './florida-area-guide-links.mjs';
 // A guide is an additional resource, not a replacement for the service-area directory.
 export const areaGuideLinks = {
   "ohio/ottawa": [
@@ -426,5 +427,6 @@ export const areaGuideLinks = {
       "title": "Keep an Alexandria sign proof separate from installation readiness",
       "localFocus": false
     }
-  ]
+  ],
+  ...floridaAreaGuideLinks
 };

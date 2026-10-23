@@ -297,7 +297,7 @@ const historicalDownloads=[
 ];
 
 test('all published guides preserve existing bookmarks and downloadable resources',()=>{
- assert.equal(journal.length,54);
+ assert.equal(journal.length,59);
  assert.ok(before.every(old=>journal.some(item=>item.path===old.path)),'Every historical guide remains published');
  for(const item of before){
   const html=journalArticle(journal.find(x=>x.path===item.path),offers,journal),found=ids(html);
@@ -376,7 +376,7 @@ test('budget and maintenance wording keeps current allowances and provider assum
 
 test('all sixty-two New York entries retain complete place lists, applicable sources and general-planning worksheets',()=>{
  const pages=countyPages(offers),state=serviceStates.find(state=>state.id==='new-york'),hub=pages.find(page=>page.path===state.path).body;
- assert.equal(pages.length,21);assert.equal(state.counties.length,62);
+ assert.equal(pages.length,22);assert.equal(state.counties.length,62);
  const ids=[...hub.matchAll(/class="county-area-detail" id="([^"]+)"/g)].map(match=>match[1]);
  assert.equal(ids.length,62);assert.equal(new Set(ids).size,62);assert.deepEqual(ids.slice().sort(),state.counties.map(county=>county.slug).sort());
  const sources=new Map([...hub.matchAll(/<li id="(geography-source-\d+)"><a href="([^"]+)">([^<]+)<\/a>/g)].map(([,id,url,label])=>[url.replaceAll('&amp;','&'),{id,label}]));
@@ -429,6 +429,6 @@ test('guide hub keeps all routes with concise copy and original article titles',
   assert.ok(journalArticle(item,offers,journal).includes('<h1>'+item.title.replaceAll('&','&amp;')+'</h1>'));
  }
  const descriptions=[...hub.matchAll(/class="journal-card-description">([^<]+)<\/p>/g)].map(x=>x[1]);
- assert.equal(descriptions.length,54);
+ assert.equal(descriptions.length,59);
  for(const text of descriptions)assert.ok(text.split(/\s+/).length<=14,text);
 });

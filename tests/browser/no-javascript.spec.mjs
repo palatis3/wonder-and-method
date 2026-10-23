@@ -1,5 +1,16 @@
 import {test,expect} from './fixtures.mjs';
 
+test('Florida county facts, local articles and worksheets remain usable without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/areas/florida/?qa=1');await openNativeCountyLists(page,67);
+ const entry=await openNativeCountyEntry(page,'brevard','Palm Bay');
+ await entry.getByRole('link',{name:'Brevard County tour websites: explain launch changes before checkout',exact:true}).click();
+ await expect(page.locator('#layout table')).toBeVisible();await expect(page.locator('#check')).toBeVisible();
+ const download=page.locator('#take-away').getByRole('link',{name:'Download the planning worksheet (text file)',exact:true});
+ const response=await page.request.get(await download.getAttribute('href'));expect(response.status()).toBe(200);expect(await response.text()).toContain('Mission postponement');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+});
+
 test('footer disclosures and single back-to-top link work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');await page.goto('/?qa=1');
  const footer=page.locator('footer');
@@ -91,7 +102,7 @@ test('New York county places and source references remain usable without JavaScr
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,1012);
+ await openNativeCountyLists(page,1079);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);

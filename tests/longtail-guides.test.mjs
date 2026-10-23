@@ -1,4 +1,5 @@
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
+import {floridaGuidePaths} from '../src/florida-guide-paths.mjs';
 import {operatingGuidePaths} from '../src/operating-guide-paths.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -14,13 +15,13 @@ const [config,offers,map,geography,previous]=await Promise.all(['config/site.jso
 const expected=['ai-search-visibility','ai-website-content-review','local-seo-audit','slow-website-on-mobile'].map(x=>'/guides/'+x+'/');
 const pages=renderPages({config,offers,map,geography});
 test('four distinct guides retain approval gates while the historical 411 routes resolve through live pages or county redirects',()=>{
- assert.equal(previous.length,411);assert.equal(pages.length,118);
+ assert.equal(previous.length,411);assert.equal(pages.length,124);
  for(const route of previous){
   const destination=retiredCountyRoutes[route];
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);assert.ok(pages.find(page=>page.path===hub)?.html.includes(`id="${slug}"`),destination);}
   else assert.ok(pages.some(page=>page.path===route),route);
  }
- assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&page.path.startsWith('/guides/')).map(page=>page.path).sort(),expected.slice().sort());
+ assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&!floridaGuidePaths.has(page.path)&&page.path.startsWith('/guides/')).map(page=>page.path).sort(),expected.slice().sort());
  const index=pages.find(p=>p.path==='/guides/').html;
  for(const path of expected){
   const detail=longtailGuideDetails[path.split('/').at(-2)],page=pages.find(p=>p.path===path),body=journalSections(path,offers).map(s=>s.body).join('');

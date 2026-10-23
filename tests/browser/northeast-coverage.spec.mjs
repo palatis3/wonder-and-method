@@ -63,7 +63,7 @@ for(const width of [320,768,1440])for(const state of fixture.states){
 test('state and district finder preserves cross-boundary and typed names, resets focus and sends no search requests',async({page})=>{
  await page.goto('/areas/?qa=1');
  const search=page.getByRole('searchbox',{name:'County, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
- await expect(state.locator('option')).toHaveCount(21);
+ await expect(state.locator('option')).toHaveCount(22);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  const targets=()=>page.locator('[data-county-results] li a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  const cases=[
@@ -94,7 +94,7 @@ test('state and district finder preserves cross-boundary and typed names, resets
  for(const s of fixture.states){await state.selectOption(s.id);await expect(page.locator('[data-county-results] li')).toHaveCount(s.areas.length);}
  await search.fill('Capitol planning region CT');await expect(page.locator('[data-county-results] li')).toHaveCount(0);
  await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(state).toHaveValue('');
- await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-county-search]')).toHaveCount(1012);
+ await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-county-search]')).toHaveCount(1079);
  expect(requests).toEqual([]);
 });
 

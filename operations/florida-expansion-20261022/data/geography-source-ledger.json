@@ -1,0 +1,49 @@
+{
+  "geography": [
+    {
+      "file": "fl-county.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_fl.html",
+      "bytes": 47907,
+      "sha256": "60ab600f0859c4ba341c18f6276cfdcb5f3d017a5fcfbf4e4e6035a1e06d09a1",
+      "retrievedAt": "2026-10-22"
+    },
+    {
+      "file": "fl-incplace.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_fl.html",
+      "bytes": 330522,
+      "sha256": "ac2b65fd8614a7f676bf7409b1f86a1ee77c64ceae9c4889e764021a147cee7b",
+      "retrievedAt": "2026-10-22"
+    },
+    {
+      "file": "fl-cdp.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_fl.html",
+      "bytes": 439678,
+      "sha256": "830299ef25c9552201a06d00f4b83c94082a4ffb2fac90a94db79413ee8281e7",
+      "retrievedAt": "2026-10-22"
+    },
+    {
+      "file": "fl-concity.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_concity_fl.html",
+      "bytes": 1699,
+      "sha256": "51f8c894eabf8fae4e6e0ee76234265c379db81955874c5e65682a75032cb94d",
+      "retrievedAt": "2026-10-22"
+    },
+    {
+      "file": "fl-grfc.txt",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_12.txt",
+      "bytes": 138039927,
+      "sha256": "61de51ab3b2847ee7a477d3fc33af723e2553640a75f1ce6dfc4c2a7fe4bf8b8",
+      "retrievedAt": "2026-10-22"
+    }
+  ],
+  "population": {
+    "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv",
+    "file": "raw/sub-est2025.csv",
+    "vintage": "2025",
+    "column": "POPESTIMATE2025",
+    "sha256": "e3508f5201465913476d4ddf91740f191f7977c9f2614a2a7e30b5fd22027934",
+    "selection": "Largest incorporated municipality intersecting the county, by 2025 Census population estimate; whole-place population is used for cross-county municipalities. Alphabetical CDP fallback only if no municipality exists; unused for Florida. This is a consistent query sample, not an exhaustive list of local commercial centers.",
+    "verifiedAgainstLiveSourceAt": "2026-10-22",
+    "reviewer": "Independent Astra geography review"
+  }
+}

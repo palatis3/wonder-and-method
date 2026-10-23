@@ -13,7 +13,7 @@ import {privateRoute,routeIndexEligible} from '../src/index-policy.mjs';
 import {guideIllustrationAlt} from '../src/guide-art.mjs';
 
 test('all 27 guides lead their prose with an answer, show useful contents and full art, and keep one ending action',()=>{
- assert.equal(journal.length,54);
+ assert.equal(journal.length,59);
  for(const item of journal){
   const html=journalArticle(item,offers,journal);
   assert.match(html,/<div class="journal-prose"><div class="guide-decision"><h2>The short answer<\/h2>/,item.path);
@@ -40,9 +40,9 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
-test('state directories lead with places, retain service links and give each of 1012 areas one destination',()=>{
+test('state directories lead with places, retain service links and give each of 1079 areas one destination',()=>{
  const pages=countyPages(offers),hub=pages.find(p=>p.path==='/areas/').body;
- assert.equal(pages.length,21);
+ assert.equal(pages.length,22);
  for(const page of pages){
   assert.ok(page.body.indexOf('id="counties"')>=0,page.path);
   assert.ok(page.body.indexOf('id="counties"')<page.body.indexOf('id="scope"'),page.path);
@@ -51,7 +51,7 @@ test('state directories lead with places, retain service links and give each of 
   assert.doesNotMatch(page.body,/class="county-buyer-task"|class="county-planning-details"/);
  }
  const destinations=[...hub.matchAll(/data-county-link href="([^"]+)"/g)].map(match=>match[1]);
- assert.equal(destinations.length,1012);assert.equal(new Set(destinations).size,1012);
+ assert.equal(destinations.length,1079);assert.equal(new Set(destinations).size,1079);
  assert.deepEqual(destinations.slice().sort(),serviceStates.flatMap(state=>state.counties.map(county=>countyPath(county,state))).sort());
  assert.equal(Object.keys(retiredCountyRoutes).length,332);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!destinations.includes(retired),retired);assert.ok(destinations.includes(destination),destination);}
@@ -73,7 +73,7 @@ test('catalog monthly entities match their services; public payment information 
 
 test('guide index is text-only while related cards use responsive WebP derivatives',async()=>{
  const index=journalIndex(journal);
- assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,54);
+ assert.equal((index.match(/class="journal-card journal-card-text"/g)||[]).length,59);
  assert.doesNotMatch(index,/<img\b/);for(const item of journal)assert.ok(index.includes('href="'+item.path+'"'));
  for(const item of journal){
   const card=journalCard(item);

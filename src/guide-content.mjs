@@ -4,6 +4,8 @@ import {researchGuideContent} from './research-guide-content.mjs';
 import {researchGuideExpansions} from './research-guide-expansions.mjs';
 import {longtailGuideContent} from './longtail-guide-content.mjs';
 import {operatingGuideContent} from './operating-guide-content.mjs';
+import {floridaGuideContent} from './florida-guide-content.mjs';
+import {withFloridaGuideExamples} from './florida-guide-additions.mjs';
 import {expandLongtailSections} from './longtail-guide-expansions.mjs';
 import {careBoundary} from './offer-summary.mjs';
 import {serviceCoverage} from './service-area.mjs';
@@ -203,6 +205,6 @@ const guideContent={
 };
 
 export function guideContentSections(path,offers){
- const authored=operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
- return formatGuideSections(expandLongtailSections(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])]));
+ const authored=floridaGuideContent[path]||operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
+ return formatGuideSections(expandLongtailSections(path,withFloridaGuideExamples(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])])));
 }

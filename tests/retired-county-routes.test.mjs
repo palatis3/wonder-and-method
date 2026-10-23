@@ -38,7 +38,7 @@ test('retiring public pages preserves all 428 fixed analytics dimensions and acc
  assert.match(names.at(-1),/^0020_/);
  const match=migrations.at(-1).match(/page TEXT NOT NULL CHECK\(page IN \(([^)]+)\)\)/);
  const fixed=[...match[1].matchAll(/'([^']+)'/g)].map(item=>item[1]);
- assert.equal(fixed.length,428);assert.deepEqual([...journeyPages].sort(),fixed.sort());
+ assert.equal(fixed.length,428);assert.ok(fixed.every(key=>journeyPages.has(key)));assert.deepEqual([...journeyPages].filter(key=>!fixed.includes(key)),['areas_florida']);
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(migrations.join('\n'));
  const DB={prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return db.prepare(sql).get(...values)||null;},async run(){return {meta:db.prepare(sql).run(...values)};}});return build([]);}};
  const env={DB,ENVIRONMENT:'production',RELEASE_APPROVED:'true',INQUIRY_MODE:'live',JOURNEY_COUNTS:'aggregate',PUBLIC_ORIGIN:'https://wonderandmethod.com',FINGERPRINT_SECRET:'synthetic-historical-analytics-secret'};

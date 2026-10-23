@@ -64,15 +64,15 @@ test('northern official municipality types retain plantations, independent citie
 
 test('three northern hubs preserve 50 entries and historical routes resolve through live pages or redirects',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,118);assert.equal(byPath.size,118);assert.equal(serviceStates.length,20);
+ assert.equal(pages.length,124);assert.equal(byPath.size,124);assert.equal(serviceStates.length,21);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
  assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of prior){
   if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,117);
- assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1012);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,123);
+ assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1079);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
@@ -118,7 +118,7 @@ test('typed northern search handles state abbreviations, plantations, accented a
   ['Towson city MD',[]],['Towson MD',['maryland/baltimore']],['Port Tobacco MD',['maryland/charles']],
   ['Chevy Chase, Village of, Section 5 MD',['maryland/montgomery']]
  ])assert.deepEqual(matches(query),expected,query);
- assert.equal(cards.length,1012);
+ assert.equal(cards.length,1079);
 });
 
 test('333 fixed inquiry contexts roundtrip as page provenance and reject invented city or county identities',async()=>{
