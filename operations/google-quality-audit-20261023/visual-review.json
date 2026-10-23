@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T15:50:12.372Z",
+  "sourceCommit": "5f56f7cbcf634a91ba8e301385d042872f920525",
+  "captureRun": "https://github.com/palatis3/wonder-and-method/actions/runs/39977943686",
+  "captureArtifact": "visual-candidates-5f56f7cbcf634a91ba8e301385d042872f920525",
+  "capturedImages": 34,
+  "approvedBaselines": 5,
+  "retainedBaselines": 29,
+  "thresholdsChanged": false,
+  "reviewMethod": "Primary agent visual inspection of actual candidate images, comparison crops and unchanged Playwright snapshot matcher.",
+  "limits": [
+    "This approval does not replace the complete final-commit Linux visual job.",
+    "Adams County Ohio text was corrected after capture; Adams is not a sampled screenshot route and none of these rendered routes changed."
+  ],
+  "images": [
+    {
+      "file": "desktop/about.png",
+      "before": "9c11ed388adb33c34ac0c83d0e450b3f53682caf66a714ae9c5b2174b089866d",
+      "after": "9c11ed388adb33c34ac0c83d0e450b3f53682caf66a714ae9c5b2174b089866d",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/care.png",
+      "before": "b3d0e75cba5477ea46d2a889822ae30b9d7bb1b35b3c7ad9adb504f3fb3c4345",
+      "after": "b3d0e75cba5477ea46d2a889822ae30b9d7bb1b35b3c7ad9adb504f3fb3c4345",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/concept.png",
+      "before": "68273e74f818feaa4022eef1f97abe5bad5bceb3866877f13653f20c2b9d5c97",
+      "after": "68273e74f818feaa4022eef1f97abe5bad5bceb3866877f13653f20c2b9d5c97",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/contact.png",
+      "before": "0560a5e896aab08e0d5b9e9befba6d854e56c2a65f596ab5ba7ad4c31c7959b8",
+      "after": "0560a5e896aab08e0d5b9e9befba6d854e56c2a65f596ab5ba7ad4c31c7959b8",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/county-entry.png",
+      "before": "c0c85a9f14905da75fe7e902be9cadec2b94f442d320c98505260a6170c4f3d2",
+      "after": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145",
+      "changed": true,
+      "decision": "approve",
+      "reason": "Inspected before/after changed region and enlarged text crops: approximately one-pixel vertical text movement, unchanged content and dimensions, no clipping or overlap. Exact rendering cause is not established."
+    },
+    {
+      "file": "desktop/county.png",
+      "before": "63ad0dae66f0e90f8e02d5cb8bc41b14e7656528944d0fd3b396786164a47e3d",
+      "after": "63ad0dae66f0e90f8e02d5cb8bc41b14e7656528944d0fd3b396786164a47e3d",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/district-directory.png",
+      "before": "3e61beeac4e04865e775c1fe32d17a550182fc4336718d42c6706f26fc8b4373",
+      "after": "dee90435491ee19582cdbcbfe20a14a1378a90796f483e8763b496747b9f2d33",
+      "changed": true,
+      "decision": "approve",
+      "reason": "Inspected the full Linux capture and separate heading captures: section labels now stack above headings, with readable content and no overlap."
+    },
+    {
+      "file": "desktop/footer-closed.png",
+      "before": "eb1b9448fd24a6b89c8b87074887b6c8a41655424bb86f1fafde1279df46775b",
+      "after": "eb1b9448fd24a6b89c8b87074887b6c8a41655424bb86f1fafde1279df46775b",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/footer-open.png",
+      "before": "69d5780aef6c93073e989e6af3a8fa2003c1f56300f835a6389560094ad36b60",
+      "after": "69d5780aef6c93073e989e6af3a8fa2003c1f56300f835a6389560094ad36b60",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/guide.png",
+      "before": "317194faa1cc2e0ea813b96c938a7d76c49398d0d175cd6cd8e0b7decbfa3985",
+      "after": "317194faa1cc2e0ea813b96c938a7d76c49398d0d175cd6cd8e0b7decbfa3985",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/home.png",
+      "before": "4cd50af60052e326b89bf600f9995861619787f48796fc025575849d3015ade8",
+      "after": "bf3bf110384c1df8ea89da50187492b2d2cbcb106bcbfc53bc10f9b3cceebbfd",
+      "changed": true,
+      "decision": "retain",
+      "reason": "Inspected small text-rendering differences; passes the unchanged existing threshold .12 and maximum differing pixel ratio .001. Existing baseline retained."
+    },
+    {
+      "file": "desktop/monthly-seo.png",
+      "before": "5c949ef2fd41d976919101b98d6fe271a71e67597dac48a9caaec82750170839",
+      "after": "5c949ef2fd41d976919101b98d6fe271a71e67597dac48a9caaec82750170839",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/pricing.png",
+      "before": "5e0fee1b287968686d63dbe9a7e81ce18160184a0f737a7a9dc048e47e9e0177",
+      "after": "5e0fee1b287968686d63dbe9a7e81ce18160184a0f737a7a9dc048e47e9e0177",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/regional-directory.png",
+      "before": "f1c9e6ee43750f1e3e3304689d07928de644ec9a7806ddabd76829444956163f",
+      "after": "029cc6dc72252970a29cfdff282f5404889226518f04c91fe01cb0f61165bc53",
+      "changed": true,
+      "decision": "approve",
+      "reason": "Inspected the full Linux capture and separate heading captures: section labels now stack above headings, with readable content and no overlap."
+    },
+    {
+      "file": "desktop/scope-request.png",
+      "before": "85e58c90147a9b6853373828aac9505cbfb5052343702d367a3968743b3e32d1",
+      "after": "85e58c90147a9b6853373828aac9505cbfb5052343702d367a3968743b3e32d1",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/web-design.png",
+      "before": "0f021726639bfc1b4e90cd0b4c3f4e97809f9cb4d82ecc73c20481b8f7626654",
+      "after": "0f021726639bfc1b4e90cd0b4c3f4e97809f9cb4d82ecc73c20481b8f7626654",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "desktop/work.png",
+      "before": "7671acb094e47568a71972a3c0ad17061808744d536efb4789e122e9cd0b916e",
+      "after": "7671acb094e47568a71972a3c0ad17061808744d536efb4789e122e9cd0b916e",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/about.png",
+      "before": "db8e6e5c8d378eb7cf1b0b2644b7e00d5c16025c2d4cf83567a7e953efd24557",
+      "after": "db8e6e5c8d378eb7cf1b0b2644b7e00d5c16025c2d4cf83567a7e953efd24557",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/care.png",
+      "before": "f67661c7543e3efaa34257e5cf3ba4f0bb5b1fd20af9498f36cd2d14d8ebbf2c",
+      "after": "f67661c7543e3efaa34257e5cf3ba4f0bb5b1fd20af9498f36cd2d14d8ebbf2c",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/concept.png",
+      "before": "063f0d0460d8c1ca44ddabcc369bd4191e717d31b66ade38df0766d69f99942e",
+      "after": "063f0d0460d8c1ca44ddabcc369bd4191e717d31b66ade38df0766d69f99942e",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/contact.png",
+      "before": "0709da3bec015a34dbc3ffe2bfac62fea7f523f4412f28030192c98990d30c9c",
+      "after": "3efd856ae9878bd04f9e46b46d79a3bcbc8edaa2c4b2b93ad80c8deebff66e31",
+      "changed": true,
+      "decision": "retain",
+      "reason": "Inspected small text-rendering differences; passes the unchanged existing threshold .12 and maximum differing pixel ratio .001. Existing baseline retained."
+    },
+    {
+      "file": "phone/county-entry.png",
+      "before": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "after": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/county.png",
+      "before": "32089e7a954232fd95a7e02261e10717c4c787f3e0a08d4f6eb11d1a78b221bd",
+      "after": "32089e7a954232fd95a7e02261e10717c4c787f3e0a08d4f6eb11d1a78b221bd",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/district-directory.png",
+      "before": "2efbb6ce1c68b0923f048331a6cd12ee4db7cf6981ae9d33728b75f170017648",
+      "after": "ab5655c6a5608e70bde62552629df3adba659996a10b5c81c9388bc35387fa13",
+      "changed": true,
+      "decision": "approve",
+      "reason": "Inspected the full Linux capture and separate heading captures: section labels now stack above headings, with readable content and no overlap."
+    },
+    {
+      "file": "phone/footer-closed.png",
+      "before": "95e9286429d969f8a6180088f9ca73b2de865c2440239947b57096476a79a404",
+      "after": "95e9286429d969f8a6180088f9ca73b2de865c2440239947b57096476a79a404",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/footer-open.png",
+      "before": "94ff79fba42aeadf9514a6362dbfb5310781e18d3dfb31a37f409fcb6a73f979",
+      "after": "94ff79fba42aeadf9514a6362dbfb5310781e18d3dfb31a37f409fcb6a73f979",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/guide.png",
+      "before": "36db32ed5d503bbfb8401493bc707708dc0d412f517a1da079be64834f839e6e",
+      "after": "36db32ed5d503bbfb8401493bc707708dc0d412f517a1da079be64834f839e6e",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/home.png",
+      "before": "1e8ffbffd2fe5829de689ad6f917af8c2536b5fc4db7970f0288f800bee2765b",
+      "after": "1e8ffbffd2fe5829de689ad6f917af8c2536b5fc4db7970f0288f800bee2765b",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/monthly-seo.png",
+      "before": "37d43a8bce1b7d6b118701c6c15c261e7ca7c0efe05b221dd8dcf8589efd3a3d",
+      "after": "37d43a8bce1b7d6b118701c6c15c261e7ca7c0efe05b221dd8dcf8589efd3a3d",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/pricing.png",
+      "before": "df4a5007bf1e0507abac7c881a4b32378ee3274f8bda6da4385101da5b6e60f4",
+      "after": "df4a5007bf1e0507abac7c881a4b32378ee3274f8bda6da4385101da5b6e60f4",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/regional-directory.png",
+      "before": "ee35fb749038fdb6238eebd351c97167824c65ecd34075046fdef4eb669ea640",
+      "after": "d7b4f61539f7226430d546762d129a895b2a164998063fccfacff43d66d731fa",
+      "changed": true,
+      "decision": "approve",
+      "reason": "Inspected the full Linux capture and separate heading captures: section labels now stack above headings, with readable content and no overlap."
+    },
+    {
+      "file": "phone/scope-request.png",
+      "before": "49d5e98842b88576386056632e852792b52050bef0e55ccb1b0269efe370060e",
+      "after": "49d5e98842b88576386056632e852792b52050bef0e55ccb1b0269efe370060e",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/web-design.png",
+      "before": "eeb6910a794a4fcf45abfab595d8852ecb6ce9d8372879fcbf2bc7b7f62a6d6d",
+      "after": "eeb6910a794a4fcf45abfab595d8852ecb6ce9d8372879fcbf2bc7b7f62a6d6d",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    },
+    {
+      "file": "phone/work.png",
+      "before": "e98273598664cdc935d09053ae29d9fd19c26158c6bbc1b3ba8761d0a8a9f85c",
+      "after": "e98273598664cdc935d09053ae29d9fd19c26158c6bbc1b3ba8761d0a8a9f85c",
+      "changed": false,
+      "decision": "retain",
+      "reason": "Byte-identical capture; existing baseline retained."
+    }
+  ]
+}

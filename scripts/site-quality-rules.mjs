@@ -61,7 +61,7 @@ export function markupFindings(path,html){
  return findings;
 }
 
-const tradeWork=/\b(?:engineering|manufacturability|structural (?:design|review)|certification|installation|electrical work|medical advice|clinical assessment|legal advice|permitting)\b/i;
+const tradeWork=/\b(?:engineering|manufacturability|CAD design|structural (?:design|review)|certification|installation|electrical work|medical advice|clinical assessment|legal advice|permitting)\b/i;
 const separateOffer=/\b(?:needs?|requires?|require|are|is)\b[^.!?]{0,130}\b(?:separate|their own|its own)\b[^.!?]{0,35}\b(?:scope|assessment|quote|work)\b/i;
 const assignedResponsibility=/\b(?:outside (?:the |this |our )?(?:website|web|studio)|not (?:part of|included in|provided by|a service)|remain[s]? (?:with|the responsibility|your|[\w’'-]+ responsibilities)|(?:business|operator|owner|manufacturer|supplier|installer|qualified|specialist|professional)[^.!?]{0,100}(?:responsib|handle|decid|perform|confirm|approve|review|carry out)|belong[s]? to)\b/i;
 const namedSoftware=/\b(?:engineering (?:tools|approval systems)|installation[- ](?:scheduling(?: systems)?|tracking|management tools)|certification records)\b/gi;

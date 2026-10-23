@@ -24,6 +24,7 @@ test('rendered copy checks catch the missing-state-description regression and ig
 test('scope checks reject offering engineering as another website quote while allowing assigned specialist responsibilities',()=>{
  assert.deepEqual(locationCopyFindings(entry),[]);
  assert.ok(locationCopyFindings({...entry,scopeTrigger:'Door engineering, electrical work and construction detailing need separate scope.'}).some(x=>x.rule==='scope-responsibility'));
+ assert.ok(locationCopyFindings({...entry,scopeTrigger:'CAD design, cabinet configuration, automatic estimates and manufacturing approval systems need separate scope.'}).some(x=>x.rule==='scope-responsibility'));
  assert.deepEqual(locationCopyFindings({...entry,scopeTrigger:'Door engineering and electrical work remain with qualified specialists. Website upload tools require separate assessment.'}),[]);
  assert.deepEqual(locationCopyFindings({...entry,scopeTrigger:'Installation is outside this website service. A customer portal requires separate assessment.'}),[]);
  assert.deepEqual(locationCopyFindings({...entry,scopeTrigger:'The maker provides engineering drawings. Installation-scheduling tools need separate website assessment.'}),[],'Specialist work and website tools in separate sentences do not create an extra trade offer.');

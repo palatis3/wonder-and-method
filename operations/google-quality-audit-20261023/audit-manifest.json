@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "recordedAt": "2026-10-23T15:22:44.572Z",
-  "status": "local checks complete; independent combined closure and final GitHub publication gates pending",
+  "recordedAt": "2026-10-23T15:50:44.989Z",
+  "status": "local checks and independent combined closure passed; final GitHub publication gates pending",
   "baselineCommit": "87745fcc5414ec2e53338abd23418c333bbfff83",
   "reviewMethod": "Independent Astra AI reading, primary implementation and exact-change verification; targeted source retrieval and preserved evidence, not a human-only review or Google certification.",
   "originalReview": {
@@ -76,6 +76,19 @@
     ]
   },
   "substantiveClosuresVerified": 11,
+  "independentClosure": {
+    "status": "pass",
+    "ciFindingsClosed": 6,
+    "collectionFindingsClosed": 4,
+    "report": "INDEPENDENT_REVIEW.md"
+  },
+  "visualReview": {
+    "captureRun": "https://github.com/palatis3/wonder-and-method/actions/runs/39977943686",
+    "captured": 34,
+    "approved": 5,
+    "retained": 29,
+    "tolerancesChanged": false
+  },
   "guideReview": {
     "reviewedAt": "2026-10-23T15:12:26.387Z",
     "reviews": [
@@ -141,8 +154,8 @@
     },
     {
       "stage": "scope-clarity-follow-up",
-      "changes": 11,
-      "records": 11
+      "changes": 12,
+      "records": 12
     },
     {
       "stage": "full-guide-relevance-review",
@@ -171,7 +184,7 @@
     ]
   },
   "qualityGate": {
-    "checkedAt": "2026-10-23T15:14:39.389Z",
+    "checkedAt": "2026-10-23T15:29:30.885Z",
     "status": "pass",
     "pages": 1192,
     "locationRecords": 1068,
@@ -270,7 +283,7 @@
     },
     {
       "path": "remediation/additional-scope-clarity.json",
-      "sha256": "a3a2de64a05dde83863229d067d4d6bf13220e38aa0468deb0a17c938c28a463"
+      "sha256": "45111d46c791e3a62b624bce705527cf2d61b193602e66a207599043ca302ebb"
     },
     {
       "path": "remediation/guide-link-changes.json",
@@ -282,11 +295,11 @@
     },
     {
       "path": "remediation/record-preservation.json",
-      "sha256": "68e0433ca6732b65755fb6b9d1191ea0337a950d189bc5e643670f2e9409635a"
+      "sha256": "390a6bca23bd3df1de0c115fd9138c6cb1c1468a8c36964097f2777ea354f4ab"
     },
     {
       "path": "remediation/built-preservation.json",
-      "sha256": "d30d453605b6f59299542e5ef07ec686c7d7810f4c5fda6d0e7f39a0fb6e9d59"
+      "sha256": "ffc2d4cad95384442f7b6d2978e2ac9e2b153c04d8e0c0b8ae6d6dbdb5a252a3"
     },
     {
       "path": "remediation/browser-reviewed.log",
@@ -313,8 +326,40 @@
       "sha256": "0a43ca30411bf26eb997d00d035f3564591c90df11c4caade0ac48e5ee1a0813"
     },
     {
-      "path": "remediation/content-baseline.log",
-      "sha256": "65dd97493517a4ca6037cef3f200daff826e2c8b28474bfa901877bbdbe0ea04"
+      "path": "remediation/content-baseline-closure.log",
+      "sha256": "48ee9f187e560e0edbece14bd1879067a5b1ee9522b966d4247257871f16cddd"
+    },
+    {
+      "path": "remediation/rules-citations-final.log",
+      "sha256": "087b26b9786c337eede047ac7b3644c256a04aec1e3f1d84f779ff15d4ee830b"
+    },
+    {
+      "path": "remediation/quality-closure.log",
+      "sha256": "cd49ac731a8c3b4270b3c1ef1f5a6c6c5a7dc6fa9d91ae442680d448434cbdf5"
+    },
+    {
+      "path": "ci-closure/report.md",
+      "sha256": "8799bd27a28e38675ded045b176328193f95f9a48289b8d434acd8d66d5cdd77"
+    },
+    {
+      "path": "ci-closure/review.json",
+      "sha256": "3a2f3cd1ff342a8df6c478e9961e9c0d4f39ce6247f6281eef11bbf61e8229e4"
+    },
+    {
+      "path": "ci-closure/final-integrity.json",
+      "sha256": "a939436bef014228c9565c04a3b476165b09db1021e36eeaba3c4fcdcba516f5"
+    },
+    {
+      "path": "ci-closure/final-site-quality.json",
+      "sha256": "377b1010727279f7ae83b7dfc632b32dd06e62f371ee8f5ec038418c1b8c9251"
+    },
+    {
+      "path": "remediation/linux-visual-approval.json",
+      "sha256": "8d48af290daff322a12e363b3189a72a3996797dc907e5b1743ed98f870f98a9"
+    },
+    {
+      "path": "remediation/linux-approved-comparison.log",
+      "sha256": "601c6c6e1f26dc1d9bce628c21dabadb59f20a446b8224fb834f1a4cbb2e1829"
     }
   ],
   "recordHashes": [
@@ -4173,9 +4218,10 @@
     {
       "path": "/areas/ohio/adams-county/",
       "beforeCanonicalSha256": "db609d266d2c7690b87d84c896f6486789de738a0c1705516e7ee8ed118ed9ee",
-      "afterCanonicalSha256": "35c5350afb238f1c288be0daae3b3ff2a2c428196a5fc02ec0b134454e2f4e86",
+      "afterCanonicalSha256": "c4ab369bb78596b45ed03bb5423d31051661dd0c8386e941cafef1bbe8bb98b4",
       "changedFields": [
-        "description"
+        "description",
+        "scopeTrigger"
       ]
     },
     {
