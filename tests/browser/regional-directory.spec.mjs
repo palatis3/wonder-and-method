@@ -93,6 +93,13 @@ test('entry references reveal the applicable source set and historic county book
   ['/areas/maryland/baltimore-city/','maryland','baltimore-city','buyer-task']
  ]){
   await page.goto(`${oldPath}?qa=1&utm_source=bookmark#${fragment}`);
+  if(oldPath==='/areas/monroe-county/'||oldPath==='/areas/maryland/baltimore-city/'){
+   const restored=oldPath==='/areas/monroe-county/';
+   await expect(page).toHaveURL(url=>url.pathname===(restored?oldPath:'/areas/maryland/baltimore-area/')&&url.search==='?qa=1&utm_source=bookmark'&&url.hash==='#'+fragment);
+   await expect(page.locator('#buyer-task')).toBeVisible();
+   await expect(page.locator('main').getByRole('link',{name:'Discuss your website',exact:true}).first()).toBeVisible();
+   continue;
+  }
   await expect(page).toHaveURL(url=>url.pathname===`/areas/${state}/`&&url.search==='?qa=1&utm_source=bookmark'&&url.hash===`#${slug}`);
   const entry=page.locator('#'+slug);
   await expect(entry).toHaveAttribute('open','');await expect(entry.locator('.county-directory')).toBeVisible();
@@ -103,7 +110,7 @@ test('entry references reveal the applicable source set and historic county book
 test('all retired county URLs permanently redirect while preserving query bytes and the Erie page remains live',async({request},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One complete HTTP redirect matrix');
  test.setTimeout(60_000);
- const routes=Object.entries(retiredCountyRoutes);expect(routes).toHaveLength(332);
+ const routes=Object.entries(retiredCountyRoutes);expect(routes).toHaveLength(283);
  const query='?qa=1&utm_source=old%20bookmark&tag=a&tag=b&literal=%2B';
  for(const [oldPath,destination] of routes){
   const response=await request.get(oldPath+query,{maxRedirects:0});

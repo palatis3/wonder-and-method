@@ -33,7 +33,7 @@ test('public sitemap and directory include every published page except the error
   const crawl = crawlFiles(config, pages), urls = [...crawl.sitemap.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod><\/url>/g)];
   assert.equal(urls.length, pages.length-1);assert.ok(urls.some(([,url])=>url===config.origin+'/services/'));assert.ok(urls.some(([,url])=>url===config.origin+'/payments/'));
   for (const [, url, date] of urls) assert.equal(date, dates[new URL(url).pathname].modifiedAt);
-  assert.match(crawl.llms, /\/pricing\//);assert.match(crawl.llms, /\/checkout\//);assert.match(crawl.llms, /\/areas\/new-york\//);assert.doesNotMatch(crawl.llms,/\/areas\/monroe-county\/|\/404\/|\/api\/operator/);
+  assert.match(crawl.llms, /\/pricing\//);assert.match(crawl.llms, /\/checkout\//);assert.match(crawl.llms, /\/areas\/new-york\//);assert.doesNotMatch(crawl.llms,/\/areas\/albany-county\/|\/404\/|\/api\/operator/);
   const missing = pages.find(page => page.path === '/404/');
   assert.doesNotMatch(missing.html, /rel="canonical"|property="og:url"/);
 });

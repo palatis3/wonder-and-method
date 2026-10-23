@@ -1,3 +1,4 @@
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -52,18 +53,18 @@ test('broad service coverage has 20 states and a federal district and preserves 
  assert.deepEqual(serviceAreas({...config,serviceCoverage:{...config.serviceCoverage,regions:['Ohio']}}),[{'@type':'State',name:'Ohio'}]);
 });
 
-test('metadata and sitemap cover 124 public pages while retired county URLs resolve to their state entries',()=>{
+test('metadata and sitemap cover 183 public pages while retired county URLs resolve to their state entries',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,124);assert.equal((sitemap.match(/<loc>/g)||[]).length,123);
+ assert.equal(pages.length,183);assert.equal((sitemap.match(/<loc>/g)||[]).length,182);
  assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,59);
- assert.deepEqual(pages.filter(item=>/^\/areas\/(?:[a-z-]+\/)?[^/]+-(?:county|planning-region)\/$/.test(item.path)||item.path==='/areas/maryland/baltimore-city/').map(item=>item.path),['/areas/erie-county/']);
- assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,23);
+ assert.deepEqual(pages.filter(item=>approvedLocationPaths.includes(item.path)).map(item=>item.path).sort(),approvedLocationPaths);
+ assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,82);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
   assert.ok(!page(retired));assert.ok(!sitemap.includes(`<loc>${config.origin+retired}</loc>`));
-  const [hub,slug]=destination.split('#');assert.ok(page(hub).html.includes(`id="${slug}"`));
+  const [hub,slug]=destination.split('#');assert.ok(page(hub),destination);if(slug)assert.ok(page(hub).html.includes(`id="${slug}"`));
   assert.ok(sitemap.includes(`<loc>${config.origin+hub}</loc>`));
  }
- assert.equal(new Set(pages.map(item=>item.path)).size,124);
+ assert.equal(new Set(pages.map(item=>item.path)).size,183);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

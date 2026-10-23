@@ -1,3 +1,4 @@
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -37,11 +38,11 @@ test('all 62 official counties remain in the state directory and retired URLs re
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
  const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,124);assert.equal((sitemap.match(/<loc>/g)||[]).length,123);
+ assert.equal(pages.length,183);assert.equal((sitemap.match(/<loc>/g)||[]).length,182);
  assert.equal((hub.match(/data-county-search=/g)||[]).length,62);
  for(const slug of official.countySlugs){
   const retired=path(slug),destination=slug==='erie'?retired:'/areas/new-york/#'+slug;
-  if(slug==='erie')assert.ok(byPath.has(retired));else {assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!byPath.has(retired));}
+  if(slug==='erie'||approvedLocationPaths.includes(retired))assert.ok(byPath.has(retired));else {assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!byPath.has(retired));}
   assert.ok(hub.includes(`href="${destination}"`));assert.ok(hub.includes(`id="${slug}"`));
   const route=destination.split('#')[0],page=byPath.get(route);
   assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
@@ -109,7 +110,7 @@ test('the consolidated New York hub preserves factual entries and publishes stat
  assert.ok(!schema.some(item=>['LocalBusiness','FAQPage'].includes(item['@type'])));
  const org=schema.find(item=>item['@type']==='Organization');assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
  for(const c of statewideCountyProfiles){
-  assert.equal(retiredCountyRoutes[path(c.slug)],page.path+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)));
+  if(approvedLocationPaths.includes(path(c.slug)))assert.ok(byPath.has(path(c.slug)));else {assert.equal(retiredCountyRoutes[path(c.slug)],page.path+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)));}
   assert.ok(page.html.includes(`id="${c.slug}"`));assert.ok(page.html.includes(escapeHtml(countyLocalNotes['new-york/'+c.slug]||c.geographyNote)),c.slug);
  }
  const image=socialCardPath(page.path);assert.ok(image);assert.ok(page.html.includes(config.origin+image));

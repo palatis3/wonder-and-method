@@ -1,3 +1,4 @@
+import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
@@ -399,7 +400,7 @@ test('all sixty-two New York entries retain complete place lists, applicable sou
   assert.match(worksheet,/Official place sources are linked from the area directory/);
   for(const text of [task.title,task.scenario,task.decision,task.output,task.check,...task.questions])assert.ok(worksheet.includes(text),slug+' authored worksheet content');
   titles.add(task.title);
-  if(slug==='erie')assert.equal(destination,'/areas/erie-county/');else assert.equal(retiredCountyRoutes[`/areas/${slug}-county/`],destination);
+  if(slug==='erie')assert.equal(destination,'/areas/erie-county/');else assert.equal(historicCountyRoutes[`/areas/${slug}-county/`],destination);
  }
  assert.equal(titles.size,62);assert.doesNotMatch(hub,/undefined|qualification path|expiry rule/);assert.match(hub,/Place types and official sources/);
  const erie=countyCoverage(geography,config,offers);

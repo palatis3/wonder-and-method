@@ -2,6 +2,7 @@ import {pageDisplayNames} from './display-names.mjs';
 import {escapeHtml} from './shared.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 import {serviceAreaDataForPath,countyAreaName} from './service-area-directory.mjs';
+import {locationServiceForPath} from './location-service-index.mjs';
 
 export function breadcrumbTrail(path,title){
  if(path==='/'||path==='/404/')return [];
@@ -26,7 +27,7 @@ export function breadcrumbTrail(path,title){
  const checkoutName=path.startsWith('/checkout/')?title.replace(/^Request /,'').replace(/ Website$/,''):null;
  const area=serviceAreaDataForPath(path);
  const countyName=area?countyAreaName(area.county):county?(({'mckean':'McKean','st-lawrence':'St. Lawrence'})[county[1]]||county[1].split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '))+(county[2]==='planning-region'?' Planning Region':' County'):null;
- const name=checkoutName||stateName||(path==='/services/'?'Services':null)||conceptLabel||pageDisplayNames[path]||shortNames[path]||(guide?guideNames[guide[1]]||title:null)||countyName||title;
+ const name=checkoutName||stateName||locationServiceForPath(path)?.market||(path==='/services/'?'Services':null)||conceptLabel||pageDisplayNames[path]||shortNames[path]||(guide?guideNames[guide[1]]||title:null)||countyName||title;
  trail.push({path,name});return trail;
 }
 

@@ -1,3 +1,5 @@
+import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -45,13 +47,13 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
 
 test('six state hubs retain all 66 original entries while historical routes resolve to preserved destinations',()=>{
  assert.equal(newRoutes.length,72,'the historical six-hub and 66-area route fixture remains intact');
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,124);assert.equal(byPath.size,124);
- assert.deepEqual(pages.filter(p=>!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,183);assert.equal(byPath.size,183);
+ assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of priorRoutes){
-  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
+  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,123);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,182);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1079);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
@@ -60,7 +62,7 @@ test('six state hubs retain all 66 original entries while historical routes reso
   assert.equal((hub.match(/data-county-search=/g)||[]).length,s.areas.length);
   assert.match(hub,/<noscript>/);assert.match(hub,/<details class="county-region county-section"/);
   assert.doesNotMatch(hub,/<div id="counties"[^>]*\bhidden/);
-  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;assert.equal(retiredCountyRoutes[path(s,a)],destination);assert.ok(!byPath.has(path(s,a)));for(const html of [hub,byPath.get('/areas/').html])assert.ok(html.includes(`href="${destination}"`),destination);assert.ok(hub.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
+  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;if(approvedLocationPaths.includes(path(s,a)))assert.ok(byPath.has(path(s,a)));else {assert.equal(retiredCountyRoutes[path(s,a)],destination);assert.ok(!byPath.has(path(s,a)));}for(const html of [hub,byPath.get('/areas/').html])assert.ok(html.includes(`href="${destination}"`),destination);assert.ok(hub.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
  }
 });
 
@@ -126,7 +128,7 @@ test('typed searches distinguish states, counties, current regions and same-name
 });
 
 test('all 333 provenance contexts roundtrip without accepting invented areas or business locations',()=>{
- const expected=[...Object.keys(retiredCountyRoutes),'/areas/erie-county/'].map(route=>route.slice('/areas/'.length,-1)).sort();
+ const expected=[...Object.keys(historicCountyRoutes),'/areas/erie-county/'].map(route=>route.slice('/areas/'.length,-1)).sort();
  assert.equal(countyContextOptions.length,333);assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),expected);
  const template=inquiryFormMarkup({live:true}),input={name:'Synthetic person',email:'owner@example.test',business:'Synthetic company',service:'unsure',message:'Synthetic validation only. Never send.'};
  for(const [county,label] of countyContextOptions){

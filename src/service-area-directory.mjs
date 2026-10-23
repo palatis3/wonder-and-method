@@ -16,6 +16,7 @@ import {northernExpansionGeography} from './northern-expansion-geography.mjs';
 import {regionalProfiles,regionalGeography} from './regional-content.mjs';
 import {countyLocalNotes} from './county-local-notes.mjs';
 import {areaGuideLinks} from './area-guide-links.mjs';
+import {locationServiceForArea} from './location-service-index.mjs';
 const additionalProfiles={...northeastProfiles,...regionalProfiles};
 
 // Alphabetical browse groups are navigation, not additional geographic entities.
@@ -81,7 +82,9 @@ function areaDetails(county,state,references){
  const note=countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote;
  const localNote=note?`<p class="county-geography-note">${e(note)}</p>`:'';
  const guides=areaGuideLinks[state.id+'/'+county.slug]||[];
- const guideLinks=guides.length?`<div class="county-guide-links"><h3>Website planning with local examples</h3><ul>${guides.map(guide=>`<li>${a(guide.path,guide.title)}</li>`).join('')}</ul></div>`:'';
+ const service=locationServiceForArea(state.id+'/'+county.slug);
+ const serviceLink=service?`<p class="county-commercial-link">${a(service.path,'Website design for '+service.market)} — project choices, prices and working with the studio.</p>`:'';
+ const guideLinks=serviceLink+(guides.length?`<div class="county-guide-links"><h3>Website planning with local examples</h3><ul>${guides.map(guide=>`<li>${a(guide.path,guide.title)}</li>`).join('')}</ul></div>`:'');
  const isErie=state.id==='new-york'&&county.slug==='erie';
  const worksheet=county.directoryOnly?'':`<p><a href="/assets/county-briefs/${state.id==='new-york'?'':state.id+'-'}${e(county.slug)}.txt" download>General website-planning worksheet (TXT)</a>. Optional fictional example; the planning principles apply in many places.</p>`;
  return `<details class="county-area-detail" id="${e(county.slug)}" data-county-area><summary>${e(countyLabel(county))}</summary><div class="county-area-content"><p>${e(type)}</p>${localNote}${lists?`<div class="county-directory">${lists}</div>`:'<p>No incorporated municipalities or Census-designated places are listed in the cited records.</p>'}${aliases?`<div class="county-alias-notes"><h3>Other names and status notes</h3><ul>${aliases}</ul></div>`:''}<p>${a('#geography-reference-'+references.areaSets.get(county.slug),'Place definitions and sources')} · <a class="county-link" data-county-link href="${e(countyPath(county,state))}">${e(area)}</a> <span>(${isErie?'Buffalo studio and local services':'link to this entry'})</span></p>${guideLinks}${worksheet}</div></details>`;

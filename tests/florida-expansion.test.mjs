@@ -45,7 +45,7 @@ test('migration 0021 preserves historical analytics and inquiries while acceptin
  const names=(await readdir(new URL('../deployment/migrations/',import.meta.url))).filter(n=>/^\d{4}.*\.sql$/.test(n)&&Number(n.slice(0,4))<=21).sort();
  const sql=await Promise.all(names.map(n=>read('deployment/migrations/'+n)));assert.match(names.at(-1),/^0021_/);
  const allowed=(s,field)=>[...s.match(new RegExp(field+" TEXT NOT NULL(?: DEFAULT '[^']+')? CHECK\\("+field+" IN \\(([^)]+)\\)\\)"))[1].matchAll(/'([^']+)'/g)].map(x=>x[1]);
- const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page');assert.equal(old.length,428);assert.equal(next.length,429);assert.deepEqual(next.filter(k=>!old.includes(k)),['areas_florida']);assert.deepEqual([...journeyPages].sort(),next.sort());
+ const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page');assert.equal(old.length,428);assert.equal(next.length,429);assert.deepEqual(next.filter(k=>!old.includes(k)),['areas_florida']);assert.ok(next.every(key=>journeyPages.has(key))); // Later additive migrations may extend the runtime set.
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=db.prepare('INSERT INTO journey_counts VALUES(?,?,?,?,?,?)');for(const [i,key]of old.entries())insert.run('2026-10-22','page_view','unsure',key,'direct',i%2?1000000:0);

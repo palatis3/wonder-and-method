@@ -1,3 +1,5 @@
+import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
@@ -10,7 +12,7 @@ import worker from '../deployment/worker.mjs';
 
 const origin='https://wonderandmethod.com';
 const query='?county=legacy%2Fvalue&x=%2f&x=two+words&Case=KEEP%20ME';
-const destination=(target,base=origin)=>base+target.replace('#',query+'#');
+const destination=(target,base=origin)=>base+target.split('#')[0]+query+(target.includes('#')?'#'+target.split('#')[1]:'');
 const variants=path=>[path,path.slice(0,-1),path.slice(0,-1)+'.html',path.slice(0,-1)+'.html/',path+'index',path+'index.html',path.toUpperCase().replaceAll('/','//')+'INDEX.HTML/',path.replace('/areas/','/%61reas/')];
 const environment=fetch=>({ENVIRONMENT:'production',RELEASE_APPROVED:'true',PUBLIC_ORIGIN:origin,ASSETS:{fetch}});
 
@@ -39,7 +41,7 @@ test('every retired county route and alias redirects once with raw query before 
 });
 
 test('all 62 historic New York prefixed aliases remain direct and Buffalo stays a page',()=>{
- const aliases=[['/areas/erie-county/','/areas/erie-county/'],...Object.entries(retiredCountyRoutes).filter(([path])=>/^\/areas\/[^/]+-county\/$/.test(path))];
+ const aliases=[['/areas/erie-county/','/areas/erie-county/'],...Object.entries(historicCountyRoutes).filter(([path])=>/^\/areas\/[^/]+-county\/$/.test(path)).map(([path,target])=>[path,approvedLocationPaths.includes(path)?path:target])];
  assert.equal(aliases.length,62);
  for(const [path,target] of aliases)for(const method of ['GET','HEAD'])for(const variant of variants(path.replace('/areas/','/areas/new-york/'))){
   const expected=target.includes('#')?destination(target):origin+target+query;

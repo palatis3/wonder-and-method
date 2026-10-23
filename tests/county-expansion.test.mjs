@@ -1,3 +1,4 @@
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
 import {escapeHtml} from '../src/shared.mjs';
@@ -28,7 +29,7 @@ test('retired New York county routes resolve to reviewed place entries within th
  assert.ok(state.html.includes('name="robots" content="index,follow"'));assert.ok(state.html.includes('href="/areas/"'));
  for(const county of countyProfiles){
   const retired=`/areas/${county.slug}-county/`,destination=state.path+'#'+county.slug;
-  assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!pages.some(page=>page.path===retired),retired);
+  if(approvedLocationPaths.includes(retired))assert.ok(pages.some(page=>page.path===retired),retired);else {assert.equal(retiredCountyRoutes[retired],destination);assert.ok(!pages.some(page=>page.path===retired),retired);}
   const original=research.counties.find(c=>c.county===county.name);
   if(original)assert.deepEqual(countyGeography[county.slug].municipalities,original.municipalities);
   assert.ok(state.html.includes(`id="${county.slug}"`),destination);
@@ -36,7 +37,7 @@ test('retired New York county routes resolve to reviewed place entries within th
   assert.ok(hub.html.includes(`href="${destination}"`));
  }
  const publicConfig={...config,searchIndexing:true},sitemap=crawlFiles(publicConfig,render(publicConfig)).sitemap;
- for(const county of countyProfiles)assert.ok(!sitemap.includes(`<loc>${config.origin}/areas/${county.slug}-county/</loc>`));
+ for(const county of countyProfiles){const path=`/areas/${county.slug}-county/`;assert.equal(sitemap.includes(`<loc>${config.origin+path}</loc>`),approvedLocationPaths.includes(path),path);}
  for(const route of ['/areas/new-york/','/areas/erie-county/','/areas/'])assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));
  const held={...config,searchIndexing:false};assert.doesNotMatch(crawlFiles(held,render(held)).sitemap,/<loc>/);
 });

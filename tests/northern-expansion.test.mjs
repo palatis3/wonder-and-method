@@ -1,3 +1,5 @@
+import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -64,14 +66,14 @@ test('northern official municipality types retain plantations, independent citie
 
 test('three northern hubs preserve 50 entries and historical routes resolve through live pages or redirects',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,124);assert.equal(byPath.size,124);assert.equal(serviceStates.length,21);
+ assert.equal(pages.length,183);assert.equal(byPath.size,183);assert.equal(serviceStates.length,21);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
- assert.deepEqual(pages.filter(p=>!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
+ assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of prior){
-  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.get(hub)?.html.includes(`id="${slug}"`),route);}
+  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,123);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,182);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1079);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){
@@ -79,7 +81,7 @@ test('three northern hubs preserve 50 entries and historical routes resolve thro
   const html=byPath.get(`/areas/${s.id}/`).html;
   assert.equal((html.match(/data-county-search=/g)||[]).length,s.areas.length);
   assert.match(html,/<noscript>/);assert.match(html,/<details class="county-region county-section"/);assert.doesNotMatch(html,/<div id="counties"[^>]*\bhidden/);
-  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;assert.equal(retiredCountyRoutes[areaPath(s,a)],destination);assert.ok(!byPath.has(areaPath(s,a)));for(const hub of [html,byPath.get('/areas/').html])assert.ok(hub.includes(`href="${destination}"`));assert.ok(html.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
+  for(const a of s.areas){const destination=`/areas/${s.id}/#${a.slug}`;if(approvedLocationPaths.includes(areaPath(s,a)))assert.ok(byPath.has(areaPath(s,a)));else {assert.equal(retiredCountyRoutes[areaPath(s,a)],s.id==='maryland'&&['baltimore','baltimore-city'].includes(a.slug)?'/areas/maryland/baltimore-area/':destination);assert.ok(!byPath.has(areaPath(s,a)));}for(const hub of [html,byPath.get('/areas/').html])assert.ok(hub.includes(`href="${destination}"`));assert.ok(html.includes(`id="${a.slug}"`));assert.ok(sitemap.includes(`<loc>${config.origin}/areas/${s.id}/</loc>`));}
  }
 });
 
@@ -98,8 +100,8 @@ test('northern state metadata and anchored entries distinguish Baltimore City fr
   titles.add(page.title);descriptions.add(page.description);assert.ok(page.description.trim());
  }
  assert.equal(titles.size,3);assert.equal(descriptions.size,3);
- assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-city/'],'/areas/maryland/#baltimore-city');
- assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-county/'],'/areas/maryland/#baltimore');
+ assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-city/'],'/areas/maryland/baltimore-area/');
+ assert.equal(retiredCountyRoutes['/areas/maryland/baltimore-county/'],'/areas/maryland/baltimore-area/');
  assert.ok(!byPath.has('/areas/maryland/baltimore-city-county/'));assert.ok(!byPath.has('/areas/maryland/baltimore-city-independent-city/'));
 });
 
@@ -124,7 +126,7 @@ test('typed northern search handles state abbreviations, plantations, accented a
 test('333 fixed inquiry contexts roundtrip as page provenance and reject invented city or county identities',async()=>{
  const [{serviceStates,countyPath},{countyContextOptions},{inquiryFormMarkup},{prefillInquiryHtml},{validateInquiry},{selectedInquiryContext,inquiryContextSummary,escapeHtml}]=await Promise.all([runtime(),import('../src/approved-rerun-county-context.mjs'),import('../src/inquiry-form.mjs'),import('../src/inquiry-prefill.mjs'),import('../src/inquiry.mjs'),import('../src/shared.mjs')]);
  assert.equal(countyContextOptions.length,333);
- assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),[...Object.keys(retiredCountyRoutes),'/areas/erie-county/'].map(route=>route.slice(7,-1)).sort());
+ assert.deepEqual(countyContextOptions.map(([key])=>key).sort(),[...Object.keys(historicCountyRoutes),'/areas/erie-county/'].map(route=>route.slice(7,-1)).sort());
  const template=inquiryFormMarkup({live:true}),input={name:'Synthetic person',email:'owner@example.test',business:'Synthetic company',service:'unsure',message:'Synthetic validation only. Never send.'};
  for(const [county,text] of countyContextOptions){
   const html=prefillInquiryHtml(template,new URL('https://example.test/contact/?county='+encodeURIComponent(county)+'&business_location=FORGED'));

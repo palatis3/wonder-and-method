@@ -1,3 +1,5 @@
+import {locationServicePages} from '../src/location-service-pages.mjs';
+import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
@@ -11,6 +13,7 @@ import {normalizeCountyQuery,parseCountyQuery,countyMatchScore,packCountyNames,u
 
 const states=serviceStates.filter(state=>regionalProfiles[state.id]);
 const pages=countyPages(offers),byPath=new Map(pages.map(page=>[page.path,page]));
+const servicesByPath=new Map(locationServicePages(offers).map(page=>[page.path,page]));
 const directories=new Map(states.map(state=>[state.id,countyDirectory(state)]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=query=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query))).map(card=>card.state+'/'+card.slug).sort();
@@ -105,7 +108,7 @@ test('compact page-local search data round-trips and bounded hubs do not repeat 
  }
 });
 
-test('the original 333 areas preserve their facts in state hubs, with 332 exact retired destinations and Erie unchanged',()=>{
+test('the original 333 areas preserve their facts in state hubs, alongside approved service pages and 283 redirects',()=>{
  const originalStates=serviceStates.filter(state=>!regionalProfiles[state.id]);assert.equal(originalStates.length,12);
  let count=0;
  for(const state of originalStates){
@@ -121,13 +124,13 @@ test('the original 333 areas preserve their facts in state hubs, with 332 exact 
    assert.match(entry,/href="#geography-reference-\d+"/);
    const destination=countyPath(county,state);
    if(state.id==='new-york'&&county.slug==='erie'){assert.equal(destination,'/areas/erie-county/');assert.ok(!retiredCountyRoutes[destination]);}
-   else {assert.equal(destination,state.path+'#'+county.slug);assert.equal(Object.values(retiredCountyRoutes).filter(value=>value===destination).length,1,destination);}
+   else {assert.equal(destination,state.path+'#'+county.slug);assert.equal(Object.values(historicCountyRoutes).filter(value=>value===destination).length,1,destination);}
   }
   for(const route of ['/services/','/pricing/'])assert.ok(page.body.includes(`href="${route}"`),state.path+' '+route);
   assert.ok(page.title.length<=60,state.path);assert.ok(page.description.length<=160,state.path);
  }
- assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,332);
- for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired),retired);const [hub,slug]=destination.split('#');assert.ok(byPath.get(hub)?.body.includes(`id="${slug}"`),destination);}
+ assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,283);
+ for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
  const changed=countyPages(altered);assert.equal(changed.length,22);
  for(const page of changed)for(const price of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);

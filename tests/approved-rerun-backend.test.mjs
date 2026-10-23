@@ -1,3 +1,4 @@
+import approvedLocationPaths from './fixtures/location-release-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
@@ -160,7 +161,7 @@ test('all333 county contexts roundtrip as page provenance, with optional separat
 
 test('all62 NY aliases combine origin/path variants directly; unknown slugs and mutations remain excluded',()=>{
  const counties=countyContextOptions.filter(([key])=>!key.includes('/'));assert.equal(counties.length,62);
- for(const [slug] of counties){const url=new URL('http://www.wonderandmethod.com//AREAS/NEW-YORK/'+slug.toUpperCase()+'/INDEX.HTML?goal=care&qa=1');const target=slug==='erie-county'?'/areas/erie-county/?goal=care&qa=1':'/areas/new-york/?goal=care&qa=1#'+slug.replace(/-county$/,'');assert.equal(publicRouteRedirect(url,'GET','https://wonderandmethod.com'),'https://wonderandmethod.com'+target);}
+ for(const [slug] of counties){const url=new URL('http://www.wonderandmethod.com//AREAS/NEW-YORK/'+slug.toUpperCase()+'/INDEX.HTML?goal=care&qa=1');const target=(slug==='erie-county'||approvedLocationPaths.includes('/areas/'+slug+'/'))?'/areas/'+slug+'/?goal=care&qa=1':'/areas/new-york/?goal=care&qa=1#'+slug.replace(/-county$/,'');assert.equal(publicRouteRedirect(url,'GET','https://wonderandmethod.com'),'https://wonderandmethod.com'+target);}
  assert.equal(publicRouteRedirect(new URL('https://wonderandmethod.com/areas/new-york/made-up-county/'),'GET','https://wonderandmethod.com'),null);
  for(const method of ['POST','PUT','DELETE','OPTIONS'])assert.equal(publicRouteRedirect(new URL('http://www.wonderandmethod.com/areas/new-york/erie-county/'),method,'https://wonderandmethod.com'),null);
  assert.equal(publicRouteRedirect(new URL('http://www.wonderandmethod.com/api/inquiries'),'GET','https://wonderandmethod.com'),null);

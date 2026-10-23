@@ -1,3 +1,4 @@
+import {locationServicePages} from '../src/location-service-pages.mjs';
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
@@ -16,6 +17,7 @@ import {pennsylvaniaBuyerTasks} from '../src/pennsylvania-content.mjs';
 import {ohioBuyerTasks} from '../src/ohio-content.mjs';
 import {northeastBuyerTasks} from '../src/northeast-content.mjs';
 const pages=countyPages(offers),byPath=new Map(pages.map(page=>[page.path,page]));
+const servicesByPath=new Map(locationServicePages(offers).map(page=>[page.path,page]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=(query,state='')=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query),state)).map(card=>`${card.state}/${card.slug}`);
 const e=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
@@ -122,14 +124,14 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
  assert.equal((erie.match(/North Tonawanda is in Niagara County/g)||[]).length,1);
 });
 
-test('all 332 retired county routes point to preserved entries and public hub prices follow current offers',()=>{
- assert.equal(Object.keys(retiredCountyRoutes).length,332);
+test('all 283 remaining retired county routes point to preserved entries and public hub prices follow current offers',()=>{
+ assert.equal(Object.keys(retiredCountyRoutes).length,283);
  assert.ok(!retiredCountyRoutes['/areas/erie-county/']);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
   assert.ok(!byPath.has(retired),retired);
-  const [route,fragment]=destination.split('#'),page=byPath.get(route);
-  assert.ok(page&&fragment,retired+' -> '+destination);
-  assert.ok(page.body.includes(`id="${fragment}"`),destination);
+  const [route,fragment]=destination.split('#'),page=byPath.get(route)||servicesByPath.get(route);
+  assert.ok(page,retired+' -> '+destination);
+  if(fragment)assert.ok(page.body.includes(`id="${fragment}"`),destination);
  }
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;

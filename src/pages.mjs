@@ -28,6 +28,8 @@ import {addonCatalogue} from './addon-content.mjs';
 import {checkoutPages} from './checkout-content.mjs';
 import {paymentContent} from './payment-content.mjs';
 import {countyPages,countyServiceArea,serviceAreaLinks} from './service-counties.mjs';
+import {locationServicePages} from './location-service-pages.mjs';
+import {locationServiceForPath} from './location-service-index.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {serviceRegionLabel} from './assets/service-state-info.js';
 import {searchMetadata,searchSupplement,countyCoverage} from './search-content.mjs';
@@ -106,6 +108,8 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
     if(breadcrumbs.length)schema.push(breadcrumbSchema(breadcrumbs,config.origin));
     const countyArea=countyServiceArea(path);
     if(countyArea)schema.push({'@context':'https://schema.org','@type':'Service','@id':canonical+'#service',name:title,description,hasOfferCatalog:{'@id':config.origin+'/pricing/#offers'},provider:{'@id':config.origin+'/#studio'},areaServed:{'@type':'AdministrativeArea',name:countyArea.areaType==='Federal District'?countyArea.areaLabel:countyArea.areaLabel+', '+countyArea.state},url:canonical});
+    const location=locationServiceForPath(path);
+    if(location&&!countyArea)schema.push({'@context':'https://schema.org','@type':'Service','@id':canonical+'#service',name:title,description,hasOfferCatalog:{'@id':config.origin+'/pricing/#offers'},provider:{'@id':config.origin+'/#studio'},areaServed:location.servedAreas.map(area=>({'@type':'AdministrativeArea',name:area.type==='Federal District'?area.name:area.name+', '+area.state})),url:canonical});
     if(article){schema.push({'@context':'https://schema.org','@type':'Article',headline:article.title,description,image:article.diagram?[socialImage]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(article)+'-'+ratio+'.png'),...articleDateSchema(article),author:{'@id':config.origin+'/#studio'},publisher:{'@id':config.origin+'/#studio'},mainEntityOfPage:canonical});}
     if(path==='/work/')schema.push({'@context':'https://schema.org','@type':'CollectionPage','@id':canonical+'#collection',name:title,description,url:canonical,mainEntity:{'@type':'ItemList',itemListElement:workItems(config).filter(x=>x.href.startsWith('/work/')&&x.href.endsWith('/')&&!x.href.includes('#')&&!x.href.includes('?')).map((x,i)=>({'@type':'ListItem',position:i+1,name:x.title,url:new URL(x.href,canonical).href}))}});
     if(path===studioSearchStudy.path)schema.push({'@context':'https://schema.org','@type':'Article',headline:title,description,...articleDateSchema(studioSearchStudy),author:{'@id':config.origin+'/#studio'},publisher:{'@id':config.origin+'/#studio'},mainEntityOfPage:canonical,image:[socialImage]});
@@ -148,5 +152,6 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   const redesign=redesignPage(o);
   pages.push(page(redesign.path,redesign.title,redesign.description,redesign.body));
   for(const county of countyPages(o))pages.push(page(county.path,county.title,county.description,county.body));
+  for(const location of locationServicePages(o))pages.push(page(location.path,location.title,location.description,location.body));
   return pages;
 }
