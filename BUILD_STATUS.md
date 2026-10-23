@@ -1,23 +1,23 @@
 # Implementation status — October 22, 2026
 
-The website is published and verified. The latest application release is the [county research and article publication](operations/county-publication-20261022/RELEASE.md), following the regional content consolidation. This status distinguishes the deployed application from later documentation commits and from the remaining requirements for accepting client work.
+The website is published and verified. The latest release is the [Florida expansion](operations/florida-expansion-20261022/RELEASE.md), following the county article publication. Deployed application identity remains separate from later documentation commits and requirements for accepting client work.
 
 ## Current published website
 
 | Item | Verified October 22, 2026 |
 |---|---|
 | Origin | https://wonderandmethod.com |
-| Published source | `ed21bfaccb17dd4ad9d6c65aa448682a3aef81aa` |
-| Authenticated runtime | `1a58d252-48f5-4feb-8028-3139f16bdede` |
-| Content | 118 HTML routes including the error page; 117 sitemap URLs; 54 guides, including 27 new articles; 1,012 area entries across 19 states and Washington, DC; the custom Buffalo/Erie page retained |
-| Technical validation | 683 unit tests and 275 local browser checks passed; 153 intentional browser project skips; 34 reviewed screenshot references; exact-commit GitHub verify/visual and predeploy passed |
-| Live verification | All 118 HTML routes and 1,094 asset hashes match the tested build; all 1,576 redirect variants passed for 332 retired routes and 62 New York aliases; live article and directory-link checks passed |
-| Independent review | Source and editorial review passed after documented corrections; the shared header rule received an independent technical recheck |
-| Database | Migrations through 0020; no new migration; all 445 prior aggregate rows and all four prior inquiry records preserved; restored database integrity and foreign-key checks passed |
-| Search | Indexing enabled; Google accepted the updated sitemap on October 22 and reports Success with 117 discovered pages. Discovery does not establish indexing or rankings |
-| Monitoring | Authenticated operational health was healthy after publication. Successful scheduled work at October 23 00:17:30 UTC followed the 00:16:50 UTC deployment (October 22 evening in New York). No new external alert-receiver dashboard receipt is claimed |
+| Published source | `5fcab430fd1b36a58ea1753f969a8a620108ea5f` |
+| Authenticated runtime | `c16af9b4-69ef-4a03-b135-b1bbd1151f62` |
+| Content | 124 HTML routes including the error page; 123 sitemap URLs; 59 guides; 1,079 area entries across 20 states and Washington, DC; custom Buffalo/Erie page retained |
+| Technical validation | 686 unit tests and 276 browser checks passed; 156 intentional skips; 34 reviewed screenshot references; exact-commit GitHub verify/visual and predeploy passed |
+| Live verification | All 124 HTML routes and 1,105 asset hashes match; 1,576 redirect variants passed for 332 retired routes and 62 New York aliases |
+| Independent review | Geography, source/editorial, integration/migration and evidence consistency reviews passed; corrected population-source provenance recorded |
+| Database | Migrations through 0021; only areas_florida added; 446 prior aggregate rows and all 4 prior inquiry records preserved; restored integrity and foreign-key checks passed |
+| Search | Google accepted the updated sitemap and reports Success with 123 discovered pages; discovery does not establish indexing or rankings |
+| Monitoring | Authenticated health was healthy after publication. Latest observed scheduled success was 2026-10-23T01:17:30.694Z; a new scheduled run after this deployment has not been observed. No new external receiver receipt is claimed |
 
-The private release record is `evidence/county-publication-20261022/release-record.json`, with the matching technical manifest, live HTTP/browser results, redirect checks, database preservation results, backup evidence and Google receipt. [GitHub release checks](https://github.com/palatis3/wonder-and-method/actions/runs/39876003319) passed for the published source. Earlier release reports remain historical evidence.
+The private release record is `evidence/florida-expansion-20261022/release-record.json`, alongside the technical manifest, live HTTP/browser checks, redirects, backup/preservation results and Google receipt. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39882286408) passed. Earlier release reports remain historical evidence.
 
 Deployment identity comes from the authenticated operator response and the private build manifest. Public `/version.json` returns 404. Do not infer the running version from the latest repository commit or an old screenshot. Follow [PRODUCTION.md](deployment/PRODUCTION.md) for publication and verification.
 

@@ -1,6 +1,6 @@
 # Operating handoff
 
-Updated October 22, 2026. [BUILD_STATUS.md](BUILD_STATUS.md) identifies the verified deployed application and its exact release evidence: 118 HTML routes, 117 sitemap URLs, 1,094 matching asset hashes and 332 permanent county redirects. The [county publication report](operations/county-publication-20261022/RELEASE.md) covers the 27 new articles and all-area decisions. Google accepted the updated sitemap and reports 117 discovered pages; indexing remains separate. Later documentation commits are separate from the deployed application. [OWNER_READINESS.md](operations/OWNER_READINESS.md) retains the business requirements that need actual owner or client evidence. Gmail routing remains unchanged.
+Updated October 22, 2026. [BUILD_STATUS.md](BUILD_STATUS.md) identifies the deployed application and its evidence: 124 HTML routes, 123 sitemap URLs, 1,105 matching asset hashes and 332 permanent county redirects. The [Florida publication report](operations/florida-expansion-20261022/RELEASE.md) covers the five new articles, three expanded guides and decisions for all 67 Florida counties. Google reports Success and 123 discovered pages; indexing remains separate. Migration 0021 and prior-data preservation passed. Later documentation commits are separate from the deployed application. [OWNER_READINESS.md](operations/OWNER_READINESS.md) retains requirements needing actual owner or client evidence. Gmail routing remains unchanged.
 
 ## Daily inquiry handling
 
