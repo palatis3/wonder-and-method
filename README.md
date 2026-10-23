@@ -2,7 +2,7 @@
 
 Current website packages: [expanded Launch, Focused and Signature](operations/EXPANDED_PACKAGES_20261018.md), approved October 18, 2026.
 
-Current published application: [October 22 long-tail content](operations/LONGTAIL_CONTENT_20261022.md), following the [nine-state expansion](operations/NORTHEAST_EXPANSION_20261022.md). [BUILD_STATUS.md](BUILD_STATUS.md) records the verified source/runtime, release evidence and remaining business dependencies. Deployment identity comes from authenticated operator status and the private build manifest; public `/version.json` returns 404.
+Current published application: [October 22 county research and article publication](operations/county-publication-20261022/RELEASE.md), following the regional consolidation. The site has 54 guides and 1,012 area entries. [BUILD_STATUS.md](BUILD_STATUS.md) records the verified source/runtime, release evidence and remaining business dependencies. Deployment identity comes from authenticated operator status and the private build manifest; public `/version.json` returns 404.
 
 Website and operating tools for Wonder and Method, operated by Venture House Group LLC in Buffalo. Current release documentation was reconciled on October 22, 2026. See [BUILD_STATUS.md](BUILD_STATUS.md) for the current production release and remaining business dependencies.
 

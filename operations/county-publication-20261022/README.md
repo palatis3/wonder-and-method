@@ -50,6 +50,6 @@ The provider's usage metadata included negative figures and inconsistent counts,
 | [Tennessee](states/tennessee.md) | 95 | Shared guides or directory |
 | [North Carolina](states/north-carolina.md) | 100 | Shared guides or directory |
 
-The [complete register](data/county-decisions.json) records each area's decision, evidence depth, rationale, exact current queries, prior research and links. [Publication manifest](data/publication-manifest.json) lists the selected 27 articles and their source URLs. Publication status and technical verification are recorded in the release report once the reviewed build is live.
+The [complete register](data/county-decisions.json) records each area's decision, evidence depth, rationale, exact current queries, prior research and links. [Publication manifest](data/publication-manifest.json) lists the selected 27 articles and their source URLs. The reviewed collection is now published. [Release status and verification](RELEASE.md) record the exact source/runtime, live checks and Google sitemap receipt.
 
 The source review held Summit's insufficient intake details and Jefferson's inconsistent wholesale terms. Other source ambiguities remain qualified beside the examples. Actual permits, operating inventory, customer eligibility and service promises must be confirmed by the responsible business or authority, not inferred from this website-planning material.
