@@ -39,3 +39,7 @@ The independent content reviews are retained under [reviews](reviews/): New York
 The content-preservation contract counts 195 HTML files because it also includes twelve existing sample-handoff HTML files. The site's public route count is 183. All 430 downloadable artifacts remain present; no artifact was removed by this batch.
 
 Exact-commit CI, reviewed Linux visual candidates, production migration/deployment and live verification are recorded separately in the release receipt after they occur. This document does not claim publication, indexing, rankings, actual email delivery or full business readiness.
+
+## Linux visual review
+
+Capture run [39898844898](https://github.com/palatis3/wonder-and-method/actions/runs/39898844898) used source commit 3e068fe3b068c6ea33145ace4c6d106e672fe108. Eight changed Linux screenshots reviewed against prior references. The desktop and phone Monroe entries add the reviewed commercial-service link while preserving place lists and worksheets. Six other references catch up to already-published Florida coverage (19 to 20 states and Florida in lists); their page HTML did not change in this batch. Full Monroe entries, both About images and bounded old/new regions for every other changed area were inspected. No clipping or broken layout observed. The other 26 references remain byte-for-byte unchanged. The capture job does not satisfy the production CI gate; normal checks must pass on the commit containing these reviewed references.

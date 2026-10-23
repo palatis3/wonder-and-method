@@ -1,15 +1,15 @@
 {
-  "captureCommit": "1bc47d59892c02a9e7b3e38737771f5042e0eb70",
-  "captureRun": 39881530078,
+  "captureCommit": "3e068fe3b068c6ea33145ace4c6d106e672fe108",
+  "captureRun": 39898844898,
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-23T01:08:21.647836+00:00",
-  "review": "Eight changed Linux screenshots reviewed against expected images. Changes are Florida in the state lists, 19 to 20 states, the added footer link and resulting line/section height shifts. Primary review inspected every changed region and affected lower-page flow; no clipping or broken layout observed. The other 26 baseline images are retained byte-for-byte from the prior reviewed set. All 34 hashes are recorded; browser accessibility and responsive checks remain separate.",
+  "reviewedAt": "2026-10-23T04:17:16.912Z",
+  "review": "Eight changed Linux screenshots reviewed against prior references. The desktop and phone Monroe entries add the reviewed commercial-service link while preserving place lists and worksheets. Six other references catch up to already-published Florida coverage (19 to 20 states and Florida in lists); their page HTML did not change in this batch. Full Monroe entries, both About images and bounded old/new regions for every other changed area were inspected. No clipping or broken layout observed. The other 26 references remain byte-for-byte unchanged.",
   "files": [
     {
       "file": "linux/desktop/about.png",
       "width": 1440,
       "height": 2224,
-      "sha256": "e07b6d047fc14caa8ec236b2366ff2bc62a00d60c5bf6bb82f04bf7b0778c240"
+      "sha256": "9c11ed388adb33c34ac0c83d0e450b3f53682caf66a714ae9c5b2174b089866d"
     },
     {
       "file": "linux/desktop/care.png",
@@ -32,8 +32,8 @@
     {
       "file": "linux/desktop/county-entry.png",
       "width": 1296,
-      "height": 1689,
-      "sha256": "9c39559bef3ecab372cb7504bc12d10cdd4011071c421226bbf41e85ffcee0a3"
+      "height": 1759,
+      "sha256": "c0c85a9f14905da75fe7e902be9cadec2b94f442d320c98505260a6170c4f3d2"
     },
     {
       "file": "linux/desktop/county.png",
@@ -69,7 +69,7 @@
       "file": "linux/desktop/home.png",
       "width": 1440,
       "height": 5073,
-      "sha256": "590d7dfb199982cb509b3e6af3ea96f8933de104ba2a2711e499d3ace2523083"
+      "sha256": "4cd50af60052e326b89bf600f9995861619787f48796fc025575849d3015ade8"
     },
     {
       "file": "linux/desktop/monthly-seo.png",
@@ -117,7 +117,7 @@
       "file": "linux/phone/care.png",
       "width": 390,
       "height": 5668,
-      "sha256": "2e7dfe5ced0269a1c1436cd09cdb852ca2933002f09dbab0fc0fc158df9bf5ac"
+      "sha256": "f67661c7543e3efaa34257e5cf3ba4f0bb5b1fd20af9498f36cd2d14d8ebbf2c"
     },
     {
       "file": "linux/phone/concept.png",
@@ -134,14 +134,14 @@
     {
       "file": "linux/phone/county-entry.png",
       "width": 350,
-      "height": 2201,
-      "sha256": "2c5a55bb560e8b332824d0598222fcc90537b21a5feb57d2935bc28f3f951882"
+      "height": 2298,
+      "sha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9"
     },
     {
       "file": "linux/phone/county.png",
       "width": 390,
       "height": 5439,
-      "sha256": "e73626c250ce92ecfd4eb99daf0d7f8f29028aaa7cdcb2bfc58e9d66e8cae444"
+      "sha256": "32089e7a954232fd95a7e02261e10717c4c787f3e0a08d4f6eb11d1a78b221bd"
     },
     {
       "file": "linux/phone/district-directory.png",
@@ -171,13 +171,13 @@
       "file": "linux/phone/home.png",
       "width": 390,
       "height": 6363,
-      "sha256": "2a68cf073b98b640b01d2d3234ead140baf8096f116fe2134b64022b37fe8284"
+      "sha256": "1e8ffbffd2fe5829de689ad6f917af8c2536b5fc4db7970f0288f800bee2765b"
     },
     {
       "file": "linux/phone/monthly-seo.png",
       "width": 390,
       "height": 7035,
-      "sha256": "42a90c51a925de25beea3350b7968a5ba6848ad25a27a8bfdaa057aab51d28fd"
+      "sha256": "37d43a8bce1b7d6b118701c6c15c261e7ca7c0efe05b221dd8dcf8589efd3a3d"
     },
     {
       "file": "linux/phone/pricing.png",
@@ -211,18 +211,23 @@
     }
   ],
   "changedFiles": [
-    "linux/desktop/care.png",
-    "linux/desktop/county.png",
-    "linux/desktop/footer-open.png",
-    "linux/desktop/monthly-seo.png",
-    "linux/desktop/web-design.png",
-    "linux/phone/about.png",
-    "linux/phone/footer-open.png",
-    "linux/phone/web-design.png"
+    "linux/desktop/about.png",
+    "linux/desktop/county-entry.png",
+    "linux/desktop/home.png",
+    "linux/phone/care.png",
+    "linux/phone/county-entry.png",
+    "linux/phone/county.png",
+    "linux/phone/home.png",
+    "linux/phone/monthly-seo.png"
   ],
   "retainedPriorCapture": {
-    "captureCommit": "df6287b5165d951ad4860aacd7311530ce11ebf5",
-    "captureRun": 39852493748,
-    "reviewedAt": "2026-10-22T20:54:57.670653+00:00"
+    "captureCommit": "1bc47d59892c02a9e7b3e38737771f5042e0eb70",
+    "captureRun": 39881530078,
+    "reviewedAt": "2026-10-23T01:08:21.647836+00:00",
+    "retainedPriorCapture": {
+      "captureCommit": "df6287b5165d951ad4860aacd7311530ce11ebf5",
+      "captureRun": 39852493748,
+      "reviewedAt": "2026-10-22T20:54:57.670653+00:00"
+    }
   }
 }
