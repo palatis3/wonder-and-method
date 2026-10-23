@@ -15,7 +15,7 @@ The accessibility review corroborated the Waterfront geometry issue. The privacy
 
 The homepage adds a curved cream transition and a dark closing invitation, three choice cards with one outcome/price/action each, and Launch Website price context plus Get one like this links for each concept. Hearthside explicitly states that its custom order preview is quoted separately. AssetRounds now reads Featured website I built. The footer retains native disclosure controls with icons and coordinated surfaces. The contact page adds a studio note, a framed form and a clear expectations panel.
 
-Independent responsive review identified faint input borders and narrow choice columns at 200% text size. The borders were darkened and the grid changed to a font-sized minimum width so columns adapt to larger text. Final rendered verification and the normal release gates remain required before publication. Screenshots and browser evidence are retained privately; no test changes waive behavior or accessibility requirements.
+Independent responsive review identified faint input borders and narrow choice columns at 200% text size. The borders were darkened and the grid changed to a font-sized minimum width so columns adapt to larger text. Narrow-screen button padding and decorative arrows were adjusted to preserve readable words. The final independent rendered review passed at 320, 390, 768 and 1440 pixels, including 200% text; field boundaries measure 3.776:1. DESIGN_INDEPENDENT_CLOSURE.md and its final 19-input hash record preserve the exact scope and evidence. Normal release gates remain required before publication. Screenshots and browser evidence are retained privately; no test changes waive behavior or accessibility requirements.
 
 ## Release boundary
 

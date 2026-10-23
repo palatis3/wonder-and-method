@@ -2,7 +2,7 @@
   "reviewedOn": "2026-10-23",
   "originalSourceCommit": "b711713f376d3f180d7d330fbbe20f5c27309d2b",
   "reviewers": "Eight independently scoped Astra extra-high reviews requested by the owner; subsequent focused independent closure reviews.",
-  "status": "Original audits completed; implemented corrections and combined release in verification",
+  "status": "Independent audit and rendered correction closures completed; combined release verification in progress",
   "files": [
     {
       "path": "accessibility-original-findings.json",
@@ -58,6 +58,26 @@
       "path": "performance-independent-evidence.json",
       "sha256": "33e164996ea592f975e40b30147f0313fcbe7e37b1b355276736057f785ecdf4",
       "originalSha256": "33e164996ea592f975e40b30147f0313fcbe7e37b1b355276736057f785ecdf4"
+    },
+    {
+      "path": "DESIGN_INDEPENDENT_CLOSURE.md",
+      "sha256": "ef15ed645dda7141bcf32fe6c940ab0ba3333fde4de489229cd795a0316cd2d4",
+      "originalSha256": "de964905a069b01b32408371e8ee5e4381342fc4614ff594bb5f2a2894de8fad"
+    },
+    {
+      "path": "design-final-input-hashes.json",
+      "sha256": "657388645ea8b87c2186d49d530c97bbe6d746b3cd3108493559ff39b015b224",
+      "originalSha256": "7e76a87cbb56fc465f57cc0b5d03dc6161d7ad905837506007c8b1185f273859"
+    },
+    {
+      "path": "design-final-integrity.json",
+      "sha256": "4f8f7e1e8d4e11eed9dbadd1068edf5acc9c19d2d90ba81ecc0ade0ce4ea6b08",
+      "originalSha256": "a095f47647b6d778700b2d178b042aa0e1bb084c593f0287cfb5f8bdc8e101e3"
+    },
+    {
+      "path": "design-retest-final.json",
+      "sha256": "32d8068716866699165d9f1c094efe967c4fdb0628da34908eb9deb5868c8467",
+      "originalSha256": "cd7c49178d512fdaa56663033d0fd2d109f97561d1b6a5282528169333464064"
     }
   ],
   "evidenceSerialization": "Copied evidence preserves substantive content; line endings and trailing whitespace normalized for repository storage. Original raw hashes retained separately."
