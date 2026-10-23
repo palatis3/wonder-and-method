@@ -63,7 +63,8 @@ for(const width of [320,768,1440])for(const state of fixture.states){
 test('state and district finder preserves cross-boundary and typed names, resets focus and sends no search requests',async({page})=>{
  await page.goto('/areas/?qa=1');
  const search=page.getByRole('searchbox',{name:'County, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
- await expect(state.locator('option')).toHaveCount(22);
+ await expect(state.locator('option')).toHaveCount(23);
+ await expect(state.getByRole('option',{name:'South Carolina',exact:true})).toHaveAttribute('value','south-carolina');
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  const targets=()=>page.locator('[data-county-results] li a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  const cases=[

@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T21:46:35.763Z",
+  "status": "PASS",
+  "baseHead": "6425e105331844f2093fa4eda2caecb1962a36b9",
+  "currentHead": "6425e105331844f2093fa4eda2caecb1962a36b9",
+  "scope": "Independent read-only review of two stale browser-test contracts. Only browser-contract-review.json and browser-contract-review.txt were written; no suites, build, browser session, product edit, baseline edit or delegation.",
+  "findings": [],
+  "unresolvedBlockingIssues": [],
+  "conclusion": "Both revised counts match the already committed South Carolina and Semrush content additions. The added exact option/value and notes-section assertions bind the corrections to those additions. All unrelated assertions remain byte-for-byte identical after reversing the two narrowly scoped edits in each file.",
+  "inputHashes": {
+    "tests/browser/northeast-coverage.spec.mjs": {
+      "sha256": "565664fbba9ccf6d565b029d0e8a7e8ff5b3a7e02d62ad2877919f38403cf131",
+      "bytes": 9965
+    },
+    "git:6425e105331844f2093fa4eda2caecb1962a36b9:tests/browser/northeast-coverage.spec.mjs": {
+      "sha256": "d4f0863f20bba528b59425b3f57fb63d7a1964b7b6a79553dbeda810541a44da",
+      "bytes": 9846
+    },
+    "tests/browser/research-guides.spec.mjs": {
+      "sha256": "ee8242d9f8946be752b5b756aacc76e314e867f3b64cacd47c99f38892b8235d",
+      "bytes": 6126
+    },
+    "git:6425e105331844f2093fa4eda2caecb1962a36b9:tests/browser/research-guides.spec.mjs": {
+      "sha256": "e70a66c983f7e2f4b7e92f82b04afc1496214d1187d67089f01b1b7a28ea836e",
+      "bytes": 5969
+    },
+    "dist/guides/website-not-generating-leads/index.html": {
+      "sha256": "e9d6527eacbe4035d08245d3c2fec72f5988ae5a1dce5da13e5afd90553c45e5",
+      "bytes": 25181
+    },
+    "dist/guides/how-to-choose-a-web-designer/index.html": {
+      "sha256": "f38b925d897a70dfdbfe977b6c78bb2b112897fdecb8e6b4768a725a4ebc996a",
+      "bytes": 25706
+    },
+    "dist/guides/website-content-template/index.html": {
+      "sha256": "d92c547f71c159346281d5a773eaa4bad3506b306ce5fa4b33bd1f225b9d3a2d",
+      "bytes": 30412
+    },
+    "dist/guides/website-redesign-timeline/index.html": {
+      "sha256": "cfc91ff9d8fcc0b4d2df5cfa246ea9b0ad9e214911036f29add48165be40c03a",
+      "bytes": 25034
+    },
+    "dist/guides/one-page-website-seo/index.html": {
+      "sha256": "36da0d6f934f28c6388f58ed6e534502d794b5caed1b3e32f597bcf2a33e7599",
+      "bytes": 25629
+    },
+    "dist/guides/website-handover-checklist/index.html": {
+      "sha256": "3ebf20a808780b32a54f66de691540241787df5b9206512567bd7df92f6a9711",
+      "bytes": 24014
+    },
+    "dist/areas/index.html": {
+      "sha256": "ce7beb87768e1f32a369971beb788f9621632d56ad62049316cc53de4d6149cc",
+      "bytes": 397481
+    },
+    "src/semrush-content-examples.mjs": {
+      "sha256": "24ced72d14d697101d4dd20d27188d78fb09fd38b809ffaa653a073f8b3e7ae2",
+      "bytes": 28647
+    },
+    "src/service-area-directory.mjs": {
+      "sha256": "066d713d3398651569d339d4f0fc645acec9b0b0cdcf80227c648778eb23dc85",
+      "bytes": 20939
+    },
+    "src/service-area.mjs": {
+      "sha256": "8422d980bc370fce4c168db393422ba4e36a27443b6934148c0e4fb43e318cc0",
+      "bytes": 1095
+    },
+    "src/pages.mjs": {
+      "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40",
+      "bytes": 31538
+    },
+    "evidence/combined-release-20261023/browser-contract-reproduction.log": {
+      "sha256": "159ffcca3274e73dcb432013f522bb397e44e44b536255abff02dc614c0995a9",
+      "bytes": 23313
+    },
+    "evidence/combined-release-20261023/browser-contract-correction.log": {
+      "sha256": "39410ee05a1a58e59a43569ef1e964769051fb2bba18c582982953e4f1790c53",
+      "bytes": 1811
+    },
+    "evidence/combined-release-20261023/browser-failures-6425e10.json": {
+      "sha256": "3898a179b8a8390ba9940a94d6894c9b72b7f6cb1cbe77a01584ce0fecf6969e",
+      "bytes": 6130
+    }
+  },
+  "inverseProof": [
+    {
+      "path": "tests/browser/northeast-coverage.spec.mjs",
+      "baselineSha256": "d4f0863f20bba528b59425b3f57fb63d7a1964b7b6a79553dbeda810541a44da",
+      "restoredSha256": "d4f0863f20bba528b59425b3f57fb63d7a1964b7b6a79553dbeda810541a44da",
+      "byteIdentical": true,
+      "currentExpectCallCount": 42,
+      "baselineExpectCallCount": 41,
+      "onlyEdits": "One exact count correction and one additive specific-content assertion. Reversing those two edits restores the entire baseline file byte for byte."
+    },
+    {
+      "path": "tests/browser/research-guides.spec.mjs",
+      "baselineSha256": "e70a66c983f7e2f4b7e92f82b04afc1496214d1187d67089f01b1b7a28ea836e",
+      "restoredSha256": "e70a66c983f7e2f4b7e92f82b04afc1496214d1187d67089f01b1b7a28ea836e",
+      "byteIdentical": true,
+      "currentExpectCallCount": 42,
+      "baselineExpectCallCount": 41,
+      "onlyEdits": "One exact count correction and one additive specific-content assertion. Reversing those two edits restores the entire baseline file byte for byte."
+    }
+  ],
+  "generatedContracts": {
+    "stateFinder": {
+      "path": "dist/areas/index.html",
+      "selector": "#county-state",
+      "optionCount": 23,
+      "emptyOption": {
+        "value": "",
+        "text": "All 21 states and Washington, DC"
+      },
+      "namedStateAndDistrictOptionCount": 22,
+      "southCarolina": {
+        "value": "south-carolina",
+        "text": "South Carolina"
+      },
+      "uniqueOptionValues": true,
+      "source": "src/service-area-directory.mjs:126 maps the existing serviceStates array to options."
+    },
+    "guides": [
+      {
+        "slug": "website-not-generating-leads",
+        "path": "dist/guides/website-not-generating-leads/index.html",
+        "directSectionCount": 6,
+        "sectionIds": [
+          "define-the-problem",
+          "measurement",
+          "find-the-bottleneck",
+          "page-decision",
+          "worked-example",
+          "lead-record"
+        ],
+        "notesToCopyDirectSectionCount": 0,
+        "fictionalOwnerNotesPresent": false
+      },
+      {
+        "slug": "how-to-choose-a-web-designer",
+        "path": "dist/guides/how-to-choose-a-web-designer/index.html",
+        "directSectionCount": 6,
+        "sectionIds": [
+          "same-brief",
+          "provider-fit",
+          "work-evidence",
+          "questions",
+          "compare-quotes",
+          "acceptance"
+        ],
+        "notesToCopyDirectSectionCount": 0,
+        "fictionalOwnerNotesPresent": false
+      },
+      {
+        "slug": "website-content-template",
+        "path": "dist/guides/website-content-template/index.html",
+        "directSectionCount": 8,
+        "sectionIds": [
+          "facts",
+          "page-purpose",
+          "homepage",
+          "service",
+          "notes-to-copy",
+          "about",
+          "contact",
+          "review"
+        ],
+        "notesToCopyDirectSectionCount": 1,
+        "fictionalOwnerNotesPresent": true
+      },
+      {
+        "slug": "website-redesign-timeline",
+        "path": "dist/guides/website-redesign-timeline/index.html",
+        "directSectionCount": 6,
+        "sectionIds": [
+          "start",
+          "ready",
+          "sequence",
+          "example",
+          "reviews",
+          "studio"
+        ],
+        "notesToCopyDirectSectionCount": 0,
+        "fictionalOwnerNotesPresent": false
+      },
+      {
+        "slug": "one-page-website-seo",
+        "path": "dist/guides/one-page-website-seo/index.html",
+        "directSectionCount": 6,
+        "sectionIds": [
+          "decision",
+          "compare",
+          "example-one",
+          "example-many",
+          "implementation",
+          "change"
+        ],
+        "notesToCopyDirectSectionCount": 0,
+        "fictionalOwnerNotesPresent": false
+      },
+      {
+        "slug": "website-handover-checklist",
+        "path": "dist/guides/website-handover-checklist/index.html",
+        "directSectionCount": 6,
+        "sectionIds": [
+          "meaning",
+          "accounts",
+          "files",
+          "register",
+          "verification",
+          "example"
+        ],
+        "notesToCopyDirectSectionCount": 0,
+        "fictionalOwnerNotesPresent": false
+      }
+    ],
+    "notesSource": "src/semrush-content-examples.mjs:46 defines writingExample as section notes-to-copy with the exact fictional-owner label; line 88 inserts it before about for website-content-template, and the insertion helper adds one section."
+  },
+  "coveragePreserved": {
+    "stateFinder": "All 21 typed and cross-boundary search cases, fixture-state selections, zero-results behavior, Clear focus/reset, 1,125 area rows and no /api/ search request assertion are unchanged.",
+    "guides": "All six guide routes, visibility, strict section counts (six for the other five guides), horizontal overflow, download status/length, process-list checks and axe WCAG assertions are unchanged.",
+    "skipTimeoutBaselineChanges": "None. Existing no-JavaScript skip remains unchanged; no timeouts, thresholds or baselines were altered."
+  },
+  "sourceIntegrity": {
+    "unchangedSources": [
+      {
+        "path": "src/semrush-content-examples.mjs",
+        "unchangedFromBase": true,
+        "sha256": "24ced72d14d697101d4dd20d27188d78fb09fd38b809ffaa653a073f8b3e7ae2"
+      },
+      {
+        "path": "src/service-area-directory.mjs",
+        "unchangedFromBase": true,
+        "sha256": "066d713d3398651569d339d4f0fc645acec9b0b0cdcf80227c648778eb23dc85"
+      },
+      {
+        "path": "src/service-area.mjs",
+        "unchangedFromBase": true,
+        "sha256": "8422d980bc370fce4c168db393422ba4e36a27443b6934148c0e4fb43e318cc0"
+      },
+      {
+        "path": "src/pages.mjs",
+        "unchangedFromBase": true,
+        "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40"
+      }
+    ],
+    "noTrackedProductOrBaselineDiff": true
+  },
+  "executionEvidence": {
+    "providedBy": "Root agent; this reviewer did not rerun tests.",
+    "before": {
+      "path": "evidence/combined-release-20261023/browser-contract-reproduction.log",
+      "failed": 6,
+      "projects": [
+        "desktop",
+        "phone",
+        "phone-reduced-motion"
+      ],
+      "observedMismatches": [
+        "state options expected 22, received 23",
+        "content-template direct sections expected 7, received 8"
+      ]
+    },
+    "after": {
+      "path": "evidence/combined-release-20261023/browser-contract-correction.log",
+      "passed": 6,
+      "failed": 0,
+      "durationSeconds": 19.3,
+      "projects": [
+        "desktop",
+        "phone",
+        "phone-reduced-motion"
+      ]
+    },
+    "completeLinuxBaseline": {
+      "path": "evidence/combined-release-20261023/browser-failures-6425e10.json",
+      "run": 40020643772,
+      "commit": "6425e105331844f2093fa4eda2caecb1962a36b9",
+      "passed": 664,
+      "skipped": 413,
+      "failed": 6,
+      "flaky": 0,
+      "globalErrors": 0,
+      "allFailuresAccountedForByTheseTwoCorrections": true,
+      "failureCases": [
+        "northeast-coverage.spec.mjs:desktop",
+        "northeast-coverage.spec.mjs:phone",
+        "northeast-coverage.spec.mjs:phone-reduced-motion",
+        "research-guides.spec.mjs:desktop",
+        "research-guides.spec.mjs:phone",
+        "research-guides.spec.mjs:phone-reduced-motion"
+      ],
+      "note": "The completed baseline CI browser report has exactly the six reproduced count failures and no additional browser failures. The focused corrected run passes all six. A full post-correction run is parent-owned."
+    }
+  },
+  "limitations": [
+    "This review is scoped to the two browser-contract corrections. The parent-owned complete Linux CI run remains a separate release gate.",
+    "Generated HTML was parsed statically for this review. Runtime and accessibility behavior is supported by the supplied focused browser result, not a new reviewer browser run."
+  ]
+}

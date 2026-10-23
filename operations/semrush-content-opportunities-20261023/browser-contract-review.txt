@@ -1,0 +1,16 @@
+PASS — browser contract correction review
+Base: 6425e105331844f2093fa4eda2caecb1962a36b9
+
+No blocking findings.
+
+The state finder has exactly 23 options: the all-regions option plus 21 states and Washington, DC. South Carolina is present exactly once with value south-carolina. The revised test keeps a strict count and explicitly requires that option/value.
+
+The content-template guide has eight direct prose sections, including the existing notes-to-copy section with “Fictional notes supplied by an owner:”. The Semrush source adds that section before about. The other five guides still have six sections each. The revised test requires the exact count and the specific new section/label.
+
+Reversing only the count correction and added assertion in each test restores the full baseline file byte for byte. Every unrelated assertion, route, fixture, skip, timeout, threshold and baseline is unchanged. Product source matches the reviewed commit; there is no tracked product/baseline diff.
+
+Supplied root evidence: six original failures (two tests × desktop, phone and reduced-motion phone) became six passes in 19.3 seconds. No reviewer suites, build or browser were run. Exact source, generated HTML, baseline-test and log SHA-256 hashes are in the companion JSON.
+
+Complete baseline Linux browser run 40020643772: 664 passed, 413 skipped, six failed, zero flaky, zero global errors. Every failure is one of these two stale counts across the same three projects. The extracted completed-run report was inspected and hashed; no additional browser correction is indicated.
+
+Scope limit: final post-correction Linux CI remains parent-owned and is not replaced by this focused review.

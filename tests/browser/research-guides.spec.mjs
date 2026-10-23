@@ -27,7 +27,8 @@ test('ROI calculator validates, recalculates and resets without transmitting inp
 test('six new guides have visible content, working downloads and narrow-screen layouts',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='no-javascript');
  for(const slug of ['website-not-generating-leads','how-to-choose-a-web-designer','website-content-template','website-redesign-timeline','one-page-website-seo','website-handover-checklist']){
-  await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();await expect(page.locator('.journal-prose > section')).toHaveCount(slug==='website-content-template'?7:6);
+  await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();await expect(page.locator('.journal-prose > section')).toHaveCount(slug==='website-content-template'?8:6);
+  if(slug==='website-content-template')await expect(page.locator('.journal-prose > #notes-to-copy')).toContainText('Fictional notes supplied by an owner:');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
   const download=page.locator('.journal-prose a[href^="/assets/guides/"]').first();await expect(download).toBeVisible();const url=await download.getAttribute('href');const response=await page.request.get(url);expect(response.status()).toBe(200);expect((await response.text()).length).toBeGreaterThan(300);
   const steps=page.locator('.guide-steps');await steps.scrollIntoViewIfNeeded();await expect(steps).toBeVisible();expect(await steps.locator('li').count()).toBeGreaterThanOrEqual(3);expect(await steps.locator('li strong').allTextContents()).not.toContain('');
