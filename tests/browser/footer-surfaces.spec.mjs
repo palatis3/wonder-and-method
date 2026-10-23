@@ -14,7 +14,7 @@ test('compact footer preserves every group and works by keyboard',async({page})=
   await expect(group.locator('a').first()).toBeVisible();await page.keyboard.press('Tab');await expect(group.locator('a').first()).toBeFocused();
   await summary.focus();await page.keyboard.press('Space');await expect(group).not.toHaveAttribute('open','');
  }
- await expect(footer.locator('a')).toHaveCount(39);
+ await expect(footer.locator('a')).toHaveCount(40);
  expect(await footer.evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(520);
 });
 
