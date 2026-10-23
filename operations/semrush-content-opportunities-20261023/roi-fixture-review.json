@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T20:16:54.265Z",
+  "status": "PASS",
+  "scope": "Read-only independent review of the ROI fixture correction against cf9b3f5; no build/browser/test execution.",
+  "baseHead": "cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517",
+  "currentHead": "cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517",
+  "inputHashes": {
+    "tests/browser/approved-rerun-backend.spec.mjs": {
+      "sha256": "ea3fac5f3cca0ed3e71869fd92836bde921a6a3821e9f3d7991766ed23f53279",
+      "bytes": 10113
+    },
+    "src/assets/site-refresh.css": {
+      "sha256": "fca3dba5a08dc7f5ff9af8e3b18eb2e5131076cff6a810a9c13f483752ffdce5",
+      "bytes": 55156
+    },
+    "src/assets/website-roi.css": {
+      "sha256": "0dbed2093de15f05f9d41d7f523ad961de61040c9ae697f17fc00f1724bd578b",
+      "bytes": 2852
+    },
+    "src/website-roi.mjs": {
+      "sha256": "1f0d851eb71ffa67ebe2bb3eb7a4ca1a30c14e2db11f45b20fec9309cb763484",
+      "bytes": 7253
+    },
+    "src/semrush-content-examples.mjs": {
+      "sha256": "24ced72d14d697101d4dd20d27188d78fb09fd38b809ffaa653a073f8b3e7ae2",
+      "bytes": 28647
+    },
+    "src/pages.mjs": {
+      "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40",
+      "bytes": 31538
+    },
+    "dist/tools/website-roi-calculator/index.html": {
+      "sha256": "6ce2ffbf1ccbf7374df4ff8312be47da52a584b578a338a2147a889914972c09",
+      "bytes": 25063
+    },
+    "dist/assets/site-family-information.css": {
+      "sha256": "214310d488755c3e6475f6338f4d94977d32c79b6e50586d0c99b1dfcbe37a90",
+      "bytes": 104214
+    },
+    "evidence/semrush-content-opportunities-20261023/roi-fixture-correction.log": {
+      "sha256": "dd2d20fbd2f362f4181d38905a0ac42d2b62bb1d85a5016b7139b0685a4a2421",
+      "bytes": 1528
+    },
+    "evidence/semrush-content-opportunities-20261023/roi-complete-layout.log": {
+      "sha256": "709c4415eec7bfefdc6a7162d2f7a7bed6eeb4623fc4f53b7ea4dc1d8108a4ff",
+      "bytes": 4359
+    }
+  },
+  "baselineFixtureSha256": "7f8e501585a1141c4a2820c266ce2ea8c9d6c65f0ccd54251bfb95aeff0b5e2c",
+  "findings": [],
+  "unresolvedBlockingIssues": [],
+  "conclusion": "This is a missing fixture dependency correction. websiteRoiPage now includes shared responsive cost-example tables, whose production selectors require site-refresh.css and the studio-site namespace. The fixture previously provided only website-roi.css. The correction loads the exact existing production dependency only for the three layout tests; no assertion or gate is weakened.",
+  "proof": {
+    "inverseFixtureOnlyChangesReproducesBaseline": true,
+    "expectCallsBefore": 53,
+    "expectCallsAfter": 53,
+    "widths": [
+      320,
+      390,
+      1440
+    ],
+    "textScales": [
+      1,
+      2
+    ],
+    "documentOverflowTolerancePx": 1,
+    "minimumFieldWidthThresholds": "320px: >220 at100%, >200 at200%; 390/1440px: >250 at both scales; unchanged.",
+    "unchangedProductionFiles": [
+      {
+        "path": "src/assets/site-refresh.css",
+        "unchanged": true
+      },
+      {
+        "path": "src/assets/website-roi.css",
+        "unchanged": true
+      },
+      {
+        "path": "src/website-roi.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "src/semrush-content-examples.mjs",
+        "unchanged": true
+      }
+    ],
+    "productionHasExactResponsiveRule": true,
+    "productionBodyIncludesStudioSite": true,
+    "productionCssOrder": "website-roi.css before site-family-information.css; fixture appends the shared layout CSS after roiCss in the same relevant cascade order."
+  },
+  "evidence": {
+    "fixtureRun": {
+      "project": "desktop",
+      "passed": 7,
+      "failed": 0,
+      "log": "evidence/semrush-content-opportunities-20261023/roi-fixture-correction.log"
+    },
+    "completeBuiltPage": [
+      {
+        "width": 320,
+        "scale": 1,
+        "documentScrollWidth": 320,
+        "viewport": 320,
+        "fieldWidth": 246,
+        "tableModes": [
+          "block"
+        ],
+        "rawDescendantBoxesBeyondViewport": []
+      },
+      {
+        "width": 320,
+        "scale": 2,
+        "documentScrollWidth": 320,
+        "viewport": 320,
+        "fieldWidth": 174,
+        "tableModes": [
+          "block"
+        ],
+        "rawDescendantBoxesBeyondViewport": [
+          {
+            "tag": "TR",
+            "id": "",
+            "classes": "",
+            "right": 322.671875
+          },
+          {
+            "tag": "TH",
+            "id": "",
+            "classes": "",
+            "right": 322.671875
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "scale": 1,
+        "documentScrollWidth": 390,
+        "viewport": 390,
+        "fieldWidth": 316,
+        "tableModes": [
+          "block"
+        ],
+        "rawDescendantBoxesBeyondViewport": []
+      },
+      {
+        "width": 390,
+        "scale": 2,
+        "documentScrollWidth": 390,
+        "viewport": 390,
+        "fieldWidth": 244,
+        "tableModes": [
+          "block"
+        ],
+        "rawDescendantBoxesBeyondViewport": []
+      },
+      {
+        "width": 1440,
+        "scale": 1,
+        "documentScrollWidth": 1440,
+        "viewport": 1440,
+        "fieldWidth": 495,
+        "tableModes": [
+          "table"
+        ],
+        "rawDescendantBoxesBeyondViewport": []
+      },
+      {
+        "width": 1440,
+        "scale": 2,
+        "documentScrollWidth": 1440,
+        "viewport": 1440,
+        "fieldWidth": 469.40625,
+        "tableModes": [
+          "table"
+        ],
+        "rawDescendantBoxesBeyondViewport": []
+      }
+    ],
+    "cssAssessment": "Shared responsive-table rules set mobile tables/rows/cells to block layout and allow wrapping. There is no document-wide overflow:hidden/clip rule added by this stylesheet; the mobile thead is intentionally visually clipped while semantic headers remain in the document."
+  },
+  "limits": [
+    "The complete-page probe proves document scrollWidth equals viewport at all six combinations. It does not prove the isolated fixture minimum-field thresholds: complete-page fields are174px at320px/200% and244px at390px/200%, versus fixture thresholds >200px and >250px. This fixture change does not alter those production dimensions.",
+    "At320px/200%, the complete-page log lists two TR/TH descendant boxes beyond the viewport while document width remains320px. The shared mobile table CSS clips the semantic thead; no new root clipping or product CSS was introduced by this fixture correction.",
+    "Recorded desktop fixture results and existing complete-page probe were reviewed; no browser run, full build, baseline mutation, screenshot visual review, or full CI execution was performed by this reviewer. Final CI remains parent-owned."
+  ],
+  "ownership": {
+    "writtenFiles": [
+      "evidence/semrush-content-opportunities-20261023/roi-fixture-review.json",
+      "evidence/semrush-content-opportunities-20261023/roi-fixture-review.txt"
+    ],
+    "sourceOrBaselineChanges": false,
+    "workersSpawned": false
+  }
+}

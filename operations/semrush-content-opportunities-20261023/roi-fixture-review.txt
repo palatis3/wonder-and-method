@@ -1,0 +1,18 @@
+PASS — ROI fixture dependency correction
+Reviewed 2026-10-23T20:16:54.265Z against cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517.
+
+No blocking findings. The ROI page now includes shared responsive cost-example tables. Their existing production styles live in site-refresh.css and require .studio-site; the isolated fixture previously supplied neither. The correction loads that exact stylesheet and namespace only for the three layout tests. Shared mobile rules reflow rows/cells and wrap content; they do not add page-wide overflow clipping.
+
+Integrity proof: reversing only the CSS import, optional body class, explanatory comment and layout-mount dependency restores the entire baseline test file exactly. All 53 expect() calls, widths 320/390/1440, scales 100%/200%, one-pixel overflow tolerance and minimum-field-width thresholds remain unchanged. Relevant production markup/CSS bytes are unchanged from cf9b3f5.
+
+Evidence: all 7 tests in this file passed on desktop. The separate complete built-page probe reports document scrollWidth equal to viewport at all six width/scale combinations, with the responsive example table switching to block layout on narrow screens.
+
+Limits: the complete-page overflow proof is separate from the isolated fixture field-width gate. Complete-page field widths at 200% are 174px at 320px and 244px at 390px, below the corresponding isolated thresholds (>200/>250); those production dimensions are not changed here. The 320px/200% log also records two TR/TH descendant bounds outside the viewport while root width remains 320px; existing mobile CSS visually clips semantic table headers. This review did not run browsers/builds or visually inspect screenshots.
+
+SHA-256 inputs:
+Baseline fixture: 7f8e501585a1141c4a2820c266ce2ea8c9d6c65f0ccd54251bfb95aeff0b5e2c
+Corrected fixture: ea3fac5f3cca0ed3e71869fd92836bde921a6a3821e9f3d7991766ed23f53279
+Shared production CSS: fca3dba5a08dc7f5ff9af8e3b18eb2e5131076cff6a810a9c13f483752ffdce5
+All other reviewed input hashes and the six measurements are in roi-fixture-review.json.
+
+Only roi-fixture-review.json and roi-fixture-review.txt were written. Final CI remains parent-owned.

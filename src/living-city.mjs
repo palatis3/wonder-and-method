@@ -13,6 +13,11 @@ const sourceSet=(media,key,small,fallback,width)=>{
  const full=url(media,key,fallback),variant=media?.files?.[small];
  return `${variant?`/assets${variant.path} ${variant.width}w, `:''}${full} ${media?.files?.[key]?.width||width}w`;
 };
+export function livingCityPosterPreloads(config={}){
+ const media=config.livingCityMedia;
+ const initialMobilePoster=media?.files?.mobileWebPoster?'mobileWebPoster':'mobilePoster';
+ return `<link rel="preload" as="image" href="${url(media,initialMobilePoster,'mobile-poster.webp')}" imagesrcset="${sourceSet(media,initialMobilePoster,'mobileSmallPoster','mobile-poster.webp',828)}" imagesizes="100vw" media="(max-width:1023px)" fetchpriority="high"><link rel="preload" as="image" href="${url(media,'desktopPoster','desktop-poster.webp')}" imagesrcset="${sourceSet(media,'desktopPoster','desktopSmallPoster','desktop-poster.webp',1440)}" imagesizes="100vw" media="(min-width:1024px)" fetchpriority="high">`;
+}
 const previewSourceSet=capture=>[...(capture.variants||[]),capture].map(item=>`${item.path} ${item.width}w`).join(', ');
 
 // Decorative star maps are original patterns, with no interactive or spoken content.

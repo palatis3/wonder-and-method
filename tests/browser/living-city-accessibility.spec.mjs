@@ -50,6 +50,11 @@ test('artwork and sky stay aligned above the roofs across desktop and phone crop
  };
  for(const width of testInfo.project.name==='phone'?[320,390,430,768,1023]:[1024,1199,1440,1521,1920,2560]){
   await page.setViewportSize({width,height:1100});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  const poster=await page.evaluate(async()=>{
+   const image=document.querySelector('.city-poster');await image.decode();
+   return {selected:image.currentSrc,requests:performance.getEntriesByType('resource').filter(entry=>entry.name.includes('/assets/living-city/')&&entry.name.includes('poster.webp')).map(entry=>({url:entry.name,initiator:entry.initiatorType}))};
+  });
+  expect(poster.requests,`Only the selected poster downloads at ${width}px`).toEqual([{url:poster.selected,initiator:'link'}]);
   await inspect(String(width));
   await testInfo.attach('sky-composition-'+width,{body:await page.screenshot(),contentType:'image/png'});
  }

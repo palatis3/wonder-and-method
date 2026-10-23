@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23T20:22:07.080Z",
+  "config": {
+    "runs": 3,
+    "paths": [
+      "/"
+    ],
+    "budgets": {
+      "largest-contentful-paint": 2500,
+      "cumulative-layout-shift": 0.1,
+      "total-blocking-time": 200
+    },
+    "minimumPerformanceScore": 0.9
+  },
+  "results": [
+    {
+      "path": "/",
+      "score": 0.97,
+      "metrics": {
+        "largest-contentful-paint": 2331.7223000000004,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 140.00000000000023
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 2331.2548,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 50
+          },
+          "score": 0.98
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2331.7223000000004,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 167
+          },
+          "score": 0.96
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2333.2843000000003,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 140.00000000000023
+          },
+          "score": 0.97
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limits": "Three cold mobile lab runs per page, median metrics, pinned Lighthouse and Chromium. Local synthetic server with gzip text transfer; third-party HTTPS requests blocked. These are repeatable lab budgets, not field Core Web Vitals or an indexing guarantee."
+}

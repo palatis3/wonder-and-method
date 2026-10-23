@@ -1,0 +1,22 @@
+PASS — homepage preload and stylesheet-discovery review
+Reviewed 2026-10-23T20:30:01.260Z against cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517.
+
+No blocking findings or unresolved code issues.
+
+The responsive image preloads use the same URLs, srcsets, sizes and mobile selection as the existing picture. All built URLs are identically versioned. Exactly one selected poster downloads through the preload in each of six viewport/DPR cases; the strengthened existing artwork test verifies the same rule at 11 widths. No new script or fallback behavior is introduced.
+
+The homepage stylesheet pair is discovered earlier but retains its exact order and bytes. Independently reversing only the two image hints and CSS-link relocation reproduces the cf9b3f5 normalized homepage HTML hash. The body, controls, native fallback, artwork and other content remain unchanged. The complete contract proof reports only index.html changed.
+
+Final isolated local Lighthouse: median LCP 2331.722ms, CLS 0, TBT 140ms, score 97. All three LCP runs are 2331–2333ms; remaining LCP margin is 168.278ms. Focused build tests: 3 passed. Artwork matrix: 2 passed, 1 existing project exclusion.
+
+Final pixel proof uses stable VIEWPORT captures at 390x844, 1440x1000 and 1425x990. All three before/current PNG pairs are byte-identical. The desktop and phone captures were visually inspected and contain the actual city artwork. The 1425px capture is also byte-identical to the approved portfolio PNG; all five portfolio WebP assets match prior hashes. Earlier full-page captures are excluded because their shared capture artifact omitted the desktop poster.
+
+SHA-256 inputs:
+src/living-city.mjs: 3512534152c35cfbdf0abdb40488c0abb84fc199c0014d4171bd381bbecb9cda
+src/pages.mjs: ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40
+scripts/build.mjs: 3c074d19e5d129717deaeda02ccf71e67bbce492ce231a64fd127fbc38d42784
+tests/build-assets.test.mjs: 0f4451e68956a094a5927ad35a95713917ab10943851674eceb6e0310bc60afd
+tests/browser/living-city-accessibility.spec.mjs: 376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69
+Complete source, evidence, asset and viewport-image hashes are recorded in home-preload-review.json.
+
+Limits: final Linux CI remains required. This bounded review ran no browser/build/test suites and modified only its two reports. No separate no-JavaScript browser run was performed; preservation is supported by exact body/asset identity and native preload semantics.

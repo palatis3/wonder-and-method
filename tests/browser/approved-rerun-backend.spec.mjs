@@ -13,7 +13,8 @@ import {priceList,money} from '../../src/shared.mjs';
 const bundle=async path=>(await build({entryPoints:[fileURLToPath(new URL(path,import.meta.url))],bundle:true,write:false,format:'iife',platform:'browser',logLevel:'silent'})).outputFiles[0].text;
 const roiScript=await bundle('../../src/assets/website-roi.js'),formScript=await bundle('../../src/client.js'),costScript=await bundle('../../src/calculator.js');
 const roiCss=await readFile(new URL('../../src/assets/website-roi.css',import.meta.url),'utf8');
-async function mount(page,html,script,{path='/contact/',css=''}={}){
+const sharedLayoutCss=await readFile(new URL('../../src/assets/site-refresh.css',import.meta.url),'utf8');
+async function mount(page,html,script,{path='/contact/',css='',bodyClass=''}={}){
  const network=[];
  await page.route('**/*',async route=>{
   const url=new URL(route.request().url());network.push({path:url.pathname,method:route.request().method(),body:route.request().postData()});
@@ -22,7 +23,7 @@ async function mount(page,html,script,{path='/contact/',css=''}={}){
   if(url.pathname==='/api/inquiries'){
    const input=route.request().postDataJSON();return route.fulfill({status:202,contentType:'application/json',body:JSON.stringify({...input,reference:'abcdef12-3456-4000-8000-000000000001',synthetic:true})});
   }
-  return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:Arial,sans-serif;margin:0;padding:20px;box-sizing:border-box}*{box-sizing:border-box}[hidden]{display:none!important}input,textarea,select{font:inherit}label{display:block}form{max-width:100%}'+css+'</style></head><body>'+html+'</body></html>'});
+  return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:Arial,sans-serif;margin:0;padding:20px;box-sizing:border-box}*{box-sizing:border-box}[hidden]{display:none!important}input,textarea,select{font:inherit}label{display:block}form{max-width:100%}'+css+'</style></head><body class="'+bodyClass+'">'+html+'</body></html>'});
  });
  await page.goto('http://synthetic.test'+path);if(script)await page.addScriptTag({content:script});return network;
 }
@@ -40,7 +41,9 @@ test('ROI shows defaults, keeps stale results, debounces valid updates without f
 });
 
 for(const width of [320,390,1440])test(`ROI fields and results fit ${width}px and 200% text`,async({page})=>{
- await page.setViewportSize({width,height:1000});await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:roiCss});
+ // The complete page includes shared responsive example tables. Use their
+ // production stylesheet and namespace as well as the calculator styles.
+ await page.setViewportSize({width,height:1000});await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:roiCss+sharedLayoutCss,bodyClass:'studio-site'});
  for(const scale of [1,2]){
   await page.evaluate(scale=>document.documentElement.style.fontSize=16*scale+'px',scale);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);

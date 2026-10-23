@@ -44,7 +44,11 @@ export function applyCssBundles(html,boot,{family}={}){
  // Package selectors do not target the identity. Brand rules now lead the shared
  // cascade, preserving their position before the general layout overrides.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- return html.replace('</head>',`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/${family?'site-family-'+family:'site'}.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}</head>`);
+ const styles=`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/${family?'site-family-'+family:'site'}.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}`;
+ // Discover the home hero's blocking styles before its font/image preloads
+ // and module requests. Keep the two stylesheets in their existing cascade.
+ if(family==='home'&&city&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
+ return html.replace('</head>',styles+'</head>');
 }
 
 export async function buildBrowserBundles(root,config){

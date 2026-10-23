@@ -1,0 +1,224 @@
+{
+  "checkedAt": "2026-10-23T20:27:14.174Z",
+  "status": "PASS",
+  "baseCommit": "cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517",
+  "networkSelections": [
+    {
+      "width": 390,
+      "dpr": 1,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+          "media": "(max-width:1023px)",
+          "srcset": "/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c 414w, /assets/living-city/mobile-web-poster.webp?v=aacccda66c5d 828w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c",
+          "initiator": "link",
+          "transferSize": 22828,
+          "startTime": 13.400000095367432
+        }
+      ]
+    },
+    {
+      "width": 412,
+      "dpr": 1.75,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+          "media": "(max-width:1023px)",
+          "srcset": "/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c 414w, /assets/living-city/mobile-web-poster.webp?v=aacccda66c5d 828w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+          "initiator": "link",
+          "transferSize": 53166,
+          "startTime": 14
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "dpr": 2,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+          "media": "(max-width:1023px)",
+          "srcset": "/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c 414w, /assets/living-city/mobile-web-poster.webp?v=aacccda66c5d 828w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+          "initiator": "link",
+          "transferSize": 53166,
+          "startTime": 14.5
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "dpr": 1,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "media": "(min-width:1024px)",
+          "srcset": "/assets/living-city/desktop-small-poster.webp?v=d8b24a4678f5 960w, /assets/living-city/desktop-poster.webp?v=c522de581f06 1440w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "initiator": "link",
+          "transferSize": 176390,
+          "startTime": 15.699999928474426
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "dpr": 2,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "media": "(min-width:1024px)",
+          "srcset": "/assets/living-city/desktop-small-poster.webp?v=d8b24a4678f5 960w, /assets/living-city/desktop-poster.webp?v=c522de581f06 1440w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "initiator": "link",
+          "transferSize": 176390,
+          "startTime": 13.699999928474426
+        }
+      ]
+    },
+    {
+      "width": 1425,
+      "dpr": 1,
+      "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+      "activePreloads": [
+        {
+          "href": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "media": "(min-width:1024px)",
+          "srcset": "/assets/living-city/desktop-small-poster.webp?v=d8b24a4678f5 960w, /assets/living-city/desktop-poster.webp?v=c522de581f06 1440w",
+          "sizes": "100vw"
+        }
+      ],
+      "posterRequests": [
+        {
+          "url": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+          "initiator": "link",
+          "transferSize": 176390,
+          "startTime": 14.800000071525574
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "deviceScaleFactor": 1,
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/home-loading-390-previous-viewport.png",
+        "sha256": "95511e73b1c9275a666feb0cd06302da6165ac2763634c83ea3426c4643aca57"
+      },
+      "current": {
+        "path": "output/playwright/home-loading-390-current-viewport.png",
+        "sha256": "95511e73b1c9275a666feb0cd06302da6165ac2763634c83ea3426c4643aca57"
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 1000,
+      "deviceScaleFactor": 1,
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/home-loading-1440-previous-viewport.png",
+        "sha256": "1d4f4c6e34e6b6c498dd65a07c6df8e43d58d299a6782c95b951f2d89a328978"
+      },
+      "current": {
+        "path": "output/playwright/home-loading-1440-current-viewport.png",
+        "sha256": "1d4f4c6e34e6b6c498dd65a07c6df8e43d58d299a6782c95b951f2d89a328978"
+      }
+    },
+    {
+      "viewportWidth": 1425,
+      "viewportHeight": 990,
+      "deviceScaleFactor": 1,
+      "differentPixels": 0,
+      "previous": {
+        "path": "output/playwright/home-loading-1425-previous-viewport.png",
+        "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d"
+      },
+      "current": {
+        "path": "output/playwright/home-loading-1425-current-viewport.png",
+        "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d"
+      }
+    }
+  ],
+  "contentProof": {
+    "changedDocuments": 1,
+    "change": "Only two responsive image preload tags and earlier placement of the same ordered stylesheet pair. Reversing those changes reproduces the prior normalized HTML hash.",
+    "allOtherHtmlContentMediaStylesDownloadsAndAssetsPreserved": true
+  },
+  "portfolioCapture": {
+    "pixelIdenticalToApprovedCapture": true,
+    "viewport": {
+      "width": 1425,
+      "height": 990
+    },
+    "allFiveImageAssetsUnchanged": true,
+    "provenanceRefreshed": true
+  },
+  "inputFiles": [
+    {
+      "path": "src/pages.mjs",
+      "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40"
+    },
+    {
+      "path": "src/living-city.mjs",
+      "sha256": "3512534152c35cfbdf0abdb40488c0abb84fc199c0014d4171bd381bbecb9cda"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "3c074d19e5d129717deaeda02ccf71e67bbce492ce231a64fd127fbc38d42784"
+    },
+    {
+      "path": "tests/build-assets.test.mjs",
+      "sha256": "0f4451e68956a094a5927ad35a95713917ab10943851674eceb6e0310bc60afd"
+    },
+    {
+      "path": "tests/browser/living-city-accessibility.spec.mjs",
+      "sha256": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69"
+    },
+    {
+      "path": "tests/browser/approved-rerun-backend.spec.mjs",
+      "sha256": "ea3fac5f3cca0ed3e71869fd92836bde921a6a3821e9f3d7991766ed23f53279"
+    },
+    {
+      "path": "src/portfolio-captures.json",
+      "sha256": "2ed836978bcc683f5050cde4a3d6265f72e8a3a31142b0c871b876076c09b6d1"
+    }
+  ],
+  "contractChanges": [
+    "Changed page: index.html (htmlSha256)"
+  ]
+}

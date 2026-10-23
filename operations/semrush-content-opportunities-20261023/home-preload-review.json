@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T20:30:01.260Z",
+  "status": "PASS",
+  "baseHead": "cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517",
+  "currentHead": "cf9b3f5d5cdf9a211a5ffe9c8e88f93f54fd4517",
+  "scope": "Independent bounded read-only review of responsive homepage poster preloads, early discovery of the unchanged homepage stylesheet pair, and their regression evidence.",
+  "findings": [],
+  "unresolvedBlockingIssues": [],
+  "inputHashes": {
+    "src/living-city.mjs": {
+      "sha256": "3512534152c35cfbdf0abdb40488c0abb84fc199c0014d4171bd381bbecb9cda",
+      "bytes": 11024
+    },
+    "src/pages.mjs": {
+      "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40",
+      "bytes": 31538
+    },
+    "scripts/build.mjs": {
+      "sha256": "3c074d19e5d129717deaeda02ccf71e67bbce492ce231a64fd127fbc38d42784",
+      "bytes": 21239
+    },
+    "tests/build-assets.test.mjs": {
+      "sha256": "0f4451e68956a094a5927ad35a95713917ab10943851674eceb6e0310bc60afd",
+      "bytes": 6580
+    },
+    "tests/browser/living-city-accessibility.spec.mjs": {
+      "sha256": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69",
+      "bytes": 14350
+    },
+    "src/portfolio-captures.json": {
+      "sha256": "2ed836978bcc683f5050cde4a3d6265f72e8a3a31142b0c871b876076c09b6d1",
+      "bytes": 4755
+    },
+    "scripts/version-static-assets.mjs": {
+      "sha256": "34d7f95761981eaca53c9460b4ba0d35269f360178ac5d2cb204404750224538",
+      "bytes": 4178
+    },
+    "scripts/static-headers.mjs": {
+      "sha256": "69ba438282aba9d357ae0b69a3666916e7d9d0ffc509b68e3c02f1530c323917",
+      "bytes": 1655
+    },
+    "scripts/site-contract.mjs": {
+      "sha256": "fabeb1aa5cbeb8e02768701e2a6843a42b3b1b6f67d6710b0fdd488a688976c7",
+      "bytes": 5200
+    },
+    "motion/living-city.js": {
+      "sha256": "921405ed51d2f9e282b2ffead715f55c7cb58a04de29c40f2503290cbb359a09",
+      "bytes": 17599
+    },
+    "public/living-city/manifest.json": {
+      "sha256": "8c2bf9b9ebcd601a46613ce3ecaf80b41527885b10b534b508d1eedc43335305",
+      "bytes": 5113
+    },
+    "dist/index.html": {
+      "sha256": "cfd89caee2b3df66a73978d6be8bde662bc4fb2c8c6280c55dc833fac3530f38",
+      "bytes": 35633
+    },
+    "dist/assets/site-family-home.css": {
+      "sha256": "b204670bd20b4182aa59ab82f62bd74707b0643c1bba63085192397ab3b98d87",
+      "bytes": 107689
+    },
+    "dist/assets/living-city.css": {
+      "sha256": "d71d6ca120350341e32a5e15e877a2cf2e5a751ff0a554b7c5a93f4664729dd8",
+      "bytes": 33132
+    },
+    "evidence/semrush-content-opportunities-20261023/home-loading-proof.json": {
+      "sha256": "d1ad78c1d7049370fff38d19df7f37815adafe593125b3a18ec02c0f73c89697",
+      "bytes": 7986
+    },
+    "evidence/semrush-content-opportunities-20261023/home-loading-proof.log": {
+      "sha256": "d5113822922265ab81e9830c35e76d2a09e1ccff0d4e3306a639b27ec32963eb",
+      "bytes": 10190
+    },
+    "evidence/semrush-content-opportunities-20261023/home-discovery-unit.log": {
+      "sha256": "74e1c36405088f27b1fb278bfa453bfb3740a74da4d0ab1b80994ebec40d27a8",
+      "bytes": 419
+    },
+    "evidence/semrush-content-opportunities-20261023/home-preload-browser.log": {
+      "sha256": "a0704646b8b15d46c3f4c42095b5143bf4f112cbfb4715f5e3460a854ac8885e",
+      "bytes": 1252
+    },
+    "evidence/semrush-content-opportunities-20261023/home-discovery-performance-final.log": {
+      "sha256": "318308d5002cb350849178434df8c677573320de03176a5121768b3649b5d773",
+      "bytes": 133
+    },
+    "evidence/semrush-content-opportunities-20261023/home-preload-performance/summary.json": {
+      "sha256": "77741e691bc957fa4ce2765d90cbe4976bf732188c3e545afbaad2181d4385eb",
+      "bytes": 1530
+    },
+    "evidence/semrush-content-opportunities-20261023/home-image-preload-only-summary.json": {
+      "sha256": "7211adc8a9845cca5266c9ee4d586175d2f3315601170f3d27eeabbc803d723c",
+      "bytes": 1506
+    },
+    "evidence/semrush-content-opportunities-20261023/linux-performance-cf9b3f5/summary.json": {
+      "sha256": "fd21a8e4299d0c94b1a5bb0035387cfaa36c85408ddb6f0c4662dd0d62a465a2",
+      "bytes": 6220
+    },
+    "evidence/semrush-content-opportunities-20261023/home-preload-performance/page-1-run-1.json": {
+      "sha256": "d3008aa43df12d17a0ec8ce83f824b257e9b96fd686b47aa074f4298de26a266",
+      "bytes": 625799
+    },
+    "evidence/semrush-content-opportunities-20261023/linux-performance-cf9b3f5/page-1-run-1.json": {
+      "sha256": "9d736054b298f815ed9387d6f282cb7ef74cdec8a623648741be8bd654271c3b",
+      "bytes": 651274
+    },
+    "evidence/semrush-content-opportunities-20261023/home-preload-performance/page-1-run-2.json": {
+      "sha256": "afa73bbfbcdcf4eee3671d10c2871183a2346c050b31db2826f843855678f4b9",
+      "bytes": 664569
+    },
+    "evidence/semrush-content-opportunities-20261023/linux-performance-cf9b3f5/page-1-run-2.json": {
+      "sha256": "ba77bab0ba3dcad9b95874dad03779ddb546052049529beaf2f98826daa202b9",
+      "bytes": 651283
+    },
+    "evidence/semrush-content-opportunities-20261023/home-preload-performance/page-1-run-3.json": {
+      "sha256": "d55a08f87352f110280d22b2014f4c90271492c84a0dd0c0793b145d22a10a59",
+      "bytes": 664299
+    },
+    "evidence/semrush-content-opportunities-20261023/linux-performance-cf9b3f5/page-1-run-3.json": {
+      "sha256": "7bbe863efac009c47940b3e45a68c59c1be0d34603df72fdccec896bfad534f1",
+      "bytes": 642048
+    },
+    "output/playwright/home-loading-390-previous-viewport.png": {
+      "sha256": "95511e73b1c9275a666feb0cd06302da6165ac2763634c83ea3426c4643aca57",
+      "bytes": 235659
+    },
+    "output/playwright/home-loading-390-current-viewport.png": {
+      "sha256": "95511e73b1c9275a666feb0cd06302da6165ac2763634c83ea3426c4643aca57",
+      "bytes": 235659
+    },
+    "output/playwright/home-loading-1440-previous-viewport.png": {
+      "sha256": "1d4f4c6e34e6b6c498dd65a07c6df8e43d58d299a6782c95b951f2d89a328978",
+      "bytes": 1215308
+    },
+    "output/playwright/home-loading-1440-current-viewport.png": {
+      "sha256": "1d4f4c6e34e6b6c498dd65a07c6df8e43d58d299a6782c95b951f2d89a328978",
+      "bytes": 1215308
+    },
+    "output/playwright/home-loading-1425-previous-viewport.png": {
+      "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+      "bytes": 1161721
+    },
+    "output/playwright/home-loading-1425-current-viewport.png": {
+      "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+      "bytes": 1161721
+    },
+    "output/playwright/semrush-studio-website.png": {
+      "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+      "bytes": 1161721
+    },
+    "git:cf9b3f5:tests/baselines/site-content.json": {
+      "sha256": "dfc2f8ad7970f1807455efaf1138bc40f7ccb9a03771ba93ec47e5a4cac7a2e7",
+      "bytes": 5765604
+    },
+    "dist/assets/work/studio-website.webp": {
+      "sha256": "cad877ec66de9e3ac38de8f5bee3831b70f93c51b3bfbc0db58c46af32db2673",
+      "bytes": 186166
+    },
+    "dist/assets/work/studio-website-240.webp": {
+      "sha256": "6c00c6771c07015c62e37c2ae37f52c254427c2df167d0972b0eb2e75f91dc5b",
+      "bytes": 8904
+    },
+    "dist/assets/work/studio-website-480.webp": {
+      "sha256": "1a9ecca0404154e95d497ce6d654af14c0de193d64ee2c82f35810f6dbb43539",
+      "bytes": 26754
+    },
+    "dist/assets/work/studio-website-640.webp": {
+      "sha256": "264fc5dcb846297843160e9a75b6e067d2f9f43fdc28f84f5e1aff2f5e9eabd4",
+      "bytes": 41212
+    },
+    "dist/assets/work/studio-website-960.webp": {
+      "sha256": "ae521d913c92bab464645e4c0ad1b9e264108cdd0674dfd0d602e31847ca4057",
+      "bytes": 72048
+    }
+  },
+  "reviewedChanges": [
+    {
+      "path": "src/living-city.mjs",
+      "line": 16,
+      "result": "The preload helper reuses the existing URL/srcset builders and the same mobileWebPoster fallback selection as livingCityHome. Mobile/desktop media are exclusive at the site breakpoint; imagesizes remains100vw."
+    },
+    {
+      "path": "src/pages.mjs",
+      "line": 119,
+      "result": "Adds image hints only for the living-city homepage, before fonts. Existing picture, image dimensions/alt text, video, controls and no-JavaScript markup are unchanged."
+    },
+    {
+      "path": "scripts/build.mjs",
+      "line": 47,
+      "result": "Moves the unchanged ordered shared-home and city CSS links immediately after title only for family home with city styles. Other families and documents without title keep existing placement; CSS cascade and bytes are preserved."
+    },
+    {
+      "path": "tests/build-assets.test.mjs",
+      "line": 32,
+      "result": "Adds checks for preserved stylesheet order, earlier discovery and untouched body; existing checks remain."
+    },
+    {
+      "path": "tests/browser/living-city-accessibility.spec.mjs",
+      "line": 53,
+      "result": "Adds an exact one-request assertion: selected poster URL, initiated by link, across the existing11-width artwork matrix. Existing artwork/geometry assertions and motion checks remain."
+    }
+  ],
+  "reasoning": {
+    "responsiveSelection": {
+      "mobileMediaMatchesSource": true,
+      "mobileSourceSetMatches": true,
+      "mobileSizesMatch": true,
+      "desktopSourceSetMatches": true,
+      "desktopSizesMatch": true,
+      "desktopHrefMatches": true,
+      "allUrlsVersioned": true
+    },
+    "versioning": "The build versions every preload href and width-descriptor imagesrcset URL identically to the picture. as=image and default request mode match the native image. Early Hints generation considers stylesheet links only, so image media conditions are not stripped into unconditional header preloads.",
+    "nativeFallback": "The hints are browser-native and do not depend on JavaScript. Exact head-only inverse reconstruction proves all previous body markup, scripts and semantics remain unchanged. No separate JavaScript-disabled browser run was performed during this bounded review.",
+    "contentPreservation": {
+      "inverseHeadOnlyRestoresBaseline": true,
+      "baselineNormalizedHtmlSha256": "3cff20ddfb7cbdae8fef5d4926c34d486cce5ff6b3b750dc8ddea0060584dfa6",
+      "reconstructedNormalizedHtmlSha256": "3cff20ddfb7cbdae8fef5d4926c34d486cce5ff6b3b750dc8ddea0060584dfa6",
+      "compiledStyles": [
+        {
+          "path": "assets/site-family-home.css",
+          "sha256": "b204670bd20b4182aa59ab82f62bd74707b0643c1bba63085192397ab3b98d87",
+          "baselineSha256": "b204670bd20b4182aa59ab82f62bd74707b0643c1bba63085192397ab3b98d87",
+          "unchanged": true
+        },
+        {
+          "path": "assets/living-city.css",
+          "sha256": "d71d6ca120350341e32a5e15e877a2cf2e5a751ff0a554b7c5a93f4664729dd8",
+          "baselineSha256": "d71d6ca120350341e32a5e15e877a2cf2e5a751ff0a554b7c5a93f4664729dd8",
+          "unchanged": true
+        }
+      ],
+      "parentCompleteContractProof": {
+        "changedDocuments": 1,
+        "change": "Only two responsive image preload tags and earlier placement of the same ordered stylesheet pair. Reversing those changes reproduces the prior normalized HTML hash.",
+        "allOtherHtmlContentMediaStylesDownloadsAndAssetsPreserved": true
+      },
+      "changedDocuments": 1
+    }
+  },
+  "evidence": {
+    "baselineLinuxHome": {
+      "path": "/",
+      "score": 0.97,
+      "metrics": {
+        "largest-contentful-paint": 2501.432,
+        "cumulative-layout-shift": 0.004285952616822844,
+        "total-blocking-time": 0
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 2505.6114,
+            "cumulative-layout-shift": 0.004285952616822844,
+            "total-blocking-time": 0
+          },
+          "score": 0.97
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2501.432,
+            "cumulative-layout-shift": 0.004285952616822844,
+            "total-blocking-time": 0
+          },
+          "score": 0.97
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2347.6717,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 0
+          },
+          "score": 0.98
+        }
+      ]
+    },
+    "imagePreloadOnlyLocal": {
+      "path": "/",
+      "score": 0.97,
+      "metrics": {
+        "largest-contentful-paint": 2481.3949999999995,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 44
+      },
+      "runs": [
+        {
+          "metrics": {
+            "largest-contentful-paint": 2483.9876,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 64
+          },
+          "score": 0.97
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2331.1584,
+            "cumulative-layout-shift": 0,
+            "total-blocking-time": 44
+          },
+          "score": 0.98
+        },
+        {
+          "metrics": {
+            "largest-contentful-paint": 2481.3949999999995,
+            "cumulative-layout-shift": 0.004286267961704002,
+            "total-blocking-time": 0
+          },
+          "score": 0.97
+        }
+      ]
+    },
+    "finalIsolatedLocal": {
+      "checkedAt": "2026-10-23T20:22:07.080Z",
+      "config": {
+        "runs": 3,
+        "paths": [
+          "/"
+        ],
+        "budgets": {
+          "largest-contentful-paint": 2500,
+          "cumulative-layout-shift": 0.1,
+          "total-blocking-time": 200
+        },
+        "minimumPerformanceScore": 0.9
+      },
+      "result": {
+        "path": "/",
+        "score": 0.97,
+        "metrics": {
+          "largest-contentful-paint": 2331.7223000000004,
+          "cumulative-layout-shift": 0,
+          "total-blocking-time": 140.00000000000023
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 2331.2548,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 50
+            },
+            "score": 0.98
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2331.7223000000004,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 167
+            },
+            "score": 0.96
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2333.2843000000003,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 140.00000000000023
+            },
+            "score": 0.97
+          }
+        ]
+      },
+      "failures": [],
+      "lcpHeadroomMs": 168.27769999999964
+    },
+    "networkSelections": [
+      {
+        "width": 390,
+        "dpr": 1,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-small-poster.webp?v=a0b5aa54834c",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 22828
+      },
+      {
+        "width": 412,
+        "dpr": 1.75,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 53166
+      },
+      {
+        "width": 768,
+        "dpr": 2,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/mobile-web-poster.webp?v=aacccda66c5d",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 53166
+      },
+      {
+        "width": 1440,
+        "dpr": 1,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 176390
+      },
+      {
+        "width": 1440,
+        "dpr": 2,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 176390
+      },
+      {
+        "width": 1425,
+        "dpr": 1,
+        "selectedImage": "http://127.0.0.1:4188/assets/living-city/desktop-poster.webp?v=c522de581f06",
+        "requests": 1,
+        "initiator": "link",
+        "transferSize": 176390
+      }
+    ],
+    "viewportComparisons": [
+      {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "byteIdentical": true,
+        "previousPath": "output/playwright/home-loading-390-previous-viewport.png",
+        "currentPath": "output/playwright/home-loading-390-current-viewport.png",
+        "sha256": "95511e73b1c9275a666feb0cd06302da6165ac2763634c83ea3426c4643aca57",
+        "pngWidth": 390,
+        "pngHeight": 844
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "byteIdentical": true,
+        "previousPath": "output/playwright/home-loading-1440-previous-viewport.png",
+        "currentPath": "output/playwright/home-loading-1440-current-viewport.png",
+        "sha256": "1d4f4c6e34e6b6c498dd65a07c6df8e43d58d299a6782c95b951f2d89a328978",
+        "pngWidth": 1440,
+        "pngHeight": 1000
+      },
+      {
+        "width": 1425,
+        "height": 990,
+        "dpr": 1,
+        "byteIdentical": true,
+        "previousPath": "output/playwright/home-loading-1425-previous-viewport.png",
+        "currentPath": "output/playwright/home-loading-1425-current-viewport.png",
+        "sha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+        "pngWidth": 1425,
+        "pngHeight": 990
+      }
+    ],
+    "visualInspection": {
+      "paths": [
+        "output/playwright/home-loading-1425-current-viewport.png",
+        "output/playwright/home-loading-390-current-viewport.png"
+      ],
+      "result": "The actual city artwork is visible in both reviewed viewport captures; no missing poster layer. Their paired prior captures are byte-identical."
+    },
+    "approvedPortfolio": {
+      "pngByteIdentical": true,
+      "approvedPngPath": "output/playwright/semrush-studio-website.png",
+      "approvedPngSha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+      "assets": [
+        {
+          "path": "dist/assets/work/studio-website.webp",
+          "sha256": "cad877ec66de9e3ac38de8f5bee3831b70f93c51b3bfbc0db58c46af32db2673",
+          "matchesManifest": true,
+          "unchangedFromBaseline": true
+        },
+        {
+          "path": "dist/assets/work/studio-website-240.webp",
+          "sha256": "6c00c6771c07015c62e37c2ae37f52c254427c2df167d0972b0eb2e75f91dc5b",
+          "matchesManifest": true,
+          "unchangedFromBaseline": true
+        },
+        {
+          "path": "dist/assets/work/studio-website-480.webp",
+          "sha256": "1a9ecca0404154e95d497ce6d654af14c0de193d64ee2c82f35810f6dbb43539",
+          "matchesManifest": true,
+          "unchangedFromBaseline": true
+        },
+        {
+          "path": "dist/assets/work/studio-website-640.webp",
+          "sha256": "264fc5dcb846297843160e9a75b6e067d2f9f43fdc28f84f5e1aff2f5e9eabd4",
+          "matchesManifest": true,
+          "unchangedFromBaseline": true
+        },
+        {
+          "path": "dist/assets/work/studio-website-960.webp",
+          "sha256": "ae521d913c92bab464645e4c0ad1b9e264108cdd0674dfd0d602e31847ca4057",
+          "matchesManifest": true,
+          "unchangedFromBaseline": true
+        }
+      ],
+      "provenanceOnlyChanges": [
+        "capturedAt",
+        "sourceHashes.src/living-city.mjs",
+        "homeCapture.builtPage.sha256"
+      ]
+    },
+    "unitTests": {
+      "passed": 3,
+      "failed": 0,
+      "log": "evidence/semrush-content-opportunities-20261023/home-discovery-unit.log"
+    },
+    "browserArtworkMatrix": {
+      "passed": 2,
+      "preexistingProjectSkips": 1,
+      "widths": [
+        320,
+        390,
+        430,
+        768,
+        1023,
+        1024,
+        1199,
+        1440,
+        1521,
+        1920,
+        2560
+      ],
+      "log": "evidence/semrush-content-opportunities-20261023/home-preload-browser.log"
+    }
+  },
+  "excludedEvidence": [
+    {
+      "path": "evidence/semrush-content-opportunities-20261023/home-discovery-overlap-discarded.json",
+      "reason": "Superseded run overlapped other work; final isolated measurement is used."
+    },
+    {
+      "paths": "output/playwright/home-loading-*-previous.png and *-current.png without -viewport suffix",
+      "reason": "Full-page screenshot method omitted the desktop poster layer in both versions. These captures are discarded for visual approval; final stable viewport pairs are used."
+    }
+  ],
+  "limits": [
+    "Local synthetic mobile Lighthouse is laboratory evidence, not field Core Web Vitals. Final Linux CI must validate the final commit and unchanged budgets.",
+    "Network/pixel evidence uses supplied Chromium captures with reduced motion; the strengthened artwork test also exercises ambient-film geometry. It does not claim every legacy browser was measured.",
+    "This reviewer ran no browsers, builds or test suites and changed no source/baselines. Files were inspected, hashed and compared; only the two owned review reports were written."
+  ],
+  "ownership": {
+    "writtenFiles": [
+      "evidence/semrush-content-opportunities-20261023/home-preload-review.json",
+      "evidence/semrush-content-opportunities-20261023/home-preload-review.txt"
+    ],
+    "sourceChanges": false,
+    "baselineChanges": false,
+    "workersSpawned": false
+  }
+}
