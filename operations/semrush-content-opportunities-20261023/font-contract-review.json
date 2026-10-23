@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T20:36:42.645Z",
+  "status": "PASS",
+  "baseHead": "f4c7b145d7b1779f3b571651cca81470ee0897be",
+  "currentHead": "f4c7b145d7b1779f3b571651cca81470ee0897be",
+  "scope": "Independent read-only review of the stale Manrope preload unit assertion correction. Only the two review report files were written.",
+  "inputHashes": {
+    "tests/premium.test.mjs": {
+      "sha256": "8e3df74f4ceffa68e35b6b250246b15d577b27841bbb0208712196c6920bb697",
+      "bytes": 8241
+    },
+    "src/pages.mjs": {
+      "sha256": "ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40",
+      "bytes": 31538
+    },
+    "evidence/semrush-content-opportunities-20261023/cf9b3f5-final-failures.log": {
+      "sha256": "2fb593ea306adc052a9adb6ab25b528c59210aa875062300deedd2c3bc6b206a",
+      "bytes": 183155
+    },
+    "evidence/semrush-content-opportunities-20261023/final-font-contract-unit.log": {
+      "sha256": "482d434398adead5565d1fde05a0c6df0dc6b491d742d6b1cd8beafb47c64c7c",
+      "bytes": 73664
+    },
+    "git:f4c7b145d7b1779f3b571651cca81470ee0897be:tests/premium.test.mjs": {
+      "sha256": "da772414b10f4fb4b9ee12b20fa75caf69a4e4a5f238ba6fa8bb8a3c318fa0cb",
+      "bytes": 8096
+    }
+  },
+  "findings": [],
+  "unresolvedBlockingIssues": [],
+  "conclusion": "The previous area-only assertion contradicted the already committed unconditional shared-layout preload. The replacement requires exactly one correctly configured Manrope preload in every generated route and preserves every unrelated assertion. No product source or baseline changes are involved.",
+  "reviewedContract": {
+    "testPath": "tests/premium.test.mjs",
+    "line": 21,
+    "sourcePath": "src/pages.mjs",
+    "sourceLine": 119,
+    "expectedTag": "<link rel=\"preload\" href=\"/assets/premium/manrope.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>",
+    "coverage": "Runs inside the existing for(const {path,html} of pages) loop over renderPages output.",
+    "strictness": [
+      "Missing preload fails.",
+      "Duplicate matching preloads fail because the expected array has exactly one entry.",
+      "Incorrect href, as, type or crossorigin markup fails exact equality.",
+      "Every route must satisfy the same contract; the old non-area prohibition is removed because the established product intentionally preloads Manrope everywhere."
+    ],
+    "unchangedChecks": [
+      "Primary navigation ordering and targets.",
+      "Footer navigation and secondary-page existence.",
+      "Newsreader font reference.",
+      "Prohibited iframe/legacy-experience assets.",
+      "All other tests and assertions in premium.test.mjs."
+    ]
+  },
+  "proof": {
+    "inverseOnlyThreeLineReplacementRestoresBaseline": true,
+    "oldBlockLines": 3,
+    "newBlockLines": 3,
+    "sourceByteIdenticalToBase": true,
+    "publicSourceAndBaselineDiffEmpty": true,
+    "sharedTemplateHasOneUnconditionalExpectedTag": true
+  },
+  "evidence": {
+    "priorCiUnitSummary": {
+      "tests": 721,
+      "pass": 719,
+      "fail": 1,
+      "cancelled": 0,
+      "skipped": 1,
+      "todo": 0
+    },
+    "priorFailureLines": [
+      "verify\tCheck build, behavior, content, historical routes and browser journeys\t2026-10-23T20:22:11.9297788Z test at tests/premium.test.mjs:12:1",
+      "verify\tCheck build, behavior, content, historical routes and browser journeys\t2026-10-23T20:22:11.9300579Z   AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression /<link[^>]+rel=\"preload\"[^>]+manrope/. Input:",
+      "verify\tCheck build, behavior, content, historical routes and browser journeys\t2026-10-23T20:22:11.9436920Z       at TestContext.<anonymous> (file:///home/runner/work/wonder-and-method/wonder-and-method/tests/premium.test.mjs:23:15)",
+      "verify\tCheck build, behavior, content, historical routes and browser journeys\t2026-10-23T20:22:11.9566078Z     operator: 'doesNotMatch',"
+    ],
+    "completedRootOwnedUnitSummary": {
+      "tests": 721,
+      "pass": 721,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "unitLog": "evidence/semrush-content-opportunities-20261023/final-font-contract-unit.log"
+  },
+  "limits": [
+    "This is a unit-contract alignment review; it does not change or reapprove product loading behavior, which was independently reviewed previously.",
+    "The assertion intentionally checks raw renderPages markup, before asset URL versioning; exact attribute order matches the controlled renderer.",
+    "The full npm test result was read from the root-owned completed log. This reviewer executed no suite, build or browser run, and modified no public source/baseline. Final commit CI remains parent-owned."
+  ],
+  "ownership": {
+    "writtenFiles": [
+      "evidence/semrush-content-opportunities-20261023/font-contract-review.json",
+      "evidence/semrush-content-opportunities-20261023/font-contract-review.txt"
+    ],
+    "sourceImplementation": false,
+    "publicOrBaselineChanges": false,
+    "workersSpawned": false
+  }
+}

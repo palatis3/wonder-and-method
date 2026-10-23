@@ -1,0 +1,16 @@
+PASS — Manrope preload unit-contract correction
+Reviewed 2026-10-23T20:36:42.645Z against f4c7b145d7b1779f3b571651cca81470ee0897be.
+
+No blocking findings. The shared renderer already emits one unconditional Manrope preload on every generated route. The old area-only assertion was stale; its non-area doesNotMatch check caused the recorded sole unit failure.
+
+The replacement requires exactly one Manrope link with the established href, as="font", type="font/woff2" and crossorigin attributes for every entry in the existing route loop. Missing, duplicate or incorrectly configured preloads fail. Reversing only the three changed lines reproduces the entire prior test file, proving every unrelated assertion remains intact. Product source and baselines are unchanged.
+
+Completed root-owned npm test evidence: 721 tests passed; zero failures, cancellations or skips. The reviewer ran no suite, build or browser.
+
+SHA-256 inputs:
+Corrected test: 8e3df74f4ceffa68e35b6b250246b15d577b27841bbb0208712196c6920bb697
+Established renderer: ffde0dd97fb55aa66c479abe11b5ca7b2f5d5d9583ea46e89d9a45531936bb40
+Completed unit log: 482d434398adead5565d1fde05a0c6df0dc6b491d742d6b1cd8beafb47c64c7c
+Baseline test and prior-failure log hashes are also recorded in font-contract-review.json.
+
+Limit: this verifies the raw renderer contract and recorded unit result. Final commit CI remains parent-owned. Only font-contract-review.json and font-contract-review.txt were written.
