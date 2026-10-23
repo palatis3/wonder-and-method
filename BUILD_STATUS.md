@@ -1,25 +1,25 @@
 # Implementation status — October 23, 2026
 
-The website is published and verified. The latest release adds [144 individually reviewed location pages](operations/location-wave-two-20261023/RELEASE.md), following the [48-page batch](operations/location-wave-one-20261023/RELEASE.md). Individual county and city review remains underway with the authorized parallel research workers. Deployed application identity remains separate from documentation commits and requirements for accepting client work.
+The website is published and verified. The latest release adds [192 individually reviewed location pages](operations/location-wave-three-20261023/RELEASE.md). Research of all 1,079 directory identities is complete; integration and publication of the remaining 611 approved pages continues. Deployed application identity remains separate from documentation commits and requirements for accepting client work.
 
 ## Current published website
 
 | Item | Verified October 23, 2026 |
 |---|---|
 | Origin | https://wonderandmethod.com |
-| Published source | `31b461e4d8a6bfb29d109dd1c67aa6241b1b47e9` |
-| Authenticated runtime | `c8fde114-4e59-4881-91a0-349d16a327ec` |
-| Content | 389 HTML routes including the error page; 388 sitemap URLs; 59 guides; 265 commercial collection pages for 275 directory identities; 266 direct service pages for 276 identities with Buffalo/Erie; all 1,079 entries retained |
-| Technical validation | 692 local unit tests passed; CI 691 passed and one platform-specific skip; 355 browser checks passed with 212 intentional project skips; 34 unchanged screenshot references; exact-source GitHub and predeploy passed |
-| Live verification | All 389 HTML routes and 1,249 asset hashes match; 720 new-route/hub checks and all 1,576 historical URL checks passed; no full-site transport retries |
-| Independent review | All 144 content candidates and combined implementation reviewed with no unresolved findings; prior 121 collection records and rendered bodies unchanged |
-| Database | Migration 0026 added 90 fixed keys, preserving 483 old keys for 573 total; all 469 prior aggregate rows and four inquiries preserved; restored integrity and foreign-key checks passed |
-| Search | Google reports Success with 388 discovered pages; discovery does not establish indexing or rankings |
-| Monitoring | Authenticated health was healthy after publication. Observed scheduled success predates deployment; no new scheduled-run or external-receiver receipt is claimed |
+| Published source | `67cb069ead8cac7c9a11711bc8cfd03727582e44` |
+| Deployed Worker version | `5fc0277d-4be5-4594-8d19-f0dfa646acad` |
+| Content | 581 HTML routes; 580 sitemap URLs; 59 guides; 457 collection pages for 467 identities; with Buffalo/Erie, 458 direct service pages for 468 identities; all 1,079 directory entries retained |
+| Technical validation | 694 local unit tests; CI 693 passed and one platform-specific skip; 427 browser checks passed, 260 intentional project skips; 34 unchanged screenshot references; exact-source GitHub and predeploy passed |
+| Live verification | All 581 HTML routes and 1,378 asset hashes match; all 960 new-route/hub and 1,576 historical URL checks passed; no transport retries |
+| Independent review | All 192 content candidates and combined implementation reviewed with no unresolved findings; prior 265 records and rendered bodies unchanged |
+| Database | Migration 0027 adds 129 fixed keys, preserves 573 old keys for 702 total; four inquiries and 476 prior aggregate rows preserved; restored integrity and foreign-key checks passed |
+| Search | Live sitemap has 580 URLs; resubmission blocked by disabled browser access; last confirmed Google receipt is 388 discovered pages |
+| Monitoring | Authenticated health healthy; scheduled recovery succeeded after deployment; no external monitoring receiver receipt claimed |
 
-Private evidence is in `evidence/location-wave-two-20261023/`, including the release record, authentic CI manifest, full live/new/historical checks, database backup and preservation, operator status and Google receipt. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39945861611) passed. All 59 guides, 333 historical county worksheets and 430 downloads remain available. Fifty-four historical routes were restored, leaving 121 reviewed historical destinations and 211 explicit redirects; worksheet planning text is unchanged.
+Private evidence is in `evidence/location-wave-three-20261023/`. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39953694670) passed. All 59 guides, 333 historical worksheets and 430 downloads remain available. Sixty-three historical routes were restored, leaving 184 reviewed historical destinations and 148 explicit redirects; worksheet planning text is unchanged.
 
-Deployment identity comes from authenticated operator status and the private build manifest. Public `/version.json` returns 404. Follow [PRODUCTION.md](deployment/PRODUCTION.md) for publication and verification. Individual work continues; neither complete assessment of all 1,079 entries nor business readiness is claimed.
+Deployment identity comes from authenticated operator status and the private build manifest; public `/version.json` returns 404. Follow [PRODUCTION.md](deployment/PRODUCTION.md). Search discovery does not establish indexing or rankings. The remaining 611 pages are approved but not yet deployed; business readiness is not claimed.
 
 ## Offers and daily operation
 
