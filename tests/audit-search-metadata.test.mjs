@@ -31,14 +31,16 @@ test('search descriptions stay concise and derive prices and page allowances fro
  assert.match(description('/services/seo/',revised),/Improve \$425\/month; Grow \$850\/month/);assert.match(description('/areas/erie-county/',revised),/from \$1,625/);
 });
 
-test('Erie metadata stays specific while same-named counties in Pennsylvania and Ohio resolve to separate state entries',()=>{
+test('Erie metadata stays specific while same-named counties in Pennsylvania and Ohio have their own reviewed pages',()=>{
  assert.match(page('/areas/erie-county/').title,/Buffalo & Erie County, NY/);assert.match(page('/areas/erie-county/').description,/Buffalo and Erie County, NY/);
  const erie=schema('/areas/erie-county/').find(node=>node['@type']==='Service');
  assert.deepEqual(erie.areaServed,{'@type':'AdministrativeArea',name:'Erie County, New York'});
  assert.match(erie.name,/Buffalo & Erie County, NY/);
  for(const [state,name] of [['pennsylvania','Pennsylvania'],['ohio','Ohio']]){
-  const route=`/areas/${state}/`,retired=route+'erie-county/';
-  assert.equal(retiredCountyRoutes[retired],route+'#erie');assert.ok(!page(retired));
+  const route=`/areas/${state}/`,restored=route+'erie-county/';
+  assert.equal(retiredCountyRoutes[restored],undefined);assert.ok(page(restored));
+  assert.deepEqual(schema(restored).find(node=>node['@type']==='Service').areaServed,[{'@type':'AdministrativeArea',name:'Erie County, '+name}]);
+  assert.ok(page(restored).html.includes(`rel="canonical" href="${config.origin+restored}"`));
   assert.ok(page(route).html.includes('id="erie"'));assert.ok(page(route).title.includes(name));
   assert.ok(page(route).html.includes(`rel="canonical" href="${config.origin+route}"`));
  }
@@ -53,18 +55,18 @@ test('broad service coverage has 20 states and a federal district and preserves 
  assert.deepEqual(serviceAreas({...config,serviceCoverage:{...config.serviceCoverage,regions:['Ohio']}}),[{'@type':'State',name:'Ohio'}]);
 });
 
-test('metadata and sitemap cover 581 public pages while retired county URLs resolve to their state entries',()=>{
+test('metadata and sitemap cover 1192 public pages while retired county URLs resolve to their state entries',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,581);assert.equal((sitemap.match(/<loc>/g)||[]).length,580);
+ assert.equal(pages.length,1192);assert.equal((sitemap.match(/<loc>/g)||[]).length,1191);
  assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,59);
  assert.deepEqual(pages.filter(item=>approvedLocationPaths.includes(item.path)).map(item=>item.path).sort(),approvedLocationPaths);
- assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,480);
+ assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,1091);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
   assert.ok(!page(retired));assert.ok(!sitemap.includes(`<loc>${config.origin+retired}</loc>`));
   const [hub,slug]=destination.split('#');assert.ok(page(hub),destination);if(slug)assert.ok(page(hub).html.includes(`id="${slug}"`));
   assert.ok(sitemap.includes(`<loc>${config.origin+hub}</loc>`));
  }
- assert.equal(new Set(pages.map(item=>item.path)).size,581);
+ assert.equal(new Set(pages.map(item=>item.path)).size,1192);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

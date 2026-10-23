@@ -14,22 +14,23 @@ import nextPaths from './fixtures/location-next-paths.json' with {type:'json'};
 import waveOnePaths from './fixtures/location-wave-one-paths.json' with {type:'json'};
 import waveTwoPaths from './fixtures/location-wave-two-paths.json' with {type:'json'};
 import waveThreePaths from './fixtures/location-wave-three-paths.json' with {type:'json'};
+import waveFourPaths from './fixtures/location-wave-four-paths.json' with {type:'json'};
 import historicPaths from './fixtures/historic-county-routes.json' with {type:'json'};
 import config from '../config/site.json' with {type:'json'};
 import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('457 approved commercial pages preserve 467 directory identities, truthful provider schema and legacy worksheets',async()=>{
- assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,467);assert.equal(new Set(areaIds).size,467);
+test('1068 approved commercial pages preserve 1078 directory identities, truthful provider schema and legacy worksheets',async()=>{
+ assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);assert.equal(waveFourPaths.length,611);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1078);assert.equal(new Set(areaIds).size,1078);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   const service=schema.filter(node=>node['@type']==='Service');assert.equal(service.length,1,entry.path);
-  assert.deepEqual(service[0].areaServed.map(area=>area.name),entry.servedAreas.map(area=>area.name+', '+area.state));
+  assert.deepEqual(service[0].areaServed.map(area=>area.name),entry.servedAreas.map(area=>area.type==='Federal District'?area.name:area.name+', '+area.state));
   assert.equal(service[0].provider['@id'],config.origin+'/#studio');
   assert.equal(schema.find(node=>node['@type']==='Organization').location.address.addressLocality,'Buffalo');
   assert.ok(!schema.some(node=>node['@type']==='LocalBusiness'),entry.path);

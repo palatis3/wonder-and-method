@@ -53,7 +53,7 @@ test('state directories lead with places, retain service links and give each of 
  const destinations=[...hub.matchAll(/data-county-link href="([^"]+)"/g)].map(match=>match[1]);
  assert.equal(destinations.length,1079);assert.equal(new Set(destinations).size,1079);
  assert.deepEqual(destinations.slice().sort(),serviceStates.flatMap(state=>state.counties.map(county=>countyPath(county,state))).sort());
- assert.equal(Object.keys(retiredCountyRoutes).length,148);
+ assert.equal(Object.keys(retiredCountyRoutes).length,2);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!destinations.includes(retired),retired);assert.ok(hub.includes(`href="${destination}"`)||pages.some(page=>page.body.includes(`href="${destination}"`)),destination);}
  assert.ok(destinations.indexOf('/areas/erie-county/')<destinations.indexOf('/areas/new-york/#niagara'));
  const ny=pages.find(p=>p.path==='/areas/new-york/').body;
