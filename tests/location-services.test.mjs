@@ -12,16 +12,17 @@ import approvedPaths from './fixtures/location-release-paths.json' with {type:'j
 import followupPaths from './fixtures/location-followup-paths.json' with {type:'json'};
 import nextPaths from './fixtures/location-next-paths.json' with {type:'json'};
 import waveOnePaths from './fixtures/location-wave-one-paths.json' with {type:'json'};
+import waveTwoPaths from './fixtures/location-wave-two-paths.json' with {type:'json'};
 import historicPaths from './fixtures/historic-county-routes.json' with {type:'json'};
 import config from '../config/site.json' with {type:'json'};
 import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('121 approved commercial pages preserve 131 directory identities, truthful provider schema and legacy worksheets',async()=>{
- assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,131);assert.equal(new Set(areaIds).size,131);
+test('265 approved commercial pages preserve 275 directory identities, truthful provider schema and legacy worksheets',async()=>{
+ assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,275);assert.equal(new Set(areaIds).size,275);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);

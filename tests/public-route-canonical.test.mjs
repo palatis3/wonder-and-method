@@ -70,8 +70,13 @@ test('unknown/private paths, legacy downloads and inquiry context retain their r
 test('native browser-test server serves county redirects and restored canonical pages',async t=>{
  const directory=await mkdtemp(join(tmpdir(),'wm-retired-routes-'));
  const siteDir=join(directory,'site');
- await mkdir(join(siteDir,'areas','new-york'),{recursive:true});
- await writeFile(join(siteDir,'areas','new-york','index.html'),'<main><details id="chenango"><summary>Chenango</summary></details></main>');
+ const [retiredPath,retiredTarget]=Object.entries(retiredCountyRoutes)[0]||[];
+ if(retiredPath){
+  const target=new URL(retiredTarget,'https://fixture.invalid');
+  const targetDir=join(siteDir,target.pathname);
+  await mkdir(targetDir,{recursive:true});
+  await writeFile(join(targetDir,'index.html'),`<main id="retired-fixture"><details id="${target.hash.slice(1)}"><summary>Retained directory entry</summary></details></main>`);
+ }
  await mkdir(join(siteDir,'areas','albany-county'),{recursive:true});
  await writeFile(join(siteDir,'areas','albany-county','index.html'),'<main id="albany">Reviewed Albany service page</main>');
  const {server,url}=await createServer({runtime:join(directory,'runtime'),siteDir,port:0});
@@ -86,8 +91,10 @@ test('native browser-test server serves county redirects and restored canonical 
  }
  const followed=await fetch(url+'/areas/new-york/ALBANY-COUNTY/index.html'+query);
  assert.equal(followed.status,200);assert.match(await followed.text(),/id="albany"/);
- const retiredFollowed=await fetch(url+'/areas/chenango-county/'+query);
- assert.equal(retiredFollowed.status,200);assert.match(await retiredFollowed.text(),/id="chenango"/);
+ if(retiredPath){
+  const retiredFollowed=await fetch(url+retiredPath+query);
+  assert.equal(retiredFollowed.status,200);assert.match(await retiredFollowed.text(),/id="retired-fixture"/);
+ }
  const api=await fetch(url+'/api/inquiries',{redirect:'manual'});assert.equal(api.status,405);assert.equal(api.headers.get('Location'),null);
  const mutation=await fetch(url+'/areas/albany-county/',{method:'POST',redirect:'manual'});assert.equal(mutation.status,405);assert.equal(mutation.headers.get('Location'),null);
 });

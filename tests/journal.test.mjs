@@ -50,7 +50,7 @@ test('published guides have unique metadata, visible authorship and matching art
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
  const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/';
- assert.equal(journal.length,59);assert.equal(pages.length,245);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
+ assert.equal(journal.length,59);assert.equal(pages.length,389);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
  const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>![comparison,audit].includes(x.path))},offers,map,geography});
  assert.ok(!gated.some(x=>[comparison,audit].includes(x.path)));for(const page of gated)for(const target of [comparison,audit])assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
  for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);

@@ -14,7 +14,7 @@ const historicStates={'new-york':61,pennsylvania:67,ohio:88,'new-jersey':21,conn
 
 test('all 332 historical county paths remain either approved pages or explicit useful redirects',async()=>{
  const {serviceStates}=await import('../src/service-area-directory.mjs');
- assert.equal(Object.keys(retiredCountyRoutes).length,265);
+ assert.equal(Object.keys(retiredCountyRoutes).length,211);
  assert.ok(Object.isFrozen(retiredCountyRoutes));
  const expected={};
  for(const [id,total] of Object.entries(historicStates)){
@@ -30,7 +30,7 @@ test('all 332 historical county paths remain either approved pages or explicit u
  assert.deepEqual(historicCountyRoutes,expected);
  const redirects=Object.fromEntries(Object.entries(expected).filter(([path])=>!approvedLocationPaths.includes(path)));
  for(const path of ['/areas/maryland/baltimore-city/','/areas/maryland/baltimore-county/'])redirects[path]='/areas/maryland/baltimore-area/';
- assert.equal(Object.keys(expected).filter(path=>approvedLocationPaths.includes(path)).length,67);
+ assert.equal(Object.keys(expected).filter(path=>approvedLocationPaths.includes(path)).length,121);
  assert.deepEqual(retiredCountyRoutes,redirects);
  assert.ok(Object.hasOwn(pageDates,'/areas/erie-county/'));
  assert.ok(!Object.hasOwn(retiredCountyRoutes,'/areas/erie-county/'));
