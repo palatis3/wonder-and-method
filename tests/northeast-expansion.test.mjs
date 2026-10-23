@@ -47,13 +47,13 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
 
 test('six state hubs retain all 66 original entries while historical routes resolve to preserved destinations',()=>{
  assert.equal(newRoutes.length,72,'the historical six-hub and 66-area route fixture remains intact');
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,1207);assert.equal(byPath.size,1207);
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,1213);assert.equal(byPath.size,1213);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of priorRoutes){
   if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1206);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1212);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1125);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());

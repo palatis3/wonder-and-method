@@ -7,12 +7,13 @@
     while(details){if(!details.open){details.open=true;opened=true;}details=details.parentElement?.closest('details');}
     if(opened)requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'instant'}));
   };
-  revealAnchor();
+  const afterParse=callback=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',callback,{once:true}):callback();
+  afterParse(revealAnchor);
   window.addEventListener('hashchange',revealAnchor);
   // Native open disclosures remain fully usable when JavaScript is unavailable.
   const footerDesktop=matchMedia('(min-width:768px)');
   const syncFooter=()=>document.querySelectorAll('[data-responsive-footer]').forEach(group=>{group.open=footerDesktop.matches;});
-  syncFooter();
+  afterParse(syncFooter);
   footerDesktop.addEventListener('change',syncFooter);
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');

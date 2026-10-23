@@ -1,3 +1,4 @@
+import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -27,7 +28,8 @@ test('SC adds exactly 46 identities while retaining every historical identity an
   assert.equal(createHash('sha256').update(JSON.stringify(restored)).digest('hex'),baseline.recordHashes[row.path],row.path+' preserved outside reviewed corrections');
  }
  assert.equal(serviceStates.length,22);assert.equal(serviceStates.filter(s=>s.kind==='district').length,1);
- assert.deepEqual(Object.keys(dates).filter(p=>!paths.includes(p)).sort(),baseline.routes);
+ for(const route of semrushGuidePaths)assert.ok(Object.hasOwn(dates,route),'Approved subsequent guide '+route);
+ assert.deepEqual(Object.keys(dates).filter(p=>!paths.includes(p)&&!semrushGuidePaths.includes(p)).sort(),baseline.routes);
 });
 test('SC search indexes every county and distinguishes cross-county Summerville from a wrong state',()=>{
  const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(r=>r.slugs.includes(county.slug))).split('|')})));

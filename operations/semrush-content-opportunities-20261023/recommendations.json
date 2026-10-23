@@ -1,0 +1,1570 @@
+{
+  "title": "Wonder & Method content opportunity plan",
+  "createdAt": "2026-10-23T18:00:41.182Z",
+  "database": "us",
+  "rankingBasis": "Editorial judgment: reader utility, existing offer fit, source overlap, observed demand and feasibility. No traffic forecast or calculated opportunity score.",
+  "coverageSummary": {
+    "distinctNewTerms": 1000,
+    "priorTermsChecked": 683,
+    "overlap": 0,
+    "positiveVolume": 711,
+    "literalZeroVolume": 93,
+    "unavailableVolume": 196,
+    "numericKd": 490,
+    "unavailableKd": 510
+  },
+  "allowance": {
+    "subscriptionMeter": "Keywords 0 / 1,500; Available 1,500",
+    "bulkMeter": "Update metrics 0 / 1,000",
+    "observation": "The subscription meter was observed after batch 6 and did not reflect the 600 research lookups. The Update metrics meter remained 0/1,000 throughout the captures.",
+    "interpretation": "These observations do not establish a 1,500-keyword lookup allowance, remaining lookup balance, or allowance exhaustion. Meter purpose was not verified.",
+    "refreshPerformed": false,
+    "upgradeOrPurchase": false,
+    "semrushApiCalls": 0,
+    "lookupLimitReached": false
+  },
+  "sourceReview": {
+    "reviewedOn": "2026-10-23",
+    "scope": "Local repository content, not a production availability audit",
+    "guideCount": 59,
+    "inventoryFile": "existing-guide-inventory.json",
+    "fullGuideSectionsFile": "existing-guide-full-sections.json",
+    "sourceFiles": [
+      {
+        "file": "config/offers.json",
+        "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2"
+      },
+      {
+        "file": "src/journal.mjs",
+        "sha256": "737836a9c13d49fb14c305a01d74f7dd13479dc2bee18931103d1872ec303722"
+      },
+      {
+        "file": "src/audit-guide-updates.mjs",
+        "sha256": "f16b8df3be15da7609cc18546f467dff661ce74a568eac288e05b26c59294ed6"
+      },
+      {
+        "file": "src/audit-content.mjs",
+        "sha256": "d05749f73936af38106e0fcd06770cdf5b554863016d5e1bc3ac1d9b51f54b5f"
+      },
+      {
+        "file": "src/longtail-guides.mjs",
+        "sha256": "82961cd30e23c04fb19764748e3e7ef68a079b358d29c5a26b404ca25d6859bd"
+      }
+    ],
+    "comparators": [
+      {
+        "file": "comparator-service-seo.txt",
+        "sha256": "eb14565763021ec76968ab83632ad524cf6844ef1c1aff9d3c849e2723c419c2"
+      },
+      {
+        "file": "comparator-seo-work-and-reporting.txt",
+        "sha256": "183190462ffeee8e2f45f64ee8aa2599df91854455ef270901d9c0603748c924"
+      },
+      {
+        "file": "comparator-service-care.txt",
+        "sha256": "8c8d85d8a8bc8d78ccf104385a776ad5b358e691d9686b719b96b2df0979d951"
+      },
+      {
+        "file": "comparator-website-maintenance-cost.txt",
+        "sha256": "780f9a7eedb36f4f92fc6c9fe67e39fc5d6a4af41d4ad45b15ccbce700bb75d5"
+      },
+      {
+        "file": "comparator-service-costEstimator.txt",
+        "sha256": "5a3f8165bfc09c201a7c50d2a4fe7c9814c75fd95946205c4fcee28449e88118"
+      },
+      {
+        "file": "existing-roi-tool.html",
+        "sha256": "4a8929976cf649897c92b4de92d818e2ddb61b2f1980a44251bf2c8e22cc5eb5"
+      },
+      {
+        "file": "comparator-website-project-cost.txt",
+        "sha256": "09241815ba999e48d6e64bfd6d951941895ac5c2ec7ed609bbf7023c5019931d"
+      },
+      {
+        "file": "comparator-service-pricing.txt",
+        "sha256": "5862a04d07a0811c04349c81e6e274863704c3d217433af9e4329e69ad490661"
+      },
+      {
+        "file": "comparator-how-to-choose-a-web-designer.txt",
+        "sha256": "6d0a6b6ea25b921dfc10f025ffed6afbc1b32b7dbdc779551eac1e72d691c77d"
+      },
+      {
+        "file": "comparator-service-webdesign.txt",
+        "sha256": "a29c26a6c6bec294bed3a68e4c166139018bd5103d575090fa66a2894fbea93e"
+      },
+      {
+        "file": "comparator-website-content-template.txt",
+        "sha256": "38187f1639e65531ae4d0a8d41f959cf2ebfd71a4b16ddb52f76802b321da3a2"
+      },
+      {
+        "file": "comparator-service-contractors.txt",
+        "sha256": "e41fe1a86fabf0c2b7edda58acb652825883f8a6ddec0d36870d8dab545c925d"
+      },
+      {
+        "file": "comparator-contractor-website-checklist.txt",
+        "sha256": "3f9fcc3b95e47ce4f85449df26c3df84d3fd9a293616bf7c4132e6ca2843c6b3"
+      },
+      {
+        "file": "comparator-manufacturing-rfq-form.txt",
+        "sha256": "e7206222b50a7cf7737c6bbcf869b17ecc272e43e1c7f20925b89f69a3186bd3"
+      },
+      {
+        "file": "comparator-contact-form-not-working.txt",
+        "sha256": "019a9d91961cc130423976558e22d34df24ad3d43d0f547c4a41f14d9d90c302"
+      },
+      {
+        "file": "comparator-website-not-generating-leads.txt",
+        "sha256": "0747471d9ad92de7d60349af0afaacbaaf59383c24c54ba025374acfc6c8da5b"
+      },
+      {
+        "file": "comparator-website-launch-checklist.txt",
+        "sha256": "a0bf0b0c83e4bf35a0330cd339745810bc8c75ff2b449061cef245ceb560cc89"
+      },
+      {
+        "file": "comparator-website-redesign-brief.txt",
+        "sha256": "0671ec4e7d8955a690b061f194d30776dd607be83803d4cd104f739009a523d9"
+      },
+      {
+        "file": "comparator-website-redesign-timeline.txt",
+        "sha256": "8eafe4f3ff746ab4197b38795455565ef61e56eda350b72e95a9e24517cb215f"
+      },
+      {
+        "file": "comparator-website-migration-checklist.txt",
+        "sha256": "0db95bf1b0555a701ba44306e00a657ce34fc8ef35a5cbaee7714e8d0df93676"
+      },
+      {
+        "file": "comparator-service-area-pages.txt",
+        "sha256": "57c4f02e93832d78945df76c07c6cc9b853553adf3fcf0ecf3540be2015e4f18"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "rank": 1,
+      "title": "Choose an SEO plan from the work that needs doing",
+      "type": "Update existing service",
+      "route": "/services/seo/",
+      "readerDecision": "Should I choose one researched improvement, two connected improvements, or care only?",
+      "priorityReason": "Strong commercial fit and low captured difficulty; the existing service already owns the topic.",
+      "closestExisting": [
+        "/services/seo/",
+        "/guides/seo-work-and-reporting/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-seo.txt",
+        "comparator-seo-work-and-reporting.txt"
+      ],
+      "alreadyExists": "The service already compares Improve and Grow, explains work and billing, gives a fictional service-page example and links a blank monthly report. The guide already explains the reporting process.",
+      "addedUtility": "Add three small selection scenarios that count the work: one service-page rewrite; a service page plus a connected decision guide; supplied edits only. Show the required business inputs and which checks are care, so buyers can choose without equating a plan with an arbitrary number of blog posts.",
+      "sections": [
+        "Pick a plan from the customer question",
+        "One finished improvement versus two related improvements",
+        "Inputs needed before the next cycle",
+        "A completed change and the decision it enables"
+      ],
+      "relatedRoutes": [
+        "/guides/seo-work-and-reporting/",
+        "/services/website-care/"
+      ],
+      "constraints": [
+        "Use current offer definitions and prices from config/offers.json.",
+        "Do not present the scenarios as client results or promise rankings, leads or a fixed number of new pages."
+      ],
+      "metrics": [
+        {
+          "keyword": "seo packages for small business",
+          "volume": 2400,
+          "kd": 4,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "2,400",
+            "kd": "4",
+            "cpcUsd": "13.70",
+            "updated": "4 weeks Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=seo%20packages%20for%20small%20business&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        },
+        {
+          "keyword": "monthly seo packages",
+          "volume": 1600,
+          "kd": 4,
+          "intent": "Informational Commercial",
+          "raw": {
+            "intent": "Informational Commercial",
+            "volume": "1,600",
+            "kd": "4",
+            "cpcUsd": "7.94",
+            "updated": "3 weeks Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=monthly%20seo%20packages&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        },
+        {
+          "keyword": "what is included in seo services",
+          "volume": 880,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "880",
+            "kd": "19",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=what%20is%20included%20in%20seo%20services&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 2,
+      "title": "Match everyday website tasks to the right support owner",
+      "type": "Update existing service and guide",
+      "route": "/services/website-care/",
+      "readerDecision": "Is this task covered by care, a researched improvement, a separate quote, or my host or specialist?",
+      "priorityReason": "High relevance to a current offer; task examples can prevent unsuitable inquiries while explaining the value of care.",
+      "closestExisting": [
+        "/services/website-care/",
+        "/guides/website-maintenance-cost/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-care.txt",
+        "comparator-website-maintenance-cost.txt"
+      ],
+      "alreadyExists": "The service and cost guide already list scope, exclusions, prices, provider costs and reporting. This is an application of those rules to everyday requests.",
+      "addedUtility": "Add a compact task-to-owner table: replace supplied photos on an existing page, write a new service page, investigate a form failure, add a booking connection, and restore a CMS backup. Give each task a fit decision and the information needed before work is accepted.",
+      "sections": [
+        "Five requests and who handles each",
+        "Checks, supplied edits and new work",
+        "What platform support must be confirmed",
+        "Before authorizing a repair"
+      ],
+      "relatedRoutes": [
+        "/guides/website-maintenance-cost/",
+        "/guides/website-care-versus-seo/",
+        "/guides/contact-form-not-working/"
+      ],
+      "constraints": [
+        "Standard care excludes CMS, plugin and theme updates, backups, restores, malware cleanup, emergency support and 24/7 staffing.",
+        "Broad maintenance keywords may describe services outside the offer; show the fit boundary prominently."
+      ],
+      "metrics": [
+        {
+          "keyword": "website care plans",
+          "volume": 590,
+          "kd": 3,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "590",
+            "kd": "3",
+            "cpcUsd": "8.92",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20care%20plans&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        },
+        {
+          "keyword": "small business website maintenance",
+          "volume": 390,
+          "kd": 10,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "390",
+            "kd": "10",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=small%20business%20website%20maintenance&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        },
+        {
+          "keyword": "website maintenance packages",
+          "volume": 1600,
+          "kd": 21,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "1,600",
+            "kd": "21",
+            "cpcUsd": "8.10",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20maintenance%20packages&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        },
+        {
+          "keyword": "website maintenance services",
+          "volume": 4400,
+          "kd": 23,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "4,400",
+            "kd": "23",
+            "cpcUsd": "13.17",
+            "updated": "4 weeks Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20maintenance%20services&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 3,
+      "title": "Connect the existing cost estimator and ROI calculator with worked scenarios",
+      "type": "Improve existing tools and their entry points",
+      "route": "/payments/#cost-calculator",
+      "readerDecision": "What is my project and recurring budget, and what assumptions would make that spend worthwhile?",
+      "priorityReason": "Both tools already exist; clearer entry points and paired examples provide practical utility without a duplicate calculator.",
+      "closestExisting": [
+        "/payments/#cost-calculator",
+        "/tools/website-roi-calculator/",
+        "/guides/website-project-cost/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-costEstimator.txt",
+        "existing-roi-tool.html",
+        "comparator-website-project-cost.txt"
+      ],
+      "alreadyExists": "The cost estimator already supports packages, add-ons, monthly plans, reviews, outside bills and 1–120 months. The ROI tool already handles contribution margin, break-even, assumptions and limitations. The cost guide links them.",
+      "addedUtility": "Add two labeled example journeys: a new build with optional care and an existing site with a review plus a defined improvement period. Explain when to use each tool and carry the same time period and known project costs into a fictional ROI example. Offer a side-by-side assumptions summary before considering any saved or shared scenarios.",
+      "sections": [
+        "Estimate the spend",
+        "Separate unknown provider bills from confirmed zero",
+        "Try a hypothetical break-even scenario",
+        "Compare assumptions before changing the budget"
+      ],
+      "relatedRoutes": [
+        "/pricing/",
+        "/guides/website-project-cost/",
+        "/tools/website-roi-calculator/"
+      ],
+      "constraints": [
+        "Keep unknown costs unknown.",
+        "ROI inputs are assumptions; no traffic, conversion, lead or revenue forecast is established by keyword volume.",
+        "Use the existing tools and routes."
+      ],
+      "metrics": [
+        {
+          "keyword": "website design cost calculator",
+          "volume": 590,
+          "kd": 15,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "590",
+            "kd": "15",
+            "cpcUsd": "5.84",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:45:14.311Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20design%20cost%20calculator&db=us&date=202610&device=0",
+          "captureFile": "batch-09-dom.txt",
+          "captureSha256": "f08f219e01e148592ad769e3937801530c47d907c79b956c4b094627fd95e6f1"
+        },
+        {
+          "keyword": "website cost calculator",
+          "volume": 720,
+          "kd": 22,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "720",
+            "kd": "22",
+            "cpcUsd": "4.03",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20cost%20calculator&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        },
+        {
+          "keyword": "website roi calculator",
+          "volume": 210,
+          "kd": 4,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "210",
+            "kd": "4",
+            "cpcUsd": "10.59",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20roi%20calculator&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 4,
+      "title": "Show why two website budgets differ using equal-scope examples",
+      "type": "Update existing budget guide",
+      "route": "/guides/website-project-cost/",
+      "readerDecision": "Which quoted items explain the price difference, and what belongs in my complete budget?",
+      "priorityReason": "Direct connection to buying a website; extends the current scope explanation with an inspectable comparison.",
+      "closestExisting": [
+        "/guides/website-project-cost/",
+        "/pricing/",
+        "/guides/how-to-choose-a-web-designer/"
+      ],
+      "comparatorFiles": [
+        "comparator-website-project-cost.txt",
+        "comparator-service-pricing.txt",
+        "comparator-how-to-choose-a-web-designer.txt"
+      ],
+      "alreadyExists": "Current package prices, outside-cost categories, a quote checklist, a calculator and provider-comparison guidance already exist.",
+      "addedUtility": "Add a fictional normalized comparison of two proposals for the same page list. Show writing, existing-URL work, forms, editing expectations, provider bills and review rounds as explicit rows. Include a current studio example generated from the offer data while keeping external prices hypothetical.",
+      "sections": [
+        "Start with the same page and task list",
+        "Identify omitted or separate work",
+        "Compare project and continuing costs",
+        "Send the normalized scope back for clarification"
+      ],
+      "relatedRoutes": [
+        "/pricing/",
+        "/payments/#cost-calculator",
+        "/guides/how-to-choose-a-web-designer/"
+      ],
+      "constraints": [
+        "Do not invent market-average prices or portray fictional quotes as observed competitors.",
+        "Keep pricing in sync with the central offer configuration."
+      ],
+      "metrics": [
+        {
+          "keyword": "web design packages",
+          "volume": 1600,
+          "kd": 20,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,600",
+            "kd": "20",
+            "cpcUsd": "5.09",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=web%20design%20packages&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        },
+        {
+          "keyword": "web design pricing",
+          "volume": 720,
+          "kd": 26,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "720",
+            "kd": "26",
+            "cpcUsd": "5.26",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=web%20design%20pricing&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        },
+        {
+          "keyword": "website redesign cost",
+          "volume": 590,
+          "kd": 18,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "590",
+            "kd": "18",
+            "cpcUsd": "9.17",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20redesign%20cost&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        },
+        {
+          "keyword": "custom website cost",
+          "volume": 140,
+          "kd": 5,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "140",
+            "kd": "5",
+            "cpcUsd": "5.65",
+            "updated": "4 weeks Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:21:24.995Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=custom%20website%20cost&db=us&date=202610&device=0",
+          "captureFile": "batch-01-dom.txt",
+          "captureSha256": "6e14e9daa005ebfdc0700408c89781939c68d82fdbe139f38ac7187623bcb17d"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 5,
+      "title": "Demonstrate the included writing process from business facts to a service page",
+      "type": "Update existing service with a linked resource example",
+      "route": "/services/web-design/",
+      "readerDecision": "What do I need to supply, and what does the studio write and check for me?",
+      "priorityReason": "Strong demand closely matches writing already included in the website and monthly offers.",
+      "closestExisting": [
+        "/services/web-design/",
+        "/guides/website-content-template/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-webdesign.txt",
+        "comparator-website-content-template.txt"
+      ],
+      "alreadyExists": "The service explains complete writing from verified facts. The template already covers home, service, about and contact pages, SEO questions and a downloadable worksheet.",
+      "addedUtility": "Show one fictional set of rough business notes, a short draft service-page section and the owner’s fact-check comments. Put the short demonstration on the service page and the complete annotated example beside the existing template. Explain what happens when proof, coverage or a price is still unconfirmed.",
+      "sections": [
+        "What the owner supplies",
+        "How notes become a useful page",
+        "What the owner approves",
+        "What happens to unverified claims"
+      ],
+      "relatedRoutes": [
+        "/guides/website-content-template/",
+        "/services/seo/",
+        "/guides/ai-website-content-review/"
+      ],
+      "constraints": [
+        "Do not launch a separate copywriting service page unless the standalone offer is actually defined.",
+        "Do not promise unlimited writing or generic high-volume blog production."
+      ],
+      "metrics": [
+        {
+          "keyword": "website copywriting services",
+          "volume": 1600,
+          "kd": 16,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,600",
+            "kd": "16",
+            "cpcUsd": "6.33",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20copywriting%20services&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        },
+        {
+          "keyword": "website content writing services",
+          "volume": 1300,
+          "kd": 18,
+          "intent": "Informational Commercial",
+          "raw": {
+            "intent": "Informational Commercial",
+            "volume": "1,300",
+            "kd": "18",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:46:06.647Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20content%20writing%20services&db=us&date=202610&device=0",
+          "captureFile": "batch-10-dom.txt",
+          "captureSha256": "f69c61f8f55999a86bde92ffcc5f8e10309cc8c8e0bf1d04fbe5037b8493878d"
+        },
+        {
+          "keyword": "website copy template",
+          "volume": 170,
+          "kd": 2,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "170",
+            "kd": "2",
+            "cpcUsd": "5.32",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:45:14.311Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20copy%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-09-dom.txt",
+          "captureSha256": "f08f219e01e148592ad769e3937801530c47d907c79b956c4b094627fd95e6f1"
+        },
+        {
+          "keyword": "website content template",
+          "volume": 210,
+          "kd": 24,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "210",
+            "kd": "24",
+            "cpcUsd": "5.12",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20content%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 6,
+      "title": "Add two complete trade briefs to the contractor resource",
+      "type": "Update existing contractor guide",
+      "route": "/guides/contractor-website-checklist/",
+      "readerDecision": "Which pages, proof and inquiry details does my particular trade need?",
+      "priorityReason": "Strong industry fit and existing contractor content; specificity is more useful than publishing many nearly identical trade pages.",
+      "closestExisting": [
+        "/services/contractor-websites/",
+        "/guides/contractor-website-checklist/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-contractors.txt",
+        "comparator-contractor-website-checklist.txt"
+      ],
+      "alreadyExists": "The service already has a seven-page plan, six inquiry fields and brief HVAC, plumbing, roofing and landscaping examples. The guide covers service fit, real coverage, proof and inquiries.",
+      "addedUtility": "Extend two short examples into complete fictional briefs: a scheduled HVAC replacement inquiry and a roofing project inquiry. Explain why the page list, project evidence, timing questions and reply expectations differ. Link back to the existing service page.",
+      "sections": [
+        "One customer job per brief",
+        "Pages and project proof required",
+        "Six useful intake fields and their purpose",
+        "What submission does and does not confirm"
+      ],
+      "relatedRoutes": [
+        "/services/contractor-websites/",
+        "/guides/service-area-pages/",
+        "/guides/website-content-template/"
+      ],
+      "constraints": [
+        "Do not imply emergency dispatch, live availability, technical diagnosis or trade credentials.",
+        "Use approved business facts for real examples; label constructed examples fictional."
+      ],
+      "metrics": [
+        {
+          "keyword": "contractor web design",
+          "volume": 1000,
+          "kd": 12,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,000",
+            "kd": "12",
+            "cpcUsd": "8.87",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:29:53.902Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=contractor%20web%20design&db=us&date=202610&device=0",
+          "captureFile": "batch-06-dom.txt",
+          "captureSha256": "d5eca63a888a86fc2a1e89569aace38b373167e29e56232da32ccffab664a644"
+        },
+        {
+          "keyword": "general contractor website design",
+          "volume": 720,
+          "kd": 7,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "720",
+            "kd": "7",
+            "cpcUsd": "8.87",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:29:53.902Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=general%20contractor%20website%20design&db=us&date=202610&device=0",
+          "captureFile": "batch-06-dom.txt",
+          "captureSha256": "d5eca63a888a86fc2a1e89569aace38b373167e29e56232da32ccffab664a644"
+        },
+        {
+          "keyword": "hvac website design",
+          "volume": 1600,
+          "kd": 21,
+          "intent": "Informational Commercial",
+          "raw": {
+            "intent": "Informational Commercial",
+            "volume": "1,600",
+            "kd": "21",
+            "cpcUsd": "11.05",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:29:53.902Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=hvac%20website%20design&db=us&date=202610&device=0",
+          "captureFile": "batch-06-dom.txt",
+          "captureSha256": "d5eca63a888a86fc2a1e89569aace38b373167e29e56232da32ccffab664a644"
+        },
+        {
+          "keyword": "roofing website design",
+          "volume": 1000,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,000",
+            "kd": "19",
+            "cpcUsd": "13.08",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:29:53.902Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=roofing%20website%20design&db=us&date=202610&device=0",
+          "captureFile": "batch-06-dom.txt",
+          "captureSha256": "d5eca63a888a86fc2a1e89569aace38b373167e29e56232da32ccffab664a644"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 7,
+      "title": "Choose the fields for a useful quote-request form",
+      "type": "NEW guide and downloadable field worksheet",
+      "route": "/guides/quote-request-form/",
+      "readerDecision": "Which details are necessary to review an inquiry, and when is a simple form enough?",
+      "priorityReason": "A useful cross-industry resource that connects existing form examples with actual form and workflow offers.",
+      "closestExisting": [
+        "/guides/manufacturing-rfq-form/",
+        "/guides/contact-form-not-working/",
+        "/guides/contractor-website-checklist/"
+      ],
+      "comparatorFiles": [
+        "comparator-manufacturing-rfq-form.txt",
+        "comparator-contact-form-not-working.txt",
+        "comparator-contractor-website-checklist.txt"
+      ],
+      "alreadyExists": "Manufacturing RFQ guidance addresses a specific technical intake; troubleshooting addresses failed delivery. Contractor content has an industry example. No general quote-form chooser appears in the 59-guide inventory.",
+      "addedUtility": "Create a purpose-first field worksheet and three worked forms: a project inquiry, a scheduled service request and a B2B specification request. Explain the review decision supported by each field and when extra workflow requires a separately scoped tool.",
+      "sections": [
+        "Name the decision after submission",
+        "Keep, defer or remove each field",
+        "Three forms with reasons for their questions",
+        "Confirmation and receiving-inbox checks"
+      ],
+      "relatedRoutes": [
+        "/guides/manufacturing-rfq-form/",
+        "/guides/contractor-website-checklist/",
+        "/guides/contact-form-not-working/",
+        "/services/web-design/"
+      ],
+      "constraints": [
+        "The current included form has up to six agreed questions, one receiving inbox and one confirmation.",
+        "A request is not a price, accepted job, booking or dispatch.",
+        "Do not request sensitive documents as default intake fields."
+      ],
+      "metrics": [
+        {
+          "keyword": "request a quote form",
+          "volume": 170,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "170",
+            "kd": "19",
+            "cpcUsd": "5.91",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=request%20a%20quote%20form&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        },
+        {
+          "keyword": "quote request form template",
+          "volume": 30,
+          "kd": null,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "30",
+            "kd": "n/a",
+            "cpcUsd": "7.43",
+            "updated": "For metrics, refresh Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=quote%20request%20form%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        },
+        {
+          "keyword": "contact form examples",
+          "volume": 480,
+          "kd": 24,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "24",
+            "cpcUsd": "2.86",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=contact%20form%20examples&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 8,
+      "title": "Write FAQ answers that help customers choose",
+      "type": "NEW examples guide and answer worksheet",
+      "route": "/guides/small-business-faq-examples/",
+      "readerDecision": "Which customer questions need an answer, and should the answer sit on the service page or a separate FAQ?",
+      "priorityReason": "Broad informational demand can be served with practical small-business examples and a clear connection to the writing service.",
+      "closestExisting": [
+        "/guides/website-content-template/",
+        "/guides/website-not-generating-leads/"
+      ],
+      "comparatorFiles": [
+        "comparator-website-content-template.txt",
+        "comparator-website-not-generating-leads.txt"
+      ],
+      "alreadyExists": "The content template asks for common service questions; the inquiry guide discusses unanswered questions. The inventory has no dedicated worked FAQ resource.",
+      "addedUtility": "Provide six annotated question-and-answer examples covering price conditions, fit, service area, inputs, timing and what happens next. Each shows an unhelpful answer, a clearer fictional answer and the owner evidence needed to publish it.",
+      "sections": [
+        "Choose questions from actual decisions",
+        "Six worked answers",
+        "Service-page answer or separate FAQ",
+        "Review dates and facts that change"
+      ],
+      "relatedRoutes": [
+        "/guides/website-content-template/",
+        "/guides/website-not-generating-leads/",
+        "/services/seo/"
+      ],
+      "constraints": [
+        "Do not fill missing policy or operational facts with plausible language.",
+        "Do not promise FAQ rich results; verify any future structured-data guidance against primary documentation."
+      ],
+      "metrics": [
+        {
+          "keyword": "faq page examples",
+          "volume": 720,
+          "kd": 17,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "720",
+            "kd": "17",
+            "cpcUsd": "1.48",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=faq%20page%20examples&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        },
+        {
+          "keyword": "faq page template",
+          "volume": 480,
+          "kd": 31,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "31",
+            "cpcUsd": "5.39",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=faq%20page%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 9,
+      "title": "Announce a website launch with a useful customer message",
+      "type": "NEW short guide and reusable text examples",
+      "route": "/guides/website-launch-announcement/",
+      "readerDecision": "What should we tell customers after launch, in which channel, and which link should they use?",
+      "priorityReason": "A distinct post-launch writing task with good fit to the launch graphics and approved promotional material already offered.",
+      "closestExisting": [
+        "/guides/website-launch-checklist/",
+        "/services/web-design/"
+      ],
+      "comparatorFiles": [
+        "comparator-website-launch-checklist.txt",
+        "comparator-service-webdesign.txt"
+      ],
+      "alreadyExists": "The launch checklist covers readiness and approval. Website offers include defined creative outputs. There is no guide devoted to the customer-facing announcement.",
+      "addedUtility": "Provide an email, short social caption and on-site notice for a fictional launch. Each explains a customer benefit, names what changed and uses a checked destination. Include a small channel-and-owner checklist.",
+      "sections": [
+        "Choose the useful change to announce",
+        "Three editable messages",
+        "Check links, previews and approved claims",
+        "Record the channel owner and publication date"
+      ],
+      "relatedRoutes": [
+        "/guides/website-launch-checklist/",
+        "/guides/website-content-template/",
+        "/services/web-design/"
+      ],
+      "constraints": [
+        "Templates do not authorize sending or public posting.",
+        "Do not invent testimonials, launch dates, discounts or performance improvements."
+      ],
+      "metrics": [
+        {
+          "keyword": "new website announcement",
+          "volume": 320,
+          "kd": 11,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "320",
+            "kd": "11",
+            "cpcUsd": "5.03",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=new%20website%20announcement&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        },
+        {
+          "keyword": "website launch announcement",
+          "volume": 140,
+          "kd": 20,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "140",
+            "kd": "20",
+            "cpcUsd": "4.35",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20launch%20announcement&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 10,
+      "title": "Make inquiry confirmations clear about the next step",
+      "type": "NEW examples guide",
+      "route": "/guides/inquiry-confirmation-examples/",
+      "readerDecision": "What can we truthfully confirm after a visitor sends a form, and what should they do next?",
+      "priorityReason": "Direct customer usefulness after the primary conversion; complements rather than repeats delivery troubleshooting.",
+      "closestExisting": [
+        "/guides/contact-form-not-working/",
+        "/guides/website-not-generating-leads/",
+        "/guides/manufacturing-rfq-form/"
+      ],
+      "comparatorFiles": [
+        "comparator-contact-form-not-working.txt",
+        "comparator-website-not-generating-leads.txt",
+        "comparator-manufacturing-rfq-form.txt"
+      ],
+      "alreadyExists": "The form-repair guide checks delivery and confirmation. Existing industry guides distinguish inquiries from accepted jobs. The inventory has no general confirmation-copy example library.",
+      "addedUtility": "Show three annotated confirmations for a project request, a quote needing review and a booking request awaiting acceptance. Separate the message shown on screen from proof that the receiving workflow works, and include a fallback contact route.",
+      "sections": [
+        "Confirm the actual event",
+        "Say what happens next using approved facts",
+        "Three examples and their boundaries",
+        "Test the message and receiving workflow together"
+      ],
+      "relatedRoutes": [
+        "/guides/contact-form-not-working/",
+        "/guides/quote-request-form/",
+        "/guides/website-launch-checklist/"
+      ],
+      "constraints": [
+        "Use a response time only when the business has approved it.",
+        "A submit event is not a verified lead, accepted quote, reservation or payment."
+      ],
+      "metrics": [
+        {
+          "keyword": "thank you page examples",
+          "volume": 320,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "320",
+            "kd": "19",
+            "cpcUsd": "2.11",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=thank%20you%20page%20examples&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        },
+        {
+          "keyword": "contact form examples",
+          "volume": 480,
+          "kd": 24,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "24",
+            "cpcUsd": "2.86",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:26:14.883Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=contact%20form%20examples&db=us&date=202610&device=0",
+          "captureFile": "batch-04-dom.txt",
+          "captureSha256": "49e48493f8d6f601e6864e914c120c613bc600fe87b5e1a7eec887c4d5c5e94a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 11,
+      "title": "Connect a redesign RFP to evidence and acceptance checks",
+      "type": "Extend existing brief and download",
+      "route": "/guides/website-redesign-brief/",
+      "readerDecision": "How do we turn a requirement into a comparable proposal and a checkable finished result?",
+      "priorityReason": "Strong captured demand but substantial existing coverage; extend the brief rather than create an overlapping RFP article.",
+      "closestExisting": [
+        "/guides/website-redesign-brief/",
+        "/guides/how-to-choose-a-web-designer/",
+        "/guides/website-redesign-timeline/"
+      ],
+      "comparatorFiles": [
+        "comparator-website-redesign-brief.txt",
+        "comparator-how-to-choose-a-web-designer.txt",
+        "comparator-website-redesign-timeline.txt"
+      ],
+      "alreadyExists": "The brief already includes a downloadable template, a completed fictional brief, approval questions and provider questions. The chooser already includes a comparison worksheet and evidence examples.",
+      "addedUtility": "Add one filled requirement-to-acceptance table to the existing brief: requirement, supplied evidence, provider response, dependency, acceptance check and owner. Use three concrete requirements, such as preserving a useful URL, routing one inquiry form and supporting a regular content update.",
+      "sections": [
+        "Use an RFP only as detailed as the decision needs",
+        "Three requirements followed through to acceptance",
+        "Expose unanswered dependencies",
+        "Reuse the existing provider comparison worksheet"
+      ],
+      "relatedRoutes": [
+        "/guides/how-to-choose-a-web-designer/",
+        "/guides/website-redesign-timeline/",
+        "/guides/website-migration-checklist/"
+      ],
+      "constraints": [
+        "Avoid a second generic brief or scoring worksheet that duplicates the existing downloads.",
+        "Unanswered questions remain unresolved, not automatic supplier failures."
+      ],
+      "metrics": [
+        {
+          "keyword": "website redesign rfp",
+          "volume": 390,
+          "kd": 3,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "390",
+            "kd": "3",
+            "cpcUsd": "10.78",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20redesign%20rfp&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        },
+        {
+          "keyword": "website rfp template",
+          "volume": 170,
+          "kd": 9,
+          "intent": null,
+          "raw": {
+            "intent": "n/a",
+            "volume": "170",
+            "kd": "9",
+            "cpcUsd": "6.74",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:45:14.311Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20rfp%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-09-dom.txt",
+          "captureSha256": "f08f219e01e148592ad769e3937801530c47d907c79b956c4b094627fd95e6f1"
+        },
+        {
+          "keyword": "website redesign project plan template",
+          "volume": 480,
+          "kd": 29,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "29",
+            "cpcUsd": "3.77",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:45:14.311Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20redesign%20project%20plan%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-09-dom.txt",
+          "captureSha256": "f08f219e01e148592ad769e3937801530c47d907c79b956c4b094627fd95e6f1"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 12,
+      "title": "Build a case-study page from evidence a business can support",
+      "type": "NEW worksheet and fictional worked example",
+      "route": "/guides/customer-case-study-template/",
+      "readerDecision": "What can we credibly say about a project, and which evidence should we collect before publishing?",
+      "priorityReason": "Supports stronger portfolios and service proof without requiring fabricated client outcomes.",
+      "closestExisting": [
+        "/guides/how-to-choose-a-web-designer/",
+        "/guides/website-content-template/"
+      ],
+      "comparatorFiles": [
+        "comparator-how-to-choose-a-web-designer.txt",
+        "comparator-website-content-template.txt"
+      ],
+      "alreadyExists": "The chooser explains how to assess claimed results and concept work; the content template asks for evidence. There is no dedicated case-study template in the guide inventory.",
+      "addedUtility": "Offer a worksheet for problem, constraints, work performed, evidence, permissions and remaining limitations. Include one explicitly fictional example with process evidence and no numeric outcome claim, plus a separate optional outcome section that requires dates and a defensible comparison.",
+      "sections": [
+        "Identify the work and who did it",
+        "Separate observed results from interpretation",
+        "Get permission for quotes and images",
+        "Publish a useful story when outcomes are unavailable"
+      ],
+      "relatedRoutes": [
+        "/guides/website-content-template/",
+        "/guides/how-to-choose-a-web-designer/",
+        "/services/web-design/"
+      ],
+      "constraints": [
+        "Never turn design concepts into implied client work.",
+        "Do not invent testimonials, baselines or causal performance claims."
+      ],
+      "metrics": [
+        {
+          "keyword": "customer success story template",
+          "volume": 480,
+          "kd": 11,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "11",
+            "cpcUsd": "8.08",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:46:06.647Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=customer%20success%20story%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-10-dom.txt",
+          "captureSha256": "f69c61f8f55999a86bde92ffcc5f8e10309cc8c8e0bf1d04fbe5037b8493878d"
+        },
+        {
+          "keyword": "website case study template",
+          "volume": 40,
+          "kd": 21,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "40",
+            "kd": "21",
+            "cpcUsd": "4.29",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:46:06.647Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20case%20study%20template&db=us&date=202610&device=0",
+          "captureFile": "batch-10-dom.txt",
+          "captureSha256": "f69c61f8f55999a86bde92ffcc5f8e10309cc8c8e0bf1d04fbe5037b8493878d"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 13,
+      "title": "Show how a monthly SEO report leads to the next decision",
+      "type": "Extend existing reporting guide",
+      "route": "/guides/seo-work-and-reporting/",
+      "readerDecision": "Was the agreed work completed, what evidence is available, and what should happen next?",
+      "priorityReason": "Highly relevant to ongoing services, with a narrow addition to an already substantial reporting resource.",
+      "closestExisting": [
+        "/guides/seo-work-and-reporting/",
+        "/services/seo/"
+      ],
+      "comparatorFiles": [
+        "comparator-seo-work-and-reporting.txt",
+        "comparator-service-seo.txt"
+      ],
+      "alreadyExists": "The guide already describes research, implementation, reporting, plan boundaries and interpretation. A blank monthly report template and fictional improvement examples already exist.",
+      "addedUtility": "Add a fully annotated fictional report for one completed page update and a second version with unavailable search data. Mark completion evidence, observation period, unresolved inputs and the next decision. The point is to teach how to read a report when results are inconclusive.",
+      "sections": [
+        "Find the completed work and its URL",
+        "Read observations with their dates and limitations",
+        "Handle missing or inconclusive data",
+        "Choose the next customer question"
+      ],
+      "relatedRoutes": [
+        "/services/seo/",
+        "/guides/website-not-generating-leads/"
+      ],
+      "constraints": [
+        "Use conspicuously labeled synthetic observations or an approved real report.",
+        "No comparison of clicks to verified leads without the required evidence."
+      ],
+      "metrics": [
+        {
+          "keyword": "monthly seo report",
+          "volume": 1300,
+          "kd": 21,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,300",
+            "kd": "21",
+            "cpcUsd": "9.57",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=monthly%20seo%20report&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        },
+        {
+          "keyword": "what is included in seo services",
+          "volume": 880,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "880",
+            "kd": "19",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=what%20is%20included%20in%20seo%20services&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 14,
+      "title": "Add a content-migration example to the existing URL checklist",
+      "type": "Extend existing migration guide",
+      "route": "/guides/website-migration-checklist/",
+      "readerDecision": "Which facts and useful content should survive a redesign, even when URLs and layouts change?",
+      "priorityReason": "Useful long-tail extension of the established migration resource without another checklist page.",
+      "closestExisting": [
+        "/guides/website-migration-checklist/",
+        "/guides/website-redesign-brief/"
+      ],
+      "comparatorFiles": [
+        "comparator-website-migration-checklist.txt",
+        "comparator-website-redesign-brief.txt"
+      ],
+      "alreadyExists": "The guide already provides the old-to-new URL map, redirects, pre/post-launch checks and search-risk guidance; the brief already calls for a content inventory.",
+      "addedUtility": "Add a filled content-level example for keep, rewrite, merge and retire decisions. Track the page purpose, approved facts, images and permissions, owner, destination and verification status alongside the existing URL worksheet.",
+      "sections": [
+        "Inventory useful content within each URL",
+        "Four content decisions with reasons",
+        "Resolve conflicting old and new facts",
+        "Check preserved information after launch"
+      ],
+      "relatedRoutes": [
+        "/guides/website-redesign-brief/",
+        "/guides/website-content-template/",
+        "/guides/website-launch-checklist/"
+      ],
+      "constraints": [
+        "Do not promise a migration without ranking or traffic changes.",
+        "Retirement decisions need actual page usefulness and available performance evidence."
+      ],
+      "metrics": [
+        {
+          "keyword": "website content migration",
+          "volume": 320,
+          "kd": 21,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "320",
+            "kd": "21",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20content%20migration&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        },
+        {
+          "keyword": "website migration checklist",
+          "volume": 1000,
+          "kd": 32,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,000",
+            "kd": "32",
+            "cpcUsd": "2.26",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:23:10.513Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=website%20migration%20checklist&db=us&date=202610&device=0",
+          "captureFile": "batch-02-dom.txt",
+          "captureSha256": "838bb8e971ce73782d40f534dc3a13654b8ad1fabcbe8dc97c6d12dff1622691"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 15,
+      "title": "Plan an industrial website around capability evidence and an RFQ",
+      "type": "NEW planning guide; commercial page only if an offer is established",
+      "route": "/guides/industrial-website-planning/",
+      "readerDecision": "Which capabilities, specifications and inquiry details should an industrial buyer be able to assess?",
+      "priorityReason": "Promising industry signal and a distinct reader task; narrower business-fit validation is still needed before prioritizing a dedicated sales page.",
+      "closestExisting": [
+        "/guides/manufacturing-rfq-form/",
+        "/guides/website-content-template/"
+      ],
+      "comparatorFiles": [
+        "comparator-manufacturing-rfq-form.txt",
+        "comparator-website-content-template.txt"
+      ],
+      "alreadyExists": "The RFQ guide goes deeply into quote intake. The general template covers service pages, but the inventory has no complete industrial website planning guide.",
+      "addedUtility": "Create a fictional site plan connecting capabilities, approved specification documents, project evidence and the RFQ route. Explain which information belongs before inquiry and which must be reviewed with the buyer later.",
+      "sections": [
+        "What the buyer needs to establish",
+        "Capability and specification page plan",
+        "Evidence and approval owners",
+        "Connect the page to the existing RFQ worksheet"
+      ],
+      "relatedRoutes": [
+        "/guides/manufacturing-rfq-form/",
+        "/guides/website-content-template/",
+        "/services/web-design/"
+      ],
+      "constraints": [
+        "Validate actual studio fit and inspect current search results before drafting.",
+        "Do not invent technical tolerances, certifications, production capacity or customer work."
+      ],
+      "metrics": [
+        {
+          "keyword": "industrial website design",
+          "volume": 1000,
+          "kd": 12,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "1,000",
+            "kd": "12",
+            "cpcUsd": "10.29",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:42:51.605Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=industrial%20website%20design&db=us&date=202610&device=0",
+          "captureFile": "batch-07-dom.txt",
+          "captureSha256": "c907b10da9fb855da94c0c4b932a19aa079821f45f39d08a13a3593e7253d250"
+        },
+        {
+          "keyword": "request a quote form",
+          "volume": 170,
+          "kd": 19,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "170",
+            "kd": "19",
+            "cpcUsd": "5.91",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:27:46.882Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=request%20a%20quote%20form&db=us&date=202610&device=0",
+          "captureFile": "batch-05-dom.txt",
+          "captureSha256": "1bcb9b3585dd04bc921f2bd2ed2583ba3660652b1588d8d9ebc402dc1bc3babc"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    },
+    {
+      "rank": 16,
+      "title": "Turn service-area guidance into a territory evidence worksheet",
+      "type": "Extend existing guide",
+      "route": "/guides/service-area-pages/",
+      "readerDecision": "Does a territory need a distinct page, and what locally useful facts justify it?",
+      "priorityReason": "Supports the existing geographic site structure while discouraging repetitive pages created solely for terms.",
+      "closestExisting": [
+        "/guides/service-area-pages/",
+        "/guides/website-content-template/"
+      ],
+      "comparatorFiles": [
+        "comparator-service-area-pages.txt",
+        "comparator-website-content-template.txt"
+      ],
+      "alreadyExists": "The guide already explains truthful coverage, local usefulness and when to combine areas. This is a practical worksheet extension, not new location-page theory.",
+      "addedUtility": "Add a completed fictional territory worksheet showing the customer task, true service coverage, distinct access or scheduling facts, source owner, review date and page decision. Include a second area that should remain on the main service page because it has no distinct useful answer.",
+      "sections": [
+        "Identify the territory-specific customer decision",
+        "Record approved coverage and operational facts",
+        "Decide between a distinct page and a service-page section",
+        "Assign future review ownership"
+      ],
+      "relatedRoutes": [
+        "/guides/local-seo-profile-eligibility/",
+        "/guides/contractor-website-checklist/",
+        "/services/seo/"
+      ],
+      "constraints": [
+        "Do not imply an office, physical presence or local client history that does not exist.",
+        "Do not extrapolate US keyword estimates into local-market demand."
+      ],
+      "metrics": [
+        {
+          "keyword": "service area business seo",
+          "volume": 590,
+          "kd": 16,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "590",
+            "kd": "16",
+            "cpcUsd": "0.00",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=service%20area%20business%20seo&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        },
+        {
+          "keyword": "location pages seo",
+          "volume": 480,
+          "kd": 20,
+          "intent": "Informational",
+          "raw": {
+            "intent": "Informational",
+            "volume": "480",
+            "kd": "20",
+            "cpcUsd": "8.09",
+            "updated": "1 month Update keyword"
+          },
+          "database": "us",
+          "retrievedAt": "2026-10-23T17:24:51.900Z",
+          "sourceUrl": "https://www.semrush.com/analytics/keywordoverview?q=location%20pages%20seo&db=us&date=202610&device=0",
+          "captureFile": "batch-03-dom.txt",
+          "captureSha256": "f082f4e332594ed7b060fb8ef1ae1ef02704d8aa40d9ed935f98daf9d5bc154a"
+        }
+      ],
+      "analystIntent": "The reader decision and proposed format are analyst recommendations, separate from the captured Semrush intent label.",
+      "preDraftCheck": "Inspect current search results, recheck overlap and confirm business facts before drafting or publishing."
+    }
+  ],
+  "defer": [
+    {
+      "topic": "Standalone copywriting or blog-writing sales pages",
+      "reason": "Demand exists, but the current offer is writing within defined builds and improvements. Confirm the standalone service before creating a sales page."
+    },
+    {
+      "topic": "Large batches of individual trade or professional-service pages",
+      "reason": "Broad and sector demand alone does not establish distinct business facts or studio expertise. Start with the existing contractor resource and one industrial planning guide."
+    },
+    {
+      "topic": "Another website cost or ROI calculator",
+      "reason": "Both already exist. Improve use and discovery of the current tools."
+    },
+    {
+      "topic": "Another generic brief, launch checklist, one-page SEO guide or AI-content checklist",
+      "reason": "Substantial current guides already serve these needs. Add precise missing examples or improve entry points only after checking current content."
+    }
+  ],
+  "limitations": [
+    "Blank, n/a and dash cells remain unavailable (null), never numeric zero.",
+    "Literal displayed 0 remains 0; this is a vendor estimate, not proof of no searches.",
+    "Volume is a US database estimate. It is not a count of local buyers or expected website traffic.",
+    "Keyword variants are not summed. No traffic, lead, ranking or revenue forecast is produced.",
+    "KD is the captured generic KD %, not personalized KD. Low KD alone does not establish business fit.",
+    "Semrush intent is retained verbatim where available. Analyst page recommendations are separate from vendor intent.",
+    "No metric refresh was requested. Partially unavailable rows saying For metrics, refresh remain incomplete.",
+    "No live SERP review, Search Console/account performance review, competitor-content analysis, or production mutation was performed in this research. Recommendations are research-backed priorities, not a completed publication brief."
+  ],
+  "validation": {
+    "passed": true,
+    "issues": []
+  }
+}

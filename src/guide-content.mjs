@@ -1,3 +1,5 @@
+import {semrushGuideContent} from './semrush-guides.mjs';
+import {extendSemrushGuide} from './semrush-content-examples.mjs';
 import {monthlyGuidePlanLines,monthlyGuidePlanSummaries} from './monthly-content.mjs';
 import {money,escapeHtml as e} from './shared.mjs';
 import {researchGuideContent} from './research-guide-content.mjs';
@@ -205,6 +207,6 @@ const guideContent={
 };
 
 export function guideContentSections(path,offers){
- const authored=floridaGuideContent[path]||operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
- return formatGuideSections(expandLongtailSections(path,withFloridaGuideExamples(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])])));
+ const authored=semrushGuideContent[path]||floridaGuideContent[path]||operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
+ return formatGuideSections(extendSemrushGuide(path,expandLongtailSections(path,withFloridaGuideExamples(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])])),offers));
 }

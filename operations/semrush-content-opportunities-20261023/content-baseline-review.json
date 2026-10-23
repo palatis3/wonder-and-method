@@ -1,0 +1,300 @@
+{
+  "reviewedAt": "2026-10-23T19:44:38.195Z",
+  "status": "PASS: exact authorized page/download/asset set; historical routes, fragment IDs, existing metadata and media retained",
+  "baselineBeforeSha256": "b7aff3070bccfb73ffafa0daf0ab7932a4de492f52debddd7ece1a3114425892",
+  "publicRoutes": 1213,
+  "allHtml": 1225,
+  "downloads": 436,
+  "changes": [
+    "Changed page: guides/contractor-website-checklist/index.html (headings, htmlSha256, links, textSha256)",
+    "Added pages: guides/customer-case-study-template/index.html",
+    "Changed page: guides/index.html (headings, htmlSha256, links, textSha256)",
+    "Added pages: guides/industrial-website-planning/index.html",
+    "Added pages: guides/inquiry-confirmation-examples/index.html",
+    "Added pages: guides/quote-request-form/index.html",
+    "Changed page: guides/seo-work-and-reporting/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Changed page: guides/service-area-pages/index.html (headings, htmlSha256, textSha256)",
+    "Added pages: guides/small-business-faq-examples/index.html",
+    "Changed page: guides/website-content-template/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Added pages: guides/website-launch-announcement/index.html",
+    "Changed page: guides/website-maintenance-cost/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Changed page: guides/website-migration-checklist/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Changed page: guides/website-project-cost/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Changed page: guides/website-redesign-brief/index.html (headings, htmlSha256, ids, links, schemaSha256, textSha256)",
+    "Changed page: index.html (htmlSha256)",
+    "Changed page: payments/index.html (headings, htmlSha256, ids, links, textSha256)",
+    "Changed page: services/seo/index.html (headings, htmlSha256, ids, links, textSha256)",
+    "Changed page: services/web-design/index.html (headings, htmlSha256, ids, links, textSha256)",
+    "Changed page: services/website-care/index.html (headings, htmlSha256, ids, links, textSha256)",
+    "Changed page: tools/website-roi-calculator/index.html (headings, htmlSha256, ids, links, textSha256)",
+    "Changed download: assets/downloads/website-redesign-brief.txt",
+    "Changed download: assets/downloads/website-url-map.csv",
+    "Added downloads: assets/guides/customer-case-study-template-worksheet.txt",
+    "Added downloads: assets/guides/industrial-website-planning-worksheet.txt",
+    "Added downloads: assets/guides/inquiry-confirmation-examples-worksheet.txt",
+    "Added downloads: assets/guides/quote-request-form-worksheet.txt",
+    "Changed download: assets/guides/service-area-decision-worksheet.txt",
+    "Added downloads: assets/guides/small-business-faq-examples-worksheet.txt",
+    "Changed download: assets/guides/website-content-template.txt",
+    "Added downloads: assets/guides/website-launch-announcement-worksheet.txt",
+    "Changed download: assets/guides/website-redesign-brief.txt",
+    "Changed download: llms.txt",
+    "Changed asset: _headers",
+    "Changed asset: assets/asset-hashes.json",
+    "Changed asset: assets/buyer-packs/owned-audit-two-fix-record.json",
+    "Changed asset: assets/living-city.css",
+    "Changed asset: assets/site-family-services.css",
+    "Changed asset: assets/site-navigation.js",
+    "Added assets: assets/social/guides-customer-case-study-template.png",
+    "Added assets: assets/social/guides-industrial-website-planning.png",
+    "Added assets: assets/social/guides-inquiry-confirmation-examples.png",
+    "Added assets: assets/social/guides-quote-request-form.png",
+    "Added assets: assets/social/guides-small-business-faq-examples.png",
+    "Added assets: assets/social/guides-website-launch-announcement.png",
+    "Changed asset: sitemap.xml"
+  ],
+  "details": [
+    {
+      "name": "guides/contractor-website-checklist/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "links"
+      ],
+      "removedLinks": [
+        "/guides/website-content-template/",
+        "/work/northline/"
+      ],
+      "addedLinks": [
+        "/guides/quote-request-form/"
+      ],
+      "removedHeadings": [
+        [
+          "h2",
+          "Two contractor website examples, with the decisions explained"
+        ]
+      ]
+    },
+    {
+      "name": "guides/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "links"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "/guides/customer-case-study-template/",
+        "/guides/industrial-website-planning/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/quote-request-form/",
+        "/guides/small-business-faq-examples/",
+        "/guides/website-launch-announcement/"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/seo-work-and-reporting/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#completed-report",
+        "/assets/guides/sample-monthly-report.txt?v=BUILD"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/service-area-pages/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings"
+      ],
+      "removedLinks": [],
+      "addedLinks": [],
+      "removedHeadings": [
+        [
+          "h2",
+          "Work through an illustrative example"
+        ]
+      ]
+    },
+    {
+      "name": "guides/website-content-template/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#notes-to-copy",
+        "/guides/small-business-faq-examples/"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/website-maintenance-cost/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#task-owners"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/website-migration-checklist/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#content-inventory"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/website-project-cost/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#matched-proposals",
+        "/payments/#cost-to-roi-examples"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "guides/website-redesign-brief/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links",
+        "schemaSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "#requirements-evidence"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "index.html",
+      "fields": [
+        "htmlSha256"
+      ],
+      "removedLinks": [],
+      "addedLinks": [],
+      "removedHeadings": []
+    },
+    {
+      "name": "payments/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "/tools/website-roi-calculator/#cost-to-roi-examples"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "services/seo/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "/guides/seo-work-and-reporting/#completed-report"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "services/web-design/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links"
+      ],
+      "removedLinks": [
+        "/guides/website-content-template/"
+      ],
+      "addedLinks": [
+        "/guides/website-content-template/#notes-to-copy"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "services/website-care/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "/guides/website-maintenance-cost/#task-owners"
+      ],
+      "removedHeadings": []
+    },
+    {
+      "name": "tools/website-roi-calculator/index.html",
+      "fields": [
+        "htmlSha256",
+        "textSha256",
+        "headings",
+        "ids",
+        "links"
+      ],
+      "removedLinks": [],
+      "addedLinks": [
+        "/payments/#cost-calculator"
+      ],
+      "removedHeadings": []
+    }
+  ]
+}

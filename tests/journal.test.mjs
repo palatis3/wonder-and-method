@@ -1,3 +1,4 @@
+import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
 import {floridaGuidePaths} from '../src/florida-guide-paths.mjs';
 import {operatingGuidePaths} from '../src/operating-guide-paths.mjs';
 import {longtailGuides} from '../src/longtail-guides.mjs';
@@ -34,7 +35,7 @@ test('published guides have unique metadata, visible authorship and matching art
   const newGuide=['google-visibility-flow','contact-form-flow','service-area-decision','maintenance-cycle','contractor-inquiry'].includes(guide.image);
   const auditGuide=['/guides/website-maintenance-cost/','/guides/website-launch-checklist/','/guides/ai-website-or-custom/'].includes(guide.path);
   const revised=auditGuide||['/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/website-not-showing-on-google/'].includes(guide.path);
-  assert.equal(guide.datePublished,(floridaGuidePaths.has(guide.path)||operatingGuidePaths.has(guide.path)||longtailGuides.some(item=>item.path===guide.path))?'2026-10-22':guide.image.endsWith('-flow')&&guide.datePublished==='2026-10-20'?'2026-10-20':auditGuide?'2026-10-17':newGuide?'2026-10-16':guide.diagram?'2026-10-15':'2026-10-14');
+  assert.equal(guide.datePublished,semrushGuidePaths.includes(guide.path)?'2026-10-23':(floridaGuidePaths.has(guide.path)||operatingGuidePaths.has(guide.path)||longtailGuides.some(item=>item.path===guide.path))?'2026-10-22':guide.image.endsWith('-flow')&&guide.datePublished==='2026-10-20'?'2026-10-20':auditGuide?'2026-10-17':newGuide?'2026-10-16':guide.diagram?'2026-10-15':'2026-10-14');
   assert.equal(guide.dateModified,pageDates[guide.path].modifiedAt);
   assert.ok(html.includes(`Published <time datetime="${guide.datePublished}">`));
   if(guide.datePublished===guide.dateModified)assert.doesNotMatch(html,/ · Updated/);else assert.ok(html.includes('Updated <time datetime="'+guide.dateModified+'">'));
@@ -49,10 +50,10 @@ test('published guides have unique metadata, visible authorship and matching art
 });
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
- const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/';
- assert.equal(journal.length,59);assert.equal(pages.length,1207);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
- const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>![comparison,audit].includes(x.path))},offers,map,geography});
- assert.ok(!gated.some(x=>[comparison,audit].includes(x.path)));for(const page of gated)for(const target of [comparison,audit])assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
+ const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/',held=[comparison,audit,...semrushGuidePaths];
+ assert.equal(journal.length,65);assert.equal(pages.length,1213);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
+ const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>!held.includes(x.path))},offers,map,geography});
+ assert.ok(!gated.some(x=>held.includes(x.path)));for(const page of gated)for(const target of held)assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
  for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
  assert.ok(pages.find(x=>x.path==='/services/website-audit/').html.includes(`href="${audit}"`));
  const cost=pages.find(x=>x.path===comparison).html,checklist=pages.find(x=>x.path===audit).html;

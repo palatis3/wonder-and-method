@@ -1,0 +1,1190 @@
+{
+  "checkedAt": "2026-10-23T19:46:55.762Z",
+  "status": "PASS; production publication not yet performed",
+  "publicRoutes": 1213,
+  "sitemapUrls": 1212,
+  "allHtml": 1225,
+  "downloads": 436,
+  "unitTests": {
+    "passed": 721,
+    "failed": 0
+  },
+  "browserRegression": {
+    "passed": 31,
+    "failed": 0,
+    "preExistingProjectExclusions": 35,
+    "scope": "Navigation resizing, footer keyboard behavior, homepage layout and accessibility, enlarged text, and native no-JavaScript journeys"
+  },
+  "contentLayouts": {
+    "status": "PASS",
+    "checks": 38,
+    "results": [
+      {
+        "path": "/services/seo/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Match a monthly plan to a concrete task",
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/sample-monthly-report.txt?v=8cff8e9b9cd4"
+        ]
+      },
+      {
+        "path": "/services/website-care/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Who handles five common website requests?",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/audit-implementation/work-receipt-template.txt?v=8cff8e9b9cd4"
+        ]
+      },
+      {
+        "path": "/guides/website-maintenance-cost/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Monthly studio plans — USD",
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Illustrative first year of care on an existing site",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Who handles five common website requests?",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-maintenance-budget.csv?v=8ebe8e7c49dc"
+        ]
+      },
+      {
+        "path": "/payments/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Two fictional journeys from cost to ROI",
+            "headers": 5,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/tools/website-roi-calculator/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Two fictional journeys from cost to ROI",
+            "headers": 5,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/guides/website-project-cost/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Current studio website prices",
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Examples of additional website work",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Illustrative first-year budget — replace the provider assumptions",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Normalize the scope before comparing the prices",
+            "headers": 11,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/audit-implementation/website-project-cost-checklist.txt?v=ec4624697a62"
+        ]
+      },
+      {
+        "path": "/services/web-design/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "What each website package includes",
+            "headers": 13,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/guides/website-content-template/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Core website content plan",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Why each part belongs",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-content-template.txt?v=b68e417a5dd0"
+        ]
+      },
+      {
+        "path": "/guides/contractor-website-checklist/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [],
+        "downloads": [
+          "/assets/guides/contractor-website-worksheet.csv?v=9952201a33c3"
+        ]
+      },
+      {
+        "path": "/guides/quote-request-form/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Six fields for a project inquiry",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Six fields for a scheduled-service request",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Six fields for a B2B request",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/quote-request-form-worksheet.txt?v=3c4434ededfb"
+        ]
+      },
+      {
+        "path": "/guides/small-business-faq-examples/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Two answers that help customers assess the service",
+            "headers": 5,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Two answers that remove uncertainty before an inquiry",
+            "headers": 5,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Two answers that set accurate expectations",
+            "headers": 5,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/small-business-faq-examples-worksheet.txt?v=b8ede9ae008a"
+        ]
+      },
+      {
+        "path": "/guides/website-launch-announcement/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Launch-announcement approval record",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-launch-announcement-worksheet.txt?v=dfefc4338596"
+        ]
+      },
+      {
+        "path": "/guides/inquiry-confirmation-examples/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [],
+        "downloads": [
+          "/assets/guides/inquiry-confirmation-examples-worksheet.txt?v=d5fab17f1044"
+        ]
+      },
+      {
+        "path": "/guides/website-redesign-brief/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional requirements and acceptance record",
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-redesign-brief.txt?v=5c83dd7ef871",
+          "/assets/downloads/website-url-map.csv?v=d721a85722b6",
+          "/assets/audit-implementation/illustrative-completed-brief.txt?v=fa66f4b51289"
+        ]
+      },
+      {
+        "path": "/guides/customer-case-study-template/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Case-study drafting record",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/customer-case-study-template-worksheet.txt?v=0fb0213134ae"
+        ]
+      },
+      {
+        "path": "/guides/seo-work-and-reporting/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional keyword-to-page planning row",
+            "headers": 4,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Fictional October service-page report",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/seo-provider-questions.txt?v=6ff47a11cdad",
+          "/assets/guides/monthly-seo-opportunity-worksheet.csv?v=1936e7b70148",
+          "/assets/guides/sample-monthly-report.txt?v=8cff8e9b9cd4",
+          "/assets/audit-implementation/seo-work-and-reporting-checklist.txt?v=04ce4c35cdbe"
+        ]
+      },
+      {
+        "path": "/guides/website-migration-checklist/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional content decisions for a small service website",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Example URL map",
+            "headers": 6,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/downloads/website-url-map.csv?v=d721a85722b6"
+        ]
+      },
+      {
+        "path": "/guides/industrial-website-planning/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "A buyer-led industrial website plan",
+            "headers": 8,
+            "width": 350,
+            "parentOverflow": "visible"
+          },
+          {
+            "caption": "Industrial content approval checklist",
+            "headers": 7,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/industrial-website-planning-worksheet.txt?v=b34221b0b597"
+        ]
+      },
+      {
+        "path": "/guides/service-area-pages/",
+        "width": 390,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Two territory rows with different page decisions",
+            "headers": 9,
+            "width": 350,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/service-area-decision-worksheet.txt?v=32aaff7a6cec"
+        ]
+      },
+      {
+        "path": "/services/seo/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Match a monthly plan to a concrete task",
+            "headers": 6,
+            "width": 1296,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/sample-monthly-report.txt?v=8cff8e9b9cd4"
+        ]
+      },
+      {
+        "path": "/services/website-care/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Who handles five common website requests?",
+            "headers": 8,
+            "width": 1296,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": [
+          "/assets/audit-implementation/work-receipt-template.txt?v=8cff8e9b9cd4"
+        ]
+      },
+      {
+        "path": "/guides/website-maintenance-cost/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Monthly studio plans — USD",
+            "headers": 6,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Illustrative first year of care on an existing site",
+            "headers": 7,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Who handles five common website requests?",
+            "headers": 8,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-maintenance-budget.csv?v=8ebe8e7c49dc"
+        ]
+      },
+      {
+        "path": "/payments/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "",
+            "headers": 7,
+            "width": 1296,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "",
+            "headers": 7,
+            "width": 1296,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Two fictional journeys from cost to ROI",
+            "headers": 5,
+            "width": 1296,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/tools/website-roi-calculator/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "headers": 6,
+            "width": 1120,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Two fictional journeys from cost to ROI",
+            "headers": 5,
+            "width": 1120,
+            "parentOverflow": "visible"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/guides/website-project-cost/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Current studio website prices",
+            "headers": 6,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Examples of additional website work",
+            "headers": 8,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Illustrative first-year budget — replace the provider assumptions",
+            "headers": 7,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Normalize the scope before comparing the prices",
+            "headers": 11,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/audit-implementation/website-project-cost-checklist.txt?v=ec4624697a62"
+        ]
+      },
+      {
+        "path": "/services/web-design/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "What each website package includes",
+            "headers": 13,
+            "width": 1296,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": []
+      },
+      {
+        "path": "/guides/website-content-template/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Core website content plan",
+            "headers": 7,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Why each part belongs",
+            "headers": 8,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-content-template.txt?v=b68e417a5dd0"
+        ]
+      },
+      {
+        "path": "/guides/contractor-website-checklist/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [],
+        "downloads": [
+          "/assets/guides/contractor-website-worksheet.csv?v=9952201a33c3"
+        ]
+      },
+      {
+        "path": "/guides/quote-request-form/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Six fields for a project inquiry",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Six fields for a scheduled-service request",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Six fields for a B2B request",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/quote-request-form-worksheet.txt?v=3c4434ededfb"
+        ]
+      },
+      {
+        "path": "/guides/small-business-faq-examples/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Two answers that help customers assess the service",
+            "headers": 5,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Two answers that remove uncertainty before an inquiry",
+            "headers": 5,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Two answers that set accurate expectations",
+            "headers": 5,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/small-business-faq-examples-worksheet.txt?v=b8ede9ae008a"
+        ]
+      },
+      {
+        "path": "/guides/website-launch-announcement/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Launch-announcement approval record",
+            "headers": 8,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-launch-announcement-worksheet.txt?v=dfefc4338596"
+        ]
+      },
+      {
+        "path": "/guides/inquiry-confirmation-examples/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [],
+        "downloads": [
+          "/assets/guides/inquiry-confirmation-examples-worksheet.txt?v=d5fab17f1044"
+        ]
+      },
+      {
+        "path": "/guides/website-redesign-brief/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional requirements and acceptance record",
+            "headers": 6,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/website-redesign-brief.txt?v=5c83dd7ef871",
+          "/assets/downloads/website-url-map.csv?v=d721a85722b6",
+          "/assets/audit-implementation/illustrative-completed-brief.txt?v=fa66f4b51289"
+        ]
+      },
+      {
+        "path": "/guides/customer-case-study-template/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Case-study drafting record",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/customer-case-study-template-worksheet.txt?v=0fb0213134ae"
+        ]
+      },
+      {
+        "path": "/guides/seo-work-and-reporting/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional keyword-to-page planning row",
+            "headers": 4,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Fictional October service-page report",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/seo-provider-questions.txt?v=6ff47a11cdad",
+          "/assets/guides/monthly-seo-opportunity-worksheet.csv?v=1936e7b70148",
+          "/assets/guides/sample-monthly-report.txt?v=8cff8e9b9cd4",
+          "/assets/audit-implementation/seo-work-and-reporting-checklist.txt?v=04ce4c35cdbe"
+        ]
+      },
+      {
+        "path": "/guides/website-migration-checklist/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Fictional content decisions for a small service website",
+            "headers": 7,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Example URL map",
+            "headers": 6,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/downloads/website-url-map.csv?v=d721a85722b6"
+        ]
+      },
+      {
+        "path": "/guides/industrial-website-planning/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "A buyer-led industrial website plan",
+            "headers": 8,
+            "width": 760,
+            "parentOverflow": "auto"
+          },
+          {
+            "caption": "Industrial content approval checklist",
+            "headers": 7,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/industrial-website-planning-worksheet.txt?v=b34221b0b597"
+        ]
+      },
+      {
+        "path": "/guides/service-area-pages/",
+        "width": 1440,
+        "status": 200,
+        "overflow": 0,
+        "h1": 1,
+        "brokenImages": [],
+        "tables": [
+          {
+            "caption": "Two territory rows with different page decisions",
+            "headers": 9,
+            "width": 760,
+            "parentOverflow": "auto"
+          }
+        ],
+        "downloads": [
+          "/assets/guides/service-area-decision-worksheet.txt?v=32aaff7a6cec"
+        ]
+      }
+    ]
+  },
+  "quality": {
+    "checkedAt": "2026-10-23T19:46:15.777Z",
+    "status": "pass",
+    "pages": 1213,
+    "locationRecords": 1082,
+    "reviewedGuideConnections": 1116,
+    "historicalRoutes": 407,
+    "routeChecks": 4412,
+    "maxWorkerRedirects": 1,
+    "historicalFragmentTargets": 2995,
+    "findings": [],
+    "limits": "Deterministic regression checks for markup, source-record structure, known scope ambiguity, reviewed contextual-link associations and historical routing. Not factual source verification, an editorial quality score, Google approval, or a guarantee of indexing/rankings."
+  },
+  "performance": {
+    "schemaVersion": 1,
+    "checkedAt": "2026-10-23T19:32:26.972Z",
+    "config": {
+      "runs": 3,
+      "paths": [
+        "/",
+        "/pricing/",
+        "/contact/",
+        "/payments/",
+        "/guides/website-content-template/",
+        "/areas/south-carolina/"
+      ],
+      "budgets": {
+        "largest-contentful-paint": 2500,
+        "cumulative-layout-shift": 0.1,
+        "total-blocking-time": 200
+      },
+      "minimumPerformanceScore": 0.9
+    },
+    "results": [
+      {
+        "path": "/",
+        "score": 0.98,
+        "metrics": {
+          "largest-contentful-paint": 2333.6473499999997,
+          "cumulative-layout-shift": 0,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 2337.7335000000003,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.97
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2333.6473499999997,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.98
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2333.043,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.98
+          }
+        ]
+      },
+      {
+        "path": "/pricing/",
+        "score": 0.99,
+        "metrics": {
+          "largest-contentful-paint": 1806.9045,
+          "cumulative-layout-shift": 0.01846358277087154,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 1808.57205,
+              "cumulative-layout-shift": 0.01846358277087154,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1661.0103000000001,
+              "cumulative-layout-shift": 0.01846358277087154,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1806.9045,
+              "cumulative-layout-shift": 0.01846358277087154,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          }
+        ]
+      },
+      {
+        "path": "/contact/",
+        "score": 0.99,
+        "metrics": {
+          "largest-contentful-paint": 1808.2227,
+          "cumulative-layout-shift": 0,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 1813.2547499999998,
+              "cumulative-layout-shift": 0.08493631326135453,
+              "total-blocking-time": 0
+            },
+            "score": 0.97
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1807.3845000000001,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1808.2227,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          }
+        ]
+      },
+      {
+        "path": "/payments/",
+        "score": 0.99,
+        "metrics": {
+          "largest-contentful-paint": 1807.6921499999999,
+          "cumulative-layout-shift": 0,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 1807.6921499999999,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1807.1461,
+              "cumulative-layout-shift": 0.001880278120783024,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1809.70545,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          }
+        ]
+      },
+      {
+        "path": "/guides/website-content-template/",
+        "score": 0.99,
+        "metrics": {
+          "largest-contentful-paint": 1809.3276,
+          "cumulative-layout-shift": 0.0005805647080027521,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 1812.6123,
+              "cumulative-layout-shift": 0.0005805647080027521,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1808.8513500000001,
+              "cumulative-layout-shift": 0.0005805647080027521,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 1809.3276,
+              "cumulative-layout-shift": 0.0005805647080027521,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          }
+        ]
+      },
+      {
+        "path": "/areas/south-carolina/",
+        "score": 0.99,
+        "metrics": {
+          "largest-contentful-paint": 2106.0518,
+          "cumulative-layout-shift": 0,
+          "total-blocking-time": 0
+        },
+        "runs": [
+          {
+            "metrics": {
+              "largest-contentful-paint": 2105.8546,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2106.0518,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          },
+          {
+            "metrics": {
+              "largest-contentful-paint": 2108.5006,
+              "cumulative-layout-shift": 0,
+              "total-blocking-time": 0
+            },
+            "score": 0.99
+          }
+        ]
+      }
+    ],
+    "failures": [],
+    "limits": "Three cold mobile lab runs per page, median metrics, pinned Lighthouse and Chromium. Local synthetic server with gzip text transfer; third-party HTTPS requests blocked. These are repeatable lab budgets, not field Core Web Vitals or an indexing guarantee."
+  },
+  "performanceScope": "Three Lighthouse runs per page across six pages. Homepage source unchanged since these measurements; final Linux CI still required.",
+  "homepageVisual": {
+    "viewport": [
+      1425,
+      990
+    ],
+    "comparedChannels": 4232250,
+    "changedChannels": 0,
+    "meanAbsoluteError": 0,
+    "referenceCapture": "Prior approved October 23 screenshot",
+    "currentCaptureSha256": "09f1edbbc9a883a8d865f5cbdbd2fe864cea44efed20b464815e9a6fb2c7926d",
+    "result": "New real browser capture is pixel-identical; refreshed capture provenance and retained identical portfolio image bytes."
+  },
+  "contract": {
+    "reviewFile": "content-baseline-review.json",
+    "acceptedBaselineSha256": "1cb0baea4f1d315db67ce2ef0f25e343f2b511bce158dc3b6cba6379d7bc951b",
+    "changes": 46,
+    "historicalRoutesPreserved": true,
+    "historicalIdsPreserved": true,
+    "existingMetadataAndMediaPreserved": true
+  },
+  "inputSha256": {
+    "src/pages.mjs": "095820966cf44e44b8f221aa85a50ff763abe41c155582dc9fcb26b31b88c631",
+    "src/assets/site-navigation.js": "e2943c6a0a52fdbf4dc1ceaf8ff47c8679d5e8e4fac85d69ab27843245ab1830",
+    "src/assets/living-city.css": "7212da6bb0ef38cab7bdb1de3c4a943178de696c2be8a343f9247630a46d65c9",
+    "src/semrush-guides.mjs": "004ace7200c00db722ce4bab85f98a2984056852609486f093a6d24b2b915bf4",
+    "src/semrush-content-examples.mjs": "24ced72d14d697101d4dd20d27188d78fb09fd38b809ffaa653a073f8b3e7ae2",
+    "src/portfolio-captures.json": "4625e4a0f935cf1b67c67f4e472f766eff07f508286866f36d38aee32d4437bb"
+  },
+  "evidenceSha256": {
+    "evidence/semrush-content-opportunities-20261023/unit-tests-final.log": "af3158e5ad36f5b12331898edb4fd8823433ab2d3182c2bcdeec6ba69d6ae5c7",
+    "evidence/semrush-content-opportunities-20261023/browser-regression.log": "15f50af837d9551bd27269207bdd44b90356b3526a28f81fcf72397969e354d9",
+    "evidence/semrush-content-opportunities-20261023/browser-layout-qa-final.log": "124c52988f2ee3d6bf36bdf21d9e7e7b36cb8828213998d27dcd49053d68b93b",
+    "evidence/semrush-content-opportunities-20261023/quality-final.log": "8cd9a909ae1bb4d488ba85dde4d80d804ebef78c206bf8a29d56f1701ee16ba0",
+    "output/ci/performance/summary.json": "003b0c26e88b91bc52f3ab9d44a7ec312744151f158cd5785956c486eb90bf53"
+  }
+}

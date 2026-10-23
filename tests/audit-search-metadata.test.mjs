@@ -55,10 +55,10 @@ test('broad service coverage has 21 states and a federal district and preserves 
  assert.deepEqual(serviceAreas({...config,serviceCoverage:{...config.serviceCoverage,regions:['Ohio']}}),[{'@type':'State',name:'Ohio'}]);
 });
 
-test('metadata and sitemap cover 1207 public pages while retired county URLs resolve to their state entries',()=>{
+test('metadata and sitemap cover 1213 public pages while retired county URLs resolve to their state entries',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,1207);assert.equal((sitemap.match(/<loc>/g)||[]).length,1206);
- assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,59);
+ assert.equal(pages.length,1213);assert.equal((sitemap.match(/<loc>/g)||[]).length,1212);
+ assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,65);
  assert.deepEqual(pages.filter(item=>approvedLocationPaths.includes(item.path)).map(item=>item.path).sort(),approvedLocationPaths);
  assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,1106);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){
@@ -66,7 +66,7 @@ test('metadata and sitemap cover 1207 public pages while retired county URLs res
   const [hub,slug]=destination.split('#');assert.ok(page(hub),destination);if(slug)assert.ok(page(hub).html.includes(`id="${slug}"`));
   assert.ok(sitemap.includes(`<loc>${config.origin+hub}</loc>`));
  }
- assert.equal(new Set(pages.map(item=>item.path)).size,1207);
+ assert.equal(new Set(pages.map(item=>item.path)).size,1213);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

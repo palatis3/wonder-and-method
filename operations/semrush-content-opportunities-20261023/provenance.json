@@ -1,0 +1,20 @@
+{
+  "preparedAt": "2026-10-23T18:49:12.384Z",
+  "status": "research-only",
+  "inputs": [
+    {
+      "file": "recommendations.json",
+      "sha256": "b1cb91fa153cf0b9b8911a512883bed7ddb0da42bf2ccc5957f0f5422a550281"
+    },
+    {
+      "file": "coverage-and-validation.json",
+      "sha256": "bdac352a16087b694a429768f7ed8c2f18131f476f14258490279fc09f07a9a9"
+    },
+    {
+      "file": "coordinator-validation.json",
+      "sha256": "35baa1e4cc5c9dd904d1c432456fd1e5e098d20ce532693b63e3f644071974d2"
+    }
+  ],
+  "coordinatorValidation": "coordinator-validation.json",
+  "privateEvidenceDirectory": "evidence/semrush-content-opportunities-20261023"
+}

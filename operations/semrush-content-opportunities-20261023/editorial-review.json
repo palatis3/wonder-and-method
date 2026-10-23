@@ -1,0 +1,336 @@
+{
+  "reviewedAt": "2026-10-23T19:46:55.748Z",
+  "reviewer": "Codex primary author/editor",
+  "authorization": "Owner instructed all Semrush additions be completed before the combined site and sitemap release on October 23, 2026.",
+  "status": "All 16 implemented; independent editorial/relevance review and local technical checks passed. Exact-commit CI and production release remain required.",
+  "reviewScope": [
+    "Live search intent checked for all 16 recommendations; observed result references are in pre-draft-review.json.",
+    "Existing target articles and service pages read from the frozen 82dcf46 build before edits.",
+    "Original examples remain labeled fictional; unsupported outcomes, credentials, technical specifications and service promises are omitted.",
+    "Offer prices and counts use the current offer catalog; provider costs remain separate and unknown costs are not treated as zero.",
+    "Six new resources complement existing guides; no new commercial industrial/copywriting offer or duplicate calculator.",
+    "Downloads are original editable worksheets, with existing brief, content template, territory worksheet and URL map extended in place.",
+    "New resources use the existing guide aggregate bucket; existing page measurement keys and database history are preserved."
+  ],
+  "newGuides": [
+    "/guides/quote-request-form/",
+    "/guides/small-business-faq-examples/",
+    "/guides/website-launch-announcement/",
+    "/guides/inquiry-confirmation-examples/",
+    "/guides/customer-case-study-template/",
+    "/guides/industrial-website-planning/"
+  ],
+  "recommendations": [
+    {
+      "rank": 1,
+      "title": "Choose an SEO plan from the work that needs doing",
+      "originalRoute": "/services/seo/",
+      "implementation": [
+        "/services/seo/#choose-monthly-work"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 2,
+      "title": "Match everyday website tasks to the right support owner",
+      "originalRoute": "/services/website-care/",
+      "implementation": [
+        "/services/website-care/#task-owners",
+        "/guides/website-maintenance-cost/#task-owners"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 3,
+      "title": "Connect the existing cost estimator and ROI calculator with worked scenarios",
+      "originalRoute": "/payments/#cost-calculator",
+      "implementation": [
+        "/payments/#cost-to-roi-examples",
+        "/tools/website-roi-calculator/#cost-to-roi-examples",
+        "/guides/website-project-cost/#matched-proposals"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 4,
+      "title": "Show why two website budgets differ using equal-scope examples",
+      "originalRoute": "/guides/website-project-cost/",
+      "implementation": [
+        "/guides/website-project-cost/#matched-proposals"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 5,
+      "title": "Demonstrate the included writing process from business facts to a service page",
+      "originalRoute": "/services/web-design/",
+      "implementation": [
+        "/services/web-design/#writing-example",
+        "/guides/website-content-template/#notes-to-copy"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 6,
+      "title": "Add two complete trade briefs to the contractor resource",
+      "originalRoute": "/guides/contractor-website-checklist/",
+      "implementation": [
+        "/guides/contractor-website-checklist/#annotated-examples"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 7,
+      "title": "Choose the fields for a useful quote-request form",
+      "originalRoute": "/guides/quote-request-form/",
+      "implementation": [
+        "/guides/quote-request-form/",
+        "/assets/guides/quote-request-form-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 8,
+      "title": "Write FAQ answers that help customers choose",
+      "originalRoute": "/guides/small-business-faq-examples/",
+      "implementation": [
+        "/guides/small-business-faq-examples/",
+        "/assets/guides/small-business-faq-examples-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 9,
+      "title": "Announce a website launch with a useful customer message",
+      "originalRoute": "/guides/website-launch-announcement/",
+      "implementation": [
+        "/guides/website-launch-announcement/",
+        "/assets/guides/website-launch-announcement-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 10,
+      "title": "Make inquiry confirmations clear about the next step",
+      "originalRoute": "/guides/inquiry-confirmation-examples/",
+      "implementation": [
+        "/guides/inquiry-confirmation-examples/",
+        "/assets/guides/inquiry-confirmation-examples-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 11,
+      "title": "Connect a redesign RFP to evidence and acceptance checks",
+      "originalRoute": "/guides/website-redesign-brief/",
+      "implementation": [
+        "/guides/website-redesign-brief/#requirements-evidence",
+        "/assets/guides/website-redesign-brief.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 12,
+      "title": "Build a case-study page from evidence a business can support",
+      "originalRoute": "/guides/customer-case-study-template/",
+      "implementation": [
+        "/guides/customer-case-study-template/",
+        "/assets/guides/customer-case-study-template-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 13,
+      "title": "Show how a monthly SEO report leads to the next decision",
+      "originalRoute": "/guides/seo-work-and-reporting/",
+      "implementation": [
+        "/guides/seo-work-and-reporting/#completed-report"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 14,
+      "title": "Add a content-migration example to the existing URL checklist",
+      "originalRoute": "/guides/website-migration-checklist/",
+      "implementation": [
+        "/guides/website-migration-checklist/#content-inventory",
+        "/assets/downloads/website-url-map.csv"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 15,
+      "title": "Plan an industrial website around capability evidence and an RFQ",
+      "originalRoute": "/guides/industrial-website-planning/",
+      "implementation": [
+        "/guides/industrial-website-planning/",
+        "/assets/guides/industrial-website-planning-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    },
+    {
+      "rank": 16,
+      "title": "Turn service-area guidance into a territory evidence worksheet",
+      "originalRoute": "/guides/service-area-pages/",
+      "implementation": [
+        "/guides/service-area-pages/#example",
+        "/assets/guides/service-area-decision-worksheet.txt"
+      ],
+      "status": "implemented; independent editorial review passed"
+    }
+  ],
+  "remaining": [
+    "All seven required GitHub CI jobs on the final clean commit",
+    "Combined production release, live route verification and sitemap submission after verified gates"
+  ],
+  "inputFiles": [
+    {
+      "path": "src/semrush-guides.mjs",
+      "sha256": "004ace7200c00db722ce4bab85f98a2984056852609486f093a6d24b2b915bf4"
+    },
+    {
+      "path": "src/semrush-content-examples.mjs",
+      "sha256": "24ced72d14d697101d4dd20d27188d78fb09fd38b809ffaa653a073f8b3e7ae2"
+    },
+    {
+      "path": "config/offers.json",
+      "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2"
+    },
+    {
+      "path": "src/guide-content.mjs",
+      "sha256": "c4ec698f59c37501e429b3b113affa9cd5d8260c0d0e568e70a9b1dd9ac874bf"
+    },
+    {
+      "path": "src/guide-details.mjs",
+      "sha256": "637057d5238cb7949ab81195301b3e89a49e9acfd869486a8e7c615d409036d1"
+    },
+    {
+      "path": "src/journal.mjs",
+      "sha256": "df6ac4a16546aa1f8ac9b612e2bcdb94cc5657a4ffa35c2997f903e986f8c923"
+    },
+    {
+      "path": "src/assets/guides/quote-request-form-worksheet.txt",
+      "sha256": "3c4434ededfb859a8480069d27463dba58014825e3c8ed10c05324cd6075ef09"
+    },
+    {
+      "path": "src/assets/guides/small-business-faq-examples-worksheet.txt",
+      "sha256": "b8ede9ae008a5dfbd6d222aeec02caaa9b80457981254424b98e7cd193024f20"
+    },
+    {
+      "path": "src/assets/guides/website-launch-announcement-worksheet.txt",
+      "sha256": "dfefc4338596ad7da34117267c6421dd5a3a2990eadbcf7a27b7ab880aa917bb"
+    },
+    {
+      "path": "src/assets/guides/inquiry-confirmation-examples-worksheet.txt",
+      "sha256": "d5fab17f1044347eff6a4f42343115f8dde568367ea23a1694cadcd5e307747c"
+    },
+    {
+      "path": "src/assets/guides/customer-case-study-template-worksheet.txt",
+      "sha256": "0fb0213134ae116fb5768fbfd4a91796d2a1123118c7866f2c483a6d2be03cce"
+    },
+    {
+      "path": "src/assets/guides/industrial-website-planning-worksheet.txt",
+      "sha256": "b34221b0b5979f26a48f4fa0d0ba33dcd61ccfb84b3532d8969612a20bb6a2c2"
+    },
+    {
+      "path": "src/assets/guides/website-redesign-brief.txt",
+      "sha256": "f55d616afad642137bbb746983b2296b12adc63d19bf67c5243c58843b78fdcd"
+    },
+    {
+      "path": "src/assets/guides/website-content-template.txt",
+      "sha256": "9edcdff91dd22bc2cd16ffcd91543aacdc4d2f7d13f83a15d2108cfce7338814"
+    },
+    {
+      "path": "src/assets/guides/service-area-decision-worksheet.txt",
+      "sha256": "b1173cc1b3459745b3ee35cf4b318d96b74036172f3c0a5773ff7bc52de2ebdf"
+    },
+    {
+      "path": "src/assets/downloads/website-url-map.csv",
+      "sha256": "d721a85722b61fc64f4242ea91e7574bbcd1b6c8f52eb5b9f931e75f8175d976"
+    },
+    {
+      "path": "src/service-content.mjs",
+      "sha256": "8d8701ce3fa71172c8875294fa0f8329677a2b87b6d55035241c8777acddf6a3"
+    },
+    {
+      "path": "src/seo-service-content.mjs",
+      "sha256": "36df2d2d2b1f9a5df4c103fa7f1b5a6717c6456fc69d2a5ca6483c0d484baf18"
+    },
+    {
+      "path": "src/payment-content.mjs",
+      "sha256": "efd0055bf6da564564da6a6752f4b11b4d55728af38453e04d6138e626f808da"
+    },
+    {
+      "path": "src/website-roi.mjs",
+      "sha256": "1f0d851eb71ffa67ebe2bb3eb7a4ca1a30c14e2db11f45b20fec9309cb763484"
+    },
+    {
+      "path": "config/site.json",
+      "sha256": "79773e64ffefd101cea657347e66f7aa013e6988e44ad4eb6fc01e0c62b9b901"
+    },
+    {
+      "path": "config/page-dates.json",
+      "sha256": "4381497eeed7ae4973549789074b602d793d0da02e8eb349cf379741a8721f85"
+    },
+    {
+      "path": "src/location-service-data.json",
+      "sha256": "625508f3a015c14da74f746769932dadc1956d7f01273a717385d53285bf05a6"
+    },
+    {
+      "path": "operations/google-quality-audit-20261023/related-guide-review.json",
+      "sha256": "02eda6e07ec03647d8adbbd28347a904102be7adcbe7e39261dbeb094eca233d"
+    },
+    {
+      "path": "src/semrush-guide-paths.mjs",
+      "sha256": "04e7e9cbd1c7768145cfa53be8e09057fd88ac791639f13faacdcbe725e5e8d3"
+    },
+    {
+      "path": "src/journey-page-key.mjs",
+      "sha256": "05b696f639bd1a4fe2f8787a5fbfa6cbfbe9ee32c1365fb6a4cfeeeb1460c1cb"
+    },
+    {
+      "path": "src/research-service-links.mjs",
+      "sha256": "1f3cab788e84e5342a6eb1fde2cf5ea5ffb1231a5dbf43c83a4f6e4dee9061ee"
+    },
+    {
+      "path": "operations/semrush-content-opportunities-20261023/editorial-review.json",
+      "sha256": "2b79c4e7711e817d897e40f548d370391452afa6e7120b92d7926a857fab8e2f"
+    },
+    {
+      "path": "operations/semrush-content-opportunities-20261023/pre-draft-review.json",
+      "sha256": "6ae35c2ae484ded54d432c878f8f16fd31a3ac98bfe844eee1d5b0983e33140e"
+    },
+    {
+      "path": "operations/semrush-content-opportunities-20261023/recommendations.json",
+      "sha256": "b1cb91fa153cf0b9b8911a512883bed7ddb0da42bf2ccc5957f0f5422a550281"
+    },
+    {
+      "path": "scripts/site-quality-rules.mjs",
+      "sha256": "6674aa86a93915eea34217ed0fd8dfcde9549289320842f0f77274d712c0702e"
+    },
+    {
+      "path": "dist/guides/manufacturing-rfq-form/index.html",
+      "sha256": "7961859b644e6aab0a4f5b6111d2283be953725cd2ddb3c3e2e10d8fd51ada39"
+    },
+    {
+      "path": "dist/guides/website-launch-checklist/index.html",
+      "sha256": "24f2718b29c33b3d0d380bf9b4c393b80fbaf8afc74c36e7cf735766ba0babab"
+    },
+    {
+      "path": "src/pages.mjs",
+      "sha256": "095820966cf44e44b8f221aa85a50ff763abe41c155582dc9fcb26b31b88c631"
+    },
+    {
+      "path": "src/assets/site-navigation.js",
+      "sha256": "e2943c6a0a52fdbf4dc1ceaf8ff47c8679d5e8e4fac85d69ab27843245ab1830"
+    },
+    {
+      "path": "src/assets/living-city.css",
+      "sha256": "7212da6bb0ef38cab7bdb1de3c4a943178de696c2be8a343f9247630a46d65c9"
+    },
+    {
+      "path": "src/portfolio-captures.json",
+      "sha256": "4625e4a0f935cf1b67c67f4e472f766eff07f508286866f36d38aee32d4437bb"
+    }
+  ]
+}

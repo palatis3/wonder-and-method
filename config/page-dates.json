@@ -31,12 +31,12 @@
   },
   "/services/web-design/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "c55fb800179cca32204a681470e3ae71095907ab727d496b242298539381799f",
+    "sha256": "d9f4d68bbf18d940c3ccdae9463e8ec56c3b4cd8e7dc4013aa97396695475c9c",
     "contentHashVersion": 3
   },
   "/services/seo/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "f45577505a5eb0b88db889b4f32937ad95605f45ce1faf3d905cd5e0f6b9797c",
+    "sha256": "a91dd6a0f249fd1807613adc5c86ceb8a1db7af96ad64c363fe92d4c19d0a9cc",
     "contentHashVersion": 3
   },
   "/pricing/": {
@@ -91,7 +91,7 @@
   },
   "/services/website-care/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "d44d4102e52d9bbd64d0fa1330f2759d0fb60ee0efc505d11eec17491610daf0",
+    "sha256": "1fa5d67617e42de8f0c7027a2c444e117fe0bcf4e3344205508e99377e5d39ed",
     "contentHashVersion": 3
   },
   "/services/website-audit/": {
@@ -190,8 +190,8 @@
     "contentHashVersion": 3
   },
   "/payments/": {
-    "modifiedAt": "2026-10-21",
-    "sha256": "13715852687236255d18de0f67ca66bff7c530583e65b224c7cae65492a30da8",
+    "modifiedAt": "2026-10-23",
+    "sha256": "062b6c55fe09d0ff6a53b7c0f3f6f29442b2d2856643b474ae558f758b5f16e0",
     "contentHashVersion": 3
   },
   "/404/": {
@@ -200,13 +200,13 @@
     "contentHashVersion": 3
   },
   "/tools/website-roi-calculator/": {
-    "modifiedAt": "2026-10-21",
-    "sha256": "58db03890e0510050cd63fb5af188625444a90bf6811bb8ce795f22ea5a35dc5",
+    "modifiedAt": "2026-10-23",
+    "sha256": "7dd6fb28e1ba4d55a11a17951943009cd1d1366da853a77b35d755b12a281e4f",
     "contentHashVersion": 3
   },
   "/guides/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "3ea6e0e3dea0f1c7c148954db84847fbd5633743d2ca344bf9e5ddf793f861d5",
+    "sha256": "3c7a8100cc191abed09f0cbcc8f50da3a6c5d0eab862963bb9cb89d908d45995",
     "contentHashVersion": 3
   },
   "/guides/ferry-booking-status/": {
@@ -400,8 +400,8 @@
     "contentHashVersion": 3
   },
   "/guides/website-content-template/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "3394d60245c2b6e7428f4e9e3b6a0e0c47710be17301c019e4dd2ab4c9e851f0",
+    "modifiedAt": "2026-10-23",
+    "sha256": "678cd95c12e29cd3b7a6b16fa9fafa314eb739dfaee614fe0a82fcd4ae5b4d06",
     "contentHashVersion": 3
   },
   "/guides/website-redesign-timeline/": {
@@ -420,8 +420,8 @@
     "contentHashVersion": 3
   },
   "/guides/website-maintenance-cost/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "fddb6c595d85542a3a81912c14a41d49fc4302d16d91ad241809b1efcb4965bf",
+    "modifiedAt": "2026-10-23",
+    "sha256": "ea3fd1794a8a9a16b84ba63d33aba6a9902e749ccc9a2a389242fee3c8905d58",
     "contentHashVersion": 3
   },
   "/guides/website-launch-checklist/": {
@@ -446,7 +446,7 @@
   },
   "/guides/service-area-pages/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "fa9fe47d751cfc1d0cfc9b78509b4e9b0c8b96eb4a9f02947c7b253d45121965",
+    "sha256": "5aaec8cff44ed4a41f137b9c035fc0522d125a6aa3969cdfd20e6d396a21b008",
     "contentHashVersion": 3
   },
   "/guides/website-maintenance-checklist/": {
@@ -456,17 +456,47 @@
   },
   "/guides/contractor-website-checklist/": {
     "modifiedAt": "2026-10-23",
-    "sha256": "33e76168a2fecee3404df0f07443b1b4e49aa169d78b421c2f50cf0461171df7",
+    "sha256": "b79b2b3218c618e503bfabfd419d5900e038a60b69a4006f9ec4374c5b5a8ca6",
+    "contentHashVersion": 3
+  },
+  "/guides/quote-request-form/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "072202e060d4d546f150344153197e62e0b317c44080ef393c69552ad6b25fe7",
+    "contentHashVersion": 3
+  },
+  "/guides/small-business-faq-examples/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "71147b2a6729c0fa5dc2d5a2f6e98418399bddf2c2e833b2e9315954012469a5",
+    "contentHashVersion": 3
+  },
+  "/guides/website-launch-announcement/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "5c223f021816416253a1a88d01bde754d38e74972b8135512ba3039d6f4fa967",
+    "contentHashVersion": 3
+  },
+  "/guides/inquiry-confirmation-examples/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "fcff5d0e0dfcb022d423106b1952075d14018c79d0741766ea3e7b402c20c8f0",
+    "contentHashVersion": 3
+  },
+  "/guides/customer-case-study-template/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "775d720401a9a710a8f4fc49ef2c660be05f11c9018264574737e6ca70707c2f",
+    "contentHashVersion": 3
+  },
+  "/guides/industrial-website-planning/": {
+    "modifiedAt": "2026-10-23",
+    "sha256": "4af74296554616bbd92595b5009feb2f110e674bc7172ebe8596c7247098d5e3",
     "contentHashVersion": 3
   },
   "/guides/website-project-cost/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "250156e49daa77c10471c3d1551a4f99da1c6d84c872c07f2fb512d89ddf7aa8",
+    "modifiedAt": "2026-10-23",
+    "sha256": "c41063b0ad96e6548778388e4ee424529a802fd7cbece4dde35e5a0b826fd956",
     "contentHashVersion": 3
   },
   "/guides/website-redesign-brief/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "297ede54eaf6e5819a8a5072ec56768f36ce4b6b91f811453d60aa8943f71a91",
+    "modifiedAt": "2026-10-23",
+    "sha256": "931b0f9acd75c33d7b7101db06033bc80cdc5985a44ce9202552f8b1abd2f147",
     "contentHashVersion": 3
   },
   "/guides/local-seo-profile-eligibility/": {
@@ -475,13 +505,13 @@
     "contentHashVersion": 3
   },
   "/guides/seo-work-and-reporting/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "53caf29f2d4515256be7a9b56370e28cc9754924dac3ca2c14578e83c53f1cf6",
+    "modifiedAt": "2026-10-23",
+    "sha256": "b9d47f251a8b7bc073f8b6494203094a71b7fcebe975dfee9fbf079b21e4e60c",
     "contentHashVersion": 3
   },
   "/guides/website-migration-checklist/": {
-    "modifiedAt": "2026-10-22",
-    "sha256": "3fe7931385752f97b8bd1a594a5d03e990478d2ec785be4a3566708f6c22c9a1",
+    "modifiedAt": "2026-10-23",
+    "sha256": "33a83177e0b061ddd6a50a6379cb34f8748e0dd69266aea12ceb65181a4bdc9b",
     "contentHashVersion": 3
   },
   "/guides/custom-website-or-template/": {

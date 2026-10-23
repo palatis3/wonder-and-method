@@ -1,0 +1,17 @@
+{
+  "appliedAt": "2026-10-23T19:46:09.413Z",
+  "status": "PASS",
+  "independentReviewSha256": "09d3b0de9f1c2715a0e719908ed8fab54969887f29fa6ff7aa5d9e6a5a803b8f",
+  "reviewedInputsVerified": 33,
+  "renderedPagesVerified": 19,
+  "associations": 499,
+  "reasonsRetained": 495,
+  "reasonsRevised": 4,
+  "labelsChanged": 0,
+  "destinationsChanged": 0,
+  "unaffectedRowsPreserved": 617,
+  "ledgerBeforeSha256": "3ea80bd10d21b88e8c45b4012130a8ec189ebebc19c131b9fe8e66a1b4e1ca68",
+  "ledgerAfterSha256": "02eda6e07ec03647d8adbbd28347a904102be7adcbe7e39261dbeb094eca233d",
+  "publishedReviewSha256": "0c063e20253041fe3cabdf08f50b73ba91c73bf0ec7b1fb6eb684bdb7a0162df",
+  "originalReport": "The independentReviewSha256 field pins the original report; the published copy uses path/sha256 input records to avoid treating a source filename as a credential label."
+}

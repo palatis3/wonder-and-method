@@ -174314,12 +174314,12 @@
       "schemaSha256": "d8a91e84c42965a3aff5a2d601873aca0051d20f9530635be27ea84c87305a16"
     },
     "guides/contractor-website-checklist/index.html": {
-      "htmlSha256": "4de2076c2fb7c892203885dc06e8340def5a4a9447b8a5b5da32f4a2fbd17e67",
+      "htmlSha256": "eae2123683b6546148370513f447487f4c8364023fc474fdc95fbeb8e630c490",
       "title": "A contractor website checklist | Wonder and Method",
       "description": "Plan clear services, accepted jobs, project examples, service areas and estimate requests for your contractor website.",
       "canonical": "https://wonderandmethod.com/guides/contractor-website-checklist/",
       "robots": "index,follow",
-      "textSha256": "184912bbe88da31e1ac032985a72e0cfefa5fd012d0a84a06e641b0a03e64fa5",
+      "textSha256": "b3679d5aefb63ca2ac2eb4c0a9fc7781e7dc6b797e334bb9db9e1914ee5b230d",
       "headings": [
         [
           "h1",
@@ -174355,7 +174355,15 @@
         ],
         [
           "h2",
-          "Two contractor website examples, with the decisions explained"
+          "Two complete fictional trade briefs"
+        ],
+        [
+          "h3",
+          "Brief A: planned HVAC replacement"
+        ],
+        [
+          "h3",
+          "Brief B: planned roof repair or replacement assessment"
         ],
         [
           "h2",
@@ -174439,8 +174447,8 @@
         "/guides/",
         "/guides/contact-form-not-working/",
         "/guides/local-seo-profile-eligibility/",
+        "/guides/quote-request-form/",
         "/guides/service-area-pages/",
-        "/guides/website-content-template/",
         "/guides/website-redesign-brief/",
         "/payments/",
         "/pricing/",
@@ -174456,8 +174464,7 @@
         "/services/website-care/",
         "/services/website-redesign/",
         "/terms/",
-        "/work/",
-        "/work/northline/"
+        "/work/"
       ],
       "media": [
         "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
@@ -174763,6 +174770,153 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
       "schemaSha256": "f0e9a791666a6359f60ff6af33f7ee005ac7d51502d4dba0629d6cfb57e12cef"
+    },
+    "guides/customer-case-study-template/index.html": {
+      "htmlSha256": "ec8265ce12e7a02ee7c6623489dd73c4af2af1c70c6a2d505d7677b1c49fbdc0",
+      "title": "A customer case-study template without invented results | Wonder and Method",
+      "description": "Build a useful project story from the problem, constraints, work and evidence. Includes a fictional process example and a permissions worksheet.",
+      "canonical": "https://wonderandmethod.com/guides/customer-case-study-template/",
+      "robots": "index,follow",
+      "textSha256": "b88a048c1450c3094a61b145c54b4fa25ab2ce667758aff07c6c06e717dc5d3c",
+      "headings": [
+        [
+          "h1",
+          "A customer case-study template without invented results"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Start with a project record you may publish"
+        ],
+        [
+          "h2",
+          "Use a structure that separates the claims"
+        ],
+        [
+          "h2",
+          "Fictional example: a clearer repair inquiry"
+        ],
+        [
+          "h3",
+          "Illustrative project story"
+        ],
+        [
+          "h2",
+          "Include outcomes only when the comparison supports them"
+        ],
+        [
+          "h2",
+          "Approve the text, images and identity together"
+        ],
+        [
+          "h2",
+          "Place the story beside the decision it supports"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Website content template"
+        ],
+        [
+          "h3",
+          "Small-business FAQ examples"
+        ]
+      ],
+      "ids": [
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "outcomes",
+        "page-top",
+        "permissions",
+        "publish",
+        "record",
+        "site-help",
+        "structure",
+        "support-chat-description",
+        "support-chat-status",
+        "worked-example"
+      ],
+      "links": [
+        "#main",
+        "#outcomes",
+        "#page-top",
+        "#permissions",
+        "#publish",
+        "#record",
+        "#structure",
+        "#worked-example",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/customer-case-study-template-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/small-business-faq-examples/",
+        "/guides/website-content-template/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "37304fbfba15fa18422c2e37445a326e3364210388855236d361761ec48e705f"
     },
     "guides/departure-address/index.html": {
       "htmlSha256": "076569f05de96ace67278c1407656b059367692366e9b2102cf7f75eb4b829fe",
@@ -175847,12 +176001,12 @@
       "schemaSha256": "d0391eba868429b81a7f48b7c06ea451693d7254d7fa1e0d79f7ff935c439184"
     },
     "guides/index.html": {
-      "htmlSha256": "96b189b676ee8478be31eb5fe17910f1caba0e79a9ef595674be255327982d92",
+      "htmlSha256": "6037bd15fde26c3f2df27426b0a36b73bf780563fcbb427bf88d01fad61dd6a4",
       "title": "Practical website and SEO guides | Wonder and Method",
       "description": "Plain guides to website costs, redesign, care, search visibility and contact forms, with checklists and worksheets for business owners.",
       "canonical": "https://wonderandmethod.com/guides/",
       "robots": "index,follow",
-      "textSha256": "b7de953bd953b8fb68b8f4183143f2f2cffa386c3eb17fdf5037cc648c00649d",
+      "textSha256": "f13dc8f6173f861488432da49c2a0b87b5ea488daba237394ab0e4b8b2b04853",
       "headings": [
         [
           "h1",
@@ -175925,6 +176079,10 @@
         [
           "h3",
           "Contractor website checklist"
+        ],
+        [
+          "h3",
+          "Industrial website planning"
         ],
         [
           "h3",
@@ -176083,6 +176241,26 @@
           "Check the property before offering rental dates"
         ],
         [
+          "h3",
+          "Quote-request form fields"
+        ],
+        [
+          "h3",
+          "Small-business FAQ examples"
+        ],
+        [
+          "h3",
+          "Website launch announcement"
+        ],
+        [
+          "h3",
+          "Inquiry confirmation examples"
+        ],
+        [
+          "h3",
+          "Customer case-study template"
+        ],
+        [
           "h2",
           "Local website cases"
         ],
@@ -176203,6 +176381,7 @@
         "/guides/contractor-website-checklist/",
         "/guides/custom-print-order/",
         "/guides/custom-website-or-template/",
+        "/guides/customer-case-study-template/",
         "/guides/departure-address/",
         "/guides/experience-product-choice/",
         "/guides/farm-event-website-updates/",
@@ -176210,6 +176389,8 @@
         "/guides/ferry-route-and-last-mile/",
         "/guides/franklin-county-canoe-rental-website/",
         "/guides/how-to-choose-a-web-designer/",
+        "/guides/industrial-website-planning/",
+        "/guides/inquiry-confirmation-examples/",
         "/guides/island-payment-preparation/",
         "/guides/itinerary-dependency-review/",
         "/guides/kayak-rental-access-information/",
@@ -176225,6 +176406,7 @@
         "/guides/personalization-preview/",
         "/guides/philadelphia-moving-website/",
         "/guides/photography-location-confirmation/",
+        "/guides/quote-request-form/",
         "/guides/repair-authorization-form/",
         "/guides/river-section-and-release/",
         "/guides/seo-work-and-reporting/",
@@ -176232,6 +176414,7 @@
         "/guides/shared-kitchen-inquiry/",
         "/guides/shipping-date-and-quote/",
         "/guides/slow-website-on-mobile/",
+        "/guides/small-business-faq-examples/",
         "/guides/timed-booking-handoff/",
         "/guides/vacation-rental-property-fit/",
         "/guides/walton-county-bonfire-booking-website/",
@@ -176239,6 +176422,7 @@
         "/guides/website-care-versus-seo/",
         "/guides/website-content-template/",
         "/guides/website-handover-checklist/",
+        "/guides/website-launch-announcement/",
         "/guides/website-launch-checklist/",
         "/guides/website-maintenance-checklist/",
         "/guides/website-maintenance-cost/",
@@ -176274,6 +176458,306 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
       "schemaSha256": "9c9dbf648c9410ffd25e483a8ce2ad51d3a28365585f58ba2367c5ccbff4067d"
+    },
+    "guides/industrial-website-planning/index.html": {
+      "htmlSha256": "049dc3cb53d8b7d1e61db904aa4038f67b273530dbcf4645ce65705f4201b317",
+      "title": "Plan an industrial website around the buyer’s next decision | Wonder and Method",
+      "description": "Prepare capabilities, specification documents, project evidence and an RFQ route. Includes a fictional site plan and an owner-approval worksheet.",
+      "canonical": "https://wonderandmethod.com/guides/industrial-website-planning/",
+      "robots": "index,follow",
+      "textSha256": "9ce81476e519de7b06168f41a40f90c62ebe2cdb3d392a0490cb7d3c11866667",
+      "headings": [
+        [
+          "h1",
+          "Plan an industrial website around the buyer’s next decision"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Plan the buyer’s check before the RFQ"
+        ],
+        [
+          "h2",
+          "Fictional site plan: a component-supply business"
+        ],
+        [
+          "h2",
+          "Give technical documents an owner and a revision"
+        ],
+        [
+          "h2",
+          "Separate the first RFQ from the technical exchange"
+        ],
+        [
+          "h2",
+          "Create a claim and document approval record"
+        ],
+        [
+          "h2",
+          "Match the website scope to the approved plan"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Quote-request form fields"
+        ],
+        [
+          "h3",
+          "Customer case-study template"
+        ]
+      ],
+      "ids": [
+        "approval",
+        "buyer-task",
+        "documents",
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "page-top",
+        "rfq",
+        "site-help",
+        "site-plan",
+        "support-chat-description",
+        "support-chat-status",
+        "website-scope"
+      ],
+      "links": [
+        "#approval",
+        "#buyer-task",
+        "#documents",
+        "#main",
+        "#page-top",
+        "#rfq",
+        "#site-plan",
+        "#website-scope",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/industrial-website-planning-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/customer-case-study-template/",
+        "/guides/manufacturing-rfq-form/",
+        "/guides/quote-request-form/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "f1ddb0036e82a0983ab53b7c2bcb7de27ba19660bfabd928e0c3dd85eb40cb9b"
+    },
+    "guides/inquiry-confirmation-examples/index.html": {
+      "htmlSha256": "566d46b88e2ab328a574d15cb30e15878bda39980403012d939b9f8cc52cf79f",
+      "title": "Inquiry confirmation examples that describe what happened | Wonder and Method",
+      "description": "Write clear project, quote and pending-booking confirmations. Separate a saved request, an email notification and an accepted appointment.",
+      "canonical": "https://wonderandmethod.com/guides/inquiry-confirmation-examples/",
+      "robots": "index,follow",
+      "textSha256": "4b8a69c03a61de945bc5ee0f617754402a475c95ec05cb4df3bb4aa050b64eab",
+      "headings": [
+        [
+          "h1",
+          "Inquiry confirmation examples that describe what happened"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Name the event the system knows"
+        ],
+        [
+          "h2",
+          "Example 1: a project inquiry"
+        ],
+        [
+          "h3",
+          "Saved project inquiry"
+        ],
+        [
+          "h2",
+          "Example 2: a quote request"
+        ],
+        [
+          "h3",
+          "Saved quote request"
+        ],
+        [
+          "h2",
+          "Example 3: a booking request awaiting review"
+        ],
+        [
+          "h3",
+          "Saved request for a visit"
+        ],
+        [
+          "h2",
+          "Use an approved reply arrangement and fallback"
+        ],
+        [
+          "h2",
+          "Check the message and the underlying workflow"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Quote-request form fields"
+        ],
+        [
+          "h3",
+          "Contact form not working?"
+        ]
+      ],
+      "ids": [
+        "booking",
+        "event",
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "page-top",
+        "project",
+        "quote",
+        "reply-fallback",
+        "site-help",
+        "support-chat-description",
+        "support-chat-status",
+        "test"
+      ],
+      "links": [
+        "#booking",
+        "#event",
+        "#main",
+        "#page-top",
+        "#project",
+        "#quote",
+        "#reply-fallback",
+        "#test",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/inquiry-confirmation-examples-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=fix&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/contact-form-not-working/",
+        "/guides/quote-request-form/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/",
+        "https://www.w3.org/WAI/tutorials/forms/notifications/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "89776d2cec87771b397d906df56f5043556676b2f1d5f5d5969c678dba866d6b"
     },
     "guides/island-payment-preparation/index.html": {
       "htmlSha256": "922835291b9c4ee4058bfb1cd50d56266c898a4fc37af0431c42dff72f87dd41",
@@ -178555,6 +179039,151 @@
       ],
       "schemaSha256": "e6e9aa67e0d2cb7d1219b929b30126d93807b2139974bc57159b8b00f973ede2"
     },
+    "guides/quote-request-form/index.html": {
+      "htmlSha256": "c0ccd8a80ce03f970cca56617714f77a646857b34f97e995ba2f6a8191749c1f",
+      "title": "A quote-request form that asks useful questions | Wonder and Method",
+      "description": "Choose fields for project, scheduled-service and B2B requests. Use three fictional examples and a worksheet to explain why each field belongs.",
+      "canonical": "https://wonderandmethod.com/guides/quote-request-form/",
+      "robots": "index,follow",
+      "textSha256": "0e88daf0c7811e09ca98c8ad0dd476e3b45ad60b1f3face4a94f8bfc7e43f8fe",
+      "headings": [
+        [
+          "h1",
+          "A quote-request form that asks useful questions"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Decide what the first response needs"
+        ],
+        [
+          "h2",
+          "Example 1: a small project inquiry"
+        ],
+        [
+          "h2",
+          "Example 2: a scheduled-service request"
+        ],
+        [
+          "h2",
+          "Example 3: a B2B specification request"
+        ],
+        [
+          "h2",
+          "Keep, defer or remove each field"
+        ],
+        [
+          "h2",
+          "Test the question and the route"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Inquiry confirmation examples"
+        ],
+        [
+          "h3",
+          "Contact form not working?"
+        ]
+      ],
+      "ids": [
+        "b2b-example",
+        "field-review",
+        "first-decision",
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "page-top",
+        "project-example",
+        "scheduled-example",
+        "site-help",
+        "support-chat-description",
+        "support-chat-status",
+        "test"
+      ],
+      "links": [
+        "#b2b-example",
+        "#field-review",
+        "#first-decision",
+        "#main",
+        "#page-top",
+        "#project-example",
+        "#scheduled-example",
+        "#test",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/quote-request-form-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/contact-form-not-working/",
+        "/guides/industrial-website-planning/",
+        "/guides/inquiry-confirmation-examples/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/",
+        "https://www.w3.org/WAI/tutorials/forms/instructions/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "e6de566ae9e259a1a87f456528d83dc00d1bae1be99f64c644fa85a73a15b6e0"
+    },
     "guides/repair-authorization-form/index.html": {
       "htmlSha256": "a95eebae18a78031c86ff791ec88fe38fc8f654c6969cba14d25dd5ac1719d58",
       "title": "Separate an equipment inspection request from approval to repair | Wonder and Method",
@@ -178860,12 +179489,12 @@
       "schemaSha256": "74683e0cfbccca827fd55a5a08e5545ffa0c4a1d289dec18f87300b805d54094"
     },
     "guides/seo-work-and-reporting/index.html": {
-      "htmlSha256": "8d3c233c20d84f2ef9cf7746dcd785b468579c854401b76bf9e9af227fd8d32c",
+      "htmlSha256": "7180ec4e2771fe1bfb786f069a5ace20f799630bc606dee36910b29f30a511dc",
       "title": "What monthly SEO work includes | Wonder and Method",
       "description": "See how research leads to a completed improvement and a monthly report. Separate the work delivered from rankings, clicks and business results.",
       "canonical": "https://wonderandmethod.com/guides/seo-work-and-reporting/",
       "robots": "index,follow",
-      "textSha256": "03a0e778f161cc6d786d0613e39c11d10cafc37f46e48a3f02ad08e7871bd21b",
+      "textSha256": "924ad4b1ba03ab1227a96857d2c985c9419280eac772ac90350b7e84d073af7d",
       "headings": [
         [
           "h1",
@@ -178894,6 +179523,14 @@
         [
           "h3",
           "Example: rewriting a service page"
+        ],
+        [
+          "h2",
+          "A completed fictional monthly report, with annotations"
+        ],
+        [
+          "h3",
+          "Version when Search Console access is unavailable"
         ],
         [
           "h2",
@@ -178938,6 +179575,7 @@
       ],
       "ids": [
         "campaigns",
+        "completed-report",
         "footer-areas-heading",
         "footer-information-heading",
         "footer-services-heading",
@@ -178964,6 +179602,7 @@
       ],
       "links": [
         "#campaigns",
+        "#completed-report",
         "#keyword-opportunities",
         "#main",
         "#metrics",
@@ -179002,6 +179641,7 @@
         "/assets/audit-implementation/seo-work-and-reporting-checklist.txt?v=BUILD",
         "/assets/buyer-packs/owned-audit-two-fixes?v=BUILD",
         "/assets/guides/monthly-seo-opportunity-worksheet.csv?v=BUILD",
+        "/assets/guides/sample-monthly-report.txt?v=BUILD",
         "/assets/guides/seo-provider-questions.txt?v=BUILD",
         "/contact/",
         "/contact/#inquiry",
@@ -179039,15 +179679,15 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "221d9f4638a53efe1019729c99ff0bec89bd93ccf80ae11da94035f3b1fe9434"
+      "schemaSha256": "e1c3365d6e40fb7ac1a0d708624e5512e5e326889321287258a7b1e193674a80"
     },
     "guides/service-area-pages/index.html": {
-      "htmlSha256": "70bb1cada79f781977552be718dce54432ed64b1c0843e4ba87cef2061014327",
+      "htmlSha256": "125e8bf98aa695616de99aa8faff22c34eaf37540bf683a304ec121a1b8dedd9",
       "title": "When does a service-area page help? | Wonder and Method",
       "description": "Decide which locations need their own page. Use real service coverage, customer questions and facts, with a simple planning worksheet.",
       "canonical": "https://wonderandmethod.com/guides/service-area-pages/",
       "robots": "index,follow",
-      "textSha256": "9ada69686136b738406cf88aa5a8c218b5452f0c2a9e3cdc7f78206acca259a0",
+      "textSha256": "907cda352aea42eb9314adfe562fc8d2712dc8852249b7623539060432fbb4f8",
       "headings": [
         [
           "h1",
@@ -179071,7 +179711,7 @@
         ],
         [
           "h2",
-          "Work through an illustrative example"
+          "A completed fictional territory decision"
         ],
         [
           "h2",
@@ -179641,6 +180281,150 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
       "schemaSha256": "894426de727370ca66f3ef021550270a593c9fdc42d3409e11857d478ae2a027"
+    },
+    "guides/small-business-faq-examples/index.html": {
+      "htmlSha256": "78660669df2c212f9de755e83cb8a273cfe7ae1fac5526b3381ef82f83a18290",
+      "title": "Small-business FAQ examples with the answers explained | Wonder and Method",
+      "description": "Rewrite vague answers about price, fit, coverage, preparation, timing and next steps. Includes six fictional examples and an approval worksheet.",
+      "canonical": "https://wonderandmethod.com/guides/small-business-faq-examples/",
+      "robots": "index,follow",
+      "textSha256": "4c3a0fa7244227ab6055620108b7669dae86bbaf09fc70c8fa3cddde373b331e",
+      "headings": [
+        [
+          "h1",
+          "Small-business FAQ examples with the answers explained"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Use questions from a real decision"
+        ],
+        [
+          "h2",
+          "Price and fit: explain the condition"
+        ],
+        [
+          "h2",
+          "Coverage and preparation: say what to send"
+        ],
+        [
+          "h2",
+          "Timing and next steps: avoid accidental promises"
+        ],
+        [
+          "h2",
+          "Choose where the answer belongs"
+        ],
+        [
+          "h2",
+          "Review facts and test the finished answer"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Website content template"
+        ],
+        [
+          "h3",
+          "Quote-request form fields"
+        ]
+      ],
+      "ids": [
+        "approve",
+        "choose-questions",
+        "coverage-inputs",
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "page-top",
+        "placement",
+        "price-fit",
+        "site-help",
+        "support-chat-description",
+        "support-chat-status",
+        "timing-next-step"
+      ],
+      "links": [
+        "#approve",
+        "#choose-questions",
+        "#coverage-inputs",
+        "#main",
+        "#page-top",
+        "#placement",
+        "#price-fit",
+        "#timing-next-step",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/small-business-faq-examples-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/quote-request-form/",
+        "/guides/website-content-template/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "41bccd2a35a029059e37a5b69bcb88de582502f739eeb3a3e5f621f6b8e2d5d5"
     },
     "guides/timed-booking-handoff/index.html": {
       "htmlSha256": "bcba52bf10c49bda3b7d4798c6a41b7cfe6ffb841e9f7b5c4e4ffc37b3f8ef3b",
@@ -180436,12 +181220,12 @@
       "schemaSha256": "b552c0f40e8df8d21c8943cc6d42c65302dd3f259bf38a95e25d977aaf2b81ec"
     },
     "guides/website-content-template/index.html": {
-      "htmlSha256": "0775fc2aa1fcb73032369317d5856a0ea23d61195163e4fa031edc6de7ee2004",
+      "htmlSha256": "027d412385f3f66eaa71c0cb55b1a62cea78a658ea23924a36cb6393b33f4ce3",
       "title": "A website content template for your small business | Wonder and Method",
       "description": "Write clearer Home, Service, About and Contact pages using prompts, an original worked example and a downloadable template for verified business facts.",
       "canonical": "https://wonderandmethod.com/guides/website-content-template/",
       "robots": "index,follow",
-      "textSha256": "2fee6af018c20ffff787d0d75d849b417ea9516451b51a5623ad4c15b8624f17",
+      "textSha256": "f1abc86e2a9edfef8e402ed04a45f57ac75f858e29e9bc4118909211f0d9ed3a",
       "headings": [
         [
           "h1",
@@ -180478,6 +181262,14 @@
         [
           "h3",
           "Service-page SEO: which questions belong here?"
+        ],
+        [
+          "h2",
+          "Annotated example: turn owner notes into a service page"
+        ],
+        [
+          "h3",
+          "Draft from those notes"
         ],
         [
           "h2",
@@ -180520,6 +181312,7 @@
         "main",
         "main-nav",
         "next-decision",
+        "notes-to-copy",
         "page-purpose",
         "page-top",
         "review",
@@ -180535,6 +181328,7 @@
         "#facts",
         "#homepage",
         "#main",
+        "#notes-to-copy",
         "#page-purpose",
         "#page-top",
         "#review",
@@ -180575,6 +181369,7 @@
         "/guides/contact-form-not-working/",
         "/guides/contractor-website-checklist/",
         "/guides/one-page-website-seo/",
+        "/guides/small-business-faq-examples/",
         "/guides/website-not-generating-leads/",
         "/guides/website-redesign-brief/",
         "/payments/",
@@ -180600,7 +181395,7 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "308368a22ef6f9279c3e5cf76bcf734bc9a2e3419dea54622d9316f62be083e3"
+      "schemaSha256": "96916f19af641363c33bf74f8cc37493d0ab6de1e0aed2d88b107e939cd02daf"
     },
     "guides/website-handover-checklist/index.html": {
       "htmlSha256": "34d4665608f8a3e2abc46c63ea0175a84348b06c731cefdbe0a4d2c56502b9a8",
@@ -180744,6 +181539,161 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
       "schemaSha256": "edb419e4cdd8e06dc645c8238eb8cd8f150e04e5022144c4a32cc08d7847b0a2"
+    },
+    "guides/website-launch-announcement/index.html": {
+      "htmlSha256": "d785b4eccd623313e803a42b52a490186b05d0a90f9b22eacb454d4a1710c8c5",
+      "title": "Announce a new website with a useful customer message | Wonder and Method",
+      "description": "Adapt an original email, social post and on-site notice. Check the destination, explain the customer benefit and record who approves each channel.",
+      "canonical": "https://wonderandmethod.com/guides/website-launch-announcement/",
+      "robots": "index,follow",
+      "textSha256": "302fd48540ed18f77ae8e3783cea2dd9ec549d786193bcd50eb0c9c2c3373a21",
+      "headings": [
+        [
+          "h1",
+          "Announce a new website with a useful customer message"
+        ],
+        [
+          "h2",
+          "The short answer"
+        ],
+        [
+          "h2",
+          "Announce a working customer task"
+        ],
+        [
+          "h2",
+          "One launch brief, three channels"
+        ],
+        [
+          "h2",
+          "Email draft: explain the useful change"
+        ],
+        [
+          "h3",
+          "Fictional email draft"
+        ],
+        [
+          "h2",
+          "Social post: keep the same promise"
+        ],
+        [
+          "h3",
+          "Fictional social draft"
+        ],
+        [
+          "h2",
+          "On-site notice: help returning visitors"
+        ],
+        [
+          "h3",
+          "Fictional on-site notice"
+        ],
+        [
+          "h2",
+          "Check and approve each channel separately"
+        ],
+        [
+          "h2",
+          "Talk through your next step"
+        ],
+        [
+          "h2",
+          "Related guides"
+        ],
+        [
+          "h3",
+          "Website launch checklist"
+        ],
+        [
+          "h3",
+          "Website content template"
+        ]
+      ],
+      "ids": [
+        "approve-send",
+        "email",
+        "fictional-brief",
+        "footer-areas-heading",
+        "footer-information-heading",
+        "footer-services-heading",
+        "footer-studio-heading",
+        "main",
+        "main-nav",
+        "next-decision",
+        "notice",
+        "page-top",
+        "ready",
+        "site-help",
+        "social",
+        "support-chat-description",
+        "support-chat-status"
+      ],
+      "links": [
+        "#approve-send",
+        "#email",
+        "#fictional-brief",
+        "#main",
+        "#notice",
+        "#page-top",
+        "#ready",
+        "#social",
+        "/",
+        "/about/",
+        "/accessibility/",
+        "/areas/",
+        "/areas/connecticut/",
+        "/areas/delaware/",
+        "/areas/district-of-columbia/",
+        "/areas/florida/",
+        "/areas/indiana/",
+        "/areas/kentucky/",
+        "/areas/maine/",
+        "/areas/maryland/",
+        "/areas/massachusetts/",
+        "/areas/michigan/",
+        "/areas/new-hampshire/",
+        "/areas/new-jersey/",
+        "/areas/new-york/",
+        "/areas/north-carolina/",
+        "/areas/ohio/",
+        "/areas/pennsylvania/",
+        "/areas/rhode-island/",
+        "/areas/south-carolina/",
+        "/areas/tennessee/",
+        "/areas/vermont/",
+        "/areas/virginia/",
+        "/areas/west-virginia/",
+        "/assets/guides/website-launch-announcement-worksheet.txt?v=BUILD",
+        "/contact/",
+        "/contact/#inquiry",
+        "/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry",
+        "/contact/?request_kind=question#inquiry",
+        "/guides/",
+        "/guides/website-content-template/",
+        "/guides/website-launch-checklist/",
+        "/payments/",
+        "/pricing/",
+        "/privacy/",
+        "/process/",
+        "/services/",
+        "/services/contractor-websites/",
+        "/services/seo/",
+        "/services/web-design/",
+        "/services/website-addons/",
+        "/services/website-audit/",
+        "/services/website-care/",
+        "/services/website-redesign/",
+        "/terms/",
+        "/work/"
+      ],
+      "media": [
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+      ],
+      "styles": [
+        "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
+      ],
+      "schemaSha256": "38905265cde95ec4c197b6854d109a2239c3fbc425c569191922deb6c4985e0f"
     },
     "guides/website-launch-checklist/index.html": {
       "htmlSha256": "8e9242ca6afbf4fe3c011aaee342a68f1002abc0d70bfe9ae013ab4832976bfb",
@@ -181038,12 +181988,12 @@
       "schemaSha256": "14eb06b87e2d99ee66f572fcd9e6df83c29149211bd49b3c283cb6ffe3a73cdf"
     },
     "guides/website-maintenance-cost/index.html": {
-      "htmlSha256": "339bec6f87201c35f55190d9f66fbac02b12f9db422053e6e7f72c6bd92be3b8",
+      "htmlSha256": "45b0cdd3691fd1d5ee4549f03c9dd3f5350cc6a58bd602ced30e52ea902029ab",
       "title": "What does website maintenance cost? | Wonder and Method",
       "description": "Separate hosting and software bills from website checks, edits and SEO. Identify who handles updates, backups and problems.",
       "canonical": "https://wonderandmethod.com/guides/website-maintenance-cost/",
       "robots": "index,follow",
-      "textSha256": "ce572156330483ae92e196bfd81b5b11a54539e14234d8615a6914f52e0709bf",
+      "textSha256": "97fd257a72e08ab448c2d4011dfd6484e8e3ce28b8017db83a8a6395ecb4dcbc",
       "headings": [
         [
           "h1",
@@ -181076,6 +182026,10 @@
         [
           "h2",
           "Ask what gets checked and how recovery works"
+        ],
+        [
+          "h2",
+          "Assign the task as well as the budget"
         ],
         [
           "h2",
@@ -181115,6 +182069,7 @@
         "studio-plans",
         "support-chat-description",
         "support-chat-status",
+        "task-owners",
         "three-bills"
       ],
       "links": [
@@ -181125,6 +182080,7 @@
         "#page-top",
         "#platform-cost",
         "#studio-plans",
+        "#task-owners",
         "#three-bills",
         "/",
         "/about/",
@@ -181183,15 +182139,15 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "74f9609fb5eda62cc74ae0f3900f870b4f1aa48363b5fa18bac44ba8016247bb"
+      "schemaSha256": "87247c2b460e4fe3e290fe1d128552bda8cdfb667ba400644074074276b4cc40"
     },
     "guides/website-migration-checklist/index.html": {
-      "htmlSha256": "5b0373a358ff0ad085e54c8bb2e06023291988f214d4ab4e915304e17496de88",
+      "htmlSha256": "82a230a7338843c3905574b10f15fb2bbbd61493ee6f8f55d5b51428c5e3e0c5",
       "title": "Website migration checklist | Wonder and Method",
       "description": "Map old pages to their new destinations, check redirects and test contact forms. Includes an example and a website-migration worksheet.",
       "canonical": "https://wonderandmethod.com/guides/website-migration-checklist/",
       "robots": "index,follow",
-      "textSha256": "31b9a7fd9bb6830a7c55977f7b87f12fec7600943b9452c153245cd9e6da9485",
+      "textSha256": "5cf52c189b7ac2c214748267df49d983f5f24ed7ca39edf15658f199350f7a7f",
       "headings": [
         [
           "h1",
@@ -181204,6 +182160,10 @@
         [
           "h2",
           "Treat a redesign as a move when addresses change"
+        ],
+        [
+          "h2",
+          "A filled content inventory before the URL map"
         ],
         [
           "h2",
@@ -181253,6 +182213,7 @@
       "ids": [
         "after",
         "before",
+        "content-inventory",
         "footer-areas-heading",
         "footer-information-heading",
         "footer-services-heading",
@@ -181275,6 +182236,7 @@
       "links": [
         "#after",
         "#before",
+        "#content-inventory",
         "#inventory",
         "#launch",
         "#main",
@@ -181340,7 +182302,7 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "8649a38ccfef469f37a1564dd8e149dfbc840e4276c80cc340adc93c0a062990"
+      "schemaSha256": "e1fe75b4c30d2ab8d9b93890f4559a1e2ba5ef19360a5ddddebc09911afeb803"
     },
     "guides/website-not-generating-leads/index.html": {
       "htmlSha256": "f4086b1c7c1bad10d441480b8e0442deb81d8bc65885fc0f280d59e5f590fb5b",
@@ -181655,12 +182617,12 @@
       "schemaSha256": "cd7cd42e03c9ca3d66facec8ff78cd4182a4de3927137529b4c6fbc67f31871b"
     },
     "guides/website-project-cost/index.html": {
-      "htmlSha256": "44d15414955d411ade1341a1c0b60ada708a37c3093a8c9fff975173caf33669",
+      "htmlSha256": "16283426b93d07d46ec2c2230f494638cae9d4ba28fd7e4234dae8eae21d03ed",
       "title": "Website Costs for Small Businesses | Wonder and Method",
       "description": "Plan build fees, hosting, domains and optional monthly work. Compare package scope and use the worksheet to budget with clear assumptions.",
       "canonical": "https://wonderandmethod.com/guides/website-project-cost/",
       "robots": "index,follow",
-      "textSha256": "822ce697bcad8eb2a42d21d6afd793b85c478e7d7e631a9ea3476fd545a6f9a4",
+      "textSha256": "7b357d64c01a35aee36c9170ee53b9f2c2a71d79686ec6e3a122dffbced82e6b",
       "headings": [
         [
           "h1",
@@ -181696,6 +182658,10 @@
         ],
         [
           "h2",
+          "Compare two proposals against one agreed brief"
+        ],
+        [
+          "h2",
           "Give each designer the same brief"
         ],
         [
@@ -181725,6 +182691,7 @@
         "footer-studio-heading",
         "main",
         "main-nav",
+        "matched-proposals",
         "next-decision",
         "ongoing-costs",
         "optional-additions",
@@ -181743,6 +182710,7 @@
         "#compare-quotes",
         "#dated-price-example",
         "#main",
+        "#matched-proposals",
         "#ongoing-costs",
         "#optional-additions",
         "#page-top",
@@ -181786,6 +182754,7 @@
         "/guides/website-redesign-timeline/",
         "/payments/",
         "/payments/#cost-calculator",
+        "/payments/#cost-to-roi-examples",
         "/pricing/",
         "/pricing/#offer-focused_site",
         "/pricing/#offer-launch_site",
@@ -181819,15 +182788,15 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "0869b69769d190e78686cd14c6a56335d7507e95bb1df5b9c593a077536ff794"
+      "schemaSha256": "5a28ad3ce88dff29c00bf3f66bc0440e5ce1edad28ae5f7173e12463f650d4a8"
     },
     "guides/website-redesign-brief/index.html": {
-      "htmlSha256": "8790859efcd46c91c55d00a83badc775eacf9467a962e05a670cf051ae61400f",
+      "htmlSha256": "db565633e4195d43978f51c545f7bf3a24a3da90809941c14e27392a00a0115f",
       "title": "Write a website redesign brief | Wonder and Method",
       "description": "Gather your business facts, customer tasks, pages, content and decision makers before asking for a website redesign proposal.",
       "canonical": "https://wonderandmethod.com/guides/website-redesign-brief/",
       "robots": "index,follow",
-      "textSha256": "a847dbc686069d07042bac4918d198345ccde37f4ca35e4739618838895867d9",
+      "textSha256": "8009d5295da3e159743dc33cf7a8656a43135c1c9ff6ffaf69b64aa7e69aaee2",
       "headings": [
         [
           "h1",
@@ -181867,6 +182836,10 @@
         ],
         [
           "h2",
+          "Turn three requirements into checkable replies"
+        ],
+        [
+          "h2",
           "Send the same brief to each designer"
         ],
         [
@@ -181901,6 +182874,7 @@
         "main-nav",
         "next-decision",
         "page-top",
+        "requirements-evidence",
         "rfp",
         "site-help",
         "support-chat-description",
@@ -181915,6 +182889,7 @@
         "#editing",
         "#main",
         "#page-top",
+        "#requirements-evidence",
         "#rfp",
         "/",
         "/about/",
@@ -181975,7 +182950,7 @@
         "<link rel=\"stylesheet\" href=\"/assets/site-family-guides.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/site-guides.css?v=BUILD\">"
       ],
-      "schemaSha256": "f8447ab4c45306b5cc4d7de3d77848fb4af7fc3fa28e3abd553173537e9af82e"
+      "schemaSha256": "90e1d995b83834d231ea46f03e34d6117ca83b32e3c6472aad8b5f6865aa5ba0"
     },
     "guides/website-redesign-timeline/index.html": {
       "htmlSha256": "c7a19c1fcf15883e6ea598a9550b573790bc56b7559e1582042042cd4c1c7b63",
@@ -182442,7 +183417,7 @@
       "schemaSha256": "d3c1f19492c804341ec3cba008dfa8e02e08688e9a1d1f4bedcb213fb5d8bf04"
     },
     "index.html": {
-      "htmlSha256": "c0e8077aa3560e7e4218a810ce15578f61860151f1ca977fc007bee11dfa4ee7",
+      "htmlSha256": "47bc8e4bc0a88beb61261782d2ef9b3f3824bdfabcd306c2e1a49bbb75b13956",
       "title": "Web Design &amp; SEO for Small Businesses | Wonder and Method",
       "description": "Small business websites from $1,400 with writing, research and original graphics. Buffalo-based, working online across 21 states and Washington, DC.",
       "canonical": "https://wonderandmethod.com/",
@@ -182618,12 +183593,12 @@
       "schemaSha256": "aca90e492d6a8263899920376ade7d968e1181263649104787a277b9c89d2f1e"
     },
     "payments/index.html": {
-      "htmlSha256": "acfb18779590a90a40efd2ae24b238e2eafd6598b3d4f1c4f72174c0b8182cd5",
+      "htmlSha256": "06097a2fb79e3c59578071135b65eb3d5355f50b81e0d83b316f8eb939084773",
       "title": "Payments &amp; billing | Wonder and Method",
       "description": "Pay an agreed invoice and understand website payments, monthly billing, cancellation and ownership.",
       "canonical": "https://wonderandmethod.com/payments/",
       "robots": "index,follow",
-      "textSha256": "a27b4b348cdb88904c63801fc21602e4b9a1835919994980d2aae9b4c724ef41",
+      "textSha256": "44537525b03d29a53a685c9695dc020bc87b7b6726371da9a7ce2dece3621572",
       "headings": [
         [
           "h1",
@@ -182663,6 +183638,10 @@
         ],
         [
           "h2",
+          "Carry a cost estimate into an ROI scenario"
+        ],
+        [
+          "h2",
           "Need help with a payment?"
         ]
       ],
@@ -182680,6 +183659,7 @@
         "cost-external-error",
         "cost-hostingMonthly-error",
         "cost-hostingMonths-error",
+        "cost-to-roi-examples",
         "cost-total",
         "cycles",
         "estimate-addon-booking_setup",
@@ -182760,6 +183740,7 @@
         "/services/website-care/",
         "/services/website-redesign/",
         "/terms/",
+        "/tools/website-roi-calculator/#cost-to-roi-examples",
         "/work/",
         "/work/source-handoff/",
         "mailto:support@wonderandmethod.com?subject=Billing%20question",
@@ -183496,12 +184477,12 @@
       "schemaSha256": "52280cbaebed298a604fa45589d9a651bc64c3f21f846f95fd834791865c6131"
     },
     "services/seo/index.html": {
-      "htmlSha256": "ce38ff1f0960ad54278332b24e9cc2ab1a93b7de41271a55f155ae25ea06b8c7",
+      "htmlSha256": "383e8a639d1f534cf3476d78311b3f79d2ffd67e2427d016e72d282c6fc242ca",
       "title": "Monthly SEO for Small Businesses | Wonder and Method",
       "description": "Monthly SEO from a Buffalo studio: research, writing and completed improvements. Improve $400/month; Grow $800/month. A site review may be needed.",
       "canonical": "https://wonderandmethod.com/services/seo/",
       "robots": "index,follow",
-      "textSha256": "db285973075edf35c8ee66ef9d25c8daba7f39db87865e30009c24ff47128d2a",
+      "textSha256": "fd98ca5cc25c08aaa046b992710fb01b2238eda64cd6dd836115aac11bbf7f2c",
       "headings": [
         [
           "h1",
@@ -183518,6 +184499,10 @@
         [
           "h3",
           "Grow"
+        ],
+        [
+          "h2",
+          "Three examples: choose the work you can use"
         ],
         [
           "h2",
@@ -183545,6 +184530,7 @@
         ]
       ],
       "ids": [
+        "choose-monthly-work",
         "footer-areas-heading",
         "footer-information-heading",
         "footer-services-heading",
@@ -183605,6 +184591,7 @@
         "/guides/",
         "/guides/local-seo-profile-eligibility/",
         "/guides/seo-work-and-reporting/",
+        "/guides/seo-work-and-reporting/#completed-report",
         "/guides/service-area-pages/",
         "/guides/website-care-versus-seo/",
         "/guides/website-not-showing-on-google/",
@@ -183635,12 +184622,12 @@
       "schemaSha256": "272be699f6206a29f6f800f777e8d947f80cf100894b2c85be4abc65ab55fb4a"
     },
     "services/web-design/index.html": {
-      "htmlSha256": "454890325a2208e478be9c7739d9f4506b94ef3c43d40cb41b440777b35a518d",
+      "htmlSha256": "124c6e6f07b83f6994f1deea37902ced169bf574ad9f1c96636d8bbc234808f2",
       "title": "Small Business Web Design | Wonder and Method",
       "description": "Custom websites from $1,400. Work with a Buffalo designer on writing, research, SEO and original graphics for a 6-, 15- or 30-page website.",
       "canonical": "https://wonderandmethod.com/services/web-design/",
       "robots": "index,follow",
-      "textSha256": "9180ef24a00985a00fd58f3d94d1cadabc0b0f4700de84a47715e23ccbfeb903",
+      "textSha256": "ca2f6b8f004eb797beba7067feee4334dc22ae06f8d02a31e52045dd1e960bef",
       "headings": [
         [
           "h1",
@@ -183661,6 +184648,14 @@
         [
           "h3",
           "Signature Website"
+        ],
+        [
+          "h2",
+          "From rough notes to useful service copy"
+        ],
+        [
+          "h3",
+          "A possible service paragraph"
         ],
         [
           "h2",
@@ -183709,7 +184704,8 @@
         "site-help",
         "source-handoff",
         "support-chat-description",
-        "support-chat-status"
+        "support-chat-status",
+        "writing-example"
       ],
       "links": [
         "#main",
@@ -183754,7 +184750,7 @@
         "/guides/ai-website-or-custom/",
         "/guides/how-to-choose-a-web-designer/",
         "/guides/one-page-website-seo/",
-        "/guides/website-content-template/",
+        "/guides/website-content-template/#notes-to-copy",
         "/guides/website-project-cost/",
         "/guides/website-redesign-brief/",
         "/guides/website-repair-or-redesign/",
@@ -184102,12 +185098,12 @@
       "schemaSha256": "cc34898d15c962da954d70f9089d6dca44b54fbc297f748e1f88c1759706df7c"
     },
     "services/website-care/index.html": {
-      "htmlSha256": "2d691fcb53c1302d6d9f5b4692b4dd60e1181e434fad24c4f62a2c2c85fd700a",
+      "htmlSha256": "5972e8c40abc8f45313939307256ad1a4770db65185a0b4fbbfbc7e547693456",
       "title": "Monthly Website Care and Maintenance | Wonder and Method",
       "description": "Website checks, changes you send and a report for $150/month. Existing sites may need the $399 Website Baseline. See coverage and limits.",
       "canonical": "https://wonderandmethod.com/services/website-care/",
       "robots": "index,follow",
-      "textSha256": "6ac7ad6a411809ff03f8ff6aa2c33f885ca232f746ff8ce3f0022e8ba9af91db",
+      "textSha256": "b9d2b2a125f709682552079dc052d9e8d7e69db8c30d7f4b14aac975b5465f71",
       "headings": [
         [
           "h1",
@@ -184120,6 +185116,10 @@
         [
           "h3",
           "Keep Running"
+        ],
+        [
+          "h2",
+          "Know who handles the request"
         ],
         [
           "h2",
@@ -184170,6 +185170,7 @@
         "support-chat-description",
         "support-chat-status",
         "supported-platforms",
+        "task-owners",
         "website-fit"
       ],
       "links": [
@@ -184213,6 +185214,7 @@
         "/guides/website-handover-checklist/",
         "/guides/website-maintenance-checklist/#monthly-record",
         "/guides/website-maintenance-cost/",
+        "/guides/website-maintenance-cost/#task-owners",
         "/payments/",
         "/payments/#monthly-payments",
         "/pricing/",
@@ -184487,12 +185489,12 @@
       "schemaSha256": "293722e24b88f5a74ff739aadf9aa9bd652be5351f88fb55000af32f31bb7ce9"
     },
     "tools/website-roi-calculator/index.html": {
-      "htmlSha256": "ee2e6b03f4742c5af87bcee7d0d0cf47271eebe61c0809ace618b2a42c672203",
+      "htmlSha256": "d2cf6918f664d3ba5e693ddbe569a1086050123ba62d998c352b9d5886db2f4a",
       "title": "Website ROI calculator for small businesses | Wonder and Method",
       "description": "Compare website costs with your assumptions about additional qualified inquiries, completed jobs and contribution. A private, browser-only planning calculator.",
       "canonical": "https://wonderandmethod.com/tools/website-roi-calculator/",
       "robots": "index,follow",
-      "textSha256": "4aa2c008116a018c5b245d51468db322e333f6d44f94b865b229c7a16df7dbcb",
+      "textSha256": "33cccc221e01390e6986a5953c9c0b01fc6cd6a60ff0ba03ac629f52928cc628",
       "headings": [
         [
           "h1",
@@ -184508,6 +185510,10 @@
         ],
         [
           "h2",
+          "Choose a cost scenario before judging the return"
+        ],
+        [
+          "h2",
           "The example, step by step"
         ],
         [
@@ -184520,6 +185526,7 @@
         ]
       ],
       "ids": [
+        "cost-to-roi-examples",
         "footer-areas-heading",
         "footer-information-heading",
         "footer-services-heading",
@@ -184594,6 +185601,7 @@
         "/guides/website-not-generating-leads/",
         "/guides/website-project-cost/",
         "/payments/",
+        "/payments/#cost-calculator",
         "/pricing/",
         "/privacy/",
         "/process/",
@@ -187400,10 +188408,10 @@
       "sha256": "34ace09380e93d67f1120ba8db12365390b0041273af41c08e75c39c62d4d38f"
     },
     "assets/downloads/website-redesign-brief.txt": {
-      "sha256": "d19ff829c5f899c34f04339f603086c634b140101b56bf2ed3459444a29b8c48"
+      "sha256": "f55d616afad642137bbb746983b2296b12adc63d19bf67c5243c58843b78fdcd"
     },
     "assets/downloads/website-url-map.csv": {
-      "sha256": "ed0f5318ee89c912e10ff1363a46682dacf8cc534da6afcea17eae27f2834b5c"
+      "sha256": "d721a85722b61fc64f4242ea91e7574bbcd1b6c8f52eb5b9f931e75f8175d976"
     },
     "assets/guides/ai-content-claim-review.csv": {
       "sha256": "d504d36dcfef1c0ce00f900cf146a6ac6963777414bd16458267c236ee9c5c28"
@@ -187435,6 +188443,9 @@
     "assets/guides/custom-print-order-worksheet.txt": {
       "sha256": "cd00eab44e936fe9f62155e69052659a0fec0b4a23a6d5755d6980da65a01a10"
     },
+    "assets/guides/customer-case-study-template-worksheet.txt": {
+      "sha256": "0fb0213134ae116fb5768fbfd4a91796d2a1123118c7866f2c483a6d2be03cce"
+    },
     "assets/guides/customer-page-plan.txt": {
       "sha256": "e4904a8bde46f94cfa4322863c21ad5c9036adea64ce1cf6de4b4c44d8a6c4fb"
     },
@@ -187458,6 +188469,12 @@
     },
     "assets/guides/google-visibility-flow-worksheet.txt": {
       "sha256": "ae436e60dd170daecdfde04e654ee598b080a446649043949cdd9e4d853a047c"
+    },
+    "assets/guides/industrial-website-planning-worksheet.txt": {
+      "sha256": "b34221b0b5979f26a48f4fa0d0ba33dcd61ccfb84b3532d8969612a20bb6a2c2"
+    },
+    "assets/guides/inquiry-confirmation-examples-worksheet.txt": {
+      "sha256": "d5fab17f1044347eff6a4f42343115f8dde568367ea23a1694cadcd5e307747c"
     },
     "assets/guides/island-payment-preparation-worksheet.txt": {
       "sha256": "bdab54bd779ad5a33e7fb719f1e40cbde37c16547398c28153d8d28f6a4a58a6"
@@ -187507,6 +188524,9 @@
     "assets/guides/photography-location-confirmation-worksheet.txt": {
       "sha256": "6c35865bbc7f4e9886e9c2cc750f4e8cca7f51530d18f78172d5ada7b25c0883"
     },
+    "assets/guides/quote-request-form-worksheet.txt": {
+      "sha256": "3c4434ededfb859a8480069d27463dba58014825e3c8ed10c05324cd6075ef09"
+    },
     "assets/guides/repair-authorization-form-worksheet.txt": {
       "sha256": "b732a607b457d697bacb4dbd50a8806ea1991b181aadebf72e9aca5153ade64d"
     },
@@ -187520,13 +188540,16 @@
       "sha256": "6ff47a11cdad96a45b28c34eecefbf49464ac282447cc87086bb734a597aecea"
     },
     "assets/guides/service-area-decision-worksheet.txt": {
-      "sha256": "c2ba8f4143fe791f917a448f9f7daf6e936aa3dbdf1abf82ee7b9f73ccbcef78"
+      "sha256": "b1173cc1b3459745b3ee35cf4b318d96b74036172f3c0a5773ff7bc52de2ebdf"
     },
     "assets/guides/shared-kitchen-inquiry-worksheet.txt": {
       "sha256": "6b7ebf6330ff87cc558b7f4eccca8db2aed95a89ce494025b3e22074c83cdc88"
     },
     "assets/guides/shipping-date-and-quote-worksheet.txt": {
       "sha256": "27d1dbe7e7866482810d2c8679796b432f4b82a45bb83fefdd15f3e9bc2899f1"
+    },
+    "assets/guides/small-business-faq-examples-worksheet.txt": {
+      "sha256": "b8ede9ae008a5dfbd6d222aeec02caaa9b80457981254424b98e7cd193024f20"
     },
     "assets/guides/studio-intent-map.csv": {
       "sha256": "64573d3570259aea1e41c2f3a1cc45871f0b943420467fd0327991a57439bfab"
@@ -187553,10 +188576,13 @@
       "sha256": "e38fd6a6fd2d9a6a09dcc4a2c7227d7aaa519a95931dcb3de05d499e96dbd613"
     },
     "assets/guides/website-content-template.txt": {
-      "sha256": "5d3b37006c68ec48aafb8c57f87384d63abd56562519f3cbd28ce6a55d7d2a60"
+      "sha256": "9edcdff91dd22bc2cd16ffcd91543aacdc4d2f7d13f83a15d2108cfce7338814"
     },
     "assets/guides/website-handover-checklist.csv": {
       "sha256": "e4991f136fecf2770c2ec1040dc3567e008618eaa7e2837cab54088e577d1528"
+    },
+    "assets/guides/website-launch-announcement-worksheet.txt": {
+      "sha256": "dfefc4338596ad7da34117267c6421dd5a3a2990eadbcf7a27b7ab880aa917bb"
     },
     "assets/guides/website-launch-checklist.csv": {
       "sha256": "eb7d699361f375a56e3a1ef56127b65830b7278a5d8ed83da913d3739987a088"
@@ -187574,7 +188600,7 @@
       "sha256": "d0e3e8f3ffe590bee3495a831795f77a373ba0a24dffd08860dc13a4befbe2ce"
     },
     "assets/guides/website-redesign-brief.txt": {
-      "sha256": "d19ff829c5f899c34f04339f603086c634b140101b56bf2ed3459444a29b8c48"
+      "sha256": "f55d616afad642137bbb746983b2296b12adc63d19bf67c5243c58843b78fdcd"
     },
     "assets/guides/website-redesign-schedule.csv": {
       "sha256": "04b9f6dc1bf918b0f4b99c27d388f15f30ba12b4aad4058646f007503213e0e7"
@@ -187610,7 +188636,7 @@
       "sha256": "21190e9af341b6e889c9581debe456423b2a99d93728a579aade1dabb61650c0"
     },
     "llms.txt": {
-      "sha256": "83796b018ce18298919f0908d2ec0d21146195b2033f92508dcad9692c23179d"
+      "sha256": "79798b68a6e203811d288abe4a93827fbba2cd9a5be8c54c4071fb6707f7981a"
     },
     "robots.txt": {
       "sha256": "bb531562bb456ea9fa338d3eef8ac067d929945ba810e348f48e726681163878"
@@ -187618,10 +188644,10 @@
   },
   "assets": {
     "_headers": {
-      "sha256": "2c8cdc13a292131f00791b1d4a4156e3815b9c5051419e65e043b9c3ca8ab354"
+      "sha256": "04ffd1119bac820dcad60e6419033ea4f39cb0856f6ccf1c362506162f95b624"
     },
     "assets/asset-hashes.json": {
-      "sha256": "9741e72323109fd360c80488887d470df1a89be3670fa3ca9b23628896fb537a"
+      "sha256": "c56b8dc589fe851d644d3b0ef7db1cee34f017230afaab1035d83b143d8899cf"
     },
     "assets/brand/apple-touch-icon.png": {
       "sha256": "12acdeeed7fc5df2720d009ee8d020a9dc5d6658ec7fadd7a653d850172cd0f6"
@@ -187672,7 +188698,7 @@
       "sha256": "9a0136e75c6e93825b39918006365b932c4b04e417cea5c84fafcd139278db9a"
     },
     "assets/buyer-packs/owned-audit-two-fix-record.json": {
-      "sha256": "ddd9e0089414db7c7d92702ba2bbcab15625c33da688d1670022f77ab8d7dfb3"
+      "sha256": "f11c84bd140e59d2bc2e56db72250fac17ed399edcf3db2450ec273ec1ba7d81"
     },
     "assets/calculator.js": {
       "sha256": "999b84952bd9f8c5c164a03168ec020f7602e96360f420a7e09415e7f2fb6b8b"
@@ -187972,7 +188998,7 @@
       "sha256": "30800b0453244027cd8323ac85ae6083ec45ad8b4efc64bd87b53d300e498467"
     },
     "assets/living-city.css": {
-      "sha256": "febbf39e346b6a27a296f9bfbc8274e2da64b9596ed976f53967e188e1a85d0b"
+      "sha256": "d71d6ca120350341e32a5e15e877a2cf2e5a751ff0a554b7c5a93f4664729dd8"
     },
     "assets/living-city.js": {
       "sha256": "67805d2d24c052e65dee7f568e44be72939daf6aeae0c8a6c674e5399f2cf871"
@@ -188032,7 +189058,7 @@
       "sha256": "214310d488755c3e6475f6338f4d94977d32c79b6e50586d0c99b1dfcbe37a90"
     },
     "assets/site-family-services.css": {
-      "sha256": "a8219b42b4b86356d973e1b854d5998b9e918a688fa6a3a6b3c5fe7a8a31dd7b"
+      "sha256": "73ba87e849b0d275ac13ef36df9829d6743a74cf341ccf9b920a9740f520dcf4"
     },
     "assets/site-family-work.css": {
       "sha256": "bbcf7f042d2e0ca7da9dc0a81c8199915db9a6f9eb6bc2b843dfba0068e3ecad"
@@ -188041,7 +189067,7 @@
       "sha256": "c2d004fd98f533cde3bf403892e06297133790e794cc4a7a4358fb2cd39fecd1"
     },
     "assets/site-navigation.js": {
-      "sha256": "85a6cb01a3dc05bb0c8aa25473a9e8e349987ebcb35a513554a28330f6e4176c"
+      "sha256": "e2943c6a0a52fdbf4dc1ceaf8ff47c8679d5e8e4fac85d69ab27843245ab1830"
     },
     "assets/site.css": {
       "sha256": "ed3875e2e81245b5821ef11c2e521715a0ba21e0a288d2c143ec8b391ce0ae81"
@@ -191439,6 +192465,9 @@
     "assets/social/guides-custom-website-or-template.png": {
       "sha256": "8fb8f8af118f8ab4783c7ae52a55e5e079f2c92aebf0beea02c61ffef982558d"
     },
+    "assets/social/guides-customer-case-study-template.png": {
+      "sha256": "bf1801e1d6245ff9480d43896ad7804a97140414449b0d1daad4644e07bfe978"
+    },
     "assets/social/guides-departure-address.png": {
       "sha256": "feb49e2691e387e81ca02dc5b4f2a43613dd062bb2590c619c0c0739953df841"
     },
@@ -191459,6 +192488,12 @@
     },
     "assets/social/guides-how-to-choose-a-web-designer.png": {
       "sha256": "188b86545f0aff052018172c5362123f0fb325706732ad7341b1f1cc1738efec"
+    },
+    "assets/social/guides-industrial-website-planning.png": {
+      "sha256": "97314b9627efbc223a049da04ff76174ac98d561e11579143007119231fb99b0"
+    },
+    "assets/social/guides-inquiry-confirmation-examples.png": {
+      "sha256": "a674dc3bd3d0d0ad2d512c138ed4df8046d7db4f466861d60562b43967ae65d7"
     },
     "assets/social/guides-island-payment-preparation.png": {
       "sha256": "0ddc4be0191294f97731cfea603255870f667f205328747537f64580291b1ede"
@@ -191505,6 +192540,9 @@
     "assets/social/guides-photography-location-confirmation.png": {
       "sha256": "8415687a61164a86b2da45929d9e65f93c7bdff64f890b043a319d2194c880fa"
     },
+    "assets/social/guides-quote-request-form.png": {
+      "sha256": "db4fdf0794cf255de966a00980669b00a13c20b125285cb983214dd5fac7b5f7"
+    },
     "assets/social/guides-repair-authorization-form.png": {
       "sha256": "81758b894dff13519a70a566d564414c4faf8f171908fdb9dc3c444f3464c623"
     },
@@ -191526,6 +192564,9 @@
     "assets/social/guides-slow-website-on-mobile.png": {
       "sha256": "7ebada12efe81c448a3777f2b82ce1109d2077f1dbce94bceb777a698fc645d8"
     },
+    "assets/social/guides-small-business-faq-examples.png": {
+      "sha256": "82c89de6e8a551e4b0160b4698046c3c19ed44a5db7a75769737868925c22029"
+    },
     "assets/social/guides-timed-booking-handoff.png": {
       "sha256": "3fcd3b440eb17cac0cd47ba88419d3d54515c0e8ebe7963d51715823de8b6333"
     },
@@ -191546,6 +192587,9 @@
     },
     "assets/social/guides-website-handover-checklist.png": {
       "sha256": "c5a66cddfe9b408d09be0da442963185b5c523bcf6d26aaa9ba9fa318a76cb5f"
+    },
+    "assets/social/guides-website-launch-announcement.png": {
+      "sha256": "0ea3d0f7067dc101658654d2f3eae6656269dff0be34016ec2ec58418e25e140"
     },
     "assets/social/guides-website-launch-checklist.png": {
       "sha256": "d1a1b54c3e3907d84dfd721346b50bef97faac82c9457209f75f3d41b3b0f594"
@@ -191884,7 +192928,7 @@
       "sha256": "764dc5ca3a223f6d457d142f87e06136fb4835c16d657e4d4af9de2acf91bda4"
     },
     "sitemap.xml": {
-      "sha256": "b87dceb97dea7f49737d6a48cd3ae0ce5217742cf0761254f45b01e7b6770aca"
+      "sha256": "8bf6566cb3e47dbc201b3e3882fd40813dc503626c8b00387aa34c60d13fdccb"
     }
   }
 }

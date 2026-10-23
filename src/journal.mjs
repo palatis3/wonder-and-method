@@ -13,6 +13,7 @@ import {newGuides} from './audit-guide-updates.mjs';
 import {ongoingGuides} from './ongoing-guides.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {searchGuides} from './search-guides.mjs';
+import {semrushGuides} from './semrush-guides.mjs';
 import {guideContentSections as journalSections} from './guide-content.mjs';
 import {guideDecision,guideDownload,guideDownloadLabel} from './guide-decisions.mjs';
 import {escapeHtml as e} from './shared.mjs';
@@ -22,7 +23,8 @@ export {journalSections};
 // Original publication is recorded in evidence/editorial-release.json.
 // The October 15 revision reconciled offers and added explanatory illustrations.
 const guideGroups=[{"id":"diagnose","title":"Fix a problem","paths":["slow-website-on-mobile","website-not-generating-leads","contact-form-not-working","website-repair-or-redesign","website-audit-checklist"]},{"id":"plan","title":"Plan a website","paths":["ai-website-content-review","website-project-cost","how-to-choose-a-web-designer","one-page-website-seo","custom-website-or-template","ai-website-or-custom","website-content-template","website-redesign-brief","website-redesign-timeline","contractor-website-checklist","website-migration-checklist","website-launch-checklist","website-handover-checklist"]},{"id":"search","title":"Search visibility","paths":["ai-search-visibility","local-seo-audit","website-not-showing-on-google","service-area-pages","local-seo-profile-eligibility","seo-work-and-reporting"]},{"id":"care-search","title":"Ongoing care","paths":["website-care-versus-seo","website-maintenance-checklist","website-maintenance-cost"]}];
-guideGroups.push(...['Business workflows','Local website cases'].map((title,i)=>({id:i?'local-cases':'business-workflows',title,paths:[...operatingGuides,...floridaGuides].filter(item=>item.category===title).map(item=>item.path.split('/').filter(Boolean).at(-1))})));
+guideGroups.find(group=>group.id==='plan').paths.push('industrial-website-planning');
+guideGroups.push(...['Business workflows','Local website cases'].map((title,i)=>({id:i?'local-cases':'business-workflows',title,paths:[...operatingGuides,...floridaGuides,...semrushGuides].filter(item=>item.category===title).map(item=>item.path.split('/').filter(Boolean).at(-1))})));
 const guideCategory=item=>guideGroups.find(group=>group.paths.includes(item.path.split('/').filter(Boolean).at(-1)))?.title||item.category;
 
 export const journal=[
@@ -33,6 +35,7 @@ export const journal=[
  ...newGuides,
  ...searchGuides,
  ...ongoingGuides,
+ ...semrushGuides,
  {path:'/guides/website-project-cost/',title:'Small business website costs: plan the full budget',category:'Planning',image:'website-budget',alt:'Illustrated website proposal showing Design, Content and Build beside a premium website mockup',description:`Plan a small business website or redesign budget with current studio prices, ongoing costs, migration work and a practical quote checklist. Based in Buffalo; serving ${serviceRegionLabel}.`,minutes:6,fallback:'/pricing/'},
  {path:'/guides/website-redesign-brief/',title:'A website redesign brief that gets useful answers',category:'Planning',image:'redesign-brief',alt:'A redesign brief with customer, pages, content and next-step questions beside home and contact page concepts',description:'Prepare a redesign brief for your service business, with a download covering pages, facts, account ownership and launch checks.',minutes:5,fallback:'/services/web-design/'},
  {path:'/guides/local-seo-profile-eligibility/',title:'Google Business Profile eligibility: local SEO starts with the business you actually run',category:'Search',image:'local-search',alt:'An illustrated Buffalo local-search map with service, area and website cards against a stylized waterfront skyline',description:'Local SEO and Google Business Profile eligibility for small service businesses: online-only work, service areas, address choices and useful website content.',minutes:5,fallback:'/services/seo/'},
