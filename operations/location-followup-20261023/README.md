@@ -1,6 +1,6 @@
 # Six further location services — October 23, 2026
 
-This reviewed candidate adds six commercial website-design pages to the 59-page [earlier location release](../location-services-20261023/RELEASE.md). Each page includes a practical comparison for agreeing website work, two possible project scopes, current offer terms and a general inquiry route. All identify the provider as a Buffalo studio working remotely.
+This published release adds six commercial website-design pages to the 59-page [earlier location release](../location-services-20261023/RELEASE.md). Each page includes a practical comparison for agreeing website work, two possible project scopes, current offer terms and a general inquiry route. All identify the provider as a Buffalo studio working remotely.
 
 | Market | Website-buying decision |
 | --- | --- |
@@ -27,4 +27,4 @@ Migration 0023 adds exactly six fixed analytics page keys, retaining all 439 ear
 - All six desktop table screenshots and a representative phone table were inspected. A narrowly scoped desktop column-width rule resolves awkward first-column word breaks and does not target existing tables.
 - The content contract includes 201 HTML files because twelve existing sample-handoff files are included; its public route count is 189. The accepted changes are the six new pages, four state-hub links, six social cards, the scoped table style and generated sitemap/index assets. No download was removed.
 
-The complete CI suite, database backup and preservation check, deployment, live parity and Google receipt are release steps recorded separately when completed. Local validation alone is not publication evidence. The broader individual market reassessment and the existing business-enrollment and recovery requirements remain open.
+The complete CI suite, database backup and preservation check, deployment, live parity and Google receipt passed and are recorded in the [publication report](RELEASE.md). The broader individual market reassessment and the existing business-enrollment and recovery requirements remain open.

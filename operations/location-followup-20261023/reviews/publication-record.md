@@ -1,0 +1,17 @@
+# Independent publication-record review
+
+Reviewed October 23, 2026. **No actionable inconsistencies found.** The six updated publication documents agree with the requested compact release evidence and the Google sitemap screenshot. No corrections are required.
+
+Scope: the current passages in the root README, BUILD_STATUS, HANDOFF and deployment/PRODUCTION, plus this release's README and RELEASE; compact `release-record`, `artifact-parity`, `database-preservation`, `operator-after`, `new-routes` and `google-receipt` JSON records; and `google-sitemap-success.png`. This was a record review, not another deployment, test run, live browser check or inspection of private inquiry/SQL contents.
+
+## Confirmed consistency
+
+- **Application identity:** source `e2733670d2d21344e1017064b92cb9018a8f7a9f` and runtime `926b95bb-59d2-4593-9c88-21b6cc234df3` agree across the publication record, authenticated operator response and documents. Source/artifact fingerprints agree between the release record and artifact-parity evidence. Later documentation commits are explicitly distinguished from the deployed application.
+- **Counts and validation:** 189 public HTML routes, 1,121 asset hashes and 188 sitemap URLs are consistently reported. The release record reports 689 unit passes, 281 browser passes and 163 skips, with zero unexpected or flaky browser results. Six additions bring the commercial collection to 65 pages and 75 directory identities; Buffalo/Erie remains separately described. The documented 201-file content inventory is explicitly distinguished from public routes by its twelve sample-handoff files.
+- **New routes and preservation:** all 30 recorded new-route checks pass with no failures. The migration record reports only expected migration 0023, four preserved inquiries, 456 preserved prior aggregate rows, integrity `ok` and no foreign-key errors. The documents consistently retain the previously reviewed additive 439-to-445 analytics-key change.
+- **Historical checks:** RELEASE line 26 and BUILD_STATUS line 20 explicitly state that the earlier 1,576 live URL checks were reused because the historical fixtures, redirect map and canonical implementation were unchanged. The release JSON identifies the earlier record and the same reason. No document presents that matrix as rerun for this additive release.
+- **Monitoring chronology:** the authenticated health observation is `2026-10-23T05:24:47.367Z`. Its scheduled-success value converts to `2026-10-23T05:17:29.804Z`, before this publication. BUILD_STATUS line 18 and RELEASE line 19 correctly say no new post-deployment scheduled run has been observed and no new external receiver receipt is claimed. Healthy status is not presented as proof of mailbox receipt or sustained reply coverage.
+- **Google evidence:** the screenshot visibly shows the correct sitemap, October 23 submitted/read dates, **Success**, **188 discovered pages** and zero discovered videos. The JSON matches it. The documents consistently limit the conclusion to sitemap acceptance/discovery, without claiming indexing or rankings.
+- **Business limits:** owner readiness, enrollment, recovery and sustained operating requirements remain open. The release does not claim a real inquiry, message, payment, client outcome or completed market reassessment. BUILD_STATUS retains the existing explicit business dependencies.
+
+The prior four-market research report was left unchanged. Only this review file was written.
