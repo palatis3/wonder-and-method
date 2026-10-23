@@ -85,10 +85,12 @@ test('failed moon and film assets keep the homepage copy and project navigation 
   await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
  }
  await expect(page.getByRole('heading',{name:'Web design & SEO. Built for small businesses.'})).toBeVisible();
- await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 20 states and Washington, DC.');
+ await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 21 states and Washington, DC.');
  await expect(page.locator('.home-starting-points')).toContainText('From $1,400');
- await expect(page.locator('#seo-services')).toContainText('From $400/month');await expect(page.locator('#seo-services')).toContainText('Improve includes 1 agreed, researched website improvement');
- await expect(page.locator('.home-service-intro')).toContainText('Once paid in full, your custom website files belong to you.');
+ await expect(page.locator('#seo-services')).toContainText('From $400/month');await expect(page.locator('#seo-services')).toContainText('Useful content and researched website improvements');
+ await expect(page.locator('.home-choice-grid>article')).toHaveCount(3);
+ for(const card of await page.locator('.home-choice-grid>article').all()){await expect(card.locator('a')).toHaveCount(1);await expect(card.locator('.starting-price')).toHaveCount(1);}
+ await expect(page.locator('.home-faq')).toContainText('You own the custom website work once it is paid for');
  await page.getByRole('tab',{name:'Northline',exact:true}).click();
  await expect(page.locator('#city-panel-northline')).toBeVisible();
  await expect(page.locator('#city-panel-northline a[data-city-project-link]').first()).toHaveAttribute('href','/work/northline/');

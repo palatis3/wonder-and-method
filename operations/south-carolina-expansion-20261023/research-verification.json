@@ -1,0 +1,48 @@
+{
+  "checkedOn": "2026-10-23",
+  "countyCount": 46,
+  "countyInventoryNamesAndFipsMatch": true,
+  "originalCountyFormsEach": 2,
+  "exampleCount": 15,
+  "classificationCounts": {
+    "DIRECTORY_COVERAGE": 29,
+    "INITIAL_PAGE": 15,
+    "MORE_RESEARCH": 2
+  },
+  "combinedDirectQueryCount": 585,
+  "totalUniqueKeywordsIncludingDiscovery": 683,
+  "browserRawHashes": [
+    {
+      "file": "semrush-browser-01-table.json",
+      "expected": "2ecf78336f7b5ab4f4a31fc6575a5df362c9764ef6f2cc081b65f8b2a2457ae9",
+      "actual": "2ecf78336f7b5ab4f4a31fc6575a5df362c9764ef6f2cc081b65f8b2a2457ae9",
+      "matches": true
+    },
+    {
+      "file": "semrush-browser-02a.json",
+      "expected": "e3c47b8ba509c75b3bb05a20c03e1b6ec0dfd738433a8c81a2fb708cdb8d144c",
+      "actual": "e3c47b8ba509c75b3bb05a20c03e1b6ec0dfd738433a8c81a2fb708cdb8d144c",
+      "matches": true
+    },
+    {
+      "file": "semrush-browser-02b-ax.txt",
+      "expected": "d0c79c41a1faa2447ef1f358053986e9cd83241d78965943102d3e038222d9eb",
+      "actual": "d0c79c41a1faa2447ef1f358053986e9cd83241d78965943102d3e038222d9eb",
+      "matches": true
+    },
+    {
+      "file": "semrush-browser-03-dom.txt",
+      "expected": "4fd0a7f502a516ac9a17d61666feaaf3852c17becce257c437879775b0fa686c",
+      "actual": "4fd0a7f502a516ac9a17d61666feaaf3852c17becce257c437879775b0fa686c",
+      "matches": true
+    },
+    {
+      "file": "semrush-browser-04-dom.txt",
+      "expected": "51f5db0f1001653203aa56d26f2cbdc2eb5a91842654daf12dd7158ce7731536",
+      "actual": "51f5db0f1001653203aa56d26f2cbdc2eb5a91842654daf12dd7158ce7731536",
+      "matches": true
+    }
+  ],
+  "sixAdditionalAddressesMatchCounty": true,
+  "unmappedBrowserKeywords": []
+}

@@ -3,9 +3,18 @@
     "width": 1440,
     "height": 1000,
     "variants": [
-      {"path": "/assets/work/assetrounds/desktop-480.webp", "width": 480},
-      {"path": "/assets/work/assetrounds/desktop-960.webp", "width": 960},
-      {"path": "/assets/work/assetrounds/desktop-1440.webp", "width": 1440}
+      {
+        "path": "/assets/work/assetrounds/desktop-480.webp",
+        "width": 480
+      },
+      {
+        "path": "/assets/work/assetrounds/desktop-960.webp",
+        "width": 960
+      },
+      {
+        "path": "/assets/work/assetrounds/desktop-1440.webp",
+        "width": 1440
+      }
     ]
   },
   "/assets/work/concepts/fieldwork-desktop.webp": {
@@ -113,8 +122,8 @@
     ]
   },
   "/assets/work/lead-workbench.webp": {
-    "width": 1440,
-    "height": 1000,
+    "width": 1200,
+    "height": 900,
     "variants": [
       {
         "path": "/assets/work/lead-workbench-240.webp",
@@ -134,7 +143,7 @@
       },
       {
         "path": "/assets/work/lead-workbench.webp",
-        "width": 1440
+        "width": 1200
       }
     ]
   },

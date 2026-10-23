@@ -1,0 +1,38 @@
+[
+  {
+    "file": "raw/sc-county.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_sc.html",
+    "bytes": 33469,
+    "sha256": "1729c667a28336b4c6acf4f8e460b0915aff134a1cc0c39fcc377e5fc846a84f",
+    "retrievedAt": "2026-10-23T15:55:06.867697+00:00",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "file": "raw/sc-incplace.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_sc.html",
+    "bytes": 216925,
+    "sha256": "123e846f893b3603d8954cd2fac2f59107df09af240c184f550320e2d00311b8",
+    "retrievedAt": "2026-10-23T15:55:07.096188+00:00",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "file": "raw/sc-cdp.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_sc.html",
+    "bytes": 164121,
+    "sha256": "436d20eaca22349248fc29baa900a9df4d356e71f38053b4e8604e31cb1f943d",
+    "retrievedAt": "2026-10-23T15:55:07.113279+00:00",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "file": "raw/sc-grfc.txt",
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_45.txt",
+    "bytes": 54604329,
+    "sha256": "3b406332601287a66ea043ab9bc958efb21f23119ce4650d22f73fae60bff2df",
+    "retrievedAt": "2026-10-23T15:55:08.756014+00:00",
+    "httpStatus": 200,
+    "contentType": "text/plain"
+  }
+]

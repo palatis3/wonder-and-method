@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "counts": {
+    "counties": 46,
+    "municipalities": 271,
+    "municipalMemberships": 301,
+    "cdps": 204,
+    "cdpMemberships": 207,
+    "crossBoundaryPlaces": 30
+  },
+  "countyPartCoverage": 300,
+  "missingCountyPart": [
+    [
+      "anderson",
+      "Central",
+      "4513015"
+    ]
+  ],
+  "sourceAndInputHashes": {
+    "raw/sc-county.html": "1729c667a28336b4c6acf4f8e460b0915aff134a1cc0c39fcc377e5fc846a84f",
+    "raw/sc-incplace.html": "123e846f893b3603d8954cd2fac2f59107df09af240c184f550320e2d00311b8",
+    "raw/sc-cdp.html": "436d20eaca22349248fc29baa900a9df4d356e71f38053b4e8604e31cb1f943d",
+    "raw/sc-grfc.txt": "3b406332601287a66ea043ab9bc958efb21f23119ce4650d22f73fae60bff2df",
+    "raw/sub-est2025.csv": "e3508f5201465913476d4ddf91740f191f7977c9f2614a2a7e30b5fd22027934",
+    "build-geography.py": "f9e8dd5b11aa94f8bba65e1da4e0cd1be2bfc1387818cd53863cae824ce3b0e0",
+    "geography.json": "dde910002c6aa1c7cfe9295853b1b9a1d065aec905f7305d041f80fb7e273a83",
+    "south-carolina-geography.mjs": "7046e956f37d3a287f6899bfeecfd922921239e07718075dc51f1a8c728d12cd"
+  },
+  "kershaw": {
+    "representativePlaces": [
+      {
+        "name": "Camden",
+        "type": "City",
+        "geoid": "4510855"
+      },
+      {
+        "name": "Elgin",
+        "type": "Town",
+        "geoid": "4523245"
+      },
+      {
+        "name": "Bethune",
+        "type": "Town",
+        "geoid": "4506040"
+      }
+    ],
+    "ColumbiaFragments": 3,
+    "ColumbiaCountyPartPopulation": 0
+  },
+  "scope": "Independent geography and directory schema readiness; does not certify production integration or legal boundaries.",
+  "primaryMunicipalityEvidence": [
+    {
+      "file": "bamberg-government.html",
+      "url": "https://www.cityofbambergsc.gov/",
+      "sha256": "b15c4fd68bf35e24bcf53352165358d13257131660124fea3d91a833e003c642",
+      "bytes": 87868,
+      "retrievedAt": "2026-10-23T16:40:00.241286+00:00",
+      "verifiedText": "City of Bamberg"
+    },
+    {
+      "file": "bamberg-masc.html",
+      "url": "https://www.masc.sc/municipality/bamberg",
+      "sha256": "e6b6fa107193945d792ba0800c0ca9b8c2661c46552253dab26dd005ff3706a4",
+      "bytes": 109285,
+      "retrievedAt": "2026-10-23T16:40:01.066579+00:00",
+      "verifiedText": "City of Bamberg"
+    }
+  ],
+  "findings": [
+    "No blocking geography defect found. Independent HTMLParser output matches all three extracted Census tables exactly.",
+    "All county/place joins, FIPS, categories, full cross-boundary memberships and exported module values agree with raw sources.",
+    "All 46 representative lists reproduce SUMLEV 157 county-part sorting. Central/Anderson remains unavailable and is preserved. Columbia/Kershaw remains present but is not a representative anchor.",
+    "Bamberg City correction is supported by the current municipal government and Municipal Association sources; both raw responses are archived in this review folder.",
+    "Existing directory renders municipalityDetails separately from CDP communities and collects source/additionalSources for Bamberg; module schema is compatible. Existing regional-content.mjs does not yet import SC, consistent with private evidence-only staging."
+  ],
+  "requiredFixes": [],
+  "optionalImprovements": [
+    "The population selection sentence is assigned twice in build-geography.py (old whole-place sentence then replacement). Remove obsolete initial wording for clarity; generated summary is already correct.",
+    "Include the 2025 population source URL in geography.sources if public anchor provenance should be visible in directory references; source hash and selection method are already recorded in geography-summary.json."
+  ]
+}

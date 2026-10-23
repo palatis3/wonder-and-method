@@ -18,13 +18,13 @@ const directories=new Map(states.map(state=>[state.id,countyDirectory(state)]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=query=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query))).map(card=>card.state+'/'+card.slug).sort();
 
-test('nine expansion hubs expose 746 entries within 22 public directory pages and preserve 333 original areas',()=>{
- assert.equal(states.length,9);assert.equal(pages.length,22);assert.equal(byPath.size,22);
- assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67]]);
- assert.equal(cards.length,1079);
+test('ten expansion hubs expose 792 entries within 23 public directory pages and preserve 333 original areas',()=>{
+ assert.equal(states.length,10);assert.equal(pages.length,23);assert.equal(byPath.size,23);
+ assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67],['south-carolina',46]]);
+ assert.equal(cards.length,1125);
  assert.equal(serviceStates.filter(state=>!regionalProfiles[state.id]).reduce((count,state)=>count+state.counties.length,0),333);
  const combined=countyDirectory();
- assert.equal((combined.match(/data-county-search=/g)||[]).length,1079);
+ assert.equal((combined.match(/data-county-search=/g)||[]).length,1125);
  assert.equal((combined.match(/data-county-area/g)||[]).length,0,'the combined finder does not repeat all detailed place lists');
  for(const state of states){
   assert.ok(byPath.has(state.path),state.path);
@@ -132,6 +132,6 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
  assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,2);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
- const changed=countyPages(altered);assert.equal(changed.length,22);
+ const changed=countyPages(altered);assert.equal(changed.length,23);
  for(const page of changed)for(const price of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);
 });

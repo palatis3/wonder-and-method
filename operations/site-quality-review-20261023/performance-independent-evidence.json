@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T17:30:04.965Z",
+  "status": "pass",
+  "reviewer": "quality_xhigh_performance",
+  "head": "b711713f376d3f180d7d330fbbe20f5c27309d2b",
+  "workingTree": "Root implementation and rebuilt dist reviewed by hashes below; HEAD alone is not the candidate identity.",
+  "scope": "Only PERF-001, PERF-002 and PERF-003 closure. Design refresh, South Carolina content, forms, deployment and production security headers excluded.",
+  "findings": [
+    {
+      "id": "PERF-003",
+      "status": "closed",
+      "sourceReview": "Initial visibility now equals !env.IntersectionObserver. Playback intent remains active while waiting for the first observer result; existing no-observer fallback remains available.",
+      "browserResult": "Fresh desktop offscreen anchor: zero MP4 requests, null src, preload none. Scrolling to the hero then produced a decoded playing frame; normal visible desktop navigation also played."
+    },
+    {
+      "id": "PERF-001",
+      "status": "closed",
+      "sourceReview": "Waterfront item is 1200x750 and the gallery renders x.width/x.height.",
+      "browserResult": "At 390x844 with poster response held, image height was 218.75px before and after decode; caption and scroll positions changed by 0px."
+    },
+    {
+      "id": "PERF-002",
+      "status": "closed",
+      "sourceReview": "Tracker manifest is 1200x900 with a 1200w final candidate, matching the actual WebP.",
+      "browserResult": "Rebuilt gallery emits width1200, height900 and final1200w. All other responsive candidates retained."
+    }
+  ],
+  "tests": {
+    "command": "node --test tests/living-city-controller.test.mjs",
+    "passed": 30,
+    "failed": 0,
+    "scope": "Existing 28 lifecycle tests plus new first-intersection and no-observer fallback regressions. No full suite or build executed by this reviewer."
+  },
+  "browserEnvironment": {
+    "origin": "http://127.0.0.1:4187",
+    "engine": "Microsoft Edge, headless, isolated Playwright CLI session",
+    "session": "perf-fix-20261023",
+    "sessionClosed": true,
+    "serverStartedOrStopped": false,
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "phone": {
+      "width": 390,
+      "height": 844
+    },
+    "networkPolicy": "Only existing local origin allowed; all nonlocal and /api/ requests aborted before network dispatch.",
+    "blockedRequests": []
+  },
+  "browser": {
+    "offscreen": {
+      "scrollY": 4215,
+      "hidden": false,
+      "reduced": false,
+      "narrow": false,
+      "saveData": false,
+      "remembered": null,
+      "ready": "true",
+      "state": "paused",
+      "sceneBottom": -3395,
+      "source": "",
+      "sourceAttribute": null,
+      "preload": "none",
+      "paused": true,
+      "currentTime": 0,
+      "hasFrame": false,
+      "requested": []
+    },
+    "afterScroll": {
+      "scrollY": 0,
+      "hidden": false,
+      "reduced": false,
+      "narrow": false,
+      "saveData": false,
+      "remembered": null,
+      "ready": "true",
+      "state": "playing",
+      "sceneBottom": 820,
+      "source": "http://127.0.0.1:4187/assets/living-city/desktop-film.mp4?v=7625f1db64dd",
+      "sourceAttribute": "/assets/living-city/desktop-film.mp4?v=7625f1db64dd",
+      "preload": "auto",
+      "paused": false,
+      "currentTime": 0.0377,
+      "hasFrame": true,
+      "requested": [
+        "/assets/living-city/desktop-film.mp4"
+      ]
+    },
+    "visible": {
+      "scrollY": 0,
+      "hidden": false,
+      "reduced": false,
+      "narrow": false,
+      "saveData": false,
+      "remembered": null,
+      "ready": "true",
+      "state": "playing",
+      "sceneBottom": 820,
+      "source": "http://127.0.0.1:4187/assets/living-city/desktop-film.mp4?v=7625f1db64dd",
+      "sourceAttribute": "/assets/living-city/desktop-film.mp4?v=7625f1db64dd",
+      "preload": "auto",
+      "paused": false,
+      "currentTime": 0.05,
+      "hasFrame": true,
+      "requested": [
+        "/assets/living-city/desktop-film.mp4",
+        "/assets/living-city/desktop-film.mp4"
+      ]
+    },
+    "image": {
+      "before": {
+        "scrollY": 8447,
+        "image": {
+          "x": 20,
+          "y": 304.328125,
+          "width": 350,
+          "height": 218.75,
+          "top": 304.328125,
+          "right": 370,
+          "bottom": 523.078125,
+          "left": 20
+        },
+        "natural": {
+          "width": 0,
+          "height": 0
+        },
+        "attributes": {
+          "width": "1200",
+          "height": "750"
+        },
+        "following": {
+          "x": 20,
+          "y": 603.265625,
+          "width": 350,
+          "height": 195.8125,
+          "top": 603.265625,
+          "right": 370,
+          "bottom": 799.078125,
+          "left": 20
+        }
+      },
+      "after": {
+        "scrollY": 8447,
+        "image": {
+          "x": 20,
+          "y": 304.328125,
+          "width": 350,
+          "height": 218.75,
+          "top": 304.328125,
+          "right": 370,
+          "bottom": 523.078125,
+          "left": 20
+        },
+        "natural": {
+          "width": 1200,
+          "height": 750
+        },
+        "attributes": {
+          "width": "1200",
+          "height": "750"
+        },
+        "following": {
+          "x": 20,
+          "y": 603.265625,
+          "width": 350,
+          "height": 195.8125,
+          "top": 603.265625,
+          "right": 370,
+          "bottom": 799.078125,
+          "left": 20
+        }
+      },
+      "heightChange": 0,
+      "captionChange": 0,
+      "scrollChange": 0
+    },
+    "tracker": {
+      "width": "1200",
+      "height": "900",
+      "srcset": "/assets/work/lead-workbench-240.webp?v=94098871ca09 240w, /assets/work/lead-workbench-480.webp?v=d994e82b6d5e 480w, /assets/work/lead-workbench-640.webp?v=ff10c6d9ca40 640w, /assets/work/lead-workbench-960.webp?v=a355204e59dd 960w, /assets/work/lead-workbench.webp?v=f668c6f8bffd 1200w"
+    },
+    "blocked": [],
+    "errors": []
+  },
+  "actualImages": [
+    {
+      "path": "dist/assets/work/lead-workbench.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "path": "dist/assets/waterfront/film-poster-landscape.webp",
+      "width": 1200,
+      "height": 750
+    }
+  ],
+  "limitations": [
+    "No Core Web Vitals or field performance score measured. Geometry is an element-box check, not a CLS metric.",
+    "Synthetic server console reported that its script-src self policy blocked the inline boot script. The external controller module did initialize and all scoped checks passed. Production CSP was not re-reviewed.",
+    "Source and built artwork hashes match the files reviewed at this checkpoint; later input changes require scoped re-evaluation."
+  ],
+  "inputHashes": [
+    {
+      "path": "motion/living-city.js",
+      "bytes": 17599,
+      "sha256": "921405ed51d2f9e282b2ffead715f55c7cb58a04de29c40f2503290cbb359a09"
+    },
+    {
+      "path": "tests/living-city-controller.test.mjs",
+      "bytes": 29402,
+      "sha256": "b57a7ef067d2b91e09dd45d7ac7fe01591613e833c553c4fa8ba92db45c21123"
+    },
+    {
+      "path": "src/work-gallery.mjs",
+      "bytes": 11400,
+      "sha256": "ea30b6f7ad75640ad8341950c988a8667bf7beaa3192a7fca5424248efa7a6ac"
+    },
+    {
+      "path": "src/assets/responsive-images.json",
+      "bytes": 7073,
+      "sha256": "15bbf00dd8b6ce2b907756db6c5c6b1a574502a9574377997b32c0a23861ab4c"
+    },
+    {
+      "path": "src/responsive-images.mjs",
+      "bytes": 427,
+      "sha256": "a63becc86e66466f0eb442f3d5c6b4c3aefd19cd0d45f88570a6c398c98abf28"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 34838,
+      "sha256": "019a300b24ceb80cfd5d5d2a5a02e175f8714aa0bf186cc06ecd0e5edcbd4fce"
+    },
+    {
+      "path": "dist/work/index.html",
+      "bytes": 31115,
+      "sha256": "0a9512aa25d5989852913d62b0656398abed2d7d31bc882e7c51cb8ab53cecce"
+    },
+    {
+      "path": "dist/assets/living-city.js",
+      "bytes": 7762,
+      "sha256": "67805d2d24c052e65dee7f568e44be72939daf6aeae0c8a6c674e5399f2cf871"
+    },
+    {
+      "path": "dist/assets/site-family-home.css",
+      "bytes": 107689,
+      "sha256": "b204670bd20b4182aa59ab82f62bd74707b0643c1bba63085192397ab3b98d87"
+    },
+    {
+      "path": "dist/assets/site-family-work.css",
+      "bytes": 105216,
+      "sha256": "bbcf7f042d2e0ca7da9dc0a81c8199915db9a6f9eb6bc2b843dfba0068e3ecad"
+    },
+    {
+      "path": "dist/assets/living-city.css",
+      "bytes": 33038,
+      "sha256": "febbf39e346b6a27a296f9bfbc8274e2da64b9596ed976f53967e188e1a85d0b"
+    },
+    {
+      "path": "dist/assets/responsive-images.json",
+      "bytes": 7073,
+      "sha256": "15bbf00dd8b6ce2b907756db6c5c6b1a574502a9574377997b32c0a23861ab4c"
+    },
+    {
+      "path": "dist/assets/work/lead-workbench.webp",
+      "bytes": 65772,
+      "sha256": "f668c6f8bffd45518c9302b696c4dcbcd76ec30c9125deea106f29db885870ce"
+    },
+    {
+      "path": "dist/assets/waterfront/film-poster-landscape.webp",
+      "bytes": 38536,
+      "sha256": "416db7a422f22fbf2c637ae8636e5bf19f5544888dfe5477382f0f3015454be9"
+    },
+    {
+      "path": "dist/assets/living-city/desktop-film.mp4",
+      "bytes": 696070,
+      "sha256": "7625f1db64ddf2dbb8ab69e72c335d9446cac762b9d5c45d3e8091adee9ceee3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-browser.config.json",
+      "bytes": 565,
+      "sha256": "77fb7b82fdfdc09dac34d593ca17811d0a7d986922704c3effeb38e66bf92d65"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-browser-check.js",
+      "bytes": 4749,
+      "sha256": "feb57b8f8db270da035d0e57cf8fcb5ce58b88cb11632c0589a7e6521347fe44"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-browser-results.log",
+      "bytes": 7428,
+      "sha256": "73303dec3dbceb9a17ca5deedd55ee64ee365386f7e5867101ef693894c8980c"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-offscreen.png",
+      "bytes": 225934,
+      "sha256": "64cee9f30f3a6b0071c72e06db354294c81ef2135de64bfcb8eaccf44528c3c7"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-visible.png",
+      "bytes": 1383624,
+      "sha256": "15fea0e22f0df4d0d52d930e4bfc87a7111546a492251c29e0b7b0f2309d229a"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-waterfront-before.png",
+      "bytes": 49187,
+      "sha256": "571e8a331e41e3fea0087a879e66e3b2dea18eb1cb135fb9fe72fee6d192ee03"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-waterfront-after.png",
+      "bytes": 96320,
+      "sha256": "2f2389306aa6ef4540a25474bd3375df2193ca7ddb49206a75309552b75b2d4a"
+    },
+    {
+      "path": "evidence/site-quality-xhigh-20261023/performance/fix-browser/console-2026-10-23T17-27-12-911Z.log",
+      "bytes": 1718,
+      "sha256": "00a6ad55aafd4c03bb2e8b6e2cf71ae2298e99ba52afcd77372b0552c1be1741"
+    }
+  ]
+}

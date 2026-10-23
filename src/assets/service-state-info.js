@@ -20,7 +20,8 @@ export const serviceStateInfo = [
  {id:'kentucky',name:'Kentucky',abbreviation:'KY'},
  {id:'tennessee',name:'Tennessee',abbreviation:'TN'},
  {id:'north-carolina',name:'North Carolina',abbreviation:'NC'},
- {id:'florida',name:'Florida',abbreviation:'FL'}
+ {id:'florida',name:'Florida',abbreviation:'FL'},
+ {id:'south-carolina',name:'South Carolina',abbreviation:'SC'}
 ].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){

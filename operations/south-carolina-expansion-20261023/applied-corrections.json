@@ -1,0 +1,34 @@
+{
+  "file": "evidence\\south-carolina-expansion-20261023\\drafts\\florence-greenwood-lancaster.json",
+  "beforeSha256": "c70520dda3644d8294d34444cbcc03427ce4d88ee13f6e48df50452956cd772e",
+  "afterSha256": "531ab342dd28f83fbf211a5fc0f554b1947b7b942a5a20ef6337874f46b27659",
+  "florenceRequiredChanges": [
+    {
+      "path": "decision",
+      "before": "If the store has ended, the useful next step is the retailer-approved contact route for that group, not an unrelated current store or an implied promise to accept a late order.",
+      "after": "For a shareable landing-page URL the business controls, I would preserve the group and ordering period after the store closes and show the retailer-approved support route. An old link directly into an external store depends on that provider's closed-store options; changing the main website alone cannot preserve that destination. Neither route should imply that a late order will be accepted."
+    },
+    {
+      "path": "scopes.0.supplies",
+      "before": "Approved group names, current store destinations, ordering-period wording and the contact route for an ended shop.",
+      "after": "Approved group names, current store destinations, ordering-period wording, who controls each shared URL and the contact route for an ended shop."
+    },
+    {
+      "path": "scopes.0.check",
+      "before": "A parent with an old link can identify its group and ask about that store without accidentally entering another team’s shop.",
+      "after": "A parent opening a retained landing page on the business's website can identify its group and ask about that store without entering another team's shop. Old external-store links are checked against the provider's available options."
+    },
+    {
+      "path": "planningTable.rows.2.1",
+      "before": "Retain the group identity and explain its published status.",
+      "after": "Retain group identity and status on a landing-page URL the business controls; check provider support for old external-store links."
+    },
+    {
+      "path": "planningTable.rows.2.3",
+      "before": "An old message does not silently send the parent to another group.",
+      "after": "An old message linking to the retained landing page still identifies the original group and gives its approved support route."
+    }
+  ],
+  "lancasterTitle": "Optional plain-language clarification applied",
+  "greenwood": "HOLD directory coverage; original private draft retained"
+}

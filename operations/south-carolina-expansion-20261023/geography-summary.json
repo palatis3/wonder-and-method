@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-23T16:24:31.997847+00:00",
+  "counties": 46,
+  "municipalities": 271,
+  "censusMunicipalTypes": {
+    "City": 69,
+    "Town": 202
+  },
+  "publicMunicipalTypes": {
+    "City": 70,
+    "Town": 201
+  },
+  "municipalMemberships": 301,
+  "cdps": 204,
+  "cdpMemberships": 207,
+  "crossBoundaryPlaces": 30,
+  "knownCrossBoundaryChecks": 5,
+  "governmentNameCorrections": [
+    {
+      "name": "Bamberg",
+      "censusLabel": "Bamberg town",
+      "publicLabel": "City",
+      "sources": [
+        "https://www.cityofbambergsc.gov/",
+        "https://www.masc.sc/municipality/bamberg"
+      ]
+    }
+  ],
+  "populationSource": {
+    "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025.csv",
+    "sha256": "e3508f5201465913476d4ddf91740f191f7977c9f2614a2a7e30b5fd22027934",
+    "reuse": "Unchanged primary source retrieved and verified for the Florida expansion on October 22, 2026.",
+    "selection": "Up to three intersecting municipalities ordered by Census SUMLEV 157 county-part 2025 population, then name. Whole-place SUMLEV 162 population is retained only as context. This is not a ranking of commercial demand; CDP fallback if no municipality exists."
+  },
+  "countyPartPopulationCoverage": 300,
+  "countyPartPopulationUnavailable": [
+    {
+      "areaId": "south-carolina/anderson",
+      "place": "Central",
+      "geoid": "4513015",
+      "note": "January 2026 geography records an Anderson County portion absent from the 2025 county-part estimate table. Membership is preserved; missing population remains unavailable and is sorted after available estimates."
+    }
+  ]
+}

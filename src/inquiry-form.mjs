@@ -3,6 +3,16 @@ import {addonPicker} from './addon-content.mjs';
 import defaultOffers from '../config/offers.json' with {type:'json'};
 import site from '../config/site.json' with {type:'json'};
 
+export function inquiryFormWebsiteField(value={},checkout=false){
+ // Editable native forms cannot change a required attribute when the service
+ // changes. The server checks the selected service; enhancement updates the field.
+ if(!checkout&&value.request_kind==='checkout')return {
+  label:'Website or social page',note:'required only for review proposals',required:false,placeholder:'example.com or @yourbusiness',
+  help:'For a Website Baseline or Audit & Fix Sprint proposal, add the public website address to review. For other services, a website or social page is optional. Leave blank if you do not have one.'
+ };
+ return inquiryWebsiteField(value);
+}
+
 export function inquiryFormMarkup(intake,{service='',checkout=false,value={},offers=defaultOffers,annualEnabled=offers.annual_enrollment_gate?.verified===true,recovery=false,errors={},headingLevel=checkout?3:2}={}){
  const selected=checkout?service:value.service||service||'unsure';
  if(!inquiryChoices.some(([id])=>id===selected))throw Error('Unknown inquiry service');
@@ -14,7 +24,7 @@ export function inquiryFormMarkup(intake,{service='',checkout=false,value={},off
  Object.assign(values,publicContext);
  values.request_kind=values.request_kind||(checkout?'checkout':'');
  const neutral=!checkout&&!values.request_kind,question=values.request_kind==='question';
- const website=inquiryWebsiteField(values),addonIds=publicContext.add_ons||[];
+ const website=inquiryFormWebsiteField(values,checkout),addonIds=publicContext.add_ons||[];
  const build=['launch_site','focused_site','signature_site'].includes(selected);
  const showAddonPicker=build&&!question||!checkout&&addonIds.length>0;
  const personal=(key,max)=>e(typeof values[key]==='string'?values[key].slice(0,max):'');

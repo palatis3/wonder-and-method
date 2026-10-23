@@ -39,6 +39,9 @@ export function validateInquiry(data){
   for(const [key,max] of Object.entries({name:100,email:254,business:160,business_location:160,website:500,service:40,message:3000})){
     if(data[key]!==undefined&&typeof data[key]!=='string'){errors[key]='Enter text in this field.';value[key]='';continue;}
     value[key]=(data[key]||'').trim();
+    // A textarea counts one character per line break. Native form encoding uses
+    // CRLF, while the enhanced JSON request uses LF; validate and save both alike.
+    if(key==='message')value[key]=value[key].replace(/\r\n?/g,'\n');
     if(!['website','business','business_location','service'].includes(key)&&!value[key])errors[key]=inquiryFieldMessage(key,{valueMissing:true});
     if(value[key].length>max)errors[key]=key==='message'?inquiryFieldMessage(key,{tooLong:true}):`Use no more than ${max} characters.`;
     if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Please retype this entry or paste it as plain text to remove hidden formatting.';

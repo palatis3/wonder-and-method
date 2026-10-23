@@ -27,7 +27,7 @@ class Element extends EventTarget {
   }
 }
 
-function fixture({autoplay = false, storage = new Map(), mobile = false, reduced = false, pending = false, reject = false, frames = true, missing = false, malformedTabs = false, videoPresent = true} = {}) {
+function fixture({autoplay = false, storage = new Map(), mobile = false, reduced = false, pending = false, reject = false, frames = true, missing = false, malformedTabs = false, videoPresent = true, initialIntersection = true, observer = true} = {}) {
   const root = new Element(), stage = new Element(), doc = new Element(), env = new Element();
   const button = new Element(), replay = new Element(), status = new Element(), projects = new Element(), tablist = new Element();
   button.hidden = replay.hidden = tablist.hidden = true;
@@ -85,13 +85,14 @@ function fixture({autoplay = false, storage = new Map(), mobile = false, reduced
     document: doc, navigator: {connection: {saveData: !autoplay}}, location:{hash:''}, sessionStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)}, matchMedia: query => queries[query],
     setTimeout: callback => { const id = ++timerId; timers.set(id, callback); return id; },
     clearTimeout: id => timers.delete(id),
-    IntersectionObserver: class {
+    IntersectionObserver: observer ? class {
       constructor(callback) { intersect = callback; }
       observe(target) { assert.equal(target, stage); }
       disconnect() { disconnected = true; }
-    }
+    } : undefined
   });
   const controller = mountLivingCity(root, env);
+  if(initialIntersection !== null)intersect?.([{isIntersecting:initialIntersection,intersectionRatio:initialIntersection?1:0}]);
   const resize = value => { queries['(max-width: 1023px)'].matches = value; queries['(max-width: 1023px)'].emit('change'); };
   const reduce = value => { queries['(prefers-reduced-motion: reduce)'].matches = value; queries['(prefers-reduced-motion: reduce)'].emit('change'); };
   const visible = value => { doc.hidden = !value; doc.emit('visibilitychange'); };
@@ -104,6 +105,23 @@ function fixture({autoplay = false, storage = new Map(), mobile = false, reduced
 const flush = () => new Promise(resolve => setImmediate(resolve));
 const advance = (f, time) => { f.video.currentTime = time; f.video.emit('timeupdate'); };
 const finish = f => { for (let i=0;i<3;i++) { advance(f, 3.9); advance(f, 0); } };
+
+test('automatic motion waits for actual visibility after an offscreen anchor navigation', async () => {
+ const f=fixture({autoplay:true,initialIntersection:null});
+ assert.equal(f.video.src,undefined);assert.equal(f.video.loads,0);assert.equal(f.video.playCalls,0);
+ f.view(false);await flush();
+ assert.equal(f.video.src,undefined);assert.equal(f.video.loads,0);assert.equal(f.video.playCalls,0);
+ f.view(true);await flush();
+ assert.equal(f.video.src,'/city-desktop.mp4');assert.equal(f.video.loads,1);assert.equal(f.video.playCalls,1);
+ f.view(false);assert.equal(f.video.paused,true);
+ f.view(true);await flush();assert.equal(f.video.loads,1);assert.equal(f.video.playCalls,2);
+});
+
+test('motion retains its existing fallback when IntersectionObserver is unavailable', async () => {
+ const f=fixture({autoplay:true,observer:false});await flush();
+ assert.equal(f.video.src,'/city-desktop.mp4');assert.equal(f.video.playCalls,1);
+ f.click();assert.equal(f.video.paused,true);
+});
 
 test('Save-Data starts with native content and an exact poster, without automatic downloads', () => {
   const f = fixture();

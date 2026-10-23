@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-23",
+  "status": "Integrated, independently reviewed; final release gates pending",
+  "scope": {
+    "counties": 46,
+    "newCommercialPages": 14,
+    "newStateHubs": 1,
+    "allGeographicIdentities": 1125,
+    "preservedExistingServiceRecords": 1068,
+    "totalServiceRecords": 1082,
+    "preservedExistingPageRoutes": 1192,
+    "totalPages": 1207,
+    "sitemapRoutes": 1206,
+    "journeyKeys": 1182
+  },
+  "recordHashMethod": "SHA-256 of JSON.stringify(record) in parsed property order",
+  "geographySha256": "7046e956f37d3a287f6899bfeecfd922921239e07718075dc51f1a8c728d12cd",
+  "approvedManifestSha256": "65daa1fb76cccd287669dc7822404bbed63cba5cf06e181c8ff3fbc912b81d91",
+  "recordDecisions": [
+    {
+      "areaId": "south-carolina/aiken",
+      "path": "/areas/south-carolina/aiken-county/",
+      "decision": "Match each proposed item to approval and the correct form.",
+      "recordSha256": "b7063a9fa9f86fd618b4f600c872cc28ffbfeadaae226f33d12c34e877e452c4",
+      "sources": [
+        {
+          "url": "https://www.aikentackexchange.com/pages/saddle-consignment",
+          "label": "Aiken Tack Exchange: saddle consignment intake",
+          "observation": "Posts an appointment-only intake and item-preapproval notice, requires a contract per saddle, directs accessories to the miscellaneous form and describes drop-off and shipping to the Aiken storefront."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/anderson",
+      "path": "/areas/south-carolina/anderson-county/",
+      "decision": "Keep the first dress-use date ahead of the wedding deadline.",
+      "recordSha256": "3fe3e959af5a758d90f37e5f6b779d4b47c0ae06b860cf4c52384ce45ea3f722",
+      "sources": [
+        {
+          "url": "https://staartailors.com/pages/bridal-alterations",
+          "label": "Staar Tailors: bridal alteration and fitting guidance",
+          "observation": "Accounts for portraits when discussing when a dress is needed, names shoes and undergarments as fitting preparation, explains pinning before a personalized quote and limits steaming to Anderson."
+        },
+        {
+          "url": "https://staartailors.com/pages/contact-us",
+          "label": "Staar Tailors: Anderson and Spartanburg locations",
+          "observation": "Lists separate Anderson and Spartanburg addresses and an Anderson parking-map link."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/berkeley",
+      "path": "/areas/south-carolina/berkeley-county/",
+      "decision": "Choose the class before choosing the family’s class pack.",
+      "recordSha256": "c1e96dc0279eb7bddc4a195eca985121ef414deec9bd9479b5be044609d13f52",
+      "sources": [
+        {
+          "url": "https://www.abstractadventuresllc.com/",
+          "label": "Abstract Adventures: class types and participation guidance",
+          "observation": "Describes Parent & Me, STEAM, homeschool and after-school art, with age guidance dependent on the class or schedule."
+        },
+        {
+          "url": "https://www.abstractadventuresllc.com/pricing-plans/plans-pricing",
+          "label": "Abstract Adventures: class packs and sibling conditions",
+          "observation": "Assigns packs to named class types and states that younger and older sibling packs apply to relevant classes in which a sibling is already enrolled."
+        },
+        {
+          "url": "https://www.abstractadventuresllc.com/Contact",
+          "label": "Abstract Adventures: studio contact address",
+          "observation": "Lists 1319 College Park Road, Unit C, Summerville, SC 29486."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/charleston",
+      "path": "/areas/south-carolina/charleston-county/",
+      "decision": "Keep the whole-boat price and the whole party together.",
+      "recordSha256": "b85bdcf10b2417179d26bd98723df2fe7c425434ae0d1bf8bd14fb92845745d4",
+      "sources": [
+        {
+          "url": "https://charlestonharborsailing.com/",
+          "label": "Charleston Harbor Sailing: private charters and custom requests",
+          "observation": "Describes per-boat pricing, a six-guest limit including children, booking links for standard departures and contact for custom plans."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/darlington",
+      "path": "/areas/south-carolina/darlington-county/",
+      "decision": "Carry the group payment responsibility into the arrival instructions.",
+      "recordSha256": "33c6245c343f1ff4ca1caebbf0b287f49a6b584b667388ee0028543636a45a32",
+      "sources": [
+        {
+          "url": "https://www.neptuneisland.com/corporate",
+          "label": "Neptune Island Waterpark: group arrangements",
+          "observation": "Describes advance reservations, a deposit and one transaction for the group’s remaining balance at arrival."
+        },
+        {
+          "url": "https://www.neptuneisland.com/contact",
+          "label": "Neptune Island Waterpark: location",
+          "observation": "Lists 1109 14th Street in Hartsville."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/dorchester",
+      "path": "/areas/south-carolina/dorchester-county/",
+      "decision": "Recheck servings and notice when a cake request becomes custom.",
+      "recordSha256": "41e54130145417430fee6bff86dff087dda411f60f2d024bf48bf84bf0247db5",
+      "sources": [
+        {
+          "url": "https://www.swankdesserts.com/",
+          "label": "Swank Desserts: celebration orders and custom inquiries",
+          "observation": "Separates celebration preorders from custom email inquiries and publishes different notice periods while preserving capacity review."
+        },
+        {
+          "url": "https://www.swankdesserts.com/charleston-bakery-faq",
+          "label": "Swank Desserts: cake formats, servings and notice",
+          "observation": "Says celebration cakes cannot be customized, custom cakes are priced to order, their taller format has different serving counts, and advance notice does not guarantee availability."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/florence",
+      "path": "/areas/south-carolina/florence-county/",
+      "decision": "Keep a shared team-store link useful after the ordering window ends.",
+      "recordSha256": "f2354c418e0fa998814b9f2c3926b47aa4d78082d5a5881656ebedf47115d53d",
+      "sources": [
+        {
+          "url": "https://allstarsports.net/webstores/",
+          "label": "All Star Sports: short-term group webstores",
+          "observation": "Offers temporary stores for teams, fundraisers and events, individual participant ordering, and a Florence storefront address."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/greenville",
+      "path": "/areas/south-carolina/greenville-county/",
+      "decision": "Make a hosted visit different from joining the workshop.",
+      "recordSha256": "a37d2836feb46d3ee765719a156a7ab4a012c5f768a0ae71e62ff61c828a168e",
+      "sources": [
+        {
+          "url": "https://www.synergymill.com/sign-up",
+          "label": "SynergyMill: joining and Visiting Maker Pass",
+          "observation": "Explains the initial form, waiver and dues visit, and requires a current member to attend with a Visiting Maker Pass guest."
+        },
+        {
+          "url": "https://www.synergymill.com/home",
+          "label": "SynergyMill: Greenville workshop",
+          "observation": "Identifies the Greenville workshop and describes its community makerspace activities."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/horry",
+      "path": "/areas/south-carolina/horry-county/",
+      "decision": "Connect the event time to shared or exclusive venue use.",
+      "recordSha256": "7cac6152f6f512d97e4b62c2a085d4199822df9da8ee16d144039b71ae686ca7",
+      "sources": [
+        {
+          "url": "https://myrtlebeachpinballmuseum.org/event-space-in-myrtle-beach/",
+          "label": "Myrtle Beach Pinball Museum: party and private-rental options",
+          "observation": "Distinguishes public-hours party packages from after-hours full-facility rental and directs event requests to staff. Its group-size summaries differ, so no capacity figure is used here."
+        },
+        {
+          "url": "https://myrtlebeachpinballmuseum.org/frequently-asked-questions/",
+          "label": "Myrtle Beach Pinball Museum: admission, events and location",
+          "observation": "Directs ordinary visitors to dated tickets, sends party inquiries to the event information and lists the Myrtle Beach address."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/lancaster",
+      "path": "/areas/south-carolina/lancaster-county/",
+      "decision": "Explain why approval of additional repairs does not settle the completion date.",
+      "recordSha256": "516b2fe3fe8c4669b355523ab8fc2da270fc0fca65f9cf2a0a6d47bad93dfd67",
+      "sources": [
+        {
+          "url": "https://lancastercollision.com/faqs",
+          "label": "Lancaster Collision Center: estimates, supplements and timing",
+          "observation": "Describes estimate scheduling, additional-damage documentation and approval, and timing dependencies involving damage, parts and approvals."
+        }
+      ],
+      "metadataAddendum": {
+        "areaId": "south-carolina/lancaster",
+        "field": "description",
+        "before": "Web design for Lancaster County, SC. A collision-repair example explains estimate visits, supplemental review and parts timing without promising a completion date.",
+        "after": "Web design for Lancaster County, SC. A collision-repair example explains estimates, supplemental review and parts timing without promising a completion date.",
+        "beforeLength": 163,
+        "afterLength": 157,
+        "reason": "Shorten metadata to the existing 160-character editorial limit; the same estimate, supplemental-review and parts dependencies remain, with no new source claim or body change.",
+        "approvedRecordSha256": "05e5f9efd34cbb508a798705f50dd87d28b68cc3de0f1ab90c2349975a9de390",
+        "currentRecordSha256": "516b2fe3fe8c4669b355523ab8fc2da270fc0fca65f9cf2a0a6d47bad93dfd67"
+      }
+    },
+    {
+      "areaId": "south-carolina/lexington",
+      "path": "/areas/south-carolina/lexington-county/",
+      "decision": "Carry the material choice into the delivery conversation.",
+      "recordSha256": "843cbd149ee3f3d575dd3c59bbf56f55248ca11377194af02e79153fbe6648f3",
+      "sources": [
+        {
+          "url": "https://pinestrawplacesc.com/faq/",
+          "label": "Pinestraw Place: landscape-supply FAQ",
+          "observation": "Separates bulk-material delivery from freshly cut sod scheduling, asks customers to confirm an address for delivery-zone pricing, and lists supply-only or installation options for pine straw, mulch and sod."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/richland",
+      "path": "/areas/south-carolina/richland-county/",
+      "decision": "Keep the product, pack and requested quantity distinct.",
+      "recordSha256": "c6f4878b8416a8db5cb5995a69c37b0ac550f829944b5b7d634d3cb83fc970ae",
+      "sources": [
+        {
+          "url": "https://www.cityrootsfarm.com/microgreens",
+          "label": "City Roots Farm: varieties and pack sizes",
+          "observation": "Lists microgreen varieties, container descriptions and the weight supplied in each published pack size."
+        },
+        {
+          "url": "https://www.cityrootsfarm.com/contact",
+          "label": "City Roots Farm: buyer inquiry choices and address",
+          "observation": "Separates distributor, grocery-retailer and restaurant inquiries and lists the Columbia address."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/spartanburg",
+      "path": "/areas/south-carolina/spartanburg-county/",
+      "decision": "Keep the portfolio reference beside the customer’s own project.",
+      "recordSha256": "c2e769bb6de9360604184551c69dead04e51b9e736ffcb863b1d03c28eba6fb7",
+      "sources": [
+        {
+          "url": "https://www.rocoupholstery.com/",
+          "label": "RoCo Upholstery: automotive and marine portfolio",
+          "observation": "Introduces automotive and marine upholstery and links to named project galleries."
+        },
+        {
+          "url": "https://www.rocoupholstery.com/contact",
+          "label": "RoCo Upholstery: contact and location",
+          "observation": "Lists its Spartanburg address and describes auto, marine, motorcycle and commercial upholstery."
+        },
+        {
+          "url": "https://www.rocoupholstery.com/1982-porsche-911-targa",
+          "label": "RoCo Upholstery: 1982 Porsche 911 Targa project",
+          "observation": "Presents a project named for this vehicle; it is a portfolio reference, not a published package for other vehicles."
+        },
+        {
+          "url": "https://www.rocoupholstery.com/2016-scout-275",
+          "label": "RoCo Upholstery: 2016 Scout 275 project",
+          "observation": "Presents a named marine project that can illustrate the distinction between a reference and the visitor’s own boat."
+        }
+      ],
+      "metadataAddendum": null
+    },
+    {
+      "areaId": "south-carolina/york",
+      "path": "/areas/south-carolina/york-county/",
+      "decision": "Make the first visit a clear sequence before the reservation step.",
+      "recordSha256": "3870ac8a3c199377b293b0a08f327bae8fc4a1693bff9f0a8c1f351c3e47e081",
+      "sources": [
+        {
+          "url": "https://www.rockhillpetcare.com/",
+          "label": "Rock Hill Pet Care: getting started, calendar and customer login",
+          "observation": "Describes staff review, a meet-and-greet and a required trial daycare visit. Identifies the public calendar as closures and important dates, says it does not confirm reservations, and provides a separate customer login."
+        }
+      ],
+      "metadataAddendum": null
+    }
+  ],
+  "heldDrafts": {
+    "south-carolina/beaufort": "Substantial overlap with Luzerne and Cheshire; independent content-a review.",
+    "south-carolina/greenwood": "Substantial overlap with Seneca and Virginia Lancaster; second-batch review."
+  },
+  "otherCounties": "Directory coverage retained. No commercial page was forced from missing or sparse keyword rows; Kershaw research did not establish a sufficiently distinct approved page.",
+  "research": {
+    "directKeywords": 585,
+    "totalUniqueIncludingDiscovery": 683,
+    "additionalBrowserUnique": 315,
+    "browserObservations": 378,
+    "nationalDatabase": "US",
+    "limitations": "Phrase estimates are not local resident counts, additive audiences or rank forecasts. Literal zero and unavailable data remain distinct. Keyword research nominated candidates; primary sources and individual content review determined publication."
+  },
+  "originalReviewEvidence": [
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\initial-four\\review.json",
+      "sha256": "8940f9cbe7e16912922c00684b91eaf32bfdc06f330d4969a0fb55f42c134ce6"
+    },
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\initial-four\\final-addendum.md",
+      "sha256": "909494df55d00a5b7687a2e5902ab937b3734b54c12e90e497278cff77071910"
+    },
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\second-batch\\review.json",
+      "sha256": "4e99340f128fe5c64c6fc502ddf2e9449c526cf222616e5dac7707113874c2c0"
+    },
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\second-batch\\applied-corrections.json",
+      "sha256": "6dd199a0cdea2004eaa505d0c9b58948dd849dae13b785cfb3867b0472357937"
+    },
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\darlington\\review.json",
+      "sha256": "00224a33212da07b872665b8e39e5c987fb4ff5f323b15451c9c033392ea4270"
+    },
+    {
+      "path": "evidence\\south-carolina-expansion-20261023\\review\\geography\\review-result.json",
+      "sha256": "217ff12b27d5f6d4a43ecd59a5d4d31860e2e41043d9127a65f48f4a19347d9b"
+    },
+    {
+      "path": "evidence\\site-quality-xhigh-20261023\\content-a\\findings.json",
+      "sha256": "e8d5b3bbe7d3b28940cb357790dc516f49d70d9050ef13a319043eedaabbf63b"
+    },
+    {
+      "path": "evidence\\site-quality-xhigh-20261023\\content-b\\findings.json",
+      "sha256": "bf22b50e9375f00c84efcf2b33fa40c617aa5ef086b606d243e1f07a0cb60d15"
+    }
+  ],
+  "copiedEvidence": [
+    {
+      "path": "geography-summary.json",
+      "sha256": "df9df780bead96f7c43480e3ab42d96700e114570746c05387d3016cd598daf2",
+      "originalSha256": "df9df780bead96f7c43480e3ab42d96700e114570746c05387d3016cd598daf2"
+    },
+    {
+      "path": "geography-sources.json",
+      "sha256": "d301eef12439b62ecb70c72ecece1ea9ea890bb2aacb775ae48e2b6754d42cf2",
+      "originalSha256": "d301eef12439b62ecb70c72ecece1ea9ea890bb2aacb775ae48e2b6754d42cf2"
+    },
+    {
+      "path": "county-inventory.json",
+      "sha256": "15c0b88516fcd39f54e2dab47f380e165af8b86cf08a35e076b12b06e6b4b61c",
+      "originalSha256": "15c0b88516fcd39f54e2dab47f380e165af8b86cf08a35e076b12b06e6b4b61c"
+    },
+    {
+      "path": "cross-boundary-memberships.json",
+      "sha256": "5ad10c3ede498e03027deb1da766aaf8e8e83093776f4b71b3c633d17b3a71f2",
+      "originalSha256": "5ad10c3ede498e03027deb1da766aaf8e8e83093776f4b71b3c633d17b3a71f2"
+    },
+    {
+      "path": "representative-places.json",
+      "sha256": "47a300390762e8b18847bad4d024d21229b9eaa4f5fb7f876ed05646d0eaf17a",
+      "originalSha256": "47a300390762e8b18847bad4d024d21229b9eaa4f5fb7f876ed05646d0eaf17a"
+    },
+    {
+      "path": "geography-review.json",
+      "sha256": "4f76a3191f808580aea6dbe9fa5c8d437d000af08c456ee448d86c30dc10fbfd",
+      "originalSha256": "217ff12b27d5f6d4a43ecd59a5d4d31860e2e41043d9127a65f48f4a19347d9b"
+    },
+    {
+      "path": "INITIAL_FOUR_REVIEW.md",
+      "sha256": "27cbed9e19619ba5db262a6765b43d4cd8509156abf634d29e250d1f4452f730",
+      "originalSha256": "be8e7d41ced19640a3d7e3e4ad045694a562ff84f6200ab1523ec045de39f545"
+    },
+    {
+      "path": "INITIAL_FOUR_ADDENDUM.md",
+      "sha256": "909494df55d00a5b7687a2e5902ab937b3734b54c12e90e497278cff77071910",
+      "originalSha256": "909494df55d00a5b7687a2e5902ab937b3734b54c12e90e497278cff77071910"
+    },
+    {
+      "path": "DARLINGTON_REVIEW.md",
+      "sha256": "efcd76ec02b7d7a8c44d6fa5f0379f7ad2b7d7c2c14bea0c2a4cb529e124e240",
+      "originalSha256": "814e4dd64db628a1097d1b55a75b1ad940b6a0671c53a660cc8ef1015afd9291"
+    },
+    {
+      "path": "SECOND_BATCH_REVIEW.md",
+      "sha256": "fa3226d5735b5dadf185360d0d8f732f674ce795255774b57a035727ae0a8dc5",
+      "originalSha256": "fa3226d5735b5dadf185360d0d8f732f674ce795255774b57a035727ae0a8dc5"
+    },
+    {
+      "path": "applied-corrections.json",
+      "sha256": "6dd199a0cdea2004eaa505d0c9b58948dd849dae13b785cfb3867b0472357937",
+      "originalSha256": "6dd199a0cdea2004eaa505d0c9b58948dd849dae13b785cfb3867b0472357937"
+    },
+    {
+      "path": "business-source-snapshots.json",
+      "sha256": "6ba3d862f554c14dcfef31fef9945c82dc046658b560c50ee94a1c39d0a11930",
+      "originalSha256": "6ba3d862f554c14dcfef31fef9945c82dc046658b560c50ee94a1c39d0a11930"
+    },
+    {
+      "path": "research-verification.json",
+      "sha256": "2a65a4bb1b1ab3da0d0886786255f2fb6a79fdd0d4ff58fca002c4e8e7e21483",
+      "originalSha256": "ed9732abd52a1f2a70672ca25646ffeb4a1f526d8c76f6e94b17a2afc8f6c0d4"
+    },
+    {
+      "path": "CONTENT_A_REVIEW.md",
+      "sha256": "768a899433f1fa760193f26fec29d73124b7a2e9240f05b84b66567375229aab",
+      "originalSha256": "768a899433f1fa760193f26fec29d73124b7a2e9240f05b84b66567375229aab"
+    },
+    {
+      "path": "CONTENT_B_REVIEW.md",
+      "sha256": "aa19931dfda580565059f6cf610b375fa6d4800dab7deef91caac4ef0cd2597c",
+      "originalSha256": "cc69a7d998c9d2e3750ba390b11c25f93fd45c50113c6b60dc49080cb944f0fa"
+    },
+    {
+      "path": "INTEGRATED_REVIEW.md",
+      "sha256": "cf5f0af38af7c02aa963fb19e59915b6d39246e9a9be72db0c8ca428d6e93f33",
+      "originalSha256": "cf5f0af38af7c02aa963fb19e59915b6d39246e9a9be72db0c8ca428d6e93f33"
+    },
+    {
+      "path": "integrated-addendum.json",
+      "sha256": "6dc8844aeae964f18cdf8e456f054d5cb46c6701a2d7309e3125c85a2d35438b",
+      "originalSha256": "6dc8844aeae964f18cdf8e456f054d5cb46c6701a2d7309e3125c85a2d35438b"
+    },
+    {
+      "path": "GUIDE_LINK_RECHECK.md",
+      "sha256": "3f97e4f11ecf8d2a2f0cd9d9d57bf074b1c4ad2cef28c771a70dbd153222e8c6",
+      "originalSha256": "3f97e4f11ecf8d2a2f0cd9d9d57bf074b1c4ad2cef28c771a70dbd153222e8c6"
+    },
+    {
+      "path": "guide-link-recheck.json",
+      "sha256": "ad15e5172ef8d88d1a615300dc5525e0357d3ad9fe1db6f354fca235b8c42007",
+      "originalSha256": "ad15e5172ef8d88d1a615300dc5525e0357d3ad9fe1db6f354fca235b8c42007"
+    }
+  ],
+  "release": "Migration 0028 followed by 0029, exact final CI and fingerprint checks, customer-record preservation, deployment and live verification remain required.",
+  "browserVerification": {
+    "reviewedAt": "2026-10-23T17:36:44.133Z",
+    "routeViewportChecks": 30,
+    "widths": [
+      390,
+      1440
+    ],
+    "routes": 15,
+    "result": "PASS",
+    "checks": [
+      "200 response",
+      "One unclipped h1",
+      "No horizontal page overflow",
+      "Canonical matches route",
+      "All 14 planning tables have four rows and scoped column headers",
+      "Directory fragment opens Berkeley",
+      "Inquiry link preserves context and focuses inquiry"
+    ],
+    "submissions": 0,
+    "visualSamples": [
+      "Berkeley phone full page",
+      "South Carolina desktop full page",
+      "Spartanburg social card",
+      "South Carolina social card"
+    ]
+  },
+  "evidenceSerialization": "Copied evidence preserves substantive content; line endings and trailing whitespace normalized for repository storage. Original raw hashes retained separately."
+}

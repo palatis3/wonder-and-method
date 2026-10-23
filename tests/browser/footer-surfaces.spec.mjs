@@ -14,7 +14,7 @@ test('compact footer preserves every group and works by keyboard',async({page})=
   await expect(group.locator('a').first()).toBeVisible();await page.keyboard.press('Tab');await expect(group.locator('a').first()).toBeFocused();
   await summary.focus();await page.keyboard.press('Space');await expect(group).not.toHaveAttribute('open','');
  }
- await expect(footer.locator('a')).toHaveCount(40);
+ await expect(footer.locator('a')).toHaveCount(41);
  expect(await footer.evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(520);
 });
 
@@ -23,10 +23,10 @@ test('section surfaces alternate without covering text or expanding the viewport
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
   const result=await page.evaluate(()=>{
    const candidates=[...document.querySelectorAll('main>section:nth-of-type(even):not(.civic-hero,.living-city-hero),.home-content>section:nth-of-type(even),.journal-prose>section:nth-of-type(even)')];
-   return {width:innerWidth,scroll:document.documentElement.scrollWidth,surfaces:candidates.map(el=>({background:getComputedStyle(el,'::before').backgroundColor,pointerEvents:getComputedStyle(el,'::before').pointerEvents,zIndex:getComputedStyle(el,'::before').zIndex}))};
+   return {width:innerWidth,scroll:document.documentElement.scrollWidth,surfaces:candidates.map(el=>({closing:el.matches('.home-content>.studio-closing'),background:getComputedStyle(el,'::before').backgroundColor,pointerEvents:getComputedStyle(el,'::before').pointerEvents,zIndex:getComputedStyle(el,'::before').zIndex}))};
   });
   expect(result.scroll,path).toBeLessThanOrEqual(result.width+1);expect(result.surfaces.length,path).toBeGreaterThan(0);
-  for(const surface of result.surfaces){expect(['rgb(238, 241, 233)','rgb(241, 238, 230)']).toContain(surface.background);expect(surface.pointerEvents).toBe('none');expect(surface.zIndex).toBe('-1');}
+  for(const surface of result.surfaces){expect(surface.closing?['rgb(5, 43, 59)']:['rgb(238, 241, 233)','rgb(241, 238, 230)']).toContain(surface.background);expect(surface.pointerEvents).toBe('none');expect(surface.zIndex).toBe('-1');}
  }
 });
 

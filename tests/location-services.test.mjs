@@ -1,3 +1,4 @@
+import scPaths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -21,10 +22,10 @@ import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('1068 approved commercial pages preserve 1078 directory identities, truthful provider schema and legacy worksheets',async()=>{
+test('1082 approved commercial pages preserve 1092 directory identities, truthful provider schema and legacy worksheets',async()=>{
  assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);assert.equal(waveFourPaths.length,611);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1078);assert.equal(new Set(areaIds).size,1078);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/')].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1092);assert.equal(new Set(areaIds).size,1092);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);

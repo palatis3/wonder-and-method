@@ -218,8 +218,11 @@ async function submit(request, env, ctx) {
   const now = Date.now();
   const synthetic = !LIVE(env);
   const payload = JSON.stringify(value), syntheticFlag = synthetic ? 1 : 0;
+  // Recent pre-update forms stored CRLF (and older text may use CR). Compare only
+  // those message variants; never rewrite saved payloads or notification bodies.
+  const duplicatePayloads=[payload,...['\r\n','\r'].map(newline=>JSON.stringify({...value,message:value.message.replaceAll('\n',newline)}))];
   const ip=request.headers.get('CF-Connecting-IP')||'local-unknown',network=inquiryNetwork(ip);
-  const recent=()=>env.DB.prepare('SELECT id, created_at, delivery_status FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ? ORDER BY created_at, id LIMIT 1').bind(now-INQUIRY_DUPLICATE_WINDOW_MS,payload,syntheticFlag).first();
+  const recent=()=>env.DB.prepare('SELECT id, created_at, delivery_status FROM inquiries WHERE created_at > ? AND payload IN (?,?,?) AND synthetic = ? ORDER BY created_at, id LIMIT 1').bind(now-INQUIRY_DUPLICATE_WINDOW_MS,...duplicatePayloads,syntheticFlag).first();
   const receiptKey=record=>fingerprint(env.FINGERPRINT_SECRET,`inquiry-receipt:${network}:${synthetic}:${record.id}`);
   const accepted=record=>respond(request,202,synthetic?'Synthetic test recorded. No email was sent and no inbox receipt is claimed.':(value.request_kind==='question'?'Thank you. Your question is saved for the studio to review. Keep this reference for your records.':value.request_kind==='checkout'?'Thank you. Your project details are saved for the studio to review. Keep this reference for your records.':'Thank you. Your message is saved for the studio to review. Keep this reference for your records.'),record.id,undefined,value.service,value,{synthetic});
   const limited=retryAfter=>recover(429,`Several requests have been sent from this connection. Please try again in about ${inquiryWait(retryAfter)}, or email support@wonderandmethod.com. Your entries are kept here.`,{retryAfter});
@@ -251,8 +254,8 @@ async function submit(request, env, ctx) {
   failureCode='inquiry_storage_outcome_unknown';
   await env.DB.prepare(`INSERT INTO inquiries (id, created_at, payload, dedupe_key, synthetic, delivery_status)
     SELECT ?, ?, ?, ?, ?, ? WHERE NOT EXISTS
-      (SELECT 1 FROM inquiries WHERE created_at > ? AND payload = ? AND synthetic = ?)`)
-    .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now-INQUIRY_DUPLICATE_WINDOW_MS, payload, syntheticFlag).run();
+      (SELECT 1 FROM inquiries WHERE created_at > ? AND payload IN (?,?,?) AND synthetic = ?)`)
+    .bind(id, now, payload, dedupe, syntheticFlag, synthetic ? 'synthetic' : 'pending', now-INQUIRY_DUPLICATE_WINDOW_MS, ...duplicatePayloads, syntheticFlag).run();
   const record=await recent();
   if (!record) throw new Error('storage-incomplete');
   failureCode='inquiry_receipt_failed';

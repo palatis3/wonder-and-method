@@ -21,7 +21,9 @@ export function mountLivingCity(root, env = globalThis) {
   const reduced = env.matchMedia?.('(prefers-reduced-motion: reduce)') || {matches: false};
   const cleanups = [];
   let observer, destroyed = false, phase = reduced.matches ? 'reduced' : 'idle';
-  let intent = false, inView = true, pageInactive = false, loaded = false;
+  // An anchor navigation may mount with the hero already above the viewport.
+  // Wait for the observer's first result before starting an automatic download.
+  let intent = false, inView = !env.IntersectionObserver, pageInactive = false, loaded = false;
   let complete = false, failed = false, hasFrame = false, sourceKind = '';
   let epoch = 0, frameRequest = null, loadingTimer = null;
   let storyTime = 0, lastMediaTime = 0, lastProgressTime = 0, activeShowcase = '';

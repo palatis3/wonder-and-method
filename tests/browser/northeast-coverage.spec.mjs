@@ -94,7 +94,7 @@ test('state and district finder preserves cross-boundary and typed names, resets
  for(const s of fixture.states){await state.selectOption(s.id);await expect(page.locator('[data-county-results] li')).toHaveCount(s.areas.length);}
  await search.fill('Capitol planning region CT');await expect(page.locator('[data-county-results] li')).toHaveCount(0);
  await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(state).toHaveValue('');
- await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-county-search]')).toHaveCount(1079);
+ await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-county-search]')).toHaveCount(1125);
  expect(requests).toEqual([]);
 });
 

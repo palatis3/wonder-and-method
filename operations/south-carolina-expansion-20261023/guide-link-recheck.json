@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23",
+  "reviewer": "content-b independent Astra extra-high follow-up",
+  "readDeclarations": {
+    "completeRenderedGuideRead": true,
+    "completeLocationRecordsRead": [
+      "florida/broward",
+      "florida/calhoun",
+      "florida/leon"
+    ],
+    "exactExistingConnectionsRead": 3
+  },
+  "fingerprintImplementation": "Imported guidePurposeFingerprint and locationPurposeFingerprint from scripts/site-quality-rules.mjs; no reimplementation.",
+  "currentGuidePurposeFingerprint": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547",
+  "previousGuidePurposeFingerprint": "1bf5fca0f637e350637659053ba8f316a846e83db3c288bb6cd848442ab1faad",
+  "comparison": {
+    "priorTextFingerprintMatchesLedger": true,
+    "onlyArticleTextChangeIsCoverageSentence": true,
+    "previousSegment": "North Carolina, and Florida.",
+    "currentSegment": "North Carolina, Florida, and South Carolina.",
+    "previousArticleCharacters": 7471,
+    "currentArticleCharacters": 7487,
+    "allThreeLocationPurposeFingerprintsUnchanged": true
+  },
+  "decisions": [
+    {
+      "areaId": "florida/broward",
+      "from": "/areas/florida/broward-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe the shop and road coverage accurately",
+      "decision": "RETAIN",
+      "reason": "Retain. Broward separates the Pompano Beach shop from road service at the truck's actual worksite and preserves vehicle/location details before confirmation. The guide explicitly separates real premises, on-site service and service reach, asks which services are available at a place, and requires address-level and scheduling conditions to remain visible. This directly supports the existing label without implying a Fort Lauderdale shop or confirmed dispatch.",
+      "requiredLinkOrLabelChanges": [],
+      "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+      "priorGuidePurposeSha256": "1bf5fca0f637e350637659053ba8f316a846e83db3c288bb6cd848442ab1faad",
+      "currentGuidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547",
+      "proposedLedgerRow": {
+        "from": "/areas/florida/broward-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Describe the shop and road coverage accurately",
+        "reason": "Broward separates the Pompano Beach shop from road service at the truck's actual worksite and preserves vehicle/location details before confirmation. The guide explicitly separates real premises, on-site service and service reach, asks which services are available at a place, and requires address-level and scheduling conditions to remain visible. This directly supports the existing label without implying a Fort Lauderdale shop or confirmed dispatch.",
+        "reviewedAt": "2026-10-23",
+        "reviewMethod": "Independent AI reread of the complete current rendered guide and complete location record; compared prior and current article text after South Carolina coverage integration",
+        "reviewPart": 3,
+        "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+        "guidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547"
+      }
+    },
+    {
+      "areaId": "florida/calhoun",
+      "from": "/areas/florida/calhoun-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Explain delivery coverage without guaranteeing availability",
+      "decision": "RETAIN",
+      "reason": "Retain. Calhoun connects an inventory or custom-building choice to its actual delivery destination and unresolved access and scheduling questions. The guide explains address-level assessment, real service limits and current scheduling conditions, leaving unknowns unresolved until the business confirms them. That supports explaining delivery coverage without treating a listed area or displayed building as guaranteed availability.",
+      "requiredLinkOrLabelChanges": [],
+      "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+      "priorGuidePurposeSha256": "1bf5fca0f637e350637659053ba8f316a846e83db3c288bb6cd848442ab1faad",
+      "currentGuidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547",
+      "proposedLedgerRow": {
+        "from": "/areas/florida/calhoun-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Explain delivery coverage without guaranteeing availability",
+        "reason": "Calhoun connects an inventory or custom-building choice to its actual delivery destination and unresolved access and scheduling questions. The guide explains address-level assessment, real service limits and current scheduling conditions, leaving unknowns unresolved until the business confirms them. That supports explaining delivery coverage without treating a listed area or displayed building as guaranteed availability.",
+        "reviewedAt": "2026-10-23",
+        "reviewMethod": "Independent AI reread of the complete current rendered guide and complete location record; compared prior and current article text after South Carolina coverage integration",
+        "reviewPart": 3,
+        "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+        "guidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547"
+      }
+    },
+    {
+      "areaId": "florida/leon",
+      "from": "/areas/florida/leon-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe locations and service coverage accurately",
+      "decision": "RETAIN",
+      "reason": "Retain. Leon explains the Midway workshop's location-specific repair limits and intermittent specialist availability before the customer transports a trailer. The guide asks which services are available at a genuine business location, rejects converting service reach into an office claim, and assigns maintenance of changing coverage and booking conditions. It therefore supports the current label and the record's explicit Midway/Gadsden versus Tallahassee/Leon distinction.",
+      "requiredLinkOrLabelChanges": [],
+      "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+      "priorGuidePurposeSha256": "1bf5fca0f637e350637659053ba8f316a846e83db3c288bb6cd848442ab1faad",
+      "currentGuidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547",
+      "proposedLedgerRow": {
+        "from": "/areas/florida/leon-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Describe locations and service coverage accurately",
+        "reason": "Leon explains the Midway workshop's location-specific repair limits and intermittent specialist availability before the customer transports a trailer. The guide asks which services are available at a genuine business location, rejects converting service reach into an office claim, and assigns maintenance of changing coverage and booking conditions. It therefore supports the current label and the record's explicit Midway/Gadsden versus Tallahassee/Leon distinction.",
+        "reviewedAt": "2026-10-23",
+        "reviewMethod": "Independent AI reread of the complete current rendered guide and complete location record; compared prior and current article text after South Carolina coverage integration",
+        "reviewPart": 3,
+        "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+        "guidePurposeSha256": "c1fab5a459d888136ab4dd3f4499a61b39cb0f663d6ff1eecbe67df61bfc4547"
+      }
+    }
+  ],
+  "inputSha256": {
+    "dist/guides/service-area-pages/index.html": "19b741c509a2bc57485567044ec92bdb221a084363c88d7a575da951b9a0feaa",
+    "src/location-service-data.json": "acc1cf3c24e639af059a4c7687ca55f23f64aeeba282073eab11452216950d68",
+    "operations/google-quality-audit-20261023/related-guide-review.json": "c0b8fc919ab81072f8958c606843c06f898d2347dcc81324ef832e049c2bd88b",
+    "evidence/google-quality-audit-20261023/guide-associations/part-3/input.json": "1cfbaaef89acfc4c64ed29895e42c98c1e4461f76327445be65c065763be04eb",
+    "scripts/site-quality-rules.mjs": "6674aa86a93915eea34217ed0fd8dfcde9549289320842f0f77274d712c0702e"
+  },
+  "limits": [
+    "No source, ledger, build or deployment mutation.",
+    "No full test run or whole-corpus rereview.",
+    "This approves retaining only the three listed existing connections for the exact current fingerprints."
+  ]
+}

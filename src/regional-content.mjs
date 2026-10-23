@@ -1,11 +1,12 @@
+import {southCarolinaGeography,southCarolinaAreaInventory} from './south-carolina-geography.mjs';
 import {virginiaExpansionGeography,virginiaExpansionAreaInventory} from './virginia-expansion-geography.mjs';
 import {michiganDcGeography,michiganDcAreaInventory} from './michigan-dc-geography.mjs';
 import {inKyTnNcGeography,inKyTnNcAreaInventory} from './in-ky-tn-nc-geography.mjs';
 import {floridaGeography,floridaAreaInventory} from './florida-geography.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 
-export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography};
-export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory];
+export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography};
+export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory];
 // The directory groups verified places within state/district hubs.
 // A county does not receive a separate commercial page merely to target its name.
 export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).map(stateId=>{

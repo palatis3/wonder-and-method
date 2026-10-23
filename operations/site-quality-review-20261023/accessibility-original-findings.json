@@ -1,0 +1,21 @@
+{
+  "baselineCommit": "b711713f376d3f180d7d330fbbe20f5c27309d2b",
+  "status": "No independent accessibility defect; one corroborated P3 layout finding",
+  "findings": [
+    {
+      "id": "waterfront-thumbnail-aspect-ratio",
+      "priority": "P3",
+      "sharedWith": "performance",
+      "route": "/work/?qa=1",
+      "viewport": {"width":390,"height":844},
+      "source": ["src/work-gallery.mjs:22","src/work-gallery.mjs:30","src/assets/site-refresh.css:697"],
+      "actual": "350px-wide thumbnail shrinks from 233.328125px to 218.75px on decode; following caption shifts upward 14.578125px",
+      "expected": "Reserve the actual 1200 × 750 image ratio before decode",
+      "evidence": ["image-geometry.json","waterfront-image-phone-before.png","waterfront-image-phone-after.png"]
+    }
+  ],
+  "corroborations": [
+    {"id":"offscreen-home-film-request","owner":"performance","evidence":"performance-checks.json"}
+  ],
+  "privateSearchConsoleDraftsIncluded": false
+}

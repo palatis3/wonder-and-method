@@ -1,0 +1,64 @@
+{
+  "reviewedOn": "2026-10-23",
+  "originalSourceCommit": "b711713f376d3f180d7d330fbbe20f5c27309d2b",
+  "reviewers": "Eight independently scoped Astra extra-high reviews requested by the owner; subsequent focused independent closure reviews.",
+  "status": "Original audits completed; implemented corrections and combined release in verification",
+  "files": [
+    {
+      "path": "accessibility-original-findings.json",
+      "sha256": "4a27a12e7849fedcc9215e190a4c628a8cf24b75ffa19f11d1bbf586b6f23327",
+      "originalSha256": "f17cb5cde5851f3a33008630bf436d7c68604100f7bdbe1ab62209ae7db877e7"
+    },
+    {
+      "path": "FORMS_REVIEW.md",
+      "sha256": "788c111ba7a9b26518911e3a9d0a7ca94f6e9d3c0eb866727b54e0c12a8bf73f",
+      "originalSha256": "788c111ba7a9b26518911e3a9d0a7ca94f6e9d3c0eb866727b54e0c12a8bf73f"
+    },
+    {
+      "path": "forms-implementation.json",
+      "sha256": "416b199b19b8178ef8ce1bf1ec661248d1807c2337c3f6aa26bf6c3168586645",
+      "originalSha256": "416b199b19b8178ef8ce1bf1ec661248d1807c2337c3f6aa26bf6c3168586645"
+    },
+    {
+      "path": "PRIVACY_REVIEW.md",
+      "sha256": "90ba93dd9ceac8ebf28fbaf5c9252688fb4dffff795fc7a831f82bc91e2ac67d",
+      "originalSha256": "90ba93dd9ceac8ebf28fbaf5c9252688fb4dffff795fc7a831f82bc91e2ac67d"
+    },
+    {
+      "path": "FORMS_INDEPENDENT_CLOSURE.md",
+      "sha256": "b755a11ae38eb4f152c674c018112dfa503517c347bc47824bcc6c58e9ed67b5",
+      "originalSha256": "b755a11ae38eb4f152c674c018112dfa503517c347bc47824bcc6c58e9ed67b5"
+    },
+    {
+      "path": "forms-independent-evidence.json",
+      "sha256": "f1f49815a7f9aa887970695591f48c519363feeac51ec3d4f13dc9ac542b9af4",
+      "originalSha256": "90c688fb592a5e2ded11904a01716214fe9f2043a673556fe666d501fde6c7d7"
+    },
+    {
+      "path": "SEARCH_REVIEW.md",
+      "sha256": "99589e3dc712a08bdd2db05b91a7bff734cff2e0f0ca8e2af07b168a98322de5",
+      "originalSha256": "99589e3dc712a08bdd2db05b91a7bff734cff2e0f0ca8e2af07b168a98322de5"
+    },
+    {
+      "path": "PERFORMANCE_REVIEW.md",
+      "sha256": "cb7478ee1fb6fae5af3ed5f5e13d8c16612937c29b9c6696444bb4be0abef93b",
+      "originalSha256": "cb7478ee1fb6fae5af3ed5f5e13d8c16612937c29b9c6696444bb4be0abef93b"
+    },
+    {
+      "path": "RELEASE_PREPARATION_REVIEW.md",
+      "sha256": "40d48c3c48ccb7b6e1143932f56235387bab9778997975ada1f38368804e2cf8",
+      "originalSha256": "40d48c3c48ccb7b6e1143932f56235387bab9778997975ada1f38368804e2cf8"
+    },
+    {
+      "path": "PERFORMANCE_INDEPENDENT_CLOSURE.md",
+      "sha256": "f1052cb8a7ab7506d7d2cb13cfea0d5631913a34eeed5c8cc3fbcebe85ee1784",
+      "originalSha256": "f1052cb8a7ab7506d7d2cb13cfea0d5631913a34eeed5c8cc3fbcebe85ee1784"
+    },
+    {
+      "path": "performance-independent-evidence.json",
+      "sha256": "33e164996ea592f975e40b30147f0313fcbe7e37b1b355276736057f785ecdf4",
+      "originalSha256": "33e164996ea592f975e40b30147f0313fcbe7e37b1b355276736057f785ecdf4"
+    }
+  ],
+  "evidenceSerialization": "Copied evidence preserves substantive content; line endings and trailing whitespace normalized for repository storage. Original raw hashes retained separately."
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "implemented-and-focused-tests-passed",
+  "recordedAt": "2026-10-23T17:14:12.419Z",
+  "ownedChangedFiles": [
+    "src/inquiry.mjs",
+    "deployment/worker.mjs",
+    "src/inquiry-form.mjs",
+    "src/inquiry-response.mjs",
+    "tests/inquiry-native-parity.test.mjs",
+    "tests/audit-inquiry-clarity.test.mjs"
+  ],
+  "sha256": {
+    "src/inquiry.mjs": "2bc182f0adb29aa5b3da0c3692cfe48eb835818463b1b19b6b8e26c49982c6df",
+    "deployment/worker.mjs": "2b038d322047cf482934c3fd513f7fc86f5ca8cc85fd4ba4853b37a13b435f1e",
+    "src/inquiry-form.mjs": "5bad15fefbcf572a0be9f421daf124e03c1ff43e54f4565e8a6d1e1fac64d7ac",
+    "src/inquiry-response.mjs": "b32ec5fb6e050e73ffae8c1f18d0871ab258bb8426ff3d02c6dd00f57620500f",
+    "tests/inquiry-native-parity.test.mjs": "d9cfd65ac284d4166fab1e580111cc532b54f2623d4f4f676ed84f7e5d2a039f",
+    "tests/audit-inquiry-clarity.test.mjs": "c7dffae756272da1d8b3b3c46edf80850c575e10d9bf1f9616e44f951145a668"
+  },
+  "findingsFixed": [
+    "FORMS-01",
+    "FORMS-02"
+  ],
+  "changes": [
+    "Normalize CRLF and CR message line endings to LF before length validation and storage.",
+    "Match only exact LF/CRLF/CR message variants in both recent lookup and atomic insertion guard, preserving old payloads, frozen notification bodies, leases and schemas.",
+    "Editable native proposal forms use a conditional website hint without a stale required attribute; fixed-service checkouts retain conditional required and enhanced client behavior is unchanged.",
+    "Native error summaries share the editable form label."
+  ],
+  "validation": [
+    {
+      "command": "node --test --test-reporter=spec tests/inquiry-native-parity.test.mjs",
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "command": "node --test --test-reporter=spec tests/worker.test.mjs tests/audit-backend-reliability.test.mjs tests/audit-inquiry-clarity.test.mjs tests/inquiry-confirmation.test.mjs",
+      "passed": 48,
+      "failed": 0
+    },
+    {
+      "command": "node --test --test-reporter=spec --test-name-pattern='site-wide notification budget|scheduled recovery selects|five-attempt cap|slow retry batches|daily quota hold|new notification text|resolution' tests/claude-backend.test.mjs",
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "command": "git diff --check -- src/inquiry.mjs deployment/worker.mjs src/inquiry-form.mjs src/inquiry-response.mjs tests/audit-inquiry-clarity.test.mjs",
+      "exitCode": 0
+    }
+  ],
+  "totalFocusedTestsPassed": 61,
+  "limits": [
+    "Synthetic requests and in-memory SQLite only; no production/provider calls, builds, full suite, migrations or deployment.",
+    "Combined-release browser, Cloudflare runtime and build checks remain with the primary agent.",
+    "The original audit.mjs asserts the pre-fix failures and remains preserved with its original harness-result.json. Use the new regression test for current-code verification."
+  ]
+}

@@ -82,11 +82,15 @@ test('contact exposes priced service choices after Email, six optional source ch
  assert.doesNotMatch(html,/name="(?:arrival|monthly_plan)"/);
 });
 
-test('only actual Baseline and Sprint proposals require a website in native markup and shared validation',()=>{
+test('fixed Baseline and Sprint proposals require a website; editable native forms defer the service rule to validation',()=>{
  for(const service of [...builds,...monthly,'website_baseline','audit_fix_sprint','unsure'])for(const request_kind of ['', 'question','checkout']){
   const value={service,request_kind,goal:'fix'},expected=request_kind==='checkout'&&['website_baseline','audit_fix_sprint'].includes(service);
   const html=inquiryFormMarkup({live:true},{value}),websiteTag=html.match(/<input id="website"[^>]*>/)[0];
-  assert.equal(/\brequired\b/.test(websiteTag),expected,service+' '+request_kind);
+  assert.equal(/\brequired\b/.test(websiteTag),false,service+' '+request_kind);
+  if(service!=='unsure'){
+   const fixed=inquiryFormMarkup({live:true},{service,checkout:true,value});
+   assert.equal(/\brequired\b/.test(fixed.match(/<input id="website"[^>]*>/)[0]),request_kind!=='question'&&['website_baseline','audit_fix_sprint'].includes(service),service+' fixed '+request_kind);
+  }
   assert.equal(Boolean(validateInquiry({...fixture,...value,website:''}).errors.website),expected,service+' '+request_kind);
   assert.equal(Boolean(validateInquiry({...fixture,...value,website:'not yet'}).errors.website),expected,service+' '+request_kind);
   assert.deepEqual(validateInquiry({...fixture,...value,website:'https://example.com/broken-page'}).errors,{});
@@ -199,7 +203,7 @@ test('enhanced neutral and explicit question submissions retain intent and use d
 });
 
 test('native errors share visible field labels and distinguish an unconfirmed save from a known rejection',()=>{
- for(const [service,kind,label]of [['website_baseline','checkout','Website to review'],['grow','checkout','Your website'],['unsure','question','Website or social page']]){
+ for(const [service,kind,label]of [['website_baseline','checkout','Website or social page'],['grow','checkout','Website or social page'],['unsure','question','Website or social page']]){
   const html=inquiryResponseHtml({service,request_kind:kind,status:422,message:'Check these details.',errors:{service:'Choose a service.',website:'Check this entry.'},retry:{...fixture,service,request_kind:kind}});
   assert.ok(html.includes(label+': Check this entry.'));assert.match(html,/What do you need help with\?: Choose a service\./);assert.doesNotMatch(html,/Which plan\?/);
  }

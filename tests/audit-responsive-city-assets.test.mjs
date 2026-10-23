@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import responsiveImages from '../src/assets/responsive-images.json' with {type:'json'};
+import {workItems,workGallery} from '../src/work-gallery.mjs';
 
 const read=path=>readFile(new URL('../'+path,import.meta.url));
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -78,6 +80,16 @@ function webpDimensions(bytes){
  }
  throw Error('WebP dimensions missing');
 }
+
+test('work image dimensions and responsive descriptors match the real image bytes',async()=>{
+ const tracker=responsiveImages['/assets/work/lead-workbench.webp'];
+ assert.deepEqual(webpDimensions(await read('src/assets/work/lead-workbench.webp')),{width:tracker.width,height:tracker.height});
+ for(const variant of tracker.variants)assert.equal(webpDimensions(await read('src'+variant.path)).width,variant.width,variant.path+' width descriptor');
+ const waterfront=workItems({}).find(item=>item.id==='studies');
+ const dimensions=webpDimensions(await read('src'+waterfront.image));
+ assert.deepEqual({width:waterfront.width,height:waterfront.height},dimensions);
+ assert.ok(workGallery({}).includes(`src="${waterfront.image}" width="${dimensions.width}" height="${dimensions.height}"`));
+});
 
 test('all six actual concept captures record the current copy and stylesheet',async()=>{
  const expected=['fieldwork','northline','hearthside'].flatMap(id=>['desktop','phone'].map(camera=>id+':'+camera)).sort();
