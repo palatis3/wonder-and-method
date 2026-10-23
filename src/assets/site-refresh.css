@@ -563,6 +563,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site table.responsive-table{width:100%;min-width:0;table-layout:auto}
 .studio-site .journal-table-wrap :is(th,td){overflow-wrap:normal;hyphens:auto}
 @media(min-width:768px){.studio-site .journal-table-wrap th:first-child{min-width:8.5rem}}
+@media(min-width:768px){.studio-site .location-planning-table th:first-child{min-width:11rem;width:23%}}
 @media(max-width:767px){
  /* Keep real headers available to assistive technology when rows become cards. */
  .studio-site :is(.table-scroll,.comparison-scroll,.payment-schedule,.journal-table-wrap):has(.responsive-table){overflow:visible;max-width:100%}

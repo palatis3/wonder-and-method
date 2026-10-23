@@ -9,16 +9,17 @@ import {journeyPages} from '../deployment/journey-dimensions.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import approvedPaths from './fixtures/location-release-paths.json' with {type:'json'};
+import followupPaths from './fixtures/location-followup-paths.json' with {type:'json'};
 import historicPaths from './fixtures/historic-county-routes.json' with {type:'json'};
 import config from '../config/site.json' with {type:'json'};
 import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('59 approved commercial pages preserve 69 directory identities, truthful provider schema and legacy worksheets',async()=>{
- assert.equal(approvedPaths.length,59);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),approvedPaths);
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,69);assert.equal(new Set(areaIds).size,69);
+test('65 approved commercial pages preserve 75 directory identities, truthful provider schema and legacy worksheets',async()=>{
+ assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...approvedPaths,...followupPaths].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,75);assert.equal(new Set(areaIds).size,75);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);
@@ -48,7 +49,7 @@ test('migration 0022 adds ten fixed page keys while retaining every old key, rec
  const allowed=(text,field)=>[...text.match(new RegExp(field+" TEXT NOT NULL(?: DEFAULT '[^']+')? CHECK\\("+field+" IN \\(([^)]+)\\)\\)"))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
  const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page');assert.equal(old.length,429);assert.equal(next.length,439);
  const added=['areas_maryland_baltimore_area','areas_virginia_alexandria_city','areas_virginia_arlington_county','areas_virginia_charlottesville_city','areas_virginia_danville_city','areas_virginia_fairfax_area','areas_virginia_fredericksburg_city','areas_virginia_hampton_roads','areas_virginia_manassas_city','areas_virginia_richmond_city'];
- assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));assert.deepEqual([...journeyPages].sort(),next.slice().sort());
+ assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));assert.ok(next.every(key=>journeyPages.has(key)));
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

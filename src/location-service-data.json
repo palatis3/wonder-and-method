@@ -921,6 +921,653 @@
     "legacyWorksheet": "/assets/county-briefs/maryland-montgomery.txt"
   },
   {
+    "areaId": "michigan/macomb",
+    "market": "Macomb County, MI",
+    "lead": "A customer with an approved drawing, a worn original part and an idea for a new part may need three different services. I help Macomb County businesses explain which work they offer before customers ask for a manufacturing quote.",
+    "decisionTitle": "Make the service and its intended output clear before the quote.",
+    "decision": "Accepting a physical sample does not explain whether a shop measures and reproduces existing work, helps develop a new design, or only manufactures to supplied engineering information. The Macomb examples below publish different boundaries. For a business with similar choices, I can clarify those services on its current website or build a fuller capability introduction. The brief should also distinguish a prototype used to check dimensions from a finished part intended for use. The owner approves those descriptions; the website does not decide engineering suitability.",
+    "scopes": [
+      {
+        "title": "Clarify the services beside the current inquiry",
+        "pages": [
+          "Work from supplied specifications",
+          "Reproduction from an existing item",
+          "Any separately offered design assistance",
+          "Meaning of prototype and finished output"
+        ],
+        "request": "Explain which starting points the business accepts and what work each request is asking the shop to perform. Retain a useful existing inquiry route.",
+        "supplies": "Your actual design, measurement and manufacturing capabilities, accepted starting information and the person who reviews an uncertain request.",
+        "check": "An inquiry about a worn original and an inquiry about a new design reach the team with their different service needs visible. A dimension-check model is never presented as a working replacement."
+      },
+      {
+        "title": "Build a capability site around the services you sell",
+        "pages": [
+          "Capability and service boundaries",
+          "Approved project examples",
+          "Starting information and review",
+          "Prototype or production output"
+        ],
+        "request": "Organize the site around the work the customer is buying, with examples that explain your contribution and the output delivered.",
+        "supplies": "Approved examples, the role your shop performed, publication permission and clear descriptions of any services supplied by another party.",
+        "check": "A buyer can distinguish measurement, design assistance and manufacturing after reading the page, without assuming every capability is included in one quoted part price."
+      }
+    ],
+    "planningTable": {
+      "title": "A manufacturing-service brief to agree with the owner",
+      "intro": "Use only rows that reflect services the business actually offers. This is a proposed website-content comparison, not an engineering approval process.",
+      "columns": [
+        "Customer starting point",
+        "Service the page should identify",
+        "Output or next review to explain"
+      ],
+      "rows": [
+        [
+          "Approved drawing or model",
+          "Manufacture to the supplied specification.",
+          "What the shop reviews before quoting the production work."
+        ],
+        [
+          "Physical original or measured reference",
+          "Measurement and reproduction, when offered.",
+          "What must be established before a replacement can be specified."
+        ],
+        [
+          "Purpose or concept needing development",
+          "Design assistance, if the shop offers it.",
+          "Who develops and approves the design before manufacturing."
+        ],
+        [
+          "Prototype requested before production",
+          "The particular check the prototype is intended to support.",
+          "Whether the output is a nonfunctional fit-check or a separately specified usable part."
+        ]
+      ]
+    },
+    "scopeTrigger": "Engineering design, CAD conversion, secure technical-file transfer and manufacturing approval tools need their own scope. Clear service content may solve the website problem without adding those functions.",
+    "quoteQuestions": [
+      "Which starting points correspond to different services you sell?",
+      "What output is included in each service?",
+      "Which uncertainties must a person review before a quote?"
+    ],
+    "coverageNote": "Macomb County includes Shelby Township and other communities with distinct business locations. Use the real shop address and visiting arrangements; this remote website service does not imply a Macomb office.",
+    "sources": [
+      {
+        "url": "https://btiindustries.com/",
+        "label": "BTI: reverse engineering from an existing part",
+        "observation": "The Shelby Township business describes reverse engineering a part when a customer has no print."
+      },
+      {
+        "url": "https://fab10x.com/",
+        "label": "10X Fabrication: starting information and fit-check output",
+        "observation": "The Macomb County site accepts several forms of supplied engineering information and explicitly distinguishes its nonfunctional fit-check prototype from a final part."
+      }
+    ],
+    "relatedGuides": [
+      {
+        "path": "/guides/manufacturing-rfq-form/",
+        "label": "Preparing a manufacturing RFQ"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "michigan/macomb"
+    ],
+    "path": "/areas/michigan/macomb-county/",
+    "title": "Web Design for Macomb County, MI",
+    "description": "Website design for Macomb County, MI. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Macomb County",
+        "state": "Michigan",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/michigan/#macomb",
+        "label": "Macomb County place directory"
+      }
+    ]
+  },
+  {
+    "areaId": "michigan/oakland",
+    "market": "Oakland County, MI",
+    "lead": "Booking a fitting and agreeing when a garment will be ready are different decisions. I help Oakland County businesses explain the work, the fitting process and the customer’s actual take-home deadline before an appointment is requested.",
+    "decisionTitle": "Keep the fitting request and garment deadline distinct.",
+    "decision": "A customer may need a garment before traveling, several days before the event itself. More substantial redesign can also require a different conversation from an ordinary alteration. The Farmington Hills example below explains fittings, custom work and final collection separately. I can clarify those distinctions around an existing appointment link or build a fuller service introduction when customers cannot tell which work to discuss. Published appointment options should accurately describe what the business is ready to confirm.",
+    "scopes": [
+      {
+        "title": "Improve the explanation around a fitting request",
+        "pages": [
+          "Garment and requested work",
+          "Event and take-home dates",
+          "What the first fitting establishes"
+        ],
+        "request": "Help customers describe the garment, the work they want and the date they need to collect it. Keep the appointment request connected to the business’s own review.",
+        "supplies": "Your service categories, actual fitting arrangements and the information needed to assess a requested deadline.",
+        "check": "A customer leaving town before a wedding can state the earlier collection need. Selecting a first fitting does not silently promise that completion date."
+      },
+      {
+        "title": "Build a clearer alterations and custom-work introduction",
+        "pages": [
+          "Ordinary alterations and redesign",
+          "Approved examples",
+          "Fitting and preparation information",
+          "Appointment or consultation route"
+        ],
+        "request": "Explain which service to discuss and how the fitting sequence works, with owner-approved preparation information beside the next step.",
+        "supplies": "Accurate process wording, approved garment photographs and your chosen route for work needing an initial discussion.",
+        "check": "A straightforward alteration and a substantial redesign can follow appropriate routes without the website inventing one completion timetable for every garment."
+      }
+    ],
+    "planningTable": {
+      "title": "Dates and decisions to include in the website brief",
+      "intro": "The business supplies its own fitting and acceptance rules. These distinctions help us decide what the public page and the existing appointment route must explain.",
+      "columns": [
+        "Information",
+        "What it helps the customer communicate",
+        "What it does not establish by itself"
+      ],
+      "rows": [
+        [
+          "Garment and intended work",
+          "An alteration, addition or redesign that the business can review.",
+          "An accurate price before the business assesses the garment."
+        ],
+        [
+          "First fitting request",
+          "When the customer hopes to begin the fitting conversation.",
+          "Acceptance of a completion deadline."
+        ],
+        [
+          "Event date",
+          "When the garment will be worn.",
+          "The latest usable collection date when travel or another commitment comes first."
+        ],
+        [
+          "Required take-home date",
+          "When the customer needs the finished garment in hand.",
+          "Confirmed production capacity until the business accepts the work."
+        ]
+      ]
+    },
+    "scopeTrigger": "Live deadline calculations, rush eligibility, appointment capacity and fitting reminders require separate scope. An explanation beside an owner-maintained booking service may be sufficient.",
+    "quoteQuestions": [
+      "Which garment and work distinctions change the initial conversation?",
+      "How should a customer state an earlier travel or collection deadline?",
+      "Who confirms the work and completion date after the fitting request?"
+    ],
+    "coverageNote": "Farmington Hills is in Oakland County. Metro Detroit covers a broader area; the website should use the business’s actual service and visiting arrangements.",
+    "sources": [
+      {
+        "url": "https://www.caughtdeadthreads.com/",
+        "label": "Caught Dead Threads: alterations and fitting process",
+        "observation": "The Farmington Hills business distinguishes alterations from custom work, describes a fitting sequence and identifies final collection separately."
+      }
+    ],
+    "relatedGuides": [
+      {
+        "path": "/guides/custom-print-order/",
+        "label": "Separating a custom request from accepted production"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "michigan/oakland"
+    ],
+    "path": "/areas/michigan/oakland-county/",
+    "title": "Web Design for Oakland County, MI",
+    "description": "Website design for Oakland County, MI. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Oakland County",
+        "state": "Michigan",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/michigan/#oakland",
+        "label": "Oakland County place directory"
+      }
+    ]
+  },
+  {
+    "areaId": "indiana/marion",
+    "market": "Indianapolis / Marion County, IN",
+    "lead": "A production estimate does not describe the whole time a custom project needs. I help Indianapolis and Marion County businesses show customers which decisions and inputs move a project forward, then scope the website around that explanation.",
+    "decisionTitle": "Explain the decisions a project is waiting for.",
+    "decision": "For an illustrative cabinetry business, the first discussion, design choices, accepted production work and installation coordination serve different purposes. The Indianapolis examples below describe customer decisions and approvals as part of their process. A useful public page can help a prospect understand what they need to supply before the next stage. I first assess that content need. A private project-status tool is a separate purchase with different requirements, even when the public explanation uses similar stage names.",
+    "scopes": [
+      {
+        "title": "Clarify the public process page",
+        "pages": [
+          "Purpose of each project stage",
+          "Customer information and decisions",
+          "What the business reviews next"
+        ],
+        "request": "Replace an unexplained production-duration claim with a concise account of the work and decisions that precede it. Use the company’s actual process.",
+        "supplies": "Your stage names, the input needed to advance each stage and which timing statements you can maintain accurately.",
+        "check": "A prospect who can discuss the room but has not selected materials understands their next decision. The page does not suggest that fabrication has already begun."
+      },
+      {
+        "title": "Build a service introduction with a useful project brief",
+        "pages": [
+          "Services and approved work",
+          "Design and decision process",
+          "Project context for an initial reply",
+          "Inquiry and consultation route"
+        ],
+        "request": "Connect representative work to the process and a useful first conversation. Agree which details belong on the public form and which are discussed later.",
+        "supplies": "Approved examples, the questions used for the first review and the person who confirms the process and timing copy.",
+        "check": "A new customer can identify what to prepare for a consultation, while an existing customer still uses the business’s agreed route for their individual project status."
+      }
+    ],
+    "planningTable": {
+      "title": "A public process brief with clear owners",
+      "intro": "Adapt these illustrative stages to the business. A row describes content to commission for the website; it does not report the status of a real customer project.",
+      "columns": [
+        "Stage to explain",
+        "Owner input for the website brief",
+        "What the public explanation should make clear"
+      ],
+      "rows": [
+        [
+          "Initial discussion",
+          "Business supplies its fit questions; customer describes the room and intended result.",
+          "What is useful before a consultation and what can remain uncertain."
+        ],
+        [
+          "Design development",
+          "Business identifies needed measurements and choices; customer provides the agreed decisions.",
+          "Which information is still needed before the design can progress."
+        ],
+        [
+          "Approval and production",
+          "Business defines what must be agreed; customer confirms the applicable choices.",
+          "How accepted work differs from a preliminary conversation or estimate."
+        ],
+        [
+          "Installation coordination",
+          "Business identifies who confirms the site and arrangements.",
+          "Where the customer will receive project-specific coordination rather than relying on a general website timetable."
+        ]
+      ]
+    },
+    "scopeTrigger": "Individual status dashboards, approval records, scheduling, reminders and internal project management require separate requirements and pricing. The public page can explain dependencies without replacing those systems.",
+    "quoteQuestions": [
+      "Which missing customer decision most often needs an explanation?",
+      "What can you state publicly about the next stage?",
+      "Does the request concern public process content or live status for individual customers?"
+    ],
+    "coverageNote": "This page serves the Indianapolis / Marion County audience. The wider Indianapolis metropolitan area includes other counties; describe wider coverage separately from the company’s actual premises.",
+    "sources": [
+      {
+        "url": "https://nathanalandesign.com/contact-us/",
+        "label": "Nathan Alan Design: project timing and customer decisions",
+        "observation": "The Indianapolis business explains that scope, materials and customer availability for meetings and decisions influence its project timelines."
+      },
+      {
+        "url": "https://rinesdesign.com/cabinetry/",
+        "label": "Rines Design: cabinetry process",
+        "observation": "The Indianapolis workshop describes design and a written quote before approval, fabrication and installation."
+      }
+    ],
+    "relatedGuides": [
+      {
+        "path": "/guides/website-redesign-timeline/",
+        "label": "Planning a website redesign timeline"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "indiana/marion"
+    ],
+    "path": "/areas/indiana/marion-county/",
+    "title": "Web Design for Indianapolis / Marion County, IN",
+    "description": "Website design for Indianapolis / Marion County, IN. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Marion County",
+        "state": "Indiana",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/indiana/#marion",
+        "label": "Marion County place directory"
+      }
+    ]
+  },
+  {
+    "areaId": "kentucky/fayette",
+    "market": "Lexington / Fayette County, KY",
+    "lead": "Ordering an item from a shop and asking it to personalize something you already own can require different first steps. I help Lexington and Fayette County businesses explain those routes before customers choose a design or request a quote.",
+    "decisionTitle": "Identify the item before approving its personalization.",
+    "decision": "For an illustrative engraving business, a design choice does not establish that a customer-supplied object is suitable for the work. The Lexington example below explicitly invites customers to bring an item, send a photograph or describe a project. I can clarify the difference between shop-supplied products and supplied-item inquiries around an existing contact route, or build a fuller service introduction. The owner determines what can be accepted; the website should preserve that review before presenting the requested personalization as agreed work.",
+    "scopes": [
+      {
+        "title": "Separate product orders and supplied-item inquiries",
+        "pages": [
+          "Who supplies the item",
+          "Description for the first review",
+          "Item acceptance and personalization approval"
+        ],
+        "request": "Make it clear whether the customer is choosing an offered product or asking about an object they already have. Use the business’s approved way to begin that discussion.",
+        "supplies": "The products you supply, the kinds of supplied-item inquiries you consider and the information your team uses to assess them.",
+        "check": "A customer with their own cup can ask about that item without being treated as though they selected a product from your catalogue. Spelling approval does not stand in for item acceptance."
+      },
+      {
+        "title": "Build a service and product introduction",
+        "pages": [
+          "Shop-supplied products",
+          "Customer-supplied item examples",
+          "Personalization and review process",
+          "Quote or existing order handoff"
+        ],
+        "request": "Explain the two routes with approved examples and a clear account of what happens next. Keep any functioning shop or order provider connected to the appropriate product choices.",
+        "supplies": "Accurate service limits, approved photographs and current descriptions of the work the business accepts.",
+        "check": "Visitors understand who is supplying the object and which review comes next. A displayed engraving example is not an assurance that every material or object can be accepted."
+      }
+    ],
+    "planningTable": {
+      "title": "A supplied-item website brief",
+      "intro": "These are proposed content questions for an engraving or personalization business. The owner supplies the actual acceptance policy and how any photographs are shared.",
+      "columns": [
+        "Decision",
+        "What the customer should be able to state",
+        "What the business confirms"
+      ],
+      "rows": [
+        [
+          "Source of the item",
+          "An offered shop product or an object the customer already owns.",
+          "The correct product or inquiry route."
+        ],
+        [
+          "Object and known material",
+          "What the item is, its quantity and any material information the customer knows.",
+          "Whether more information is needed to assess suitability."
+        ],
+        [
+          "Requested marking",
+          "The proposed location and type of personalization.",
+          "Whether the requested work can be accepted on that item."
+        ],
+        [
+          "Design approval",
+          "The exact spelling or artwork after the relevant review.",
+          "The agreed personalization, kept distinct from the earlier item-suitability decision."
+        ]
+      ]
+    },
+    "scopeTrigger": "Photo uploads, acceptance rules, customer-property records, custom checkout and liability terms need their own assessment. The actual item-acceptance policy remains with the business.",
+    "quoteQuestions": [
+      "Does the customer buy the item from you or supply it?",
+      "What information is needed to assess the object?",
+      "How do you distinguish item acceptance from design or spelling approval?"
+    ],
+    "coverageNote": "Lexington and Fayette County identify this Kentucky service audience. Use the business’s real location and intake arrangements when describing how a customer starts a request.",
+    "sources": [
+      {
+        "url": "https://lexingtonengraving.com/glass-cups-and-wood",
+        "label": "Lexington Engraving: supplied-item inquiries",
+        "observation": "The Lexington page invites customers to bring an item, send a photograph or describe a glass, drinkware or wood project."
+      },
+      {
+        "url": "https://lexingtonengraving.com/metal-marking-and-etching",
+        "label": "Lexington Engraving: metal-item inquiries",
+        "observation": "The metal-marking page also invites an item, photograph or description before a quote. These examples do not establish an acceptance policy for every object."
+      }
+    ],
+    "relatedGuides": [
+      {
+        "path": "/guides/personalization-preview/",
+        "label": "Separating a personalization preview from approval"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "kentucky/fayette"
+    ],
+    "path": "/areas/kentucky/fayette-county/",
+    "title": "Web Design for Lexington / Fayette County, KY",
+    "description": "Website design for Lexington / Fayette County, KY. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Fayette County",
+        "state": "Kentucky",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/kentucky/#fayette",
+        "label": "Fayette County place directory"
+      }
+    ]
+  },
+  {
+    "areaId": "tennessee/davidson",
+    "market": "Nashville / Davidson County, TN",
+    "lead": "A customer may need a room, a room with an engineer, or help finishing recordings they already have. I help Nashville and Davidson County businesses explain those inclusions before a visitor chooses a booking or inquiry route.",
+    "decisionTitle": "Show the room, the professional service and the deliverable.",
+    "decision": "For an illustrative recording studio, session length alone does not describe what the customer is buying. The Nashville examples below distinguish room access, engineering and finishing work, with some services included in packages and others offered separately. I can clarify those choices around a working booking system or build a fuller service comparison when the current site leaves the bundle unclear. The brief should identify what is included and which details the studio still needs to confirm.",
+    "scopes": [
+      {
+        "title": "Clarify the offers beside existing booking links",
+        "pages": [
+          "Room and equipment access",
+          "Who provides the engineer",
+          "Included or separate finishing work",
+          "The agreed booking destination"
+        ],
+        "request": "Explain the relevant service bundle before sending a visitor to the studio’s existing booking or quote route.",
+        "supplies": "Current package inclusions, supported booking links and the information needed to assess a session or finishing request.",
+        "check": "An artist bringing an engineer and an artist needing one can identify their respective options. Existing recordings can reach the finishing-work route without assuming a room booking is necessary."
+      },
+      {
+        "title": "Build a service introduction around recording stages",
+        "pages": [
+          "Rooms and intended uses",
+          "Engineering and production help",
+          "Mixing or mastering options",
+          "Approved work and inquiry"
+        ],
+        "request": "Connect each service to the stage the customer is at and the output being discussed. Show package relationships where services are combined.",
+        "supplies": "Accurate inclusions, approved studio photographs or project examples and permission for any published credits.",
+        "check": "A visitor can explain the help they need and the output they expect. The page does not imply that all finishing work is an extra charge or that every room booking includes an engineer."
+      }
+    ],
+    "planningTable": {
+      "title": "A studio-offer comparison to agree before the build",
+      "intro": "These are illustrative questions for the website brief. Use the studio’s actual bundles; recording and finishing services can overlap within one package.",
+      "columns": [
+        "Customer request",
+        "Inclusions to explain before the next step",
+        "What must remain explicit"
+      ],
+      "rows": [
+        [
+          "Room with their own engineer",
+          "Room access and the equipment or assistance actually included.",
+          "Who operates the session and what the studio still needs to confirm."
+        ],
+        [
+          "Room with a studio engineer",
+          "Engineering services and any included production or finishing work.",
+          "The work and deliverables included in this particular package."
+        ],
+        [
+          "Work on existing recordings",
+          "The mixing, mastering or other finishing service offered.",
+          "What the customer provides and what output is being agreed."
+        ],
+        [
+          "A combined project",
+          "How session and finishing services are bundled.",
+          "Which stages are included in the price and which are separately agreed."
+        ]
+      ]
+    },
+    "scopeTrigger": "Shared calendars, engineer scheduling, payments, session-file transfer and automatic booking rules require separate scope. A clear comparison can work with an existing provider before those integrations are needed.",
+    "quoteQuestions": [
+      "Which room and professional services are included together?",
+      "Can customers request finishing work on existing recordings?",
+      "What deliverable should each booking or inquiry identify?"
+    ],
+    "coverageNote": "This page serves Nashville / Davidson County. The broader Nashville metropolitan area includes other counties; a regional name should not imply a studio location that the business does not have.",
+    "sources": [
+      {
+        "url": "https://www.jdsound615.com/",
+        "label": "JD Sound: room and engineering choices",
+        "observation": "The Nashville studio says Studio A can be booked with or without an engineer and also describes mixing, mastering and production."
+      },
+      {
+        "url": "https://kalicai.com/",
+        "label": "Kali Cai: session and finishing options",
+        "observation": "The East Nashville studio publishes studio-only and with-engineer options, with finishing work included in some packages and online mixing and mastering also offered."
+      }
+    ],
+    "relatedGuides": [
+      {
+        "path": "/guides/custom-print-order/",
+        "label": "Keeping a custom request and agreed work distinct"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "tennessee/davidson"
+    ],
+    "path": "/areas/tennessee/davidson-county/",
+    "title": "Web Design for Nashville / Davidson County, TN",
+    "description": "Website design for Nashville / Davidson County, TN. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Davidson County",
+        "state": "Tennessee",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/tennessee/#davidson",
+        "label": "Davidson County place directory"
+      }
+    ]
+  },
+  {
+    "areaId": "tennessee/williamson",
+    "market": "Franklin / Williamson County, TN",
+    "lead": "A design consultation can happen in person while the customer still handles purchasing and placement. I help Franklin and Williamson County businesses explain what their design service delivers and who is responsible for putting the plan into practice.",
+    "decisionTitle": "Compare the deliverables and responsibilities, as well as the meeting format.",
+    "decision": "For an illustrative interior-design business, virtual and in-person describe how people meet. They do not fully describe what the customer receives. The examples serving this audience publish different combinations of plans, shopping links and styling help. I can improve that comparison on an existing website or build a fuller portfolio and process introduction. The useful starting point is an owner-approved account of what the business delivers and what the customer does next.",
+    "scopes": [
+      {
+        "title": "Clarify an existing service comparison",
+        "pages": [
+          "Design outputs",
+          "Customer purchasing responsibilities",
+          "Delivery and placement arrangements",
+          "Any separately offered styling"
+        ],
+        "request": "Explain the work included in each service without asking the consultation format to carry the whole meaning of the offer.",
+        "supplies": "Your actual deliverables, responsibility for purchasing and implementation, and which optional work needs a separate agreement.",
+        "check": "A customer can distinguish receiving a plan and product links from receiving help furnishing and styling the room, even when both options involve an in-person conversation."
+      },
+      {
+        "title": "Build a portfolio and service introduction",
+        "pages": [
+          "Design services and included outputs",
+          "Approved project examples",
+          "Working and implementation process",
+          "Consultation inquiry"
+        ],
+        "request": "Connect representative work to the service the customer can commission. Explain the business’s contribution to a completed room and the responsibilities agreed with a new customer.",
+        "supplies": "Approved project images, accurate role descriptions and the person who maintains the service and responsibility wording.",
+        "check": "A room photograph does not lead a visitor to assume that every package includes purchasing, delivery management and final styling. The inquiry preserves the kind of help requested."
+      }
+    ],
+    "planningTable": {
+      "title": "A design-service responsibility brief",
+      "intro": "Use the owner’s terms to mark each responsibility as included, client-led, optional or to be agreed. Consultation format alone does not answer these questions.",
+      "columns": [
+        "Part of the service",
+        "What the website should identify",
+        "Question for the project brief"
+      ],
+      "rows": [
+        [
+          "Space information and design plan",
+          "Who supplies measurements or photographs and which design outputs are delivered.",
+          "What does the customer receive and what input must they provide?"
+        ],
+        [
+          "Product selection and purchasing",
+          "Whether the service supplies recommendations or purchase links, or includes purchasing responsibility.",
+          "Who places orders and owns the resulting decisions?"
+        ],
+        [
+          "Delivery and placement",
+          "Who coordinates arrivals and the physical arrangement of the room.",
+          "Is this client-led, included or separately agreed?"
+        ],
+        [
+          "Final styling",
+          "Whether finishing and styling help is part of the selected service.",
+          "Which additional work can be requested, and when is it agreed?"
+        ]
+      ]
+    },
+    "scopeTrigger": "Procurement, ordering, deliveries, returns and project-management software require separate requirements. A public responsibility comparison does not include running those operations.",
+    "quoteQuestions": [
+      "What is delivered in each design service?",
+      "Who handles purchasing and implementation?",
+      "Which project images need a caption explaining your actual contribution?"
+    ],
+    "coverageNote": "Franklin is in Williamson County. A designer serving Franklin may be based elsewhere; identify actual premises and service coverage separately.",
+    "sources": [
+      {
+        "url": "https://mountainashdesign.com/service-interior-designer-franklin-tn/",
+        "label": "Mountain Ash Design: virtual and full-service design",
+        "observation": "The page serving Franklin distinguishes a virtual plan with shopping information from a fuller process that includes installation and styling."
+      },
+      {
+        "url": "https://ellishousedesignstudio.com/services",
+        "label": "Ellis House: design outputs and optional styling",
+        "observation": "The service page describes purchase links and separately offered styling; an in-person design option can still leave purchasing to the customer."
+      }
+    ],
+    "relatedGuides": [],
+    "checkedDate": "2026-10-23",
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "areaIds": [
+      "tennessee/williamson"
+    ],
+    "path": "/areas/tennessee/williamson-county/",
+    "title": "Web Design for Franklin / Williamson County, TN",
+    "description": "Website design for Franklin / Williamson County, TN. Compare project scopes, prices and ownership. Work online with Terry in Buffalo.",
+    "servedAreas": [
+      {
+        "name": "Williamson County",
+        "state": "Tennessee",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/tennessee/#williamson",
+        "label": "Williamson County place directory"
+      }
+    ]
+  },
+  {
     "areaId": "new-jersey/atlantic",
     "market": "Atlantic County, NJ",
     "lead": "New and returning customers may need different appointment choices. I help Atlantic County businesses explain that distinction before a visitor reaches an existing booking tool.",
