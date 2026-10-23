@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-23T21:54:40.637Z",
+  "status": "PASS",
+  "baseHead": "6d90fda5d67778929353242cdf61b8cd4492bec9",
+  "currentHead": "6d90fda5d67778929353242cdf61b8cd4492bec9",
+  "scope": "Independent review of the root Zod override and exact lockfile delta. Only zod-review.json and zod-review.txt were written. No suites, builds, browser sessions, source edits, lock edits, baseline changes or CI changes were performed by this reviewer.",
+  "findings": [],
+  "unresolvedBlockingIssues": [],
+  "conclusion": "The exact Zod 4.6.7 override removes the vulnerable 4.5.4 dependency node without changing any non-Zod package. Current audits and observed build, unit, content and Remotion composition/bundle evidence pass. The known Remotion exact-version warning and pre-existing vendored Zod code are retained as private-authoring limitations; neither was found in the deployed Worker graph or emitted site artifacts.",
+  "inputHashes": {
+    "package.json": {
+      "sha256": "5a0e45fd90b63ee37b15ab5b060b374c4f04f87dccdfbc975ca8069018e10eb4",
+      "bytes": 2797
+    },
+    "package-lock.json": {
+      "sha256": "d53a6ac6515984983a4907aaff7335cc7b2a937a21a06f9603e14b43c7d3c14c",
+      "bytes": 211714
+    },
+    "git:6d90fda5d67778929353242cdf61b8cd4492bec9:package.json": {
+      "sha256": "6b51194bea9e1e5784ff2e0e5b2a7d332dbd56de790ced9b150228eaaff4c084",
+      "bytes": 2756
+    },
+    "git:6d90fda5d67778929353242cdf61b8cd4492bec9:package-lock.json": {
+      "sha256": "a4a25357b2be06784b438152c950ab757b4de418d005077fcc9f3254dded07b1",
+      "bytes": 212112
+    },
+    "evidence/combined-release-20261023/zod-install.log": {
+      "sha256": "a239cff78868d64459ff8c5ef0d7d81562b11635c838d181c7170ac439fb4d36",
+      "bytes": 168
+    },
+    "evidence/combined-release-20261023/zod-audit.log": {
+      "sha256": "05aa6e22a618fee5ad5ec835d5dd6942e41b39ae04e028089f12c8f275e256b6",
+      "bytes": 237
+    },
+    "evidence/combined-release-20261023/zod-site-audit.json": {
+      "sha256": "ad07709ba0b8d0346c86d94ed37cf4669f2061050728bd831370eaf27cb25100",
+      "bytes": 363
+    },
+    "evidence/combined-release-20261023/zod-deployment-audit.json": {
+      "sha256": "dc7f0c0924260c054b82217104b633033cdb31fa631d0362352eb916af149cd8",
+      "bytes": 361
+    },
+    "evidence/combined-release-20261023/zod-remotion-smoke.log": {
+      "sha256": "a306242e9c196e2e4efe05d4fe9e964333e69fa94c7ad3169842d66b52e72a28",
+      "bytes": 2816
+    },
+    "evidence/combined-release-20261023/zod-build.log": {
+      "sha256": "87b94fb1af80cb858eb0a2aea3e7431fe00ba447ecba67b5453c5185a61a16cb",
+      "bytes": 245
+    },
+    "evidence/combined-release-20261023/zod-unit.log": {
+      "sha256": "af5b0e129c4fa962935b43b793bfa1bb59a74df955e07039643336b783a399bc",
+      "bytes": 73724
+    },
+    "evidence/combined-release-20261023/zod-content.log": {
+      "sha256": "3998215594d3db4e685503e9e946bfd7b133e7c9047d4877aaac24c2727d0121",
+      "bytes": 139
+    },
+    "evidence/combined-release-20261023/dependencies-failure-6d90fda.log": {
+      "sha256": "7c5cd10ec3666990aa986a61e7d5618d17421c6d86a7c574824f784d6f3270f6",
+      "bytes": 20763
+    },
+    "evidence/combined-release-20261023/ci-dependencies-6d90fda/site.json": {
+      "sha256": "ba1adb15ede4dfc74f70fe76c3b786314486f1a7f146119b12fc891d5816f9fc",
+      "bytes": 5940
+    },
+    "evidence/combined-release-20261023/ci-dependencies-6d90fda/deployment.json": {
+      "sha256": "dc7f0c0924260c054b82217104b633033cdb31fa631d0362352eb916af149cd8",
+      "bytes": 361
+    },
+    "scripts/check-dependencies.mjs": {
+      "sha256": "1c2ed5a193f1fc0c07627c3090cb0627917a758e13f7e6d8170d397902622997",
+      "bytes": 1325
+    },
+    "scripts/build.mjs": {
+      "sha256": "3c074d19e5d129717deaeda02ccf71e67bbce492ce231a64fd127fbc38d42784",
+      "bytes": 21239
+    },
+    "scripts/site-contract.mjs": {
+      "sha256": "fabeb1aa5cbeb8e02768701e2a6843a42b3b1b6f67d6710b0fdd488a688976c7",
+      "bytes": 5200
+    },
+    "deployment/package.json": {
+      "sha256": "6857231895d5a33768dbd228c07d35ea95d1fa14ba9dd4d891583679935b08c4",
+      "bytes": 443
+    },
+    "deployment/package-lock.json": {
+      "sha256": "b9b98e7da13328c09755fa8fad741f6477ac30998c9156b84c56d3c8d5c3eb8b",
+      "bytes": 50548
+    },
+    "deployment/wrangler.production.jsonc": {
+      "sha256": "d8451f55ac228ee8cda11e833150f851a15a780bc6bcd365166f47869eb36365",
+      "bytes": 1791
+    },
+    "motion/remotion/index.jsx": {
+      "sha256": "658b34ef99426e0fd58de381ac987f091da83fbc96120953792ef9aae91b032c",
+      "bytes": 115
+    },
+    "motion/remotion/Root.jsx": {
+      "sha256": "445362d1bdcab28f8fc550c8f53fd0478e825d56c7a2372783ec94a581ca3717",
+      "bytes": 1016
+    },
+    "node_modules/@remotion/cli/dist/versions.js": {
+      "sha256": "419082552c8479f7ecf8a01bd8359ed4f24dce47294bab0a34d4f3e0c46dcda3",
+      "bytes": 9967
+    },
+    "node_modules/@remotion/studio-protocol/dist/index.cjs": {
+      "sha256": "36482ec4c1c7869030257a531a2d001ad736a0f484b81176b508a0fc29e05d26",
+      "bytes": 130709
+    },
+    "node_modules/@remotion/studio-protocol/dist/esm/index.mjs": {
+      "sha256": "07aab77eba119922e66550a7e4d41e7dc42fb688136af7ea5289e355f3e317d8",
+      "bytes": 129181
+    },
+    "deployment/worker.mjs": {
+      "sha256": "2b038d322047cf482934c3fd513f7fc86f5ca8cc85fd4ba4853b37a13b435f1e",
+      "bytes": 50653
+    },
+    "deployment/journey-counts.mjs": {
+      "sha256": "cb2ace393c37e7672dea96a4ab6e251c676daa9239bff7b4b8767f6d549a4da1",
+      "bytes": 3708
+    },
+    "deployment/journey-dimensions.mjs": {
+      "sha256": "c4ac65f50d2db38469327dccda04ff6d1adebdd5160998fa4ae183de4091b22f",
+      "bytes": 809
+    },
+    "config/page-dates.json": {
+      "sha256": "4381497eeed7ae4973549789074b602d793d0da02e8eb349cf379741a8721f85",
+      "bytes": 225719
+    },
+    "src/journey-page-key.mjs": {
+      "sha256": "05b696f639bd1a4fe2f8787a5fbfa6cbfbe9ee32c1365fb6a4cfeeeb1460c1cb",
+      "bytes": 864
+    },
+    "src/operating-guide-paths.mjs": {
+      "sha256": "ad253621005c5dbadd215f960bae868884ca354dcb1241b9272b0aaef2ab7a89",
+      "bytes": 1235
+    },
+    "src/florida-guide-paths.mjs": {
+      "sha256": "090879c7781ebf35c52d202df2bf5fb778228549343660da6810da44296cd8e0",
+      "bytes": 348
+    },
+    "src/semrush-guide-paths.mjs": {
+      "sha256": "04e7e9cbd1c7768145cfa53be8e09057fd88ac791639f13faacdcbe725e5e8d3",
+      "bytes": 443
+    },
+    "deployment/retired-county-routes.mjs": {
+      "sha256": "432606661dcac90fdec9bb32932fe1088cc734065a2525199c20b55f5bc1748d",
+      "bytes": 367
+    },
+    "src/index-policy.mjs": {
+      "sha256": "ec4d219d89b4a88ca723f7b49f2c2d903f5e06cad46e508cb351a38d5af7161c",
+      "bytes": 1011
+    },
+    "src/inquiry.mjs": {
+      "sha256": "2bc182f0adb29aa5b3da0c3692cfe48eb835818463b1b19b6b8e26c49982c6df",
+      "bytes": 6548
+    },
+    "src/shared.mjs": {
+      "sha256": "d7f59e93e76243a56850b94f3a4a65c78fc39b8b7aa347750959e304e7595373",
+      "bytes": 20093
+    },
+    "src/offer-catalog.mjs": {
+      "sha256": "7959bf99c0721df97158ebaf5b174e3cefbc5c4f998d2dd4d8168a2e2d23d2d7",
+      "bytes": 7587
+    },
+    "src/addons.mjs": {
+      "sha256": "90d6de58365332d8b8bd0f9fa38c5f8eaf04fef993a017e4e0af6ed6c4e2320c",
+      "bytes": 3924
+    },
+    "config/offers.json": {
+      "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2",
+      "bytes": 134430
+    },
+    "src/approved-rerun-county-context.mjs": {
+      "sha256": "5d825abee93006d2e401a52f330a0c2b14dd0476c9f190abf12e1a566b9c9572",
+      "bytes": 19852
+    },
+    "src/inquiry-response.mjs": {
+      "sha256": "b32ec5fb6e050e73ffae8c1f18d0871ab258bb8426ff3d02c6dd00f57620500f",
+      "bytes": 3646
+    },
+    "config/site.json": {
+      "sha256": "79773e64ffefd101cea657347e66f7aa013e6988e44ad4eb6fc01e0c62b9b901",
+      "bytes": 30166
+    },
+    "src/inquiry-confirmation.mjs": {
+      "sha256": "c147687a9ecdfe9282652ee5e923c8e54b9891fa5d51466dd57cbc494878a3ea",
+      "bytes": 2603
+    },
+    "src/inquiry-form.mjs": {
+      "sha256": "5bad15fefbcf572a0be9f421daf124e03c1ff43e54f4565e8a6d1e1fac64d7ac",
+      "bytes": 10818
+    },
+    "src/addon-content.mjs": {
+      "sha256": "c52c2776dc301f51bfd9a5d080c73f05a3e66e5d5834626a729b1d2b9f4e61bb",
+      "bytes": 6427
+    },
+    "deployment/inquiry-maintenance.mjs": {
+      "sha256": "b992d60163a1b6a8a7a25d69b9c7967d1de868cf684d3fdf748a72a89b29f1c5",
+      "bytes": 5839
+    },
+    "deployment/inquiry-health.mjs": {
+      "sha256": "0f1c48038be3d5d8b61f7477f8ef1fa5259c6a597b9be6f0ddc9fcf7062ce1b6",
+      "bytes": 7059
+    },
+    "deployment/notification-budget.mjs": {
+      "sha256": "352a147f162a0b98903e8ae3c5f455300fed6c26f66bd68da8af589c4ab89dae",
+      "bytes": 560
+    },
+    "deployment/approved-rerun-attention.mjs": {
+      "sha256": "cb6cc84c828fdcd488e30cca181fd1fe2ecb55ee72d8d5514c32863ce122c01f",
+      "bytes": 7099
+    },
+    "deployment/inquiry-rate.mjs": {
+      "sha256": "51634783a676a1837909f00ed7731833c3c7f9712c31bf0cc285754e122ed70f",
+      "bytes": 1828
+    },
+    "src/inquiry-prefill.mjs": {
+      "sha256": "6f3f3ed55f4d5dd5c1e0a4bb1fc0215d6a9b185951cf5517c1e8138eeaa8ef32",
+      "bytes": 2319
+    },
+    "deployment/public-route-canonical.mjs": {
+      "sha256": "b4d4a7db0b69e2811f3b9aca0e449305503e132225c7070473964b97d98d0c74",
+      "bytes": 2522
+    }
+  },
+  "changeProof": {
+    "packageJsonOnlyChange": {
+      "overrides": {
+        "zod": "4.6.7"
+      },
+      "inverseRestoresBaseBytes": true
+    },
+    "lockChangedPackagePaths": [
+      "node_modules/chromium-bidi/node_modules/zod",
+      "node_modules/zod"
+    ],
+    "changedPackage": "node_modules/zod: 4.5.4 -> 4.6.7",
+    "removedPackage": "node_modules/chromium-bidi/node_modules/zod: duplicate 4.6.7",
+    "newRootEntryIdenticalToPriorNestedEntry": true,
+    "nonZodPackageEntriesUnchanged": true,
+    "otherLockTopLevelFieldsUnchanged": true,
+    "allTrackedChanges": [
+      "package-lock.json",
+      "package.json"
+    ]
+  },
+  "overrideAssessment": {
+    "reason": "All six direct Remotion consumers exact-pin Zod 4.5.4; the current chromium-bidi consumer permits ^4.6.5. A root exact override supplies the patched version to all consumers. Zod is transitive, so there is no conflicting direct dependency override.",
+    "consumers": [
+      {
+        "path": "node_modules/@remotion/elevenlabs",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/@remotion/media",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/@remotion/openai-whisper",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/@remotion/studio",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/@remotion/studio-protocol",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/@remotion/studio-server",
+        "packageVersion": "4.0.535",
+        "declaredZodVersion": "4.5.4"
+      },
+      {
+        "path": "node_modules/chromium-bidi",
+        "packageVersion": "157.0.8090-0",
+        "declaredZodVersion": "^4.6.5"
+      }
+    ],
+    "installedResolution": {
+      "command": "npm ls zod --all --json",
+      "exitCode": 0,
+      "stdoutSha256": "75d0b6c03bed4f9f245638eaa6de911552bffd0a015919a0e9afbcd6fc06f1e9",
+      "paths": [
+        {
+          "path": "@remotion/cli > @remotion/codemods > @remotion/studio-protocol > zod",
+          "version": "4.6.7",
+          "overridden": false
+        },
+        {
+          "path": "@remotion/cli > @remotion/studio-server > zod",
+          "version": "4.6.7",
+          "overridden": false
+        },
+        {
+          "path": "@remotion/cli > @remotion/studio > @remotion/elevenlabs > zod",
+          "version": "4.6.7",
+          "overridden": false
+        },
+        {
+          "path": "@remotion/cli > @remotion/studio > @remotion/openai-whisper > zod",
+          "version": "4.6.7",
+          "overridden": false
+        },
+        {
+          "path": "@remotion/cli > @remotion/studio > zod",
+          "version": "4.6.7",
+          "overridden": false
+        },
+        {
+          "path": "@remotion/media > zod",
+          "version": "4.6.7",
+          "overridden": true
+        },
+        {
+          "path": "lighthouse > puppeteer-core > chromium-bidi > zod",
+          "version": "4.6.7",
+          "overridden": false
+        }
+      ]
+    },
+    "registryRead": {
+      "commands": [
+        "npm view @remotion/media@4.0.538 dependencies.zod",
+        "npm view @remotion/cli version"
+      ],
+      "results": [
+        "4.5.4",
+        "4.0.538"
+      ],
+      "implication": "The latest queried Remotion release still declares the affected Zod pin; a broad Remotion upgrade is not necessary to make this bounded dependency-graph correction."
+    },
+    "auditGateUnchanged": true
+  },
+  "advisory": {
+    "id": "GHSA-mrhx-c7xc-m3w5",
+    "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+    "affectedRange": "<4.6.6",
+    "firstPatchedVersion": "4.6.6",
+    "selectedVersion": "4.6.7",
+    "verifiedAt": "2026-10-23T21:54:40.679Z"
+  },
+  "auditEvidence": {
+    "failedCI": {
+      "run": 40029399493,
+      "site": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 10,
+        "critical": 0,
+        "total": 10
+      },
+      "deployment": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      }
+    },
+    "corrected": {
+      "site": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "deployment": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      }
+    },
+    "note": "A clean npm audit describes the dependency graph and known advisories; it does not establish that embedded upstream code was replaced."
+  },
+  "compatibilityEvidence": {
+    "providedBy": "Root agent; logs independently inspected and hashed.",
+    "remotion": {
+      "command": "Remotion CLI compositions for motion/remotion/index.jsx",
+      "exitCodeReportedByRoot": 0,
+      "bundleCompleted": true,
+      "compositionIds": [
+        "BuffaloAssembly",
+        "BuffaloPaperWord",
+        "ExperienceOpening",
+        "WaterfrontFilm",
+        "WaterfrontFilmPortrait"
+      ],
+      "warning": "Installed Zod 4.6.7 differs from the Remotion required version 4.5.4. The warning remains visible and was not suppressed."
+    },
+    "build": {
+      "publicHtmlRoutes": 1213,
+      "completed": true
+    },
+    "unit": {
+      "passed": 721,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 27087.9773
+    },
+    "content": {
+      "passed": true,
+      "contractDocuments": 1225,
+      "downloads": 436
+    }
+  },
+  "deploymentScope": {
+    "configuration": "deployment/wrangler.production.jsonc selects worker.mjs and ../dist assets.",
+    "worker": {
+      "method": "Recursive inspection of static import and export-from specifiers, with a separate search for dynamic import and require calls.",
+      "sourceFiles": 28,
+      "externalImports": [
+        {
+          "from": "deployment/worker.mjs",
+          "specifier": "node:crypto"
+        },
+        {
+          "from": "deployment/inquiry-rate.mjs",
+          "specifier": "node:net"
+        }
+      ],
+      "dynamicImportOrRequireFiles": [],
+      "remotionOrZodMatches": [],
+      "allSourceHashesIncluded": true
+    },
+    "staticAssets": {
+      "root": "dist",
+      "textExtensions": [
+        "html",
+        "js",
+        "mjs",
+        "cjs",
+        "css",
+        "json"
+      ],
+      "filesChecked": 1261,
+      "bytesChecked": 35867196,
+      "signatures": [
+        "remotion-studio-protocol",
+        "StudioProtocolInternals",
+        "parseStudioElementPayload",
+        "zod@4\\.5\\.4"
+      ],
+      "matches": [],
+      "artifactSetSha256": "7871bd8734fcd128f6e5e7f53e3e8425be45cc1f1100bcf7ad834cc3a285a995",
+      "artifactSetDigestMethod": "SHA-256 of localeCompare-sorted UTF-8 lines: relative path, NUL, file SHA-256, newline.",
+      "note": "Media assets are prebuilt; the scan covers emitted text/code artifacts."
+    },
+    "assessment": "No path to the installed Remotion studio-protocol package was found in this site’s Worker source import graph, and no embedded protocol signatures were found in emitted site code. This is an upstream private-authoring limitation, with no concrete deployed-release impact identified."
+  },
+  "nonBlockingObservations": [
+    {
+      "id": "REMOTION-EXACT-PIN-WARNING",
+      "detail": "Remotion intentionally warns because the security override differs from its declared Zod version. Composition discovery and bundling pass. This observed compatibility evidence is scoped to the existing workflow and is not a guarantee for every optional Remotion feature."
+    },
+    {
+      "id": "UPSTREAM-VENDORED-ZOD",
+      "detail": "The published @remotion/studio-protocol 4.0.535 index.cjs and esm/index.mjs embed code labeled Zod 4.5.4. The embedded array parser iterates input elements directly; the npm override does not rewrite that bundle. This pre-existing private authoring copy is unchanged by the proposed fix and absent from the inspected deployed scope. No claim is made that every vendored copy or all authoring tooling is vulnerability-free.",
+      "sourcePaths": [
+        "node_modules/@remotion/studio-protocol/dist/index.cjs",
+        "node_modules/@remotion/studio-protocol/dist/esm/index.mjs"
+      ],
+      "sourceLines": {
+        "commonJsVersionLabel": 54,
+        "commonJsArrayParser": 1082,
+        "esmVersionLabel": 1
+      },
+      "releaseImpact": "No concrete impact found in deployed assets or Worker; upstream authoring limitation remains."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub advisory GHSA-mrhx-c7xc-m3w5",
+      "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+      "supports": "Affected and patched versions."
+    },
+    {
+      "title": "npm package.json overrides documentation",
+      "url": "https://docs.npmjs.com/cli/v11/configuring-npm/package-json/#overrides",
+      "supports": "Root overrides may replace transitive dependency versions, including for security fixes."
+    },
+    {
+      "title": "Zod v4.6.7 release",
+      "url": "https://github.com/colinhacks/zod/releases/tag/v4.6.7",
+      "supports": "Selected published release exists."
+    },
+    {
+      "title": "Zod collection size-check fix",
+      "url": "https://github.com/colinhacks/zod/commit/a0ebf970f2d752e5f58527cd2942ff48be4f46bd",
+      "supports": "Upstream fix performs size checks before element parsing."
+    }
+  ],
+  "remainingReleaseGate": "Parent-owned full Linux CI on the exact dependency-correction commit. This bounded review does not replace it."
+}

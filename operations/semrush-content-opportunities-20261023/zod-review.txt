@@ -1,0 +1,20 @@
+PASS — bounded Zod dependency-fix review
+Base: 6d90fda5d67778929353242cdf61b8cd4492bec9
+
+No blocking findings or concrete deployed-release impact identified.
+
+Only package.json and package-lock.json differ. package.json adds the exact root override zod 4.6.7. The lock updates root Zod 4.5.4 to 4.6.7 and removes chromium-bidi’s duplicate 4.6.7 node; every non-Zod package entry and other top-level lock field is unchanged. The new root entry is byte-data-equivalent to the previously locked nested 4.6.7 entry. All seven consumers resolve to 4.6.7.
+
+GHSA-mrhx-c7xc-m3w5 affects versions below 4.6.6. The selected 4.6.7 release is outside that range. The failed site audit recorded ten high findings through the affected Zod tree; corrected site and deployment audits both report zero vulnerabilities. Existing audit gating and CI are unchanged.
+
+Root compatibility evidence inspected: Remotion bundled successfully and discovered all five existing compositions (exit 0); production build completed 1213 public HTML routes; unit suite passed 721 with zero failures or skips; content preservation passed 1225 contract documents and 436 downloads. Exact input/log hashes are in the companion JSON.
+
+Retained limitations: Remotion still emits its exact-version warning because it requests Zod 4.5.4. Its studio-protocol distribution also embeds an older Zod copy which npm overrides cannot rewrite. This is an unchanged upstream private-authoring limitation. The production configuration points to worker.mjs and dist; the Worker’s 28-file static import graph has only node:crypto/node:net external imports and no Remotion/Zod references or dynamic imports. A scan of 1261 emitted text/code files found no embedded studio-protocol signatures. No claim is made that all vendored code or all authoring tooling is vulnerability-free.
+
+Scope: read-only review plus these two reports; no reviewer suites, build, browser, product or baseline edits. Full exact-commit Linux CI remains the parent-owned release gate.
+
+Sources:
+https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+https://docs.npmjs.com/cli/v11/configuring-npm/package-json/#overrides
+https://github.com/colinhacks/zod/releases/tag/v4.6.7
+https://github.com/colinhacks/zod/commit/a0ebf970f2d752e5f58527cd2942ff48be4f46bd
