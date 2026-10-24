@@ -31,3 +31,7 @@ Independent implementation review passed after fixing natural type-first precinc
 Linux visual capture 40073286236 is reviewed and approved: 48 references, comprising 30 byte-identical prior references, 14 intended coverage/footer updates and four new county-entry images. The final normal CI comparison remains required.
 
 The first final-source CI run (40073719113) passed all 733 unit checks but correctly held publication because Windows and Linux gzip headers produced two different HTML hashes. The correction sets the RFC 1952 operating-system header field to 255. Independent checks confirm identical compressed content, checksums, decoded names and visible HTML; only that metadata byte changes in the combined and Michigan dictionaries. The fourteen targeted tests pass. All seven jobs must pass again on the corrected commit.
+
+## Verified publication
+
+Published and verified in the [release report](../wi-il-release-20261024/RELEASE.md). Earlier pending-gate statements above are dated preparation checkpoints; all required CI, backup, migration, live, monitoring and sitemap receipts are now recorded.

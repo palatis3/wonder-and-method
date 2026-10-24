@@ -1,23 +1,18 @@
 # Implementation status — October 24, 2026
 
-The [combined Georgia, Mississippi, Alabama and FAQ release](operations/georgia-ms-al-faq-release-20261024/RELEASE.md) is published and verified. The requested state coverage, selective FAQ review, request-demo removal, contact-anchor work and Google sitemap submission are complete. Earlier location and South Carolina expansions remain published. Application identity is separate from documentation commits and business enrollment requirements.
+The [Wisconsin and Illinois release](operations/wi-il-release-20261024/RELEASE.md) is published and verified. Earlier state, county, guide and FAQ work remains preserved.
 
 ## Current published website
 
-| Item | Verified October 24, 2026 |
-|---|---|
-| Origin | [wonderandmethod.com](https://wonderandmethod.com/) |
-| Published source | `8dd504666bc3847df3537bb0f6d04b198b880a92` |
-| Deployed Worker | `05929cff-2b65-4963-8982-d7539e79d87b` |
-| Content | 1,224 HTML routes; 1,223 sitemap URLs; 65 guides; 1,093 generated location pages serving 1,103 identities, plus the standalone Buffalo/Erie page; 1,433 directory identities across 24 states and Washington, DC; 436 downloads |
-| FAQs | 234 answers across 162 of 1,102 service pages |
-| Technical validation | All seven exact-commit GitHub jobs pass. Chromium has 681 passing checks and 421 intentional project skips; Firefox/WebKit has 72 passing checks and 20 intentional skips. No unexpected or flaky results remain. All 44 reviewed visual references pass in 42 screenshot tests. |
-| Live verification | All 1,224 HTML routes and 1,884 asset hashes match the tested build. All 104 new-route/demo redirect variants, 11 state-hub backlinks and 234 FAQ answers on 162 pages passed live checks. |
-| Database | Migrations 0030 and 0031 preserve 4 prior inquiries, 876 prior aggregate rows and all 1,182 old page keys, adding 14 keys for 1,196 total. The fresh backup restored locally, its combined migration rehearsal passed, and the post-migration export passed integrity and foreign-key checks. |
-| Search | The verified live sitemap has 1,223 eligible URLs. Google Search Console confirmed its submission at 2026-10-24T05:34:08.891Z and displayed Success with 1,223 discovered pages at 2026-10-24T05:34:33.625Z. Discovery does not establish indexing or rankings. |
-| Monitoring | Authenticated inquiry health is healthy. A genuine scheduled recovery and its external monitoring receipt occurred after deployment; email alerts remain enabled to support@wonderandmethod.com. |
+Published source `c709ee350ed522dcdb926d4496cb680bbe4d0fbe`; authenticated Worker `2c38e707-2cfb-4b81-a1ac-d5d0d4e47c52`; deployed 2026-10-24T10:31:37.621Z.
 
-Private evidence: `evidence/georgia-ms-al-faq-release-20261024/`. Public `/version.json` remains unavailable; authenticated runtime metadata identifies the release. Follow [PRODUCTION.md](deployment/PRODUCTION.md).
+All 1,229 live HTML routes and 1,889 asset hashes match the tested build. The sitemap has 1,228 eligible URLs. All 68 new-route/retired-demo variants, three county-to-hub backlinks and 234 FAQ answers on 162 pages pass live checks. Directory coverage is 1,607 identities across 26 states plus DC; there are 1,096 generated location records, 65 guides and 436 downloads. A fresh remote backup restored locally and passed the migration rehearsal. Migration 0032 preserves 4 prior inquiries, 895 prior aggregate rows and all 1,196 historical page keys, adding five keys for 1,201 total. The post-migration export passes integrity and foreign-key checks. The prior Worker remains compatible; a code rollback does not restore the database or discard newer inquiries.
+
+All seven [exact-source CI checks](https://github.com/palatis3/wonder-and-method/actions/runs/40077189517) passed. Chromium: 684 passed and 424 intentional skips; visual: 46 passed; Firefox/WebKit: 72 passed and 20 intentional skips. No unexpected failures or flaky retries. The quality checker reports zero findings across 4412 route checks and 2995 historical fragment targets. Outbound links: 2333 reachable, zero confirmed broken and 83 unverified; blocked or unavailable sources remain unverified.
+
+Authenticated health is healthy, with a genuine scheduled recovery at 2026-10-24T11:17:30.114Z and an external HTTPS receipt at 2026-10-24T11:17:31.173440+00:00. The monitoring dashboard was observed 2026-10-24T11:18:14.822Z; email alerts remain enabled to support@wonderandmethod.com with a one-hour period and fifteen-minute grace. No manual heartbeat was sent.
+
+The sitemap was submitted through Google Search Console at 2026-10-24T10:36:47.619Z. At 2026-10-24T10:37:54.910Z, the updated submitted-sitemap row displayed Success and 1,228 discovered pages. That row is the retained confirmation; a transient submission dialog was not captured. Discovery does not establish indexing or rankings; Google's displayed count may lag the verified live sitemap.
 
 ## Offers and daily operation
 
