@@ -2,7 +2,7 @@ import {test,expect} from './fixtures.mjs';
 import {retiredCountyRoutes} from '../../deployment/retired-county-routes.mjs';
 import currentLocationPaths from '../fixtures/current-location-paths.mjs';
 
-const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval'],['south-carolina',46,'charleston'],['georgia',159,'richmond'],['mississippi',82,'yalobusha'],['alabama',67,'madison']];
+const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval'],['south-carolina',46,'charleston'],['georgia',159,'richmond'],['mississippi',82,'yalobusha'],['alabama',67,'madison'],['wisconsin',72,'menominee'],['illinois',102,'cook']];
 const searchbox=page=>page.getByRole('searchbox',{name:'County, region or community',exact:true});
 
 test('new hubs reveal saved entry fragments with complete place lists and no horizontal overflow',async({page},testInfo)=>{
@@ -30,7 +30,7 @@ test('new hubs reveal saved entry fragments with complete place lists and no hor
 
 test('typed searches distinguish governments and keyboard results reveal the matching in-page entry',async({page})=>{
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-cs]')).toHaveCount(1433);
+ await expect(page.locator('[data-cs]')).toHaveCount(1607);
  const search=searchbox(page),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,paths] of [
@@ -51,6 +51,13 @@ test('typed searches distinguish governments and keyboard results reveal the mat
   ['Jackson city MS',['/areas/mississippi/#hinds','/areas/mississippi/#madison','/areas/mississippi/#rankin']],
   ['Huntsville city AL',['/areas/alabama/#limestone','/areas/alabama/#madison','/areas/alabama/#marshall','/areas/alabama/#morgan']],
   ['Tillatoba MS',['/areas/mississippi/#yalobusha']],
+  ['Wisconsin Dells city WI',['/areas/wisconsin/#adams','/areas/wisconsin/#columbia','/areas/wisconsin/#juneau','/areas/wisconsin/#sauk']],
+  ['Brookfield town WI',['/areas/wisconsin/#waukesha']],
+  ['Naperville city IL',['/areas/illinois/#dupage','/areas/illinois/#will']],
+  ['Cicero township IL',['/areas/illinois/#cook']],
+  ['Election precinct 1 IL',['/areas/illinois/#monroe']],
+  ['Precinct Cache IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
+  ['Cache precinct IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
   ['Atlanta city GA',['/areas/georgia/#dekalb','/areas/georgia/#fulton']],
   ['Athens municipality GA',['/areas/georgia/#clarke']],
   ['Braselton town GA',['/areas/georgia/#barrow','/areas/georgia/#gwinnett','/areas/georgia/#hall','/areas/georgia/#jackson']]

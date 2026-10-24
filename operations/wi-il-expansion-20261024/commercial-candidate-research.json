@@ -1,0 +1,102 @@
+{
+  "reviewedAt": "2026-10-24",
+  "reviewer": "independent Astra research worker",
+  "result": "Three KEEP concepts; fifteen county HOLD dispositions. No county/page quota.",
+  "baseline": {"file": "src/location-service-data.json", "records": 1093, "sha256": "d1661acdd24f7a5d57608797d8b1c4062fd431ba11afdab685d577899d4a9d22"},
+  "keywordInputs": [
+    {"file": "keyword-state-city.json", "rows": 100, "sha256": "01d657b172d528c706a36a59f248632a38bffb0b92a3615cdbb6ee1cbd131d63"},
+    {"file": "keyword-shortlist-counties-refreshed.json", "rows": 36, "sha256": "9594a91ffdf813df12535fb469feab7421b303b5fa71c38c144c1b9800ef91d4"},
+    {"file": "input-shortlist-counties.txt", "counties": 18}
+  ],
+  "method": "Read keyword inputs; scanned all baseline record text for relevant concepts and read full closest records, including scopes and planning tables. Opened current primary public business pages without submitting forms. Search-only leads are explicitly distinguished from fully verified candidates. This is a bounded editorial recommendation, not an exhaustive market inventory or transaction test. Geographic directory publication does not depend on every county receiving a commercial page.",
+  "keywordInterpretation": "US phrase estimates are not county-resident demand. Preserve partial, missing, n/a and zero separately; do not sum overlapping city, state and county terms. Cook and DuPage each display 10 for the county SEO phrase; this does not supply the editorial justification for either concept.",
+  "keep": [
+    {
+      "areaId": "wisconsin/dane",
+      "business": "Cronometro",
+      "location": "841 W Lakeside St, Madison, WI 53715; Dane County",
+      "sources": [{"url": "https://www.cronometro.com/biodynamic-fitting", "label": "Cronometro: Biodynamic Bike Fit", "publishedFacts": "The page lists a new Biodynamic fitting, an aero fitting, setup to fit-sheet specifications, and cleat fitting as separate offerings. It describes rider assessment and iterative position work for fitting and lists bicycle, shoes and riding clothing to bring. The same page identifies the Madison address."}],
+      "decisionTitle": "Distinguish finding a riding position from setting up a bike to an existing fit sheet.",
+      "contentBrief": "Illustrative customer has a position reference and wants a bike configured to it; another wants the position reassessed. A website should ask what reference exists, which bike is being discussed and whether the goal is implementation or a new assessment. Let uncertainty reach staff. Keep cleat work visible as a separately discussed service. Build the page around the role of the existing specification, rather than a general repair-versus-fitting comparison.",
+      "scopeChoices": ["Focused edit: clarify the service comparison and the existing-reference prompt beside the current contact route.", "Fuller site: connect service descriptions, reference preparation, bicycle context and staff confirmation without adding a fit calculator."],
+      "acceptanceCase": "A rider with an old fit sheet and changed goals can disclose both without the website assuming the previous position is still appropriate or treating a setup request as a completed new fit assessment.",
+      "closestExisting": [
+        {"areaId": "north-carolina/guilford", "comparison": "Full record separates mechanical symptoms from position goals and coordinates repair/fit reviews. It does not distinguish a fresh fit assessment from implementing an existing fit specification."},
+        {"areaId": "indiana/hendricks", "comparison": "Full record compares adjustment, cleaning, overhaul and additional parts. The new distinction is the status and purpose of an existing position reference, not package size."},
+        {"areaId": "virginia/harrisonburg-city", "comparison": "Full record identifies customer-owned frame/parts in a custom build and leaves compatibility to staff. It does not explain a pre-existing fit sheet as an instruction reference distinct from a new assessment."}
+      ],
+      "additionalUtility": "Preserves the difference between discovering a specification and applying one. This supports a concrete service-selection decision before the customer chooses a fitting appointment.",
+      "guideReview": "Reviewed /guides/repair-authorization-form/: inspection and authorization are different decisions and would be a loose link here. No mandatory related guide is needed.",
+      "faqDecision": "No FAQ needed. The service comparison and changed-goal acceptance case should answer the central uncertainty in the main body. Add an FAQ only if the final body leaves an actual unresolved question about unknown or outdated fit references.",
+      "draftingLimits": ["The source does not promise to accept every outside fit sheet or to reproduce every position on every bike.", "Do not claim a specific transfer between bicycles is the operator's advertised procedure; label it as an original website-planning scenario.", "Do not infer that separately listed cleat fitting is included in every other fitting.", "Do not make medical, comfort or performance guarantees or reproduce prices as evergreen terms."]
+    },
+    {
+      "areaId": "illinois/dupage",
+      "business": "Ellman's Music Center",
+      "location": "508 West 5th Avenue, Naperville, IL 60563; DuPage County",
+      "sources": [
+        {"url": "https://ellmansmusic.net/rental-return/", "label": "Ellman's: Rental Return", "publishedFacts": "The return instructions require the assigned instrument serial number; a mismatch requires contacting staff. For school drop-off the return form adds the instrument to the pickup list, and the printed response should identify a return because representatives also collect repairs. A true return ends the rental contract; there is no hold option. The page lists the Naperville address."},
+        {"url": "https://ellmansmusic.net/orchestra-instrument-rentals/", "label": "Ellman's: Orchestra Instrument Rentals", "publishedFacts": "Its fractional-size string rental description says a size exchange can be arranged by visiting or calling, at no extra cost, with the existing contract continuing. This is distinct from the return instructions."}
+      ],
+      "decisionTitle": "Keep the instrument's pickup purpose distinct from ending its rental.",
+      "contentBrief": "A parent says the school will send the violin back, but that phrase alone does not distinguish repair from ending the rental. Keep the current instrument identifier, intended action and correct next route together. Explain a size-change inquiry separately so a growing student's request does not lead directly to a contract-ending return form. The same physical handoff can carry different instructions and consequences.",
+      "scopeChoices": ["Focused edit: clarify action labels and the meaning of the existing return and repair routes.", "Fuller site: organize ongoing rental support around repair, size-change inquiry and contract-ending return, preserving actual operator channels."],
+      "acceptanceCase": "Two families leave instruments at school: one requests repair and the other ends a rental. Their acknowledgements and accompanying instructions preserve the different purpose, while a serial mismatch reaches staff rather than being silently accepted.",
+      "closestExisting": [
+        {"areaId": "pennsylvania/washington", "comparison": "Full record covers beginning a school instrument rental, accessory inclusions, school requirements and receiving arrangements. It does not cover the divergent purposes of an outgoing shared pickup."},
+        {"areaId": "georgia/gwinnett", "comparison": "Full record already distinguishes rental size changes from upgrades and credit. Therefore the DuPage page must lead with return-versus-repair purpose and contract effect, not repeat a size-versus-upgrade lesson. Size exchange is supporting context only."},
+        {"areaId": "alabama/baldwin", "comparison": "Full record attaches prior service history to the current boat. Correct serial identity is relevant here, but the additional utility is preserving two different actions over the same handoff channel, including the contract-ending action."}
+      ],
+      "additionalUtility": "Explains why pickup is not a sufficient statement of customer intent. It helps a business avoid ambiguous action wording while keeping current asset identity attached to that action.",
+      "guideReview": "The repair-authorization guide explains equipment-specific inspection and approval, not rental termination. Link only if the final page explicitly develops that relationship; no generic guide link is required.",
+      "faqDecision": "No FAQ required if the main comparison already explains the contract effect. An FAQ repeating whether a size change is a return would duplicate the body and Gwinnett's emphasis.",
+      "draftingLimits": ["School pickup is explicitly documented for return and repair. The orchestra page describes size exchange by call or store visit; do not invent a school exchange channel.", "Do not imply a generic inquiry changes a contract, cancels payments, redeems credit or confirms pickup.", "Do not present operator-specific terms as rules for every music rental business.", "State this as a proposed content design, not an allegation that Ellman's currently mishandles instruments."]
+    },
+      {
+      "areaId": "illinois/cook",
+      "business": "Chicago Scanning",
+      "location": "848 W Eastman St, Suite 102, Chicago, IL 60642; Cook County",
+      "sources": [{"url": "https://www.chicagoscanning.com/faq/", "label": "Chicago Scanning: digitization FAQ", "publishedFacts": "The disc FAQ says it can finalize most Mini DVDs, while regular DVDs that have not been finalized require the original recording device. It separately describes an attempt charge for blank or damaged discs. The page identifies its Chicago office and states digitizing work takes place there."}],
+      "decisionTitle": "Keep a disc-transfer request attached to the recording device it may still need.",
+      "contentBrief": "Illustrative customer has a family DVD that will not play and wants a digital copy, but no longer has the original recorder. The website should preserve known disc type, what the customer observes, whether finalization is known and whether the original device is available. Unknown is a legitimate answer. Explain when staff must review a missing prerequisite before the customer assumes sending the disc will produce a usable file.",
+      "scopeChoices": ["Focused edit: add an intelligible prerequisite explanation and an unknown-answer route to the existing disc-transfer inquiry.", "Fuller site: connect source-format descriptions, media-specific prerequisites, assessment expectations and output discussion."],
+      "acceptanceCase": "A customer without the original recorder can describe an unplayable disc without declaring it blank, being forced to claim it is finalized or receiving an automatic promise of a successful transfer.",
+      "closestExisting": [
+        {"areaId": "ohio/scioto", "comparison": "Full record connects photo sources to requested print/file output. The Cook concept is a missing source-device dependency that can affect whether transfer is possible, not merely identifying output."},
+        {"areaId": "pennsylvania/snyder", "comparison": "Full record distinguishes copying, restoration and color edits across source groups. It does not explain disc finalization or the unavailable originating recorder."},
+        {"areaId": "virginia/petersburg-city", "comparison": "Full record separates collection transport from later inventory and consultation. The new decision occurs before treating media handoff as sufficient because a different asset may be required."}
+      ],
+      "additionalUtility": "Makes a hidden prerequisite discussable without technical self-diagnosis. A desired output or a physical disc alone does not settle the dependency on its source device.",
+      "guideReview": "Repair-authorization-form has useful general language about assessment versus promised work, but does not directly address this media prerequisite. No forced related guide is recommended.",
+      "faqDecision": "Prefer no FAQ if the main acceptance example retains unknown finalization and missing recorder. A useful gap, only if absent from the body, is how an inquiry should handle an unknown finalization status: ask for observation and staff review rather than force a technical yes/no answer.",
+      "draftingLimits": ["Do not diagnose an unplayable disc as unfinalized or blank.", "Do not promise a missing-recorder workaround, successful recovery, or universal compatibility.", "Do not teach disc-finalization procedures or require customers to alter fragile originals.", "Avoid expanding into album scanning, color restoration or generic output formats already covered elsewhere."]
+    }
+  ],
+  "verifiedHolds": [
+    {"areaId": "wisconsin/brown", "business": "Advanta Print", "url": "https://www.advantaprint.com/embroidery-artwork-requirements", "facts": "Accepts customer-supplied Tajima DSTs and explains that prior fabric/color application and substantial resizing can require new setup.", "closestExisting": ["north-carolina/scotland", "tennessee/rutherford", "florida/pasco", "west-virginia/putnam"], "reason": "The full Scotland record already asks how existing setup is reviewed for a changed item, size or placement; Rutherford covers changed reorders and Pasco/Putnam connect proof approval to actual products. A DST extension or numeric resize limit is not enough additional website-buyer utility. HOLD this concept, not the county permanently."},
+    {"areaId": "wisconsin/outagamie", "business": "D'Sewist", "url": "https://www.dsewistquilts.com/longarm-quilting.htm", "facts": "Appleton address; reservation form, call inviting the quilt to be sent, then a separate arrival notification. Form captures supplied material and design choices.", "closestExisting": ["new-york/wyoming", "ohio/hamilton", "kentucky/letcher"], "reason": "Invitation before shipment is a real difference, but the full Wyoming readiness/queue/arrival/return explanation and the existing component/choice records cover most of the useful brief. A separate page is not justified by the timing detail alone."},
+    {"areaId": "wisconsin/milwaukee", "business": "Eucalyptus & Company", "url": "https://www.eucalyptusandcompany.com/kiln-firing", "facts": "The Milwaukee studio lists firing subject to workload and kiln availability, named firing ranges, and a ready-to-fire material declaration.", "closestExisting": ["virginia/stafford", "new-york/queens", "virginia/lynchburg-city"], "reason": "Material identity, readiness, service access and firing quantities already have substantive pages. No stronger local decision was verified in this bounded pass. The separate Bindery lead remains on HOLD because current-business status was not resolved from a primary source; no closure claim is made here."},
+    {"areaId": "wisconsin/waukesha", "business": "The Potter's Shop", "url": "https://www.pottersshop.com/studio/kiln-firing-service/", "facts": "The Waukesha nonmember firing page requires clay and glaze previously bought from the shop with a purchase record. It separately describes staff loading and member arrangements.", "closestExisting": ["virginia/stafford", "new-york/queens", "virginia/lynchburg-city"], "reason": "Purchase provenance is a narrow potential extension, but current readiness/material/access pages carry most of the service-planning value. HOLD rather than turn one eligibility rule into another full commercial page."}
+  ],
+  "countyDispositions": [
+    {"areaId": "wisconsin/dane", "decision": "KEEP", "reason": "Cronometro assessment versus existing fit specification."},
+    {"areaId": "wisconsin/milwaukee", "decision": "HOLD", "reason": "Verified firing lead overlaps; Bindery status unresolved."},
+    {"areaId": "wisconsin/brown", "decision": "HOLD", "reason": "Verified DST lead duplicates existing setup/reorder review."},
+    {"areaId": "wisconsin/winnebago", "decision": "HOLD", "reason": "Oshkosh search did not produce a fully verified distinct concept in this pass."},
+    {"areaId": "wisconsin/outagamie", "decision": "HOLD", "reason": "Verified quilt lead largely duplicates readiness and components."},
+    {"areaId": "wisconsin/waukesha", "decision": "HOLD", "reason": "Verified firing purchase-source rule is too narrow to justify another page now."},
+    {"areaId": "wisconsin/eau-claire", "decision": "HOLD", "reason": "Exploratory search only; no fully verified distinct brief."},
+    {"areaId": "wisconsin/la-crosse", "decision": "HOLD", "reason": "Search-only Leithold repair/loaner pickup lead exists, but was not fully compared and overlaps the stronger DuPage rental-support direction."},
+    {"areaId": "wisconsin/racine", "decision": "HOLD", "reason": "Search-only Photographic Design Gallery framing/restoration lead supplies no clear additional decision beyond existing framing pages."},
+    {"areaId": "illinois/cook", "decision": "KEEP", "reason": "Chicago Scanning source-recorder prerequisite."},
+    {"areaId": "illinois/dupage", "decision": "KEEP", "reason": "Ellman's shared pickup with different purpose and contract consequence."},
+    {"areaId": "illinois/will", "decision": "HOLD", "reason": "Joliet exploratory furniture/apparel leads are not fully verified distinct briefs."},
+    {"areaId": "illinois/sangamon", "decision": "HOLD", "reason": "Springfield sharpening search produced no verified distinct primary-source concept."},
+    {"areaId": "illinois/champaign", "decision": "HOLD", "reason": "Exploratory repair search only; no fully verified distinct brief."},
+    {"areaId": "illinois/peoria", "decision": "HOLD", "reason": "Sharpening results were largely third-party listings, insufficient for a sourced distinct brief."},
+    {"areaId": "illinois/winnebago", "decision": "HOLD", "reason": "Rockford search-only tailoring/furniture leads are not fully verified and compared; no page inferred from keyword demand."},
+    {"areaId": "illinois/mclean", "decision": "HOLD", "reason": "Bloomington apparel proof/payment lead is a familiar custom-order preparation pattern, not a demonstrated new decision."},
+    {"areaId": "illinois/kane", "decision": "HOLD", "reason": "Aurora exploratory repair results did not establish a fully verified distinct local concept."}
+  ],
+  "reviewBoundary": "Recommendations only. No src, tests, production, forms or third-party messages changed. Final drafted content still needs factual and distinctness review against these limits. Other county holds mean insufficient justification in this pass, not a claim that useful businesses or demand do not exist."
+}

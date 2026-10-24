@@ -1,0 +1,74 @@
+{
+  "reviewedAt": "2026-10-24",
+  "result": "PASS",
+  "requiredContentChanges": [],
+  "scope": "Reread complete current built service-area guide journal/main text, complete three location records, and original association rows; propose only the exact three updated rows below. No source registry edits performed.",
+  "guide": {
+    "path": "/guides/service-area-pages/",
+    "file": "dist/guides/service-area-pages/index.html",
+    "fileSha256": "cedb6151033cbc818aa6a30278f4856684a17ed4d83629d04363e80f6fd767b0",
+    "guidePurposeSha256": "facc8866b9eeeac745d1c246dc644658575e70edbcbde9ce8acecc174da8bb18",
+    "previousGuidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+  },
+  "reviewRegistry": {
+    "file": "operations/google-quality-audit-20261023/related-guide-review.json",
+    "sha256": "268e945f69b489ea957ce7d5bc901182e3a76ec224153c7f859546067569de80"
+  },
+  "records": [
+    {
+      "path": "/areas/florida/broward-county/",
+      "fullRecordSha256": "857e7c22f50902479700da6a72f7935c5b220497e8b90a60df2d239c99d422d8",
+      "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+      "reasonAndLabelPreserved": true
+    },
+    {
+      "path": "/areas/florida/calhoun-county/",
+      "fullRecordSha256": "2e2374ea555524b74898dc073e6ec89103cb3e4e6868add019da81da719e2c6e",
+      "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+      "reasonAndLabelPreserved": true
+    },
+    {
+      "path": "/areas/florida/leon-county/",
+      "fullRecordSha256": "9857b635d717e93bccd6c533492e6aa58d5e8e4c8583006566e6319cdc72afc6",
+      "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+      "reasonAndLabelPreserved": true
+    }
+  ],
+  "assessment": "The current guide still distinguishes genuine premises, on-site delivery and service reach; preserves address-level and scheduling conditions; recommends the smallest useful structure; and requires owner-maintained facts. The shared coverage paragraph now includes Wisconsin and Illinois without changing these purposes. Leon uses this distinction for the neighboring Midway workshop and changing capability; Broward for shop versus the truck worksite; Calhoun for delivery destination, access and scheduling uncertainty.",
+  "proposedRows": [
+    {
+      "from": "/areas/florida/broward-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe the shop and road coverage accurately",
+      "reason": "Broward separates the Pompano Beach shop from road service at the truck's actual worksite and preserves vehicle/location details before confirmation. The guide explicitly separates real premises, on-site service and service reach, asks which services are available at a place, and requires address-level and scheduling conditions to remain visible. This directly supports the existing label without implying a Fort Lauderdale shop or confirmed dispatch.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide journal/main text and complete Leon, Broward and Calhoun records after Wisconsin and Illinois were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/wi-il-expansion-20261024/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+      "guidePurposeSha256": "facc8866b9eeeac745d1c246dc644658575e70edbcbde9ce8acecc174da8bb18"
+    },
+    {
+      "from": "/areas/florida/calhoun-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Explain delivery coverage without guaranteeing availability",
+      "reason": "Calhoun connects an inventory or custom-building choice to its actual delivery destination and unresolved access and scheduling questions. The guide explains address-level assessment, real service limits and current scheduling conditions, leaving unknowns unresolved until the business confirms them. That supports explaining delivery coverage without treating a listed area or displayed building as guaranteed availability.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide journal/main text and complete Leon, Broward and Calhoun records after Wisconsin and Illinois were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/wi-il-expansion-20261024/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+      "guidePurposeSha256": "facc8866b9eeeac745d1c246dc644658575e70edbcbde9ce8acecc174da8bb18"
+    },
+    {
+      "from": "/areas/florida/leon-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe locations and service coverage accurately",
+      "reason": "Leon explains the Midway workshop's location-specific repair limits and intermittent specialist availability before the customer transports a trailer. The guide asks which services are available at a genuine business location, rejects converting service reach into an office claim, and assigns maintenance of changing coverage and booking conditions. It therefore supports the current label and the record's explicit Midway/Gadsden versus Tallahassee/Leon distinction.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide journal/main text and complete Leon, Broward and Calhoun records after Wisconsin and Illinois were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/wi-il-expansion-20261024/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+      "guidePurposeSha256": "facc8866b9eeeac745d1c246dc644658575e70edbcbde9ce8acecc174da8bb18"
+    }
+  ],
+  "limits": "This is contextual-link relevance review, not a fresh verification of every underlying operator policy, ranking outcome, or release state."
+}

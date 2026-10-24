@@ -121874,5 +121874,323 @@
         ]
       ]
     }
+  },
+  {
+    "areaId": "wisconsin/dane",
+    "areaIds": [
+      "wisconsin/dane"
+    ],
+    "market": "Dane County, WI",
+    "path": "/areas/wisconsin/dane-county/",
+    "title": "Web Design for Dane County, WI",
+    "servedAreas": [
+      {
+        "name": "Dane County",
+        "state": "Wisconsin",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/wisconsin/#dane",
+        "label": "Dane County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Dane County, WI. A Madison bicycle-shop example separates a new fitting from setting up a bike using an existing fit sheet.",
+    "lead": "A rider bringing measurements from an earlier fitting may need a different conversation from someone seeking a new assessment. I help Dane County businesses make that distinction clear before an appointment request.",
+    "decisionTitle": "Separate finding the measurements from applying an existing fit sheet.",
+    "decision": "Cronometro in Madison lists bicycle fitting and bike setup to fit-sheet specifications as separate services. For a proposed bicycle-shop website, consider a rider who has an earlier fit sheet and a different bicycle. The first inquiry should preserve three facts: the rider wants help setting up that bicycle, an existing sheet is available, and the shop still needs to confirm the appropriate work. I would distinguish that request from a new fitting rather than send both through an unexplained “fit” label. If the rider cannot find the sheet, the website should let them say so and ask the shop what to arrange next. Having a document does not establish that it is current, complete or suitable for every bicycle; the shop makes that assessment. The useful website change is a clearer service choice and preparation question, not an automatic transfer of measurements or a promise that an earlier setup can be reproduced.",
+    "scopes": [
+      {
+        "title": "Clarify the existing fitting and setup links",
+        "pages": [
+          "A new fitting",
+          "Setup using an existing fit sheet",
+          "What to ask before arranging a visit"
+        ],
+        "request": "Identify whether the customer wants an assessment or help applying measurements they already have.",
+        "supplies": "The shop’s service descriptions, what information it wants about the sheet and bicycle, and its current appointment route.",
+        "check": "A rider with an earlier sheet can describe a setup request without the site presenting it as a confirmed new fitting."
+      },
+      {
+        "title": "Build a bicycle-service introduction around the rider’s request",
+        "pages": [
+          "Fitting and setup comparison",
+          "Existing sheet and target bicycle",
+          "Preparation for the agreed service",
+          "Questions the shop confirms before the visit"
+        ],
+        "request": "Keep the service purpose, available reference and current bicycle together through the inquiry.",
+        "supplies": "Owner-approved examples, preparation instructions for each service and the person who decides whether a sheet is usable.",
+        "check": "Changing the answer from “sheet available” to “cannot find it” leads to a clarification request; it does not silently carry forward a setup assumption."
+      }
+    ],
+    "scopeTrigger": "A focused edit can clarify labels and preparation beside existing contact links. A fuller build helps when several bicycle services need to be compared. Document uploads, measurement storage, booking rules and equipment compatibility checks require separate scope. The shop confirms the work and supplies all fitting guidance.",
+    "quoteQuestions": [
+      "Does the customer want new measurements or help using a sheet they already have?",
+      "What information identifies the bicycle the customer wants set up?",
+      "What should happen when the reference is missing, unclear or no longer appropriate?"
+    ],
+    "coverageNote": "Cronometro lists its shop at 841 W Lakeside Street in Madison. This public example informs a Dane County website brief. Wonder and Method works remotely from Buffalo; the shop is not a client or partner.",
+    "sources": [
+      {
+        "url": "https://www.cronometro.com/biodynamic-fitting",
+        "label": "Cronometro: fitting and fit-sheet setup",
+        "observation": "Lists bicycle fitting, bike setup to fit-sheet specifications and cleat fitting separately, with a Madison address and visit preparation."
+      }
+    ],
+    "planningTable": {
+      "title": "A fit-sheet setup inquiry",
+      "intro": "A proposed review for a rider bringing a reference to a different bicycle. The shop decides which service is appropriate.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Purpose of the visit",
+          "Separate a new fitting from setup using an existing reference.",
+          "Current service names and the questions used to distinguish them.",
+          "The customer’s chosen purpose remains visible beside the appointment inquiry."
+        ],
+        [
+          "Existing reference",
+          "Ask whether a fit sheet is available, missing or needs clarification.",
+          "What the shop needs to review before accepting setup work.",
+          "An unknown answer stays unknown; the form does not invent measurements or document availability."
+        ],
+        [
+          "Current bicycle",
+          "Identify the bicycle that needs work without treating the earlier sheet as a compatibility verdict.",
+          "The bicycle information useful to the shop.",
+          "The reference and the target bicycle are described as separate parts of the same request."
+        ],
+        [
+          "Service confirmation",
+          "Let the shop explain the appropriate next step and preparation.",
+          "The maintained contact route and instructions for the agreed visit.",
+          "Submitting the inquiry does not claim that the sheet has been accepted or that setup can be reproduced."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "illinois/dupage",
+    "areaIds": [
+      "illinois/dupage"
+    ],
+    "market": "DuPage County, IL",
+    "path": "/areas/illinois/dupage-county/",
+    "title": "Web Design for DuPage County, IL",
+    "servedAreas": [
+      {
+        "name": "DuPage County",
+        "state": "Illinois",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/illinois/#dupage",
+        "label": "DuPage County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for DuPage County, IL. A Naperville music-store example distinguishes rental returns, repairs and a student’s instrument-size exchange.",
+    "lead": "The same instrument pickup point can serve different purposes. I help DuPage County businesses keep a return, a repair request and a size-change conversation distinct, so a customer’s intended next step survives the handoff.",
+    "decisionTitle": "Keep the instrument’s identity and the reason for handing it over together.",
+    "decision": "Ellman’s Music Center in Naperville explains that its school representatives collect instruments for both repair and rental return. Its return instructions ask customers to check the assigned serial number, submit the return form and identify the instrument as a return. A separate string-rental page describes exchanging a fractional-size instrument for a larger one while the rental contract continues. For a proposed rental website, consider a parent whose student has outgrown a violin. “Bring it back” is too ambiguous to explain whether they want an exchange, repair or the end of a rental. I would give those intentions separate routes, then preserve the specific instrument identity and the business’s instructions for that route. The published size-exchange route is to call or visit the store; it should not inherit the school return instructions. If the serial number does not match the account record, the website should direct the customer to the store for help. It must not decide that the instrument has been returned or that a contract has ended merely because a form was sent.",
+    "scopes": [
+      {
+        "title": "Clarify the rental support links",
+        "pages": [
+          "End a rental",
+          "Arrange a repair",
+          "Ask about a larger string instrument"
+        ],
+        "request": "Choose the reason for the handoff before following the store’s existing instructions.",
+        "supplies": "Current return, repair and size-exchange policies, the correct links and the store’s mismatch instructions.",
+        "check": "A parent asking for a larger violin reaches the call/store exchange route without being told to end the rental."
+      },
+      {
+        "title": "Build a rental support journey around the current instrument",
+        "pages": [
+          "What the customer wants to do",
+          "Serial-number preparation",
+          "School pickup or store instructions where supported",
+          "Confirmation and questions for the rental team"
+        ],
+        "request": "Carry the intended action and specific instrument through the appropriate support route.",
+        "supplies": "Owner-approved handoff wording, which actions can use school pickup and what confirms receipt or a contract change.",
+        "check": "A school return stays labeled as a return; changing the request to repair replaces the return instructions instead of inheriting a cancellation assumption."
+      }
+    ],
+    "scopeTrigger": "A focused edit can separate support labels and link to the store’s existing forms. A fuller build helps when families need to compare several next steps. Rental accounts, serial-number lookup, pickup scheduling, billing and contract changes require separate software scope and the provider’s support. The music store controls its rental terms and confirms each action.",
+    "quoteQuestions": [
+      "Is the customer ending a rental, seeking repair or asking about a larger instrument?",
+      "What identifies the current instrument, and where should a mismatch be resolved?",
+      "Which handoff instructions actually apply to each action?"
+    ],
+    "coverageNote": "Ellman’s Music Center lists its store on West 5th Avenue in Naperville. Naperville spans DuPage and Will counties; this example is used for the DuPage brief, not as a claim that the whole city lies in one county. Wonder and Method works remotely from Buffalo; the store is not a client or partner.",
+    "sources": [
+      {
+        "url": "https://ellmansmusic.net/rental-return/",
+        "label": "Ellman’s Music Center: rental return instructions",
+        "observation": "Distinguishes repair pickup from return pickup, asks for the assigned serial number and return form, and explains that returning an instrument ends the rental."
+      },
+      {
+        "url": "https://ellmansmusic.net/orchestra-instrument-rentals/",
+        "label": "Ellman’s Music Center: string-instrument size exchanges",
+        "observation": "Describes a call or store visit to exchange a fractional-size string instrument while continuing the existing rental contract."
+      }
+    ],
+    "planningTable": {
+      "title": "One instrument, three different intentions",
+      "intro": "A proposed support review for a parent deciding what to do with a current rental.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Intended action",
+          "Offer separate explanations for return, repair and size exchange.",
+          "The maintained policy and contact route for each action.",
+          "“My child needs a larger violin” does not become an end-of-rental request."
+        ],
+        [
+          "Instrument identity",
+          "Explain where to check the assigned serial number and whom to ask about a mismatch.",
+          "Owner-approved identification guidance.",
+          "A mismatch leads to help before the site treats the item as the expected rental."
+        ],
+        [
+          "Handoff route",
+          "Keep school return instructions distinct from repair and call/store exchange arrangements.",
+          "Which actions and locations the business actually supports.",
+          "The school return route identifies the item as a return; exchange does not acquire an unsupported school-pickup promise."
+        ],
+        [
+          "Completed action",
+          "Explain what the business confirms after receiving the request or instrument.",
+          "The provider’s receipt and contract-confirmation process.",
+          "A submitted request is not displayed as proof of physical receipt or a completed contract change."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "illinois/cook",
+    "areaIds": [
+      "illinois/cook"
+    ],
+    "market": "Cook County, IL",
+    "path": "/areas/illinois/cook-county/",
+    "title": "Web Design for Cook County, IL",
+    "servedAreas": [
+      {
+        "name": "Cook County",
+        "state": "Illinois",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/illinois/#cook",
+        "label": "Cook County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Cook County, IL. A Chicago media-transfer example shows why an unfinalized DVD may require its original recording device.",
+    "lead": "A disc and a desired digital copy may not be enough to establish that a transfer can proceed. I help Cook County businesses explain a missing prerequisite before customers assume their material is ready to process.",
+    "decisionTitle": "Ask about the original recorder before promising a disc transfer.",
+    "decision": "Chicago Scanning’s FAQ distinguishes unfinalized regular DVDs from Mini DVDs: it says regular DVDs require the original recording device, while most Mini DVDs can be finalized. For a proposed media-transfer website, consider someone with a home-recorded disc who no longer knows where the recorder is. A generic “DVD to digital” choice should not turn that uncertainty into a promise of a playable file. I would first ask the customer to describe the disc and what they know about its preparation, then keep recorder availability as a separate question when relevant. “I do not know” should remain a useful answer rather than force a guess. The business can then explain what it needs to assess the material. A requested output format or a parcel arriving at the shop does not establish that an unfinalized disc is ready. These are proposed inquiry and acceptance checks, not a claim about how the company’s current form behaves or a guarantee that missing or damaged recordings can be recovered.",
+    "scopes": [
+      {
+        "title": "Clarify the existing DVD-transfer introduction",
+        "pages": [
+          "Regular and Mini DVD questions",
+          "Finalization and unknown status",
+          "Original-recorder availability",
+          "Ask the specialist before sending uncertain material"
+        ],
+        "request": "Identify a prerequisite that may affect the requested service before following the existing quote route.",
+        "supplies": "The business’s accepted media, current finalization guidance and how it wants customers to describe uncertain discs.",
+        "check": "A customer with an unfinalized regular DVD and no known recorder gets a clarification route, not an unconditional transfer promise."
+      },
+      {
+        "title": "Build a media-transfer introduction around source readiness",
+        "pages": [
+          "Identify the source material",
+          "Record known and unknown preparation details",
+          "Equipment that may be needed",
+          "Specialist assessment and output discussion"
+        ],
+        "request": "Keep the source, unresolved prerequisite and desired result together without treating the result as already feasible.",
+        "supplies": "Owner-approved examples, the information needed for assessment and the business’s actual acceptance process.",
+        "check": "Changing from a Mini DVD to an unfinalized regular DVD makes the recorder question visible in the brief; the earlier readiness assumption does not carry across."
+      }
+    ],
+    "scopeTrigger": "A focused edit can put source-readiness guidance beside the existing inquiry. A fuller build helps when several media types have different prerequisites. Customer uploads, item tracking, transfer-status tools and automated eligibility decisions require separate scope. The transfer specialist assesses the media and supplies all handling and recovery guidance.",
+    "quoteQuestions": [
+      "What does the customer know about the disc type and whether it was finalized?",
+      "Is any required original recording equipment available, missing or unknown?",
+      "What should the customer ask before shipping or selecting an output option?"
+    ],
+    "coverageNote": "Chicago Scanning lists its office at 848 W Eastman Street in Chicago. This public source informs a Cook County website-planning example. Wonder and Method works remotely from Buffalo; the business is not a client or partner.",
+    "sources": [
+      {
+        "url": "https://www.chicagoscanning.com/faq/",
+        "label": "Chicago Scanning: disc finalization and transfer questions",
+        "observation": "Distinguishes most Mini DVD finalization from the original-recorder requirement for unfinalized regular DVDs and lists its Chicago office."
+      }
+    ],
+    "planningTable": {
+      "title": "A disc-transfer inquiry with a missing prerequisite",
+      "intro": "A proposed acceptance review for a home-recorded disc whose preparation or recorder is uncertain.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Source identification",
+          "Ask which kind of disc the customer has, with an option to ask for help identifying it.",
+          "The descriptions and examples the specialist approves.",
+          "An uncertain disc is not silently classified as a supported, ready-to-transfer format."
+        ],
+        [
+          "Preparation status",
+          "Keep known finalization status separate from an unknown answer.",
+          "How the business wants that question explained to customers.",
+          "The inquiry accepts “not sure” without converting it into a yes."
+        ],
+        [
+          "Original equipment",
+          "Ask about the original recorder where the service requires it.",
+          "The provider’s current requirement and assessment route.",
+          "A missing recorder remains an unresolved prerequisite after the customer chooses a desired output."
+        ],
+        [
+          "Acceptance and result",
+          "Explain that the business assesses the source before confirming what can be delivered.",
+          "Current assessment, acceptance and customer-contact steps.",
+          "Submitting a quote request or receiving a parcel does not promise a successful transfer."
+        ]
+      ]
+    }
   }
 ]

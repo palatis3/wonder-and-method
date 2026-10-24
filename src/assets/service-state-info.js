@@ -24,7 +24,9 @@ export const serviceStateInfo = [
  {id:'south-carolina',name:'South Carolina',abbreviation:'SC'},
  {id:'georgia',name:'Georgia',abbreviation:'GA'},
  {id:'mississippi',name:'Mississippi',abbreviation:'MS'},
- {id:'alabama',name:'Alabama',abbreviation:'AL'}
+ {id:'alabama',name:'Alabama',abbreviation:'AL'},
+ {id:'wisconsin',name:'Wisconsin',abbreviation:'WI'},
+ {id:'illinois',name:'Illinois',abbreviation:'IL'}
 ].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){

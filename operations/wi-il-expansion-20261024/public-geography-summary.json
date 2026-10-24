@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-10-24T06:45:46.319240+00:00",
+  "states": [
+    {
+      "stateId": "wisconsin",
+      "counties": 72,
+      "uniqueEntities": 2049,
+      "incorporatedPlaces": 608,
+      "cdps": 199,
+      "types": {
+        "City": 190,
+        "Village": 418,
+        "Census-designated place": 199,
+        "Town": 1242
+      },
+      "functionalStatuses": {
+        "A": 1850,
+        "S": 199
+      },
+      "memberships": 2116,
+      "crossCountyPlaces": 62,
+      "excludedFictitiousSubdivisions": 683
+    },
+    {
+      "stateId": "illinois",
+      "counties": 102,
+      "uniqueEntities": 3148,
+      "incorporatedPlaces": 1294,
+      "cdps": 167,
+      "types": {
+        "City": 300,
+        "Village": 980,
+        "Town": 14,
+        "Census-designated place": 167,
+        "Township": 1426,
+        "Precinct": 224,
+        "Election precinct": 37
+      },
+      "functionalStatuses": {
+        "A": 2705,
+        "S": 167,
+        "B": 14,
+        "N": 261,
+        "C": 1
+      },
+      "memberships": 3286,
+      "crossCountyPlaces": 127,
+      "excludedFictitiousSubdivisions": 8
+    }
+  ],
+  "representativeSelection": "Up to three incorporated places ordered by 2025 county-part population, then name. Counties without incorporated places use active towns/MCDs. Unknown county-part estimates remain null; whole-place populations are never substituted.",
+  "sourceManifest": "source-manifest.json"
+}

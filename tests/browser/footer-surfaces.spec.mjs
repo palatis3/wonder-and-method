@@ -14,8 +14,8 @@ test('compact footer preserves every group and works by keyboard',async({page})=
   await expect(group.locator('a').first()).toBeVisible();await page.keyboard.press('Tab');await expect(group.locator('a').first()).toBeFocused();
   await summary.focus();await page.keyboard.press('Space');await expect(group).not.toHaveAttribute('open','');
  }
- await expect(footer.locator('a')).toHaveCount(44);
- for(const state of ['georgia','mississippi','alabama'])await expect(footer.locator('a[href="/areas/'+state+'/"]')).toHaveCount(1);
+ await expect(footer.locator('a')).toHaveCount(46);
+ for(const state of ['georgia','mississippi','alabama','wisconsin','illinois'])await expect(footer.locator('a[href="/areas/'+state+'/"]')).toHaveCount(1);
  expect(await footer.evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(520);
 });
 

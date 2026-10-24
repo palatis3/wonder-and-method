@@ -1,0 +1,31 @@
+{
+  "reviewedAt": "2026-10-24",
+  "decisions": [
+    {
+      "path": "/areas/wisconsin/dane-county/",
+      "decision": "NO_ADDITION",
+      "reason": "The complete body, two scopes and planning table already answer the material customer uncertainty; another FAQ would repeat the existing answer."
+    },
+    {
+      "path": "/areas/illinois/dupage-county/",
+      "decision": "NO_ADDITION",
+      "reason": "The complete body, two scopes and planning table already answer the material customer uncertainty; another FAQ would repeat the existing answer."
+    },
+    {
+      "path": "/areas/illinois/cook-county/",
+      "decision": "NO_ADDITION",
+      "reason": "The complete body, two scopes and planning table already answer the material customer uncertainty; another FAQ would repeat the existing answer."
+    }
+  ],
+  "existingQuestionsPreserved": 234,
+  "existingPagesWithQuestions": 162,
+  "trackedDatasetQuestions": 231,
+  "trackedDatasetPaths": 161,
+  "remainingQuestions": "Three retained Erie questions on one page.",
+  "relatedGuides": "No loosely related guide forced onto these three pages.",
+  "policySources": [
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "https://developers.google.com/search/docs/essentials/spam-policies",
+    "https://developers.google.com/search/docs/appearance/structured-data/faqpage"
+  ]
+}

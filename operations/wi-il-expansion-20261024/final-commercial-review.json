@@ -1,0 +1,68 @@
+{
+  "reviewedDate": "2026-10-24",
+  "reviewer": "independent Astra content reviewer",
+  "result": "PASS",
+  "decision": "KEEP all three candidate records",
+  "requiredChanges": [],
+  "inputs": [
+    {"path": "evidence/wi-il-expansion-20261024/candidate-commercial.json", "sha256": "8387da6b20b1196e2667f0c36fa45b442945756930f934cd6a65bbba14c50378", "role": "Exact three-record content reviewed"},
+    {"path": "evidence/wi-il-expansion-20261024/draft-commercial.mjs", "sha256": "d8032c644c55eaaba1f68baef55157f9a689ea815a28a36fca57a53bebcbd968", "role": "Draft generator identity; review decision applies to generated JSON content"},
+    {"path": "src/location-service-data.json", "records": 1093, "sha256": "d1661acdd24f7a5d57608797d8b1c4062fd431ba11afdab685d577899d4a9d22", "role": "Unchanged prior-record corpus used for full closest-record comparisons"},
+    {"path": "evidence/wi-il-expansion-20261024/business-source-manifest.json", "sha256": "9374cba2e2352a8159cbe36eb6657fc8f2380c3c99fb1d43807e7faca76f3501", "role": "Direct-fetch outcomes, including retained HTTP 403 failures"},
+    {"path": "evidence/wi-il-expansion-20261024/raw/business-dane-fitting.html", "sha256": "3fdf9bb1e7e0167b5bdb5002142f65baab5c3a34a6e542abeabbee643b6aca9a", "role": "Successful native HTTP 200 capture of Cronometro fitting page"},
+    {"path": "evidence/wi-il-expansion-20261024/business-primary-web-capture.json", "sha256": "c104176d11c90b027b9a7870c14001511b235201553a7c809fcae832895582b0", "observedAt": "2026-10-24T06:55:41.178Z", "role": "Saved successful web-tool retrieval containing the original Ellman's return/rental and Chicago Scanning FAQ URLs and text"},
+    {"path": "src/service-faqs.json", "sha256": "f90860dc4fa17cf722a7d37c12ad8004b2542072fd4dbe1f3cfd5c529fbddba3", "role": "Unchanged tracked FAQ dataset; 231 questions on 161 paths in this file"},
+    {"path": "src/service-faqs.mjs", "sha256": "8b60c06b97afde3dd8466e59394818a7e1ef9ea5eee1aa25e454ba0af7bf8ab5", "role": "Unchanged tracked FAQ renderer"}
+  ],
+  "sourceEvidenceAssessment": {
+    "result": "PASS",
+    "dane": "Native capture hash matches manifest; text confirms separately listed fitting, setup to fit-sheet specifications, cleat fitting and Madison address.",
+    "dupage": "Native HTTP requests failed with 403 and remain recorded as failures. Successful saved web-tool content confirms assigned-serial matching, school pickup for both repairs and returns, return identification, contract termination on true return, and call/store size exchange with contract continuation.",
+    "cook": "Native HTTP request failed with 403 and remains recorded as failed. Successful saved web-tool content confirms the unfinalized-disc context: most Mini DVDs can be finalized, while regular DVDs require the original recording device, and identifies the Chicago office.",
+    "limitation": "Successful web-tool content is evidence of public-page retrieval, not evidence that native fetch succeeded, that forms work, or that any service transaction was performed. No failed response is relabeled HTTP 200."
+  },
+  "records": [
+    {
+      "areaId": "wisconsin/dane",
+      "decision": "KEEP",
+      "factualAttribution": "PASS. The published distinction between fitting and setup to fit-sheet specifications is accurately attributed. A rider using a prior sheet with a different bicycle is explicitly a proposed scenario; the draft does not claim Cronometro accepts every outside sheet or guarantees reproduction of a prior setup.",
+      "distinctness": "PASS. Full north-carolina/guilford covers mechanical versus position concerns; indiana/hendricks covers package labor versus parts; virginia/harrisonburg-city covers owned components in a build. This complete draft instead preserves the purpose and availability of an existing position specification versus requesting a new assessment, including the missing-sheet case.",
+      "scopeAndPlainLanguage": "PASS. Two scopes give usable content outcomes and owner inputs. Uploads, stored measurements, booking logic and compatibility checks are separately scoped. The four-row table tests purpose, reference availability, target bicycle and staff confirmation without automating fit guidance.",
+      "localCoverage": "PASS. Madison shop address supports the Dane example; coverage explicitly states remote Buffalo work and no client/partner relationship.",
+      "faq": "No addition warranted. Missing or uncertain sheets and service confirmation are already addressed in the body, scopes and table.",
+      "requiredChanges": []
+    },
+    {
+      "areaId": "illinois/dupage",
+      "decision": "KEEP",
+      "factualAttribution": "PASS. The draft accurately preserves serial identity, distinct repair/return purpose, and call/store fractional-size exchange with contract continuation. It explicitly prevents the school return route being inherited by exchange. Contacting the store for a mismatch is consistent with the source's instruction to contact Ellman's for assistance.",
+      "distinctness": "PASS. Full pennsylvania/washington concerns initial rental requirements and delivery; georgia/gwinnett concerns size changes versus upgrade credit; alabama/baldwin concerns asset-specific history. Although size change appears as an example, this draft's primary utility is carrying action intent with the correct instrument and applicable handoff instructions. It neither repeats Gwinnett's credit discussion nor reduces to Baldwin's history problem.",
+      "scopeAndPlainLanguage": "PASS. The two scopes are clear about improving links/content versus a fuller support journey. Accounts, serial lookup, scheduling, billing and contract changes are excluded from ordinary content work and separately scoped. The table tests misrouting, mismatch, supported location and completed-action meaning.",
+      "localCoverage": "PASS. The named West 5th Avenue store is a Naperville example; the text correctly avoids treating all Naperville as a single-county city. Remote Buffalo and nonclient status are explicit. No unsupported service coverage is attributed to Ellman's.",
+      "faq": "No addition warranted. The body and table already explain the action distinction, the serial mismatch route and why submission is not proof of receipt or completed contract change.",
+      "requiredChanges": []
+    },
+    {
+      "areaId": "illinois/cook",
+      "decision": "KEEP",
+      "factualAttribution": "PASS. The regular-DVD recorder requirement remains in its unfinalized-disc context. The draft retains the qualifier most for Mini DVDs, allows unknown status and does not diagnose unplayability, promise recovery or invent a missing-recorder workaround.",
+      "distinctness": "PASS. Full ohio/scioto maps photo source to output; pennsylvania/snyder separates copying from restoration; virginia/petersburg-city separates collection transport from inventory. This complete draft instead exposes the originating equipment as a prerequisite that remains unresolved even after an output is selected or a parcel arrives.",
+      "scopeAndPlainLanguage": "PASS. The proposed form behavior is clearly labeled as proposed rather than a claim about the existing company's software. Two scopes and four planning rows carry source identity, unknown finalization, missing equipment and assessment through a useful inquiry. Tracking, uploads and automated eligibility are separately scoped.",
+      "localCoverage": "PASS. The Chicago office supports the Cook example; remote Buffalo and nonclient status are explicit.",
+      "faq": "No addition warranted. Unknown disc type, unknown finalization and missing recorder are already covered without forcing a technical diagnosis.",
+      "requiredChanges": []
+    }
+  ],
+  "structuralChecks": {
+    "threeDistinctAreaIds": true,
+    "twoScopesPerRecord": true,
+    "fourPlanningRowsPerRecord": true,
+    "fourPlanningColumnsPerRecord": true,
+    "noCandidateFaqs": true,
+    "candidatePathsAbsentFromExistingFaqDataset": true,
+    "noForcedRelatedGuides": true,
+    "existingFaqFilesUnchangedInGitStatus": true
+  },
+  "faqBoundary": "The existing tracked dataset and renderer are unchanged; candidates add no FAQs. The dataset itself contains 231 questions across 161 paths. The parent's broader original total of 234 questions across 162 pages was not independently recounted in rendered output during this bounded content review; do not misrepresent this file-level count as a contradictory full-site total.",
+  "reviewBoundary": "Independent final content review of the exact candidate hash above, with preserved full closest-record comparisons from the preceding research pass because the baseline hash is unchanged. No source, tests, generator, FAQ, production or third-party data changed by this reviewer. This is not a rendered integration, crawl, deployed-runtime, redirect, or transaction test. Later content changes require a focused rereview of the changed records."
+}

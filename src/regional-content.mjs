@@ -1,3 +1,4 @@
+import {wiIlGeography,wiIlAreaInventory} from './wi-il-geography.mjs';
 import {msAlGeography,msAlAreaInventory} from './ms-al-geography.mjs';
 import {georgiaGeography,georgiaAreaInventory} from './georgia-geography.mjs';
 import {southCarolinaGeography,southCarolinaAreaInventory} from './south-carolina-geography.mjs';
@@ -7,8 +8,8 @@ import {inKyTnNcGeography,inKyTnNcAreaInventory} from './in-ky-tn-nc-geography.m
 import {floridaGeography,floridaAreaInventory} from './florida-geography.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 
-export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography};
-export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory];
+export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography};
+export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory];
 // The directory groups verified places within state/district hubs.
 // A county does not receive a separate commercial page merely to target its name.
 export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).map(stateId=>{

@@ -1,0 +1,88 @@
+{
+  "reviewedAt": "2026-10-24",
+  "method": "Actual signed-in Semrush US browser analysis through native Windows accessibility; no API metrics or fabricated exports.",
+  "distinctInputPhrases": 448,
+  "refreshedSubset": 36,
+  "keywordBatches": [
+    {
+      "file": "keyword-state-city.json",
+      "observedAt": "2026-10-24T06:34:32.630Z",
+      "rows": 100,
+      "statuses": {
+        "displayed": 33,
+        "missing": 8,
+        "partial": 59
+      },
+      "sha256": "01d657b172d528c706a36a59f248632a38bffb0b92a3615cdbb6ee1cbd131d63"
+    },
+    {
+      "file": "keyword-counties-1.json",
+      "observedAt": "2026-10-24T06:37:43.884Z",
+      "rows": 100,
+      "statuses": {
+        "missing": 98,
+        "partial": 2
+      },
+      "sha256": "5c4d45b60a4bf7334445e6db615713ef7d2211a28bf03530f1e184d735729021"
+    },
+    {
+      "file": "keyword-counties-2.json",
+      "observedAt": "2026-10-24T06:38:14.729Z",
+      "rows": 100,
+      "statuses": {
+        "missing": 95,
+        "partial": 5
+      },
+      "sha256": "7f0843fc8276d40044537cfebaf4bab735b74adc4ccbdba03e68eaba9dd6572f"
+    },
+    {
+      "file": "keyword-counties-3.json",
+      "observedAt": "2026-10-24T06:38:56.934Z",
+      "rows": 100,
+      "statuses": {
+        "missing": 98,
+        "partial": 2
+      },
+      "sha256": "85eaa05ea2eac90d0f519b5a03dd17baaa19d3158c4ead3021d91596021b962e"
+    },
+    {
+      "file": "keyword-counties-4.json",
+      "observedAt": "2026-10-24T06:39:36.626Z",
+      "rows": 48,
+      "statuses": {
+        "missing": 44,
+        "partial": 4
+      },
+      "sha256": "4e041a870fd7efed02ba28622564fdfcb03177dd8acbc79150a08693b751cea2"
+    },
+    {
+      "file": "keyword-shortlist-counties-refreshed.json",
+      "observedAt": "2026-10-24T06:46:23.033Z",
+      "rows": 36,
+      "statuses": {
+        "displayed": 36
+      },
+      "sha256": "9594a91ffdf813df12535fb469feab7421b303b5fa71c38c144c1b9800ef91d4"
+    }
+  ],
+  "interpretation": "Missing, partial, loading, n/a and zero remain distinct. US phrase estimates do not measure county-resident demand. Overlapping phrases are not summed.",
+  "questionResearch": {
+    "wisconsin": {
+      "allKeywordSuggestionsDisplayed": 311,
+      "broadMatchQuestions": 1,
+      "broadMatchQuestion": "is web design taxable in wisconsin",
+      "displayedVolume": "0",
+      "displayedKD": "n/a"
+    },
+    "illinois": {
+      "allKeywordSuggestionsDisplayed": 711,
+      "broadMatchQuestions": 0
+    },
+    "limitation": "All Keywords includes generic semantic suggestions; not all listed suggestions were individually reviewed and none establishes local demand."
+  },
+  "counties": 174,
+  "commercialShortlist": 18,
+  "approvedCountyPages": 3,
+  "heldShortlistCounties": 15,
+  "otherDirectoryOnlyCounties": 156
+}

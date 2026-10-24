@@ -22,11 +22,11 @@ const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:stat
 const matches=(query,state='')=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query),state)).map(card=>`${card.state}/${card.slug}`);
 const e=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
-test('all 1433 area entries resolve to indexable pages and remain crawlable without JavaScript',()=>{
+test('all 1607 area entries resolve to indexable pages and remain crawlable without JavaScript',()=>{
  const directory=countyDirectory();
  const stateDirectories=new Map(serviceStates.map(state=>[state.id,countyDirectory(state)]));
- assert.equal(cards.length,1433);
- assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24,133,55,83,1,92,120,95,100,67,46,159,82,67]);
+ assert.equal(cards.length,1607);
+ assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24,133,55,83,1,92,120,95,100,67,46,159,82,67,72,102]);
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
   assert.ok(routeIndexEligible(route.split('#')[0]),route);
@@ -34,8 +34,8 @@ test('all 1433 area entries resolve to indexable pages and remain crawlable with
   assert.ok(stateDirectories.get(state.id).includes(`href="${route}"`),route);
   if(route!=='/areas/erie-county/')assert.ok(byPath.has(route.split('#')[0]),route);
  }
- assert.equal((directory.match(/data-cs=/g)||[]).length,1433);
- assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,25);
+ assert.equal((directory.match(/data-cs=/g)||[]).length,1607);
+ assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,27);
  assert.doesNotMatch(directory,/data-county-filter-controls hidden/);
  assert.match(directory,/<noscript>.*Open the lists below to browse every service area/s);
  assert.equal((directory.match(/for="county-search"/g)||[]).length,1);
@@ -102,7 +102,7 @@ test('search names are normalized and deduplicated with less than 350 bytes per 
 });
 
 test('state hubs retain all place facts and distinguish borough aliases while Erie keeps its custom page',()=>{
- assert.equal(pages.length,26);assert.equal(byPath.size,26);
+ assert.equal(pages.length,28);assert.equal(byPath.size,28);
  let entries=0;
  for(const state of serviceStates){
   const page=byPath.get(state.path);assert.ok(page,state.path);
@@ -115,7 +115,7 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
    if(county.geographyNote)assert.ok(page.body.includes(e(countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote)),state.id+'/'+county.slug+' local distinction');
   }
  }
- assert.equal(entries,1433);
+ assert.equal(entries,1607);
  const ny=byPath.get('/areas/new-york/').body;
  for(const name of ['Brooklyn','Manhattan','Staten Island'])assert.ok(ny.includes(name),name);
  const erie=countyCoverage(erieGeography,config,offers);
@@ -135,10 +135,10 @@ test('all 2 remaining retired county routes point to preserved entries and publi
  }
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
- const rendered=countyPages(changed);assert.equal(rendered.length,26);
+ const rendered=countyPages(changed);assert.equal(rendered.length,28);
  for(const page of rendered)for(const text of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(text),page.path+' '+text);
  const links=serviceAreaLinks();
- assert.equal((links.match(/href=/g)||[]).length,26);assert.match(links,/href="\/areas\/"/);assert.doesNotMatch(links,/-county\//);
+ assert.equal((links.match(/href=/g)||[]).length,28);assert.match(links,/href="\/areas\/"/);assert.doesNotMatch(links,/-county\//);
 });
 
 test('all 333 public worksheets preserve the exact task, decisions, checks and safe note fields',async()=>{
