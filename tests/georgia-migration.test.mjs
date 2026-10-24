@@ -15,7 +15,7 @@ test('migration 0030 adds exactly seven Georgia keys and preserves all 1182 hist
  const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page'),added=paths.map(journeyPageKey).sort();
  assert.equal(paths.length,7);assert.equal(old.length,1182);assert.equal(next.length,1189);
  assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));
- assert.deepEqual([...journeyPages].sort(),next.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')).sort(),next.slice().sort());
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

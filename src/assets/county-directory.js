@@ -1,4 +1,5 @@
 import {serviceStateInfo} from './service-state-info.js';
+// data-cs and data-cl keep repeated search-card markup compact; visible names and links remain complete.
 // Search stays in this browser; names are stored once per official place type.
 export const normalizeCountyQuery=value=>String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\bsaint\b/g,'st').replace(/['’]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
 // Consecutive names of the same type share one prefix in the HTML payload.
@@ -89,7 +90,7 @@ export function bindCountyDirectory(root=document){
  if(!controls||!input||!clear||!status||!empty)return;
  const nameData=root.querySelector('[data-county-place-names]');
  const names=nameData?unpackCountyNames(JSON.parse(nameData.textContent)):undefined;
- const cards=[...directory.querySelectorAll('[data-county-search]')].map((element,index)=>({element,index,state:element.closest('[data-county-state]').dataset.countyState,terms:unpackCountySearch(element.dataset.countySearch,names)}));
+ const cards=[...directory.querySelectorAll('[data-cs]')].map((element,index)=>({element,index,state:element.closest('[data-county-state]').dataset.countyState,terms:unpackCountySearch(element.dataset.cs,names)}));
  const sections=[...directory.querySelectorAll('.county-section')];
  const results=root.querySelector('[data-county-results]');
  const bestList=results?.querySelector('[data-county-best]'),moreList=results?.querySelector('[data-county-more]');
@@ -97,7 +98,7 @@ export function bindCountyDirectory(root=document){
  const stateLabels=Object.fromEntries(serviceStateInfo.map(state=>[state.id,state.name]));
  const areaPlural=controls.dataset.areaPlural||'areas';
  const makeResult=card=>{
-  const row=root.createElement('li'),link=card.element.querySelector('[data-county-link]').cloneNode(true),why=root.createElement('p');
+  const row=root.createElement('li'),link=card.element.querySelector('[data-cl]').cloneNode(true),why=root.createElement('p');
   link.removeAttribute('aria-hidden');
   why.className='county-match-reason';
   why.textContent=stateLabels[card.state]+(card.match.name?' · Matched '+card.match.type+': '+card.match.name: ' · Service area');

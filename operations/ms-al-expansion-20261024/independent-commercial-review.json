@@ -1,0 +1,271 @@
+{
+  "reviewedAt": "2026-10-24T04:05:47.725895+00:00",
+  "scope": "Independent source/content review of five final candidate records, including a bounded rereview of revised Baldwin. Not rendered integration or sitewide SEO approval.",
+  "gate": "pass",
+  "summary": "Final five candidates KEEP after Baldwin source/concept replacement. Initial MakeWake hold is resolved. No required content revisions remain.",
+  "candidateCount": 5,
+  "inputHashes": {
+    "evidence/ms-al-expansion-20261024/candidate-commercial.json": "65a0a2c368a4e2d7c4ee8e9038e19053a734c83194251da92cff94c827e1ef9e",
+    "evidence/ms-al-expansion-20261024/business-source-manifest.json": "c548ab2da06f465ca90f95dcc540bafbd4b57ab9ce13563cbe33861faa798b38",
+    "src/location-service-data.json": "d1661acdd24f7a5d57608797d8b1c4062fd431ba11afdab685d577899d4a9d22",
+    "evidence/ms-al-expansion-20261024/raw/google-spam-policies.html": "fcf8febdcfe9e3b62920a5a683337dd509e73d568432994304d12dc5a1112756",
+    "evidence/ms-al-expansion-20261024/raw/google-helpful-content.html": "64989fbabbf79dfcd6dc1464a9785b5614d9e28619f85debc7ab5ee0e081d32f",
+    "evidence/ms-al-expansion-20261024/keyword-shortlist-counties-refreshed.json": "38da1354d9a8e3d4dec28e7fb1485da372fd9cd8b01fbb41cfc4be6dfac8a6c3",
+    "evidence/ms-al-expansion-20261024/semrush-questions-ms-all.ax.txt": "0370fecf6c32f27ff91d459fb7ff64bff0c1d5a671d6bf732724df600a953116",
+    "evidence/ms-al-expansion-20261024/semrush-questions-al-all.ax.txt": "487238d380079b94dd45bf4728d2a5ea297cd2f4c282da40688f023175776b46",
+    "evidence/ms-al-expansion-20261024/raw/business-lafayette-chef.html": "02aad7d494c8ad7caa0cd69385542cfd8c357230cef0de37499c8765a75e0295",
+    "evidence/ms-al-expansion-20261024/raw/business-harrison-tours.html": "7b36face245379c7b2baee13ab43ef6370bc73ecafdfe87872dc32adf72654d1",
+    "evidence/ms-al-expansion-20261024/raw/business-forrest-pottery-current.html": "946512a21079c1cebf156bdad68b66c185468a44673cc8775cdb894f3cfea56e",
+    "evidence/ms-al-expansion-20261024/raw/business-forrest-pottery-location.html": "aca41ee6e496c2077edbbf3eb37f3358c9221ae2b51a20947eb3d3a3fe787698",
+    "evidence/ms-al-expansion-20261024/raw/business-baldwin-logistics.html": "8b243439b8e1761c70093cca6016e92f8c0f698098f046ab3920b9269b18916c",
+    "evidence/ms-al-expansion-20261024/raw/business-jefferson-orders.html": "72087c260b13fcfefc38be5a4d8583f3acefa0854cfbbf4fd1bd998454d4c479",
+    "evidence/ms-al-expansion-20261024/raw/business-jefferson-shipping.html": "f95a128c769a86a748f790dd584e65ac7fb4e43e24bf37176716b0d1f956d857",
+    "evidence/ms-al-expansion-20261024/raw/business-jefferson-locations.html": "210a4e095554d99256dde23eb60ffdab48e22b9fa0995334ab7c593661ae96d8",
+    "evidence/ms-al-expansion-20261024/baldwin-primary-web-check.json": "3414afae872f032b4cb0c997aeab403021fe658e02602a43bd60b822531fe6a3",
+    "evidence/ms-al-expansion-20261024/revise-baldwin.mjs": "25eb3fd089320e731e248e00d1e14fb93b72a28d8081797ef119d93cdf7a9465",
+    "evidence/ms-al-expansion-20261024/draft-commercial.mjs": "0b6945c68d28e1f3d75cccf71d10a1d6faffc6edc05901afbbe671fc878fb1bb"
+  },
+  "sourceManifestChecks": [
+    {
+      "id": "lafayette-chef",
+      "file": "raw/business-lafayette-chef.html",
+      "sha256": "02aad7d494c8ad7caa0cd69385542cfd8c357230cef0de37499c8765a75e0295",
+      "matchesManifest": true
+    },
+    {
+      "id": "harrison-tours",
+      "file": "raw/business-harrison-tours.html",
+      "sha256": "7b36face245379c7b2baee13ab43ef6370bc73ecafdfe87872dc32adf72654d1",
+      "matchesManifest": true
+    },
+    {
+      "id": "forrest-pottery-current",
+      "file": "raw/business-forrest-pottery-current.html",
+      "sha256": "946512a21079c1cebf156bdad68b66c185468a44673cc8775cdb894f3cfea56e",
+      "matchesManifest": true
+    },
+    {
+      "id": "forrest-pottery-location",
+      "file": "raw/business-forrest-pottery-location.html",
+      "sha256": "aca41ee6e496c2077edbbf3eb37f3358c9221ae2b51a20947eb3d3a3fe787698",
+      "matchesManifest": true
+    },
+    {
+      "id": "baldwin-logistics",
+      "file": "raw/business-baldwin-logistics.html",
+      "sha256": "8b243439b8e1761c70093cca6016e92f8c0f698098f046ab3920b9269b18916c",
+      "matchesManifest": true
+    },
+    {
+      "id": "jefferson-orders",
+      "file": "raw/business-jefferson-orders.html",
+      "sha256": "72087c260b13fcfefc38be5a4d8583f3acefa0854cfbbf4fd1bd998454d4c479",
+      "matchesManifest": true
+    },
+    {
+      "id": "jefferson-shipping",
+      "file": "raw/business-jefferson-shipping.html",
+      "sha256": "f95a128c769a86a748f790dd584e65ac7fb4e43e24bf37176716b0d1f956d857",
+      "matchesManifest": true
+    },
+    {
+      "id": "jefferson-locations",
+      "file": "raw/business-jefferson-locations.html",
+      "sha256": "210a4e095554d99256dde23eb60ffdab48e22b9fa0995334ab7c593661ae96d8",
+      "matchesManifest": true
+    }
+  ],
+  "candidateRecordHashes": {
+    "mississippi/lafayette": "8a3cba787022dec14aea3206c34fc9295057db8f9ec7c83e33bcd2238c6000c1",
+    "mississippi/harrison": "a4b7be08dd5f0c3b8fa488ae86c77360311f33f9a84d71d6270e90fa8d289522",
+    "mississippi/forrest": "31c4ce84fcc68ecbef35d76e3e0b952c35b2346fb7630ee3242c0e24f5924ec3",
+    "alabama/baldwin": "744a3428c2da083b0d47db9bce8eafc199b10a0fda30180089b7278872a650d1",
+    "alabama/jefferson": "f4b9e3ca30ba31bb040d9f23b493d6c3e4ae279df02aa0f6da80fe88b508efcc"
+  },
+  "records": [
+    {
+      "areaId": "mississippi/lafayette",
+      "recommendation": "keep",
+      "gate": "pass",
+      "sourceGate": "pass",
+      "distinctnessGate": "pass",
+      "comparedWith": [
+        "ohio/richland",
+        "new-york/suffolk"
+      ],
+      "sourceFinding": "The saved Chef Stewart Robinson homepage supports Oxford, private dining/classes, kitchen stocking and food preparation before arrival, and confirmation before a deposit. The Friday scenario and access-coordinator inquiry are explicitly proposed, not reported software behavior.",
+      "utilityFinding": "Richland compares catering service styles; Suffolk distinguishes inquiry/payment/confirmation states. Lafayette adds a ready-by arrival deadline versus attended service time, with access coordination that avoids collecting credentials. The deposit step alone would duplicate Suffolk, but it is not the main contribution.",
+      "requiredChanges": [],
+      "faqAssessment": "No essential omitted FAQ. Presence, access information and confirmation before payment are already answered. Recasting these as questions would repeat the body."
+    },
+    {
+      "areaId": "mississippi/harrison",
+      "recommendation": "keep",
+      "gate": "pass",
+      "sourceGate": "pass",
+      "distinctnessGate": "pass",
+      "comparedWith": [
+        "south-carolina/charleston",
+        "north-carolina/hyde",
+        "virginia/york",
+        "indiana/crawford"
+      ],
+      "sourceFinding": "The saved Biloxi FAQ supports a ferry with 90 minutes island time, a sunset trip with 30 minutes island time, a coastal ride, a customizable private tour, and Point Cadet departure/return. Draft avoids publishing an inferred total duration or guaranteed return.",
+      "utilityFinding": "Charleston treats whole-boat price and passenger count; Hyde treats activity priorities; York treats commentary/participation. Crawford is the closest timing analogy (tour duration versus whole visit), but Harrison adds outbound crossing, unaccompanied island interval, return arrangement and a private-itinerary switch. That is useful additional comparison, not a renamed cave-tour page.",
+      "requiredChanges": [],
+      "faqAssessment": "No essential omitted FAQ. What a duration measures and where to confirm return are covered. A separate weather FAQ is unnecessary; operator instructions remain authoritative."
+    },
+    {
+      "areaId": "mississippi/forrest",
+      "recommendation": "keep",
+      "gate": "pass",
+      "sourceGate": "pass",
+      "distinctnessGate": "pass",
+      "comparedWith": [
+        "georgia/richmond",
+        "massachusetts/hampshire",
+        "pennsylvania/monroe",
+        "indiana/brown",
+        "indiana/marshall",
+        "indiana/noble",
+        "indiana/posey",
+        "virginia/lynchburg-city",
+        "virginia/stafford",
+        "north-carolina/chatham",
+        "virginia/greene",
+        "michigan/van-buren",
+        "tennessee/henry",
+        "south-carolina/dorchester"
+      ],
+      "sourceFinding": "Current mainstreetco.us collection, rather than the dead former domain, expressly lists painting 12, handbuilding 8 and wheel 5 total under private-party minimums. Its vendor profile supports historic downtown Hattiesburg at 210 Main Street. The draft appropriately notes the city spans Forrest/Lamar.",
+      "utilityFinding": "Richmond handles two sequential individual appointments; other pottery pages handle finishing, return visits, instruction/access, exclusive space, firing or inventory. Forrest tests an eight-person private group switching to an activity requiring twelve and separates minimum eligibility from capacity. Dorchester shares the change-choice/recheck pattern, but concerns custom cake servings and lead time, not party format eligibility.",
+      "requiredChanges": [],
+      "faqAssessment": "No essential omitted FAQ. The below-minimum contact route is useful and already explicit; do not invent exceptions or present the minimum as available capacity."
+    },
+    {
+      "areaId": "alabama/baldwin",
+      "recommendation": "keep",
+      "gate": "pass",
+      "sourceGate": "pass",
+      "distinctnessGate": "pass",
+      "comparedWith": [
+        "virginia/gloucester",
+        "tennessee/shelby",
+        "north-carolina/new-hanover",
+        "new-york/jefferson",
+        "tennessee/rutherford",
+        "georgia/fulton",
+        "kentucky/crittenden",
+        "maryland/somerset",
+        "south-carolina/spartanburg"
+      ],
+      "sourceFinding": "Independent read-only live open of the GSPS service URL returned primary visible content crawled today. It identifies Gulf Shores, separates vessel identifiers and requested service, and asks about earlier service on that vessel with previous-visit/work fields. The draft accurately treats a returning customer with a different boat as an illustrative case and does not assert prefilled data, a database lookup or an actual GSPS defect. No provisional-build label was observed. Direct HTTP retrieval failed separately; this review relies on independently readable primary web content.",
+      "utilityFinding": "New York Jefferson groups storage/restoration/return-to-use; Rutherford differentiates unchanged versus changed reorders; Fulton keeps old core and replacement identities distinct; Crittenden explains prior restoration work. Spartanburg is the closest identity analogy: portfolio boat versus customer boat. Baldwin instead prevents a familiar customer relationship from attributing an earlier service record to a different current asset. Current-vessel identity, unknown history and reviewing history after a changed vessel provide a useful distinct service-inquiry check.",
+      "requiredChanges": [],
+      "faqAssessment": "No essential omitted FAQ. The draft already asks how to handle unknown vessel history and separates record lookup/accounts from a wording improvement. A form may need owner-approved unknown/not-sure guidance, but the page correctly treats that as a proposed question rather than inventing GSPS policy."
+    },
+    {
+      "areaId": "alabama/jefferson",
+      "recommendation": "keep",
+      "gate": "pass",
+      "sourceGate": "pass",
+      "distinctnessGate": "pass",
+      "comparedWith": [
+        "georgia/chatham",
+        "south-carolina/dorchester",
+        "virginia/bristol-city",
+        "virginia/prince-edward",
+        "kentucky/anderson"
+      ],
+      "sourceFinding": "Edgar’s local-order article supports pickup/local delivery and separate Goldbelly shipping. Shipping page distinguishes dispatch and arrival days and preparation by product type. Location page identifies Financial Center at 505 20th Street North, Birmingham. Draft does not transfer all branches into Jefferson County or assert shared carts.",
+      "utilityFinding": "Chatham treats item-specific destination restrictions; Dorchester treats fixed/custom cake servings and notice; Bristol treats pickup location and stock. Prince Edward distinguishes production/warehouse/driver stages and Anderson made-to-order readiness. Jefferson adds a change between local pickup and external shipping, requiring date meaning, available shipped products and preparation time to be reconsidered together.",
+      "requiredChanges": [],
+      "faqAssessment": "No essential omitted FAQ. The draft already explains why local dates/cart choices cannot be assumed to transfer and who confirms shipped options. Do not add food-handling answers beyond maintained bakery guidance."
+    }
+  ],
+  "crossCutting": {
+    "claimsGate": "pass",
+    "scopeGate": "pass",
+    "findings": [
+      "All five disclose remote work from Buffalo and identify named businesses as research examples, not clients or partners. No local office, invented business-software diagnosis, guaranteed rankings or county demand assertion found.",
+      "All five distinguish a focused content edit from a fuller introduction and exclude custom scheduling/payment/inventory/operational software from ordinary scope. Proposed examples remain conditional and business decisions remain with the operator.",
+      "The five use a common narrative/scopes/table frame and repeatedly test a changed customer choice. That shared mechanism requires scrutiny, but the concrete decision units differ: ready-by deadline, outing segments, activity minimum, vessel-history attribution, and fulfillment clocks. Do not treat this review as permission to scale the pattern by renaming counties.",
+      "Google saved policies evaluate purpose and added value, not a numerical page cap. These five supported candidates add applied planning checks beyond paraphrasing primary businesses; no conclusion about ranking, indexing or the full collection follows."
+    ]
+  },
+  "faqAssessment": {
+    "gate": "pass",
+    "mandatoryAdditions": [],
+    "optionalSharedQuestion": "Who keeps service requirements and provider links up to date after launch?",
+    "rationale": "Owner inputs are named, but ongoing update responsibility is not explicit. If the existing shared service/maintenance content does not answer it, a single shared answer linked from relevant pages could help buyers. Answer only from actual studio terms; do not clone a county FAQ block.",
+    "researchLimits": "Inspected saved state question results: Mississippi includes a website-redesign-cost phrase but is heavily mixed with billboards, unrelated geographies and fragments; Alabama mixes unrelated legal, Alaska and other-state topics. The refreshed shortlist states US national phrase estimates, not county-resident demand. No volume-derived FAQ requirement or SEO promise is justified. FAQ rich-result eligibility is not a reason to add content."
+  },
+  "liveVerification": [
+    {
+      "url": "https://www.makewake.org/index.html",
+      "retrievedDate": "2026-10-24",
+      "observations": "Primary URL was readable; cited convenience options remain public, Review build remains in footer, preview-refresh.vercel.app is used for several images. No independent operational confirmation obtained.",
+      "role": "Confirms source reliability concern, not service fulfillment."
+    },
+    {
+      "url": "https://www.gspsmarine.com/service-request-boats-dealership--xservice_request",
+      "retrievedDate": "2026-10-24",
+      "method": "Independent read-only web open; crawled today.",
+      "observations": "Visible primary form identifies the current vessel separately from requested work and earlier service on that vessel; Gulf Shores address visible; no provisional footer observed.",
+      "role": "Final Baldwin factual-source evidence; no form submitted and no customer data accessed."
+    }
+  ],
+  "notReviewed": [
+    "Rendered page integration, accessibility or navigation",
+    "Census geography, separately verified by primary agent",
+    "Sitewide doorway compliance or ranking outcomes",
+    "Changes made after final input hashes"
+  ],
+  "revisionHistory": [
+    {
+      "areaId": "alabama/baldwin",
+      "originalRecommendation": "revise/hold",
+      "reason": "Saved and live MakeWake primary-domain HTML contain the cited mobile, transport and after-hours descriptions, but the footer explicitly labels the site Review build. Several live assets resolve to preview-refresh.vercel.app. This is evidence of published draft wording, insufficient here to treat the operational options as settled current offerings without corroboration. The earlier GSPS direct-fetch 403 does not support the current draft and is not cited by it.",
+      "originalConcept": "Repair location versus boat transport and after-hours handoff.",
+      "resolution": "Replaced with independently readable GSPS primary service-form example; MakeWake is no longer cited by the final candidate. Direct-request 403 remains recorded and is not relabeled as success."
+    }
+  ],
+  "baselineRecordCountObservedBeforeIntegration": 1088,
+  "datasetRecordCountAtFinalHash": 1093,
+  "datasetHashNote": "The primary agent integrated five candidates concurrently: original comparison dataset was observed at 1088 records, final hashed dataset has 1093. Canonical hashes below identify the exact compared records at finalization; no original full-dataset hash is claimed.",
+  "comparedRecordHashes": {
+    "new-york/suffolk": "cb0b685db76c38784bd1f18d6896feacd3d5125d067a3db221b3c760f72b2614",
+    "new-york/jefferson": "7ff77e5149acc7978ae203f76ab2ef821ab253c24bf2bf0a5f968ee5014601d7",
+    "tennessee/rutherford": "0bf17e95d5f0e94f03c144eafe96549907bb8d1461818b56328548d49537e0f5",
+    "tennessee/shelby": "91a683a9313eed1335eafb3b6cb074e20505c22450ca5f16f947681264e050af",
+    "virginia/bristol-city": "4c6c1659d7de11ab24f50cf3f4406af9dadac7645d382cddf9e014f7730226d1",
+    "north-carolina/chatham": "86e360fad3fd3870fd8c8b82d9f36322e63ecda47bef74f522dd05aa83d87412",
+    "ohio/richland": "855f241f322429b92506b85770d80b23da12caf34d1aea00bb273d84f677b3b0",
+    "massachusetts/hampshire": "ac30999886ef835e578d9feaf37673c5bde7daaef206e28ad3a58c319365ab14",
+    "kentucky/anderson": "2d513416f27d834dbe7eea1ed66afa45942a38e40049d1f7e69040715686d6a9",
+    "virginia/gloucester": "eee06efc993a6813ca64e53e1acba462cc85ad05232a9fb10bbcdaed54e1b919",
+    "north-carolina/new-hanover": "76cf3414609cc22ddde09903a411d35849ca22d744c76b407cae5fbaaa5e049f",
+    "kentucky/crittenden": "1041a9798c6b526152f91f0f865943904fc2fd77779498c38ca21ac6802d05ae",
+    "virginia/greene": "16aaa6c53a465d0f7e3ab348356fe4c2be0fe7fd7c246d2d908ab42c3854f6f6",
+    "virginia/lynchburg-city": "80130f913fc8128db5f1fac6e438b228bc4c5f377de4ee4b90493d3059f053f4",
+    "north-carolina/hyde": "1ea89b710927d4cc7ef9323677e28604b1ea5e43bfd82d8f5f89b394c36f3dda",
+    "pennsylvania/monroe": "6892e5d7be0b8f07f00b20907fc3de76cbea70db2901a187567ac76a89c4b7a4",
+    "virginia/prince-edward": "e93c47515d9f66fd35d6d1240e68c03e8daa37b72d03691238cb74ae1dab3bd2",
+    "maryland/somerset": "68b930e258fe9037c77dc4d3d9c91ed638d1a07427e23f67172d877fee1e569a",
+    "michigan/van-buren": "62e2e0c1ef9b887e8a473cb156b68c48c36e741f550f31f3b4d62c12ecf4da55",
+    "indiana/brown": "5f18a2777298e76cde533ade4a5344404ab9a4c6c38b25b50c8f1ad16b623daa",
+    "tennessee/henry": "b548244d81aab5cb88633c66456f1175a4cf056509d831c3f1593d1aa96218f9",
+    "indiana/crawford": "2c83555765c967851a9f367ef5b06140156de3ff68b242e11313db80438f8bec",
+    "virginia/stafford": "bf3df2f809334ceecd6327007f48188989f31782a93a33efcf8ba25bca4f7c53",
+    "virginia/york": "6a693ad04f03e8eaf553b662d064bc4e2db8aa03fc8474590867d2e5c0a7105f",
+    "indiana/marshall": "cf048c045acc46606ea425146b21a252a9770b317a7f07001d8ee70377cbf4bc",
+    "indiana/noble": "a9d729c87825163cd68f211881eee36be66d12c3212d4f27de3f9a6d7a3b6f09",
+    "indiana/posey": "abacc75ad1c81225254b520c021a7adb2e253afa8ad2270c14f19f36788c4158",
+    "south-carolina/charleston": "3f7a50ccd1bc7bdfad42208945322c01c155f3c54aa0f013a0c4d30f9a61a338",
+    "south-carolina/dorchester": "48547ad80efd9a223a22510b8672829ae083f95997c1afa060ebe4bd67de0845",
+    "south-carolina/spartanburg": "abcdf4ee99f51b2bd677afe52e24f7e7e92c7adf4d65f243118cc6b49e352b5b",
+    "georgia/chatham": "134d3d161bf5e3eaa8ebeda6c7d35f32bb2d855be4d85c9644c8fc8ff13459de",
+    "georgia/richmond": "96a71eeee52d24d1c2a2e1f8111c1400ce1acbbdaf631abb1851fae6abbbf981",
+    "georgia/fulton": "70dd1fbc233b2d716a1d6e480d9cc8a9c990a82b7e3047294ea0b00f33dae94e"
+  }
+}

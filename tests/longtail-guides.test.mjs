@@ -17,7 +17,7 @@ const [config,offers,map,geography,previous]=await Promise.all(['config/site.jso
 const expected=['ai-search-visibility','ai-website-content-review','local-seo-audit','slow-website-on-mobile'].map(x=>'/guides/'+x+'/');
 const pages=renderPages({config,offers,map,geography});
 test('four distinct guides retain approval gates while the historical 411 routes resolve through live pages or county redirects',()=>{
- assert.equal(previous.length,411);assert.equal(pages.length,1217);
+ assert.equal(previous.length,411);assert.equal(pages.length,1224);
  for(const route of previous){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);const target=pages.find(page=>page.path===hub);assert.ok(target,destination);if(slug)assert.ok(target.html.includes(`id="${slug}"`),destination);}

@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-24T04:01:55.577Z",
+  "method": "Semrush signed-in Chrome UI, with native Windows input where browser input stalled. No API calls, upgrades, purchases or fabricated estimates.",
+  "queryCount": 398,
+  "completeDisplayedRows": 152,
+  "pendingOrPartialRows": 246,
+  "volumeCaution": "US database phrase estimates are not searches by county residents. n/a, blank, zero and For metrics, refresh remain distinct. The 26-county shortlist is a research prioritization, not an approval or demand threshold.",
+  "sourceFiles": [
+    {
+      "file": "keyword-state-city-initial.json",
+      "observedAt": "2026-10-24T03:35:41.884Z",
+      "rawFile": "semrush-state-city-initial.ax.txt",
+      "rawSha256": "4cee1dff028714af6a863a8698c47c92348514357bf706e9737b1702c0ab1b89"
+    },
+    {
+      "file": "keyword-state-city-refreshed.json",
+      "observedAt": "2026-10-24T03:40:56.110Z",
+      "rawFile": "semrush-state-city-refreshed.ax.txt",
+      "rawSha256": "6a7dfbafc28cad5a62a313f1b706dd713432a7d2c503bafb6f6aac138524384a"
+    },
+    {
+      "file": "keyword-counties-1.json",
+      "observedAt": "2026-10-24T03:42:40.037Z",
+      "rawFile": "semrush-counties-1.ax.txt",
+      "rawSha256": "e916597bcbfe5be0b826616af2a750e5c6ef85d2ed2ee59800d939261bf7c0a4"
+    },
+    {
+      "file": "keyword-counties-2.json",
+      "observedAt": "2026-10-24T03:44:45.704Z",
+      "rawFile": "semrush-counties-2.ax.txt",
+      "rawSha256": "4f31a0cf404e78cd2c036268ff07b0d6878734bc6df392a5bd5fbd48f3ad746c"
+    },
+    {
+      "file": "keyword-counties-3.json",
+      "observedAt": "2026-10-24T03:47:00.617Z",
+      "rawFile": "semrush-counties-3.ax.txt",
+      "rawSha256": "5fa497998e53c1a004233852623e0661bfe4450645c7ac33468d24ae44db796b"
+    },
+    {
+      "file": "keyword-shortlist-counties-refreshed.json",
+      "observedAt": "2026-10-24T03:51:51.335Z",
+      "rawFile": "semrush-shortlist-counties-refreshed.ax.txt",
+      "rawSha256": "0a4e777478eae34e5ab821e825db6b26c01cc8dc64cb0b526539799d529d2a32"
+    }
+  ],
+  "questionResearch": [
+    {
+      "state": "ms",
+      "seed": "web design mississippi",
+      "filter": "Questions; All Keywords",
+      "database": "US",
+      "observedAt": "2026-10-24T03:54:51.347Z",
+      "sourceFile": "semrush-questions-ms-all.ax.txt",
+      "sourceSha256": "0370fecf6c32f27ff91d459fb7ff64bff0c1d5a671d6bf732724df600a953116",
+      "summaryDisplayed": "All keywords : 114 Total Volume : 440 Average KD : 66%",
+      "observedRows": 100
+    },
+    {
+      "state": "al",
+      "seed": "web design alabama",
+      "filter": "Questions; All Keywords",
+      "database": "US",
+      "observedAt": "2026-10-24T03:56:04.206Z",
+      "sourceFile": "semrush-questions-al-all.ax.txt",
+      "sourceSha256": "487238d380079b94dd45bf4728d2a5ea297cd2f4c282da40688f023175776b46",
+      "summaryDisplayed": "All keywords : 64 Total Volume : 210 Average KD : n/a",
+      "observedRows": 64
+    }
+  ],
+  "editorialDisposition": {
+    "mississippi": [
+      "The relevant redesign-cost question routes to existing pricing and redesign explanations. The Jackson SEO-provider question routes to the state directory and existing SEO service explanation. Neither requires a separate location FAQ page."
+    ],
+    "alabama": [
+      "Results mainly concern provider inventories, named companies, learning web design or unrelated legal and advertising topics. They do not establish a useful omitted website-buying FAQ for these county briefs."
+    ],
+    "scope": "Questions reviewed for intent and usefulness, not copied wholesale. Supplemental FAQs are optional and will be independently assessed against each finished draft."
+  },
+  "privateResearchSha256": "451d68e7072c755e36996a9dc3416e38720f2f8497abf99e31ba15be3cab5af0",
+  "finalAssessment": "Five finished briefs independently reviewed; no supplemental FAQ additions. See faq-assessment.json and independent-commercial-review.md."
+}

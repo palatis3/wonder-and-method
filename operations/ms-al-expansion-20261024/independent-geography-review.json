@@ -1,0 +1,1399 @@
+{
+  "checkedAt": "2026-10-24T03:45:15.806801+00:00",
+  "status": "PASS",
+  "findings": [],
+  "method": "Offline independent standard-library HTML parsing, complete streaming of both raw GRFC files, raw CSV population joins, exact county/detail/group/membership comparisons and complete representative recomputation. Producer scripts are reviewed but never imported or executed.",
+  "states": [
+    {
+      "stateId": "mississippi",
+      "counties": 82,
+      "incorporatedEntitiesIncludingInactive": 300,
+      "activeIncorporatedEntities": 299,
+      "cdps": 127,
+      "municipalMemberships": 320,
+      "cdpMemberships": 129,
+      "crossCountyPlaces": 20,
+      "types": {
+        "Census-designated place": 127,
+        "City": 113,
+        "Inactive incorporated town": 1,
+        "Town": 166,
+        "Village": 20
+      },
+      "functionalStatuses": {
+        "A": 299,
+        "I": 1,
+        "S": 127
+      },
+      "grfcRowsRead": 112861,
+      "grfcRowsWithPlace": 49830,
+      "populationRowsRead": 783,
+      "populationSummaryLevels": {
+        "040": 1,
+        "050": 82,
+        "157": 401,
+        "162": 299
+      },
+      "representativesChecked": 213
+    },
+    {
+      "stateId": "alabama",
+      "counties": 67,
+      "incorporatedEntitiesIncludingInactive": 465,
+      "activeIncorporatedEntities": 465,
+      "cdps": 130,
+      "municipalMemberships": 518,
+      "cdpMemberships": 133,
+      "crossCountyPlaces": 50,
+      "types": {
+        "Census-designated place": 130,
+        "City": 187,
+        "Town": 278
+      },
+      "functionalStatuses": {
+        "A": 465,
+        "S": 130
+      },
+      "grfcRowsRead": 190536,
+      "grfcRowsWithPlace": 104853,
+      "populationRowsRead": 1113,
+      "populationSummaryLevels": {
+        "040": 1,
+        "050": 67,
+        "157": 582,
+        "162": 463
+      },
+      "representativesChecked": 196
+    }
+  ],
+  "rawGrfcRowsRead": 303397,
+  "countyRowsChecked": 149,
+  "uniquePlaceRowsChecked": 1022,
+  "representativeSelectionsChecked": 409,
+  "manifest": [
+    {
+      "file": "raw/co-est2025-alldata.csv",
+      "bytes": 2071735,
+      "sha256": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/ms-county.html",
+      "bytes": 58214,
+      "sha256": "5ab62a644110ae3d4eb3a00f236a11ccc4f853fa4d3d305eb7e3a9db8a8b713e",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/ms-incplace.html",
+      "bytes": 239477,
+      "sha256": "e447ad08b02f6b2a02619b3d68e26b77729d8fd11a214483d045993f3b34ed1b",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/ms-cdp.html",
+      "bytes": 102659,
+      "sha256": "2cf8ada8c8238fd4b5aa0989b6168775cf35cc0cddfac9252a1e25962955429e",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/ms-grfc.txt",
+      "bytes": 39436519,
+      "sha256": "978983e52a83f41258d98cca407a96846aa25d7cf66fcce9eab5b0a5145ad76a",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/sub-est2025_28.csv",
+      "bytes": 74213,
+      "sha256": "4b049c6a6e22589241b529fd77e92894f02af320b71e8dd968a2d7ba5f253eef",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/al-county.html",
+      "bytes": 47841,
+      "sha256": "85cc652e9aab6512ba1ebafcaa6917481bd7d3d9ef7a98dc76166663d94fd4b0",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/al-incplace.html",
+      "bytes": 371207,
+      "sha256": "8c54f7b2a152ea0602d2e8c47497f6c54a38093a9975f6d81389195ffe84fccc",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/al-cdp.html",
+      "bytes": 105244,
+      "sha256": "6a0cf061fc3c25bd666c59f04dc29f25f1d1e3053f964d1135426c5d7b7f6cb0",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/al-grfc.txt",
+      "bytes": 66571349,
+      "sha256": "df38459f762c9217fa52691d22f9fb762be11298ac9ca19f749b91f21c520d85",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/sub-est2025_01.csv",
+      "bytes": 100349,
+      "sha256": "220436709a033c74b0f880198da0b24f96b6c51121ff064bfe4ccfc85e44c378",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/google-spam-policies.html",
+      "bytes": 211208,
+      "sha256": "fcf8febdcfe9e3b62920a5a683337dd509e73d568432994304d12dc5a1112756",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/google-helpful-content.html",
+      "bytes": 189814,
+      "sha256": "64989fbabbf79dfcd6dc1464a9785b5614d9e28619f85debc7ab5ee0e081d32f",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/google-documentation-updates.html",
+      "bytes": 388319,
+      "sha256": "9949706d58ee2e3aa4c771d0b86dcdb2af382e97054c65ef7d93e7de819302cd",
+      "matchesManifest": true
+    },
+    {
+      "file": "raw/census-functional-status.html",
+      "bytes": 329361,
+      "sha256": "754eaea562c206799501f1c98fc5ce3fde3c8d388b613acda29a1c817794bf47",
+      "matchesManifest": true
+    }
+  ],
+  "crossCountyPlaces": [
+    {
+      "stateId": "mississippi",
+      "geoid": "2802700",
+      "name": "Baldwyn",
+      "type": "City",
+      "countyFips": [
+        "28081",
+        "28117"
+      ],
+      "countyNames": [
+        "Lee",
+        "Prentiss"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2812740",
+      "name": "Centreville",
+      "type": "Town",
+      "countyFips": [
+        "28005",
+        "28157"
+      ],
+      "countyNames": [
+        "Amite",
+        "Wilkinson"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2816460",
+      "name": "Crenshaw",
+      "type": "Town",
+      "countyFips": [
+        "28107",
+        "28119"
+      ],
+      "countyNames": [
+        "Panola",
+        "Quitman"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2816620",
+      "name": "Crosby",
+      "type": "Town",
+      "countyFips": [
+        "28005",
+        "28157"
+      ],
+      "countyNames": [
+        "Amite",
+        "Wilkinson"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2816940",
+      "name": "Crowder",
+      "type": "Town",
+      "countyFips": [
+        "28107",
+        "28119"
+      ],
+      "countyNames": [
+        "Panola",
+        "Quitman"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2831020",
+      "name": "Hattiesburg",
+      "type": "City",
+      "countyFips": [
+        "28035",
+        "28073"
+      ],
+      "countyNames": [
+        "Forrest",
+        "Lamar"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2836000",
+      "name": "Jackson",
+      "type": "City",
+      "countyFips": [
+        "28049",
+        "28089",
+        "28121"
+      ],
+      "countyNames": [
+        "Hinds",
+        "Madison",
+        "Rankin"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2838600",
+      "name": "Lake",
+      "type": "Town",
+      "countyFips": [
+        "28101",
+        "28123"
+      ],
+      "countyNames": [
+        "Newton",
+        "Scott"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2842640",
+      "name": "Lumberton",
+      "type": "City",
+      "countyFips": [
+        "28073",
+        "28109"
+      ],
+      "countyNames": [
+        "Lamar",
+        "Pearl River"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2842980",
+      "name": "Maben",
+      "type": "Town",
+      "countyFips": [
+        "28105",
+        "28155"
+      ],
+      "countyNames": [
+        "Oktibbeha",
+        "Webster"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2845720",
+      "name": "Mathiston",
+      "type": "Town",
+      "countyFips": [
+        "28019",
+        "28155"
+      ],
+      "countyNames": [
+        "Choctaw",
+        "Webster"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2850880",
+      "name": "Nettleton",
+      "type": "City",
+      "countyFips": [
+        "28081",
+        "28095"
+      ],
+      "countyNames": [
+        "Lee",
+        "Monroe"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2866280",
+      "name": "Sebastopol",
+      "type": "Town",
+      "countyFips": [
+        "28079",
+        "28123"
+      ],
+      "countyNames": [
+        "Leake",
+        "Scott"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2867000",
+      "name": "Shaw",
+      "type": "City",
+      "countyFips": [
+        "28011",
+        "28133"
+      ],
+      "countyNames": [
+        "Bolivar",
+        "Sunflower"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2867200",
+      "name": "Sherman",
+      "type": "Town",
+      "countyFips": [
+        "28081",
+        "28115",
+        "28145"
+      ],
+      "countyNames": [
+        "Lee",
+        "Pontotoc",
+        "Union"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2870320",
+      "name": "State Line",
+      "type": "Town",
+      "countyFips": [
+        "28041",
+        "28153"
+      ],
+      "countyNames": [
+        "Greene",
+        "Wayne"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2875360",
+      "name": "Union",
+      "type": "Town",
+      "countyFips": [
+        "28099",
+        "28101"
+      ],
+      "countyNames": [
+        "Neshoba",
+        "Newton"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2878640",
+      "name": "Wesson",
+      "type": "Town",
+      "countyFips": [
+        "28029",
+        "28085"
+      ],
+      "countyNames": [
+        "Copiah",
+        "Lincoln"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2807330",
+      "name": "Bogue Chitto",
+      "type": "Census-designated place",
+      "countyFips": [
+        "28069",
+        "28099"
+      ],
+      "countyNames": [
+        "Kemper",
+        "Neshoba"
+      ]
+    },
+    {
+      "stateId": "mississippi",
+      "geoid": "2820740",
+      "name": "Eastabuchie",
+      "type": "Census-designated place",
+      "countyFips": [
+        "28035",
+        "28067"
+      ],
+      "countyNames": [
+        "Forrest",
+        "Jones"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0101660",
+      "name": "Altoona",
+      "type": "Town",
+      "countyFips": [
+        "01009",
+        "01055"
+      ],
+      "countyNames": [
+        "Blount",
+        "Etowah"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0102116",
+      "name": "Arab",
+      "type": "City",
+      "countyFips": [
+        "01043",
+        "01095"
+      ],
+      "countyNames": [
+        "Cullman",
+        "Marshall"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0102320",
+      "name": "Argo",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01115"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "St. Clair"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0107000",
+      "name": "Birmingham",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01117"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0107912",
+      "name": "Boaz",
+      "type": "City",
+      "countyFips": [
+        "01055",
+        "01095"
+      ],
+      "countyNames": [
+        "Etowah",
+        "Marshall"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0111416",
+      "name": "Calera",
+      "type": "City",
+      "countyFips": [
+        "01021",
+        "01117"
+      ],
+      "countyNames": [
+        "Chilton",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0115256",
+      "name": "Clay",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01115"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "St. Clair"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0116600",
+      "name": "Collinsville",
+      "type": "City",
+      "countyFips": [
+        "01019",
+        "01049"
+      ],
+      "countyNames": [
+        "Cherokee",
+        "DeKalb"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0117968",
+      "name": "County Line",
+      "type": "Town",
+      "countyFips": [
+        "01009",
+        "01073"
+      ],
+      "countyNames": [
+        "Blount",
+        "Jefferson"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0120104",
+      "name": "Decatur",
+      "type": "City",
+      "countyFips": [
+        "01083",
+        "01103"
+      ],
+      "countyNames": [
+        "Limestone",
+        "Morgan"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0121184",
+      "name": "Dothan",
+      "type": "City",
+      "countyFips": [
+        "01045",
+        "01067",
+        "01069"
+      ],
+      "countyNames": [
+        "Dale",
+        "Henry",
+        "Houston"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0124184",
+      "name": "Enterprise",
+      "type": "City",
+      "countyFips": [
+        "01031",
+        "01045"
+      ],
+      "countyNames": [
+        "Coffee",
+        "Dale"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0129032",
+      "name": "Garden City",
+      "type": "Town",
+      "countyFips": [
+        "01009",
+        "01043"
+      ],
+      "countyNames": [
+        "Blount",
+        "Cullman"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0129944",
+      "name": "Glen Allen",
+      "type": "Town",
+      "countyFips": [
+        "01057",
+        "01093"
+      ],
+      "countyNames": [
+        "Fayette",
+        "Marion"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0129992",
+      "name": "Glencoe",
+      "type": "City",
+      "countyFips": [
+        "01015",
+        "01055"
+      ],
+      "countyNames": [
+        "Calhoun",
+        "Etowah"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0132536",
+      "name": "Gu-Win",
+      "type": "Town",
+      "countyFips": [
+        "01057",
+        "01093"
+      ],
+      "countyNames": [
+        "Fayette",
+        "Marion"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0132704",
+      "name": "Haleyville",
+      "type": "City",
+      "countyFips": [
+        "01093",
+        "01133"
+      ],
+      "countyNames": [
+        "Marion",
+        "Winston"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0134024",
+      "name": "Helena",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01117"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0135896",
+      "name": "Hoover",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01117"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0137000",
+      "name": "Huntsville",
+      "type": "City",
+      "countyFips": [
+        "01083",
+        "01089",
+        "01095",
+        "01103"
+      ],
+      "countyNames": [
+        "Limestone",
+        "Madison",
+        "Marshall",
+        "Morgan"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0140928",
+      "name": "Lake View",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01125"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Tuscaloosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0141968",
+      "name": "Leeds",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01115",
+        "01117"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "St. Clair",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0145784",
+      "name": "Madison",
+      "type": "City",
+      "countyFips": [
+        "01083",
+        "01089"
+      ],
+      "countyNames": [
+        "Limestone",
+        "Madison"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0145496",
+      "name": "McKenzie",
+      "type": "Town",
+      "countyFips": [
+        "01013",
+        "01035"
+      ],
+      "countyNames": [
+        "Butler",
+        "Conecuh"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0148712",
+      "name": "Millbrook",
+      "type": "City",
+      "countyFips": [
+        "01001",
+        "01051"
+      ],
+      "countyNames": [
+        "Autauga",
+        "Elmore"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0151648",
+      "name": "Moundville",
+      "type": "Town",
+      "countyFips": [
+        "01065",
+        "01125"
+      ],
+      "countyNames": [
+        "Hale",
+        "Tuscaloosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0153400",
+      "name": "Nauvoo",
+      "type": "Town",
+      "countyFips": [
+        "01127",
+        "01133"
+      ],
+      "countyNames": [
+        "Walker",
+        "Winston"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0155440",
+      "name": "Notasulga",
+      "type": "Town",
+      "countyFips": [
+        "01081",
+        "01087"
+      ],
+      "countyNames": [
+        "Lee",
+        "Macon"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0157576",
+      "name": "Oxford",
+      "type": "City",
+      "countyFips": [
+        "01015",
+        "01121"
+      ],
+      "countyNames": [
+        "Calhoun",
+        "Talladega"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0159472",
+      "name": "Phenix City",
+      "type": "City",
+      "countyFips": [
+        "01081",
+        "01113"
+      ],
+      "countyNames": [
+        "Lee",
+        "Russell"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0159640",
+      "name": "Piedmont",
+      "type": "City",
+      "countyFips": [
+        "01015",
+        "01019"
+      ],
+      "countyNames": [
+        "Calhoun",
+        "Cherokee"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0162328",
+      "name": "Prattville",
+      "type": "City",
+      "countyFips": [
+        "01001",
+        "01051"
+      ],
+      "countyNames": [
+        "Autauga",
+        "Elmore"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0167920",
+      "name": "Sand Rock",
+      "type": "Town",
+      "countyFips": [
+        "01019",
+        "01049"
+      ],
+      "countyNames": [
+        "Cherokee",
+        "DeKalb"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0168280",
+      "name": "Sardis City",
+      "type": "Town",
+      "countyFips": [
+        "01055",
+        "01095"
+      ],
+      "countyNames": [
+        "Etowah",
+        "Marshall"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0171832",
+      "name": "Southside",
+      "type": "City",
+      "countyFips": [
+        "01015",
+        "01055"
+      ],
+      "countyNames": [
+        "Calhoun",
+        "Etowah"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0173848",
+      "name": "Sumiton",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01127"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Walker"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0174688",
+      "name": "Tallassee",
+      "type": "City",
+      "countyFips": [
+        "01051",
+        "01123"
+      ],
+      "countyNames": [
+        "Elmore",
+        "Tallapoosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0175096",
+      "name": "Taylor",
+      "type": "City",
+      "countyFips": [
+        "01061",
+        "01069"
+      ],
+      "countyNames": [
+        "Geneva",
+        "Houston"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0176680",
+      "name": "Trafford",
+      "type": "Town",
+      "countyFips": [
+        "01009",
+        "01073"
+      ],
+      "countyNames": [
+        "Blount",
+        "Jefferson"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0176872",
+      "name": "Trinity",
+      "type": "City",
+      "countyFips": [
+        "01079",
+        "01103"
+      ],
+      "countyNames": [
+        "Lawrence",
+        "Morgan"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0176944",
+      "name": "Trussville",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01115"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "St. Clair"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0178264",
+      "name": "Vance",
+      "type": "City",
+      "countyFips": [
+        "01007",
+        "01125"
+      ],
+      "countyNames": [
+        "Bibb",
+        "Tuscaloosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0178552",
+      "name": "Vestavia Hills",
+      "type": "City",
+      "countyFips": [
+        "01073",
+        "01117"
+      ],
+      "countyNames": [
+        "Jefferson",
+        "Shelby"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0179008",
+      "name": "Vincent",
+      "type": "Town",
+      "countyFips": [
+        "01115",
+        "01117",
+        "01121"
+      ],
+      "countyNames": [
+        "St. Clair",
+        "Shelby",
+        "Talladega"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0180256",
+      "name": "Waverly",
+      "type": "Town",
+      "countyFips": [
+        "01017",
+        "01081",
+        "01123"
+      ],
+      "countyNames": [
+        "Chambers",
+        "Lee",
+        "Tallapoosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0182992",
+      "name": "Winfield",
+      "type": "City",
+      "countyFips": [
+        "01057",
+        "01093"
+      ],
+      "countyNames": [
+        "Fayette",
+        "Marion"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0183640",
+      "name": "Woodstock",
+      "type": "Town",
+      "countyFips": [
+        "01007",
+        "01125"
+      ],
+      "countyNames": [
+        "Bibb",
+        "Tuscaloosa"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0111488",
+      "name": "Calvert",
+      "type": "Census-designated place",
+      "countyFips": [
+        "01097",
+        "01129"
+      ],
+      "countyNames": [
+        "Mobile",
+        "Washington"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0119024",
+      "name": "Cullomburg",
+      "type": "Census-designated place",
+      "countyFips": [
+        "01023",
+        "01129"
+      ],
+      "countyNames": [
+        "Choctaw",
+        "Washington"
+      ]
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0139064",
+      "name": "Joppa",
+      "type": "Census-designated place",
+      "countyFips": [
+        "01043",
+        "01095"
+      ],
+      "countyNames": [
+        "Cullman",
+        "Marshall"
+      ]
+    }
+  ],
+  "missingMunicipalEstimates": [
+    {
+      "stateId": "mississippi",
+      "geoid": "2873440",
+      "name": "Tillatoba",
+      "countyFips": "28161",
+      "countyName": "Yalobusha",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": null
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0137000",
+      "name": "Huntsville",
+      "countyFips": "01095",
+      "countyName": "Marshall",
+      "wholePlacePopulation2025": 233627,
+      "countyPartPopulation2025": null
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0139832",
+      "name": "Kilpatrick",
+      "countyFips": "01049",
+      "countyName": "DeKalb",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": null
+    },
+    {
+      "stateId": "alabama",
+      "geoid": "0160264",
+      "name": "Pine Level",
+      "countyFips": "01001",
+      "countyName": "Autauga",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": null
+    }
+  ],
+  "specialCases": {
+    "Tillatoba": {
+      "stateId": "mississippi",
+      "name": "Tillatoba",
+      "type": "Inactive incorporated town",
+      "geoid": "2873440",
+      "censusName": "Tillatoba town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "I",
+      "countyFips": [
+        "28161"
+      ],
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "28161": null
+      }
+    },
+    "Huntsville": {
+      "stateId": "alabama",
+      "name": "Huntsville",
+      "type": "City",
+      "geoid": "0137000",
+      "censusName": "Huntsville city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "countyFips": [
+        "01083",
+        "01089",
+        "01095",
+        "01103"
+      ],
+      "wholePlacePopulation2025": 233627,
+      "countyPartPopulation2025": {
+        "01083": 5206,
+        "01089": 228416,
+        "01095": null,
+        "01103": 5
+      }
+    },
+    "Kilpatrick": {
+      "stateId": "alabama",
+      "name": "Kilpatrick",
+      "type": "Town",
+      "geoid": "0139832",
+      "censusName": "Kilpatrick town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "countyFips": [
+        "01049"
+      ],
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "01049": null
+      }
+    },
+    "PineLevel": {
+      "stateId": "alabama",
+      "name": "Pine Level",
+      "type": "Town",
+      "geoid": "0160264",
+      "censusName": "Pine Level town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "countyFips": [
+        "01001"
+      ],
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "01001": null
+      }
+    },
+    "functionalStatusI": [
+      [
+        "I",
+        "Inactive governmental unit that has the power to provide primary special-purpose functions",
+        "County Subdivision, Elementary School District, Incorporated Place, Secondary School District, Special School Administrative Area, Unified School District"
+      ]
+    ],
+    "functionalStatusS": [
+      [
+        "S",
+        "Statistical entity",
+        "American Indian/Alaska Native/Native Hawaiian Area, Block Area Grouping, Block Group, Census Designated Place, Census Division, Census Region, Census Super Tract, Census Tract, Collection Block, Combined New England City and Town Area, Combined Statistical Area, Commercial Region, Consolidated Metropolitan Statistical Area and Metropolitan Statistical Area, County or Equivalent Feature, County Subdivision, Economic Census Place, Local/Tribal Legislative District, Metropolitan and Micropolitan Statistical Area, Metropolitan Division, New England City and Town Division, New England City and Town Metropolitan and Micropolitan Statistical Area, New England County Metropolitan Area, Primary Metropolitan Statistical Area, Public-Use Microdata Area (1% Area), Public-Use Microdata Area (5% or 10% Area), Special School Administrative Area, Tabulation Block, Test Census Area (FLD Area), Traffic Analysis Zone, Tribal Block Group, Tribal Census Tract, Tribal Subdivision, Urban Area, Voting District, Zip Code Tabulation Area (Five-Digit), ZIP Code Tabulation Area (Three-Digit)"
+      ]
+    ]
+  },
+  "reviewedFileHashes": [
+    {
+      "path": "source-manifest.json",
+      "sha256": "a2a23093f2ab6733d1ddeb893a2b88ce0106b5044d909b9bf87a101c3a53704a"
+    },
+    {
+      "path": "prepare-sources.py",
+      "sha256": "be922eed5d39b83295aca09cf5d6a32da1f2daccf417f81519137093021b483e"
+    },
+    {
+      "path": "build-public-geography.py",
+      "sha256": "b33f892ac779ca12678ed4a203da58e341c7585314964d0eb80297ce5cd5ae1b"
+    },
+    {
+      "path": "county-inventory.json",
+      "sha256": "6ff0c61ade94412a002b6e543e10867b44c498fdb40c2ffc1a9e34c1acd63155"
+    },
+    {
+      "path": "place-inventory.json",
+      "sha256": "0f3c019a1f5355d6f4589a6aa8950d7272138df6fb0fe8d2f0be9050e666c914"
+    },
+    {
+      "path": "geography-source-summary.json",
+      "sha256": "b0a02dae48163f1fe5db2e543d2e0067376a48087be62bced8a5d7cc51e26573"
+    },
+    {
+      "path": "public-geography.json",
+      "sha256": "9d7223b74985bb533c2b18111ebc0974083aa343b8b45cdae17a6526c212a204"
+    },
+    {
+      "path": "public-area-inventory.json",
+      "sha256": "cc01924ff0dba1d3ede728c086459a85782bafc1e65162d7fd5df551e93c05c6"
+    },
+    {
+      "path": "public-representative-places.json",
+      "sha256": "9e384c0733900a5f6ab3ca1e12ec3f2da3b73f362b3bb1d92aa6632214e38723"
+    },
+    {
+      "path": "public-geography-summary.json",
+      "sha256": "eb80774293e460fae589332d6bd3d8fa52f0d47b4c47819549605033b0ef3017"
+    },
+    {
+      "path": "candidate-ms-al-geography.mjs",
+      "sha256": "07800ad749b9e470c0043a1f73e005c5a46df0cb4dca0ad225769da8474472e6"
+    },
+    {
+      "path": "raw/co-est2025-alldata.csv",
+      "sha256": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5"
+    },
+    {
+      "path": "raw/ms-county.html",
+      "sha256": "5ab62a644110ae3d4eb3a00f236a11ccc4f853fa4d3d305eb7e3a9db8a8b713e"
+    },
+    {
+      "path": "raw/ms-incplace.html",
+      "sha256": "e447ad08b02f6b2a02619b3d68e26b77729d8fd11a214483d045993f3b34ed1b"
+    },
+    {
+      "path": "raw/ms-cdp.html",
+      "sha256": "2cf8ada8c8238fd4b5aa0989b6168775cf35cc0cddfac9252a1e25962955429e"
+    },
+    {
+      "path": "raw/ms-grfc.txt",
+      "sha256": "978983e52a83f41258d98cca407a96846aa25d7cf66fcce9eab5b0a5145ad76a"
+    },
+    {
+      "path": "raw/sub-est2025_28.csv",
+      "sha256": "4b049c6a6e22589241b529fd77e92894f02af320b71e8dd968a2d7ba5f253eef"
+    },
+    {
+      "path": "raw/al-county.html",
+      "sha256": "85cc652e9aab6512ba1ebafcaa6917481bd7d3d9ef7a98dc76166663d94fd4b0"
+    },
+    {
+      "path": "raw/al-incplace.html",
+      "sha256": "8c54f7b2a152ea0602d2e8c47497f6c54a38093a9975f6d81389195ffe84fccc"
+    },
+    {
+      "path": "raw/al-cdp.html",
+      "sha256": "6a0cf061fc3c25bd666c59f04dc29f25f1d1e3053f964d1135426c5d7b7f6cb0"
+    },
+    {
+      "path": "raw/al-grfc.txt",
+      "sha256": "df38459f762c9217fa52691d22f9fb762be11298ac9ca19f749b91f21c520d85"
+    },
+    {
+      "path": "raw/sub-est2025_01.csv",
+      "sha256": "220436709a033c74b0f880198da0b24f96b6c51121ff064bfe4ccfc85e44c378"
+    },
+    {
+      "path": "raw/google-spam-policies.html",
+      "sha256": "fcf8febdcfe9e3b62920a5a683337dd509e73d568432994304d12dc5a1112756"
+    },
+    {
+      "path": "raw/google-helpful-content.html",
+      "sha256": "64989fbabbf79dfcd6dc1464a9785b5614d9e28619f85debc7ab5ee0e081d32f"
+    },
+    {
+      "path": "raw/google-documentation-updates.html",
+      "sha256": "9949706d58ee2e3aa4c771d0b86dcdb2af382e97054c65ef7d93e7de819302cd"
+    },
+    {
+      "path": "raw/census-functional-status.html",
+      "sha256": "754eaea562c206799501f1c98fc5ce3fde3c8d388b613acda29a1c817794bf47"
+    }
+  ],
+  "limitations": [
+    "This verifies retained source bytes and transformations, not fresh remote retrieval or independent authenticity of recorded HTTP metadata.",
+    "The January 2026 geography and 2025 population estimates have different reference dates; absent county-part estimates remain unavailable rather than being inferred from whole-place totals.",
+    "Google policy snapshots receive manifest integrity checks only. Commercial choices, keyword demand, source integration, CI and production are outside this checkpoint.",
+    "No source mutations, UI, network, CI monitoring or outreach; only this review folder is written."
+  ]
+}

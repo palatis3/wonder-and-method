@@ -1,0 +1,39 @@
+{
+  "source": {
+    "path": "src/assets/premium/newsreader-regular.woff2",
+    "sha256": "5224a611a53ccb8c65857bb8a0de79ee34d9989ca9f29f83d7cd18bd05614607",
+    "bytes": 58396
+  },
+  "output": {
+    "path": "src/assets/premium/newsreader-regular-common.woff2",
+    "sha256": "08057429a915eff5ea8db915928709d35a49a870f24599646f82a17904c6f5b9",
+    "bytes": 42104
+  },
+  "commonUnicodeRange": "U+0020-007E,U+00A0,U+00B7,U+2010,U+2013-2014,U+2018-201A,U+201C-201E,U+2020-2022,U+2026,U+2030,U+2032-2033,U+2039-203A,U+2044,U+2052,U+20AC",
+  "companionUnicodeRange": "U+00A1-00B6,U+00B8-00FF",
+  "initialBytesSaved": 16292,
+  "validation": {
+    "retainedGlyphsWithIdenticalOutlinesMetricsAndVariableDeltas": 158,
+    "orderedEncodedGlyphPairsWithIdenticalVariableKerning": 13924,
+    "axesAndNamesIdentical": true,
+    "horizontalMetricVariationValuesIdentical": true,
+    "gsubFeatures": [
+      "case",
+      "liga",
+      "ordn",
+      "pnum",
+      "sups",
+      "tnum"
+    ]
+  },
+  "tools": {
+    "fontTools": "4.67.0",
+    "brotli": "1.2.0"
+  },
+  "limitations": [
+    "The full original remains available for other Latin characters.",
+    "Pages using both faces download both files; shaping across the face boundary can differ.",
+    "This report proves retained glyph data, not browser performance."
+  ],
+  "license": "SIL OFL 1.1; newsreader-OFL.txt remains unchanged."
+}

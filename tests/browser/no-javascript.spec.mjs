@@ -83,12 +83,12 @@ async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
  await expect(page.getByRole('searchbox',{name:'County, region or community'})).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
- await expect(page.locator('[data-county-search]')).toHaveCount(count);
- await expect(page.locator('[data-county-search]:visible')).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(count);
+ await expect(page.locator('[data-cs]:visible')).toHaveCount(0);
  for(const summary of await page.locator('[data-county-directory] > details > summary').all()){
   await summary.click();await expect(summary.locator('..')).toHaveAttribute('open','');
  }
- await expect(page.locator('[data-county-search]:visible')).toHaveCount(count);
+ await expect(page.locator('[data-cs]:visible')).toHaveCount(count);
 }
 
 async function openNativeCountyEntry(page,slug,place){
@@ -116,13 +116,13 @@ test('New York county places and source references remain usable without JavaScr
  const entry=await openNativeCountyEntry(page,'st-lawrence','Ogdensburg');
  await expect(entry.getByRole('heading',{name:'Cities',exact:true})).toBeVisible();
  await expect(entry.locator('.county-geography-note')).toContainText('Canton');
- await expect(entry.locator('[data-county-link]')).toHaveAttribute('href','/areas/new-york/#st-lawrence');
+ await expect(entry.locator('[data-cl]')).toHaveAttribute('href','/areas/new-york/#st-lawrence');
 });
 
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,1284);
+ await openNativeCountyLists(page,1433);
  await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);

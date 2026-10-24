@@ -16,7 +16,7 @@ test('migration 0028 adds exactly 465 page keys and preserves all 702 historical
  assert.equal(paths.length,611);assert.equal(paths.filter(path=>old.includes(journeyPageKey(path))).length,146);
  assert.equal(old.length,702);assert.equal(next.length,1167);assert.equal(added.length,465);
  assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>!key.startsWith('areas_south_carolina')&&!key.startsWith('areas_georgia')).sort(),next.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')).filter(key=>!key.startsWith('areas_south_carolina')&&!key.startsWith('areas_georgia')).sort(),next.slice().sort());
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

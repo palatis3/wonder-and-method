@@ -17,7 +17,7 @@ test('every route exposes the same primary journey and local type system',()=>{
   assert.deepEqual([...primary.matchAll(/href="([^"]+)"/g)].map(x=>x[1]),expected,path);
   const footer=html.match(/<nav aria-label="Footer">(.*?)<\/nav>/s)?.[1];assert.ok(footer,path);
   for(const secondary of ['/services/website-addons/','/services/contractor-websites/']){assert.ok(footer.includes(`href="${secondary}"`),path+' -> '+secondary);assert.ok(pages.some(page=>page.path===secondary),secondary);}
-  assert.match(html,/\/assets\/premium\/newsreader-regular\.woff2/);
+  assert.match(html,/\/assets\/premium\/newsreader-regular-common\.woff2/);
   // Every shared layout needs the body/navigation font before paint to avoid shifts.
   const bodyFontPreloads=[...html.matchAll(/<link\b[^>]*rel="preload"[^>]*>/g)].map(match=>match[0]).filter(link=>link.includes('/assets/premium/manrope.woff2'));
   assert.deepEqual(bodyFontPreloads,['<link rel="preload" href="/assets/premium/manrope.woff2" as="font" type="font/woff2" crossorigin>'],path);

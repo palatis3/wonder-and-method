@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-10-24T03:40:11.230350+00:00",
+  "states": [
+    {
+      "stateId": "mississippi",
+      "counties": 82,
+      "municipalEntitiesIncludingInactive": 300,
+      "municipalMemberships": 320,
+      "cdps": 127,
+      "cdpMemberships": 129,
+      "types": {
+        "City": 113,
+        "Inactive incorporated town": 1,
+        "Town": 166,
+        "Village": 20
+      },
+      "crossCountyPlaces": 20
+    },
+    {
+      "stateId": "alabama",
+      "counties": 67,
+      "municipalEntitiesIncludingInactive": 465,
+      "municipalMemberships": 518,
+      "cdps": 130,
+      "cdpMemberships": 133,
+      "types": {
+        "City": 187,
+        "Town": 278
+      },
+      "crossCountyPlaces": 50
+    }
+  ],
+  "representativeSelection": "Up to three intersecting incorporated places ordered by 2025 county-part population, then name. Missing county-part estimates sort after known estimates; whole-place estimates are never substituted. Population is geographic context, not commercial demand.",
+  "sourceManifest": "source-manifest.json"
+}

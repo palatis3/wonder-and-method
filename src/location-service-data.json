@@ -121339,5 +121339,540 @@
         ]
       ]
     }
+  },
+  {
+    "areaId": "mississippi/lafayette",
+    "areaIds": [
+      "mississippi/lafayette"
+    ],
+    "market": "Lafayette County, MS",
+    "path": "/areas/mississippi/lafayette-county/",
+    "title": "Web Design for Lafayette County, MS",
+    "servedAreas": [
+      {
+        "name": "Lafayette County",
+        "state": "Mississippi",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/mississippi/#lafayette",
+        "label": "Lafayette County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Lafayette County, MS. An Oxford private-chef example separates an attended meal from preparing a home before guests arrive.",
+    "lead": "A dinner in your home and food prepared before you arrive need different arrangements. I help Lafayette County businesses explain who needs to be present, what is being prepared and what the customer should confirm.",
+    "decisionTitle": "Separate the meal time from the time a home must be ready.",
+    "decision": "Oxford-based Chef Stewart Robinson describes private dinners, in-home cooking classes and weekend provisioning. The provisioning offer includes stocking a kitchen and preparing food before the customer arrives. For a proposed private-chef website, consider a host arriving on Friday evening who wants a prepared kitchen rather than a chef serving dinner that night. A single “event time” field could misdescribe the request. I would first explain the service choice, then distinguish the arrival deadline from an attended meal or class. The ordinary inquiry can ask who will coordinate access without collecting a door code. The chef’s site also asks customers to confirm the booking before paying a deposit. That sequence should remain visible beside the existing payment route. These are proposed planning checks, not a description of the chef’s current software.",
+    "scopes": [
+      {
+        "title": "Clarify the service choice before the inquiry",
+        "pages": [
+          "Private dinner and cooking-class descriptions",
+          "Provisioning before arrival",
+          "Confirmation before the deposit link"
+        ],
+        "request": "Describe whether the host wants an attended experience or a kitchen prepared ahead of arrival.",
+        "supplies": "Current service descriptions, preparation boundaries and the chef’s actual confirmation process.",
+        "check": "The Friday-arrival example reaches a provisioning inquiry without being described as a Friday dinner reservation."
+      },
+      {
+        "title": "Build a home-hospitality introduction",
+        "pages": [
+          "What happens while the chef is present",
+          "What is prepared before arrival",
+          "Guest count and menu discussion",
+          "Access coordination and confirmed next steps"
+        ],
+        "request": "Keep the chosen service and its timing purpose together through the inquiry and later confirmation.",
+        "supplies": "Approved examples, the person responsible for access arrangements and what the business tells customers after accepting a request.",
+        "check": "Changing a dinner request to provisioning replaces the meal-time assumption with a ready-by discussion; it does not carry a confirmed dinner slot across."
+      }
+    ],
+    "scopeTrigger": "A focused edit can separate the existing service descriptions and timing labels. A fuller build helps when customers need to compare the experience before inquiring. Availability calendars, deposits, secure access-instruction storage and changes to a confirmed booking require separate scope. Menu, access and food-preparation arrangements remain with the chef and customer.",
+    "quoteQuestions": [
+      "Which requests describe an attended meal, and which describe a home prepared before arrival?",
+      "What timing and guest information is useful before the chef replies?",
+      "How are access details exchanged after the business accepts the work?"
+    ],
+    "coverageNote": "This Oxford-based public example informs a website brief for Lafayette County. Wonder and Method works remotely from Buffalo. Named businesses are research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.chefstewartrobinson.com/",
+        "label": "Chef Stewart Robinson: Oxford services and booking sequence",
+        "observation": "Distinguishes private dining, in-home classes and provisioning before arrival, and asks customers to confirm a booking before paying a deposit."
+      }
+    ],
+    "planningTable": {
+      "title": "One arrival deadline, two different service conversations",
+      "intro": "The business supplies current preparation and confirmation instructions. The example below concerns website wording, not operational advice.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Service wanted",
+          "Distinguish being served a meal from having food prepared ahead.",
+          "Actual service descriptions and boundaries.",
+          "A host requesting a stocked kitchen does not select an attended dinner by accident."
+        ],
+        [
+          "Timing purpose",
+          "Label the arrival deadline separately from a meal or class time.",
+          "How the chef discusses preparation and attendance.",
+          "Friday arrival remains a ready-by request, not a confirmed service start."
+        ],
+        [
+          "Access coordination",
+          "Ask who will arrange access through the agreed later process.",
+          "The appropriate contact and secure communication method.",
+          "The initial public inquiry does not ask for keys, alarm details or door codes."
+        ],
+        [
+          "Deposit sequence",
+          "Explain the step that precedes the existing payment link.",
+          "Current confirmation instructions.",
+          "A customer sees that discussing the plan and accepting it come before the deposit handoff."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "mississippi/harrison",
+    "areaIds": [
+      "mississippi/harrison"
+    ],
+    "market": "Harrison County, MS",
+    "path": "/areas/mississippi/harrison-county/",
+    "title": "Web Design for Harrison County, MS",
+    "servedAreas": [
+      {
+        "name": "Harrison County",
+        "state": "Mississippi",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/mississippi/#harrison",
+        "label": "Harrison County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Harrison County, MS. A Biloxi boat-tour example distinguishes time ashore, time aboard and a customizable private outing.",
+    "lead": "A trip length can describe time on an island, time aboard a boat or the whole outing. I help Harrison County businesses make those differences clear before customers compare experiences or open a booking calendar.",
+    "decisionTitle": "Explain what the advertised duration actually measures.",
+    "decision": "Biloxi Boat Tours describes a Deer Island ferry with time ashore, a sunset trip with a shorter island stop, a coastal boat ride and a customizable private sightseeing tour. For a proposed excursion website, a visitor comparing the ferry with a boat ride should not have to infer where the time is spent. I would label the crossing, island visit and return arrangement separately where the operator provides that information. Consider a visitor who needs to be back at the marina for another commitment: an island-time figure alone cannot establish the return time. The page should explain which published schedule to check and when to ask the operator. A private-tour inquiry also needs its own requested itinerary; choosing that label must not silently reuse the public ferry’s return arrangement. The operator controls schedules, routes and operating conditions.",
+    "scopes": [
+      {
+        "title": "Clarify durations beside the existing trip links",
+        "pages": [
+          "Time aboard and time ashore",
+          "Departure and return information",
+          "The correct provider link for each trip"
+        ],
+        "request": "Compare the actual shape of the outing before opening the existing booking provider.",
+        "supplies": "Current trip descriptions, approved timing labels and the maintained schedule or contact link.",
+        "check": "A visitor can tell that the ferry’s island time is not a promise of the total outing length."
+      },
+      {
+        "title": "Build an excursion comparison around the visit",
+        "pages": [
+          "Public ferry and cruise choices",
+          "Time spent at each part of the outing",
+          "Private itinerary requests",
+          "Marina arrival and operator confirmation"
+        ],
+        "request": "Carry the selected excursion and any return-time question to the appropriate booking or inquiry route.",
+        "supplies": "Operator-approved descriptions, current departure instructions and how private itinerary requests are reviewed.",
+        "check": "A customer switching to a private tour sees a new itinerary discussion rather than an inherited public-ferry return time."
+      }
+    ],
+    "scopeTrigger": "A focused update can clarify duration labels and links. A fuller build helps when visitors need to compare several trip types. Live schedules, seat inventory, itinerary changes and automated return-time calculations require separate software scope and provider support. The operator supplies all route, weather and passenger instructions.",
+    "quoteQuestions": [
+      "Does each duration refer to the boat ride, time ashore or the complete outing?",
+      "Where does the customer verify the planned return arrangement?",
+      "What changes when someone requests a private itinerary?"
+    ],
+    "coverageNote": "Biloxi Boat Tours identifies Point Cadet Marina in Biloxi as its departure and return location. This is a Harrison County website-planning example. Wonder and Method works remotely from Buffalo; the operator is not a client or partner.",
+    "sources": [
+      {
+        "url": "https://www.biloxiboattours.com/faqs-frequently-asked-questions",
+        "label": "Biloxi Boat Tours: excursion types and visit arrangements",
+        "observation": "Separates ferry, sunset, coastal-ride and private-tour descriptions, including time ashore and the Point Cadet departure/return location."
+      }
+    ],
+    "planningTable": {
+      "title": "Compare the outing before comparing the number of minutes",
+      "intro": "These are proposed website checks. Current schedules and operating decisions belong to the operator.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Meaning of duration",
+          "State what part of the outing the figure describes.",
+          "Approved duration wording for each excursion.",
+          "Time ashore is visibly different from time aboard."
+        ],
+        [
+          "Return constraint",
+          "Point to the maintained schedule or a specific operator question.",
+          "The current source of return information.",
+          "A visitor with a later commitment is not given a total return time inferred from island time."
+        ],
+        [
+          "Different excursion",
+          "Keep each comparison attached to its own trip description.",
+          "Current inclusions and the correct booking destination.",
+          "Changing to the coastal ride does not retain an island visit from the ferry description."
+        ],
+        [
+          "Private request",
+          "Ask about the wanted itinerary and timing.",
+          "The operator’s private-trip review process.",
+          "The acknowledgement records a request without confirming a public or private schedule."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "mississippi/forrest",
+    "areaIds": [
+      "mississippi/forrest"
+    ],
+    "market": "Forrest County, MS",
+    "path": "/areas/mississippi/forrest-county/",
+    "title": "Web Design for Forrest County, MS",
+    "servedAreas": [
+      {
+        "name": "Forrest County",
+        "state": "Mississippi",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/mississippi/#forrest",
+        "label": "Forrest County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Forrest County, MS. A Hattiesburg pottery example keeps private-party minimums attached to the chosen activity.",
+    "lead": "A group can be large enough for one studio activity and too small for another. I help Forrest County businesses explain those choices so a change of activity does not leave the customer relying on the wrong party requirements.",
+    "decisionTitle": "Recheck the group requirement when the activity changes.",
+    "decision": "The Wheel in the Window’s Hattiesburg collection lists different private-party minimums for pottery painting, handbuilding and wheel experiences. For a proposed studio website, consider eight friends who start with handbuilding and then choose painting. The published minimum changes from eight to twelve. The group should see that difference before following the party-inquiry link. I would keep the activity name beside the headcount guidance and explain the contact route for a group that does not fit a published option. A minimum is also different from the studio’s available capacity: satisfying it does not reserve a room or instructor. This example concerns changing activities within a private-party inquiry; it does not turn public class seats into a private booking or infer how the studio’s current software works.",
+    "scopes": [
+      {
+        "title": "Clarify activity choices on the current party page",
+        "pages": [
+          "Painting, handbuilding and wheel descriptions",
+          "The minimum for each private-party option",
+          "Questions about a group outside the listed range"
+        ],
+        "request": "Name the intended activity and participant count in the party inquiry.",
+        "supplies": "Current activity-specific requirements, the party contact route and the owner’s wording for exceptions.",
+        "check": "Eight people switching from handbuilding to painting see that the published minimum for the new activity is different."
+      },
+      {
+        "title": "Build a studio visit and private-party introduction",
+        "pages": [
+          "Individual class listings",
+          "Private-party activity comparison",
+          "Participant and date discussion",
+          "Studio acceptance and preparation instructions"
+        ],
+        "request": "Explain the difference between selecting a public class and asking the studio to arrange a private event.",
+        "supplies": "Approved activity descriptions, current group rules and the actual path from inquiry to an accepted event.",
+        "check": "The activity and headcount arrive together; a matching minimum does not produce a reservation confirmation."
+      }
+    ],
+    "scopeTrigger": "A focused edit can make the existing party guidance easier to compare. A fuller build helps when public classes and private events need clearer routes. Automated minimum checks, room allocation, combined payments and instructor scheduling require separate scope. The studio confirms participant requirements and availability.",
+    "quoteQuestions": [
+      "Which participant requirements belong to each activity?",
+      "How should a group ask about an option below its published minimum?",
+      "What establishes an accepted private event rather than a sent inquiry?"
+    ],
+    "coverageNote": "The Wheel in the Window is identified in downtown Hattiesburg. The city extends into both Forrest and Lamar counties; this brief concerns the downtown example and Forrest County directory. Wonder and Method works remotely from Buffalo. Named businesses are public examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.mainstreetco.us/collections/the-wheel-in-the-window-pottery-studio",
+        "label": "The Wheel in the Window: Hattiesburg activities and party minimums",
+        "observation": "Publishes private-party minimums of twelve for painting, eight for handbuilding and five for wheel experiences."
+      },
+      {
+        "url": "https://www.mainstreetco.us/blogs/vendor-spotlight/a-legacy-of-creativity-and-community-welcome-to-the-wheel-in-the-window-pottery-studio",
+        "label": "Main Street Collective: downtown Hattiesburg studio",
+        "observation": "Identifies the pottery studio in historic downtown Hattiesburg and describes its class formats."
+      }
+    ],
+    "planningTable": {
+      "title": "Eight friends changing their activity",
+      "intro": "The numbers here illustrate the cited public offer. Your own website must use your studio’s approved current requirements.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Starting activity",
+          "Keep the chosen activity beside its group requirement.",
+          "The current rule for that format.",
+          "The handbuilding inquiry identifies eight participants and the intended activity."
+        ],
+        [
+          "Change of activity",
+          "Explain that a new format can have a different minimum.",
+          "Rules for every option being compared.",
+          "Switching to painting prompts a fresh check instead of carrying the earlier eligibility wording."
+        ],
+        [
+          "Group outside the option",
+          "Provide an inquiry route without inventing an exception.",
+          "Who can consider a different arrangement.",
+          "The group can ask a question but is not promised a smaller private event."
+        ],
+        [
+          "Event status",
+          "Separate group size from available date, room and instructor.",
+          "How the studio accepts an event.",
+          "Meeting a minimum does not display a confirmed reservation."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "alabama/baldwin",
+    "areaIds": [
+      "alabama/baldwin"
+    ],
+    "market": "Baldwin County, AL",
+    "path": "/areas/alabama/baldwin-county/",
+    "title": "Web Design for Baldwin County, AL",
+    "servedAreas": [
+      {
+        "name": "Baldwin County",
+        "state": "Alabama",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/alabama/#baldwin",
+        "label": "Baldwin County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Baldwin County, AL. A Gulf Shores marine-service example keeps prior repair history attached to the correct vessel.",
+    "lead": "A returning customer may be bringing a different boat. I help Baldwin County businesses make the item being serviced clear so a familiar customer’s earlier repair does not become the history of a new request.",
+    "decisionTitle": "Keep prior service history attached to the correct boat.",
+    "decision": "GSPS Marine in Gulf Shores separates vessel details from requested work and prior service history on its public service form. It asks whether the vessel has been serviced before, then provides space for the previous visit and work. For a proposed marine-service website, consider a customer who used the shop last year and now owns a different boat. “Have you been here before?” would ask the wrong question. I would keep the current vessel identifiable beside the history prompt and explain that prior work concerns that boat. If the customer changes the vessel midway through the request, the form wording should prompt them to review the history as well. The service team still verifies any records it needs. This is an original form-planning example, not a claim that GSPS pre-fills customer data or currently mixes boat histories.",
+    "scopes": [
+      {
+        "title": "Clarify the existing vessel and history prompts",
+        "pages": [
+          "The boat being serviced",
+          "Requested work",
+          "Earlier work on this vessel"
+        ],
+        "request": "Describe the current boat and distinguish its known service history from the customer’s previous relationship with the shop.",
+        "supplies": "Approved identification fields, what prior-work detail is useful and the current service-request route.",
+        "check": "A returning customer with a newly acquired boat can explain that the shop worked on a different vessel last year."
+      },
+      {
+        "title": "Build a service introduction with a clearer repair inquiry",
+        "pages": [
+          "Maintenance and repair descriptions",
+          "Current boat identification",
+          "Known history and unanswered questions",
+          "Team review and next steps"
+        ],
+        "request": "Keep the boat, symptoms or requested work, and relevant earlier work together for staff review.",
+        "supplies": "Current service descriptions, examples of useful inquiry detail and the team’s process for checking uncertain history.",
+        "check": "Changing the boat being discussed prompts a review of the history text; it does not silently attribute the earlier job to the new vessel."
+      }
+    ],
+    "scopeTrigger": "A focused edit can improve labels and help text around the existing service form. A fuller build helps when the service introduction and inquiry need to be organized together. Saved vessels, customer accounts, service-record lookup and pre-filled history require separate scope and appropriate access controls. The marine team verifies records and decides the work and schedule.",
+    "quoteQuestions": [
+      "Which details identify the boat currently being discussed?",
+      "How should a customer explain earlier work on a different vessel?",
+      "What should the form say when the customer does not know the current boat’s service history?"
+    ],
+    "coverageNote": "GSPS Marine lists its address on Gulf Shores Parkway in Gulf Shores, within Baldwin County. Wonder and Method works remotely from Buffalo. The dealership is a public research example, not a client or partner.",
+    "sources": [
+      {
+        "url": "https://www.gspsmarine.com/service-request-boats-dealership--xservice_request",
+        "label": "GSPS Marine: vessel details and prior service history",
+        "observation": "The Gulf Shores service form separates vessel make, model, year and identifiers from requested work and the question about earlier service on that vessel."
+      }
+    ],
+    "planningTable": {
+      "title": "A returning customer with a different boat",
+      "intro": "These proposed website checks distinguish the current asset from the customer’s previous visits. Staff determines which records and work apply.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Current vessel",
+          "Keep the boat being discussed identifiable.",
+          "The fields needed for an ordinary service inquiry.",
+          "The request concerns the newly acquired boat, even though the customer is familiar."
+        ],
+        [
+          "Earlier shop visit",
+          "Ask whether this vessel received the earlier work.",
+          "How the team distinguishes vessel history from customer history.",
+          "Work on last year’s boat is not described as work on the current one."
+        ],
+        [
+          "Change during the inquiry",
+          "Prompt a review of the related history when the vessel changes.",
+          "Which details must be checked together.",
+          "An updated boat description does not leave the earlier history looking confirmed."
+        ],
+        [
+          "Uncertain history",
+          "Give the customer a way to explain what they do not know.",
+          "How staff reviews incomplete information.",
+          "The site does not invent a service record or turn uncertainty into a diagnosis."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "alabama/jefferson",
+    "areaIds": [
+      "alabama/jefferson"
+    ],
+    "market": "Jefferson County, AL",
+    "path": "/areas/alabama/jefferson-county/",
+    "title": "Web Design for Jefferson County, AL",
+    "servedAreas": [
+      {
+        "name": "Jefferson County",
+        "state": "Alabama",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/alabama/#jefferson",
+        "label": "Jefferson County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-24",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Jefferson County, AL. A Birmingham bakery example separates a pickup date, delivery request and shipped arrival plan.",
+    "lead": "Collecting a cake on the day of a celebration is a different plan from receiving one by carrier. I help Jefferson County businesses explain the timing change when a customer moves between local ordering and shipping.",
+    "decisionTitle": "Keep the occasion date distinct from pickup, dispatch and arrival.",
+    "decision": "Edgar’s Bakery describes local pickup and delivery separately from nationwide orders through Goldbelly. Its shipping page distinguishes dispatch days from arrival days and gives product-specific preparation instructions. For a proposed bakery website, consider a Birmingham customer who starts with local pickup, then decides to send a cake to a relative in another state. The original pickup date cannot simply become a shipping date. I would explain that the customer is changing ordering routes, link to the available shipped products and identify which date the shipping provider asks them to select. The occasion date remains useful context, but the provider’s delivery options and the bakery’s preparation instructions determine what the customer must check. This is a proposed ordering explanation; it does not claim that the existing systems share a cart or automatically transfer dates.",
+    "scopes": [
+      {
+        "title": "Clarify the links between local orders and shipping",
+        "pages": [
+          "Local pickup or delivery route",
+          "Products available through the shipping provider",
+          "What each date label means"
+        ],
+        "request": "Choose the appropriate ordering route with the occasion and required arrival in mind.",
+        "supplies": "Current local-order and shipping links, date-label meanings and approved product instructions.",
+        "check": "A customer leaving local pickup sees a new shipping choice; the page does not imply the original date has been carried over."
+      },
+      {
+        "title": "Build an ordering introduction around the occasion",
+        "pages": [
+          "Local collection and delivery choices",
+          "Nationwide product selection",
+          "Occasion, arrival and preparation timing",
+          "Order confirmation and the right support contact"
+        ],
+        "request": "Explain the choices before handing the customer to the existing order provider.",
+        "supplies": "Approved fulfillment descriptions, maintained shipping guidance and the team responsible for questions about each order type.",
+        "check": "A customer can identify who confirms the shipped arrival option and where to check preparation guidance before choosing it."
+      }
+    ],
+    "scopeTrigger": "A focused update can make the ordering routes and timing labels clearer. A fuller build helps when product browsing hides the difference between local fulfillment and shipping. Shared carts, carrier estimates, calculated arrival promises and cross-provider order changes require separate software scope. The bakery approves food instructions and the ordering provider confirms the options it supports.",
+    "quoteQuestions": [
+      "Which dates represent collection, dispatch, arrival or the occasion itself?",
+      "What should someone review when switching from a local order to shipping?",
+      "Who handles a question about each ordering route after the handoff?"
+    ],
+    "coverageNote": "Edgar’s lists its Financial Center bakery in downtown Birmingham and other Alabama locations; this brief does not place every branch in Jefferson County. Wonder and Method works remotely from Buffalo. Named businesses are public examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.edgarsbakery.com/news-item/how-to-order-a-custom-cake/",
+        "label": "Edgar’s Bakery: local ordering and delivery",
+        "observation": "Describes local cake ordering, pickup and delivery, with a separate nationwide shipping route."
+      },
+      {
+        "url": "https://www.edgarsbakery.com/shipping/",
+        "label": "Edgar’s Bakery: nationwide shipping and timing",
+        "observation": "Identifies Goldbelly, distinguishes shipping and arrival days, and provides preparation information by product type."
+      },
+      {
+        "url": "https://www.edgarsbakery.com/hours-and-location/",
+        "label": "Edgar’s Bakery: Alabama locations",
+        "observation": "Lists the Financial Center bakery at 505 20th Street North in Birmingham, separately from its other locations."
+      }
+    ],
+    "planningTable": {
+      "title": "Changing from local pickup to a shipped gift",
+      "intro": "This proposed check concerns date meanings and the provider handoff. Your own business supplies current product and fulfillment instructions.",
+      "columns": [
+        "Customer decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Original plan",
+          "Identify the chosen collection point and pickup date.",
+          "Current local-order instructions.",
+          "The customer understands the date as collection, not carrier dispatch."
+        ],
+        [
+          "Change of route",
+          "Explain that shipping uses its own product and date choices.",
+          "The correct provider link and supported products.",
+          "The page does not promise that a local cart or date transfers to another provider."
+        ],
+        [
+          "Arrival and occasion",
+          "Keep the event date distinct from the provider’s date selection.",
+          "Approved timing labels and preparation guidance.",
+          "The customer is directed to check arrival and preparation before relying on the occasion date alone."
+        ],
+        [
+          "Confirmation and help",
+          "Identify the source of order confirmation and relevant support.",
+          "Current responsibilities for local and shipped orders.",
+          "A question about a shipped order reaches its actual support route."
+        ]
+      ]
+    }
   }
 ]

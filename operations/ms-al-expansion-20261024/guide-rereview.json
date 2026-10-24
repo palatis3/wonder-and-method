@@ -1,0 +1,160 @@
+{
+  "reviewedAt": "2026-10-24T04:24:55.661Z",
+  "reviewDate": "2026-10-24",
+  "result": "PASS: retain all three links and their exact existing reasons; update only review metadata and the guide fingerprint",
+  "reviewer": "Independent Astra integration reviewer",
+  "method": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+  "sources": {
+    "guide": {
+      "path": "dist/guides/service-area-pages/index.html",
+      "sha256": "e8284e0c4466c7074fc85e17ed1d5082b3d3e173f4c5e2de1d149d3e3c05223c",
+      "mainTextSha256": "c33dc37e83893fee5df426cbf72878fda7c4abbe7ded2a2714a00b45a78bf360",
+      "guidePurposeFingerprint": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482",
+      "fingerprintMethod": "guidePurposeFingerprint(html), exported from scripts/site-quality-rules.mjs; SHA-256 of normalized journal-article text"
+    },
+    "records": {
+      "path": "src/location-service-data.json",
+      "sha256": "d1661acdd24f7a5d57608797d8b1c4062fd431ba11afdab685d577899d4a9d22",
+      "scope": "Complete records, including all lead, decisionTitle, decision, scopes and planningTable purpose fields plus coverage/source/context fields, were read."
+    },
+    "existingReview": {
+      "path": "operations/google-quality-audit-20261023/related-guide-review.json",
+      "sha256": "f16851ce877ad075392b5a1eb0d5828aee4fbe4949126bc9c74c1caddded462e"
+    },
+    "helper": {
+      "path": "scripts/site-quality-rules.mjs",
+      "sha256": "6674aa86a93915eea34217ed0fd8dfcde9549289320842f0f77274d712c0702e"
+    }
+  },
+  "rows": [
+    {
+      "from": "/areas/florida/leon-county/",
+      "to": "/guides/service-area-pages/",
+      "result": "KEEP",
+      "existingLabelAccurate": true,
+      "existingReasonAccurate": true,
+      "locationPurposeUnchanged": true,
+      "finding": "KEEP. The workshop-specific model/service limits, intermittent specialist availability, and need to inquire before transporting a trailer remain the purpose. The guide tells businesses to identify genuine work locations, distinguish coverage from offices, state current service availability and maintain changing booking conditions. The existing reason accurately connects those instructions to Midway/Gadsden versus Tallahassee/Leon; no new claim is needed.",
+      "guideSections": [
+        "Confirm what your business actually does",
+        "Keep the coverage honest and current"
+      ],
+      "previousGuidePurposeSha256": "59b04649b539fc8aae96a1a3544f6b0c9f68df0c831996be74f1415afdbff76f",
+      "proposedRow": {
+        "from": "/areas/florida/leon-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Describe locations and service coverage accurately",
+        "reason": "Leon explains the Midway workshop's location-specific repair limits and intermittent specialist availability before the customer transports a trailer. The guide asks which services are available at a genuine business location, rejects converting service reach into an office claim, and assigns maintenance of changing coverage and booking conditions. It therefore supports the current label and the record's explicit Midway/Gadsden versus Tallahassee/Leon distinction.",
+        "reviewedAt": "2026-10-24",
+        "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+        "reviewPart": 3,
+        "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+        "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+      }
+    },
+    {
+      "from": "/areas/florida/broward-county/",
+      "to": "/guides/service-area-pages/",
+      "result": "KEEP",
+      "existingLabelAccurate": true,
+      "existingReasonAccurate": true,
+      "locationPurposeUnchanged": true,
+      "finding": "KEEP. The record preserves each truck, requested work and actual road-service worksite while distinguishing a Pompano Beach shop from Broward road coverage and from confirmed dispatch. The complete guide distinguishes premises, customer-property service and service reach, and asks for address-level and scheduling conditions. The existing reason and shop/road-coverage label remain accurate; the guide is supplementary coverage guidance, not authorization or dispatch advice.",
+      "guideSections": [
+        "Begin with a customer decision",
+        "Confirm what your business actually does",
+        "Write the page around the next action"
+      ],
+      "previousGuidePurposeSha256": "59b04649b539fc8aae96a1a3544f6b0c9f68df0c831996be74f1415afdbff76f",
+      "proposedRow": {
+        "from": "/areas/florida/broward-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Describe the shop and road coverage accurately",
+        "reason": "Broward separates the Pompano Beach shop from road service at the truck's actual worksite and preserves vehicle/location details before confirmation. The guide explicitly separates real premises, on-site service and service reach, asks which services are available at a place, and requires address-level and scheduling conditions to remain visible. This directly supports the existing label without implying a Fort Lauderdale shop or confirmed dispatch.",
+        "reviewedAt": "2026-10-24",
+        "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+        "reviewPart": 3,
+        "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+        "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+      }
+    },
+    {
+      "from": "/areas/florida/calhoun-county/",
+      "to": "/guides/service-area-pages/",
+      "result": "KEEP",
+      "existingLabelAccurate": true,
+      "existingReasonAccurate": true,
+      "locationPurposeUnchanged": true,
+      "finding": "KEEP. Inventory versus custom building choice leads to an actual destination, access questions and an unconfirmed delivery arrangement. The guide directs owners to describe real service limits, address-level assessment and scheduling conditions and to leave unknowns unresolved until supplied. The existing reason correctly supports coverage explanation without promising availability, site suitability or a delivery date.",
+      "guideSections": [
+        "Confirm what your business actually does",
+        "Write the page around the next action",
+        "Keep the coverage honest and current"
+      ],
+      "previousGuidePurposeSha256": "59b04649b539fc8aae96a1a3544f6b0c9f68df0c831996be74f1415afdbff76f",
+      "proposedRow": {
+        "from": "/areas/florida/calhoun-county/",
+        "to": "/guides/service-area-pages/",
+        "label": "Explain delivery coverage without guaranteeing availability",
+        "reason": "Calhoun connects an inventory or custom-building choice to its actual delivery destination and unresolved access and scheduling questions. The guide explains address-level assessment, real service limits and current scheduling conditions, leaving unknowns unresolved until the business confirms them. That supports explaining delivery coverage without treating a listed area or displayed building as guaranteed availability.",
+        "reviewedAt": "2026-10-24",
+        "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+        "reviewPart": 3,
+        "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+        "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+      }
+    }
+  ],
+  "proposedRows": [
+    {
+      "from": "/areas/florida/leon-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe locations and service coverage accurately",
+      "reason": "Leon explains the Midway workshop's location-specific repair limits and intermittent specialist availability before the customer transports a trailer. The guide asks which services are available at a genuine business location, rejects converting service reach into an office claim, and assigns maintenance of changing coverage and booking conditions. It therefore supports the current label and the record's explicit Midway/Gadsden versus Tallahassee/Leon distinction.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "5377e877b819b538c14a59c5a41d31f3d68196ae15f9e604776fe9896d2f1d12",
+      "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+    },
+    {
+      "from": "/areas/florida/broward-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Describe the shop and road coverage accurately",
+      "reason": "Broward separates the Pompano Beach shop from road service at the truck's actual worksite and preserves vehicle/location details before confirmation. The guide explicitly separates real premises, on-site service and service reach, asks which services are available at a place, and requires address-level and scheduling conditions to remain visible. This directly supports the existing label without implying a Fort Lauderdale shop or confirmed dispatch.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "4cf0f82b74f9c18845b1df954ceaa2aa06a44841bc148e365e687fd8fe2a7b21",
+      "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+    },
+    {
+      "from": "/areas/florida/calhoun-county/",
+      "to": "/guides/service-area-pages/",
+      "label": "Explain delivery coverage without guaranteeing availability",
+      "reason": "Calhoun connects an inventory or custom-building choice to its actual delivery destination and unresolved access and scheduling questions. The guide explains address-level assessment, real service limits and current scheduling conditions, leaving unknowns unresolved until the business confirms them. That supports explaining delivery coverage without treating a listed area or displayed building as guaranteed availability.",
+      "reviewedAt": "2026-10-24",
+      "reviewMethod": "Independent Astra reread of the complete current built guide main text and all three complete location records after Mississippi and Alabama were added to shared coverage. Existing link labels and relevance reasons remain accurate; location-purpose fingerprints are unchanged. Evidence: evidence/ms-al-expansion-20261024/integration-review/guide-rereview.json.",
+      "reviewPart": 3,
+      "locationPurposeSha256": "97541cdaa6629f68c9043991683362093ccf5e9640e0ecda1f7095ac1d882a28",
+      "guidePurposeSha256": "621cbb2281c67aca77e5122baff4a9742c454ca3e93134a3e5d3392812365482"
+    }
+  ],
+  "validation": "Scoped relatedGuideFindings returned zero findings with the proposed three rows.",
+  "fontScriptFollowup": {
+    "path": "scripts/subset-newsreader-common.py",
+    "previousReviewedSha256": "632eb19aab1bfc00b8289c87ddd698ad4b3e5f2146ba21cfe90905322889eb7d",
+    "currentSha256": "2d5ce5b9ad68f574c90dd914756c2499e2c21e4c034678ed551cc7aeb938f3e7",
+    "changes": [
+      "line12: import sys",
+      "line29: sys.dont_write_bytecode = True before loading the validation helper"
+    ],
+    "independentlyVerified": "Removing exactly the two added lines reconstructs the previous reviewed script hash. Font-generation and validation logic are otherwise unchanged.",
+    "primaryReportedValidation": "Primary reports --check reproduced byte-identically. Not rerun here, because that script writes its evidence outside this reviewer-owned directory."
+  },
+  "limitations": [
+    "This is a contextual-link relevance rereview, not renewed verification of the businesses or their source websites.",
+    "No source, production review rows, build output, main integration review or release status was modified.",
+    "No suite, build, browser, network or deployment operation was run."
+  ]
+}

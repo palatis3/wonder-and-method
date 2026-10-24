@@ -6,7 +6,9 @@
 
 @font-face{font-family:Newsreader;src:url('/assets/premium/newsreader-latin-ext.woff2') format('woff2');font-weight:401 800;font-style:normal;font-display:swap;unicode-range:U+0100-0131,U+0134-0148,U+014A-017E,U+018F,U+0192,U+01A0-01A1,U+01AF-01B0,U+01C4-01CC,U+01E6-01E7,U+01EA-01EB,U+01FA-021B,U+022A-022D,U+0230-0233,U+0237}
 
-@font-face{font-family:Newsreader;src:url('/assets/premium/newsreader-regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF,U+2010,U+2013-2014,U+2018-201A,U+201C-201E,U+2020-2022,U+2026,U+2030,U+2032-2033,U+2039-203A,U+2044,U+2052,U+20AC}
+@font-face{font-family:Newsreader;src:url('/assets/premium/newsreader-regular-common.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+2010,U+2013-2014,U+2018-201A,U+201C-201E,U+2020-2022,U+2026,U+2030,U+2032-2033,U+2039-203A,U+2044,U+2052,U+20AC}
+
+@font-face{font-family:Newsreader;src:url('/assets/premium/newsreader-regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+00A1-00B6,U+00B8-00FF}
 
 @font-face{font-family:Newsreader;src:url('/assets/premium/newsreader-regular-latin-ext.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0100-0131,U+0134-0148,U+014A-017E,U+018F,U+0192,U+01A0-01A1,U+01AF-01B0,U+01C4-01CC,U+01E6-01E7,U+01EA-01EB,U+01FA-021B,U+022A-022D,U+0230-0233,U+0237}
 

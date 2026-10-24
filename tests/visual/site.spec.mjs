@@ -50,6 +50,13 @@ test('Georgia entry preserves government and place distinctions',async({page})=>
  const entry=page.locator('#richmond');await expect(entry).toHaveAttribute('open','');
  await isolateContent(page);await expect(entry).toHaveScreenshot('georgia-entry.png');
 });
+for(const [state,county] of [['mississippi','yalobusha'],['alabama','madison']]){
+ test(`${state} entry preserves place classifications`,async({page})=>{
+  await page.goto(`/areas/${state}/?qa=1#${county}`);await settle(page);
+  const entry=page.locator('#'+county);await expect(entry).toHaveAttribute('open','');
+  await isolateContent(page);await expect(entry).toHaveScreenshot(state+'-entry.png');
+ });
+}
 for(const [name,path] of [['service-questions','/services/web-design/'],['county-questions','/areas/massachusetts/barnstable-county/']]){
  test(`${name} expanded answers remain readable`,async({page})=>{
   await page.goto(path+'?qa=1');await settle(page);

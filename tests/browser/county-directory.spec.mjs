@@ -43,10 +43,10 @@ test('county finder supports shared villages, county aliases and a useful empty 
  const search=page.getByRole('searchbox',{name:'County, region or community'});
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(search).toBeVisible();await expect(page.locator('[data-county-search]')).toHaveCount(62);await expect(visible).toHaveCount(0);
+ await expect(search).toBeVisible();await expect(page.locator('[data-cs]')).toHaveCount(62);await expect(visible).toHaveCount(0);
  await page.locator('#western-new-york > summary').click();
  await expect(page.locator('#western-new-york')).toHaveAttribute('open','');
- const initiallyOpenCount=await page.locator('[data-county-search]:visible').count();expect(initiallyOpenCount).toBeGreaterThan(0);
+ const initiallyOpenCount=await page.locator('[data-cs]:visible').count();expect(initiallyOpenCount).toBeGreaterThan(0);
  const searchRequests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))searchRequests.push(request.url());});
  await search.fill('Buffalo');await expect(page.locator('[data-county-best] a').first()).toHaveAttribute('href','/areas/erie-county/');await search.fill('Ithaca');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/new-york/#tompkins']);
  await search.fill('Saranac Lake');await expect(visible).toHaveCount(2);expect(await targets()).toEqual(['/areas/new-york/#essex','/areas/new-york/#franklin']);
@@ -59,7 +59,7 @@ test('county finder supports shared villages, county aliases and a useful empty 
  await search.fill('not a real place 123');await expect(visible).toHaveCount(0);
  await expect(page.getByText('No service areas match that search.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('0 areas match your search.');
- await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(page.locator('[data-county-search]:visible')).toHaveCount(initiallyOpenCount);await expect(visible).toHaveCount(0);await expect(page.locator('#western-new-york')).toHaveAttribute('open','');
+ await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(page.locator('[data-cs]:visible')).toHaveCount(initiallyOpenCount);await expect(visible).toHaveCount(0);await expect(page.locator('#western-new-york')).toHaveAttribute('open','');
  await expect(page.locator('[data-county-directory]')).toBeVisible();
  expect(searchRequests).toEqual([]);
 });
@@ -81,14 +81,14 @@ test('combined finder disambiguates states and shared place names without sendin
  const search=page.getByRole('searchbox',{name:'County, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(page.locator('[data-county-search]')).toHaveCount(1284);await expect(visible).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(1433);await expect(visible).toHaveCount(0);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  await search.fill('Hamburg');await expect(visible).toHaveCount(6);expect(await targets()).toEqual(['/areas/erie-county/','/areas/indiana/#franklin','/areas/michigan/#livingston','/areas/new-jersey/#sussex','/areas/ohio/#fairfield','/areas/pennsylvania/#berks']);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(1);
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('1 area matches your search in Pennsylvania.');
  await search.fill('');await expect(visible).toHaveCount(67);
  await state.selectOption('new-york');await expect(visible).toHaveCount(62);
- await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-county-search]')).toHaveCount(1284);
+ await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-cs]')).toHaveCount(1433);
  await search.fill('Hamburg township MI');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/michigan/#livingston']);
  await search.fill('Hamburg CDP IN');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/indiana/#franklin']);
  await search.fill('Erie PA');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/pennsylvania/#erie']);
@@ -106,7 +106,7 @@ test('Ohio finder distinguishes cities, villages and cross-county destinations',
  const search=page.getByRole('searchbox',{name:'County, region or community'}),visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  const county=slug=>`/areas/ohio/#${slug}`;
- await expect(page.locator('[data-county-search]')).toHaveCount(88);await expect(visible).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(88);await expect(visible).toHaveCount(0);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,slugs] of [['Columbus city',['delaware','fairfield','franklin']],['Dublin city',['delaware','franklin','union']],['Fostoria city',['hancock','seneca','wood']],['Hamilton city',['butler']],['Sandusky city',['erie']],['Sandusky city OH',['erie']],['Upper Sandusky city',['wyandot']],['Saint Clairsville city',['belmont']],['McArthur village',['vinton']],['Yellow Springs village',['greene']]]){
   await search.fill(query);await expect(visible).toHaveCount(slugs.length);expect(await targets()).toEqual(slugs.map(county).sort());
@@ -124,7 +124,7 @@ test('Pennsylvania finder supports cross-county cities, community names and keyb
  await page.goto('/areas/pennsylvania/?qa=1');
  const search=page.getByRole('searchbox',{name:'County, region or community'}),visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(page.locator('[data-county-search]')).toHaveCount(67);await expect(visible).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(67);await expect(visible).toHaveCount(0);
  await search.fill('Bethlehem');await expect(visible).toHaveCount(5);expect(await targets()).toEqual(['/areas/pennsylvania/#armstrong','/areas/pennsylvania/#clarion','/areas/pennsylvania/#lehigh','/areas/pennsylvania/#northampton','/areas/pennsylvania/#washington']);
  await search.fill('Bethlehem city');await expect(visible).toHaveCount(2);expect(await targets()).toEqual(['/areas/pennsylvania/#lehigh','/areas/pennsylvania/#northampton']);
  await search.fill('State College borough');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(['/areas/pennsylvania/#centre']);
