@@ -8,6 +8,11 @@
   "engines": {
     "node": ">=24"
   },
+  "overrides": {
+    "miniflare": {
+      "undici": "7.30.1"
+    }
+  },
   "scripts": {
     "check": "wrangler deploy --dry-run --outdir dry-run",
     "types": "wrangler types worker-configuration.d.ts --include-runtime false",
