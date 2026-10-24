@@ -1,0 +1,187 @@
+{
+  "reviewedAt": "2026-10-24T01:30:35.909Z",
+  "scope": "Independent editorial and source review of six private commercial drafts. This is not a publication, integration, rendered-browser or CI approval.",
+  "standard": "A different county, business, industry or scenario is insufficient. Each complete draft must offer a materially different visitor decision, content relationship or handoff compared with the closest complete existing records. This review applies operations/south-carolina-expansion-20261023/CONTENT_A_REVIEW.md.",
+  "recordHashMethod": "sha256(JSON.stringify(record))",
+  "fileInputs": {
+    "drafts": {
+      "path": "evidence/georgia-expansion-20261023/drafts/initial-six.json",
+      "sha256": "a8e0b4ea708bb1bc7a5b9b2a38f9f0c2456a2eb378491a9361f8b71202884481"
+    },
+    "authorReview": {
+      "path": "evidence/georgia-expansion-20261023/drafts/author-review.json",
+      "sha256": "147a5e06b3e508225a6a0474bc7c1658f040b04acd28b09f0465582d834df340"
+    },
+    "primaryComparisons": {
+      "path": "evidence/georgia-expansion-20261023/drafts/primary-full-comparisons.json",
+      "sha256": "d0a07cee3e3a65a11d76d4c4f48d79a89198f2b33ad635591ca48ea302c95390"
+    },
+    "collection": {
+      "path": "src/location-service-data.json",
+      "sha256": "625508f3a015c14da74f746769932dadc1956d7f01273a717385d53285bf05a6"
+    },
+    "renderer": {
+      "path": "src/location-service-pages.mjs",
+      "sha256": "e01bf5c4b565bd1df4ab431402dfae6cf462c9e4d1004af88d8a562b0f878cac"
+    },
+    "offers": {
+      "path": "config/offers.json",
+      "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2"
+    },
+    "preservation": {
+      "path": "tests/fixtures/georgia-preservation.json",
+      "sha256": "d33c22cee7f3c6258bd7cee4736c8fa1560042bdf6e316154d01fb9e83d94916"
+    },
+    "standard": {
+      "path": "operations/south-carolina-expansion-20261023/CONTENT_A_REVIEW.md",
+      "sha256": "768a899433f1fa760193f26fec29d73124b7a2e9240f05b84b66567375229aab"
+    },
+    "sourceManifest": {
+      "path": "evidence/georgia-expansion-20261023/source-research/source-manifest.json",
+      "sha256": "e8a3dd7f767f5daeca9a40b79d5d433a8e67ed2e5ce1b096007fa89638c990bb"
+    },
+    "additionalSourceManifest": {
+      "path": "evidence/georgia-expansion-20261023/source-research/additional-source-manifest.json",
+      "sha256": "4638372214ff7db8ff326986c09ba60bf41b50b36b9c304d600a552f62d30e94"
+    }
+  },
+  "fullDraftReadCount": 6,
+  "completeComparisonReadCount": 21,
+  "retainedUnchangedFullReads": [
+    "virginia/frederick",
+    "michigan/alger"
+  ],
+  "assessments": [
+    {
+      "areaId": "georgia/chatham",
+      "verdict": "PASS",
+      "closestRead": [
+        "new-york/lewis",
+        "new-york/schenectady",
+        "indiana/washington"
+      ],
+      "overlap": "Lewis already separates perishables and merchandise fulfillment, Schenectady attaches timing to each mixed-order component, and Washington separates reseller, recipient and package identity. Separate parcels and recipient labels alone would not establish novelty.",
+      "materialDifference": "The draft tests a product-specific destination restriction against a broader shipping statement. Its useful recovery decision is to keep the intended recipient while reconsidering that recipient's gift, then recheck that product-destination pairing. It also carries item/recipient context into parcel explanations. None of the complete closest records handles this eligibility conflict and recovery choice.",
+      "sourceAssessment": "The general FAQ supports military-address shipping and assigning cart items to multiple addresses. The warm-weather page separately restricts apple destinations and describes separate express packing. The draft correctly presents the proposed conflict/recovery test as a website design check, not an observed checkout defect.",
+      "countyAssessment": "The official Savannah visitor listing identifies the historic River Street shop at 13 E. River Street, Savannah. The draft's Savannah/Chatham identity is supported.",
+      "commercialAssessment": "Content clarification and a fuller introduction are useful distinct scopes. Checkout rules, destination validation and fulfillment integrations are separately scoped; no automatic eligibility or shipping promise is sold as ordinary content work.",
+      "faqAssessment": "No additions. Product/destination eligibility, preserving recipient context, split parcels, owner-supplied rules and the software boundary are already explicit. A general ecommerce or shipping FAQ would repeat the draft or shared connection limits rather than answer an omitted buyer decision.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/chatham-county/",
+      "inputSha256": "97930ad69b36cba37e380625c48861f8f36f16b2f73720a97afd55451b6b0e89"
+    },
+    {
+      "areaId": "georgia/richmond",
+      "verdict": "PASS",
+      "closestRead": [
+        "north-carolina/hoke",
+        "massachusetts/worcester",
+        "indiana/noble",
+        "virginia/staunton-city",
+        "pennsylvania/monroe",
+        "massachusetts/hampshire"
+      ],
+      "overlap": "Hoke already describes individual turns inside a group experience; Worcester separates private groups from ordinary appointments; Noble describes individual instruction in a shared studio. Staunton separates people from pieces, while Monroe and Hampshire explain later pottery finishing and collection. A pottery/couple example alone would fail.",
+      "materialDifference": "Two participants require two separately booked appointments with a specified adjacency relationship. The content must explain individual instruction and waiting, make both bookings recognizable, and provide an owner-confirmed fallback if the pair cannot be completed. This is a dependency between two reservations, unlike a single group booking with individual turns or later firing-dependent visits.",
+      "sourceAssessment": "Tire City Potters explicitly instructs two visitors to book two appointments 30 minutes apart, with one-to-one instruction while the other waits; larger groups contact the studio. The missing-pair scenario is expressly a proposed acceptance check, not a claim about a broken current scheduler.",
+      "countyAssessment": "The source gives the Augusta studio address at 210B 10th Street. Its Richmond County identity is consistent with the cited downtown location.",
+      "commercialAssessment": "The draft offers instructions and provider handoff clarification. Automatic paired-slot availability, reservations and custom scheduler behavior remain separate software work; a normal inquiry does not promise both places.",
+      "faqAssessment": "No additions. The two-slot requirement, waiting arrangement, incomplete-pair fallback, larger-group route and scheduler boundary already answer the useful page-specific questions. Shared pricing and connection content covers the remaining ordinary website-buying questions.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/richmond-county/",
+      "inputSha256": "3c29b53f28311391c43fb8eae0220608c9332e52dd0d2fd24f1a502415d3d7fb"
+    },
+    {
+      "areaId": "georgia/fulton",
+      "verdict": "PASS",
+      "closestRead": [
+        "virginia/frederick",
+        "vermont/orange",
+        "west-virginia/morgan"
+      ],
+      "overlap": "Frederick routes support using purchase/installation context, Orange distinguishes the affected item from the complete return set, and Morgan identifies return method before drop-off. Object identity, authorization and return preparation are therefore existing territory.",
+      "materialDifference": "The customer may possess both an old unit and its newly purchased replacement. The draft keeps those objects and purposes separate while linking the old-unit surrender to the replacement purchase, selecting the applicable return terms, and distinguishing receipt, inspection and actual credit. The old unit can be returned while the replacement is kept; this is not an ordinary complaint or paired-item repair intake.",
+      "sourceAssessment": "Absolute Lift Parts describes eligible old-core exchange after replacement purchase, with credit after inspection. Its separate purchased-part policy requires authorization and gives a 30-day invoice-based return period. The draft does not transplant that period into core terms or invent a core deadline.",
+      "countyAssessment": "The business lists 1120 Oakleigh Drive, East Point. East Point is in Fulton County; the draft does not confuse the broader Atlanta service area with its base.",
+      "commercialAssessment": "The draft reserves eligibility, condition, authorization and credit decisions for the supplier. Portals, shipping labels, order access and automatic credits need separate scope. The two content scopes are commercially useful without implying an included returns system.",
+      "faqAssessment": "No additions. Item identity, purpose, purchase reference, separate applicable terms, review states and system exclusions already cover the distinctive buyer concerns. A repair/return FAQ would repeat those explanations.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/fulton-county/",
+      "inputSha256": "b296face881151dcd06e8bb8edda53eeabd6b5a526dce577ba8e8eb0df5b7e56"
+    },
+    {
+      "areaId": "georgia/cherokee",
+      "verdict": "PASS",
+      "closestRead": [
+        "tennessee/grainger",
+        "connecticut/southeastern-connecticut",
+        "north-carolina/polk"
+      ],
+      "overlap": "Grainger already separates new inquiries from existing-holder renewals. Southeastern Connecticut distinguishes ordinary visitors, members and member guests; Polk separates membership from further studio-use requirements. Merely adding a membership label or a new-versus-returning split would not be sufficient.",
+      "materialDifference": "The draft distinguishes current membership renewal, expired membership requiring a new purchase, and an unredeemed gift certificate whose activation starts the membership term. A person with a prior relationship is not automatically eligible for renewal, and a purchaser is not necessarily the member. The time/activation event changes the correct route, beyond the compared new/existing customer or admission-category splits.",
+      "sourceAssessment": "The membership page explicitly separates renewal of current memberships from a new purchase after expiry. Gift certificates must be presented at the Welcome Center and their membership year begins at redemption. The draft does not invent remote activation, account lookup or a universal gift validity calculation.",
+      "countyAssessment": "Destination Cherokee lists Gibbs Gardens at 1987 Gibbs Drive. The garden's own history independently places the home site in northeast Cherokee County, supporting county identity beyond the Ball Ground mailing name.",
+      "commercialAssessment": "Owner-approved instructions and existing links are ordinary content work. Account checks, membership administration, activation and entitlement calculation remain separate and owner/provider controlled.",
+      "faqAssessment": "No additions. The current/expired/gift distinctions, activation event, actual provider route and owner-confirmed terms already answer the relevant local example questions. An account or membership FAQ would repeat the body or add unapproved software expectations.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/cherokee-county/",
+      "inputSha256": "4061d4041bd9c5898bf721111e62faa76444dcbaf73b516dd4d6119c5db9597b"
+    },
+    {
+      "areaId": "georgia/lowndes",
+      "verdict": "PASS",
+      "closestRead": [
+        "michigan/alger",
+        "new-york/sullivan",
+        "indiana/dearborn"
+      ],
+      "overlap": "Alger already keeps a selected tour distinct from an alternative, guest choice and confirmed rebooking. Sullivan distinguishes ticket/meal/performance combinations and explicitly dates seasonal examples; Dearborn carries selected inclusions through arrival handoffs. Neither different attraction branding nor general inclusion/confirmation copy establishes novelty.",
+      "materialDifference": "The draft asks whether the holder needs a date change on an existing dated ticket or a change to a more flexible ticket product. It then rechecks product-linked next-consecutive-operating-day eligibility. A date change must not silently acquire another product's benefit, and a closed calendar day must not be treated as an operating day. That product/date/benefit relationship differs from an alternative excursion and consent to rebook it.",
+      "sourceAssessment": "The current Wild Adventures FAQ still labels the relevant rules as 2026: dated tickets, Any Day use, changes/upgrades and the Any Day next-consecutive-operating-day benefit. The surrounding site promotes 2027 passes. The draft confines its example to the dated 2026 policy and does not imply that the same offer is a current 2027 promise.",
+      "countyAssessment": "The official Lowndes County Wild Adventures page provides the attraction and Old Clyattville Road address. The county identity is directly supported.",
+      "commercialAssessment": "The content scopes explain change choices and confirmation language. Ticket inventory, price differences, eligibility and calendar calculations are not promised as included content/standard connection behavior.",
+      "faqAssessment": "No additions. Date changes, product upgrades, operating-day benefits, source season and provider confirmation are already covered, including the software boundary. A general seasonal-update FAQ would repeat existing body and shared maintenance explanations.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/lowndes-county/",
+      "inputSha256": "2af7730272893352226c01a01f5ca071e6238d6be64758e3a27e7bc08b61ec99"
+    },
+    {
+      "areaId": "georgia/gwinnett",
+      "verdict": "PASS",
+      "closestRead": [
+        "pennsylvania/washington",
+        "south-carolina/berkeley",
+        "indiana/switzerland"
+      ],
+      "overlap": "Washington already covers school instrument rentals, accessory inclusions and receiving arrangements. Berkeley covers product-specific credits/packs and eligibility tied to existing enrollment. Switzerland separates instrument preferences, repairs and upgrades. A music-rental or credit example alone would not be sufficient.",
+      "materialDifference": "The draft follows an existing rental relationship through a free size exchange or a different instrument upgrade, preserving the current instrument, rental history and owner-confirmed credit definition. The customer is choosing the kind of change within an ongoing arrangement, not starting a rental, selecting a class pack or requesting a repair. It explicitly prevents an exchange, accumulated credit and final ownership from collapsing into the same promise.",
+      "sourceAssessment": "Ronald Sachs' rental page describes free size changes, rental-payment value toward upgrades and non-expiring earned trade-in credit; its listed rental price excludes tax and damage protection. The draft treats the exact components/amount of usable credit as owner-confirmed information. The observed price exclusions alone do not establish a credit formula or individual eligibility.",
+      "countyAssessment": "The actual Lilburn store page identifies its Pleasant Hill Road shop in central Gwinnett County. This review uses /store/lilburn-ga/, not the guessed /locations/lilburn/ URL that resolves to different rental content.",
+      "commercialAssessment": "Content can explain the existing rental program and contact route. Rental balances, credit calculations, entitlement decisions, exchanges and ownership records remain provider responsibilities and separate software scope.",
+      "faqAssessment": "No additions. The draft already explains exchange versus upgrade, retaining rental context, credit-definition questions and the limits on calculated eligibility/ownership. Additional rental FAQ wording would repeat the body or risk inventing provider terms.",
+      "recommendedFaqs": [],
+      "findings": [],
+      "path": "/areas/georgia/gwinnett-county/",
+      "inputSha256": "71c7a25926c2d93dc553074cc6ac29c2b479f6b8327dd85152c0ff408db0a438"
+    }
+  ],
+  "sharedCommercialReview": {
+    "result": "PASS",
+    "basis": "Read the complete shared location renderer and relevant current offer definitions. The shared section supplies scoped fixed-price paths, ordinary-form limits, standard external-provider connections, ownership/hosting, review and maintenance boundaries. All six drafts use content groupings rather than promise a fixed page count. Their custom systems remain separately scoped.",
+    "noAdditionalFaqRationale": "All six complete drafts already contain a lead, decision explanation, two scoped options, four-row planning table, quote questions and a scope boundary. The shared content answers common price, process, forms, connections, hosting and follow-up questions. No useful omitted buyer question justified an extra FAQ on these six pages. This is a page-by-page editorial judgment, not a zero-FAQ quota."
+  },
+  "keywordStatus": {
+    "status": "unqueried",
+    "reason": "No supplemental FAQ or keyword suggestion is recommended, so no demand or volume claim is made. No Semrush metric has been inferred or copied from a merely similar query."
+  },
+  "releaseCaveats": [
+    "PASS applies only to the pinned private drafts and reviewed shared inputs. Integration, preservation, rendering and the parent task's wider release gates remain separate.",
+    "The Lowndes example must retain its explicit 2026 limitation whenever used with current/2027 navigation.",
+    "Source-backed program descriptions do not authorize calculated core deadlines, rental-credit eligibility or unverified provider behavior."
+  ]
+}

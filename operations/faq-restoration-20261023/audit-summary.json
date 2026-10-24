@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-24T02:37:29.585Z",
+  "status": "PASS",
+  "existingLocationPagesReviewed": 1082,
+  "newGeorgiaPagesReviewed": 6,
+  "mainServicePagesReviewed": 8,
+  "legacyQuestionsReviewed": 1749,
+  "legacyDispositions": {
+    "adapt": 171,
+    "omit": 1578
+  },
+  "faqRoutes": 161,
+  "faqAnswers": 231,
+  "locationRoutesWithFaqs": 154,
+  "mainServiceRoutesWithFaqs": 7,
+  "existingLocationNoFaqDecisions": 928,
+  "georgiaFaqReviewFile": "operations/georgia-expansion-20261023/commercial-faq-assessments.json",
+  "georgiaFaqReviewSha256": "c536388c71f80fb8d57521b26a5437844586ebb5527ffc1463f0cadc02a0a5f4",
+  "preservedOriginalRecords": 1082,
+  "integratedFaqSha256": "f90860dc4fa17cf722a7d37c12ad8004b2542072fd4dbe1f3cfd5c529fbddba3",
+  "batches": [
+    {
+      "batch": "batch-001",
+      "reviewedPages": 24,
+      "answers": 53,
+      "legacyQuestions": 114,
+      "recommendedSha256": "975c301515c43056e34af1e8bc613199ec05f5ad719fe8573908e14455bca1e3",
+      "reviewSha256": "e3b9064ae6242dec959a20d5b1609aea0bb2c88f2299a904e2cf59b12da24ba2"
+    },
+    {
+      "batch": "batch-002",
+      "reviewedPages": 48,
+      "answers": 74,
+      "legacyQuestions": 154,
+      "recommendedSha256": "5c5b6ba9ecb7be0f883a14370aea77664a8942aaa1e4094ab4234817bcbcd86b",
+      "reviewSha256": "7acb693af68eeaa245057cc6a836bcb1aff7c9a0d38f443ce0705aeceb7e4572"
+    },
+    {
+      "batch": "batch-003",
+      "reviewedPages": 72,
+      "answers": 51,
+      "legacyQuestions": 180,
+      "recommendedSha256": "680b20c4f3be1e84e5050d2601ad01d2f1465d2a518254a58c91825ff0946cef",
+      "reviewSha256": "c46b33cc0c0cc1507b073ed92a06615c596a4b066650965488c8fbdccca75885"
+    },
+    {
+      "batch": "batch-004",
+      "reviewedPages": 96,
+      "answers": 12,
+      "legacyQuestions": 55,
+      "recommendedSha256": "64d88d613b1f339cab93dd26da0ccbb933e06d15f47d59d9241e490c0030b0f7",
+      "reviewSha256": "e4b3b36cac386e56006a0554809d29a9870fc4b0c911a43c1da0bb6bba8d7d9d"
+    },
+    {
+      "batch": "batch-005",
+      "reviewedPages": 120,
+      "answers": 10,
+      "legacyQuestions": 287,
+      "recommendedSha256": "3ec92ff17b0c564d8940c2d56488c7babb7a9bf6c73fd0fec3d3d6da2a3e076a",
+      "reviewSha256": "6ebd055b40e72c0cab21069847ede1ff2dd65195317e6d5c1ab05c4a081119b2"
+    },
+    {
+      "batch": "batch-006",
+      "reviewedPages": 180,
+      "answers": 3,
+      "legacyQuestions": 189,
+      "recommendedSha256": "54677758a19bdab930978fb3e36ef4526efc870c4eb826202d884227c2ec3664",
+      "reviewSha256": "82f8a2b95e84e6b5e835a21f2e19ef184892c776de3e062b320564aacb859756"
+    },
+    {
+      "batch": "batch-007",
+      "reviewedPages": 180,
+      "answers": 8,
+      "legacyQuestions": 528,
+      "recommendedSha256": "aa32019906ff9f8b7c8c058587c59dad3f7086b27d8d7358c2a5c830fde5e465",
+      "reviewSha256": "1a4144c25b84feb742a7d827c4bdd69fff10f3690b3dd504ac78c68c88ea7f4c"
+    },
+    {
+      "batch": "batch-008",
+      "reviewedPages": 180,
+      "answers": 10,
+      "legacyQuestions": 155,
+      "recommendedSha256": "c72eb2293f45ce93e47882c430dda6ec27353d586db99dfcadedcde21d6a421c",
+      "reviewSha256": "fb98c5bafe3744c143b2ba8970c4fd13830659ec1c4b6729a74cb3e19638bc84"
+    },
+    {
+      "batch": "batch-009",
+      "reviewedPages": 182,
+      "answers": 1,
+      "legacyQuestions": 87,
+      "recommendedSha256": "a884f236ea0898dcb329ce837d2ed071d113cc549cacd4fc713a608da5c8ad7f",
+      "reviewSha256": "b247e06d9f5c28f93a8d44a95d748e3cc8790e80cd95dfa06bc70fe9b304dd03"
+    }
+  ],
+  "keywords": {
+    "faqUnique": 303,
+    "georgiaUnique": 518,
+    "combinedUnique": 821,
+    "phraseMappings": 446,
+    "unqueriedFinalSuggestions": 0,
+    "lastDisplayedRefreshMeter": "834/1,000",
+    "limits": "US phrase-level estimates, not county demand or forecast traffic. Exact phrase matching only; displayed zero, unavailable and blank are distinct. Metrics do not determine FAQ inclusion.",
+    "sourceFiles": [
+      {
+        "path": "evidence/county-faq-restoration-20261023/semrush-service-faq-batch-a-refreshed.json",
+        "sha256": "d45ad99e2068909068431b51cf95e9ad4cbe79cc4f265e560bcb5a05480f819c",
+        "rows": 50
+      },
+      {
+        "path": "evidence/county-faq-restoration-20261023/semrush-service-faq-batch-b.json",
+        "sha256": "405fb41db52bf43408d056e1f2e36de050389af81ac8f8d19efb6bcfd57b9153",
+        "rows": 100
+      },
+      {
+        "path": "evidence/county-faq-restoration-20261023/semrush-service-faq-batch-c.json",
+        "sha256": "226f93ccaa70e321d1162d6841b81af577e67dc87a954cbfa7e7405bd6de7f56",
+        "rows": 91
+      },
+      {
+        "path": "evidence/county-faq-restoration-20261023/semrush-service-faq-batch-d.json",
+        "sha256": "de6bd1bdeb48f00559a6e1b02508f16275fd0f81d0afc124e38497b17ae6777d",
+        "rows": 32
+      },
+      {
+        "path": "evidence/county-faq-restoration-20261023/semrush-service-faq-batch-e.json",
+        "sha256": "e021763688a4f4f9c7d5ed06806b5fc861d1d113e0a1e202e66e3b0d2c531022",
+        "rows": 30
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-batch-a-refreshed.json",
+        "sha256": "b3af69cfde8f98f7f4d7a24f2370098a7fd522efcb607402453e036d3b081c99",
+        "rows": 100
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-city-batch-b.json",
+        "sha256": "426679b7991b283235792b55e2d0b0022f2cad63e73930505b2ce1aac53c9069",
+        "rows": 100
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-county-batch-a.json",
+        "sha256": "09bd2ded8099a6eaaa9d3754514836dcac2efa6b192645ea8d53b96164b0260c",
+        "rows": 100
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-county-batch-b.json",
+        "sha256": "51c7753f353ea8f888e79b9d612c1284129183e822216a452a11a9449837f6ac",
+        "rows": 100
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-county-batch-c.json",
+        "sha256": "e1dee955e18743a05d43d5d4461c99d414c4b75629f21a6816ebb734300a8633",
+        "rows": 100
+      },
+      {
+        "path": "evidence/georgia-expansion-20261023/keyword-county-batch-d.json",
+        "sha256": "28b0eeb1e5a85a83ea0a5706fee16aafd41ab105f098590420628784556a4d0d",
+        "rows": 18
+      }
+    ]
+  },
+  "releaseStatus": "Editorial audit complete; full final release gates pending.",
+  "copyCorrections": {
+    "count": 1,
+    "path": "operations/faq-restoration-20261023/copy-corrections.json",
+    "sha256": "46020abd3acde19b6fc5a4be4ef0b5ae6cb96d8e21d8d650ec3a80af089ddea2",
+    "policy": "Original reviewed batch artifacts are preserved; explicit copy corrections are checked against their exact before and after text."
+  }
+}

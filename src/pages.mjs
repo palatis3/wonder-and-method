@@ -30,6 +30,7 @@ import {paymentContent} from './payment-content.mjs';
 import {countyPages,countyServiceArea,serviceAreaLinks} from './service-counties.mjs';
 import {locationServicePages} from './location-service-pages.mjs';
 import {locationServiceForPath} from './location-service-index.mjs';
+import {serviceFaqSection} from './service-faqs.mjs';
 import {serviceCoverage} from './service-area.mjs';
 import {serviceRegionLabel} from './assets/service-state-info.js';
 import {searchMetadata,searchSupplement,countyCoverage} from './search-content.mjs';
@@ -78,6 +79,11 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
     }
     const planningLinks=researchServiceLinks(path);
     if(planningLinks)body=body.includes('<section class="studio-closing">')?body.replace('<section class="studio-closing">',planningLinks+'<section class="studio-closing">'):body+planningLinks;
+    const serviceQuestions=serviceFaqSection(path);
+    if(serviceQuestions){
+      const before=path.startsWith('/areas/')?'<section class="section county-section" id="your-brief">':'<section class="studio-closing">';
+      body=body.includes(before)?body.replace(before,serviceQuestions+before):body+serviceQuestions;
+    }
     if(path.startsWith('/services/')){const areas=serviceAreaLinks();body=body.includes('<section class="studio-closing">')?body.replace('<section class="studio-closing">',areas+'<section class="studio-closing">'):body+areas;}
     if(formPage&&chatMarkup)body+='<p class="inline-chat-action"><button type="button" data-chat-open aria-describedby="support-chat-description" hidden>Chat with Terry</button><span>Live chat uses cookies.</span></p>';
     if(searchMetadata[path]){const metadata=searchMetadata[path];title=metadata.title;if(metadata.description)description=typeof metadata.description==='function'?metadata.description(o,config):metadata.description;}

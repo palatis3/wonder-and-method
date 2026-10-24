@@ -1,11 +1,13 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect} from './fixtures.mjs';
-import paths from '../fixtures/location-wave-four-paths.json' with {type:'json'};
+import waveFourPaths from '../fixtures/location-wave-four-paths.json' with {type:'json'};
+import southCarolinaPaths from '../fixtures/south-carolina-approved-paths.json' with {type:'json'};
+import georgiaPaths from '../fixtures/georgia-approved-paths.json' with {type:'json'};
 const axe=await readFile(new URL('../../node_modules/axe-core/axe.min.js',import.meta.url),'utf8');
 
-for(let offset=0;offset<paths.length;offset+=6){
+for(const [group,paths] of [['wave four',waveFourPaths],['South Carolina',southCarolinaPaths.slice(1)],['Georgia',georgiaPaths.slice(1)]])for(let offset=0;offset<paths.length;offset+=6){
  const batch=paths.slice(offset,offset+6);
- test(`location wave four ${offset/6+1} preserves table headings, phone labels, links and accessibility`,async({page},testInfo)=>{
+ test(`location ${group} ${offset/6+1} preserves table headings, phone labels, links and accessibility`,async({page},testInfo)=>{
  test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');test.setTimeout(180_000);
  await page.route('**/__location-axe.js',route=>route.fulfill({status:200,contentType:'text/javascript',body:axe}));
  for(const path of batch){

@@ -1,0 +1,1075 @@
+{
+  "status": "PASS",
+  "recommendationSha256": "aa32019906ff9f8b7c8c058587c59dad3f7086b27d8d7358c2a5c830fde5e465",
+  "counts": {
+    "currentRecords": 180,
+    "manuallyReadAssessments": 180,
+    "fullCandidateCurrentRecordsRead": 8,
+    "fullCandidateLegacyPagesRead": 8,
+    "fullCandidateLegacyQuestionsRead": 42,
+    "faqs": 8,
+    "pagesWithoutFaqs": 172,
+    "legacyPages": 100,
+    "legacyDispositions": 528,
+    "adapted": 24,
+    "omitted": 504,
+    "acceptedComparisonPages": 153,
+    "acceptedComparisonFaqs": 223,
+    "batch009ComparisonFaqs": 1
+  },
+  "faqChecks": [
+    {
+      "path": "/areas/pennsylvania/cambria-county/",
+      "question": "Can a new portfolio keep links to older restoration projects working?",
+      "words": 61,
+      "legacySources": 4
+    },
+    {
+      "path": "/areas/pennsylvania/clearfield-county/",
+      "question": "Can we keep older place names when updating memorial project pages?",
+      "words": 63,
+      "legacySources": 4
+    },
+    {
+      "path": "/areas/pennsylvania/crawford-county/",
+      "question": "Can a machining website explain supplied-part services without showing confidential customer work?",
+      "words": 59,
+      "legacySources": 2
+    },
+    {
+      "path": "/areas/pennsylvania/franklin-county/",
+      "question": "Who updates our website when a fabric supplier changes its catalog links?",
+      "words": 61,
+      "legacySources": 1
+    },
+    {
+      "path": "/areas/pennsylvania/philadelphia-county/",
+      "question": "Can we show what an assessment report looks like without publishing a full client report?",
+      "words": 57,
+      "legacySources": 1
+    },
+    {
+      "path": "/areas/new-hampshire/grafton-county/",
+      "question": "Can links to a particular framing section survive a redesign?",
+      "words": 61,
+      "legacySources": 3
+    },
+    {
+      "path": "/areas/maine/hancock-county/",
+      "question": "Can we use feedback from a boatyard alongside boat-owner comments?",
+      "words": 67,
+      "legacySources": 5
+    },
+    {
+      "path": "/areas/ohio/sandusky-county/",
+      "question": "How should my website distinguish Sandusky County from Sandusky city?",
+      "words": 55,
+      "legacySources": 4
+    }
+  ],
+  "inputHashes": [
+    {
+      "path": "evidence/county-faq-restoration-20261023/batch-007/inputs.json",
+      "sha256": "2b2d9b07c1aeef3f84c2fa186b85c7489fd5f1d6588fb72567f455f02129a515"
+    },
+    {
+      "path": "evidence/county-faq-restoration-20261023/batch-007/authored.json",
+      "sha256": "966480857834023e6faed98cb5d176b8eb9764ecab1551794a5ffe350c126451"
+    },
+    {
+      "path": "evidence/county-faq-restoration-20261023/batch-007/recommended-faqs.json",
+      "sha256": "aa32019906ff9f8b7c8c058587c59dad3f7086b27d8d7358c2a5c830fde5e465"
+    },
+    {
+      "path": "evidence/county-faq-recovery-20261023/historical-faqs.json",
+      "sha256": "2e5572722738b37f971d097b9eebcaa993094216372aeff2331f1f0eeb3509df"
+    },
+    {
+      "path": "src/location-service-data.json",
+      "sha256": "319ffee480e9ea1b68ed5e6346c4ddc54c42264903729060c91c8ba9c33a2d18"
+    },
+    {
+      "path": "src/service-faqs.json",
+      "sha256": "4736a73e2e0884846e4a260b4e78a25c93281c474f95da3f6f5a7d6941f9b95a"
+    },
+    {
+      "path": "src/service-faqs.mjs",
+      "sha256": "8b60c06b97afde3dd8466e59394818a7e1ef9ea5eee1aa25e454ba0af7bf8ab5"
+    },
+    {
+      "path": "src/pages.mjs",
+      "sha256": "32e180a024ee3d83eb73f8024bb974af69ac57fc1adb825026e0a2533393b2bd"
+    },
+    {
+      "path": "src/location-service-pages.mjs",
+      "sha256": "e01bf5c4b565bd1df4ab431402dfae6cf462c9e4d1004af88d8a562b0f878cac"
+    },
+    {
+      "path": "src/shared.mjs",
+      "sha256": "61d6bb923980fbea617fc0cf848f8ed4d289cd3d65215e9c932abb056f00d636"
+    },
+    {
+      "path": "config/offers.json",
+      "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2"
+    },
+    {
+      "path": "src/service-content.mjs",
+      "sha256": "8d8701ce3fa71172c8875294fa0f8329677a2b87b6d55035241c8777acddf6a3"
+    },
+    {
+      "path": "src/ohio-geography.mjs",
+      "sha256": "7b8ba3c3039a8383726c69738d73f6d54022761c45c233b68b36244989b67803"
+    },
+    {
+      "path": "src/ohio-tasks-d.mjs",
+      "sha256": "b442c011727619168b0a03592fe2d3dbdd2414d2507b1a76afe9122123b8ff71"
+    },
+    {
+      "path": "tests/service-faqs.test.mjs",
+      "sha256": "ecdac14887e25efaff585e5f36e88e4fccf8523bdf28e21d0011b8f83712116b"
+    },
+    {
+      "path": "tests/browser/site-health.spec.mjs",
+      "sha256": "8be3cce26188010ea3f0f66aea0564040d8b60f9ac8e41415fbc7e3395abbe7e"
+    },
+    {
+      "path": "tests/browser/no-javascript.spec.mjs",
+      "sha256": "7b894391b7a66e22b50c409d7b4e190022ff5b1d259b24ad406203ec9eb00091"
+    },
+    {
+      "path": "playwright.config.mjs",
+      "sha256": "f0c81512cc9afee2b50670326fbc8a39362ec446c4d94db1db306c0f9fd86dc5"
+    },
+    {
+      "path": "evidence/county-faq-restoration-20261023/batch-009/recommended-faqs.json",
+      "sha256": "a884f236ea0898dcb329ce837d2ed071d113cc549cacd4fc713a608da5c8ad7f"
+    }
+  ],
+  "currentRecordPins": [
+    {
+      "index": 540,
+      "path": "/areas/north-carolina/johnston-county/",
+      "sha256": "d453941f33021bb3f73430e357f3366ffa90334f88665ea0e5dbad1b54a91c2d"
+    },
+    {
+      "index": 541,
+      "path": "/areas/north-carolina/jones-county/",
+      "sha256": "626f8e0095c084ba7f5f57b8c9a692411a1e37f079ddac317a34df72ae4f7745"
+    },
+    {
+      "index": 542,
+      "path": "/areas/north-carolina/lenoir-county/",
+      "sha256": "f9f5a9419d88cd7304bf7ba618b7dee9934ac1236c4b40e34ee35534758638fc"
+    },
+    {
+      "index": 543,
+      "path": "/areas/north-carolina/lincoln-county/",
+      "sha256": "aa6130752fee33f0c63e659efb2671a3873cbee5586f38cf5620d9ad42fde4f2"
+    },
+    {
+      "index": 544,
+      "path": "/areas/north-carolina/madison-county/",
+      "sha256": "4b93b4bcf493f36a6433e32ad69548b90f7afbd992f169e44e9d58bc6b083801"
+    },
+    {
+      "index": 545,
+      "path": "/areas/north-carolina/martin-county/",
+      "sha256": "9c9f0aa40953a9766de8cbc0c682ade8eea7be55218653501970bb761bcb0465"
+    },
+    {
+      "index": 546,
+      "path": "/areas/north-carolina/mcdowell-county/",
+      "sha256": "df789da902bd78c52911ae19fa72b9009c0e8b0dd49d14bf2b1db8fdddbf750c"
+    },
+    {
+      "index": 547,
+      "path": "/areas/north-carolina/mitchell-county/",
+      "sha256": "57f0de69be6a8f2fa559bf832fb0ad2557bfdedcb5f9d711e20573be4f8dc2a5"
+    },
+    {
+      "index": 548,
+      "path": "/areas/yates-county/",
+      "sha256": "5ca06e0081e8676d69b412ddaca1e7f6824cacaf9c158d0d26d90fb1d6a15b12"
+    },
+    {
+      "index": 549,
+      "path": "/areas/pennsylvania/adams-county/",
+      "sha256": "6d9ba4897b61ab18855ab9a31fcdec46a7e683fb79e89bb396aaaa9c63cfc8b7"
+    },
+    {
+      "index": 550,
+      "path": "/areas/pennsylvania/allegheny-county/",
+      "sha256": "e9eea135d22144aabc053fcfe5efba9ed8bcd9834324eaa8ee34d051e83dd822"
+    },
+    {
+      "index": 551,
+      "path": "/areas/pennsylvania/blair-county/",
+      "sha256": "30129511de27838342a13210a42972c3a79386b9392106ffaecc4ed7122a52e6"
+    },
+    {
+      "index": 552,
+      "path": "/areas/pennsylvania/cambria-county/",
+      "sha256": "7603f38f6530f9455341b55eb364759ea08c1339e350d152ebc218901c423e21"
+    },
+    {
+      "index": 553,
+      "path": "/areas/pennsylvania/centre-county/",
+      "sha256": "14f00e823ed9397f08d0bafca8dfdf35ccb55fee6b6abb4d6b6c25afa0d91ed0"
+    },
+    {
+      "index": 554,
+      "path": "/areas/pennsylvania/clearfield-county/",
+      "sha256": "d9a926e24b29cb2fb56113a3ade3e071695347059e1915ee46a96ab9a5c70b62"
+    },
+    {
+      "index": 555,
+      "path": "/areas/pennsylvania/clinton-county/",
+      "sha256": "e0a55c8a3e3ede6605fd66954ee6bc1403a38efc2584ee67ff381a891a1a0f03"
+    },
+    {
+      "index": 556,
+      "path": "/areas/pennsylvania/crawford-county/",
+      "sha256": "c74b667348cca93c60e325c5581cb3bc728205503c898087dd305db17ede88ee"
+    },
+    {
+      "index": 557,
+      "path": "/areas/pennsylvania/cumberland-county/",
+      "sha256": "2a29ca7f3da6d95c2be274dfe6bf71bb8e0283d2cd06fa4664248412c87e94b9"
+    },
+    {
+      "index": 558,
+      "path": "/areas/pennsylvania/dauphin-county/",
+      "sha256": "b90eb726d1e495dcc9ec00582c8955e95dfeb6972a3b7bbbe247e863fa2d4afa"
+    },
+    {
+      "index": 559,
+      "path": "/areas/pennsylvania/erie-county/",
+      "sha256": "9765c378ba7bde5ec671658bb6f369274646a42385bde87eaf83aa7c3735b204"
+    },
+    {
+      "index": 560,
+      "path": "/areas/pennsylvania/franklin-county/",
+      "sha256": "b0faeba7ec163326b75f91346f07d0c70047e0e71ae6b69269ea6869a3063b24"
+    },
+    {
+      "index": 561,
+      "path": "/areas/pennsylvania/huntingdon-county/",
+      "sha256": "7d7e5be8d47e2c4cd78148a363807eec1093da75d3ae051190d84c406a64548b"
+    },
+    {
+      "index": 562,
+      "path": "/areas/pennsylvania/indiana-county/",
+      "sha256": "fa7cbfe7d6715961d862d8108558a45e90a81e43432d85e10af33f05f3dbb5fc"
+    },
+    {
+      "index": 563,
+      "path": "/areas/pennsylvania/lackawanna-county/",
+      "sha256": "80d0c7cf6714749c93a0cab332ac7ac91176fa6bd4edd772f43a0e1196e3e12a"
+    },
+    {
+      "index": 564,
+      "path": "/areas/pennsylvania/lebanon-county/",
+      "sha256": "a8fc473abcf693ff68fee5676e71f9bbcbaab12d6f3ec35c32bc422969c78483"
+    },
+    {
+      "index": 565,
+      "path": "/areas/pennsylvania/lehigh-county/",
+      "sha256": "c507c05c69bc45c00060fd46af10afbfe1bef0b407b772f160f1fdc1217e0dda"
+    },
+    {
+      "index": 566,
+      "path": "/areas/pennsylvania/luzerne-county/",
+      "sha256": "a6093b4dc4ee0fa92960813df9f78da1e41d01170eaca7d26f4898e8bcf7bf26"
+    },
+    {
+      "index": 567,
+      "path": "/areas/pennsylvania/lycoming-county/",
+      "sha256": "8b8aae7efa311732628825759e91631f189f59f8bdae2a8ebb247d50268bc4ee"
+    },
+    {
+      "index": 568,
+      "path": "/areas/pennsylvania/mercer-county/",
+      "sha256": "b63657c6e0dea0a8a5c4aec03edd98c2260d0cd9c7c95891475a828ed566dc08"
+    },
+    {
+      "index": 569,
+      "path": "/areas/pennsylvania/monroe-county/",
+      "sha256": "4778f2f305d5cccbb9d67621ae578ae89ae46cd29bd8d14948ba38ff0c4467ee"
+    },
+    {
+      "index": 570,
+      "path": "/areas/pennsylvania/philadelphia-county/",
+      "sha256": "763b5f309f9cda31a92b446fff4d05895431fd163e06d0117c993a9e3224e4a7"
+    },
+    {
+      "index": 571,
+      "path": "/areas/pennsylvania/schuylkill-county/",
+      "sha256": "73e811e0f1c4906deb07d3fc5a004c11d3e6f83418cd0ca531532baf10a43bc1"
+    },
+    {
+      "index": 572,
+      "path": "/areas/michigan/crawford-county/",
+      "sha256": "399af3e60c04ff04c226d0820bd1e6ca5b194d6d25fe4213d86ca835a211bd36"
+    },
+    {
+      "index": 573,
+      "path": "/areas/michigan/delta-county/",
+      "sha256": "ae31f8e36243592dd124d65f50d265157ece329ddac4a6ea693a2fb2e6c15775"
+    },
+    {
+      "index": 574,
+      "path": "/areas/michigan/dickinson-county/",
+      "sha256": "78043d6dd43d8d66e1f28d953fa577a8415cba985859ec26e6b7d39f74f682e7"
+    },
+    {
+      "index": 575,
+      "path": "/areas/michigan/eaton-county/",
+      "sha256": "e22b06101e2c3845f18768e3a47424aaaeeeb6ff7cc389dce711dfed9c6334ed"
+    },
+    {
+      "index": 576,
+      "path": "/areas/michigan/emmet-county/",
+      "sha256": "b2169a8a0b37e4ec0d5ed0238b55cd561ac7ef13722d54224b3f02c3418b1c77"
+    },
+    {
+      "index": 577,
+      "path": "/areas/michigan/gladwin-county/",
+      "sha256": "655bd3af4e705922191f0016492d9668a9cc3a89bb3a17243fa74ae74f305f60"
+    },
+    {
+      "index": 578,
+      "path": "/areas/michigan/gogebic-county/",
+      "sha256": "55e9568edf35df0658a5ed0e3d1ce0ddbfef2557509dc012f76079bb3c04b11c"
+    },
+    {
+      "index": 579,
+      "path": "/areas/michigan/houghton-county/",
+      "sha256": "12288125826a6dcf889be89df13fa17c99d74cfece17d877f446bcac0f272357"
+    },
+    {
+      "index": 580,
+      "path": "/areas/michigan/huron-county/",
+      "sha256": "e4647d7b9848eb140a943cae0a73f063b196e5fbd6090cea0d4b553e737c7932"
+    },
+    {
+      "index": 581,
+      "path": "/areas/michigan/iosco-county/",
+      "sha256": "c070b9388dbe5d9c7ff7cf28557ab4e70a0e40199cb4be892a74f9619ad23def"
+    },
+    {
+      "index": 582,
+      "path": "/areas/michigan/iron-county/",
+      "sha256": "1836141d379fa08729df92ce497bc8b50683c2d04f4a2e37862e6bcca760b1bc"
+    },
+    {
+      "index": 583,
+      "path": "/areas/michigan/isabella-county/",
+      "sha256": "bc67e5f9f38a2b79ec53046a998ec56a81e556bfe3d1bee5d586d31c01516df4"
+    },
+    {
+      "index": 584,
+      "path": "/areas/michigan/kalkaska-county/",
+      "sha256": "e8a548f5f18a75aab483f5b6ab4d7f1faadf2bd06e85d702167cb8aa31876f23"
+    },
+    {
+      "index": 585,
+      "path": "/areas/michigan/keweenaw-county/",
+      "sha256": "0c60198e0db8d5b8728567c2cb2a40ad5cc984b0217f094fd3c4a664e50a28de"
+    },
+    {
+      "index": 586,
+      "path": "/areas/michigan/lake-county/",
+      "sha256": "e4b776eee95237ed26240568a4ced5fc0a3e0a058b47fa2a8b45c5653ddc9569"
+    },
+    {
+      "index": 587,
+      "path": "/areas/michigan/leelanau-county/",
+      "sha256": "461e1c747e9abe11383b7965436478f62b34162effb7b5ad54dd60167932bbbf"
+    },
+    {
+      "index": 588,
+      "path": "/areas/michigan/luce-county/",
+      "sha256": "d4ae4ed53342b3150f5c3322c21af9e3f1a87e131063384e3d6ae2e3777b9f67"
+    },
+    {
+      "index": 589,
+      "path": "/areas/michigan/mackinac-county/",
+      "sha256": "6cc947fc6ca597c6cb81b50439dade0b84c0c9503a002d32bb286bbe8773f995"
+    },
+    {
+      "index": 590,
+      "path": "/areas/michigan/manistee-county/",
+      "sha256": "5fa7b6f658b15f3e7958625d5a1d61f1587a5d11eaf63ee903559acdcd54a2a6"
+    },
+    {
+      "index": 591,
+      "path": "/areas/michigan/mason-county/",
+      "sha256": "fb2637bc5399b635968df0daf2c676c945005ab10237ad5e06418b9eedcbd861"
+    },
+    {
+      "index": 592,
+      "path": "/areas/michigan/menominee-county/",
+      "sha256": "27cec77bcf5627fa96094452e4d7f17c28fa5dd8a4f1aaf811d2d92f7988c543"
+    },
+    {
+      "index": 593,
+      "path": "/areas/michigan/missaukee-county/",
+      "sha256": "52cdb2afb7cc7396e7dcda0f6894fdebfba616491a483592b0ed999d5c1c778b"
+    },
+    {
+      "index": 594,
+      "path": "/areas/michigan/monroe-county/",
+      "sha256": "774907575f371a81dc3d85fa56a6c0c7de6897056cfc38d2ba783b68bde7cda3"
+    },
+    {
+      "index": 595,
+      "path": "/areas/michigan/montcalm-county/",
+      "sha256": "82ad2affa99b9e2f5d59c75964ba257d49f4fe0608312c014f81a574217af9ae"
+    },
+    {
+      "index": 596,
+      "path": "/areas/ohio/coshocton-county/",
+      "sha256": "b72e177510da3bd38d55e2a1bcb27ef13af79f4230756d4d553a9b0b7f3c3a8e"
+    },
+    {
+      "index": 597,
+      "path": "/areas/ohio/crawford-county/",
+      "sha256": "1e55605e276d24eeaf19858da9a0a5dab29e19532434b3660b8044c305a53b21"
+    },
+    {
+      "index": 598,
+      "path": "/areas/ohio/darke-county/",
+      "sha256": "a6d091da52a27528ceda88b47ed0a1b43855f7cd834ff296a6333686bb430316"
+    },
+    {
+      "index": 599,
+      "path": "/areas/ohio/defiance-county/",
+      "sha256": "de888d608ea649096058125b4999fb0f2a97575314361097fcfd552bae346050"
+    },
+    {
+      "index": 600,
+      "path": "/areas/ohio/erie-county/",
+      "sha256": "36f8e5702cb8d101c449a422ce4e3050046500f913c679758e20ee5b63624ef0"
+    },
+    {
+      "index": 601,
+      "path": "/areas/ohio/fairfield-county/",
+      "sha256": "b2d87e3e578812ea05343485e92cb8111696862c6354ac547e7014ae287e3614"
+    },
+    {
+      "index": 602,
+      "path": "/areas/ohio/fayette-county/",
+      "sha256": "9fec3c7d009ba21407ec0f230ed657631868c5fcde1580578d17fcad1b83b112"
+    },
+    {
+      "index": 603,
+      "path": "/areas/ohio/fulton-county/",
+      "sha256": "a6231646019ddf86696eb247990746b81f66530a99358eeeb4a609c33d2a4236"
+    },
+    {
+      "index": 604,
+      "path": "/areas/ohio/gallia-county/",
+      "sha256": "09d8eefb25712d61c41e209b14642db7a68fbd388a1a20109922d6cc153197c9"
+    },
+    {
+      "index": 605,
+      "path": "/areas/ohio/geauga-county/",
+      "sha256": "3e27f315204b80a52c24230290cc765d77e6353e98b38fb8fffaa5deee7c3af8"
+    },
+    {
+      "index": 606,
+      "path": "/areas/ohio/guernsey-county/",
+      "sha256": "9521b4807f43350ebdb4799ae02fcb80278d71c33ed09eb3c96546aeb5e4dfeb"
+    },
+    {
+      "index": 607,
+      "path": "/areas/ohio/hardin-county/",
+      "sha256": "b641ce101c6906c3569ec988a93edbc40d501e9f9c29c17cef700efc6a7e0ed1"
+    },
+    {
+      "index": 608,
+      "path": "/areas/ohio/harrison-county/",
+      "sha256": "94bca4782e572ebee47699db62d0378a4e442bb5d6561d31e30a0bb44fd12094"
+    },
+    {
+      "index": 609,
+      "path": "/areas/ohio/henry-county/",
+      "sha256": "7911e3576df3e47de21740991898fcc96611e3a85db37671fc8ae809dc8c18c0"
+    },
+    {
+      "index": 610,
+      "path": "/areas/ohio/highland-county/",
+      "sha256": "374fb68f0dd0d0bea691c7e4dc3bbfd6bfb8ceed444af06d9d5fc42d3a5d1a34"
+    },
+    {
+      "index": 611,
+      "path": "/areas/ohio/hocking-county/",
+      "sha256": "e2cf55fa913c626646d62e94bc8b8604034ba20bb1d59748b0d8cfa59c543763"
+    },
+    {
+      "index": 612,
+      "path": "/areas/ohio/holmes-county/",
+      "sha256": "1bf6ecd63907bdeff2c392d1003c84863670f0b252711a2a9bb5ad324ec933db"
+    },
+    {
+      "index": 613,
+      "path": "/areas/ohio/huron-county/",
+      "sha256": "b820b2880fafedde42973e4febb821c6d104bdddc78636a104a5bd465e42091f"
+    },
+    {
+      "index": 614,
+      "path": "/areas/ohio/jackson-county/",
+      "sha256": "6925174cb3eeb65d466c47222d9b93a5e5b7c5a19bea415ddbe928655db2f5c8"
+    },
+    {
+      "index": 615,
+      "path": "/areas/ohio/jefferson-county/",
+      "sha256": "e535ce4c96eb14b975342d033d89349d806af8aec1111dc9ed58a554235678b3"
+    },
+    {
+      "index": 616,
+      "path": "/areas/ohio/lawrence-county/",
+      "sha256": "fec0e8cf4cc97849eac8cdd75d4b6317802c39853627bed2796fb9b61253ac78"
+    },
+    {
+      "index": 617,
+      "path": "/areas/ohio/logan-county/",
+      "sha256": "4e95397fc80cf51f54d01468c7392f066a9737309e541ef262791bab18381e01"
+    },
+    {
+      "index": 618,
+      "path": "/areas/ohio/marion-county/",
+      "sha256": "e91a99cb0202801e3a3a253cb8cea575bc893170cb505fc7b68c0ad9fdfc02ec"
+    },
+    {
+      "index": 619,
+      "path": "/areas/ohio/meigs-county/",
+      "sha256": "e952946ec85ddfac461961f4decf565e7fcec6ae8688fd28cf4167be1b12d9f1"
+    },
+    {
+      "index": 620,
+      "path": "/areas/vermont/lamoille-county/",
+      "sha256": "a01252bc1f9ba5ceb69355d4cc6aaa4ebdde228fea1d73dd89c6ba554ce35bec"
+    },
+    {
+      "index": 621,
+      "path": "/areas/vermont/orange-county/",
+      "sha256": "c0d7da799d5562a905a0148539142da99e3276ab4ebfb0c608ff49cdc5046a86"
+    },
+    {
+      "index": 622,
+      "path": "/areas/vermont/orleans-county/",
+      "sha256": "78a2a23e53f3ba7ccadcdc1ba21a4ab0bee5ede879b88d5a991c5fb7b8a1293e"
+    },
+    {
+      "index": 623,
+      "path": "/areas/vermont/washington-county/",
+      "sha256": "51fce9043899cb5dad2f8999b138f221102db21c2119c74163060a802036e7ab"
+    },
+    {
+      "index": 624,
+      "path": "/areas/vermont/windham-county/",
+      "sha256": "b6ec79f7453631f18d48c67c20500b2d3104ddf45c072e1d28443422db9e72e6"
+    },
+    {
+      "index": 625,
+      "path": "/areas/new-hampshire/belknap-county/",
+      "sha256": "915a280bace804841ec04866feb12045235a0680b18c31d194a11081a10ac74a"
+    },
+    {
+      "index": 626,
+      "path": "/areas/new-hampshire/carroll-county/",
+      "sha256": "aa14104ade412a567976c97bd5fc83f6094bd31709364ee6a694b02b3f73efe4"
+    },
+    {
+      "index": 627,
+      "path": "/areas/new-hampshire/coos-county/",
+      "sha256": "3130c412d0656dadd8d4b5e935ef1e4bfda11f4028aab574cc60a70ea0f497b5"
+    },
+    {
+      "index": 628,
+      "path": "/areas/new-hampshire/grafton-county/",
+      "sha256": "47291055cac2568f84bf2834938c62cae3604ccf1ac4c28524abd61f51b449d3"
+    },
+    {
+      "index": 629,
+      "path": "/areas/new-hampshire/sullivan-county/",
+      "sha256": "fc1aeb0d40eef64cb7a29de033384e4f38ee2a3be284e9f021b2f5ef8df4b06f"
+    },
+    {
+      "index": 630,
+      "path": "/areas/maine/androscoggin-county/",
+      "sha256": "9e3bd9285ea2f05137335afabe79b3ea0cc36431d9b6b1811ce5324118c90ac0"
+    },
+    {
+      "index": 631,
+      "path": "/areas/maine/franklin-county/",
+      "sha256": "b256dc2122ee28ea1feca6a7581cab52d899c06e4fa5ff0512b90fecce66b3f3"
+    },
+    {
+      "index": 632,
+      "path": "/areas/maine/hancock-county/",
+      "sha256": "0cc7415cd0515fb06279432042395cf4dc82adc71cf010355f53f166d47f375b"
+    },
+    {
+      "index": 633,
+      "path": "/areas/maine/kennebec-county/",
+      "sha256": "7e6ed6e6fc088e2b3eddd7d00a78ff1961c93d91ce10d2df6b0b3d2edd62c93b"
+    },
+    {
+      "index": 634,
+      "path": "/areas/maine/knox-county/",
+      "sha256": "c01592dd7105ce465718ec6a2366f3e2669c45bb00ee587fe9f1e2d786920d9e"
+    },
+    {
+      "index": 635,
+      "path": "/areas/maine/lincoln-county/",
+      "sha256": "2a1c031d67c4ab1ce14db68efc22816a13007c41ace1a8f33f3cbf11694ec7c0"
+    },
+    {
+      "index": 636,
+      "path": "/areas/maine/oxford-county/",
+      "sha256": "8d396a5f8ba79581872309434ddfc6cc7fb97b13a6194a200d38a9a1af78a048"
+    },
+    {
+      "index": 637,
+      "path": "/areas/maine/piscataquis-county/",
+      "sha256": "ede622ce9889a28857a56adaf9fffa48c37d1c8b262f76c5f6509c3fc66a6b8a"
+    },
+    {
+      "index": 638,
+      "path": "/areas/maine/sagadahoc-county/",
+      "sha256": "2fba85dc2e4baf7c3ad8a45f090ab940849aa34db296a14ac21dcb238bcb5966"
+    },
+    {
+      "index": 639,
+      "path": "/areas/maine/somerset-county/",
+      "sha256": "c25cb1c5224843028411e835c4a086ceed832bfa8a9c9f7b8fb275736c99733f"
+    },
+    {
+      "index": 640,
+      "path": "/areas/maine/waldo-county/",
+      "sha256": "d45adef95decbd0d6574b3b4f8ccd8c999d10cf6268faa68bb369b4ef7e25398"
+    },
+    {
+      "index": 641,
+      "path": "/areas/maine/washington-county/",
+      "sha256": "3c9d0400a4d0bc1a6313c7561ca8ae85cf9faca47a62317d3bde2de615aacc7f"
+    },
+    {
+      "index": 642,
+      "path": "/areas/maine/york-county/",
+      "sha256": "d4c39c2bbd4d4e410a05174b2c2764a030dd11b1ff60db393489032544e6a8e7"
+    },
+    {
+      "index": 643,
+      "path": "/areas/maryland/allegany-county/",
+      "sha256": "dfc0da0ab4586ddb728b928514de76de1ac3f236ca4b278bfc8700e95f88471f"
+    },
+    {
+      "index": 644,
+      "path": "/areas/kentucky/hart-county/",
+      "sha256": "a5e5bfd5b51cb393d84382d37ff95a384a449575428306b10bd71ec9847e97c1"
+    },
+    {
+      "index": 645,
+      "path": "/areas/kentucky/henry-county/",
+      "sha256": "eb110022d4e3f9f27d48a5ac40133d9907019352e774c8ee065cd31549afdd53"
+    },
+    {
+      "index": 646,
+      "path": "/areas/kentucky/hickman-county/",
+      "sha256": "bcbd56d080c09ef9fca04b2e293f6df9195765856e600108890df69950ebdbe2"
+    },
+    {
+      "index": 647,
+      "path": "/areas/kentucky/hopkins-county/",
+      "sha256": "aa89070d28e071b6d1cdbf834b472f91c25909ffa140175837ecf3ff4683a653"
+    },
+    {
+      "index": 648,
+      "path": "/areas/kentucky/jackson-county/",
+      "sha256": "9a58b160ae95db08f1d026c47a892137bf564028aeeb7c85f515562e05a11afd"
+    },
+    {
+      "index": 649,
+      "path": "/areas/kentucky/jefferson-county/",
+      "sha256": "51829f9d2276aace3a59ae04619c4abdc9cdf4ae9c528baa74bbc7ac22813c13"
+    },
+    {
+      "index": 650,
+      "path": "/areas/kentucky/johnson-county/",
+      "sha256": "1441c8a756862287584d66dd28acf110d8a21a3cc17a3c136027e0a5bdef05ae"
+    },
+    {
+      "index": 651,
+      "path": "/areas/kentucky/knott-county/",
+      "sha256": "217de7844ace388271ab7d709cb9cf564574a3c4245f46d6c5e56e29aa8ba3c0"
+    },
+    {
+      "index": 652,
+      "path": "/areas/kentucky/knox-county/",
+      "sha256": "0bc3510d59ba1764444d800ab36ae363a1ad830921eec12780752fd348a23704"
+    },
+    {
+      "index": 653,
+      "path": "/areas/kentucky/larue-county/",
+      "sha256": "1453694c7f3520e3ffcc219b404b707e89b081e8eaa2f7dad7eb170a883a99a9"
+    },
+    {
+      "index": 654,
+      "path": "/areas/kentucky/lawrence-county/",
+      "sha256": "8e009f4cae981b037e637eac9742c8ff7dfbeefede578019604006196e5fb726"
+    },
+    {
+      "index": 655,
+      "path": "/areas/kentucky/lee-county/",
+      "sha256": "dd3595d1f9acde071e125103306c1636f0b4b131d2362d79b9c7071105dd1cd7"
+    },
+    {
+      "index": 656,
+      "path": "/areas/kentucky/leslie-county/",
+      "sha256": "dc91057a08dba83e4767b3851087e5cdda905bb8d474cd7e6c7576f2763bb968"
+    },
+    {
+      "index": 657,
+      "path": "/areas/kentucky/letcher-county/",
+      "sha256": "7d7162314eff4b042868a9d909761e717d235189095c91413f9fb713684ee51d"
+    },
+    {
+      "index": 658,
+      "path": "/areas/kentucky/lewis-county/",
+      "sha256": "5e8d47f5263c7c2594dc98d48d72bf67afd757ed132cc7bcdc77e044c9cedff7"
+    },
+    {
+      "index": 659,
+      "path": "/areas/kentucky/lincoln-county/",
+      "sha256": "4a848f7f85d3b3bb2146c229ecf9e1c4ec7d213fb483fe3bcaab776f4ec2d4dc"
+    },
+    {
+      "index": 660,
+      "path": "/areas/kentucky/livingston-county/",
+      "sha256": "127b9794e7536dab31c76512041cf49c049b0e39e614e8afcbbc61e6f4e2c8d3"
+    },
+    {
+      "index": 661,
+      "path": "/areas/kentucky/logan-county/",
+      "sha256": "a07b321975a91181f5d1a35a31334872f552761a89692b38b7c5c72368b61e4d"
+    },
+    {
+      "index": 662,
+      "path": "/areas/kentucky/lyon-county/",
+      "sha256": "877aabce6f5f97e04f3bb0102a758349b8608ca5c7e420683df48bae058484a5"
+    },
+    {
+      "index": 663,
+      "path": "/areas/kentucky/magoffin-county/",
+      "sha256": "d6c287cf52e42a1b78e7ffa3c1903d0a53109de12299df72b3eb341d00b6a682"
+    },
+    {
+      "index": 664,
+      "path": "/areas/kentucky/marion-county/",
+      "sha256": "f5f925c8897f7a742446d4c0a37a9ad82b9f17828ee8f83a820de5ae823db987"
+    },
+    {
+      "index": 665,
+      "path": "/areas/kentucky/marshall-county/",
+      "sha256": "acb8c5463bba28e684f8b0d8c60eecc10d9f40a3151944c6c2698c2f111661b9"
+    },
+    {
+      "index": 666,
+      "path": "/areas/kentucky/martin-county/",
+      "sha256": "ea03ac4a523f782163d9e947a7b2605c6df1ca7f2f5085a72bc5ee23e086df25"
+    },
+    {
+      "index": 667,
+      "path": "/areas/kentucky/mason-county/",
+      "sha256": "4d21ba78106760dc396fa5d08d59c7a8f3a7f523a34a0b1cbc6b8440b66721ce"
+    },
+    {
+      "index": 668,
+      "path": "/areas/virginia/mecklenburg-county/",
+      "sha256": "0d0af15490f5b446ff67197a9e2f12394eb0c455e6fc30a6d8ae172766544733"
+    },
+    {
+      "index": 669,
+      "path": "/areas/virginia/middlesex-county/",
+      "sha256": "df263360a20b299345ec9113ae4f18c0912c15680b474d37e2ecfa71e0d8c49d"
+    },
+    {
+      "index": 670,
+      "path": "/areas/virginia/nelson-county/",
+      "sha256": "f4b9d6d0b8d12def3bb6c8ccd616c58ef7abf40a1c78658846f8d02af5defb9b"
+    },
+    {
+      "index": 671,
+      "path": "/areas/virginia/new-kent-county/",
+      "sha256": "dc7baa9dcad226e07a69be73762b76036ba19cb9f93c5de3a3a9debb3da2092c"
+    },
+    {
+      "index": 672,
+      "path": "/areas/virginia/northampton-county/",
+      "sha256": "14c36756d3da746d3c78c534a350224666307fa3475907c6e3c27d98c99a8d77"
+    },
+    {
+      "index": 673,
+      "path": "/areas/virginia/northumberland-county/",
+      "sha256": "21cebfe1d1432868eab911724846ce198d0fe0993e91c1f7373907ded437a061"
+    },
+    {
+      "index": 674,
+      "path": "/areas/virginia/norton-city/",
+      "sha256": "07ae4281bcd96c507dd724ebd4f00084933b8c35dc132b75a2e5b01a75874985"
+    },
+    {
+      "index": 675,
+      "path": "/areas/virginia/nottoway-county/",
+      "sha256": "bc3597c50cd6af4cd19ed08e313c1141cb6f14ef3188c7da39067e8be9560f6f"
+    },
+    {
+      "index": 676,
+      "path": "/areas/virginia/orange-county/",
+      "sha256": "c3e7eb3763203934f65d0044052e27e8533263f28d20ff2fae1fd070e8730a29"
+    },
+    {
+      "index": 677,
+      "path": "/areas/virginia/patrick-county/",
+      "sha256": "b232d1e7241cc16dcf8e893e2f48f21e04a6155e269c445b1a6ca7dde3785b85"
+    },
+    {
+      "index": 678,
+      "path": "/areas/virginia/petersburg-city/",
+      "sha256": "ab87a72546adad17f238f05cfe6a6cd8f2d934eef262e6932553bc1abb164803"
+    },
+    {
+      "index": 679,
+      "path": "/areas/virginia/pittsylvania-county/",
+      "sha256": "f19d3b6c4aed8e32bf63fa3f7190ff5476693e2eb75cba20f956f3d29c28b6a3"
+    },
+    {
+      "index": 680,
+      "path": "/areas/virginia/poquoson-city/",
+      "sha256": "ac1e18efa566e75d9b05e42d71040cb79508d98e095ee1b20b76b50a3e8c298f"
+    },
+    {
+      "index": 681,
+      "path": "/areas/virginia/powhatan-county/",
+      "sha256": "29cbb1c55f02210795bb9cbf27b69d7d9a1c51b23c348a9a5696569d551fd62c"
+    },
+    {
+      "index": 682,
+      "path": "/areas/virginia/prince-edward-county/",
+      "sha256": "3819cad9a88302aa2a66bc4b3beac8abd03a01ea10586e337e0e8d7e3b4f2098"
+    },
+    {
+      "index": 683,
+      "path": "/areas/virginia/prince-george-county/",
+      "sha256": "7b79239b54973f4b758870cf6fc7f4dc7f0dc360f4f7e959a62da4a95e571852"
+    },
+    {
+      "index": 684,
+      "path": "/areas/virginia/pulaski-county/",
+      "sha256": "ce24dd515b72ca7bdadd9c1e2bc29e28073993e540a1b679b14cbea72fdef832"
+    },
+    {
+      "index": 685,
+      "path": "/areas/virginia/radford-city/",
+      "sha256": "8e146031421df6f95daab7223472672e65231d7b0a865c572b5ba168a030d1b5"
+    },
+    {
+      "index": 686,
+      "path": "/areas/virginia/rappahannock-county/",
+      "sha256": "b988a7ed447033b2bbbf8272485481f237feb59cc7bdf01757dafeb4e8036bb5"
+    },
+    {
+      "index": 687,
+      "path": "/areas/virginia/richmond-county/",
+      "sha256": "6b92bd4fd5f16de594e40fe010e204555e5953e8c7c478f4c94094033cf82f13"
+    },
+    {
+      "index": 688,
+      "path": "/areas/virginia/roanoke-city/",
+      "sha256": "9d548ab93324d3dd1e0834ef4cd5acabe4c14da66f49920cb2da09df98067906"
+    },
+    {
+      "index": 689,
+      "path": "/areas/virginia/roanoke-county/",
+      "sha256": "206db12e12635d35a6363691196c185d37bc2f52152513f359aeb1337b28e089"
+    },
+    {
+      "index": 690,
+      "path": "/areas/virginia/rockbridge-county/",
+      "sha256": "8ce330de1e2aa0d20d4d0a0486beae90d55d76154aa58cc04685e3202f6fb2f9"
+    },
+    {
+      "index": 691,
+      "path": "/areas/virginia/rockingham-county/",
+      "sha256": "2022e2a635eb35c6f6b10889c572f43dce6dcb8e3382f64069bed523f5addada"
+    },
+    {
+      "index": 692,
+      "path": "/areas/ohio/mercer-county/",
+      "sha256": "d4422cf122d6aab907e92d4d01c2084e14ed0c4ac9f34b3871c159e45deb9359"
+    },
+    {
+      "index": 693,
+      "path": "/areas/ohio/miami-county/",
+      "sha256": "18a982541ee8211515e2b9e01f083277280a5c40a4731b10463524246212242c"
+    },
+    {
+      "index": 694,
+      "path": "/areas/ohio/monroe-county/",
+      "sha256": "75143c971c9078e025b8ef9166d8535cfaaba4403b4b7d114e4cb4855013072a"
+    },
+    {
+      "index": 695,
+      "path": "/areas/ohio/morgan-county/",
+      "sha256": "dc3c3a7fa89c38063d259fb89333a249632591be3b616e55f15d38db62d76420"
+    },
+    {
+      "index": 696,
+      "path": "/areas/ohio/morrow-county/",
+      "sha256": "b72c1cdf621d706f116c26a21e530038bccf66ce0d96cf258c476cf2f302daa3"
+    },
+    {
+      "index": 697,
+      "path": "/areas/ohio/muskingum-county/",
+      "sha256": "56c6c11e977d6c86ab9b68a00b18afc3dbdc15aefe8322b5bc204c491b0d985a"
+    },
+    {
+      "index": 698,
+      "path": "/areas/ohio/noble-county/",
+      "sha256": "8d044383baf47467ecee0b1e775c853eac532dbcf45a2ea58cb3fdd19605689e"
+    },
+    {
+      "index": 699,
+      "path": "/areas/ohio/ottawa-county/",
+      "sha256": "5dc4bfe129372cd8f3a27bbd29cfe0f390e8fe63305aebc0ed2a81a6ce2088cd"
+    },
+    {
+      "index": 700,
+      "path": "/areas/ohio/paulding-county/",
+      "sha256": "761e5a858cb4967fdd3983f431b3e35765a853bbe14f186029d3a8b5d0bf7fbc"
+    },
+    {
+      "index": 701,
+      "path": "/areas/ohio/perry-county/",
+      "sha256": "83db210f08f8b63dc40c135e4cf723167e0bfcf0e63faaea7951c6af127c970d"
+    },
+    {
+      "index": 702,
+      "path": "/areas/ohio/pickaway-county/",
+      "sha256": "54b19da3eb112181e6ee14190024c05a14aa379b8b6d69d3be02c5099b3457ed"
+    },
+    {
+      "index": 703,
+      "path": "/areas/ohio/pike-county/",
+      "sha256": "7b05b9613773789a8e222cd36fa291e8c40789d0270b4100777a6a3e181c5a97"
+    },
+    {
+      "index": 704,
+      "path": "/areas/ohio/preble-county/",
+      "sha256": "00ed9d95e910a9c638c589c93364d193a8d587e2f8b45140952c3f53add9ba4c"
+    },
+    {
+      "index": 705,
+      "path": "/areas/ohio/putnam-county/",
+      "sha256": "c0d2f08418b6ee3fc27300c13abfd2ea63f84f5192a95766d69c50ef6faf182d"
+    },
+    {
+      "index": 706,
+      "path": "/areas/ohio/ross-county/",
+      "sha256": "b95857b27d39e595c1e2e0cf9ed3ba6815da5df2f2ecdb1b1bd7a416ba3876ba"
+    },
+    {
+      "index": 707,
+      "path": "/areas/ohio/sandusky-county/",
+      "sha256": "348540b2fda4061552f5956b8be2ab7266a8f69784f4926c780be90ad37f58fc"
+    },
+    {
+      "index": 708,
+      "path": "/areas/ohio/scioto-county/",
+      "sha256": "d81f46a9d3aca9842df191468360ffec2217340ac02d18db2648d091f0d2e09f"
+    },
+    {
+      "index": 709,
+      "path": "/areas/ohio/seneca-county/",
+      "sha256": "c3827c5c43046c66a487e876043d1fce8ee8ce478b9e98a11a81fcb37efaba7c"
+    },
+    {
+      "index": 710,
+      "path": "/areas/ohio/shelby-county/",
+      "sha256": "aa941dc5845aed0968527755aa8bdebdf5608f31bf5f640a58737f38cd28c0c5"
+    },
+    {
+      "index": 711,
+      "path": "/areas/ohio/tuscarawas-county/",
+      "sha256": "8fd7ace9bcc008b51ce6663464ea71fe4c9d4f7ff54054d4993d41e57c35f427"
+    },
+    {
+      "index": 712,
+      "path": "/areas/ohio/union-county/",
+      "sha256": "0dc09fb97d942fa7d7bb5a47dd05d5747b1c100a98e3464b222199a89fe1bd8d"
+    },
+    {
+      "index": 713,
+      "path": "/areas/ohio/van-wert-county/",
+      "sha256": "2c159a381a340be3acb1d92125e3f5420331abcb8f05b3a54982304ddc539959"
+    },
+    {
+      "index": 714,
+      "path": "/areas/ohio/vinton-county/",
+      "sha256": "3de8752a95fef52e178e1ed05e3f761421c4c4d47208399a4c7557544cbddd67"
+    },
+    {
+      "index": 715,
+      "path": "/areas/ohio/williams-county/",
+      "sha256": "151516ce1437b3c9fec3d3b64df6e06fc5aa5378d985746b59f5827c0c0fd27b"
+    },
+    {
+      "index": 716,
+      "path": "/areas/maryland/calvert-county/",
+      "sha256": "0687229bc830058e739d14a78bc85d2b70f24ed081eb200846c189fa4c993440"
+    },
+    {
+      "index": 717,
+      "path": "/areas/maryland/caroline-county/",
+      "sha256": "d08f907c7b6dd705bd7a3d9258ebafbce16d6a717af27f35f1c135a6dc5c8020"
+    },
+    {
+      "index": 718,
+      "path": "/areas/maryland/charles-county/",
+      "sha256": "e848dfd3c572016163c5421d4f24e70db2eddf014009db32e84dac625e01abae"
+    },
+    {
+      "index": 719,
+      "path": "/areas/maryland/dorchester-county/",
+      "sha256": "6a316b4d14f395aadd54234ae83916e18b0a97ddf49db7c1c2b7a54fbe6d8688"
+    }
+  ],
+  "unitTest": {
+    "command": "node --test tests/service-faqs.test.mjs",
+    "exitCode": 0
+  },
+  "candidateRender": {
+    "sourceMutation": false,
+    "integratedOnlyInProcess": true,
+    "candidatePagesChecked": 9,
+    "builtRouteCount": 1217,
+    "fullTextLinksNativeDisclosureAndPreContactPlacement": true
+  },
+  "browserReview": {
+    "executed": false,
+    "reason": "Browser execution is primary-owned; read and assessed source coverage only.",
+    "allRoutes": [
+      360,
+      1440
+    ],
+    "noJavaScript": {
+      "configuredJavaScriptEnabled": false,
+      "width": 390,
+      "representativeServiceAndCounty": true
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,805 @@
+{
+  "status": "PASS",
+  "counts": {
+    "counties": 159,
+    "municipalAndConsolidatedEntities": 538,
+    "municipalMemberships": 598,
+    "cdps": 138,
+    "cdpMemberships": 141,
+    "types": {
+      "City": 429,
+      "Town": 101,
+      "Consolidated city-county government": 8
+    }
+  },
+  "officialRows": {
+    "counties": 159,
+    "incorporatedPlaces": 538,
+    "cdps": 138,
+    "consolidatedParents": 2,
+    "grfcRows": 238043
+  },
+  "crossCountyPlaces": [
+    {
+      "geoid": "1301948",
+      "counties": [
+        "13011",
+        "13137"
+      ],
+      "type": "Town",
+      "name": "Alto"
+    },
+    {
+      "geoid": "1304980",
+      "counties": [
+        "13011",
+        "13137"
+      ],
+      "type": "City",
+      "name": "Baldwin"
+    },
+    {
+      "geoid": "1332860",
+      "counties": [
+        "13011",
+        "13139",
+        "13157"
+      ],
+      "type": "City",
+      "name": "Gillsville"
+    },
+    {
+      "geoid": "1347896",
+      "counties": [
+        "13011",
+        "13139"
+      ],
+      "type": "City",
+      "name": "Lula"
+    },
+    {
+      "geoid": "1350484",
+      "counties": [
+        "13011",
+        "13157"
+      ],
+      "type": "Town",
+      "name": "Maysville"
+    },
+    {
+      "geoid": "1304140",
+      "counties": [
+        "13013",
+        "13135"
+      ],
+      "type": "City",
+      "name": "Auburn"
+    },
+    {
+      "geoid": "1310076",
+      "counties": [
+        "13013",
+        "13135",
+        "13139",
+        "13157"
+      ],
+      "type": "Town",
+      "name": "Braselton"
+    },
+    {
+      "geoid": "1375664",
+      "counties": [
+        "13015",
+        "13233"
+      ],
+      "type": "Town",
+      "name": "Taylorsville"
+    },
+    {
+      "geoid": "1329528",
+      "counties": [
+        "13017",
+        "13155"
+      ],
+      "type": "City",
+      "name": "Fitzgerald"
+    },
+    {
+      "geoid": "1363728",
+      "counties": [
+        "13019",
+        "13173"
+      ],
+      "type": "City",
+      "name": "Ray City"
+    },
+    {
+      "geoid": "1301500",
+      "counties": [
+        "13023",
+        "13175",
+        "13289",
+        "13319"
+      ],
+      "type": "City",
+      "name": "Allentown"
+    },
+    {
+      "geoid": "1305708",
+      "counties": [
+        "13027",
+        "13275"
+      ],
+      "type": "City",
+      "name": "Barwick"
+    },
+    {
+      "geoid": "1359556",
+      "counties": [
+        "13027",
+        "13275"
+      ],
+      "type": "City",
+      "name": "Pavo"
+    },
+    {
+      "geoid": "1309040",
+      "counties": [
+        "13033",
+        "13245"
+      ],
+      "type": "City",
+      "name": "Blythe"
+    },
+    {
+      "geoid": "1302928",
+      "counties": [
+        "13037",
+        "13099"
+      ],
+      "type": "City",
+      "name": "Arlington"
+    },
+    {
+      "geoid": "1310132",
+      "counties": [
+        "13045",
+        "13143"
+      ],
+      "type": "City",
+      "name": "Bremen"
+    },
+    {
+      "geoid": "1375832",
+      "counties": [
+        "13045",
+        "13143"
+      ],
+      "type": "City",
+      "name": "Temple"
+    },
+    {
+      "geoid": "1379528",
+      "counties": [
+        "13045",
+        "13097"
+      ],
+      "type": "City",
+      "name": "Villa Rica"
+    },
+    {
+      "geoid": "1330956",
+      "counties": [
+        "13047",
+        "13295"
+      ],
+      "type": "City",
+      "name": "Fort Oglethorpe"
+    },
+    {
+      "geoid": "1353172",
+      "counties": [
+        "13057",
+        "13121"
+      ],
+      "type": "City",
+      "name": "Mountain Park"
+    },
+    {
+      "geoid": "1354572",
+      "counties": [
+        "13057",
+        "13227"
+      ],
+      "type": "City",
+      "name": "Nelson"
+    },
+    {
+      "geoid": "1309068",
+      "counties": [
+        "13059",
+        "13219"
+      ],
+      "type": "Town",
+      "name": "Bogart"
+    },
+    {
+      "geoid": "1317776",
+      "counties": [
+        "13063",
+        "13121"
+      ],
+      "type": "City",
+      "name": "College Park"
+    },
+    {
+      "geoid": "1304252",
+      "counties": [
+        "13067",
+        "13097"
+      ],
+      "type": "City",
+      "name": "Austell"
+    },
+    {
+      "geoid": "1367284",
+      "counties": [
+        "13067",
+        "13121"
+      ],
+      "type": "City",
+      "name": "Roswell"
+    },
+    {
+      "geoid": "1358184",
+      "counties": [
+        "13071",
+        "13277"
+      ],
+      "type": "City",
+      "name": "Omega"
+    },
+    {
+      "geoid": "1315552",
+      "counties": [
+        "13077",
+        "13121"
+      ],
+      "type": "City",
+      "name": "Chattahoochee Hills"
+    },
+    {
+      "geoid": "1336528",
+      "counties": [
+        "13077",
+        "13199"
+      ],
+      "type": "Town",
+      "name": "Haralson"
+    },
+    {
+      "geoid": "1358884",
+      "counties": [
+        "13077",
+        "13121"
+      ],
+      "type": "City",
+      "name": "Palmetto"
+    },
+    {
+      "geoid": "1304000",
+      "counties": [
+        "13089",
+        "13121"
+      ],
+      "type": "City",
+      "name": "Atlanta"
+    },
+    {
+      "geoid": "1323536",
+      "counties": [
+        "13089",
+        "13135"
+      ],
+      "type": "City",
+      "name": "Doraville"
+    },
+    {
+      "geoid": "1351408",
+      "counties": [
+        "13091",
+        "13271"
+      ],
+      "type": "City",
+      "name": "Milan"
+    },
+    {
+      "geoid": "1300660",
+      "counties": [
+        "13107",
+        "13167"
+      ],
+      "type": "City",
+      "name": "Adrian"
+    },
+    {
+      "geoid": "1312932",
+      "counties": [
+        "13119",
+        "13147"
+      ],
+      "type": "City",
+      "name": "Canon"
+    },
+    {
+      "geoid": "1345460",
+      "counties": [
+        "13119",
+        "13147"
+      ],
+      "type": "City",
+      "name": "Lavonia"
+    },
+    {
+      "geoid": "1350008",
+      "counties": [
+        "13119",
+        "13257"
+      ],
+      "type": "Town",
+      "name": "Martin"
+    },
+    {
+      "geoid": "1367452",
+      "counties": [
+        "13119",
+        "13147",
+        "13195"
+      ],
+      "type": "City",
+      "name": "Royston"
+    },
+    {
+      "geoid": "1311784",
+      "counties": [
+        "13135",
+        "13139"
+      ],
+      "type": "City",
+      "name": "Buford"
+    },
+    {
+      "geoid": "1347196",
+      "counties": [
+        "13135",
+        "13297"
+      ],
+      "type": "City",
+      "name": "Loganville"
+    },
+    {
+      "geoid": "1364792",
+      "counties": [
+        "13135",
+        "13139"
+      ],
+      "type": "Town",
+      "name": "Rest Haven"
+    },
+    {
+      "geoid": "1375328",
+      "counties": [
+        "13137",
+        "13241"
+      ],
+      "type": "Town",
+      "name": "Tallulah Falls"
+    },
+    {
+      "geoid": "1361124",
+      "counties": [
+        "13145",
+        "13199"
+      ],
+      "type": "Town",
+      "name": "Pine Mountain"
+    },
+    {
+      "geoid": "1382132",
+      "counties": [
+        "13145",
+        "13285"
+      ],
+      "type": "City",
+      "name": "West Point"
+    },
+    {
+      "geoid": "1360340",
+      "counties": [
+        "13153",
+        "13225"
+      ],
+      "type": "City",
+      "name": "Perry"
+    },
+    {
+      "geoid": "1380508",
+      "counties": [
+        "13153",
+        "13225"
+      ],
+      "type": "City",
+      "name": "Warner Robins"
+    },
+    {
+      "geoid": "1349532",
+      "counties": [
+        "13199",
+        "13263"
+      ],
+      "type": "City",
+      "name": "Manchester"
+    },
+    {
+      "geoid": "1350680",
+      "counties": [
+        "13205",
+        "13275"
+      ],
+      "type": "City",
+      "name": "Meigs"
+    },
+    {
+      "geoid": "1379388",
+      "counties": [
+        "13209",
+        "13279"
+      ],
+      "type": "City",
+      "name": "Vidalia"
+    },
+    {
+      "geoid": "1371660",
+      "counties": [
+        "13217",
+        "13297"
+      ],
+      "type": "City",
+      "name": "Social Circle"
+    },
+    {
+      "geoid": "1310104",
+      "counties": [
+        "13223",
+        "13233"
+      ],
+      "type": "Town",
+      "name": "Braswell"
+    },
+    {
+      "geoid": "1380956",
+      "counties": [
+        "13229",
+        "13299"
+      ],
+      "type": "City",
+      "name": "Waycross"
+    },
+    {
+      "geoid": "1349100",
+      "counties": [
+        "13271",
+        "13309"
+      ],
+      "type": "City",
+      "name": "McRae-Helena"
+    },
+    {
+      "geoid": "1369336",
+      "counties": [
+        "13271",
+        "13309"
+      ],
+      "type": "City",
+      "name": "Scotland"
+    },
+    {
+      "geoid": "1321688",
+      "counties": [
+        "13289",
+        "13319"
+      ],
+      "type": "Town",
+      "name": "Danville"
+    },
+    {
+      "geoid": "1327512",
+      "counties": [
+        "13023",
+        "13091"
+      ],
+      "type": "CDP",
+      "name": "Empire"
+    },
+    {
+      "geoid": "1344900",
+      "counties": [
+        "13047",
+        "13295"
+      ],
+      "type": "CDP",
+      "name": "Lakeview"
+    },
+    {
+      "geoid": "1338105",
+      "counties": [
+        "13151",
+        "13255"
+      ],
+      "type": "CDP",
+      "name": "Heron Bay"
+    }
+  ],
+  "geometryAndPopulationChecks": [
+    {
+      "parentGeoid": "1303436",
+      "countyFips": "13059",
+      "fields": {
+        "AREALAND": {
+          "parent": "308985550",
+          "county": "308985550",
+          "equal": true
+        },
+        "AREAWATER": {
+          "parent": "4776725",
+          "county": "4776725",
+          "equal": true
+        },
+        "INTPTLAT": {
+          "parent": "+33.9521852",
+          "county": "+33.9521852",
+          "equal": true
+        },
+        "INTPTLON": {
+          "parent": "-083.3671522",
+          "county": "-083.3671522",
+          "equal": true
+        }
+      },
+      "grfcBlockSetsEqual": true,
+      "countyBlocks": 1828,
+      "parentBlocks": 1828,
+      "fullGovernmentPopulation2025": 129921,
+      "fullGovernmentPopulationSource": "SUMLEV 170 / CONCIT",
+      "countyPopulation2025": 129921,
+      "balanceGeoid": "1303440",
+      "balancePopulation2025": 128612,
+      "balancePopulationSource": "SUMLEV 162 / PLACE",
+      "populationDifference": 1309
+    },
+    {
+      "parentGeoid": "1304200",
+      "countyFips": "13245",
+      "fields": {
+        "AREALAND": {
+          "parent": "840095291",
+          "county": "840095291",
+          "equal": true
+        },
+        "AREAWATER": {
+          "parent": "10936549",
+          "county": "10936549",
+          "equal": true
+        },
+        "INTPTLAT": {
+          "parent": "+33.3614863",
+          "county": "+33.3614863",
+          "equal": true
+        },
+        "INTPTLON": {
+          "parent": "-082.0749982",
+          "county": "-082.0749982",
+          "equal": true
+        }
+      },
+      "grfcBlockSetsEqual": true,
+      "countyBlocks": 3841,
+      "parentBlocks": 3841,
+      "fullGovernmentPopulation2025": 206559,
+      "fullGovernmentPopulationSource": "SUMLEV 170 / CONCIT",
+      "countyPopulation2025": 206559,
+      "balanceGeoid": "1304204",
+      "balancePopulation2025": 201999,
+      "balancePopulationSource": "SUMLEV 162 / PLACE",
+      "populationDifference": 4560
+    }
+  ],
+  "retainedMunicipalities": {
+    "clarke": [
+      "Athens-Clarke County",
+      "Bogart",
+      "Winterville"
+    ],
+    "richmond": [
+      "Augusta-Richmond County",
+      "Blythe",
+      "Hephzibah"
+    ],
+    "oconee": [
+      "Bishop",
+      "Bogart",
+      "North High Shoals",
+      "Watkinsville"
+    ],
+    "burke": [
+      "Blythe",
+      "Girard",
+      "Keysville",
+      "Midville",
+      "Sardis",
+      "Vidette",
+      "Waynesboro"
+    ]
+  },
+  "governmentTypeAttribution": [
+    {
+      "geoid": "1319000",
+      "source": "https://columbusga.gov/",
+      "preservedSourceExcerpt": "ag('js', new Date()); gtag('config', 'G-XT99V0B54D'); Columbus Consolidated Government // Skip to main content",
+      "censusName": "Columbus city",
+      "censusLSAD": "25",
+      "publicType": "Consolidated city-county government"
+    },
+    {
+      "geoid": "1349008",
+      "source": "https://www.maconbibb.us/commissioners/",
+      "preservedSourceExcerpt": "the Macon-Bibb County Government. This body enacts the laws, ordinances, and resolutions for local consolidated government. Commissioners are elected every four years and may serve three terms. The Macon-Bibb County Commission meets in Commission Chambers at City Hall (700 Poplar Street)",
+      "censusName": "Macon-Bibb County",
+      "censusLSAD": "00",
+      "publicType": "Consolidated city-county government"
+    }
+  ],
+  "representativeCountiesChecked": 159,
+  "manifestChecks": [
+    {
+      "file": "raw/ga-county.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_ga.html",
+      "expectedSha256": "eadc047df3c6febf69be3c3524d233f4a6186e813b2a490934346fbc4f94b358",
+      "actualSha256": "eadc047df3c6febf69be3c3524d233f4a6186e813b2a490934346fbc4f94b358",
+      "bytes": 111220,
+      "matches": true
+    },
+    {
+      "file": "raw/ga-incplace.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_ga.html",
+      "expectedSha256": "71f9dd21f79ca249686ebb656b9731f61e9f40ee5c06681913c3702d121b6edb",
+      "actualSha256": "71f9dd21f79ca249686ebb656b9731f61e9f40ee5c06681913c3702d121b6edb",
+      "bytes": 429532,
+      "matches": true
+    },
+    {
+      "file": "raw/ga-cdp.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_ga.html",
+      "expectedSha256": "85dc14b401b3d1aa209901a31132850448657e3808e62a796f25ee7458b9263b",
+      "actualSha256": "85dc14b401b3d1aa209901a31132850448657e3808e62a796f25ee7458b9263b",
+      "bytes": 111639,
+      "matches": true
+    },
+    {
+      "file": "raw/ga-concity.html",
+      "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_concity_ga.html",
+      "expectedSha256": "8c25385ed2f78cc72ad582c280abce51887e22ef4575396ae722a7b40ce68978",
+      "actualSha256": "8c25385ed2f78cc72ad582c280abce51887e22ef4575396ae722a7b40ce68978",
+      "bytes": 3360,
+      "matches": true
+    },
+    {
+      "file": "raw/macon-government.html",
+      "url": "https://www.maconbibb.us/commissioners/",
+      "expectedSha256": "9248a229a93cd339c976c331459fa2bbbb099af5e55210236ebe0592f5b370a1",
+      "actualSha256": "9248a229a93cd339c976c331459fa2bbbb099af5e55210236ebe0592f5b370a1",
+      "bytes": 78130,
+      "matches": true
+    },
+    {
+      "file": "raw/columbus-government.html",
+      "url": "https://columbusga.gov/",
+      "expectedSha256": "244e73f023236d8ab6c7ab7b7df439c5faa6d58562289797095202b15f2da273",
+      "actualSha256": "244e73f023236d8ab6c7ab7b7df439c5faa6d58562289797095202b15f2da273",
+      "bytes": 70204,
+      "matches": true
+    },
+    {
+      "file": "raw/ga-grfc.txt",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_13.txt",
+      "expectedSha256": "1e418349ccd7266764d3cc1c5e8818e0014ad53314116bcf4a0ec3a25289c9f6",
+      "actualSha256": "1e418349ccd7266764d3cc1c5e8818e0014ad53314116bcf4a0ec3a25289c9f6",
+      "bytes": 83244525,
+      "matches": true
+    },
+    {
+      "file": "raw/co-est2025-alldata.csv",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
+      "expectedSha256": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5",
+      "actualSha256": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5",
+      "bytes": 2071735,
+      "matches": true
+    },
+    {
+      "file": "raw/sub-est2025_13.csv",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025_13.csv",
+      "expectedSha256": "55b20f811cc023177d556a6058029e516e9c5b79cd9ac39343fd29c6ac168972",
+      "actualSha256": "55b20f811cc023177d556a6058029e516e9c5b79cd9ac39343fd29c6ac168972",
+      "bytes": 133785,
+      "matches": true
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "src/georgia-geography.mjs",
+      "sha256": "f101b521681b51b387693f21c227dd61bc121e838bd3bc4ce823c23217334264"
+    },
+    {
+      "path": "src/regional-content.mjs",
+      "sha256": "307799b51a0a98a47bb3d4c527813e5b51e4b4d0d72e658f7359f02efeabb0ba"
+    },
+    {
+      "path": "src/assets/service-state-info.js",
+      "sha256": "ff43069a6010a639fd5cd355f7657f6e1adb5000dbd5948930a0903fb59578bb"
+    },
+    {
+      "path": "src/assets/county-directory.js",
+      "sha256": "3588168fdc74a9b1dfd9955337c22008f71bd4a57dd2e8495539e9d43f7b1ab5"
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "sha256": "aacf64d95d08a7b06a0fe1cfbac0976b857290bfdfa98bae7de30b1f920ced87"
+    },
+    {
+      "path": "src/service-area-directory.mjs",
+      "sha256": "aace0ebce13d16724e5891e9523e49514c84f9e9aed492aff09753f79b7168fe"
+    },
+    {
+      "path": "config/site.json",
+      "sha256": "985b296efff6cf5ff99843bd99137c145e4573f350df45aa40d4d3ca2f2552b7"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/place-inventory.json",
+      "sha256": "309be6e3c224a422dbe8af5499f2d9cd3df3890d7c9119497764e31b1716f5e0"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/county-inventory.json",
+      "sha256": "e5d931b04d29506326a5fcf5d2dd7d7097ec91d2849697e61f1c08c1ff94f4ba"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/geography-sources.json",
+      "sha256": "2278c4ad71b31d9d82617597d052bbb414a677a737733222466ad7572375f5a3"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/public-geography-summary.json",
+      "sha256": "c2103ab99bb41eed873dd2c60cdbdd82403d84bd4f3984e642365f09dd6f757e"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/public-representative-places.json",
+      "sha256": "99a3c20879f1128d849bb2be0bd28b93605cfcc8e111486905a84a7698e04c20"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/public-geography.json",
+      "sha256": "02793f69431e6387c88012e661ce89d4c6740c346789502047171bddbbf3a817"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/public-area-inventory.json",
+      "sha256": "8f1efc788bde42065b28811f8755e319c2e7cad4a546d2b488d44edb2647200a"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/build-public-geography.py",
+      "sha256": "20e81afd6e8a76350564fe0590f624c1cd67adfd5ede19cc950a95b99e67d10b"
+    },
+    {
+      "path": "evidence/georgia-expansion-20261023/prepare_geography.py",
+      "sha256": "bd32bc6b9673d1094665ff7bdc46c87ad07c245f1bc5702acf671f8224afb168"
+    }
+  ],
+  "errors": [],
+  "limitations": "Preserved official source verification only; no network refresh. Matching tabular geometry fields and exact current GRFC block membership verified; no independent polygon topology computation."
+}

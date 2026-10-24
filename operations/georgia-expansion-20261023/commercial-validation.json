@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "draftCount": 6,
+  "collectionCount": 1082,
+  "existingRecordFixtureMismatches": [],
+  "completeComparisonReadCount": 21,
+  "verifiedSavedSourceCount": 8,
+  "faqRecommendationCount": 0,
+  "verdictCounts": {
+    "PASS": 6
+  },
+  "pinnedInputHashesChecked": [
+    "drafts",
+    "authorReview",
+    "primaryComparisons",
+    "collection",
+    "renderer",
+    "sourceManifest",
+    "additionalSourceManifest"
+  ],
+  "testsNotRun": "No production build, CI or browser tests required for this private editorial task; parent release gates remain independent."
+}

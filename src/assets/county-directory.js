@@ -23,16 +23,20 @@ export function unpackCountySearch(value,names){
   return group.slice(colon+1).split(',').map(name=>{if(names){index+=parseInt(name,36);name=names[index];}return type+':'+name;});
  });
 }
-// Sorted names share their common prefix; all delimiters are excluded by normalization.
+// Sorted names share their common prefix. One base-36 character encodes the
+// usual prefix length; unusually long prefixes use a ~length: escape.
 export function packCountyNames(names){
  let previous='';
  return names.map(name=>{let prefix=0;while(prefix<previous.length&&prefix<name.length&&previous[prefix]===name[prefix])prefix++;
-  const packed=prefix.toString(36)+':'+name.slice(prefix);previous=name;return packed;
+  const packed=(prefix<36?prefix.toString(36):'~'+prefix.toString(36)+':')+name.slice(prefix);previous=name;return packed;
  }).join('|');
 }
 export function unpackCountyNames(value){
- let previous='';
- return value.split('|').map(packed=>{const colon=packed.indexOf(':');previous=previous.slice(0,parseInt(packed.slice(0,colon),36))+packed.slice(colon+1);return previous;});
+ let previous='';const legacy=value.startsWith('0:');
+ return value.split('|').map(packed=>{const extended=packed[0]==='~',colon=legacy||extended?packed.indexOf(':'):-1;
+  const prefix=parseInt(colon<0?packed[0]:packed.slice(extended?1:0,colon),36);
+  previous=previous.slice(0,prefix)+packed.slice(colon<0?1:colon+1);return previous;
+ });
 }
 const placeTypes={city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w','federal district':'d','census designated place':'x',cdp:'x'};
 const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
@@ -62,14 +66,17 @@ export function countyMatch(card,search,selectedState=''){
  let result={score:0};
  for(const entry of card.terms){
   const colon=entry.indexOf(':'),type=colon<0?'p':entry.slice(0,colon),name=colon<0?entry:entry.slice(colon+1);
-  if(search.type&&!type.includes(placeTypes[search.type]))continue;
+  // County can be part of a consolidated government's legal name. Preserve
+  // that exact name without making an ordinary city match a county query.
+  const countyInMunicipalName=search.type==='county'&&type.includes('m')&&name===search.query+' county';
+  if(search.type&&!type.includes(placeTypes[search.type])&&!countyInMunicipalName)continue;
   // A typed name identifies the complete place; unqualified input can match
   // the start of any word, so Erie cannot accidentally match Deferiet.
-  const exact=name===search.query;
+  const exact=name===search.query||countyInMunicipalName;
   const match=exact||(!search.type&&(name.startsWith(search.query)||name.includes(' '+search.query)));
   const isArea=/[yrid]/.test(type);
   const score=match?(exact?(isArea?6:type.includes('a')?5:type.includes('c')?4:3):isArea||type.includes('a')?2:1):0;
-  if(score>result.score)result={score,name,type:search.type||typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place'};
+  if(score>result.score)result={score,name,type:countyInMunicipalName?'municipality':search.type||typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place'};
  }
  return result;
 }

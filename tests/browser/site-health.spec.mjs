@@ -1,5 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect} from './fixtures.mjs';
+import faqsByPath from '../../src/service-faqs.json' with {type:'json'};
 
 const {routes}=JSON.parse(await readFile(new URL('../../evidence/build.json',import.meta.url),'utf8'));
 
@@ -34,6 +35,18 @@ for(let offset=0;offset<routes.length;offset+=25){
     const inline=page.locator('.support-chat--inline');
     if(await inline.count())await expect(page.locator('[data-chat-open]')).toBeVisible();
     else await expect(page.locator('.support-chat-launch')).toBeVisible();
+    const answers=faqsByPath[path]||[],section=page.locator('#service-questions');
+    await expect(section).toHaveCount(answers.length?1:0);
+    for(const [index,answer] of answers.entries()){
+     const details=section.locator('details').nth(index),summary=details.locator('summary');
+     await expect(summary).toHaveText(answer.question);await expect(details).not.toHaveAttribute('open','');
+     await summary.focus();await page.keyboard.press('Enter');
+     await expect(summary).toBeFocused();await expect(details).toHaveAttribute('open','');
+     await expect(details.locator('p').first()).toBeVisible();await expect(details.locator('p').first()).toHaveText(answer.answer);
+     for(const link of answer.links||[])await expect(details.getByRole('link',{name:link.label,exact:true})).toHaveAttribute('href',link.path);
+     expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),path+' open FAQ at '+width).toBeLessThanOrEqual(1);
+     await page.keyboard.press('Space');await expect(details).not.toHaveAttribute('open','');await expect(summary).toBeFocused();
+    }
     await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
     if(await page.evaluate(()=>scrollY>=520))await expect(page.locator('.back-to-top')).toBeVisible();
    }

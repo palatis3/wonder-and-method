@@ -1,0 +1,68 @@
+[
+  {
+    "file": "raw/ga-county.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_county_ga.html",
+    "bytes": 111220,
+    "sha256": "eadc047df3c6febf69be3c3524d233f4a6186e813b2a490934346fbc4f94b358",
+    "reused": true
+  },
+  {
+    "file": "raw/ga-incplace.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_ga.html",
+    "bytes": 429532,
+    "sha256": "71f9dd21f79ca249686ebb656b9731f61e9f40ee5c06681913c3702d121b6edb",
+    "reused": true
+  },
+  {
+    "file": "raw/ga-cdp.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_ga.html",
+    "bytes": 111639,
+    "sha256": "85dc14b401b3d1aa209901a31132850448657e3808e62a796f25ee7458b9263b",
+    "reused": true
+  },
+  {
+    "file": "raw/ga-concity.html",
+    "url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_concity_ga.html",
+    "bytes": 3360,
+    "sha256": "8c25385ed2f78cc72ad582c280abce51887e22ef4575396ae722a7b40ce68978",
+    "retrievedAt": "2026-10-24T00:36:55.834298+00:00",
+    "httpStatus": 200
+  },
+  {
+    "file": "raw/macon-government.html",
+    "url": "https://www.maconbibb.us/commissioners/",
+    "bytes": 78130,
+    "sha256": "9248a229a93cd339c976c331459fa2bbbb099af5e55210236ebe0592f5b370a1",
+    "retrievedAt": "2026-10-24T00:36:56.422115+00:00",
+    "httpStatus": 200
+  },
+  {
+    "file": "raw/columbus-government.html",
+    "url": "https://columbusga.gov/",
+    "bytes": 70204,
+    "sha256": "244e73f023236d8ab6c7ab7b7df439c5faa6d58562289797095202b15f2da273",
+    "retrievedAt": "2026-10-24T00:36:55.984980+00:00",
+    "httpStatus": 200
+  },
+  {
+    "file": "raw/ga-grfc.txt",
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/grf/2026/public_grfc_cur26_13.txt",
+    "bytes": 83244525,
+    "sha256": "1e418349ccd7266764d3cc1c5e8818e0014ad53314116bcf4a0ec3a25289c9f6",
+    "reused": true
+  },
+  {
+    "file": "raw/co-est2025-alldata.csv",
+    "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv",
+    "bytes": 2071735,
+    "sha256": "4f5a499d851e2cb48fd7a5405e5a9235453a8a66933657aacd10df0e264f35d5",
+    "reused": true
+  },
+  {
+    "file": "raw/sub-est2025_13.csv",
+    "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025_13.csv",
+    "bytes": 133785,
+    "sha256": "55b20f811cc023177d556a6058029e516e9c5b79cd9ac39343fd29c6ac168972",
+    "reused": true
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "path": "/services/",
+    "assessment": "Reviewed the complete overview. Its seven service choices, costs, optional monthly help and initial-review rule already answer the selection questions. Keep the overview short and place detailed answers on the relevant service page.",
+    "faqs": []
+  },
+  {
+    "path": "/services/web-design/",
+    "assessment": "The page already explains build timing, writing, editing, ownership and package inclusions. Add the missing decision about a deliberately smaller first launch, without promising unused package capacity as future free work.",
+    "faqs": [
+      {
+        "question": "Can we launch a smaller website and add more later?",
+        "answer": "Yes, if the first version gives customers a complete explanation and a useful next step. We agree which pages belong in the first launch and identify any later dependencies before choosing the package. Future pages or features need their own agreed scope and price; unused page capacity is not an open-ended promise of later work.",
+        "links": [{"path": "/guides/website-project-cost/", "label": "Plan the website budget"}],
+        "keywordQueries": ["how much does a small business website cost"],
+        "reason": "Adds a phasing decision rather than repeating package totals."
+      }
+    ]
+  },
+  {
+    "path": "/services/website-redesign/",
+    "assessment": "The page already covers prices, retained URLs, search risks and migration checks. Add continuity during the build and the evidence for choosing a redesign instead of a calendar-based replacement.",
+    "faqs": [
+      {
+        "question": "Can my current website stay online during the redesign?",
+        "answer": "Usually, if its hosting and accounts remain available. We plan a separate preview, agree how approved content changes will be carried across, and identify the launch and recovery steps before switching. Keep the existing hosting active until that plan is confirmed. A platform restriction or account-access problem may change the approach and needs checking before booking.",
+        "links": [{"path": "/guides/website-redesign-timeline/", "label": "Plan the redesign sequence"}],
+        "keywordQueries": ["website redesign timeline"],
+        "reason": "Explains the operational consequence of the already-described private preview and launch checks."
+      },
+      {
+        "question": "Does a website need redesigning after a fixed number of years?",
+        "answer": "Age alone does not decide it. Start with what no longer works: changed services, confusing page structure, difficult updates or a platform that cannot support an important customer task. A focused repair may be enough. I use the current site's condition and your next requirements to scope the work, rather than recommending replacement simply because a date has passed.",
+        "links": [{"path": "/guides/website-repair-or-redesign/", "label": "Compare repair and redesign"}],
+        "keywordQueries": ["how often should a website be redesigned"],
+        "reason": "Answers the measured replacement-frequency question without inventing an arbitrary lifespan."
+      }
+    ]
+  },
+  {
+    "path": "/services/website-care/",
+    "assessment": "Existing content covers checks, supplied edits, costs, unsupported software tasks and cancellation. Add who to contact outside the agreed work window, extending the staffing limitation into a practical enrollment decision.",
+    "faqs": [
+      {
+        "question": "What happens if the website goes down outside your work hours?",
+        "answer": "We agree contact windows, escalation contacts and provider responsibilities before enrollment. An automated alert does not mean someone is immediately working on the problem. Hosting or account failures may need the provider's support, while website repairs follow the agreed scope and availability. If your business needs continuous emergency cover, arrange that requirement with a suitable provider before relying on ordinary care.",
+        "links": [{"path": "/guides/website-care-versus-seo/", "label": "Choose the support your website needs"}],
+        "keywordQueries": ["website care plan"],
+        "reason": "Adds the escalation decision without creating a response-time or recovery promise."
+      }
+    ]
+  },
+  {
+    "path": "/services/seo/",
+    "assessment": "The page already defines monthly outputs, prices, research limits and reporting. Add the difference between finishing work and observing search effects, plus how missing historical data affects the starting comparison.",
+    "faqs": [
+      {
+        "question": "How long does SEO take to show results?",
+        "answer": "There is no dependable deadline for rankings or inquiries. Google says changes can take hours to months to appear, and some have no noticeable search effect. We record when each improvement is published, check that it works, and review the available search data over time. Finishing a page this month does not establish that it will bring customers this month.",
+        "links": [{"path": "/guides/seo-work-and-reporting/", "label": "Judge the work and its results"}],
+        "keywordQueries": ["how long does seo take"],
+        "reason": "Separates controllable delivery from observed results using Google's current Starter Guide."
+      },
+      {
+        "question": "Can we start if the website has no useful analytics history?",
+        "answer": "We can first assess the public pages, customer questions and search information that is available. I identify missing access or history before agreeing what we can measure. New tracking does not recreate past visits or inquiries. Any additional tracking setup is scoped explicitly, and the first report distinguishes observed evidence from assumptions instead of inventing a before-and-after result.",
+        "links": [{"path": "/guides/seo-work-and-reporting/", "label": "Understand the reporting evidence"}],
+        "keywordQueries": ["what is included in seo services"],
+        "reason": "Explains a practical starting-data limitation not answered by the list of monthly deliverables."
+      }
+    ]
+  },
+  {
+    "path": "/services/website-audit/",
+    "assessment": "Review limits, safety, no-fix outcomes, payments and cancellation are already explicit. Add the buyer's freedom to use the findings with their existing developer rather than treating the review as a commitment to more studio work.",
+    "faqs": [
+      {
+        "question": "Can I give the review to my existing web developer?",
+        "answer": "Yes. The findings and ordered next steps are yours to use when deciding who should do further work. The notes identify the affected pages, evidence, completed fixes and anything I could not check. You do not have to buy a redesign or monthly plan afterward. Any additional implementation by me requires a separate agreement.",
+        "links": [{"path": "/guides/website-audit-checklist/", "label": "See what a useful review records"}],
+        "keywordQueries": ["what does a website audit include"],
+        "reason": "Answers the commitment and handover question rather than repeating the eight review checks."
+      }
+    ]
+  },
+  {
+    "path": "/services/website-addons/",
+    "assessment": "The catalogue already supplies exact boundaries, costs, payment and ownership for every addition. Add the option to separate a tool project from a public website launch while checking dependencies first.",
+    "faqs": [
+      {
+        "question": "Can the public website launch before a dashboard or portal is ready?",
+        "answer": "Possibly, if customers can still complete the agreed public journey without the unfinished tool. We identify the dependencies, temporary contact route and separate acceptance checks before choosing that approach. The tool keeps its own scope, price and support arrangements. We would not publish a button that promises access to a portal or workflow that is not ready.",
+        "links": [{"path": "/process/", "label": "Agree the work and launch checks"}],
+        "keywordQueries": ["phased website launch"],
+        "reason": "Provides a sequencing decision; the suggested query has not been measured."
+      }
+    ]
+  },
+  {
+    "path": "/services/contractor-websites/",
+    "assessment": "The page already covers estimate fields, trade examples, evidence, packages and editing. Add a location-page decision so broad service coverage does not imply separate websites or repetitive town pages.",
+    "faqs": [
+      {
+        "question": "Do I need a separate website or page for every town I serve?",
+        "answer": "Usually not. Start with clear service descriptions and an accurate coverage page. A separate location page needs something useful to explain, such as a different service, genuine local project or materially different visit arrangements. Repeating the same text with town names changed does not help a customer decide. We research the actual need before adding pages or increasing the scope.",
+        "links": [{"path": "/guides/service-area-pages/", "label": "Plan useful service-area content"}],
+        "keywordQueries": ["service area pages for contractors"],
+        "reason": "Adds a scope decision relevant to trades serving multiple places; exact query remains unmeasured."
+      }
+    ]
+  }
+]

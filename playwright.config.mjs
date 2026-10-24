@@ -5,7 +5,7 @@ export default defineConfig({
  outputDir:'output/playwright/results',
  timeout:30_000,
  // The 581-route suite took 29.5 minutes. Retain every journey and per-test
- // bound while allowing all 1,192 routes and location tables to finish.
+ // bound while allowing all 1,217 routes and location tables to finish.
  globalTimeout:4_500_000,
  expect:{timeout:7000},
  workers:1,

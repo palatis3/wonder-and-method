@@ -45,6 +45,20 @@ test('county entry preserves readable local facts and place lists',async({page})
  const entry=page.locator('#monroe');await expect(entry).toHaveAttribute('open','');
   await isolateContent(page);await expect(entry).toHaveScreenshot('county-entry.png');
 });
+test('Georgia entry preserves government and place distinctions',async({page})=>{
+ await page.goto('/areas/georgia/?qa=1#richmond');await settle(page);
+ const entry=page.locator('#richmond');await expect(entry).toHaveAttribute('open','');
+ await isolateContent(page);await expect(entry).toHaveScreenshot('georgia-entry.png');
+});
+for(const [name,path] of [['service-questions','/services/web-design/'],['county-questions','/areas/massachusetts/barnstable-county/']]){
+ test(`${name} expanded answers remain readable`,async({page})=>{
+  await page.goto(path+'?qa=1');await settle(page);
+  const section=page.locator('#service-questions');
+  for(const summary of await section.locator('summary').all())await summary.click();
+  for(const details of await section.locator('details').all())await expect(details).toHaveAttribute('open','');
+  await isolateContent(page);await expect(section).toHaveScreenshot(name+'.png');
+ });
+}
 test('footer collapsed and expanded layouts',async({page})=>{
  await page.goto('/?qa=1');await settle(page);const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
  await isolateContent(page);await expect(footer).toHaveScreenshot('footer-closed.png');

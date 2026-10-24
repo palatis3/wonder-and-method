@@ -1,0 +1,41 @@
+{
+  "observedDateUtc": "2026-10-24",
+  "method": "Direct web reads during independent review. These are concise paraphrased observations, not downloaded HTML snapshots, live checkout tests or claims that a booking was made.",
+  "sources": [
+    {
+      "url": "https://www.riverstreetsweets.com/pages/warm-weather-shipping",
+      "readSection": "Apple shipping and exceptions; web text lines 136–141",
+      "observation": "Apple instructions specify express shipping, separate protective packing and destination exclusions including military addresses. This supports treating the item-specific rule separately from the general FAQ."
+    },
+    {
+      "url": "https://www.riverstreetsweets.com/pages/faqs-product-information",
+      "readSection": "Shipping and ordering; web text lines 149–181",
+      "observation": "General military-address shipping is offered. The ordering answer describes assigning selected cart items to an address and repeating for additional addresses. These statements support the general promise and item-recipient mapping, not a tested guarantee that the current checkout validates every exception."
+    },
+    {
+      "url": "https://visitsavannah.com/profile/river-street-sweets-historic-district/4262",
+      "readSection": "Business location and description; web text lines 139 and 181",
+      "observation": "The official visitor listing identifies the historic River Street shop at 13 E. River Street in Savannah."
+    },
+    {
+      "url": "https://www.wildadventures.com/Plan-Your-Visit/FAQ",
+      "readSection": "Dated tickets and Any Day FAQ; web text lines 202–260",
+      "observation": "The page contains explicit 2026 ticket terms despite current 2027 pass navigation. It distinguishes a chosen-date ticket from Any Day use, discusses changing dates or upgrading, and ties the next-consecutive-operating-day offer to Any Day tickets. The draft's 2026 limitation is necessary and accurate."
+    },
+    {
+      "url": "https://destinationcherokeega.com/attractions/farms-gardens/",
+      "readSection": "County attraction directory and Gibbs Gardens listing; web text lines 0–10 and 68–98",
+      "observation": "The Cherokee destination site lists Gibbs Gardens at 1987 Gibbs Drive, Ball Ground."
+    },
+    {
+      "url": "https://www.gibbsgardens.com/about/",
+      "readSection": "History and Manor House site; web text lines 69–82",
+      "observation": "The garden's own history locates its home site in northeast Cherokee County. This independently supports the county attribution rather than relying solely on a mailing city or tourism-directory category."
+    }
+  ],
+  "inferences": [
+    "Keeping a recipient while selecting an eligible alternative gift is proposed website behavior, not behavior observed in River Street Sweets' checkout.",
+    "The cited 2026 ticket example does not establish any 2027 benefit, upgrade price or eligibility calculation.",
+    "The county sources establish example location/context; none establishes a Wonder and Method office, client relationship or affiliation."
+  ]
+}

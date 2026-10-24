@@ -10,11 +10,14 @@ import dates from '../config/page-dates.json' with {type:'json'};
 import paths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
 import linkCorrections from '../operations/ci-checks-20261023/source-link-corrections.json' with {type:'json'};
 import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
-const identities=serviceStates.flatMap(s=>s.counties.map(c=>s.id+'/'+c.slug));
+// Keep this historical release contract scoped to its original regions; later
+// Georgia additions have their own independent geography/preservation checks.
+const historicalStates=serviceStates.filter(state=>state.id!=='georgia');
+const identities=historicalStates.flatMap(s=>s.counties.map(c=>s.id+'/'+c.slug));
 test('SC adds exactly 46 identities while retaining every historical identity and service record',()=>{
  assert.equal(identities.length,1125);assert.equal(new Set(identities).size,1125);
  assert.deepEqual(identities.filter(id=>!id.startsWith('south-carolina/')).sort(),baseline.identities);
- const existing=locationServices.filter(x=>!x.path.startsWith('/areas/south-carolina/'));
+ const existing=locationServices.filter(x=>!x.path.startsWith('/areas/south-carolina/')&&!x.path.startsWith('/areas/georgia/'));
  assert.deepEqual(existing.map(row=>row.path).sort(),baseline.recordPaths);
  assert.deepEqual(Object.keys(baseline.recordHashes).sort(),baseline.recordPaths);
  // Keep the historical baseline immutable. Replay only the separately reviewed
@@ -28,11 +31,11 @@ test('SC adds exactly 46 identities while retaining every historical identity an
   }
   assert.equal(createHash('sha256').update(JSON.stringify(restored)).digest('hex'),baseline.recordHashes[row.path],row.path+' preserved outside reviewed corrections');
  }
- assert.equal(serviceStates.length,22);assert.equal(serviceStates.filter(s=>s.kind==='district').length,1);
+ assert.equal(historicalStates.length,22);assert.equal(historicalStates.filter(s=>s.kind==='district').length,1);
  for(const route of semrushGuidePaths)assert.ok(Object.hasOwn(dates,route),'Approved subsequent guide '+route);
  const retiredRequests=['fieldwork','northline','hearthside'].map(id=>`/work/${id}/request/`);
  for(const path of retiredRequests){assert.ok(baseline.routes.includes(path));assert.ok(!Object.hasOwn(dates,path));assert.equal(publicRouteRedirect(new URL(path,'https://wonderandmethod.com'),'GET'),'https://wonderandmethod.com'+path.replace('request/',''));}
- assert.deepEqual([...Object.keys(dates).filter(p=>!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
+ assert.deepEqual([...Object.keys(dates).filter(p=>!p.startsWith('/areas/georgia/')&&!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
 });
 test('SC search indexes every county and distinguishes cross-county Summerville from a wrong state',()=>{
  const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(r=>r.slugs.includes(county.slug))).split('|')})));

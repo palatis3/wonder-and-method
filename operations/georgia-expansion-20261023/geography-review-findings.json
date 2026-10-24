@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "scope": "Independent preserved-authority, generated-module, and source-level directory review. Worker writes confined to this geography-review directory.",
+  "head": "abb8516a01484f9a20eafae6e44f8f9ffc8cacaa",
+  "findings": [
+    {
+      "id": "GA-001",
+      "priority": "P2",
+      "title": "New York borough alias leaked into Georgia Richmond County",
+      "file": "src/service-area-directory.mjs",
+      "status": "corrected-and-independently-verified",
+      "trigger": "Rendering Georgia Richmond County displayed “Staten Island · Richmond County”.",
+      "correction": "The county label helper now applies the borough alias only for New York and the renderer passes the current state.",
+      "verification": "Four-state regression checks the helper and rendered summary for New York, Virginia, North Carolina, and Georgia.",
+      "beforeEvidence": "source-smoke-initial.json",
+      "afterEvidence": "source-smoke.json"
+    },
+    {
+      "id": "GA-002",
+      "priority": "P2",
+      "title": "Canonical consolidated-government names ending in County could not be found",
+      "file": "src/assets/county-directory.js",
+      "status": "corrected-and-independently-verified",
+      "trigger": "The typed suffix parser treated County as a requested county type, so the five full consolidated-government names returned no result.",
+      "affectedNames": [
+        "Athens-Clarke County",
+        "Augusta-Richmond County",
+        "Macon-Bibb County",
+        "Cusseta-Chattahoochee County",
+        "Georgetown-Quitman County"
+      ],
+      "correction": "Exact full municipal names ending in County can match after suffix parsing, with the resulting match correctly labeled municipality. Ordinary typed county/city exclusions remain in effect.",
+      "verification": "Fifteen canonical-name searches: bare name, GA suffix, and Georgia suffix. Existing typed Atlanta city, Braselton town, Mountain Park city/CDP, Bogart, and Blythe cross-county searches are also checked.",
+      "beforeEvidence": "source-smoke-canonical-failure.json",
+      "afterEvidence": "source-smoke.json"
+    }
+  ],
+  "openFindings": [],
+  "counts": {
+    "counties": 159,
+    "municipalAndConsolidatedEntities": 538,
+    "municipalMemberships": 598,
+    "cdps": 138,
+    "cdpMemberships": 141,
+    "types": {
+      "City": 429,
+      "Town": 101,
+      "Consolidated city-county government": 8
+    }
+  },
+  "crossCountyPlaces": 57,
+  "representativeCountiesChecked": 159,
+  "sourceHashes": [
+    {
+      "path": "src/georgia-geography.mjs",
+      "sha256": "f101b521681b51b387693f21c227dd61bc121e838bd3bc4ce823c23217334264"
+    },
+    {
+      "path": "src/regional-content.mjs",
+      "sha256": "307799b51a0a98a47bb3d4c527813e5b51e4b4d0d72e658f7359f02efeabb0ba"
+    },
+    {
+      "path": "src/assets/service-state-info.js",
+      "sha256": "ff43069a6010a639fd5cd355f7657f6e1adb5000dbd5948930a0903fb59578bb"
+    },
+    {
+      "path": "src/assets/county-directory.js",
+      "sha256": "3588168fdc74a9b1dfd9955337c22008f71bd4a57dd2e8495539e9d43f7b1ab5"
+    },
+    {
+      "path": "src/assets/counties.css",
+      "sha256": "f91b95d6b73b8796239586688d347c36fe5555ffe35e9328529fa31690aa30c2"
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "sha256": "aacf64d95d08a7b06a0fe1cfbac0976b857290bfdfa98bae7de30b1f920ced87"
+    },
+    {
+      "path": "src/service-area-directory.mjs",
+      "sha256": "aace0ebce13d16724e5891e9523e49514c84f9e9aed492aff09753f79b7168fe"
+    },
+    {
+      "path": "config/site.json",
+      "sha256": "985b296efff6cf5ff99843bd99137c145e4573f350df45aa40d4d3ca2f2552b7"
+    }
+  ],
+  "officialEvidence": "official-verification.json",
+  "sourceEvidence": "source-smoke.json",
+  "limits": [
+    "No network refresh; checked the preserved official files against their declared SHA-256 digests and byte sizes.",
+    "No independent polygon topology computation; checked exact source tabular area/reference-point fields and identical GRFC block sets for the consolidated parents.",
+    "No build, browser, publication, or deployment performed by this reviewer. Those acceptance gates remain the parent task’s responsibility."
+  ]
+}

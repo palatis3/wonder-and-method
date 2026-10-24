@@ -120680,5 +120680,664 @@
         ]
       ]
     }
+  },
+  {
+    "areaId": "georgia/chatham",
+    "areaIds": [
+      "georgia/chatham"
+    ],
+    "market": "Chatham County, GA",
+    "path": "/areas/georgia/chatham-county/",
+    "title": "Web Design for Chatham County, GA",
+    "servedAreas": [
+      {
+        "name": "Chatham County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#chatham",
+        "label": "Chatham County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Chatham County, GA. A Savannah gift-shipping example keeps product restrictions attached to each item and destination in a mixed order.",
+    "lead": "One gift order can contain items that cannot travel to the same address or in the same parcel. I help Chatham County businesses explain those differences before a customer relies on a general shipping answer.",
+    "decisionTitle": "Keep each product’s destination rules visible in a mixed gift order.",
+    "decision": "River Street Sweets provides the Savannah example. Its shipping guidance says apples travel separately in coolers and excludes several destination types, while its general FAQ describes military-address shipping. For an illustrative gift website, someone choosing pralines and apples for one recipient needs the product exception beside the general destination guidance. I would connect those explanations to the product choices and preserve the intended recipient when a gift specialist helps revise the selection. This plans clearer content around the existing shop; it does not claim that River Street Sweets has a broken checkout or that every non-apple product is eligible for every address.",
+    "scopes": [
+      {
+        "title": "Clarify product exceptions beside shipping guidance",
+        "pages": [
+          "Products with special restrictions",
+          "Destination-specific guidance",
+          "Existing shop and gift-specialist contact"
+        ],
+        "request": "Find the relevant shipping explanation before relying on a broad delivery statement.",
+        "supplies": "Current product restrictions, separate-parcel rules and the owner-approved route for a destination question.",
+        "check": "A shopper sending a mixed gift to a military address sees the apple exception and can ask about another selection."
+      },
+      {
+        "title": "Connect gift selection to fulfillment information",
+        "pages": [
+          "Gift choices and recipient context",
+          "Item-specific shipment requirements",
+          "Multiple parcels and current checkout",
+          "Changes to the gift selection"
+        ],
+        "request": "Keep product, recipient and shipment information connected as the customer changes a gift.",
+        "supplies": "Maintained product classifications, current checkout behavior and who approves exceptions or alternatives.",
+        "check": "Removing a restricted item does not silently change the intended recipient, and a single order is not described as one guaranteed parcel."
+      }
+    ],
+    "scopeTrigger": "A focused content edit fits when product pages and checkout already work. A fuller introduction helps when gift and shipping information are separated across the site. Shipping-rule automation, cart validation, multiple-address ordering and carrier integrations need separate website/software scope. The merchant controls destination eligibility, fulfillment and current terms.",
+    "quoteQuestions": [
+      "Which products need exceptions beside your general shipping answer?",
+      "How do you explain separate parcels within a single gift order?",
+      "Who reviews alternatives when a chosen product cannot go to the intended address?"
+    ],
+    "coverageNote": "River Street Sweets identifies Savannah as its original home. This example serves website buyers in Savannah and Chatham County. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.riverstreetsweets.com/pages/warm-weather-shipping",
+        "label": "River Street Sweets: product-specific shipping",
+        "observation": "Describes separate apple shipments and excluded destination types, alongside seasonal heat-sensitive shipping guidance."
+      },
+      {
+        "url": "https://www.riverstreetsweets.com/pages/faqs-product-information",
+        "label": "River Street Sweets: general shipping and gift questions",
+        "observation": "Gives general military-address shipping guidance and explains selecting products for different recipient addresses."
+      },
+      {
+        "url": "https://visitsavannah.com/profile/river-street-sweets-historic-district/4262",
+        "label": "Visit Savannah: original River Street shop",
+        "observation": "Identifies the original flagship store at 13 East River Street in Savannah."
+      }
+    ],
+    "planningTable": {
+      "title": "A mixed gift needs item-level shipping explanations",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Gift contents",
+          "Name the actual items under consideration.",
+          "Product categories with distinct shipping treatment.",
+          "The exception remains attached to the apples, not to an unnamed order."
+        ],
+        [
+          "Recipient destination",
+          "Explain which address types need a different choice.",
+          "Current restrictions and an appropriate contact route.",
+          "A general military-shipping answer does not override a product exception."
+        ],
+        [
+          "Separate parcels",
+          "Distinguish one purchase from how its items travel.",
+          "Actual parcel and shipping-method explanations.",
+          "The customer can recognize that items may arrive as separate shipments."
+        ],
+        [
+          "Changed selection",
+          "Retain the destination while the gift is revised.",
+          "Who confirms the replacement selection and fulfillment.",
+          "An alternative is discussed without an unsupported arrival promise."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "georgia/richmond",
+    "areaIds": [
+      "georgia/richmond"
+    ],
+    "market": "Richmond County, GA",
+    "path": "/areas/georgia/richmond-county/",
+    "title": "Web Design for Richmond County, GA",
+    "servedAreas": [
+      {
+        "name": "Richmond County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#richmond",
+        "label": "Richmond County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Richmond County, GA. An Augusta pottery example explains two consecutive individual appointments within a shared visit.",
+    "lead": "Visiting a studio together does not always mean booking one simultaneous lesson. I help Richmond County businesses explain the appointment arrangement before a couple or group chooses its next step.",
+    "decisionTitle": "Explain how a shared visit uses consecutive individual appointments.",
+    "decision": "TireCity Potters in Augusta asks two wheel-throwing participants to book appointments 30 minutes apart. Each works individually with the instructor while the other can remain in the studio; larger groups are directed to discuss a customized session. For a proposed creative-experience website, I would explain that sequence beside the booking link. Two visitors should understand the relationship between their shared outing and their separate appointments. If only one suitable slot remains, the page should provide a way to ask the studio rather than suggesting that one appointment secures both participants. This is a proposed content and handoff check, not a claim about the studio’s scheduling software.",
+    "scopes": [
+      {
+        "title": "Explain the two-person booking sequence",
+        "pages": [
+          "One participant per appointment",
+          "Taking turns during the same visit",
+          "Larger-group contact"
+        ],
+        "request": "Understand the arrangement before opening the existing booking provider.",
+        "supplies": "Current appointment spacing, participant instructions and the real group-contact route.",
+        "check": "A couple understands that the second participant needs another appropriately timed appointment."
+      },
+      {
+        "title": "Build an experience introduction around the visit",
+        "pages": [
+          "Individual experience",
+          "Two-person visit sequence",
+          "Larger parties and custom sessions",
+          "Preparation and booking questions"
+        ],
+        "request": "Choose the appropriate conversation using participant count and the intended visit.",
+        "supplies": "Approved session descriptions, current booking rules and what staff does when adjacent availability is missing.",
+        "check": "Three friends reach the group discussion; they are not told that three unrelated slots create a simultaneous group lesson."
+      }
+    ],
+    "scopeTrigger": "A focused update can clarify the existing booking instructions. A fuller build helps when the experience, participant count and visit sequence need a clearer introduction. Holding linked slots, combined payments or custom group scheduling requires separate software scope and provider support. The studio confirms appointments, participation and session arrangements.",
+    "quoteQuestions": [
+      "How many participants does one appointment cover?",
+      "What should visitors do when they cannot find the required sequence of slots?",
+      "When does a larger party need a different booking conversation?"
+    ],
+    "coverageNote": "TireCity Potters lists its studio on 10th Street in downtown Augusta, within Augusta-Richmond County. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.tcpotters.com/throwing-experience",
+        "label": "TireCity Potters: two-person and group arrangements",
+        "observation": "Explains two appointments 30 minutes apart, one-to-one instruction and a separate contact route for groups larger than two."
+      },
+      {
+        "url": "https://www.tcpotters.com/",
+        "label": "TireCity Potters: Augusta studio",
+        "observation": "Identifies the downtown Augusta pottery studio and its public experience offer."
+      }
+    ],
+    "planningTable": {
+      "title": "Two people, two appointments, one outing",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Participants",
+          "State who each appointment covers.",
+          "The actual instruction arrangement.",
+          "One booked slot is not described as a booking for two people."
+        ],
+        [
+          "Sequence",
+          "Explain the interval between individual appointments.",
+          "Current timing instructions.",
+          "The couple can identify the intended order of their turns."
+        ],
+        [
+          "Availability question",
+          "Provide a contact route when the sequence cannot be found.",
+          "How staff handles an incomplete pair of slots.",
+          "One available appointment does not imply the other has been held."
+        ],
+        [
+          "Larger party",
+          "Explain when the ordinary sequence gives way to a group discussion.",
+          "The current group-inquiry threshold and contact.",
+          "An additional participant does not silently turn individual appointments into a group booking."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "georgia/fulton",
+    "areaIds": [
+      "georgia/fulton"
+    ],
+    "market": "Fulton County, GA",
+    "path": "/areas/georgia/fulton-county/",
+    "title": "Web Design for Fulton County, GA",
+    "servedAreas": [
+      {
+        "name": "Fulton County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#fulton",
+        "label": "Fulton County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Fulton County, GA. An East Point parts example distinguishes returning an old unit for core credit from returning a purchased replacement.",
+    "lead": "A customer returning a worn-out unit for credit has a different purpose from a customer reporting a problem with a newly purchased part. I help Fulton County suppliers make the object and reason clear before either return begins.",
+    "decisionTitle": "Identify which part is coming back and why.",
+    "decision": "Absolute Lift Parts in East Point describes a core-exchange program for eligible replacement purchases, with credit following inspection of the old unit. Its returns page separately explains authorization for returning a purchased part. For an illustrative supplier website, the important distinction is the item in the customer’s hands: the old unit being surrendered for credit or the replacement that was just bought. I would make those two routes understandable while retaining the relevant purchase reference. A generic return button should not lead the customer to send the wrong unit, borrow an unrelated deadline or treat a shipment as an approved credit.",
+    "scopes": [
+      {
+        "title": "Clarify the purpose before the return instructions",
+        "pages": [
+          "Old unit for core review",
+          "Purchased part with a problem",
+          "Current authorization and contact instructions"
+        ],
+        "request": "Identify the actual item and purpose before following a return route.",
+        "supplies": "Approved core eligibility wording, current return instructions and the support contact for uncertain cases.",
+        "check": "A customer keeping the replacement can find guidance for the old core without starting a complaint about the replacement."
+      },
+      {
+        "title": "Connect replacement purchase and later core review",
+        "pages": [
+          "Purchased replacement and old-unit identity",
+          "Eligibility and preparation questions",
+          "Dispatch and receipt",
+          "Inspection and confirmed outcome"
+        ],
+        "request": "Explain the later return of the old unit as part of the purchase relationship.",
+        "supplies": "The supplier’s real reference requirements, applicable return window and explanation of inspection outcomes.",
+        "check": "A customer with both units can identify which one is being sent and can distinguish received-for-review from credit issued."
+      }
+    ],
+    "scopeTrigger": "A focused content update can clarify existing support routes. A fuller build helps when replacement purchases and core returns are difficult to connect. Return portals, shipping labels, order-system access and automatic credits require separate software scope. The supplier determines eligibility, condition, authorization and credit; website work explains its approved process.",
+    "quoteQuestions": [
+      "Which item does the customer need to identify before receiving instructions?",
+      "Do core returns and purchased-part returns have different deadlines or authorization steps?",
+      "How does the customer learn that inspection is complete and a credit has actually been issued?"
+    ],
+    "coverageNote": "Absolute Lift Parts lists 1120 Oakleigh Drive in East Point, Fulton County. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://absoluteliftparts.com/",
+        "label": "Absolute Lift Parts: core-exchange explanation",
+        "observation": "Describes eligible old-unit returns after replacement purchase and credit following inspection; identifies its East Point base."
+      },
+      {
+        "url": "https://absoluteliftparts.com/returns-and-refunds/",
+        "label": "Absolute Lift Parts: purchased-part returns",
+        "observation": "Separately explains return authorization and the process for incorrect or defective purchased parts."
+      }
+    ],
+    "planningTable": {
+      "title": "Preserve the identities of both parts",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Purchased replacement",
+          "Label the item bought and its reference.",
+          "The order or part identifiers staff actually uses.",
+          "The replacement remains distinct from the worn-out unit."
+        ],
+        [
+          "Item being returned",
+          "Ask which physical item the customer wants to send.",
+          "Plain-language labels for core and purchased-part returns.",
+          "A core inquiry does not describe the replacement as defective."
+        ],
+        [
+          "Applicable instructions",
+          "Point to the terms for that particular purpose.",
+          "Current eligibility, authorization and deadline wording.",
+          "A purchased-part return deadline is not assumed to be the core deadline."
+        ],
+        [
+          "Review outcome",
+          "Distinguish shipment, receipt, inspection and issued credit.",
+          "The supplier’s actual review and communication process.",
+          "A delivery confirmation is not presented as credit approval."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "georgia/cherokee",
+    "areaIds": [
+      "georgia/cherokee"
+    ],
+    "market": "Cherokee County, GA",
+    "path": "/areas/georgia/cherokee-county/",
+    "title": "Web Design for Cherokee County, GA",
+    "servedAreas": [
+      {
+        "name": "Cherokee County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#cherokee",
+        "label": "Cherokee County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Cherokee County, GA. A garden-membership example separates renewal, an expired membership and redeeming a gift certificate.",
+    "lead": "A current member, a former member and a gift recipient may all want the next visit, but they do not necessarily need the same purchase link. I help Cherokee County organizations explain the next action using the visitor’s actual starting point.",
+    "decisionTitle": "Choose the membership action from its current status.",
+    "decision": "Gibbs Gardens distinguishes renewal before expiration from purchasing a new membership after expiration. It also gives gift recipients a separate redemption step at the Welcome Center, with membership validity starting at redemption. For a proposed membership website, I would connect those instructions to three recognizable situations instead of sending everyone to a button labelled renew. Someone holding an unredeemed gift should see what to bring and where to go; someone with an expired card should find the appropriate purchase route. The website can explain these states without looking up an account or claiming that a gift purchase has already activated its recipient’s membership.",
+    "scopes": [
+      {
+        "title": "Clarify the current membership choices",
+        "pages": [
+          "Check the existing membership status",
+          "Renew or purchase using the current route",
+          "Redeem a gift before treating it as active"
+        ],
+        "request": "Find the next action using the membership or gift already held.",
+        "supplies": "Current expiration guidance, renewal and purchase destinations, and approved gift-redemption instructions.",
+        "check": "A visitor with an expired card reaches the new-membership instructions rather than a renewal-only route."
+      },
+      {
+        "title": "Connect gifts, membership and the first visit",
+        "pages": [
+          "Buying for yourself or giving a gift",
+          "Recipient redemption",
+          "Membership validity and later renewal",
+          "Account questions and visitor support"
+        ],
+        "request": "Explain who acts at each stage and what changes the membership status.",
+        "supplies": "The actual gift handoff, activation event, validity wording and support responsibilities.",
+        "check": "A recipient can tell that holding the gift and redeeming it are different stages and does not calculate validity from the giver’s purchase date."
+      }
+    ],
+    "scopeTrigger": "A focused update fits when the current membership provider works and visitors need clearer choices. A fuller build helps when gift and membership information are scattered. Account lookups, automatic eligibility checks, redemption systems and payment changes require separate website/software assessment. The organization controls membership records and status.",
+    "quoteQuestions": [
+      "Which actions depend on whether membership is current, expired or not yet activated?",
+      "What must a gift recipient do before the membership becomes usable?",
+      "Which event starts validity, and where will that explanation be maintained?"
+    ],
+    "coverageNote": "Destination Cherokee lists Gibbs Gardens at its Gibbs Drive address near Ball Ground as a Cherokee County attraction. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.gibbsgardens.com/visit/membership/",
+        "label": "Gibbs Gardens: membership status and gift redemption",
+        "observation": "Distinguishes current renewal, new purchase after expiration and gift redemption, including when gift membership validity begins."
+      },
+      {
+        "url": "https://destinationcherokeega.com/attractions/farms-gardens/",
+        "label": "Destination Cherokee: Gibbs Gardens location",
+        "observation": "Lists Gibbs Gardens and its Gibbs Drive address among the county’s gardens."
+      }
+    ],
+    "planningTable": {
+      "title": "Make the starting status visible before the action",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Current membership",
+          "Show how to find the expiration information.",
+          "The operator’s current card or account instructions.",
+          "The visitor can check status without guessing from the last visit."
+        ],
+        [
+          "Expired membership",
+          "Explain the applicable next purchase step.",
+          "Approved wording and the correct destination.",
+          "An expired-card holder is not promised a renewal the operator does not allow."
+        ],
+        [
+          "Unredeemed gift",
+          "Explain the recipient’s remaining action.",
+          "What must be presented and where redemption happens.",
+          "A gift purchase confirmation is not described as an active membership card."
+        ],
+        [
+          "Validity begins",
+          "Name the event that starts the recipient’s membership term.",
+          "Current validity and redemption terms.",
+          "The explanation does not substitute purchase date for redemption date."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "georgia/lowndes",
+    "areaIds": [
+      "georgia/lowndes"
+    ],
+    "market": "Lowndes County, GA",
+    "path": "/areas/georgia/lowndes-county/",
+    "title": "Web Design for Lowndes County, GA",
+    "servedAreas": [
+      {
+        "name": "Lowndes County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#lowndes",
+        "label": "Lowndes County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Lowndes County, GA. A Valdosta attraction example connects a changed visit date to the ticket type and its included benefits.",
+    "lead": "Moving a visit to another day and choosing a ticket that allows flexible dates are different decisions. I help Lowndes County visitor businesses keep those choices connected to what the customer actually bought.",
+    "decisionTitle": "Keep a date change attached to the selected ticket type.",
+    "decision": "Wild Adventures’ published 2026 FAQ distinguishes Calendar Based Pricing tickets from Any Day tickets. It explains a contact step for changing a dated visit and attaches its next-day benefit specifically to the Any Day option. For an illustrative attraction or visitor-information website, I would keep the purchased ticket type visible when someone asks to move a date. A customer should not infer that rescheduling creates an Any Day ticket or adds a second visit. This dated example illustrates offer structure; current availability, future-season terms and the outcome of any change remain with the operator.",
+    "scopes": [
+      {
+        "title": "Clarify the dated-ticket change explanation",
+        "pages": [
+          "Selected ticket and visit date",
+          "Operator’s date-change contact",
+          "Benefits tied to the purchased option"
+        ],
+        "request": "Find the relevant change instructions without choosing a new entitlement by mistake.",
+        "supplies": "Current ticket names, approved change guidance and the real support destination.",
+        "check": "A holder of a dated ticket asking to move a visit is not told that the change adds the Any Day next-day benefit."
+      },
+      {
+        "title": "Compare date flexibility across the visitor journey",
+        "pages": [
+          "Ticket choices before purchase",
+          "Bought ticket and intended visit",
+          "Changes, upgrades and separate benefits",
+          "Season-specific information review"
+        ],
+        "request": "Keep the original offer and the requested change understandable from comparison to follow-up.",
+        "supplies": "Current inclusions, who confirms changes or upgrades, applicable season and the person maintaining the explanation.",
+        "check": "A visitor planning two operating days can identify the relevant inclusion and ask the operator about the held ticket instead of assuming all tickets cover both days."
+      }
+    ],
+    "scopeTrigger": "A focused update can resolve ambiguity around the existing ticket links. A fuller build helps when comparison, changes and inclusions are described separately. Ticket exchanges, price adjustments, account access and live availability require separate scope and ticket-provider authorization. The operator confirms every actual change and entitlement.",
+    "quoteQuestions": [
+      "Which ticket type must customers identify before asking to change a date?",
+      "Which benefits change only when the ticket option itself changes?",
+      "Who checks seasonal terms and replaces outdated comparisons?"
+    ],
+    "coverageNote": "Wild Adventures identifies its attraction with Valdosta in Lowndes County. The cited 2026 terms are used as a dated planning example. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://www.wildadventures.com/Plan-Your-Visit/FAQ",
+        "label": "Wild Adventures: 2026 ticket changes and inclusions",
+        "observation": "Distinguishes dated and Any Day tickets, the date-change contact step and which ticket includes the next-day offer."
+      },
+      {
+        "url": "https://lowndescounty.com/244/Wild-Adventures",
+        "label": "Lowndes County: Wild Adventures",
+        "observation": "The county’s official visitor information identifies the attraction with Valdosta and links to the operator for current information."
+      }
+    ],
+    "planningTable": {
+      "title": "A changed day does not by itself change the ticket",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Original ticket",
+          "Name the option already bought.",
+          "Actual ticket labels and how customers identify them.",
+          "The request starts from the held ticket, not a generic admission label."
+        ],
+        [
+          "Requested date",
+          "Explain how a different day is discussed.",
+          "Current change route and the terms staff confirms.",
+          "A request for another date is not presented as completed rescheduling."
+        ],
+        [
+          "Additional benefit",
+          "Keep any extra-day inclusion with its qualifying option.",
+          "Approved inclusion wording for each offer.",
+          "Changing a date does not silently add another visit."
+        ],
+        [
+          "Applicable season",
+          "Identify which dated terms the example describes.",
+          "An update owner and the next-season review process.",
+          "A 2026 example is not presented as a promise about 2027 tickets."
+        ]
+      ]
+    }
+  },
+  {
+    "areaId": "georgia/gwinnett",
+    "areaIds": [
+      "georgia/gwinnett"
+    ],
+    "market": "Gwinnett County, GA",
+    "path": "/areas/georgia/gwinnett-county/",
+    "title": "Web Design for Gwinnett County, GA",
+    "servedAreas": [
+      {
+        "name": "Gwinnett County",
+        "state": "Georgia",
+        "type": "County"
+      }
+    ],
+    "directoryLinks": [
+      {
+        "path": "/areas/georgia/#gwinnett",
+        "label": "Gwinnett County place directory"
+      }
+    ],
+    "checkedDate": "2026-10-23",
+    "relatedGuides": [],
+    "outlineNote": "These are content groupings, not a prescribed page count. The quote names the pages, forms and connections.",
+    "description": "Web design for Gwinnett County, GA. A Lilburn instrument-rental example distinguishes a size change from using earned credit toward an upgrade.",
+    "lead": "A growing student may need another instrument size before the family wants an ownership upgrade. I help Gwinnett County businesses explain those choices without making the customer calculate an entitlement from a general monthly price.",
+    "decisionTitle": "Distinguish a rental size change from an instrument upgrade.",
+    "decision": "Ronald Sachs Violins’ rental page describes free size changes and rental-payment credit toward upgrades; its Lilburn shop identifies its Gwinnett County location. For a proposed instrument-rental website, I would help a family state whether they need a size change within the rental arrangement or want to discuss a different instrument using earned credit. The published rental price also identifies additional charges separately, so a clear explanation should identify which amounts the business uses when confirming credit. A family can ask about the next instrument without treating every payment as a cash balance or assuming that changing size ends the rental.",
+    "scopes": [
+      {
+        "title": "Explain the two reasons for changing instruments",
+        "pages": [
+          "Size-change request",
+          "Upgrade discussion and earned credit",
+          "Current rental support route"
+        ],
+        "request": "Describe the desired change before assuming it is a new purchase.",
+        "supplies": "Current size-change rules, approved credit wording and the staff contact that reviews the account.",
+        "check": "A parent requesting the next size can reach rental support without being told to spend the family’s upgrade credit."
+      },
+      {
+        "title": "Connect the rental relationship to later instrument choices",
+        "pages": [
+          "Current instrument and arrangement",
+          "Requested size or instrument change",
+          "Credit explanation and account review",
+          "Confirmed next arrangement"
+        ],
+        "request": "Preserve the existing rental context while the family considers its next instrument.",
+        "supplies": "The actual definitions of rental payments and additional charges, available change options and how staff confirms the outcome.",
+        "check": "An upgrade inquiry keeps the current rental identifiable, while its acknowledgement makes no claim that credit has been redeemed or ownership transferred."
+      }
+    ],
+    "scopeTrigger": "A focused update fits when rental administration already works and customers need clearer language. A fuller build helps when rental, upgrade and ongoing support information are disconnected. Credit calculations, account balances, payment changes and instrument inventory connections require separate software scope. The music business determines the actual rental and upgrade terms.",
+    "quoteQuestions": [
+      "How should a customer distinguish changing size from upgrading an instrument?",
+      "Which payment components count toward the credit your business actually offers?",
+      "Who confirms the effect of a change on the existing rental arrangement?"
+    ],
+    "coverageNote": "Ronald Sachs Violins lists its Lilburn shop at 836 Pleasant Hill Road and explicitly identifies the location with Gwinnett County. Wonder and Method works remotely from Buffalo. Named businesses are public research examples, not clients or partners.",
+    "sources": [
+      {
+        "url": "https://ronaldsachs.com/string-instrument-rentals/",
+        "label": "Ronald Sachs Violins: rental and upgrade information",
+        "observation": "Describes free size changes, rental payments toward upgrades and earned trade-in credit; lists additional rental charges separately."
+      },
+      {
+        "url": "https://ronaldsachs.com/store/lilburn-ga/",
+        "label": "Ronald Sachs Violins: Lilburn shop",
+        "observation": "Identifies the Pleasant Hill Road shop with Gwinnett County and describes rental, repair and instrument services."
+      }
+    ],
+    "planningTable": {
+      "title": "Keep the requested change distinct from the credit question",
+      "intro": "These are proposed checks for your own website. The business supplies current terms and confirms the actual customer arrangement.",
+      "columns": [
+        "Decision",
+        "Website explanation",
+        "Owner information",
+        "Acceptance check"
+      ],
+      "rows": [
+        [
+          "Existing arrangement",
+          "Identify the instrument and current rental context.",
+          "The references staff needs for an ordinary support inquiry.",
+          "The next-size request is connected to the right rental."
+        ],
+        [
+          "Reason for change",
+          "Separate size needs from an upgrade choice.",
+          "The owner’s descriptions of the available arrangements.",
+          "A size change is not automatically described as a purchase."
+        ],
+        [
+          "Credit explanation",
+          "Name which amounts and terms staff will confirm.",
+          "Approved definitions and a current account-review route.",
+          "A monthly total is not automatically presented as redeemable credit."
+        ],
+        [
+          "Confirmed outcome",
+          "Explain what happens after the business reviews the request.",
+          "How the new arrangement and any applied credit are communicated.",
+          "An inquiry does not claim that the existing rental has ended."
+        ]
+      ]
+    }
   }
 ]

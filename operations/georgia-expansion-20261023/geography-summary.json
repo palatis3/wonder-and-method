@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-10-24T00:46:43.568917+00:00",
+  "counties": 159,
+  "municipalAndConsolidatedEntities": 538,
+  "types": {
+    "City": 429,
+    "Town": 101,
+    "Consolidated city-county government": 8
+  },
+  "municipalMemberships": 598,
+  "cdps": 138,
+  "cdpMemberships": 141,
+  "statisticalBalancesReplacedByParentGovernments": [
+    {
+      "countyFips": "13059",
+      "government": {
+        "geoid": "1303436",
+        "name": "Athens-Clarke County",
+        "censusName": "Athens-Clarke County unified government",
+        "censusLSAD": "UG",
+        "censusFunctionalStatus": "A"
+      },
+      "balance": {
+        "name": "Athens-Clarke County unified government (balance)",
+        "geoid": "1303440",
+        "censusName": "Athens-Clarke County unified government (balance)",
+        "censusLSAD": "00",
+        "censusFunctionalStatus": "F",
+        "wholePlacePopulation2025": 128612
+      },
+      "governmentPopulation2025": 129921,
+      "populationBasis": "SUMLEV 170 full consolidated-government estimate; boundary matches county",
+      "sameCountyGeometryFields": [
+        "AREALAND",
+        "AREAWATER",
+        "INTPTLAT",
+        "INTPTLON"
+      ]
+    },
+    {
+      "countyFips": "13245",
+      "government": {
+        "geoid": "1304200",
+        "name": "Augusta-Richmond County",
+        "censusName": "Augusta-Richmond County consolidated government",
+        "censusLSAD": "CG",
+        "censusFunctionalStatus": "A"
+      },
+      "balance": {
+        "name": "Augusta-Richmond County consolidated government (balance)",
+        "geoid": "1304204",
+        "censusName": "Augusta-Richmond County consolidated government (balance)",
+        "censusLSAD": "00",
+        "censusFunctionalStatus": "F",
+        "wholePlacePopulation2025": 201999
+      },
+      "governmentPopulation2025": 206559,
+      "populationBasis": "SUMLEV 170 full consolidated-government estimate; boundary matches county",
+      "sameCountyGeometryFields": [
+        "AREALAND",
+        "AREAWATER",
+        "INTPTLAT",
+        "INTPTLON"
+      ]
+    }
+  ],
+  "representativeSelection": "Up to three intersecting municipalities or consolidated governments ordered by 2025 county-part population. Full consolidated-government estimates use SUMLEV 170 only where the official full-government geometry matches the county. Unavailable estimates sort after known estimates. Population is geographic context, not commercial demand.",
+  "sourceManifest": "geography-sources.json",
+  "missingCountyPartEstimates": []
+}

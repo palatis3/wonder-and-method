@@ -33,6 +33,9 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site .page-jump a:hover{text-decoration-thickness:2px}
 .studio-site summary{padding-top:.2rem;padding-bottom:.2rem;min-height:44px}
 .studio-site details[open]>summary{margin-bottom:.6rem}
+.service-faq-answers{max-width:75ch}
+.service-faq-answers>details{border-block-start:1px solid var(--line);padding-block:1rem}
+.service-faq-answers>details>summary{font-weight:600;line-height:1.5;cursor:pointer}
 .studio-site .steps.long>li{padding-block:2rem}
 .studio-site .steps.long>li>span{color:var(--moss)}
 .studio-site .intent-example,.studio-site .baseline-note{background:var(--subtle);border-color:var(--line)}
