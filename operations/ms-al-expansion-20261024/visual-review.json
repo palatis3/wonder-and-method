@@ -1,0 +1,673 @@
+{
+  "reviewedAt": "2026-10-24T04:31:42.235048+00:00",
+  "captureCommit": "4983b874cd75e01d5266e83ea10d250cd1827a09",
+  "captureRun": "https://github.com/palatis3/wonder-and-method/actions/runs/40062342025",
+  "artifactDigest": "sha256:85f30c719b0dd731393c82ec4fd2e84a4ab0178f79800de5c172de441352f6ca",
+  "images": 44,
+  "screenshotTests": 42,
+  "pixelIdenticalPriorImages": 25,
+  "updatedPriorImages": 15,
+  "newImages": 4,
+  "decision": "Accepted after primary visual inspection of all new entries and changed areas in full/cropped before-after screenshots.",
+  "observations": [
+    "Mississippi Yalobusha distinguishes active towns, inactive Tillatoba and Water Valley city on desktop and phone.",
+    "Alabama Madison lists towns, cities and CDPs separately with readable place/source links. Huntsville membership is covered by the separate browser/data tests.",
+    "Coverage text correctly changes 22 to 24 states and adds both state links. Phone about/web-design text wraps one additional line with downstream content remaining readable.",
+    "Expanded footers retain all previous links and add Mississippi and Alabama; desktop and phone layouts remain contained.",
+    "Home header and cropped FAQ rendering show minor antialiasing/rounding differences without altered text, glyph shape or layout. Font proof independently verifies retained metrics and glyph data."
+  ],
+  "limits": "Capture approval does not replace final exact-commit visual CI. The other 25 images are pixel-identical to the previously reviewed baselines.",
+  "files": [
+    {
+      "file": "desktop/about.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        2292
+      ],
+      "size": [
+        1440,
+        2292
+      ],
+      "bbox": [
+        752,
+        1145,
+        1367,
+        1189
+      ],
+      "sha256": "1fdf77701f90f502cff6560b96f70d51c3a2a0d6b93c70c67e39d0aaacdef1eb"
+    },
+    {
+      "file": "desktop/alabama-entry.png",
+      "status": "new",
+      "size": [
+        1296,
+        812
+      ],
+      "sha256": "43575fb685b3437d3c07bd4145a36159d59a596de25a0701dd92f13d26944f05"
+    },
+    {
+      "file": "desktop/care.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        5938
+      ],
+      "size": [
+        1440,
+        5938
+      ],
+      "bbox": [
+        348,
+        5038,
+        758,
+        5137
+      ],
+      "sha256": "445bd48e2434dfe8877b1941fddd324ed326f10f65261edebc2cf001f5eab75b"
+    },
+    {
+      "file": "desktop/concept.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        3050
+      ],
+      "size": [
+        1440,
+        3050
+      ],
+      "bbox": null,
+      "sha256": "321ba9c89537ff56c6acce7df1caf6aa29f1171244dd74c982d0a553cbf09d8f"
+    },
+    {
+      "file": "desktop/contact.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        2769
+      ],
+      "size": [
+        1440,
+        2769
+      ],
+      "bbox": null,
+      "sha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2"
+    },
+    {
+      "file": "desktop/county-entry.png",
+      "status": "same",
+      "oldSize": [
+        1296,
+        1759
+      ],
+      "size": [
+        1296,
+        1759
+      ],
+      "bbox": null,
+      "sha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145"
+    },
+    {
+      "file": "desktop/county-questions.png",
+      "status": "same",
+      "oldSize": [
+        900,
+        711
+      ],
+      "size": [
+        900,
+        711
+      ],
+      "bbox": null,
+      "sha256": "f2fed15a54de552e54f2f3cf4deee9799cfe17d4643f3fbc25ab7305d7438d20"
+    },
+    {
+      "file": "desktop/county.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        4378
+      ],
+      "size": [
+        1440,
+        4378
+      ],
+      "bbox": [
+        348,
+        3458,
+        758,
+        3557
+      ],
+      "sha256": "836eecda7a4b0b70c4b9b44eeb97ceefea4b240736a661d23a2d6cb09d46e30b"
+    },
+    {
+      "file": "desktop/district-directory.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        3166
+      ],
+      "size": [
+        1440,
+        3166
+      ],
+      "bbox": null,
+      "sha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433"
+    },
+    {
+      "file": "desktop/footer-closed.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        394
+      ],
+      "size": [
+        1440,
+        394
+      ],
+      "bbox": null,
+      "sha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef"
+    },
+    {
+      "file": "desktop/footer-open.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        1477
+      ],
+      "size": [
+        1440,
+        1565
+      ],
+      "bbox": null,
+      "sha256": "c30a1bff79c6a36daf5110147b19637c2cd7a6dc7a2952dafef304502f51db1b"
+    },
+    {
+      "file": "desktop/georgia-entry.png",
+      "status": "same",
+      "oldSize": [
+        1296,
+        490
+      ],
+      "size": [
+        1296,
+        490
+      ],
+      "bbox": null,
+      "sha256": "c3ec941ee6b404ca85fd45b04102e3571a872574ca0963830bf43437bdbac396"
+    },
+    {
+      "file": "desktop/guide.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        6968
+      ],
+      "size": [
+        1440,
+        6968
+      ],
+      "bbox": null,
+      "sha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1"
+    },
+    {
+      "file": "desktop/home.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        5216
+      ],
+      "size": [
+        1440,
+        5216
+      ],
+      "bbox": [
+        159,
+        38,
+        1368,
+        574
+      ],
+      "sha256": "3435d3d4a84d94d386068355e166f6d6962b2fba8146ef409cff076fc60c1f5e"
+    },
+    {
+      "file": "desktop/mississippi-entry.png",
+      "status": "new",
+      "size": [
+        1296,
+        506
+      ],
+      "sha256": "1178c65139718af7f54fd17224f6384d0f54a5272627da4bdda9605d10ddb0a2"
+    },
+    {
+      "file": "desktop/monthly-seo.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        6426
+      ],
+      "size": [
+        1440,
+        6426
+      ],
+      "bbox": [
+        71,
+        569,
+        758,
+        5435
+      ],
+      "sha256": "d2f23055846ce95080c744cd148f01bf3e9d1838bb3d8712da65695779b41ff3"
+    },
+    {
+      "file": "desktop/pricing.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        7767
+      ],
+      "size": [
+        1440,
+        7767
+      ],
+      "bbox": null,
+      "sha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549"
+    },
+    {
+      "file": "desktop/regional-directory.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        4185
+      ],
+      "size": [
+        1440,
+        4185
+      ],
+      "bbox": null,
+      "sha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c"
+    },
+    {
+      "file": "desktop/scope-request.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        2734
+      ],
+      "size": [
+        1440,
+        2734
+      ],
+      "bbox": null,
+      "sha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3"
+    },
+    {
+      "file": "desktop/service-questions.png",
+      "status": "same",
+      "oldSize": [
+        1296,
+        467
+      ],
+      "size": [
+        1296,
+        467
+      ],
+      "bbox": null,
+      "sha256": "c9b2797f086d5c147926162841ed0c3346b40c0528766655605ddcf21864eabd"
+    },
+    {
+      "file": "desktop/web-design.png",
+      "status": "changed",
+      "oldSize": [
+        1440,
+        7149
+      ],
+      "size": [
+        1440,
+        7149
+      ],
+      "bbox": [
+        199,
+        539,
+        758,
+        6185
+      ],
+      "sha256": "ff91211363f5dc6b748f9946a19572c10bcae6e1ff72a70402047984b77c5aa4"
+    },
+    {
+      "file": "desktop/work.png",
+      "status": "same",
+      "oldSize": [
+        1440,
+        7260
+      ],
+      "size": [
+        1440,
+        7260
+      ],
+      "bbox": null,
+      "sha256": "356fa7451b437aebf224250a5f17d368fb829cb35f8feea510b24279d4deebc7"
+    },
+    {
+      "file": "phone/about.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        2859
+      ],
+      "size": [
+        390,
+        2886
+      ],
+      "bbox": null,
+      "sha256": "b9d1110830b6d95da7e009323a41f6e32a8fa07879d213c1e170fbfbb0a71209"
+    },
+    {
+      "file": "phone/alabama-entry.png",
+      "status": "new",
+      "size": [
+        350,
+        948
+      ],
+      "sha256": "0044ba086823441af5eed06254cb862ab51b4a660d657dda1539f80eeecce12b"
+    },
+    {
+      "file": "phone/care.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        8494
+      ],
+      "size": [
+        390,
+        8494
+      ],
+      "bbox": [
+        152,
+        7280,
+        312,
+        7515
+      ],
+      "sha256": "dddb63d9b936ce6abcfb56867970eb272b5cfd2539fc56f20e8d730a0016b756"
+    },
+    {
+      "file": "phone/concept.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        3903
+      ],
+      "size": [
+        390,
+        3903
+      ],
+      "bbox": null,
+      "sha256": "2616d4da65a83eb6e5f591f586099bd52e730943c992fe814a1e1351a4a9ca8f"
+    },
+    {
+      "file": "phone/contact.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        3996
+      ],
+      "size": [
+        390,
+        3996
+      ],
+      "bbox": null,
+      "sha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e"
+    },
+    {
+      "file": "phone/county-entry.png",
+      "status": "same",
+      "oldSize": [
+        350,
+        2298
+      ],
+      "size": [
+        350,
+        2298
+      ],
+      "bbox": null,
+      "sha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9"
+    },
+    {
+      "file": "phone/county-questions.png",
+      "status": "same",
+      "oldSize": [
+        350,
+        983
+      ],
+      "size": [
+        350,
+        983
+      ],
+      "bbox": null,
+      "sha256": "bb11b6af6ca39291cbf858e7bf06f083fa37637af2e10f74605e398a40548525"
+    },
+    {
+      "file": "phone/county.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        5566
+      ],
+      "size": [
+        390,
+        5566
+      ],
+      "bbox": [
+        152,
+        4303,
+        312,
+        4537
+      ],
+      "sha256": "4f83dd2e91bbd6f0c2b2a71c4a8bd8a862f418f7327d528f885989ecf6d1e67e"
+    },
+    {
+      "file": "phone/district-directory.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        3897
+      ],
+      "size": [
+        390,
+        3897
+      ],
+      "bbox": null,
+      "sha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f"
+    },
+    {
+      "file": "phone/footer-closed.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        519
+      ],
+      "size": [
+        390,
+        519
+      ],
+      "bbox": null,
+      "sha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8"
+    },
+    {
+      "file": "phone/footer-open.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        2053
+      ],
+      "size": [
+        390,
+        2141
+      ],
+      "bbox": null,
+      "sha256": "8f1b8da99c8216625da3b948ebc1003d689417384856ee3ee8bf6caeea8f21c6"
+    },
+    {
+      "file": "phone/georgia-entry.png",
+      "status": "same",
+      "oldSize": [
+        350,
+        739
+      ],
+      "size": [
+        350,
+        739
+      ],
+      "bbox": null,
+      "sha256": "3cea4478ed466e48db585bf1c19ee4f2517e5b41749607a739d666e07fd4273b"
+    },
+    {
+      "file": "phone/guide.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        10288
+      ],
+      "size": [
+        390,
+        10288
+      ],
+      "bbox": null,
+      "sha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4"
+    },
+    {
+      "file": "phone/home.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        6367
+      ],
+      "size": [
+        390,
+        6367
+      ],
+      "bbox": [
+        80,
+        426,
+        95,
+        444
+      ],
+      "sha256": "c75d4a86612b307cac062b74d035d358d97dbf13f3de750c71dcf434cf168f56"
+    },
+    {
+      "file": "phone/mississippi-entry.png",
+      "status": "new",
+      "size": [
+        350,
+        641
+      ],
+      "sha256": "e1f1d26fbdd18e1545e1d26b9068d9ee37048d69ea016448cf6fd3b71683f55a"
+    },
+    {
+      "file": "phone/monthly-seo.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        9601
+      ],
+      "size": [
+        390,
+        9601
+      ],
+      "bbox": [
+        19,
+        548,
+        367,
+        8377
+      ],
+      "sha256": "db1c1ac050e3616423f177b214babfa5a47312b4e91d2a493b7d079752b6d3f4"
+    },
+    {
+      "file": "phone/pricing.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        16183
+      ],
+      "size": [
+        390,
+        16183
+      ],
+      "bbox": null,
+      "sha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425"
+    },
+    {
+      "file": "phone/regional-directory.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        5148
+      ],
+      "size": [
+        390,
+        5148
+      ],
+      "bbox": null,
+      "sha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691"
+    },
+    {
+      "file": "phone/scope-request.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        3643
+      ],
+      "size": [
+        390,
+        3643
+      ],
+      "bbox": null,
+      "sha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b"
+    },
+    {
+      "file": "phone/service-questions.png",
+      "status": "changed",
+      "oldSize": [
+        350,
+        574
+      ],
+      "size": [
+        350,
+        574
+      ],
+      "bbox": [
+        0,
+        151,
+        350,
+        574
+      ],
+      "sha256": "2d08754682d41ee7613186e5000293b2cc683957b8a54b97172f558b5c558470"
+    },
+    {
+      "file": "phone/web-design.png",
+      "status": "changed",
+      "oldSize": [
+        390,
+        12351
+      ],
+      "size": [
+        390,
+        12378
+      ],
+      "bbox": null,
+      "sha256": "3ec4baa41dd7e24a1f38c9d4a716182c38434c8ae9cc8a1415da559f58422e4f"
+    },
+    {
+      "file": "phone/work.png",
+      "status": "same",
+      "oldSize": [
+        390,
+        10245
+      ],
+      "size": [
+        390,
+        10245
+      ],
+      "bbox": null,
+      "sha256": "6e04263c7536db832df606d470be2f55c98d2bd25a3331d138dc6e35ab9ddb21"
+    }
+  ]
+}
