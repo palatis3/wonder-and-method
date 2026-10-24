@@ -1,0 +1,352 @@
+{
+  "reviewedAt": "2026-10-24T07:13:12.814210+00:00",
+  "reviewer": "independent Astra implementation reviewer",
+  "result": "PASS_WITH_RELEASE_GATES_PENDING",
+  "requiredCodeOrContentChanges": [],
+  "reviewedInputs": [
+    {
+      "path": "src/wi-il-geography.mjs",
+      "sha256": "f08a61f526cf1c4daf7c6041f7087d1eccdb3b24b1eef82e2c0c872c5a45786b"
+    },
+    {
+      "path": "src/assets/county-directory.js",
+      "sha256": "adfdb7e67ec8eadeb73a51a8a78c312f5e895c6347a0417e2a146e1151a04a3a"
+    },
+    {
+      "path": "src/assets/service-state-info.js",
+      "sha256": "4b7aea3a39eefb6e4dc7d8da25c8e5f0fa9ceea273d4af375a954e0e5f55f152"
+    },
+    {
+      "path": "src/service-area-directory.mjs",
+      "sha256": "b39d255f18ef86a55a691f234c923721d663ae1cc486390501f2ea4244d27bd8"
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "sha256": "73cb99e11aed0c83bb7fe0b23badbb850e6e443b5c2e5a2be1a5cb6c58944300"
+    },
+    {
+      "path": "src/regional-content.mjs",
+      "sha256": "1d3fd229de0e64cbb307e13097f967601a4bcf2fe55f7cf92f9bc20cda281ea6"
+    },
+    {
+      "path": "src/location-service-data.json",
+      "sha256": "847b9cac4ce6315b20cb194ae4dec3b524ecf41f24081d316d2a665249861860"
+    },
+    {
+      "path": "src/service-faqs.json",
+      "sha256": "f90860dc4fa17cf722a7d37c12ad8004b2542072fd4dbe1f3cfd5c529fbddba3"
+    },
+    {
+      "path": "src/service-faqs.mjs",
+      "sha256": "8b60c06b97afde3dd8466e59394818a7e1ef9ea5eee1aa25e454ba0af7bf8ab5"
+    },
+    {
+      "path": "config/site.json",
+      "sha256": "0aaad6f939de41f5305e72e0e2dd91ff2e73a7fc64fed8fe9a592847669b26ac"
+    },
+    {
+      "path": "config/page-dates.json",
+      "sha256": "9b76a2198bad9f78ae63fae7ade9d0d4a7b495532bf1f08cb769b3fd9ea72ba0"
+    },
+    {
+      "path": "deployment/migrations/0032_journey_wi_il.sql",
+      "sha256": "55c88eabc821d58b4e16a6e89c7957545fd1ee0e9c6d65282643139652951d07"
+    },
+    {
+      "path": "tests/wi-il-geography.test.mjs",
+      "sha256": "2c95644b7e1365d0b8a26252cf4e0e72c984c6b716315ddb7fdfbf9eaaa2d8c2"
+    },
+    {
+      "path": "tests/wi-il-migration.test.mjs",
+      "sha256": "71b2ee3bc4a8af5b6595d92ad85afc9ac415558ee83992f72a3fceb214769eb3"
+    },
+    {
+      "path": "tests/fixtures/wi-il-approved-paths.json",
+      "sha256": "120465af378cb939f11fdccd8982e0ff63dfc47f4b1f2342bf153c0068a2057a"
+    },
+    {
+      "path": "tests/fixtures/wi-il-geography.json",
+      "sha256": "bcc9edc78ce70f22deb55cca78f0cb3172363f25ec60c37fd3bbcc7f2ba0f20b"
+    },
+    {
+      "path": "tests/fixtures/wi-il-preservation.json",
+      "sha256": "475e4ea4937b16536583efd088f298886ebd4287c01c055c604b25eb57c34a42"
+    },
+    {
+      "path": "tests/audit-county-clarity.test.mjs",
+      "sha256": "d829a2e1c88579329b856826e33c385cfb0c09f8f79a2d0d9c97034923b176b3"
+    },
+    {
+      "path": "tests/audit-search-metadata.test.mjs",
+      "sha256": "d81b86c601e22cfe660969c2d783c0d75d9681ea1f5803878121aa982526a14d"
+    },
+    {
+      "path": "tests/baselines/site-content.json",
+      "sha256": "13c952f7cfb090ff2b987b1194c4daccdeeda0145b91dd48fffbf7a932691c59"
+    },
+    {
+      "path": "tests/browser/county-directory.spec.mjs",
+      "sha256": "e157d43c378a45a492bace342d2dd2b62eebfc6b209f802ca5304204d241460d"
+    },
+    {
+      "path": "tests/browser/footer-surfaces.spec.mjs",
+      "sha256": "2e4e6a20e92db1a2b79da2a469ccd06b3f1376fc0ca5a4a1dbb08d385c8d4f03"
+    },
+    {
+      "path": "tests/browser/living-city-night.spec.mjs",
+      "sha256": "9afe99b8f4f5ccaa1395da0dafc56ff9d77abf67487982c370c0873c23cfcacf"
+    },
+    {
+      "path": "tests/browser/location-wave-four-planning.spec.mjs",
+      "sha256": "8095274d290a33d652d5c4fb8c4cfb94971c04405ad2db62fc510beff66798e6"
+    },
+    {
+      "path": "tests/browser/no-javascript.spec.mjs",
+      "sha256": "485062f9de5ff6b7adcb909908ce8f504c77d926cca74d11f99a3a4a9b96d825"
+    },
+    {
+      "path": "tests/browser/northeast-coverage.spec.mjs",
+      "sha256": "cf18d067d558d026b9d15e2138908aa879fe80712deb367ae45b1b14cf15419f"
+    },
+    {
+      "path": "tests/browser/regional-directory.spec.mjs",
+      "sha256": "dfc502ec8acae9d7393a93efa53fec79b770d0556d116ca46af29da77933c796"
+    },
+    {
+      "path": "tests/content-remediation.test.mjs",
+      "sha256": "cf09df30c9944897954b3d599f9bbccc4d94c9bbb68aa9d3972022e0f36e15a7"
+    },
+    {
+      "path": "tests/county-expansion-20261020.test.mjs",
+      "sha256": "d65f5f393dd6b23021502a5035765e8cf4bdab944dd2aae16efae3eef55de8db"
+    },
+    {
+      "path": "tests/fixtures/current-location-paths.mjs",
+      "sha256": "5f5a2b3545abae7ad3f3704efa364318554cd02be5db6d8b45492e2f6b184502"
+    },
+    {
+      "path": "tests/georgia-geography.test.mjs",
+      "sha256": "d30b7da136eb59533ce21f56729b56291b581c70b1e133dcad51b797218c2c12"
+    },
+    {
+      "path": "tests/georgia-migration.test.mjs",
+      "sha256": "6ef44a948cd73d68f931f1adfab9627eed4935ad78f4517dde6bb7c2536ec492"
+    },
+    {
+      "path": "tests/journal.test.mjs",
+      "sha256": "5b41a4d25c550f9107b2b7236e4ecf8db2b87322d05bcd301417958337674ba0"
+    },
+    {
+      "path": "tests/location-services.test.mjs",
+      "sha256": "14a873e23fe6328bba1f1b1d4e87d8574031f9b50e125e8bc4a0eadd9a6ef302"
+    },
+    {
+      "path": "tests/location-wave-four.test.mjs",
+      "sha256": "8278b7a57f5325db11b97a95ab49d1b865d998232cfe3eb4aa0965e57de37fc8"
+    },
+    {
+      "path": "tests/longtail-guides.test.mjs",
+      "sha256": "5b0748d248028fc57e0fb5392e8d84bf7426753d5640bcbcf7b3081c3976dee9"
+    },
+    {
+      "path": "tests/ms-al-geography.test.mjs",
+      "sha256": "4bc42256f81fb3934cd9d00a45aa9e4b94dab76930019a3fa17a7e744005ac97"
+    },
+    {
+      "path": "tests/ms-al-migration.test.mjs",
+      "sha256": "6c75b04af6be082d8bc23e9c9b3f9ec3d22405814422fa96dcceaffa70ed7f35"
+    },
+    {
+      "path": "tests/northeast-expansion.test.mjs",
+      "sha256": "445a151fdfc9880919dbc02170cfa86b6ecb26f8eb8d66f5d9028f50ffae0a91"
+    },
+    {
+      "path": "tests/northern-expansion.test.mjs",
+      "sha256": "74d59a11d9bc00a822f059ce4411ccad735f9dc6b39133e54059b619a84f893a"
+    },
+    {
+      "path": "tests/ohio-counties.test.mjs",
+      "sha256": "6a923a9fe9f27a35d1227934e9a48ab9ef30b75a78a477dcc9e3fa70398de381"
+    },
+    {
+      "path": "tests/pennsylvania-counties.test.mjs",
+      "sha256": "c020009733d46bb1585dde7308f598284164dc8068407489d3665631d980b269"
+    },
+    {
+      "path": "tests/regional-directory.test.mjs",
+      "sha256": "8fa04e23dc9bd1ff470c0f939188d668d427844557b8d89a067cae09f67410d1"
+    },
+    {
+      "path": "tests/rerun2-content.test.mjs",
+      "sha256": "8e6af8216ab8ae0b6530a68fbe06ad4d9af4731c9cee45232c7abf52ea15a734"
+    },
+    {
+      "path": "tests/research-content.test.mjs",
+      "sha256": "eb01907522bbb678b0102ac965fb9d8143bc14a6f54d7d58be3223c1fbc61faf"
+    },
+    {
+      "path": "tests/source-handoff-offers.test.mjs",
+      "sha256": "84afe7b4f996447e1f0db07e5aec13503306af21445e52972a669ccc0c77ab7f"
+    },
+    {
+      "path": "tests/south-carolina-geography.test.mjs",
+      "sha256": "9b7fd35b84e36aff578b54102c0d7de77f723821297de6f65ae3535582078007"
+    },
+    {
+      "path": "tests/south-carolina-migration.test.mjs",
+      "sha256": "3950b7a39469f42ddead1ed75f809e775cd38e7aefce99dd7fb980fc2215f953"
+    },
+    {
+      "path": "tests/statewide-counties.test.mjs",
+      "sha256": "3ade22784e81b37fdbd28352d55de3ceb26be24cd84a9ddc79ec7593aef9ad7d"
+    },
+    {
+      "path": "tests/visual/site.spec.mjs",
+      "sha256": "702f761d195d2b0dcb114e47a8c53a1b892d56a8d6d1b8b9de0017243067b15b"
+    },
+    {
+      "path": "operations/wi-il-expansion-20261024/README.md",
+      "sha256": "4b5e0bf6d4f6fea4676acd39358d4712b4bc596a9cd0e96e80aa3a31819620d2"
+    },
+    {
+      "path": "operations/wi-il-expansion-20261024/research-summary.json",
+      "sha256": "e4ad4feb8d07e98cb068ea74bf404bf073d96dc2351f8a18e98a7873dfe82044"
+    },
+    {
+      "path": "operations/wi-il-expansion-20261024/public-geography-summary.json",
+      "sha256": "fb5543f621592ce7ed9696ab9743777a108a26a0e3bd260eeaea21d134710a17"
+    },
+    {
+      "path": "operations/wi-il-expansion-20261024/faq-assessment.json",
+      "sha256": "c7ddc5d765c02de236982f9fe0f38775bb9065ae8b1a367816f5f634dfd08cf6"
+    },
+    {
+      "path": "operations/google-quality-audit-20261023/related-guide-review.json",
+      "sha256": "bd468933e023f4f28595129d585bab351a9e587c9cf898f11d723924b9d5b971"
+    }
+  ],
+  "retainedApprovals": {
+    "geographySha256": "f08a61f526cf1c4daf7c6041f7087d1eccdb3b24b1eef82e2c0c872c5a45786b",
+    "geographyMatchesAcceptedCandidateByteForByte": true,
+    "commercialCandidateSha256": "8387da6b20b1196e2667f0c36fa45b442945756930f934cd6a65bbba14c50378",
+    "commercialIntegration": "Independent deep equality confirmed the first 1093 records equal HEAD and the appended three equal the reviewed candidate exactly."
+  },
+  "observedCounts": {
+    "newStates": 2,
+    "newCounties": 174,
+    "newGeographicMemberships": 5402,
+    "directoryRegionsIncludingDC": 27,
+    "directoryEntries": 1607,
+    "commercialRecords": 1096,
+    "servedCommercialIdentities": 1106,
+    "routes": 1229,
+    "sitemapEntries": 1228,
+    "migrationPriorKeys": 1196,
+    "migrationCurrentKeys": 1201
+  },
+  "compressionAndSearch": {
+    "result": "PASS",
+    "combinedDirectoryBytes": 368015,
+    "unchangedByteBudget": 375000,
+    "dictionaryNames": 15657,
+    "encoding": "gzip-base64",
+    "analysis": "Build-time gzip/base64 keeps the typed dictionary local to the HTML. Client decoding is awaited before controls become enabled. String payload decoding preserves the earlier representation. No remote query service was added. Type q remains precinct and e remains election precinct; neither becomes a ward or municipality. Existing sorting, state filtering, clear/focus behavior and native browse markup remain in place.",
+    "independentProbes": [
+      "Legacy packed string roundtrip returns exact names.",
+      "Compressed combined dictionary decodes 15657 unique names.",
+      "Malformed JSON, unsupported encoding, invalid gzip/base64 and unavailable DecompressionStream all resolve to the unavailable-search status, preserve the visible directory and leave inputs/select/clear disabled.",
+      "Election Precinct 1 IL and 1 election precinct IL both resolve to Monroe.",
+      "Precinct Cache IL and Cache precinct IL both resolve to Alexander and Johnson.",
+      "Cache ward IL returns no matches; Ward 3 DC still resolves to DC."
+    ],
+    "limits": "Failure paths were exercised with a minimal DOM stub in an isolated Node process, not a new browser run. Complete browser behavior remains subject to the release browser/cross-browser gates."
+  },
+  "geographyAndPreservation": {
+    "result": "PASS",
+    "analysis": "Accepted geography bytes are unchanged. The 174-county fixture retains independent source signatures and exact representatives. Normalizing a scalar fixture countyFips to a one-element array changes representation only; the entire membership array still participates in exact equality. Prior commercial entries, prior FAQ dataset and prior directory identities are preserved. No held county was promoted merely for coverage."
+  },
+  "migration": {
+    "result": "PASS",
+    "addedKeys": [
+      "areas_illinois",
+      "areas_illinois_cook_county",
+      "areas_illinois_dupage_county",
+      "areas_wisconsin",
+      "areas_wisconsin_dane_county"
+    ],
+    "removedKeys": [],
+    "analysis": "After replacing the allowlisted page clause and temporary-table name, every noncomment SQL statement is identical to migration0031. Thus column definitions, source default, composite primary key, WITHOUT ROWID and all non-page constraints remain intact. The INSERT SELECT copies every column before rename.",
+    "independentExecution": "Applied migrations through0031 in in-memory SQLite, inserted all1196 historical page keys with alternating0/1000000 totals, then applied0032. All1196 rows remained exactly equal; integrity_check returnedok and foreign_key_check was empty.",
+    "primaryTestEvidence": "Completed unit-final run includes migration0032 test, which additionally preserves inquiry/resolution rows and exercises all old/new page keys through the Worker API.",
+    "limit": "No production database, backup, or migration was touched."
+  },
+  "testChangeReview": {
+    "result": "PASS",
+    "analysis": "Historical SC/GA/MS-AL record, route and migration tests exclude only the named later states needed to preserve their original release scope. Old expected path sets, record hashes and constraint checks remain in place. Global count assertions were updated to the actual new totals. The decompression roundtrip still compares every typed term/order; the375000-byte limit was not raised. The new fixture normalization does not drop membership checks. Browser additions preserve existing focus, no-network-query, keyboard, no-JavaScript and accessibility assertions. The reviewed-date expectation now explicitly distinguishes the October24 MS/AL and WI/IL groups from the earlier October23 groups."
+  },
+  "closedFindings": [
+    {
+      "id": "WIIL-SEARCH-01",
+      "issue": "Type-first Election Precinct1 input returned no results despite the numbered precinct being present.",
+      "resolution": "Primary extended the shorthand parser to election precinct|precinct|ward and added regressions. Independently verified both new type-first forms plus prior ward behavior.",
+      "status": "CLOSED"
+    },
+    {
+      "id": "WIIL-RESEARCH-01",
+      "issue": "Public README described all refreshed phrases besides the two10-volume phrases as zero, incorrectly collapsing29 n/a results.",
+      "resolution": "Primary corrected the sentence to two10, five0 and29n/a; independently matched that breakdown to the36-row source JSON.",
+      "status": "CLOSED"
+    },
+    {
+      "id": "WIIL-TEST-01",
+      "issue": "Initial integration retained several old global counts and scalar-versus-array fixture shape.",
+      "resolution": "Primary batched count corrections and shape normalization without weakening identity checks; completed final unit run reports733/733 passing.",
+      "status": "CLOSED"
+    },
+    {
+      "id": "WIIL-GUIDE-01",
+      "issue": "Adding WI/IL to shared coverage invalidated three service-area-guide fingerprints.",
+      "resolution": "Full current guide and complete Leon/Broward/Calhoun records reread. Exact proposed rows preserve labels, reasons, reviewPart and location hashes; independently confirmed they are now applied to the registry.",
+      "status": "CLOSED"
+    }
+  ],
+  "guideRereview": {
+    "evidence": "evidence/wi-il-expansion-20261024/guide-rereview.json",
+    "guidePurposeSha256": "facc8866b9eeeac745d1c246dc644658575e70edbcbde9ce8acecc174da8bb18",
+    "rowsAppliedExactly": true
+  },
+  "observedPrimaryRunEvidence": [
+    {
+      "path": "evidence/wi-il-expansion-20261024/unit-final.log",
+      "sha256": "fe5903e82885519fb37adb777711eb4f5920564c5b175f5aaedc4184c625630f",
+      "assessment": "733 tests, 733 passed, 0 failed; observed completed primary run."
+    },
+    {
+      "path": "evidence/wi-il-expansion-20261024/build-final.log",
+      "sha256": "0171d48ef87c317f624bba0dd0d80595ca53fc027878254700f7e2df12e76a77",
+      "assessment": "Built 1229 routes; observed completed primary build."
+    },
+    {
+      "path": "evidence/wi-il-expansion-20261024/browser-directories.log",
+      "sha256": "ed19e15eb3e6131129a6015ee02191f1374d19a5f99615dbb0511d1753bd2ef9",
+      "assessment": "5 desktop directory tests passed, including native no-JavaScript browsing."
+    },
+    {
+      "path": "evidence/wi-il-expansion-20261024/browser-focused.log",
+      "sha256": "2efebd853f2ead6b463e04362c5f405acfe0470139b99a7032e2c9d9d4bc1f9d",
+      "assessment": "Initial focused run: 20 passed, 5 skipped, 2 failed on old review-date expectation. The expectation is now corrected; final rerun remains pending at review time."
+    },
+    {
+      "path": "evidence/wi-il-expansion-20261024/quality.log",
+      "sha256": "c3eabdaa2a778d8373f8172b5f66db7c9a1d4e48b64a6a9d7113685b064cfcc3",
+      "assessment": "Earlier quality run reported three stale guide fingerprints. Replacement rows have now been independently reread and applied exactly; rerun remains a release gate."
+    }
+  ],
+  "pendingReleaseGates": [
+    "Corrected focused browser rerun and the complete browser/cross-browser suites.",
+    "Full Linux visual capture, comparison and approval, including the new Menominee and Alexander cases.",
+    "All seven exact-CI jobs at the final source commit; no green CI conclusion inferred from local checks.",
+    "Fresh production backup and preservation verification, deployment/live checks, scheduled monitoring and sitemap receipt as required by the primary release plan."
+  ],
+  "boundary": "Read-only implementation review plus only the four assigned evidence outputs. No broad concurrent tests, source edits, production mutations or new agents. Passing review approves the inspected implementation; it does not assert that pending release gates are complete. Later source changes require a bounded delta review."
+}

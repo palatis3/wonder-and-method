@@ -1,0 +1,622 @@
+{
+  "reviewedAt": "2026-10-24T07:19:59.682346+00:00",
+  "result": "PASS",
+  "captureRun": 40073286236,
+  "captureCommit": "daf61625d25372b8751219db08ce131b402c8c1b",
+  "artifactSha256": "sha256:0e6bd35ff8bd1318c57d99e0e98791b347eed51ae972dd887df5d4559d27d377",
+  "references": 48,
+  "byteIdenticalPriorReferences": 30,
+  "changedPriorReferences": 14,
+  "newReferences": 4,
+  "method": "Inspected all four new county-entry images at desktop and phone sizes, and all changed pixel-row regions of fourteen existing references; unchanged image bytes retained. Expanded footer links, 26-state coverage copy, wrapping and new geographic classifications are readable without overlap or clipping. Also inspected five social cards and six desktop/phone planning-table captures.",
+  "records": [
+    {
+      "file": "desktop/about.png",
+      "sha256": "d1b0046df0215f3d550dde324bb54663c846bbe5803594c416256cf15bb9e70f",
+      "newSize": [
+        1440,
+        2319
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        2292
+      ],
+      "reviewRows": [
+        1112,
+        2190
+      ]
+    },
+    {
+      "file": "desktop/alabama-entry.png",
+      "sha256": "43575fb685b3437d3c07bd4145a36159d59a596de25a0701dd92f13d26944f05",
+      "newSize": [
+        1296,
+        812
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/care.png",
+      "sha256": "39bf20e424b10e0ea51a4de4c32015299378c874621432c9c2f459d5faab2713",
+      "newSize": [
+        1440,
+        5965
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        5938
+      ],
+      "reviewRows": [
+        4978,
+        5836
+      ]
+    },
+    {
+      "file": "desktop/concept.png",
+      "sha256": "321ba9c89537ff56c6acce7df1caf6aa29f1171244dd74c982d0a553cbf09d8f",
+      "newSize": [
+        1440,
+        3050
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/contact.png",
+      "sha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2",
+      "newSize": [
+        1440,
+        2769
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/county-entry.png",
+      "sha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145",
+      "newSize": [
+        1296,
+        1759
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/county-questions.png",
+      "sha256": "f2fed15a54de552e54f2f3cf4deee9799cfe17d4643f3fbc25ab7305d7438d20",
+      "newSize": [
+        900,
+        711
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/county.png",
+      "sha256": "7810c8849fcd30e25c96b41c257c20dfa1b9eb6c06bee393ca8dfe0103a9777f",
+      "newSize": [
+        1440,
+        4405
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        4378
+      ],
+      "reviewRows": [
+        3398,
+        4276
+      ]
+    },
+    {
+      "file": "desktop/district-directory.png",
+      "sha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433",
+      "newSize": [
+        1440,
+        3166
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/footer-closed.png",
+      "sha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef",
+      "newSize": [
+        1440,
+        394
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/footer-open.png",
+      "sha256": "ec1ff4b283b28f2283ed641d05b8cddbde80558230ee920f684f1fa2e871a93d",
+      "newSize": [
+        1440,
+        1653
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        1565
+      ],
+      "reviewRows": [
+        145,
+        1523
+      ]
+    },
+    {
+      "file": "desktop/georgia-entry.png",
+      "sha256": "c3ec941ee6b404ca85fd45b04102e3571a872574ca0963830bf43437bdbac396",
+      "newSize": [
+        1296,
+        490
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/guide.png",
+      "sha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1",
+      "newSize": [
+        1440,
+        6968
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/home.png",
+      "sha256": "14ac926c572c72e361e41f44fe9fb1a37208b906ede6cdd0398ce38b81d1b0c7",
+      "newSize": [
+        1440,
+        5216
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        5216
+      ],
+      "reviewRows": [
+        0,
+        638
+      ]
+    },
+    {
+      "file": "desktop/illinois-entry.png",
+      "sha256": "c82cd971f79b659e744aa5012eb06900b53bc1de5011ad674bfbd05db85ed063",
+      "newSize": [
+        1296,
+        813
+      ],
+      "same": false,
+      "new": true,
+      "reviewRows": [
+        0,
+        813
+      ]
+    },
+    {
+      "file": "desktop/mississippi-entry.png",
+      "sha256": "1178c65139718af7f54fd17224f6384d0f54a5272627da4bdda9605d10ddb0a2",
+      "newSize": [
+        1296,
+        506
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/monthly-seo.png",
+      "sha256": "3a38010669e8e939fa2e87ba64da40e4bf6ece89db03496f33863a1250319f8f",
+      "newSize": [
+        1440,
+        6453
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        6426
+      ],
+      "reviewRows": [
+        509,
+        6324
+      ]
+    },
+    {
+      "file": "desktop/pricing.png",
+      "sha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549",
+      "newSize": [
+        1440,
+        7767
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/regional-directory.png",
+      "sha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c",
+      "newSize": [
+        1440,
+        4185
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/scope-request.png",
+      "sha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3",
+      "newSize": [
+        1440,
+        2734
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/service-questions.png",
+      "sha256": "c9b2797f086d5c147926162841ed0c3346b40c0528766655605ddcf21864eabd",
+      "newSize": [
+        1296,
+        467
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "desktop/web-design.png",
+      "sha256": "522ca38fc6345d944048fa96c882506d7b64c47373c04c9b197e5fcf09f227f5",
+      "newSize": [
+        1440,
+        7176
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        1440,
+        7149
+      ],
+      "reviewRows": [
+        479,
+        7047
+      ]
+    },
+    {
+      "file": "desktop/wisconsin-entry.png",
+      "sha256": "acb32bbb985387ac519c5d644ae5ab715f9be0f268850363af2eadac9a433c61",
+      "newSize": [
+        1296,
+        500
+      ],
+      "same": false,
+      "new": true,
+      "reviewRows": [
+        0,
+        500
+      ]
+    },
+    {
+      "file": "desktop/work.png",
+      "sha256": "356fa7451b437aebf224250a5f17d368fb829cb35f8feea510b24279d4deebc7",
+      "newSize": [
+        1440,
+        7260
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/about.png",
+      "sha256": "60bde25fbe2c4538a8b0fdd8a9244efa0cc81733c115ae94405ee6ccea13d52f",
+      "newSize": [
+        390,
+        2886
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        2886
+      ],
+      "reviewRows": [
+        1439,
+        1630
+      ]
+    },
+    {
+      "file": "phone/alabama-entry.png",
+      "sha256": "0044ba086823441af5eed06254cb862ab51b4a660d657dda1539f80eeecce12b",
+      "newSize": [
+        350,
+        948
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/care.png",
+      "sha256": "27146c09f2258fc03a11839325d091d7987ea8afffaa5e9f322a36e30921a221",
+      "newSize": [
+        390,
+        8521
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        8494
+      ],
+      "reviewRows": [
+        7220,
+        8392
+      ]
+    },
+    {
+      "file": "phone/concept.png",
+      "sha256": "2616d4da65a83eb6e5f591f586099bd52e730943c992fe814a1e1351a4a9ca8f",
+      "newSize": [
+        390,
+        3903
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/contact.png",
+      "sha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e",
+      "newSize": [
+        390,
+        3996
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/county-entry.png",
+      "sha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9",
+      "newSize": [
+        350,
+        2298
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/county-questions.png",
+      "sha256": "bb11b6af6ca39291cbf858e7bf06f083fa37637af2e10f74605e398a40548525",
+      "newSize": [
+        350,
+        983
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/county.png",
+      "sha256": "64416bad98455d4eab5d938da789d7835dbfcb7d96442bc733948d7f28b27645",
+      "newSize": [
+        390,
+        5593
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        5566
+      ],
+      "reviewRows": [
+        4243,
+        5464
+      ]
+    },
+    {
+      "file": "phone/district-directory.png",
+      "sha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f",
+      "newSize": [
+        390,
+        3897
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/footer-closed.png",
+      "sha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8",
+      "newSize": [
+        390,
+        519
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/footer-open.png",
+      "sha256": "bf3871ecd464e4f45748fb0da1d96c12e23c62c1f9e20c2df246dddc63d83065",
+      "newSize": [
+        390,
+        2229
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        2141
+      ],
+      "reviewRows": [
+        617,
+        2099
+      ]
+    },
+    {
+      "file": "phone/georgia-entry.png",
+      "sha256": "3cea4478ed466e48db585bf1c19ee4f2517e5b41749607a739d666e07fd4273b",
+      "newSize": [
+        350,
+        739
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/guide.png",
+      "sha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4",
+      "newSize": [
+        390,
+        10288
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/home.png",
+      "sha256": "562a8ae2058f3fc3e9510e4d728a1ba309e9a69e5b76ce091e98151ba4782c37",
+      "newSize": [
+        390,
+        6367
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        6367
+      ],
+      "reviewRows": [
+        366,
+        508
+      ]
+    },
+    {
+      "file": "phone/illinois-entry.png",
+      "sha256": "5b6861cfe6b2d38d47c2b651e01fad1f5921000db97a1311c2a0dc0e49e08c01",
+      "newSize": [
+        350,
+        1088
+      ],
+      "same": false,
+      "new": true,
+      "reviewRows": [
+        0,
+        1088
+      ]
+    },
+    {
+      "file": "phone/mississippi-entry.png",
+      "sha256": "e1f1d26fbdd18e1545e1d26b9068d9ee37048d69ea016448cf6fd3b71683f55a",
+      "newSize": [
+        350,
+        641
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/monthly-seo.png",
+      "sha256": "35346f088f14db9d6b386d7fb8bbef315efb71daceeff402ff10e38d8e8c7632",
+      "newSize": [
+        390,
+        9628
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        9601
+      ],
+      "reviewRows": [
+        515,
+        9499
+      ]
+    },
+    {
+      "file": "phone/pricing.png",
+      "sha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425",
+      "newSize": [
+        390,
+        16183
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/regional-directory.png",
+      "sha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691",
+      "newSize": [
+        390,
+        5148
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/scope-request.png",
+      "sha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b",
+      "newSize": [
+        390,
+        3643
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/service-questions.png",
+      "sha256": "2d08754682d41ee7613186e5000293b2cc683957b8a54b97172f558b5c558470",
+      "newSize": [
+        350,
+        574
+      ],
+      "same": true,
+      "new": false
+    },
+    {
+      "file": "phone/web-design.png",
+      "sha256": "b96ac34e06f5cd610e2603576432997824b822aa2f8088a0a7c3b9c3239d6367",
+      "newSize": [
+        390,
+        12405
+      ],
+      "same": false,
+      "new": false,
+      "oldSize": [
+        390,
+        12378
+      ],
+      "reviewRows": [
+        461,
+        12276
+      ]
+    },
+    {
+      "file": "phone/wisconsin-entry.png",
+      "sha256": "187517cbff2004fbd90b7eb5474ddda0fb66eb0d3ed4917c30558e85a988880a",
+      "newSize": [
+        350,
+        656
+      ],
+      "same": false,
+      "new": true,
+      "reviewRows": [
+        0,
+        656
+      ]
+    },
+    {
+      "file": "phone/work.png",
+      "sha256": "6e04263c7536db832df606d470be2f55c98d2bd25a3331d138dc6e35ab9ddb21",
+      "newSize": [
+        390,
+        10245
+      ],
+      "same": true,
+      "new": false
+    }
+  ]
+}

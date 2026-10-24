@@ -23,3 +23,9 @@ The candidate preserves 1,093 earlier commercial records and appends three, for 
 The finder retains every typed term and visible browse link within its unchanged 375,000-byte budget. Its large dictionary is compressed within the HTML; browser decoding enables search, and native browse links remain available without JavaScript. New precinct types do not become wards or municipalities.
 
 Google's helpful-content and spam guidance informed the source and distinctness gates. No ranking, indexing or FAQ rich-result guarantee is made. Raw account observations, source captures and reproduction scripts remain in private evidence and are excluded from the website. Committed summaries retain successful and failed source retrievals honestly. Exact CI, visual approval, fresh database backup/preservation, deployment, live verification, genuine scheduled monitoring and Google sitemap receipt remain release gates; this candidate record does not assert they have completed.
+
+## Local validation checkpoint
+
+Independent implementation review passed after fixing natural type-first precinct queries and correcting the unavailable keyword-value summary. All 733 local unit tests pass, static verification covers 1,229 routes, and the site-quality checker reports zero findings. The corrected focused browser run passed 22 checks with five intentional project skips; it supersedes the initial date-assertion failures recorded in the dated review. All five social cards and six desktop/phone planning tables were visually inspected. Linux visual capture and full release gates remain pending.
+
+Linux visual capture 40073286236 is reviewed and approved: 48 references, comprising 30 byte-identical prior references, 14 intended coverage/footer updates and four new county-entry images. The final normal CI comparison remains required.
