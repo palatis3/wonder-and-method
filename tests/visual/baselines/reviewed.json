@@ -1,135 +1,135 @@
 {
-  "captureCommit": "3e068fe3b068c6ea33145ace4c6d106e672fe108",
-  "captureRun": 39898844898,
+  "captureCommit": "08b95efe03737deb876d1879f4e0e1f40a75090f",
+  "captureRun": 40043127844,
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-23T04:17:16.912Z",
-  "review": "Eight changed Linux screenshots reviewed against prior references. The desktop and phone Monroe entries add the reviewed commercial-service link while preserving place lists and worksheets. Six other references catch up to already-published Florida coverage (19 to 20 states and Florida in lists); their page HTML did not change in this batch. Full Monroe entries, both About images and bounded old/new regions for every other changed area were inspected. No clipping or broken layout observed. The other 26 references remain byte-for-byte unchanged.",
+  "reviewedAt": "2026-10-24T00:14:33.446Z",
+  "review": "Eight changed Linux references reviewed: desktop and phone concept, home, web-design and work. Full concept pages and full phone work page were inspected in readable crops; changed regions were compared against prior references for the other images. Changes remove request demonstrations, update their surrounding copy and show recaptured concept and studio previews. No clipping, broken layout or lingering demo action was observed. The other 26 images are byte-for-byte unchanged. Contact anchor and field focus were separately inspected at 530 by 764; ordinary contact visual references are unchanged.",
   "files": [
     {
       "file": "linux/desktop/about.png",
       "width": 1440,
-      "height": 2224,
-      "sha256": "9c11ed388adb33c34ac0c83d0e450b3f53682caf66a714ae9c5b2174b089866d"
+      "height": 2292,
+      "sha256": "9bd4bc8af8f8281af5768ea874cafafe67df62c8ffa807922a558c0456bbcdac"
     },
     {
       "file": "linux/desktop/care.png",
       "width": 1440,
-      "height": 4537,
-      "sha256": "b3d0e75cba5477ea46d2a889822ae30b9d7bb1b35b3c7ad9adb504f3fb3c4345"
+      "height": 5652,
+      "sha256": "c2e980d305f8a911bb4812b2a104c008c655447b8ef86e8eac5fe7981729b2bf"
     },
     {
       "file": "linux/desktop/concept.png",
       "width": 1440,
-      "height": 3261,
-      "sha256": "68273e74f818feaa4022eef1f97abe5bad5bceb3866877f13653f20c2b9d5c97"
+      "height": 3050,
+      "sha256": "321ba9c89537ff56c6acce7df1caf6aa29f1171244dd74c982d0a553cbf09d8f"
     },
     {
       "file": "linux/desktop/contact.png",
       "width": 1440,
-      "height": 2458,
-      "sha256": "0560a5e896aab08e0d5b9e9befba6d854e56c2a65f596ab5ba7ad4c31c7959b8"
+      "height": 2769,
+      "sha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2"
     },
     {
       "file": "linux/desktop/county-entry.png",
       "width": 1296,
       "height": 1759,
-      "sha256": "c0c85a9f14905da75fe7e902be9cadec2b94f442d320c98505260a6170c4f3d2"
+      "sha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145"
     },
     {
       "file": "linux/desktop/county.png",
       "width": 1440,
-      "height": 4310,
-      "sha256": "63ad0dae66f0e90f8e02d5cb8bc41b14e7656528944d0fd3b396786164a47e3d"
+      "height": 4378,
+      "sha256": "232e487d6c002fb55a0e60e46f7c753aa487c86ad82007a787b24e511aa8932f"
     },
     {
       "file": "linux/desktop/district-directory.png",
       "width": 1440,
-      "height": 3022,
-      "sha256": "3e61beeac4e04865e775c1fe32d17a550182fc4336718d42c6706f26fc8b4373"
+      "height": 3166,
+      "sha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433"
     },
     {
       "file": "linux/desktop/footer-closed.png",
       "width": 1440,
-      "height": 325,
-      "sha256": "eb1b9448fd24a6b89c8b87074887b6c8a41655424bb86f1fafde1279df46775b"
+      "height": 394,
+      "sha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef"
     },
     {
       "file": "linux/desktop/footer-open.png",
       "width": 1440,
-      "height": 1312,
-      "sha256": "69d5780aef6c93073e989e6af3a8fa2003c1f56300f835a6389560094ad36b60"
+      "height": 1433,
+      "sha256": "5ec63396e81572ea1c210ec33430df564078f0a0e02d4d2505d07008d6472578"
     },
     {
       "file": "linux/desktop/guide.png",
       "width": 1440,
-      "height": 6900,
-      "sha256": "317194faa1cc2e0ea813b96c938a7d76c49398d0d175cd6cd8e0b7decbfa3985"
+      "height": 6968,
+      "sha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1"
     },
     {
       "file": "linux/desktop/home.png",
       "width": 1440,
-      "height": 5073,
-      "sha256": "4cd50af60052e326b89bf600f9995861619787f48796fc025575849d3015ade8"
+      "height": 5216,
+      "sha256": "a58f1a71f16766772cc80be0b01c047c04a0985305de7f026ed864b6c4bb9a56"
     },
     {
       "file": "linux/desktop/monthly-seo.png",
       "width": 1440,
-      "height": 4998,
-      "sha256": "5c949ef2fd41d976919101b98d6fe271a71e67597dac48a9caaec82750170839"
+      "height": 6064,
+      "sha256": "5b94c55180aa584db93fb7e204f3b4c68c7b4bd002aeda2e3c27c639585fdc63"
     },
     {
       "file": "linux/desktop/pricing.png",
       "width": 1440,
-      "height": 7699,
-      "sha256": "5e0fee1b287968686d63dbe9a7e81ce18160184a0f737a7a9dc048e47e9e0177"
+      "height": 7767,
+      "sha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549"
     },
     {
       "file": "linux/desktop/regional-directory.png",
       "width": 1440,
-      "height": 4042,
-      "sha256": "f1c9e6ee43750f1e3e3304689d07928de644ec9a7806ddabd76829444956163f"
+      "height": 4185,
+      "sha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c"
     },
     {
       "file": "linux/desktop/scope-request.png",
       "width": 1440,
-      "height": 2666,
-      "sha256": "85e58c90147a9b6853373828aac9505cbfb5052343702d367a3968743b3e32d1"
+      "height": 2734,
+      "sha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3"
     },
     {
       "file": "linux/desktop/web-design.png",
       "width": 1440,
-      "height": 6214,
-      "sha256": "0f021726639bfc1b4e90cd0b4c3f4e97809f9cb4d82ecc73c20481b8f7626654"
+      "height": 6863,
+      "sha256": "7103a920742cdaa556e4217fbf7bb2db908dc3669698307a7c6c5bbc5ea37841"
     },
     {
       "file": "linux/desktop/work.png",
       "width": 1440,
-      "height": 7192,
-      "sha256": "7671acb094e47568a71972a3c0ad17061808744d536efb4789e122e9cd0b916e"
+      "height": 7260,
+      "sha256": "e303a9851cc91dcca3a373372bfde31fc72588386b6232543b0e5d2d90b97099"
     },
     {
       "file": "linux/phone/about.png",
       "width": 390,
-      "height": 2759,
-      "sha256": "db8e6e5c8d378eb7cf1b0b2644b7e00d5c16025c2d4cf83567a7e953efd24557"
+      "height": 2859,
+      "sha256": "52b198086e9955750d24e998dc979d61ca4659aac1c4b56e3ee462a5a7520431"
     },
     {
       "file": "linux/phone/care.png",
       "width": 390,
-      "height": 5668,
-      "sha256": "f67661c7543e3efaa34257e5cf3ba4f0bb5b1fd20af9498f36cd2d14d8ebbf2c"
+      "height": 8210,
+      "sha256": "62b6d014cb9f63adf5eaaf4f702d8391602074276496304e9fd439a5a2fca34b"
     },
     {
       "file": "linux/phone/concept.png",
       "width": 390,
-      "height": 4147,
-      "sha256": "063f0d0460d8c1ca44ddabcc369bd4191e717d31b66ade38df0766d69f99942e"
+      "height": 3903,
+      "sha256": "2616d4da65a83eb6e5f591f586099bd52e730943c992fe814a1e1351a4a9ca8f"
     },
     {
       "file": "linux/phone/contact.png",
       "width": 390,
-      "height": 3133,
-      "sha256": "0709da3bec015a34dbc3ffe2bfac62fea7f523f4412f28030192c98990d30c9c"
+      "height": 3996,
+      "sha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e"
     },
     {
       "file": "linux/phone/county-entry.png",
@@ -140,94 +140,99 @@
     {
       "file": "linux/phone/county.png",
       "width": 390,
-      "height": 5439,
-      "sha256": "32089e7a954232fd95a7e02261e10717c4c787f3e0a08d4f6eb11d1a78b221bd"
+      "height": 5566,
+      "sha256": "e99d38f2a88b5f45d96b7f9580d2f37b9ae58befd2ccf44aa52701c6a79ade53"
     },
     {
       "file": "linux/phone/district-directory.png",
       "width": 390,
-      "height": 3809,
-      "sha256": "2efbb6ce1c68b0923f048331a6cd12ee4db7cf6981ae9d33728b75f170017648"
+      "height": 3897,
+      "sha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f"
     },
     {
       "file": "linux/phone/footer-closed.png",
       "width": 390,
-      "height": 419,
-      "sha256": "95e9286429d969f8a6180088f9ca73b2de865c2440239947b57096476a79a404"
+      "height": 519,
+      "sha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8"
     },
     {
       "file": "linux/phone/footer-open.png",
       "width": 390,
-      "height": 1856,
-      "sha256": "94ff79fba42aeadf9514a6362dbfb5310781e18d3dfb31a37f409fcb6a73f979"
+      "height": 2009,
+      "sha256": "345fd3389967d5639f20d14261f26849edf113e9c849667481f5cf530fbba662"
     },
     {
       "file": "linux/phone/guide.png",
       "width": 390,
-      "height": 10188,
-      "sha256": "36db32ed5d503bbfb8401493bc707708dc0d412f517a1da079be64834f839e6e"
+      "height": 10288,
+      "sha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4"
     },
     {
       "file": "linux/phone/home.png",
       "width": 390,
-      "height": 6363,
-      "sha256": "1e8ffbffd2fe5829de689ad6f917af8c2536b5fc4db7970f0288f800bee2765b"
+      "height": 6367,
+      "sha256": "f4d4a5650b67a9bdfdaa444831c2dd425f3c5c6c03b54900483668472bdd5c26"
     },
     {
       "file": "linux/phone/monthly-seo.png",
       "width": 390,
-      "height": 7035,
-      "sha256": "37d43a8bce1b7d6b118701c6c15c261e7ca7c0efe05b221dd8dcf8589efd3a3d"
+      "height": 9213,
+      "sha256": "002f204f629d4237a7ae28f8f6445356a227a40b547c9e45b9cacc8b646decdc"
     },
     {
       "file": "linux/phone/pricing.png",
       "width": 390,
-      "height": 16083,
-      "sha256": "df4a5007bf1e0507abac7c881a4b32378ee3274f8bda6da4385101da5b6e60f4"
+      "height": 16183,
+      "sha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425"
     },
     {
       "file": "linux/phone/regional-directory.png",
       "width": 390,
-      "height": 5060,
-      "sha256": "ee35fb749038fdb6238eebd351c97167824c65ecd34075046fdef4eb669ea640"
+      "height": 5148,
+      "sha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691"
     },
     {
       "file": "linux/phone/scope-request.png",
       "width": 390,
-      "height": 3543,
-      "sha256": "49d5e98842b88576386056632e852792b52050bef0e55ccb1b0269efe370060e"
+      "height": 3643,
+      "sha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b"
     },
     {
       "file": "linux/phone/web-design.png",
       "width": 390,
-      "height": 11100,
-      "sha256": "eeb6910a794a4fcf45abfab595d8852ecb6ce9d8372879fcbf2bc7b7f62a6d6d"
+      "height": 12067,
+      "sha256": "d0a880e7cfb99ac820477a2bfc0aefc3bef05d04e56012e706d17824914cf244"
     },
     {
       "file": "linux/phone/work.png",
       "width": 390,
-      "height": 10094,
-      "sha256": "e98273598664cdc935d09053ae29d9fd19c26158c6bbc1b3ba8761d0a8a9f85c"
+      "height": 10245,
+      "sha256": "a7844185575f49aa1a3f0ace930b8915c9d6f0dcd6b687de6ba8712e2a92c5be"
     }
   ],
   "changedFiles": [
-    "linux/desktop/about.png",
-    "linux/desktop/county-entry.png",
+    "linux/desktop/concept.png",
     "linux/desktop/home.png",
-    "linux/phone/care.png",
-    "linux/phone/county-entry.png",
-    "linux/phone/county.png",
+    "linux/desktop/web-design.png",
+    "linux/desktop/work.png",
+    "linux/phone/concept.png",
     "linux/phone/home.png",
-    "linux/phone/monthly-seo.png"
+    "linux/phone/web-design.png",
+    "linux/phone/work.png"
   ],
   "retainedPriorCapture": {
-    "captureCommit": "1bc47d59892c02a9e7b3e38737771f5042e0eb70",
-    "captureRun": 39881530078,
-    "reviewedAt": "2026-10-23T01:08:21.647836+00:00",
+    "captureCommit": "3e068fe3b068c6ea33145ace4c6d106e672fe108",
+    "captureRun": 39898844898,
+    "reviewedAt": "2026-10-23T04:17:16.912Z",
     "retainedPriorCapture": {
-      "captureCommit": "df6287b5165d951ad4860aacd7311530ce11ebf5",
-      "captureRun": 39852493748,
-      "reviewedAt": "2026-10-22T20:54:57.670653+00:00"
+      "captureCommit": "1bc47d59892c02a9e7b3e38737771f5042e0eb70",
+      "captureRun": 39881530078,
+      "reviewedAt": "2026-10-23T01:08:21.647836+00:00",
+      "retainedPriorCapture": {
+        "captureCommit": "df6287b5165d951ad4860aacd7311530ce11ebf5",
+        "captureRun": 39852493748,
+        "reviewedAt": "2026-10-22T20:54:57.670653+00:00"
+      }
     }
   }
 }
