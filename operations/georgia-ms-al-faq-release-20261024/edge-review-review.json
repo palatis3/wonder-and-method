@@ -1,0 +1,113 @@
+{
+  "reviewedAt": "2026-10-24T05:32:15.930Z",
+  "reviewer": "Independent Astra edge-plan reviewer",
+  "result": "PASS: no actionable findings in the bounded plan comparison",
+  "findings": [],
+  "scope": "Offline comparison of the full 10-rule version 20 snapshot with four proposed per-rule patches. Plan only; no API, network, browser, build or application changes.",
+  "rulesetId": "590b172d82eb4132986b26ab10e423f2",
+  "expectedVersion": "20",
+  "snapshotObservedAt": "2026-10-24T05:30:29.577Z",
+  "checks": {
+    "snapshotRules": 10,
+    "patchedRules": 4,
+    "unchangedRules": 6,
+    "removedExactQuotedPaths": 21,
+    "retiredFamilies": 3,
+    "aliasesPerFamily": 7,
+    "expressionChanges": "Byte-exact removal of the declared quoted path tokens only; all remaining characters are identical.",
+    "otherFields": "All editable fields besides expression deep-equal their original values. Action, status code, target expression, enabled state, description, ref and preserve_query_string remain unchanged.",
+    "conditions": "Host/method/SSL/case conditions and /areas/ exclusions remain byte-identical outside the removed literals. No security or unrelated canonicalization clause changes.",
+    "order": "No position/order change is present in any patch. Applying by stable ID to the existing list preserves all 10 rule IDs in their original order.",
+    "unaffectedRules": "All six unpatched rules remain deep-identical in the projected ruleset; all enabled states are unchanged."
+  },
+  "patches": [
+    {
+      "ruleId": "1ce8356ff1e845deaf6dea237d282487",
+      "snapshotIndex": 0,
+      "description": "Canonical known public pages",
+      "removedCount": 3,
+      "removedPaths": [
+        "/work/fieldwork/request/",
+        "/work/northline/request/",
+        "/work/hearthside/request/"
+      ],
+      "onlyExactPathTokensRemoved": true,
+      "allOtherEditableFieldsIdentical": true,
+      "queryPreservation": true,
+      "areaExclusionPreserved": true,
+      "beforeExpressionSha256": "61ca3dd6932547d81ebf0580094d7dc3e41a6844da1c27e77f7bfccb31d0d1ee",
+      "plannedExpressionSha256": "f4bc5ecea3a2bb972d038271b7f4e9241f52b4e4dee6404d8c2ab65ea98f288d"
+    },
+    {
+      "ruleId": "487a1dbb4e41484f9551171ba993ce82",
+      "snapshotIndex": 1,
+      "description": "Canonical public pages without slash",
+      "removedCount": 3,
+      "removedPaths": [
+        "/work/fieldwork/request",
+        "/work/northline/request",
+        "/work/hearthside/request"
+      ],
+      "onlyExactPathTokensRemoved": true,
+      "allOtherEditableFieldsIdentical": true,
+      "queryPreservation": true,
+      "areaExclusionPreserved": true,
+      "beforeExpressionSha256": "17cc6c829b3be00eaa4edbc47c9213fc7c4a1690ec98d8f9236f778ef71f9e1b",
+      "plannedExpressionSha256": "ec14b78ff0b83408707f9d76795952a25bccc2fbb2af7cb72446f36af4619c36"
+    },
+    {
+      "ruleId": "83fc9c8b1d924921af5aa69045415560",
+      "snapshotIndex": 2,
+      "description": "Canonical public index aliases 1",
+      "removedCount": 12,
+      "removedPaths": [
+        "/work/fieldwork/request/index",
+        "/work/fieldwork/request/index.html",
+        "/work/fieldwork/request/index/",
+        "/work/fieldwork/request/index.html/",
+        "/work/northline/request/index",
+        "/work/northline/request/index.html",
+        "/work/northline/request/index/",
+        "/work/northline/request/index.html/",
+        "/work/hearthside/request/index",
+        "/work/hearthside/request/index.html",
+        "/work/hearthside/request/index/",
+        "/work/hearthside/request/index.html/"
+      ],
+      "onlyExactPathTokensRemoved": true,
+      "allOtherEditableFieldsIdentical": true,
+      "queryPreservation": true,
+      "areaExclusionPreserved": true,
+      "beforeExpressionSha256": "0a18addbe542090367f6b6ae67feb7f8d9a2a5fa2a05bcc77325a0380f2eb939",
+      "plannedExpressionSha256": "4a095b36e7021db14e50ba8e0ef501d7e854215af62815753df1d748868d03ea"
+    },
+    {
+      "ruleId": "75d985e0c39243089d3fb11565ea50a8",
+      "snapshotIndex": 5,
+      "description": "Canonical public html aliases",
+      "removedCount": 3,
+      "removedPaths": [
+        "/work/fieldwork/request.html",
+        "/work/northline/request.html",
+        "/work/hearthside/request.html"
+      ],
+      "onlyExactPathTokensRemoved": true,
+      "allOtherEditableFieldsIdentical": true,
+      "queryPreservation": true,
+      "areaExclusionPreserved": true,
+      "beforeExpressionSha256": "c5903e3eacd31c347c6c05c616798c93eaf577909c1580882fa41e416695bd52",
+      "plannedExpressionSha256": "f845ca04784ef6d6a00cce59290ad2d73a465c9f2feae30b7ef10ee2c0743357"
+    }
+  ],
+  "inputHashes": {
+    "redirects-before.json": "423d91aa8857d154dfd972392a9aabf4925e721d25ddfbb83b8b04c5933964c4",
+    "redirects-plan.json": "ea0ba7bba3c0478d12244ed5f22329301e032972370478da4017d868193e410b"
+  },
+  "projectedRulesSha256": "b0da35fb3c7201f25927056d0ae561ff03a644ecfbce9c7df3574ec37066a3eb",
+  "limitations": [
+    "Dry-run success is reported by the primary; no API dry-run was executed or independently fetched here.",
+    "Snapshot version 20 is the reviewed baseline. A newer observed ruleset must be reconciled rather than blindly overwriting it.",
+    "This approves the exact plan, not proof that patches were applied or that all edge locations have updated.",
+    "Post-apply full ruleset comparison and live retired-route/query checks remain necessary. Worker behavior and deployed application identity were not rereviewed."
+  ]
+}

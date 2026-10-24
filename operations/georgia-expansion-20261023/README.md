@@ -1,8 +1,10 @@
 # Georgia service coverage — October 23, 2026
 
-The local candidate adds Georgia to the regional directory. All 159 counties are represented, with 538 municipal or consolidated-government entities and 138 Census-designated places. The combined directory has 1,284 geographic identities across 22 states and Washington, DC. The studio continues to work remotely from Buffalo.
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
 
-The geography and source-level directory review passes. Six individually written commercial briefs also passed independent editorial and source review and are integrated locally: Chatham, Richmond, Fulton, Cherokee, Lowndes and Gwinnett. Each has an explicit no-addition FAQ assessment because its relevant buying decisions and scope limits are already answered. All 159 counties remain represented in the directory. No minimum commercial-page count is a release requirement.
+The published release adds Georgia to the regional directory. All 159 counties are represented, with 538 municipal or consolidated-government entities and 138 Census-designated places. At the Georgia-only integration checkpoint, the combined directory had 1,284 geographic identities across 22 states and Washington, DC. The published combined release has 1,433 identities across 24 states and Washington, DC. The studio continues to work remotely from Buffalo.
+
+The geography and source-level directory review passes. Six individually written commercial briefs also passed independent editorial and source review and are published: Chatham, Richmond, Fulton, Cherokee, Lowndes and Gwinnett. Each has an explicit no-addition FAQ assessment because its relevant buying decisions and scope limits are already answered. All 159 counties remain represented in the directory. No minimum commercial-page count is a release requirement.
 
 ## Geography and preservation
 
@@ -22,6 +24,10 @@ The source manifest and review records in this directory preserve exact primary 
 
 The original 16-county business shortlist, additional East Point and Lilburn research, complete draft comparisons and exact Semrush observations remain in private evidence. The completed audit summary in `operations/faq-restoration-20261023/audit-summary.json` pins the research files: 518 Georgia phrases and 303 FAQ phrases, with all final FAQ suggestions matched to exact observed phrases. Source observations are separate from proposed website behavior. Public examples are not studio clients, endorsements, completed implementations or local-office claims.
 
-## Release status
+## Original release checkpoint
 
 This is the combined release candidate. Integration preserves all 1,082 existing records and adds exactly seven routes, including the state hub. The local build contains 1,217 HTML routes and 1,216 sitemap entries. The seven new social cards and refreshed homepage portfolio capture were visually checked. Migration 0030 adds exactly seven journey keys to the prior 1,182; its synthetic replay preserves all historical aggregate, inquiry and delivery-resolution rows and their constraints. The FAQ audit is complete: 231 answers across 161 routes, with 1,749 historical questions explicitly assessed. Local static verification, content preservation and quality checks pass, including 4,412 route checks and 2,995 historical fragment targets. Final browser/visual/CI gates, production data preservation and live verification remain pending. The user requested one combined publication after all tasks are complete.
+
+## Current release
+
+Published and retained in the [current verified release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The Georgia hub and six county pages are live. Original research, local checks and pending-gate statements above describe their dated checkpoints; final exact-commit CI, live parity, database preservation, monitoring and sitemap receipt are in the release report.

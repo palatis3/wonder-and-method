@@ -1,5 +1,7 @@
 # Final 611 location pages — October 23, 2026
 
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
+
 This candidate completes direct website-design coverage for all 1,079 county and equivalent directory identities. It adds 611 individually researched pages after the [192-page publication](../location-wave-three-20261023/RELEASE.md), for 1,068 collection pages serving 1,078 identities. The existing Buffalo/Erie page brings the total to 1,069 direct service pages for all 1,079 identities. Shared destinations for selected adjoining markets account for the difference between pages and identities.
 
 The [page and source register](data/reviewed-locations.json) preserves the original reviewed candidate for every addition. The subsequent [whole-collection quality audit](../google-quality-audit-20261023/README.md) records the deliberate corrections made before publication. Each page develops a specific buyer decision through original analysis, two possible scopes, owner inputs, a four-column planning table and concrete acceptance examples. Shared industries and principles are allowed when the complete page helps a direct visitor. Named organizations are public research examples; Wonder and Method remains a Buffalo studio working remotely.
@@ -50,3 +52,7 @@ The previous 581-route CI run took 39.5 minutes, including 29.5 minutes for brow
 This is a candidate record. Final browser and manual visual review, independent implementation review, the exact-commit CI gate, authentic artifact parity, private database backup and preservation, deployment and live checks must pass before publication. The live 192-page release remains authoritative until that happens. Google resubmission is currently unavailable because local browser access is disabled in Work settings; the current public sitemap remains registered from earlier releases, and no new Google receipt is claimed.
 
 Private evidence is retained in `evidence/location-wave-four-20261023/`. No real inquiry, email, chat message or payment is submitted for verification. Search discovery does not establish indexing or rankings. Existing enrollment, reply coverage and independent recovery requirements remain separate from website publication.
+
+## Current release
+
+Published and retained in the [current verified release](../georgia-ms-al-faq-release-20261024/RELEASE.md). All 611 reviewed location pages are live. Original research, local checks and pending-gate statements above describe their dated checkpoints; final exact-commit CI, live parity, database preservation, monitoring and sitemap receipt are in the release report.

@@ -1,0 +1,195 @@
+{
+  "checkedAt": "2026-10-24T06:18:32.829Z",
+  "commit": "8dd504666bc3847df3537bb0f6d04b198b880a92",
+  "runtimeVersion": "05929cff-2b65-4963-8982-d7539e79d87b",
+  "deployedAt": "2026-10-24T05:28:23.998Z",
+  "sourceSha256": "a5da8bd10de07fb1e988320d9bca958cf59cbe5fb34e74e03edc497b77ab7453",
+  "artifactSha256": "26ac1d2ef7647a59f9ef9e259241a6b34d7da8ec3a55331c9570efb4d74c9bcf",
+  "ciRun": "https://github.com/palatis3/wonder-and-method/actions/runs/40062703901",
+  "ciJobs": [
+    {
+      "name": "verify",
+      "conclusion": "success"
+    },
+    {
+      "name": "cross-browser",
+      "conclusion": "success"
+    },
+    {
+      "name": "performance",
+      "conclusion": "success"
+    },
+    {
+      "name": "standards",
+      "conclusion": "success"
+    },
+    {
+      "name": "dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "visual",
+      "conclusion": "success"
+    },
+    {
+      "name": "links",
+      "conclusion": "success"
+    }
+  ],
+  "browserStats": {
+    "startTime": "2026-10-24T04:36:22.611Z",
+    "duration": 2955912.681,
+    "expected": 681,
+    "skipped": 421,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "crossBrowserStats": {
+    "startTime": "2026-10-24T04:33:22.214Z",
+    "duration": 133440.83500000002,
+    "expected": 72,
+    "skipped": 20,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "visualStats": {
+    "startTime": "2026-10-24T04:33:22.109Z",
+    "duration": 47386.697,
+    "expected": 42,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "routes": 1224,
+  "sitemapUrls": 1223,
+  "guides": 65,
+  "downloads": 436,
+  "assets": 1884,
+  "georgiaRoutes": 7,
+  "msAlRoutes": 7,
+  "newCommercialPages": 11,
+  "serviceInventory": {
+    "servicePages": 1102,
+    "generatedLocationPages": 1093,
+    "standaloneLocationPages": 1,
+    "mainServicePages": 8,
+    "newFaqPages": 161,
+    "newFaqAnswers": 231,
+    "retainedFaqPages": 1,
+    "retainedFaqAnswers": 3,
+    "totalFaqPages": 162,
+    "totalFaqAnswers": 234,
+    "pagesWithoutFaqs": 940
+  },
+  "database": {
+    "checkedAt": "2026-10-24T05:27:38.832Z",
+    "onlyExpectedMigrationAdded": true,
+    "latestMigration": "0031_journey_ms_al.sql",
+    "existingInquiriesPreserved": 4,
+    "inquiriesAfter": 4,
+    "existingResolutionsPreserved": 0,
+    "priorAggregateRowsPreserved": 876,
+    "aggregateRowsAfter": 876,
+    "priorPageKeys": 1182,
+    "finalPageKeys": 1196,
+    "addedPageKeys": [
+      "areas_georgia",
+      "areas_georgia_chatham_county",
+      "areas_georgia_cherokee_county",
+      "areas_georgia_fulton_county",
+      "areas_georgia_gwinnett_county",
+      "areas_georgia_lowndes_county",
+      "areas_georgia_richmond_county",
+      "areas_mississippi",
+      "areas_mississippi_lafayette_county",
+      "areas_mississippi_harrison_county",
+      "areas_mississippi_forrest_county",
+      "areas_alabama",
+      "areas_alabama_baldwin_county",
+      "areas_alabama_jefferson_county"
+    ],
+    "integrity": "ok",
+    "foreignKeyErrors": 0
+  },
+  "rollbackRuntimeVersion": "ce2b3594-f490-482b-8ee0-d3de0749aad7",
+  "performance": [
+    {
+      "path": "/",
+      "score": 0.98,
+      "metrics": {
+        "largest-contentful-paint": 2347.9694,
+        "cumulative-layout-shift": 0.004285952616822844,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "path": "/pricing/",
+      "score": 1,
+      "metrics": {
+        "largest-contentful-paint": 1664.0516000000002,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "path": "/contact/",
+      "score": 1,
+      "metrics": {
+        "largest-contentful-paint": 1667.5243,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "path": "/payments/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1818.1931,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "path": "/guides/website-content-template/",
+      "score": 1,
+      "metrics": {
+        "largest-contentful-paint": 1668.0848999999998,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "path": "/areas/south-carolina/",
+      "score": 0.99,
+      "metrics": {
+        "largest-contentful-paint": 1812.4415,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    }
+  ],
+  "outboundLinks": {
+    "reachable": 2314,
+    "broken": 0,
+    "unverified": 86
+  },
+  "monitoring": {
+    "status": "up",
+    "latestReceiptAt": "2026-10-24T06:17:31.611423+00:00",
+    "observedAt": "2026-10-24T06:18:26.108Z",
+    "alertDestination": "support@wonderandmethod.com",
+    "notificationMethodEnabled": true,
+    "manualPingSent": false
+  },
+  "scheduledSuccessAt": "2026-10-24T06:17:30.525Z",
+  "search": {
+    "submissionPerformed": true,
+    "submittedAt": "2026-10-24T05:34:08.891Z",
+    "observedAt": "2026-10-24T05:34:33.625Z",
+    "sitemapUrl": "https://wonderandmethod.com/sitemap.xml",
+    "acknowledgment": "Sitemap submitted successfully",
+    "displayedStatus": "Success",
+    "displayedDiscoveredPages": 1223,
+    "notAnIndexingClaim": true
+  }
+}

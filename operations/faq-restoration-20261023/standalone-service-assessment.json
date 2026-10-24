@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-24T03:03:23.384Z",
+  "path": "/areas/erie-county/",
+  "type": "standalone location service page outside the generated collection",
+  "reviewedBy": "primary",
+  "assessment": "Reviewed the entire rendered page, all three existing FAQs, links and current central timing/offer inputs. The budget answer gives a concise starting price, external-cost limits and a pricing link; the timing answer uses the current configured build windows, readiness conditions, two review rounds and proposal dates; the search answer describes agreed work without promising rankings or leads and preserves Business Profile eligibility/access limits. The main page already covers remote delivery, writing, ownership, optional plans, service-area distinctions and local examples. Retain these three established answers and add no second FAQ section. No new local claims, keywords, prices or obligations are introduced.",
+  "newFaqs": 0,
+  "retainedFaqs": 3,
+  "questions": [
+    {
+      "question": "How much should I budget?",
+      "answer": "Website packages start at $1,400, plus your domain, hosting, paid tools, taxes and any approved additions. Compare all prices.",
+      "links": [
+        {
+          "path": "/pricing/",
+          "label": "Compare all prices"
+        }
+      ],
+      "disposition": "retain unchanged"
+    },
+    {
+      "question": "How soon can a website launch?",
+      "answer": "Planned build work: Launch 3–5 business days, Focused 5–8 and Signature 7–10, once your page list, facts, photos and account access are ready. Add your review time: two rounds, each allowing up to five business days. Your proposal confirms the start and launch dates; missing information or extra work can move them.",
+      "links": [],
+      "disposition": "retain unchanged"
+    },
+    {
+      "question": "Will the website appear in local search?",
+      "answer": "I plan around your actual services and customer questions and check the agreed search setup. Rankings and leads are not guaranteed. Google Business Profile work requires eligibility and approved access.",
+      "links": [],
+      "disposition": "retain unchanged"
+    }
+  ],
+  "renderedMainSha256": "3f3a8457a7d5cb5fd9f5c29f17c73fd5e0c8ec3fdb606a47c27d6b28bfe19cfc",
+  "sourceFiles": [
+    {
+      "path": "src/erie-content.mjs",
+      "sha256": "b3e8c1a7b0d86098332f183005093eda2793fd6ad024afdf4d138f312ae74596"
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "sha256": "aacf64d95d08a7b06a0fe1cfbac0976b857290bfdfa98bae7de30b1f920ced87"
+    },
+    {
+      "path": "src/county-buyer-tasks.mjs",
+      "sha256": "ea562941f82216fffe7a99545e5bea76eaa6d1ee3aebaaf51d27c7441ec2eabd"
+    },
+    {
+      "path": "config/site.json",
+      "sha256": "985b296efff6cf5ff99843bd99137c145e4573f350df45aa40d4d3ca2f2552b7"
+    },
+    {
+      "path": "config/offers.json",
+      "sha256": "f3d686ce1e7a18fae8dea08d8c1f2c70730e349687eea1de998ed96f5545dab2"
+    },
+    {
+      "path": "authority/v5/geography.json",
+      "sha256": "7d83f004583966668691417400283538090a0c5a3fe5fb8ed2d28a44e2177df4"
+    }
+  ],
+  "completeServiceInventory": {
+    "servicePages": 1097,
+    "generatedLocationPages": 1088,
+    "standaloneLocationPages": 1,
+    "mainServicePages": 8,
+    "newFaqPages": 161,
+    "newFaqAnswers": 231,
+    "retainedFaqPages": 1,
+    "retainedFaqAnswers": 3,
+    "totalFaqPages": 162,
+    "totalFaqAnswers": 234,
+    "pagesWithoutFaqs": 935
+  },
+  "contentChanged": false
+}

@@ -1,5 +1,7 @@
 # Concept demo cleanup and contact focus — October 23, 2026
 
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
+
 The three fictional concept websites now contain their overview and service/menu pages only. Their request demonstrations, navigation actions, promotional copy and unused form script/styles were removed. GET and HEAD requests to the three retired request URLs permanently redirect to the matching overview, including supported canonical variants; query strings survive. POST requests do not enter this redirect flow. All three historical aggregate analytics dimensions remain accepted, and no database migration or record deletion is required.
 
 The contact form's anchor focus previously combined a suppressed outline with an inherited dark box shadow around the entire form. The container shadow is removed. Individual fields retain a visible green focus ring with a pale surrounding halo, plus a system-color treatment in forced-colors mode. Field labels, validation, submission and keyboard order are unchanged.
@@ -13,3 +15,7 @@ The reviewed content change removes exactly three public pages and the unused de
 All eight changed Linux visual references were subsequently reviewed and accepted from capture run 40043127844; the other 26 references were byte-identical. Release run 40043999173 passed visual, standards and performance checks but reported an Undici security advisory in the deployment toolchain. It was cancelled while the remaining checks were running. The local technical run was also stopped before completion. A scoped Miniflare override updates Undici from 7.29.1 to the maintainer's patched 7.30.1; the site lockfile updates fast-uri from 3.1.8 to patched 3.1.9. Both dependency audits then report zero vulnerabilities, and the Worker dry run passes. No audit threshold or release gate was weakened.
 
 The user subsequently requested one deployment after all open work is complete. The concept and contact changes therefore remain unpublished while the full FAQ review and Georgia expansion are completed. The combined final source must pass all release gates again before deployment.
+
+## Current release
+
+This work is published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). Earlier pending-release statements are historical checkpoint observations. All seven exact-commit CI gates, live checks and the requested Google sitemap submission are now complete.

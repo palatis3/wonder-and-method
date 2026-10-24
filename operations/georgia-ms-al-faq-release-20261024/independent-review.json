@@ -1,0 +1,110 @@
+{
+  "reviewedAt": "2026-10-24T04:41:20.409Z",
+  "reviewer": "Independent Astra release-helper reviewer",
+  "result": "PASS after two resolved findings; no unresolved actionable helper defects found in this bounded review",
+  "sourceCommit": "8dd504666bc3847df3537bb0f6d04b198b880a92",
+  "plannedCiRun": 40062703901,
+  "expectedPreviousRuntime": "ce2b3594-f490-482b-8ee0-d3de0749aad7",
+  "expectedPreviousSource": "f636b3c8e86f207ab4a38fcf4e8a37f1a6ee60f0",
+  "expectedPreviousSchema": "0029_journey_south_carolina.sql",
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "P2",
+      "status": "resolved",
+      "initialObservedAt": "2026-10-24T04:38:07.202Z",
+      "path": "evidence/georgia-ms-al-faq-release-20261024/verify-backup.mjs",
+      "initialLine": 14,
+      "title": "Bind backup verification to a fresh remote-export receipt",
+      "problem": "The original helper accepted any previously existing schema 0029 SQL and assigned capturedAt at verification time. Replaying the same backup produced a new-looking receipt, so the result did not prove the required fresh export.",
+      "resolution": "Primary added export-fresh-backup.mjs and receipt validation. The writer refuses an existing SQL file, requires planned HEAD and established predeploy controls, verifies previous runtime/source/health, invokes pinned Wrangler remote export, and saves time/hash/byte provenance. The verifier checks matching receipt hash/bytes/runtime/source, successful export, valid nonfuture timestamps and export age<=15 minutes. capturedAt now records actual export completion; verifiedAt is separate.",
+      "validation": "Six synthetic receipt cases passed: fresh accepted; stale, wrong hash, wrong bytes, future time and wrong runtime rejected.",
+      "resolvedAt": "2026-10-24T04:39:49.161Z"
+    },
+    {
+      "id": "R2",
+      "priority": "P2",
+      "status": "resolved",
+      "initialObservedAt": "2026-10-24T04:38:07.202Z",
+      "path": "evidence/georgia-ms-al-faq-release-20261024/verify-additions.mjs",
+      "initialLine": 66,
+      "currentLine": 67,
+      "title": "Require the commercial backlink inside the intended county entry",
+      "problem": "The original string check accepted a matching county ID anywhere and a matching href anywhere, including a different county. Synthetic misplaced backlink was accepted.",
+      "resolution": "Primary scopes the parse5 search to exactly one matching county-ID element and requires a descendant anchor with the expected href.",
+      "validation": "Synthetic misplaced link and duplicate county IDs rejected; correctly scoped link accepted.",
+      "resolvedAt": "2026-10-24T04:39:49.161Z"
+    }
+  ],
+  "checks": {
+    "migration": "Exact helper body ran against synthetic SQL built from public migrations.0030 then 0031 succeeds, retains all 1182 historical keys and rows and adds exactly 14 keys for 1196 total. Rehearsal runs inside a local transaction and rolls back its synthetic inserted rows.",
+    "preservation": "Unchanged and increased aggregate fixtures accepted; decreased and missing aggregates rejected. Changed prior inquiry and resolution rows rejected without leaking private sentinel values. Unexpected extra migration rejected. Private row comparisons use boolean assertions instead of dumping objects.",
+    "liveCoverage": {
+      "checkedAt": "2026-10-24T04:38:44.809Z",
+      "addedRoutes": 14,
+      "routeVariants": 104,
+      "retiredDemoVariants": 48,
+      "faqPages": 162,
+      "faqQuestions": 234,
+      "hubBacklinks": 11,
+      "technicalAndGithubRejectedCases": [
+        "wrong commit",
+        "wrong source",
+        "wrong artifact",
+        "dirty source",
+        "missing step",
+        "missing job",
+        "skipped job",
+        "incomplete job"
+      ]
+    },
+    "ciArtifact": "verify-ci-artifact calls verifyTechnicalManifest with actual current commit/source/artifact fingerprints, requires zero unexpected/flaky browser results and zero browser errors, then copies the CI technical manifest. Established predeploy independently requires clean/pushed/rebuilt source, matching tested artifact and all seven exact-commit jobs from the expected workflow. Negative tests reject wrong commit/source/artifact, dirty source, incomplete technical sequence, and missing/skipped/incomplete CI jobs.",
+    "liveParity": "verify-live-resilient wraps established verify-finished-site; retries only GET/HEAD transport/502–504 failures, does not retry writes or failed content assertions. The underlying verifier compares every built HTML/asset byte, sitemap/robots and authenticated runtime release metadata, plus private exclusions/canonical rules. Its expected cross-origin rejection probe remains separate from retry behavior.",
+    "recovery": "wait-for-recovery pins deployed runtime and planned commit and requires healthy recovery timestamp after deployment, with 75-minute bound. It explicitly leaves actual external receiver receipt unverified; release-plan also requires that receipt and Search Console submission separately.",
+    "freshBackup": "Fixed export/verification pair is structurally sound and synthetic receipt negatives pass. No actual fresh backup has been created or verified by this review.",
+    "sourceAndVisual": "Final source and 44 Linux visual references were previously reviewed and intentionally not rereviewed."
+  },
+  "pendingAcceptance": [
+    "Actual fresh pinned-Wrangler export receipt and private backup file are still required.",
+    "Actual schema0030 then 0031 application and production before/after preservation receipts remain required.",
+    "All seven exact-final-commit CI gates and authentic downloaded artifact parity must complete; this review did not poll CI.",
+    "Live 104-route variants,11 hub backlinks,234 FAQs/162 pages and complete deployed byte parity must be executed against the resulting runtime.",
+    "Postdeployment scheduled recovery and actual external receiver receipts, plus Search Console submission receipt, remain required."
+  ],
+  "limitations": [
+    "No production mutation, network request, browser, CI polling, build or full suite was run.",
+    "No actual SQL export, inquiry record or credential was read. All executed helper bodies used mocked filesystem/operator inputs and synthetic SQL from public migrations.",
+    "export-fresh-backup was inspected, never invoked.",
+    "New strict write-release-record.mjs and verify-service-inventory.mjs are outside this checkpoint and not approved by this report.",
+    "Assertions do not prove future third-party behavior or actual release receipts."
+  ],
+  "exactReviewedFileHashes": {
+    "evidence/georgia-ms-al-faq-release-20261024/verify-backup.mjs": "14551ce9fa9625eae2d9ec0bcb38772ea75df0e6706fbb53f6563ff4cd442ef4",
+    "evidence/georgia-ms-al-faq-release-20261024/verify-preservation.mjs": "2b2b499859288b0b98a2de2c2d114ce7d8fa2f6c079172b0e2572177d9c3f51b",
+    "evidence/georgia-ms-al-faq-release-20261024/verify-ci-artifact.mjs": "28b05746549d99e48c9d8f60e4ae1d37d64f790fdfabc4f5341aa7a66832ee3d",
+    "evidence/georgia-ms-al-faq-release-20261024/verify-additions.mjs": "4fbb2039bb989f23ef2b057e8838989e089a06963ab602077eb91311e01e648d",
+    "evidence/georgia-ms-al-faq-release-20261024/verify-live-resilient.mjs": "9f2b6b4914f6179a902419d4d5691a2ab5f5c1ec10ca1bc399a6df81f57d1903",
+    "evidence/georgia-ms-al-faq-release-20261024/freeze-candidate.mjs": "3ad93b71a5ac341a078511053cac889aea122b16b1861716873e860f4637c47d",
+    "evidence/georgia-ms-al-faq-release-20261024/watch-final-ci.mjs": "69c1ff4189d90d87fbd24e64f15fc6430c81c3d97b37afaff150187987a85c7f",
+    "evidence/georgia-ms-al-faq-release-20261024/wait-for-recovery.mjs": "fecd67164d4bfca342789425961c7df7004c762d57aad0ff84fbd50aed67330c",
+    "evidence/georgia-ms-al-faq-release-20261024/release-plan.json": "2222dce6e22d1c3844694245bb85b0a31f231aea289615d837f3434f9b1c600f",
+    "scripts/predeploy.mjs": "18bd179b4f4082b1af39c629ff71a8820e281ed9874bec07773247a7ae84e5be",
+    "scripts/verify-github-checks.mjs": "0cac73830409ffbdeb5a44ebece960ff73ac8643f37600952b3207a2d6e23e88",
+    "scripts/technical-check.mjs": "8508410029c390d832d0126d649b875d03fa7e3f1c9a40cbd322ebf3423d8a50",
+    "scripts/verify-finished-site.mjs": "6a6bf38b3e9ff534280133c4a60673dd483f0a214656c1f318d3fa58a1aa49e2",
+    "src/release.mjs": "937be4ebfcd392352181998750ad3ced8552dbe833315c48d6fef5b0d982ee7c",
+    "src/release-verification.mjs": "92aa312cdbe29eb1e30fa17b891d39b1966dbc29d994ccdc6b780ebe835c1f5f",
+    "deployment/production-operator.mjs": "417292fe493af83a36e6792747b489e20554e5e8e923f7cb70a4da6418b401f6",
+    "deployment/inquiry-health.mjs": "0f1c48038be3d5d8b61f7477f8ef1fa5259c6a597b9be6f0ddc9fcf7062ce1b6",
+    "deployment/migrations/0030_journey_georgia.sql": "3f9fad317428762dd5e6fa7cdea9f7021ed7172cd6360660ad9a9d16fa03b47a",
+    "deployment/migrations/0031_journey_ms_al.sql": "06fc98d399ec810742244d6441e10452f9f613908ef203481c2385e5e966c73d",
+    "evidence/georgia-ms-al-faq-release-20261024/export-fresh-backup.mjs": "c282572e44110b61ee2c36547a510202a80deb3da32a0b7d7c44eb291f0904b2"
+  },
+  "evidenceHashes": {
+    "synthetic-results.json": "d41a2d90cd4c08db433f66f69787054411f938562fc23a95c91bb053419b2a99",
+    "controls-results.json": "c4d06c4011d512665f4d60a22cb5c64181f4e8f4b72c57660badd8e9b92f0ba2",
+    "fix-results.json": "dac0f66d1a33f12aeda0f6b03ea64db142bb0c1459f42828306affd45bd4b5bf",
+    "synthetic-checks.mjs": "6d274c5a9731dbb0f9dc645c5790d5573f50e3fb393f2e1404dfbc7b65ce7adc",
+    "fix-checks.mjs": "50af2a09958b4be9a85d3e8472965dbd545c3b2ab230e37adc401a456129b8b8"
+  }
+}

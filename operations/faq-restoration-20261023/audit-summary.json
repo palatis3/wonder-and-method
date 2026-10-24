@@ -159,11 +159,26 @@
       }
     ]
   },
-  "releaseStatus": "Editorial audit complete; full final release gates pending.",
+  "releaseStatus": "Published and verified; see operations/georgia-ms-al-faq-release-20261024/RELEASE.md",
   "copyCorrections": {
     "count": 1,
     "path": "operations/faq-restoration-20261023/copy-corrections.json",
     "sha256": "46020abd3acde19b6fc5a4be4ef0b5ae6cb96d8e21d8d650ec3a80af089ddea2",
     "policy": "Original reviewed batch artifacts are preserved; explicit copy corrections are checked against their exact before and after text."
-  }
+  },
+  "standaloneLocationPagesReviewed": 1,
+  "completeServiceInventory": {
+    "servicePages": 1102,
+    "generatedLocationPages": 1093,
+    "standaloneLocationPages": 1,
+    "mainServicePages": 8,
+    "newFaqPages": 161,
+    "newFaqAnswers": 231,
+    "retainedFaqPages": 1,
+    "retainedFaqAnswers": 3,
+    "totalFaqPages": 162,
+    "totalFaqAnswers": 234,
+    "pagesWithoutFaqs": 940
+  },
+  "faqCollectionScope": "faqAnswers and faqRoutes describe the new collection; the complete inventory includes the three retained Erie answers and five later MS/AL no-addition decisions."
 }

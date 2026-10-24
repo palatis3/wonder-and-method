@@ -1,6 +1,8 @@
 # Mississippi and Alabama coverage — October 24, 2026
 
-This candidate adds complete Mississippi and Alabama directories: 82 and 67 counties respectively. The combined site covers 1,433 geographic identities across 24 states and Washington, DC. Work remains remote from Buffalo; public examples are not clients, partnerships or local-office claims.
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
+
+The published release adds complete Mississippi and Alabama directories: 82 and 67 counties respectively. The combined site covers 1,433 geographic identities across 24 states and Washington, DC. Work remains remote from Buffalo; public examples are not clients, partnerships or local-office claims.
 
 ## Page decisions and question research
 
@@ -27,3 +29,7 @@ The common regular Newsreader face saves 16,292 initial font bytes. The reproduc
 Raw browser observations, source snapshots, reproduction scripts and complete keyword rows remain private under evidence/ms-al-expansion-20261024, excluded from the website. Manifest raw paths are relative to that directory. The committed summary omits account and quota details. Copied evidence uses repository LF line endings; line-ending-provenance.json records both original reviewed hashes and normalized copy hashes. Private originals remain untouched.
 
 Integration and source review are complete. All 727 local unit tests pass. Focused browser runs passed 40 and 48 tests respectively, with 23 and 28 intentional project-specific skips; these do not replace the full suite. Static verification passes for all 1,224 routes. Seven new social cards and representative state entries/planning pages were visually inspected locally. Linux visual capture now has 44 approved references, including four new state-entry images; see visual-review.json. The final full browser/visual comparisons, all exact-commit CI gates, database preservation, deployment, live checks and Google sitemap submission remain pending. This record must be updated with actual release receipts after those steps complete.
+
+## Current release
+
+Published and retained in the [current verified release](../georgia-ms-al-faq-release-20261024/RELEASE.md). Both MS/AL hubs and five county pages are live. Original research, local checks and pending-gate statements above describe their dated checkpoints; final exact-commit CI, live parity, database preservation, monitoring and sitemap receipt are in the release report.

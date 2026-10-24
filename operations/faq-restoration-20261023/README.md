@@ -1,8 +1,10 @@
 # Selective FAQ restoration
 
-Reviewed all 1,082 existing location service pages, all 1,749 archived questions and answers, and the eight main service pages. The six new Georgia briefs were also reviewed and need no supplemental FAQ. Existing location records remain byte-for-byte equivalent under their pinned record hashes.
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
 
-The approved result contains 231 answers on 161 routes: 222 answers on 154 location pages and nine answers on seven main service pages. The other 928 existing location pages and the service overview have explicit no-addition decisions. Of the archived questions, 171 informed adapted answers and 1,578 were omitted with a recorded reason. Several old questions can inform one answer; the archive count is not the number of published answers.
+Reviewed all 1,082 existing generated location service pages, the standalone Erie page, all 1,749 archived questions and answers, and the eight main service pages. The six new Georgia briefs were also reviewed and need no supplemental FAQ. Existing location records remain byte-for-byte equivalent under their pinned record hashes.
+
+The new FAQ collection contains 231 answers on 161 routes: 222 answers on 154 location pages and nine answers on seven main service pages. The other 928 existing location pages and the service overview have explicit no-addition decisions. Of the archived questions, 171 informed adapted answers and 1,578 were omitted with a recorded reason. Several old questions can inform one answer; the archive count is not the number of published answers.
 
 Answers address commissioning the website, use current scope and ownership terms, and add useful clarification to the particular page. They do not claim the studio operates the named example businesses. Prices remain in the current offer system. The implementation uses native disclosures before the relevant contact step and introduces no FAQ structured-data or search-result promise.
 
@@ -15,3 +17,5 @@ An independent Astra review found no actionable errors in the primary-authored f
 Validation includes exact integration and full archive coverage, current-record hashes, local destination/fragment resolution, every rendered FAQ's placement/content/native structure, all-route keyboard and responsive browser checks, representative no-JavaScript checks, and the existing whole-site release gates. This record documents completed editorial review; final deployment evidence is separate.
 
 The full unit gate caught one US spelling inconsistency. `copy-corrections.json` pins the exact original and corrected Bradford answer. Original batch recommendations and review hashes remain unchanged; the final audit verifies the approved projection plus this explicit copy correction.
+
+The standalone Erie page retains its three pre-existing answers unchanged. Its dated review is retained in standalone-service-assessment.json and standalone-faq-review.md. The current rendered inventory contains 1,102 service pages, 234 FAQs on 162 pages and 940 no-FAQ pages. The five subsequent MS/AL briefs have independent no-addition assessments. See [production verification](../georgia-ms-al-faq-release-20261024/RELEASE.md).

@@ -1,25 +1,23 @@
-# Implementation status — October 23, 2026
+# Implementation status — October 24, 2026
 
-The website is published and verified. The latest release adds [192 individually reviewed location pages](operations/location-wave-three-20261023/RELEASE.md). Research of all 1,079 directory identities is complete; integration and publication of the remaining 611 approved pages continues. Deployed application identity remains separate from documentation commits and requirements for accepting client work.
+The [combined Georgia, Mississippi, Alabama and FAQ release](operations/georgia-ms-al-faq-release-20261024/RELEASE.md) is published and verified. The requested state coverage, selective FAQ review, request-demo removal, contact-anchor work and Google sitemap submission are complete. Earlier location and South Carolina expansions remain published. Application identity is separate from documentation commits and business enrollment requirements.
 
 ## Current published website
 
-| Item | Verified October 23, 2026 |
+| Item | Verified October 24, 2026 |
 |---|---|
-| Origin | https://wonderandmethod.com |
-| Published source | `67cb069ead8cac7c9a11711bc8cfd03727582e44` |
-| Deployed Worker version | `5fc0277d-4be5-4594-8d19-f0dfa646acad` |
-| Content | 581 HTML routes; 580 sitemap URLs; 59 guides; 457 collection pages for 467 identities; with Buffalo/Erie, 458 direct service pages for 468 identities; all 1,079 directory entries retained |
-| Technical validation | 694 local unit tests; CI 693 passed and one platform-specific skip; 427 browser checks passed, 260 intentional project skips; 34 unchanged screenshot references; exact-source GitHub and predeploy passed |
-| Live verification | All 581 HTML routes and 1,378 asset hashes match; all 960 new-route/hub and 1,576 historical URL checks passed; no transport retries |
-| Independent review | All 192 content candidates and combined implementation reviewed with no unresolved findings; prior 265 records and rendered bodies unchanged |
-| Database | Migration 0027 adds 129 fixed keys, preserves 573 old keys for 702 total; four inquiries and 476 prior aggregate rows preserved; restored integrity and foreign-key checks passed |
-| Search | Live sitemap has 580 URLs; resubmission blocked by disabled browser access; last confirmed Google receipt is 388 discovered pages |
-| Monitoring | Authenticated health healthy; scheduled recovery succeeded after deployment; no external monitoring receiver receipt claimed |
+| Origin | [wonderandmethod.com](https://wonderandmethod.com/) |
+| Published source | `8dd504666bc3847df3537bb0f6d04b198b880a92` |
+| Deployed Worker | `05929cff-2b65-4963-8982-d7539e79d87b` |
+| Content | 1,224 HTML routes; 1,223 sitemap URLs; 65 guides; 1,093 generated location pages serving 1,103 identities, plus the standalone Buffalo/Erie page; 1,433 directory identities across 24 states and Washington, DC; 436 downloads |
+| FAQs | 234 answers across 162 of 1,102 service pages |
+| Technical validation | All seven exact-commit GitHub jobs pass. Chromium has 681 passing checks and 421 intentional project skips; Firefox/WebKit has 72 passing checks and 20 intentional skips. No unexpected or flaky results remain. All 44 reviewed visual references pass in 42 screenshot tests. |
+| Live verification | All 1,224 HTML routes and 1,884 asset hashes match the tested build. All 104 new-route/demo redirect variants, 11 state-hub backlinks and 234 FAQ answers on 162 pages passed live checks. |
+| Database | Migrations 0030 and 0031 preserve 4 prior inquiries, 876 prior aggregate rows and all 1,182 old page keys, adding 14 keys for 1,196 total. The fresh backup restored locally, its combined migration rehearsal passed, and the post-migration export passed integrity and foreign-key checks. |
+| Search | The verified live sitemap has 1,223 eligible URLs. Google Search Console confirmed its submission at 2026-10-24T05:34:08.891Z and displayed Success with 1,223 discovered pages at 2026-10-24T05:34:33.625Z. Discovery does not establish indexing or rankings. |
+| Monitoring | Authenticated inquiry health is healthy. A genuine scheduled recovery and its external monitoring receipt occurred after deployment; email alerts remain enabled to support@wonderandmethod.com. |
 
-Private evidence is in `evidence/location-wave-three-20261023/`. [Exact-source GitHub checks](https://github.com/palatis3/wonder-and-method/actions/runs/39953694670) passed. All 59 guides, 333 historical worksheets and 430 downloads remain available. Sixty-three historical routes were restored, leaving 184 reviewed historical destinations and 148 explicit redirects; worksheet planning text is unchanged.
-
-Deployment identity comes from authenticated operator status and the private build manifest; public `/version.json` returns 404. Follow [PRODUCTION.md](deployment/PRODUCTION.md). Search discovery does not establish indexing or rankings. The remaining 611 pages are approved but not yet deployed; business readiness is not claimed.
+Private evidence: `evidence/georgia-ms-al-faq-release-20261024/`. Public `/version.json` remains unavailable; authenticated runtime metadata identifies the release. Follow [PRODUCTION.md](deployment/PRODUCTION.md).
 
 ## Offers and daily operation
 

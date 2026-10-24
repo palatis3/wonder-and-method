@@ -1,5 +1,7 @@
 # Semrush additions — October 23, 2026
 
+Current status: published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). The research and validation narrative below preserves dated checkpoints; earlier candidate counts and pending-gate statements are historical. Use the current release for deployed counts, CI, monitoring and Google submission receipts.
+
 The owner instructed completion of all 16 recommendations before the combined website and sitemap release. Ten extend existing destinations and six add useful guides with worksheets. All 16 are implemented and independently reviewed. Local unit, browser, quality, content-preservation and performance checks passed. Exact-commit CI and production publication remain pending.
 
 The authenticated browser research checked 1,000 new US terms, separate from 683 earlier terms. There were 711 positive-volume estimates, 93 literal zeros, 196 unavailable volumes and 490 numeric difficulty estimates. The displayed quota meters did not decrement, so exhaustion and remaining allowance remain unverified. No API lookup, paid refresh or purchase was used.
@@ -27,3 +29,7 @@ The unit contract previously restricted the body-font preload to area directorie
 The complete Linux browser run passed 664 checks and identified six failures from two stale counts across desktop, phone and reduced-motion phone projects. The state finder now expects its 23 options and explicitly requires South Carolina; the content-template guide expects its eight sections and explicitly requires the fictional notes example. [Browser contract review](browser-contract-review.txt) confirms that every unrelated assertion remains unchanged. All six corrected checks pass locally. The final complete CI run remains required.
 
 A newly updated dependency advisory surfaced during final CI. The installed Zod dependency is now overridden to the patched 4.6.7 release; all non-Zod package versions are unchanged. Both dependency audits report zero vulnerabilities. [Dependency-fix review](zod-review.txt) verifies the lockfile change, successful Remotion composition discovery, the 1,213-route build, all 721 unit tests and content preservation. Remotion still warns about its exact version pin and embeds an older Zod copy in its private authoring tools; the override does not patch that bundled upstream code. Review found neither dependency in the deployed Worker or emitted site assets. Final exact-commit CI remains required.
+
+## Current release
+
+This work is published and verified in the [combined state and FAQ release](../georgia-ms-al-faq-release-20261024/RELEASE.md). Earlier pending-release statements are historical checkpoint observations. All seven exact-commit CI gates, live checks and the requested Google sitemap submission are now complete.
