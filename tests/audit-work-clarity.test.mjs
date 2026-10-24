@@ -2,46 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {conceptPages} from '../src/portfolio-concepts.mjs';
-import {resolveDemoService} from '../src/assets/portfolio-concepts.js';
 import {workGallery,workItems} from '../src/work-gallery.mjs';
 import {sourceHandoff} from '../src/source-handoff.mjs';
 import {studioSearchStudy} from '../src/studio-search-study.mjs';
 import {projectCalendar,conceptDebrief} from '../src/buyer-experience.mjs';
 import {buffaloStudy} from '../src/buffalo-study.mjs';
-
-test('the clearer Northline options retain every old service query choice',()=>{
- const choices=['Kitchen remodeling','Bathroom remodeling','Interior layout changes'];
- for(const [old,current] of [['Kitchen remodeling conversation',choices[0]],['Bathroom remodeling conversation',choices[1]],['Interior layout conversation',choices[2]]]){
-  const query=new URLSearchParams('service='+encodeURIComponent(old)).get('service');
-  assert.equal(resolveDemoService('northline',query,choices),current);
-  assert.equal(resolveDemoService('northline',current,choices),current);
- }
- assert.equal(resolveDemoService('northline','unknown',choices),null);
- assert.equal(resolveDemoService('northline',null,choices),null);
- assert.equal(resolveDemoService('hearthside','Classic cheese',['Classic cheese ($16)','Pepperoni ($19)','Garden ($18)']),'Classic cheese ($16)');
- assert.equal(resolveDemoService('fieldwork','Garden assessment',['Seasonal garden care','Planting refresh','Garden assessment']),'Garden assessment');
-});
-
-test('all nine concept routes remain, with disabled submit controls and honest preview labels',()=>{
- const pages=conceptPages();
- assert.equal(pages.length,9);
- for(const id of ['fieldwork','northline','hearthside']){
-  const page=pages.find(page=>page.path===`/work/${id}/request/`);
-  const form=page.body.match(/<form\b[^>]*>([\s\S]*?)<\/form>/)?.[1];
-  const disabled=form?.match(/<fieldset disabled>([\s\S]*?)<\/fieldset>/)?.[1];
-  assert.ok(disabled,id);
-  assert.match(disabled,/<button type="submit"/);
-  assert.equal((form.match(/type="submit"/g)||[]).length,(disabled.match(/type="submit"/g)||[]).length);
-  assert.match(page.body,/nothing is sent or saved/i);
-  assert.match(page.body,/Demo complete · Nothing sent/);
-  assert.match(page.title,id==='hearthside'?/^Preview your order/:/^Request an estimate/);
-  assert.match(page.body,id==='hearthside'?/See my order/:/See my request/);
-  assert.doesNotMatch(page.body,/<form[^>]+(?:action|method)=|confirm by text|within 10 minutes|free in-home estimate/i);
- }
- const north=pages.find(page=>page.path==='/work/northline/remodeling/').body;
- assert.match(north,/service=Kitchen%20remodeling/);
- assert.doesNotMatch(north,/remodeling conversation|layout conversation/);
-});
 
 test('Work keeps every project and both films with a useful early inquiry route',()=>{
  const items=workItems({homeEdition:'living-city'}),html=workGallery({homeEdition:'living-city'});
@@ -96,7 +61,7 @@ test('animation and restaurant explanations invite useful inquiries without new 
  assert.equal((art.match(/<video\b/g)||[]).length,2);
  assert.match(art,/Ask about custom homepage animation/);
  assert.match(art,/use the video controls to pause/);
- assert.match(restaurant,/custom order preview shown here/);
+ assert.match(restaurant,/Creating an ordering system or setting up the outside account/);
  assert.match(restaurant,/is separate work/);
  assert.doesNotMatch(restaurant,/the Order button|Order for pickup/);
 });

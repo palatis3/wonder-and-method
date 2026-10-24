@@ -1,3 +1,4 @@
+import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
 import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
@@ -66,14 +67,15 @@ test('northern official municipality types retain plantations, independent citie
 
 test('three northern hubs preserve 50 entries and historical routes resolve through live pages or redirects',async()=>{
  const {pages,byPath,serviceStates,crawlFiles,northeastProfiles}=await runtime();
- assert.equal(pages.length,1213);assert.equal(byPath.size,1213);assert.equal(serviceStates.length,22);
+ assert.equal(pages.length,1210);assert.equal(byPath.size,1210);assert.equal(serviceStates.length,22);
  const prior=[...oldRoutes,...earlierRoutes];assert.equal(new Set(prior).size,358);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!prior.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of prior){
-  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
+  const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
+  if(destination){const [hub,slug]=destination.split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1212);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1209);
  assert.equal((byPath.get('/areas/').html.match(/data-county-search=/g)||[]).length,1125);
  assert.equal(Object.values(northeastProfiles).flat().length,116);
  for(const s of fixture.states){

@@ -82,7 +82,7 @@ test('navigation order, mobile Services alignment and in-flow footer links agree
 });
 
 test('form pages omit floating chat and retain the deliberate inline opener',async({page})=>{
- for(const path of ['/contact/','/checkout/focused-site/','/work/hearthside/request/']){
+ for(const path of ['/contact/','/checkout/focused-site/']){
   await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(0);
   await expect(page.locator('[data-chat-open]')).toBeVisible();await expect(page.locator('[data-chat-open]')).toHaveAttribute('aria-describedby','support-chat-description');
   expect(await page.locator('script[src^="https://embed.tawk.to/"]').count()).toBe(0);

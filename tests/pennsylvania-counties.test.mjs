@@ -1,3 +1,4 @@
+import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
@@ -32,10 +33,11 @@ const migration=await readFile(new URL('0013_journey_pennsylvania.sql',migration
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
 test('Pennsylvania retains all 67 county entries within its consolidated state directory',()=>{
- assert.equal(priorRoutes.length,120);assert.equal(pages.length,1213);assert.equal(byPath.size,1213);
+ assert.equal(priorRoutes.length,120);assert.equal(pages.length,1210);assert.equal(byPath.size,1210);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&(p.path.startsWith('/areas/pennsylvania/')||p.path==='/areas/new-york/')).map(p=>p.path).sort(),["/areas/new-york/", "/areas/pennsylvania/"].sort());
  for(const route of priorRoutes){
-  if(retiredCountyRoutes[route]){const [hub,slug]=retiredCountyRoutes[route].split('#');assert.ok(!byPath.has(route),route);assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
+  const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
+  if(destination){const [hub,slug]=destination.split('#');assert.ok(!byPath.has(route),route);assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
  assert.deepEqual(pennsylvaniaProfiles.map(c=>c.slug).sort(),expectedSlugs);
@@ -43,7 +45,7 @@ test('Pennsylvania retains all 67 county entries within its consolidated state d
  assert.equal(pennsylvaniaRegions.length,10);
  assert.deepEqual(pennsylvaniaRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,1212);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1209);
  for(const [route,count] of [['/areas/',1125],['/areas/new-york/',62],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-county-search=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);

@@ -1,3 +1,4 @@
+import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
 import {floridaGuidePaths} from '../src/florida-guide-paths.mjs';
@@ -21,10 +22,10 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,1213);
+ assert.equal(previous.length,278);assert.equal(pages.length,1210);
  for(const route of previous){
-  const destination=retiredCountyRoutes[route];
-  if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);assert.ok(pages.find(page=>page.path===hub)?.html.includes(`id="${slug}"`),destination);}
+  const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
+  if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);const target=pages.find(page=>page.path===hub);assert.ok(target,destination);if(slug)assert.ok(target.html.includes(`id="${slug}"`),destination);}
   else assert.ok(pages.some(page=>page.path===route),route);
  }
  assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&!floridaGuidePaths.has(page.path)&&!semrushGuidePaths.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());

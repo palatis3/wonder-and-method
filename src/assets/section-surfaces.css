@@ -141,6 +141,7 @@
 .studio-site .contact-form-heading h2{font:400 clamp(1.9rem,3vw,2.45rem)/1.1 var(--display);letter-spacing:-.035em;margin:.5rem 0 1rem}
 .studio-site .contact-page-layout form{max-width:none}
 .studio-site .contact-page-layout :is(input:not([type=checkbox],[type=radio]),textarea,select){background:#fff;border-color:#788772;border-radius:8px}
+.studio-site .contact-page-layout :is(input,textarea,select):focus-visible{outline:2px solid #334b3c;outline-offset:3px;box-shadow:0 0 0 5px #e9eddf;background:#fffef9}
 .studio-site .contact-page-layout label{color:#263f33}
 .studio-site .contact-page-layout>.contact-expectations{padding:1.75rem;border:1px solid #244334;border-radius:24px;background:#304c3c;color:#fffef6;min-width:0}
 .studio-site .contact-aside-mark{display:grid;place-items:center;width:48px;height:48px;border:1px solid #91a28a;border-radius:50%;color:#e3edce;margin-bottom:1.5rem}
@@ -186,6 +187,7 @@
  .studio-site .contact-form-heading h2{font-size:1.9rem}
 }
 @media(forced-colors:active){
+ .studio-site .contact-page-layout :is(input,textarea,select):focus-visible{outline:3px solid Highlight;box-shadow:none;background:Canvas}
  .studio-site .site-footer--compact .footer-group,.studio-site .home-choice-grid>.home-choice,.studio-site .contact-studio-note,.studio-site .contact-page-layout>:is(.contact-form-column,.contact-expectations){border:1px solid CanvasText;background:Canvas;color:CanvasText;box-shadow:none}
  .studio-site .contact-expectations :is(p,h2,a),.studio-home .home-content>.studio-closing :is(p,h2,a){color:CanvasText}
  .city-transition{display:none}

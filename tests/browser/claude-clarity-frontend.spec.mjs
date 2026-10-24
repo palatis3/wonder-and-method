@@ -10,6 +10,7 @@ const read=path=>readFile(new URL('../../'+path,import.meta.url),'utf8');
 const offers=normalizeOfferCatalog(JSON.parse(await read('config/offers.json')));
 const css=(await Promise.all(['style','journal','premium','site-refresh','layout-components','support-chat','section-surfaces'].map(name=>read(`src/assets/${name}.css`)))).join('\n');
 const brand=await read('src/assets/brand.css');
+const conceptCss=await read('src/assets/portfolio-concepts.css');
 const navigation=await read('src/assets/site-navigation.js');
 const tools=await read('src/assets/page-navigation.js');
 const chat=await read('src/assets/support-chat.js');
@@ -79,20 +80,20 @@ test('desktop chrome fits and forced-colors retains a visible mark and video foc
  await page.screenshot({path:'output/playwright/clarity-forced-dark.png'});
 });
 
-test('without scripts navigation and footer disclose natively while demo fields stay inert',async({browser})=>{
+test('without scripts concept navigation and footer remain usable',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
  try{
   const page=await context.newPage();
   await page.route('**/__frontend-component-fixture',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html></html>'}));
   await page.goto('http://127.0.0.1:4187/__frontend-component-fixture');
-  const concept=conceptPages({config:{},offers}).find(p=>p.path==='/work/hearthside/request/').body.replace(/<script[\s\S]*?<\/script>/g,'');
-  await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body class="studio-site">${siteHeader('/work/hearthside/request/')}<main>${concept}</main>${supportChatMarkup(chatConfig)}${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
+  const concept=conceptPages({config:{},offers}).find(p=>p.path==='/work/hearthside/menu/').body.replace(/<script[\s\S]*?<\/script>/g,'');
+  await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}\n${conceptCss}</style></head><body class="studio-site">${siteHeader('/work/hearthside/menu/')}<main>${concept}</main>${supportChatMarkup(chatConfig)}${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
   await expect(page.locator('#main-nav')).toBeVisible();
   await page.locator('.service-navigation>summary').click();
   await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
-  await expect(page.locator('.concept-demo-form fieldset')).toHaveAttribute('disabled','');
-  await expect(page.locator('#concept-name')).toBeDisabled();
-  await expect(page.locator('.concept-demo-form button[type=submit]')).toBeDisabled();
+  await expect(page.locator('.concept-header nav').getByRole('link',{name:'Overview',exact:true})).toBeVisible();
+  await expect(page.locator('.concept-menu-list article')).toHaveCount(3);
+  await expect(page.locator('.concept-demo-form')).toHaveCount(0);
   await page.locator('footer summary').filter({hasText:'Information'}).click();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.locator('.support-chat noscript a').click();

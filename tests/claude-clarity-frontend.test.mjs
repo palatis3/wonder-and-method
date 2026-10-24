@@ -4,7 +4,6 @@ import {readFile} from 'node:fs/promises';
 import {siteHeader,siteFooter} from '../src/site-chrome.mjs';
 import {breadcrumbTrail} from '../src/navigation.mjs';
 import {conceptPages} from '../src/portfolio-concepts.mjs';
-import {validateDemo,demoOrderTotal} from '../src/assets/portfolio-concepts.js';
 import {bindCostCalculator} from '../src/calculator.js';
 import {priceList} from '../src/shared.mjs';
 
@@ -22,7 +21,7 @@ test('compact chrome preserves service, pricing, process and contact navigation'
  for(const path of ['/privacy/','/terms/','/accessibility/','/payments/','/pricing/'])assert.ok(footer.includes(`href="${path}"`));
  assert.match(footer,/Example &amp; Co/);
  assert.equal(breadcrumbTrail('/services/seo/','SEO')[1].path,'/services/');
- assert.equal(breadcrumbTrail('/work/hearthside/request/','Long title').at(-1).name,'Order form');
+ assert.equal(breadcrumbTrail('/work/hearthside/menu/','Long title').at(-1).name,'Menu');
 });
 
 test('service navigation marks only listed current pages and keeps secondary services reachable',()=>{
@@ -33,23 +32,6 @@ test('service navigation marks only listed current pages and keeps secondary ser
   assert.match(html,/class="service-navigation is-current"/);
   if(secondary.includes(path))assert.ok(siteFooter().includes(`href="${path}"`),path);
  }
-});
-
-test('pizza note is optional while real inquiry-like demos retain useful message validation',()=>{
- const sample={name:'Sample',email:'sample@example.test',message:'',concept:'hearthside',quantity:'2'};
- assert.deepEqual(validateDemo(sample),{});
- assert.ok(validateDemo({...sample,concept:'fieldwork'}).message);
- assert.ok(validateDemo({...sample,quantity:'1.5'}).quantity);
- assert.equal(demoOrderTotal('Classic cheese ($16)',2),'$32.00');
- const pages=conceptPages({config:{},offers});
- const pizza=pages.find(page=>page.path==='/work/hearthside/request/').body;
- assert.match(pizza,/Order note \(optional\)/);
- assert.doesNotMatch(pizza.match(/<textarea[^>]+>/)[0],/required|minlength/);
- assert.match(pizza,/<fieldset disabled>/);
- assert.doesNotMatch(pizza,/<form[^>]+(?:action|method)=/);
- assert.ok(pizza.indexOf('Classic cheese ($16)')<pizza.indexOf('Pepperoni ($19)'));
- assert.ok(pizza.indexOf('Pepperoni ($19)')<pizza.indexOf('Garden ($18)'));
- assert.equal(pages.filter(page=>page.body.includes('studio-concept-debrief')).length,3);
 });
 
 function calculatorFixture(annual=true){

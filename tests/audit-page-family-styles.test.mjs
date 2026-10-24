@@ -17,7 +17,7 @@ test('routes share predictable CSS families without changing content or index po
  for(const path of ['/areas/','/areas/erie-county/','/areas/ohio/erie-county/'])assert.equal(pageStyleFamily(path),'areas');
  assert.equal(pageStyleFamily('/checkout/grow/'),'services');
  assert.equal(pageStyleFamily('/guides/website-project-cost/'),'guides');
- assert.equal(pageStyleFamily('/work/hearthside/request/'),'work');
+ assert.equal(pageStyleFamily('/work/hearthside/menu/'),'work');
  assert.equal(pageStyleFamily('/privacy/'),'information');
  assert.equal(pageStyleFamily('/'),'home');
 });

@@ -3,7 +3,8 @@ import {inquiryChoices} from '../src/shared.mjs';
 import {retiredCountyRoutes} from './retired-county-routes.mjs';
 
 const retired=new Map(Object.entries(retiredCountyRoutes));
-const routes=new Map(Object.keys(pageDates).filter(path=>path!=='/404/'&&!retired.has(path)).map(path=>[path.toLowerCase(),path]));
+const retiredConceptRequests=new Map(['fieldwork','northline','hearthside'].map(id=>[`/work/${id}/request/`,`/work/${id}/`]));
+const routes=new Map(Object.keys(pageDates).filter(path=>path!=='/404/'&&!retired.has(path)&&!retiredConceptRequests.has(path)).map(path=>[path.toLowerCase(),path]));
 const aliases=new Map([['/work/content-editor/','/work/source-handoff/'],['/assets/audit-implementation/illustrative-url-map.csv/','/assets/downloads/website-url-map.csv']]);
 for(const path of [...routes.values(),...retired.keys()])if(/^\/areas\/[^/]+-county\/$/.test(path))aliases.set(path.replace('/areas/','/areas/new-york/'),retired.get(path)||path);
 const buyerPackIds=new Set([...inquiryChoices.map(([id])=>id).filter(id=>id!=='unsure'),'website-addons']);
@@ -22,7 +23,7 @@ export function publicRouteRedirect(url,method,publicOrigin){
  // Keep exact asset case and never apply this rule to an unknown filename.
  const pack=url.pathname.match(/^\/assets\/buyer-packs\/([a-z_-]+)\/$/);
  const packPath=url.pathname==='/assets/buyer-packs/website-addons.html'?'/assets/buyer-packs/website-addons':pack&&buyerPackIds.has(pack[1])?'/assets/buyer-packs/'+pack[1]:null;
- const canonical=packPath||retired.get(lookup.toLowerCase())||routes.get(lookup.toLowerCase())||aliases.get(lookup.toLowerCase());
+ const canonical=packPath||retiredConceptRequests.get(lookup.toLowerCase())||retired.get(lookup.toLowerCase())||routes.get(lookup.toLowerCase())||aliases.get(lookup.toLowerCase());
  const path=canonical||url.pathname;
  const origin=publicOrigin?new URL(publicOrigin).origin:url.origin;
  // The destination fragment replaces any obsolete section bookmark. Keep the

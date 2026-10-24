@@ -131,8 +131,8 @@ test('examples use current limits and do not imply included production commerce'
  assert.match(report, /Blank template/);
  const demo = conceptDebrief('hearthside');
  assert.match(demo, /A link to an ordering service you already use can be included/);
- assert.match(demo, /Building the custom order preview shown here, creating an ordering system or setting up the outside account is separate work/);
- assert.match(demo, /places no order and takes no payment/);
+ assert.match(demo, /Creating an ordering system or setting up the outside account is separate work/);
+ assert.doesNotMatch(demo, /order preview|places no order/);
 });
 
 test('payment portal remains unavailable without an approved live destination', () => {

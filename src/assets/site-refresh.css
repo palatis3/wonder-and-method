@@ -128,7 +128,8 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .sample-receipt{border-left:3px solid var(--blue);padding:1rem 1.5rem;background:var(--subtle)}
 .sample-receipt dt{font-weight:600;margin-top:1rem}
 .sample-receipt dd{margin:.3rem 0}
-#inquiry:focus{outline:0}
+/* The anchor focuses the form container; individual fields retain their focus rings. */
+#inquiry:focus{outline:0;box-shadow:none}
 .communication details{margin:1.5rem 0}
 .contact-expectations{margin-bottom:4rem}
 @media(max-width:767px){.compact-comparison,.compact-comparison:has(>article:nth-child(2):last-child){grid-template-columns:1fr}
