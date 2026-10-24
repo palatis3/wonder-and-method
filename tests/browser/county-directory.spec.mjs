@@ -83,7 +83,7 @@ test('combined finder disambiguates states and shared place names without sendin
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  await expect(page.locator('[data-cs]')).toHaveCount(1607);await expect(visible).toHaveCount(0);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
- await search.fill('Hamburg');await expect(visible).toHaveCount(6);expect(await targets()).toEqual(['/areas/erie-county/','/areas/indiana/#franklin','/areas/michigan/#livingston','/areas/new-jersey/#sussex','/areas/ohio/#fairfield','/areas/pennsylvania/#berks']);
+ await search.fill('Hamburg');await expect(visible).toHaveCount(9);expect(await targets()).toEqual(['/areas/erie-county/','/areas/illinois/#calhoun','/areas/indiana/#franklin','/areas/michigan/#livingston','/areas/new-jersey/#sussex','/areas/ohio/#fairfield','/areas/pennsylvania/#berks','/areas/wisconsin/#marathon','/areas/wisconsin/#vernon']);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(1);
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('1 area matches your search in Pennsylvania.');
  await search.fill('');await expect(visible).toHaveCount(67);
