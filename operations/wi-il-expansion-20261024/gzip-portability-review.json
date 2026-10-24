@@ -1,0 +1,81 @@
+{
+  "reviewedAt": "2026-10-24T07:27:44.257463+00:00",
+  "reviewer": "independent Astra worker",
+  "status": "PASS_FIX_REQUIRES_NEW_FINAL_CI",
+  "scope": "Only gzip metadata portability fix and regression test; no production or UI activity.",
+  "requiredChanges": [],
+  "baselineCommit": "fa1f5f693bd0a81aab818bcef91b4ad95b143b97",
+  "inputs": [
+    {
+      "path": "src/service-area-directory.mjs",
+      "sha256": "b4861888a64dc688f6896c38cd1ecdb4709d5c68fa4d2ef44d2f0ac6fcae30e0"
+    },
+    {
+      "path": "tests/wi-il-geography.test.mjs",
+      "sha256": "e69c2a17f5fd054519f631424bbcf9200e48bc0233b3970b6b8238d534d56dba"
+    },
+    {
+      "path": "src/assets/county-directory.js",
+      "sha256": "adfdb7e67ec8eadeb73a51a8a78c312f5e895c6347a0417e2a146e1151a04a3a"
+    }
+  ],
+  "specification": {
+    "url": "https://www.rfc-editor.org/rfc/rfc1952.html#section-2.3.1.2",
+    "verified": "RFC 1952 section 2.3.1 defines OS byte 255 as unknown; section 2.3.1.2 explicitly permits this default. Section 2.3.1.1 describes the extra field, not OS."
+  },
+  "reviewFindings": [
+    "Code preserves level-9 compression and the same payload threshold; it replaces only the fixed header OS byte before base64 serialization.",
+    "The emitted FLG byte is zero, so there is no header CRC to invalidate. Payload CRC32 and ISIZE trailers remain unchanged.",
+    "The regression assertion checks the full ten-byte deterministic header and is included in the existing all-term roundtrip, 1,607-identity and unchanged payload-budget test.",
+    "The dictionary script remains non-rendered JSON; all HTML outside that script is identical. No visible content, styling, links, search terms or decoded runtime behavior changed."
+  ],
+  "independentVerification": {
+    "node": "v24.18.0",
+    "platform": "win32",
+    "method": "Loaded HEAD module read-only through an in-memory data URL with absolute imports; compared countyDirectory output with the working module for combined directory plus all 27 state/DC directories. No temporary source file created.",
+    "checkedDirectories": 28,
+    "unchangedDirectories": 26,
+    "changedDirectories": [
+      {
+        "path": "/areas/",
+        "differingGzipByteOffsets": [
+          9
+        ],
+        "oldOS": 10,
+        "newOS": 255,
+        "gzipBytes": 46462,
+        "decodedNames": 15657
+      },
+      {
+        "path": "/areas/michigan/",
+        "differingGzipByteOffsets": [
+          9
+        ],
+        "oldOS": 10,
+        "newOS": 255,
+        "gzipBytes": 6832,
+        "decodedNames": 2628
+      }
+    ],
+    "checksPassed": [
+      "HTML outside JSON script identical for all 28 directories",
+      "Uncompressed directories entirely byte-identical",
+      "Compressed lengths identical",
+      "All compressed bytes except OS byte identical",
+      "Deflate payload and CRC32/ISIZE trailer identical",
+      "node:zlib gunzip output identical",
+      "Existing DecompressionStream-backed decodeCountyNames output identical"
+    ]
+  },
+  "targetedTests": {
+    "path": "evidence/wi-il-expansion-20261024/gzip-portability-tests.log",
+    "passed": 14,
+    "failed": 0
+  },
+  "buildObservation": "> wonder-and-method@0.1.0 build\n> node scripts/build.mjs\n\nBuilt 1229 HTML routes (production); source plan and operating records excluded from dist.\nRemoved 189 unreferenced build assets (5574115 bytes); retained 3 referenced candidates.",
+  "limits": [
+    "This fixes the observed OS-header difference; it does not promise deterministic deflate output across different compressor versions.",
+    "The previously failed final run cannot certify the corrected source. Archive superseded plan/freeze and obtain a corrected clean final commit, fresh exact-source CI/artifact parity and all seven passing jobs.",
+    "No fresh browser visual run or live production check was performed by this reviewer. Visual invariance is supported by exact non-payload HTML equality and identical decoded data."
+  ]
+}

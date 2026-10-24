@@ -138,7 +138,13 @@ export function countyDirectory(state){
  const placeNames=[...new Set(states.flatMap(item=>item.counties.flatMap(county=>countySearchText(county,item,item.regions.find(region=>region.slugs.includes(county.slug))).split('|').map(term=>term.slice(term.indexOf(':')+1)))))].sort();
  const dictionary={names:placeNames,indices:new Map(placeNames.map((name,index)=>[name,index]))};
  const packedNames=packCountyNames(dictionary.names);
- const namePayload=packedNames.length>20_000?{encoding:'gzip-base64',data:gzipSync(packedNames,{level:9}).toString('base64')}:packedNames;
+ let namePayload=packedNames;
+ if(packedNames.length>20_000){
+  const compressed=gzipSync(packedNames,{level:9});
+  // RFC 1952 OS=255 (unknown) removes host metadata from identical builds.
+  compressed[9]=255;
+  namePayload={encoding:'gzip-base64',data:compressed.toString('base64')};
+ }
  const sections=state?state.regions.map(region=>({id:region.id,name:region.name,count:region.slugs.length,plural:state.areaPlural,html:cards(state,regionCounties(state,region),dictionary,references)})):states.map(item=>({id:item.id,name:item.name,count:item.counties.length,plural:item.areaPlural,html:cards(item,[...item.counties].sort((a,b)=>a.name.localeCompare(b.name)),dictionary)}));
  return directoryControls(state)+`<script type="application/json" data-county-place-names>${JSON.stringify(namePayload)}</script><section class="county-search-results" data-county-results hidden aria-label="Service area search results"><h2>Best matches</h2><ul class="county-result-list" data-county-best></ul><details hidden><summary>Other matching areas</summary><ul class="county-result-list" data-county-more></ul></details></section><div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} ${section.plural})</summary>${section.html}</details>`).join('')}</div><div class="county-search-empty" data-county-empty hidden><p><strong>No service areas match that search.</strong></p><p>Try a county, region or community name${state?'':', or choose a different state or district'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name+' '+state.areaPlural:'all service areas'}.</p></div>`+(references?.html||'');
 }
