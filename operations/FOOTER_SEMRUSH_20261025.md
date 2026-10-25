@@ -18,4 +18,14 @@ The 33 link reports comprised 25 rate limits, three 404s, two 406s, one 500 and 
 
 The Cherokee Landing rental link returned HTTP 200 with the cited linen information, so it remains. Distinctive Bookbinding and the Pennsylvania PUC supplied relevant official content despite Semrush responses. Blackwater Bikes remained unavailable with 503 responses. Rate limits and client-dependent availability remain explicitly unverified; no blanket claim that every external destination works is made. USA Raft replacement content was available through cached official-page retrieval while direct access varied.
 
-Private crawl exports, independent reviews and test evidence are in `evidence/footer-semrush-20261025/`. The new citation and footer changes require their own exact-source CI run, reviewed visual baselines, publication and live verification. The Semrush scores above describe the completed palette-release crawl, not a later crawl of this follow-up.
+Private crawl exports, independent reviews and test evidence are in `evidence/footer-semrush-20261025/`. The Semrush scores above describe the completed palette-release crawl; any later crawl is recorded separately.
+
+## Verified publication
+
+Published source `32d6f08e929f33bbf9e482cd87447f6b764c143d`; authenticated Worker `9f79874a-3aa3-491d-b057-210bcc2a472a`; deployed 2026-10-25T21:22:10.859Z.
+
+All 1,476 live HTML routes and 2,143 public asset hashes match the tested build, with 1,464 eligible sitemap URLs. All 15 [exact-source CI jobs](https://github.com/palatis3/wonder-and-method/actions/runs/40233235635) passed: nine named release gates, a shared core build and five browser partitions. The complete browser inventory passed 819 checks with 511 reviewed platform-specific skips. Reading checks passed 36 cases; visual checks passed 56 tests covering 64 images; Firefox/WebKit passed 72 checks with 20 intentional skips. All 3,629 generated files match between local and Linux builds. Live desktop, phone and 320-pixel journeys passed.
+
+The visual references were independently reviewed: 38 changed images were inspected and 26 were retained by exact hash. Every application route is checked for fixed controls and unique footer destinations at phone and desktop widths. The post-publication journeys also verified the new citations after opening their source disclosures.
+
+The fresh private database backup passed restore, integrity and foreign-key checks against all 38 existing migrations. No schema changes were applied. Authenticated health is healthy. A genuine scheduled recovery succeeded at 2026-10-25T22:17:33.607Z, with an external HTTPS receipt at 2026-10-25T22:17:35.808215+00:00. Email alerts remain enabled to support@wonderandmethod.com with a one-hour period and fifteen-minute grace. No manual heartbeat was sent.
