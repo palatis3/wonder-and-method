@@ -57,7 +57,7 @@ test('delayed chat failure does not steal focus after the visitor moves elsewher
  assert.equal(b.fallback.hidden,false);assert.equal(b.focus(),'');assert.match(b.status.textContent,/could not connect/);
 });
 
-test('form pages omit the floating launcher and inline chat keeps the same consent boundary',()=>{
+test('optional inline helper mode omits the floating launcher and keeps the same consent boundary',()=>{
  const markup=supportChatMarkup(config(),{formPage:true});
  assert.doesNotMatch(markup,/class="support-chat-launch"/);assert.match(markup,/support-chat--inline/);
  const b=browser({inline:true});assert.equal(b.appended.length,0);b.click();b.click();assert.equal(b.appended.length,1);

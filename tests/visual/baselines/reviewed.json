@@ -1,360 +1,396 @@
 {
-  "captureCommit": "f65b60ddaf0c37a61b4efd66fc2b43108ef60e73",
-  "captureRun": 40190015487,
-  "artifactId": 12597629352,
-  "artifactSha256": "8525bdfd8007f8a2f59de211f619f1e47af4a1295b876d2eceb1325369f20186",
+  "captureCommit": "c591755e7851ece53ba0a8390a5a9def433449a1",
+  "captureRun": 40227950899,
+  "artifactId": 12611717020,
+  "artifactSha256": "sha256:0a415b9db6f8b99b4707cb867d5df37e5d655dcc216f3f9d4392fc39b1df0997",
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-25T11:47:39.478Z",
-  "review": "Primary and independent Astra review accepted sixteen changed phone captures: all differences are confined to the former bottom strip at y750–850 with identical image dimensions and surrounding pixels. Removing the shared white surface reveals the page between independently floating round controls. Four new desktop/phone viewport screenshots show the homepage and scrolled Texas content. The other thirty-eight captures are byte-identical. Focus, typing, menu, chat, fallback and responsive regression tests passed separately. No rendering inputs changed after the captured commit.",
-  "independentReviewSha256": "65bcaafec8bcacd201a049ddeeb9447038309afe933dfc4554faa62889d49f2d",
+  "reviewedAt": "2026-10-25T20:00:23.908Z",
+  "review": "Independent Astra review accepted 38 changed images for footer deduplication and floating controls on all pages and retained 26 byte-identical images. Capture passed all 56 tests. No screenshot thresholds, masks or content checks were relaxed.",
+  "independentReviewSha256": "cca401cf0f1a7a9328b3935f14a21c28a4d8d6ed91f68e5757dc74ab72f760d1",
   "files": [
     {
       "file": "linux/desktop/about.png",
+      "sha256": "27bcda61cd90d3fa25849193c3bf4cafae1017ca9249fb700022c3ddcc29e92c",
       "width": 1440,
-      "height": 2806,
-      "sha256": "d82d1be34fd7933135ebaac37afb9b184fa27e7d7c209174108f28d16f5214f3"
+      "height": 3169
     },
     {
       "file": "linux/desktop/alabama-entry.png",
-      "width": 1296,
-      "height": 813,
-      "sha256": "d10bf4d27d962e011a8ccf73685d1aabf37d2decda1939e2765bcb2da5757ba6"
+      "sha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538",
+      "width": 850,
+      "height": 812
     },
     {
       "file": "linux/desktop/care.png",
+      "sha256": "dc27af9970bdf31f03d260d669dd0bee6fdb7cae7d6c12aef7196b944947cdc3",
       "width": 1440,
-      "height": 5680,
-      "sha256": "c88c76db84df86d7ab5d16ce62bd9d957a6a495abfaa4e480b1e07417af85198"
+      "height": 6098
     },
     {
       "file": "linux/desktop/concept.png",
+      "sha256": "b1cc3363b5b96022fa0a5ce42613f516841fd2b3443b51b0a0d43ba7ebfab7c0",
       "width": 1440,
-      "height": 3050,
-      "sha256": "df69f850bf2c7e47889e65883554933417801e8d322aba74d2ce3841ed166b69"
+      "height": 3377
     },
     {
       "file": "linux/desktop/contact.png",
+      "sha256": "28d5c036b2c6a4adb2106e4408117ca27395c9295bbb8ddee447405c54bcc356",
       "width": 1440,
-      "height": 2649,
-      "sha256": "788f2a5cea0f1d30e2a5799e384ec88deeacf3b002d5f37cd7b6c455033a6650"
+      "height": 2983
     },
     {
       "file": "linux/desktop/county-entry.png",
-      "width": 1296,
-      "height": 1748,
-      "sha256": "6fea929ac01247da0d05f22ec15875891d8a16d149bbe56737bd65a66e898c75"
+      "sha256": "ca2354c93fe2cec7858ab98a777d293754ebd196e621aa78f1d96dc8491cd772",
+      "width": 850,
+      "height": 1748
     },
     {
       "file": "linux/desktop/county-questions.png",
+      "sha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8",
       "width": 900,
-      "height": 769,
-      "sha256": "a7bbdae24b72933ca8d83f3ddaf352242300239203d4b7229f03ef3d86401b75"
+      "height": 769
     },
     {
       "file": "linux/desktop/county.png",
+      "sha256": "5a92cc68d396360bb8accc0da73d188b1e63409ceb54daf72f38d693622e3b5d",
       "width": 1440,
-      "height": 4331,
-      "sha256": "f79153f81c243c6ab189cab093d49a02cbdb01ae3854bf14b677ece25ec3a090"
+      "height": 4898
     },
     {
       "file": "linux/desktop/district-directory.png",
+      "sha256": "757f99842b68807cb754d3776b586f1a48b5df3de387dc34a5f80f7762441d2c",
       "width": 1440,
-      "height": 2883,
-      "sha256": "b060a2fdf91087f84c87246a9528753eacbaaab59dc994768e1c621d49814fa3"
+      "height": 3281
     },
     {
       "file": "linux/desktop/floating-tools-content.png",
+      "sha256": "6143e6c838c5c36bd955726f8789e60d80f2c63411700e650f2e494f04b6fa0d",
       "width": 1440,
-      "height": 1000,
-      "sha256": "259f5c741770898b446afee2cf1dba9faa22e9ea234bb9c925c9048499ce6503"
+      "height": 1000
     },
     {
       "file": "linux/desktop/floating-tools-home.png",
+      "sha256": "619b93a9dd5506112a4db028610a0511ccd4d9215742376b9ca6fde64b2ec413",
       "width": 1440,
-      "height": 1000,
-      "sha256": "619b93a9dd5506112a4db028610a0511ccd4d9215742376b9ca6fde64b2ec413"
+      "height": 1000
     },
     {
       "file": "linux/desktop/footer-closed.png",
+      "sha256": "267b1a561df76dec8ff9928605c08bb37e33ec8a0711d7c0a0a13a146f76b85d",
       "width": 1440,
-      "height": 429,
-      "sha256": "2103279e84c9c6b1b058c582ea773c167af34c1992020d29cd55d0b52e5fcdd3"
+      "height": 428
     },
     {
       "file": "linux/desktop/footer-open.png",
+      "sha256": "2255d4bbdfedf5c52cf617d000413c73712c9bb1ac002868c39ad80fe62b1673",
       "width": 1440,
-      "height": 1820,
-      "sha256": "5d5554146b864ab7f95a35a4cd7bb8f6a4ddc0576db3b05d39a1a0e1fea11114"
+      "height": 1888
     },
     {
       "file": "linux/desktop/georgia-entry.png",
-      "width": 1296,
-      "height": 506,
-      "sha256": "45b46ad7360e0791b7351e49cbf96cb792def99b7569cca9c552b79584a5b60b"
+      "sha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600",
+      "width": 850,
+      "height": 506
     },
     {
       "file": "linux/desktop/guide.png",
+      "sha256": "57d29995835d8c8e08388b523f653c11d95d20a6a2cdf4a9cda4eba1ed453d4e",
       "width": 1440,
-      "height": 7173,
-      "sha256": "d174eac553a2efe4c7a6e75b7e64f10c489d0540fc6cb9b10d358d18cf152726"
+      "height": 7536
     },
     {
-      "file": "linux/desktop/home.png",
+      "file": "linux/desktop/home-viewport-01.png",
+      "sha256": "619b93a9dd5506112a4db028610a0511ccd4d9215742376b9ca6fde64b2ec413",
       "width": 1440,
-      "height": 5423,
-      "sha256": "42fd9ca766a246aedaf9f054e9a45deeed78701ad7ed8e4d94ff71f2844af78f"
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-02.png",
+      "sha256": "25f43e107e87b476340702c565cf1ad26391cd4f11310d875cae3423d94c5daa",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-03.png",
+      "sha256": "69842f1b6c7a3a2d574cfe47c1134cf4295d025c5b641def4312f0cf9b81547a",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-04.png",
+      "sha256": "03bbcc7de1d75a463df7d1ecc1c4788b0d0933423d91296cb00046a6c147a31c",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-05.png",
+      "sha256": "55a2c247d2aed664ba35213e48498385e9e39c390f7839210ff9e6593a75be7a",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-06.png",
+      "sha256": "30550f5d28c3ef97df7c1d412d06cae78ab4bc59838803d2d4dfc32234db7b2f",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "linux/desktop/home-viewport-07.png",
+      "sha256": "cb2501ecfadef77563191bcb3938bb080a02a640271e26c8e288b7e28f26bc50",
+      "width": 1440,
+      "height": 1000
     },
     {
       "file": "linux/desktop/illinois-entry.png",
-      "width": 1296,
-      "height": 812,
-      "sha256": "9f7ce504efdb8596c528cd9e71d709f2b304a4013c41d646b97573c8c2d150dd"
+      "sha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd",
+      "width": 850,
+      "height": 813
     },
     {
       "file": "linux/desktop/mississippi-entry.png",
-      "width": 1296,
-      "height": 505,
-      "sha256": "1c6509c1215322cba3c6e5ea6937cb38a547034209b118a58b9c33cbadb7fcd4"
+      "sha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
+      "width": 850,
+      "height": 505
     },
     {
       "file": "linux/desktop/monthly-seo.png",
+      "sha256": "16a9da2c1826f5e0e33cddc53b903c12d9214cdd16169889c18d0f44bb2ebf71",
       "width": 1440,
-      "height": 5686,
-      "sha256": "8ce2a1e66f831be4cb8717ca07bf69471ff4f1cdd1e9bdf5e0faaa02c12102f1"
+      "height": 6049
     },
     {
       "file": "linux/desktop/pricing.png",
+      "sha256": "6634c7b13d889c4a84df43ad6d48ef68d9ff69b3fedf0949b53122a7b7f0869e",
       "width": 1440,
-      "height": 7910,
-      "sha256": "816d2b148f3ce91c5f87449c4ffd21d9e6aca44147ac1cd9f5da45d79c96a322"
+      "height": 7294
     },
     {
       "file": "linux/desktop/regional-directory.png",
+      "sha256": "4f325d8cc3fe447221238980ea9181e6f75f62b815e78d01db4a1b72e13c9a66",
       "width": 1440,
-      "height": 3902,
-      "sha256": "972670a7ac1d97e632bf3d62e3ed6f0ba234d030c74b5959b036fc1f14c7bd99"
+      "height": 3386
     },
     {
       "file": "linux/desktop/scope-request.png",
+      "sha256": "fe4acc2ca1bd98222f1e14a0a0bdb757bd86823e6dc2644632bd9e8140b94bc8",
       "width": 1440,
-      "height": 2555,
-      "sha256": "2aa2a1c4ba933f201975f28ff5defde406a2520a72314a2cb03532807352ad6a"
+      "height": 2918
     },
     {
       "file": "linux/desktop/service-questions.png",
+      "sha256": "678f262feb21c717eecd035764dbe152eb139e3e843f8e8013de8652de616814",
       "width": 1296,
-      "height": 427,
-      "sha256": "d3ab18fed385398ba060852b58e0c911709dd41516dc64b906b594a299d448cd"
+      "height": 427
     },
     {
       "file": "linux/desktop/services.png",
+      "sha256": "0c4ed82748b4157004d1e1208eeda0a44743b0ca3b8a082465229eeee26115cd",
       "width": 1440,
-      "height": 3336,
-      "sha256": "082eb5ae508fc4f204661c047672e6a40ef43a3debcf258d1e62d8874c546058"
+      "height": 3699
     },
     {
       "file": "linux/desktop/texas-county.png",
+      "sha256": "8a92127dbc0f2d709e7516f1781ef8f4b0bf746ccc07e4f4e2b27af655ec42bc",
       "width": 1440,
-      "height": 5823,
-      "sha256": "9336e4c9d0fb290d5c23595a2e60e339d53c663f38b9e7d1dd86c8cebc22c90b"
+      "height": 4965
     },
     {
       "file": "linux/desktop/texas-entry.png",
-      "width": 1296,
-      "height": 784,
-      "sha256": "a1a414b8cb25d46505407eea2f7bc1ca7e7a44a4f5946981ef945463a7c86bea"
+      "sha256": "297c5bcd64e3251966d892be2262f01537cdb50582770ffd5576f164a2345074",
+      "width": 850,
+      "height": 784
     },
     {
       "file": "linux/desktop/web-design.png",
+      "sha256": "6971b8654c4f01e6e43a91b0e3b642500d946c1e7186aa2d089521a1c2aa9b0b",
       "width": 1440,
-      "height": 7256,
-      "sha256": "dfc2328b13dfbec4aea6fcabb092fbcae7797471c381bd723e76f2d5d3bb3885"
+      "height": 6686
     },
     {
       "file": "linux/desktop/wisconsin-entry.png",
-      "width": 1296,
-      "height": 501,
-      "sha256": "e5bb51309eb225463d8e346649d4c7780da126a4294989a220f386dcc582deac"
+      "sha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe",
+      "width": 850,
+      "height": 501
     },
     {
       "file": "linux/desktop/work.png",
+      "sha256": "80fa4dcfd62ebf65fd2b6e6785db1a61f8870718803330894cd333f26ef030f9",
       "width": 1440,
-      "height": 7170,
-      "sha256": "f3a8d6b498a97588e2530b31970b13ce5f33449cc5beb9c09d6e3c1b5a71e889"
+      "height": 7671
     },
     {
       "file": "linux/phone/about.png",
+      "sha256": "6562f5cf810ffc044adf36f8b55cc3fe04374f3fa7d0959e028fbe102dc527f9",
       "width": 390,
-      "height": 3917,
-      "sha256": "14e7783693c791f95d36332bd68665ac3940fab3d028245b7647ea0f8a6af561"
+      "height": 3721
     },
     {
       "file": "linux/phone/alabama-entry.png",
+      "sha256": "12869b7d7f7f6644e530dc35239a1f925267e129bd11ece8f0c7c13031f3835f",
       "width": 350,
-      "height": 949,
-      "sha256": "c488965686e633c04f8d8b799856edd606621b1c7725994d4656cf17c35bdeb7"
+      "height": 948
     },
     {
       "file": "linux/phone/care.png",
+      "sha256": "331f56b0042d1ae9d69d6c6cb94dd27fbcd6f65c5f3dd35a58194f3c39c9e4fc",
       "width": 390,
-      "height": 7784,
-      "sha256": "3ff62c9dcf90fcef49b0cfce52236149229b734cc92908d71ffa0e84c9aacecd"
+      "height": 7849
     },
     {
       "file": "linux/phone/concept.png",
+      "sha256": "d4a35166269450df396f9056a523dd90967d869699ae6d283056905207dee3d3",
       "width": 390,
-      "height": 4293,
-      "sha256": "8e3036a3d70f2c2517b339c46ded37ae2c35c4dca38989efb6b6c4dd50ae7f34"
+      "height": 4117
     },
     {
       "file": "linux/phone/contact.png",
+      "sha256": "b62dbecd9b93626bb60cb9cbffb79d4c64d7f8cdee0637b3b7efce07221a2cd8",
       "width": 390,
-      "height": 4263,
-      "sha256": "6f9c5ad9e15ef03867c7fde8d438778819fd6269c85ccf79c836e2ce3e8a4881"
+      "height": 4067
     },
     {
       "file": "linux/phone/county-entry.png",
+      "sha256": "ac5466bf14598168d2e872daca521cdc075c581ead9db9f8986b14e57dea5d48",
       "width": 350,
-      "height": 2287,
-      "sha256": "9891884d27f3b55e73da7874a096d80a87a9b953b010902c39200f17fe096677"
+      "height": 2287
     },
     {
       "file": "linux/phone/county-questions.png",
+      "sha256": "151fc625c2ff5aca824b48067784b4943328062c0dff362ef9d7207a2f4a4289",
       "width": 350,
-      "height": 982,
-      "sha256": "cec21323a21458046448c6b551a1b3b606cbdbe1bee0c81498e9fd00eea8285d"
+      "height": 982
     },
     {
       "file": "linux/phone/county.png",
+      "sha256": "88e08cfe04548de9b1681c597572c335c568f2b7cb2ea7bd66807fc806a7e617",
       "width": 390,
-      "height": 5808,
-      "sha256": "cc4b9229e76d2794a949d89a99bedef2f75c9ab18c6fb5b02d7a6a4ea86b0250"
+      "height": 6024
     },
     {
       "file": "linux/phone/district-directory.png",
+      "sha256": "93dba973050ae5aecedc9ff8dd96e8b47a2836047a6db7e504e589b29ceb3458",
       "width": 390,
-      "height": 3862,
-      "sha256": "b8777244253b48d053f19cd56563bbe4a9a2b1b3c6d533b681efb08f635e123c"
+      "height": 3701
     },
     {
       "file": "linux/phone/floating-tools-content.png",
+      "sha256": "7fcca1469108524ccaf09db4cce96bb3f1bc613acb3f0bc351f260ba4834c838",
       "width": 390,
-      "height": 844,
-      "sha256": "7fcca1469108524ccaf09db4cce96bb3f1bc613acb3f0bc351f260ba4834c838"
+      "height": 844
     },
     {
       "file": "linux/phone/floating-tools-home.png",
+      "sha256": "3288cacac94af5bbebb012dc610c25027d8a85a4edfbc55064eb2f60256dd2dc",
       "width": 390,
-      "height": 844,
-      "sha256": "3288cacac94af5bbebb012dc610c25027d8a85a4edfbc55064eb2f60256dd2dc"
+      "height": 844
     },
     {
       "file": "linux/phone/footer-closed.png",
+      "sha256": "b80a11badae6039fc801dc1c94ec8cc6b6a24bd9b79a43ff646f791334d59670",
       "width": 390,
-      "height": 951,
-      "sha256": "45aadf38f8724b97b80ba1e8009052cae6d687949d77c3c9c6cc1263ec3c086d"
+      "height": 755
     },
     {
       "file": "linux/phone/footer-open.png",
+      "sha256": "881eb659c97fdea30eec3ee816128d61fad62d9811b3626c22570dd07577df7c",
       "width": 390,
-      "height": 3213,
-      "sha256": "f26066dfdeebe8bb0d98e5fe0ef8a6834d9e3c357755efe9f0f0bdc05165dab1"
+      "height": 2867
     },
     {
       "file": "linux/phone/georgia-entry.png",
+      "sha256": "3bc6335f54d0e0f2571bcab55273ee2a0bc83b2f6d4f93770119f81e331ffcce",
       "width": 350,
-      "height": 727,
-      "sha256": "d8432e713ca62b801096af8a6a99cc2d025b45079172cec6acd18fa67c7e7549"
+      "height": 727
     },
     {
       "file": "linux/phone/guide.png",
+      "sha256": "be7e2f6d9e44d9f1b56d4fbad6b88dc285503edc4d5be5e13832975c39614969",
       "width": 390,
-      "height": 10971,
-      "sha256": "faaa40a50e401600620843ffd84cdcb0eac16b80f7a6afcf46eeac35a9dd3411"
+      "height": 10775
     },
     {
       "file": "linux/phone/home.png",
+      "sha256": "9532f077dac3d28b0e4006435b217b1e5685b1b612e3efeecc78cb0dd9d44689",
       "width": 390,
-      "height": 8471,
-      "sha256": "1f913ab4aeb2d629a5edf9562560865a9d6aa06ff9c4b8a608ab49c372339893"
+      "height": 8086
     },
     {
       "file": "linux/phone/illinois-entry.png",
+      "sha256": "4a6a33ec67eedaa623f88188402b582e729072ac12d3e821bc788dda506c2efb",
       "width": 350,
-      "height": 1088,
-      "sha256": "cf64f54a6b791f75c54ccc08d3d2f10eb072d4c274e100da1c2fd3d7c0307369"
+      "height": 1088
     },
     {
       "file": "linux/phone/mississippi-entry.png",
+      "sha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
       "width": 350,
-      "height": 642,
-      "sha256": "8119919f2d5f4c48e2225dd027a8d793cf244508ac86cb9e3cc6aff367a25547"
+      "height": 641
     },
     {
       "file": "linux/phone/monthly-seo.png",
+      "sha256": "3ff356c04c72e4be55a147a9b9f50ff159837f9156932d7bc315d9d9d5e20402",
       "width": 390,
-      "height": 8338,
-      "sha256": "7f244e3d50f7fac5ab52eebb87ffdf88c39936b7a34371fb3ee300276eca327a"
+      "height": 8142
     },
     {
       "file": "linux/phone/pricing.png",
+      "sha256": "56493173090f0a73ae4e68b4e3e4033ab1dd5212ddd44e193b2101f92b0c4334",
       "width": 390,
-      "height": 10002,
-      "sha256": "6915294f5bc2c89f6986e74186f4feea11a522d3ed1b6fa685484bec5589f867"
+      "height": 10719
     },
     {
       "file": "linux/phone/regional-directory.png",
+      "sha256": "97cd767711fd70d7fd4b493d0263af468cbfa0ff03f46b01a0bc4e02931a2658",
       "width": 390,
-      "height": 5141,
-      "sha256": "049762e2d8b95e30658f2490c086e8215785c8c5b3d27a4b67f85a77048d8096"
+      "height": 4163
     },
     {
       "file": "linux/phone/scope-request.png",
+      "sha256": "0e8e91ee0818f0995c29b5791409399f8eb5588f8cf1e895b851beb47e156c6f",
       "width": 390,
-      "height": 3392,
-      "sha256": "ffd1ed8896c2255129911731059489d512b0176f9de21aa4a3920738634ecedc"
+      "height": 3408
     },
     {
       "file": "linux/phone/service-questions.png",
+      "sha256": "133965249d342215e3656b3317899732a9211ac269f8acbe6c482893e073ac65",
       "width": 350,
-      "height": 477,
-      "sha256": "8d53e584c8e30caca7851e96037f07d50a28d6d82ae2c559c79fd1d88bea83e3"
+      "height": 477
     },
     {
       "file": "linux/phone/services.png",
+      "sha256": "0bd61d0c3008bfca09888098a71b37e28738d410a3ad52d32c80405d1532e583",
       "width": 390,
-      "height": 5242,
-      "sha256": "e48f3375edfd0a0310728b1df77cab3a7e4d1688d9a5e68ebf0edaf904bff796"
+      "height": 5046
     },
     {
       "file": "linux/phone/texas-county.png",
+      "sha256": "40f77bf67c31f5d7d3574f736b19c510b048e419702af71058a964508ca44341",
       "width": 390,
-      "height": 9480,
-      "sha256": "1403ae0ffffc781a4e821887df4197456f0b17ed18a6c37c7ffe590f8f75e1b5"
+      "height": 6433
     },
     {
       "file": "linux/phone/texas-entry.png",
+      "sha256": "d1f4357f6ad042cf99e800450572ad09189ad2ebfb4c167f0824d6148f25a486",
       "width": 350,
-      "height": 1072,
-      "sha256": "65e3f72335f9da73f2f4e3d7dd6e464e8d0d28b71e3b1c459b243dce383e2fcc"
+      "height": 1072
     },
     {
       "file": "linux/phone/web-design.png",
+      "sha256": "e0c7d9d82cc2a362160f03ec180940b18d3200d392fe0c0456aef1663c5d3fd2",
       "width": 390,
-      "height": 8159,
-      "sha256": "3d56bff1bb3092196b735f16f7035e1dac07c69a64511e47b1f1b8de699dad83"
+      "height": 7945
     },
     {
       "file": "linux/phone/wisconsin-entry.png",
+      "sha256": "fca08a081b366233f86858a9531418a97df30e297ddc92e4bcf3b45bccaabb70",
       "width": 350,
-      "height": 656,
-      "sha256": "8e47fca1c6f965127652650fb9741587e9e9126c498e7f7a0d114f0186c28921"
+      "height": 656
     },
     {
       "file": "linux/phone/work.png",
+      "sha256": "7f11bdb604f737c464c0bd148c8502c82c0d8a1ab192707202dbcb8e7acb09ec",
       "width": 390,
-      "height": 12290,
-      "sha256": "25e71259cd3fbb413e82f16ff4b8c9ec1a0b4b08b1648e58582da7f8708c6a25"
+      "height": 12239
     }
   ]
 }
