@@ -10,6 +10,10 @@
     {
       "path": "evidence/combined-improvements-20261024/checkpoint-43-review/report.json",
       "sha256": "87d763c5e2e8a71adb147b8ba310c9162b172f6abe1e3c30dc080fa8c623b82c"
+    },
+    {
+      "path": "evidence/footer-semrush-20261025/external-review.json",
+      "sha256": "2e035001744afdd6d05a3eb24211ba81fc12646c659024e4275b638a5e3650f6"
     }
   ],
   "records": [
@@ -12526,7 +12530,7 @@
     {
       "path": "/areas/ohio/union-county/",
       "beforeSha256": "0dc09fb97d942fa7d7bb5a47dd05d5747b1c100a98e3464b222199a89fe1bd8d",
-      "afterSha256": "8f8c43deedf19c091a1562c5ea93e2ad782c9d6d6268615d6ec0ba0a254ff53d",
+      "afterSha256": "eed065bbe80b1381ec403115ad4f29e21ab1e61e5b9e5b32aa18bcd6347d900f",
       "edits": [
         {
           "path": [
@@ -12536,6 +12540,56 @@
           "after": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
           "beforeExists": true,
           "afterExists": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": "ABE Creations identifies itself with Marysville and describes branded wooden gifts, including an event cutting board offered with bulk delivery for personal presentation or direct shipment to recipients. For a maker, I can clarify the gift inquiry or build a fuller custom-gift introduction. The page can keep the shared branding, individual message and intended handoff together while explaining the natural variation in wooden examples.",
+          "after": "ABE Creations identifies itself with Marysville and offers quotes for custom logo woodwork, asking about quantity, timing and shipping preference. Its cutting-board examples explain that wood grain and color vary. For a maker, I can clarify the gift inquiry or build a fuller custom-gift introduction. The page can keep shared branding, individual messages and the intended handoff together while leaving the actual presentation and shipping arrangements for the maker to confirm."
+        },
+        {
+          "path": [
+            "sources"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": [
+            {
+              "url": "https://abecreations.com/products/gift-for-your-event-edge-grain-cutting-board",
+              "label": "ABE Creations: branded event cutting board",
+              "observation": "Describes branding, natural wood variation and bulk or direct-recipient handoff options."
+            },
+            {
+              "url": "https://abecreations.com/pages/send-a-gift",
+              "label": "ABE Creations: gift projects",
+              "observation": "Presents custom promotional wooden gifts and discussion of special requests."
+            },
+            {
+              "url": "https://abecreations.com/",
+              "label": "ABE Creations: Marysville business introduction",
+              "observation": "Identifies the business with Marysville, Ohio."
+            }
+          ],
+          "after": [
+            {
+              "url": "https://abecreations.com/products/maple-elizabeth-artisan-cutting-board-walnut-maple-striped-board-rounded-edges-food-safe-finish",
+              "label": "ABE Creations: wooden cutting-board variation",
+              "observation": "Describes a handcrafted maple-and-walnut cutting board and explains that wood grain and color vary between boards."
+            },
+            {
+              "url": "https://abecreations.com/pages/send-a-gift",
+              "label": "ABE Creations: gift projects",
+              "observation": "Requests quantity, needed-by date, shipping preference and project notes for custom logo woodwork; artwork follows quote review."
+            },
+            {
+              "url": "https://abecreations.com/",
+              "label": "ABE Creations: Marysville business introduction",
+              "observation": "Identifies the business with Marysville, Ohio."
+            }
+          ]
         }
       ]
     },
@@ -18025,7 +18079,7 @@
     {
       "path": "/areas/tennessee/unicoi-county/",
       "beforeSha256": "69f7a4a0f463234b9b5295a930fe3d846e6ff4c44d4987927cfbf2efdfbb6c8a",
-      "afterSha256": "3bb68cbc1a1fed8e2bc90411c23f4c9ca8c21b9a42f2073c16ce9787c0e0860c",
+      "afterSha256": "2f28381dd53c2c6d2577c844895da977fa54be97451275cf645859ac0bddf5c7",
       "edits": [
         {
           "path": [
@@ -18035,6 +18089,98 @@
           "after": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
           "beforeExists": true,
           "afterExists": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": "USA Raft Adventure Resort’s FAQ describes pet permissions for lodging alongside restrictions on leaving pets unattended and taking them on rafting or tubing trips. For a combined lodging-and-activity website, I can make those related conditions easier to understand or build a fuller trip-planning introduction. A guest should recognize the unresolved pet arrangement before treating a lodging choice as a complete plan for an activity day.",
+          "after": "USA Raft Adventure Resort's lodging and tubing pages describe pet permissions for stays alongside restrictions on leaving pets unattended and taking them tubing. For a combined lodging-and-activity website, I can make those related conditions easier to understand or build a fuller trip-planning introduction. A guest should recognize the unresolved pet arrangement before treating a lodging choice as a complete plan for an activity day."
+        },
+        {
+          "path": [
+            "sources"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": [
+            {
+              "url": "https://usaraft.com/faq/",
+              "label": "USA Raft Adventure Resort: lodging and activity FAQ",
+              "observation": "States lodging pet permissions and exceptions, restricts leaving pets unattended and excludes pets from rafting and tubing; lists its two Erwin-area addresses."
+            }
+          ],
+          "after": [
+            {
+              "url": "https://usaraft.com/lodging-2/",
+              "label": "USA Raft Adventure Resort: lodging and pet arrangements",
+              "observation": "Describes lodging pet permissions and exceptions, restricts leaving pets unattended, and lists both Erwin-area properties."
+            },
+            {
+              "url": "https://usaraft.com/tubing-lower-nolichucky/",
+              "label": "USA Raft Adventure Resort: tubing and pet arrangements",
+              "observation": "Excludes dogs from tubing and reminds guests that dogs cannot be left unsupervised in lodging units."
+            }
+          ]
+        },
+        {
+          "path": [
+            "scopes"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": [
+            {
+              "title": "Connect the relevant pet information",
+              "pages": [
+                "Selected accommodation and current pet terms",
+                "Activity participation limits",
+                "Questions before booking"
+              ],
+              "request": "Place the related owner-approved conditions together near the stay and activity descriptions, preserving a general inquiry route.",
+              "supplies": "Current pet policies by accommodation and activity, approved wording about unattended pets and the correct contact for questions.",
+              "check": "A guest planning to stay with a pet and go rafting can see that lodging permission does not settle where the pet will be during the trip."
+            },
+            {
+              "title": "Introduce combined stays and activities",
+              "pages": [
+                "Accommodation choices",
+                "Activity choices",
+                "Party and pet arrangements",
+                "Confirmation and preparation"
+              ],
+              "request": "Show how the selected stay and planned activities relate without implying that every combination is workable.",
+              "supplies": "Current accommodation and activity descriptions, permitted pet arrangements and the actual confirmation process.",
+              "check": "A visitor can describe the stay, activity and unresolved pet question together before assuming the whole itinerary is accepted."
+            }
+          ],
+          "after": [
+            {
+              "title": "Connect the relevant pet information",
+              "pages": [
+                "Selected accommodation and current pet terms",
+                "Activity participation limits",
+                "Questions before booking"
+              ],
+              "request": "Place the related owner-approved conditions together near the stay and activity descriptions, preserving a general inquiry route.",
+              "supplies": "Current pet policies by accommodation and activity, approved wording about unattended pets and the correct contact for questions.",
+              "check": "A guest planning to stay with a pet and go tubing can see that lodging permission does not settle where the pet will be during the trip."
+            },
+            {
+              "title": "Introduce combined stays and activities",
+              "pages": [
+                "Accommodation choices",
+                "Activity choices",
+                "Party and pet arrangements",
+                "Confirmation and preparation"
+              ],
+              "request": "Show how the selected stay and planned activities relate without implying that every combination is workable.",
+              "supplies": "Current accommodation and activity descriptions, permitted pet arrangements and the actual confirmation process.",
+              "check": "A visitor can describe the stay, activity and unresolved pet question together before assuming the whole itinerary is accepted."
+            }
+          ]
         }
       ]
     },

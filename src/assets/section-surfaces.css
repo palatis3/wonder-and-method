@@ -296,11 +296,6 @@
  .studio-site .process-summary{grid-template-columns:1fr;gap:1rem}
  .studio-site .concept-toolbar{gap:0 1rem}
  .studio-site .concept-toolbar p{flex-basis:100%;order:-1}
- .page-tools-ready .studio-site .site-tools{position:static;width:90%;margin:1rem auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;padding:1rem 0;border-top:1px solid var(--line)}
- .page-tools-ready .studio-site .back-to-top{position:static;width:auto;height:auto;gap:.6rem;padding:.4rem 1rem .4rem .45rem}
- .page-tools-ready .studio-site .back-to-top>span:not(.back-to-top-icon){position:static;width:auto;height:auto;overflow:visible;clip-path:none;white-space:normal}
- .page-tools-ready .studio-site .site-footer--compact{padding-bottom:2rem}
- .studio-site main{padding-bottom:1rem}
 }
 @media(prefers-reduced-motion:reduce){.studio-site :is(a.work-preview,.real-project-preview-image,.guide-card>a,.services-overview-card){transition:none}}
 @media(forced-colors:active){

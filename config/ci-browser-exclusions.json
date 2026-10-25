@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "reviewedBy": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-  "reviewedAt": "2026-10-25T17:50:00.308Z",
-  "basis": "Independently matched all 511 identities to current discovery, exact source hashes and true project/mobile skip predicates with matching reasons. Exact match to 511 previously skipped identities; no failed identity included. This approves the existing exclusion policy only, not new omissions or the in-progress CI implementation.",
+  "reviewedBy": "Codex independent reviewer (gpt-6-astra)",
+  "reviewedAt": "2026-10-25T19:38:17.692Z",
+  "basis": "Retain 511 independently reviewed platform/project exclusions. The October 25 floating-controls review approved six changed source hashes and two renamed identities, with no added or removed skips. Evidence: evidence/footer-semrush-20261025/implementation-review.json",
   "sourceFiles": {
     "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
-    "tests/browser/audit-layout-regression.spec.mjs": "0475143ee7a5960dd0f3250e47043ab90ededcb07fa1eb7458233336cecce0ea",
+    "tests/browser/audit-layout-regression.spec.mjs": "b4c282e937db44a729a54c3ae6e2e2d27a913ce22b8d1a045fa798468376eecb",
     "tests/browser/buyer-journeys.spec.mjs": "4b52170428b484e4e276cfa138c9c92c761c92da3cd610b1397ff77c4dbb47a4",
-    "tests/browser/floating-tools.spec.mjs": "4a6db0e9c02892070de54acd97a5e8cf3f8457a3f08babea168270b886550977",
-    "tests/browser/footer-surfaces.spec.mjs": "2f009ba570caea37e3549502c221621b883b7b1b5d94958fa5d5996e915231d7",
+    "tests/browser/floating-tools.spec.mjs": "81df441e41165e408aad758d02fc3b042e411404d507ab6491c85690e487211f",
+    "tests/browser/footer-surfaces.spec.mjs": "5a592842a5a78c01a0d681019097d155f3a7ff9684ccc34c91b40475a229fe38",
     "tests/browser/header-resize.spec.mjs": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918",
     "tests/browser/living-city-accessibility.spec.mjs": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69",
     "tests/browser/living-city-motion-polish.spec.mjs": "eefef091140963e0cdfa84bc902119ad3a5790ad9ec69dc7a5ca47f80a4c40a3",
@@ -21,11 +21,11 @@
     "tests/browser/location-wave-two-planning.spec.mjs": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
     "tests/browser/no-javascript.spec.mjs": "7220fa243bdd7238c7eda1050e34591482601b40ae0008c68cb4d7af90ed3cd5",
     "tests/browser/northeast-coverage.spec.mjs": "0bcc94730c3a32ef21984353c1c8f2144ee714c42f49c39fe978a90ce5cba7eb",
-    "tests/browser/palette-clarity.spec.mjs": "6a649f34300dc007eb6a76286f4b33164eca977fdd350b368ac1eba6775c2255",
+    "tests/browser/palette-clarity.spec.mjs": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
     "tests/browser/regional-directory.spec.mjs": "33dba984c1f882468138bfd2c8513e7b32ee19a0ddf08e1646867f6bd98bf711",
-    "tests/browser/shared-controls.spec.mjs": "f92fb5bd164c2099cc593324af78860f8a2249af2a89876eae93043e725caed7",
+    "tests/browser/shared-controls.spec.mjs": "169be5add9628b881382fff283a4d3b2cab0cc7d9b292c1a6045c5ff2d17e3bf",
     "tests/browser/site-accessibility.spec.mjs": "4fa345631db704a5c8ebe10546bbc9d6b2301fca7bd15ee222ed064f68e130a6",
-    "tests/browser/site-health.spec.mjs": "0989012e6fef42f701748ae4b9c5950e05a8a49a107879d85daa9b8d06f4087d",
+    "tests/browser/site-health.spec.mjs": "abe10f3cc3e7b85a172835da3fdbbf346fd0304bd09bd41c0d0059aa0cccd6dd",
     "tests/browser/texas-planning.spec.mjs": "df351ec1a10c43508c8062db9ed8c1b30f506d5e8e1dba327b5edeae6d5ed575"
   },
   "exclusions": [
@@ -1420,7 +1420,7 @@
       "reason": "Reduced motion is already static"
     },
     {
-      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › page help uses a phone row, desktop corner and deliberate form action",
+      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › page help floats in separate corners at every width and yields to form editing",
       "file": "tests/browser/shared-controls.spec.mjs",
       "reason": "One complete viewport matrix"
     },
@@ -2280,7 +2280,7 @@
       "reason": "One complete HTTP redirect matrix"
     },
     {
-      "identity": "[phone] › tests/browser/shared-controls.spec.mjs › page help uses a phone row, desktop corner and deliberate form action",
+      "identity": "[phone] › tests/browser/shared-controls.spec.mjs › page help floats in separate corners at every width and yields to form editing",
       "file": "tests/browser/shared-controls.spec.mjs",
       "reason": "One complete viewport matrix"
     },

@@ -42,7 +42,7 @@ if(chatRoot){
  chatRoot.querySelector('.support-chat-dismiss').addEventListener('click',()=>{
   dismissed=true;chatRoot.hidden=true;stopFocus();
   const visible=node=>node&&!node.hidden&&node.getClientRects().length&&getComputedStyle(node).visibility!=='hidden'&&getComputedStyle(node).display!=='none';
-  const next=[opener!==launcher?opener:null,document.querySelector('.back-to-top'),document.querySelector('footer a[href="#page-top"]'),document.querySelector('.site-header .wordmark')].find(visible);
+  const next=[opener!==launcher?opener:null,document.querySelector('.back-to-top'),document.querySelector('footer a[href="#page-top"]'),document.querySelector('.site-header .wordmark,.concept-toolbar a[href="/work/"]')].find(visible);
   next?.focus();toolsChanged();
  });
  for(const trigger of triggers){

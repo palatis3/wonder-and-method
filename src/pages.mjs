@@ -71,7 +71,7 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   function page(path,title,description,body){
     const formPage=path==='/contact/'||path.startsWith('/checkout/')||/^\/work\/[^/]+\/request\/$/.test(path);
     const conceptPage=conceptCatalog.some(x=>path.startsWith(x.path));
-    const chatMarkup=conceptPage?'':supportChatMarkup(config,{formPage});
+    const chatMarkup=supportChatMarkup(config);
     body=premiumBody(path,{config,offers:o})??body;
     if(path==='/areas/erie-county/')body=countyCoverage(geography,config,o);
     if(path==='/areas/erie-county/')body=body.replace(/<section\b[^>]*id="start-a-project"[^>]*>/,closing=>serviceAreaLinks()+closing);

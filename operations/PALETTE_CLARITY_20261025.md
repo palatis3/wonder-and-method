@@ -2,6 +2,8 @@
 
 This implementation applies the selected Forest Studio palette and the fourteen recommendations in the October 25 design and clarity review. See `deployment/PRODUCTION.md` for the verified current publication identity; this implementation record alone is not deployment evidence.
 
+The subsequent [footer and shared-control follow-up](FOOTER_SEMRUSH_20261025.md) records the owner's later request for floating corner controls on every page and viewport, superseding this release's phone-row and concept-chat choices. It also removes duplicate footer links and records the completed postpublication Semrush crawl.
+
 The shared palette uses ivory `#F8F7F2` for reading, ink `#0E1B2A` for text, forest `#334739` for brand and actions, sage `#EDF0E8` for examples, pale blue `#E7EEF3` for process, stone `#F1EEE6` for cost and responsibility, and copper `#A34F2E` for restrained emphasis. The illustrated night hero retains its approved blue-teal and ivory inversion. The three fictional businesses retain their individual design palettes; their surrounding studio toolbar and footer use the shared palette. Shadows distinguish interactive previews and overlays; ordinary reading surfaces stay flat.
 
 | Recommendation | Implemented behavior |

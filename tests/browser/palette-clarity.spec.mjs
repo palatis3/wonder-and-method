@@ -39,7 +39,7 @@ test('every concept keeps prices and navigation clear on narrow phones',async({p
  test.skip(testInfo.project.name!=='desktop','One complete phone matrix');test.setTimeout(90_000);
  for(const width of [320,375,390,430])for(const concept of conceptCatalog){
   await page.setViewportSize({width,height:844});await page.goto(concept.servicePath+'?qa=1');await page.evaluate(()=>document.fonts.ready);
-  await expect(page.locator('.concept-toolbar')).toContainText('Fictional website concept');await expect(page.locator('.support-chat')).toHaveCount(0);await expect(page.locator('#main-nav')).toHaveCount(0);
+  await expect(page.locator('.concept-toolbar')).toContainText('Fictional website concept');await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');await expect(page.locator('#main-nav')).toHaveCount(0);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
   await page.locator('#site-help').scrollIntoViewIfNeeded();await page.locator('.back-to-top').click();await expect(page.locator('.concept-toolbar a').first()).toBeFocused();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
   if(width===390)await page.screenshot({path:testInfo.outputPath(concept.id+'-phone.png')});

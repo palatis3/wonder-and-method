@@ -15,17 +15,17 @@ test('saved content bookmarks and historical county downloads survive reviewed l
  assert.ok(!page('/areas/onondaga-county/').includes('/assets/county-briefs/onondaga.txt'),'Reviewed unrelated worksheet is retained as a file without an irrelevant contextual link');
  for(const p of pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path))){const slug=p.path.match(/^\/areas\/(.+)-county\//)[1];assert.ok(p.html.includes('id="buyer-task"'),slug);assert.ok((await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8')).trim(),slug+' historical download retained');if(slug!=='erie')for(const id of ['approach','search'])assert.ok(p.html.includes(`id="${id}"`),slug+id);}
 });
-test('every route keeps a return path; studio chat is inline on forms and absent from fictional demos',()=>{
+test('every route keeps one return control and one studio chat launcher',()=>{
  for(const p of pages){
   assert.match(p.html,/<a class="back-to-top" href="#page-top"/);assert.doesNotMatch(p.html,/<details class="support-chat-choice"/);
   if(/^\/work\/(?:fieldwork|northline|hearthside)\//.test(p.path)){
-   assert.doesNotMatch(p.html,/data-chat-script=|class="support-chat-launch"/);
+   assert.match(p.html,/data-chat-script=/);
    assert.match(p.html,/href="\/contact\/#inquiry">Contact the studio<\/a>/);
-   continue;
+
   }
   const formPage=p.path==='/contact/'||p.path.startsWith('/checkout/')||/^\/work\/[^/]+\/request\/$/.test(p.path);
-  if(formPage){assert.match(p.html,/<button\b[^>]+data-chat-open[^>]+aria-describedby="support-chat-description"[^>]*>Chat with Terry<\/button>/,p.path);assert.doesNotMatch(p.html,/<button class="support-chat-launch"/,p.path);assert.match(p.html,/class="support-chat support-chat--inline"/);}
-  else{assert.match(p.html,/<button class="support-chat-launch"/,p.path);assert.match(p.html,/<small>Uses cookies<\/small>/,p.path);}
+  if(formPage){assert.match(p.html,/<button\b[^>]+data-chat-open[^>]+aria-describedby="support-chat-description"[^>]*>Chat with Terry<\/button>/,p.path);}
+  assert.equal((p.html.match(/<button class="support-chat-launch"/g)||[]).length,1,p.path);assert.match(p.html,/<small>Uses cookies<\/small>/,p.path);
   assert.match(p.html,/id="support-chat-description"[^>]*>Chat runs on an outside service that uses cookies/);
   assert.match(p.html,/<noscript><p><a href="\/contact\/#inquiry">Use the contact form<\/a>\. Live chat needs JavaScript\.<\/p><\/noscript>/);
  }

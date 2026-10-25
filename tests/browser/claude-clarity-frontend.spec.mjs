@@ -41,10 +41,10 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('phone help row preserves focus and leaves fields unobstructed',async({page})=>{
+test('floating phone help preserves focus and leaves fields unobstructed',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- await expect(page.locator('.support-chat')).toHaveCSS('position','static');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
  await launch.scrollIntoViewIfNeeded();await expect(launch).toBeInViewport();
  expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
@@ -86,12 +86,12 @@ test('without scripts concept navigation and footer remain usable',async({browse
   await page.goto('http://127.0.0.1:4187/work/hearthside/menu/?qa=1');
   await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();
   await expect(page.locator('.concept-toolbar a[href="/contact/#inquiry"]')).toBeVisible();
-  await expect(page.locator('#main-nav,.support-chat')).toHaveCount(0);
+  await expect(page.locator('#main-nav')).toHaveCount(0);await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.support-chat noscript a')).toBeVisible();
   await expect(page.locator('.concept-header nav').getByRole('link',{name:'Overview',exact:true})).toBeVisible();
   await expect(page.locator('.concept-menu-list article')).toHaveCount(3);
   await expect(page.locator('.concept-demo-form')).toHaveCount(0);
   await expect(page.locator('footer details.footer-group[open]')).toHaveCount(4);
-  await expect(page.locator('footer nav[aria-label="Footer"]').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
+  await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.goto('http://127.0.0.1:4187/about/?qa=1');
   await expect(page.locator('#main-nav')).toBeVisible();
   await page.locator('.service-navigation>summary').click();

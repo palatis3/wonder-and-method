@@ -29,18 +29,22 @@ for(let offset=0;offset<routes.length;offset+=25){
      top:document.querySelectorAll('a.back-to-top[href="#page-top"]').length,
      chat:document.querySelectorAll('.support-chat').length,
      concept:document.body.classList.contains('studio-concept'),form:document.body.classList.contains('studio-form'),
-     footerGroups:document.querySelectorAll('footer details.footer-group').length
+     footerGroups:document.querySelectorAll('footer details.footer-group').length,
+     footerDestinations:[...document.querySelectorAll('footer a[href]')].map(link=>new URL(link.href).pathname)
     }));
     expect(health.scroll,`${path} ${width}px overflow`).toBeLessThanOrEqual(width+1);
     expect(health.h1,`${path} heading`).toBe(1);expect(health.brokenImages,path).toEqual([]);expect(health.badFonts,path).toEqual([]);
-    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(health.concept?0:1);expect(health.footerGroups,path).toBe(4);expect(errors,path).toEqual([]);
+    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(4);expect(errors,path).toEqual([]);
+    expect(new Set(health.footerDestinations).size,path+' unique footer destinations').toBe(health.footerDestinations.length);
     expect(health.palette,path+' shared palette').toEqual(['#f8f7f2','#334739','#edf0e8','#e7eef3','#f1eee6','#a34f2e']);
     expect(health.footerBackground,path+' footer canvas').toBe('rgb(248, 247, 242)');
     // Presence alone misses controls hidden by a future CSS or boot-script edit.
-    await expect(page.locator('.support-chat-launch')).toHaveCount(health.concept||health.form?0:1);
+    await expect(page.locator('.support-chat-launch')).toHaveCount(1);
     if(health.concept){await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();await expect(page.locator('.concept-toolbar a[href="/contact/#inquiry"]')).toBeVisible();}
     else if(health.form)await expect(page.locator('[data-chat-open]')).toBeVisible();
-    else {await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat')).toHaveCSS('position',width<=767?'static':'fixed');}
+    await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+    await expect(page.locator('.back-to-top')).toHaveCSS('position','fixed');
+    await expect(page.locator('.support-chat-launch')).toBeInViewport();
     const answers=faqsByPath[path]||[],section=page.locator('#service-questions');
     await expect(section).toHaveCount(answers.length?1:0);
     if(answers.length===1){
@@ -61,8 +65,14 @@ for(let offset=0;offset<routes.length;offset+=25){
      expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),path+' open FAQ at '+width).toBeLessThanOrEqual(1);
      await page.keyboard.press('Space');await expect(details).not.toHaveAttribute('open','');await expect(summary).toBeFocused();
     }
-    await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
+    await page.evaluate(async()=>{document.activeElement?.blur();scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
     if(await page.evaluate(()=>scrollY>=520))await expect(page.locator('.back-to-top')).toBeVisible();
+    const corners=await page.evaluate(()=>[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(el=>el.checkVisibility({checkVisibilityCSS:true})).map(el=>{
+     const r=el.getBoundingClientRect(),top=el.matches('.back-to-top');
+     return {name:el.className,inViewport:r.top>=0&&r.left>=0&&r.bottom<=innerHeight+1&&r.right<=innerWidth+1,corner:top?r.right<innerWidth/2:r.left>innerWidth/2,touchTarget:r.width>=44&&r.height>=44,reachable:el.contains(document.elementFromPoint(r.left+r.width/2,r.top+r.height/2))};
+    }));
+    expect(corners.some(control=>control.name==='support-chat-launch'),path+' chat remains available after scrolling').toBe(true);
+    for(const control of corners){expect(control.inViewport,path+' '+control.name).toBe(true);expect(control.corner,path+' separate corners').toBe(true);expect(control.touchTarget,path+' touch target').toBe(true);expect(control.reachable,path+' unobstructed control').toBe(true);}
    }
   }
  });

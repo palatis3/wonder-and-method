@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-25T15:18:21.209Z",
+  "capturedAt": "2026-10-25T19:40:38.847Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
@@ -7,15 +7,15 @@
   "sourceHashes": {
     "src/premium-site.mjs": "d5697fde6e0ed486526453f0f2fea8c3d1e4d5a904c196fe499d15860819d238",
     "src/home-proof.mjs": "3e9ef0af0895c810727e1db5f6ed0219ed17fc5103dab45d16f4f85c7956b4d9",
-    "src/site-chrome.mjs": "fadc793ab8d4ab2c92b1d770a084d96ff729380b600fc1d0f8de2855bfb5e4c4",
+    "src/site-chrome.mjs": "5fb6dada13a508fd93d693efe502981bcee0a2d535e1e08285f386da494e1685",
     "src/assets/layout-components.css": "9c4e63b40ef785ab960d71872e043410ee288a5dc9325ca1e21ef40cc4ef3f40",
     "src/assets/site-refresh.css": "c1d2d67c9459b01a8f9622842a69989ac1d8681b21678bc0acc183efcaa31136",
     "src/living-city.mjs": "7be3e417ab5c8640220cd07f6cb692c0c0c35fb5c3bf588188f4873b8dc2dcd4",
-    "src/assets/living-city.css": "ad9dda64608a42254b6a68c5156c95ea72f692e59eaa7a635e7c2982198ab90f",
+    "src/assets/living-city.css": "5301af0aae2acdf0d758fc96860dee9ed8d6fc158e8ff6f59c5b59316b8402f8",
     "src/city-preview-captures.json": "c628f870013c2e32f1ac211f00ef04a98a730ba5e6aa3c6fbd0141e325108d5d",
     "public/living-city/manifest.json": "8c2bf9b9ebcd601a46613ce3ecaf80b41527885b10b534b508d1eedc43335305",
-    "src/assets/section-surfaces.css": "0b179234f7d4c233560e144df90da32f0c70bdc5491e0027fa8d478cf703eb02",
-    "src/assets/support-chat.css": "22e88ad8769bc70361de48f656c53d5be0a322616d85076db3b38b38edd83ed5"
+    "src/assets/section-surfaces.css": "416a6660a99f79f543421192c7634b978bc191911a9766a887bdf57d242705c7",
+    "src/assets/support-chat.css": "554bee31a7d8981452187b0eae56b37d404d32e65698fbf59d168e6becfa8880"
   },
   "homeCapture": {
     "path": "/assets/work/studio-website.webp",
@@ -62,11 +62,11 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "9a33fcf743ef8605e99c34c0e48fcdee393806976ce9d43d8c3695dea9e2c202"
+      "sha256": "6e8f00c96106b9f32284a815a3fef5df272dddb983c38ddbefa56314361d4958"
     },
     "builtStyles": {
-      "dist/assets/site.css": "e4614b196a235df704cdc4d5797a131bd84ca92d073d435b0f3a2260dee01efc",
-      "dist/assets/living-city.css": "b17769a360f7f435b558a978b0a90168b6c2c44d8b47126bd6de346a35988c3d"
+      "dist/assets/site.css": "918e9a3a9ca1f27930c2ad22b5a6d63b398bc53f933030e21a5caf58cda84bc6",
+      "dist/assets/living-city.css": "983446ad76c7a90bd935d494377da9e95e107d63b2b3676e912e2c344ab73475"
     }
   },
   "trackerCapture": {
