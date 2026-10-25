@@ -230,6 +230,11 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 .city-copy .city-eyebrow{font-size:.875rem}
 .city-projects-top p,.city-project-copy .city-description,.city-features,.city-demo-note{font-size:1rem}
 @media(max-width:767px){.city-copy .city-lede{font-size:clamp(1rem,3.9vw,1.55rem)}}
+/* Keep the first-view actions above the fixed help bar on short landscape screens. */
+@media(max-width:767px) and (max-height:520px){
+ .city-copy h1{font-size:2rem;line-height:.92;margin-bottom:6px}
+ .city-copy .city-lede{font-size:1rem;max-width:none;margin-bottom:6px}
+}
 
 .city-copy .city-location,.city-package-note,.city-reveal-copy p:not(.city-reveal-category):not(.city-reveal-title){font-size:1rem}
 .city-reveal-copy .city-reveal-category,.city-controls .city-status,.city-controls button,.city-reveal-bar,.city-reveal-copy a{font-size:.875rem}
