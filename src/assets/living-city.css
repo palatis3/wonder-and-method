@@ -1,6 +1,9 @@
 /* The city artwork and native page share one composition. */
 .studio-home.edition-living-city{--city-paper:#f8f6ef;--city-ink:#092d3b;--city-blue:#153657;background:var(--city-paper)}
-.studio-home.edition-living-city .site-header{position:fixed;inset:0 0 auto;z-index:60;max-width:none;width:100%;padding:24px 5%;min-height:94px;background:transparent;border:0;color:var(--city-paper);box-shadow:none;transition:background .2s ease,box-shadow .2s ease,color .2s ease}
+.studio-home.edition-living-city .site-header{position:fixed;inset:0 0 auto;z-index:60;max-width:none;width:100%;padding:24px 5%;min-height:94px;background:transparent;border:0;color:var(--city-paper);box-shadow:none;transition:box-shadow .2s ease}
+/* Switch foreground and background together: independent color fades briefly
+   lose contrast when the fixed header changes from the hero to reading mode. */
+.studio-home.edition-living-city .site-header :is(a,summary,button){transition-property:box-shadow,transform}
 .studio-home.edition-living-city .site-header .wordmark.brand-lockup{color:var(--city-paper);font-size:clamp(1.8rem,2.75vw,2.8rem);gap:12px}
 .studio-home.edition-living-city .site-header .brand-emblem{width:58px;height:40px;flex-basis:58px;filter:brightness(0) invert(96%) sepia(9%) saturate(310%) hue-rotate(352deg)}
 .studio-home.edition-living-city .site-header nav a,.studio-home.edition-living-city .site-header summary{color:var(--city-paper)}

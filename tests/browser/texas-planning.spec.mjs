@@ -15,7 +15,12 @@ for(let offset=0;offset<paths.length;offset+=6){
    await page.evaluate(()=>document.fonts.ready);
    await expect(page.getByRole('heading',{level:1})).toContainText('Web design for');
    for(const id of ['buyer-task','approach','search'])await expect(page.locator('#'+id)).toBeVisible();
+   const planning=page.locator('details.local-planning-details');
+   await expect(planning).not.toHaveAttribute('open','');
+   await planning.locator(':scope > summary').focus();await page.keyboard.press('Enter');
+   await expect(planning).toHaveAttribute('open','');
    for(const table of await page.locator('.location-planning-table table').all()){
+    await expect(table).toBeVisible();
     await expect(table.locator('caption')).not.toBeEmpty();
     const headers=await table.getByRole('columnheader').allTextContents();
     expect(headers.length).toBeGreaterThanOrEqual(3);
@@ -40,7 +45,13 @@ for(let offset=0;offset<paths.length;offset+=6){
   }
   if(testInfo.project.name==='phone'){
    await page.setViewportSize({width:320,height:800});
-   for(const path of batch){await page.goto(path+'?qa=1');expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);}
+   for(const path of batch){
+    await page.goto(path+'?qa=1');
+    const planning=page.locator('details.local-planning-details');await planning.locator(':scope > summary').click();
+    await expect(planning).toHaveAttribute('open','');
+    for(const table of await planning.locator('.location-planning-table table').all())await expect(table).toBeVisible();
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+   }
   }
  });
 }
