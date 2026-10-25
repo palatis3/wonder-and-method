@@ -147,6 +147,7 @@ test.describe('without JavaScript',()=>{
  test('native browse controls expose county places and DC wards without a search service',async({page})=>{
   await page.goto('/areas/virginia/?qa=1');
   await expect(searchbox(page)).toBeDisabled();
+  await page.locator('[data-county-browse-all] > summary').click();
   const group=page.locator('.county-region').filter({has:page.locator('#accomack')});
   await group.locator(':scope > summary').click();
   await page.locator('#accomack > summary').click();
@@ -155,6 +156,7 @@ test.describe('without JavaScript',()=>{
   await expect(page.locator('#accomack').getByText('Belle Haven',{exact:true})).toBeVisible();
   await expect(page.locator('#accomack').getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();
   await page.goto('/areas/district-of-columbia/?qa=1');
+  await page.locator('[data-county-browse-all] > summary').click();
   await page.locator('.county-region > summary').click();
   await page.locator('#district-of-columbia > summary').click();
   await expect(page.getByRole('heading',{name:'Selected neighborhoods',exact:true})).toBeVisible();

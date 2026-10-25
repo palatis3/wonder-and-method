@@ -13,6 +13,7 @@ import {priceList,money} from '../../src/shared.mjs';
 const bundle=async path=>(await build({entryPoints:[fileURLToPath(new URL(path,import.meta.url))],bundle:true,write:false,format:'iife',platform:'browser',logLevel:'silent'})).outputFiles[0].text;
 const roiScript=await bundle('../../src/assets/website-roi.js'),formScript=await bundle('../../src/client.js'),costScript=await bundle('../../src/calculator.js');
 const roiCss=await readFile(new URL('../../src/assets/website-roi.css',import.meta.url),'utf8');
+const foundationCss=await readFile(new URL('../../src/assets/premium.css',import.meta.url),'utf8');
 const sharedLayoutCss=await readFile(new URL('../../src/assets/site-refresh.css',import.meta.url),'utf8');
 async function mount(page,html,script,{path='/contact/',css='',bodyClass=''}={}){
  const network=[];
@@ -42,8 +43,9 @@ test('ROI shows defaults, keeps stale results, debounces valid updates without f
 
 for(const width of [320,390,1440])test(`ROI fields and results fit ${width}px and 200% text`,async({page})=>{
  // The complete page includes shared responsive example tables. Use their
- // production stylesheet and namespace as well as the calculator styles.
- await page.setViewportSize({width,height:1000});await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:roiCss+sharedLayoutCss,bodyClass:'studio-site'});
+ // production foundation (including heading wrapping), stylesheet and namespace
+ // as well as the calculator styles, in their production cascade order.
+ await page.setViewportSize({width,height:1000});await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:foundationCss+sharedLayoutCss+roiCss,bodyClass:'studio-site'});
  for(const scale of [1,2]){
   await page.evaluate(scale=>document.documentElement.style.fontSize=16*scale+'px',scale);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
