@@ -22,7 +22,7 @@ New scopes use [config/offers.json](config/offers.json), currently version `2026
 
 Use [HANDOFF.md](HANDOFF.md) for daily operation, [WORKFLOWS.md](operations/WORKFLOWS.md) for a client job, [PAYMENTS.md](operations/PAYMENTS.md) for private Stripe invoicing, and [CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for source delivery. Website notifications go to the owner's Gmail inbox; public support mail remains in Fastmail and chat remains in tawk.to. Monitoring does not prove mailbox review or a buyer reply.
 
-The actual private board is `.runtime/operations/weekly-board.json`; the tracked `operations/weekly-board.json` is a blank template. The October 22 report contained zero recorded buyers. That is a board observation, not proof that no inquiries exist elsewhere. Use `npm run leads -- report` for a fresh report.
+The actual private board is `.runtime/operations/weekly-board.json` in the operator checkout, `C:/Wonder and Method/wonder-method`; the tracked `operations/weekly-board.json` is a blank template. The October 25 report contained zero recorded buyers. That is a board observation, not proof that no inquiries exist elsewhere. Use `npm run leads -- report` from that operator checkout for a fresh report. Release worktrees do not contain these ignored records; do not initialize a second board there.
 
 ## Remaining business requirements
 

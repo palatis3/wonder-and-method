@@ -1,6 +1,6 @@
 # Before the first booking
 
-Prepared October 18 and reconciled October 22, 2026. This is a short completion list for actual evidence,
+Prepared October 18 and reconciled October 25, 2026. This is a short completion list for actual evidence,
 not a declaration that the business is ready to accept every service.
 
 1. **Available dates.** Start with `capacity-draft-2026-10-19.json`. Confirm real
@@ -14,10 +14,10 @@ not a declaration that the business is ready to accept every service.
 
 2. **Stripe and cash.** The October 22 read-only API reports charges and payouts
    enabled. It does not expose or clear owner Dashboard requirements. The last
-   Dashboard observation, October 18, showed “Provide a tax ID for Wonder and
+   Dashboard observation, October 25, showed “Provide a tax ID for Wonder and
    Method,” with payouts due to pause November 15, 2026 or at $600.00 in volume,
    and a $0.00 balance. Those are dated observations, not a fresh balance or
-   resolved-task claim. Review the current task using the actual business details
+   resolved-task claim. Payments were Active and payouts were Paused soon. Review the current task using the actual business details
    and requested evidence; record its resolved status and date privately. Do not
    treat enabled payouts or pending payouts as funded reserves. The existing
    cash/acceptance gate remains in force.
@@ -31,8 +31,9 @@ not a declaration that the business is ready to accept every service.
 3. **Annual service.** Keep annual enrollment on hold until the actual funded
    gross unearned balance, separate fee buffer and accepted undelivered work are
    recorded. Use the structured fields in `templates/billing.json`. The local
-   settlement calculator has pre-start and four-cycle tests; a completed Stripe
-   sandbox refund route still needs its own dated provider evidence. Record the
+   settlement calculator has pre-start and four-cycle tests. The [October 25
+   sandbox refund rehearsal](SANDBOX_REFUND_20261025.md) completed the provider
+   route for the existing synthetic $700 payment; it does not prove funding. Record the
    effective date, ten-business-day initiation deadline, owner and undisputed
    amount. Do not infer actual funds from a successful calculation.
 

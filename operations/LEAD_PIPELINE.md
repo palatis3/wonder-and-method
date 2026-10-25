@@ -1,6 +1,14 @@
 # Private lead pipeline
 
-The actual board is `.runtime/operations/weekly-board.json`, ignored by Git and excluded from public assets. `operations/weekly-board.json` is its blank template. Keep one row per economic buyer, linked by the saved inquiry reference. Initialize without overwriting existing rows:
+The actual board is `.runtime/operations/weekly-board.json` in the operator checkout, ignored by Git and excluded from public assets. `operations/weekly-board.json` is its blank template. Keep one row per economic buyer, linked by the saved inquiry reference.
+
+On this Windows workstation, the existing operator checkout is `C:/Wonder and Method/wonder-method`. Its board was read on October 25, 2026 and contained zero recorded buyers. This does not establish that other inquiry channels are empty. Private files are not carried into Git worktrees: the `nys-distinct-20261022/site` release checkout has no board. Run the report against the existing operator checkout:
+
+```powershell
+npm --prefix "C:/Wonder and Method/wonder-method" run leads -- report
+```
+
+Run updates from that same operator checkout. Do not initialize a second board merely because a release worktree reports a missing file. For a genuinely new installation, first locate or restore the existing private records; initialize only when there is no existing board to preserve. From the designated operator checkout:
 
 ```powershell
 npm run leads -- init

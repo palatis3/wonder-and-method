@@ -20,6 +20,12 @@ The October 18 live API reports charges_enabled=true, payouts_enabled=true and d
 
 ## Setup and environments
 
+### October 25 readiness refresh
+
+The authenticated live Dashboard still lists **Provide a tax ID for Wonder and Method**, with payouts due to pause November 15, 2026 or when volume reaches $600.00. Payments show Active; payouts show Paused soon. The home Dashboard displays a $0.00 balance. No tax ID, document, live payment or account change was submitted. This observation supersedes the date of the October 18 Dashboard check, not its unresolved requirement. Complete the task directly in Stripe using actual business information.
+
+Separately, the [sandbox refund rehearsal](SANDBOX_REFUND_20261025.md) succeeded for the original synthetic $700 payment. It does not resolve the live identity task or establish funded annual reserves.
+
 The owner completes Stripe live activation, identity verification, bank details and final submission inside Stripe. Verify charges and payouts are enabled. Live account: `acct_1UQHQFLjuTLH94aN`. Sandbox: `acct_1UQHQMLt5KTaVn9K`. A sandbox pass is not live readiness.
 
 The local operator needs a restricted key with account read, customer read, product/price read-write and invoice/invoice-item read-write. It does not need payout, bank, transfer, refund, dispute or subscription write access. Use Dashboard for customer creation, tax review, reconciliation and refunds.
@@ -99,7 +105,7 @@ funding and delivery evidence exists.
 For cancellation, record the effective end/confirmation, responsible owner and
 actual ten-business-day deadline, including relevant holidays. Return undisputed
 unearned money on time. Preserve accepted delayed work or agree an itemized
-substitute/refund without double counting. Review the exact original sandbox
-invoice and payment in Stripe Dashboard before rehearsing the refund route;
-this audit's local calculation is not a completed provider refund. Real refunds
+substitute/refund without double counting. The [October 25 sandbox rehearsal](SANDBOX_REFUND_20261025.md)
+fully refunded the original synthetic $700 payment and verified provider success.
+It establishes the refund route, not actual funding or a customer settlement. Real refunds
 require the customer's actual reconciled obligation and the authorized operator.
