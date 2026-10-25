@@ -173,7 +173,7 @@ test('New York county places and source references remain usable without JavaScr
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,2000);
+ await openNativeCountyLists(page,2214);
  await page.locator('.state-area-links a[href="/areas/pennsylvania/"]').click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);

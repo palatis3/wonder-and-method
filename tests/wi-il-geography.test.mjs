@@ -22,7 +22,7 @@ import {serviceStates,countyDirectory,countySearchText} from '../src/service-are
 import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,unpackCountySearch} from '../src/assets/county-directory.js';
 
 const additions=['wisconsin','illinois'];
-const laterStates=['louisiana','arkansas','texas'];
+const laterStates=['louisiana','arkansas','texas','missouri','iowa'];
 const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 test('WI/IL preserve every earlier commercial record, FAQ and directory identity',()=>{
@@ -95,7 +95,7 @@ test('compressed dictionary preserves every term while keeping the existing payl
  const terms=await decodeCountySearchCards(JSON.parse(html.match(/data-county-search-cards>(.*?)<\/script>/s)[1]),names);
  const actual=[...html.matchAll(/data-cs="([^"]+)"/g)].map(match=>terms[Number(match[1])]);
  assert.deepEqual(actual,expectedTerms);
- assert.equal(actual.length,2000);
+ assert.equal(actual.length,2214);
  assert.ok(Buffer.byteLength(html)<450_000);
  assert.ok(gzipSync(html).length<195_000);
  for(const state of serviceStates.filter(state=>['wisconsin','illinois'].includes(state.id)))assert.ok(Buffer.byteLength(countyDirectory(state))<200_000,state.id);

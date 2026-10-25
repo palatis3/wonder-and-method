@@ -1,3 +1,4 @@
+import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import texasPaths from './fixtures/texas-approved-paths.json' with {type:'json'};
 import paths from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import {journeyPageKey} from '../src/journey-page-key.mjs';
@@ -57,7 +58,7 @@ test('0037 adds exactly the 28 reviewed county keys and preserves populated rows
  assert.equal(nextKeys.length,1231);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>!texasPaths.map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>![...moIaPaths,...texasPaths].map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
  // SQLite quotes the renamed table. Only the 28 page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()),oldSchema);
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

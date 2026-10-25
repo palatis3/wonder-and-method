@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "reviewedBy": "Codex independent reviewer (gpt-6-astra)",
-  "reviewedAt": "2026-10-25T20:26:12.671Z",
-  "basis": "Retain 511 independently reviewed platform/project exclusions. The October 25 floating-controls review approved six changed source hashes and two renamed identities, with no added or removed skips. Evidence: evidence/footer-semrush-20261025/implementation-review.json The subsequent no-JavaScript footer review approved its source hash only; all 48 existing file exclusions and all 511 total exclusions remain unchanged. Evidence: evidence/footer-semrush-20261025/no-js-footer-review.json",
+  "reviewedBy": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+  "reviewedAt": "2026-10-25T22:57:23.454Z",
+  "basis": "Independent integration review approved all 523 exclusions: 509 existing identities retained, two terminal all-route batch identities replaced, and twelve added non-desktop batch identities for the same desktop/phone matrix predicate. All 93 new Missouri/Iowa cases run without exclusions. Four changed test source hashes were reviewed. Evidence: evidence/mo-ia-expansion-20261025/integration-review/review.json",
   "sourceFiles": {
     "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
     "tests/browser/audit-layout-regression.spec.mjs": "b4c282e937db44a729a54c3ae6e2e2d27a913ce22b8d1a045fa798468376eecb",
@@ -12,17 +12,17 @@
     "tests/browser/header-resize.spec.mjs": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918",
     "tests/browser/living-city-accessibility.spec.mjs": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69",
     "tests/browser/living-city-motion-polish.spec.mjs": "eefef091140963e0cdfa84bc902119ad3a5790ad9ec69dc7a5ca47f80a4c40a3",
-    "tests/browser/living-city-night.spec.mjs": "f3f2239d7d2ee5f8fe8cf65974bfb8ce92ca6f375f28e19d6cf4b201b5854e0a",
+    "tests/browser/living-city-night.spec.mjs": "cf6450110a3a624aa84de89f66f711f3d308171fc9aaf7481db01ae93ecd3883",
     "tests/browser/location-next-planning.spec.mjs": "fa92b027090c0cc43fa98d41e6e9367bb570299ab83af0df03d12ec5dc4396ee",
     "tests/browser/location-planning.spec.mjs": "cb765d897729ffdb55640e1bc2916cc50d08292bad35562820f0627047d6283c",
     "tests/browser/location-wave-four-planning.spec.mjs": "81d4062945e04eb740a4aa01ce12bb9c7631653b02cbc48b2f2425d2f4e302a5",
     "tests/browser/location-wave-one-planning.spec.mjs": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
     "tests/browser/location-wave-three-planning.spec.mjs": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
     "tests/browser/location-wave-two-planning.spec.mjs": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
-    "tests/browser/no-javascript.spec.mjs": "3c58de99613d01e2319ab0599a99cc424cca50946bf33f63e794893a697668b9",
-    "tests/browser/northeast-coverage.spec.mjs": "0bcc94730c3a32ef21984353c1c8f2144ee714c42f49c39fe978a90ce5cba7eb",
+    "tests/browser/no-javascript.spec.mjs": "0f6a78a97e7920a356a230b1c96316399e37d7b370783d75d61995369cc902b4",
+    "tests/browser/northeast-coverage.spec.mjs": "71d04564f8623d24c3dbf2ecfd2adab859f2c9b33b1c0b56e725ee77f246e528",
     "tests/browser/palette-clarity.spec.mjs": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
-    "tests/browser/regional-directory.spec.mjs": "33dba984c1f882468138bfd2c8513e7b32ee19a0ddf08e1646867f6bd98bf711",
+    "tests/browser/regional-directory.spec.mjs": "a305d4bde9164fc23d1bdf2fe119c4b054c06acb176abb67a716f1f4240f6d5d",
     "tests/browser/shared-controls.spec.mjs": "169be5add9628b881382fff283a4d3b2cab0cc7d9b292c1a6045c5ff2d17e3bf",
     "tests/browser/site-accessibility.spec.mjs": "4fa345631db704a5c8ebe10546bbc9d6b2301fca7bd15ee222ed064f68e130a6",
     "tests/browser/site-health.spec.mjs": "abe10f3cc3e7b85a172835da3fdbbf346fd0304bd09bd41c0d0059aa0cccd6dd",
@@ -1540,12 +1540,42 @@
       "reason": "One complete desktop/phone matrix"
     },
     {
-      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1476",
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1500",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1501–1525",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },
     {
       "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 151–175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1526–1550",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1551–1575",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1576–1600",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1601–1625",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1626–1644",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },
@@ -2395,12 +2425,42 @@
       "reason": "One complete desktop/phone matrix"
     },
     {
-      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1476",
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1500",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1501–1525",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },
     {
       "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 151–175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1526–1550",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1551–1575",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1576–1600",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1601–1625",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1626–1644",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },

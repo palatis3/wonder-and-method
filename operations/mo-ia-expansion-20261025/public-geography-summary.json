@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-25T21:41:40.742089+00:00",
+  "states": [
+    {
+      "stateId": "missouri",
+      "countiesAndEquivalents": 115,
+      "counties": 114,
+      "independentCities": 1,
+      "uniqueEntities": 2474,
+      "incorporatedPlaces": 947,
+      "cdps": 134,
+      "types": {
+        "City": 645,
+        "Village": 196,
+        "Town": 106,
+        "Census-designated place": 134,
+        "Township": 1393
+      },
+      "functionalStatuses": {
+        "A": 1218,
+        "I": 27,
+        "S": 134,
+        "N": 1094,
+        "B": 1
+      },
+      "memberships": 2546,
+      "crossCountyPlaces": 67,
+      "grfcRows": 256484,
+      "directIncorporatedPartPopulationJoins": 1003,
+      "missingCountyPartPopulationJoins": 11,
+      "wholePlaceTotalsReconciled": 936,
+      "zeroPopulationParts": 16,
+      "excludedFictitiousSubdivisions": 1
+    },
+    {
+      "stateId": "iowa",
+      "countiesAndEquivalents": 99,
+      "counties": 99,
+      "independentCities": 0,
+      "uniqueEntities": 2627,
+      "incorporatedPlaces": 939,
+      "cdps": 87,
+      "types": {
+        "City": 939,
+        "Census-designated place": 87,
+        "Township": 1600,
+        "Unorganized territory": 1
+      },
+      "functionalStatuses": {
+        "A": 939,
+        "S": 88,
+        "G": 1598,
+        "N": 2
+      },
+      "memberships": 2701,
+      "crossCountyPlaces": 68,
+      "grfcRows": 176546,
+      "directIncorporatedPartPopulationJoins": 1012,
+      "missingCountyPartPopulationJoins": 0,
+      "wholePlaceTotalsReconciled": 939,
+      "zeroPopulationParts": 15,
+      "excludedFictitiousSubdivisions": 62
+    }
+  ],
+  "sourceManifest": "source-manifest.json",
+  "populationRule": "Use direct county/parish-part estimates only. Zero remains a geographic membership. CDP fallback is alphabetical, with null population, not inferred demand."
+}

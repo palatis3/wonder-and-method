@@ -25,6 +25,52 @@ export function unpackCountySearch(value,names){
   return group.slice(colon+1).split(',').map(name=>{if(names){index+=parseInt(name,36);name=names[index];}return type+':'+name;});
  });
 }
+// Keep card/group order, but compress each numeric byte column together. This
+// avoids mixing high dictionary-index bytes with low bytes and type labels.
+export function packCountySearchCards(cards){
+ const types=[...new Set(cards.flatMap(card=>card.split('|').map(group=>group.split(':')[0])))].sort();
+ const typeIndices=new Map(types.map((type,index)=>[type,index])),lengths=[],groups=[],indices=[];
+ const length=value=>{while(value>=128){lengths.push(value%128+128);value=Math.floor(value/128);}lengths.push(value);};
+ for(const card of cards){
+  const entries=card.split('|');length(entries.length);let index=0;
+  for(const entry of entries){
+   const [type,values]=entry.split(':'),deltas=values.split(',');groups.push(typeIndices.get(type));length(deltas.length);
+   for(const delta of deltas){index+=parseInt(delta,36);indices.push(index);}
+  }
+ }
+ const width=values=>Math.max(1,Math.ceil(Math.log2(values.reduce((maximum,value)=>Math.max(maximum,value),0)+1)/8));
+ const typeWidth=width(groups),indexWidth=width(indices);
+ const header=new TextEncoder().encode(JSON.stringify({types,cards:cards.length,groups:groups.length,terms:indices.length,lengthBytes:lengths.length,typeWidth,indexWidth})+'\n');
+ const bytes=new Uint8Array(header.length+lengths.length+groups.length*typeWidth+indices.length*indexWidth);
+ bytes.set(header);bytes.set(lengths,header.length);let offset=header.length+lengths.length;
+ for(const [values,size] of [[groups,typeWidth],[indices,indexWidth]])for(let column=0;column<size;column++){
+  for(const value of values)bytes[offset++]=Math.floor(value/256**column)%256;
+ }
+ return bytes;
+}
+function unpackCountySearchCards(bytes,names){
+ const end=bytes.indexOf(10);if(end<0)throw new Error('Missing county search header');
+ const header=JSON.parse(new TextDecoder().decode(bytes.subarray(0,end)));
+ const {types,cards,groups,terms,lengthBytes,typeWidth,indexWidth}=header;
+ if(!Array.isArray(types)||![cards,groups,terms,lengthBytes,typeWidth,indexWidth].every(value=>Number.isSafeInteger(value)&&value>=0)||typeWidth<1||indexWidth<1||typeWidth>6||indexWidth>6||end+1+lengthBytes+groups*typeWidth+terms*indexWidth!==bytes.length)throw new Error('Invalid county search columns');
+ const lengthsEnd=end+1+lengthBytes,typeStart=lengthsEnd,indexStart=typeStart+groups*typeWidth;let cursor=end+1,group=0,term=0;
+ const length=()=>{let value=0,factor=1,byte;do{if(cursor>=lengthsEnd||factor>2**49)throw new Error('Invalid county search length');byte=bytes[cursor++];value+=(byte%128)*factor;factor*=128;}while(byte>=128);return value;};
+ const read=(start,count,width,index)=>{let value=0;for(let column=0;column<width;column++)value+=bytes[start+column*count+index]*256**column;return value;};
+ const result=[];
+ for(let card=0;card<cards;card++){
+  const entries=[],count=length();if(group+count>groups)throw new Error('Invalid county search group count');
+  for(let item=0;item<count;item++){
+   const type=types[read(typeStart,groups,typeWidth,group++)],size=length();
+   if(type===undefined||term+size>terms)throw new Error('Invalid county search group');
+   for(let n=0;n<size;n++){
+    const name=names[read(indexStart,terms,indexWidth,term++)];if(name===undefined)throw new Error('Missing county search name');entries.push(type+':'+name);
+   }
+  }
+  result.push(entries);
+ }
+ if(cursor!==lengthsEnd||group!==groups||term!==terms)throw new Error('Unused county search data');
+ return result;
+}
 // Sorted names share their common prefix. One base-36 character encodes the
 // usual prefix length; unusually long prefixes use a ~length: escape.
 export function packCountyNames(names){
@@ -42,20 +88,22 @@ export function unpackCountyNames(value){
 }
 // Large dictionaries travel compressed within the same HTML. The visible county
 // links stay server-rendered and usable without JavaScript or decompression.
-async function decodeCountyPayload(payload){
+async function decodeCountyPayload(payload,binary=false){
  if(typeof payload==='string')return payload;
  if(payload?.encoding!=='gzip-base64')throw new Error('Unsupported county search payload');
  const bytes=Uint8Array.from(atob(payload.data),character=>character.charCodeAt(0));
  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
- return new Response(stream).text();
+ const response=new Response(stream);
+ return binary?new Uint8Array(await response.arrayBuffer()):response.text();
 }
 export async function decodeCountyNames(payload){
  return unpackCountyNames(await decodeCountyPayload(payload));
 }
 export async function decodeCountySearchCards(payload,names){
+ if(payload?.format==='columns-v1')return unpackCountySearchCards(await decodeCountyPayload(payload,true),names);
  return (await decodeCountyPayload(payload)).split('\n').map(value=>unpackCountySearch(value,names));
 }
-const placeTypes={parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z'};
+const placeTypes={parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z','unorganized territory':'o'};
 const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
 const typedPrefix=new RegExp('^('+typePattern+') of (.+)$'),typedSuffix=new RegExp('^(.+?) ('+typePattern+')$');
 const stateNames=Object.fromEntries(serviceStateInfo.flatMap(state=>[state.name,state.abbreviation,...(state.aliases||[])].map(name=>[normalizeCountyQuery(name),state.id])).sort((a,b)=>b[0].length-a[0].length));
@@ -70,7 +118,7 @@ export function parseCountyQuery(value){
  // District of Columbia is the name, not a "District of" type prefix.
  if(query==='district of columbia federal district')return {query:'district of columbia',state,type:'federal district'};
  const prefix=query.match(typedPrefix);
- const barePrefix=query.match(/^(census county division|ccd|election precinct|precinct|ward|district|township) (.+)$/);
+ const barePrefix=query.match(/^(census county division|ccd|unorganized territory|election precinct|precinct|ward|district|township) (.+)$/);
  const suffix=query.match(typedSuffix);
  // Preserve names ending in a place type, such as City of Traverse City.
  if(prefix){type=prefix[1];query=prefix[2];}
@@ -85,7 +133,7 @@ export function countyMatchScore(card,search,selectedState=''){
  return countyMatch(card,search,selectedState).score;
 }
 export const compareCountyMatches=(a,b)=>b.score-a.score||(b.population||0)-(a.population||0);
-const typeLabels={u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',z:'Census county division (statistical)',a:'place',p:'place or region'};
+const typeLabels={u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',z:'Census county division (statistical)',o:'unorganized territory (statistical)',a:'place',p:'place or region'};
 export function countyMatch(card,search,selectedState=''){
  if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return {score:0};
  if(!search.query)return {score:1,name:'',type:'state'};
@@ -114,7 +162,7 @@ export function countyMatch(card,search,selectedState=''){
   const score=match?(exact?(city?8:matchType.includes('a')?7:isArea?6:5):isArea||matchType.includes('a')?2:1):0;
   const label=city?(type.includes('i')?'independent city':'city'):typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place';
   const population=exact&&city?countyCityPopulations[card.state+'/'+name]||0:0;
-  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':placeTypes[search.type]==='z'?typeLabels.z:search.type||label};
+  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':['z','o'].includes(placeTypes[search.type])?typeLabels[placeTypes[search.type]]:search.type||label};
  }
  return result;
 }

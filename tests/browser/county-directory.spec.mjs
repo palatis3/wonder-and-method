@@ -128,14 +128,14 @@ test('combined finder disambiguates states and shared place names without sendin
  const search=page.getByRole('searchbox',{name:'County, parish, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(page.locator('[data-cs]')).toHaveCount(2000);await expect(visible).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(2214);await expect(visible).toHaveCount(0);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  await search.fill('Hamburg');await expect(visible).toHaveCount(10);expect(await targets()).toEqual(["/areas/arkansas/#ashley","/areas/erie-county/","/areas/illinois/#calhoun","/areas/indiana/franklin-county/","/areas/michigan/livingston-county/","/areas/new-jersey/sussex-county/","/areas/ohio/fairfield-county/","/areas/pennsylvania/berks-county/","/areas/wisconsin/#marathon","/areas/wisconsin/#vernon"]);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(1);
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('1 area matches your search in Pennsylvania.');
  await search.fill('');await expect(visible).toHaveCount(67);
  await state.selectOption('new-york');await expect(visible).toHaveCount(62);
- await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-cs]')).toHaveCount(2000);
+ await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-cs]')).toHaveCount(2214);
  await search.fill('Hamburg township MI');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/michigan/livingston-county/"]);
  await search.fill('Hamburg CDP IN');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/indiana/franklin-county/"]);
  await search.fill('Erie PA');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/pennsylvania/erie-county/"]);

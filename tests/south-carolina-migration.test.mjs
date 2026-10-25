@@ -1,3 +1,4 @@
+import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import texasPaths from './fixtures/texas-approved-paths.json' with {type:'json'};
 import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import test from 'node:test';
@@ -9,7 +10,7 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
 
-const laterPageKeys=new Set([...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+const laterPageKeys=new Set([...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0029 adds exactly 15 SC keys and preserves all 1167 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);

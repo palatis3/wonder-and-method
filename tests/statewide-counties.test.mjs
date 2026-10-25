@@ -38,7 +38,7 @@ test('all 62 official counties remain in the state directory and retired URLs re
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
  const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,1476);assert.equal((sitemap.match(/<loc>/g)||[]).length,1464);
+ assert.equal(pages.length,1644);assert.equal((sitemap.match(/<loc>/g)||[]).length,1632);
  assert.equal((hub.match(/data-cs=/g)||[]).length,62);
  for(const slug of official.countySlugs){
   const retired=path(slug),destination=slug==='erie'?retired:'/areas/new-york/#'+slug;

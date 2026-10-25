@@ -34,7 +34,8 @@ for(const [name,path] of [
  ['work','/work/'],['contact','/contact/'],['scope-request','/checkout/focused-site/'],
  ['guide','/guides/ai-search-visibility/'],['county','/areas/erie-county/'],
  ['about','/about/'],['concept','/work/fieldwork/'],
- ['regional-directory','/areas/virginia/'],['district-directory','/areas/district-of-columbia/'],['texas-county','/areas/texas/milam-county/']
+ ['regional-directory','/areas/virginia/'],['district-directory','/areas/district-of-columbia/'],['texas-county','/areas/texas/milam-county/'],
+ ['missouri-county','/areas/missouri/gasconade-county/'],['iowa-county','/areas/iowa/allamakee-county/']
 ]){
  test(`${name} approved layout`,async({page})=>{
   const response=await page.goto(path+'?qa=1');expect(response.status()).toBe(200);await settle(page);
@@ -77,7 +78,7 @@ test('Georgia entry preserves government and place distinctions',async({page})=>
  const entry=page.locator('#richmond');await expect(entry).toHaveAttribute('open','');
  await isolateContent(page);await expect(entry).toHaveScreenshot('georgia-entry.png');
 });
-for(const [state,county] of [['mississippi','yalobusha'],['alabama','madison'],['wisconsin','menominee'],['illinois','alexander'],['texas','anderson']]){
+for(const [state,county] of [['mississippi','yalobusha'],['alabama','madison'],['wisconsin','menominee'],['illinois','alexander'],['texas','anderson'],['missouri','st-louis-city'],['iowa','polk']]){
  test(`${state} entry preserves place classifications`,async({page})=>{
   await page.goto(`/areas/${state}/?qa=1#${county}`);await settle(page);
   const entry=page.locator('#'+county);await expect(entry).toHaveAttribute('open','');

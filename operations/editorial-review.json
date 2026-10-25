@@ -135,6 +135,60 @@
       "reason": "Retain: the semicolon preserves a useful distinction between the RV page’s location/rates/availability contact and the event page’s separate booking inquiry. Combining the related observations clarifies that park and event arrangements follow distinct information paths; this editorial decision does not independently certify the cited facts.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
       "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/missouri/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "2dc7b2e02f651b3c14f6ce87ce5886e271940849889e628614d4191761e1c1ee",
+      "disposition": "retain",
+      "reason": "Retain the source-note paragraph: it keeps the January 2026 vintage, statistical-place status, cross-county membership, township classifications, independent St. Louis City and excluded hierarchy placeholders together. Each short sentence explains a distinct limitation of the same geography source; the note is inside the source disclosure.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/missouri/gasconade-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "fe8073ff3a026caddde65cbb91905499fff81a5a3aa8a5399162874521cdfdb1",
+      "disposition": "retain",
+      "reason": "Retain the precise tour-arrival sentence: the named Shire Experience and carriage ride use Stone Barn instead of the stated First Settlement Village address, and reaching them requires a vehicle. Keeping the exception and transport requirement together prevents an incomplete arrival instruction.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/missouri/st-louis-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "6103250ae22cad93761c21c2b818160c0ffd413b44db0e2b2d98e0d7dc0ff794",
+      "disposition": "retain",
+      "reason": "Retain the two-part planning example: the semicolon clearly separates real-time tape capture plus setup/saving from a film-reel workflow whose duration cannot be inferred from running time. The distinction is the reason for asking about media type before a session.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/missouri/randolph-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "6618207ae144659a91831c670b9a614a7b2b0ef1b78ebff66380474f05e4e68f",
+      "disposition": "retain",
+      "reason": "Retain the clearly separated room and equipment requirements. The semicolon contrasts one-week room notice and branch limits with the equipment borrowing checklist. Every listed requirement supports choosing and preparing the correct request, rather than adding unrelated detail.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/missouri/stone-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "c797bbfba6965e17942a66d8497b6b068288960a4ecea7c362c4e8818e110f01",
+      "disposition": "retain",
+      "reason": "Retain the above-ground versus cave-tour distinction and the qualified first-stop exit/refund route. The sentence identifies who must be contacted and when; a shorter unconditional refund statement would misrepresent the source.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/iowa/winnebago-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "e1ca4a3541d9764d225a5f351d2b274bd8aaef7f836a4c81023fe7e6322dfee7",
+      "disposition": "retain",
+      "reason": "Retain this colon-led, parallel owner-input list: requested room, setup/cleanup duration, public access and the staff orientation. These concrete decisions describe the whole venue arrangement and remain easy to scan as one connected planning sentence.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
+      "reviewedAt": "2026-10-25T22:57:23.454Z"
     }
   ]
 }

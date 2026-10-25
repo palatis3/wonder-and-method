@@ -33,7 +33,7 @@ const migration=await readFile(new URL('0014_journey_ohio.sql',migrationFolder),
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
 test('Ohio retains all 88 county entries and historical routes resolve to live destinations',()=>{
- assert.equal(priorRoutes.length,189);assert.equal(pages.length,1476);assert.equal(byPath.size,1476);
+ assert.equal(priorRoutes.length,189);assert.equal(pages.length,1644);assert.equal(byPath.size,1644);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&p.path.startsWith('/areas/ohio/')).map(p=>p.path).sort(),["/areas/ohio/"].sort());
  for(const route of priorRoutes){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
@@ -45,8 +45,8 @@ test('Ohio retains all 88 county entries and historical routes resolve to live d
  assert.equal(ohioRegions.length,7);
  assert.deepEqual(ohioRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,1464);
- for(const [route,count] of [['/areas/',2000],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1632);
+ for(const [route,count] of [['/areas/',2214],['/areas/new-york/',62],['/areas/ohio/',88],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-cs=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
  }

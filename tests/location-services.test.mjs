@@ -1,3 +1,4 @@
+import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import texasPaths from './fixtures/texas-approved-paths.json' with {type:'json'};
 import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import wiIlPaths from './fixtures/wi-il-approved-paths.json' with {type:'json'};
@@ -28,10 +29,10 @@ import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('1340 approved commercial pages preserve 1350 directory identities, truthful provider schema and legacy worksheets',async()=>{
+test('1506 approved commercial pages preserve 1516 directory identities, truthful provider schema and legacy worksheets',async()=>{
  assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);assert.equal(waveFourPaths.length,611);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...texasPaths.slice(1),...countyDepth,...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1350);assert.equal(new Set(areaIds).size,1350);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...moIaPaths.slice(2),...texasPaths.slice(1),...countyDepth,...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1516);assert.equal(new Set(areaIds).size,1516);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  assert.equal(Object.keys(reviewedWorksheets).length,72);
  assert.equal(locationServices.filter(entry=>entry.legacyWorksheet&&reviewedWorksheets[entry.areaId]===entry.legacyWorksheet).length,71);

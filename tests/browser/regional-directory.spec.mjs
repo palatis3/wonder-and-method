@@ -30,7 +30,7 @@ test('new hubs reveal saved entry fragments with complete place lists and no hor
 
 test('typed searches distinguish governments and keyboard results open services while directory bookmarks reveal places',async({page})=>{
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-cs]')).toHaveCount(2000);
+ await expect(page.locator('[data-cs]')).toHaveCount(2214);
  const search=searchbox(page),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,paths] of [

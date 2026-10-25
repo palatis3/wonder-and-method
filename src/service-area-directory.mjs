@@ -1,6 +1,6 @@
 import {gzipSync} from 'node:zlib';
 import {escapeHtml as e} from './shared.mjs';
-import {normalizeCountyQuery,parseCountyQuery,packCountySearch,packCountyNames} from './assets/county-directory.js';
+import {normalizeCountyQuery,parseCountyQuery,packCountySearch,packCountyNames,packCountySearchCards} from './assets/county-directory.js';
 import {countyProfiles} from './county-profiles.mjs';
 import {countyGeography} from './county-geography.mjs';
 import {countyRegions} from './county-regions.mjs';
@@ -85,7 +85,8 @@ function areaDetails(county,state,references){
   // A shared status describes this entire typed list. Mixed statuses and
   // place-specific notes stay next to the individual names.
   const sharedStatus=places.length>1&&places[0].governmentStatus&&places.every(place=>place.governmentStatus===places[0].governmentStatus)?places[0].governmentStatus:'';
-  return `<div><h3>${e(placeTypeLabels[type]||type)}</h3>${sharedStatus?`<p class="county-place-note">All places in this list: ${e(sharedStatus)}</p>`:''}<ul class="county-place-list">${places.map(place=>{const notes=[...new Set([place.note,sharedStatus?'':place.governmentStatus,place.town?'In the Town of '+place.town+'.':null].filter(Boolean))];return `<li>${e(place.name)}${notes.length?` <span class="county-place-note">${e(notes.join(' '))}</span>`:''}</li>`;}).join('')}</ul></div>`;
+  const heading=type==='Unorganized territory'&&state.id==='iowa'?'Unorganized territories (statistical)':placeTypeLabels[type]||type;
+  return `<div><h3>${e(heading)}</h3>${sharedStatus?`<p class="county-place-note">All places in this list: ${e(sharedStatus)}</p>`:''}<ul class="county-place-list">${places.map(place=>{const notes=[...new Set([place.note,sharedStatus?'':place.governmentStatus,place.town?'In the Town of '+place.town+'.':null].filter(Boolean))];return `<li>${e(place.name)}${notes.length?` <span class="county-place-note">${e(notes.join(' '))}</span>`:''}</li>`;}).join('')}</ul></div>`;
  }).join('');
  const aliases=(g.aliases||[]).filter(alias=>alias.note).map(alias=>`<li>${e(alias.name)}${alias.type?' ('+e(alias.type)+')':''}: ${e(alias.note)}</li>`).join('');
  const area=countyAreaName(county),type=county.areaType==='Independent City'?'Independent city; separate from surrounding counties.':county.areaType==='Federal District'?'Federal district and Census county equivalent. Wards and neighborhoods are separate categories below.':county.areaType==='Parish'?'Parish directory. Places crossing a parish boundary may appear in more than one entry.':county.areaType==='Planning Region'?'Planning region and current Census county equivalent; distinct from the former county boundaries.':'County directory. Places crossing a county boundary may appear in more than one entry.';
@@ -117,7 +118,7 @@ export function countySearchText(county,state,region){
  for(const place of g?.municipalityDetails||[])if(place.type==='Charter township')add(place.name,'h');
  for(const place of g?.communities||[])add(place.name,place.type==='Neighborhood'?'n':place.type==='Census-designated place'?'x':'p');
  for(const district of g?.administrativeDistricts||[]){
-  const type=({'Census county division':'z','Election precinct':'e',Precinct:'q',District:'j',Township:'s',Ward:'w','Council ward':'w'})[district.type];
+  const type=({'Census county division':'z','Unorganized territory':'o','Election precinct':'e',Precinct:'q',District:'j',Township:'s',Ward:'w','Council ward':'w'})[district.type];
   if(!type)throw Error('Unknown administrative place type: '+district.type);
   add(district.name,type);if(type==='w')add(district.name.replace(/^Ward\s+/i,''),type);
  }
@@ -164,7 +165,7 @@ export function countyDirectory(state,{compact=false}={}){
  const foldBrowse=compact||!!state;
  const alphabet=state&&state.counties.length>30?[...new Map([...state.counties].sort((a,b)=>a.name.localeCompare(b.name,'en')).map(county=>[county.name.charAt(0).toUpperCase(),county]).reverse()).entries()].reverse():[];
  const alphabetLinks=alphabet.length?`<nav class="county-alphabet" aria-label="Browse ${e(state.name)} areas by letter">${alphabet.map(([letter,county])=>`<a href="#${e(county.slug)}">${e(letter)}</a>`).join('')}</nav>`:'';
- const cardPayload=searchCards?`<script type="application/json" data-county-search-cards>${JSON.stringify(compressSearchPayload(searchCards.join('\n')))}</script>`:'';
+ const cardPayload=searchCards?`<script type="application/json" data-county-search-cards>${JSON.stringify({...compressSearchPayload(packCountySearchCards(searchCards)),format:'columns-v1'})}</script>`:'';
  return directoryControls(state)+cardPayload+`<script type="application/json" data-county-place-names>${JSON.stringify(namePayload)}</script><section class="county-search-results" data-county-results hidden aria-label="Service area search results"><h2>Best matches</h2><p data-county-multiple hidden>Some places extend into more than one county; other places share a name. Check each matching area and use the actual address when a boundary matters.</p><ul class="county-result-list" data-county-best></ul><details hidden><summary>Other matching areas</summary><ul class="county-result-list" data-county-more></ul></details></section>${compact?serviceStateCards():''}${alphabetLinks}${foldBrowse?'<details class="county-browse-all" data-county-browse-all><summary>Browse all counties and regions</summary>':''}<div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} ${section.plural})</summary>${section.html}</details>`).join('')}</div>${foldBrowse?'</details>':''}<div class="county-search-empty" data-county-empty hidden><p><strong>No service areas match that search.</strong></p><p>Try a county, region or community name${state?'':', or choose a different state or district'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name+' '+state.areaPlural:'all service areas'}.</p></div>`+(references?.html||'');
 }
 export function serviceStateCards(){

@@ -29,8 +29,10 @@ export const serviceStateInfo = [
  {id:'illinois',name:'Illinois',abbreviation:'IL'},
  {id:'louisiana',name:'Louisiana',abbreviation:'LA'},
  {id:'arkansas',name:'Arkansas',abbreviation:'AR'},
- {id:'texas',name:'Texas',abbreviation:'TX'}
-].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia'].includes(state.id)?'service areas':'counties'}));
+ {id:'texas',name:'Texas',abbreviation:'TX'},
+ {id:'missouri',name:'Missouri',abbreviation:'MO'},
+ {id:'iowa',name:'Iowa',abbreviation:'IA'}
+].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){
  const district=regions.some(name=>/^(?:Washington,? DC|District of Columbia)$/i.test(name));
