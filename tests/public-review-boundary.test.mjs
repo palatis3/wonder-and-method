@@ -12,6 +12,7 @@ const [config,offers,map,geography]=await Promise.all(['config/site.json','confi
 const pages=renderPages({config,offers,map,geography});
 const privateMechanics=/weighted(?:\s|_|-)*(?:score|total|rating)|(?:section|area|audit|review)\s+weights?|weighting|rubric|74\.55|scoreLimit|weightedScoreOutOf100|"(?:weight|score|scoreLimit|weightedScoreOutOf100)"\s*:|\b\d+(?:\.\d+)?\s*(?:\/|out of)\s*100\b|\b\d+(?:\.\d+)?\s*(?:\/|out of)\s*10\b/gi;
 function publicSafe(name,text){
+ assert.doesNotMatch(text,/terrance[\s_-]*ciszek|\bciszek\b|linkedin\.com\/in\/terrance/i,name+' private founder identity');
  // Dated source-document paths are citations, not private numerical ratings.
  const withoutUrlDates=text.replace(/https?:\/\/[^\s"'<>]+/g,url=>url.replace(/\/\d{4}\/(?:0[1-9]|1[0-2])(?=\/)/g,'/SOURCE-DATE/'));
  const matches=[...withoutUrlDates.matchAll(privateMechanics)].map(match=>match[0]);assert.deepEqual(matches,[],name);
@@ -50,6 +51,17 @@ test('current pages, every buyer pack, owned proof JSON and public text assets o
   }
   const proof=JSON.parse(await readFile(join(output,'assets/buyer-packs/owned-audit-two-fix-record.json'),'utf8'));assert.deepEqual(Object.keys(proof.baseline),['capturedAt','phase','reviewAreas']);assert.equal(proof.baseline.reviewAreas.length,22);assert.ok(proof.baseline.reviewAreas.every(area=>Object.keys(area).join(',')==='id,title'));assert.equal(proof.fixes.length,2);
  }finally{assert.ok(output.startsWith(join(tmpdir(),'wm-public-review-')));await rm(output,{recursive:true,force:true});}
+});
+
+test('public identity uses Terry without a personal profile in any page or metadata',()=>{
+ assert.equal(config.founderName,'Terry');assert.equal(config.founderProfile,undefined);assert.equal(config.founderPublicName,undefined);
+ for(const page of pages){
+  assert.doesNotMatch(page.html,/terrance[\s_-]*ciszek|\bciszek\b|linkedin\.com\/in\/terrance/i,page.path);
+  for(const match of page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
+   const schemas=JSON.parse(match[1]);
+   for(const schema of Array.isArray(schemas)?schemas:[schemas])if(schema['@type']==='Person'){assert.equal(schema.name,'Terry',page.path);assert.equal(schema.sameAs,undefined,page.path);}
+  }
+ }
 });
 
 test('public cleanup retains commercial percentages, owned-work limits and responsible identity',()=>{

@@ -26,15 +26,15 @@ for(let offset=0;offset<routes.length;offset+=25){
      footer:document.querySelectorAll('footer.site-footer--compact').length,
      top:document.querySelectorAll('a.back-to-top[href="#page-top"]').length,
      chat:document.querySelectorAll('.support-chat').length,
-     footerGroups:document.querySelectorAll('footer section.footer-group').length
+     footerGroups:document.querySelectorAll('footer details.footer-group').length
     }));
     expect(health.scroll,`${path} ${width}px overflow`).toBeLessThanOrEqual(width+1);
     expect(health.h1,`${path} heading`).toBe(1);expect(health.brokenImages,path).toEqual([]);expect(health.badFonts,path).toEqual([]);
-    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(3);expect(errors,path).toEqual([]);
+    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(4);expect(errors,path).toEqual([]);
     // Presence alone misses controls hidden by a future CSS or boot-script edit.
-    const inline=page.locator('.support-chat--inline');
-    if(await inline.count())await expect(page.locator('[data-chat-open]')).toBeVisible();
-    else await expect(page.locator('.support-chat-launch')).toBeVisible();
+    await expect(page.locator('.support-chat-launch')).toHaveCount(1);
+    await expect(page.locator('.support-chat-launch')).toBeVisible();
+    await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
     const answers=faqsByPath[path]||[],section=page.locator('#service-questions');
     await expect(section).toHaveCount(answers.length?1:0);
     if(answers.length===1){

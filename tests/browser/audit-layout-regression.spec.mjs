@@ -1,17 +1,35 @@
 import {test,expect} from './fixtures.mjs';
 
-// Page help stays in flow. Check ordinary reading content and controls, not just focus.
+test('Services separates three needs and keeps every choice readable at enlarged text',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='desktop','One complete responsive matrix');
+ await page.route('**/__services-large-text.css',route=>route.fulfill({contentType:'text/css',body:':root{font-size:200%}'}));
+ for(const width of [320,390,768,1440])for(const enlarged of [false,true]){
+  await page.setViewportSize({width,height:1000});await page.goto('/services/?qa=1');await page.evaluate(()=>document.fonts.ready);
+  if(enlarged)await page.addStyleTag({url:'/__services-large-text.css'});
+  const overview=page.locator('.services-overview');await expect(overview.locator('h1')).toHaveText('The right help for your website.');
+  await expect(overview.locator('.services-overview-group')).toHaveCount(3);
+  const cards=overview.locator('.services-overview-card');await expect(cards).toHaveCount(7);
+  for(const card of await cards.all()){await expect(card).toBeVisible();expect(await card.evaluate(el=>el.scrollWidth<=el.clientWidth+1)).toBe(true);}
+  expect(await cards.evaluateAll(elements=>elements.map(el=>el.getAttribute('href')))).toEqual(['/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-audit/','/services/website-addons/','/services/website-care/','/services/seo/']);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth),`${width}px enlarged=${enlarged}`).toBeLessThanOrEqual(width+1);
+  await overview.getByRole('link',{name:'Ongoing help',exact:false}).click();
+  await expect(page).toHaveURL(/#services-ongoing$/);
+  await expect(overview.getByRole('heading',{name:'Keep your website useful.'})).toBeInViewport();
+ }
+});
+
+// Floating tools remain available while scrolling and yield to keyboard focus.
 function coveredContent(){
  const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(node=>node.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})).map(node=>({name:node.className,r:node.getBoundingClientRect()}));
  const hits=[],overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
  for(const node of document.querySelectorAll('main p,main li,main h1,main h2,main h3,main a,main label,main input,main textarea,main button,main summary,main video,footer a')){
-  if(!node.checkVisibility({checkVisibilityCSS:true}))continue;
+  if(node!==document.activeElement||!node.checkVisibility({checkVisibilityCSS:true}))continue;
   for(const control of floats)if(overlaps(node.getBoundingClientRect(),control.r))hits.push(control.name+' / '+node.tagName+' '+node.textContent.trim().slice(0,80));
  }
  return {hits,visible:floats.filter(({r})=>r.bottom>0&&r.top<innerHeight).length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1).map(({name})=>name)};
 }
 
-for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`page tools stay in flow and leave text and controls clear at ${width}x${height}`,async({page},testInfo)=>{
+for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`floating page tools remain reachable and leave focused controls clear at ${width}x${height}`,async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});
  await page.clock.install();
@@ -25,6 +43,7 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
    await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
    await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
    if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
+   await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
    const result=await page.evaluate(coveredContent);expect(result.hits,`${path} at ${y}`).toEqual([]);expect(result.outside).toEqual([]);visible+=result.visible;
    const focused=await page.evaluate(()=>{
     const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect());
@@ -61,7 +80,7 @@ test('short touch screens let the header scroll away while the project action fi
  }
 });
 
-test('navigation order, mobile Services alignment and in-flow footer links agree',async({page},testInfo)=>{
+test('navigation order, mobile Services alignment and footer disclosures agree',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix');
  for(const width of [320,390,1440]){
   await page.setViewportSize({width,height:900});
@@ -75,16 +94,16 @@ test('navigation order, mobile Services alignment and in-flow footer links agree
     expect(Math.abs(metrics.a-metrics.s)).toBeLessThanOrEqual(1);expect(metrics.font).toBeGreaterThanOrEqual(15);expect(metrics.height).toBeGreaterThanOrEqual(44);
     await page.keyboard.press('Escape');
    }
-   await expect(page.locator('footer section.footer-group')).toHaveCount(3);await expect(page.locator('footer h2')).toHaveCount(3);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
+   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
    await page.locator('footer').scrollIntoViewIfNeeded();await expect(page.locator('a.back-to-top[href="#page-top"]')).toBeVisible();
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }
  }
 });
 
-test('form pages omit floating chat and retain the deliberate inline opener',async({page})=>{
+test('form pages retain floating chat and the deliberate inline opener',async({page})=>{
  for(const path of ['/contact/','/checkout/focused-site/']){
-  await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(0);
+  await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(1);
   await expect(page.locator('[data-chat-open]')).toBeVisible();await expect(page.locator('[data-chat-open]')).toHaveAttribute('aria-describedby','support-chat-description');
   expect(await page.locator('script[src^="https://embed.tawk.to/"]').count()).toBe(0);
  }

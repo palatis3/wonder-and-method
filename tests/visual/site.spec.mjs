@@ -27,7 +27,7 @@ async function settle(page){
  await page.mouse.move(0,0);
 }
 for(const [name,path] of [
- ['home','/'],['pricing','/pricing/'],['web-design','/services/web-design/'],
+ ['home','/'],['services','/services/'],['pricing','/pricing/'],['web-design','/services/web-design/'],
  ['monthly-seo','/services/seo/'],['care','/services/website-care/'],
  ['work','/work/'],['contact','/contact/'],['scope-request','/checkout/focused-site/'],
  ['guide','/guides/ai-search-visibility/'],['county','/areas/erie-county/'],

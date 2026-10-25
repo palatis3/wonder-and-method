@@ -40,7 +40,7 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
   const terms=cardPayload?await decodeCountySearchCards(JSON.parse(cardPayload[1]),names):null;
   const cards=[...html.matchAll(/data-cs="([^"]+)">[\s\S]*?<a data-cl href="([^"]+)"/g)];
   assert.equal(cards.length,scope?scope.counties.length:1746);
-  const expected=scope?scope.regions.flatMap(region=>regionCounties(scope,region).map(county=>({county,state:scope}))):serviceStates.flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>({county,state})));
+  const expected=scope?scope.regions.flatMap(region=>regionCounties(scope,region).map(county=>({county,state:scope}))):serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>({county,state})));
   for(const [index,[,packed,route]] of cards.entries()){
    const {county,state}=expected[index];
    assert.equal(route,countyServicePath(county,state));

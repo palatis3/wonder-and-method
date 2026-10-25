@@ -23,26 +23,29 @@
 .studio-site .guide-method{margin:2rem 0 0;padding-top:1rem;border-top:1px solid var(--line);font-size:1rem;line-height:1.7}
 .studio-site .guide-method p{margin:0}
 
-/* Essential destinations remain visible at every width, without scripts. */
 .studio-site .site-footer--compact .footer-top{align-items:center;padding-bottom:1.25rem}
 .studio-site .site-footer--compact .footer-location{margin:0;max-width:none;color:var(--slate)}
-.studio-site .site-footer--compact nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;align-items:start}
-.studio-site .site-footer--compact .footer-group{border:0;margin:0;padding:0;min-width:0;background:transparent}
-.studio-site .site-footer--compact .footer-group h2{margin:0 0 .5rem;color:var(--ink);font:650 1rem/1.5 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
-.studio-site .site-footer--compact .footer-group>div{padding:0}
+.studio-site .site-footer--compact nav{gap:.75rem;align-items:start}
+.studio-site .site-footer--compact .footer-group{border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:clip}
+.studio-site .site-footer--compact .footer-group summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none;margin:0;padding:.85rem 1rem;min-height:52px;color:var(--ink);font:600 1rem/1.5 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
+.studio-site .site-footer--compact .footer-group summary::-webkit-details-marker{display:none}
+.studio-site .site-footer--compact .footer-group summary:hover{background:var(--surface-sage)}
+.studio-site .site-footer--compact .footer-group summary:focus-visible{outline:2px solid var(--moss);outline-offset:-5px;border-radius:12px}
+.studio-site .site-footer--compact .footer-chevron{flex:none;transition:transform .15s ease}
+.studio-site .site-footer--compact .footer-group[open] .footer-chevron{transform:rotate(180deg)}
+.studio-site .site-footer--compact .footer-group[open] summary{border-bottom:1px solid var(--line);background:var(--surface-sage)}
+.studio-site .site-footer--compact .footer-group>div{padding:.4rem 1rem .75rem}
 .studio-site .site-footer--compact .footer-group a{padding:.5rem 0;min-height:44px;line-height:1.45;text-underline-offset:.2em;max-width:100%;overflow-wrap:anywhere}
 .studio-site .site-footer--compact .footer-bottom{margin-top:1.25rem;padding-top:1rem}
 @media(max-width:767px){
  .studio-site{--section-gutter:1.25rem}
- /* Match the pricing page’s capped padding when text is enlarged. */
- .studio-pricing{--section-gutter:min(1.25rem,20px)}
  .studio-home.edition-living-city .home-content{--section-gutter:min(1.25rem,6.4vw)}
  .studio-site .site-footer--compact .footer-top{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding-bottom:1rem}
  .studio-site .site-footer--compact .footer-top>p+p{margin:0}
- .studio-site .site-footer--compact nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 1rem}
- .studio-site .site-footer--compact .footer-group--information{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1rem}
- .studio-site .site-footer--compact .footer-group--information>div{flex-direction:row;flex-wrap:wrap;gap:0 1.5rem}
+ .studio-site .site-footer--compact .footer-group summary{padding:.75rem;gap:.5rem}
+ .studio-site .site-footer--compact .footer-group>div{padding-inline:.75rem}
 }
+@media(prefers-reduced-motion:reduce){.studio-site .footer-chevron{transition:none}}
 @media(forced-colors:active){
  .studio-site main>section::before,.studio-site .home-content>section::before,.studio-site .journal-prose>section::before{display:none}
  .studio-site .site-footer--compact .footer-group{border-color:CanvasText}
@@ -205,3 +208,24 @@
 .studio-site.studio-inner .studio-closing--night .button:hover{background:#e5eddd;border-color:#e5eddd}
 .studio-site.studio-inner .studio-closing--night .button:focus-visible{outline:3px solid #f8f6ef;outline-offset:5px}
 @media(forced-colors:active){.studio-site.studio-inner .studio-closing--night :is(h2,p,a){color:CanvasText}}
+
+/* Studio navigation: expressive surfaces, with native disclosure behavior. */
+.studio-site .site-footer--compact{padding-top:2.5rem}
+.studio-site .site-footer--compact nav{gap:1rem}
+.studio-site .site-footer--compact .footer-group{border-color:#cdd4c7;border-radius:18px;background:linear-gradient(145deg,#fffef9,#eff1e9)}
+.studio-site .site-footer--compact .footer-group:nth-child(even){background:linear-gradient(145deg,#fffef9,#f2ece1)}
+.studio-site .site-footer--compact .footer-group summary{display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:.7rem 1rem;min-height:112px;padding:1.15rem 1.2rem;color:#263f33}
+.studio-site .footer-section-icon{grid-column:1;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid #c7d1bf;border-radius:50%;background:#fbfcf7;color:#415d44}
+.studio-site .footer-section-icon svg{width:20px;height:20px}
+.studio-site .footer-section-label{grid-column:1;font:400 clamp(1.3rem,2vw,1.6rem)/1.05 var(--display);letter-spacing:-.025em;overflow-wrap:anywhere}
+.studio-site .site-footer--compact .footer-chevron{grid-column:2;grid-row:1/3;width:28px;height:28px;padding:6px;border-radius:50%;background:#e0e7d9;color:#334b3c}
+.studio-site .site-footer--compact .footer-group summary:hover{background:#e8eddf}
+.studio-site .site-footer--compact .footer-group summary:focus-visible{outline:3px solid #334b3c;outline-offset:-5px;border-radius:18px}
+.studio-site .site-footer--compact .footer-group[open] summary{background:#e8eddf;border-bottom-color:#cdd4c7}
+.studio-site .site-footer--compact .footer-group>div{padding:.65rem 1.2rem 1rem}
+.studio-site .site-footer--compact .footer-group a{width:100%;border-radius:5px;padding:.5rem .1rem}
+.studio-site .site-footer--compact .footer-group a:hover{color:#233d2f;text-decoration-thickness:2px}
+
+
+.studio-site .site-footer--compact nav{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+@media(max-width:767px){.studio-site .site-footer--compact .footer-group summary{padding:1rem .9rem;gap:.7rem .4rem;grid-template-columns:minmax(0,1fr) 24px}.studio-site .footer-section-label{font-size:1.35rem}}

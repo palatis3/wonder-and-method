@@ -763,3 +763,18 @@ form>.optional-choice{margin:1.25rem 0}
 .studio-site .audit-sample-pair img{display:block;width:100%;height:auto;border:1px solid var(--line)}
 .studio-site .audit-sample-pair figcaption{margin-top:.75rem;line-height:1.5}
 @media(max-width:600px){.studio-site .audit-sample-pair{grid-template-columns:minmax(0,320px)}}
+
+html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
+/* Fixed corner tools enhance the native footer link after JavaScript is ready. */
+.page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
+.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));right:auto;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
+.page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
+.page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.page-tools-ready .studio-site .site-footer--compact{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
+.page-tools-ready :is(.back-to-top,.support-chat-launch).is-obstructing-controls:not(:focus),
+.page-tools-ready.editing-form :is(.back-to-top,.support-chat-launch),
+.page-tools-ready.chat-is-open .back-to-top,
+html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back-to-top{visibility:hidden;pointer-events:none}
+@media(max-width:767px),(max-height:520px){
+ .studio-site main{padding-bottom:5rem}
+}

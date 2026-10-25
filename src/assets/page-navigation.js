@@ -34,7 +34,39 @@ if(header){
  }
  const topLink=document.querySelector('.back-to-top');
  if(topLink){
-  // Page help stays in normal flow so it cannot cover text or controls.
+  root.classList.add('page-tools-ready');
+  topLink.hidden=true;
+  const floating=[topLink,document.querySelector('.support-chat-launch')].filter(Boolean);
+  const blocked=(control,active)=>{
+   if(!active?.matches('a[href],button,summary,video,audio,[tabindex]:not([tabindex="-1"])')||active===control||active.closest('.support-chat,.site-tools'))return false;
+   if(control.hidden||getComputedStyle(control).display==='none')return false;
+   const r=control.getBoundingClientRect(),target=active.getBoundingClientRect();
+   return Math.min(r.right,target.right)>Math.max(r.left,target.left)-4&&Math.min(r.bottom,target.bottom)>Math.max(r.top,target.top)-4;
+  };
+  let queued=false;
+  const updateTools=()=>{
+   queued=false;
+   const active=document.activeElement;
+   // Separate show/hide thresholds prevent chatter near the top boundary.
+   if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
+   root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
+   // Keep tools discoverable during ordinary reading and scrolling. Yield only
+   // to the visitor's focused control; content hit tests hid chat on most pages.
+   const states=floating.map(control=>blocked(control,active));
+   floating.forEach((control,index)=>control.classList.toggle('is-obstructing-controls',states[index]));
+  };
+  const scheduleTools=()=>{if(!queued){queued=true;requestAnimationFrame(updateTools);}};
+  updateTools();
+  window.addEventListener('scroll',scheduleTools,{passive:true});
+  if('ResizeObserver' in window){const sizes=new ResizeObserver(scheduleTools);floating.forEach(control=>sizes.observe(control));}
+  window.addEventListener('resize',scheduleTools,{passive:true});
+  window.visualViewport?.addEventListener('resize',scheduleTools,{passive:true});
+  document.addEventListener('focusin',scheduleTools);
+  document.addEventListener('focusout',scheduleTools);
+  document.addEventListener('page-tools-change',scheduleTools);
+  document.addEventListener('toggle',scheduleTools,true);
+  document.fonts?.ready.then(scheduleTools);
+
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   topLink.addEventListener('click',event=>{
    if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;

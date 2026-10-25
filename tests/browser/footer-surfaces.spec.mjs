@@ -1,20 +1,29 @@
 import {test,expect} from './fixtures.mjs';
+import {serviceStateInfo} from '../../src/assets/service-state-info.js';
 
-test('footer destinations are visible and keyboard reachable without opening disclosures',async({page})=>{
- await page.goto('/?qa=1');
- const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
+test('four illustrated footer disclosures retain services and every published area',async({page})=>{
+ await page.goto('/?qa=1');const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
  await expect(footer.locator('.footer-location')).toHaveText('Based in Buffalo.');
- await expect(footer.locator('[data-chat-open],a[href="#page-top"],a[href^="mailto:"]')).toHaveCount(0);
- const groups=footer.locator('section.footer-group');await expect(groups).toHaveCount(3);
- for(const [index,label]of ['Studio','Services','Information'].entries()){
-  const group=groups.nth(index);
-  await expect(group.locator('h2')).toHaveText(label);
-  await expect(group.locator('a').first()).toBeVisible();
-  await group.locator('a').first().focus();await page.keyboard.press('Tab');await expect(group.locator('a').nth(1)).toBeFocused();
+ const groups=footer.locator('details.footer-group');await expect(groups).toHaveCount(4);
+ for(const [index,label]of ['Studio','Services','Areas','Information'].entries()){
+  const group=groups.nth(index),summary=group.locator('summary');
+  await expect(summary).toHaveText(label);await expect(summary.locator('svg')).toHaveCount(2);
+  // Guard the approved visual treatment as well as link presence. A plain
+  // heading list must fail CI even if all destinations survive the change.
+  await expect(group).toHaveCSS('border-radius','18px');
+  expect(await group.evaluate(el=>getComputedStyle(el).backgroundImage)).toContain('linear-gradient');
+  expect(await summary.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(112);
+  await expect(summary.locator('.footer-section-icon')).toHaveCSS('border-radius','50%');
+  expect(await summary.locator('.footer-section-label').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(20);
+  await expect(summary.locator('.footer-chevron')).toHaveCSS('border-radius','50%');
+  await summary.focus();await page.keyboard.press('Enter');await expect(group).toHaveAttribute('open','');
+  await page.keyboard.press('Tab');await expect(group.locator('a').first()).toBeFocused();
  }
- await expect(footer.locator('a')).toHaveCount(19);
- for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(footer.locator(`a[href="${path}"]`)).toBeVisible();
- expect(await footer.evaluate(el=>el.getBoundingClientRect().height)).toBeLessThan(1000);
+ await expect(groups.nth(2).locator('a[href="/areas/"]')).toBeVisible();
+ await expect(groups.nth(2).locator('a[href="/areas/new-york/"]')).toBeVisible();
+ const areas=groups.nth(2).locator('a');await expect(areas).toHaveCount(serviceStateInfo.length+1);
+ expect(await areas.evaluateAll(links=>links.map(link=>({href:link.getAttribute('href'),name:link.textContent.trim()})))).toEqual([{href:'/areas/',name:'Service areas'},...serviceStateInfo.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).map(state=>({href:`/areas/${state.id}/`,name:state.name}))]);
+ for(const path of ['/payments/','/privacy/','/terms/','/accessibility/'])await expect(footer.locator(`a[href="${path}"]`)).toBeVisible();
 });
 
 test('section surfaces alternate without covering text or expanding the viewport',async({page})=>{
@@ -37,9 +46,10 @@ test('enlarged text keeps section backgrounds and footer labels within the page'
  for(const width of [320,390,768,1440]){
   await page.setViewportSize({width,height:1000});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
   await page.addStyleTag({url:'/__test-footer-text.css'});
+  for(const summary of await page.locator('footer details summary').all())await summary.click();
   const layout=await page.evaluate(()=>({
    pageWidth:document.documentElement.scrollWidth,
-   clipped:[...document.querySelectorAll('footer h2,footer a')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>el.textContent.trim())
+   clipped:[...document.querySelectorAll('footer summary,footer a')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>el.textContent.trim())
   }));
   expect(layout.pageWidth,`${width}px at 200% text`).toBeLessThanOrEqual(width+1);
   expect(layout.clipped,`${width}px footer text`).toEqual([]);

@@ -35,7 +35,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await expect(page.locator('footer section.footer-group')).toHaveCount(3);await expect(page.locator('footer h2')).toHaveCount(3);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
+  await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(1);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -44,10 +44,10 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('in-flow page tools preserve focus and leave fields unobstructed',async({page})=>{
+test('floating page tools preserve focus and leave fields unobstructed',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- await expect(page.locator('.support-chat')).toHaveCSS('position','relative');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
  expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
  await page.evaluate(()=>dispatchEvent(new Event('scroll')));
@@ -95,18 +95,18 @@ test('without scripts concept navigation and footer remain usable',async({browse
   await expect(page.locator('.concept-header nav').getByRole('link',{name:'Overview',exact:true})).toBeVisible();
   await expect(page.locator('.concept-menu-list article')).toHaveCount(3);
   await expect(page.locator('.concept-demo-form')).toHaveCount(0);
-  await expect(page.locator('footer').getByRole('heading',{name:'Information',exact:true})).toBeVisible();
+  await page.locator('footer summary').filter({hasText:'Information'}).click();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.locator('.support-chat noscript a').click();
   await expect(page).toHaveURL(/\/contact\/#inquiry$/);
  }finally{await context.close();}
 });
 
-test('enlarged text keeps in-flow chat discoverable without covering a focused link',async({page})=>{
+test('enlarged text keeps floating chat discoverable without covering a focused link',async({page})=>{
  await fixture(page,{width:1024,height:900});
  await page.addStyleTag({content:'html{font-size:32px}#last-link{position:fixed;right:40px;bottom:115px;z-index:1}'});
  await expect(page.locator('.support-chat-launch')).toBeVisible();
  await page.locator('#last-link').focus();await expect(page.locator('#last-link')).toBeFocused();
- await expect(page.locator('.support-chat')).toHaveCSS('position','relative');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
  const unobstructed=await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.right-5,r.top+5));});expect(unobstructed).toBe(true);
 });

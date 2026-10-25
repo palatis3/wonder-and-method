@@ -44,6 +44,7 @@ test('footer destinations and single back-to-top link work without JavaScript',a
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');await page.goto('/?qa=1');
  const footer=page.locator('footer');
  await footer.scrollIntoViewIfNeeded();
+ for(const group of await footer.locator('details.footer-group').all())await group.locator('summary').click();
  for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(footer.locator(`a[href="${path}"]`)).toBeVisible();
  await page.locator('.back-to-top').click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  await expect(footer.locator('a[href="#page-top"]')).toHaveCount(0);

@@ -36,6 +36,7 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
 }
 
 export function applyCssBundles(html,boot,{family}={}){
+ const overview=html.includes('class="services-overview"');
  const plans=html.includes('href="/assets/package-visuals.css"');
  const guides=html.includes('href="/assets/journal.css"');
  const city=html.includes('href="/assets/living-city.css"');
@@ -50,7 +51,7 @@ export function applyCssBundles(html,boot,{family}={}){
  // Discover the home hero's blocking styles before its font/image preloads
  // and module requests. Keep the two stylesheets in their existing cascade.
  if(family==='home'&&city&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
- return html.replace('</head>',styles+'</head>');
+ return html.replace('</head>',styles+(overview?'<link rel="stylesheet" href="/assets/services-overview.css">':'')+'</head>');
 }
 
 export async function buildBrowserBundles(root,config){

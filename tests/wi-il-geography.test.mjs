@@ -90,7 +90,7 @@ test('compressed dictionary preserves every term while keeping the existing payl
  assert.equal(payload.encoding,'gzip-base64');
  assert.deepEqual([...Buffer.from(payload.data,'base64').subarray(0,10)],[31,139,8,0,0,0,0,0,2,255]);
  const names=await decodeCountyNames(payload);
- const expectedTerms=serviceStates.flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')));
+ const expectedTerms=serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')));
  const terms=await decodeCountySearchCards(JSON.parse(html.match(/data-county-search-cards>(.*?)<\/script>/s)[1]),names);
  const actual=[...html.matchAll(/data-cs="([^"]+)"/g)].map(match=>terms[Number(match[1])]);
  assert.deepEqual(actual,expectedTerms);

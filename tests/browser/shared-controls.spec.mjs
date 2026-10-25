@@ -1,4 +1,14 @@
 import {test,expect} from './fixtures.mjs';
+import {serviceStateInfo} from '../../src/assets/service-state-info.js';
+
+test('state choices stay alphabetical in the footer, finder and browse lists',async({page})=>{
+ await page.goto('/areas/?qa=1');
+ const expected=serviceStateInfo.map(state=>state.name).sort((a,b)=>a.localeCompare(b,'en'));
+ expect(await page.locator('#county-state option:not([value=""])').allTextContents()).toEqual(expected);
+ expect(await page.locator('[data-state-directory-links] a>span').allTextContents()).toEqual(expected);
+ expect((await page.locator('#counties>.county-region>summary').allTextContents()).map(name=>name.replace(/ \(\d+ [^)]+\)$/,''))).toEqual(expected);
+ expect((await page.locator('#footer-areas-heading+div>a').allTextContents()).slice(1)).toEqual(expected);
+});
 
 const inViewport=async(locator)=>{
  await expect(locator).toBeVisible();
@@ -6,13 +16,13 @@ const inViewport=async(locator)=>{
  expect(fits).toBe(true);
 };
 
-// Page help has one stable location in normal flow, with no scroll-triggered hiding.
+// Floating tools remain available while reading.
 const revealTools=async page=>{
- await page.locator('.support-chat-launch').scrollIntoViewIfNeeded();
+ await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));
  await inViewport(page.locator('.support-chat-launch'));
 };
 
-test('shared header contact and the single in-flow top link remain reachable across page types',async({page,isMobile})=>{
+test('shared header contact and the single floating top link remain reachable across page types',async({page,isMobile})=>{
  if(isMobile)await page.setViewportSize({width:320,height:844});
  for(const path of ['/','/pricing/','/contact/','/work/fieldwork/','/services/seo/','/areas/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
@@ -26,10 +36,10 @@ test('shared header contact and the single in-flow top link remain reachable acr
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).not.toBeInViewport();
   if(path==='/contact/'){
-   await expect(page.locator('.support-chat-launch')).toHaveCount(0);
+   await expect(page.locator('.support-chat-launch')).toHaveCount(1);
    await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
   }else await revealTools(page);
-  await page.locator('.back-to-top').scrollIntoViewIfNeeded();await inViewport(page.locator('.back-to-top'));
+  await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));await inViewport(page.locator('.back-to-top'));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
   await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
   const top=page.locator('.back-to-top');await inViewport(top);await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
@@ -79,17 +89,17 @@ test('blocked chat exposes a usable contact fallback and restores visible focus 
  await allowMockChat(page);
  await page.route('https://embed.tawk.to/**',route=>route.abort('blockedbyclient'));
  for(const scroll of [0,900]){
-  await page.goto('/?qa=1');await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),scroll);await revealTools(page);await page.locator('.support-chat-launch').click();
+  await page.goto('/?qa=1');await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),scroll);await inViewport(page.locator('.support-chat-launch'));await page.locator('.support-chat-launch').click();
   const contact=page.locator('.support-chat-fallback a');await inViewport(contact);await expect(contact).toBeFocused();
   await expect(contact).toHaveAttribute('href','/contact/');
   await page.locator('.support-chat-dismiss').click();await expect(page.locator('.support-chat')).toBeHidden();
-  const target=page.locator('.back-to-top');await expect(target).toBeFocused();await inViewport(target);
+  const target=page.locator(scroll ? '.back-to-top' : '.site-header .wordmark');await expect(target).toBeFocused();await inViewport(target);
  }
 });
 
-test('form pages use inline chat without covering focused fields in landscape',async({page})=>{
+test('form pages keep chat available while yielding to focused fields in landscape',async({page})=>{
  await page.setViewportSize({width:390,height:320});await page.goto('/contact/?qa=1');await page.locator('#email').focus();
- await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toHaveCount(0);await expect(page.locator('.back-to-top')).not.toBeInViewport();
+ await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.back-to-top')).toBeHidden();
  const covered=await page.locator('#email').evaluate(el=>{const r=el.getBoundingClientRect();return !el.contains(document.elementFromPoint(r.left+8,r.top+8));});expect(covered).toBe(false);
  await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
@@ -248,57 +258,20 @@ test('ordinary scrolling preserves every page section and reachable tools',async
  }
 });
 
-test('chat keeps a stable document position while scrolling and the top link stays on the left',async({page})=>{
- await page.goto('/pricing/?qa=1');await page.evaluate(()=>document.fonts.ready);
- const samples=await page.evaluate(async()=>{
-  const launcher=document.querySelector('.support-chat-launch'),samples=[];
-  const positions=[...Array.from({length:81},(_,i)=>i*40),...Array.from({length:60},(_,i)=>3160-i*40)];
-  for(const y of positions){
-   scrollTo({top:y,behavior:'instant'});
-   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-   samples.push({y,documentTop:Math.round(launcher.getBoundingClientRect().top+scrollY),visible:launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})});
-  }
-  return samples;
- });
- const reappearances=samples.slice(1).filter((sample,index)=>sample.visible&&!samples[index].visible);
- expect(reappearances,'Chat must not flicker in and out while scrolling').toEqual([]);
- expect(samples.every(sample=>sample.visible),'Chat stays available without scroll-triggered hiding').toBe(true);
- expect(new Set(samples.map(sample=>sample.documentTop)).size,'Chat occupies one position in the document').toBe(1);
- {
-  const top=page.locator('.back-to-top');await top.scrollIntoViewIfNeeded();await inViewport(top);
-  expect(await top.evaluate(node=>{const r=node.getBoundingClientRect();return r.left>=0&&r.right<innerWidth/2&&r.bottom<=innerHeight;})).toBe(true);
-  await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
- }
- await page.evaluate(()=>scrollTo({top:800,behavior:'instant'}));
- await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(800);
- await revealTools(page);await expect(page.locator('.support-chat-launch')).toBeVisible();
- const launcher=page.locator('.support-chat-launch');await launcher.focus();
- const focusedScroll=await page.evaluate(async()=>{
-  const launcher=document.querySelector('.support-chat-launch'),start=scrollY,samples=[];
-  for(const delta of [80,20,100,0]){
-   scrollTo({top:Math.max(0,start-delta),behavior:'instant'});
-   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-   samples.push({y:scrollY,focusedAndVisible:document.activeElement===launcher&&launcher.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})});
-  }
-  return {start,samples};
- });
- expect(focusedScroll.samples,'Keyboard focus remains on chat through real scroll reversals').toEqual([80,20,100,0].map(delta=>({y:focusedScroll.start-delta,focusedAndVisible:true})));
-});
-
-test('page-help controls remain below content and reachable after scrolling',async({page})=>{
- for(const path of ['/','/pricing/']){
+test('chat and back-to-top stay in viewport corners throughout scrolling on every page type',async({page})=>{
+ for(const path of ['/','/pricing/','/services/','/services/seo/','/areas/','/contact/','/checkout/focused-site/','/guides/ai-search-visibility/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
   const chat=page.locator('.support-chat-launch'),top=page.locator('.back-to-top');
-  await expect(chat).not.toBeInViewport();await expect(top).not.toBeInViewport();
+  await inViewport(chat);await expect(top).toBeHidden();
   for(const y of [680,1200,760]){
    await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
-   const placement=await page.locator('#site-help').evaluate(help=>({top:help.getBoundingClientRect().top,mainBottom:document.querySelector('main').getBoundingClientRect().bottom,positions:[...help.querySelectorAll('.back-to-top,.support-chat')].map(n=>getComputedStyle(n).position)}));
-   expect(placement.top).toBeGreaterThanOrEqual(placement.mainBottom);
-   expect(placement.positions).not.toContain('fixed');expect(placement.positions).not.toContain('sticky');
+   await inViewport(chat);await inViewport(top);
+   const positions=await page.evaluate(()=>({chat:getComputedStyle(document.querySelector('.support-chat')).position,top:getComputedStyle(document.querySelector('.back-to-top')).position}));
+   expect(positions).toEqual({chat:'fixed',top:'fixed'});
+   expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);
+   expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
   }
-  await page.locator('#site-help').scrollIntoViewIfNeeded();await inViewport(chat);await inViewport(top);
   await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
-  await expect(page.locator('.site-header .wordmark')).toBeFocused();
-  await expect(top).not.toBeInViewport();await expect(chat).not.toBeInViewport();
+  await expect(page.locator('.site-header .wordmark')).toBeFocused();await inViewport(chat);
  }
 });

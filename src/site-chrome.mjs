@@ -1,3 +1,5 @@
+import {studioIcon} from './studio-motifs.mjs';
+import {serviceStateInfo} from './assets/service-state-info.js';
 import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e} from './shared.mjs';
 import {brandWordmark} from './brand.mjs';
@@ -18,6 +20,6 @@ export function siteHeader(path,config={}){
 }
 
 export function siteFooter(config={}){
- const groups=[['Studio',[['/work/','Work'],['/about/','About'],['/process/','Process'],['/contact/','Contact'],['/guides/','Guides'],['/areas/','Service areas']]],['Services',[...services,['/pricing/','Pricing']]],['Information',[['/payments/',pageDisplayNames['/payments/']],['/privacy/','Privacy'],['/terms/','Website terms'],['/accessibility/','Accessibility']]]];
- return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p class="footer-location">Based in ${e(serviceCoverage(config).base)}.</p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<section class="footer-group footer-group--${label.toLowerCase()}" aria-labelledby="footer-${label.toLowerCase()}-heading"><h2 id="footer-${label.toLowerCase()}-heading">${label}</h2><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></section>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span></div></footer>`;
+ const groups=[['Studio',[['/work/','Work'],['/about/','About'],['/process/','Process'],['/contact/','Contact'],['/guides/','Guides']]],['Services',[...services,['/pricing/','Pricing']]],['Areas',[['/areas/','Service areas'],...serviceStateInfo.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).map(state=>[state.path,state.name])]],['Information',[['/payments/',pageDisplayNames['/payments/']],['/privacy/','Privacy'],['/terms/','Website terms'],['/accessibility/','Accessibility']]]];
+ return `<footer class="site-footer--compact"><div class="footer-top"><p class="wordmark brand-lockup">${brandWordmark()}</p><p class="footer-location">Based in ${e(serviceCoverage(config).base)}.</p></div><nav aria-label="Footer">${groups.map(([label,links])=>`<details class="footer-group"><summary id="footer-${label.toLowerCase()}-heading"><span class="footer-section-icon">${studioIcon(label.toLowerCase())}</span><span class="footer-section-label">${label}</span><svg class="footer-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div>${links.map(([url,text])=>`<a href="${url}">${e(text)}</a>`).join('')}</div></details>`).join('')}</nav><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} ${e(config.businessIdentity||'Wonder and Method')}. All rights reserved.</span></div></footer>`;
 }
