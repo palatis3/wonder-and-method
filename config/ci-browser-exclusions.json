@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "reviewedBy": "Codex independent reviewer (gpt-6-astra)",
-  "reviewedAt": "2026-10-25T19:38:17.692Z",
-  "basis": "Retain 511 independently reviewed platform/project exclusions. The October 25 floating-controls review approved six changed source hashes and two renamed identities, with no added or removed skips. Evidence: evidence/footer-semrush-20261025/implementation-review.json",
+  "reviewedAt": "2026-10-25T20:26:12.671Z",
+  "basis": "Retain 511 independently reviewed platform/project exclusions. The October 25 floating-controls review approved six changed source hashes and two renamed identities, with no added or removed skips. Evidence: evidence/footer-semrush-20261025/implementation-review.json The subsequent no-JavaScript footer review approved its source hash only; all 48 existing file exclusions and all 511 total exclusions remain unchanged. Evidence: evidence/footer-semrush-20261025/no-js-footer-review.json",
   "sourceFiles": {
     "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
     "tests/browser/audit-layout-regression.spec.mjs": "b4c282e937db44a729a54c3ae6e2e2d27a913ce22b8d1a045fa798468376eecb",
@@ -19,7 +19,7 @@
     "tests/browser/location-wave-one-planning.spec.mjs": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
     "tests/browser/location-wave-three-planning.spec.mjs": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
     "tests/browser/location-wave-two-planning.spec.mjs": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
-    "tests/browser/no-javascript.spec.mjs": "7220fa243bdd7238c7eda1050e34591482601b40ae0008c68cb4d7af90ed3cd5",
+    "tests/browser/no-javascript.spec.mjs": "3c58de99613d01e2319ab0599a99cc424cca50946bf33f63e794893a697668b9",
     "tests/browser/northeast-coverage.spec.mjs": "0bcc94730c3a32ef21984353c1c8f2144ee714c42f49c39fe978a90ce5cba7eb",
     "tests/browser/palette-clarity.spec.mjs": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
     "tests/browser/regional-directory.spec.mjs": "33dba984c1f882468138bfd2c8513e7b32ee19a0ddf08e1646867f6bd98bf711",

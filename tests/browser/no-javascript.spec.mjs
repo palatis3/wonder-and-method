@@ -53,8 +53,10 @@ test('footer destinations and single back-to-top link work without JavaScript',a
  const footer=page.locator('footer');
  await footer.scrollIntoViewIfNeeded();
  await expect(footer.locator('details.footer-group[open]')).toHaveCount(4);
- const destinations=footer.locator('nav[aria-label="Footer"]');
- for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(destinations.locator(`a[href="${path}"]`)).toBeVisible();
+ for(const path of ['/contact/#inquiry','/pricing/','/areas/','/payments/','/privacy/','/terms/','/accessibility/']){
+  const destination=footer.locator(`a[href="${path}"]`);await expect(destination).toHaveCount(1);await expect(destination).toBeVisible();
+ }
+ const destinations=await footer.locator('a[href]').evaluateAll(links=>links.map(link=>new URL(link.href).pathname));expect(new Set(destinations).size).toBe(destinations.length);
  const directories=footer.locator('.footer-area-directories');await expect(directories).not.toHaveAttribute('open','');
  await directories.locator(':scope > summary').focus();await page.keyboard.press('Enter');
  await expect(directories.locator('a[href="/areas/new-york/"]')).toBeVisible();
