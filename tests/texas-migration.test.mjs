@@ -58,7 +58,7 @@ test('0038 adds exactly the Texas directory and 216 reviewed county keys and pre
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
  assert.deepEqual([...journeyPages].sort(),nextKeys.slice().sort());
  // SQLite quotes the renamed table. Only the 217 approved page literals may differ.
- assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()),oldSchema);
+ assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');
  assert.deepEqual(db.sqlite.prepare('PRAGMA foreign_key_check').all(),[]);
  for(const page of keys)insert(db,{page});
