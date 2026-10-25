@@ -1,0 +1,2589 @@
+{
+  "schemaVersion": 1,
+  "reviewedBy": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+  "reviewedAt": "2026-10-25T17:50:00.308Z",
+  "basis": "Independently matched all 511 identities to current discovery, exact source hashes and true project/mobile skip predicates with matching reasons. Exact match to 511 previously skipped identities; no failed identity included. This approves the existing exclusion policy only, not new omissions or the in-progress CI implementation.",
+  "sourceFiles": {
+    "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
+    "tests/browser/audit-layout-regression.spec.mjs": "0475143ee7a5960dd0f3250e47043ab90ededcb07fa1eb7458233336cecce0ea",
+    "tests/browser/buyer-journeys.spec.mjs": "4b52170428b484e4e276cfa138c9c92c761c92da3cd610b1397ff77c4dbb47a4",
+    "tests/browser/floating-tools.spec.mjs": "4a6db0e9c02892070de54acd97a5e8cf3f8457a3f08babea168270b886550977",
+    "tests/browser/footer-surfaces.spec.mjs": "2f009ba570caea37e3549502c221621b883b7b1b5d94958fa5d5996e915231d7",
+    "tests/browser/header-resize.spec.mjs": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918",
+    "tests/browser/living-city-accessibility.spec.mjs": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69",
+    "tests/browser/living-city-motion-polish.spec.mjs": "eefef091140963e0cdfa84bc902119ad3a5790ad9ec69dc7a5ca47f80a4c40a3",
+    "tests/browser/living-city-night.spec.mjs": "f3f2239d7d2ee5f8fe8cf65974bfb8ce92ca6f375f28e19d6cf4b201b5854e0a",
+    "tests/browser/location-next-planning.spec.mjs": "fa92b027090c0cc43fa98d41e6e9367bb570299ab83af0df03d12ec5dc4396ee",
+    "tests/browser/location-planning.spec.mjs": "cb765d897729ffdb55640e1bc2916cc50d08292bad35562820f0627047d6283c",
+    "tests/browser/location-wave-four-planning.spec.mjs": "81d4062945e04eb740a4aa01ce12bb9c7631653b02cbc48b2f2425d2f4e302a5",
+    "tests/browser/location-wave-one-planning.spec.mjs": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
+    "tests/browser/location-wave-three-planning.spec.mjs": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
+    "tests/browser/location-wave-two-planning.spec.mjs": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
+    "tests/browser/no-javascript.spec.mjs": "7220fa243bdd7238c7eda1050e34591482601b40ae0008c68cb4d7af90ed3cd5",
+    "tests/browser/northeast-coverage.spec.mjs": "0bcc94730c3a32ef21984353c1c8f2144ee714c42f49c39fe978a90ce5cba7eb",
+    "tests/browser/palette-clarity.spec.mjs": "6a649f34300dc007eb6a76286f4b33164eca977fdd350b368ac1eba6775c2255",
+    "tests/browser/regional-directory.spec.mjs": "33dba984c1f882468138bfd2c8513e7b32ee19a0ddf08e1646867f6bd98bf711",
+    "tests/browser/shared-controls.spec.mjs": "f92fb5bd164c2099cc593324af78860f8a2249af2a89876eae93043e725caed7",
+    "tests/browser/site-accessibility.spec.mjs": "4fa345631db704a5c8ebe10546bbc9d6b2301fca7bd15ee222ed064f68e130a6",
+    "tests/browser/site-health.spec.mjs": "0989012e6fef42f701748ae4b9c5950e05a8a49a107879d85daa9b8d06f4087d",
+    "tests/browser/texas-planning.spec.mjs": "df351ec1a10c43508c8062db9ed8c1b30f506d5e8e1dba327b5edeae6d5ed575"
+  },
+  "exclusions": [
+    {
+      "identity": "[desktop] › tests/browser/audit-layout-regression.spec.mjs › short touch screens let the header scroll away while the project action fits",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "Touch landscape exception"
+    },
+    {
+      "identity": "[desktop] › tests/browser/buyer-journeys.spec.mjs › mobile menu traps focus and Escape returns to its trigger",
+      "file": "tests/browser/buyer-journeys.spec.mjs",
+      "reason": "Phone navigation"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › all guides remain browsable when search enhancement is unavailable",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Native fallback coverage"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › checkout terms remain available by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › Florida county facts, local articles and worksheets remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › footer destinations and single back-to-top link work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › homepage projects and Buffalo films remain available without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › native additions prefill, correction and receipt preserve all selected work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › native checkout retains chosen additions and welcomes questions without another form",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › new guide examples and contact intent are usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › New York county places and source references remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › Ohio directory preserves typed municipalities and omits an unrelated worksheet without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › ROI worked example and guide templates stay useful without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › server-rendered proposal, general question and fixed monthly context work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › service and county project answers remain accessible by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › state directories and Pennsylvania county details work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › state hubs and independent-city entries work without JavaScript or inferred inquiry context",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/no-javascript.spec.mjs › Texas directory entries and reviewed county briefs remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[desktop] › tests/browser/shared-controls.spec.mjs › a first phone visit requests no film, remembers explicit play in its tab, and respects a later pause",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "One first-visit phone trace covers session behavior"
+    },
+    {
+      "identity": "[desktop] › tests/browser/shared-controls.spec.mjs › keyboard wrapping and reopening reveal links inside a short mobile menu",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "Phone navigation"
+    },
+    {
+      "identity": "[desktop] › tests/browser/shared-controls.spec.mjs › page tools yield to the phone menu and recover after it closes",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "Phone navigation"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/area-heading-layout.spec.mjs › area section labels remain above their headings at phone, tablet and desktop widths",
+      "file": "tests/browser/area-heading-layout.spec.mjs",
+      "reason": "Same static heading layout; motion has separate coverage."
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 1440x900",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 320x640",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 390x844",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 683x328",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 844x390",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › home hero controls remain clear and short screens fit the project action",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › mobile home Contact remains readable across hero, scrolled and menu states",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One responsive state check"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › navigation order, mobile Services alignment and footer disclosures agree",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › Services separates three needs and keeps every choice readable at enlarged text",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One complete responsive matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/audit-layout-regression.spec.mjs › shared header retains readable brand, Contact and navigation with enlarged text",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One independent viewport and text-size matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1024x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1279x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1280x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1440x1000",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 320x640",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 390x844",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 768x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 844x390",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/footer-surfaces.spec.mjs › enlarged text keeps section backgrounds and footer labels within the page",
+      "file": "tests/browser/footer-surfaces.spec.mjs",
+      "reason": "One complete text-resize matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /areas/michigan/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /contact/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /guides/service-area-pages/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /pricing/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /services/web-design/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/header-resize.spec.mjs › short desktop menus scroll and recover across the navigation breakpoint",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop resize and keyboard navigation"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-accessibility.spec.mjs › artwork and sky stay aligned above the roofs across desktop and phone crops",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "Desktop and phone matrices cover the composition"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-accessibility.spec.mjs › city copy and controls survive doubled text across phone, tablet and desktop",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One independent viewport matrix covers this text-resize check"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-accessibility.spec.mjs › city heading keeps whole words in two columns across wide desktops",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One viewport matrix covers the desktop composition"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-accessibility.spec.mjs › homepage city film controls keep their own space across desktop and doubled text",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One viewport matrix covers the real-film responsive states"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-motion-polish.spec.mjs › card entrances settle into crisp text and pause their entire animation",
+      "file": "tests/browser/living-city-motion-polish.spec.mjs",
+      "reason": "The tour is disabled when reduced motion is requested"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-motion-polish.spec.mjs › keyboard focus during an entrance reveals the complete card before holding it",
+      "file": "tests/browser/living-city-motion-polish.spec.mjs",
+      "reason": "The tour is disabled when reduced motion is requested"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-night.spec.mjs › night effects survive rapid replay and pause, offscreen suspension, and page backgrounding",
+      "file": "tests/browser/living-city-night.spec.mjs",
+      "reason": "Motion is disabled"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/living-city-night.spec.mjs › the night sky loops after the cards finish and freezes with the motion control",
+      "file": "tests/browser/living-city-night.spec.mjs",
+      "reason": "Covered by the static-sky test"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-next-planning.spec.mjs › eight further location planning tables preserve headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-next-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-planning.spec.mjs › six location planning tables preserve headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Georgia 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Mississippi and Alabama 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 2 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 3 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 10 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 100 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 101 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 102 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 11 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 12 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 13 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 14 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 15 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 16 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 17 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 18 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 19 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 2 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 20 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 21 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 22 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 23 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 24 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 25 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 26 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 27 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 28 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 29 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 3 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 30 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 31 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 32 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 33 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 34 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 35 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 36 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 37 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 38 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 39 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 4 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 40 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 41 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 42 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 43 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 44 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 45 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 46 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 47 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 48 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 49 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 5 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 50 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 51 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 52 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 53 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 54 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 55 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 56 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 57 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 58 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 59 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 6 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 60 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 61 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 62 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 63 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 64 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 65 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 66 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 67 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 68 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 69 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 7 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 70 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 71 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 72 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 73 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 74 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 75 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 76 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 77 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 78 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 79 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 8 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 80 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 81 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 82 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 83 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 84 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 85 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 86 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 87 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 88 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 89 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 9 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 90 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 91 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 92 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 93 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 94 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 95 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 96 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 97 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 98 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 99 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Wisconsin and Illinois 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 2 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 3 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 4 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 5 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 6 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 7 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 8 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 10 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 11 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 12 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 13 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 14 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 15 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 16 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 17 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 18 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 19 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 2 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 20 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 21 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 22 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 23 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 24 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 25 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 26 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 27 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 28 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 29 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 3 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 30 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 31 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 32 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 4 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 5 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 6 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 7 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 8 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 9 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 1 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 10 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 11 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 12 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 13 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 14 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 15 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 16 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 17 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 18 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 19 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 2 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 20 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 21 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 22 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 23 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 24 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 3 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 4 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 5 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 6 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 7 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 8 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 9 preserves table headings, phone labels, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "reason": "Same static tables; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › all guides remain browsable when search enhancement is unavailable",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Native fallback coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › checkout terms remain available by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › Florida county facts, local articles and worksheets remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › footer destinations and single back-to-top link work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › homepage projects and Buffalo films remain available without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › native additions prefill, correction and receipt preserve all selected work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › native checkout retains chosen additions and welcomes questions without another form",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › new guide examples and contact intent are usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › New York county places and source references remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › Ohio directory preserves typed municipalities and omits an unrelated worksheet without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › ROI worked example and guide templates stay useful without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › server-rendered proposal, general question and fixed monthly context work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › service and county project answers remain accessible by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › state directories and Pennsylvania county details work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › state hubs and independent-city entries work without JavaScript or inferred inquiry context",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/no-javascript.spec.mjs › Texas directory entries and reviewed county briefs remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/palette-clarity.spec.mjs › every concept keeps prices and navigation clear on narrow phones",
+      "file": "tests/browser/palette-clarity.spec.mjs",
+      "reason": "One complete phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/regional-directory.spec.mjs › all retired county URLs permanently redirect while preserving query bytes and the Erie page remains live",
+      "file": "tests/browser/regional-directory.spec.mjs",
+      "reason": "One complete HTTP redirect matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › a failed city film keeps the still and website links usable, then retries",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "Reduced motion never requests a film"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › a first phone visit requests no film, remembers explicit play in its tab, and respects a later pause",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "One first-visit phone trace covers session behavior"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › a visitor pause choice survives reloading the homepage until motion is requested again",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "Reduced motion is already static"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/shared-controls.spec.mjs › page help uses a phone row, desktop corner and deliberate form action",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-accessibility.spec.mjs › shared chrome and page families pass automated accessibility checks with footer groups open",
+      "file": "tests/browser/site-accessibility.spec.mjs",
+      "reason": "Same accessibility tree; reduced motion has dedicated interaction tests"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1–25",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1001–1025",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 101–125",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1026–1050",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1051–1075",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1076–1100",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1101–1125",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1126–1150",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1151–1175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1176–1200",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1201–1225",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1226–1250",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1251–1275",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 126–150",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1276–1300",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1301–1325",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1326–1350",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1351–1375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1376–1400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1401–1425",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1426–1450",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1451–1475",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1476",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 151–175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 176–200",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 201–225",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 226–250",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 251–275",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 26–50",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 276–300",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 301–325",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 326–350",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 351–375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 376–400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 401–425",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 426–450",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 451–475",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 476–500",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 501–525",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 51–75",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 526–550",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 551–575",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 576–600",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 601–625",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 626–650",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 651–675",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 676–700",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 701–725",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 726–750",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 751–775",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 76–100",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 776–800",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 801–825",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 826–850",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 851–875",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 876–900",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 901–925",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 926–950",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 951–975",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 976–1000",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 1 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 10 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 11 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 12 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 13 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 14 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 15 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 16 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 17 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 18 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 19 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 2 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 20 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 21 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 22 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 23 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 24 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 25 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 26 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 27 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 28 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 29 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 3 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 30 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 31 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 32 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 33 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 34 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 35 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 36 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 4 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 5 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 6 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 7 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 8 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 9 preserves complete briefs, table semantics, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "reason": "Static content has the same layout; reduced motion is covered separately"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 1440x900",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 320x640",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 390x844",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 683x328",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › floating page tools remain reachable and leave focused controls clear at 844x390",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix covers the responsive sweep"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › home hero controls remain clear and short screens fit the project action",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › mobile home Contact remains readable across hero, scrolled and menu states",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One responsive state check"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › navigation order, mobile Services alignment and footer disclosures agree",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › Services separates three needs and keeps every choice readable at enlarged text",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One complete responsive matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/audit-layout-regression.spec.mjs › shared header retains readable brand, Contact and navigation with enlarged text",
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "reason": "One independent viewport and text-size matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1024x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1279x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1280x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 1440x1000",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 320x640",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 390x844",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 768x900",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/floating-tools.spec.mjs › page help leaves reading space clear at 844x390",
+      "file": "tests/browser/floating-tools.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/footer-surfaces.spec.mjs › enlarged text keeps section backgrounds and footer labels within the page",
+      "file": "tests/browser/footer-surfaces.spec.mjs",
+      "reason": "One complete text-resize matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /areas/michigan/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /contact/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /guides/service-area-pages/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /pricing/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › desktop header survives width and height changes while scrolled: /services/web-design/",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop pointer and resizable-window regression"
+    },
+    {
+      "identity": "[phone] › tests/browser/header-resize.spec.mjs › short desktop menus scroll and recover across the navigation breakpoint",
+      "file": "tests/browser/header-resize.spec.mjs",
+      "reason": "Desktop resize and keyboard navigation"
+    },
+    {
+      "identity": "[phone] › tests/browser/living-city-accessibility.spec.mjs › city copy and controls survive doubled text across phone, tablet and desktop",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One independent viewport matrix covers this text-resize check"
+    },
+    {
+      "identity": "[phone] › tests/browser/living-city-accessibility.spec.mjs › city heading keeps whole words in two columns across wide desktops",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One viewport matrix covers the desktop composition"
+    },
+    {
+      "identity": "[phone] › tests/browser/living-city-accessibility.spec.mjs › homepage city film controls keep their own space across desktop and doubled text",
+      "file": "tests/browser/living-city-accessibility.spec.mjs",
+      "reason": "One viewport matrix covers the real-film responsive states"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › all guides remain browsable when search enhancement is unavailable",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Native fallback coverage"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › checkout terms remain available by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › Florida county facts, local articles and worksheets remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › footer destinations and single back-to-top link work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › homepage projects and Buffalo films remain available without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › native additions prefill, correction and receipt preserve all selected work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › native checkout retains chosen additions and welcomes questions without another form",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › new guide examples and contact intent are usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › New York county places and source references remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › Ohio directory preserves typed municipalities and omits an unrelated worksheet without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › ROI worked example and guide templates stay useful without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › server-rendered proposal, general question and fixed monthly context work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › service and county project answers remain accessible by keyboard without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › state directories and Pennsylvania county details work without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › state hubs and independent-city entries work without JavaScript or inferred inquiry context",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/no-javascript.spec.mjs › Texas directory entries and reviewed county briefs remain usable without JavaScript",
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "reason": "Dedicated no-JavaScript project"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Connecticut: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Delaware: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maine: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Maryland: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Massachusetts: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Hampshire: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › New Jersey: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Rhode Island: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 1440px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 320px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/northeast-coverage.spec.mjs › Vermont: every directory entry fits 768px before and after disclosures",
+      "file": "tests/browser/northeast-coverage.spec.mjs",
+      "reason": "One complete three-width layout matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/palette-clarity.spec.mjs › every concept keeps prices and navigation clear on narrow phones",
+      "file": "tests/browser/palette-clarity.spec.mjs",
+      "reason": "One complete phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/regional-directory.spec.mjs › all retired county URLs permanently redirect while preserving query bytes and the Erie page remains live",
+      "file": "tests/browser/regional-directory.spec.mjs",
+      "reason": "One complete HTTP redirect matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/shared-controls.spec.mjs › page help uses a phone row, desktop corner and deliberate form action",
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "reason": "One complete viewport matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1–25",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1001–1025",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 101–125",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1026–1050",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1051–1075",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1076–1100",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1101–1125",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1126–1150",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1151–1175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1176–1200",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1201–1225",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1226–1250",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1251–1275",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 126–150",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1276–1300",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1301–1325",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1326–1350",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1351–1375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1376–1400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1401–1425",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1426–1450",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1451–1475",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 1476–1476",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 151–175",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 176–200",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 201–225",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 226–250",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 251–275",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 26–50",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 276–300",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 301–325",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 326–350",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 351–375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 376–400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 401–425",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 426–450",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 451–475",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 476–500",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 501–525",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 51–75",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 526–550",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 551–575",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 576–600",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 601–625",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 626–650",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 651–675",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 676–700",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 701–725",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 726–750",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 751–775",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 76–100",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 776–800",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 801–825",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 826–850",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 851–875",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 876–900",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 901–925",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 926–950",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 951–975",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 976–1000",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    }
+  ],
+  "status": "reviewed"
+}

@@ -8,6 +8,16 @@ function page({route='/',title='A clear page title',description='A useful, speci
 }
 const errors=p=>p.findings.filter(f=>f.severity==='error').map(f=>f.rule);
 const sitemap=routes=>`<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(r=>`<url><loc>${config.origin}${r}</loc></url>`).join('')}</urlset>`;
+
+test('incoming-link review binds destination and accessible label even when parent count is unchanged',()=>{
+ const evidence=anchor=>auditSeoCorpus({pages:[page({body:`<h1>Home</h1>${anchor}`}),page({route:'/other/',title:'Other',description:'Different summary.'})],sitemap:sitemap(['/','/other/']),config}).findings.find(item=>item.route==='/other/'&&item.rule==='incoming-links').evidenceSha256;
+ const first=evidence('<a href="/other/">Explore the other project</a>');
+ assert.notEqual(first,evidence('<a href="/other/">here</a>'));
+ assert.notEqual(first,evidence('<a href="/other/#details">Explore the other project</a>'));
+ assert.notEqual(first,evidence('<a href="/other/" aria-label="here">Explore the other project</a>'));
+ assert.notEqual(first,evidence('<span id="label">here</span><a href="/other/" aria-labelledby="label">Explore the other project</a>'));
+ assert.equal(first,evidence('<a href="https://example.com/other/">Explore the other project</a>'));
+});
 test('title limit measures decoded Unicode characters including brand and spaces',()=>{
  const atLimit=page({title:'x'.repeat(66)+' &amp; 😀'});
  assert.equal(atLimit.titleCharacters,70);

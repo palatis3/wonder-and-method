@@ -8,7 +8,7 @@ import {inquiryForm} from '../src/inquiry-form.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 import {inquiryMessagePrompt,inquiryMessageHelp} from '../src/shared.mjs';
 import {routeIndexEligible} from '../src/index-policy.mjs';
-import {verifyWorkerVersion,verifyTechnicalManifest} from '../src/release-verification.mjs';
+import {verifyWorkerVersion,verifyTechnicalManifest,technicalChecks} from '../src/release-verification.mjs';
 
 test('inquiry retention bounds match the published hourly/daily policy at bucket boundaries',async()=>{
  for(const now of [Date.UTC(2026,9,18),Date.UTC(2026,9,18,12,30),Date.UTC(2026,9,18,23,59,59,999)]){
@@ -69,7 +69,7 @@ test('runtime identity mismatch or a missing binding fails release verification'
 
 test('technical manifest rejects changed artifacts or incomplete checks without approving business gates',()=>{
  const current={commit:'a'.repeat(40),sourceSha256:'b'.repeat(64),artifactSha256:'c'.repeat(64)};
- const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+ const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:technicalChecks};
  assert.equal(verifyTechnicalManifest(manifest,current),true);
  assert.throws(()=>verifyTechnicalManifest(manifest,{...current,artifactSha256:'d'.repeat(64)}),/artifactSha256/);
  assert.throws(()=>verifyTechnicalManifest({...manifest,dirty:true},current),/clean source/);

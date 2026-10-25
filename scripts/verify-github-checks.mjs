@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
-export const requiredGithubJobs=['verify','visual','standards','cross-browser','performance','dependencies','links'];
+export const requiredGithubJobs=['verify','visual','standards','cross-browser','performance','dependencies','links','seo-editorial','reading-accessibility'];
 
 export function verifyGithubRun(run,commit,jobs){
  assert.equal(run.head_sha,commit,'GitHub checks must match the exact release commit.');

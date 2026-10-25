@@ -5,7 +5,7 @@ import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
 import {releaseFingerprint,evaluateRelease,workerRuntimeSourceFiles} from '../src/release.mjs';
-import {verifyTechnicalManifest} from '../src/release-verification.mjs';
+import {verifyTechnicalManifest,technicalChecks} from '../src/release-verification.mjs';
 import {civicAssetState,copyCivicAssets,civicPublicPath} from '../scripts/build-civic-assets.mjs';
 
 const config={homeEdition:'civic-sculpture'};
@@ -16,7 +16,7 @@ test('direct and nested Worker helper edits invalidate approval even without an 
   await f.put('deployment/helpers/recovery.mjs','export const retryLimit=3;');
   assert.deepEqual(await workerRuntimeSourceFiles(f.root),['deployment/helpers/recovery.mjs','deployment/inquiry-acknowledgment.mjs','deployment/worker.mjs']);
   const current={commit:'b'.repeat(40),...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:[...technicalChecks]};
   for(const [file,original] of [['deployment/inquiry-acknowledgment.mjs',"import './helpers/recovery.mjs'; export const enabled=true;"],['deployment/helpers/recovery.mjs','export const retryLimit=3;']]){
    await f.put(file,original+'\nexport const changed=true;');
    const changed={commit:current.commit,...await releaseFingerprint(f.root)};
@@ -32,7 +32,7 @@ test('direct and nested Worker helper edits invalidate approval even without an 
 test('changing Worker routing or retired destinations invalidates an exact technical approval',async()=>{
  const f=await fixture();try{
   const current={commit:'a'.repeat(40),...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:[...technicalChecks]};
   assert.equal(verifyTechnicalManifest(manifest,current),true);
   for(const file of ['deployment/public-route-canonical.mjs','deployment/retired-county-routes.mjs']){
   await f.put(file,'changed canonical routing');
@@ -48,10 +48,12 @@ test('predeploy manifest rejects a changed dist byte even when source and commit
  const f=await fixture();
  try{
   const commit='a'.repeat(40),current={commit,...await releaseFingerprint(f.root)};
-  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:[...technicalChecks]};
   assert.equal(verifyTechnicalManifest(manifest,current),true);
   assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!=='browser-journeys')},current),/Incomplete technical check sequence/);
   assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!=='site-quality')},current),/Incomplete technical check sequence/);
+  assert.throws(()=>verifyTechnicalManifest({...manifest,kind:'website-technical-core'},current),/Business approval/);
+  for(const gate of ['seo-editorial','reading-accessibility'])assert.throws(()=>verifyTechnicalManifest({...manifest,checks:manifest.checks.filter(check=>check!==gate)},current),/Incomplete technical check sequence/);
   await f.put('dist/index.html','Fixture');
   const changed={commit,...await releaseFingerprint(f.root)};
   assert.equal(changed.sourceSha256,current.sourceSha256);

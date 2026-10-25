@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "route": "/work/buffalo-civic/",
+      "rule": "incoming-links",
+      "evidenceSha256": "2c9532597ae6bbd742af75daa6a919f62bb8274e862d77598d3928b2d4083372",
+      "disposition": "retain",
+      "reason": "Retain: the project is discoverable from its natural /work/ parent through the descriptive crawlable link “Explore Buffalo Civic”. This specialized portfolio destination does not need an unrelated second referring page solely to meet a link-count heuristic.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:56:16.337Z"
+    },
+    {
+      "route": "/work/lead-workbench/",
+      "rule": "incoming-links",
+      "evidenceSha256": "e75a2bc85bb1e58f8c55545e6fc5d317e822675511f23b4e2bd0820cdf12c464",
+      "disposition": "retain",
+      "reason": "Retain: /work/ supplies the crawlable, purpose-specific link “Try the inquiry tracker demo”. A single portfolio-parent entry is proportionate for this focused demonstration; duplicating navigation elsewhere would not establish additional editorial relevance.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:56:16.337Z"
+    },
+    {
+      "route": "/privacy/",
+      "rule": "long-sentence",
+      "evidenceSha256": "dfe5caacaacac1aa31b2f9881425a1f9eeb570b3896a52017460fda3f35399de",
+      "disposition": "retain",
+      "reason": "Retain: the semicolon-separated sentence enumerates exactly which actions are counted and keeps the valid-ROI-calculation and once-per-page-load qualifications attached. Its length reflects a concrete disclosure list rather than a chain of abstract claims; shortening by dropping items would reduce transparency.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/guides/how-to-choose-a-web-designer/",
+      "rule": "long-sentence",
+      "evidenceSha256": "c2900b0c7f1972264211ac00fc15dd823c57dd638d157931781bbcc8dd17fe58",
+      "disposition": "retain",
+      "reason": "Retain: the sentence defines one acceptance list using parallel, concrete outcomes: named pages, approved facts, working contact, old-link destinations, and owner access/files. The colon establishes the list clearly and each item helps a buyer assess completion.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/guides/contractor-website-checklist/",
+      "rule": "long-sentence",
+      "evidenceSha256": "a81e275e990e4db00e806432bb72c4572abc724eeecd6068244d4861eb7b854f",
+      "disposition": "retain",
+      "reason": "Retain: this is a compact example page plan, with semicolons separating the purpose of Home, Replacement, Process, Coverage, About and Contact. Named page labels make the parallel structure scannable; the sentence length does not obscure the proposed information architecture.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/guides/website-launch-announcement/",
+      "rule": "incoming-links",
+      "evidenceSha256": "242f2dd31ca9451192bbb136946499da089e802fbb922e153561a43eedf55a4b",
+      "disposition": "retain",
+      "reason": "Retain: the /guides/ directory links directly with “Announce a new website with a useful customer message”, explaining the reader task before the visit. The guide has an appropriate discovery path despite falling below the two-referrer review threshold.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:56:16.337Z"
+    },
+    {
+      "route": "/areas/tennessee/loudon-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "a74b544cfca35377b67613268f8171c1bcc9a545f7366cd3580b36da2079fb36",
+      "disposition": "retain",
+      "reason": "Retain: the proposed deck-contractor example connects an assessment conversation to three specific inputs—existing surface, desired change and contractor inspection. The colon makes those questions a clear list, and the inspection qualification prevents implying that scope can be defined without assessment.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/kentucky/clinton-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "bf437fadb14d5f653ad40fc48d4526688f0735bf56294171b8f4fd297c1b8dbf",
+      "disposition": "retain",
+      "reason": "Retain: the retailer example describes one practical inquiry using three parallel questions about item, size and information needed before taking it home. Keeping the questions together makes their relationship to the inquiry clear and retains the conditional proposal voice.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/bandera-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "47382f3831ae026ea7abb4a50a5e0e8fbfe1d258328fe587cb1108c22e4ef470",
+      "disposition": "retain",
+      "reason": "Retain: the late-arrival and checkout scenario explains why first riding opportunity and final meal must be visible before travel is fixed. Those paired timing constraints are essential to the proposed check; the colon separates the scenario from its expected outcome.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/burnet-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "324e6094edbabd32d6c3845155fa16423d6002340e93536c6dfc1ec51f07e764",
+      "disposition": "retain",
+      "reason": "Retain both flagged sentences: the first distinguishes preparation for different attraction experiences using a colon-led list; the second tests whether a family sees requirements and avoids confusing free park access with cave admission. The qualifications carry the central visitor-choice and admission distinction and should not be dropped to shorten the example.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/calhoun-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "50d773ed3e2821bc873d503e8e5823c132ebcd7712596865b04286d1c7458e92",
+      "disposition": "retain",
+      "reason": "Retain: the conditional no-additional-charges scenario states both the reader’s action and the limit on promising a free loan before staff review. The colon separates the scenario from the proposed page behavior; preserving that qualification avoids turning an inquiry into a guarantee.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/callahan-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "bc638e8fe4e4ffe8525523204bd9bb5c69db24bac11aee8ab2bbf5610e6332ff",
+      "disposition": "retain",
+      "reason": "Retain: the pavilion/cabin example distinguishes two arrangements, then uses a semicolon to qualify what a payment receipt can confirm. Keeping the operator-confirmation condition is important to prevent conflating payment with either reservation.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/cottle-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "1ff895a122220601d138fb757224e1dbecd60b894410089f97b61ac68e2df7ac",
+      "disposition": "retain",
+      "reason": "Retain: the proposed outdoor-visit example explicitly orders three visitor questions—date suitability, group arrangements and stay preparation. The colon-led sequence is concrete and coherent; retaining the questions preserves the proposed decision order.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/dimmit-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "0623a0e476da8432a7f88f3499b4b4cb4505bd45bddf65e999b14383686878f0",
+      "disposition": "retain",
+      "reason": "Retain: the ranch example uses parallel actions to distinguish a new inquiry from an amendment, preserve the original date and revised count, and direct the organizer to staff. These details jointly prevent treating a changed inquiry as an already approved hunt.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    },
+    {
+      "route": "/areas/texas/milam-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "1559a0fbd0a297dadaec419895e20583eb1d10b12d041bd01a3ab8bd91890cac",
+      "disposition": "retain",
+      "reason": "Retain: the semicolon preserves a useful distinction between the RV page’s location/rates/availability contact and the event page’s separate booking inquiry. Combining the related observations clarifies that park and event arrangements follow distinct information paths; this editorial decision does not independently certify the cited facts.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
+      "reviewedAt": "2026-10-25T17:50:00.308Z"
+    }
+  ]
+}

@@ -5,8 +5,10 @@ import {createServer} from './server.mjs';
 
 // This server has only synthetic SQLite intake. It has no delivery credentials,
 // email integration or production target, even if browser mocking fails.
+const port=process.argv[2]===undefined?4187:Number(process.argv[2]);
+if(![4187,4198].includes(port))throw Error('Use a dedicated browser test port');
 const runtime=await mkdtemp(join(tmpdir(),'wm-browser-'));
-const {server,url}=await createServer({runtime,port:4187});
+const {server,url}=await createServer({runtime,port});
 let closing=false;
 async function stop(){
  if(closing)return;closing=true;
