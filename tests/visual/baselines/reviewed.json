@@ -1,16 +1,16 @@
 {
-  "captureCommit": "c591755e7851ece53ba0a8390a5a9def433449a1",
-  "captureRun": 40227950899,
-  "artifactId": 12611717020,
-  "artifactSha256": "sha256:0a415b9db6f8b99b4707cb867d5df37e5d655dcc216f3f9d4392fc39b1df0997",
+  "captureCommit": "077cab303c999e6e13e4e69dff6630c1b71db572",
+  "captureRun": 40244342709,
+  "artifactId": 12618460336,
+  "artifactSha256": "sha256:9f457c77b7b39f103fe2501c0e7c2c5652b89a8cfbad32d9f2f7e071e84a56db",
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-25T20:00:23.908Z",
-  "review": "Independent Astra review accepted 38 changed images for footer deduplication and floating controls on all pages and retained 26 byte-identical images. Capture passed all 56 tests. No screenshot thresholds, masks or content checks were relaxed.",
-  "independentReviewSha256": "cca401cf0f1a7a9328b3935f14a21c28a4d8d6ed91f68e5757dc74ab72f760d1",
+  "reviewedAt": "2026-10-25T23:26:13.204Z",
+  "review": "Independent Astra review accepted 8 new and 18 changed images for Missouri and Iowa coverage; retained 46 byte-identical images. Capture passed all 64 tests. No screenshot thresholds, masks or content checks were relaxed.",
+  "independentReviewSha256": "03b8a21af56b0ec74d1b21e61b7aa038dfc6815b754ef1873434174915399e24",
   "files": [
     {
       "file": "linux/desktop/about.png",
-      "sha256": "27bcda61cd90d3fa25849193c3bf4cafae1017ca9249fb700022c3ddcc29e92c",
+      "sha256": "33600ceeac0e3f2e8855b50357f343512344b3de8bb5b0f8f128fc61bcc4844b",
       "width": 1440,
       "height": 3169
     },
@@ -22,7 +22,7 @@
     },
     {
       "file": "linux/desktop/care.png",
-      "sha256": "dc27af9970bdf31f03d260d669dd0bee6fdb7cae7d6c12aef7196b944947cdc3",
+      "sha256": "59b0644a115c846b8837e50fe6a3f3703e51d3641c2e3d79373ef34c6158290e",
       "width": 1440,
       "height": 6098
     },
@@ -52,7 +52,7 @@
     },
     {
       "file": "linux/desktop/county.png",
-      "sha256": "5a92cc68d396360bb8accc0da73d188b1e63409ceb54daf72f38d693622e3b5d",
+      "sha256": "9d91b2324a86853c7633692894c26ffbcf9eefb20c7d9c47645e813b06aecde9",
       "width": 1440,
       "height": 4898
     },
@@ -70,7 +70,7 @@
     },
     {
       "file": "linux/desktop/floating-tools-home.png",
-      "sha256": "619b93a9dd5506112a4db028610a0511ccd4d9215742376b9ca6fde64b2ec413",
+      "sha256": "f0ca6f8c14a3aca8ecb36a602f104d26513d4e92e39a203bcd52b1b7cf55e5fe",
       "width": 1440,
       "height": 1000
     },
@@ -82,9 +82,9 @@
     },
     {
       "file": "linux/desktop/footer-open.png",
-      "sha256": "2255d4bbdfedf5c52cf617d000413c73712c9bb1ac002868c39ad80fe62b1673",
+      "sha256": "5667e5690f9a1bf70f7c8f26387ab28012c427698d16721bbc2a5e0a41476915",
       "width": 1440,
-      "height": 1888
+      "height": 1976
     },
     {
       "file": "linux/desktop/georgia-entry.png",
@@ -100,7 +100,7 @@
     },
     {
       "file": "linux/desktop/home-viewport-01.png",
-      "sha256": "619b93a9dd5506112a4db028610a0511ccd4d9215742376b9ca6fde64b2ec413",
+      "sha256": "f0ca6f8c14a3aca8ecb36a602f104d26513d4e92e39a203bcd52b1b7cf55e5fe",
       "width": 1440,
       "height": 1000
     },
@@ -147,14 +147,38 @@
       "height": 813
     },
     {
+      "file": "linux/desktop/iowa-county.png",
+      "sha256": "bbb1953bec360f5b2d9fca64d0c207deec5f34fbf9a0f25908cb2b05f65f1f14",
+      "width": 1440,
+      "height": 5280
+    },
+    {
+      "file": "linux/desktop/iowa-entry.png",
+      "sha256": "e7668cfb8ab2485b46063ac5aafddf1c51b15bce5860835a91d8800f6a09fe52",
+      "width": 850,
+      "height": 2089
+    },
+    {
       "file": "linux/desktop/mississippi-entry.png",
       "sha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
       "width": 850,
       "height": 505
     },
     {
+      "file": "linux/desktop/missouri-county.png",
+      "sha256": "dab0fecaeb42b1745d5836189998dc72021dcbe63b0620763a0673cf2f6a7330",
+      "width": 1440,
+      "height": 5078
+    },
+    {
+      "file": "linux/desktop/missouri-entry.png",
+      "sha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b",
+      "width": 850,
+      "height": 406
+    },
+    {
       "file": "linux/desktop/monthly-seo.png",
-      "sha256": "16a9da2c1826f5e0e33cddc53b903c12d9214cdd16169889c18d0f44bb2ebf71",
+      "sha256": "11755b92858265629345d5b748f224b376723e394a925a29e04ef8fc5be4a8c5",
       "width": 1440,
       "height": 6049
     },
@@ -184,7 +208,7 @@
     },
     {
       "file": "linux/desktop/services.png",
-      "sha256": "0c4ed82748b4157004d1e1208eeda0a44743b0ca3b8a082465229eeee26115cd",
+      "sha256": "558b8924bb85aa6caa6dcefa24022fe2fab767b79e7bbd36a0b9ba318ed18a77",
       "width": 1440,
       "height": 3699
     },
@@ -202,7 +226,7 @@
     },
     {
       "file": "linux/desktop/web-design.png",
-      "sha256": "6971b8654c4f01e6e43a91b0e3b642500d946c1e7186aa2d089521a1c2aa9b0b",
+      "sha256": "1f21f2b43c7c770d7cf7c2ce92e21263e98f60dc869e8c5a063b38024da43938",
       "width": 1440,
       "height": 6686
     },
@@ -220,7 +244,7 @@
     },
     {
       "file": "linux/phone/about.png",
-      "sha256": "6562f5cf810ffc044adf36f8b55cc3fe04374f3fa7d0959e028fbe102dc527f9",
+      "sha256": "cf29ee8b4e021bcec39bafaf477fe9460c1810d0a5362b43ea5a86fbb19b50c0",
       "width": 390,
       "height": 3721
     },
@@ -232,7 +256,7 @@
     },
     {
       "file": "linux/phone/care.png",
-      "sha256": "331f56b0042d1ae9d69d6c6cb94dd27fbcd6f65c5f3dd35a58194f3c39c9e4fc",
+      "sha256": "b707995cab4d172e93dfa69010a7bbce49e16e99892a379b7535a3ea6f203781",
       "width": 390,
       "height": 7849
     },
@@ -262,7 +286,7 @@
     },
     {
       "file": "linux/phone/county.png",
-      "sha256": "88e08cfe04548de9b1681c597572c335c568f2b7cb2ea7bd66807fc806a7e617",
+      "sha256": "db00d56108a2032761062bdb5f38c6ab341953a7b9a070a8b137ea6170e2b0f1",
       "width": 390,
       "height": 6024
     },
@@ -280,7 +304,7 @@
     },
     {
       "file": "linux/phone/floating-tools-home.png",
-      "sha256": "3288cacac94af5bbebb012dc610c25027d8a85a4edfbc55064eb2f60256dd2dc",
+      "sha256": "8080252b8f0fa8aca27a2df90fe6f0fb28f77e1be96d27041076a17a0a1ca3e4",
       "width": 390,
       "height": 844
     },
@@ -292,9 +316,9 @@
     },
     {
       "file": "linux/phone/footer-open.png",
-      "sha256": "881eb659c97fdea30eec3ee816128d61fad62d9811b3626c22570dd07577df7c",
+      "sha256": "600e9a195a64687a429ec4a39433cec5a777878900e9a22c67ec51141ebe6d85",
       "width": 390,
-      "height": 2867
+      "height": 2955
     },
     {
       "file": "linux/phone/georgia-entry.png",
@@ -310,7 +334,7 @@
     },
     {
       "file": "linux/phone/home.png",
-      "sha256": "9532f077dac3d28b0e4006435b217b1e5685b1b612e3efeecc78cb0dd9d44689",
+      "sha256": "39215ed4109c9e2e5bc1492b9ba446ddf66f7cb06d66fa08707245dd75578d55",
       "width": 390,
       "height": 8086
     },
@@ -321,14 +345,38 @@
       "height": 1088
     },
     {
+      "file": "linux/phone/iowa-county.png",
+      "sha256": "227cdae718f7005a7fc2d335bb9125bb8c78eb08a3225fefc25bf19f39a83392",
+      "width": 390,
+      "height": 6793
+    },
+    {
+      "file": "linux/phone/iowa-entry.png",
+      "sha256": "002cd7ee7b4ad8aa18ae4da388b22d23d0123eceeb38425e6756af30c94681c7",
+      "width": 350,
+      "height": 2381
+    },
+    {
       "file": "linux/phone/mississippi-entry.png",
       "sha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
       "width": 350,
       "height": 641
     },
     {
+      "file": "linux/phone/missouri-county.png",
+      "sha256": "2d02cd9d05e0e9778583018c796fa6004a28c9ad2dac6ed879843301e914adbe",
+      "width": 390,
+      "height": 6411
+    },
+    {
+      "file": "linux/phone/missouri-entry.png",
+      "sha256": "a418a45ff201b279b327d79e962a3e2443cdb0aeeea257595360e19982c7f44a",
+      "width": 350,
+      "height": 488
+    },
+    {
       "file": "linux/phone/monthly-seo.png",
-      "sha256": "3ff356c04c72e4be55a147a9b9f50ff159837f9156932d7bc315d9d9d5e20402",
+      "sha256": "8bfe1103b8f00b5ad150e6a919d949265c5b0d591878b24719ec4114831d9cf2",
       "width": 390,
       "height": 8142
     },
@@ -358,7 +406,7 @@
     },
     {
       "file": "linux/phone/services.png",
-      "sha256": "0bd61d0c3008bfca09888098a71b37e28738d410a3ad52d32c80405d1532e583",
+      "sha256": "6d456ecbef937d61fdaad0d98587ed094ea80bc0aeb9cb8595d5e7fbffa6a594",
       "width": 390,
       "height": 5046
     },
@@ -376,7 +424,7 @@
     },
     {
       "file": "linux/phone/web-design.png",
-      "sha256": "e0c7d9d82cc2a362160f03ec180940b18d3200d392fe0c0456aef1663c5d3fd2",
+      "sha256": "17c1cca59548bb76b9b2a4b9a4974402253cf5fbce166bff2ea7403703c3e561",
       "width": 390,
       "height": 7945
     },
