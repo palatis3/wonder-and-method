@@ -97,7 +97,8 @@ test('form pages use inline chat without covering focused fields in landscape',a
 
 test('saved section links still reach consolidated tools, privacy details and county downloads',async({page})=>{
  await page.goto('/pricing/?qa=1#cost-calculator');await expect(page.locator('#cost-calculator')).toBeVisible();await expect(page.locator('#cost-calculator a[href="/payments/#cost-calculator"]')).toBeVisible();
- await page.goto('/privacy/?qa=1#privacy-11');await expect(page.locator('#privacy-6')).toHaveAttribute('open','');await expect(page.locator('#privacy-11')).toBeVisible();
+ await page.goto('/privacy/?qa=1#privacy-6');await expect(page.locator('#privacy-6')).toHaveAttribute('open','');
+ await page.goto('/privacy/?qa=1#privacy-11');const storage=page.locator('#privacy-11').locator('..');await expect(storage).toHaveAttribute('open','');await expect(storage.locator('summary')).toHaveText('Optional demo storage and downloaded files');await expect(page.locator('#privacy-11')).toBeVisible();
  await page.goto('/areas/erie-county/?qa=1#buyer-task');await expect(page.locator('#buyer-task')).toBeVisible();await expect(page.locator('a[href^="/assets/county-briefs/erie.txt"]')).toBeVisible();
 });
 

@@ -55,7 +55,7 @@ test('typed searches distinguish governments and keyboard results open services 
   ['Brookfield town WI',['/areas/wisconsin/#waukesha']],
   ['Naperville city IL',['/areas/illinois/dupage-county/','/areas/illinois/#will']],
   ['Cicero township IL',['/areas/illinois/cook-county/']],
-  ['Election precinct 1 IL',['/areas/illinois/#monroe']],
+  ['Election precinct 1 IL',['/areas/illinois/monroe-county/']],
   ['Precinct Cache IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
   ['Cache precinct IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
   ['Atlanta city GA',['/areas/georgia/#dekalb','/areas/georgia/fulton-county/']],
