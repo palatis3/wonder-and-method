@@ -31,9 +31,10 @@ test('city relevance keeps explicit county and state choices available',async({p
  await search.fill('District of Columbia Federal District DC');await expect(best).toHaveCount(1);await expect(best).toHaveAttribute('href','/areas/district-of-columbia/district-of-columbia/');
  await search.fill('City of Traverse City MI');await expect(best).toHaveCount(2);
  expect(await best.evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort())).toEqual(["/areas/michigan/grand-traverse-county/","/areas/michigan/leelanau-county/"]);
- await search.fill('Jackson county');await expect(best).toHaveCount(14);
+ await search.fill('Jackson county');await expect(best).toHaveCount(15);
+ await expect(page.locator('[data-county-best] a[href="/areas/texas/#jackson"]')).toHaveText('Jackson County (Edna)');
  await expect(page.locator('[data-county-more] a')).toHaveCount(0);
- await expect(page.locator('[data-county-best] li')).toContainText(Array(14).fill('Matched county: jackson'));
+ await expect(page.locator('[data-county-best] li')).toContainText(Array(15).fill('Matched county: jackson'));
  expect(requests).toEqual([]);
 });
 
