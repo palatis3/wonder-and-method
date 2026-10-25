@@ -26,18 +26,6 @@ async function settle(page){
   return [...document.images].filter(img=>img.getClientRects().length&&(!img.complete||!img.naturalWidth)).map(img=>img.currentSrc||img.src);
  });
  expect(broken,'Visible images must load before accepting a visual baseline').toEqual([]);
- if(await city.count()){
-  // A full-page capture can precede Chromium rasterizing decoded offscreen
-  // artwork. Paint the actual viewport across the page before comparing it.
-  // Keep the real CSS, image bytes and layout intact.
-  const height=await page.evaluate(()=>document.documentElement.scrollHeight);
-  const step=page.viewportSize().height;
-  for(let y=0;y<height;y+=step){
-   await page.evaluate(async top=>{scrollTo({top,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},y);
-   await page.screenshot({animations:'disabled'});
-  }
-  await page.evaluate(async()=>{scrollTo({top:0,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
- }
  await page.mouse.move(0,0);
 }
 for(const [name,path] of [
@@ -50,6 +38,20 @@ for(const [name,path] of [
 ]){
  test(`${name} approved layout`,async({page})=>{
   const response=await page.goto(path+'?qa=1');expect(response.status()).toBe(200);await settle(page);
+  if(name==='home'&&page.viewportSize().width>767){
+   // Linux Chromium can omit the city's decoded image layers in a synthetic
+   // tall full-page capture. Compare overlapping real viewports instead, from
+   // the hero through the footer, without hiding or restyling any content.
+   const viewport=page.viewportSize(),height=await page.evaluate(()=>document.documentElement.scrollHeight);
+   const last=Math.max(0,height-viewport.height),positions=[];
+   for(let y=0;y<last;y+=viewport.height-150)positions.push(y);
+   positions.push(last);
+   for(const [index,top] of positions.entries()){
+    await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},top);
+    await expect(page).toHaveScreenshot(`home-viewport-${String(index+1).padStart(2,'0')}.png`);
+   }
+   return;
+  }
   await expect(page).toHaveScreenshot(name+'.png',{fullPage:true});
  });
 }
