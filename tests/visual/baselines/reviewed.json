@@ -1,295 +1,352 @@
 {
-  "captureCommit": "77f717b58db8be80831d30a961d5896a6e4e584d",
-  "captureRun": 40055174071,
-  "artifactId": 12544483524,
-  "artifactSha256": "b454456eba134312066ebd7c3844a67cf331356d019453c4a1dece14508e356d",
+  "captureCommit": "027dc80dd391963d3da35b9955f0d67c7aa67c82",
+  "captureRun": 40168755193,
+  "artifactId": 12589392249,
+  "artifactSha256": "749d6dd6bc99737c67465b1e6014069f4043b45818fe04c832ba058fdc378aad",
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-24T02:47:16.641042+00:00",
-  "review": "Primary visual review passed for all six new references (expanded service FAQs, expanded Barnstable County FAQs and Richmond County, Georgia directory entry at desktop and phone sizes) and all 16 changed existing references. Reviewed changed regions in readable crops, including full shifted phone SEO content, FAQ placement, Georgia coverage links and the recaptured studio website preview. No clipping, overlap or broken layout was observed. Eighteen prior references remain byte-for-byte unchanged. Pixel row comparisons isolate unchanged prefixes and suffixes; service comparisons also account for the inserted FAQ section height.",
+  "reviewedAt": "2026-10-25T06:24:21.544753+00:00",
+  "review": "Primary final visual review: the illustrated Studio, Services, Areas and Information footer cards retain the independently reviewed desktop row, phone stack and expanded lists. Services has three need-based groups with seven cards; About omits the full personal name/profile link. All 30 whole-page final images are byte-identical to capture 40168499812: all changed control regions were inspected, desktop compact chat clears content and phone controls occupy a distinct bottom bar. Passing focused browser checks cover scrolling and yielding to forms, menus and focused links. The five isolated phone images affected by the new backdrop are now byte-identical to the first reviewed capture after the test-only content isolator was corrected. The other isolated images are unchanged. Prior independent visual findings are resolved through these final pixels plus the control-placement source and interaction reviews. No source or public content changed between captures 40168499812 and 40168755193.",
   "files": [
     {
       "file": "linux/desktop/about.png",
       "width": 1440,
-      "height": 2292,
-      "sha256": "6bc6985f1680827cfd0d69c2d36e3944452437ccf7f731b2dfb6812f0da8b4ef"
+      "height": 2806,
+      "sha256": "d9063f27b2d1dcecfcf3d4106b659d77a42899618c1c2068ccaf7a3c4a4227ff"
+    },
+    {
+      "file": "linux/desktop/alabama-entry.png",
+      "width": 1296,
+      "height": 813,
+      "sha256": "d10bf4d27d962e011a8ccf73685d1aabf37d2decda1939e2765bcb2da5757ba6"
     },
     {
       "file": "linux/desktop/care.png",
       "width": 1440,
-      "height": 5938,
-      "sha256": "4bc563a4258c0300374bc6bdaede71db2900b18161ce51a641a9c910998b74ca"
+      "height": 5680,
+      "sha256": "dd6740d953ddff4f3b625c8c3c0ef408c76f5111a988773ef870bba5e77dae31"
     },
     {
       "file": "linux/desktop/concept.png",
       "width": 1440,
       "height": 3050,
-      "sha256": "321ba9c89537ff56c6acce7df1caf6aa29f1171244dd74c982d0a553cbf09d8f"
+      "sha256": "df69f850bf2c7e47889e65883554933417801e8d322aba74d2ce3841ed166b69"
     },
     {
       "file": "linux/desktop/contact.png",
       "width": 1440,
-      "height": 2769,
-      "sha256": "7aa7c6492180c281ff935f87499158458d04853ac8203fe672827bc6e271fbf2"
+      "height": 2649,
+      "sha256": "788f2a5cea0f1d30e2a5799e384ec88deeacf3b002d5f37cd7b6c455033a6650"
     },
     {
       "file": "linux/desktop/county-entry.png",
       "width": 1296,
-      "height": 1759,
-      "sha256": "adb9aaf56ffc5b24abb9ec7572bba842339a317b3ceaaef6862650fdfb079145"
+      "height": 1748,
+      "sha256": "6fea929ac01247da0d05f22ec15875891d8a16d149bbe56737bd65a66e898c75"
     },
     {
       "file": "linux/desktop/county-questions.png",
       "width": 900,
-      "height": 711,
-      "sha256": "f2fed15a54de552e54f2f3cf4deee9799cfe17d4643f3fbc25ab7305d7438d20"
+      "height": 769,
+      "sha256": "a7bbdae24b72933ca8d83f3ddaf352242300239203d4b7229f03ef3d86401b75"
     },
     {
       "file": "linux/desktop/county.png",
       "width": 1440,
-      "height": 4378,
-      "sha256": "8971ef3b8ac3dba7d30027200081d835b04a0221bf9e25e45da6529d884017d2"
+      "height": 4331,
+      "sha256": "b6fed20a9f05ce8dd54f5eeadcdeb093c7cd775ed77356b24dde673e06678a09"
     },
     {
       "file": "linux/desktop/district-directory.png",
       "width": 1440,
-      "height": 3166,
-      "sha256": "c8eee75413a85fd2802c11d0a10fcc599aa240ee07a16e573ac3bc222eedc433"
+      "height": 2883,
+      "sha256": "b060a2fdf91087f84c87246a9528753eacbaaab59dc994768e1c621d49814fa3"
     },
     {
       "file": "linux/desktop/footer-closed.png",
       "width": 1440,
-      "height": 394,
-      "sha256": "3ffd212aee57fd12563ddc96a2956710b8f516d2e778132af8d6c94e3d3e54ef"
+      "height": 429,
+      "sha256": "2103279e84c9c6b1b058c582ea773c167af34c1992020d29cd55d0b52e5fcdd3"
     },
     {
       "file": "linux/desktop/footer-open.png",
       "width": 1440,
-      "height": 1477,
-      "sha256": "b0b77087de9b138c572eb8cdca61c683228ef59f039d99d8be7643d3a4445575"
+      "height": 1776,
+      "sha256": "a946ff6e30aff72a788039d3e379c0e42e124cf85d22a5657f182f7dc72c270b"
     },
     {
       "file": "linux/desktop/georgia-entry.png",
       "width": 1296,
-      "height": 490,
-      "sha256": "c3ec941ee6b404ca85fd45b04102e3571a872574ca0963830bf43437bdbac396"
+      "height": 506,
+      "sha256": "45b46ad7360e0791b7351e49cbf96cb792def99b7569cca9c552b79584a5b60b"
     },
     {
       "file": "linux/desktop/guide.png",
       "width": 1440,
-      "height": 6968,
-      "sha256": "0580d2e44179d38f4dac8234271d376de9ef853f15ccfa3a6da5e0bf3964c3a1"
+      "height": 7173,
+      "sha256": "d174eac553a2efe4c7a6e75b7e64f10c489d0540fc6cb9b10d358d18cf152726"
     },
     {
       "file": "linux/desktop/home.png",
       "width": 1440,
-      "height": 5216,
-      "sha256": "6c7234d75b6c1419d16a59a13627067af1c19b930a94480032e12bf5c8a8be2d"
+      "height": 5423,
+      "sha256": "1ac25f5a7abfb74741f8c96c2f0c4cc0e81577ee5648ed30cccb8c4f01e936e9"
+    },
+    {
+      "file": "linux/desktop/illinois-entry.png",
+      "width": 1296,
+      "height": 812,
+      "sha256": "9f7ce504efdb8596c528cd9e71d709f2b304a4013c41d646b97573c8c2d150dd"
+    },
+    {
+      "file": "linux/desktop/mississippi-entry.png",
+      "width": 1296,
+      "height": 505,
+      "sha256": "1c6509c1215322cba3c6e5ea6937cb38a547034209b118a58b9c33cbadb7fcd4"
     },
     {
       "file": "linux/desktop/monthly-seo.png",
       "width": 1440,
-      "height": 6426,
-      "sha256": "92bd6a81095553d2e87f9c1ff745e58babf5bede36472bd0b6c505282d2dbc36"
+      "height": 5686,
+      "sha256": "955bf60b08ec1f0166c908a6ff24982f70a02f21205379a8aa7a5305683f6f27"
     },
     {
       "file": "linux/desktop/pricing.png",
       "width": 1440,
-      "height": 7767,
-      "sha256": "9d95bf1fc9ddc956a9662bcbbc1bf1dcec9dd714e8580810619a8dd0d5a24549"
+      "height": 7910,
+      "sha256": "816d2b148f3ce91c5f87449c4ffd21d9e6aca44147ac1cd9f5da45d79c96a322"
     },
     {
       "file": "linux/desktop/regional-directory.png",
       "width": 1440,
-      "height": 4185,
-      "sha256": "cc71fa208d18e141b436156b56a673660f24397cf97581b3a25ca0e51b0b4b2c"
+      "height": 3902,
+      "sha256": "972670a7ac1d97e632bf3d62e3ed6f0ba234d030c74b5959b036fc1f14c7bd99"
     },
     {
       "file": "linux/desktop/scope-request.png",
       "width": 1440,
-      "height": 2734,
-      "sha256": "eed090a25601de87ce40586d3530e3a3ea61db4f4614bbde42e38df92074d8f3"
+      "height": 2555,
+      "sha256": "2aa2a1c4ba933f201975f28ff5defde406a2520a72314a2cb03532807352ad6a"
     },
     {
       "file": "linux/desktop/service-questions.png",
       "width": 1296,
-      "height": 467,
-      "sha256": "c9b2797f086d5c147926162841ed0c3346b40c0528766655605ddcf21864eabd"
+      "height": 427,
+      "sha256": "d3ab18fed385398ba060852b58e0c911709dd41516dc64b906b594a299d448cd"
+    },
+    {
+      "file": "linux/desktop/services.png",
+      "width": 1440,
+      "height": 3336,
+      "sha256": "9c6937b70249abb5663e87015420fee34efcf8611de85c15754c44378e0bcabc"
     },
     {
       "file": "linux/desktop/web-design.png",
       "width": 1440,
-      "height": 7149,
-      "sha256": "53846dcae3133bb94adcd633df265d046af381bdeb3f177d8c24ccd3962d0b58"
+      "height": 7256,
+      "sha256": "08dd029cca276503450f9f1aef5c8250c3d6913164430ca4fecec168cf34b5fc"
+    },
+    {
+      "file": "linux/desktop/wisconsin-entry.png",
+      "width": 1296,
+      "height": 501,
+      "sha256": "e5bb51309eb225463d8e346649d4c7780da126a4294989a220f386dcc582deac"
     },
     {
       "file": "linux/desktop/work.png",
       "width": 1440,
-      "height": 7260,
-      "sha256": "356fa7451b437aebf224250a5f17d368fb829cb35f8feea510b24279d4deebc7"
+      "height": 7170,
+      "sha256": "f3a8d6b498a97588e2530b31970b13ce5f33449cc5beb9c09d6e3c1b5a71e889"
     },
     {
       "file": "linux/phone/about.png",
       "width": 390,
-      "height": 2859,
-      "sha256": "a1d666b09463726b51c155312c64de760adb83547910bac8993a222dd656ace2"
+      "height": 3917,
+      "sha256": "22dfb1d889d8b95f14adcbffe2ece90523d728f42c82275d006dd81da1261a30"
+    },
+    {
+      "file": "linux/phone/alabama-entry.png",
+      "width": 350,
+      "height": 949,
+      "sha256": "c488965686e633c04f8d8b799856edd606621b1c7725994d4656cf17c35bdeb7"
     },
     {
       "file": "linux/phone/care.png",
       "width": 390,
-      "height": 8494,
-      "sha256": "1215c3d16d0eba5b63544df9f4b415885ec9e2723df1dde3382291f6488e5479"
+      "height": 7784,
+      "sha256": "1cd06c80a282aa3664c49d4d6950ee671904317207f5773c4101dc90767e4ee1"
     },
     {
       "file": "linux/phone/concept.png",
       "width": 390,
-      "height": 3903,
-      "sha256": "2616d4da65a83eb6e5f591f586099bd52e730943c992fe814a1e1351a4a9ca8f"
+      "height": 4293,
+      "sha256": "8e7b484059740f54e08d8cacb048cce5f7f850f7afff7f32f62c7ed4d54137cc"
     },
     {
       "file": "linux/phone/contact.png",
       "width": 390,
-      "height": 3996,
-      "sha256": "09ed5681919ec4314d454b4307842c110679a286f1a91d9935846dc4318a039e"
+      "height": 4263,
+      "sha256": "70010690c6ac3408e722e8af56cf31d2d2f23c75821b1b5b82a331637b1730db"
     },
     {
       "file": "linux/phone/county-entry.png",
       "width": 350,
-      "height": 2298,
-      "sha256": "ce44115bb50fdcc4d9c58b12e2f5b8e5fba6785d6ce74caf7530710b125663e9"
+      "height": 2287,
+      "sha256": "9891884d27f3b55e73da7874a096d80a87a9b953b010902c39200f17fe096677"
     },
     {
       "file": "linux/phone/county-questions.png",
       "width": 350,
-      "height": 983,
-      "sha256": "bb11b6af6ca39291cbf858e7bf06f083fa37637af2e10f74605e398a40548525"
+      "height": 982,
+      "sha256": "cec21323a21458046448c6b551a1b3b606cbdbe1bee0c81498e9fd00eea8285d"
     },
     {
       "file": "linux/phone/county.png",
       "width": 390,
-      "height": 5566,
-      "sha256": "4494b4fcc534269f5f24dcebb0e69cc4dcaf4e515cf6b1678dd3320f7b0176ca"
+      "height": 5808,
+      "sha256": "285eeba0e309e4d962b6d53bc1e1d6a6cea64ddd64fc153b7db9cdffbb1a26b2"
     },
     {
       "file": "linux/phone/district-directory.png",
       "width": 390,
-      "height": 3897,
-      "sha256": "88fc99728236f60154c32991ac09c85edae2331066051b46463bac5db070355f"
+      "height": 3862,
+      "sha256": "a77c58a67a489224902efe6077070c293d915dd90c9047826916016c01bd8b83"
     },
     {
       "file": "linux/phone/footer-closed.png",
       "width": 390,
-      "height": 519,
-      "sha256": "5b9e73d4bf59f38373fffabb1180f7a443137f9bc6c28e9425e4a071bb4390e8"
+      "height": 951,
+      "sha256": "45aadf38f8724b97b80ba1e8009052cae6d687949d77c3c9c6cc1263ec3c086d"
     },
     {
       "file": "linux/phone/footer-open.png",
       "width": 390,
-      "height": 2053,
-      "sha256": "a8ee420ed5460f9907dd8004e4888aac94cd466b7c58b7ff8832d44c2d0b6c9c"
+      "height": 3169,
+      "sha256": "0bc249f1835da43e7108bdc32edfa2a455b05001d08518ba85316e1cf48e00d4"
     },
     {
       "file": "linux/phone/georgia-entry.png",
       "width": 350,
-      "height": 739,
-      "sha256": "3cea4478ed466e48db585bf1c19ee4f2517e5b41749607a739d666e07fd4273b"
+      "height": 727,
+      "sha256": "d8432e713ca62b801096af8a6a99cc2d025b45079172cec6acd18fa67c7e7549"
     },
     {
       "file": "linux/phone/guide.png",
       "width": 390,
-      "height": 10288,
-      "sha256": "d9261a79adde9b194db846bf531d7a7e064ad38ee90e1589242cade2911010c4"
+      "height": 10971,
+      "sha256": "cb352a589ea651811a14cc444bd95463e87505003e58a1e7e7a73b4f12137255"
     },
     {
       "file": "linux/phone/home.png",
       "width": 390,
-      "height": 6367,
-      "sha256": "2daebf34d1cf608220d443e0a456840ed1b92e18810dd331261dcb3345905f6f"
+      "height": 8471,
+      "sha256": "ab91c82704ca5df27e6a573d69c6be85d21a4ec1ea75a2979865bd05708c4e48"
+    },
+    {
+      "file": "linux/phone/illinois-entry.png",
+      "width": 350,
+      "height": 1088,
+      "sha256": "cf64f54a6b791f75c54ccc08d3d2f10eb072d4c274e100da1c2fd3d7c0307369"
+    },
+    {
+      "file": "linux/phone/mississippi-entry.png",
+      "width": 350,
+      "height": 642,
+      "sha256": "8119919f2d5f4c48e2225dd027a8d793cf244508ac86cb9e3cc6aff367a25547"
     },
     {
       "file": "linux/phone/monthly-seo.png",
       "width": 390,
-      "height": 9601,
-      "sha256": "5a004163ff252e9fe6c68ebec24453bcd071cc6b921a334fa88a07424067249c"
+      "height": 8338,
+      "sha256": "276c91d672eed7ea620180ab416a02834d4c57470b77bc8b1f9a14dcfcdcad06"
     },
     {
       "file": "linux/phone/pricing.png",
       "width": 390,
-      "height": 16183,
-      "sha256": "d174d55e35585ce5232ab0c8475c58a108e6e83dfd70e09234e5132f1f031425"
+      "height": 10002,
+      "sha256": "d6fcfe849b72037fdea2013a58578df5c0895a2d924f58da9b562012953b68a3"
     },
     {
       "file": "linux/phone/regional-directory.png",
       "width": 390,
-      "height": 5148,
-      "sha256": "f3fd5da8f626c97d2cf561ef00e955ff4c8f72e3c1b7ade4b944192f0c5fb691"
+      "height": 5141,
+      "sha256": "9f85feb2536d57ddc59b225927286cdfb7508c06a96736d027e7c9b31564fe66"
     },
     {
       "file": "linux/phone/scope-request.png",
       "width": 390,
-      "height": 3643,
-      "sha256": "a2370b26581911f486a3a28a6747e5084f8e1087d7b33c0936bf6b6d1c2b611b"
+      "height": 3392,
+      "sha256": "762f31a4f45a950d842fcff2a63ff22424be2ed3181dc6994ab1b97fb534ccf3"
     },
     {
       "file": "linux/phone/service-questions.png",
       "width": 350,
-      "height": 574,
-      "sha256": "ce336bb2a29a8f851994d139fb2e32181988b1730fb5afd56641411335228647"
+      "height": 477,
+      "sha256": "8d53e584c8e30caca7851e96037f07d50a28d6d82ae2c559c79fd1d88bea83e3"
+    },
+    {
+      "file": "linux/phone/services.png",
+      "width": 390,
+      "height": 5242,
+      "sha256": "4d7c7cde8bd9c1fde24bd637ef5e7eba50ef9b81906bfc3da3e47022898ff8ea"
     },
     {
       "file": "linux/phone/web-design.png",
       "width": 390,
-      "height": 12351,
-      "sha256": "a0d3391ea53e608ed685b60e0f5c6b3c1fffde37deb8a62f50a36659d4059a13"
+      "height": 8159,
+      "sha256": "aecd1b73e9cf0f257250e5970643f0ceaa67fc46c817ed3ac7c65832fb2e4835"
+    },
+    {
+      "file": "linux/phone/wisconsin-entry.png",
+      "width": 350,
+      "height": 656,
+      "sha256": "8e47fca1c6f965127652650fb9741587e9e9126c498e7f7a0d114f0186c28921"
     },
     {
       "file": "linux/phone/work.png",
       "width": 390,
-      "height": 10245,
-      "sha256": "6e04263c7536db832df606d470be2f55c98d2bd25a3331d138dc6e35ab9ddb21"
+      "height": 12290,
+      "sha256": "58b1782a9def9c35a1f2f6c87e59b6d7728439412e9e725dbb1b5d3b09cfb646"
     }
   ],
   "changedFiles": [
     "linux/desktop/about.png",
     "linux/desktop/care.png",
-    "linux/desktop/county-questions.png",
+    "linux/desktop/concept.png",
+    "linux/desktop/contact.png",
     "linux/desktop/county.png",
+    "linux/desktop/district-directory.png",
+    "linux/desktop/footer-closed.png",
     "linux/desktop/footer-open.png",
-    "linux/desktop/georgia-entry.png",
+    "linux/desktop/guide.png",
     "linux/desktop/home.png",
     "linux/desktop/monthly-seo.png",
-    "linux/desktop/service-questions.png",
+    "linux/desktop/pricing.png",
+    "linux/desktop/regional-directory.png",
+    "linux/desktop/scope-request.png",
     "linux/desktop/web-design.png",
     "linux/desktop/work.png",
     "linux/phone/about.png",
     "linux/phone/care.png",
-    "linux/phone/county-questions.png",
+    "linux/phone/concept.png",
+    "linux/phone/contact.png",
     "linux/phone/county.png",
+    "linux/phone/district-directory.png",
+    "linux/phone/footer-closed.png",
     "linux/phone/footer-open.png",
-    "linux/phone/georgia-entry.png",
+    "linux/phone/guide.png",
     "linux/phone/home.png",
     "linux/phone/monthly-seo.png",
-    "linux/phone/service-questions.png",
+    "linux/phone/pricing.png",
+    "linux/phone/regional-directory.png",
+    "linux/phone/scope-request.png",
     "linux/phone/web-design.png",
-    "linux/phone/work.png"
+    "linux/phone/work.png",
+    "linux/desktop/services.png",
+    "linux/phone/services.png"
   ],
   "retainedPriorCapture": {
-    "captureCommit": "08b95efe03737deb876d1879f4e0e1f40a75090f",
-    "captureRun": 40043127844,
-    "reviewedAt": "2026-10-24T00:14:33.446Z",
-    "retainedPriorCapture": {
-      "captureCommit": "3e068fe3b068c6ea33145ace4c6d106e672fe108",
-      "captureRun": 39898844898,
-      "reviewedAt": "2026-10-23T04:17:16.912Z",
-      "retainedPriorCapture": {
-        "captureCommit": "1bc47d59892c02a9e7b3e38737771f5042e0eb70",
-        "captureRun": 39881530078,
-        "reviewedAt": "2026-10-23T01:08:21.647836+00:00",
-        "retainedPriorCapture": {
-          "captureCommit": "df6287b5165d951ad4860aacd7311530ce11ebf5",
-          "captureRun": 39852493748,
-          "reviewedAt": "2026-10-22T20:54:57.670653+00:00"
-        }
-      }
-    }
+    "captureCommit": "77f717b58db8be80831d30a961d5896a6e4e584d",
+    "captureRun": 40055174071,
+    "reviewedAt": "2026-10-24T02:47:16.641042+00:00"
   }
 }
