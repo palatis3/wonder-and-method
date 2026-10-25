@@ -7,6 +7,7 @@ export const floridaGuideAdditions = {
 
 export function withFloridaGuideExamples(path,sections){
  const additions=floridaGuideAdditions[path];if(!additions)return sections;
- const index=sections.findIndex(section=>section.id==='layout');
+ const after=path==='/guides/ferry-booking-status/'?sections.findIndex(section=>section.id==='planning-1'):-1;
+ const index=after>=0?after+1:sections.findIndex(section=>section.id==='layout');
  return index<0?[...sections,...additions]:[...sections.slice(0,index),...additions,...sections.slice(index)];
 }

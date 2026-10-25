@@ -76,7 +76,7 @@ export const northeastProfiles=Object.fromEntries(Object.entries(orderedRows).ma
   lead:`I design websites and improve search visibility for businesses in ${areaName(area)}${area.areaType==='Independent City'?'':`, including ${anchor}`}. Work directly with me online from Buffalo. This guide includes a practical planning exercise for your website.`,
   focusTitle:row.title,focus:row.focus,briefs:row.briefs,search:row.search,
   geographyNote:geographyNote(stateId,area,g),
-  questions:[...row.local,[`Can we work together online from ${anchor}?`,`Yes. I work with ${stateName} businesses online from Buffalo. We agree the pages, content, features, price and review steps before booking. You supply and approve business facts; shared drafts and clear feedback support the work without requiring a local office or an in-person meeting.`]]
+  questions:[...row.local,[`Can we work together online from ${anchor}?`,`Yes. I work with ${stateName} businesses online from Buffalo. We agree on the pages, content, features, price and review steps before booking. You supply and approve business facts; shared drafts and clear feedback support the work without requiring a local office or an in-person meeting.`]]
  };
 })]));
 export const northeastBuyerTasks=Object.fromEntries(Object.entries(orderedRows).map(([stateId,entries])=>[stateId,Object.fromEntries(entries.map(({area,row})=>[area.slug,{

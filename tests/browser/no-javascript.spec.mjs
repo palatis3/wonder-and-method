@@ -4,10 +4,19 @@ import faqsByPath from '../../src/service-faqs.json' with {type:'json'};
 test('service and county project answers remain accessible by keyboard without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  const entries=Object.entries(faqsByPath);
- for(const [path,answers] of [entries.find(([path])=>path.startsWith('/services/')),entries.find(([path])=>path.startsWith('/areas/'))]){
+ const cases=['/services/','/areas/'].flatMap(prefix=>[1,2].map(size=>entries.find(([path,answers])=>path.startsWith(prefix)&&(size===1?answers.length===1:answers.length>1))));
+ for(const [path,answers] of cases){
   await page.goto(path+'?qa=1');
   const section=page.locator('#service-questions');await expect(section).toHaveCount(1);
   for(const [index,answer] of answers.entries()){
+   if(answers.length===1){
+    await expect(section.getByRole('heading',{name:answer.question,exact:true})).toBeVisible();
+    await expect(section.locator('details')).toHaveCount(0);
+    await expect(section.locator('p').first()).toHaveText(answer.answer);await expect(section.locator('p').first()).toBeVisible();
+    for(const link of answer.links||[]){const target=section.getByRole('link',{name:link.label,exact:true});await expect(target).toHaveAttribute('href',link.path);await target.focus();await expect(target).toBeFocused();}
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+    continue;
+   }
    const details=section.locator('details').nth(index),summary=details.locator('summary');
    await expect(details).not.toHaveAttribute('open','');await expect(summary).toHaveText(answer.question);
    await summary.focus();await page.keyboard.press('Enter');
@@ -31,22 +40,32 @@ test('Florida county facts, local articles and worksheets remain usable without 
  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
 });
 
-test('footer disclosures and single back-to-top link work without JavaScript',async({page},testInfo)=>{
+test('footer destinations and single back-to-top link work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');await page.goto('/?qa=1');
  const footer=page.locator('footer');
- for(const label of ['Studio','Services','Areas','Information']){
-  const summary=footer.locator('summary').filter({hasText:label});await summary.click();
-  await expect(summary.locator('..')).toHaveAttribute('open','');await expect(summary.locator('..').locator('a').first()).toBeVisible();
- }
+ await footer.scrollIntoViewIfNeeded();
+ for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(footer.locator(`a[href="${path}"]`)).toBeVisible();
  await page.locator('.back-to-top').click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  await expect(footer.locator('a[href="#page-top"]')).toHaveCount(0);
+});
+
+test('checkout terms remain available by keyboard without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ for(const id of ['launch-site','focused-site','signature-site','website-baseline','audit-fix-sprint','keep-running','improve','grow']){
+  await page.goto('/checkout/'+id+'/?qa=1');
+  const overview=page.locator('.checkout-overview'),summary=overview.locator('summary');
+  await expect(page.locator('#name')).toBeVisible();await expect(overview).not.toHaveAttribute('open','');
+  await summary.focus();await page.keyboard.press('Enter');await expect(overview).toHaveAttribute('open','');
+  await expect(overview.getByRole('heading',{name:['launch-site','focused-site','signature-site'].includes(id)?'Your project and payments':'Payment steps',exact:true})).toBeVisible();
+  await expect(overview.getByRole('link',{name:'Payments and cancellation',exact:true})).toBeVisible();
+ }
 });
 test('new guide examples and contact intent are usable without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  for(const [slug,goal]of [['ai-search-visibility','search'],['ai-website-content-review','search'],['local-seo-audit','search'],['slow-website-on-mobile','fix']]){
   await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('#worked-example, #completed-example')).toBeVisible();
   const download=page.locator('.journal-prose a[download]').first();expect((await page.request.get(await download.getAttribute('href'))).status()).toBe(200);
-  await page.locator('#next-decision .button').click();await expect(page.locator('#goal')).toHaveValue(goal);await expect(page.locator('#request_kind')).toHaveValue('question');
+  await page.locator('#next-decision .button').click();await expect(page.locator('input[name=goal]:checked')).toHaveValue(goal);await expect(page.locator('#request_kind')).toHaveValue('question');
  }
 });
 
@@ -81,10 +100,12 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'County, region or community'})).toBeDisabled();
+ await expect(page.getByRole('searchbox',{name:'County, parish, region or community'})).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-cs]')).toHaveCount(count);
  await expect(page.locator('[data-cs]:visible')).toHaveCount(0);
+ const allAreas=page.locator('[data-county-browse-all] > summary');
+ if(await allAreas.count())await allAreas.click();
  for(const summary of await page.locator('[data-county-directory] > details > summary').all()){
   await summary.click();await expect(summary.locator('..')).toHaveAttribute('open','');
  }
@@ -116,35 +137,35 @@ test('New York county places and source references remain usable without JavaScr
  const entry=await openNativeCountyEntry(page,'st-lawrence','Ogdensburg');
  await expect(entry.getByRole('heading',{name:'Cities',exact:true})).toBeVisible();
  await expect(entry.locator('.county-geography-note')).toContainText('Canton');
- await expect(entry.locator('[data-cl]')).toHaveAttribute('href','/areas/new-york/#st-lawrence');
+ await expect(entry.locator('[data-cl]')).toHaveAttribute('href','/areas/st-lawrence-county/');
+ await expect(entry.getByRole('link',{name:'Link to this directory entry',exact:true})).toHaveAttribute('href','/areas/new-york/#st-lawrence');
 });
 
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,1607);
- await page.locator('.state-area-cards').getByRole('link',{name:'Explore Pennsylvania',exact:true}).click();
+ await openNativeCountyLists(page,1746);
+ await page.locator('.state-area-links a[href="/areas/pennsylvania/"]').click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);
  const entry=await openNativeCountyEntry(page,'columbia','Bloomsburg');
  await expect(entry.getByRole('heading',{name:'Towns',exact:true})).toBeVisible();
  await expect(entry.locator('.county-geography-note')).toContainText('incorporated town');
  const download=entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true});
- await expect(download).toBeVisible();
- await expect(download).toHaveAttribute('href',/^\/assets\/county-briefs\/pennsylvania-columbia\.txt(?:\?v=[a-f0-9]+)?$/);
- expect((await page.request.get(await download.getAttribute('href'))).status()).toBe(200);
+ await expect(download).toHaveCount(0);
+ expect((await page.request.get('/assets/county-briefs/pennsylvania-columbia.txt')).status()).toBe(200);
 });
 
-test('Ohio directory, typed municipalities and worksheet work without JavaScript',async({page},testInfo)=>{
+test('Ohio directory preserves typed municipalities and omits an unrelated worksheet without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await page.locator('.state-area-cards').getByRole('link',{name:'Explore Ohio',exact:true}).click();
+ await page.locator('.state-area-links a[href="/areas/ohio/"]').click();
  await openNativeCountyLists(page,88);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(7);
  const entry=await openNativeCountyEntry(page,'greene','Yellow Springs');
  await expect(entry.getByRole('heading',{name:'Villages',exact:true})).toBeVisible();
  await expect(entry.getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();
- await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveAttribute('href',/^\/assets\/county-briefs\/ohio-greene\.txt(?:\?v=[a-f0-9]+)?$/);
+ await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveCount(0);
 });
 
 test('state hubs and independent-city entries work without JavaScript or inferred inquiry context',async({page},testInfo)=>{
@@ -156,8 +177,8 @@ test('state hubs and independent-city entries work without JavaScript or inferre
  const entry=await openNativeCountyEntry(page,'baltimore-city','Baltimore');
  await expect(entry.locator('.county-area-content')).toContainText('Independent city; separate from surrounding counties.');
  const download=entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true});
- await expect(download).toHaveAttribute('href',/^\/assets\/county-briefs\/maryland-baltimore-city\.txt(?:\?v=[a-f0-9]+)?$/);
- await page.locator('.county-state-switch').getByRole('link',{name:'Discuss your website',exact:true}).click();
+ await expect(download).toHaveCount(0);
+ await page.locator('.county-state-switch').getByRole('link',{name:'Ask about your website',exact:true}).click();
  await expect(page.locator('input[name="county"]')).toHaveValue('');
  await expect(page.locator('input[name="business_location"]')).toHaveValue('');
  await expect(page.locator('#request_kind')).toHaveValue('question');

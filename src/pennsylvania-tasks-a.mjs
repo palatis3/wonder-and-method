@@ -53,7 +53,7 @@ export const pennsylvaniaTasksA = {
     scenario: 'Imagine a Blair County specialist whose assessment page does not explain when an estimate is issued or when the customer authorizes repair work.',
     decision: 'Map inquiry, inspection, proposed work, approval and collection. For each stage, record what the customer supplies, what the business confirms and the message that moves the job forward. Use only approved charges and timing rules. Keep new assessment inquiries separate from questions about existing jobs, and identify the appropriate contact destination for each.',
     questions: ['What does submitting the initial form actually authorize?', 'How does the customer approve the proposed work?', 'Which details are needed to ask about an existing job?'],
-    output: 'A five-stage process explanation and two clearly labelled contact routes, ready for factual review.',
+    output: 'A five-stage process explanation and two clearly labeled contact routes, ready for factual review.',
     check: 'Read only the initial form and receipt; confirm that they do not imply an inspection, repair approval or completion date has already been agreed.'
   },
   bradford: {
@@ -83,7 +83,7 @@ export const pennsylvaniaTasksA = {
   cambria: {
     name: 'Cambria', title: 'Protect five useful old links during a redesign',
     scenario: 'Imagine a Cambria County business reorganizing an established website. Customers still use service links from emails, printed material and saved instructions.',
-    decision: 'Select five important existing addresses and record their purpose, approved content and proposed destination. Mark each as retained, revised in place, moved or retired. For a move, identify the genuinely relevant replacement and agree redirect scope. Note any missing evidence or access instead of assuming every old link has been discovered.',
+    decision: 'Select five important existing addresses and record their purpose, approved content and proposed destination. Mark each as retained, revised in place, moved or retired. For a move, identify the genuinely relevant replacement and agree on redirect scope. Note any missing evidence or access instead of assuming every old link has been discovered.',
     questions: ['Which content still answers a real customer question?', 'Does the proposed menu label make that destination clearer?', 'Which shared links must be checked after launch?'],
     output: 'A small migration inventory connecting old addresses, content decisions and agreed launch checks.',
     check: 'Open each of the five old links in the reviewed version and confirm that its visitor can reach an accurate service explanation and current next step.'
@@ -98,7 +98,7 @@ export const pennsylvaniaTasksA = {
   },
   carbon: {
     name: 'Carbon', title: 'Define what a group reservation actually confirms',
-    scenario: 'Imagine a Carbon County operator accepting private group requests alongside bookings for scheduled sessions. Both currently use a button labelled “Book now.”',
+    scenario: 'Imagine a Carbon County operator accepting private group requests alongside bookings for scheduled sessions. Both currently use a button labeled “Book now.”',
     decision: 'Write the commitment made by each route: one place, several places or an exclusive session. Record the approved group limits and the details needed for review. Decide exactly when the date is accepted and what the customer receives as confirmation. Revise the action and receipt wording to match that process.',
     questions: ['Is the visitor reserving places or requesting a private date?', 'Which group detail affects whether the request can be accepted?', 'What event makes the reservation confirmed?'],
     output: 'Two distinct booking descriptions with required details, accurate action labels and confirmation wording.',

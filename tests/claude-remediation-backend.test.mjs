@@ -16,7 +16,7 @@ import pageDates from '../config/page-dates.json' with {type:'json'};
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 const dir=new URL('../deployment/migrations/',import.meta.url);
 const migrations=await Promise.all((await readdir(dir)).filter(n=>n.endsWith('.sql')).sort().map(n=>readFile(new URL(n,dir),'utf8')));
-function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);}};}
+function fixture(){const sqlite=new DatabaseSync(':memory:');sqlite.exec(migrations.join('\n'));return {sqlite,prepare(sql){const build=values=>({bind:(...next)=>build(next),async first(){return sqlite.prepare(sql).get(...values)??null;},async all(){return {results:sqlite.prepare(sql).all(...values)};},async run(){return {meta:sqlite.prepare(sql).run(...values)};}});return build([]);},async batch(statements){sqlite.exec('BEGIN');try{const results=[];for(const statement of statements)results.push(await statement.run());sqlite.exec('COMMIT');return results;}catch(error){sqlite.exec('ROLLBACK');throw error;}}};}
 const base={name:'Synthetic Person',email:'synthetic@example.test',business:'',website:'',service:'unsure',request_kind:'question',message:'A synthetic question for testing.'};
 
 test('Baseline and Sprint proposals require an address while questions, monthly help and new builds remain optional',()=>{
@@ -52,7 +52,7 @@ test('native query prefill uses the same first-value policy as enhanced URLSearc
   const html=prefillInquiryHtml(inquiryFormMarkup({live:true}),url);
   assert.match(html,new RegExp(`<option value="${url.searchParams.get('offer')}" selected>`));
   assert.match(html,new RegExp(`name="request_kind" value="${url.searchParams.get('request_kind')}"`));
-  assert.match(html,/type="hidden" id="goal" name="goal" value="search"/);assert.doesNotMatch(html,/private@example\.test/);
+  assert.match(html,/type="radio" id="goal-search" name="goal" value="search" checked/);assert.doesNotMatch(html,/private@example\.test/);
   const fixed=prefillInquiryHtml(inquiryFormMarkup({live:true},{checkout:true,service:'website_baseline'}),new URL(url.href.replace('/contact/','/checkout/website-baseline/')));
   assert.match(fixed,/type="hidden" id="service" name="service" value="website_baseline"/);
   assert.match(fixed,new RegExp(`name="request_kind" value="${firstKind}"`));

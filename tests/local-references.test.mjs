@@ -5,17 +5,13 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {verifyLocalReferences} from '../scripts/verify-local-references.mjs';
 import {buildShowcase} from '../scripts/build-showcase.mjs';
-import {runInNewContext} from 'node:vm';
+import {initialRouteAssets} from '../scripts/initial-route-assets.mjs';
 
 test('initial resource classification excludes navigation and lazy media while retaining eager descendants and dependencies',async()=>{
- const verifier=await readFile(new URL('../scripts/verify.mjs',import.meta.url),'utf8');
- const expression=verifier.match(/const initialHomeHtml=([^;]+);/)[1];
  const homeHtml='<link rel="icon" href="/favicon.ico"><link rel="preload" href="/assets/font.woff2"><link rel="stylesheet" href="/assets/site.css"><script src="/assets/app.js"></script><a href="/assets/full-comparison.webp" download>Open image<img src="/assets/eager-thumbnail.webp"></a><a href="/assets/other.pdf">Open PDF</a><img src="/assets/lazy-comparison.webp" loading="lazy"><video poster="/assets/still.webp"></video>';
- const classified=runInNewContext(expression,{homeHtml});
- const assetExpression=verifier.match(/const homeAssets=([^;]+);/)[1];
- const resources=Array.from(runInNewContext(assetExpression,{initialHomeHtml:classified}));
+ const resources=Array.from(initialRouteAssets(homeHtml));
  assert.deepEqual(resources,['/favicon.ico','/assets/font.woff2','/assets/site.css','/assets/app.js','/assets/eager-thumbnail.webp','/assets/still.webp']);
- assert.doesNotMatch(classified,/full-comparison|other\.pdf|lazy-comparison/);
+ assert.doesNotMatch(resources.join('\n'),/full-comparison|other\.pdf|lazy-comparison/);
 });
 test('reference verification detects missing scripts and nested stylesheet fonts',async()=>{
  const root=await mkdtemp(join(tmpdir(),'wm-refs-'));

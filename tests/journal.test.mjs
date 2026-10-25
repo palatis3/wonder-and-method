@@ -1,3 +1,4 @@
+import searchExcluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
 import {floridaGuidePaths} from '../src/florida-guide-paths.mjs';
 import {operatingGuidePaths} from '../src/operating-guide-paths.mjs';
@@ -51,7 +52,7 @@ test('published guides have unique metadata, visible authorship and matching art
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
  const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/',held=[comparison,audit,...semrushGuidePaths];
- assert.equal(journal.length,65);assert.equal(pages.length,1229);assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
+ assert.equal(journal.length,65);assert.equal(pages.length,1259);for(const route of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===route));assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
  const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>!held.includes(x.path))},offers,map,geography});
  assert.ok(!gated.some(x=>held.includes(x.path)));for(const page of gated)for(const target of held)assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
  for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);
@@ -94,8 +95,8 @@ test('care comparison uses current configured service fees and finite units',()=
  const html=journalSections('/guides/website-care-versus-seo/',revised).map(x=>x.body).join('');
  assert.match(html,/Keep Running — \$207\/month/);assert.match(html,/3 completed improvements/);assert.match(html,/billing and cancellation terms/);assert.doesNotMatch(html,/base-hosting credit/);
  assert.match(html,/five business days before renewal, the improvement month pauses/);assert.match(html,/We agree in writing whether care also pauses or continues/);assert.match(html,/no automatic \$207 care charge/);
- const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/If I delay approved work, we agree a new date or refund/);
- const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/I never count the same work twice/);assert.match(seo,/If I delay accepted work, I still owe it/);
+ const terms=JSON.stringify(buyerPacks(revised).find(pack=>pack.id==='improve').sections);assert.match(terms,/same work is never counted twice/i);assert.match(terms,/If I delay approved work, we agree on a new date or refund/);
+ const seo=pages.find(page=>page.path==='/services/seo/').html;assert.match(seo,/I never count the same work twice/);assert.match(seo,/accepted work I delay remains owed, with a new date or refund/);
 });
 
 test('only pages containing Civic artwork load Civic styles and alternate hero code stays absent',()=>{
@@ -109,7 +110,7 @@ test('approved public launch has indexed editorial pages and excluded utility pa
  assert.ok(pages.find(x=>x.path==='/').html.includes('name="robots" content="index,follow"'));
  assert.ok(pages.find(x=>x.path==='/privacy/').html.includes('name="robots" content="index,follow"'));
  assert.ok(pages.every(x=>!x.html.includes('class="preview-label"')));
- const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.length-1);
+ const crawl=crawlFiles(config,pages);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.filter(p=>p.path!=='/404/'&&!searchExcluded.includes(p.path)).length);
  const contact=pages.find(x=>x.path==='/contact/').html;assert.match(contact,/data-mode="live"/);assert.ok(!/<(?:input|select|textarea)[^>]*disabled/.test(contact));
 });
 test('edge noindex covers public assets, rejected API requests and unavailable storage',async()=>{
@@ -123,9 +124,9 @@ test('edge noindex covers public assets, rejected API requests and unavailable s
 
 test('the cost-guide examples distinguish pages and creative scope with source-code handoff',()=>{
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
- assert.match(html,/Focused adds more service detail, two forms, two original guides and up to two ready connections/);
- assert.match(html,/Signature adds a larger page plan, four original guides and one original animated homepage feature or one 3D centerpiece/);
- assert.match(html,/Every package includes.*source files, written handoff instructions and an optional handoff call of up to 30 minutes/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
+ assert.match(html,/Focused Website adds more service detail, 2 forms, 2 original guides and up to 2 ready connections/);
+ assert.match(html,/Signature Website adds a larger page plan, 2 forms, 4 original guides and one original animated homepage feature or one 3D centerpiece/);
+ assert.match(html,/Every package includes.*source files and written handoff instructions\. An optional 30-minute walkthrough is included/);assert.doesNotMatch(html,/browser CMS|publishing dashboard/);
  assert.doesNotMatch(html,/the first scope might|the second could/);
 });
 

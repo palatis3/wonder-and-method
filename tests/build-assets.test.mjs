@@ -30,9 +30,14 @@ test('plan pages reuse shared CSS without changing the existing cascade',async()
  const city=applyCssBundles(`<head>${styles(['brand','premium','layout-components','living-city'])}</head>`,'');
  assert.deepEqual([...city.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]),['/assets/site.css','/assets/living-city.css'],'City typography keeps its override position after shared styles');
  const home=applyCssBundles(`<head><title>Home</title><link rel="preload" href="/assets/premium/manrope.woff2" as="font">${styles(['brand','premium','layout-components','living-city'])}<script type="module" src="/assets/living-city.js"></script></head><body>Unchanged home</body>`,'',{family:'home'});
- assert.deepEqual([...home.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]),['/assets/site-family-home.css','/assets/living-city.css']);
+ assert.deepEqual([...home.matchAll(/rel="stylesheet" href="([^"]+)"/g)].map(match=>match[1]),['/assets/site.css','/assets/living-city.css']);
  assert.ok(home.indexOf('href="/assets/living-city.css"')<home.indexOf('rel="preload"'),'Home styles are discovered before competing preload requests');
  assert.equal(home.split('<body>')[1],'Unchanged home</body>');
+ for(const family of ['home','areas','guides','work','services','information']){
+  const result=applyCssBundles(fixture,'',{family});
+  assert.ok(result.includes('href="/assets/site.css"'),`${family} reuses the common cache key`);
+  assert.doesNotMatch(result,/site-family-/);
+ }
 });
 
 test('pruning preserves references in emitted documents, dynamic edition paths and unlisted archives',async()=>{

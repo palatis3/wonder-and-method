@@ -10,6 +10,15 @@
   const afterParse=callback=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',callback,{once:true}):callback();
   afterParse(revealAnchor);
   window.addEventListener('hashchange',revealAnchor);
+  // Set the phone starting state once. Native disclosures stay open without
+  // JavaScript; later resizing must not undo the visitor's own choice.
+  afterParse(()=>{
+    if(!matchMedia('(max-width:767px)').matches)return;
+    let target;try{target=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{}
+    document.querySelectorAll('details.feature-comparison,details.pricing-detail-table').forEach(details=>{
+      if(!target||!details.contains(target))details.open=false;
+    });
+  });
   // Native open disclosures remain fully usable when JavaScript is unavailable.
   const footerDesktop=matchMedia('(min-width:768px)');
   const syncFooter=()=>document.querySelectorAll('[data-responsive-footer]').forEach(group=>{group.open=footerDesktop.matches;});

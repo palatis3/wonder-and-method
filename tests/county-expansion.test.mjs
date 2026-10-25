@@ -34,7 +34,7 @@ test('retired New York county routes resolve to reviewed place entries within th
   if(original)assert.deepEqual(countyGeography[county.slug].municipalities,original.municipalities);
   assert.ok(state.html.includes(`id="${county.slug}"`),destination);
   assert.ok(state.html.includes(escapeHtml(countyLocalNotes['new-york/'+county.slug]||county.geographyNote)),county.slug);
-  assert.ok(hub.html.includes(`href="${destination}"`));
+  assert.ok(hub.html.includes(`href="${approvedLocationPaths.includes(retired)?retired:destination}"`));
  }
  const publicConfig={...config,searchIndexing:true},sitemap=crawlFiles(publicConfig,render(publicConfig)).sitemap;
  for(const county of countyProfiles){const path=`/areas/${county.slug}-county/`;assert.equal(sitemap.includes(`<loc>${config.origin+path}</loc>`),approvedLocationPaths.includes(path),path);}

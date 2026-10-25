@@ -1,4 +1,6 @@
+import {friendlyGuideDownloads,withoutRepeatedPreparation,guidePreparationNote} from './guide-presentation.mjs';
 import {serviceRegionLabel} from './assets/service-state-info.js';
+import {guideDisplayName} from './guide-display-names.mjs';
 import {guideIllustration,guideIllustrationAlt} from './guide-art.mjs';
 import {socialCardPath} from './social-cards.mjs';
 import {accessibleGuideTables} from './guide-practical-steps.mjs';
@@ -11,7 +13,7 @@ import {operatingGuides} from './operating-guides.mjs';
 import {floridaGuides} from './florida-guides.mjs';
 import {newGuides} from './audit-guide-updates.mjs';
 import {ongoingGuides} from './ongoing-guides.mjs';
-import {serviceCoverage} from './service-area.mjs';
+import {serviceCoverageLink} from './service-area.mjs';
 import {searchGuides} from './search-guides.mjs';
 import {semrushGuides} from './semrush-guides.mjs';
 import {guideContentSections as journalSections} from './guide-content.mjs';
@@ -45,7 +47,7 @@ export const journal=[
  {path:'/guides/website-care-versus-seo/',title:'Website care or monthly SEO: what are you paying for?',category:'Planning',image:'care-versus-seo',diagram:true,imageHeight:520,alt:'Two work lanes: keep the site working and improve the search decision. Both lead to verifying and recording the change.',description:'Compare routine checks and small edits with work to improve a service page. Includes plan prices and a worksheet for choosing the job you need.',minutes:6,fallback:'/services/website-care/',datePublished:'2026-10-15'},
  {path:'/guides/website-audit-checklist/',title:'A practical website audit checklist',category:'Websites',image:'audit-checklist',diagram:true,imageHeight:660,alt:'Audit sequence: question, evidence, priority, small agreed fix, retest and dated record. Missing access is recorded and obtained before dependent checks continue.',description:'Start with a customer task that fails, use the checklist and see two small fixes made to this website.',minutes:7,fallback:'/services/website-audit/',datePublished:'2026-10-15'},
  {path:'/guides/website-repair-or-redesign/',title:'Repair or redesign your website? Choose the smallest useful change.',category:'Planning',image:'repair-or-redesign',diagram:true,imageHeight:850,diagramCaption:'Process diagram: first confirm the visitor task and access. Keep a useful site when the task works. If a supported small correction and its retest are known, fix and verify it. Otherwise diagnose the scope: rework the current content or structure where it can support the requirements, or assess a rebuild. Missing access pauses the dependent decision; no branch promises a price or outcome.',alt:'Decision tree for keeping, correcting, reworking or rebuilding a website, with a separate needs-access branch before the decision.',description:'For small service businesses deciding whether an existing website needs a small fix, broader changes or a rebuild. Includes practical examples and a decision worksheet.',minutes:6,fallback:'/services/website-audit/',datePublished:'2026-10-15'}
-].map(x=>({datePublished:'2026-10-14',dateModified:'2026-10-16',...x,...(['/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/website-not-showing-on-google/'].includes(x.path)?{dateModified:'2026-10-17'}:{}),needed:'Dated editorial accuracy review and owner publication instruction.'})).map(item=>({...item,dateModified:pageDate(item.path,item.dateModified),category:guideCategory(item)}));
+].map(x=>({datePublished:'2026-10-14',dateModified:'2026-10-16',...x,...(['/guides/website-project-cost/','/guides/contact-form-not-working/','/guides/website-not-showing-on-google/'].includes(x.path)?{dateModified:'2026-10-17'}:{}),needed:'Dated editorial accuracy review and owner publication instruction.'})).map(item=>({...item,title:guideDisplayName(item),dateModified:pageDate(item.path,item.dateModified),category:guideCategory(item)}));
 export const journalImage=item=>socialCardPath(item.path);
 
 const readableDate=value=>new Date(value+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
@@ -53,7 +55,7 @@ const guideDiagramAlts={
  'google-visibility-flow':'Keep private pages excluded. For public pages, check discovery, indexing and relevance; assess Maps eligibility separately. Search placement is not guaranteed.',
  'contact-form-flow':'Trace one authorized test through submission and any saved receipt, notification, inbox and reply. Investigate the first missing step; a success message alone does not prove delivery.',
  'service-area-decision':'Confirm coverage and the visitor’s need. Use an existing page when it does the job; create and maintain a separate page only when it adds substantial help.',
- 'maintenance-cycle':'Choose important website tasks, check them, record results, agree corrections and retest. Set the schedule and responsibilities for your actual site.',
+ 'maintenance-cycle':'Choose important website tasks, check them, record results, agree on corrections and retest. Set the schedule and responsibilities for your actual site.',
  'contractor-inquiry':'Explain accepted work, show real evidence, confirm coverage, collect job details and acknowledge the request. A request is not a quote or confirmed appointment.',
  'care-versus-seo':'Care keeps the site working; search work improves its answer to a customer question. Both end with a verified, dated change record, not promised growth.',
  'audit-checklist':'Question, evidence, priority, agreed small fix, retest and dated record. Obtain missing account access before continuing checks that need it.',
@@ -75,7 +77,7 @@ const guideCardDescriptions={
  'website-migration-checklist':'Map old page addresses, plan matching redirects and test forms before and after moving your website.',
  'custom-website-or-template':'Compare custom design and templates around your content, customer journey, editing needs, ownership and ongoing costs.',
  'website-care-versus-seo':'Match routine updates and search improvements to the problem before choosing monthly help or a finite project.',
- 'website-audit-checklist':'Follow a customer task, record where it fails and agree a small correction with a clear retest.',
+ 'website-audit-checklist':'Follow a customer task, record where it fails and agree on a small correction with a clear retest.',
  'website-repair-or-redesign':'Decide whether to keep your site, fix a small problem, rework its content or consider rebuilding.'
 };
 const guideThumbnail=item=>'/assets/guides/'+item.path.split('/').filter(Boolean).at(-1)+'-card';
@@ -100,19 +102,24 @@ const guideIndexCopy={
 };
 const articleFigure=item=>{
  const slug=item.path.split('/').filter(Boolean).at(-1),steps=researchGuideDetails[slug]?.steps;
+ if(steps?.[0]?.[0]==='Define the customer decision')return '';
  if(steps)return `<ol class="guide-steps" aria-label="Steps in this guide">${steps.map(([title,detail])=>`<li><strong>${e(title)}</strong><span>${e(detail)}</span></li>`).join('')}</ol>`;
  // Keep the branching decision diagram; other figures repeated the nearby text.
  if(item.image==='repair-or-redesign')return `<figure class="journal-hero journal-diagram"><img src="/assets/guides/${item.image}.svg" width="360" height="${item.imageHeight}" alt="${e(guideDiagramAlts[item.image])}" loading="lazy" decoding="async"><figcaption>${e(item.diagramCaption)}</figcaption></figure>`;
  return '';
 };
-const displayGuideTitle=item=>researchGuideDetails[item.path.split('/').filter(Boolean).at(-1)]?.indexTitle||guideIndexCopy[item.path.split('/').filter(Boolean).at(-1)]?.[0]||item.title;
+const displayGuideTitle=item=>item.title;
 export function journalCard(item,{headingLevel=3,layout='related',eager=false}={}){
  const slug=item.path.split('/').filter(Boolean).at(-1),description=researchGuideDetails[slug]?.indexDescription||guideCardDescriptions[slug];
  if(!description)throw Error(`Missing guide card description: ${slug}`);
  if(layout==='index'){const extra=researchGuideDetails[slug];const summary=extra?extra.indexDescription:guideIndexCopy[slug][1];const title=displayGuideTitle(item);return `<article class="journal-card journal-card-text"><div><h${headingLevel}><a href="${item.path}">${e(title)}</a></h${headingLevel}><p class="journal-card-description">${e(summary)}</p></div></article>`;}
  return `<article class="journal-card journal-card-text"><div><h${headingLevel}><a href="${item.path}">${e(displayGuideTitle(item))}</a></h${headingLevel}><p class="journal-card-description">${e(description)}</p></div></article>`;
 }
-export function journalIndex(items){return `<header class="page-intro"><p class="eyebrow">Website guides</p><h1>Practical website<br>and SEO guides.</h1><p class="lede">Clear explanations, examples and worksheets for the decisions around your website. Written for service businesses across ${e(serviceCoverage().region)}.</p></header><section class="guide-start"><h2>Start here</h2><ul><li><a href="/guides/website-not-generating-leads/">My website is not bringing in inquiries</a></li><li><a href="/guides/website-project-cost/">What should I budget?</a></li><li><a href="/guides/contact-form-not-working/">My contact form is not working</a></li></ul></section><span id="choose"></span><nav class="page-jump" aria-label="Guide topics">${guideGroups.map(group=>'<a href="#'+group.id+'">'+group.title+'</a>').join('')}<a href="#planning-tools">Planning tool</a></nav>${guideGroups.map(group=>'<section class="journal-group" id="'+group.id+'"><h2>'+group.title+'</h2><div class="journal-index-list">'+items.filter(item=>group.paths.includes(item.path.split('/').filter(Boolean).at(-1))).map(item=>journalCard(item,{headingLevel:3,layout:'index'})).join('')+'</div></section>').join('')}<section class="journal-group" id="planning-tools"><h2>Try a planning tool</h2><h3><a href="/tools/website-roi-calculator/">Website ROI scenario calculator</a></h3><p>Enter your costs and assumptions about extra jobs to see when a website project could pay for itself.</p></section>`;}
+const indexGroup=(group,items)=>'<section class="journal-group" id="'+group.id+'"><h2>'+group.title+'</h2><div class="journal-index-list">'+items.filter(item=>group.paths.includes(item.path.split('/').filter(Boolean).at(-1))).map(item=>journalCard(item,{headingLevel:3,layout:'index'})).join('')+'</div></section>';
+export function journalIndex(items){
+ const core=guideGroups.filter(group=>!['business-workflows','local-cases'].includes(group.id)),examples=guideGroups.filter(group=>['business-workflows','local-cases'].includes(group.id));
+ return `<header class="page-intro"><p class="eyebrow">Website guides</p><h1>Practical website<br>and SEO guides.</h1><p class="lede">Clear explanations, examples and worksheets for the decisions around your website. Written for service businesses across ${serviceCoverageLink()}.</p></header><section class="guide-start"><h2>Start here</h2><ul><li><a href="/guides/website-not-generating-leads/">My website is not bringing in inquiries</a></li><li><a href="/guides/website-project-cost/">What should I budget?</a></li><li><a href="/guides/contact-form-not-working/">My contact form is not working</a></li></ul></section><span id="choose"></span><nav class="page-jump" aria-label="Guide topics">${core.map(group=>'<a href="#'+group.id+'">'+group.title+'</a>').join('')}<a href="#examples">Examples and workflows</a><a href="#planning-tools">Planning tool</a></nav>${core.map(group=>indexGroup(group,items)).join('')}<details class="guide-examples" id="examples"><summary>Browse business workflows and local website cases</summary><p>Use these worked examples to plan the information, choices and next steps a website needs.</p><nav class="related-links" aria-label="Example collections">${examples.map(group=>'<a href="#'+group.id+'">'+group.title+'</a>').join('')}</nav>${examples.map(group=>indexGroup(group,items)).join('')}</details><section class="journal-group" id="planning-tools"><h2>Try a planning tool</h2><h3><a href="/tools/website-roi-calculator/">Website ROI scenario calculator</a></h3><p>Enter your costs and assumptions about extra jobs to see when a website project could pay for itself.</p></section>`;
+}
 
 const relatedGuidePaths={
   'website-maintenance-cost':['website-maintenance-checklist','website-care-versus-seo','website-project-cost'],
@@ -175,16 +182,12 @@ export const relatedGuides=(item,available)=>{
  if(!paths)throw Error(`Missing related guides for ${item.path}`);
  return paths.map(slug=>available.find(page=>page.path===`/guides/${slug}/`)).filter(Boolean).slice(0,2);
 };
-const friendlyDownloads=body=>body.replace(/(<a\b[^>]*href="[^"]+\.(csv|txt)"[^>]*>)([^<]*)(<\/a>)/gi,(_match,open,ext,label,close)=>{
- const clean=label.replace(/\s*\((?:CSV|TXT)\)/gi,'').trim();
- return open+clean+(ext.toLowerCase()==='csv'?' (spreadsheet)':' (text file)')+close;
-});
 export function journalArticle(item,offers,available){
- const sections=journalSections(item.path,offers).map(section=>({...section,body:friendlyDownloads(accessibleGuideTables(contextualizeGuideBody(section.body,item.path)))}));
+ const sections=journalSections(item.path,offers).map(section=>({...section,body:friendlyGuideDownloads(accessibleGuideTables(contextualizeGuideBody(withoutRepeatedPreparation(section.body),item.path)),item.path)}));
  const download=guideDownload(item.path);
  const takeaway=download&&!sections.some(x=>x.body.includes(download))?`<div id="take-away"><p><a href="${download}" download>${e(guideDownloadLabel(item.path))} (${download.endsWith('.csv')?'spreadsheet':'text file'})</a>. Fill it in with your own business facts.</p></div>`:'';
  const words=(item.description+' '+guideDecision(item.path,offers)+' '+sections.map(x=>x.title+' '+x.body).join(' ')).replace(/<[^>]+>/g,' ').split(/\s+/).filter(Boolean).length;
  const minutes=Math.max(1,Math.ceil(words/220));
- const toc=sections.length>=6?`<details class="journal-toc"><summary>In this guide</summary><nav aria-label="In this guide"><ol>${sections.map(x=>`<li><a href="#${x.id}">${e(x.title)}</a></li>`).join('')}</ol></nav></details>`:'';
- return `<article class="journal-article"><header class="journal-header"><p class="eyebrow">${e(item.category)} / ${minutes} min read</p><h1>${e(item.title)}</h1><p class="lede">${e(item.description)}</p><p class="journal-byline">By <a href="/about/">Wonder and Method</a> <span class="byline-date">Published <time datetime="${item.datePublished}">${readableDate(item.datePublished)}</time></span>${item.dateModified!==item.datePublished?` <span class="byline-date">Updated <time datetime="${item.dateModified}">${readableDate(item.dateModified)}</time></span>`:''} <a class="byline-correction" href="/contact/?request_kind=question#inquiry">Suggest a correction</a></p></header><div class="journal-layout${toc?'':' journal-layout-no-toc'}">${toc}<div class="journal-prose">${guideDecision(item.path,offers)}${download?`<p class="guide-help"><a href="${download}" download>${e(guideDownloadLabel(item.path))} (${download.endsWith('.csv')?'spreadsheet':'text file'})</a></p>`:''}${sections.map((x,index)=>`<section id="${x.id}"><h2>${e(x.title)}</h2>${x.body}</section>${index===0?articleFigure(item):''}`).join('')}${takeaway}${guideAction(item,{offers})}</div></div></article><section class="journal-related"><p class="eyebrow">Keep exploring</p><h2>Related guides</h2><div class="journal-grid">${relatedGuides(item,available).map(item=>journalCard(item)).join('')}</div><a class="text-link" href="/guides/">All guides</a></section>`;
+ const toc=sections.length>=6||words>=900?`<details class="journal-toc"><summary>In this guide</summary><nav aria-label="In this guide"><ol>${sections.map(x=>`<li><a href="#${x.id}">${e(x.title)}</a></li>`).join('')}</ol></nav></details>`:'';
+ return `<article class="journal-article"><header class="journal-header"><p class="eyebrow">${e(item.category)} / ${minutes} min read</p><h1>${e(item.title)}</h1><p class="lede">${e(item.description)}</p><p class="journal-byline">By <a href="/about/">Wonder and Method</a> <span class="byline-date">Published <time datetime="${item.datePublished}">${readableDate(item.datePublished)}</time></span>${item.dateModified!==item.datePublished?` <span class="byline-date">Updated <time datetime="${item.dateModified}">${readableDate(item.dateModified)}</time></span>`:''} <a class="byline-correction" href="/contact/?request_kind=question#inquiry">Suggest a correction</a></p></header><div class="journal-layout${toc?'':' journal-layout-no-toc'}">${toc}<div class="journal-prose">${guideDecision(item.path,offers)}${download?`<p class="guide-help"><a href="${download}" download>${e(guideDownloadLabel(item.path))} (${download.endsWith('.csv')?'spreadsheet':'text file'})</a></p>`:''}${sections.map((x,index)=>`<section id="${x.id}"><h2>${e(x.title)}</h2>${x.body.replace(`<caption>${e(x.title)}</caption>`,`<caption class="guide-caption-hidden">${e(x.title)}</caption>`)}</section>${index===0?articleFigure(item):''}`).join('')}${takeaway}${guideAction(item,{offers})}${guidePreparationNote(item)}</div></div></article><section class="journal-related"><p class="eyebrow">Keep exploring</p><h2>Related guides</h2><div class="journal-grid">${relatedGuides(item,available).map(item=>journalCard(item)).join('')}</div><a class="text-link" href="/guides/">All guides</a></section>`;
 }

@@ -1,3 +1,4 @@
+import {inquiryNextStep} from './inquiry-next-step.mjs';
 // Optional measurement must never prevent the form handler from loading.
 let measurement;
 const countJourney=(...args)=>{measurement??=import('./journey-counts.js').catch(()=>null);measurement.then(module=>module?.countJourney(...args)).catch(()=>{});};
@@ -5,7 +6,7 @@ import {addonBuildPayments} from './addon-content.mjs';
 import {addonSelectionFromQuery,normalizeAddonSelection,priceAddons} from './addons.mjs';
 import {money} from './shared.mjs';
 import {bindInquirySubmission} from './inquiry-submit.mjs';
-import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection,inquiryWebsiteField,inquirySubmitLabel,inquiryOffer} from './shared.mjs';
+import {resolveServiceId,inquiryChoices,inquiryContextFields,publicInquiryContext,selectedInquiryContext,inquiryRequestSummary,inquiryMessagePrompt,inquiryMessageHelp,hasInquirySelection,inquiryWebsiteField,inquirySubmitLabel,inquiryOffer,inquiryAllowsMonthlyInterest} from './shared.mjs';
 const form=document.querySelector('form#inquiry');
 if(form){
  const field=key=>form.elements.namedItem(key);
@@ -41,6 +42,9 @@ if(form){
   const current={service,...context};
   const additions=priceAddons(normalizeAddonSelection(values));
   const isBuild=['launch_site','focused_site','signature_site'].includes(service);
+  const interest=field('care_interest'),interestPanel=form.querySelector('[data-care-interest]'),allowInterest=inquiryAllowsMonthlyInterest(values);
+  if(interest){interest.value=context.care_interest||'';interest.disabled=!allowInterest;}
+  if(interestPanel)interestPanel.hidden=!allowInterest;
   const picker=form.querySelector('[data-inquiry-addons]');if(picker){picker.hidden=!(isBuild&&!question||additions.ids.length);const catalogue=picker.querySelector?.('[data-addon-picker]');if(catalogue)catalogue.hidden=!(isBuild&&!question||!form.dataset.fixedService&&additions.ids.length);}
   const alternative=form.querySelector('[data-addon-alternative]');if(alternative)alternative.hidden=isBuild&&!question;
   const addonSummary=form.querySelector('[data-addon-summary]');
@@ -67,10 +71,10 @@ if(form){
   const required=document.createElement('span');required.className='field-note';required.textContent='(required)';label.append(required);
   document.querySelector('#message-help').textContent=inquiryMessageHelp(service,current.request_kind,context.goal,neutral);
   form.querySelector('[data-request-submit]').textContent=inquirySubmitLabel(service,Boolean(form.dataset.fixedService),current.request_kind);
-  const nextStep=form.querySelector('[data-request-next]');if(nextStep)nextStep.textContent=neutral?'I read your message and reply by email.':question?'I read your question and reply by email.':'I review your project and email you about the work, price and available dates.';
-  const wrapper=form.querySelector('.request-summary');if(wrapper)wrapper.hidden=!hasInquirySelection(current);
+  const nextStep=form.querySelector('[data-request-next]');if(nextStep)nextStep.textContent=inquiryNextStep(service,current.request_kind);
+  const wrapper=form.querySelector('.request-summary');if(wrapper)wrapper.hidden=!hasInquirySelection({...current,goal:form.querySelector('[data-goal-choices]')?'':current.goal});
   const summary=document.querySelector('#request-summary');
-  const next=inquiryRequestSummary(current);if(summary&&summary.textContent!==next)summary.textContent=next;
+  const next=inquiryRequestSummary(current,undefined,{includeGoal:!form.querySelector('[data-goal-choices]')});if(summary&&summary.textContent!==next)summary.textContent=next;
   const changeService=form.querySelector('[data-change-service]');if(changeService)changeService.hidden=service==='unsure';
   const clearAddons=form.querySelector('[data-clear-addons]');if(clearAddons)clearAddons.hidden=!additions.ids.length;
   for(const questionLink of document.querySelectorAll('[data-checkout-question]')){
@@ -79,9 +83,10 @@ if(form){
    questionLink.href='/contact/?'+query.toString()+'#inquiry';
   }
  };
+ form.querySelector('[data-change-service]')?.addEventListener('click',()=>{const choices=form.querySelector('#package-choice');if(choices)choices.open=true;field('service').focus();});
  form.querySelector('[data-clear-addons]')?.addEventListener('click',event=>{
   event.preventDefault();for(const input of form.querySelectorAll('input[name^="addon_"]'))input.checked=false;
-  updateRequestSummary();field('service').focus();
+  updateRequestSummary();const choices=form.querySelector('#package-choice');if(choices)choices.open=true;field('service').focus();
  });
  form.addEventListener('click',event=>{
   const remove=event.target.closest?.('[data-addon-remove]');if(!remove||!form.contains(remove))return;

@@ -1,3 +1,4 @@
+import searchExcluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import {robotsDirective} from '../src/seo.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -22,11 +23,11 @@ test('production output has coherent canonical, OG, schema and crawl metadata',(
   const title=html.match(/<title>(.*?)<\/title>/)[1],description=html.match(/name="description" content="([^"]+)"/)[1];
   assert.ok(!titles.has(title));assert.ok(!descriptions.has(description));titles.add(title);descriptions.add(description);
   const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
-  assert.equal(schema[0].url,production.origin+'/');if(!['/','/404/'].includes(path))assert.equal(schema.find(x=>x['@type']==='BreadcrumbList').itemListElement.at(-1).item,production.origin+path);
+  assert.equal(schema[0].url,production.origin+'/');const breadcrumb=schema.find(x=>x['@type']==='BreadcrumbList');if(html.includes('aria-label="Breadcrumb"'))assert.equal(breadcrumb.itemListElement.at(-1).item,production.origin+path);else assert.equal(breadcrumb,undefined,path+' shallow navigation');
  }
  const crawl=crawlFiles(production,pages);
  assert.match(crawl.robots,/Allow: \/\nSitemap: https:\/\/studio.example.com\/sitemap.xml/);
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.length-1);
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,pages.filter(p=>p.path!=='/404/'&&!searchExcluded.includes(p.path)).length);
  assert.ok(!crawl.sitemap.includes('/404/'));assert.ok(!crawl.sitemap.includes('/concepts/'));assert.ok(!crawl.sitemap.includes('/guides/'));
  assert.ok(!pages.some(page=>page.html.includes('127.0.0.1')));
 });

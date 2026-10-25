@@ -8,7 +8,7 @@ import offers from '../config/offers.json' with {type:'json'};
 import {escapeHtml as e} from '../src/shared.mjs';
 import {regionalProfiles} from '../src/regional-content.mjs';
 import {countyPages} from '../src/service-counties.mjs';
-import {serviceStates,countyPath,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
+import {serviceStates,countyPath,countyServicePath,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
 import {normalizeCountyQuery,parseCountyQuery,countyMatchScore,packCountyNames,unpackCountyNames,packCountySearch,unpackCountySearch} from '../src/assets/county-directory.js';
 
 const states=serviceStates.filter(state=>regionalProfiles[state.id]);
@@ -18,13 +18,13 @@ const directories=new Map(states.map(state=>[state.id,countyDirectory(state)]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=query=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query))).map(card=>card.state+'/'+card.slug).sort();
 
-test('fifteen expansion hubs expose 1274 entries within 28 public directory pages and preserve 333 original areas',()=>{
- assert.equal(states.length,15);assert.equal(pages.length,28);assert.equal(byPath.size,28);
- assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67],['south-carolina',46],['georgia',159],['mississippi',82],['alabama',67],['wisconsin',72],['illinois',102]]);
- assert.equal(cards.length,1607);
+test('seventeen expansion hubs expose 1413 entries within 30 public directory pages and preserve 333 original areas',()=>{
+ assert.equal(states.length,17);assert.equal(pages.length,30);assert.equal(byPath.size,30);
+ assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67],['south-carolina',46],['georgia',159],['mississippi',82],['alabama',67],['wisconsin',72],['illinois',102],['louisiana',64],['arkansas',75]]);
+ assert.equal(cards.length,1746);
  assert.equal(serviceStates.filter(state=>!regionalProfiles[state.id]).reduce((count,state)=>count+state.counties.length,0),333);
  const combined=countyDirectory();
- assert.equal((combined.match(/data-cs=/g)||[]).length,1607);
+ assert.equal((combined.match(/data-cs=/g)||[]).length,1746);
  assert.equal((combined.match(/data-county-area/g)||[]).length,0,'the combined finder does not repeat all detailed place lists');
  for(const state of states){
   assert.ok(byPath.has(state.path),state.path);
@@ -35,7 +35,7 @@ test('fifteen expansion hubs expose 1274 entries within 28 public directory page
   for(const county of state.counties){
    const target=countyPath(county,state);
    assert.equal(target,state.path+'#'+county.slug);
-   assert.ok(combined.includes(`href="${target}"`),target+' in combined finder');
+   assert.ok(combined.includes(`href="${countyServicePath(county,state)}"`),target+' has direct service or directory destination');
    assert.ok(html.includes(`id="${county.slug}"`),target+' has a real native-disclosure target');
    assert.ok(html.includes(`href="${target}"`),target+' can be shared');
   }
@@ -135,6 +135,6 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
  assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,2);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
- const changed=countyPages(altered);assert.equal(changed.length,28);
+ const changed=countyPages(altered);assert.equal(changed.length,30);
  for(const page of changed)for(const price of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);
 });

@@ -4,11 +4,31 @@ import {mkdtemp,mkdir,writeFile,readFile,rm,stat} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {createHash} from 'node:crypto';
-import {releaseFingerprint,evaluateRelease} from '../src/release.mjs';
+import {releaseFingerprint,evaluateRelease,workerRuntimeSourceFiles} from '../src/release.mjs';
 import {verifyTechnicalManifest} from '../src/release-verification.mjs';
 import {civicAssetState,copyCivicAssets,civicPublicPath} from '../scripts/build-civic-assets.mjs';
 
 const config={homeEdition:'civic-sculpture'};
+test('direct and nested Worker helper edits invalidate approval even without an artifact rebuild',async()=>{
+ const f=await fixture();try{
+  await f.put('deployment/worker.mjs',"import './inquiry-acknowledgment.mjs'; export default {};");
+  await f.put('deployment/inquiry-acknowledgment.mjs',"import './helpers/recovery.mjs'; export const enabled=true;");
+  await f.put('deployment/helpers/recovery.mjs','export const retryLimit=3;');
+  assert.deepEqual(await workerRuntimeSourceFiles(f.root),['deployment/helpers/recovery.mjs','deployment/inquiry-acknowledgment.mjs','deployment/worker.mjs']);
+  const current={commit:'b'.repeat(40),...await releaseFingerprint(f.root)};
+  const manifest={schemaVersion:1,kind:'website-technical',dirty:false,...current,checks:['build','tests','site-quality','static-verification','content-preservation','browser-journeys','worker-dry-run']};
+  for(const [file,original] of [['deployment/inquiry-acknowledgment.mjs',"import './helpers/recovery.mjs'; export const enabled=true;"],['deployment/helpers/recovery.mjs','export const retryLimit=3;']]){
+   await f.put(file,original+'\nexport const changed=true;');
+   const changed={commit:current.commit,...await releaseFingerprint(f.root)};
+   assert.equal(changed.artifactSha256,current.artifactSha256);
+   assert.notEqual(changed.sourceSha256,current.sourceSha256);
+   assert.throws(()=>verifyTechnicalManifest(manifest,changed),/sourceSha256/);
+   await f.put(file,original);
+  }
+  await f.put('deployment/helpers/recovery.mjs',"import './missing.mjs';");
+  await assert.rejects(releaseFingerprint(f.root),/Could not resolve/);
+ }finally{await f.close();}
+});
 test('changing Worker routing or retired destinations invalidates an exact technical approval',async()=>{
  const f=await fixture();try{
   const current={commit:'a'.repeat(40),...await releaseFingerprint(f.root)};
@@ -43,6 +63,7 @@ async function fixture(){
  const put=async(path,content)=>{await mkdir(dirname(join(root,path)),{recursive:true});await writeFile(join(root,path),typeof content==='string'?content:JSON.stringify(content));};
  for(const dir of ['content','src','experience','scripts','authority/v5','deployment/migrations'])await mkdir(join(root,dir),{recursive:true});
  for(const file of ['dist/index.html','package.json','package-lock.json','config/offers.json','deployment/worker.mjs','deployment/public-route-canonical.mjs','deployment/retired-county-routes.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/payment-records.mjs','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css'])await put(file,'fixture');
+ for(const file of ['package.json','deployment/package.json'])await put(file,{type:'module'});
  await put('config/site.json',config);
  await put('config/page-dates.json',{});
  await put('deployment/journey-dimensions.mjs','fixture');

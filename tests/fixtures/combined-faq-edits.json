@@ -1,0 +1,1639 @@
+{
+  "purpose": "Exact approved FAQ edits reversed before comparison with the immutable historical answers.",
+  "reviewedSourceSha256": "343e6a176aaaecd2ac9bf1549b85aa2456e732ea8faf25dd47d4177b7e43239d",
+  "evidence": [
+    {
+      "path": "evidence/combined-improvements-20261024/final-copy-layout/review-inputs.json"
+    },
+    {
+      "path": "evidence/combined-improvements-20261024/checkpoint-44-review/recheck.json"
+    }
+  ],
+  "records": [
+    {
+      "path": "/areas/massachusetts/barnstable-county/",
+      "beforeSha256": "c31c1285147f69723fa337b0117782efe5426ac07b6ed07b208693f3e9898d59",
+      "afterSha256": "b7fbae9bc46db25eb2185a0a37d4376372c7c9c93c8e09366495ba7cc1cb3bd7",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "For a new website, the payment stages are 50% after you approve the proposal, 30% after written design approval and 20% after you approve the working site, before launch. We agree the pages, features and review dates first. Silence does not count as approval, and additions need an agreed price.",
+          "after": "For a new website, the payment stages are 50% after you approve the proposal, 30% after written design approval and 20% after you approve the working site, before launch. We agree on the pages, features and review dates first. Silence does not count as approval, and additions need an agreed price.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/massachusetts/berkshire-county/",
+      "beforeSha256": "44334c5663ff4b3132c671918fbb69304873329f7faa73881a1869f019af1c80",
+      "afterSha256": "e6f2aa36b481a086f3a667a41215eb14ad42d86b2fd27e9099b3798459e22726",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "I can review which existing addresses should stay and which need a relevant replacement. Bring a list of current pages and important links before we agree the redesign. Redirect work is bounded by the chosen package or a separate migration quote; a redesign does not include an unlimited search for every old address.",
+          "after": "I can review which existing addresses should stay and which need a relevant replacement. Bring a list of current pages and important links before we agree on the redesign. Redirect work is bounded by the chosen package or a separate migration quote; a redesign does not include an unlimited search for every old address.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/massachusetts/bristol-county/",
+      "beforeSha256": "f04e1128b8864a8efa48bb55ddcaa639d0e0285164845c86ed5ac5bfd1b9865c",
+      "afterSha256": "44a388c7303855e8f70985d03050a008c07c25442a7be6c120ced92b3bd6b40f",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. I research the service topics and customer questions, then match them to useful pages about the work you actually offer and where you accept it. Closely related searches can share one page. We agree any additional content in the scope; neither a town name nor a keyword estimate establishes a need for another page or guarantees rankings.",
+          "after": "Yes. I research the service topics and customer questions, then match them to useful pages about the work you actually offer and where you accept it. Closely related searches can share one page. We agree on any additional content in the scope; neither a town name nor a keyword estimate establishes a need for another page or guarantees rankings.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/massachusetts/plymouth-county/",
+      "beforeSha256": "dd314f7e241a2eb7ec4966c4c8cb6533c83265f268910a80210f171aa28fd1ec",
+      "afterSha256": "e126dc1f5850833f796e76fcedd5ca7ad490b7f183155796594801882a5a73bc",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We check the existing domain, hosting and email arrangements before deciding what needs to move. Replacing public pages does not automatically require replacing your email service. The quote identifies the supported launch setup and any separate migration work, with access and DNS changes planned so that unrelated services are accounted for.",
+          "after": "We check the existing domain, hosting and email arrangements before deciding what needs to move. Replacing public pages does not automatically require replacing your email service. The written proposal identifies the supported launch setup and any separate migration work, with access and DNS changes planned so that unrelated services are accounted for.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/massachusetts/worcester-county/",
+      "beforeSha256": "3cbeedda7270f2c9afd204ffa9e1119fa0735267be981d8327ff4dc79e0dc435",
+      "afterSha256": "31f31d80b9574e67001ad909c1e0438ea7e1d5683f8375d76a366db7332bb1bb",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "The agreed website checks still run, even if you send no text, photo or link changes. The unused set of supplied edits does not carry into another month. If I fall behind on work you already approved, that work remains due; we agree a new date or a refund rather than treating it as your unused allowance.",
+          "after": "The agreed website checks still run, even if you send no text, photo or link changes. The unused set of supplied edits does not carry into another month. If I fall behind on work you already approved, that work remains due; we agree on a new date or a refund rather than treating it as your unused allowance.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/delaware/sussex-county/",
+      "beforeSha256": "0a31bf214961c31cfda575d17e662a9067b995fc168addc000de10c733b91f26",
+      "afterSha256": "31113714d3757ab21165d082a53354c9da9e48d3c50d1e9a84d33e10267e0391",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Choose one factual approver for the website and have the relevant parties resolve the disputed contribution before publication. I can draft from verified notes, but an unresolved role should not become a marketing claim. We can agree different approved examples or adjust the page plan; new content work or delayed approvals may affect the quoted scope and dates.",
+          "after": "Choose one factual approver for the website and have the relevant parties resolve the disputed contribution before publication. I can draft from verified notes, but an unresolved role should not become a marketing claim. We can agree on different approved examples or adjust the page plan; new content work or delayed approvals may affect the quoted scope and dates.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/anne-arundel-county/",
+      "beforeSha256": "fcd8ca29412ffd38af21f0491a51e0ec896005f603c0c5b544da992e1fc1c430",
+      "afterSha256": "193d7795e1cce5a5d990e9b6c8c3c64e90cb28ffe7062884232066903d3d9565",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Send the page address, the service the visitor was trying to request and a description of what went wrong. A fictional example can show missing or contradictory fields without exposing customer records. I check the platform and access before quoting a contained repair, then agree the changed area and the result we will test.",
+          "after": "Send the page address, the service the visitor was trying to request and a description of what went wrong. A fictional example can show missing or contradictory fields without exposing customer records. I check the platform and access before quoting a contained repair, then agree on the changed area and the result we will test.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/baltimore-area/",
+      "beforeSha256": "bd6f20f88aa4c96cf018c0c3c9658d36e6bf92bb37dcf3bca001bfaee376e919",
+      "afterSha256": "55674e9ca85663de4a72d92eb43abdce4051bba1435513fdeb2acc0e099d3fe5",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Bring an inventory of QR codes and printed web addresses before we agree the migration work. I can keep a useful destination or map it to a relevant replacement within the quoted scope. We include representative printed links in the agreed launch checks; a change to the homepage does not automatically repair every printed destination.",
+          "after": "Bring an inventory of QR codes and printed web addresses before we agree on the migration work. I can keep a useful destination or map it to a relevant replacement within the quoted scope. We include representative printed links in the agreed launch checks; a change to the homepage does not automatically repair every printed destination.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/garrett-county/",
+      "beforeSha256": "4edd1af42df4111ce3be594996324b44178e7ae7435a574867a54246cac7a93c",
+      "afterSha256": "93bb85a8da2fe988430860635b20d43febaddd394c9138f7ca397a26c08d0448",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "question"
+          ],
+          "before": "Can we launch a catalogue first and consider interactive features later?",
+          "after": "Can we launch a catalog first and consider interactive features later?",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. We can agree a first version with useful product explanations and an inquiry route, then assess a later preview or calculator as a separate project. I do not include an unspecified future tool in the initial price. We document any likely dependencies early, while leaving its rules, testing and ongoing maintenance for an explicit brief.",
+          "after": "Yes. We can agree on a first version with useful product explanations and an inquiry route, then assess a later preview or calculator as a separate project. I do not include an unspecified future tool in the initial price. We document any likely dependencies early, while leaving its rules, testing and ongoing maintenance for an explicit brief.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "question"
+          ],
+          "before": "What do you need to estimate the writing for a product catalogue?",
+          "after": "What do you need to estimate the writing for a product catalog?",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Send the product families you want to explain, existing specifications, approved images and the questions buyers ask before contacting you. We agree which subjects need their own pages and which can share a clear comparison. The quote names the actual page list; a large supplier document library is not automatically included because it concerns one product family.",
+          "after": "Send the product families you want to explain, existing specifications, approved images and the questions buyers ask before contacting you. We agree which subjects need their own pages and which can share a clear comparison. The written proposal names the actual page list; a large supplier document library is not automatically included because it concerns one product family.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree the website page scope",
+          "after": "Agree on the website page scope",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/harford-county/",
+      "beforeSha256": "2e1fe4b492152098e19351ec960d107782b88bfc17bb1223f7866dab646aa9f8",
+      "afterSha256": "dbb110d8a6f4d9ab3d316cea6d6b617cd25bd32c092ce52b9d0112ad7489405b",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree a usable fallback as part of the website scope, such as essential instructions and a supported direct provider link or ordinary contact route. I check the agreed alternatives as well as the normal display. The website cannot restore a provider outage or invent appointment availability, so those limits stay clear in the page wording.",
+          "after": "We agree on a usable fallback as part of the website scope, such as essential instructions and a supported direct provider link or ordinary contact route. I check the agreed alternatives as well as the normal display. The website cannot restore a provider outage or invent appointment availability, so those limits stay clear in the page wording.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/howard-county/",
+      "beforeSha256": "a9bb39be557bb24a12a4c798bc188acf2820df1809b1e3ede6cd674f696d476b",
+      "afterSha256": "2d08740b30d7bfef86c343fd804f533310da90424adcf1cb431e885f7b848eb7",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Yes. We agree representative fictional submissions and the expected result before testing. I check the selected service and vehicle details through the relevant page, form and receiving destination, using the approved test arrangement. Any live-provider actions are coordinated first. The handoff records what passed, what could not be checked and any remaining dependency.",
+          "after": "Yes. We agree on representative fictional submissions and the expected result before testing. I check the selected service and vehicle details through the relevant page, form and receiving destination, using the approved test arrangement. Any live-provider actions are coordinated first. The handoff records what passed, what could not be checked and any remaining dependency.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/montgomery-county/",
+      "beforeSha256": "7292cf6271fe617f665f87af6d685d5d032e4f5660be1ae6c248eeab6884e9d2",
+      "afterSha256": "3c58c868734228b468bdbb1b8ce9688cbfecfd37a8c808b9ab617f12b0ae57fb",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Possibly. I first review the current paths, labels and destinations to identify where visitors get lost. A contained menu or service-introduction change may be enough if the platform supports it. Before payment, we agree the affected area and a useful check, rather than treating a different visual design as proof that the problem is fixed.",
+          "after": "Possibly. I first review the current paths, labels and destinations to identify where visitors get lost. A contained menu or service-introduction change may be enough if the platform supports it. Before payment, we agree on the affected area and a useful check, rather than treating a different visual design as proof that the problem is fixed.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "A menu change does not automatically require new page addresses. We identify the portfolio pages worth retaining and review their internal links before making the change. If pages must move or merge, the quote includes an agreed redirect plan. Bring links used in proposals or campaigns so those destinations are part of the discussion.",
+          "after": "A menu change does not automatically require new page addresses. We identify the portfolio pages worth retaining and review their internal links before making the change. If pages must move or merge, the written proposal includes an agreed redirect plan. Bring links used in proposals or campaigns so those destinations are part of the discussion.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/macomb-county/",
+      "beforeSha256": "eacbb5bbac000bc7a695616cf9e469d61cb378c2bc56f08665359a30f75ed68c",
+      "afterSha256": "d7d1f5860a764eb8e847786035b7c2771da32efa43b437ab59cc0a4a3630a6e5",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Yes. We can scope the pages using your services, approved capability descriptions and anonymized examples of buyer questions. We do not need to publish confidential drawings to begin planning. Before build work starts, we agree the material that is ready to use and any gaps that change the page plan; later case studies can be separately scheduled.",
+          "after": "Yes. We can scope the pages using your services, approved capability descriptions and anonymized examples of buyer questions. We do not need to publish confidential drawings to begin planning. Before build work starts, we agree on the material that is ready to use and any gaps that change the page plan; later case studies can be separately scheduled.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Discuss a manufacturing website brief",
+          "after": "Ask about a manufacturing website",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/fayette-county/",
+      "beforeSha256": "053981d1a2f1f6527490b3d771f7a0a778f6252136f21cb2ae7ae78388787752",
+      "afterSha256": "68122c823893d3fa6d2bbc1969da411364fcb5f8f205a8c01430207a99e22363",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "The delivered site is maintained through its source and content files. Your developer can update the options and publish them, or you can choose optional care for agreed small changes. If the change also affects an external store, we identify who updates that system; editing a website description does not automatically change the provider's catalogue.",
+          "after": "The delivered site is maintained through its source and content files. Your developer can update the options and publish them, or you can choose optional care for agreed small changes. If the change also affects an external store, we identify who updates that system; editing a website description does not automatically change the provider's catalog.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/tennessee/davidson-county/",
+      "beforeSha256": "40f0f84b1f313887378485701b2101c8f2fbe577b71ed7611d26cd648d9e6d2e",
+      "afterSha256": "a50893ae926a2c2b149f328484e8cde5770f69b7e1de9c6fd83bf763c78c4764",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Provide audio you are authorized to publish, the credits or captions you approve and the purpose of each example. We agree the media presentation and any external player in the website scope, including the access it needs. Audio production, new licensing and a private listening or delivery system are separate decisions rather than assumed parts of a portfolio page.",
+          "after": "Provide audio you are authorized to publish, the credits or captions you approve and the purpose of each example. We agree on the media presentation and any external player in the website scope, including the access it needs. Audio production, new licensing and a private listening or delivery system are separate decisions rather than assumed parts of a portfolio page.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/tennessee/williamson-county/",
+      "beforeSha256": "793b3ae73a30af15881438ac97667edfd1a20c1cf68c63e7b866db43a35ff1d8",
+      "afterSha256": "02a107393b1f1cad0ea6a861ba10a3e8575c099abbf80ca6df6be8d55227fa80",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We review how the request differs from the approved direction and agree any additional price and dates before making it. The included review rounds are not unlimited redesigns. Corrections to work that does not match our agreement are handled separately, so an error in the agreed design is not treated as a new creative request.",
+          "after": "We review how the request differs from the approved direction and agree on any additional price and dates before making it. The included review rounds are not unlimited redesigns. Corrections to work that does not match our agreement are handled separately, so an error in the agreed design is not treated as a new creative request.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/atlantic-county/",
+      "beforeSha256": "94deecdf8e344a865a4b61022d6d18ca8965af280b7c8fe3ca56a2a3dc65e387",
+      "afterSha256": "39ed45634d1e5afe3ab70190a3154a20cae8e3e6b213a6f7d7f3571f4460db18",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We review the public service pages separately from the provider's booking destinations. Useful public addresses can often stay in place while their booking links change. If a page must move, we agree a relevant destination and the redirect work in the quote. Bring links used in campaigns or messages so they can be included in the planned checks.",
+          "after": "We review the public service pages separately from the provider's booking destinations. Useful public addresses can often stay in place while their booking links change. If a page must move, we agree on a relevant destination and the redirect work in the written proposal. Bring links used in campaigns or messages so they can be included in the planned checks.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/bergen-county/",
+      "beforeSha256": "5541d80116f34b0c50c5a693070ea4f390485ca0772a8cfe4f011decd32b88f7",
+      "afterSha256": "355aebbe2c51fca96dfc6edb96164339a15fe2ac26d78abd76c13fc38dc3a2cd",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Send the form address, the expected result and a fictional example that shows the failure. Avoid confidential drawings or customer records in the initial brief. I check the platform, access and likely contained change before payment, then agree the affected area and completion check. A new quoting system or secure document workflow requires a separate assessment.",
+          "after": "Send the form address, the expected result and a fictional example that shows the failure. Avoid confidential drawings or customer records in the initial brief. I check the platform, access and likely contained change before payment, then agree on the affected area and completion check. A new quoting system or secure document workflow requires a separate assessment.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We agree the expected result before making the repair. You receive before-and-after notes and retest results for the changed route, including approved example submissions checked at the receiving destination. The notes identify anything I could not verify because of missing access or provider limits. A success message on screen alone is not evidence that the full agreed contact path worked.",
+          "after": "We agree on the expected result before making the repair. You receive before-and-after notes and retest results for the changed route, including approved example submissions checked at the receiving destination. The notes identify anything I could not verify because of missing access or provider limits. A success message on screen alone is not evidence that the full agreed contact path worked.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/burlington-county/",
+      "beforeSha256": "7e57df105bf8f3675f6f41bea87e65a6f96637078fc284681600e19fa9d94969",
+      "afterSha256": "0f3350125e121b670b9d7b07e84f5f7cc6964ea7dce489d8af99ccc933341c5b",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "The quote names the public pages I am building and the agreed links or compatible embeds to outside services. Customer shops that stay in another provider are not silently rebuilt as part of that page list. Store configuration, customer permissions and product administration are separate work. We check those boundaries before choosing a package or approving additions.",
+          "after": "The written proposal names the public pages I am building and the agreed links or compatible embeds to outside services. Customer shops that stay in another provider are not silently rebuilt as part of that page list. Store configuration, customer permissions and product administration are separate work. We check those boundaries before choosing a package or approving additions.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/cape-may-county/",
+      "beforeSha256": "8e44f9056e3dc74906657e8253f2f02875343613c4e23b2c532f6ef9ffb93440",
+      "afterSha256": "7997f359d7bf524d6e0fe6a426363e7805d5de0bcbb1c30a4f290255fc44aa39",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes, through agreed additional work or optional care for a set of small supplied text, photo or link changes. You provide the approved item information and tell me what has changed. Care does not continuously reconcile your store's stock or replace its administration. New catalogue sections and automatic inventory connections are assessed separately.",
+          "after": "Yes, through agreed additional work or optional care for a set of small supplied text, photo or link changes. You provide the approved item information and tell me what has changed. Care does not continuously reconcile your store's stock or replace its administration. New catalog sections and automatic inventory connections are assessed separately.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/services/web-design/",
+      "beforeSha256": "7e55f22c2091bd8fb0e7a731c3f3cf15442bdc80e8e8566bec6ab7ccee1d1d15",
+      "afterSha256": "ce203dc124cf0b8bc8f269dcb874362b61c8cf7e70c9c07f06455526a5ff350b",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes, if the first version gives customers a complete explanation and a useful next step. We agree which pages belong in the first launch and identify any later dependencies before choosing the package. Future pages or features need their own agreed scope and price; unused page capacity is not an open-ended promise of later work.",
+          "after": "Yes, if the first version gives customers a complete explanation and a useful next step. We agree which pages belong in the first launch and identify any later dependencies before choosing the package. Future pages or features need their own agreed work and price; unused page capacity is not an open-ended promise of later work.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/services/website-redesign/",
+      "beforeSha256": "f41a9d66626bf7d39f1cbe21f0b11c82d905ab218be39526b70290b43ce775be",
+      "afterSha256": "64aaff5974da2f61742082358cf9feb27b8d1608d82cfe7f4cb80d9b1bc0f503",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Age alone does not decide it. Start with what no longer works: changed services, confusing page structure, difficult updates or a platform that cannot support an important customer task. A focused repair may be enough. I use the current site's condition and your next requirements to scope the work, rather than recommending replacement simply because a date has passed.",
+          "after": "Age alone does not decide it. Start with what no longer works: changed services, confusing page structure, difficult updates or a platform that cannot support an important customer task. A focused repair may be enough. I use the current site's condition and your next requirements to define the work, rather than recommending replacement simply because a date has passed.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/services/website-care/",
+      "beforeSha256": "d06dc3864da57512a35c8af14e71935e545af482254d5050c59c7320533ce5a4",
+      "afterSha256": "1d122f486b23fe7f66cdfb50f579ec1dce13295e48650dd51ced3f5e66dfcf8c",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree contact windows, escalation contacts and provider responsibilities before enrollment. An automated alert does not mean someone is immediately working on the problem. Hosting or account failures may need the provider's support, while website repairs follow the agreed scope and availability. If your business needs continuous emergency cover, arrange that requirement with a suitable provider before relying on ordinary care.",
+          "after": "We agree on contact windows, who handles urgent problems and responsibilities for hosting and connected tools before enrollment. An automated alert does not mean someone is immediately working on the problem. Hosting or account failures may need the host or tool company's support, while website repairs follow the agreed work and availability. If your business needs continuous emergency cover, arrange that requirement with a specialist who offers that cover before relying on ordinary care.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/services/website-addons/",
+      "beforeSha256": "01236f53b5dd8b530df53cb4fd19f353570abe6e4a81058a9084aa3e5892263f",
+      "afterSha256": "2924f4fab90fd66565dd6a4bdb66b833459acd9b9a45cd5266e8e44a6fbc57f7",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Possibly, if customers can still complete the agreed public journey without the unfinished tool. We identify the dependencies, temporary contact route and separate acceptance checks before choosing that approach. The tool keeps its own scope, price and support arrangements. We would not publish a button that promises access to a portal or workflow that is not ready.",
+          "after": "Possibly, if customers can still complete the agreed public journey without the unfinished tool. We identify the dependencies, temporary contact route and separate acceptance checks before choosing that approach. The tool has its own agreed work, price and support arrangements. I would not publish a button that promises access to a portal or workflow that is not ready.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree the work and launch checks",
+          "after": "Agree on the work and launch checks",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/services/contractor-websites/",
+      "beforeSha256": "1cc6ca5304c73a5c9c20e6b8b2e8c5ed0179509bd6f073163207365edaef245b",
+      "afterSha256": "b7f238307e3e99d7237d537003aae3712614bd8b743c30b218f196143d4e83a4",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Usually not. Start with clear service descriptions and an accurate coverage page. A separate location page needs something useful to explain, such as a different service, genuine local project or materially different visit arrangements. Repeating the same text with town names changed does not help a customer decide. We research the actual need before adding pages or increasing the scope.",
+          "after": "Usually not. Start with clear service descriptions and an accurate coverage page. A separate location page needs something useful to explain, such as a different service, genuine local project or materially different visit arrangements. Repeating the same text with town names changed does not help a customer decide. I research the actual need before adding pages or quoting extra work.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/essex-county/",
+      "beforeSha256": "9efacd6dc0896ff62d8f6f5a82a23d6380aea0c03d1dfb606891f51aab62435c",
+      "afterSha256": "93360bf873cbfe33ddea66926f5f6814cf23aa03ca993232d4cfbffaf5690d8c",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "question"
+          ],
+          "before": "Can you review the catalogue before recommending a rebuild?",
+          "after": "Can you review the catalog before recommending a rebuild?",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. A review can examine whether buyers are losing the product reference, choosing the wrong route or missing information that already exists. You receive findings and a prioritized fix list; the agreed review may include a small repair when safe and practical. A larger catalogue rebuild needs a separate scope, rather than following automatically from the review.",
+          "after": "Yes. A review can examine whether buyers are losing the product reference, choosing the wrong route or missing information that already exists. You receive findings and a prioritized fix list; the agreed review may include a small repair when safe and practical. A larger catalog rebuild needs a separate scope, rather than following automatically from the review.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/gloucester-county/",
+      "beforeSha256": "93583c97a962573b8a3377c9a0ec0ee7b7accc41871b3472f2de25ea07702d3d",
+      "afterSha256": "40a52825838e3f5f918089a08860f552e7b8141f74fbecd855c2cc5d2802e4e0",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "I explain what I could verify and which part depends on the provider. A website review does not grant access to repair the provider’s software or change its account rules. We can agree a supported link or other contained website change where appropriate; provider configuration or replacement needs its own assessed scope and approval.",
+          "after": "I explain what I could verify and which part depends on the provider. A website review does not grant access to repair the provider’s software or change its account rules. We can agree on a supported link or other contained website change where appropriate; provider configuration or replacement needs its own assessed scope and approval.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/morris-county/",
+      "beforeSha256": "180770448c751751d6111aaacfae6d493afc546e745392bdb3da32f8688136d3",
+      "afterSha256": "cd5874e3a7b0467fcc947728f15212c9e31385d9b5c3af711990d75361c6c9d1",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "No. Automated website monitoring is not continuous human staffing. Before enrollment, we agree the supported site, covered tools and review and contact windows. Problems are recorded and routed within that coverage, with no guaranteed restoration deadline. If your business needs a staffed emergency support service, that requirement must be addressed separately before choosing a care arrangement.",
+          "after": "No. Automated website monitoring is not continuous human staffing. Before enrollment, we agree on the supported site, covered tools and review and contact windows. Problems are recorded and routed within that coverage, with no guaranteed restoration deadline. If your business needs a staffed emergency support service, that requirement must be addressed separately before choosing a care arrangement.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/ocean-county/",
+      "beforeSha256": "815efed37f8870808c9f95ef682fa5e2bf5c13da6484e098bb40c2900c904d73",
+      "afterSha256": "d01994b05562f0031e569e04263c19bf2ed90578ac22094017b5954f54714ddc",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can agree a first phase that explains the service and uses a working, approved contact or existing booking route. The proposal must say what that phase delivers and which later features remain separate. A future calendar or payment system is not included merely because the first website leaves room to link to one later.",
+          "after": "We can agree on a first phase that explains the service and uses a working, approved contact or existing booking route. The proposal must say what that phase delivers and which later features remain separate. A future calendar or payment system is not included merely because the first website leaves room to link to one later.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree the first launch scope",
+          "after": "Agree on the first launch scope",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "You provide and approve changes to your rental information. Optional care can publish one agreed set of small supplied text, photo or link updates each month on existing parts of the supported site. Reorganizing the catalogue or adding a new booking feature is a different scope. The care report records completed work and any outstanding dependency.",
+          "after": "You provide and approve changes to your rental information. Optional care can publish one agreed set of small supplied text, photo or link updates each month on existing parts of the supported site. Reorganizing the catalog or adding a new booking feature is a different scope. The care report records completed work and any outstanding dependency.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/union-county/",
+      "beforeSha256": "8d7235447b7e4d501396773e5507870c9509852419ef9a492ad2e896b8354860",
+      "afterSha256": "7d2bb3fccd787bbf48fa084e75f886822eb132b06028d6e08f1c25a3e39a9d35",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "An initial website check can follow the public route with agreed sample details or a provider-supported test process. Do not send a customer list simply to demonstrate a broken link. If a deeper check needs access to private records or an account, we agree permissions, the allowed test and handling requirements before that work is included.",
+          "after": "An initial website check can follow the public route with agreed sample details or a provider-supported test process. Do not send a customer list simply to demonstrate a broken link. If a deeper check needs access to private records or an account, we agree on permissions, the allowed test and handling requirements before that work is included.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree access and testing",
+          "after": "Agree on access and testing",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-jersey/warren-county/",
+      "beforeSha256": "5c6ef2c820a271441ea1d219551290ced64efddc84bb3d47a13321ea8479399f",
+      "afterSha256": "3edd4f0ce7cfa7933d5136aabc235770b34a97143ec97cd9a2da0f0790e2d71f",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "I check whether the agreed content and controls remain readable and usable, including navigation, service choices and the contact path. For this kind of site, a visitor should be able to find visit information without being forced into a project form. The final record identifies checks completed, problems corrected and anything that could not be tested.",
+          "after": "I check whether the agreed content and controls remain readable and usable, including navigation, service choices and the contact path. In the brochure example, a phone visitor should be able to describe the intended format and reading sequence without needing a finished artwork file first. The final record identifies checks completed, problems corrected and anything that could not be tested.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "No. Related pages can share a layout while giving customers different information and next steps. We agree the actual page addresses and purpose before booking; repeating the same service list under different titles adds little. A new layout, feature or substantial content expansion changes the agreed work and should be priced before it is added.",
+          "after": "No. Related pages can share a layout while giving customers different information and next steps. We agree on the actual page addresses and purpose before booking; repeating the same service list under different titles adds little. A new layout, feature or substantial content expansion changes the agreed work and should be priced before it is added.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/monroe-county/",
+      "beforeSha256": "bc812bfd6c8899c6a45853ca69a46cd76d794beb78715074e57c9c28bf616e7d",
+      "afterSha256": "c8de98a8883b29228670b70ba797d98352b6688937141add7ebba53c21de598f",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Bring the current page list and any important addresses used in search listings, messages or printed material. We mark pages to retain and agree relevant destinations for those being replaced. Included redirect work is limited by the chosen package; discovering a large legacy site or moving unrelated systems requires a separate migration assessment before the launch plan is fixed.",
+          "after": "Bring the current page list and any important addresses used in search listings, messages or printed material. We mark pages to retain and agree on relevant destinations for those being replaced. Included redirect work is limited by the chosen package; discovering a large legacy site or moving unrelated systems requires a separate migration assessment before the launch plan is fixed.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/nassau-county/",
+      "beforeSha256": "a1ead85e3697669cef6a92bb50ace3f943cff830bf38d2b943d955736dd64198",
+      "afterSha256": "93ce7615228fa5157bb10cbaa96b6d9a4751c3462ffb910166022d7be450b16c",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We can retain useful public page addresses and change their approved next-step links without automatically rebuilding every page. If an address must change, we agree a relevant redirect within the migration scope. Bring important existing URLs and the current quote destination so testing can cover both the public page and its handoff before launch.",
+          "after": "We can retain useful public page addresses and change their approved next-step links without automatically rebuilding every page. If an address must change, we agree on a relevant redirect within the migration scope. Bring important existing URLs and the current quote destination so testing can cover both the public page and its handoff before launch.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/westchester-county/",
+      "beforeSha256": "7e0897945536d06abc56d4c4f5944c52affb8529489454aaea60f177e12afac4",
+      "afterSha256": "131982f329e9f5e8fea9ccf9bab7550af93b1443dd3b27a5cee0ab3b2d28dc41",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Missing approved facts, photographs, working account access or decisions about the two customer routes can delay production. Your review time also sits outside the planned build days. We agree a named approver and review dates in the proposal, and you send each review round as one list. New features or a changed direction need a revised agreement.",
+          "after": "Missing approved facts, photographs, working account access or decisions about the two customer routes can delay production. Your review time also sits outside the planned build days. We agree on a named approver and review dates in the proposal, and you send each review round as one list. New features or a changed direction need a revised agreement.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/broome-county/",
+      "beforeSha256": "64952fbb4aa8c96c8706c43082481e3ee6b5f65a077bb8a3e0e8679be685f4d4",
+      "afterSha256": "8370fd4470b1976d2b9cb93ded068cec311f102e141eb20bc6f2b5b5d3d77954",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree a separate price before proceeding.",
+          "after": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree on a separate price before proceeding.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/indiana/monroe-county/",
+      "beforeSha256": "68ab76a4e6f4c305eeec5f9ea4128548bfbe6efb49a000e9acb6b27ae3f4a0c6",
+      "afterSha256": "0b972f95aa2b4f480dca7f8750f9eb2ca36236c9d54597c3177cb4cc83b5bf51",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes, if we agree a useful first scope and a working next step for visitors. The first proposal lists its pages, writing and features; later additions are quoted separately. We can identify likely future needs while planning, but that does not reserve unused package capacity or include future design tools and customer portals in the initial fee.",
+          "after": "Yes, if we agree on a useful first scope and a working next step for visitors. The first proposal lists its pages, writing and features; later additions are quoted separately. We can identify likely future needs while planning, but that does not reserve unused package capacity or include future design tools and customer portals in the initial fee.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree purposeful pages and scope",
+          "after": "Agree on purposeful pages and scope",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/north-carolina/craven-county/",
+      "beforeSha256": "813657d3a92e8b81b85a78262f00d48530c742fa304633c7ab374ca7fe339737",
+      "afterSha256": "8a1023bb48ee204e5bafd54b537aec9e55bc69eef26e797f3f42191da5da859d",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We name the approver, version and review dates in writing. You review the proposed service and process wording against your actual documents and return one consolidated list for the relevant round. The working site receives a further review before launch. If a correction changes the agreed feature or direction, we agree its scope and price before adding it.",
+          "after": "We name the approver, version and review dates in writing. You review the proposed service and process wording against your actual documents and return one consolidated list for the relevant round. The working site receives a further review before launch. If a correction changes the agreed feature or direction, we agree on its scope and price before adding it.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/pennsylvania/carbon-county/",
+      "beforeSha256": "ade37cfe449de365069967a58d4c8230c71153ae87cf916606af10525ca86fe1",
+      "afterSha256": "2d7cdc324dc788bb7ad22335b26a1749bc16611930e7d82b21d7c8d9f4261984",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "The final review records the agreed checks, corrections and anything that could not be verified. For the defined sample request, we check the visible confirmation and the supported saving and notification path, not only the page appearance. We agree the test data and access first; technical measurement approval remains with your business.",
+          "after": "The final review records the agreed checks, corrections and anything that could not be verified. For the defined sample request, we check the visible confirmation and the supported saving and notification path, not only the page appearance. We agree on the test data and access first; technical measurement approval remains with your business.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/pennsylvania/lancaster-county/",
+      "beforeSha256": "30a25529ebc3550d68434a23651f01b509f71755e6a2bf2f176f7ae885c8fac9",
+      "afterSha256": "bb10eba862c00ebd1fa35a7940c9288de661e9cab042eeb3b2f9cf5af2cbaaed",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree the business objective and review customer questions, current pages and available search evidence. Improve researches one active service or topic and delivers one substantial improvement; Grow can connect two improvements across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production.",
+          "after": "We agree on the business objective and review customer questions, current pages and available search evidence. Improve researches one active service or topic and delivers one substantial improvement; Grow can connect two improvements across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/pennsylvania/northampton-county/",
+      "beforeSha256": "236369fd3af204c1d43a06cf42a76940f7d9f67dc762b22dd62a0f5a3ff4f87f",
+      "afterSha256": "2bef22906fed7fdddef1d745f156764e841e0e85901ce367c45d69634009474e",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "question"
+          ],
+          "before": "What should survive a catalogue redesign besides the page text?",
+          "after": "What should survive a catalog redesign besides the page text?",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Plan catalogue preservation",
+          "after": "Plan catalog preservation",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "question"
+          ],
+          "before": "Can care keep the catalogue current without taking over order management?",
+          "after": "Can care keep the catalog current without taking over order management?",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "1",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Catalogue updates and care limits",
+          "after": "Catalog updates and care limits",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/charlottesville-city/",
+      "beforeSha256": "9f5266e7482afb1c5f7cfcb46141fe4f8bf668185ed65217faf45d11670ffe7a",
+      "afterSha256": "ed72d3c9b7534e03cf4cae32653b70943c42688ebb5a66da08997fc029cc6c91",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "We can agree redirects for known public addresses to a relevant current destination, within the selected migration scope. Provide the links used in old messages or bookmarks before launch planning. A redirect on your website cannot rewrite a provider-owned account address or transfer a customer session; those changes depend on the outside service.",
+          "after": "We can agree on redirects for known public addresses to a relevant current destination, within the selected migration scope. Provide the links used in old messages or bookmarks before launch planning. A redirect on your website cannot rewrite a provider-owned account address or transfer a customer session; those changes depend on the outside service.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/fredericksburg-city/",
+      "beforeSha256": "e2bc96fcbb7c3d2b8c207f450874818756095476c72f41cba7a54b3a898dfd70",
+      "afterSha256": "822a2ccc990c2eb9e241543e44739139d318985f082849c281e8c8ff7800efc1",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "A developer can update the delivered source and publish checked changes, or we can agree studio work. A small supplied image or caption replacement may fit care; a complete new project story with writing and page work is more substantial. We define its facts, permissions, destination and review before treating it as a monthly improvement or separate project.",
+          "after": "A developer can update the delivered source and publish checked changes, or we can agree on studio work. A small supplied image or caption replacement may fit care; a complete new project story with writing and page work is more substantial. We define its facts, permissions, destination and review before treating it as a monthly improvement or separate project.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/manassas-city/",
+      "beforeSha256": "93e6c0c5e03e235962565d50c6f4b04f8739a480889e28d42933c9f894e7482a",
+      "afterSha256": "409caa132a6543787e9f1254e11f8fa84960f895a5ee0a53feaf2be27afe5d03",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree the verification method before testing. A public-link check may be enough for the website handoff, while deeper order or payment checks depend on the provider’s supported test options and authorized access. A live transaction is not assumed. The final record should distinguish the website path that was checked from provider behavior that could not be verified.",
+          "after": "We agree on the verification method before testing. A public-link check may be enough for the website handoff, while deeper order or payment checks depend on the provider’s supported test options and authorized access. A live transaction is not assumed. The final record should distinguish the website path that was checked from provider behavior that could not be verified.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree website and connection checks",
+          "after": "Agree on website and connection checks",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/allegany-county/",
+      "beforeSha256": "cebb43e19c5197ebf8546835d7d8065459d3a628a24830b1b8c39ab1a84880e0",
+      "afterSha256": "5a9f40fb9030023d9dc9ba204a626354cd4c1ff9c19c3df00e85d5beb3c4853a",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "For a supported site, we can agree a related set of supplied contact, text and link changes under the care plan. You identify the current branch facts and replacement documents; I update the agreed website content. Creating a new catalogue, checking supplier stock or managing product data is a different scope from keeping existing pages current.",
+          "after": "For a supported site, we can agree on a related set of supplied contact, text and link changes under the care plan. You identify the current branch facts and replacement documents; I update the agreed website content. Creating a new catalog, checking supplier stock or managing product data is a different scope from keeping existing pages current.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/bronx-county/",
+      "beforeSha256": "bf8f0933056d1700e80985a8ca1f7561c28a84416765e6f5c810724069113987",
+      "afterSha256": "ab3a43c55b6fb959b18042d77f62d47ae40a2b3b61b9167a61f30aa8058c7f47",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. We can agree a review of how visitors find an example and reach the custom-order discussion, then identify what can be retained. You receive an ordered fix list within the review scope. A gallery labeling problem may need a contained change; rebuilding becomes a separate proposal if the wider structure and customer journey need work.",
+          "after": "Yes. We can agree on a review of how visitors find an example and reach the custom-order discussion, then identify what can be retained. You receive an ordered fix list within the review scope. A gallery labeling problem may need a contained change; rebuilding becomes a separate proposal if the wider structure and customer journey need work.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/cayuga-county/",
+      "beforeSha256": "f75d6f16918b1a51c1829970a94778859fe48657f087d238d0b499fdf75f0894",
+      "afterSha256": "485b4625eaf06b590ed64b3cf296416c5ce84d808e8cd05ca72a1653f8960036",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Send the project addresses already used in search, proposals or customer messages. We decide which can remain and map agreed replacements where the structure changes. Project images and captions also need review before transfer. The quote defines migration work and redirects; a redesign can reduce avoidable broken links but cannot promise unchanged search visibility.",
+          "after": "Send the project addresses already used in search, proposals or customer messages. We decide which can remain and map agreed replacements where the structure changes. Project images and captions also need review before transfer. The written proposal defines migration work and redirects; a redesign can reduce avoidable broken links but cannot promise unchanged search visibility.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/chemung-county/",
+      "beforeSha256": "1588d4358c177c9426b9fa3a1ffa915cf8b55560c7f8d19effa43f822c673807",
+      "afterSha256": "d024607bd84ba492250fe991eb32a2f8220b7e5e34c735f0097e1243d327e444",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree the supported site and contact path first. Care includes the specified checks and a related set of small changes you supply, such as revised service descriptions or shop details. It does not independently verify glass specifications or rewrite the whole service catalogue. Substantial new content or changes to how orders work need a separate agreed task.",
+          "after": "We agree on the supported site and contact path first. Care includes the specified checks and a related set of small changes you supply, such as revised service descriptions or shop details. It does not independently verify glass specifications or rewrite the whole service catalog. Substantial new content or changes to how orders work need a separate agreed task.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/barry-county/",
+      "beforeSha256": "00ba0800bf5523a375ce8591ca28170b19db7c4fd6fa408d09161f547aa07594",
+      "afterSha256": "5a46a4602b261b9b5eac0d634070c2fcd03e1f42428a4f0956ef9120b4a403f1",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Share the promotion date before booking so I can assess a realistic scope and schedule. Approved cake photographs, current options, account access and your review time all affect readiness. We set the start and launch dates in the proposal. If essential content arrives late or the work expands, we agree the effect on the schedule rather than assuming the promotion deadline is guaranteed.",
+          "after": "Share the promotion date before booking so I can assess a realistic scope and schedule. Approved cake photographs, current options, account access and your review time all affect readiness. We set the start and launch dates in the proposal. If essential content arrives late or the work expands, we agree on the effect on the schedule rather than assuming the promotion deadline is guaranteed.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/calhoun-county/",
+      "beforeSha256": "454df0b757eb0ccdabae5721ee422240eac980ab93b07a28856eb5415fdb6da0",
+      "afterSha256": "947780ffee0535d539209c9e373ca5c8830322d270e500db8733c958a4a346e9",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can agree concrete reading and contact tasks, such as finding existing-memorial services without using a mouse or understanding an example without its photograph. My finished-site checks include phone layouts, keyboard use and contrast, with results and limits recorded. Your team approves the wording. Specialist accessibility assessment or certification requires separate scope.",
+          "after": "We can agree on concrete reading and contact tasks, such as finding existing-memorial services without using a mouse or understanding an example without its photograph. My finished-site checks include phone layouts, keyboard use and contrast, with results and limits recorded. Your team approves the wording. Specialist accessibility assessment or certification requires separate scope.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/genesee-county/",
+      "beforeSha256": "50eed5337a0a2f6175a8593ade5c58f2692b72ea4e454d39d4b1234442fad481",
+      "afterSha256": "b71a7fbeb53de6ce74301f6723d9c86de8327c19f9ece6d47c5858912a38c523",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "I compare the services you actually offer with customer questions, relevant search results and available keyword evidence. Repair and refurbishment may need different explanations, but a term alone does not justify another page. We agree a page map based on useful differences and publish accurate titles, headings and internal links. Research does not establish a ranking or inquiry guarantee.",
+          "after": "I compare the services you actually offer with customer questions, relevant search results and available keyword evidence. Repair and refurbishment may need different explanations, but a term alone does not justify another page. We agree on a page map based on useful differences and publish accurate titles, headings and internal links. Research does not establish a ranking or inquiry guarantee.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/hillsdale-county/",
+      "beforeSha256": "943f201721ecf937def21892c7838fcdd21443f9d8ba9ef65bf83b965ad379e4",
+      "afterSha256": "c8020cddbaf9b100fdd6b1a5257fb1bec4f904ab88858047531b3b268bfc58e9",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "That depends on who buys the work and how they search. I start with your actual fixture, machining and gauging services, then research the questions and terminology relevant to those buyers. A local address can support trust without making every page a location page. We agree useful content and search improvements; geographic labels alone do not establish demand.",
+          "after": "That depends on who buys the work and how they search. I start with your actual fixture, machining and gauging services, then research the questions and terminology relevant to those buyers. A local address can support trust without making every page a location page. We agree on useful content and search improvements; geographic labels alone do not establish demand.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/henderson-county/",
+      "beforeSha256": "0b128058f1c5a9bb830a3f99095ba58da85e3e6c6eb18623db95bd48dd67259d",
+      "afterSha256": "a87187668f3ab6fc00def1589477a8ccb1ff9b2fb9d5d21d225ddab78d4cd580",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Care can include an agreed set of small menu-text or link changes from your approved source, but it is not automatic synchronization or continuous staffing. We agree the submission and work windows before enrollment. If prices change frequently or must publish at a precise time, describe that need before quoting so the update process and any additional functionality are assessed.",
+          "after": "Care can include an agreed set of small menu-text or link changes from your approved source, but it is not automatic synchronization or continuous staffing. We agree on the submission and work windows before enrollment. If prices change frequently or must publish at a precise time, describe that need before quoting so the update process and any additional functionality are assessed.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/kenton-county/",
+      "beforeSha256": "9067c06feb7a3722ef1c40a7b745e3468587b580184810b2b36c324e1842cae9",
+      "afterSha256": "e9a896b3c97436a01f732455dc5ad70de53c6d3bd979fdcd4a5807c7b664440a",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Give me the opening date and identify any photographs, service details or approvals that will only become available near it. We agree a realistic website page list, review schedule and launch date before booking. Design approval is one milestone; checking and approving the working site is another. Late inputs or added work can change the agreed timetable.",
+          "after": "Give me the opening date and identify any photographs, service details or approvals that will only become available near it. We agree on a realistic website page list, review schedule and launch date before booking. Design approval is one milestone; checking and approving the working site is another. Late inputs or added work can change the agreed timetable.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/fauquier-county/",
+      "beforeSha256": "6946f10ab42ee43795c375b838d5dc3beab265f7a4f9cc736becbdd050ca3859",
+      "afterSha256": "25307cb0fa45b06d2467ace28cd9ded06bde1dda5aa1181701dfcd9f6315e95b",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can plan appropriately sized website images and choose where a closer view helps a visitor. Supply the best permitted originals, then we agree the images and layouts the site needs. I check the finished pages on phones and review speed as part of the build. This is a recorded quality check, not a guarantee of loading speed on every connection.",
+          "after": "We can plan appropriately sized website images and choose where a closer view helps a visitor. Supply the best permitted originals, then we agree on the images and layouts the site needs. I check the finished pages on phones and review speed as part of the build. This is a recorded quality check, not a guarantee of loading speed on every connection.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/henry-county/",
+      "beforeSha256": "c1acf44770cecd547c3509044f06d51aa1b26934f5d4ece53f052b28120309ab",
+      "afterSha256": "cc40e7805874d79147b9838cf916c24dede814df7762ebb71b6bf3093f4a3001",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes, provided we agree publishable evidence before writing. Your team can supply an approved general description of the work, permitted process photographs or an anonymized account that does not expose customer information. We do not invent a case study to fill a gap. If permission or technical approval is still needed, we identify that dependency in the content plan.",
+          "after": "Yes, provided we agree on publishable evidence before writing. Your team can supply an approved general description of the work, permitted process photographs or an anonymized account that does not expose customer information. We do not invent a case study to fill a gap. If permission or technical approval is still needed, we identify that dependency in the content plan.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/montgomery-county/",
+      "beforeSha256": "4905d6b88e681b1c4e0fffca83e752f20457113c6d2001ab27fbffdd71ab04a2",
+      "afterSha256": "390d4947077dcdb7ea85196d9d330759cfb10efc6bf1555da62a4585ddf18768",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Start with the project pages, photographs and addresses that already help customers understand your work. We can retain useful material while changing the navigation or grouping. Before quoting, identify links used in search, proposals and past marketing so we can agree any redirects and checks. A larger content inventory or migration is assessed separately from a straightforward new build.",
+          "after": "Start with the project pages, photographs and addresses that already help customers understand your work. We can retain useful material while changing the navigation or grouping. Before quoting, identify links used in search, proposals and past marketing so we can agree on any redirects and checks. A larger content inventory or migration is assessed separately from a straightforward new build.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/florida/columbia-county/",
+      "beforeSha256": "34d22273ac84da9dfaf561a51411a6e90a1351ca50f37655570d8d78c6b685a8",
+      "afterSha256": "d4ae4375c443562086e3d140b51d57bbc21255ec9467b84f0abaa3f24123c29d",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Only if there are useful customer questions that the service pages do not already answer. Clear kitchen, closet and built-in information may be the first priority. Research can identify a worthwhile preparation guide, but publishing regular posts is not a requirement for buying the website. We agree any articles inside the page plan and price later content separately.",
+          "after": "Only if there are useful customer questions that the service pages do not already answer. Clear kitchen, closet and built-in information may be the first priority. Research can identify a worthwhile preparation guide, but publishing regular posts is not a requirement for buying the website. We agree on any articles inside the page plan and price later content separately.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/florida/escambia-county/",
+      "beforeSha256": "c82c26d89437a53f0850791c9e1885fcaefbcafebf5b78b2edab48cce4208d2d",
+      "afterSha256": "50d6b86f8a6cb005e1c5e7e9a6040638ada9bb4ee032a01f3c54789e7234937e",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Ask the designer to show how a sign company would identify your installation role, find relevant evidence and make a useful request. The proposed page map and checks should reflect that commercial relationship. Compare the included writing, review stages, migration work and ongoing costs in the written scope. A visually impressive portfolio alone does not demonstrate that the trade audience has been understood.",
+          "after": "Ask the designer to show how a sign company would identify your installation role, find relevant evidence and make a useful request. The proposed page map and checks should reflect that commercial relationship. Compare the included writing, review stages, migration work and ongoing costs in the written proposal. A visually impressive portfolio alone does not demonstrate that the trade audience has been understood.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/florida/lake-county/",
+      "beforeSha256": "b5e2d94551f5dc61a9f9d9946e40689b5972f2562efbc54ef5f24f4e8f5cb41f",
+      "afterSha256": "74d5e8d954248fc566b9c80224ad67878aa9585ca544acf6eeb17ae5d96a07a3",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can agree a website review that checks the page explanation, request path and available delivery evidence. Bring examples of where customers get stuck and access to the supported receiving route. The findings distinguish website problems from questions about your estimating process. You receive prioritized recommendations; a larger redesign or new estimating system would require its own scope.",
+          "after": "We can agree on a website review that checks the page explanation, request path and available delivery evidence. Bring examples of where customers get stuck and access to the supported receiving route. The findings distinguish website problems from questions about your estimating process. You receive prioritized recommendations; a larger redesign or new estimating system would require its own scope.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/florida/lee-county/",
+      "beforeSha256": "547ea504b37104563bb25124cefaa7bf4035ad15d9d76df34878524a1a41a819",
+      "afterSha256": "6f0e762aaa7ab232d2aba601f4e7798676a21755573d33c8626a2cc856427d8f",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. An initial conversation can identify the pages, usable material and missing approvals. Before build work starts, we need the agreed business facts, photographs and account access ready. If some cabinetry projects cannot yet be shown, we agree a smaller publishable selection or revise the schedule. The written proposal records what will be delivered and when.",
+          "after": "Yes. An initial conversation can identify the pages, usable material and missing approvals. Before build work starts, we need the agreed business facts, photographs and account access ready. If some cabinetry projects cannot yet be shown, we agree on a smaller publishable selection or revise the schedule. The written proposal records what will be delivered and when.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/ohio/ashland-county/",
+      "beforeSha256": "2d570ae2272ce9cf313a09ba67037b84b72a69f418a6f5572a5b218e60e79cdc",
+      "afterSha256": "8517373423be058c6dd6438db483165afc015db29c962769e20c4a9e1429aa50",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. We can agree representative buyer tasks, including a request where power or connectivity is unknown, and review the supported pages and inquiry path against them. The findings identify missing explanations, confusing actions and any access limits. Your specialists verify product suitability; the website review does not assess surveillance performance or recommend a hardware configuration.",
+          "after": "Yes. We can agree on representative buyer tasks, including a request where power or connectivity is unknown, and review the supported pages and inquiry path against them. The findings identify missing explanations, confusing actions and any access limits. Your specialists verify product suitability; the website review does not assess surveillance performance or recommend a hardware configuration.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "beforeSha256": "5807c234b02e9d95703a92adc94d1fc4c3136095abf801a128b22c9dc684bc03",
+      "afterSha256": "af229065746a77841782127f7c6e93aa67de0ff901cb5e0d8739bb32f56ef81c",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "A focused review can identify whether clearer component, assembly and finish descriptions would solve the problem on the existing website. We agree the pages and inquiry path to inspect, then record priorities and any practical small fix within the purchased review. A broader rebuild is a separate decision if the structure or supported platform prevents the needed changes.",
+          "after": "A focused review can identify whether clearer component, assembly and finish descriptions would solve the problem on the existing website. We agree on the pages and inquiry path to inspect, then record priorities and any practical small fix within the purchased review. A broader rebuild is a separate decision if the structure or supported platform prevents the needed changes.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/cortland-county/",
+      "beforeSha256": "4c83f08c8a2207752bdc98a398171827e92a36055ccdd402e5ca53dcb9c131bb",
+      "afterSha256": "a0b793bffcdd5b8a771d09a551e77a98a7dd28317d78782b8e9e04725469b6e4",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Begin while there is time to agree the page map, clear project-image permissions and approve service facts. The build schedule also needs your design and finished-site reviews; it is not just production time. Share the intended promotion date early, and I will assess the work and record feasible dates in the proposal. Delayed inputs or added features can move launch.",
+          "after": "Begin while there is time to agree on the page map, clear project-image permissions and approve service facts. The build schedule also needs your design and finished-site reviews; it is not just production time. Share the intended promotion date early, and I will assess the work and record feasible dates in the proposal. Delayed inputs or added features can move launch.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/essex-county/",
+      "beforeSha256": "9ff838894945a11ca0eac3fd90dfa48fd58607f51bdb0ed29d799d0365f00fa2",
+      "afterSha256": "c1ad8a92d1726f757142d983b6f937d915eb59ce9983c3fbdd18c8671a26fc6d",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "No. You supply and approve changed rental facts, and we agree the website edits and publishing window. Care does not monitor stock, decide current terms or promise immediate publication whenever shop conditions change. If opening information, package descriptions and return instructions must change together, send them as one related request and identify any deadline before work is scheduled.",
+          "after": "No. You supply and approve changed rental facts, and we agree on the website edits and publishing window. Care does not monitor stock, decide current terms or promise immediate publication whenever shop conditions change. If opening information, package descriptions and return instructions must change together, send them as one related request and identify any deadline before work is scheduled.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/franklin-county/",
+      "beforeSha256": "6c56758bdea721fa183d1a1e0a27db9817aa215bb83bf54a1cd01894aa3276dd",
+      "afterSha256": "d4a9b33369c28af9d110778810526021ed5a57f5b1a455c5244ddbf3ec07b1df",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. Before reorganizing them, identify the addresses used by search visitors, organizers and referral partners. We can keep suitable URLs and agree redirects where offers move, then check internal links and the relevant inquiry destinations. Available search data can help assess the transition, but neither redirects nor a redesign guarantee that traffic stays the same.",
+          "after": "Yes. Before reorganizing them, identify the addresses used by search visitors, organizers and referral partners. We can keep suitable URLs and agree on redirects where offers move, then check internal links and the relevant inquiry destinations. Available search data can help assess the transition, but neither redirects nor a redesign guarantee that traffic stays the same.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/greene-county/",
+      "beforeSha256": "ce5daaee790ece0e4a471ba2b65ee691717b64518535115bc294d47d2bf81242",
+      "afterSha256": "e33331834ffb8fc8059053ad89838087036807967f16cf239536c56f99f04c71",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We agree the work window and publishing arrangement before enrollment; ordinary care is not an instant or round-the-clock harvest-news service. Supply the approved notice, its intended dates and any related hours or contact changes together. If your stand needs frequent same-day publishing, raise that requirement before booking so we can assess a suitable update arrangement and its scope.",
+          "after": "We agree on the work window and publishing arrangement before enrollment; ordinary care is not an instant or round-the-clock harvest-news service. Supply the approved notice, its intended dates and any related hours or contact changes together. If your stand needs frequent same-day publishing, raise that requirement before booking so we can assess a suitable update arrangement and its scope.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/hamilton-county/",
+      "beforeSha256": "1cf7fbd667aa85ed276c322408a8d1504ba7f519e566d274c372781772a67f6e",
+      "afterSha256": "95ad0a3998510b6f817bbad872cd7dbdfc70f0b76382f40d0bbe18bfa7222f06",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "The public pages can still develop outdated service descriptions, contact details or links to the customer tool. We can agree care for that supported website and a related set of changes you supply. This does not include administering the marina app, monitoring launch requests or managing storage records. The app's operating responsibilities remain separate from website upkeep.",
+          "after": "The public pages can still develop outdated service descriptions, contact details or links to the customer tool. We can agree on care for that supported website and a related set of changes you supply. This does not include administering the marina app, monitoring launch requests or managing storage records. The app's operating responsibilities remain separate from website upkeep.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kings-county/",
+      "beforeSha256": "3a3386b1b3b8c3287a3cb78b70e000905aecb1178e451091235bae0a7df0a868",
+      "afterSha256": "745a2a9f374d7a53fc9805c54bb860a4db4655b1ace75c8638364d4cbd9806fb",
+      "edits": [
+        {
+          "path": [
+            "1",
+            "answer"
+          ],
+          "before": "Yes. A few well-chosen projects can explain the studio's range if their captions identify the work performed and credit collaborators accurately. We agree the evidence available for each service before setting the page plan. Where client material cannot be shown, use an approved description or another permitted example; do not pad the portfolio with invented projects or unsupported claims.",
+          "after": "Yes. A few well-chosen projects can explain the studio's range if their captions identify the work performed and credit collaborators accurately. We agree on the evidence available for each service before setting the page plan. Where client material cannot be shown, use an approved description or another permitted example; do not pad the portfolio with invented projects or unsupported claims.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/livingston-county/",
+      "beforeSha256": "7f69eb0baf04f7d6729306454af5203683cff1f842e59511def16aa77faf7839",
+      "afterSha256": "a42cf698fcaba04168c80bdb2ad86d90cb93a2a1f46ba21f2471c4358bc754ed",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. We can agree a page plan using approved service descriptions, your team’s responsibilities and nonconfidential process explanations. You identify what may be published and approve the technical claims. If an illustrative diagram would help, we can scope it explicitly and label it as an illustration rather than present it as a completed customer installation.",
+          "after": "Yes. We can agree on a page plan using approved service descriptions, your team’s responsibilities and nonconfidential process explanations. You identify what may be published and approve the technical claims. If an illustrative diagram would help, we can scope it explicitly and label it as an illustration rather than present it as a completed customer installation.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/michigan/wayne-county/",
+      "beforeSha256": "3e5ba4c9538207b9ed06386281eb59d95e9f7372fd3be1dcfe6f8d9309d39ff0",
+      "afterSha256": "d2f1f6e6f05d0f2dfdc413d604882b5ada101f1be73562e8f911e230140b6f27",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can use selected still images, short project descriptions and deliberate play controls so visitors choose which work to watch. Before quoting, we agree the video host, player behavior and any caption or transcript work. I check the agreed presentation on phones and with a keyboard; video hosting subscriptions and additional media production are separate costs.",
+          "after": "We can use selected still images, short project descriptions and deliberate play controls so visitors choose which work to watch. Before quoting, we agree on the video host, player behavior and any caption or transcript work. I check the agreed presentation on phones and with a keyboard; video hosting subscriptions and additional media production are separate costs.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/tennessee/carter-county/",
+      "beforeSha256": "efd800cf90376405136ea2ee7fd10d762f1206d54d9f1a98c5e8e490c8299ca4",
+      "afterSha256": "59415af6106bb563168fca7f335435bdb7b9a0d051a05384eb26e9b64b1fbeb6",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "That can be a useful starting point. Send the current shop and wedding-page addresses so I can assess how they connect. We can scope new explanatory pages and a clear route to your existing shop or wedding inquiry. Moving catalogue products, orders, payment settings or customer accounts would need its own assessment before you book.",
+          "after": "That can be a useful starting point. Send the current shop and wedding-page addresses so I can assess how they connect. We can scope new explanatory pages and a clear route to your existing shop or wedding inquiry. Moving catalog products, orders, payment settings or customer accounts would need its own assessment before you book.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/ohio/franklin-county/",
+      "beforeSha256": "c305b1715893e3c54c630abfcb3a67ad3e2135307a2ff7d2dfef1ffff32e9590",
+      "afterSha256": "87bde83202105ffbc3adefee4aa72381acbe57c6b639f27cd232653710df60d9",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can agree a test brief with a fictional buyer choosing an appearance model, then another combining a functional question with a presentation need. I follow the agreed contact path on a phone and with a keyboard, checking that the purpose reaches the receiving message and that the receipt explains the next review. The test uses invented information, not confidential product files.",
+          "after": "We can agree on a test brief with a fictional buyer choosing an appearance model, then another combining a functional question with a presentation need. I follow the agreed contact path on a phone and with a keyboard, checking that the purpose reaches the receiving message and that the receipt explains the next review. The test uses invented information, not confidential product files.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/ohio/montgomery-county/",
+      "beforeSha256": "974fe36a6c2ef38a61c4f7a7bcf97c11ad797aca7b1ed09616694409353fce26",
+      "afterSha256": "4c98f26a666cb85c4c578818ff648413961c16c44731223b2665535a76e4bb8b",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can review the existing project addresses before changing the portfolio. Useful pages may keep their addresses; moved pages need an agreed destination and redirect. Send any saved links or search reports you have, and tell me what is missing. We agree the migration work before booking; preserving useful routes does not guarantee unchanged search rankings.",
+          "after": "We can review the existing project addresses before changing the portfolio. Useful pages may keep their addresses; moved pages need an agreed destination and redirect. Send any saved links or search reports you have, and tell me what is missing. We agree on the migration work before booking; preserving useful routes does not guarantee unchanged search rankings.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/ohio/richland-county/",
+      "beforeSha256": "ef09dce9b8317d3b35a6561c5721c1e30484eb2d7997266139a626b360b0e3a0",
+      "afterSha256": "21c3515eef5f74c859ff0b7e100dd7421f2663371eb73bba5df02503b7e06b7c",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree the pages and content to build",
+          "after": "Agree on the pages and content to build",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/vermont/bennington-county/",
+      "beforeSha256": "fdbda89cb48c7d84f582f4690c01c5ff73789dafdc6804da76f0cc96165c7b53",
+      "afterSha256": "cea858b26e55f12209ea34b5b74ef05985859065ec320293dff5fcb35e3dff50",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We review the old addresses before removing pages. A useful older page can explain its status and lead to your current configuration inquiry. If a genuine replacement exists, we can agree a redirect; otherwise, the missing-page route should help the visitor recover. We define and check those changes within the quoted migration work, without implying that an archived design is available.",
+          "after": "We review the old addresses before removing pages. A useful older page can explain its status and lead to your current configuration inquiry. If a genuine replacement exists, we can agree on a redirect; otherwise, the missing-page route should help the visitor recover. We define and check those changes within the quoted migration work, without implying that an archived design is available.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/boyle-county/",
+      "beforeSha256": "9715447424bc9c43503cdc5cb411f73040a42cbabc9d60ba077fa2e2ab58d418",
+      "afterSha256": "fb08b397c6f2bd580897bec4761542600b9e178ccddfbcfa8c1b1fc7657e1c7f",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "I can prepare supplied photographs for clear website use, with the edits agreed in the quote. We should preserve the grain, weathering and other details the example is meant to show, and explain relevant lighting or sample differences in the caption. Screens cannot guarantee an exact color match. You approve the images and factual descriptions; new photography is separate work.",
+          "after": "I can prepare supplied photographs for clear website use, with the edits agreed in the written proposal. We should preserve the grain, weathering and other details the example is meant to show, and explain relevant lighting or sample differences in the caption. Screens cannot guarantee an exact color match. You approve the images and factual descriptions; new photography is separate work.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/carroll-county/",
+      "beforeSha256": "3b565feffb3e766cc9c3ef10a481246c631cf72229da2cf6f1dee683c45dd41f",
+      "afterSha256": "c4424fb45ad4c04f787442114b506114f268e5e7f57695708d679063050f1bb9",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree the website's public information",
+          "after": "Agree on the website's public information",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/virginia/colonial-heights-city/",
+      "beforeSha256": "a43b4b444ccfae4ed9c0fc154d00d2e502712dce372940ed83b1db2b8dce1106",
+      "afterSha256": "383a7e31a8a28ab84e13d87ce6508755f628863e99a839146ec5bbeed6d08a96",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Yes. We can replace the sales invitation with a clear closed date, approved production or distribution information and the right contact for existing orders. The campaign can remain identifiable for people using saved links. You or the shop provider must also close the actual ordering route. We agree manual updates or any automatic expiry separately before building the page.",
+          "after": "Yes. We can replace the sales invitation with a clear closed date, approved production or distribution information and the right contact for existing orders. The campaign can remain identifiable for people using saved links. You or the shop provider must also close the actual ordering route. We agree on manual updates or any automatic expiry separately before building the page.",
+          "beforeExists": true,
+          "afterExists": true
+        },
+        {
+          "path": [
+            "0",
+            "links",
+            "0",
+            "label"
+          ],
+          "before": "Agree changes after a campaign closes",
+          "after": "Agree on changes after a campaign closes",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/new-hampshire/hillsborough-county/",
+      "beforeSha256": "faf589d098c560e24a2be8afb42d5967d337440ac3ac5e2edc6efd555af6379d",
+      "afterSha256": "ec96bbbcb11eea1c6713ff05bf1af890c2bdfa725c9bfd49131867897f114e29",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Usually, a shared service page can explain the ordering process while catalogue links identify the garments. I would propose another page when customers need meaningfully different preparation or service information, rather than for every size, colour or logo position. For a mixed order, we can show a labelled example and explain how to send the breakdown through your existing quote route.",
+          "after": "Usually, a shared service page can explain the ordering process while catalog links identify the garments. I would propose another page when customers need meaningfully different preparation or service information, rather than for every size, color or logo position. For a mixed order, we can show a labeled example and explain how to send the breakdown through your existing quote route.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/maryland/worcester-county/",
+      "beforeSha256": "859bedc39badd3aa5f8c86a7a4bc44baa0d60d7fe40a469a145f832ef3bdb0ee",
+      "afterSha256": "6c174820ffd54d46a2013cbdb3b3cd6fb97f84a194845298ee9c3239c3ce60f3",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "No. Approved photographs of the same space with the shade open and closed, paired with clear captions, can explain the difference. If you have a useful clip, we can assess it for the page and agree playback controls and a readable alternative. The captions should describe that project's goals and result without suggesting the same system will suit every site.",
+          "after": "No. Approved photographs of the same space with the shade open and closed, paired with clear captions, can explain the difference. If you have a useful clip, we can assess it for the page and agree on playback controls and a readable alternative. The captions should describe that project's goals and result without suggesting the same system will suit every site.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/kentucky/menifee-county/",
+      "beforeSha256": "e02c8e9c34838a5ea7359dbe0039a0bf0e38491c01cc799169c86548b0f01b6d",
+      "afterSha256": "872fa1bd36c04add4dd7833e5d82fab23ddcb58b15365d34e4193e70dcd09896",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We can start with a comparison when the cabins need only a few short descriptions. Separate pages become useful when each cabin has enough distinct photographs, sleeping details and preparation information to justify a fuller introduction. We agree the actual addresses in the page plan, keeping the comparison useful and avoiding nearly identical pages created only to fill a package.",
+          "after": "We can start with a comparison when the cabins need only a few short descriptions. Separate pages become useful when each cabin has enough distinct photographs, sleeping details and preparation information to justify a fuller introduction. We agree on the actual addresses in the page plan, keeping the comparison useful and avoiding nearly identical pages created only to fill a package.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/north-carolina/northampton-county/",
+      "beforeSha256": "e4b91cbfa02be8108df145994ef5c4fa7c83a22c48856eba2d628740673f372e",
+      "afterSha256": "aeffbe7b3b784b0ca15828d01b53c8b07a7aaac5edb39e48fca0f1924e16838f",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "Send the existing support-page and document addresses you want preserved before we agree the redesign. We can keep suitable URLs or identify matching destinations for agreed redirects, then check the important model-to-manual paths. Old file addresses and hosting behavior need review too; a larger document migration is priced separately rather than assumed to fit the standard redirect allowance.",
+          "after": "Send the existing support-page and document addresses you want preserved before we agree on the redesign. We can keep suitable URLs or identify matching destinations for agreed redirects, then check the important model-to-manual paths. Old file addresses and hosting behavior need review too; a larger document migration is priced separately rather than assumed to fit the standard redirect allowance.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/pennsylvania/bradford-county/",
+      "beforeSha256": "4eb1d348f45c2e2c67ca0d8a76acbc2f9c5d84f6e2a1af6d8e5f137a6fef4857",
+      "afterSha256": "3a9c03068a87e73ccdc187ae11f14c2f6c011244c30ea2a418da5962e2ac23dd",
+      "edits": [
+        {
+          "path": [
+            "0",
+            "answer"
+          ],
+          "before": "We should decide that from how you review requests. A town or service area may be enough to assess an install-or-remove inquiry initially, while a confirmed visit can need the full address later. The item’s present location, such as an upstairs window, is a separate question. We agree the minimum useful fields and explain what staff will confirm after receiving the message.",
+          "after": "We should decide that from how you review requests. A town or service area may be enough to assess an install-or-remove inquiry initially, while a confirmed visit can need the full address later. The item’s present location, such as an upstairs window, is a separate question. We agree on the minimum useful fields and explain what staff will confirm after receiving the message.",
+          "beforeExists": true,
+          "afterExists": true
+        }
+      ]
+    }
+  ]
+}

@@ -101,3 +101,17 @@ ul.county-hub-grid [data-cl]{display:flex;flex-wrap:wrap;align-items:center;gap:
 .county-general-guidance>p{max-width:75ch;line-height:1.8}
 .county-general-guidance .county-section{padding-block:2rem}
 @media(max-width:700px){.county-area-content .county-directory{grid-template-columns:minmax(0,1fr)}.county-area-content{padding-inline:0}.county-area-detail>summary{padding-inline:0}}
+
+/* Compact state navigation keeps the place finder and every native list usable. */
+.state-area-links{margin-block:2rem;max-width:1100px}
+.state-area-links h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem}
+.state-area-links ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem 1.25rem}
+.state-area-links li{min-width:0;border-top:1px solid var(--line,#bac2c2)}
+.state-area-links a{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:.6rem .25rem;line-height:1.4;text-decoration:none;overflow-wrap:anywhere}
+.state-area-links a:hover span{text-decoration:underline;text-underline-offset:.2em}
+.state-area-links a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.state-area-links small{font-size:.8125rem;color:var(--slate,#526362);margin-top:.25rem}
+.county-browse-all{margin-block:1rem 2rem;border-block:1px solid var(--line,#bac2c2)}
+.county-browse-all>summary{cursor:pointer;min-height:48px;padding:1rem .25rem;font-weight:650}
+.county-browse-all[hidden],.state-area-links[hidden]{display:none}
+@media(max-width:800px){.state-area-links ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:.25rem 1rem}}

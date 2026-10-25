@@ -1,3 +1,4 @@
+import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -6,6 +7,8 @@ import {journeyPages} from '../deployment/journey-dimensions.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
+
+const laterPageKeys=new Set([...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0029 adds exactly 15 SC keys and preserves all 1167 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);
@@ -16,7 +19,7 @@ test('migration 0029 adds exactly 15 SC keys and preserves all 1167 historical k
  assert.equal(paths.length,15);assert.equal(paths.filter(path=>old.includes(journeyPageKey(path))).length,0);
  assert.equal(old.length,1167);assert.equal(next.length,1182);assert.equal(added.length,15);
  assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')&&!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).filter(key=>!key.startsWith('areas_georgia')).sort(),next.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!laterPageKeys.has(key)).filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')&&!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).filter(key=>!key.startsWith('areas_georgia')).sort(),next.slice().sort());
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

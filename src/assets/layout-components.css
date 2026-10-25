@@ -161,9 +161,7 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .studio-site .site-footer--compact .footer-top .wordmark{font-size:1.65rem}
 .studio-site .site-footer--compact .footer-top p:last-child{font-size:1rem}
 .studio-site .site-footer--compact .footer-top a{display:inline-flex;align-items:center;min-height:44px}
-.studio-site .site-footer--compact nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
-.studio-site .site-footer--compact details{border:0;margin:0;padding:0;min-width:0}
-.studio-site .site-footer--compact summary{font:600 1rem/1.5 Manrope,Arial,sans-serif;min-height:44px;padding:.6rem 0;cursor:pointer}
+.studio-site .site-footer--compact nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .studio-site .site-footer--compact .footer-group a{font-size:.9375rem;min-height:36px;padding:.25rem 0}
 .studio-site .site-footer--compact .footer-bottom{font-size:.875rem;gap:.6rem;margin-top:1rem;padding-top:1rem}
 @media(max-width:1023px){
@@ -241,3 +239,10 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .coverage-region-grid li{margin:.55rem 0;line-height:1.6}
 @media(max-width:900px){.coverage-region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.coverage-region-grid{grid-template-columns:1fr;gap:1.25rem}}
+
+.cost-month-shortcuts{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}.cost-month-shortcuts button{min-height:44px;padding:.5rem 1rem;font:inherit;border:1px solid #405b47;background:#faf8f1;color:#102d37;border-radius:4px;cursor:pointer}.cost-month-shortcuts button[aria-pressed="true"]{background:#173d30;color:#fff}.cost-month-shortcuts button:focus-visible{outline:3px solid #ad591f;outline-offset:3px}.cost-month-shortcuts button:disabled{opacity:.6;cursor:default}
+
+@media(max-width:1023px){.studio-site .site-header .wordmark.brand-lockup{min-height:44px;align-items:center}}
+
+/* Existing service destinations, grouped by the buyer’s next job. */
+.service-links>.service-link-group{border-top:1px solid var(--line);margin-top:.25rem;padding-top:.25rem}

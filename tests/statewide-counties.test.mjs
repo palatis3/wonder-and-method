@@ -38,7 +38,7 @@ test('all 62 official counties remain in the state directory and retired URLs re
  const members=countyRegions.flatMap(r=>r.slugs);
  assert.equal(new Set(members).size,62);assert.deepEqual([...members].sort(),official.countySlugs);
  const hub=byPath.get('/areas/new-york/').html,sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,1229);assert.equal((sitemap.match(/<loc>/g)||[]).length,1228);
+ assert.equal(pages.length,1259);assert.equal((sitemap.match(/<loc>/g)||[]).length,1247);
  assert.equal((hub.match(/data-cs=/g)||[]).length,62);
  for(const slug of official.countySlugs){
   const retired=path(slug),destination=slug==='erie'?retired:'/areas/new-york/#'+slug;
@@ -47,8 +47,9 @@ test('all 62 official counties remain in the state directory and retired URLs re
   const route=destination.split('#')[0],page=byPath.get(route);
   assert.ok(sitemap.includes(`<loc>${config.origin+route}</loc>`));assert.ok(page.html.includes(`rel="canonical" href="${config.origin+route}"`));
   assert.match(page.html,/<meta name="robots" content="index,follow"/);
-  for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
  }
+ for(const service of pages.filter(p=>p.path.startsWith('/services/')))assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');
+ for(const state of ['new-york','pennsylvania','ohio'])assert.ok(byPath.get('/areas/').html.includes(`href="/areas/${state}/"`),'directory -> '+state);
 });
 
 test('county directories retain official municipality types and villages crossing county lines',()=>{

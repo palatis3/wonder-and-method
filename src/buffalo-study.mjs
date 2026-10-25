@@ -1,4 +1,5 @@
 import preservedMedia from '../public/civic-sculpture/manifest.json' with {type:'json'};
+import defaultOffers from '../config/offers.json' with {type:'json'};
 import {selectedEdition} from './editions.mjs';
 import {escapeHtml as e} from './shared.mjs';
 
@@ -24,7 +25,7 @@ function still(art){
  return `<picture><img class="buffalo-study-film" src="${e(art.still)}" srcset="${e(art.srcset)}" sizes="(max-width: 767px) calc(100vw - 40px), 1120px" width="${art.width}" height="${art.height}" alt="${e(art.alt)}" fetchpriority="high" decoding="async"></picture>`;
 }
 
-export function buffaloStudy(config={}){
+export function buffaloStudy(config={},offers=defaultOffers){
  const art=buffaloStudyMedia(config);
  const ready=config.civicMotionReady!==false;
  const ambient=ready&&config.civicAmbientReady!==false&&art.ambientMotion;
@@ -36,7 +37,7 @@ export function buffaloStudy(config={}){
  </figure>
  <section class="studio-section buffalo-study-notes" aria-labelledby="buffalo-art-heading"><h2 id="buffalo-art-heading">A city, suggested through lettering.</h2><p>Fluted stone, civic relief and bronze structure give each letter its own detail. A curled bridge underlines the word; small sculpted cars carry the movement into the finished composition.</p><p>These are Buffalo-inspired allusions, not replicas of individual landmarks. This is an animation and art study made for the studio.</p></section>
  ${ambient?`<section class="studio-section buffalo-study-ambient" aria-labelledby="buffalo-ambient-heading"><h2 id="buffalo-ambient-heading">A quieter looping version.</h2><p id="buffalo-ambient-description">A ${art.ambientDuration}-second silent loop holds the complete sculpture in view while cars cross the bronze bridge and the composition gently turns. Playback begins when you choose Play; use the video controls to pause.</p><video id="buffalo-ambient" class="buffalo-study-film" controls playsinline loop preload="none" poster="${e(art.still)}" width="${art.width}" height="${art.height}" aria-label="Buffalo Civic ambient animation" aria-describedby="buffalo-ambient-description">${sources(art.ambientMotion,art.mobileAmbientMotion)}<p><a href="${e(art.ambientMotion)}">Open the Buffalo Civic ambient study (MP4)</a>.</p></video></section>`:''}
- <section class="studio-closing"><h2>Give your homepage its own movement.</h2><p>Signature includes one agreed original animated homepage feature or one 3D centerpiece. Other custom animation is scoped and priced separately, with an appropriate still version and playback controls.</p><a class="button" href="/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry">Ask about custom homepage animation</a><p><a href="/pricing/#website-packages">Compare website packages</a></p></section>
- <p class="buffalo-study-back"><a class="text-link" href="/work/">Back to studio work</a></p>
+ <section class="studio-closing"><h2>Give your homepage its own movement.</h2><p>${e(offers.signature_site.public_name)} includes one agreed original animated homepage feature or one 3D centerpiece. Other custom animation is scoped and priced separately, with an appropriate still version and playback controls.</p><a class="button" href="/contact/?offer=unsure&amp;goal=new_website&amp;request_kind=question#inquiry">Ask about custom homepage animation</a><p><a href="/pricing/#website-packages">Compare website packages</a></p></section>
+ <p class="buffalo-study-back"><a class="text-link" href="/work/">View studio work</a></p>
  </article>`;
 }

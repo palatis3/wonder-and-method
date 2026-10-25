@@ -1,18 +1,17 @@
 import {test,expect} from './fixtures.mjs';
 
-// Keep controls discoverable during reading, while independently checking that
-// they yield to keyboard targets instead of hiding over every text block.
+// Page help stays in flow. Check ordinary reading content and controls, not just focus.
 function coveredContent(){
  const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(node=>node.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})).map(node=>({name:node.className,r:node.getBoundingClientRect()}));
  const hits=[],overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
- for(const node of document.querySelectorAll('main :focus,footer :focus')){
+ for(const node of document.querySelectorAll('main p,main li,main h1,main h2,main h3,main a,main label,main input,main textarea,main button,main summary,main video,footer a')){
   if(!node.checkVisibility({checkVisibilityCSS:true}))continue;
   for(const control of floats)if(overlaps(node.getBoundingClientRect(),control.r))hits.push(control.name+' / '+node.tagName+' '+node.textContent.trim().slice(0,80));
  }
- return {hits,visible:floats.length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1||r.top<0||r.bottom>innerHeight+1).map(({name})=>name)};
+ return {hits,visible:floats.filter(({r})=>r.bottom>0&&r.top<innerHeight).length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1).map(({name})=>name)};
 }
 
-for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`page tools stay available and leave keyboard targets clear at ${width}x${height}`,async({page},testInfo)=>{
+for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`page tools stay in flow and leave text and controls clear at ${width}x${height}`,async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});
  await page.clock.install();
@@ -34,7 +33,9 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
    });
    if(focused){await expect.poll(async()=>(await page.evaluate(coveredContent)).hits).toEqual([]);await page.evaluate(()=>document.activeElement.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();}
   }
-  expect(visible,path+' retains reachable chat positions').toBeGreaterThan(0);
+  await page.locator('#site-help').scrollIntoViewIfNeeded();
+  await expect(page.locator('.back-to-top')).toBeInViewport();await expect(page.locator('.support-chat-launch')).toBeInViewport();
+  const help=await page.locator('#site-help').evaluate(el=>({top:el.getBoundingClientRect().top,mainBottom:document.querySelector('main').getBoundingClientRect().bottom}));expect(help.top).toBeGreaterThanOrEqual(help.mainBottom);
  }
 });
 
@@ -74,7 +75,7 @@ test('navigation order, mobile Services alignment and in-flow footer links agree
     expect(Math.abs(metrics.a-metrics.s)).toBeLessThanOrEqual(1);expect(metrics.font).toBeGreaterThanOrEqual(15);expect(metrics.height).toBeGreaterThanOrEqual(44);
     await page.keyboard.press('Escape');
    }
-   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
+   await expect(page.locator('footer section.footer-group')).toHaveCount(3);await expect(page.locator('footer h2')).toHaveCount(3);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
    await page.locator('footer').scrollIntoViewIfNeeded();await expect(page.locator('a.back-to-top[href="#page-top"]')).toBeVisible();
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }

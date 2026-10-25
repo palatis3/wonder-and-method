@@ -1,6 +1,8 @@
+import {assertOfferBindings} from './check-offer-bindings.mjs';
 import {normalizeOfferCatalog,publicOfferProjection} from '../src/offer-catalog.mjs';
 import {execFileSync} from 'node:child_process';
 import {assertPageDates} from './page-dates.mjs';
+import {assertLocationInquiryContexts} from './location-inquiry-contexts.mjs';
 import {verifyLocalReferences} from './verify-local-references.mjs';
 import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {writeCountyBriefs} from './build-county-briefs.mjs';
@@ -9,7 +11,7 @@ import {supportChatCsp} from '../src/support-chat.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
 import {fingerprintStaticAssets,versionAssetReferences} from './version-static-assets.mjs';
-import {pageStyleFamily,pageFamilyStyles} from './page-family-styles.mjs';
+import {pageStyleFamily} from './page-family-styles.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
 import {livingCityAssetState,copyLivingCityAssets} from './build-living-city-assets.mjs';
@@ -44,7 +46,7 @@ export function applyCssBundles(html,boot,{family}={}){
  // Package selectors do not target the identity. Brand rules now lead the shared
  // cascade, preserving their position before the general layout overrides.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- const styles=`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/${family?'site-family-'+family:'site'}.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}`;
+ const styles=`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}`;
  // Discover the home hero's blocking styles before its font/image preloads
  // and module requests. Keep the two stylesheets in their existing cascade.
  if(family==='home'&&city&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
@@ -64,7 +66,7 @@ export async function buildBrowserBundles(root,config){
  }});
  const client=await bundle({entryPoints:[resolve(root,'src/client.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[publicInputs()]});
  const calculator=await bundle({entryPoints:[resolve(root,'src/calculator.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[publicInputs()]});
- const roi=await bundle({entryPoints:[resolve(root,'src/assets/website-roi.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16']});
+ const roi=await bundle({entryPoints:[resolve(root,'src/assets/website-roi.js')],bundle:true,write:false,format:'esm',minify:true,target:['chrome110','safari16'],plugins:[publicInputs()]});
  return {client:client.outputFiles[0].contents,calculator:calculator.outputFiles[0].contents,roi:roi.outputFiles[0].contents,journeyVersion};
 }
 
@@ -125,6 +127,7 @@ export async function pruneRetiredPlanArtwork(output){
 }
 
 export async function buildSite(){
+await assertLocationInquiryContexts();
 const config=await readJSON('config/site.json');
 const captures=await readJSON('src/portfolio-captures.json');
 for(const [file,sha] of Object.entries(captures.sourceHashes))if(createHash('sha256').update(await readFile(resolve(root,file))).digest('hex')!==sha)console.warn('Portfolio homepage screenshot may be stale: '+file+' changed since '+captures.capturedAt+'.');
@@ -133,6 +136,7 @@ const offers=normalizeOfferCatalog(await readJSON('config/offers.json'));
 const map=await readJSON('authority/v5/site-map.json');
 const tokens=await readJSON('authority/v5/design-tokens.json');
 const geography=await readJSON('authority/v5/geography.json');
+console.log('Offer bindings:',JSON.stringify(assertOfferBindings({config,offers,map,geography})));
 Object.assign(config,await civicAssetState(root,config));
 Object.assign(config,await livingCityAssetState(root,config));
 assertSiteOrigin(config);
@@ -150,6 +154,7 @@ const workbenchScript=resolve(output,'assets/lead-workbench.js');
 await writeFile(workbenchScript,(await readFile(workbenchScript,'utf8')).replace(/lead-workbench-state\.js\?v=[^'"]+/,`lead-workbench-state.js?v=${workbenchStateVersion}`));
 // Retired unaffiliated siteaudit verification file is retained in source history only.
 await cp(resolve(root,'src/assets/brand/favicon.ico'),resolve(output,'favicon.ico'));
+await cp(resolve(root,'src/assets/brand/apple-touch-icon.png'),resolve(output,'apple-touch-icon.png'));
 const browserBundles=await buildBrowserBundles(root,config);
 await writeFile(resolve(output,'assets/client.js'),browserBundles.client);
 await writeFile(resolve(output,'assets/calculator.js'),browserBundles.calculator);
@@ -171,13 +176,8 @@ const css=await buildCssBundles(resolve(root,'src/assets'),{includeChat:Boolean(
 await writeFile(resolve(output,'assets/site.css'),css.shared);
 await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
 await writeFile(resolve(output,'assets/site-guides.css'),css.guides);
-const dynamicStyles=(await Promise.all((await readdir(resolve(output,'assets'),{recursive:true})).filter(file=>/\.(?:js|mjs)$/.test(file)).map(file=>readFile(resolve(output,'assets',file),'utf8')))).join('\n');
-const styleFamilies={};
-for(const family of new Set(pages.map(page=>pageStyleFamily(page.path)))){
- const filtered=pageFamilyStyles(css.shared,pages.filter(page=>pageStyleFamily(page.path)===family).map(page=>page.html).join('\n'),dynamicStyles);
- const file='site-family-'+family+'.css';await writeFile(resolve(output,'assets',file),filtered.css);
- styleFamilies[family]={bytes:Buffer.byteLength(filtered.css),removedRules:filtered.removedRules};
-}
+// A single versioned base survives navigation between page families. Keep the
+// existing section additions and cascade order; family only controls discovery.
 for(const page of pages)page.html=applyCssBundles(page.html,boot,{family:pageStyleFamily(page.path)});
 const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
@@ -262,7 +262,7 @@ await writeFile(resolve(root,'evidence/authority-hashes.json'),JSON.stringify(in
 await writeFile(resolve(root,'evidence/build.json'),JSON.stringify({builtAt:new Date().toISOString(),mode:config.mode,routes:pages.map(p=>p.path),pageDates:Object.fromEntries(pages.filter(p=>p.modifiedAt).map(p=>[p.path,p.modifiedAt])),prices,source:'config/offers.json',gated:['/services/website-care/',...map.pages.filter(p=>p.stage==='launch_if_evidence_ready').map(p=>p.url)].filter(path=>!pages.some(p=>p.path===path)),guideReason:config.guideApprovals?.length?'Dated editorial review and owner publication instruction recorded in config/site.json':'Dated editorial evidence review required before publication',careReason:config.careReady?'Actual coverage and review recorded':'Actual staffed coverage, recipient and escalation must be agreed before enrollment'},null,2));
 console.log(`Built ${pages.length} HTML routes (${config.mode}); source plan and operating records excluded from dist.`);
 console.log(`Removed ${assetPruning.removed.length} unreferenced build assets (${assetPruning.bytesRemoved} bytes); retained ${assetPruning.retained.length} referenced candidates.`);
-return {routes:pages.length,assetPruning,retiredPlanArtwork,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans),families:styleFamilies}};
+return {routes:pages.length,assetPruning,retiredPlanArtwork,cssBytes:{shared:Buffer.byteLength(css.shared),plans:Buffer.byteLength(css.plans),guides:Buffer.byteLength(css.guides)}};
 }
 
 if(process.argv[1]&&resolve(process.argv[1])===resolve(import.meta.filename))await buildSite();

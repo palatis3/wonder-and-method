@@ -21,6 +21,8 @@
 .sample-list{list-style:none;padding:0;margin:1rem 0}.sample-list li{padding:0;margin:.7rem 0}
 .sample-list button{display:flex;flex-direction:column;align-items:start;gap:.4rem;width:100%;padding:.8rem;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line)}
 .sample-list button[aria-pressed=true]{border:2px solid var(--blue);background:var(--subtle)}
+.sample-list button:is(:hover,:focus-visible){color:var(--ink);background:var(--subtle);border-color:var(--blue)}
+.sample-list button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .sample-list strong{font-size:.95rem;line-height:1.55}.sample-list span{font-size:.85rem;color:var(--slate)}
 .workbench-actions{display:flex;flex-wrap:wrap;gap:1rem;margin:1.5rem 0}.workbench button:disabled{opacity:.6;cursor:not-allowed}
 .workbench-evidence ol{padding-left:1.4rem}.workbench-evidence li{margin:.8rem 0;line-height:1.7}

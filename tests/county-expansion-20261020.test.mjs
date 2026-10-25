@@ -1,3 +1,4 @@
+import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import approvedLocationPaths from './fixtures/current-location-paths.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
@@ -26,13 +27,13 @@ const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)
 const oldSchema=prior.at(-1);
 
 test('all fifteen additions remain in the area hub reached from service pages',()=>{
- assert.equal(pages.length,1229);
+ assert.equal(pages.length,1259);
  const servicePages=pages.filter(p=>p.path.startsWith('/services/'));
  assert.ok(servicePages.length>=7);
  for(const slug of slugs){
   const path='/areas/new-york/#'+slug,page=byPath.get('/areas/new-york/');
   const old=`/areas/${slug}-county/`;if(approvedLocationPaths.includes(old))assert.ok(byPath.has(old),old);else {assert.equal(retiredCountyRoutes[old],path);assert.ok(!byPath.has(old));}assert.ok(page.html.includes(`id="${slug}"`));
-  assert.ok(byPath.get('/areas/').html.includes(`href="${path}"`),`Directory missing ${path}`);for(const source of [byPath.get('/areas/erie-county/'),...servicePages])assert.ok(source.html.includes('href="/areas/"'),`${source.path} missing county directory`);
+  assert.ok(byPath.get('/areas/').html.includes(`href="${approvedLocationPaths.includes(old)?old:path}"`),`Directory missing ${path}`);for(const source of [byPath.get('/areas/erie-county/'),...servicePages])assert.ok(source.html.includes('href="/areas/"'),`${source.path} missing county directory`);
   assert.match(page.html,/href="\/services\/seo\/"/);
   assert.match(page.html,/href="\/services\/web-design\/"/);
   assert.match(page.html,/Place types and official sources/);
@@ -47,9 +48,10 @@ test('public pages retain distinct metadata and only live pages enter the sitema
  assert.equal(new Set(titles).size,titles.length);
  assert.equal(new Set(descriptions).size,descriptions.length);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,1228);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1247);
  for(const page of pages){
   if(page.path==='/404/')continue;
+  if(excluded.includes(page.path)){assert.match(page.html,/<meta name="robots" content="noindex,follow"/,page.path);assert.ok(!sitemap.includes(`<loc>${config.origin+page.path}</loc>`),page.path);continue;}
   assert.match(page.html,/<meta name="robots" content="index,follow"/,page.path);
   assert.ok(sitemap.includes(`<loc>${config.origin+page.path}</loc>`),page.path);
   assert.ok(page.html.includes(`rel="canonical" href="${config.origin+page.path}"`),page.path);

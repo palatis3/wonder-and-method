@@ -68,7 +68,8 @@ try{
  if(!css.ok||await css.text()!==await readFile(resolve(root,'src/assets/portfolio-concepts.css'),'utf8'))throw Error('The served concept CSS is stale; build the current source first.');
  browser=await chromium.launch({headless:true});
  for(const camera of ['desktop','phone']){
-  const page=await browser.newPage({viewport:camera==='desktop'?{width:1440,height:1200}:{width:700,height:1600},deviceScaleFactor:camera==='desktop'?1:2,reducedMotion:'reduce'});
+  const viewport=camera==='desktop'?{width:1440,height:1200}:{width:390,height:1440},deviceScaleFactor=camera==='desktop'?1:2;
+  const page=await browser.newPage({viewport,deviceScaleFactor,reducedMotion:'reduce'});
   await page.route('**/*',route=>new URL(route.request().url()).origin===origin.origin?route.continue():route.abort());
   for(const id of ['fieldwork','northline','hearthside']){
    const path='/work/'+id+'/',response=await page.goto(new URL(path+'?qa=1',origin).href);
@@ -80,14 +81,14 @@ try{
    await page.locator('.concept-hero img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
    const clip=await page.locator('.portfolio-concept').evaluate(article=>{const box=article.getBoundingClientRect(),hero=article.querySelector('.concept-hero').getBoundingClientRect();return {x:box.x+scrollX,y:box.y+scrollY,width:box.width,height:hero.bottom-box.top};});
    const bytes=await page.screenshot({clip,animations:'disabled'}),file=id+'-showcase-'+camera+'.webp';
-   const [base,...variants]=await encode(bytes,file,camera==='desktop'?[640,960]:[]);
-   records.push({id,camera,...base,variants});
+   const [base,...variants]=await encode(bytes,file,camera==='desktop'?[480,640,960]:[350]);
+   records.push({id,camera,viewport,deviceScaleFactor,clip,...base,variants});
   }
   await page.close();
  }
  if(JSON.stringify(await hashes())!==JSON.stringify(sourceHashes))throw Error('Capture sources changed during the run; capture the finished build again.');
  await writeFile(resolve(root,'src/city-preview-captures.json'),JSON.stringify({capturedAt:new Date().toISOString(),encoder,sourceHashes,builtPages,records},null,2)+'\n');
- console.log('Captured six actual concept previews and six desktop variants with '+encoder+'.');
+ console.log('Captured six actual concept previews, nine desktop variants and three phone variants with '+encoder+'.');
 }finally{
  await browser?.close();
  // createServer closes its synthetic database when the server emits close.

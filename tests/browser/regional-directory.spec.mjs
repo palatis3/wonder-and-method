@@ -3,7 +3,7 @@ import {retiredCountyRoutes} from '../../deployment/retired-county-routes.mjs';
 import currentLocationPaths from '../fixtures/current-location-paths.mjs';
 
 const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval'],['south-carolina',46,'charleston'],['georgia',159,'richmond'],['mississippi',82,'yalobusha'],['alabama',67,'madison'],['wisconsin',72,'menominee'],['illinois',102,'cook']];
-const searchbox=page=>page.getByRole('searchbox',{name:'County, region or community',exact:true});
+const searchbox=page=>page.getByRole('searchbox',{name:'County, parish, region or community',exact:true});
 
 test('new hubs reveal saved entry fragments with complete place lists and no horizontal overflow',async({page},testInfo)=>{
  test.setTimeout(60_000);
@@ -28,39 +28,39 @@ test('new hubs reveal saved entry fragments with complete place lists and no hor
  await page.screenshot({path:testInfo.outputPath('michigan-entry-320px.png')});
 });
 
-test('typed searches distinguish governments and keyboard results reveal the matching in-page entry',async({page})=>{
+test('typed searches distinguish governments and keyboard results open services while directory bookmarks reveal places',async({page})=>{
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-cs]')).toHaveCount(1607);
+ await expect(page.locator('[data-cs]')).toHaveCount(1746);
  const search=searchbox(page),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,paths] of [
-  ['Richmond city VA',['/areas/virginia/#richmond-city']],
-  ['Richmond county VA',['/areas/virginia/#richmond']],
-  ['Belle Haven town VA',['/areas/virginia/#accomack','/areas/virginia/#northampton']],
-  ['Harpers Ferry town WV',['/areas/west-virginia/#jefferson']],
-  ['Bloomfield charter township MI',['/areas/michigan/#oakland']],
-  ['Bloomfield township MI',['/areas/michigan/#huron','/areas/michigan/#missaukee','/areas/michigan/#oakland']],
-  ['Ward 3 DC',['/areas/district-of-columbia/#district-of-columbia']],
-  ['Georgetown neighborhood DC',['/areas/district-of-columbia/#district-of-columbia']],
-  ['Indianapolis consolidated city county government IN',['/areas/indiana/#marion']],
-  ['Frankfort city KY',['/areas/kentucky/#franklin']],
-  ['Memphis city TN',['/areas/tennessee/#shelby']],
-  ['Asheville city NC',['/areas/north-carolina/#buncombe']],
-  ['Longboat Key town FL',['/areas/florida/#manatee','/areas/florida/#sarasota']],
-  ['Orange county FL',['/areas/florida/#orange']],
+  ['Richmond city VA',['/areas/virginia/richmond-city/']],
+  ['Richmond county VA',['/areas/virginia/richmond-county/']],
+  ['Belle Haven town VA',['/areas/virginia/accomack-county/','/areas/virginia/northampton-county/']],
+  ['Harpers Ferry town WV',['/areas/west-virginia/jefferson-county/']],
+  ['Bloomfield charter township MI',['/areas/michigan/oakland-county/']],
+  ['Bloomfield township MI',['/areas/michigan/huron-county/','/areas/michigan/missaukee-county/','/areas/michigan/oakland-county/']],
+  ['Ward 3 DC',['/areas/district-of-columbia/district-of-columbia/']],
+  ['Georgetown neighborhood DC',['/areas/district-of-columbia/district-of-columbia/']],
+  ['Indianapolis consolidated city county government IN',['/areas/indiana/marion-county/']],
+  ['Frankfort city KY',['/areas/kentucky/franklin-county/']],
+  ['Memphis city TN',['/areas/tennessee/shelby-county/']],
+  ['Asheville city NC',['/areas/north-carolina/buncombe-county/']],
+  ['Longboat Key town FL',['/areas/florida/manatee-county/','/areas/florida/sarasota-county/']],
+  ['Orange county FL',['/areas/florida/orange-county/']],
   ['Jackson city MS',['/areas/mississippi/#hinds','/areas/mississippi/#madison','/areas/mississippi/#rankin']],
   ['Huntsville city AL',['/areas/alabama/#limestone','/areas/alabama/#madison','/areas/alabama/#marshall','/areas/alabama/#morgan']],
   ['Tillatoba MS',['/areas/mississippi/#yalobusha']],
   ['Wisconsin Dells city WI',['/areas/wisconsin/#adams','/areas/wisconsin/#columbia','/areas/wisconsin/#juneau','/areas/wisconsin/#sauk']],
   ['Brookfield town WI',['/areas/wisconsin/#waukesha']],
-  ['Naperville city IL',['/areas/illinois/#dupage','/areas/illinois/#will']],
-  ['Cicero township IL',['/areas/illinois/#cook']],
+  ['Naperville city IL',['/areas/illinois/dupage-county/','/areas/illinois/#will']],
+  ['Cicero township IL',['/areas/illinois/cook-county/']],
   ['Election precinct 1 IL',['/areas/illinois/#monroe']],
   ['Precinct Cache IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
   ['Cache precinct IL',['/areas/illinois/#alexander','/areas/illinois/#johnson']],
-  ['Atlanta city GA',['/areas/georgia/#dekalb','/areas/georgia/#fulton']],
+  ['Atlanta city GA',['/areas/georgia/#dekalb','/areas/georgia/fulton-county/']],
   ['Athens municipality GA',['/areas/georgia/#clarke']],
-  ['Braselton town GA',['/areas/georgia/#barrow','/areas/georgia/#gwinnett','/areas/georgia/#hall','/areas/georgia/#jackson']]
+  ['Braselton town GA',['/areas/georgia/#barrow','/areas/georgia/gwinnett-county/','/areas/georgia/#hall','/areas/georgia/#jackson']]
  ]){
   await search.fill(query);
   await expect(page.locator('[data-county-results] li')).toHaveCount(paths.length);
@@ -79,8 +79,11 @@ test('typed searches distinguish governments and keyboard results reveal the mat
  await searchbox(page).press('Tab');await expect(page.getByRole('button',{name:'Clear',exact:true})).toBeFocused();
  await page.keyboard.press('Tab');await expect(result).toBeFocused();
  await page.keyboard.press('Enter');
- await expect(page).toHaveURL(/\/areas\/virginia\/(?:\?qa=1)?#richmond-city$/);
+ await expect(page).toHaveURL(/\/areas\/virginia\/richmond-city\/(?:\?qa=1)?$/);
+ await page.goto('/areas/virginia/?qa=1#richmond-city');
  await expect(page.locator('#richmond-city')).toHaveAttribute('open','');
+ const permalink=page.locator('#richmond-city').getByRole('link',{name:'Link to this directory entry',exact:true});
+ await permalink.focus();await page.keyboard.press('Enter');
  await expect(page.locator('#richmond-city > summary')).toBeFocused();
  await expect(page.locator('#richmond-city .county-directory')).toBeVisible();
  await expect(page.locator('[data-county-directory]')).toBeVisible();
@@ -112,7 +115,7 @@ test('entry references reveal the applicable source set and historic county book
    await expect(page).toHaveURL(url=>url.pathname===(restored?oldPath:'/areas/maryland/baltimore-area/')&&url.search==='?qa=1&utm_source=bookmark'&&url.hash==='#'+fragment);
    await expect(page.locator('#'+fragment)).toBeVisible();
    await expect(page.locator('#'+fragment)).not.toBeEmpty();
-   await expect(page.locator('main').getByRole('link',{name:'Discuss your website',exact:true}).first()).toBeVisible();
+   await expect(page.locator('main').getByRole('link',{name:'Ask about your website',exact:true}).first()).toBeVisible();
    continue;
   }
   await expect(page).toHaveURL(url=>url.pathname===`/areas/${state}/`&&url.search==='?qa=1&utm_source=bookmark'&&url.hash===`#${slug}`);

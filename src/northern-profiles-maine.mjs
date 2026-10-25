@@ -186,7 +186,7 @@ export const maineRows = [
       ],
       [
         "A different outcome in Rangeley",
-        "Fictional example: a Rangeley customer asks whether a booking can be moved instead of cancelled. The page distinguishes the two requests and lets the business review the applicable arrangement. It does not assume that the customer’s preferred outcome overrides the approved terms or that selecting a new preference secures another place."
+        "Fictional example: a Rangeley customer asks whether a booking can be moved instead of canceled. The page distinguishes the two requests and lets the business review the applicable arrangement. It does not assume that the customer’s preferred outcome overrides the approved terms or that selecting a new preference secures another place."
       ]
     ],
     "search": "Keep cancellation guidance reachable from the relevant service and confirmation path. Public content should explain the approved process while leaving customer-specific decisions to the business. Review searches that indicate people cannot find the request route, but do not turn a cancellation page into a promotional detour or hide essential instructions behind unrelated service offers.",
@@ -381,7 +381,7 @@ export const maineRows = [
         "Not necessarily. The relevant question is how many meaningful product distinctions customers must navigate, not the number of images."
       ],
       [
-        "Can a Rockport empty result be labelled sold out?",
+        "Can a Rockport empty result be labeled sold out?",
         "Only if that is what the underlying information actually establishes. No category match and no available stock are different conditions."
       ]
     ],
@@ -537,7 +537,7 @@ export const maineRows = [
         "Fictional example: a Brewer supplier compares two pack sizes using an approved example. The table shows both the pack quantity and the unit being compared, and states any assumption behind the calculation. It does not imply that the lower unit amount is the total payable for a customer who needs fewer items."
       ]
     ],
-    "search": "Use comparison content to answer real buying questions with consistent definitions and clearly labelled assumptions. Search phrases about cheaper or better options do not justify an unsupported savings claim. Keep the compared offers current and explain material differences. A useful page may show why a direct numeric comparison is inappropriate instead of forcing unlike services into a false ranking.",
+    "search": "Use comparison content to answer real buying questions with consistent definitions and clearly labeled assumptions. Search phrases about cheaper or better options do not justify an unsupported savings claim. Keep the compared offers current and explain material differences. A useful page may show why a direct numeric comparison is inappropriate instead of forcing unlike services into a false ranking.",
     "task": [
       "Normalize one offer comparison",
       "Choose two offers and list units, periods, quantities, deliverables and assumptions. Select a fair comparison basis or explain why no single number is sufficient. Review all example calculations with the business.",
@@ -584,7 +584,7 @@ export const maineRows = [
     "id": "piscataquis",
     "audience": "Businesses displaying recent articles or announcements on the home page",
     "title": "Make an old announcement look like an archive item rather than a current instruction",
-    "focus": "A section labelled latest can show an old announcement long after its practical instructions have expired. Decide what qualifies for prominent display and whether the item is news, a lasting resource or a time-limited offer. Keep publication date, event date and current status distinguishable. An older article can remain useful without occupying the same position as a current customer notice. Define what appears when there is no fresh announcement so the page does not create a false impression of an active promotion. The business should supply the retirement or review trigger for each item. The goal is an honest home page that uses the available content well, rather than a feed whose label promises freshness the publishing routine cannot sustain.",
+    "focus": "A section labeled latest can show an old announcement long after its practical instructions have expired. Decide what qualifies for prominent display and whether the item is news, a lasting resource or a time-limited offer. Keep publication date, event date and current status distinguishable. An older article can remain useful without occupying the same position as a current customer notice. Define what appears when there is no fresh announcement so the page does not create a false impression of an active promotion. The business should supply the retirement or review trigger for each item. The goal is an honest home page that uses the available content well, rather than a feed whose label promises freshness the publishing routine cannot sustain.",
     "briefs": [
       [
         "An old announcement in Dover-Foxcroft",
@@ -653,7 +653,7 @@ export const maineRows = [
         "Fictional example: a Topsham business reviews a departing specialist’s profile. The business decides what historical project information can remain and removes wording that implies the person still provides current consultations. Any replacement profile uses that person’s own approved qualifications rather than inheriting the previous description for convenience."
       ]
     ],
-    "search": "Review pages that rank for a staff name alongside pages that describe the current service. Historical authorship and current availability are different facts and should be labelled accurately. Keep useful service destinations working without claiming the departed person still handles inquiries. Do not publish a new biography merely to preserve keywords associated with someone else’s credentials.",
+    "search": "Review pages that rank for a staff name alongside pages that describe the current service. Historical authorship and current availability are different facts and should be labeled accurately. Keep useful service destinations working without claiming the departed person still handles inquiries. Do not publish a new biography merely to preserve keywords associated with someone else’s credentials.",
     "task": [
       "Inventory a public contact transition",
       "List each page, document, form and receipt naming the departing contact. Assign the current responsible role, approved wording and publication owner. Separate public content changes from the authorized account-access process.",

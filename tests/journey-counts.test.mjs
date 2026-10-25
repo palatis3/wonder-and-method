@@ -91,10 +91,14 @@ test('client count module respects privacy, test and origin suppression and send
  assert.deepEqual(JSON.parse(calls[1].body),{event:'request_start',service:'focused_site',page:'pricing',source:'not_recorded'});
  const clicked=execute();
  clicked.handlers.click({target:{closest:selector=>selector==='a[href]'?{href:'mailto:support@example.test?body=private-content'}:null}});
- clicked.handlers.click({target:{closest:selector=>selector==='.support-chat-launch'?{}:null}});
+ clicked.handlers.click({target:{closest:selector=>selector==='.support-chat-launch,[data-chat-open]'?{}:null}});
  assert.deepEqual(clicked.calls.slice(1).map(c=>JSON.parse(c.body).event),['email_click','chat_open']);
  assert.ok(clicked.calls.every(c=>!c.body.includes('private-content')&&!c.body.includes('support@example.test')));
- for(const setting of [{search:'?qa=1'},{gpc:true},{dnt:'1'}]){const blocked=execute(setting);blocked.handlers.click({target:{closest:selector=>selector==='.support-chat-launch'?{}:null}});assert.equal(blocked.calls.length,0);}
+ const inline=execute();
+ inline.handlers.click({target:{closest:selector=>selector.includes('[data-chat-open]')?{dataset:{chatOpen:''}}:null}});
+ inline.handlers.click({target:{closest:selector=>selector.includes('.support-chat-launch')?{}:null}});
+ assert.deepEqual(inline.calls.slice(1).map(c=>JSON.parse(c.body).event),['chat_open']);
+ for(const setting of [{search:'?qa=1'},{gpc:true},{dnt:'1'}]){const blocked=execute(setting);blocked.handlers.click({target:{closest:selector=>selector.includes('[data-chat-open]')?{}:null}});assert.equal(blocked.calls.length,0);}
 });
 
 test('contact-event migration preserves history and accepts only coarse allowed actions',async()=>{

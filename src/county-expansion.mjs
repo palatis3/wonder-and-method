@@ -55,7 +55,7 @@ export const expandedCountyProfiles = [
     geographyNote: 'New York County is the borough of Manhattan. It does not mean all five boroughs or New York State. Listed places are selected neighborhoods rather than separate municipalities.',
     questions: [
       ['Can you make a professional-services website easier to evaluate?', 'Yes. We can define the deliverable, suitable project, required inputs and proposal process for each distinct service. You supply or approve credentials and project evidence. The result should help a buyer judge fit before requesting a meeting.'],
-      ['Does a Manhattan website project require in-person meetings?', 'No. We agree review dates, written feedback and the materials needed to proceed. Your website can still explain your own in-person services or office visits accurately, where those are part of your business.']
+      ['Does a Manhattan website project require in-person meetings?', 'No. We agree on review dates, written feedback and the materials needed to proceed. Your website can still explain your own in-person services or office visits accurately, where those are part of your business.']
     ]
   },
   {

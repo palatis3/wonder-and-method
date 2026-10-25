@@ -21,6 +21,10 @@ export function bindCostCalculator(calculator,prices,doc=document){
   const monthlyFields=calculator.querySelector?.('[data-monthly-cost-fields]');if(monthlyFields)monthlyFields.hidden=noPlan;
   field('billing').disabled=noPlan;
   field('cycles').readOnly=field('billing').value==='annual'&&!noPlan;
+  for(const button of calculator.querySelectorAll('[data-cost-months]')){
+   button.disabled=noPlan||field('cycles').readOnly;
+   button.setAttribute('aria-pressed',String(button.dataset.costMonths===field('cycles').value));
+  }
   field('baseline').disabled=!existing||field('sprint').checked;
   field('sprint').disabled=!existing;
   const projectFields=field('sprint').closest?.('fieldset');if(projectFields)projectFields.hidden=!existing;
@@ -67,7 +71,14 @@ export function bindCostCalculator(calculator,prices,doc=document){
   update();
  });
  calculator.addEventListener('submit',event=>event.preventDefault());
- calculator.addEventListener('click',event=>{const remove=event.target.closest?.('[data-addon-remove]');if(!remove||!calculator.contains(remove))return;const input=field('addon_'+remove.dataset.addonRemove);if(!input)return;input.checked=false;update();(calculator.querySelector('[data-addon-remove]')||calculator.querySelector('[data-addon-picker] summary'))?.focus();});
+ calculator.addEventListener('click',event=>{
+  const period=event.target.closest?.('[data-cost-months]');
+  if(period&&calculator.contains(period)){
+   if(period.disabled)return;
+   field('cycles').value=period.dataset.costMonths;monthlyCycles=field('cycles').value;cyclesEdited=true;update();return;
+  }
+  const remove=event.target.closest?.('[data-addon-remove]');if(!remove||!calculator.contains(remove))return;const input=field('addon_'+remove.dataset.addonRemove);if(!input)return;input.checked=false;update();(calculator.querySelector('[data-addon-remove]')||calculator.querySelector('[data-addon-picker] summary'))?.focus();
+ });
  update();
  return update;
 }

@@ -24,7 +24,7 @@ export const marylandRows = [
         "Does that feature survive the phone layout?",
         "Is the specification readable without the image?"
       ],
-      "A crop approval sheet with three labelled mobile previews.",
+      "A crop approval sheet with three labeled mobile previews.",
       "Compare the options on a narrow screen and identify each without opening the full-size photograph."
     ],
     "local": [
@@ -192,7 +192,7 @@ export const marylandRows = [
     "search": "A printed campaign destination should deliver the specific information promised on the material. Decide separately whether it also has a useful role in search. Preserve meaningful URLs during redesigns where practical and document any change. A QR code does not need a thin new page for every print variation when the destination and customer task are identical.",
     "task": [
       "Register the life of a printed link",
-      "Record one printed item, its labelled purpose, destination, controlling account and expected lifespan. Write the active and ended states of the destination. Test a physical proof and keep the human-readable alternative visible.",
+      "Record one printed item, its labeled purpose, destination, controlling account and expected lifespan. Write the active and ended states of the destination. Test a physical proof and keep the human-readable alternative visible.",
       [
         "Who can change the destination later?",
         "What does the print promise the visitor?",
@@ -278,7 +278,7 @@ export const marylandRows = [
       ],
       [
         "What website maintenance covers receipt emails?",
-        "Agree checks of the supported form receipt and supplied sender or destination changes. Mailbox administration and third-party delivery systems may require separate scope. The business must monitor the destination that is published as available for replies.",
+        "Agree on checks of the supported form receipt and supplied sender or destination changes. Mailbox administration and third-party delivery systems may require separate scope. The business must monitor the destination that is published as available for replies.",
         "what does website maintenance include",
         "maintenance"
       ],
@@ -308,7 +308,7 @@ export const marylandRows = [
     "search": "Comparison content should remain readable and connected to the actual offer pages. Use meaningful headings and labels that explain the choices rather than treating the table as an image filled with keywords. Review the mobile landing experience from search and confirm that essential distinctions remain visible before the inquiry action. Additional traffic cannot repair values whose labels have become ambiguous.",
     "task": [
       "Choose the comparison that survives a narrow screen",
-      "Identify the three criteria that decide the initial choice. For each offer, pair those criteria with approved values and an optional detail link. Test a compact layout or labelled scrollable table with the same customer task.",
+      "Identify the three criteria that decide the initial choice. For each offer, pair those criteria with approved values and an optional detail link. Test a compact layout or labeled scrollable table with the same customer task.",
       [
         "Which criteria determine the first choice?",
         "Can every value be traced to its offer?",
@@ -400,7 +400,7 @@ export const marylandRows = [
       ],
       [
         "What maintenance does a saved application feature need?",
-        "Agree checks for the supported save, recovery and submission paths, including supplied instructions. The business determines its data-handling process and monitors submitted applications. Changes to draft storage or account behavior require explicit scope.",
+        "Agree on checks for the supported save, recovery and submission paths, including supplied instructions. The business determines its data-handling process and monitors submitted applications. Changes to draft storage or account behavior require explicit scope.",
         "what does website maintenance include",
         "maintenance"
       ]
@@ -452,7 +452,7 @@ export const marylandRows = [
       ],
       [
         "What maintenance should downloadable templates receive?",
-        "Agree checks for supplied revisions, correct labels and the current blank file. The business approves questions and handling instructions. Document production, advanced form fields or specialized format conversion may require separate scope.",
+        "Agree on checks for supplied revisions, correct labels and the current blank file. The business approves questions and handling instructions. Document production, advanced form fields or specialized format conversion may require separate scope.",
         "what does website maintenance include",
         "maintenance"
       ],
@@ -704,7 +704,7 @@ export const marylandRows = [
     "briefs": [
       [
         "A Bel Air map alternative",
-        "Fictional example: a Bel Air business embeds a map but also publishes the approved address and visiting instructions in text. When a visitor does not enable the external map, the page remains useful. A clearly labelled link offers another way to view directions without making the embed a prerequisite to contact."
+        "Fictional example: a Bel Air business embeds a map but also publishes the approved address and visiting instructions in text. When a visitor does not enable the external map, the page remains useful. A clearly labeled link offers another way to view directions without making the embed a prerequisite to contact."
       ],
       [
         "A Havre de Grace optional video",
@@ -742,7 +742,7 @@ export const marylandRows = [
       ],
       [
         "What maintenance do external embeds need?",
-        "Agree checks for current provider links, supported configuration and fallback content. Provider policy or account changes may require review beyond a routine edit. The business approves its privacy and legal arrangements rather than assuming a widget establishes compliance.",
+        "Agree on checks for current provider links, supported configuration and fallback content. Provider policy or account changes may require review beyond a routine edit. The business approves its privacy and legal arrangements rather than assuming a widget establishes compliance.",
         "what does website maintenance include",
         "maintenance"
       ],
@@ -943,7 +943,7 @@ export const marylandRows = [
         "Fictional example: a Greenbelt provider tests a saved selection after one option has changed. The supported interface shows the current status and asks the customer to review it before sending an inquiry. It does not silently replace the old choice or imply that the earlier selection guaranteed ongoing availability."
       ]
     ],
-    "search": "Keep product and service descriptions useful outside the shortlist feature so search visitors can understand each option independently. A collection of selected items is a customer aid, not automatically a public search page. Avoid indexing customer-specific lists or presenting saved choices as current availability. Evaluate whether the feature improves comparison before adding more catalogue pages.",
+    "search": "Keep product and service descriptions useful outside the shortlist feature so search visitors can understand each option independently. A collection of selected items is a customer aid, not automatically a public search page. Avoid indexing customer-specific lists or presenting saved choices as current availability. Evaluate whether the feature improves comparison before adding more catalog pages.",
     "task": [
       "Define what saving actually does",
       "Record the information stored, persistence limits, visibility to staff and status wording for a shortlist. Include a changed option and a removed option. Compare the feature with a simpler inquiry summary before choosing implementation.",
@@ -980,7 +980,7 @@ export const marylandRows = [
       ],
       [
         "What maintenance does a shortlist feature require?",
-        "Retest changed and removed options along with the main catalogue. The business controls availability facts and approved status wording. Adding persistence, account access or synchronization is separate feature work rather than an ordinary content edit.",
+        "Retest changed and removed options along with the main catalog. The business controls availability facts and approved status wording. Adding persistence, account access or synchronization is separate feature work rather than an ordinary content edit.",
         "what does website maintenance include",
         "maintenance"
       ]
@@ -1056,7 +1056,7 @@ export const marylandRows = [
       ],
       [
         "A Lexington Park test destination",
-        "Fictional example: a Lexington Park provider tests a new inquiry page using a designated review destination. Before publication, the authorized team changes it to the approved live destination and sends a harmless labelled test. The final page contains accurate contact instructions rather than the temporary details used during design review."
+        "Fictional example: a Lexington Park provider tests a new inquiry page using a designated review destination. Before publication, the authorized team changes it to the approved live destination and sends a harmless labeled test. The final page contains accurate contact instructions rather than the temporary details used during design review."
       ]
     ],
     "search": "A new public page should contain accurate, approved information rather than copied placeholder titles or sample descriptions. Review what search-facing titles, summaries and image descriptions say at launch. Confirm that a temporary preview is handled through the agreed publication setup; do not assume that a polished appearance means the page is ready to be presented as the business’s final offer.",

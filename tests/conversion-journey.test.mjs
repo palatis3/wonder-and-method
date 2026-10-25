@@ -7,7 +7,7 @@ import {routeIndexEligible} from '../src/index-policy.mjs';
 test('core inquiry fields precede one optional detail disclosure and preserve contract',()=>{
  const html=inquiryForm({live:false,privacyLink:'Privacy'});
  assert.ok(html.indexOf('id="email"')<html.indexOf('id="business"'));
- assert.ok(html.indexOf('id="business"')<html.indexOf('id="message"'));
+ assert.ok(html.indexOf('id="message"')<html.indexOf('id="business"'));
  assert.doesNotMatch(html,/<input[^>]+name="business(?:_location)?"[^>]* required/);
  assert.equal((html.match(/name="service"/g)||[]).length,1);
  assert.match(html,/value="unsure" selected/);assert.match(html,/action="\/api\/inquiries"/);
@@ -26,7 +26,7 @@ test('every guide has explicit intent and contextual replacement retains editori
  assert.match(contextualizeGuideBody(body,'/guides/website-redesign-brief/'),/Hypothetical example/);
  assert.match(contextualizeGuideBody(body,'/guides/website-redesign-brief/'),/goal=redesign/);
 });
-test('public fictional concept and work pages are eligible for search',()=>{
- for(const id of ['fieldwork','northline','hearthside']){assert.equal(routeIndexEligible(`/work/${id}/`),true);assert.equal(routeIndexEligible(`/work/${id}/request/`),true);}
+test('portfolio overview pages remain eligible while fictional request paths are excluded',()=>{
+ for(const id of ['fieldwork','northline','hearthside']){assert.equal(routeIndexEligible(`/work/${id}/`),true);assert.equal(routeIndexEligible(`/work/${id}/request/`),false);}
  assert.equal(routeIndexEligible('/work/'),true);
 });

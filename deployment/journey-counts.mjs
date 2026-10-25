@@ -1,5 +1,6 @@
 import {journeyPages as pages,journeySources as sources} from './journey-dimensions.mjs';
-const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open','resource_select','goal_new_website','goal_redesign','goal_fix','goal_search','goal_care']);
+import {saveJourneyTotals,cleanJourneyMonths} from './journey-months.mjs';
+const events=new Set(['page_view','offer_select','question_select','contact_select','request_start','question_start','inquiry_saved','question_saved','email_click','chat_open','resource_select','goal_new_website','goal_redesign','goal_fix','goal_search','goal_care','roi_calculate']);
 const services=new Set(['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure']);
 export const journeyRetentionDays=90;
 export function journeyReportCoverage(days,now=Date.now()){
@@ -20,16 +21,19 @@ export async function saveJourneyCount(request,env,{readLimited,fingerprint,now=
  if(request.headers.get('Content-Type')?.split(';')[0]!=='application/json')return reply(415);
  let data;try{data=JSON.parse(await readLimited(request.body,512));}catch{return reply(400);}
  if(!data||typeof data!=='object'||Array.isArray(data)||!['event,page,service','event,page,service,source'].includes(Object.keys(data).sort().join(','))||!events.has(data.event)||!services.has(data.service)||!pages.has(data.page)||!sources.has(data.source??'not_recorded'))return reply(400);
+ if(data.event==='roi_calculate'&&(data.page!=='tools_website_roi_calculator'||data.service!=='unsure'||(data.source??'not_recorded')!=='not_recorded'))return reply(400);
  // Distinct short-lived rate key; never stored with aggregate events.
  const key=await fingerprint(env.FINGERPRINT_SECRET,`journey-rate:${request.headers.get('CF-Connecting-IP')||'unknown'}:${Math.floor(now/600000)}`);
  const allowed=await env.DB.prepare('INSERT INTO rate_limits (key,hits,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET hits=hits+1 WHERE hits<60 RETURNING hits').bind(key,now+1200000).first();
  if(!allowed)return reply(429);
  const day=new Date(now).toISOString().slice(0,10);
- await env.DB.prepare('INSERT INTO journey_counts (day,event,service,page,source,total) VALUES (?,?,?,?,?,1) ON CONFLICT(day,event,service,page,source) DO UPDATE SET total=MIN(total+1,1000000)').bind(day,data.event,data.service,data.page,data.source??'not_recorded').run();
+ await saveJourneyTotals(env.DB,day,data,now);
  return reply(204);
 }
 export async function cleanJourneyCounts(db,now=Date.now()){
- if(!await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='journey_counts'").first())return;
- const before=new Date(now-(journeyRetentionDays-1)*86400000).toISOString().slice(0,10);
- await db.prepare('DELETE FROM journey_counts WHERE day < ?').bind(before).run();
+ if(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='journey_counts'").first()){
+  const before=new Date(now-(journeyRetentionDays-1)*86400000).toISOString().slice(0,10);
+  await db.prepare('DELETE FROM journey_counts WHERE day < ?').bind(before).run();
+ }
+ await cleanJourneyMonths(db,now);
 }

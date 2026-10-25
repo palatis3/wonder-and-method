@@ -13,6 +13,14 @@ import {draftScope} from '../scripts/create-job.mjs';
 import {seoServiceContent} from '../src/seo-service-content.mjs';
 import {careContent,servicesOverview} from '../src/service-content.mjs';
 import {countyServiceCards} from '../src/service-counties.mjs';
+import {assertOfferBindings,offerBindingProbe} from '../scripts/check-offer-bindings.mjs';
+import {serviceFaqSection,validateOfferFaqBindings} from '../src/service-faqs.mjs';
+import faqQuestions from '../src/service-faqs.json' with {type:'json'};
+import faqBindings from '../src/service-faq-offer-copy.json' with {type:'json'};
+import {escapeHtml} from '../src/shared.mjs';
+import {parseFragment} from 'parse5';
+import {responsiveTables} from '../src/responsive-tables.mjs';
+import {inquiryMessageHelp} from '../src/shared.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const [offers,config,map,geography]=await Promise.all(['config/offers.json','config/site.json','authority/v5/site-map.json','authority/v5/geography.json'].map(read));
 const changes={version:'2099-01-01-catalog-regression',as_of:'2099-01-01',set:{
@@ -39,8 +47,8 @@ test('one update reaches HTML metadata, schema, forms, calculator data, download
  const pricing=page('/pricing/');assert.match(pricing.description,/Websites up to 8, 18 or 30 pages/);
  const schemas=[...pricing.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  assert.match(JSON.stringify(schemas),/"name":"Starter Website"/);assert.match(JSON.stringify(schemas),/"price":1601\.03/);
- assert.match(pricing.html,/Up to 18 pages, including 3 guides/);
- assert.match(pricing.html,/Three researched, completed website improvements each month/);
+ assert.match(pricing.html,/up to 18 pages/);assert.match(pricing.html,/Complete Website’s 3/);
+ assert.match(pricing.html,/Three completed website improvements each month/);
  assert.match(page('/contact/').html,/Starter Website[^<]*1,601\.03/);
  assert.match(page('/contact/').html,/Progress[^<]*three SEO improvements a month/);
  assert.match(page('/work/northline/').html,/Complete Website[^<]*2,603\.07, up to 18 pages/);
@@ -88,8 +96,12 @@ test('service and county prose follows renamed plans, monthly quantities and res
   'plans.grow.promotion_reuse.quantity':2,'plans.grow.promotion_reuse.graphic_sizes':4,'plans.grow.promotion_reuse.newsletter_max_words':200
  }});
  const pages=renderPages({config,offers:changed,map,geography}),seo=pages.find(p=>p.path==='/services/seo/').html,care=pages.find(p=>p.path==='/services/website-care/').html,county=countyServiceCards(changed);
- assert.match(seo,/<strong>Progress:<\/strong> three finished improvements a month/);
- assert.match(seo,/<strong>Campaign:<\/strong> four related improvements a month, plus two extra social graphics or newsletter excerpts/);
+ const seoCard=(html,id)=>html.match(new RegExp('<article class="compact-offer" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1]||'';
+ assert.match(seoCard(seo,'improve'),/<h3>Progress<\/h3>/);
+ assert.match(seoCard(seo,'improve'),/Three researched, completed website improvements each month/);
+ assert.match(seoCard(seo,'grow'),/<h3>Campaign<\/h3>/);
+ assert.match(seoCard(seo,'grow'),/four completed improvements each month/);
+ assert.match(seoCard(seo,'grow'),/Two extra social graphics or newsletter excerpts/);
  assert.match(seo,/Progress compares up to five opportunities for two services or topics/);
  assert.match(seo,/Campaign compares up to eight opportunities across three topics and up to four competitors, updating a rolling 120-day plan/);
  assert.match(seo,/two simple graphics in up to four sizes with a caption, or two newsletter excerpts up to 200 words/);
@@ -98,14 +110,16 @@ test('service and county prose follows renamed plans, monthly quantities and res
  assert.match(care,/Campaign \(\$901\.09\/month\) adds four/);
  assert.match(county,/Progress \$450\.07 for care and three researched improvements; Campaign \$901\.09 for care and four related improvements/);
  assert.match(county,/monthly first payments are Steady Care \$600\.06, Progress \$875\.10, or Campaign \$1,326\.12/);
- for(const html of [seo,care,county])assert.doesNotMatch(html,/<strong>Improve:|<strong>Grow:|Improve compares|Grow compares|one finished improvement|two related improvements|Keep Running \$|Improve \$|Grow \$/);
+ for(const html of [seo,care,county])assert.doesNotMatch(html,/<strong>Improve:|<strong>Grow:|Improve compares|Grow compares|two related improvements|Keep Running \$|Improve \$|Grow \$/);
  assert.doesNotMatch(seo,/up to three opportunities for one service|up to six opportunities across two topics|up to three competitors, updating a rolling 90-day plan/);
  const escaped=structuredClone(changed);escaped.plans.keep_running.public_name='Care & Support';escaped.launch_site.public_name='Start & Launch';
  assert.match(countyServiceCards(escaped),/Start &amp; Launch/);assert.doesNotMatch(countyServiceCards(escaped),/&amp;amp;/);
  assert.match(servicesOverview(escaped),/Care &amp; Support/);
  // Preserve approved current service promises; the made-up report remains a sample.
  const currentSeo=seoServiceContent(offers),currentCare=careContent(offers),currentCounty=countyServiceCards(offers);
- assert.match(currentSeo,/<strong>Improve:<\/strong> one finished improvement a month/);
+ assert.match(seoCard(currentSeo,'improve'),/One researched, completed website improvement each month/);
+ assert.match(seoCard(currentSeo,'grow'),/two completed improvements each month/);
+ assert.match(seoCard(currentSeo,'grow'),/One extra social graphic or newsletter excerpt/);
  assert.match(currentSeo,/Improve compares up to three opportunities for one service or topic/);
  assert.match(currentSeo,/Grow compares up to six opportunities across two topics and up to three competitors, updating a rolling 90-day plan/);
  assert.match(currentCare,/Improve \(\$400\/month\)<\/a> adds one finished improvement/);
@@ -140,4 +154,107 @@ test('new catalog leaves an accepted commercial snapshot and its invoice amount 
  const old=prepareInvoice(scope,billing,0,{now:new Date('2026-10-22T12:00:00Z')});
  const changed=applyOfferChanges(offers,changes);await draftScope('launch_site','new-catalog-regression',{catalog:changed});paymentCatalog(changed);
  assert.equal(JSON.stringify(scope),before);assert.equal(old.amount,70000);assert.deepEqual(prepareInvoice(scope,billing,0,{now:new Date('2026-10-22T12:00:00Z')}),old);
+});
+
+test('the build probe exercises different review, form, monthly and creative limits without changing inputs',()=>{
+ const before=JSON.stringify({offers,config});
+ const result=assertOfferBindings({config,offers,map,geography});
+ assert.equal(result.status,'PASS');assert.ok(result.assertions>=71);
+ assert.equal(JSON.stringify({offers,config}),before);
+ const changed=offerBindingProbe(offers);
+ assert.match(changed.launch_site.functionality,/Three contact forms, each with up to seven agreed fields/);
+ assert.match(changed.focused_site.form_limit,/Four distinct contact forms, each with up to eight agreed fields/);
+ assert.match(changed.audit_sprint.scope,/up to 16 agreed main pages/);
+ assert.match(changed.signature_site.seo_foundation,/110-day sequence/);
+ assert.match(changed.plans.grow.deliverables[2],/replaces Probe & Progress’s three improvements/);
+ assert.match(changed.plans.grow.deliverables[6],/replaces Probe & Progress’s 25-minute review/);
+ assert.match(changed.plans.grow.promotion_reuse.scope,/two newsletter excerpts of up to 200 words each/);
+ for(const key of ['form_field_limit','training_minutes']){
+  const invalid=structuredClone(offers);invalid.launch_site[key]=-1;
+  assert.throws(()=>normalizeOfferCatalog(invalid),/must be an integer/);
+ }
+});
+
+test('bound FAQ and inquiry copy uses current names and quantities with one HTML escape',()=>{
+ const changed=offerBindingProbe(offers);
+ const county=serviceFaqSection('/areas/suffolk-county/',changed);
+ assert.match(county,/Probe &amp; Progress includes three substantial researched improvements/);
+ assert.match(county,/Probe &amp; Campaign includes four connected improvements and two extra approved-content graphics or newsletter excerpts/);
+ assert.doesNotMatch(county,/&amp;amp;/);
+ assert.match(inquiryMessageHelp('website_baseline','checkout','',false,publicOfferProjection(changed)),/Probe & Review review/);
+ const unchanged=serviceFaqSection('/areas/new-jersey/monmouth-county/',offers);
+ assert.match(unchanged,/Keep Running includes one set of small text, photo or link changes/);
+});
+
+test('all FAQ bindings reject renamed, missing, duplicated or changed source rows',()=>{
+ validateOfferFaqBindings();
+ for(const [path,bindings] of Object.entries(faqBindings))for(const binding of bindings){
+  assert.ok(serviceFaqSection(path,offers).includes(escapeHtml(binding.sourceAnswer)));
+  for(const mutation of ['rename','remove','duplicate','answer','route']){
+   const source=structuredClone(faqQuestions),rows=source[path],index=rows.findIndex(r=>r.question===binding.question);
+   if(mutation==='rename')rows[index].question+=' revised';
+   if(mutation==='remove')rows.splice(index,1);
+   if(mutation==='duplicate')rows.push({...rows[index]});
+   if(mutation==='answer')rows[index].answer+=' revised';
+   if(mutation==='route')delete source[path];
+   assert.throws(()=>validateOfferFaqBindings(source),/Review changed FAQ offer binding/);
+  }
+ }
+ // The render path must invoke the guard, even when rendering another route.
+ const path='/areas/ohio/cuyahoga-county/',row=faqQuestions[path][0],original=row.question;
+ try{row.question+=' revised';assert.throws(()=>serviceFaqSection('/pricing/',offers),/Review changed FAQ offer binding/);}
+ finally{row.question=original;}
+});
+
+test('build checkout names escape markup once and fractional guide payments match the catalog',()=>{
+ const changed=structuredClone(offerBindingProbe(offers));changed.plans.keep_running.public_name='Care & <Support>';
+ const pages=renderPages({config,offers:changed,map,geography}),at=path=>pages.find(p=>p.path===path).html;
+ for(const id of ['launch-site','focused-site','signature-site']){
+  const html=at('/checkout/'+id+'/');assert.ok(html.includes('Care &amp; &lt;Support&gt;'));
+  assert.doesNotMatch(html,/&amp;amp;|&amp;lt;|<Support>/);
+ }
+ const amounts=changed.launch_site.payment_schedule.map(s=>s.amount);
+ assert.deepEqual(amounts,[800.52,480.31,320.20]);
+ assert.equal(amounts.reduce((sum,n)=>sum+Math.round(n*100),0),Math.round(changed.launch_site.public_price*100));
+ assert.ok(at('/guides/website-project-cost/').includes('$800.52 / $480.31 / $320.20'));
+});
+
+test('guide table cells and mobile labels preserve names as text through one escape',()=>{
+ const changed=structuredClone(offerBindingProbe(offers)),suffix=' & <ProbeName> "quoted" \'text\' &lt;';
+ for(const id of ['launch_site','focused_site','signature_site'])changed[id].public_name=id+suffix;
+ changed.plans.keep_running.public_name='Care'+suffix;
+ for(const addon of changed.add_ons)addon.public_name=addon.id+suffix;
+ const html=renderPages({config,offers:changed,map,geography}).find(p=>p.path==='/guides/website-project-cost/').html;
+ const nodes=[];function visit(node){nodes.push(node);for(const child of node.childNodes||[])visit(child);}visit(parseFragment(html));
+ const text=node=>node.nodeName==='#text'?node.value:(node.childNodes||[]).map(text).join('');
+ assert.equal(nodes.some(node=>node.tagName==='probename'),false);
+ const anchors=nodes.filter(node=>node.tagName==='a');
+ for(const id of ['launch_site','focused_site','signature_site'])assert.ok(anchors.some(node=>text(node)===changed[id].public_name));
+ for(const id of ['standard_page','three_page_bundle','contact_form','guided_quote_form','job_dashboard','client_portal'])assert.ok(anchors.some(node=>text(node)===id+suffix));
+ assert.ok(nodes.some(node=>node.tagName==='th'&&text(node)===changed.plans.keep_running.public_name+': 12 monthly invoices'));
+ const labels=nodes.flatMap(node=>(node.attrs||[]).filter(attr=>attr.name==='data-label').map(attr=>attr.value));
+ assert.ok(labels.includes('Proposal A: studio '+changed.launch_site.public_name));
+ assert.ok(!labels.some(label=>label.includes('&lt;ProbeName&gt;')));
+ // Repeated responsive processing is stable; intentional heading markup is stripped.
+ const table='<table><thead><tr><th>Row</th><th><strong>'+escapeHtml(suffix)+'</strong></th></tr></thead><tbody><tr><th>Example</th><td>Value</td></tr></tbody></table>';
+ assert.equal(responsiveTables(responsiveTables(table)),responsiveTables(table));
+ const parsed=parseFragment(responsiveTables(table));nodes.length=0;visit(parsed);
+ assert.equal(nodes.find(node=>node.tagName==='td').attrs.find(attr=>attr.name==='data-label').value,suffix.trim());
+});
+
+test('downloaded buyer documents and the report sample follow the same changed catalog',async()=>{
+ const changed=offerBindingProbe(offers),folder=await mkdtemp(join(tmpdir(),'wm-bound-downloads-'));
+ try{
+  await mkdir(join(folder,'assets'));await writeFile(join(folder,'assets/site.css'),'/* isolated document fixture */');
+  await writeBuyerPacks(folder,changed);
+  const read=id=>readFile(join(folder,'assets/buyer-packs/'+id),'utf8');
+  const [baseline,launch,grow,sample]=await Promise.all(['website_baseline.txt','launch_site.txt','grow.txt','keep-running-sample.html'].map(read));
+  assert.match(baseline,/Probe & Review/i);assert.doesNotMatch(baseline,/Website Baseline/);
+  assert.match(launch,/3 contact forms, each with up to seven agreed fields/);
+  assert.match(grow,/Two separate extras/);assert.match(grow,/One 35-minute call/);
+  assert.match(grow,/two newsletter excerpts of up to 200 words each/);
+  assert.match(sample,/<title>Sample Probe &amp; Care report/);
+  assert.match(sample,/Probe &amp; Progress and Probe &amp; Campaign add researched improvements/);
+  assert.doesNotMatch(sample,/Keep Running|&amp;amp;/);
+ }finally{await rm(folder,{recursive:true,force:true});}
 });

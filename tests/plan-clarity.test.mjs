@@ -8,8 +8,30 @@ import {planCards,pricingContent,ongoingOverview} from '../src/service-content.m
 import {assertPackageVisualOffers,packageVisualCards} from '../src/package-visuals.mjs';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket} from '../scripts/job-packet.mjs';
+import {websiteComparison,clearPricing} from '../src/pricing-content.mjs';
+import {offerSummary} from '../src/offer-summary.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const offers=await read('config/offers.json'),prices=priceList(offers),legacy=await read('tests/fixtures/legacy-offers.json'),artOffers=await read('tests/fixtures/plan-art-offers-20261018.json');
+
+test('pricing separates actual first-year bills and derives research and graphic totals from offers',()=>{
+ const before=JSON.stringify(offers),html=clearPricing(offers);
+ assert.equal((html.match(/class="offer-first-year"/g)||[]).length,3);
+ assert.match(html,/actual domain, hosting and tool bills, tax and approved extras/);
+ assert.match(html,/If you choose a monthly plan, add its price × the number of months you want/);
+ assert.doesNotMatch(html,/First-year studio fees = website price \+ 12/);
+ for(const id of ['launch_site','focused_site','signature_site']){
+  const p=offers[id];assert.ok(html.includes(p.search_research.summary));assert.ok(html.includes(p.search_research.next_steps));
+  assert.ok(offerSummary(offers,id).briefPoints.some(x=>x.includes(p.graphic_counts.total+' finished graphic')));
+ }
+ const changed=structuredClone(offers);
+ changed.focused_site.search_research.summary='Research fixture: up to 7 comparison sites.';
+ changed.focused_site.search_research.next_steps='Up to 9 fixture ideas, later delivery separate.';
+ changed.launch_site.marketing_page_cap=8;changed.focused_site.launch_content.articles=3;changed.signature_site.launch_content.articles=5;
+ const table=websiteComparison(changed);
+ for(const value of [changed.focused_site.search_research.summary,changed.focused_site.search_research.next_steps,'Launch Website’s 8 pages','Focused Website’s 3','Signature Website’s 5'])assert.ok(table.includes(value),value);
+ assert.match(table,/Each column shows the package total/);assert.match(table,/Photo edits and resized exports do not add new graphics/);
+ assert.equal(JSON.stringify(offers),before);
+});
 
 test('new costs add direct vendor bills once and retain baseline, unknown, zero and cent boundaries',()=>{
  const examples=[

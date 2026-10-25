@@ -1,60 +1,60 @@
 {
-  "capturedAt": "2026-10-24T02:23:01.199Z",
+  "capturedAt": "2026-10-25T02:40:34.713Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
   },
   "sourceHashes": {
-    "src/premium-site.mjs": "688812884e5da5fe0f93620b63a899c8badc937f01dc0c0381a3e45468f3e324",
-    "src/home-proof.mjs": "393bcfa80da76f157310901548d2334059ec07f2f85b321bb229fbe6f8248e3b",
-    "src/site-chrome.mjs": "98c9c300385769ed7814146dc17aa5ceb11b47b177ccafb327253d463c42b4d4",
-    "src/assets/layout-components.css": "b3d2be24bf457c1cb156482e3f73d2abd0fe33c513afdc0fe1ddc2cdce4afbbe",
-    "src/assets/site-refresh.css": "733cf928a7ac9d68d36cc62f13d9941f43d85183ce9053de49ad10f383b43823",
-    "src/living-city.mjs": "ca2107ab420811e48a6d86e3b660f8b927f332c70b564f69b7ca175076907a10",
-    "src/assets/living-city.css": "7212da6bb0ef38cab7bdb1de3c4a943178de696c2be8a343f9247630a46d65c9",
-    "src/city-preview-captures.json": "aa78f9d31bc774693725b419bb80edca8b038f48c2c19d6884227298d9dbc83a",
+    "src/premium-site.mjs": "33416b4f10e27bb9e8aafcd531992025bed46a8053d8a18ee8800cf1b114aea8",
+    "src/home-proof.mjs": "3e9ef0af0895c810727e1db5f6ed0219ed17fc5103dab45d16f4f85c7956b4d9",
+    "src/site-chrome.mjs": "7265194dd36ea666a0666d0fac66d74fad26ddd1901610b1dee3bd4eff2e1eb2",
+    "src/assets/layout-components.css": "9c4e63b40ef785ab960d71872e043410ee288a5dc9325ca1e21ef40cc4ef3f40",
+    "src/assets/site-refresh.css": "94aee8ee49a56a2dcf01cedc8b12183b0e3e8ce8bccd5c0768c80a8a9b1755ef",
+    "src/living-city.mjs": "7be3e417ab5c8640220cd07f6cb692c0c0c35fb5c3bf588188f4873b8dc2dcd4",
+    "src/assets/living-city.css": "78f0fcb215c322e96fc769d4e7cfb51327d05b65e1feb76684224e3c4ba5535f",
+    "src/city-preview-captures.json": "c628f870013c2e32f1ac211f00ef04a98a730ba5e6aa3c6fbd0141e325108d5d",
     "public/living-city/manifest.json": "8c2bf9b9ebcd601a46613ce3ecaf80b41527885b10b534b508d1eedc43335305",
-    "src/assets/section-surfaces.css": "77a3dcdaaf1e42baf7e4ba8adcfe0c98b9f061797068dfacc6bcb48532963831",
-    "src/assets/support-chat.css": "529b4424fb9bb9f834caa6237dbf70fdb9f99d03ed63caa1c81850acfe8eeb73"
+    "src/assets/section-surfaces.css": "ec6689793cffd17cd7e45ce8461bdb8a47f9538a7d2eb139dc64d6f382ebf4e4",
+    "src/assets/support-chat.css": "358b88544bfccee79a42452f97ea3d82e3d8b3d15f15aa0ae9f9b83ab630f480"
   },
   "homeCapture": {
     "path": "/assets/work/studio-website.webp",
     "width": 1425,
     "height": 990,
-    "bytes": 186180,
-    "sha256": "e5241125af2c3f19c50e3d03aadeeeef30fe37b385c47acfa398bebc6c789654",
+    "bytes": 194394,
+    "sha256": "e287e4d595cf4e3971a9680e9869ca5877a4d1cd414e946f8a7219902efb2ed6",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/studio-website-240.webp",
         "width": 240,
         "height": 167,
-        "bytes": 8966,
-        "sha256": "f75e81e60d4457e491d88dcd391babc3f590356df36ede1e22c0142c6084da5a",
+        "bytes": 8808,
+        "sha256": "24ed380908649764de25b285deaa4db83b61f64edefe74ebc236f20e740c76ee",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-480.webp",
         "width": 480,
         "height": 333,
-        "bytes": 26748,
-        "sha256": "eff3f3b501f271fc9be2cd8bfe2dd9d8ae4dccb9f16528f4fdb665466658ee9b",
+        "bytes": 26712,
+        "sha256": "0da20f1f35ba9efb5978b5bdd57544ec502b4ce2d52305015e648ae2294eb375",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640,
         "height": 445,
-        "bytes": 41248,
-        "sha256": "ad260c8b45f9a0932c85a3f4a051e685d3ab317d8d405f391530d95a6f5f71ba",
+        "bytes": 40550,
+        "sha256": "9190697bfae6224807f9887f38b905b20e888739e995471fd88c6382d5fcc8b9",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-960.webp",
         "width": 960,
         "height": 667,
-        "bytes": 72128,
-        "sha256": "506925e7386ad8d022abda21aad03952138e03b7fed0f14e23adede63e332ffa",
+        "bytes": 73134,
+        "sha256": "39756bc64a1318e00962733d17b5394473fbbc402a04483047fb39436108593c",
         "quality": 82
       }
     ],
@@ -62,11 +62,11 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "c764dae6c61241530be8a3f5a314015e02b054120b73f6566080c03fab8e82ee"
+      "sha256": "64dc956e3d4a637b89c1403a4226fbcb757af78a0bdd496352dd1e2d764f9095"
     },
     "builtStyles": {
-      "dist/assets/site-family-home.css": "36e36b5c8decf9c814096927161775aff90ae3c2ba09201b3e461c01163abcf6",
-      "dist/assets/living-city.css": "d71d6ca120350341e32a5e15e877a2cf2e5a751ff0a554b7c5a93f4664729dd8"
+      "dist/assets/site.css": "0135b263cc230a006a94e126a650bb51c4d615fcc7100890b47153525e809cea",
+      "dist/assets/living-city.css": "35d4af738bcc61e33be140d49a602c344c4f0b65a0aa20606ac82bbc92fe26bd"
     }
   },
   "trackerCapture": {

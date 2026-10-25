@@ -1,3 +1,6 @@
+import {beforeReviewedLocationEdits,beforeReviewedFaqEdits} from './fixtures/reviewed-location-edits.mjs';
+import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
+import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import approvedPaths from './fixtures/wi-il-approved-paths.json' with {type:'json'};
 import {renderPages} from '../src/pages.mjs';
 import {crawlFiles} from '../src/seo.mjs';
@@ -15,18 +18,20 @@ import records from '../src/location-service-data.json' with {type:'json'};
 import faqs from '../src/service-faqs.json' with {type:'json'};
 import {wiIlGeography,wiIlAreaInventory} from '../src/wi-il-geography.mjs';
 import {serviceStates,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
-import {parseCountyQuery,countyMatch,decodeCountyNames,unpackCountySearch} from '../src/assets/county-directory.js';
+import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,unpackCountySearch} from '../src/assets/county-directory.js';
 
 const additions=['wisconsin','illinois'];
+const laterStates=['louisiana','arkansas'];
+const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 test('WI/IL preserve every earlier commercial record, FAQ and directory identity',()=>{
- const prior=records.filter(record=>!additions.some(state=>record.path.startsWith('/areas/'+state+'/')));
+ const prior=records.filter(record=>!additions.some(state=>record.path.startsWith('/areas/'+state+'/'))&&!isLater(record.path));
  assert.equal(prior.length,1093);
  assert.deepEqual(prior.map(record=>record.path).sort(),preservation.recordPaths);
- assert.equal(hash(prior),preservation.recordsArraySha256);
- for(const record of prior)assert.equal(hash(record),preservation.recordHashes[record.path],record.path);
- assert.deepEqual(serviceStates.filter(state=>!additions.includes(state.id)).flatMap(state=>state.counties.map(county=>state.id+'/'+county.slug)).sort(),preservation.identities);
- for(const [path,answers] of Object.entries(preservation.faqs))assert.deepEqual(faqs[path],answers,path);
+ assert.equal(hash(prior.map(beforeReviewedLocationEdits)),preservation.recordsArraySha256);
+ for(const record of prior)assert.equal(hash(beforeReviewedLocationEdits(record)),preservation.recordHashes[record.path],record.path);
+ assert.deepEqual(serviceStates.filter(state=>!additions.includes(state.id)&&!laterStates.includes(state.id)).flatMap(state=>state.counties.map(county=>state.id+'/'+county.slug)).sort(),preservation.identities);
+ for(const [path,answers] of Object.entries(preservation.faqs))assert.deepEqual(beforeReviewedFaqEdits(path,faqs[path]),answers,path);
 });
 
 test('all 174 counties and 5402 memberships match the independent raw-source reconstruction',()=>{
@@ -86,20 +91,21 @@ test('compressed dictionary preserves every term while keeping the existing payl
  assert.deepEqual([...Buffer.from(payload.data,'base64').subarray(0,10)],[31,139,8,0,0,0,0,0,2,255]);
  const names=await decodeCountyNames(payload);
  const expectedTerms=serviceStates.flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')));
- const actual=[...html.matchAll(/data-cs="([^"]+)"/g)].map(match=>unpackCountySearch(match[1],names));
+ const terms=await decodeCountySearchCards(JSON.parse(html.match(/data-county-search-cards>(.*?)<\/script>/s)[1]),names);
+ const actual=[...html.matchAll(/data-cs="([^"]+)"/g)].map(match=>terms[Number(match[1])]);
  assert.deepEqual(actual,expectedTerms);
- assert.equal(actual.length,1607);
+ assert.equal(actual.length,1746);
  assert.ok(Buffer.byteLength(html)<375_000);
- for(const state of serviceStates.slice(-2))assert.ok(Buffer.byteLength(countyDirectory(state))<200_000,state.id);
+ for(const state of serviceStates.filter(state=>['wisconsin','illinois'].includes(state.id)))assert.ok(Buffer.byteLength(countyDirectory(state))<200_000,state.id);
 });
 
 
-test('WI/IL add exactly two hubs and three approved pages while preserving prior routes',()=>{
- const pages=renderPages({config,offers,map,geography:erieGeography}),routes=pages.map(page=>page.path).sort();
+test('WI/IL retain the original five routes and the separately reviewed county additions',()=>{
+ const pages=renderPages({config,offers,map,geography:erieGeography}),routes=pages.map(page=>page.path).filter(path=>!isLater(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1224);assert.equal(approvedPaths.length,5);
- assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
- assert.deepEqual(Object.keys(dates).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
- const indexed=[...crawlFiles(config,pages).sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).sort();
- assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'));
- assert.deepEqual(records.filter(record=>additions.some(state=>record.path.startsWith('/areas/'+state+'/'))).map(record=>record.path).sort(),approvedPaths.slice(2).sort());
+ assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>!isLater(path)).sort(),[...preservation.dateRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
+ const indexed=[...crawlFiles(config,pages).sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!isLater(path)).sort();
+ assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
+ assert.deepEqual(records.filter(record=>additions.some(state=>record.path.startsWith('/areas/'+state+'/'))).map(record=>record.path).sort(),[...approvedPaths.slice(2),...countyDepth.filter(path=>!isLater(path))].sort());
 });

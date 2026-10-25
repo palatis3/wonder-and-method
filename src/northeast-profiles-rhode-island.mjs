@@ -78,7 +78,7 @@ export const rhodeIslandRows = [
       "Build a postponement notice",
       "Write a notice for an event with no replacement date, then a second version with an approved date. List every public instruction that depends on the original date and assign a reviewer.",
       [
-        "Is the event postponed or cancelled?",
+        "Is the event postponed or canceled?",
         "Who receives individual notification?",
         "Which old links must remain understandable?"
       ],
@@ -214,7 +214,7 @@ export const rhodeIslandRows = [
     "faqs": [
       [
         "What does website maintenance include for downloads?",
-        "Agree checks for file links, review status and supplied replacement documents. The business owns the accuracy of its advice; technical maintenance does not automatically include rewriting every resource.",
+        "Agree on checks for file links, review status and supplied replacement documents. The business owns the accuracy of its advice; technical maintenance does not automatically include rewriting every resource.",
         "what does website maintenance include",
         "maintenance"
       ],

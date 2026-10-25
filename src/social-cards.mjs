@@ -1,6 +1,7 @@
-import {routeIndexEligible} from './index-policy.mjs';
+import {privateRoute} from './index-policy.mjs';
 
 export function socialCardPath(path) {
-  if (!routeIndexEligible(path) && !/^\/work\/(?:fieldwork|northline|hearthside)\//.test(path)) return null;
+  // Public forms and demonstrations still need accurate previews when shared.
+  if (privateRoute(path)) return null;
   return '/assets/social/' + (path === '/' ? 'home' : path.slice(1, -1).replaceAll('/', '-')) + '.png';
 }

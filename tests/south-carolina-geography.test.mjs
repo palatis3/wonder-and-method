@@ -1,3 +1,4 @@
+import {beforeReviewedLocationEdits} from './fixtures/reviewed-location-edits.mjs';
 import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -12,17 +13,18 @@ import linkCorrections from '../operations/ci-checks-20261023/source-link-correc
 import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 // Keep this historical release contract scoped to its original regions; later
 // Georgia additions have their own independent geography/preservation checks.
-const historicalStates=serviceStates.filter(state=>!['georgia','mississippi','alabama','wisconsin','illinois'].includes(state.id));
+const historicalStates=serviceStates.filter(state=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas'].includes(state.id));
 const identities=historicalStates.flatMap(s=>s.counties.map(c=>s.id+'/'+c.slug));
 test('SC adds exactly 46 identities while retaining every historical identity and service record',()=>{
  assert.equal(identities.length,1125);assert.equal(new Set(identities).size,1125);
  assert.deepEqual(identities.filter(id=>!id.startsWith('south-carolina/')).sort(),baseline.identities);
- const existing=locationServices.filter(x=>!x.path.startsWith('/areas/south-carolina/')&&!['georgia','mississippi','alabama','wisconsin','illinois'].some(state=>x.path.startsWith('/areas/'+state+'/')));
+ const existing=locationServices.filter(x=>!x.path.startsWith('/areas/south-carolina/')&&!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas'].some(state=>x.path.startsWith('/areas/'+state+'/')));
  assert.deepEqual(existing.map(row=>row.path).sort(),baseline.recordPaths);
  assert.deepEqual(Object.keys(baseline.recordHashes).sort(),baseline.recordPaths);
  // Keep the historical baseline immutable. Replay only the separately reviewed
  // source-link corrections, checking both their exact new fields and old hash.
- for(const row of existing){
+ for(const current of existing){
+  const row=beforeReviewedLocationEdits(current);
   const correction=linkCorrections.records.find(record=>record.path===row.path),restored=structuredClone(row);
   if(correction){
    assert.equal(createHash('sha256').update(JSON.stringify(row)).digest('hex'),correction.afterSha256,row.path+' reviewed correction');
@@ -35,7 +37,7 @@ test('SC adds exactly 46 identities while retaining every historical identity an
  for(const route of semrushGuidePaths)assert.ok(Object.hasOwn(dates,route),'Approved subsequent guide '+route);
  const retiredRequests=['fieldwork','northline','hearthside'].map(id=>`/work/${id}/request/`);
  for(const path of retiredRequests){assert.ok(baseline.routes.includes(path));assert.ok(!Object.hasOwn(dates,path));assert.equal(publicRouteRedirect(new URL(path,'https://wonderandmethod.com'),'GET'),'https://wonderandmethod.com'+path.replace('request/',''));}
- assert.deepEqual([...Object.keys(dates).filter(p=>!['georgia','mississippi','alabama','wisconsin','illinois'].some(state=>p.startsWith('/areas/'+state+'/'))&&!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
+ assert.deepEqual([...Object.keys(dates).filter(p=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas'].some(state=>p.startsWith('/areas/'+state+'/'))&&!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
 });
 test('SC search indexes every county and distinguishes cross-county Summerville from a wrong state',()=>{
  const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(r=>r.slugs.includes(county.slug))).split('|')})));

@@ -12,6 +12,6 @@ test('four new guide journeys retain examples, accessible tables, downloads and 
   const link=page.locator('.journal-prose a[download]').first();await link.scrollIntoViewIfNeeded();
   const [download]=await Promise.all([page.waitForEvent('download'),link.click()]);expect(await download.failure()).toBeNull();expect(download.suggestedFilename()).toMatch(/\.csv$/);
   await page.addScriptTag({url:'/__test-axe.js'});const violations=await page.evaluate(async()=>{const r=await axe.run(document.getElementById('main'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return r.violations.map(x=>({id:x.id,nodes:x.nodes.length}));});expect(violations,slug).toEqual([]);
-  await page.locator('#next-decision .button').click();await expect(page.locator('#goal')).toHaveValue(goal);await expect(page.locator('#request_kind')).toHaveValue('question');await expect(page.locator('#service')).toHaveValue('unsure');
+  await page.locator('#next-decision .button').click();await expect(page.locator('input[name=goal]:checked')).toHaveValue(goal);await expect(page.locator('#request_kind')).toHaveValue('question');await expect(page.locator('#service')).toHaveValue('unsure');
  }
 });

@@ -1,3 +1,4 @@
+import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -19,7 +20,7 @@ test('approved indexing includes public routes and an explicit hold still exclud
  assert.ok(pages.every(x=>x.html.includes('noindex,nofollow')));assert.doesNotMatch(crawlFiles(held,pages).sitemap,/<loc>/);
  const enabled={...config,searchIndexing:true},livePages=renderPages({config:enabled,offers,map,geography}),crawl=crawlFiles(enabled,livePages);
  for(const route of [...newGuides,'/services/','/services/website-redesign/','/services/website-addons/'])assert.ok(crawl.sitemap.includes(config.origin+route));
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,livePages.length-1);assert.doesNotMatch(crawl.sitemap,/\/api\/|\/assets\/|\/404\//);
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,livePages.length-1-excluded.length);assert.doesNotMatch(crawl.sitemap,/\/api\/|\/assets\/|\/404\//);
  const evidence={gates:{},approvedVersion:{}},current={};
  assert.ok(evaluateRelease({release_gates:[]},evidence,current,held,deployment).missing.some(x=>x.gate==='indexing_consistency'));
  assert.ok(!evaluateRelease({release_gates:[]},evidence,current,config,deployment).missing.some(x=>x.gate==='indexing_consistency'));

@@ -27,6 +27,21 @@ Global Privacy Control and Do Not Track suppress collection. `?qa=1` suppresses 
 
 Hourly cleanup retains the latest 90 UTC calendar dates including today, even when new collection is disabled. Provider infrastructure/recovery copies have separate lifetimes. For the public description see `config/site.json` privacy analytics; implementation tests are not a legal certification.
 
+## Prospective monthly totals (combined release candidate, October 24)
+
+Migration `0033_journey_monthly.sql` adds monthly aggregate storage without copying any daily history. Apply it through the normal verified release process before relying on the new report. Until applied, the Worker retains legacy daily writes and the monthly endpoint reports unavailable, rather than inventing history. A partly installed schema fails explicitly.
+
+```powershell
+npm run inquiries:production -- measurement-months
+npm run inquiries:production -- measurement-months 12
+```
+
+The authenticated `/api/operator/journey-months?months=N` accepts 1–24 calendar months, defaulting to 24. Daily and monthly increments are one atomic D1 batch; a rejected daily key cannot leave a monthly count behind. Monthly increments stop when the corresponding daily key reaches its existing one-million-event cap. No person, inquiry or session identifier is added.
+
+Hourly cleanup retains the current UTC month and preceding 23 months, alongside the separate 90-date daily window. This is a calendar window, not 730 days. Cleanup still runs when collection is disabled, although a failed maintenance run can delay deletion. Do not disable scheduled cleanup when pausing collection.
+
+The report groups events and page-view source categories by month. It shows the first recorded monthly-event timestamp and marks absent rows as “no rows.” The first recorded and current months can be partial; older dates, outages and uninterrupted collection are not verified. No rows means no recorded events, not verified zero visitors. Saved-confirmation totals are browser events, not unique leads. Daily history is never reconstructed or backfilled, and this report does not imply long-term Search Console history.
+
 ## Disable or restore
 
 To pause collection through the normal authorized release workflow, set site analytics to null and Worker `JOURNEY_COUNTS` to `off`, then build, verify and deploy. Keep the table and scheduled expiry. Re-enable only with the reviewed configuration and accurate notice. This analytics setting is separate from search indexing, which stays enabled.

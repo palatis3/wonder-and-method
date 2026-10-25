@@ -72,12 +72,12 @@ test('enhanced form preserves county provenance, optional URL, selected extras a
  const path='/contact/?offer=unsure&request_kind=question&goal=fix&county=pennsylvania%2Ferie-county&addons=standard_page';
  const html=prefillInquiryHtml(inquiryForm({live:false}),new URL('http://synthetic.test'+path));
  const network=await mount(page,html,formScript,{path});
- await expect(page.locator('#request-summary')).toContainText('From county page: Erie County, PA');await expect(page.locator('#message-help')).toContainText('when you tested it');
+ await expect(page.locator('#request-summary')).toContainText('From service-area page: Erie County, PA');await expect(page.locator('#message-help')).toContainText('when you tested it');
  await expect(page.locator('#website')).not.toHaveAttribute('required');
  await expect(page.locator('[data-addon-picker]')).toBeVisible();await expect(page.locator('[data-addon-picker]')).not.toHaveAttribute('open');
- await expect(page.locator('[data-addon-remove=standard_page]')).toBeVisible();await expect(page.locator('#business')).toBeVisible();
+ await expect(page.locator('[data-addon-remove=standard_page]')).toBeVisible();await expect(page.locator('#business')).toBeHidden();await page.getByText('Business details (optional)',{exact:true}).click();await expect(page.locator('#business')).toBeVisible();
  await page.locator('#name').fill('Synthetic Person');await page.locator('#email').fill('synthetic@example.test');await page.locator('#business_location').fill('Fictional town');await page.locator('#message').fill('Synthetic drafted diagnostic details.');
- await page.locator('#service').selectOption('keep_running');await expect(page.locator('#message')).toHaveValue('Synthetic drafted diagnostic details.');await expect(page.locator('#county')).toHaveValue('pennsylvania/erie-county');
+ await page.locator('#package-choice summary').click();await page.locator('#service').selectOption('keep_running');await expect(page.locator('#message')).toHaveValue('Synthetic drafted diagnostic details.');await expect(page.locator('#county')).toHaveValue('pennsylvania/erie-county');
  await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#inquiry-confirmation')).toContainText('No email was sent');
  const sent=JSON.parse(network.find(row=>row.path==='/api/inquiries').body);expect(sent.county).toBe('pennsylvania/erie-county');expect(sent.business_location).toBe('Fictional town');expect(sent.goal).toBe('fix');expect(sent.add_ons).toEqual(['standard_page']);expect(sent.website).toBe('');
 });
@@ -93,3 +93,54 @@ test('build picker stays collapsed with selected summary and remove controls pre
 });
 
 function assertNoPersonalNetwork(network){expect(network.filter(row=>row.method==='POST')).toHaveLength(0);}
+
+test('changing service clears an obsolete website requirement without exposing untouched errors',async({page})=>{
+ const path='/contact/?offer=website_baseline&request_kind=checkout';
+ const html=prefillInquiryHtml(inquiryForm({live:false}),new URL('http://synthetic.test'+path));
+ const network=await mount(page,html,formScript,{path});
+ await expect(page.locator('#website')).toHaveAttribute('required','');
+ await page.locator('#package-choice summary').click();await page.locator('#website').focus();await page.locator('#service').focus();
+ await expect(page.locator('#website-error')).not.toBeEmpty();
+ await page.locator('#service').selectOption('launch_site');
+ await expect(page.locator('#website')).not.toHaveAttribute('required');
+ await expect(page.locator('#website-error')).toBeEmpty();
+ await expect(page.locator('#website')).toHaveAttribute('aria-invalid','false');
+ await expect(page.locator('#name-error')).toBeEmpty();await expect(page.locator('#email-error')).toBeEmpty();
+ await expect(page.locator('#form-status')).toBeEmpty();assertNoPersonalNetwork(network);
+});
+
+test('inquiry field errors clear during correction and update the summary without a POST',async({page})=>{
+ const network=await mount(page,inquiryForm({live:false}),formScript);
+ await page.locator('#name').fill('Synthetic Person');
+ await page.locator('#email').fill('not-an-email');
+ await page.locator('#message').fill('short');
+ await page.locator('[type=submit]').click();
+ await expect(page.locator('#email')).toBeFocused();
+ await expect(page.locator('#form-status')).toContainText('2 highlighted fields');
+ await page.locator('#email').fill('synthetic@example.test');
+ await expect(page.locator('#email-error')).toBeEmpty();
+ await expect(page.locator('#email')).toHaveAttribute('aria-invalid','false');
+ await expect(page.locator('#form-status')).toContainText('the highlighted field');
+ await page.locator('#message').fill('Please review this fictional website.');
+ await expect(page.locator('#message-error')).toBeEmpty();
+ await expect(page.locator('#form-status')).toBeEmpty();
+ assertNoPersonalNetwork(network);
+});
+
+test('inquiry blur validation catches whitespace and malformed email without interrupting first entry',async({page})=>{
+ const network=await mount(page,inquiryForm({live:false}),formScript);
+ await page.locator('#name').fill('   ');
+ await expect(page.locator('#name-error')).toBeEmpty();
+ await page.locator('#website').focus();
+ await expect(page.locator('#name-error')).toContainText('name');
+ await page.locator('#name').fill('Synthetic Person');
+ await expect(page.locator('#name-error')).toBeEmpty();
+ await page.locator('#email').fill('two..dots@example.test');
+ await expect(page.locator('#email-error')).toBeEmpty();
+ await page.locator('#message').focus();
+ await expect(page.locator('#email-error')).toContainText('full email');
+ await page.locator('#message').fill('Please review this fictional website.');
+ await page.locator('#email').fill('synthetic@example.test');
+ await expect(page.locator('#form-status')).toBeEmpty();
+ assertNoPersonalNetwork(network);
+});

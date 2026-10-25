@@ -5,13 +5,15 @@ import {renderPages} from '../src/pages.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(read));
 const pages=renderPages({config,offers,map,geography}),page=path=>pages.find(x=>x.path===path).html;
-test('saved content bookmarks and all ten county worksheets survive consolidation',()=>{
+test('saved content bookmarks and historical county downloads survive reviewed link selection',async()=>{
  for(const n of Array.from({length:12},(_,i)=>i+1))assert.ok(page('/privacy/').includes(`id="privacy-${n}"`),`privacy-${n}`);
  assert.match(page('/privacy/'),/<h2 id="responsibility">Who is responsible/);
  assert.match(page('/privacy/'),/<h2 id="record-retention">How long I keep records/);
  assert.match(page('/pricing/'),/id="cost-calculator"/);assert.match(page('/pricing/'),/href="\/payments\/#cost-calculator"/);
  assert.match(page('/services/website-care/'),/id="annual-terms"/);
- for(const p of pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path))){const slug=p.path.match(/^\/areas\/(.+)-county\//)[1];assert.ok(p.html.includes('id="buyer-task"'),slug);assert.ok(p.html.includes(`/assets/county-briefs/${slug}.txt`),slug);if(slug!=='erie')for(const id of ['approach','search'])assert.ok(p.html.includes(`id="${id}"`),slug+id);}
+ assert.ok(page('/areas/albany-county/').includes('/assets/county-briefs/albany.txt'));
+ assert.ok(!page('/areas/onondaga-county/').includes('/assets/county-briefs/onondaga.txt'),'Reviewed unrelated worksheet is retained as a file without an irrelevant contextual link');
+ for(const p of pages.filter(x=>/^\/areas\/[^/]+-county\/$/.test(x.path))){const slug=p.path.match(/^\/areas\/(.+)-county\//)[1];assert.ok(p.html.includes('id="buyer-task"'),slug);assert.ok((await readFile(new URL(`../src/assets/county-briefs/${slug}.txt`,import.meta.url),'utf8')).trim(),slug+' historical download retained');if(slug!=='erie')for(const id of ['approach','search'])assert.ok(p.html.includes(`id="${id}"`),slug+id);}
 });
 test('every rendered route retains directly reachable chat and native back-to-top controls',()=>{
  for(const p of pages){

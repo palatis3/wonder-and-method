@@ -102,11 +102,11 @@ test('all six actual concept captures record the current copy and stylesheet',as
 test('responsive capture variants are real smaller WebP files with matching dimensions and integrity',async()=>{
  const paths=new Set();let variantCount=0;
  for(const record of captures.records){
-  if(record.camera==='desktop')assert.deepEqual(record.variants.map(variant=>variant.width),[640,960]);
-  else assert.deepEqual(record.variants,[]);
+  if(record.camera==='desktop')assert.deepEqual(record.variants.map(variant=>variant.width),[480,640,960]);
+  else {assert.deepEqual(record.variants.map(variant=>variant.width),[350]);assert.equal(record.viewport.width,390);assert.equal(record.deviceScaleFactor,2);assert.ok(record.clip.width<=390);assert.equal(record.width,record.clip.width*2);}
   for(const asset of [record,...record.variants]){
    assert.ok(!paths.has(asset.path),asset.path);paths.add(asset.path);
-   assert.match(asset.path,/^\/assets\/work\/concepts\/(?:fieldwork|northline|hearthside)-showcase-(?:desktop|phone)(?:-(?:640|960))?\.webp$/);
+   assert.match(asset.path,/^\/assets\/work\/concepts\/(?:fieldwork|northline|hearthside)-showcase-(?:desktop|phone)(?:-(?:350|480|640|960))?\.webp$/);
    const bytes=await read('src'+asset.path);
    assert.equal(bytes.length,asset.bytes,asset.path);assert.equal(hash(bytes),asset.sha256,asset.path);
    assert.deepEqual(webpDimensions(bytes),{width:asset.width,height:asset.height},asset.path);
@@ -116,7 +116,7 @@ test('responsive capture variants are real smaller WebP files with matching dime
    }
   }
  }
- assert.equal(paths.size,12);assert.equal(variantCount,6);
+ assert.equal(paths.size,18);assert.equal(variantCount,12);
 });
 
 test('the smaller initial mobile poster preserves the city dimensions and every original asset',async()=>{

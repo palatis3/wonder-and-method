@@ -33,7 +33,7 @@ test('proposal summaries stay concise while hidden selected details remain avail
 test('production timing stays consistent across buying pages and generated decision packs',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- assert.match(config.projectTiming,/Planned build work: Launch 3–5 business days, Focused 5–8 and Signature 7–10/);assert.match(config.projectTiming,/page list, facts, photos and account access are ready/);
+ assert.match(config.projectTiming,/Planned build work: Launch Website 3–5 business days, Focused Website 5–8 and Signature Website 7–10/);assert.match(config.projectTiming,/page list, facts, photos and account access are ready/);
  assert.match(config.projectTiming,/Add your review time: two rounds, each allowing up to five business days/);assert.match(config.projectTiming,/missing information or extra work can move them/);assert.match(config.projectTiming,/proposal confirms the start and launch dates/);
  const pages=renderPages({config,offers,map,geography});
  const home=pages.find(page=>page.path==='/').html;assert.ok(home.includes(config.projectTiming));assert.match(home,/complete writing/i);
@@ -63,6 +63,6 @@ test('production timing stays consistent across buying pages and generated decis
  assert.match(process,/using that full time can extend the build-time target/);
  assert.match(process,/Missing information or extra work means agreeing a new schedule/);
  assert.match(process,/Each allows up to five business days/);assert.match(process,/Silence is never approval/);
- assert.match(process,/five business days after the paid work is finished/);assert.match(process,/File delivery does not wait for that period to end/);
+ assert.match(process,/five business days after the paid work is finished/);assert.match(process,/You receive your files without waiting for that correction period to end/);
  assert.doesNotMatch(process,/ten production days across four working weeks/);
 });

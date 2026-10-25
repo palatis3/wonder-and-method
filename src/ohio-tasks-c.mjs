@@ -99,7 +99,7 @@ export const ohioTasksC = {
   montgomery:{
     name:'Montgomery', title:'Assign a destination to useful pages before a redesign.',
     scenario:'A Dayton business is replacing its navigation and considering removing older pages without checking how customers reach them.',
-    decision:'List the important existing URLs and the decision each page supports. Add available search, link and owner evidence, marking missing access honestly. Choose retain, improve, combine or retire for each page. Where an address changes, name the relevant replacement and agree the redirect scope. Include customer emails and downloads in the link review, then record the launch checks and comparison evidence.',
+    decision:'List the important existing URLs and the decision each page supports. Add available search, link and owner evidence, marking missing access honestly. Choose retain, improve, combine or retire for each page. Where an address changes, name the relevant replacement and agree on the redirect scope. Include customer emails and downloads in the link review, then record the launch checks and comparison evidence.',
     questions:['Which pages help customers even when absent from the main menu?','What evidence supports combining or retiring a page?','Where should an old link lead after the new website launches?'],
     output:'A page decision inventory with destinations and a scoped redirect list.',
     check:'Open representative old links to a Kettering service page and a preparation guide. Confirm that each reaches the correct current explanation without relying on a homepage search.'

@@ -153,6 +153,7 @@ test('desktop and portrait choose their authored source only on play; first deco
     assert.equal(f.root.classes.has('has-city-frame'), true);
     assert.equal(f.root.dataset.cityState, 'playing');
     assert.equal(f.button.textContent, 'Pause motion');
+    assert.equal(f.button.getAttribute('aria-pressed'), null);
   }
 });
 
@@ -169,6 +170,7 @@ test('explicit pause freezes frame and time across scroll, page visibility, hist
   assert.equal(f.video.src, '/city-desktop.mp4');
   assert.equal(f.video.poster, '/desktop-first.webp');
   assert.equal(f.button.textContent, 'Resume motion');
+  assert.equal(f.button.getAttribute('aria-pressed'), null);
   f.click(); await flush();
   assert.equal(f.video.playCalls, 2);
   assert.equal(f.video.currentTime, 1.7);
@@ -352,6 +354,8 @@ test('reduced motion never loads video, keeps selector instant, and changing pre
   assert.equal(f.video.loads, 0);
   assert.equal(f.video.playCalls, 0);
   assert.equal(f.button.disabled, true);
+  assert.equal(f.button.hidden, true);
+  assert.equal(f.status.textContent, 'Motion is off to match your device setting.');
   assert.equal(f.root.dataset.cityProject, 'hearthside');
   f.reduce(false); assert.equal(f.video.playCalls, 0);
   f.click(); f.video.emit('playing');

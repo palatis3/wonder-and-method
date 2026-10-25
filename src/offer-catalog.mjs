@@ -25,6 +25,19 @@ export function setCatalogValue(object, path, value) {
  requireValue(parent && Object.hasOwn(parent,key), 'unknown field '+path);
  parent[key]=value;
 }
+export function resolveOfferCopy(template,o) {
+ requireValue(typeof template==='string','copy template must be a string');
+ const value=template.replace(/\{\{([\w.]+)(?:\|(words|title|money|sets|improvements|forms|topics|graphics|excerpts|article|topicPhrase))?\}\}/g,(_match,reference,format)=>{
+  const v=catalogValue(o,reference);requireValue(['string','number'].includes(typeof v),'unknown template reference '+reference);
+  if(format==='words')return countWords(v);if(format==='title')return titleCount(v);
+  if(format==='article')return v===1?'an':countWords(v);
+  if(format==='topicPhrase')return v===1?'service or topic':'services or topics';
+  if(['sets','improvements','forms','topics','graphics','excerpts'].includes(format))return v===1?format.slice(0,-1):format;
+  if(format==='money')return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(v)?0:2}).format(v);
+  return String(v);
+ });
+ requireValue(!value.includes('{{'),'unresolved copy template');return value;
+}
 function freeze(value) { if(value && typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value; }
 export function derivePaymentSchedule(price, schedule) {
  const total=catalogCents(price);
@@ -42,14 +55,19 @@ export function normalizeOfferCatalog(input) {
  const integer=(value,path,min=0)=>requireValue(Number.isSafeInteger(value)&&value>=min, path+' must be an integer >= '+min);
  for(const id of buildOfferIds){
   const p=o[id];name(p);catalogCents(p.public_price);
+  // Earlier saved catalogs expressed these values only in prose. Their legacy
+  // limits remain available when rendering archived, unaccepted examples.
+  p.form_field_limit??=6;
+  if(id==='signature_site')p.search_research.planning_days??=90;
   p.payment_schedule=derivePaymentSchedule(p.public_price,p.payment_schedule);
   requireValue(JSON.stringify(p.payment_schedule.map(s=>s.percent))==='[50,30,20]','build schedule must remain 50/30/20');
-  for(const key of ['marketing_page_cap','forms','external_connection_limit'])integer(p[key],id+'.'+key,key==='marketing_page_cap'?1:0);
+  for(const key of ['marketing_page_cap','forms','form_field_limit','external_connection_limit','training_minutes'])integer(p[key],id+'.'+key,key==='marketing_page_cap'?1:0);
   integer(p.launch_content.articles,id+'.launch_content.articles');
   requireValue(p.launch_content.articles<=p.marketing_page_cap,'included guides exceed the page cap');
   for(const key of ['launch','promotional','supplied_photo_edits'])integer(p.graphic_counts[key],id+'.graphic_counts.'+key);
   p.graphic_counts.total=p.graphic_counts.launch+p.graphic_counts.promotional;
   for(const key of ['competitor_limit','content_idea_limit'])integer(p.search_research[key],id+'.search_research.'+key);
+  if(id==='signature_site')integer(p.search_research.planning_days,id+'.search_research.planning_days',1);
  }
  for(const id of monthlyOfferIds){
   const p=o.plans?.[id];name(p);const monthly=catalogCents(p.monthly_price);
@@ -73,14 +91,7 @@ export function normalizeOfferCatalog(input) {
  // available in the saved JSON for existing tools and human-readable reviews.
  for(const [path,template] of Object.entries(o.copy_templates||{})){
   requireValue(typeof catalogValue(o,path)==='string'&&typeof template==='string','invalid copy template '+path);
-  const value=template.replace(/\{\{([\w.]+)(?:\|(words|title|money|sets|improvements))?\}\}/g,(_match,reference,format)=>{
-   const v=catalogValue(o,reference);requireValue(['string','number'].includes(typeof v),'unknown template reference '+reference);
-   if(format==='words')return countWords(v);if(format==='title')return titleCount(v);
-   if(format==='sets')return v===1?'set':'sets';if(format==='improvements')return v===1?'improvement':'improvements';
-   if(format==='money')return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:Number.isInteger(v)?0:2}).format(v);
-   return String(v);
-  });
-  requireValue(!value.includes('{{'),'unresolved copy template '+path);setCatalogValue(o,path,value);
+  setCatalogValue(o,path,resolveOfferCopy(template,o));
  }
  normalized.add(o);return freeze(o);
 }

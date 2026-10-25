@@ -62,11 +62,11 @@ test('monthly first-payment alternatives and website editing limits appear befor
  const pages=checkoutPages(offers,intakeContent(config));
  for(const [slug,first,repeat]of [['keep-running','$549','$150'],['improve','$799','$400'],['grow','$1,199','$800']]){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body,header=page.slice(0,page.indexOf('<form'));
-  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);assert.match(header,/No minimum term/);
+  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);assert.match(header,/No minimum term/);
  }
  for(const slug of ['launch-site','focused-site','signature-site']){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  assert.match(page.slice(0,page.indexOf('<form')),/no drag-and-drop editor/);
+  assert.match(page.slice(0,page.indexOf('<form')),/No visual or drag-and-drop editor is included/);
   assert.match(page,/name="request_kind" value="checkout"/);
  }
 });

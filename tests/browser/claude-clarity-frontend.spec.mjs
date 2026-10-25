@@ -21,7 +21,7 @@ async function fixture(page,{width=390,height=844}={}){
  await page.route('**/__frontend-component-fixture',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html><body></body></html>'}));
  await page.goto('/__frontend-component-fixture');
  const markup=supportChatMarkup(chatConfig).replace(/<script[\s\S]*?<\/script>/g,'');
- await page.setContent(`<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body id="page-top" class="studio-site studio-inner">${siteHeader('/pricing/')}<main id="main" tabindex="-1"><h1>Compare website packages.</h1><p>Choose the website that meets your needs.</p><div style="height:1200px"></div><a id="last-link" href="#main">Return to the plan choices</a><input aria-label="Sample question"></main><section class="site-tools" aria-label="Page help">${markup}${backToTopMarkup()}</section>${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
+ await page.setContent(`<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}</style></head><body id="page-top" class="studio-site studio-inner">${siteHeader('/pricing/')}<main id="main" tabindex="-1"><h1>Compare website packages.</h1><p>Choose the website that meets your needs.</p><div style="height:1200px"></div><a id="last-link" href="#main">Return to the plan choices</a><input aria-label="Sample question"></main><section class="site-tools" aria-label="Page help">${backToTopMarkup()}${markup}</section>${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
  await page.addScriptTag({content:navigation});
  await page.addScriptTag({content:chat});
  await page.addScriptTag({content:tools});
@@ -35,7 +35,7 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
+  await expect(page.locator('footer section.footer-group')).toHaveCount(3);await expect(page.locator('footer h2')).toHaveCount(3);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -44,10 +44,10 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('floating page tools preserve focus and yield while editing',async({page})=>{
+test('in-flow page tools preserve focus and leave fields unobstructed',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','relative');
  expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
  await page.evaluate(()=>dispatchEvent(new Event('scroll')));
@@ -55,7 +55,8 @@ test('floating page tools preserve focus and yield while editing',async({page})=
  await page.locator('#last-link').focus();
  await expect(page.locator('#last-link')).toBeFocused();expect(await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.left+5,r.top+5));})).toBe(true);
  await page.getByRole('textbox',{name:'Sample question'}).focus();
- await expect(page.getByRole('textbox',{name:'Sample question'})).toBeFocused();await expect(launch).toBeHidden();
+ await expect(page.getByRole('textbox',{name:'Sample question'})).toBeFocused();
+ expect(await page.getByRole('textbox',{name:'Sample question'}).evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.left+5,r.top+5));})).toBe(true);
 });
 
 test('text-spacing leaves the mobile project action and menu unclipped',async({page})=>{
@@ -94,18 +95,18 @@ test('without scripts concept navigation and footer remain usable',async({browse
   await expect(page.locator('.concept-header nav').getByRole('link',{name:'Overview',exact:true})).toBeVisible();
   await expect(page.locator('.concept-menu-list article')).toHaveCount(3);
   await expect(page.locator('.concept-demo-form')).toHaveCount(0);
-  await page.locator('footer summary').filter({hasText:'Information'}).click();
+  await expect(page.locator('footer').getByRole('heading',{name:'Information',exact:true})).toBeVisible();
   await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.locator('.support-chat noscript a').click();
   await expect(page).toHaveURL(/\/contact\/#inquiry$/);
  }finally{await context.close();}
 });
 
-test('enlarged text keeps chat discoverable and yields to a focused underlying link',async({page})=>{
+test('enlarged text keeps in-flow chat discoverable without covering a focused link',async({page})=>{
  await fixture(page,{width:1024,height:900});
  await page.addStyleTag({content:'html{font-size:32px}#last-link{position:fixed;right:40px;bottom:115px;z-index:1}'});
  await expect(page.locator('.support-chat-launch')).toBeVisible();
  await page.locator('#last-link').focus();await expect(page.locator('#last-link')).toBeFocused();
- await expect(page.locator('.support-chat-launch')).toHaveCSS('visibility','hidden');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','relative');
  const unobstructed=await page.locator('#last-link').evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.right-5,r.top+5));});expect(unobstructed).toBe(true);
 });

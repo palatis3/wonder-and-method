@@ -1,3 +1,5 @@
+import {beforeReviewedLocationEdits} from './fixtures/reviewed-location-edits.mjs';
+import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -16,7 +18,7 @@ import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
 const states=['mississippi','alabama'];
-const laterStates=['wisconsin','illinois'];
+const laterStates=['wisconsin','illinois','louisiana','arkansas'];
 const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const isAddition=path=>states.some(state=>path.startsWith('/areas/'+state+'/'));
 
@@ -24,7 +26,7 @@ test('MS and AL preserve all 1088 earlier records and 1284 earlier area identiti
  const prior=records.filter(record=>!isAddition(record.path)&&!isLater(record.path));
  assert.equal(prior.length,1088);
  assert.deepEqual(prior.map(record=>record.path).sort(),preservation.recordPaths);
- assert.equal(createHash('sha256').update(JSON.stringify(prior)).digest('hex'),preservation.recordsArraySha256);
+ assert.equal(createHash('sha256').update(JSON.stringify(prior.map(beforeReviewedLocationEdits))).digest('hex'),preservation.recordsArraySha256);
  assert.deepEqual(serviceStates.filter(region=>!states.includes(region.id)&&!laterStates.includes(region.id)).flatMap(region=>region.counties.map(county=>region.id+'/'+county.slug)).sort(),preservation.identities);
 });
 
@@ -36,7 +38,7 @@ test('MS and AL add only two hubs and five reviewed commercial pages, preserving
  assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
  assert.deepEqual(Object.keys(dates).filter(path=>!isLater(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
  const indexed=[...crawlFiles(config,pages).sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!isLater(path)).sort();
- assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'));
+ assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
  assert.deepEqual(records.filter(record=>isAddition(record.path)).map(record=>record.path).sort(),approvedPaths.filter(path=>!states.some(state=>path==='/areas/'+state+'/')).sort());
 });
 

@@ -458,7 +458,7 @@ export const massachusettsRows = [
       ],
       [
         "What does maintenance cover for inquiry wording?",
-        "Agree checks for form destinations and supplied policy or process updates. Business approval of confidentiality statements and specialized data-handling decisions remains distinct from routine website edits.",
+        "Agree on checks for form destinations and supplied policy or process updates. Business approval of confidentiality statements and specialized data-handling decisions remains distinct from routine website edits.",
         "what should i know about website maintenance",
         "maintenance"
       ]

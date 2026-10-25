@@ -8,7 +8,7 @@ export const vermontRows = [
     "briefs": [
       [
         "A Middlebury finish comparison",
-        "Fictional example: a Middlebury maker offers three approved surface finishes. Each has a name, a short description and a labelled image. The inquiry records the name rather than an image position, so changing the gallery order does not alter the meaning of a customer’s earlier request."
+        "Fictional example: a Middlebury maker offers three approved surface finishes. Each has a name, a short description and a labeled image. The inquiry records the name rather than an image position, so changing the gallery order does not alter the meaning of a customer’s earlier request."
       ],
       [
         "A Vergennes scale explanation",
@@ -30,7 +30,7 @@ export const vermontRows = [
     "local": [
       [
         "Does an Addison County maker need a page for every finish?",
-        "Only if each page provides substantial distinct information. A well-labelled comparison on one product page may serve the choice better than several thin pages."
+        "Only if each page provides substantial distinct information. A well-labeled comparison on one product page may serve the choice better than several thin pages."
       ],
       [
         "Can Middlebury product photographs substitute for dimensions?",
@@ -52,7 +52,7 @@ export const vermontRows = [
       ],
       [
         "What should maintaining a product gallery include?",
-        "Agree checks for supplied image replacements, option labels and linked inquiry values. The business approves specifications and photography permissions. A new product configurator or photography session should be defined separately.",
+        "Agree on checks for supplied image replacements, option labels and linked inquiry values. The business approves specifications and photography permissions. A new product configurator or photography session should be defined separately.",
         "what does website maintenance include",
         "maintenance"
       ]
@@ -220,7 +220,7 @@ export const vermontRows = [
       ],
       [
         "What maintenance remains if I edit the content myself?",
-        "Self-editing does not define responsibility for the rest of the site. Agree supported updates, backups or recovery arrangements, issue reporting and checks after material content changes in the care scope. Avoid assuming every self-made change is covered.",
+        "Self-editing does not define responsibility for the rest of the site. Agree on supported updates, backups or recovery arrangements, issue reporting and checks after material content changes in the care scope. Avoid assuming every self-made change is covered.",
         "what does website maintenance include",
         "maintenance"
       ],
@@ -363,7 +363,7 @@ export const vermontRows = [
         "Fictional example: a North Hero business approves its new service pages. Before announcing them, its designer checks the public addresses, access settings, canonical links and search instructions. The private draft remains restricted, and a public inquiry test follows an agreed process that avoids sending a real customer request."
       ]
     ],
-    "search": "Keep the intended public page addresses in the launch checklist. Google treats noindex as an indexing instruction, not an access restriction, and must be able to crawl a page to read it. Agree the correct public settings before launch, then verify them on the deployed pages. A successful check or sitemap submission does not guarantee indexing or rankings.",
+    "search": "Keep the intended public page addresses in the launch checklist. Google treats noindex as an indexing instruction, not an access restriction, and must be able to crawl a page to read it. Agree on the correct public settings before launch, then verify them on the deployed pages. A successful check or sitemap submission does not guarantee indexing or rankings.",
     "task": [
       "Write a draft-to-publication permission checklist",
       "List the draft address, permitted reviewers, approved test information and access owner. Separately list public pages, final addresses, search settings and the person who authorizes launch. Record evidence from both environments.",
@@ -394,7 +394,7 @@ export const vermontRows = [
       ],
       [
         "Can a redesign lose search visibility because draft settings remain?",
-        "A public page excluded from indexing can become harder to discover. Agree checks for access, indexing instructions and canonical addresses as part of the redesign launch, while preserving useful existing URLs.",
+        "A public page excluded from indexing can become harder to discover. Agree on checks for access, indexing instructions and canonical addresses as part of the redesign launch, while preserving useful existing URLs.",
         "how to redesign a website without losing seo",
         "migration"
       ],
@@ -516,7 +516,7 @@ export const vermontRows = [
       ],
       [
         "What language-switching behavior needs maintenance?",
-        "Check mappings and missing-version messages when pages are added, moved or retired. Updating navigation is different from translating or verifying specialist content; agree both responsibilities.",
+        "Check mappings and missing-version messages when pages are added, moved or retired. Updating navigation is different from translating or verifying specialist content; agree on both responsibilities.",
         "what does website maintenance include",
         "maintenance"
       ]
@@ -620,7 +620,7 @@ export const vermontRows = [
     "faqs": [
       [
         "What should I ask a designer about text zoom?",
-        "Ask to follow a customer task with text enlarged and to see how clipped labels or overlapping controls are handled. Agree representative checks and record their limits.",
+        "Ask to follow a customer task with text enlarged and to see how clipped labels or overlapping controls are handled. Agree on representative checks and record their limits.",
         "how to choose a web design agency",
         "approach"
       ],
@@ -653,7 +653,7 @@ export const vermontRows = [
         "Fictional example: a Barre organization publishes an appeal for one approved project. Before launch, staff check that the donation link opens the correct campaign and that the provider’s description agrees with the webpage. They identify the contact responsible for questions without promising a receipt or outcome the website cannot verify."
       ]
     ],
-    "search": "Write a specific explanation of the organization and approved appeal so a search visitor can understand the purpose before leaving the site. Retain useful organizational information independently of a short-lived campaign. When an appeal ends, update its status and links rather than leaving a prominent donation action pointing to an obsolete or differently labelled destination.",
+    "search": "Write a specific explanation of the organization and approved appeal so a search visitor can understand the purpose before leaving the site. Retain useful organizational information independently of a short-lived campaign. When an appeal ends, update its status and links rather than leaving a prominent donation action pointing to an obsolete or differently labeled destination.",
     "task": [
       "Match an appeal to its destination",
       "Record the approved purpose, permitted claims, destination and account owner for one appeal. Compare the webpage with the provider’s wording and identify the process for closing or revising the appeal.",
@@ -690,7 +690,7 @@ export const vermontRows = [
       ],
       [
         "What maintenance does a campaign page require?",
-        "Agree updates for approved purpose wording, active status and destination links. The organization controls fundraising claims and donor administration. Website care should not be described as financial, legal or fundraising-policy advice.",
+        "Agree on updates for approved purpose wording, active status and destination links. The organization controls fundraising claims and donor administration. Website care should not be described as financial, legal or fundraising-policy advice.",
         "what does website maintenance include",
         "maintenance"
       ]
@@ -700,7 +700,7 @@ export const vermontRows = [
     "id": "windham",
     "audience": "Businesses arranging online sessions with customers in different places",
     "title": "Make the date and time zone part of the appointment meaning",
-    "focus": "A time such as ten o’clock is incomplete when the participants may be in different time zones. Decide how the website displays the host’s time, whether an external scheduler converts it and what the customer sees in the final confirmation. Use a clearly labelled date and time zone wherever a time is presented as a commitment. Check the transition between the service page and scheduler rather than assuming they use the same display rule. Explain whether a date field expresses a preference or a confirmed appointment. Where the business supports online sessions, provide preparation and joining instructions through the appropriate approved channel without publishing private meeting credentials on a public page.",
+    "focus": "A time such as ten o’clock is incomplete when the participants may be in different time zones. Decide how the website displays the host’s time, whether an external scheduler converts it and what the customer sees in the final confirmation. Use a clearly labeled date and time zone wherever a time is presented as a commitment. Check the transition between the service page and scheduler rather than assuming they use the same display rule. Explain whether a date field expresses a preference or a confirmed appointment. Where the business supports online sessions, provide preparation and joining instructions through the appropriate approved channel without publishing private meeting credentials on a public page.",
     "briefs": [
       [
         "A Brattleboro online consultation",
@@ -730,7 +730,7 @@ export const vermontRows = [
       ],
       [
         "Can a Brattleboro business publish available times in a paragraph?",
-        "It can if those times are reliably maintained and clearly labelled. When availability changes frequently, an approved scheduler may be the more accurate source; check that the webpage explains its time display."
+        "It can if those times are reliably maintained and clearly labeled. When availability changes frequently, an approved scheduler may be the more accurate source; check that the webpage explains its time display."
       ]
     ],
     "faqs": [
@@ -742,7 +742,7 @@ export const vermontRows = [
       ],
       [
         "What maintenance does a scheduling link need?",
-        "Agree checks for the intended service, date wording and approved scheduler changes. Operating the calendar and deciding availability remain business responsibilities unless separately scoped. Recheck time display after a provider configuration change.",
+        "Agree on checks for the intended service, date wording and approved scheduler changes. Operating the calendar and deciding availability remain business responsibilities unless separately scoped. Recheck time display after a provider configuration change.",
         "what does website maintenance include",
         "maintenance"
       ],
@@ -806,7 +806,7 @@ export const vermontRows = [
       ],
       [
         "What maintenance supports reliable inquiry review?",
-        "Agree checks for the form and supported measurement setup after material changes. The business classifies inquiries and decides what counts as useful. Ongoing reporting or marketing analysis should have its own explicit scope.",
+        "Agree on checks for the form and supported measurement setup after material changes. The business classifies inquiries and decides what counts as useful. Ongoing reporting or marketing analysis should have its own explicit scope.",
         "what does website maintenance include",
         "maintenance"
       ]

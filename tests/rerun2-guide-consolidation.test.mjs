@@ -4,6 +4,7 @@ import offers from '../config/offers.json' with {type:'json'};
 import {journal,journalSections,journalArticle} from '../src/journal.mjs';
 import {guideContentSections} from '../src/guide-content.mjs';
 import {money} from '../src/shared.mjs';
+import {normalizeOfferCatalog} from '../src/offer-catalog.mjs';
 
 const path=slug=>`/guides/${slug}/`;
 const sections=(slug,values=offers)=>journalSections(path(slug),values);
@@ -62,7 +63,8 @@ test('build prices, scope names, page limits and payment amounts stay dynamic',(
   changed[id].public_name=`Probe ${id}`;
  }
  const original=body('website-project-cost');
- const revised=body('website-project-cost',changed);
+ // Match the public rendering boundary: derive payment amounts after changing prices.
+ const revised=body('website-project-cost',normalizeOfferCatalog(changed));
  for(const id of ['launch_site','focused_site','signature_site']){
   assert.ok(revised.includes(money(changed[id].public_price)),id);
   assert.ok(revised.includes(changed[id].public_name),id);

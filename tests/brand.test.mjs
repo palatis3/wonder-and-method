@@ -37,7 +37,7 @@ test('brand default sharing metadata is dimensioned while editorial sharing reta
 
 test('production logo and favicon responses remain crawlable while release holds remain protected',async()=>{
  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',INQUIRY_MODE:'live',SEARCH_INDEXING:'true',ASSETS:{fetch:async()=>new Response('synthetic public image',{headers:{'Content-Type':'image/png'}})}};
- for(const path of ['/favicon.ico','/assets/brand/favicon-96.png','/assets/brand/apple-touch-icon.png','/assets/brand/logo-square.png']){
+ for(const path of ['/favicon.ico','/apple-touch-icon.png','/assets/brand/favicon-96.png','/assets/brand/apple-touch-icon.png','/assets/brand/logo-square.png']){
   const response=await worker.fetch(new Request('https://example.test'+path),env,{});
   assert.equal(response.status,200);assert.equal(response.headers.get('X-Robots-Tag'),null,path);
   const held=await worker.fetch(new Request('https://example.test'+path),{...env,SEARCH_INDEXING:'false'},{});

@@ -51,7 +51,7 @@ test('initial city page provides all project destinations before enhancement and
  assert.doesNotMatch(html,/<video[^>]+(?: autoplay| loop| src=)/);
  assert.match(html,/<video[^>]+data-desktop-src="\/assets\/living-city\/desktop-film.mp4"[^>]+preload="none"/);
  for(const id of ['fieldwork','northline','hearthside']){assert.match(html,new RegExp(`href="/work/${id}/"`));assert.match(html,new RegExp(`data-city-panel="${id}"`));}
- assert.match(html,/fictional businesses/);assert.match(html,/Start a project/);
+ assert.match(html,/fictional businesses/);assert.match(html,/Ask about your website/);
 });
 
 test('loop publication distinguishes the native introduction from the encoded film duration',async()=>{

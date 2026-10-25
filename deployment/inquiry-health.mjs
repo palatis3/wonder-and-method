@@ -1,6 +1,7 @@
 import {hasInquiryFollowup,hasInquiryResolutions,RETENTION_DAYS,RETENTION_REVIEW_DAYS} from './inquiry-maintenance.mjs';
 import {notificationBudget} from './notification-budget.mjs';
 import {submissionAttention} from './approved-rerun-attention.mjs';
+import {inquiryAcknowledgmentStatus} from './inquiry-acknowledgment.mjs';
 const TEN_MINUTES = 600_000;
 
 async function hasHealthTable(db) {
@@ -41,7 +42,13 @@ export async function inquiryStatus(env, now = Date.now(), {includeAttention=tru
   else if(live&&budget.used>=budget.automaticLimit)reasons.push('automatic_notification_budget_exhausted');
   const retention=includeAttention?await inquiryRetentionStatus(env,now):null;
   const submissions=includeAttention?await submissionAttention(env.DB):null;
+  // Optional visitor email attention cannot hide owner delivery/retention state.
+  // Only a fixed failure code is exposed if this independent aggregate query fails.
+  let acknowledgment=null;
+  if(includeAttention)try{acknowledgment=await inquiryAcknowledgmentStatus(env,now);}
+  catch{acknowledgment={available:false,reason:'acknowledgment_status_unavailable',containsInquiryText:false};}
   return {total:results.reduce((sum,row)=>sum+row.total,0),delivery:Object.fromEntries(results.map(row=>[row.delivery_status,row.total])),
+    acknowledgment,
     resolution:{migration_ready:resolutionReady,manual_review_resolved:attention.manual_review_resolved||0},
     containsInquiryText:false, checked_at:now, attention:{submissions,manual_review:attention.manual_review||0,pending_over_ten_minutes:attention.pending_over_ten_minutes||0,oldest_pending_at:attention.oldest_pending_at,notification_budget:budget,retention},
     health:{ok:reasons.length===0,reasons,live,notification_configured:configured,recovery:{migration_ready:migrationReady,last_success_at:heartbeat?.last_success_at??null,stale}},

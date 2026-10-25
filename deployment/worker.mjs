@@ -1,7 +1,10 @@
 import {saveJourneyCount,cleanJourneyCounts,journeyReportCoverage} from './journey-counts.mjs';
+import {readJourneyMonths} from './journey-months.mjs';
+import {createDeletionPlan,executeDeletionPlan,hasInquiryAcknowledgmentTable,acknowledgmentDeletionInProgress} from './inquiry-deletion-batch.mjs';
+import {queueInquiryAcknowledgment,sendInquiryAcknowledgment,recoverInquiryAcknowledgments} from './inquiry-acknowledgment.mjs';
 import {routeIndexEligible,privateRoute} from '../src/index-policy.mjs';
 import { timingSafeEqual } from 'node:crypto';
-import { validateInquiry } from '../src/inquiry.mjs';
+import { validateInquiry,inquiryValidationMessage } from '../src/inquiry.mjs';
 import {selectedInquiryContext,inquiryChoices,inquiryContextSummary} from '../src/shared.mjs';
 import { inquiryResponseHtml } from '../src/inquiry-response.mjs';
 import { MAX_NOTIFICATION_ATTEMPTS, NOTIFICATION_WINDOW_MS, UNSENT_NOTIFICATION_WINDOW_MS, hasInquiryFollowup, hasInquiryResolutions, inquiryRetentionPreview, followupInput, inquiryResolutionInput } from './inquiry-maintenance.mjs';
@@ -39,7 +42,7 @@ function respond(request, status, message, reference = null, errors, service, ch
   const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer' };
   if(status===405&&new URL(request.url).pathname==='/api/inquiries')headers.Allow='POST';
   if(status===429)headers['Retry-After']=String(flags.retryAfter||600);
-  const data = { message, reference, ...(reference&&typeof choices.email==='string'?{email:choices.email}:{}), ...(errors ? { errors } : {}), ...(service ? { service } : {}), ...selectedInquiryContext({...choices,service}), ...(typeof flags.synthetic === 'boolean' ? { synthetic: flags.synthetic } : {}) };
+  const data = { message, reference, ...(reference&&typeof choices.email==='string'?{email:choices.email}:{}), ...(reference&&choices.reply_preference==='callback'?{reply_preference:'callback'}:{}), ...(reference&&choices.email_receipt==='requested'?{email_receipt:'requested'}:{}), ...(errors ? { errors } : {}), ...(service ? { service } : {}), ...selectedInquiryContext({...choices,service}), ...(typeof flags.synthetic === 'boolean' ? { synthetic: flags.synthetic } : {}) };
   if (request.headers.get('Accept')?.includes('application/json')) return Response.json(data, { status, headers });
   headers['Content-Type'] = 'text/html; charset=utf-8';
   // Native correction POSTs need a same-origin Origin; never send a cross-site referrer.
@@ -95,7 +98,11 @@ async function parseBody(request) {
   const type = request.headers.get('Content-Type')?.split(';')[0];
   if (!['application/json', 'application/x-www-form-urlencoded'].includes(type)) throw new Error('content-type');
   const text = await readLimited(request.body);
-  if (type === 'application/json') return JSON.parse(text);
+  if (type === 'application/json') {
+    const data=JSON.parse(text);
+    if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('object-required');
+    return data;
+  }
   const fields = new URLSearchParams(text);
   for (const key of fields.keys()) if (fields.getAll(key).length !== 1) throw new Error('duplicate-field');
   return Object.fromEntries(fields);
@@ -164,6 +171,17 @@ export async function notifyInquiry(env, id, send = fetch, now = Date.now(), {ow
   return { status, sent: status === 'accepted' };
 }
 
+// Owner result/receipt semantics stay unchanged. An optional visitor email is
+// considered only after persisted provider acceptance of the owner notification.
+export async function notifyInquiryAndAcknowledge(env,id,send=fetch,now=Date.now(),{ownerReviewed=false,logger=console.error}={}){
+  const owner=await notifyInquiry(env,id,send,now,{ownerReviewed});
+  if(owner.status==='accepted')try{
+    await queueInquiryAcknowledgment(env,id,now);
+    await sendInquiryAcknowledgment(env,id,send,now);
+  }catch{try{logger('inquiry_acknowledgment_failed');}catch{}}
+  return owner;
+}
+
 function notificationMessage(env, id, inquiry) {
   const service = inquiryChoices.find(([value]) => value === inquiry.service)?.[1] || 'Project inquiry';
   const subjectName = String(inquiry.business || inquiry.name || '').replace(/[\r\n\u0000-\u001f]/g, ' ').slice(0, 100);
@@ -173,6 +191,7 @@ function notificationMessage(env, id, inquiry) {
     text: ['Website inquiry', `Reference: ${id}`, `Name: ${inquiry.name}`, `Email: ${inquiry.email}`,
       `Business: ${inquiry.business || 'Not supplied'}`, `Website: ${inquiry.website || 'Not supplied'}`,
       `Business location (visitor supplied): ${inquiry.business_location || 'Not supplied'}`,
+      ...(inquiry.reply_preference==='callback'?[`Reply preference: Callback requested; email remains available.`,`Callback number (visitor supplied): ${inquiry.callback_phone}`]:[]),
       `Service: ${service}`, ...inquiryContextSummary(inquiry), `Message: ${inquiry.message}`, 'Owner: reply from the studio support mailbox. A provider acceptance is not proof of inbox delivery.'].join('\n\n')
   };
 }
@@ -209,7 +228,7 @@ async function submit(request, env, ctx) {
   // Do not identify the trap field or claim that an unstored message was saved.
   if (data && typeof data === 'object' && (data._wm_note||data._faxcheck||data.company_url)) return respond(request, 422, 'Unable to accept this request. Please email support@wonderandmethod.com for help.');
   const { errors, value } = validateInquiry(data);
-  if (Object.keys(errors).length) return respond(request, 422, 'Please review the indicated fields.', null, errors, value.service, value,{live:LIVE(env)});
+  if (Object.keys(errors).length) return respond(request, 422, inquiryValidationMessage(errors), null, errors, value.service, value,{live:LIVE(env)});
   const recover=(status,message,flags={})=>respond(request,status,message,null,undefined,value.service,value,{retry:value,live:LIVE(env),...flags});
   const reportFailure=code=>{if(LIVE(env))ctx.waitUntil(recordSubmissionFailure(env,code).catch(()=>{}));};
   if (!env.DB || !env.FINGERPRINT_SECRET || env.FINGERPRINT_SECRET.length < 32){reportFailure('inquiry_configuration_unavailable');return recover(503, 'Your inquiry could not be saved. Your entries are kept here. Please try again or email support@wonderandmethod.com.');}
@@ -259,7 +278,7 @@ async function submit(request, env, ctx) {
   const record=await recent();
   if (!record) throw new Error('storage-incomplete');
   failureCode='inquiry_receipt_failed';
-  if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiry(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
+  if (!synthetic && record.id === id) ctx.waitUntil(notifyInquiryAndAcknowledge(env, id).catch(() => { /* A persisted pending/leased row remains recoverable. */ }));
   if(network!=='unknown'){
     // Opaque, short-lived receipt; no IP or payload is stored in rate_limits.
     // Anchoring expiry to the original save prevents retries extending the window.
@@ -286,6 +305,12 @@ async function operator(request, env) {
   if (!authenticated) return respond(request, 401, 'Operator authentication required.');
   if (!env.DB) return respond(request, 503, 'Storage unavailable.');
   const url = new URL(request.url);
+  if(url.pathname==='/api/operator/journey-months'&&request.method==='GET'){
+    const months=Number(url.searchParams.get('months')||24);
+    if(!Number.isInteger(months)||months<1||months>24)return respond(request,422,'Choose a reporting period from 1 to 24 calendar months.');
+    const report=await readJourneyMonths(env.DB,months);
+    return report?Response.json(report,{headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}}):respond(request,503,'Monthly aggregate storage is not enabled. No historical totals were inferred.');
+  }
   if(url.pathname==='/api/operator/journey-summary'&&request.method==='GET'){
     const days=Number(url.searchParams.get('days')||7);
     if(!Number.isInteger(days)||days<1||days>90)return respond(request,422,'Choose a reporting period from 1 to 90 days.');
@@ -326,6 +351,13 @@ async function operator(request, env) {
     const preview = await inquiryRetentionPreview(env.DB);
     return preview ? Response.json(preview, { headers: { 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer' } })
       : respond(request, 503, 'Inquiry follow-up migration is required. No records were changed.');
+  }
+  if ([`${base}/deletion-plan`,`${base}/delete-batch`].includes(url.pathname) && request.method==='POST') {
+    let data;try{data=await parseBody(request);}catch{return respond(request,400,'Use a valid bounded deletion plan request.');}
+    try{
+      const result=url.pathname.endsWith('/deletion-plan')?await createDeletionPlan(env.DB,data):await executeDeletionPlan(env.DB,data,request.headers.get('X-Confirm-Delete-Batch'));
+      return Response.json(result,{headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
+    }catch(error){if([409,422,503].includes(error.status))return respond(request,error.status,error.message);throw error;}
   }
   if (url.pathname === base && request.method === 'GET') {
     const cursor = url.searchParams.get('after') || '';
@@ -382,13 +414,19 @@ async function operator(request, env) {
     return respond(request, 200, 'Follow-up tracking updated. No records were deleted.', id);
   }
   if (request.method === 'POST' && match[2] === '/retry' && request.headers.get('X-Confirm-Retry') === id) {
-    const result = await notifyInquiry(env, id,fetch,Date.now(),{ownerReviewed:true});
+    const result = await notifyInquiryAndAcknowledge(env, id,fetch,Date.now(),{ownerReviewed:true});
     return Response.json(result, { headers: { 'Cache-Control': 'no-store' } });
   }
   if (request.method === 'DELETE' && !match[2] && request.headers.get('X-Confirm-Delete') === id) {
     if (!await hasInquiryFollowup(env.DB)) return respond(request, 503, 'Inquiry follow-up migration is required. No records were changed.');
-    const deleted = await env.DB.prepare("DELETE FROM inquiries WHERE id = ? AND delivery_status != 'sending' AND retention_hold = 0 RETURNING id").bind(id).first();
-    return respond(request, deleted ? 200 : 409, deleted ? 'Record deleted from active D1. Apply the approved retention policy to mailbox, exports and backups separately.' : 'No eligible record deleted. Reconcile any sending attempt or preservation hold before deletion.', id);
+    const acknowledgmentReady=await hasInquiryAcknowledgmentTable(env.DB);
+    const acknowledgmentBusy='An acknowledgment is sending. No record deleted; wait for recovery before retrying deletion.';
+    if(acknowledgmentReady&&await env.DB.prepare("SELECT inquiry_id FROM inquiry_acknowledgments WHERE inquiry_id=? AND status='sending'").bind(id).first())return respond(request,409,acknowledgmentBusy,id);
+    let deleted;
+    try{deleted=await env.DB.prepare(`DELETE FROM inquiries WHERE id = ? AND delivery_status != 'sending' AND retention_hold = 0
+      ${acknowledgmentReady?"AND NOT EXISTS (SELECT 1 FROM inquiry_acknowledgments a WHERE a.inquiry_id=inquiries.id AND a.status='sending')":''} RETURNING id`).bind(id).first();}
+    catch(error){if(acknowledgmentDeletionInProgress(error))return respond(request,409,acknowledgmentBusy,id);throw error;}
+    return respond(request, deleted ? 200 : 409, deleted ? 'Record deleted from active D1. Apply the approved retention policy to mailbox, exports and backups separately.' : 'No eligible record deleted. Reconcile any sending notification or acknowledgment, or preservation hold, before deletion.', id);
   }
   return respond(request, 405, 'Use a supported operator action and exact reference confirmation.');
 }
@@ -477,7 +515,8 @@ export default {
       else if (url.pathname === '/api/journey-counts') response = await saveJourneyCount(request,env,{readLimited,fingerprint});
       else if (url.pathname === '/api/inquiries') response = await submit(request, env, ctx);
       else if (url.pathname.startsWith('/api/')) response = await unknownApiResponse(request, env);
-      else if(/^\/version\.json\/?$/i.test(decodeURIComponent(url.pathname)))response=new Response('Not found.',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}});
+      // Internal ASSETS calls bypass this public route guard and retain the hash index.
+      else if(/^(?:\/version\.json|\/assets\/asset-hashes\.json)\/?$/i.test(decodeURIComponent(url.pathname).replace(/\/{2,}/g,'/')))response=new Response(request.method==='HEAD'?null:'Not found.',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'}});
       else {
         let assetRequest=request;
         if(hasInquiryQuery(url)){
@@ -572,10 +611,10 @@ export default {
 export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clock=Date.now,logger=console.error}={}){
   if(!env.DB){await signalSubmissionAttention(env,{send,logger});await retentionAttentionPing(env,null,{send});return {ok:false,codes:['scheduled_database_missing']};}
   const codes=[];
-  const fail=code=>{codes.push(code);logger(code);};
+  const fail=code=>{codes.push(code);try{logger(code);}catch{}};
   const step=async(code,fn)=>{try{return await fn();}catch{fail(code);return null;}};
   const recovery=await step('scheduled_recovery_failed',()=>retryPendingInquiries(env,send,now,clock));
-  if(recovery?.failed){codes.push('scheduled_recovery_row_failed');logger('scheduled_recovery_row_failed');}
+  if(recovery?.failed)fail('scheduled_recovery_row_failed');
   if(recovery && !recovery.failed)await step('scheduled_heartbeat_failed',()=>recordRecoverySuccess(env.DB,now));
   await step('scheduled_rate_cleanup_failed',()=>env.DB.prepare('DELETE FROM rate_limits WHERE expires_at < ?').bind(now).run());
   await step('scheduled_aggregate_cleanup_failed',()=>cleanJourneyCounts(env.DB,now));
@@ -616,5 +655,11 @@ export async function runScheduledMaintenance(env,{send=fetch,now=Date.now(),clo
       if(!signal.acknowledged&&!signal.edge_limited)fail('scheduled_submission_signal_failed');
     }
   }
+  // Run after the existing monitoring decisions: optional visitor email failures
+  // cannot suppress the owner heartbeat or retention/submission attention jobs.
+  // Call even when disabled so stale acknowledgment leases can be cleared.
+  const acknowledgment=await step('scheduled_acknowledgment_recovery_failed',()=>recoverInquiryAcknowledgments(env,send,now,clock));
+  if(acknowledgment?.failed)fail('scheduled_acknowledgment_row_failed');
+  if(acknowledgment&&env.INQUIRY_ACKNOWLEDGMENT==='enabled'&&LIVE(env)&&acknowledgment.status!=='complete')fail('scheduled_acknowledgment_unavailable');
   return {ok:codes.length===0,codes};
 }

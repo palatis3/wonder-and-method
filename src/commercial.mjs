@@ -66,7 +66,7 @@ export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_sche
  if(id==='website_additions'){
   requireValue(billing!=='annual','Standalone additions are one-time work, not an annual plan.');
   const terms=offers.add_on_terms||{};
-  return composeAddons(offers,id,{public_name:'Website additions',scope:'The individually listed website additions and their agreed acceptance checks.',acceptance:'Approve each selected addition against its written scope and checks. Silence is not approval.',refinement:terms.support,exclusions:[terms.providers||'Provider costs are separate.', 'Additional units, changes of direction and unlisted work require a separate written agreement.']},ids,payment_schedule);
+  return composeAddons(offers,id,{public_name:'Website additions',scope:'The individually listed website additions and their agreed acceptance checks.',acceptance:'Approve each selected addition against the agreed work and checks. Silence is not approval.',refinement:terms.support,exclusions:[terms.providers||'Provider costs are separate.', 'Additional units, changes of direction and unlisted work require a separate written agreement.']},ids,payment_schedule);
  }
  requireValue(!ids.length||builds.includes(id),'One-time add-ons require a separate website_additions project for this service.');
  if(offers.plans[id]){

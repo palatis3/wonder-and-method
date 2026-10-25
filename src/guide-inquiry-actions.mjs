@@ -1,3 +1,4 @@
+import {reviewPageLimits} from './offer-copy.mjs';
 import {guideDetails as researchGuideDetails} from './guide-details.mjs';
 import {escapeHtml as e,money} from './shared.mjs';
 // Deliberate reader intent, independent of the fallback service used for navigation.
@@ -20,7 +21,13 @@ export const guideInquiryActions={
  'website-audit-checklist':['fix','question','Discuss a website review'],
  'website-repair-or-redesign':['unsure','question','Discuss repair or redesign']
 };
-export function guideInquiry(path){const key=path.split('/').filter(Boolean).at(-1);const extra=researchGuideDetails[key];const choice=extra?[extra.goal,'question',extra.action]:guideInquiryActions[key];if(!choice)throw Error(`Missing guide inquiry intent: ${path}`);const [goal,kind,label]=choice;return {label,href:`/contact/?offer=${key==='contact-form-not-working'?'website_baseline':'unsure'}&amp;goal=${goal}&amp;request_kind=${kind}#inquiry`};}
+const askLabel=label=>({
+ 'Get help fixing your form':'Ask about fixing your form',
+ 'Talk through your contractor site':'Ask about your contractor website',
+ 'Compare website approaches':'Ask about website options',
+ 'Choose between care and SEO':'Ask about care or SEO'
+}[label]||label.replace(/^Discuss /,'Ask about '));
+export function guideInquiry(path){const key=path.split('/').filter(Boolean).at(-1);const extra=researchGuideDetails[key];const choice=extra?[extra.goal,'question',extra.action]:guideInquiryActions[key];if(!choice)throw Error(`Missing guide inquiry intent: ${path}`);const [chosenGoal,kind,label]=choice;const goal=chosenGoal==='new_website'&&['Business workflows','Local website cases'].includes(extra?.category)?'unsure':chosenGoal;return {label:askLabel(label),href:`/contact/?offer=${key==='contact-form-not-working'?'website_baseline':'unsure'}&amp;goal=${goal}&amp;request_kind=${kind}#inquiry`};}
 export function contextualizeGuideBody(body,path){
  const defaults=new URL(guideInquiry(path).href.replaceAll('&amp;','&'),'https://wonderandmethod.com');
  return body.replace(/href="(\/contact\/(?:[^"<>]*))"/g,(_match,href)=>{
@@ -51,9 +58,29 @@ const endingPrompts={
 };
 export function guideAction(item,{compact=false,offers}={}){
  const action=guideInquiry(item.path);
- if(compact)return `<p class="guide-help"><a href="#next-decision">${e(action.label)}</a></p>`;
+ const formRepair=item.path==='/guides/contact-form-not-working/';
+ if(compact)return `<p class="guide-help"><a href="#${formRepair?'review-options':'next-decision'}">${e(action.label)}</a></p>`;
+ if(formRepair)return '';
  const slug=item.path.split('/').filter(Boolean).at(-1);const prompt=researchGuideDetails[slug]?.prompt||endingPrompts[slug];
  if(!prompt)throw Error(`Missing guide ending: ${item.path}`);
- const buttonLabel=slug==='contact-form-not-working'&&offers?`Ask about the ${money(offers.baseline.one_time_price)} Website Baseline`:action.label;
- return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(endingHeadings[slug]||'Talk through your next step')}</h2><p>${e(prompt)} I confirm the work, access and price before booking or payment.</p><a class="button" href="${action.href}">${e(buttonLabel)}</a></div>`;
+ const buttonLabel=action.label;
+ return `<div id="next-decision" class="journal-callout guide-ending"><h2>${e(endingHeadings[slug]||'Talk through your next step')}</h2><p>${e(prompt)} I confirm the work, access and price before booking or payment.</p>${guideServiceLink(item)}<a class="button" href="${action.href}">${e(buttonLabel)}</a></div>`;
+}
+const serviceLabels={
+ '/services/web-design/':'Web design',
+ '/services/website-redesign/':'Website redesign',
+ '/services/website-audit/':'Website reviews and small fixes',
+ '/services/website-care/':'Website care',
+ '/services/seo/':'Monthly SEO',
+ '/pricing/':'Compare website packages',
+ '/pricing/#after-launch':'Compare monthly plans'
+};
+export function guideServiceLink(item){
+ const path=item.path==='/guides/website-care-versus-seo/'?'/pricing/#after-launch':item.fallback;
+ const label=serviceLabels[path];if(!label)throw Error(`Missing related service: ${item.path}`);
+ return `<p class="guide-service">${path.startsWith('/pricing/')?'See the options:':'Related service:'} <a href="${path}">${e(label)}</a>.</p>`;
+}
+export function formRepairHelp(o){
+ const action=guideInquiry('/guides/contact-form-not-working/');
+ return `<div id="next-decision" class="journal-callout guide-ending"><p>Share the form address, platform, test time and the first step that failed. I check your setup and the access I need before you pay; on Wix, access is through a collaborator invitation.</p><p>The <a href="/services/website-audit/#offer-website_baseline">${money(o.baseline.one_time_price)} ${e(o.baseline.public_name)}</a> reviews your site and includes one small fix when safe and practical. That fix can be the form if the diagnosed problem fits; a repair is not guaranteed. The <a href="/services/website-audit/#offer-audit_fix_sprint">${money(o.audit_sprint.one_time_price)} ${e(o.audit_sprint.public_name)}</a> includes the review and up to two small fixes in total.</p><p>${e(reviewPageLimits(o))}; larger sites are quoted separately. I confirm the work, access and price before booking or payment.</p><a class="button" href="${action.href}">${e(action.label)}</a></div>`;
 }

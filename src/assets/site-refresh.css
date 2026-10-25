@@ -34,6 +34,7 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .studio-site summary{padding-top:.2rem;padding-bottom:.2rem;min-height:44px}
 .studio-site details[open]>summary{margin-bottom:.6rem}
 .service-faq-answers{max-width:75ch}
+.service-faq-single h2{max-width:35ch;font-size:clamp(1.5rem,3vw,2rem);line-height:1.3}
 .service-faq-answers>details{border-block-start:1px solid var(--line);padding-block:1rem}
 .service-faq-answers>details>summary{font-weight:600;line-height:1.5;cursor:pointer}
 .studio-site .steps.long>li{padding-block:2rem}
@@ -45,6 +46,10 @@ html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height
 .work-preview{display:block;background:var(--subtle);aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line)}
 .work-preview img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .3s ease}
 .work-preview:hover img{transform:scale(1.018)}
+.studio-site .work-preview--concept{aspect-ratio:auto;border-radius:5px}
+.studio-site .work-preview--concept picture{display:block}
+.studio-site .work-preview--concept img{width:100%;height:auto;object-fit:contain}
+.studio-site .work-preview--concept:hover img{transform:none}
 .work-item#websites .work-preview img,.work-item#workflow .work-preview img{object-fit:contain;object-position:top}
 .work-caption{padding-top:1.3rem}
 .work-caption>.eyebrow{font-size:.66rem}
@@ -329,7 +334,8 @@ form .request-summary p{font-size:.9rem;margin:.5rem 0}
 /* The contact fallback remains in the layout; enhanced controls stay reachable while scrolling. */
 .site-tools{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 2rem;width:90%;margin:2rem auto;padding:1.5rem 0;border-top:1px solid var(--line)}
 .site-tools>p{margin:0}
-.site-tools .page-tools{margin-left:auto}
+.site-tools .page-tools{margin-left:0}
+.site-tools .support-chat{margin-left:auto}
 .site-tools a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 .studio-site .closing>p{margin-left:auto;margin-right:auto;text-align:center}
 .recovery-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.75rem;margin:2rem 0 4rem}
@@ -530,6 +536,7 @@ form>.optional-choice{margin:1.25rem 0}
 
 /* Readable prose and actions without constraining figures or data grids. */
 .studio-site main :where(section>p,section>ul:not(.link-row),section>ol,details>p,details>ul:not(.link-row),details>ol){max-width:72ch}
+.studio-site main details>p{max-width:72ch}
 .studio-site :is(.button,.text-link,.concept-button,.pricing-jump a,.page-jump a){font-size:1rem}
 .studio-site .eyebrow{font-size:.875rem;letter-spacing:.06em}
 .studio-site .compact-offer .eyebrow{text-transform:none;letter-spacing:.02em}
@@ -542,20 +549,6 @@ form>.optional-choice{margin:1.25rem 0}
 @media(max-width:767px){.studio-site main :is(a.text-link,.standalone-link,th>a,.link-row a,.page-jump a){display:inline-flex;align-items:center;min-height:44px}}
 .studio-site :is(.actions,p:has(>.button+.text-link)){display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center}
 .studio-site .error{font-size:1rem;line-height:1.5}
-html.page-tools-ready{scroll-padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
-/* Fixed corner tools enhance the native footer link after JavaScript is ready. */
-.page-tools-ready .studio-site .site-tools{width:auto;margin:0;padding:0;border:0}
-.page-tools-ready .back-to-top{position:fixed;left:max(1rem,env(safe-area-inset-left));right:auto;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:50}
-.page-tools-ready .back-to-top{width:48px;height:48px;padding:0;gap:0}
-.page-tools-ready .back-to-top>span:not(.back-to-top-icon){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.page-tools-ready .studio-site .site-footer--compact{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
-.page-tools-ready :is(.back-to-top,.support-chat-launch).is-obstructing-controls:not(:focus),
-.page-tools-ready.editing-form :is(.back-to-top,.support-chat-launch),
-.page-tools-ready.chat-is-open .back-to-top,
-html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back-to-top{visibility:hidden;pointer-events:none}
-@media(max-width:767px),(max-height:520px){
- .studio-site main{padding-bottom:5rem}
-}
 /* Every retained financial table shares the same column alignment. */
 .studio-site :is(.responsive-table,.table-scroll){margin-bottom:2rem}
 .studio-site .table-scroll>.responsive-table{margin-bottom:0}
@@ -571,16 +564,16 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 @media(max-width:767px){
  /* Keep real headers available to assistive technology when rows become cards. */
  .studio-site :is(.table-scroll,.comparison-scroll,.payment-schedule,.journal-table-wrap):has(.responsive-table){overflow:visible;max-width:100%}
- .studio-site table.responsive-table{display:block;min-width:0;width:100%;max-width:100%}
- .studio-site table.responsive-table caption{display:block;width:100%;max-width:100%;box-sizing:border-box}
- .studio-site table.responsive-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
- .studio-site table.responsive-table tbody{display:block}
- .studio-site table.responsive-table tbody tr{display:block;border:1px solid var(--line);margin:0 0 1rem;padding:.75rem;background:var(--paper)}
- .studio-site table.responsive-table tbody :is(th,td){display:block;position:static;inset:auto;width:auto;min-width:0;max-width:none;white-space:normal;padding:.6rem 0;overflow-wrap:anywhere;box-sizing:border-box}
- .studio-site table.responsive-table tbody th{font-weight:700;border-bottom:1px solid var(--line)}
- .studio-site table.responsive-table tbody th:first-child{width:auto;max-width:none}
- .studio-site table.responsive-table tbody td:last-child{border-bottom:0}
- .studio-site table.responsive-table td[data-label]::before{content:attr(data-label);display:block;font-weight:650;margin-bottom:.25rem;color:var(--ink)}
+ .studio-site table.responsive-table:not(.compact-money-table){display:block;min-width:0;width:100%;max-width:100%}
+ .studio-site table.responsive-table:not(.compact-money-table) caption{display:block;width:100%;max-width:100%;box-sizing:border-box}
+ .studio-site table.responsive-table:not(.compact-money-table) thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody{display:block}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody tr{display:block;border:1px solid var(--line);margin:0 0 1rem;padding:.75rem;background:var(--paper)}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody :is(th,td){display:block;position:static;inset:auto;width:auto;min-width:0;max-width:none;white-space:normal;padding:.6rem 0;overflow-wrap:anywhere;box-sizing:border-box}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody th{font-weight:700;border-bottom:1px solid var(--line)}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody th:first-child{width:auto;max-width:none}
+ .studio-site table.responsive-table:not(.compact-money-table) tbody td:last-child{border-bottom:0}
+ .studio-site table.responsive-table:not(.compact-money-table) td[data-label]::before{content:attr(data-label);display:block;font-weight:650;margin-bottom:.25rem;color:var(--ink)}
 }
 /* One named, keyboard-accessible animation control over the image. */
 .studio-site .civic-hero{position:relative}
@@ -643,6 +636,17 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .compact-offer>ul{margin-block:.5rem 1rem}
 .studio-site .compact-offer>ul>li{margin-block:.4rem;line-height:1.55}
 .studio-site .checkout-request>h2{font-size:2rem;margin-bottom:.75rem}
+.studio-site .contact-layout.checkout-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start}
+.studio-site .contact-layout.checkout-layout>.checkout-summary{padding:.5rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.studio-site .checkout-summary>details.checkout-overview{border:0;padding:0;margin:0}
+.studio-site .checkout-intro .checkout-price span{display:inline;font-size:1rem}
+.studio-site .checkout-overview>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:600;font-size:1rem}
+.studio-site .checkout-overview[open]>summary{margin-bottom:1rem}
+.studio-site .checkout-intro .checkout-reassurance{font-weight:600}
+.studio-site.studio-inner .checkout-intro{padding-block:1.5rem 1rem;margin-bottom:1rem}
+.studio-site.studio-inner .checkout-intro h1{font-size:clamp(2.1rem,4.3vw,3.5rem);margin-block:0 .75rem}
+.studio-site .checkout-intro .checkout-tax{font-size:.9375rem;line-height:1.5;max-width:55ch}
+.studio-site .checkout-layout .checkout-request>h2{font-size:1.5rem;margin-top:0}
 .studio-form .site-tools{display:block;padding:0}
 @media(max-width:767px){
  .studio-site .work-item--secondary .work-preview,.studio-site .work-item--secondary .work-preview img{max-height:180px}
@@ -651,7 +655,6 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
  .studio-site .checkout-intro .delivery-target{font-size:.9rem}
 }
 
-.page-tools-ready .studio-site.studio-form .site-tools{width:auto;margin:0;padding:0;border:0}
 @media(min-width:768px){.studio-site table.website-allowance-table{table-layout:fixed}}
 
 /* Optional additions use a distinct catalogue; the core package cards stay compact. */
@@ -668,7 +671,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .addon-item>p{margin:.5rem 0}
 .studio-site .addon-item>.text-link{display:inline-flex;align-items:center;min-height:44px;gap:.5rem}
 .studio-site .addon-scope>summary,.studio-site .addon-picker>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:650}
-.studio-site .addon-scope p,.studio-site .addon-scope li{font-size:.92rem;line-height:1.7}
+.studio-site .addon-scope p,.studio-site .addon-scope li{font-size:1rem;line-height:1.7}
 .studio-site .addon-terms{max-width:78ch;margin-block:2rem}
 .studio-site .addon-picker{margin-block:1.25rem;border-block:1px solid var(--line,#ced2c7);padding:.5rem 0}
 .studio-site .addon-picker fieldset{min-width:0;margin:1rem 0;padding:0;border:0}
@@ -677,7 +680,7 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 .studio-site .addon-picker .addon-choice input{width:20px;height:20px;margin:.15rem 0 0;accent-color:#334739}
 .studio-site .addon-choice small{display:block;margin-top:.25rem;font-size:.9375rem;line-height:1.55;font-weight:400}
 .studio-site .addon-choice-price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:650}
-.studio-site .addon-selection-summary{padding:.75rem 1rem;background:#edf0e8;border-radius:6px;margin:1rem 0}
+.studio-site .addon-selection-summary{padding:.75rem 1rem;background:var(--subtle);border-radius:6px;margin:1rem 0}
 .studio-site .addon-selection-summary p{margin:.5rem 0}
 .studio-site .addon-selection-summary output{font:inherit}
 .studio-site .addon-selection-summary[hidden]{display:none}
@@ -699,3 +702,64 @@ html:has(.support-chat:not([hidden]) .support-chat-fallback:not([hidden])) .back
 @media(forced-colors:active){.studio-site :is(a,button,summary,input,select,textarea):focus-visible{outline:3px solid Highlight;box-shadow:none}.studio-site :is(.button,.menu-toggle,.header-contact,#main-nav>a:last-of-type,.city-primary,.city-reveal-copy a){border:1px solid ButtonText}.city-copy::before{background:Canvas}.city-copy{color:CanvasText}}
 
 .service-preparation{max-width:76rem;margin:2rem auto;padding-inline:clamp(1rem,4vw,3rem)}.service-preparation h2{font-size:1.5rem}.service-preparation ul{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;padding:0;list-style:none}.work-study-title img{display:block;width:100%;height:auto;max-height:240px;object-fit:cover}
+
+/* Native need choices and optional details share the same inquiry payload. */
+.studio-site #inquiry .inquiry-goals{padding:0;border:0;margin:0 0 1rem;min-width:0}
+.studio-site #inquiry .inquiry-goals legend{font-size:1.15rem;font-weight:600;margin-bottom:.8rem}
+.studio-site #inquiry .inquiry-goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(9rem,calc(50% - .3rem))),1fr));gap:.6rem}
+.studio-site #inquiry label.inquiry-goal{display:flex;align-items:center;gap:10px;min-height:48px;padding:clamp(10px,1.5vw,14px);margin:0;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:1rem;font-weight:400;line-height:1.45;cursor:pointer}
+.studio-site #inquiry label.inquiry-goal:has(:checked){border-color:var(--moss);background:var(--subtle);box-shadow:inset 0 0 0 1px var(--moss)}
+.studio-site #inquiry .inquiry-goals input[type=radio]{width:1.1rem;min-width:1.1rem;height:1.1rem;min-height:1.1rem;margin:0;flex:none;accent-color:var(--moss)}
+.studio-site #inquiry .inquiry-package-choice,.studio-site #inquiry .inquiry-extra{margin:1rem 0;padding:.7rem 0;border-block:1px solid var(--line)}
+.studio-site #inquiry :is(.inquiry-package-choice,.inquiry-extra)>summary{min-height:44px;align-content:center;font-size:1rem;font-weight:600;cursor:pointer}
+.studio-site #inquiry .monthly-interest[hidden]{display:none!important}
+
+/* Keep concise amount columns aligned; longer planning rows still stack. */
+@media(max-width:767px){
+ .studio-site table.compact-money-table :is(th,td){padding:.7rem .4rem;font-size:1rem;min-width:0}
+ .studio-site table.compact-money-table tbody td{white-space:nowrap}
+ .studio-site table.compact-money-table th:first-child{width:68%;min-width:0;hyphens:none}
+ .studio-site :is(.journal-group,.addon-title) :is(h2,h3)>a{display:inline-flex;align-items:center;min-height:44px}
+ .studio-site .studio-concept-debrief>.button{min-height:44px}
+}
+.studio-site .journal-related .journal-card-description{font-size:1rem}
+
+.studio-site .studio-process>p:not(.eyebrow){font-size:1rem}
+
+/* Enlarged text can outgrow compact amount columns; contain that scroll and let
+   page-navigation.js add keyboard access only while it is needed. */
+.studio-site .journal-table-wrap:has(.compact-money-table){max-width:100%;overflow-x:auto}
+
+/* A concise package choice beside the web-design introduction. Full scope stays below. */
+.studio-site .service-price-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:start;padding-block:2rem;border-bottom:1px solid var(--line)}
+.studio-site.studio-inner .service-price-intro .page-intro{padding:0;border:0;margin:0}
+.studio-site .build-price-summary{min-width:0;padding:1.25rem;background:var(--subtle);border:1px solid var(--line)}
+.studio-site .build-price-summary h2{font-family:inherit;font-size:1.3rem;line-height:1.3;margin:0}
+.studio-site .build-price-currency{margin:.3rem 0 .9rem;font-size:1rem}
+.studio-site .build-price-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem .75rem;padding:.8rem 0;border-top:1px solid var(--line);scroll-margin-top:calc(var(--site-header-height,94px) + 16px)}
+.studio-site .build-price-row h3{font-size:1.05rem;line-height:1.4;margin:0}
+.studio-site .build-price-row .build-price{font-size:1.15rem;line-height:1.4;font-weight:600;margin:0;font-variant-numeric:tabular-nums}
+.studio-site .build-price-fit{grid-column:1/-1;font-size:1rem;line-height:1.5;margin:.25rem 0}
+.studio-site .build-price-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0 1rem}
+.studio-site .build-price-actions a,.studio-site .build-compare-link{display:inline-flex;align-items:center;min-height:44px;font-size:1rem;line-height:1.4}
+.studio-site .build-price-outside{font-size:1rem;line-height:1.5;margin:.5rem 0}
+.studio-site #package-scope{scroll-margin-top:calc(var(--site-header-height,94px) + 16px)}
+@media(max-width:1023px){.studio-site .service-price-intro{grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-top:1rem}.studio-site .build-price-summary{max-width:46rem}}
+@media(max-width:380px){.studio-site .build-price-row{grid-template-columns:minmax(0,1fr)}.studio-site .build-price-actions{flex-direction:column}}
+
+/* Secondary headings follow the shared page-title scale at narrow widths.
+   Concept identities and other component-specific sizes remain independent. */
+@media(max-width:767px){
+ .studio-site :is(.real-project-heading,.work-caption,.work-study-title,.addon-group,.addon-terms,.guide-start,.journal-related)>h2,
+ .studio-site .real-project-heading>div>h2{font-size:clamp(1.9rem,5vw,2.2rem)}
+}
+
+/* Owned, dated example of a contained website repair. */
+.studio-site .audit-sample-findings{max-width:72ch;padding-left:1.5em}
+.studio-site .audit-sample-findings li+li{margin-top:2rem}
+.studio-site .audit-sample-findings h3{font-size:1.15rem;font-weight:500;line-height:1.4}
+.studio-site .audit-sample-pair{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:1.5rem;max-width:664px;margin-block:1.5rem}
+.studio-site .audit-sample-pair figure{min-width:0;margin:0}
+.studio-site .audit-sample-pair img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.studio-site .audit-sample-pair figcaption{margin-top:.75rem;line-height:1.5}
+@media(max-width:600px){.studio-site .audit-sample-pair{grid-template-columns:minmax(0,320px)}}

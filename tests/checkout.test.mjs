@@ -13,7 +13,7 @@ test('monthly checkout states setup plus the first cycle and the baseline waiver
  const pages=checkoutPages(offers,intakeContent(config));
  for(const [slug,total] of [['keep-running','$549'],['improve','$799'],['grow','$1,199']]){
   const body=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  const header=body.split('</header>')[0];assert.ok(header.includes(total));assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);assert.match(body,/up to 12 agreed main pages/);assert.match(body,/updates.*backups.*restores.*malware cleanup/);assert.ok(body.includes(total));assert.match(body,/\$399.*Website Baseline/);assert.match(body,/do not pay for it twice/);
+  const header=body.split('</header>')[0];assert.ok(header.includes(total));assert.match(body,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);assert.match(body,/up to 12 agreed main pages/);assert.match(body,/updates.*backups.*restores.*malware cleanup/);assert.ok(body.includes(total));assert.match(body,/\$399.*Website Baseline/);assert.match(body,/do not pay for it twice/);
  }
 });
 test('all eight offers have request-only checkout with the exact service preserved without JavaScript',()=>{
@@ -47,7 +47,7 @@ test('checkout explains the email reply and preserves synthetic-preview boundari
 test('build checkout keeps editing limits in the package details before the form and outside costs accessible',()=>{
  for(const page of checkoutPages(offers,intakeContent(config)).filter(p=>/-site\/$/.test(p.path))){
   const beforeForm=page.body.slice(0,page.body.indexOf('<form'));
-  assert.match(beforeForm,/no drag-and-drop editor/);assert.match(beforeForm,/send changes to me or use your own developer/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
-  assert.ok(page.body.indexOf('no drag-and-drop editor')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
+  assert.match(beforeForm,/No visual or drag-and-drop editor is included/);assert.match(beforeForm,/you or your developer can edit and publish the website files/);assert.match(beforeForm,/You can also send changes to me/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
+  assert.ok(page.body.indexOf('No visual or drag-and-drop editor is included')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
  }
 });

@@ -1,4 +1,4 @@
-import {inquiryChoices,resolveServiceId,inquiryContextFields,inquiryNeedsWebsite} from './shared.mjs';
+import {inquiryChoices,resolveServiceId,inquiryContextFields,inquiryNeedsWebsite,inquiryAllowsMonthlyInterest} from './shared.mjs';
 import {normalizeAddonSelection} from './addons.mjs';
 export function validEmail(email){
   if(typeof email!=='string'||email.length>254)return false;
@@ -9,6 +9,17 @@ export function validEmail(email){
   return labels.length>=2&&labels.every(label=>/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$/.test(label));
 }
 export const serviceIds=inquiryChoices.map(([id])=>id);
+export const inquiryChoiceErrorKeys=new Set(['service','add_ons',...Object.keys(inquiryContextFields)]);
+export function inquiryValidationMessage(errors={}){
+ return Object.keys(errors).some(key=>inquiryChoiceErrorKeys.has(key))
+  ? 'Some service choices need to be reviewed. Your message has not been saved. Check the current choices before sending again.'
+  : 'Please correct the indicated fields. Your message has not been saved.';
+}
+export function validCallbackPhone(value){
+ if(typeof value!=='string'||value.length>40||!/^\+?[\d ().-]+(?:\s*(?:ext\.?|x|#)\s*\d{1,6})?$/i.test(value))return false;
+ const main=value.split(/\s*(?:ext\.?|x|#)\s*/i)[0],digits=main.replace(/\D/g,'');
+ return digits.length>=7&&digits.length<=15;
+}
 export function publicWebsiteAddress(input){
  if(typeof input!=='string'||!input.trim()||/\s/.test(input))return null;
  const text=input.trim();
@@ -47,6 +58,18 @@ export function validateInquiry(data){
     if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[key]))errors[key]='Please retype this entry or paste it as plain text to remove hidden formatting.';
   }
   if(!validEmail(value.email))errors.email=inquiryFieldMessage('email',{typeMismatch:true});
+  // Default email-first requests keep the legacy payload shape. Phone details
+  // are stored only when the visitor explicitly asks for a callback.
+  if(data.reply_preference!==undefined&&data.reply_preference!==''&&!['email','callback'].includes(data.reply_preference))errors.reply_preference='Choose email or request a callback.';
+  if(data.reply_preference==='callback'){
+    value.reply_preference='callback';
+    value.callback_phone=typeof data.callback_phone==='string'?data.callback_phone.trim():'';
+    if(!validCallbackPhone(value.callback_phone))errors.callback_phone='Add a phone number with 7–15 digits, including the country code if needed. An extension is optional.';
+  }
+  if(data.email_receipt!==undefined&&data.email_receipt!==''){
+    if(data.email_receipt==='requested')value.email_receipt='requested';
+    else errors.email_receipt='Choose whether to email your reference using the checkbox.';
+  }
   value.service=resolveServiceId(value.service)||'unsure';
   if(!serviceIds.includes(value.service))errors.service='Choose one of the listed services.';
   if(value.message.length<10)errors.message=inquiryFieldMessage('message',{tooShort:true});
@@ -61,6 +84,7 @@ export function validateInquiry(data){
     }catch{/* A harmless website/social note remains plain text, never a generated link. */}
   }
   for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service))continue;value[key]=data[key];}
+  if(!inquiryAllowsMonthlyInterest(value))delete value.care_interest;
   if(!inquiryNeedsWebsite(value)&&/^(?:none|n\/?a|no website|not yet|-)?$/i.test(value.website))value.website='';
   if(inquiryNeedsWebsite(value)){
    const address=publicWebsiteAddress(value.website);

@@ -93,7 +93,7 @@ export const ohioProfilesC = [
     geographyNote:'London is a city and the Madison County seat. West Jefferson, Plain City and Mount Sterling are villages in the county. The meeting method should be explicit even when the community is familiar.',
     questions:[
       ['Should a London consultation form ask customers to choose a final package?','Only if that choice is necessary before the discussion. Otherwise ask for the problem, desired outcome and relevant background. Explain that recommendations and any later proposal follow the consultation, so an uncertain visitor can still make a useful first inquiry.'],
-      ['Can a Madison County consultation have several possible outcomes?','Yes. Name the realistic outcomes and the output included in the initial service. Make clear which further work requires a written scope and price. The business should approve those boundaries before the page or booking instructions are published.']
+      ['Can a Madison County consultation have several possible outcomes?','Yes. Name the realistic outcomes and the output included in the initial service. Make clear which further work requires a written proposal with the work and price. The business should approve those boundaries before the page or booking instructions are published.']
     ]
   },
   {
@@ -244,7 +244,7 @@ export const ohioProfilesC = [
     search:'Dayton SEO research should inform the new structure without erasing useful existing context. Review titles, internal links, canonical settings, crawl access and the agreed redirect list at launch. Compare post-launch evidence with a dated baseline while noting seasonality and other changes. These checks reduce avoidable mistakes; they do not guarantee unchanged rankings or immediate indexing.',
     geographyNote:'Dayton is the Montgomery County seat. Kettering, Huber Heights and Riverside are cities in the verified inventory. Retain service-area wording only where it reflects the business’s current coverage.',
     questions:[
-      ['Should a Dayton redesign keep the old page addresses?','Keep a useful address when the page still serves the same purpose. Change it when the planned structure justifies the move, then agree a relevant redirect and update internal links. A cosmetic redesign alone is not a reason to replace every URL.'],
+      ['Should a Dayton redesign keep the old page addresses?','Keep a useful address when the page still serves the same purpose. Change it when the planned structure justifies the move, then agree on a relevant redirect and update internal links. A cosmetic redesign alone is not a reason to replace every URL.'],
       ['What if a Riverside business cannot access its old search reports?','Document the missing access and use the evidence available, such as the existing pages, customer links and owner knowledge. Request appropriate account access before making major removal decisions. Lack of a report should not be described as proof that a page receives no visits.']
     ]
   },

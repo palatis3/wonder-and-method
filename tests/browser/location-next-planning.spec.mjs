@@ -26,8 +26,8 @@ test('eight further location planning tables preserve headings, phone labels, li
   const violations=await page.evaluate(async()=>{const result=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return result.violations.map(({id,nodes})=>({id,targets:nodes.map(node=>node.target)}));});
   expect(violations,path).toEqual([]);
   await table.screenshot({path:testInfo.outputPath(path.split('/').slice(-3,-1).join('-')+'-table.png')});
-  await page.getByRole('link',{name:'Discuss your website',exact:true}).first().click();
-  await expect(page).toHaveURL(url=>url.pathname==='/contact/'&&url.hash==='#inquiry'&&url.searchParams.get('offer')==='unsure'&&url.searchParams.get('goal')==='new_website'&&url.searchParams.get('request_kind')==='question'&&url.searchParams.get('qa')==='1'&&url.searchParams.size===4);
+  await page.getByRole('link',{name:'Ask about your website',exact:true}).first().click();
+  await expect(page).toHaveURL(url=>url.pathname==='/contact/'&&url.hash==='#inquiry'&&url.searchParams.get('offer')==='unsure'&&!url.searchParams.has('goal')&&url.searchParams.get('county')===path.slice('/areas/'.length,-1)&&url.searchParams.get('request_kind')==='question'&&url.searchParams.get('qa')==='1'&&url.searchParams.size===4);
  }
  if(testInfo.project.name==='phone'){
   await page.setViewportSize({width:320,height:800});

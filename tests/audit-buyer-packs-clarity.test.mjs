@@ -79,7 +79,7 @@ test('build packs retain numeric scope and approval, correction, cancellation an
   const pack=packs.find(pack=>pack.id===id),text=body(pack);
   assert.match(text,new RegExp('Up to '+pages+' pages'));
   assert.match(text,new RegExp(forms+' contact forms?'));
-  assert.match(text,new RegExp('Up to '+connections+' agreed booking or newsletter'));
+  assert.match(text,connections===1?/One agreed booking or newsletter/:new RegExp('Up to '+connections+' agreed booking or newsletter'));
   assert.ok(text.includes(offers[id].seo_foundation));
   assert.ok(text.includes(offers[id].redirect_limit));
   assert.ok(text.includes(offers[id].training));
@@ -109,7 +109,7 @@ test('monthly packs state the starting review once and retain work, renewal and 
    assert.match(text,new RegExp('One '+(id==='grow'?30:20)+'-minute call'));
    assert.ok(text.includes(offers.plans[id].search_scope.method));
    assert.ok(text.includes(offers.plans[id].search_scope.metrics));
-   for(const pattern of [/Public posting or email sending needs your explicit approval/,/Five business days before renewal/,/next monthly invoice pauses/,/agree with you in writing whether its basic care continues/,/do not automatically charge for a different plan/,/unused-work refund or credit/,/inquiry clicks are not confirmed leads/])assert.match(text,pattern,id);
+   for(const pattern of [/Public posting or email sending needs your explicit approval/,/For Improve and Grow: confirm useful work and ready inputs five business days before renewal/,/next monthly invoice pauses/,/agree with you in writing whether its basic care continues/,/do not automatically charge for a different plan/,/unused-work refund or credit/,/inquiry clicks are not confirmed leads/])assert.match(text,pattern,id);
   }
  }
  const grow=body(packs.find(pack=>pack.id==='grow'));
@@ -171,8 +171,9 @@ test('generated HTML, TXT and index keep every destination and the complete twel
   assert.deepEqual(Object.keys(record),['id','name','price','priceLabel','summary','request','annual','baselineFee','addOns']);
   assert.equal(record.addOns,'/assets/buyer-packs/website-addons');
   assert.equal(record.request,pack.request);
-  // A ceiling allows the complete conditions to exceed the 900-word reading target.
-  assert.ok(words(txt)<1200,pack.id+' full download has avoidable growth');
+  // Full-sentence exclusions and named outside costs put Grow at 1,221 words.
+  // Keep a bounded full download without removing its complete conditions.
+  assert.ok(words(txt)<1250,pack.id+' full download has avoidable growth');
   assert.ok(words(pack.sections.filter(section=>!section.disclosure).flatMap(section=>section.items).join(' '))<900,pack.id+' main reading length');
  }
  const catalogue=index.at(-1),html=await readFile(join(folder,'website-addons.html'),'utf8'),txt=await readFile(join(folder,'website-addons.txt'),'utf8');

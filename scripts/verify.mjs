@@ -2,6 +2,7 @@ import {readFile,readdir,stat,writeFile} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {robotsDirective,crawlFiles} from '../src/seo.mjs';
 import {verifyLocalReferences} from './verify-local-references.mjs';
+import {initialRouteAssets,deferredMotionImages} from './initial-route-assets.mjs';
 import assert from 'node:assert/strict';
 const root=resolve(import.meta.dirname,'..');
 const json=async p=>JSON.parse(await readFile(join(root,p),'utf8'));
@@ -35,12 +36,10 @@ for(const route of routes){
  }
 }
 const deferredFilmBytes=inventory.filter(x=>/\.mp4$/.test(x.path)).reduce((sum,x)=>sum+x.bytes,0);
-// Navigation links do not fetch their destinations; retain any eager media nested inside them.
-const initialHomeHtml=homeHtml.replace(/<img\b[^>]*loading="lazy"[^>]*>/g,'').replace(/<a\b[^>]*>/g,'');
-const homeAssets=new Set([...initialHomeHtml.matchAll(/(?:src|href|poster)="(\/(?:assets\/[^\"]+|favicon\.ico))"/g)].map(x=>x[1].split('?')[0]));
+// Parse actual resource attributes. Data-only previews wait for playback, and
+// a native-lazy picture includes its source candidates in that same deferral.
+const homeAssets=initialRouteAssets(homeHtml);
 // Conservatively count every responsive hero candidate and referenced dependency.
-// Historical assets retained for source recovery are not browser requests.
-for(const match of initialHomeHtml.matchAll(/\/assets\/[^\s"<>]+\.(?:webp|woff2)/g))homeAssets.add(match[0]);
 for(const asset of homeAssets){
  if(!/\.(?:css|js|mjs)$/.test(asset))continue;
  const content=await readFile(join(root,'dist',asset),'utf8');
@@ -49,7 +48,9 @@ for(const asset of homeAssets){
 }
 const homeInventory=inventory.filter(x=>{const p=x.path.replaceAll('\\','/');return !/\.mp4$/.test(p)&&homeAssets.has(p);});
 const payload=homeInventory.reduce((s,x)=>s+x.bytes,0)+results[0].htmlBytes;
+const motionImages=deferredMotionImages(homeHtml);
+const deferredMotionImageBytes=inventory.filter(x=>motionImages.has(x.path.replaceAll('\\','/'))&&!homeAssets.has(x.path.replaceAll('\\','/'))).reduce((sum,x)=>sum+x.bytes,0);
 const totalLocalAssetBytes=inventory.filter(x=>/assets/.test(x.path)).reduce((s,x)=>s+x.bytes,0);
 assert.ok(payload<1024000,'Initial route conservative payload');
-const output={checkedAt:new Date().toISOString(),routes:results,localReferences,contrast,selectedContrast,conservativeInitialBytes:payload,totalLocalAssetBytes,deferredFilmBytes,staticBudgets:'pass',privateDataExcluded:'pass',inventory,limits:'Conservative homepage bytes include eager home images/posters, all responsive hero candidates and referenced local code/fonts. Native lazy images are excluded from initial bytes. Article-only assets are counted separately in totalLocalAssetBytes. Deferred motion is separate; no external scene is loaded. Static inspection is not browser, field performance, screen reader or live provider evidence.'};
+const output={checkedAt:new Date().toISOString(),routes:results,localReferences,contrast,selectedContrast,conservativeInitialBytes:payload,totalLocalAssetBytes,deferredFilmBytes,deferredMotionImageBytes,staticBudgets:'pass',privateDataExcluded:'pass',inventory,limits:'Conservative static homepage bytes include eager resource attributes, all responsive hero candidates and referenced local code/fonts. Native-lazy images and their picture sources are excluded from this static base. Data-only motion images are reported separately: ordinary desktop autoplay may fetch them immediately, while phone first visits and reduced motion wait. Article-only assets remain in totalLocalAssetBytes. Films are separate. This static inventory does not establish total desktop-autoplay transfer, field performance, screen-reader behavior or live provider delivery.'};
 await writeFile(join(root,'evidence/static-verification.json'),JSON.stringify(output,null,2));console.log(`${results.length} routes checked; internal links, metadata, original and selected identity contrast pairs, private data exclusion and payload passed (${payload} bytes conservative initial payload).`);

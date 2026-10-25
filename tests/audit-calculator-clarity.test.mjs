@@ -12,6 +12,18 @@ import {leadWorkbench} from '../src/lead-workbench.mjs';
 
 const scenario={oneTime:2350,monthlyCost:180,months:12,inquiries:4,closeRate:25,contribution:500};
 
+test('large ROI assumptions prompt checking without clipping valid values or fabricating break-even',()=>{
+ assert.deepEqual(calculateWebsiteRoi(scenario).checks,[]);
+ const extreme={oneTime:1000000000,monthlyCost:1000000000,months:120,inquiries:1000000,closeRate:100,contribution:1000000000};
+ const r=calculateWebsiteRoi(extreme);assert.equal(r.ok,true);assert.deepEqual(r.values,extreme);assert.equal(r.checks.length,4);
+ for(const key of ['totalCost','totalContribution','net','roiPercent','expectedJobs','paybackMonths','breakEvenInquiries'])assert.ok(Number.isFinite(r[key]),key);
+ assert.equal(calculateWebsiteRoi({...scenario,closeRate:0}).breakEvenInquiries,null);
+ assert.equal(calculateWebsiteRoi({...scenario,contribution:0}).paybackMonths,null);
+ const free=calculateWebsiteRoi({...scenario,oneTime:0,monthlyCost:0});assert.equal(free.roiPercent,null);assert.equal(free.breakEvenInquiries,0);
+ const html=websiteRoiPage();assert.ok(html.indexOf('class="roi-next"')>html.indexOf('id="roi-output"'));assert.ok(html.indexOf('class="roi-next"')<html.indexOf('id="worked-example"'));
+ assert.match(html,/Ask about your website/);assert.doesNotMatch(html,/Discuss your website scope/);
+});
+
 test('currency inputs accept common formatting without guessing malformed amounts',()=>{
  for(const text of ['2350.50','$2,350.50','  $ 2,350.50  ','2 350.50','2\u00a0350.50','2\u202f350.50',2350.5])assert.deepEqual(parseMoneyInput(text),{ok:true,value:2350.5},String(text));
  for(const text of ['$0','0.00','$.00','.00',0])assert.equal(parseMoneyInput(text).value,0);
@@ -47,7 +59,7 @@ test('ROI preset uses offer prices and a reconciled provider assumption with for
 
 function costFixture(initial={}){
  const fields=Object.fromEntries(Object.entries({build:'focused',plan:'improve',cycles:'12',hostingMonths:'12',hostingMonthly:'10',external:'20',billing:'monthly',baseline:'on',sprint:'on',...initial}).map(([name,value])=>[name,{name,value,disabled:false,checked:name==='baseline',attributes:{},options:[],setAttribute(key,value){this.attributes[key]=value;},removeAttribute(key){delete this.attributes[key];},closest(selector){return selector==='details'&&['external','hostingMonthly','hostingMonths'].includes(name)?disclosure:null;}}]));
- const disclosure={open:false,parentElement:null},listeners={},calculator={elements:{namedItem:name=>fields[name]},addEventListener:(type,handler)=>listeners[type]=handler,querySelector:()=>null,querySelectorAll:()=>Object.values(fields).filter(field=>field.attributes['aria-invalid']==='true')};
+ const disclosure={open:false,parentElement:null},listeners={},calculator={elements:{namedItem:name=>fields[name]},addEventListener:(type,handler)=>listeners[type]=handler,querySelector:()=>null,querySelectorAll:selector=>selector==='[data-cost-months]'?[]:Object.values(fields).filter(field=>field.attributes['aria-invalid']==='true')};
  const output=Object.fromEntries(['cost-total','cost-breakdown','calculator-error','external-note',...['cycles','hostingMonths','hostingMonthly','external'].map(name=>'cost-'+name+'-error')].map(id=>[id,{textContent:''}]));
  class Data{constructor(){this.values=new Map(Object.entries(fields).filter(([name,field])=>!field.disabled&&(!['baseline','sprint'].includes(name)||field.checked)).map(([name,field])=>[name,field.value]));}get(name){return this.values.get(name)??null;}has(name){return this.values.has(name);}}
  const original=globalThis.FormData;globalThis.FormData=Data;
@@ -84,15 +96,17 @@ test('an existing-site review appears once and is superseded by the Sprint witho
 });
 
 test('ROI controller renders complete scenarios, individual errors and reset without sending entries',async()=>{
- const source=(await readFile(new URL('../src/assets/website-roi.js',import.meta.url),'utf8')).replace(/^import [^\n]+\n/,'');
+ const source=(await readFile(new URL('../src/assets/website-roi.js',import.meta.url),'utf8')).replace(/^import [^\n]+\n/gm,'');
  const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:'',innerHTML:'',attributes:{},focus(){this.focused=true;},setAttribute(name,value){this.attributes[name]=value;},removeAttribute(name){delete this.attributes[name];},replaceChildren(){this.innerHTML='';}});return nodes.get(id);};
  const form=get('website-roi'),listeners={};form.elements=Object.fromEntries(Object.entries(scenario).map(([key,value])=>[key,Object.assign(get('roi-'+key),{value:String(value)})]));form.addEventListener=(type,handler)=>{listeners[type]=handler;};
- const timers=[];runInNewContext(source,{calculateWebsiteRoi,roiFields,breakEvenDisplayBound,Intl,setTimeout:fn=>{timers.push(fn);return timers.length;},clearTimeout(){},document:{getElementById:get}});
+ const timers=[],counts=[];runInNewContext(source,{calculateWebsiteRoi,roiFields,breakEvenDisplayBound,countJourney(...args){counts.push(args);},Intl,setTimeout:fn=>{timers.push(fn);return timers.length;},clearTimeout(){},document:{getElementById:get}});
  assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-results-title').focused,undefined);
+ assert.deepEqual(counts,[]);
  form.elements.oneTime.value='$2,350';listeners.submit({preventDefault(){}});
  assert.equal(get('roi-results').hidden,false);assert.match(get('roi-output').innerHTML,/Money left after website costs/);assert.match(get('roi-output').innerHTML,/\$1,490/);assert.match(get('roi-output').innerHTML,/scope="col">Inquiries/);assert.match(get('roi-output').innerHTML,/scope="col">Net/);
  form.elements.oneTime.value='$2,35';listeners.input();assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-stale').hidden,false);listeners.submit({preventDefault(){}});assert.equal(form.elements.oneTime.attributes['aria-invalid'],'true');assert.equal(form.elements.oneTime.focused,true);
  form.elements.oneTime.value='2350';listeners.reset();timers.at(-1)();assert.equal(get('roi-results').hidden,false);assert.match(get('roi-output').innerHTML,/\$1,490/);assert.equal(form.elements.oneTime.attributes['aria-invalid'],undefined);
+ listeners.input();timers.at(-1)();assert.deepEqual(counts,[['roi_calculate']]);
 });
 
 test('inquiry tracker keeps storage and download boundaries and links to relevant add-ons',async()=>{

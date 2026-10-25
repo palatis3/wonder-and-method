@@ -1,5 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect} from './fixtures.mjs';
+import reviewedWorksheets from '../../src/location-worksheet-links.json' with {type:'json'};
 const fixture=JSON.parse(await readFile(new URL('../fixtures/northeast-expected-areas.json',import.meta.url),'utf8'));
 const northern=JSON.parse(await readFile(new URL('../fixtures/northern-expected-areas.json',import.meta.url),'utf8'));
 fixture.states.push(...northern.states);
@@ -49,7 +50,9 @@ for(const width of [320,768,1440])for(const state of fixture.states){
    const referenceId=await entry.getByRole('link',{name:'Place definitions and sources',exact:true}).getAttribute('href');
    await expect(page.locator(referenceId)).toBeAttached();
    expect(await page.locator(referenceId+' a[href^="#geography-source-"]').count()).toBeGreaterThan(0);
-   await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveAttribute('download','');
+   const worksheet=entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true}),reviewed=reviewedWorksheets[state.id+'/'+area.slug];
+   if(reviewed){await expect(worksheet).toHaveAttribute('download','');await expect(worksheet).toHaveAttribute('href',new RegExp('^'+reviewed.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:\\?v=[a-f0-9]+)?$'));}
+   else await expect(worksheet).toHaveCount(0);
   }
   for(const selector of ['.county-reference-sets > summary','.county-source-index > summary'])await page.locator(selector).click();
   await settle(page);const expanded=await layout(page);
@@ -62,45 +65,46 @@ for(const width of [320,768,1440])for(const state of fixture.states){
 
 test('state and district finder preserves cross-boundary and typed names, resets focus and sends no search requests',async({page})=>{
  await page.goto('/areas/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
- await expect(state.locator('option')).toHaveCount(28);
+ const search=page.getByRole('searchbox',{name:'County, parish, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
+ await expect(state.locator('option')).toHaveCount(30);
  await expect(state.getByRole('option',{name:'South Carolina',exact:true})).toHaveAttribute('value','south-carolina');
- for(const [name,id] of [['Georgia','georgia'],['Mississippi','mississippi'],['Alabama','alabama'],['Wisconsin','wisconsin'],['Illinois','illinois']])await expect(state.getByRole('option',{name,exact:true})).toHaveAttribute('value',id);
+ for(const [name,id] of [['Georgia','georgia'],['Mississippi','mississippi'],['Alabama','alabama'],['Wisconsin','wisconsin'],['Illinois','illinois'],['Louisiana','louisiana'],['Arkansas','arkansas']])await expect(state.getByRole('option',{name,exact:true})).toHaveAttribute('value',id);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  const targets=()=>page.locator('[data-county-results] li a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  const cases=[
-  ['Princeton municipality NJ',['/areas/new-jersey/#mercer']],
-  ['Township of South Orange Village NJ',['/areas/new-jersey/#essex']],
-  ['Groton city CT',['/areas/connecticut/#southeastern-connecticut']],
-  ['Groton town CT',['/areas/connecticut/#southeastern-connecticut']],
-  ['Capitol planning region CT',['/areas/connecticut/#capitol']],
-  ['Bristol county RI',['/areas/rhode-island/#bristol']],
-  ['Amherst town MA',['/areas/massachusetts/#hampshire']],
-  ['Smyrna town DE',['/areas/delaware/#kent','/areas/delaware/#new-castle']],
-  ['Milford city DE',['/areas/delaware/#kent','/areas/delaware/#sussex']],
-  ['Saint Albans city VT',['/areas/vermont/#franklin']],
-  ['Essex Junction village VT',['/areas/vermont/#chittenden']],
-  ['Coös County NH',['/areas/new-hampshire/#coos']],
-  ['Rangeley plantation ME',['/areas/maine/#franklin']],
-  ['Rangeley town ME',['/areas/maine/#franklin']],
-  ['Baltimore city MD',['/areas/maryland/#baltimore-city']],
-  ['Baltimore independent city MD',['/areas/maryland/#baltimore-city']],
-  ['Baltimore county MD',['/areas/maryland/#baltimore']],
-  ['Saint Marys County MD',['/areas/maryland/#st-marys']],
-  ["St. Mary's County MD",['/areas/maryland/#st-marys']],
-  ['Towson MD',['/areas/maryland/#baltimore']],
-  ['Mount Airy town MD',['/areas/maryland/#carroll','/areas/maryland/#frederick']]
+  ['Princeton municipality NJ',['/areas/new-jersey/mercer-county/']],
+  ['Township of South Orange Village NJ',['/areas/new-jersey/essex-county/']],
+  ['Groton city CT',['/areas/connecticut/southeastern-connecticut-planning-region/']],
+  ['Groton town CT',['/areas/connecticut/southeastern-connecticut-planning-region/']],
+  ['Capitol planning region CT',['/areas/connecticut/capitol-planning-region/']],
+  ['Bristol county RI',['/areas/rhode-island/bristol-county/']],
+  ['Amherst town MA',['/areas/massachusetts/hampshire-county/']],
+  ['Smyrna town DE',['/areas/delaware/kent-county/','/areas/delaware/new-castle-county/']],
+  ['Milford city DE',['/areas/delaware/kent-county/','/areas/delaware/sussex-county/']],
+  ['Saint Albans city VT',['/areas/vermont/franklin-county/']],
+  ['Essex Junction village VT',['/areas/vermont/chittenden-county/']],
+  ['Coös County NH',['/areas/new-hampshire/coos-county/']],
+  ['Rangeley plantation ME',['/areas/maine/franklin-county/']],
+  ['Rangeley town ME',['/areas/maine/franklin-county/']],
+  ['Baltimore city MD',['/areas/maryland/baltimore-area/']],
+  ['Baltimore independent city MD',['/areas/maryland/baltimore-area/']],
+  ['Baltimore county MD',['/areas/maryland/baltimore-area/']],
+  ['Saint Marys County MD',['/areas/maryland/st-marys-county/']],
+  ["St. Mary's County MD",['/areas/maryland/st-marys-county/']],
+  ['Towson MD',['/areas/maryland/baltimore-area/']],
+  ['Mount Airy town MD',['/areas/maryland/carroll-county/','/areas/maryland/frederick-county/']]
  ];
- for(const [query,expected] of cases){await search.fill(query);await expect.poll(targets).toEqual(expected);}
+ for(const [query,expected] of cases){await search.fill(query);await expect.poll(targets).toEqual([...expected].sort());}
  await search.fill('');
  for(const s of fixture.states){await state.selectOption(s.id);await expect(page.locator('[data-county-results] li')).toHaveCount(s.areas.length);}
  await search.fill('Capitol planning region CT');await expect(page.locator('[data-county-results] li')).toHaveCount(0);
  await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(state).toHaveValue('');
- await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-cs]')).toHaveCount(1607);
+ const browse=page.locator('[data-county-browse-all] > summary');await expect(browse).toBeVisible();await browse.click();
+ await expect(page.locator('[data-county-directory]')).toBeVisible();await expect(page.locator('[data-cs]')).toHaveCount(1746);
  expect(requests).toEqual([]);
 });
 
-test('planning-region entry supports keyboard use, optional worksheet and general inquiry context',async({page})=>{
+test('planning-region entry supports keyboard use and general inquiry context without a mismatched worksheet',async({page})=>{
  await page.goto('/areas/connecticut/?qa=1');await settle(page);
  const entry=page.locator('#lower-connecticut-river-valley'),group=page.locator('.county-region').filter({has:entry});
  await group.locator(':scope > summary').click();
@@ -109,13 +113,11 @@ test('planning-region entry supports keyboard use, optional worksheet and genera
  await expect(entry.locator('.county-area-content')).toContainText('current Census county equivalent');
  await expect(entry.getByRole('heading',{name:'Towns',exact:true})).toBeVisible();
  await expect(entry.getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();
- await expect(entry.locator('.county-area-content')).toContainText('Optional fictional example; the planning principles apply in many places.');
- const downloadPromise=page.waitForEvent('download');await entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true}).click();
- const download=await downloadPromise;expect(download.suggestedFilename()).toBe('connecticut-lower-connecticut-river-valley.txt');
- const stream=await download.createReadStream();let text='';for await(const chunk of stream)text+=chunk.toString();
+ await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveCount(0);
+ const preserved=await page.request.get('/assets/county-briefs/connecticut-lower-connecticut-river-valley.txt');expect(preserved.status()).toBe(200);const text=await preserved.text();
  expect(text).toContain('LOWER CONNECTICUT RIVER VALLEY PLANNING REGION, CONNECTICUT');expect(text).toContain('EXAMPLE (MADE UP)');
  expect(text).toContain('/areas/connecticut/lower-connecticut-river-valley-planning-region/');
- await page.locator('.county-state-switch').getByRole('link',{name:'Discuss your website',exact:true}).click();await expect(page).toHaveURL(url=>url.pathname==='/contact/'&&!url.searchParams.has('county')&&url.searchParams.get('request_kind')==='question'&&url.searchParams.get('qa')==='1'&&url.hash==='#inquiry');
+ await page.locator('.county-state-switch').getByRole('link',{name:'Ask about your website',exact:true}).click();await expect(page).toHaveURL(url=>url.pathname==='/contact/'&&!url.searchParams.has('county')&&url.searchParams.get('request_kind')==='question'&&url.searchParams.get('qa')==='1'&&url.hash==='#inquiry');
  await expect(page.locator('input[name="county"]')).toHaveValue('');
  await expect(page.locator('input[name="business_location"]')).toHaveValue('');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);

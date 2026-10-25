@@ -8,7 +8,7 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
  for(const {path,html} of pages){
   const data=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   const breadcrumbs=data.filter(x=>x['@type']==='BreadcrumbList');
-  if(path==='/'||path==='/404/'){assert.equal(breadcrumbs.length,0);assert.doesNotMatch(html,/aria-label="Breadcrumb"/);continue;}
+  if(breadcrumbTrail(path,'Current page').length<3){assert.equal(breadcrumbs.length,0);assert.doesNotMatch(html,/aria-label="Breadcrumb"/);continue;}
   total++;assert.equal(breadcrumbs.length,1,path);const items=breadcrumbs[0].itemListElement;assert.ok(items.length>=2,path);
   assert.deepEqual(items.map(x=>x.position),items.map((_,i)=>i+1));assert.equal(items[0].item,config.origin+'/');assert.equal(items.at(-1).item,config.origin+path);
   for(const item of items){assert.equal(item['@type'],'ListItem');assert.ok(item.name.trim());assert.ok(pages.some(page=>config.origin+page.path===item.item),item.item);}
@@ -16,7 +16,7 @@ test('breadcrumbs give meaningful parents and match canonical, visible current-p
   const parent=path.startsWith('/services/')&&path!=='/services/'?'/services/':path.startsWith('/checkout/')?'/pricing/':path.startsWith('/guides/')&&path!=='/guides/'?'/guides/':path.startsWith('/areas/')&&path!=='/areas/'?'/areas/':path.startsWith('/work/')&&path!=='/work/'?'/work/':null;
   if(parent){assert.equal(items[1].item,config.origin+parent);assert.ok(nav.includes(`href="${parent}"`));}
  }
- assert.equal(total,pages.filter(page=>!['/','/404/'].includes(page.path)).length);
+ assert.equal(total,pages.filter(page=>breadcrumbTrail(page.path,'Current page').length>=3).length);
 });
 test('breadcrumb labels escape markup while structured names retain their actual text',()=>{
  const trail=breadcrumbTrail('/services/test/','A <better> & "clearer" page');assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,'A <better> & "clearer" page');assert.match(breadcrumbMarkup(trail),/A &lt;better&gt; &amp; &quot;clearer&quot; page/);
@@ -24,7 +24,7 @@ test('breadcrumb labels escape markup while structured names retain their actual
 test('contact-form guide uses its visible title in the breadcrumb and Article headline',()=>{
  const page=pages.find(page=>page.path==='/guides/contact-form-not-working/'),heading=page.html.match(/<h1\b[^>]*>([^<]+)<\/h1>/)?.[1];assert.ok(heading);
  const trail=breadcrumbTrail(page.path,heading);
- assert.equal(trail.at(-1).name,'Contact form help');
+ assert.equal(trail.at(-1).name,heading);
  assert.equal(breadcrumbSchema(trail,config.origin).itemListElement.at(-1).name,trail.at(-1).name);
  assert.ok(breadcrumbMarkup(trail).includes(`aria-current="page">${trail.at(-1).name}</span>`));
  const graph=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);

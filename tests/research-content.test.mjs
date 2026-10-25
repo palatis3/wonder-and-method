@@ -22,7 +22,8 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,1229);
+ assert.equal(previous.length,278);assert.equal(pages.length,1259);
+ for(const path of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===path),path);
  for(const route of previous){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);const target=pages.find(page=>page.path===hub);assert.ok(target,destination);if(slug)assert.ok(target.html.includes(`id="${slug}"`),destination);}
@@ -64,7 +65,7 @@ test('six distinct guides are complete, linked, approved, downloadable and indiv
    assert.match(body,/two review rounds, each allowing up to five business days/);assert.match(body,/Reviews, late inputs and added work extend the elapsed schedule/);
   }
   if(guide.path==='/guides/website-handover-checklist/'){
-   assert.match(body,/source files, images, configuration notes and build instructions/);assert.match(body,/within five business days after the paid work is finished, or after a cancelled account is settled/);assert.match(body,/Your accounts stay under your control throughout/);
+   assert.match(body,/source files, images, configuration notes and build instructions/);assert.match(body,/within five business days after the paid work is finished, or after a canceled account is settled/);assert.match(body,/Your accounts stay under your control throughout/);
   }
   assert.ok(index.includes(`href="${guide.path}"`));assert.ok(html.includes(detail.download));assert.ok((await read('src'+detail.download)).length>300);
   const png=await readFile(new URL('../src/assets/social/guides-'+detail.slug+'.png',import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);

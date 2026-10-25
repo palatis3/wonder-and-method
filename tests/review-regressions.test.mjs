@@ -13,7 +13,7 @@ test('offer summaries retain page caps, policy boundaries and working detailed d
  for(const route of ['/pricing/','/services/web-design/']){
   const html=pages.find(p=>p.path===route).html;
   for(const id of ['focused_site','signature_site']){
-   assert.match(html,new RegExp('Up to '+offers[id].marketing_page_cap+' (?:custom )?pages'));
+   assert.match(html,new RegExp('up to '+offers[id].marketing_page_cap+' (?:custom )?pages','i'));
    if(route==='/pricing/')assert.ok(html.includes('href="/assets/buyer-packs/'+id+'"'));
    else{assert.ok(html.includes('href="/assets/buyer-packs/'+id+'"'));assert.ok(buyerPacks(offers).some(pack=>pack.id===id));}
    assert.ok(pages.find(page=>page.path==='/services/web-design/').html.includes('id="offer-'+id+'"'));

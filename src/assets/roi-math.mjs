@@ -40,7 +40,9 @@ export function calculateWebsiteRoi(input){
  const totalContribution=monthlyContribution*months;
  const net=totalContribution-totalCost;
  const monthlyNet=monthlyContribution-monthlyCost;
- return {ok:true,values,totalCost,totalContribution,net,roiPercent:totalCost>0?net/totalCost*100:null,expectedJobs:inquiries*closeRate/100*months,monthlyNet,paybackMonths:monthlyNet>0?oneTime/monthlyNet:null,breakEvenInquiries:totalCost===0?0:contributionPerInquiry>0?totalCost/(months*contributionPerInquiry):null};
+ // These prompts invite a check; they do not cap or alter a valid scenario.
+ const checks=[['oneTime',100000],['monthlyCost',10000],['inquiries',1000],['contribution',10000]].filter(([key,threshold])=>values[key]>=threshold).map(([key])=>roiFields[key].label);
+ return {ok:true,values,checks,totalCost,totalContribution,net,roiPercent:totalCost>0?net/totalCost*100:null,expectedJobs:inquiries*closeRate/100*months,monthlyNet,paybackMonths:monthlyNet>0?oneTime/monthlyNet:null,breakEvenInquiries:totalCost===0?0:contributionPerInquiry>0?totalCost/(months*contributionPerInquiry):null};
 }
 
 // Round a reachable threshold upward; absorb only floating-point noise at exact tenths.

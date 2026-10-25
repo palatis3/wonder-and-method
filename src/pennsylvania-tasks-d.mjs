@@ -46,7 +46,7 @@ export const pennsylvaniaTasksD = {
     decision: 'Write a sample temporary-hours notice with explicit affected dates and a clear statement of what changes. List the pages where hours appear and name the person who approves the update. Add a review or removal task. Check that the fallback contact is usable and that any reply expectation reflects actual capacity. An automatic expiry or synchronized listing update should be named separately if required.',
     questions: ['What are the ordinary hours and the dated exception?', 'How can someone confirm a visit when availability is uncertain?', 'Who removes or replaces the notice?'],
     output: 'An approved notice pattern, a list of affected pages and a practical update responsibility.',
-    check: 'Ask a reader to determine whether the notice applies to a specific date and how they would confirm a visit before travelling.'
+    check: 'Ask a reader to determine whether the notice applies to a specific date and how they would confirm a visit before traveling.'
   },
   susquehanna: {
     name: 'Susquehanna', title: 'Write coverage rules that support an uncertain border inquiry.',
@@ -67,7 +67,7 @@ export const pennsylvaniaTasksD = {
   union: {
     name: 'Union', title: 'Define the appointment before connecting a calendar.',
     scenario: 'A Lewisburg professional business offers an initial conversation and a more substantial working session with different preparation.',
-    decision: 'Describe the purpose, format, required preparation and deliverable for each appointment. Include owner-approved fees and scope limits where applicable. Decide whether a customer can book directly or must submit a request for review. Keep confidential documents out of an ordinary introduction form and agree any necessary exchange separately. Compare the finished explanation with the booking destination so its duration and confirmation match the actual offer.',
+    decision: 'Describe the purpose, format, required preparation and deliverable for each appointment. Include owner-approved fees and scope limits where applicable. Decide whether a customer can book directly or must submit a request for review. Keep confidential documents out of an ordinary introduction form and agree on any necessary exchange separately. Compare the finished explanation with the booking destination so its duration and confirmation match the actual offer.',
     questions: ['What does the customer receive from this session?', 'What must be ready before it can proceed?', 'Does selecting a date reserve time or request review?'],
     output: 'An appointment comparison and a checked request or booking route for each offer.',
     check: 'Have a reader choose the suitable session and describe its outcome, preparation and commitment before opening the calendar.'
@@ -99,7 +99,7 @@ export const pennsylvaniaTasksD = {
   wayne: {
     name: 'Wayne', title: 'Match each workshop status to an honest next step.',
     scenario: 'A Honesdale workshop organizer has confirmed sessions, possible future dates and occasional requests for private groups.',
-    decision: 'Sort every current listing into confirmed and open, confirmed but closed, ended or still proposed. Agree the information and action appropriate to each state. Keep a stable explanation of the workshop linked to current dates, and create a separate inquiry route for custom sessions. Check that external registration links identify the intended session. Assign responsibility for changing status when a date closes or passes.',
+    decision: 'Sort every current listing into confirmed and open, confirmed but closed, ended or still proposed. Agree on the information and action appropriate to each state. Keep a stable explanation of the workshop linked to current dates, and create a separate inquiry route for custom sessions. Check that external registration links identify the intended session. Assign responsibility for changing status when a date closes or passes.',
     questions: ['Which dates and venues have actually been confirmed?', 'What action is appropriate when registration is closed?', 'How does a custom group request reach the organizer?'],
     output: 'A reviewed schedule, clear status wording and checked links to current registration or inquiry destinations.',
     check: 'Open a current, a closed and a proposed session as a visitor; each should make its status clear before any booking action appears.'

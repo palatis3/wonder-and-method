@@ -8,8 +8,8 @@ import offers from '../config/offers.json' with {type:'json'};
 import config from '../config/site.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import {countyPages,serviceAreaLinks} from '../src/service-counties.mjs';
-import {serviceStates,countyPath,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
-import {normalizeCountyQuery,parseCountyQuery,countyMatchScore} from '../src/assets/county-directory.js';
+import {serviceStates,countyPath,countyServicePath,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
+import {normalizeCountyQuery,parseCountyQuery,countyMatchScore,countyMatch,compareCountyMatches} from '../src/assets/county-directory.js';
 import {countyCoverage} from '../src/erie-content.mjs';
 import {routeIndexEligible} from '../src/index-policy.mjs';
 import {countyBuyerTasks} from '../src/county-buyer-tasks.mjs';
@@ -22,25 +22,25 @@ const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:stat
 const matches=(query,state='')=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query),state)).map(card=>`${card.state}/${card.slug}`);
 const e=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
-test('all 1607 area entries resolve to indexable pages and remain crawlable without JavaScript',()=>{
+test('all 1746 area entries resolve to indexable pages and remain crawlable without JavaScript',()=>{
  const directory=countyDirectory();
  const stateDirectories=new Map(serviceStates.map(state=>[state.id,countyDirectory(state)]));
- assert.equal(cards.length,1607);
- assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24,133,55,83,1,92,120,95,100,67,46,159,82,67,72,102]);
+ assert.equal(cards.length,1746);
+ assert.deepEqual(serviceStates.map(state=>state.counties.length),[62,67,88,21,9,5,14,3,14,10,16,24,133,55,83,1,92,120,95,100,67,46,159,82,67,72,102,64,75]);
  for(const state of serviceStates)for(const county of state.counties){
   const route=countyPath(county,state);
   assert.ok(routeIndexEligible(route.split('#')[0]),route);
-  assert.ok(directory.includes(`href="${route}"`),route);
+  assert.ok(directory.includes(`href="${countyServicePath(county,state)}"`),route+' service or directory destination');
   assert.ok(stateDirectories.get(state.id).includes(`href="${route}"`),route);
   if(route!=='/areas/erie-county/')assert.ok(byPath.has(route.split('#')[0]),route);
  }
- assert.equal((directory.match(/data-cs=/g)||[]).length,1607);
- assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,27);
+ assert.equal((directory.match(/data-cs=/g)||[]).length,1746);
+ assert.equal((directory.match(/<details class="county-region county-section"/g)||[]).length,29);
  assert.doesNotMatch(directory,/data-county-filter-controls hidden/);
  assert.match(directory,/<noscript>.*Open the lists below to browse every service area/s);
  assert.equal((directory.match(/for="county-search"/g)||[]).length,1);
  assert.equal((directory.match(/>Clear<\/button>/g)||[]).length,1);
- assert.match(directory,/ZIP codes aren't supported/);
+ assert.match(directory,/ZIP codes are not supported/);
  assert.doesNotMatch(directory,/<h2>No count/);
 });
 
@@ -55,6 +55,13 @@ test('compact search retains typed places, state qualifiers, shared county porti
  assert.deepEqual(matches('St. Clairsville OH'),matches('Saint Clairsville Ohio'));
  assert.ok(matches('Saint Clairsville OH').includes('ohio/belmont'));
  assert.deepEqual(matches('Town of Newfane NY'),['new-york/niagara']);
+ for(const [name,state] of [['Traverse City','MI'],['Bay City','MI'],['Michigan City','IN'],['Johnson City','TN']]){
+  const query=`City of ${name} ${state}`;
+  assert.equal(parseCountyQuery(query).query,name.toLowerCase(),query);
+  assert.equal(parseCountyQuery(query).type,'city',query);
+  assert.ok(matches(query).length,query+' must find its city');
+  assert.deepEqual(matches(query),matches(`${name} city ${state}`),query+' preserves prefix/suffix equivalence');
+ }
  assert.equal(parseCountyQuery('Town Line NY').query,'town line');
  assert.equal(parseCountyQuery('Town Line NY').type,'','Town Line is a name, not a type prefix');
  assert.deepEqual(matches('Bethlehem Township PA'),['pennsylvania/northampton']);
@@ -92,6 +99,29 @@ test('New York City keeps its five-borough alias while typed counties and state 
  assert.deepEqual(matches('Sandusky city OH'),['ohio/erie']);
 });
 
+test('unqualified city matches precede same-name counties without dropping explicit or smaller places',()=>{
+ const ranked=(query,state='')=>cards.map(card=>({...card,match:countyMatch(card,parseCountyQuery(query),state)})).filter(card=>card.match.score).sort((a,b)=>compareCountyMatches(a.match,b.match));
+ for(const [query,expected] of [['Buffalo','new-york/erie'],['Cleveland','ohio/cuyahoga'],['Miami','florida/miami-dade'],['Newark','new-jersey/essex']]){
+  const result=ranked(query);assert.equal(result[0].state+'/'+result[0].slug,expected,query);
+  assert.equal(result[0].match.type,'city',query+' explains the matched place');
+ }
+ assert.ok(ranked('Buffalo').some(card=>card.state==='wisconsin'&&card.slug==='buffalo'));
+ assert.deepEqual(ranked('Buffalo county WI').map(card=>card.state+'/'+card.slug),['wisconsin/buffalo']);
+ assert.equal(ranked('Newark NY')[0].slug,'wayne');
+ assert.ok(ranked('Newark NY').every(card=>card.state==='new-york'));
+ assert.deepEqual(ranked('Newark village NY').map(card=>card.state+'/'+card.slug),['new-york/wayne']);
+ assert.equal(ranked('Newark','delaware')[0].state,'delaware');
+ assert.deepEqual(ranked('Miami county OH').map(card=>card.state+'/'+card.slug),['ohio/miami']);
+ assert.deepEqual(ranked('Buffalo NY','wisconsin'),[]);
+ const exact={state:'ohio',terms:['v:miami']},partial={state:'ohio',terms:['ca:miamisburg']};
+ assert.ok(countyMatchScore(exact,parseCountyQuery('Miami'))>countyMatchScore(partial,parseCountyQuery('Miami')));
+ for(const query of ['Jackson county','Lafayette parish']){
+  const result=ranked(query);assert.ok(result.length,query);
+  assert.ok(result.every(card=>card.match.population===0),query+' must not use same-named city population');
+  assert.equal(new Set(result.map(card=>card.match.score)).size,1,query+' keeps every exact area in the best-match group');
+ }
+});
+
 test('search names are normalized and deduplicated with less than 350 bytes per area entry',()=>{
  assert.ok(Buffer.byteLength(countyDirectory())/cards.length<350);
  for(const card of cards){
@@ -102,7 +132,7 @@ test('search names are normalized and deduplicated with less than 350 bytes per 
 });
 
 test('state hubs retain all place facts and distinguish borough aliases while Erie keeps its custom page',()=>{
- assert.equal(pages.length,28);assert.equal(byPath.size,28);
+ assert.equal(pages.length,30);assert.equal(byPath.size,30);
  let entries=0;
  for(const state of serviceStates){
   const page=byPath.get(state.path);assert.ok(page,state.path);
@@ -115,7 +145,7 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
    if(county.geographyNote)assert.ok(page.body.includes(e(countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote)),state.id+'/'+county.slug+' local distinction');
   }
  }
- assert.equal(entries,1607);
+ assert.equal(entries,1746);
  const ny=byPath.get('/areas/new-york/').body;
  for(const name of ['Brooklyn','Manhattan','Staten Island'])assert.ok(ny.includes(name),name);
  const erie=countyCoverage(erieGeography,config,offers);
@@ -135,10 +165,10 @@ test('all 2 remaining retired county routes point to preserved entries and publi
  }
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
- const rendered=countyPages(changed);assert.equal(rendered.length,28);
+ const rendered=countyPages(changed);assert.equal(rendered.length,30);
  for(const page of rendered)for(const text of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(text),page.path+' '+text);
  const links=serviceAreaLinks();
- assert.equal((links.match(/href=/g)||[]).length,28);assert.match(links,/href="\/areas\/"/);assert.doesNotMatch(links,/-county\//);
+ assert.equal((links.match(/href=/g)||[]).length,1);assert.match(links,/href="\/areas\/">28 states and Washington, DC/);assert.doesNotMatch(links,/-county\//);
 });
 
 test('all 333 public worksheets preserve the exact task, decisions, checks and safe note fields',async()=>{

@@ -369,15 +369,15 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.match(article('website-project-cost'),/Illustrative first-year budget — replace the provider assumptions/);assert.match(article('website-project-cost'),/Replace \$20\/month hosting and \$120\/year other bills with your actual renewal prices/);
  const scope=journalSections('/guides/seo-work-and-reporting/',offers).find(section=>section.id==='scope').body;
  assert.match(scope,/Improve — \$400\/month:.*1 completed improvement each month/);assert.match(scope,/Grow — \$800\/month:.*2 connected improvements/);
- assert.match(article('website-maintenance-checklist'),/plans exclude CMS, plugin and theme updates, backups, restores and malware cleanup/);assert.match(article('website-maintenance-checklist'),/Monitoring is automated and is not staffed 24\/7/);assert.ok(hrefs(article('website-maintenance-checklist')).includes('/services/website-care/'));
+ assert.match(article('website-maintenance-checklist'),/plans exclude updates to a content management system \(CMS\), its plugins or themes, as well as backups, restores and malware cleanup/);assert.match(article('website-maintenance-checklist'),/Monitoring is automated and is not staffed 24\/7/);assert.ok(hrefs(article('website-maintenance-checklist')).includes('/services/website-care/'));
  assert.match(careContent(offers),/no 24\/7 staffing or guaranteed repair time/);
  assert.match(seoServiceContent(offers),/href="\/services\/website-care\/">Keep Running/);assert.match(careContent(offers),/Keep Running is \$150\/month/);
- assert.match(seoServiceContent(offers),/If I delay accepted work, I still owe it; we agree a new date or refund/);
+ assert.match(seoServiceContent(offers),/accepted work I delay remains owed, with a new date or refund/);
 });
 
 test('all sixty-two New York entries retain complete place lists, applicable sources and general-planning worksheets',()=>{
  const pages=countyPages(offers),state=serviceStates.find(state=>state.id==='new-york'),hub=pages.find(page=>page.path===state.path).body;
- assert.equal(pages.length,28);assert.equal(state.counties.length,62);
+ assert.equal(pages.length,30);assert.equal(state.counties.length,62);
  const ids=[...hub.matchAll(/class="county-area-detail" id="([^"]+)"/g)].map(match=>match[1]);
  assert.equal(ids.length,62);assert.equal(new Set(ids).size,62);assert.deepEqual(ids.slice().sort(),state.counties.map(county=>county.slug).sort());
  const sources=new Map([...hub.matchAll(/<li id="(geography-source-\d+)"><a href="([^"]+)">([^<]+)<\/a>/g)].map(([,id,url,label])=>[url.replaceAll('&amp;','&'),{id,label}]));
@@ -416,10 +416,10 @@ test('worksheets, contractor scope and source handoff agree with the pages',()=>
  assert.match(read('src/assets/guides/contact-form-flow-worksheet.txt'),/Find the saved message if your form tool keeps one/);
  assert.match(read('src/assets/guides/contact-form-flow.svg'),/Some forms do not save it/);
  const contractor=contractorService(offers,config);
- assert.match(contractor,/seven pages plus Focused’s two included guides use nine of its 15 pages/);assert.match(contractor,/six-page Launch plan/);assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate scope/);
+ assert.match(contractor,/seven pages plus Focused Website’s 2 included guides use 9 of its 15 pages/);assert.match(contractor,/six-page Launch Website plan/);assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate agreement on the work and price/);
  assert.ok(hrefs(contractor).some(x=>x.includes('request_kind=question#inquiry')));
  assert.match(article('contractor-website-checklist'),/href="\/services\/contractor-websites\/"/);
- assert.match(sourceHandoff(),/<h1>Sample website handoff\.<\/h1>/);assert.match(sourceHandoff(),/There is no drag-and-drop editor/);
+ assert.match(sourceHandoff(),/<h1>Sample website files\.<\/h1>/);assert.match(sourceHandoff(),/There is no drag-and-drop editor/);
  assert.match(sourceHandoff(),/within five business days after the paid work is finished, or after settling the account if the project stops early/);
 });
 

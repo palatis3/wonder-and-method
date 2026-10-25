@@ -197,3 +197,8 @@ body.menu-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* Optional reference-email consent remains a compact native checkbox. */
+#inquiry .inquiry-receipt-choice{display:flex;align-items:flex-start;gap:.65rem;cursor:pointer}
+#inquiry .inquiry-receipt-choice input{width:1.1rem;height:1.1rem;min-height:0;flex:0 0 auto;margin:.2rem 0 0}
+#inquiry [data-review-inquiry-choices]{margin:0 0 1rem}

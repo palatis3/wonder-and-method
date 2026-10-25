@@ -1,0 +1,38 @@
+{
+  "/areas/new-jersey/monmouth-county/": [
+    {
+      "question": "Can website care handle new dates and announcements?",
+      "sourceAnswer": "Keep Running includes one set of small text, photo or link changes you supply each month for existing parts of a supported site. A new event section, ticketing setup or substantial promotional page is a separate scope decision. We agree who supplies approved dates and the work window; monthly care is not an on-demand event publishing desk.",
+      "template": "{{plans.keep_running.public_name}} includes {{plans.keep_running.small_change_batches|words}} {{plans.keep_running.small_change_batches|sets}} of small text, photo or link changes you supply each month for existing parts of a supported site. A new event section, ticketing setup or substantial promotional page is a separate scope decision. We agree who supplies approved dates and the work window; monthly care is not an on-demand event publishing desk."
+    }
+  ],
+  "/areas/suffolk-county/": [
+    {
+      "question": "How do I choose a monthly SEO budget after the booking path is clear?",
+      "sourceAnswer": "Start with the work you want completed and the information you can approve each month. Improve includes one substantial researched improvement; Grow includes two connected improvements and an extra approved-content graphic or newsletter excerpt. Both include care, while Keep Running alone focuses on checks and supplied small updates. Current prices and the exact scope are confirmed before enrollment.",
+      "template": "Start with the work you want completed and the information you can approve each month. {{plans.improve.public_name}} includes {{plans.improve.priorities|words}} substantial researched {{plans.improve.priorities|improvements}}; {{plans.grow.public_name}} includes {{plans.grow.priorities|words}} connected {{plans.grow.priorities|improvements}} and {{plans.grow.promotion_reuse.quantity|article}} extra approved-content {{plans.grow.promotion_reuse.quantity|graphics}} or newsletter {{plans.grow.promotion_reuse.quantity|excerpts}}. Both include care, while {{plans.keep_running.public_name}} alone focuses on checks and supplied small updates. Current prices and the exact scope are confirmed before enrollment."
+    }
+  ],
+  "/areas/pennsylvania/delaware-county/": [
+    {
+      "question": "What would routine care cover when our accepted jobs change?",
+      "sourceAnswer": "You supply the approved changes and identify the affected service descriptions. Keep Running can publish one agreed set of small text, photo or link updates each month on existing parts of the site, with a dated report. Adding a new job calculator, routing process or substantial service section needs a separate scope rather than being treated as a small wording update.",
+      "template": "You supply the approved changes and identify the affected service descriptions. {{plans.keep_running.public_name}} can publish {{plans.keep_running.small_change_batches|words}} agreed {{plans.keep_running.small_change_batches|sets}} of small text, photo or link updates each month on existing parts of the site, with a dated report. Adding a new job calculator, routing process or substantial service section needs a separate scope rather than being treated as a small wording update."
+    }
+  ],
+  "/areas/pennsylvania/lancaster-county/": [
+    {
+      "question": "How would monthly SEO choose which of our two services to work on first?",
+      "sourceAnswer": "We agree on the business objective and review customer questions, current pages and available search evidence. Improve researches one active service or topic and delivers one substantial improvement; Grow can connect two improvements across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production.",
+      "template": "We agree on the business objective and review customer questions, current pages and available search evidence. {{plans.improve.public_name}} researches {{plans.improve.search_scope.active_topics|words}} active {{plans.improve.search_scope.active_topics|topicPhrase}} and delivers {{plans.improve.priorities|words}} substantial {{plans.improve.priorities|improvements}}; {{plans.grow.public_name}} can connect {{plans.grow.priorities|words}} {{plans.grow.priorities|improvements}} across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production."
+    }
+  ],
+  "/areas/ohio/cuyahoga-county/": [
+    {
+      "question": "Would an SEO plan charge me again for routine website care?",
+      "sourceAnswer": "Improve and Grow include Keep Running care and a separate set of small supplied edits; routine care is not an additional plan charge. A substantial rewrite of equipment-service content can be agreed as improvement work, while ordinary approved corrections remain distinct. We define the supported site and tasks first, and the same work is not counted against two allowances.",
+      "template": "{{plans.improve.public_name}} and {{plans.grow.public_name}} include {{plans.keep_running.public_name}} care and their separate allowance of small supplied edits; routine care is not an additional plan charge. A substantial rewrite of equipment-service content can be agreed as improvement work, while ordinary approved corrections remain distinct. We define the supported site and tasks first, and the same work is not counted against two allowances.",
+      "singleBatchTemplate": "{{plans.improve.public_name}} and {{plans.grow.public_name}} include {{plans.keep_running.public_name}} care and a separate set of small supplied edits; routine care is not an additional plan charge. A substantial rewrite of equipment-service content can be agreed as improvement work, while ordinary approved corrections remain distinct. We define the supported site and tasks first, and the same work is not counted against two allowances."
+    }
+  ]
+}

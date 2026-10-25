@@ -12,6 +12,22 @@ const offers = JSON.parse(await readFile(new URL('../config/offers.json', import
 const text = pack => pack.sections.flatMap(s => s.items).join(' ');
 const config = {contactEmail: 'support@example.test'};
 
+test('buyer packs offer a request before detailed terms and retain every monthly exclusion once',()=>{
+ for(const pack of buyerPacks(offers)){
+  const html=packBody(pack),firstSection=html.indexOf('<section>');
+  assert.ok(html.indexOf('Request '+pack.name)<firstSection,pack.id);
+  assert.ok(html.indexOf('Ask about '+pack.name)<firstSection,pack.id);
+  if(!['keep_running','improve','grow'].includes(pack.id))continue;
+  const limits=pack.sections.filter(section=>section.title==='Not included');
+  assert.equal(limits.length,1);
+  assert.ok(!pack.sections.some(section=>section.title==='Complete limits'));
+  for(const exclusion of monthlyPlanDetails(offers,pack.id).exclusions){
+   assert.equal(limits[0].items.filter(item=>item===exclusion).length,1,exclusion);
+  }
+  if(pack.id==='keep_running')assert.match(limits[0].items.join(' '),/New pages, new tools and substantial writing or development are separate work/);
+ }
+});
+
 test('closed annual gate removes enrollment marketing while preserving existing agreement rights', () => {
  const closed = structuredClone(offers);
  closed.annual_enrollment_gate.verified = false;
@@ -101,7 +117,7 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
  for (const id of ['website_baseline', 'audit_fix_sprint']) {
   const body = text(packs.find(p => p.id === id));
   assert.doesNotMatch(body, /twelve hypothetical hosting|\$759|\$1,110.*hosting/);
-  assert.match(body, /approved unavoidable third-party costs/);
+  assert.match(body, /approved unavoidable outside costs/);
   assert.match(body, /unearned amount to be refunded/);
   assert.match(body, /30 calendar days after your written approval of its completion/);
  }
@@ -110,10 +126,10 @@ test('build and one-off documents retain actual payment, acceptance and ownershi
 
 test('process and handoff avoid stale schedules and premature final-payment trigger', () => {
  const calendar = projectCalendar(), handoff = sourceHandoff();
- assert.match(calendar, /3–5 business days for Launch, 5–8 business days for Focused and 7–10 business days for Signature/);
+ assert.match(calendar, /3–5 business days for Launch Website, 5–8 business days for Focused Website and 7–10 business days for Signature Website/);
  assert.match(calendar, /I write the content/);
  assert.match(calendar, /Add your review time: two rounds, each allowing up to five business days/);
- assert.match(calendar, /Missing information or extra work can move them; I agree any revised dates with you/);
+ assert.match(calendar, /Missing information or extra work can move them; we agree on any revised dates/);
  assert.doesNotMatch(calendar, /April|2027|four working weeks|ten production days/);
  assert.match(handoff, /five business days after the paid work is finished, or after settling the account if the project stops early/);
  assert.doesNotMatch(handoff, /five business days.*final payment/);

@@ -1,6 +1,8 @@
 /* Quiet changes of surface give long pages a rhythm without changing content,
    spacing, illustrations or the colors used by interactive controls. */
-.studio-site{--surface-sage:#eef1e9;--surface-stone:#f1eee6;--section-gutter:clamp(1.25rem,5vw,4.5rem)}
+/* A section uses 90% of the available page width. Its 5% side space is
+   1/18 of that section, avoiding viewport units that include a scrollbar. */
+.studio-site{--surface-sage:#eef1e9;--surface-stone:#f1eee6;--section-gutter:min(5.5555556%,4.5rem)}
 .studio-site main>section:not(.civic-hero,.living-city-hero),
 .studio-site .home-content>section,
 .studio-site .journal-prose>section{
@@ -9,40 +11,38 @@
 .studio-site main>section:nth-of-type(even):not(.civic-hero,.living-city-hero),.studio-site .home-content>section:nth-of-type(even){--section-surface:var(--surface-sage)}
 .studio-site main>section:nth-of-type(4n):not(.civic-hero,.living-city-hero),.studio-site .home-content>section:nth-of-type(4n){--section-surface:var(--surface-stone)}
 .studio-site main>section:nth-of-type(even):not(.civic-hero,.living-city-hero)::before,
-.studio-site .home-content>section:nth-of-type(even)::before,
-.studio-site .journal-prose>section:nth-of-type(even)::before{
+.studio-site .home-content>section:nth-of-type(even)::before{
  content:"";position:absolute;inset:0 calc(-1 * var(--section-gutter));background:var(--section-surface,var(--surface-sage));z-index:-1;pointer-events:none
 }
 .studio-home main>section{--section-gutter:0px}
-.studio-home.edition-living-city .home-content{--section-gutter:min(5vw,4.5rem)}
+.studio-home.edition-living-city .home-content{--section-gutter:min(5.5555556%,4.5rem)}
 .studio-site .journal-prose>section{--section-gutter:1rem}
-.studio-site .journal-prose>section:nth-of-type(4n){--section-surface:var(--surface-stone)}
-.studio-site .journal-prose>section:nth-of-type(even)::before{border-radius:12px}
+.studio-site .buyer-pack-document{--section-gutter:0px}
+/* Guide tints identify summaries, worked examples and actions, not section order. */
+.studio-site .journal-related{max-width:760px;margin:0 auto 4rem;padding-top:2rem}
+.studio-site .guide-method{margin:2rem 0 0;padding-top:1rem;border-top:1px solid var(--line);font-size:1rem;line-height:1.7}
+.studio-site .guide-method p{margin:0}
 
-/* Native disclosures keep every footer destination reachable without scripts. */
+/* Essential destinations remain visible at every width, without scripts. */
 .studio-site .site-footer--compact .footer-top{align-items:center;padding-bottom:1.25rem}
 .studio-site .site-footer--compact .footer-location{margin:0;max-width:none;color:var(--slate)}
-.studio-site .site-footer--compact nav{gap:.75rem;align-items:start}
-.studio-site .site-footer--compact .footer-group{border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:clip}
-.studio-site .site-footer--compact .footer-group summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none;margin:0;padding:.85rem 1rem;min-height:52px;color:var(--ink);font:600 1rem/1.5 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
-.studio-site .site-footer--compact .footer-group summary::-webkit-details-marker{display:none}
-.studio-site .site-footer--compact .footer-group summary:hover{background:var(--surface-sage)}
-.studio-site .site-footer--compact .footer-group summary:focus-visible{outline:2px solid var(--moss);outline-offset:-5px;border-radius:12px}
-.studio-site .site-footer--compact .footer-chevron{flex:none;transition:transform .15s ease}
-.studio-site .site-footer--compact .footer-group[open] .footer-chevron{transform:rotate(180deg)}
-.studio-site .site-footer--compact .footer-group[open] summary{border-bottom:1px solid var(--line);background:var(--surface-sage)}
-.studio-site .site-footer--compact .footer-group>div{padding:.4rem 1rem .75rem}
+.studio-site .site-footer--compact nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;align-items:start}
+.studio-site .site-footer--compact .footer-group{border:0;margin:0;padding:0;min-width:0;background:transparent}
+.studio-site .site-footer--compact .footer-group h2{margin:0 0 .5rem;color:var(--ink);font:650 1rem/1.5 Manrope,Arial,sans-serif;overflow-wrap:anywhere}
+.studio-site .site-footer--compact .footer-group>div{padding:0}
 .studio-site .site-footer--compact .footer-group a{padding:.5rem 0;min-height:44px;line-height:1.45;text-underline-offset:.2em;max-width:100%;overflow-wrap:anywhere}
 .studio-site .site-footer--compact .footer-bottom{margin-top:1.25rem;padding-top:1rem}
 @media(max-width:767px){
  .studio-site{--section-gutter:1.25rem}
+ /* Match the pricing page’s capped padding when text is enlarged. */
+ .studio-pricing{--section-gutter:min(1.25rem,20px)}
  .studio-home.edition-living-city .home-content{--section-gutter:min(1.25rem,6.4vw)}
  .studio-site .site-footer--compact .footer-top{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding-bottom:1rem}
  .studio-site .site-footer--compact .footer-top>p+p{margin:0}
- .studio-site .site-footer--compact .footer-group summary{padding:.75rem;gap:.5rem}
- .studio-site .site-footer--compact .footer-group>div{padding-inline:.75rem}
+ .studio-site .site-footer--compact nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 1rem}
+ .studio-site .site-footer--compact .footer-group--information{grid-column:1/-1;border-top:1px solid var(--line);padding-top:1rem}
+ .studio-site .site-footer--compact .footer-group--information>div{flex-direction:row;flex-wrap:wrap;gap:0 1.5rem}
 }
-@media(prefers-reduced-motion:reduce){.studio-site .footer-chevron{transition:none}}
 @media(forced-colors:active){
  .studio-site main>section::before,.studio-site .home-content>section::before,.studio-site .journal-prose>section::before{display:none}
  .studio-site .site-footer--compact .footer-group{border-color:CanvasText}
@@ -74,21 +74,6 @@
  .real-project-notes{align-items:flex-start;flex-direction:column;gap:.75rem}
 }
 
-/* Studio navigation: expressive surfaces, with native disclosure behavior. */
-.studio-site .site-footer--compact{padding-top:2.5rem}
-.studio-site .site-footer--compact nav{gap:1rem}
-.studio-site .site-footer--compact .footer-group{border-color:#cdd4c7;border-radius:18px;background:linear-gradient(145deg,#fffef9,#eff1e9)}
-.studio-site .site-footer--compact .footer-group:nth-child(even){background:linear-gradient(145deg,#fffef9,#f2ece1)}
-.studio-site .site-footer--compact .footer-group summary{display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:.7rem 1rem;min-height:112px;padding:1.15rem 1.2rem;color:#263f33}
-.studio-site .footer-section-icon{grid-column:1;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid #c7d1bf;border-radius:50%;background:#fbfcf7;color:#415d44}
-.studio-site .footer-section-icon svg{width:20px;height:20px}
-.studio-site .footer-section-label{grid-column:1;font:400 clamp(1.3rem,2vw,1.6rem)/1.05 var(--display);letter-spacing:-.025em;overflow-wrap:anywhere}
-.studio-site .site-footer--compact .footer-chevron{grid-column:2;grid-row:1/3;width:28px;height:28px;padding:6px;border-radius:50%;background:#e0e7d9;color:#334b3c}
-.studio-site .site-footer--compact .footer-group summary:hover{background:#e8eddf}
-.studio-site .site-footer--compact .footer-group summary:focus-visible{outline:3px solid #334b3c;outline-offset:-5px;border-radius:18px}
-.studio-site .site-footer--compact .footer-group[open] summary{background:#e8eddf;border-bottom-color:#cdd4c7}
-.studio-site .site-footer--compact .footer-group>div{padding:.65rem 1.2rem 1rem}
-.studio-site .site-footer--compact .footer-group a{width:100%;border-radius:5px;padding:.5rem .1rem}
 .studio-site .site-footer--compact .footer-group a:hover{color:#233d2f;text-decoration-thickness:2px}
 
 /* The cream curve and closing night band connect the homepage's two surfaces. */
@@ -105,6 +90,15 @@
 /* Each starting point offers one outcome, one price and one next step. */
 .studio-site .home-choice-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.25rem;margin-top:1.75rem}
 .studio-site .home-choice-grid>.home-choice{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:clamp(1.4rem,2.7vw,2.3rem);border:1px solid #cbd3c4;border-radius:20px;background:#fffef9;box-shadow:0 8px 24px #263d2f05}
+.studio-site .home-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1200px){.studio-site .home-choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.studio-site .home-choice-grid>.home-choice{padding:1.5rem}.studio-site .home-choice-grid h3{font-size:1.85rem}}
+.studio-site :is(.home-choice,.service-choice){color:var(--ink,#092d3b);text-decoration:none}
+.studio-site :is(.home-choice,.service-choice):focus-visible{outline:3px solid #29645b;outline-offset:5px}
+.studio-site .home-choice:hover{border-color:#547666;box-shadow:0 8px 24px #263d2f12}
+.studio-site .service-choice{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:1.25rem;border:1px solid #cbd3c4;border-radius:12px;background:#fffef9}
+.studio-site .service-choice:hover{border-color:#547666}
+.studio-site .service-choice .text-link{margin-top:auto;text-decoration:underline;text-underline-offset:.2em}
+@media(max-width:700px){.studio-site .home-choice-grid{grid-template-columns:minmax(0,1fr)}}
 .studio-site .home-choice-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid #d1dac9;border-radius:14px;background:#edf1e6;color:#36513d;margin-bottom:1.6rem}
 .studio-site .home-choice-icon svg{width:25px;height:25px}
 .studio-site .home-choice-grid h3{font:400 clamp(1.7rem,2.3vw,2.25rem)/1.1 var(--display);letter-spacing:-.035em;margin:0 0 .85rem;max-width:16ch}
@@ -124,9 +118,9 @@
 .city-project-copy .city-project-link,.city-project-copy .city-sample-link{font-size:.9rem}
 
 /* Contact is a studio conversation around the existing, accessible form. */
-.studio-site.studio-inner .contact-intro--studio{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.7fr);gap:clamp(2rem,5vw,5rem);align-items:center;border-bottom:0;padding-block:3.5rem 2.75rem;margin-bottom:0}
+.studio-site.studio-inner .contact-intro--studio{display:block;border-bottom:0;padding-block:2rem 1rem;margin-bottom:0}
 .studio-site .contact-opening{min-width:0}
-.studio-site.studio-inner .contact-intro--studio h1{font-size:clamp(2.8rem,5.5vw,5.4rem);line-height:1.04;max-width:15ch}
+.studio-site.studio-inner .contact-intro--studio h1{font-size:clamp(2.4rem,4.5vw,4.3rem);line-height:1.06;max-width:22ch}
 .studio-site .contact-opening .lede{font-size:1.12rem;line-height:1.7;max-width:43ch}
 .studio-site .contact-studio-note{position:relative;padding:1.75rem;border:1px solid #d3ccb9;border-radius:8px 24px 8px 8px;background:#f0eadc;box-shadow:5px 7px 0 #e4e8db;transform:rotate(1.5deg);max-width:340px;justify-self:end}
 .studio-site .contact-note-mark{position:absolute;right:1.3rem;top:1.15rem;display:block;color:#7d6237}
@@ -163,10 +157,6 @@
 @media(max-width:767px){
  .studio-site .site-footer--compact{padding-top:1.25rem}
  .studio-site .site-footer--compact nav{gap:.75rem}
- .studio-site .site-footer--compact .footer-group summary{padding:1rem .9rem;min-height:108px;gap:.7rem .4rem;grid-template-columns:minmax(0,1fr) 24px}
- .studio-site .site-footer--compact .footer-chevron{width:24px;height:24px;padding:5px}
- .studio-site .footer-section-label{font-size:1.35rem}
- .studio-site .site-footer--compact .footer-group>div{padding:.5rem .9rem .9rem}
  .studio-site .home-choice-grid{gap:1rem}
  .studio-site .home-choice-grid>.home-choice{padding:clamp(18px,4.5vw,24px)}
  .studio-site .home-choice-icon{margin-bottom:1.1rem}
@@ -192,3 +182,26 @@
  .studio-site .contact-expectations :is(p,h2,a),.studio-home .home-content>.studio-closing :is(p,h2,a){color:CanvasText}
  .city-transition{display:none}
 }
+.studio-site .project-milestones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;list-style:none;padding:0;margin:2rem 0}
+.studio-site .project-milestones>li{border-top:2px solid var(--moss);padding:1.2rem 0 0;min-width:0}
+.studio-site .project-milestones h2,.studio-site .project-milestones h3{font-size:1.6rem;line-height:1.3;margin:0 0 1.2rem}
+.studio-site .project-milestones dl{margin:0}
+.studio-site .project-milestones dt{font-size:.875rem;font-weight:700;margin-top:1rem}
+.studio-site .project-milestones dd{font-size:1rem;line-height:1.65;margin:.3rem 0 0}
+.studio-site .milestone-number{color:var(--moss)}
+.studio-site .project-milestones--compact{grid-template-columns:1fr;gap:1.25rem}
+.studio-site .project-milestones--compact h3{font-size:1.35rem}
+@media(max-width:800px){.studio-site .project-milestones{grid-template-columns:1fr;gap:1.5rem}}
+
+/* Keep the two responsibility lists readable on wide screens. */
+.care-responsibilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;max-width:1000px}.care-responsibilities>div{min-width:0}.care-responsibilities h3{margin-top:0}.care-responsibilities li{max-width:65ch}
+@media(max-width:760px){.care-responsibilities{grid-template-columns:1fr;gap:1rem}}
+
+/* Selected service closings echo the homepage; no extra CTA sections. */
+.studio-site.studio-inner main>section.studio-closing--night{color:#f8f6ef;padding-inline:1rem}
+.studio-site.studio-inner main>section.studio-closing--night::before{content:"";position:absolute;inset:0 calc(-1 * var(--section-gutter));z-index:-1;pointer-events:none;background:#052b3b}
+.studio-site.studio-inner .studio-closing--night :is(h2,p){color:#f8f6ef}
+.studio-site.studio-inner .studio-closing--night .button{background:#f8f6ef;color:#183e3c;border-color:#f8f6ef}
+.studio-site.studio-inner .studio-closing--night .button:hover{background:#e5eddd;border-color:#e5eddd}
+.studio-site.studio-inner .studio-closing--night .button:focus-visible{outline:3px solid #f8f6ef;outline-offset:5px}
+@media(forced-colors:active){.studio-site.studio-inner .studio-closing--night :is(h2,p,a){color:CanvasText}}

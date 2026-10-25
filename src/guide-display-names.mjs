@@ -1,0 +1,36 @@
+// One core name for the guide heading, cards, breadcrumb and search title.
+// Descriptions carry the longer explanation; existing URLs stay stable.
+const names={
+ 'website-maintenance-cost':'Website maintenance costs',
+ 'website-launch-checklist':'Website launch checklist',
+ 'ai-website-or-custom':'AI website or custom build?',
+ 'website-project-cost':'Website costs for small businesses',
+ 'website-redesign-brief':'Write a website redesign brief',
+ 'local-seo-profile-eligibility':'Google Business Profile eligibility',
+ 'website-migration-checklist':'Website migration checklist',
+ 'custom-website-or-template':'Custom website or template?',
+ 'website-care-versus-seo':'Website care or monthly SEO?',
+ 'website-repair-or-redesign':'Repair or redesign your website?',
+ 'ferry-route-and-last-mile':'Ferry arrival directions and the onward trip',
+ 'experience-product-choice':'Tour booking pages: compare access and options',
+ 'timed-booking-handoff':'Booking confirmations: times, tickets and check-in',
+ 'photography-location-confirmation':'Photography inquiries: session and location',
+ 'shipping-date-and-quote':'Ecommerce checkout: shipping dates and custom quotes',
+ 'custom-print-order':'Custom-order websites: from inquiry to production',
+ 'itinerary-dependency-review':'Travel packages when another operator changes a service',
+ 'river-section-and-release':'Rafting bookings: trip, river section and date',
+ 'island-payment-preparation':'Island bookings: payment and parking before departure',
+ 'franklin-county-canoe-rental-website':'Franklin County canoe rentals: the carry to Long Pond',
+ 'otsego-county-baseball-lodging-website':'Otsego County lodging: identify the baseball venue',
+ 'farm-event-website-updates':'Farm events and everyday opening hours',
+ 'parts-compatibility-inquiry':'Parts inquiries for modified equipment',
+ 'marine-service-intake':'Marine service: boat, work and worksite',
+ 'wholesale-order-readiness':'Wholesale orders: quantities and fulfillment',
+ 'alexandria-sign-project-website':'Alexandria sign projects: proof and installation',
+ 'brevard-county-launch-tour-website':'Brevard County tour websites and launch changes',
+ 'citrus-county-manatee-tour-website':'Citrus County manatee tours: compare ways to visit',
+ 'marion-county-equestrian-stay-website':'Marion County, FL lodging and horse-show bookings',
+ 'walton-county-bonfire-booking-website':'Walton County bonfires: confirm the beach location',
+ 'vacation-rental-property-fit':'Vacation rentals: check the property and stay'
+};
+export const guideDisplayName=item=>names[item.path.split('/').filter(Boolean).at(-1)]||item.title.replace(/\.$/,'');

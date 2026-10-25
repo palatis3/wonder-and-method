@@ -1,3 +1,4 @@
+import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import wiIlPaths from './fixtures/wi-il-approved-paths.json' with {type:'json'};
 import msAlPaths from './fixtures/ms-al-approved-paths.json' with {type:'json'};
 import scPaths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
@@ -7,7 +8,8 @@ import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {DatabaseSync} from 'node:sqlite';
 import {renderPages} from '../src/pages.mjs';
-import {locationServicePages} from '../src/location-service-pages.mjs';
+import {locationServicePages,locationServiceSections} from '../src/location-service-pages.mjs';
+import reviewedWorksheets from '../src/location-worksheet-links.json' with {type:'json'};
 import {locationServices} from '../src/location-service-index.mjs';
 import {journeyPages} from '../deployment/journey-dimensions.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
@@ -25,11 +27,13 @@ import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('1096 approved commercial pages preserve 1106 directory identities, truthful provider schema and legacy worksheets',async()=>{
+test('1124 approved commercial pages preserve 1134 directory identities, truthful provider schema and legacy worksheets',async()=>{
  assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);assert.equal(waveFourPaths.length,611);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1106);assert.equal(new Set(areaIds).size,1106);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...countyDepth,...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1134);assert.equal(new Set(areaIds).size,1134);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
+ assert.equal(Object.keys(reviewedWorksheets).length,72);
+ assert.equal(locationServices.filter(entry=>entry.legacyWorksheet&&reviewedWorksheets[entry.areaId]===entry.legacyWorksheet).length,71);
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
@@ -42,8 +46,17 @@ test('1096 approved commercial pages preserve 1106 directory identities, truthfu
   for(const link of entry.directoryLinks){const [path,id]=link.path.split('#');assert.ok(byPath.get(path).html.includes(`id="${id}"`),link.path);assert.ok(byPath.get(path).html.includes(`href="${entry.path}"`),entry.path+' discoverability');}
   assert.match(page.html,/online from Buffalo/);assert.match(page.html,/not studio projects, clients or endorsements/);
   for(const id of ['buyer-task','approach','search'])assert.ok(page.html.includes(`id="${id}"`),entry.path+'#'+id);
-  if(historicPaths[entry.path]){assert.ok(entry.legacyWorksheet,entry.path);assert.ok(page.html.includes(entry.legacyWorksheet));assert.ok((await readFile(new URL('../src'+entry.legacyWorksheet,import.meta.url),'utf8')).includes('General website planning'));}
+  if(historicPaths[entry.path]){
+   assert.ok(entry.legacyWorksheet,entry.path);
+   assert.equal(page.html.includes(entry.legacyWorksheet),reviewedWorksheets[entry.areaId]===entry.legacyWorksheet,entry.path+' reviewed worksheet availability');
+   assert.ok((await readFile(new URL('../src'+entry.legacyWorksheet,import.meta.url),'utf8')).includes('General website planning'));
+  }
  }
+ for(const areaId of ['massachusetts/barnstable','massachusetts/plymouth','new-york/onondaga','pennsylvania/columbia','ohio/greene','connecticut/lower-connecticut-river-valley'])assert.equal(reviewedWorksheets[areaId],undefined,areaId+' independently reviewed mismatch');
+ assert.equal(reviewedWorksheets['new-york/erie'],'/assets/county-briefs/erie.txt');
+ assert.equal(reviewedWorksheets['new-york/albany'],'/assets/county-briefs/albany.txt');
+ const albany=locationServices.find(entry=>entry.areaId==='new-york/albany');
+ assert.ok(!locationServiceSections({...albany,legacyWorksheet:'/assets/county-briefs/onondaga.txt'},offers).includes('General website-planning worksheet (TXT)'),'a different file cannot inherit an area approval');
  const baltimore=locationServices.find(entry=>entry.path==='/areas/maryland/baltimore-area/');assert.deepEqual(baltimore.areaIds.slice().sort(),['maryland/baltimore','maryland/baltimore-city']);
  const fairfax=locationServices.find(entry=>entry.path==='/areas/virginia/fairfax-area/');assert.deepEqual(fairfax.areaIds.slice().sort(),['virginia/fairfax','virginia/fairfax-city','virginia/falls-church-city']);
  const hampton=locationServices.find(entry=>entry.path==='/areas/virginia/hampton-roads/');assert.equal(hampton.areaIds.length,8);assert.ok(hampton.coverageNote.includes('selected'));

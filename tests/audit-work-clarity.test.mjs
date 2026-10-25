@@ -18,7 +18,7 @@ test('Work keeps every project and both films with a useful early inquiry route'
  assert.match(html,/poster="\/assets\/waterfront\/film-poster-landscape.webp"/);
  assert.match(html,/<source src="\/assets\/waterfront\/film-landscape.mp4" type="video\/mp4">/);
  assert.match(html,/href="\/work\/buffalo-civic\/"/);
- assert.match(html,/Sample website handoff/);
+ assert.match(html,/Sample website files/);
  assert.match(html,/Inquiry tracker demo/);
  assert.doesNotMatch(html,/audio-only information|through the brief, content changes, checks and next review/);
 });
@@ -35,7 +35,7 @@ test('the page-planning example describes its real contents and preserves saved 
 
 test('plain handoff wording preserves the paid-completion trigger and full delivery rights',()=>{
  const html=sourceHandoff();
- assert.match(html,/<h1>Sample website handoff\.<\/h1>/);
+ assert.match(html,/<h1>Sample website files\.<\/h1>/);
  assert.match(html,/within five business days after the paid work is finished, or after settling the account if the project stops early/);
  assert.doesNotMatch(html,/within five business days (?:of|after) (?:your )?final payment/);
  assert.match(html,/does not delay file delivery/);

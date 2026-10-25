@@ -6,15 +6,23 @@ import {DatabaseSync} from 'node:sqlite';
 import {gzipSync} from 'node:zlib';
 import {randomUUID,createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {validateInquiry} from '../src/inquiry.mjs';
+import {validateInquiry,inquiryValidationMessage} from '../src/inquiry.mjs';
 import {escapeHtml,selectedInquiryContext} from '../src/shared.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 const root=resolve(import.meta.dirname,'..');
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png','.ico':'image/x-icon','.mp4':'video/mp4','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
-const security={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",'Cache-Control':'no-store'};
+const defaultSecurity={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",'Cache-Control':'no-store'};
 export async function createServer({runtime=resolve(root,'.runtime'),port=4183,siteDir=resolve(root,'dist'),compress=false}={}){
  siteDir=resolve(siteDir);
+ // Use only the built inline-script hashes, while keeping local external-network
+ // restrictions. Preview the same boot bytes that production permits.
+ const builtHeaders=await readFile(resolve(siteDir,'_headers'),'utf8').catch(()=>'');
+ const scriptPolicy=builtHeaders.match(/script-src ([^;]+);/)?.[1]||'';
+ const hashes=[...scriptPolicy.matchAll(/'sha256-[A-Za-z0-9+/=]+'/g)].map(match=>match[0]);
+ const security={...defaultSecurity};
+ if(hashes.length)security['Content-Security-Policy']=security['Content-Security-Policy'].replace("script-src 'self';",`script-src 'self' ${hashes.join(' ')};`);
+
  await mkdir(runtime,{recursive:true});
  const db=new DatabaseSync(resolve(runtime,'inquiries.sqlite'));
  db.exec('PRAGMA journal_mode=WAL; CREATE TABLE IF NOT EXISTS inquiries (id TEXT PRIMARY KEY, created_at TEXT NOT NULL, fingerprint TEXT NOT NULL, payload TEXT NOT NULL, status TEXT NOT NULL); CREATE INDEX IF NOT EXISTS inquiry_fingerprint ON inquiries(fingerprint,created_at);');
@@ -47,8 +55,9 @@ export async function createServer({runtime=resolve(root,'.runtime'),port=4183,s
       data=Object.fromEntries(fields);
      }
     }catch{reply(400,{message:'The request could not be read. Please try again.'});return;}
+    if(!data||typeof data!=='object'||Array.isArray(data)){reply(400,{message:'This request could not be read as form fields. Nothing has been saved. Open the contact form or email support@wonderandmethod.com.'});return;}
     const {value,errors}=validateInquiry(data);
-    if(Object.keys(errors).length){reply(422,{message:'Check the highlighted fields. Nothing has been saved.',errors,service:value.service,...selectedInquiryContext(value)},value);return;}
+    if(Object.keys(errors).length){reply(422,{message:inquiryValidationMessage(errors),errors,service:value.service,...selectedInquiryContext(value)},value);return;}
     recovery=value;
     if(recent.length>5){reply(429,{message:'Several requests have been sent from this connection. Wait about one minute, then try again. Your entries are kept here.',service:value.service,...selectedInquiryContext(value)},value);return;}
     const fingerprint=createHash('sha256').update(JSON.stringify(value)).digest('hex');

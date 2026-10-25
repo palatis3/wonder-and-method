@@ -37,3 +37,17 @@ Preview is read-only and returns at most 100 due records, an unknown-contact cou
 4. Keep a minimal result: reference, decision date, reason/category, systems checked and any unresolved retained copy with owner/review date. Do not preserve the deleted message body in a cleanup log. Client/accounting records and justified holds remain under their separate schedule.
 
 Exports are plaintext private files even though operator credentials are DPAPI encrypted. Keep them out of Git and public output. Synthetic tests must use mocks/local records; routine QA sends no real notifications and deletes no real inquiries.
+
+## Reviewed batches (combined release candidate, October 24)
+
+The candidate adds a bounded alternative to the existing exact-reference command. It has not been exercised against real inquiries. A plan contains 1–25 explicit references and one reason: `retention_due`, or `resolved_spam_or_duplicate`. Delivery held for manual review is not evidence of spam. The latter reason requires an already recorded `spam_confirmed` or `duplicate_confirmed` resolution; `handled_manually` does not qualify.
+
+Both reasons exclude clients, synthetic rows, preservation holds, sending records and unexpired delivery leases. Retention additionally requires a verified last-contact timestamp at least 90 days old. Unknown contact never falls back to creation time. A plan snapshots delivery, contact, client, hold and resolution fields. Any missing, changed or newly ineligible record rejects the entire batch in one database statement; no partial cleanup is accepted.
+
+1. Reconcile each inquiry and all working copies using the steps above. Save only the chosen `reason` and `references` array in a private `.runtime/` JSON input file. A plan request does not update or delete records.
+2. Run `npm run inquiries:production -- deletion-plan REVIEW_LABEL .runtime/INPUT_FILE.json`. This saves a new private `.runtime/deletion-plans/REVIEW_LABEL.json` and prints its SHA-256 digest, count, reason and expiry. Existing files are never overwritten. The plan expires after 30 minutes.
+3. Read the complete plan and check every reference against the conversation and recorded reason. Keep it private: it includes operational references, dates and resolution evidence references, although it omits inquiry text and contact details.
+4. Only after review, run `npm run inquiries:production -- delete-batch .runtime/deletion-plans/REVIEW_LABEL.json EXACT_REVIEWED_DIGEST`. The client checks the file digest and expiry; the authenticated server checks them again and atomically revalidates every snapshot. A stale plan requires a fresh plan and review. Do not edit a plan to force it through.
+5. Verify the result and complete mailbox, chat, export and recovery-copy reconciliation. Delete local input/plan working copies under the same policy. Retain only the minimal cleanup result; the digest is an integrity confirmation, not proof that other systems were cleaned.
+
+No schedule automatically runs this command. The existing reference-twice deletion command remains available with its existing safeguards. Neither command removes provider recovery copies or grants permission to disregard a preservation obligation.

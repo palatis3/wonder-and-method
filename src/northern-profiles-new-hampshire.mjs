@@ -363,7 +363,7 @@ export const newHampshireRows = [
         "Fictional example: a New London business offers a separate signup for occasional product updates. The page describes the actual subject of those messages and uses the approved subscription destination. It does not imply that signing up requests a quote, reserves a product or guarantees a personal response from the sales team."
       ]
     ],
-    "search": "Use service pages to answer service questions and a clearly labelled subscription invitation for ongoing updates. Search visitors should not have to join a list to understand basic offer information. Review inquiry completion and subscription interest as separate outcomes. Avoid counting an optional signup as a qualified project lead when no project request was made.",
+    "search": "Use service pages to answer service questions and a clearly labeled subscription invitation for ongoing updates. Search visitors should not have to join a list to understand basic offer information. Review inquiry completion and subscription interest as separate outcomes. Avoid counting an optional signup as a qualified project lead when no project request was made.",
     "task": [
       "Separate two communication purposes",
       "Write the inquiry receipt and subscription confirmation as different messages. Record which selection triggers each one, where preferences are sent and how a visitor understands the offered updates.",
@@ -534,7 +534,7 @@ export const newHampshireRows = [
       ],
       [
         "An uncertain completion in Newport",
-        "Fictional example: a Newport customer reaches an error after attempting a reservation through an outside provider. The help instructions ask for the non-sensitive reference information the business can use to investigate. They do not tell the customer to pay again automatically or promise that an unseen reservation has already been cancelled."
+        "Fictional example: a Newport customer reaches an error after attempting a reservation through an outside provider. The help instructions ask for the non-sensitive reference information the business can use to investigate. They do not tell the customer to pay again automatically or promise that an unseen reservation has already been canceled."
       ]
     ],
     "search": "Keep essential service and contact information on the main site so a search visitor has a useful route during an external interruption. A temporary provider problem does not require publishing multiple new search pages. If an outage notice is added, give it an owner and removal condition, and avoid unsupported claims about when normal booking will resume.",
@@ -562,7 +562,7 @@ export const newHampshireRows = [
     "faqs": [
       [
         "What does maintenance cover for an external booking link?",
-        "Agree link checks, notices and escalation responsibilities. Operating or repairing the external booking service is a separate responsibility unless explicitly included in the arrangement.",
+        "Agree on link checks, notices and escalation responsibilities. Operating or repairing the external booking service is a separate responsibility unless explicitly included in the arrangement.",
         "what does website maintenance include",
         "maintenance"
       ],

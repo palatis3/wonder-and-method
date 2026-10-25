@@ -372,7 +372,7 @@ export const statewideCountyProfiles = [
       ['A supplier with a long product PDF','An Amsterdam business can introduce product families on the website and show the specifications buyers need to select a category. A linked technical sheet can carry further detail, with its file type and revision identified.'],
       ['A capability sheet sent with proposals','For a Canajoharie firm, the website and downloadable sheet should agree on services, contact details and approved credentials. A change to one should trigger a check of the other. Old documents should not silently contradict the current offer.']
     ],
-    search:'Readable service pages give visitors context before a download. Review headings, descriptive document links and outdated files that still receive traffic. Preserve useful URLs or agree relevant redirects when documents are replaced, and check that the published revision is the one a buyer receives.',
+    search:'Readable service pages give visitors context before a download. Review headings, descriptive document links and outdated files that still receive traffic. Preserve useful URLs or agree on relevant redirects when documents are replaced, and check that the published revision is the one a buyer receives.',
     geographyNote:'The Mohawk River and Erie Canal run through Montgomery County. Amsterdam is both a city and a town; the correct business address should remain clear on web pages and downloadable material.',
     questions:[
       ['Should we move every PDF into a web page?','Start with essential information people need to choose or contact you. Detailed documents may still be useful. Label downloads clearly, keep them current and review their accessibility separately from the website page.'],
@@ -466,7 +466,7 @@ export const statewideCountyProfiles = [
     geographyNote:'Watkins Glen International and Watkins Glen State Park are separate places in Schuyler County. A reference to “Watkins Glen” should make the intended destination clear.',
     questions:[
       ['Can we mention a local event in a package page?','Yes, with accurate wording and an approved offer. Explain the dates and what your business supplies. Do not imply affiliation, included admission or guaranteed event arrangements unless you can substantiate them.'],
-      ['What happens to a package page after the event?','Remove expired purchase or booking actions and give the page a clear status. Keep it only if it still offers useful information, or agree a relevant redirect when retiring it. Do not replace the year without reviewing the actual offer.']
+      ['What happens to a package page after the event?','Remove expired purchase or booking actions and give the page a clear status. Keep it only if it still offers useful information, or agree on a relevant redirect when retiring it. Do not replace the year without reviewing the actual offer.']
     ]
   },
   {
@@ -483,7 +483,7 @@ export const statewideCountyProfiles = [
     search:'Review whether experience names and descriptions answer different visitor intentions. Clear comparisons, useful preparation answers and links to the correct booking destination can improve the existing pages. Separate lake or town pages need substantive differences, not identical packages under different headings.',
     geographyNote:'Seneca County sits between Seneca and Cayuga lakes. Seneca Falls, Waterloo and Ovid are distinct destinations; the lake reference should support, rather than replace, the venue address.',
     questions:[
-      ['Should every experience have its own page?','Use separate pages when the requirements, content or booking route differ enough to help a customer. A compact comparison on one page may be clearer for closely related options. Agree the useful page list before choosing a package.'],
+      ['Should every experience have its own page?','Use separate pages when the requirements, content or booking route differ enough to help a customer. A compact comparison on one page may be clearer for closely related options. Agree on the useful page list before choosing a package.'],
       ['Can a customer request a private session through the website?','Yes. Collect the facts the business needs to assess the request and state when the session becomes confirmed. Custom availability, deposits and automated group pricing need separate scope.']
     ]
   },
@@ -622,7 +622,7 @@ export const statewideCountyProfiles = [
     focus:'Wayne County lies along Lake Ontario east of Rochester, and includes the Town of Ontario. That town is distinct from Ontario County. When moving or renaming a business, inventory the address wherever customers encounter it: contact pages, footers, maps, downloads and business-controlled listings. Explain the effective date and preserve a clear way to reach you during the transition.',
     briefs:[
       ['A move to new location','A Newark business can publish the approved move date, new visit instructions and any service interruption. A checklist should include external booking destinations and documents as well as the visible contact page.'],
-      ['A redesign that reorganizes services','For a Lyons provider, inventory useful existing URLs before changing navigation. Retain suitable addresses and agree relevant redirects for necessary changes. Check the inquiry path and the published location details on the new site.']
+      ['A redesign that reorganizes services','For a Lyons provider, inventory useful existing URLs before changing navigation. Retain suitable addresses and agree on relevant redirects for necessary changes. Check the inquiry path and the published location details on the new site.']
     ],
     search:'Existing pages, links and business details deserve review before a move or redesign. Keep useful content current and record URL changes so later search data can be interpreted. Updating a website does not automatically update every external directory or guarantee unchanged search traffic.',
     geographyNote:'Wayne County is on Lake Ontario’s southern shore. The Town of Ontario is in Wayne County and is distinct from Ontario County; preserve the complete address when updating business information.',

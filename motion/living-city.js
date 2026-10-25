@@ -68,12 +68,14 @@ export function mountLivingCity(root, env = globalThis) {
     setClass('has-city-frame', hasFrame);
     renderStory();
     if (playButton && video) {
-      playButton.hidden = false;
+      playButton.hidden = reduced.matches;
       playButton.disabled = reduced.matches;
       const label = reduced.matches ? 'Motion off' : intent ? 'Pause motion' : failed ? 'Retry motion' : phase === 'blocked' ? 'Play motion' : loaded ? 'Resume motion' : 'Play motion';
       playButton.textContent = label;
       playButton.setAttribute('aria-label', label);
-      playButton.setAttribute('aria-pressed', String(intent));
+      // The changing label names the next action, rather than a toggle state.
+      playButton.removeAttribute('aria-pressed');
+      if(reduced.matches)announce('Motion is off to match your device setting.');
     }
     if (replayButton) {
       replayButton.hidden = !loaded || reduced.matches || failed;

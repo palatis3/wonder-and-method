@@ -1,3 +1,4 @@
+import countyDepth from './county-depth-approved-paths.json' with {type:'json'};
 import wiIlPaths from './wi-il-approved-paths.json' with {type:'json'};
 import msAl from './ms-al-approved-paths.json' with {type:'json'};
 import original from './location-release-paths.json' with {type:'json'};
@@ -10,4 +11,4 @@ import waveFour from './location-wave-four-paths.json' with {type:'json'};
 import southCarolina from './south-carolina-approved-paths.json' with {type:'json'};
 import georgia from './georgia-approved-paths.json' with {type:'json'};
 // Reviewed release fixtures remain fixed and independent from production data.
-export default Object.freeze([...wiIlPaths.slice(2),...msAl.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...original,...followup,...next,...waveOne,...waveTwo,...waveThree,...waveFour,...southCarolina.filter(path=>path!=='/areas/south-carolina/'),...georgia.filter(path=>path!=='/areas/georgia/')].sort());
+export default Object.freeze([...countyDepth,...wiIlPaths.slice(2),...msAl.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...original,...followup,...next,...waveOne,...waveTwo,...waveThree,...waveFour,...southCarolina.filter(path=>path!=='/areas/south-carolina/'),...georgia.filter(path=>path!=='/areas/georgia/')].sort());

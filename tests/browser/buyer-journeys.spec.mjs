@@ -99,12 +99,14 @@ test('authorized annual calculator fixture restores monthly cycles after switchi
  await page.route('http://127.0.0.1:4187/assets/prices.json',async route=>{
   const response=await route.fetch(),prices=await response.json();await route.fulfill({response,json:{...prices,annual_available:true}});
  });
- await page.goto('/payments/?qa=annual-fixture');
+ await page.goto('/payments/?qa=annual-fixture#cost-calculator');
  await page.locator('#plan').selectOption('improve');await expect(page.locator('#cycles')).toHaveValue('12');
  await page.locator('#billing').selectOption('annual');await expect(page.locator('#cycles')).toHaveValue('12');
  await expect(page.locator('#cycles')).toHaveJSProperty('readOnly',true);
+ for(const months of [3,6,12])await expect(page.locator(`[data-cost-months="${months}"]`)).toBeDisabled();
  await expect(page.locator('#cost-breakdown')).toContainText(money(offers.plans.improve.annual.upfront_price)+' paid upfront for 12 months');
  await page.locator('#billing').selectOption('monthly');await expect(page.locator('#cycles')).toHaveValue('12');await expect(page.locator('#cycles')).toHaveJSProperty('readOnly',false);
+ await expect(page.locator('[data-cost-months="3"]')).toBeEnabled();
  await page.locator('#cycles').fill('8');await page.locator('#billing').selectOption('annual');await page.locator('#billing').selectOption('monthly');await expect(page.locator('#cycles')).toHaveValue('8');
 });
 
@@ -121,7 +123,7 @@ test('portfolio previews, SEO topic navigation and early process overview work b
  await page.goto('/process/?qa=1');
  const firstStep=page.getByRole('heading',{name:'Start with the business',exact:true});await expect(firstStep).toBeVisible();
  const box=await firstStep.boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
- for(const name of ['Agree the work and book','Review the design','Approve the finished website','Receive your files and fixes','Decide how future updates happen'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
+ for(const name of ['Agree and book','Review the design','Approve and launch','Receive your files and fixes','Decide how future updates happen'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
  await page.locator('#handoff-sample summary').click();
  const handoff=page.getByRole('link',{name:'See an example delivery folder',exact:true});await handoff.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/source-handoff\//);
 });
@@ -161,7 +163,7 @@ test('long message paste preserves existing text and explains the email alternat
 
 test('changing the selected offer keeps the website label and requirement in sync',async({page})=>{
  for(const query of ['?request_kind=checkout','?request_kind=question&goal=fix']){
-  await page.goto('/contact/'+query);
+  await page.goto('/contact/'+query);await page.locator('#package-choice summary').click();
   await page.locator('#service').selectOption('improve');
   await expect(page.locator('label[for="website"]')).toHaveText('Your website (if you have one)');
   await expect(page.locator('#website')).not.toHaveAttribute('required','');

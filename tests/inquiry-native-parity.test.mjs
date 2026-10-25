@@ -41,7 +41,7 @@ function nativeFields(html){
  const fields={};
  for(const match of html.matchAll(/<input\b[^>]*>/g)){
   const input=attributes(match[0]);
-  if(!input.name||/\bdisabled\b/.test(match[0])||input.type==='checkbox'&&!/\bchecked\b/.test(match[0]))continue;
+  if(!input.name||/\bdisabled\b/.test(match[0])||['checkbox','radio'].includes(input.type)&&!/\bchecked\b/.test(match[0]))continue;
   fields[input.name]=input.value||'';
  }
  for(const match of html.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/g)){

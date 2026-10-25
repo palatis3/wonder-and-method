@@ -39,7 +39,9 @@ export function countJourney(event,service='unsure',localResourceKey=''){
 const landedService=location.pathname.match(/^\/checkout\/([a-z-]+)\/$/)?.[1]?.replaceAll('-','_')||'unsure';
 countJourney('page_view',landedService);
 document.addEventListener('click',event=>{
- if(event.target.closest?.('.support-chat-launch')){countJourney('chat_open');return;}
+ // Historical event name: activation of a chat control, not proof that the
+ // third-party widget connected or that a conversation took place.
+ if(event.target.closest?.('.support-chat-launch,[data-chat-open]')){countJourney('chat_open');return;}
  const a=event.target.closest?.('a[href]');if(!a)return;
  const url=new URL(a.href,location.href);
  if(url.protocol==='mailto:'){countJourney('email_click');return;}

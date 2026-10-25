@@ -40,9 +40,14 @@ test('approved project answers are reachable once on the intended page, before i
   assert.equal(sections.length,items.length?1:0,page.path+' section count');
   if(!items.length)continue;
   const section=sections[0],details=descendants(section).filter(node=>node.tagName==='details');
-  assert.equal(details.length,items.length,page.path+' answer count');
-  assert.equal(text(descendants(section).find(node=>node.tagName==='h2')),'Questions about your website project.');
+  assert.equal(details.length,items.length===1?0:items.length,page.path+' answer count');
+  assert.equal(text(descendants(section).find(node=>node.tagName==='h2')),items.length===1?items[0].question:'Questions about your website project.');
   for(const [index,item] of items.entries()){
+   if(items.length===1){
+    assert.equal(text(descendants(section).find(node=>node.tagName==='p')),item.answer,page.path+' complete visible answer');
+    assert.deepEqual(descendants(section).filter(node=>node.tagName==='a').map(node=>({path:attr(node,'href'),label:text(node)})),item.links,page.path+' answer links');
+    continue;
+   }
    const children=details[index].childNodes.filter(node=>node.tagName);
    assert.equal(children[0].tagName,'summary',page.path+' native disclosure');
    assert.equal(text(children[0]),item.question,page.path+' question');

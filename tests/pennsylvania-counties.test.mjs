@@ -12,7 +12,7 @@ import {pennsylvaniaGeography} from '../src/pennsylvania-geography.mjs';
 import {pennsylvaniaRegions} from '../src/pennsylvania-regions.mjs';
 import {countyPages} from '../src/service-counties.mjs';
 import {escapeHtml} from '../src/shared.mjs';
-import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
+import {serviceStates,countyServicePath} from '../src/service-area-directory.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import {socialCardPath} from '../src/social-cards.mjs';
@@ -33,7 +33,7 @@ const migration=await readFile(new URL('0013_journey_pennsylvania.sql',migration
 const allowed=(sql,field)=>[...sql.match(new RegExp(`CHECK\\(${field} IN \\(([^)]+)\\)\\)`))[1].matchAll(/'([^']+)'/g)].map(match=>match[1]);
 
 test('Pennsylvania retains all 67 county entries within its consolidated state directory',()=>{
- assert.equal(priorRoutes.length,120);assert.equal(pages.length,1229);assert.equal(byPath.size,1229);
+ assert.equal(priorRoutes.length,120);assert.equal(pages.length,1259);assert.equal(byPath.size,1259);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&(p.path.startsWith('/areas/pennsylvania/')||p.path==='/areas/new-york/')).map(p=>p.path).sort(),["/areas/new-york/", "/areas/pennsylvania/"].sort());
  for(const route of priorRoutes){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
@@ -45,16 +45,16 @@ test('Pennsylvania retains all 67 county entries within its consolidated state d
  assert.equal(pennsylvaniaRegions.length,10);
  assert.deepEqual(pennsylvaniaRegions.flatMap(r=>r.slugs).sort(),expectedSlugs);
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal((sitemap.match(/<loc>/g)||[]).length,1228);
- for(const [route,count] of [['/areas/',1607],['/areas/new-york/',62],['/areas/pennsylvania/',67]]){
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1247);
+ for(const [route,count] of [['/areas/',1746],['/areas/new-york/',62],['/areas/pennsylvania/',67]]){
   const html=byPath.get(route).html;assert.equal((html.match(/data-cs=/g)||[]).length,count,route);
   assert.ok(html.includes('data-county-filter-controls>'));assert.doesNotMatch(html,/data-county-filter-controls hidden/);
  }
  for(const state of serviceStates)for(const county of state.counties){
-  const route=countyPath(county,state);
+  const route=countyServicePath(county,state);
   for(const hub of ['/areas/',state.path])assert.ok(byPath.get(hub).html.includes(`href="${route}"`),hub+' -> '+route);
   assert.ok(sitemap.includes(`<loc>${config.origin+route.split('#')[0]}</loc>`),route);
-  for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(service.html.includes(`href="/areas/${state}/"`),service.path+' -> '+state);}
+  for(const service of pages.filter(p=>p.path.startsWith('/services/'))){assert.ok(service.html.includes('href="/areas/"'),service.path+' -> county directory');for(const state of ['new-york','pennsylvania','ohio'])assert.ok(byPath.get('/areas/').html.includes(`href="/areas/${state}/"`),service.path+' -> directory -> '+state);}
  }
 });
 

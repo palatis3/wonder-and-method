@@ -1,5 +1,6 @@
 import siteConfig from '../config/site.json' with {type:'json'};
 import {serviceRegionSummary} from './assets/service-state-info.js';
+import {escapeHtml as e} from './shared.mjs';
 
 // Delivery reach is distinct from the local search focus in search-content.mjs.
 // Change these facts in config/site.json; publish new area pages only when useful.
@@ -11,4 +12,10 @@ export function serviceCoverage(config=siteConfig){
   const region=new Intl.ListFormat('en-US',{style:'long',type:'conjunction'}).format(regions);
   const areas=regions.map(name=>({'@type':'AdministrativeArea',name:`${name}, ${country}`}));
   return {base,region,regions,shortRegion:serviceRegionSummary(regions),country,statement:`Based in ${base}, serving businesses across ${region} online.`,areaServed:areas.length===1?areas[0]:areas};
+}
+
+// Visible summaries link to the complete directory; structured coverage keeps
+// every region above, including the district.
+export function serviceCoverageLink(config=siteConfig){
+  return `<a href="/areas/">${e(serviceCoverage(config).shortRegion)}</a>`;
 }

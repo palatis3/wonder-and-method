@@ -24,7 +24,7 @@ export function countyBriefs(){
     'WHAT YOUR WEBSITE COULD EXPLAIN',task.output,'The change you want, including any limits:','',
     'TRY IT AS A CUSTOMER',task.check,'Your own task to try:','Could you complete it? Yes / No / Not checked','What happened, and what needs fixing?','Who checked it, and when?','',
     'KEEP IT ACCURATE','Who confirmed the facts?','Who will update changing details?','When should dated information be reviewed or removed?','What questions or account access are still unresolved?','',
-    'Use this worksheet to plan; it is not a booking. Agree the work, outside costs, dates and responsibilities in writing. Do not include passwords or sensitive personal information. Official place sources are linked from the area directory.',''
+    'Use this worksheet to plan; it is not a booking. Agree on the work, outside costs, dates and responsibilities in writing. Do not include passwords or sensitive personal information. Official place sources are linked from the area directory.',''
    ].join('\n')});
   }
  }

@@ -1,3 +1,4 @@
+import countyDepth from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
@@ -7,6 +8,8 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/ms-al-approved-paths.json' with {type:'json'};
 
+const laterPageKeys=new Set([...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+
 test('migration 0031 adds exactly seven MS/AL keys and preserves all 1189 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);
  const names=(await readdir(directory)).filter(name=>/^\d{4}.*\.sql$/.test(name)&&Number(name.slice(0,4))<=31).sort();
@@ -15,7 +18,7 @@ test('migration 0031 adds exactly seven MS/AL keys and preserves all 1189 histor
  const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page'),added=paths.map(journeyPageKey).sort();
  assert.equal(paths.length,7);assert.equal(old.length,1189);assert.equal(next.length,1196);
  assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).sort(),next.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!laterPageKeys.has(key)).filter(key=>!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).sort(),next.slice().sort());
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

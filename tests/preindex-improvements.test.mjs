@@ -18,7 +18,7 @@ test('all public content variants are indexable while APIs, downloads, errors an
  const excluded=['/api/inquiries','/assets/example.txt','/404/','/404.html','/version.json','/.well-known/private'];
  const env={ENVIRONMENT:'production',RELEASE_APPROVED:'true',SEARCH_INDEXING:'true',ASSETS:{fetch:async()=>new Response('fixture')}};
  for(const path of excluded){assert.equal(routeIndexEligible(path),false,path);if(!path.startsWith('/api/'))assert.match((await worker.fetch(new Request('https://example.test'+path),env,{})).headers.get('X-Robots-Tag'),/noindex/,path);}
- for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/','/areas/monroe-county/','/checkout/launch-site/','/checkout/grow','/checkout/launch-site/index.html','/payments','/payments.html','/privacy/','/work/lead-workbench/'])assert.equal(routeIndexEligible(path),true,path);
+ for(const path of ['/','/pricing/','/services/web-design/','/areas/niagara-county/','/guides/service-area-pages/','/areas/monroe-county/','/payments','/payments.html','/privacy/','/work/lead-workbench/'])assert.equal(routeIndexEligible(path),true,path);
  assert.equal(config.searchIndexing,true);const pages=renderPages({config:{...config,searchIndexing:false},offers,map,geography});assert.ok(pages.every(p=>p.html.includes('noindex,nofollow')));
 });
 test('website cards use authoritative limits and canonical destinations without duplicate posters',()=>{

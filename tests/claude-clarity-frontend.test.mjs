@@ -36,7 +36,7 @@ test('service navigation marks only listed current pages and keeps secondary ser
 
 function calculatorFixture(annual=true){
  const fields=Object.fromEntries(Object.entries({build:'focused',plan:'grow',cycles:'11',hostingMonths:'12',hostingMonthly:'25',external:'',billing:'monthly',baseline:'on',sprint:'on'}).map(([name,value])=>[name,{name,value,disabled:false,checked:name==='baseline',options:name==='billing'?[{value:'monthly'},{value:'annual'}]:[],setAttribute(){},removeAttribute(){},closest(){return null;}}]));
- const listeners={},calculator={elements:{namedItem:name=>fields[name]},addEventListener:(name,handler)=>listeners[name]=handler};
+ const listeners={},calculator={elements:{namedItem:name=>fields[name]},querySelectorAll:()=>[],addEventListener:(name,handler)=>listeners[name]=handler};
  const output=Object.fromEntries(['cost-total','cost-breakdown','calculator-error','external-note'].map(id=>[id,{textContent:''}]));
  class Data{constructor(){this.values=new Map(Object.entries(fields).filter(([name,f])=>!f.disabled&&(!['baseline','sprint'].includes(name)||f.checked)).map(([name,f])=>[name,f.value]));}get(name){return this.values.get(name)??null;}has(name){return this.values.has(name);}}
  const original=globalThis.FormData;globalThis.FormData=Data;

@@ -26,18 +26,26 @@ for(let offset=0;offset<routes.length;offset+=25){
      footer:document.querySelectorAll('footer.site-footer--compact').length,
      top:document.querySelectorAll('a.back-to-top[href="#page-top"]').length,
      chat:document.querySelectorAll('.support-chat').length,
-     footerGroups:document.querySelectorAll('footer details.footer-group').length
+     footerGroups:document.querySelectorAll('footer section.footer-group').length
     }));
     expect(health.scroll,`${path} ${width}px overflow`).toBeLessThanOrEqual(width+1);
     expect(health.h1,`${path} heading`).toBe(1);expect(health.brokenImages,path).toEqual([]);expect(health.badFonts,path).toEqual([]);
-    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(4);expect(errors,path).toEqual([]);
+    expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(3);expect(errors,path).toEqual([]);
     // Presence alone misses controls hidden by a future CSS or boot-script edit.
     const inline=page.locator('.support-chat--inline');
     if(await inline.count())await expect(page.locator('[data-chat-open]')).toBeVisible();
     else await expect(page.locator('.support-chat-launch')).toBeVisible();
     const answers=faqsByPath[path]||[],section=page.locator('#service-questions');
     await expect(section).toHaveCount(answers.length?1:0);
-    for(const [index,answer] of answers.entries()){
+    if(answers.length===1){
+     const [answer]=answers;
+     await expect(section.locator('details')).toHaveCount(0);
+     await expect(section.getByRole('heading',{level:2})).toHaveText(answer.question);
+     await expect(section.getByRole('heading',{level:2})).toBeVisible();
+     await expect(section.locator('p').first()).toBeVisible();await expect(section.locator('p').first()).toHaveText(answer.answer);
+     for(const link of answer.links||[])await expect(section.getByRole('link',{name:link.label,exact:true})).toHaveAttribute('href',link.path);
+     expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),path+' visible FAQ at '+width).toBeLessThanOrEqual(1);
+    }else for(const [index,answer] of answers.entries()){
      const details=section.locator('details').nth(index),summary=details.locator('summary');
      await expect(summary).toHaveText(answer.question);await expect(details).not.toHaveAttribute('open','');
      await summary.focus();await page.keyboard.press('Enter');

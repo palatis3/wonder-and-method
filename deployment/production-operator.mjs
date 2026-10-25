@@ -4,23 +4,25 @@ import {fileURLToPath} from 'node:url';
 import {readProductionCredentials} from './production-credentials.mjs';
 import {inquiryChoices} from '../src/shared.mjs';
 import {inquiryResolutionInput} from './inquiry-maintenance.mjs';
-import pageDates from '../config/page-dates.json' with {type:'json'};
-import {retiredCountyRoutes} from './retired-county-routes.mjs';
-import {journeyPageKey} from '../src/journey-page-key.mjs';
 import {serviceStateInfo} from '../src/assets/service-state-info.js';
+import {countyMeasurementCatalog,retiredMeasurementCatalog,measurementTypeTotals} from './measurement-catalog.mjs';
+import {validateDeletionPlan} from './inquiry-deletion-batch.mjs';
 
 const root=resolve(import.meta.dirname,'..');
 const origin='https://wonderandmethod.com';
 const referencePattern=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/;
-const countyCatalog=[...new Set([...Object.keys(pageDates),...Object.keys(retiredCountyRoutes)])].flatMap(path=>{
- const match=path.match(/^\/areas\/(?:([a-z-]+)\/)?[^/]+-(?:county|planning-region)\/$/)||(path==='/areas/maryland/baltimore-city/'?[path,'maryland']:null);
- const state=match&&serviceStateInfo.find(item=>item.id===(match[1]||'new-york'));
- return state?[{state:state.abbreviation,page:journeyPageKey(path)}]:[];
-});
+
+async function privateJson(workspace,path,maxBytes){
+ const file=await realpath(resolve(workspace,path)),privateRoot=await realpath(resolve(workspace,'.runtime')),inside=relative(privateRoot,file);
+ const actualRoot=await realpath(workspace);
+ if(relative(actualRoot,privateRoot)!=='.runtime'||!inside||inside==='..'||inside.startsWith('..'+sep)||isAbsolute(inside))throw Error('Batch files must stay inside the private .runtime directory without redirects.');
+ const bytes=await readFile(file);if(bytes.length>maxBytes)throw Error('Private batch file is too large.');
+ try{return JSON.parse(bytes);}catch{throw Error('Private batch file must contain JSON.');}
+}
 
 export async function productionOperator(args,{workspace=root,fetchImpl=fetch,credentials=readProductionCredentials,now=()=>new Date()}={}){
  const [action,label,confirmation,...extra]=args;
- if(extra.length!==(action==='followup'?1:action==='resolve'?2:0)||!['status','export','retry','delete','measurement','retention-preview','followup','resolve','lookup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS] [--all]; lookup CODE; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; resolve REFERENCE CONFIRM_REFERENCE OUTCOME EVIDENCE_REFERENCE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
+ if(extra.length!==(action==='followup'?1:action==='resolve'?2:0)||!['status','export','retry','delete','measurement','measurement-months','deletion-plan','delete-batch','retention-preview','followup','resolve','lookup'].includes(action))throw Error('Use status; export LABEL; measurement [DAYS] [--all]; measurement-months [MONTHS]; deletion-plan LABEL PRIVATE_INPUT_FILE; delete-batch PRIVATE_PLAN_FILE DIGEST; lookup CODE; retention-preview; followup REFERENCE CONFIRM_REFERENCE FILE; resolve REFERENCE CONFIRM_REFERENCE OUTCOME EVIDENCE_REFERENCE; or retry|delete REFERENCE CONFIRM_REFERENCE.');
  if(action==='lookup'&&(confirmation||!/^WM-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$/i.test(label||'')))throw Error('Lookup needs the short WM-XXXX-XXXX-XXXX code.');
  if(['status','retention-preview'].includes(action)&&(label||confirmation))throw Error('Status takes no additional arguments.');
  if(action==='export'&&(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(label||'')||confirmation))throw Error('Export needs a lowercase filename label, not a path.');
@@ -29,6 +31,12 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
  if(action==='resolve'&&!resolution)throw Error('Resolution needs handled_manually, duplicate_confirmed or spam_confirmed and a nonpersonal 3–80 character evidence reference using lowercase letters, numbers, dots, hyphens or underscores.');
  const measurementDays=label==='--all'?7:Number(label||7);
  if(action==='measurement'&&((confirmation&&confirmation!=='--all')||(label==='--all'&&confirmation)||!Number.isInteger(measurementDays)||measurementDays<1||measurementDays>90))throw Error('Measurement uses measurement [DAYS] [--all]; days must be an integer from 1 to 90.');
+ const measurementMonths=Number(label||24);
+ if(action==='measurement-months'&&(confirmation||!Number.isInteger(measurementMonths)||measurementMonths<1||measurementMonths>24))throw Error('Monthly measurement uses measurement-months [MONTHS]; months must be an integer from 1 to 24.');
+ if(action==='deletion-plan'&&(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(label||'')||!confirmation))throw Error('Deletion plan needs a lowercase filename label and private input file.');
+ if(action==='delete-batch'&&(!label||!/^[a-f0-9]{64}$/.test(confirmation||'')))throw Error('Batch deletion requires a private plan file and exact reviewed digest.');
+ const batchInput=action==='deletion-plan'?await privateJson(workspace,confirmation,4096):null;
+ const batchPlan=action==='delete-batch'?validateDeletionPlan(await privateJson(workspace,label,40000),confirmation,now().getTime()):null;
  const {OPERATOR_TOKEN}=credentials();
  const headers={Accept:'application/json',Authorization:`Bearer ${OPERATOR_TOKEN}`};
  const request=async(path,options={})=>{
@@ -37,9 +45,19 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
   try{return await response.json();}catch{throw Error('Production returned an unreadable response; no private body printed.');}
  };
  if(action==='measurement')return request('/api/operator/journey-summary?days='+measurementDays);
+ if(action==='measurement-months')return request('/api/operator/journey-months?months='+measurementMonths);
  if(action==='lookup')return request('/api/operator/inquiries/lookup?code='+encodeURIComponent(label));
  if(action==='retention-preview')return request('/api/operator/inquiries/retention-preview');
  if(action==='status')return {origin,...await request('/api/operator/inquiries/status')};
+ if(action==='deletion-plan'){
+  const plan=await request('/api/operator/inquiries/deletion-plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(batchInput)});
+  validateDeletionPlan(plan,plan.digest,now().getTime());
+  const folder=resolve(workspace,'.runtime/deletion-plans');await mkdir(folder,{recursive:true});
+  if(relative(await realpath(workspace),await realpath(folder))!==['.runtime','deletion-plans'].join(sep))throw Error('Deletion plans must stay in the private .runtime/deletion-plans directory without redirects.');
+  const file=resolve(folder,label+'.json');await writeFile(file,JSON.stringify(plan,null,2)+'\n',{flag:'wx',mode:0o600});
+  return {file,digest:plan.digest,records:plan.records.length,reason:plan.reason,expiresAt:new Date(plan.expiresAt).toISOString(),private:true,warning:'Nothing deleted. Review every reference, current contact/client/hold status, recorded reason and working copies. Confirm this exact digest only after review; plans expire after 30 minutes.'};
+ }
+ if(action==='delete-batch')return request('/api/operator/inquiries/delete-batch',{method:'POST',headers:{'Content-Type':'application/json','X-Confirm-Delete-Batch':confirmation},body:JSON.stringify(batchPlan)});
  if(action==='resolve'){
   const result=await request('/api/operator/inquiries/'+label+'/resolve',{method:'POST',headers:{'X-Confirm-Resolve':label,'Content-Type':'application/json'},body:JSON.stringify(resolution)});
   return {action,reference:label,status:result.status,resolution:result.resolution,already_resolved:result.already_resolved,message:result.message};
@@ -76,7 +94,7 @@ export async function productionOperator(args,{workspace=root,fetchImpl=fetch,cr
 }
 
 export function formatMeasurement(report,{all=false}={}){
- const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Resource link clicks',['resource_select']],['Email / chat actions',['email_click','chat_open']]];
+ const groups=[['Page views',['page_view']],['Offer / contact selections',['offer_select','question_select','contact_select']],['Form starts',['request_start','question_start']],['Saved confirmations',['inquiry_saved','question_saved']],['Resource link clicks',['resource_select']],['ROI calculations',['roi_calculate']],['Email / chat actions',['email_click','chat_open']]];
  const total=(events,current)=>report.daily.filter(row=>events.includes(row.event)&&(current?row.day>=report.since:row.day<report.since)).reduce((sum,row)=>sum+Number(row.total),0);
  const comparable=report.coverage?.previousAvailable===true&&report.days<=45;
  const topSource=[...(report.bySource||[])].filter(row=>!['internal','not_recorded'].includes(row.source)).sort((a,b)=>Number(b.total)-Number(a.total))[0];
@@ -117,13 +135,19 @@ export function formatMeasurement(report,{all=false}={}){
  lines.push('',`Page views by page (${shown}):`);showPages(views);
  if(!all)lines.push('Use measurement DAYS --all to list every recorded page.');
  const viewsByPage=new Map(views.map(row=>[row.page,row.total]));
- lines.push('','County and equivalent-area pages (current catalog; recorded page-view events):');
+ lines.push('','County and equivalent-area pages (local checkout catalog; recorded page-view events):','Catalog classification reflects this checkout, not independently verified live deployment. Shared area pages count once.');
  for(const {abbreviation:state} of serviceStateInfo){
-  const pages=countyCatalog.filter(page=>page.state===state);
+  const pages=countyMeasurementCatalog.filter(page=>page.state===state);
+  if(!pages.length)continue;
   const views=pages.reduce((sum,{page})=>sum+(viewsByPage.get(page)||0),0);
   const unrecorded=pages.filter(({page})=>!viewsByPage.get(page)).length;
   lines.push(`${state}: ${pages.length} pages / ${views} views / ${unrecorded} pages with no recorded views`);
  }
+ lines.push('','Retired county-page keys (historical page-view events; excluded from current catalog):');
+ for(const {page} of retiredMeasurementCatalog)lines.push(`${pageLabel(page)}: ${viewsByPage.get(page)||0}`);
+ lines.push('','Page types (local checkout classification; event counts):','Type | Page-view events | Other recorded events');
+ for(const row of measurementTypeTotals(report.counts))lines.push(`${row.type} | ${row.pageViews} | ${row.otherEvents}`);
+ lines.push('Shared guide keys are grouped as Guides; they cannot identify an individual guide. Unclassified keys are retained without guessing a current page or state. These totals are events, not unique people or conversion rates.');
  lines.push('No recorded views does not establish zero visitors; privacy choices, blockers, outages and incomplete collection affect counts.');
  lines.push('','Goals selected on contact links:');
  for(const [event,label] of [['goal_new_website','New website'],['goal_redesign','Redesign'],['goal_fix','Repair'],['goal_search','Search visibility'],['goal_care','Website care']])lines.push(`${label}: ${report.counts.filter(row=>row.event===event).reduce((sum,row)=>sum+Number(row.total),0)}`);
@@ -131,6 +155,23 @@ export function formatMeasurement(report,{all=false}={}){
  lines.push('',report.note,'Saved confirmations are client-reported events, not a count of unique leads. Resource clicks do not prove a completed download; repeated clicks on the same resource in a page instance count once. Goals describe link selections, not identified inquiries. Use the separate lead report for real inquiry stages.');return lines.join('\n');
 }
 
+export function formatMonthlyMeasurement(report){
+ const lines=[`Monthly website events: ${report.sinceMonth} through ${report.throughMonth} (UTC)`,
+  `First recorded monthly event: ${report.firstRecordedAt?new Date(report.firstRecordedAt).toISOString():'none recorded'}`,
+  'Prospective totals only; no daily history was backfilled. First and current months may be partial; continuity is unverified.',
+  'Month | Recorded page views | Recorded saved confirmations | All recorded events'];
+ const [year,month]=report.sinceMonth.split('-').map(Number);
+ for(let offset=0;offset<report.months;offset++){
+  const key=new Date(Date.UTC(year,month-1+offset,1)).toISOString().slice(0,7),rows=report.counts.filter(row=>row.month===key);
+  const sum=events=>rows.filter(row=>!events||events.includes(row.event)).reduce((total,row)=>total+Number(row.total),0);
+  lines.push(`${key} | ${rows.some(row=>row.event==='page_view')?sum(['page_view']):'no rows'} | ${rows.some(row=>['inquiry_saved','question_saved'].includes(row.event))?sum(['inquiry_saved','question_saved']):'no rows'} | ${rows.length?sum():'no rows'}`);
+ }
+ lines.push('','Monthly page-view source categories:');
+ for(const row of report.bySource)lines.push(`${row.month} | ${row.source} | ${row.total}`);
+ lines.push('',report.note,'No rows does not mean zero visitors. Saved confirmations are browser-reported events, not unique inquiries.');
+ return lines.join('\n');
+}
+
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- productionOperator(process.argv.slice(2)).then(result=>console.log(process.argv[2]==='measurement'&&Array.isArray(result.daily)?formatMeasurement(result,{all:process.argv.slice(3).includes('--all')}):JSON.stringify(result,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
+ productionOperator(process.argv.slice(2)).then(result=>console.log(process.argv[2]==='measurement'&&Array.isArray(result.daily)?formatMeasurement(result,{all:process.argv.slice(3).includes('--all')}):process.argv[2]==='measurement-months'?formatMonthlyMeasurement(result):JSON.stringify(result,null,2))).catch(error=>{console.error(error.message);process.exitCode=1;});
 }

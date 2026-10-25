@@ -6,6 +6,7 @@ import {journal,journalArticle,journalIndex,journalSections} from '../src/journa
 import {guideDecision} from '../src/guide-decisions.mjs';
 import {guideInquiry} from '../src/guide-inquiry-actions.mjs';
 import {money} from '../src/shared.mjs';
+import {normalizeOfferCatalog} from '../src/offer-catalog.mjs';
 
 // Public guide routes and bookmarks recorded before the October 21 clarity pass.
 const historic={
@@ -308,7 +309,7 @@ test('form troubleshooting finishes owner checks before help and points to the B
  assert.match(body('contact-form-not-working'),/site dashboard, open Automations/);
  assert.match(body('contact-form-not-working'),/Log out and send another test/);
  assert.doesNotMatch(body('contact-form-not-working'),/applicable agreement|additional contact-form scope|quarantine|approved retention/);
- assert.match(html,/Ask about the \$399 Website Baseline/);
+ assert.match(html,/\$399 Website Baseline/);assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);assert.match(html,/That fix can be the form if the diagnosed problem fits; a repair is not guaranteed/);assert.doesNotMatch(html,/web person/);
  assert.match(guideInquiry(path('contact-form-not-working')).href,/offer=website_baseline&amp;goal=fix/);
  assert.match(sections('contact-form-not-working').find(x=>x.id==='review-options').body,/href="\/services\/website-audit\/#offer-website_baseline"/);
  assert.match(sections('contact-form-not-working').at(-1).body,/^<details>/);
@@ -327,12 +328,13 @@ test('Google diagnosis defines terms, gives the first check, and keeps server de
 });
 
 test('prices and payment examples recalculate from the supplied offers',()=>{
- const changed=structuredClone(offers);
- changed.launch_site.public_price=2000;
- changed.focused_site.public_price=3000;
- changed.signature_site.public_price=4500;
- changed.plans.keep_running.monthly_price=200;
- changed.baseline.one_time_price=450;
+ const raw=structuredClone(offers);
+ raw.launch_site.public_price=2000;
+ raw.focused_site.public_price=3000;
+ raw.signature_site.public_price=4500;
+ raw.plans.keep_running.monthly_price=200;
+ raw.baseline.one_time_price=450;
+ const changed=normalizeOfferCatalog(raw);
  const cost=body('website-project-cost',changed);
  for(const price of [2000,3000,4500,1000,600,400,5760])assert.ok(cost.includes(money(price)),String(price));
  assert.match(cost,/10 simple old-to-new redirects/);
@@ -340,7 +342,7 @@ test('prices and payment examples recalculate from the supplied offers',()=>{
  assert.match(cost,/assumed yearly total/);
  assert.ok(body('website-maintenance-cost',changed).includes(money(3210)));
  assert.ok(body('contact-form-not-working',changed).includes(money(450)));
- assert.ok(article('contact-form-not-working',changed).includes('Ask about the $450 Website Baseline'));
+ assert.ok(article('contact-form-not-working',changed).includes('$450 Website Baseline'));assert.ok(article('contact-form-not-working',changed).includes('Get help fixing your form'));
 });
 
 test('timeline uses configuration, names both review windows, and preserves the handoff trigger',()=>{
@@ -353,7 +355,7 @@ test('timeline uses configuration, names both review windows, and preserves the 
  }
  const handover=body('website-handover-checklist');
  assert.match(handover,/within five business days after the paid work is finished/);
- assert.match(handover,/cancelled account is settled/);
+ assert.match(handover,/canceled account is settled/);
  assert.doesNotMatch(handover,/five business days (?:of|after) final payment/);
  const stages=sections('website-redesign-timeline').find(x=>x.id==='sequence').body;
  const rows=csvRows(readFileSync(file('/assets/guides/website-redesign-schedule.csv'),'utf8'));

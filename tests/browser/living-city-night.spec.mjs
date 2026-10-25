@@ -61,6 +61,9 @@ test('reduced motion has a static moon and star map with no shooting stars',asyn
   if(testInfo.project.name==='phone-reduced-motion')await page.goto('/?qa=1');
   else {await reachNight(page);await page.emulateMedia({reducedMotion:'reduce'});}
   await expect(page.locator('[data-city-play]')).toBeDisabled();
+  await expect(page.locator('[data-city-play]')).toBeHidden();
+  await expect(page.locator('[data-city-play]')).not.toHaveAttribute('aria-pressed',/./);
+  await expect(page.getByText('Motion is off to match your device setting.',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
   expect(await page.locator('.city-night').evaluate(node=>node.getAnimations({subtree:true}).length)).toBe(0);
   expect(await page.locator('.city-meteor').evaluateAll(nodes=>nodes.every(node=>getComputedStyle(node).opacity==='0'))).toBe(true);
@@ -85,11 +88,12 @@ test('failed moon and film assets keep the homepage copy and project navigation 
   await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
  }
  await expect(page.getByRole('heading',{name:'Web design & SEO. Built for small businesses.'})).toBeVisible();
- await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 26 states and Washington, DC.');
+ await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 28 states and Washington, DC.');
  await expect(page.locator('.home-starting-points')).toContainText('From $1,400');
  await expect(page.locator('#seo-services')).toContainText('From $400/month');await expect(page.locator('#seo-services')).toContainText('Useful content and researched website improvements');
- await expect(page.locator('.home-choice-grid>article')).toHaveCount(3);
- for(const card of await page.locator('.home-choice-grid>article').all()){await expect(card.locator('a')).toHaveCount(1);await expect(card.locator('.starting-price')).toHaveCount(1);}
+ await expect(page.locator('.home-choice-grid>a')).toHaveCount(4);
+ for(const card of await page.locator('.home-choice-grid>a').all()){await expect(card.locator('a,button,input,select,textarea')).toHaveCount(0);await expect(card.locator('.starting-price')).toHaveCount(1);}
+ await expect(page.getByRole('link',{name:'Something is broken',exact:true})).toHaveAttribute('href','/services/website-audit/');
  await expect(page.locator('.home-faq')).toContainText('You own the custom website work once it is paid for');
  await page.getByRole('tab',{name:'Northline',exact:true}).click();
  await expect(page.locator('#city-panel-northline')).toBeVisible();

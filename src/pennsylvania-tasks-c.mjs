@@ -67,7 +67,7 @@ export const pennsylvaniaTasksC = {
   mercer:{
     name:'Mercer', title:'Trace the old business name through every contact path.',
     scenario:'A Sharon business has approved a new name, but its form destination, booking account and downloaded brochure still use the former identity.',
-    decision:'List the current and proposed name beside each public page and connected account. Record the owner, intended change date and whether a temporary explanation is needed. Separate a brand update from a domain or email migration. Retain useful URLs where possible and agree redirects for necessary changes. Check postal details independently: a municipal name change does not automatically change a mailing address.',
+    decision:'List the current and proposed name beside each public page and connected account. Record the owner, intended change date and whether a temporary explanation is needed. Separate a brand update from a domain or email migration. Retain useful URLs where possible and agree on redirects for necessary changes. Check postal details independently: a municipal name change does not automatically change a mailing address.',
     questions:['Which former-name references help returning customers recognize the business?','Who controls the domain, email and external booking account?','Which contact paths must be tested before the new name is published?'],
     output:'A coordinated name-change checklist with account ownership, approved transitional wording and URL decisions.',
     check:'A customer arriving from an older link can recognize the current business and send an inquiry that reaches the correct, monitored destination.'

@@ -3,9 +3,21 @@ import {livingCityAssetState} from '../scripts/build-living-city-assets.mjs';
 import {readFile,readdir,stat} from 'node:fs/promises';
 import {resolve,relative,sep} from 'node:path';
 import {createHash} from 'node:crypto';
+import {build as inspectModuleGraph} from 'esbuild';
 const digest=value=>createHash('sha256').update(value).digest('hex');
+export async function workerRuntimeSourceFiles(root){
+ root=resolve(root);
+ // Resolve local imports without executing the Worker. Package versions remain
+ // bound by the lockfiles; every local transitive input is bound by its bytes.
+ const result=await inspectModuleGraph({absWorkingDir:root,entryPoints:['deployment/worker.mjs'],bundle:true,write:false,metafile:true,platform:'neutral',packages:'external',logLevel:'silent'});
+ return Object.keys(result.metafile.inputs).map(file=>{
+  const path=resolve(root,file);
+  if(path!==root&&!path.startsWith(root+sep))throw Error('Worker input is outside the release source tree: '+file);
+  return relative(root,path).split(sep).join('/');
+ }).sort();
+}
 export async function releaseFingerprint(root){
- async function collect(paths){const entries=[];async function walk(path){const info=await stat(path);if(info.isDirectory()){for(const name of (await readdir(path)).sort())await walk(resolve(path,name));}else entries.push({path:relative(root,path).split(sep).join('/'),sha256:digest(await readFile(path))});}for(const path of paths)await walk(resolve(root,path));return entries.sort((a,b)=>a.path.localeCompare(b.path));}
+ async function collect(paths){const entries=[],seen=new Set();async function walk(path){if(seen.has(path))return;seen.add(path);const info=await stat(path);if(info.isDirectory()){for(const name of (await readdir(path)).sort())await walk(resolve(path,name));}else entries.push({path:relative(root,path).split(sep).join('/'),sha256:digest(await readFile(path))});}for(const path of paths)await walk(resolve(root,path));return entries.sort((a,b)=>a.path.localeCompare(b.path));}
  const artifacts=await collect(['dist']);
  // Bind the motion inputs consumed by the builder, not Blender files,
  // frame directories or render logs. Source edits invalidate approval even
@@ -13,7 +25,8 @@ export async function releaseFingerprint(root){
  const config=JSON.parse(await readFile(resolve(root,'config/site.json'),'utf8'));
  const civic=await civicAssetState(root,config);
  const city=await livingCityAssetState(root,config);
- const source=await collect(['content','src','experience','scripts','authority/v5','package.json','package-lock.json','config/site.json','config/offers.json','config/page-dates.json','deployment/worker.mjs','deployment/public-route-canonical.mjs','deployment/retired-county-routes.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/journey-dimensions.mjs','deployment/inquiry-rate.mjs','deployment/notification-budget.mjs','deployment/payment-records.mjs','deployment/migrations','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css',...(civic.civicSourceFiles??[]),...(city.livingCitySourceFiles??[])]);
+ const workerSources=await workerRuntimeSourceFiles(root);
+ const source=await collect(['content','src','experience','scripts','authority/v5','package.json','package-lock.json','config/site.json','config/offers.json','config/page-dates.json','deployment/worker.mjs','deployment/public-route-canonical.mjs','deployment/retired-county-routes.mjs','deployment/inquiry-maintenance.mjs','deployment/inquiry-health.mjs','deployment/journey-counts.mjs','deployment/journey-dimensions.mjs','deployment/inquiry-rate.mjs','deployment/notification-budget.mjs','deployment/payment-records.mjs','deployment/migrations','deployment/wrangler.production.jsonc','deployment/package.json','deployment/package-lock.json','motion/civic-sculpture-preview.js','motion/civic-sculpture-preview.css',...workerSources,...(civic.civicSourceFiles??[]),...(city.livingCitySourceFiles??[])]);
  return {artifactSha256:digest(JSON.stringify(artifacts)),sourceSha256:digest(JSON.stringify(source))};
 }
 export function evaluateRelease(contract,evidence,current,config,deployment){

@@ -111,7 +111,7 @@ export const pennsylvaniaProfilesB = [
     search:'For local SEO, the service page and its contact path should agree. Someone arriving on an appointment page should not be sent to a form designed for a large project. Review the actual words used for each service, contact link and confirmation. Use Pennsylvania context when referring to Delaware County, and make the real business address clear wherever a customer could otherwise confuse the county with the state of Delaware.',
     geographyNote:'Media is a borough. Chester City and Chester Township are separate municipalities in Delaware County; Upper Darby is a township. Use the full address for visits.',
     questions:[
-      ['Does a Delaware County business need three separate contact forms?','Not necessarily. One clear form may handle new inquiries, while an existing appointment link and phone number handle the other needs. Choose the simplest supported arrangement and agree any distinct forms, destinations and confirmations in the project scope.'],
+      ['Does a Delaware County business need three separate contact forms?','Not necessarily. One clear form may handle new inquiries, while an existing appointment link and phone number handle the other needs. Choose the simplest supported arrangement and agree on any distinct forms, destinations and confirmations in the project scope.'],
       ['How should a Chester service address be written on the contact page?','Use the business’s approved full postal address and clarify the municipality where it helps visitors. Chester City and Chester Township are distinct. A map and written directions should point to the same supported arrival location, including any appointment requirement.']
     ]
   },

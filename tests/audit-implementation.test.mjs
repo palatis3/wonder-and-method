@@ -61,7 +61,7 @@ test('published decisions include the real review framework, exclusions and insp
  assert.equal(offers.review_standard.sections.reduce((sum,s)=>sum+s.weight,0),100);
  assert.match(page('/services/website-audit/'),/Website Baseline/);assert.match(page('/services/website-audit/'),/Audit &amp; Fix Sprint/);
  const seo=page('/services/seo/');assert.match(seo,/<h3>Not included<\/h3><ul>/);
- assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/Example: rewriting a service page/);
+ assert.match(page('/guides/seo-work-and-reporting/'),/\/assets\/buyer-packs\/owned-audit-two-fixes/);assert.match(page('/guides/seo-work-and-reporting/'),/illustrative record of one agreed service-page improvement/);
  assert.match(page('/guides/website-redesign-brief/'),/illustrative-completed-brief\.txt/);
  assert.match(page('/guides/website-migration-checklist/'),/\/assets\/downloads\/website-url-map\.csv/);
  for(const id of ['keep_running','improve','grow','audit_fix_sprint'])assert.match(page('/contact/'),new RegExp('value="'+id+'"'));
@@ -134,7 +134,7 @@ test('source-handoff scopes survive quote drafting with clear agreed delivery li
  assert.match(web,/one initial launch/i);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
  assert.ok(pages.find(p=>p.path==='/services/seo/').html.includes('20-minute call or written review'));
- assert.match(pages.find(p=>p.path==='/services/seo/').html,/(?:already-promised|unfinished) launch work.*(?:does not|do not).*paid/i);
+ assert.match(pages.find(p=>p.path==='/services/seo/').html,/unfinished launch work never use paid monthly work/i);
 });
 
 test('historical snapshot: provider cents survive hosting credits, overlap and the displayed estimate exactly',()=>{

@@ -53,7 +53,7 @@ ${motionShowcase()}
   <li><span>02 / Create</span><h3>Give it character.</h3><p>Bring the story to life through composition, language, imagery, and thoughtful interaction.</p></li>
   <li><span>03 / Deliver</span><h3>Make it work.</h3><p>Test the experience, refine the details, and hand over the paid work with clear documentation.</p></li>
 </ol><a class="waterfront-text-link" href="/process/">See the complete process <img class="waterfront-arrow" src="/assets/waterfront/arrow-up-right.svg" width="18" height="18" alt="" aria-hidden="true"></a></section>
-${guides.length?`<section class="waterfront-journal waterfront-wrap"><p class="eyebrow">Notes from the studio</p><h2>Good decisions<br>start with clarity.</h2><div class="journal-grid">${guides.slice(0,3).map(journalCard).join('')}</div><a class="waterfront-text-link" href="/guides/">Explore the journal ↗</a></section>`:''}
+${guides.length?`<section class="waterfront-journal waterfront-wrap"><p class="eyebrow">Notes from the studio</p><h2>Good decisions<br>start with clarity.</h2><div class="journal-grid">${guides.slice(0,3).map(journalCard).join('')}</div><a class="waterfront-text-link" href="/guides/">Explore the journal →</a></section>`:''}
 <section class="waterfront-closing"><div class="waterfront-wrap"><p class="eyebrow">Your next chapter</p><h2>Let’s make it<br>worth noticing.</h2><a class="waterfront-button" href="/contact/">Start a conversation <img class="waterfront-arrow" src="/assets/waterfront/arrow-up-right.svg" width="18" height="18" alt="" aria-hidden="true"></a><p class="waterfront-closing-location">Rooted in Erie County.<br>Open to what’s next.</p></div></section>
 `}
 

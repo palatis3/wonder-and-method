@@ -1,5 +1,5 @@
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
-import {serviceStates,countyPath} from '../src/service-area-directory.mjs';
+import {serviceStates,countyPath,countyServicePath} from '../src/service-area-directory.mjs';
 import {researchGuideDetails} from '../src/research-guides.mjs';
 import {readFile} from 'node:fs/promises';
 import test from 'node:test';
@@ -40,9 +40,9 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
-test('state directories lead with places, retain service links and give each of 1607 areas one destination',()=>{
+test('state directories retain places and give each of 1746 areas a direct service or directory destination',()=>{
  const pages=countyPages(offers),hub=pages.find(p=>p.path==='/areas/').body;
- assert.equal(pages.length,28);
+ assert.equal(pages.length,30);
  for(const page of pages){
   assert.ok(page.body.indexOf('id="counties"')>=0,page.path);
   assert.ok(page.body.indexOf('id="counties"')<page.body.indexOf('id="scope"'),page.path);
@@ -51,11 +51,11 @@ test('state directories lead with places, retain service links and give each of 
   assert.doesNotMatch(page.body,/class="county-buyer-task"|class="county-planning-details"/);
  }
  const destinations=[...hub.matchAll(/data-cl href="([^"]+)"/g)].map(match=>match[1]);
- assert.equal(destinations.length,1607);assert.equal(new Set(destinations).size,1607);
- assert.deepEqual(destinations.slice().sort(),serviceStates.flatMap(state=>state.counties.map(county=>countyPath(county,state))).sort());
+ assert.equal(destinations.length,1746);assert.equal(new Set(destinations).size,1736,'three reviewed combined service pages serve multiple distinct area entries');
+ assert.deepEqual(destinations.slice().sort(),serviceStates.flatMap(state=>state.counties.map(county=>countyServicePath(county,state))).sort());
  assert.equal(Object.keys(retiredCountyRoutes).length,2);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!destinations.includes(retired),retired);assert.ok(hub.includes(`href="${destination}"`)||pages.some(page=>page.body.includes(`href="${destination}"`)),destination);}
- assert.ok(destinations.indexOf('/areas/erie-county/')<destinations.indexOf('/areas/new-york/#niagara'));
+ assert.ok(destinations.indexOf('/areas/erie-county/')<destinations.indexOf('/areas/niagara-county/'));
  const ny=pages.find(p=>p.path==='/areas/new-york/').body;
  assert.match(ny.slice(ny.indexOf('id="orange"')).split('</details>')[0],/Tuxedo Park remains a separate village/);
  assert.match(ny.slice(ny.indexOf('id="albany"')).split('</details>')[0],/Green Island is a coterminous town and village/);

@@ -246,7 +246,7 @@ test('a versioned full film remains streamed rather than read to compute its has
 });
 
 test('documents, missing assets and protected staging never gain immutable caching',async()=>{
- for(const path of ['/assets/guides/checklist.txt','/assets/data.csv','/assets/asset-hashes.json','/assets/buyer-packs/example.js']){
+ for(const path of ['/assets/guides/checklist.txt','/assets/data.csv','/assets/buyer-packs/example.js']){
   const {env,hash}=assetEnvironment(path,'fixture','text/plain');
   const response=await worker.fetch(new Request('https://example.test'+path+'?v='+hash),env,context());
   assert.equal(response.headers.get('Cache-Control'),'no-cache');
@@ -260,4 +260,23 @@ test('documents, missing assets and protected staging never gain immutable cachi
  const missing=assetEnvironment('/assets/missing.webp','missing','image/webp',{status:404});
  const response=await worker.fetch(new Request('https://example.test/assets/missing.webp?v='+missing.hash),missing.env,context());
  assert.doesNotMatch(response.headers.get('Cache-Control')||'',/immutable/);
+});
+
+
+test('public asset hash index requests are blocked while internal image verification still works',async()=>{
+ const path='/assets/image.webp',body='fixture',{env,hash,calls}=assetEnvironment(path,body,'image/webp');
+ for(const pathname of ['/assets/asset-hashes.json','/assets/asset-hashes.json?v='+hash,'/assets/asset-hashes.json/','/assets/%61sset-hashes.json','/assets%2Fasset-hashes.json','//assets//asset-hashes.json','/ASSETS/ASSET-HASHES.JSON']){
+  for(const method of ['GET','HEAD','POST']){
+   const response=await worker.fetch(new Request('https://example.test'+pathname,{method}),env,context());
+   assert.equal(response.status,404,method+' '+pathname);
+   assert.equal(response.headers.get('Cache-Control'),'no-store');
+   assert.match(response.headers.get('X-Robots-Tag'),/noindex/);
+   assert.equal(await response.text(),method==='HEAD'?'':'Not found.');
+  }
+ }
+ assert.deepEqual(calls,[],'Direct requests do not enter the ASSETS binding');
+ const image=await worker.fetch(new Request('https://example.test'+path+'?v='+hash),env,context());
+ assert.equal(image.status,200);assert.equal(await image.text(),body);
+ assert.match(image.headers.get('Cache-Control'),/immutable/);
+ assert.deepEqual(calls,[path,'/assets/asset-hashes.json']);
 });

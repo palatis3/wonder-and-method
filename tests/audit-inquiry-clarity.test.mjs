@@ -8,6 +8,8 @@ import * as addons from '../src/addons.mjs';
 import {addonBuildPayments} from '../src/addon-content.mjs';
 import {checkoutPages} from '../src/checkout-content.mjs';
 import {inquiryFormMarkup} from '../src/inquiry-form.mjs';
+import {inquiryNextStep} from '../src/inquiry-next-step.mjs';
+import {inquiryConfirmationHtml} from '../src/inquiry-confirmation.mjs';
 import {prefillInquiryHtml} from '../src/inquiry-prefill.mjs';
 import {inquiryResponseHtml} from '../src/inquiry-response.mjs';
 import {bindInquirySubmission} from '../src/inquiry-submit.mjs';
@@ -23,7 +25,7 @@ const attrs=tag=>Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map
 function nativeValues(html){
  const values={};
  for(const match of html.matchAll(/<input\b[^>]*>/g)){
-  const input=attrs(match[0]);if(!input.name||/\bdisabled\b/.test(match[0])||input.type==='checkbox'&&!/\bchecked\b/.test(match[0]))continue;
+  const input=attrs(match[0]);if(!input.name||/\bdisabled\b/.test(match[0])||['checkbox','radio'].includes(input.type)&&!/\bchecked\b/.test(match[0]))continue;
   values[input.name]=input.value||'';
  }
  for(const match of html.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/g)){
@@ -35,43 +37,47 @@ function nativeValues(html){
 }
 const visibleText=html=>html.replace(/<details\b[^>]*>([\s\S]*?)<\/details>/g,(_match,inside)=>inside.match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/)?.[1]||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 
-test('all checkouts show price, written payment steps and open scope before the form without duplicate reassurance',()=>{
+test('all checkouts lead with price and no-charge reassurance, with complete scope and payment steps in a native disclosure',()=>{
  const pages=checkoutPages(offers,{live:true});assert.equal(pages.length,8);
  for(const page of pages){
   const id=page.path.split('/')[2].replaceAll('-','_'),offer=shared.inquiryOffer(id),formStart=page.body.indexOf('<form');
   const before=page.body.slice(0,formStart),header=before.split('</header>')[0],scope=before.match(/<aside class="checkout-summary">([\s\S]*?)<\/aside>/)?.[1];
   assert.ok(scope,id);const serviceType={keep_running:' website care',improve:' monthly SEO',grow:' monthly SEO'}[id]||'';assert.match(header,new RegExp('<h1>Request '+shared.escapeHtml(offer.name)+serviceType+'</h1>'));
   assert.ok(header.includes(shared.money(offer.price)));assert.ok(page.title.includes(shared.money(offer.price)));
-  assert.ok(scope.indexOf('What you get')<scope.indexOf('<details'));assert.ok(scope.indexOf('checkout-highlights')<scope.indexOf('<details'));
-  assert.match(scope,new RegExp('<details class="checkout-detail"><summary>More about this '+(monthly.includes(id)?'plan':builds.includes(id)?'package':'review')+'</summary>'));
+  assert.match(scope,/<details class="checkout-overview"><summary>What you get and when you pay<\/summary>/);
+  assert.match(header,/Free to ask\. Nothing is booked or charged\./);
+  assert.match(header,/cost (?:separately|extra)/);
   assert.equal(page.body.split(site.responseWindow).length-1,1,id);
   assert.doesNotMatch(page.body,/data-checkout-question|A request for review, with no payment or booking/);
   assert.ok(visibleText(before).split(/\s+/).length<=220,id+' retains a concise introduction with important costs and limits visible');
   assert.ok(page.body.includes(shared.escapeHtml(shared.inquirySubmitLabel(id,true,'checkout'))));
   if(builds.includes(id)){
-   for(const milestone of offers[id].payment_schedule)assert.ok(header.includes(shared.money(milestone.amount)));
-   assert.match(header,/written scope approval/);assert.match(header,/written design approval/);assert.match(header,/written approval of the working site, before launch/);
-   assert.match(scope,/There is no drag-and-drop editor/);assert.match(scope,/30 calendar days after launch/);
+   for(const milestone of offers[id].payment_schedule)assert.ok(scope.includes(shared.money(milestone.amount)));
+   assert.match(scope,/after written proposal approval/);assert.match(scope,/written design approval/);assert.match(scope,/written working-site approval, before launch/);
+   assert.match(scope,/No visual or drag-and-drop editor is included/);assert.match(scope,/30 calendar days after launch/);
   }
   if(monthly.includes(id)){
    assert.ok(header.includes(shared.money(offers.baseline.one_time_price+offer.price)));
-   assert.match(header,/previous Website Baseline, studio build or Sprint already provides a usable review/);
-   assert.match(header,/do not pay for it twice/);assert.match(header,/New studio websites include this review/);
-   assert.match(visibleText(scope),/Not included in monthly care:.*updates.*backups, restores and malware cleanup/);
+   assert.match(scope,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);
+   assert.match(scope,/do not pay for it twice/);assert.match(scope,/New websites I build include this review/);
+   assert.match(scope,/Not included in monthly care:.*updates.*backups, restores and malware cleanup/);
   }
  }
 });
 
-test('contact exposes priced service choices after Email, six optional source choices and a level-two next step',()=>{
+test('contact starts with native need choices and keeps optional package/business details behind labeled disclosures',()=>{
  const html=inquiryFormMarkup({live:true});
- assert.ok(html.indexOf('id="email"')<html.indexOf('id="service"'));
- assert.ok(html.indexOf('id="service"')<html.indexOf('id="website"'));
- assert.doesNotMatch(html,/<details class="inquiry-extra">/);assert.ok(html.indexOf('id="business"')>html.indexOf('id="email"'));assert.ok(html.indexOf('id="business"')<html.indexOf('id="service"'));
+ assert.match(html,/<legend>What do you need\? <span class="field-note">\(optional\)<\/span><\/legend>/);
+ assert.equal([...html.matchAll(/type="radio"[^>]*name="goal"/g)].length,6);
+ assert.match(html,/<details class="inquiry-package-choice" id="package-choice"><summary>Choose or change a package \(optional\)<\/summary>/);
+ assert.ok(html.indexOf('id="service"')<html.indexOf('id="name"'));
+ assert.match(html,/<details class="inquiry-extra"><summary>Business details \(optional\)<\/summary>/);
+ assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));
  assert.match(html,/one SEO improvement a month/);assert.match(html,/two SEO improvements a month/);
  const source=html.match(/<select id="found_via"[^>]*>([\s\S]*?)<\/select>/)[1];
  assert.deepEqual([...source.matchAll(/<option value="([^"]*)"/g)].map(match=>match[1]),['','search','maps','ai','referral','social','other']);
- assert.ok(html.indexOf('id="found_via"')>html.indexOf('data-inquiry-addons'));
+ assert.ok(html.indexOf('id="found_via"')>html.indexOf('id="business_location"'));
  assert.match(html,/<h2>What happens next<\/h2>/);
  assert.ok(html.indexOf('Nothing is booked or charged when you send this.')<html.indexOf('type="submit"'));
  for(const value of ['google','directory','returning']){
@@ -174,7 +180,7 @@ function clientFixture({service='unsure',fixed=false,kind=fixed?'checkout':'',qu
  const doc={querySelector:selector=>({'form#inquiry':form,'#inquiry':form,'#form-status':status,'#inquiry-confirmation':confirmation,'#message-help':selectors['#message-help']??=node(),'#request-summary':summary}[selector]||null),querySelectorAll:()=>[],getElementById:id=>errors[id]||null,createTextNode:text=>({textContent:text}),createElement:()=>node()};
  class FormData {constructor(){return [...Object.values(fields),...checks].filter(input=>!input.disabled&&(input.type!=='checkbox'||input.checked)).map(input=>[input.name,input.value]);}}
  const countJourney=(...args)=>counts.push(args);
- runInNewContext(client,{...shared,...addons,addonBuildPayments,document:doc,location:new URL('https://example.test/'+query),URLSearchParams,FormData,requestAnimationFrame:fn=>fn(),__countJourney:countJourney,bindInquirySubmission:(target,options)=>bindInquirySubmission(target,{...options,document:doc,FormData,fetch:async(_url,init)=>{sent.push(JSON.parse(init.body));return {ok:true,json:async()=>({reference:'00000000-0000-4000-8000-000000000123',synthetic:false})};}})});
+ runInNewContext(client,{...shared,...addons,addonBuildPayments,inquiryNextStep,document:doc,location:new URL('https://example.test/'+query),URLSearchParams,FormData,requestAnimationFrame:fn=>fn(),__countJourney:countJourney,bindInquirySubmission:(target,options)=>bindInquirySubmission(target,{...options,document:doc,FormData,fetch:async(_url,init)=>{sent.push(JSON.parse(init.body));return {ok:true,json:async()=>({reference:'00000000-0000-4000-8000-000000000123',synthetic:false})};}})});
  return {form,fields,checks,button,selectors,summary,counts,sent,status,confirmation,change:input=>form.dispatch('change',{target:input}),submit:()=>form.dispatch('submit',{preventDefault(){}})};
 }
 
@@ -185,6 +191,26 @@ test('enhanced service changes reveal relevant extras, keep priced context and p
  ui.fields.service.value='unsure';ui.change(ui.fields.service);assert.match(ui.summary.textContent,/Asking about: Booking system setup \(\$400 extra\)/);assert.equal(ui.selectors['[data-change-service]'].hidden,true);assert.equal(ui.selectors['[data-clear-addons]'].hidden,false);
  ui.selectors['[data-clear-addons]'].dispatch('click',{preventDefault(){}});assert.equal(booking.checked,false);assert.equal(ui.selectors['[data-inquiry-addons]'].hidden,true);assert.equal(ui.fields.service.focused,true);
  ui.form.dispatch('input');assert.deepEqual(ui.counts,[['request_start','unsure']]);assert.equal(ui.fields.request_kind.value,'');
+});
+
+test('fixed-fee review wording stays consistent through native, enhanced and saved-request states',()=>{
+ for(const service of ['website_baseline','audit_fix_sprint']){
+  const native=inquiryFormMarkup({live:true},{service,checkout:true,offers});
+  const ui=clientFixture({fixed:true,service});
+  const receipt=inquiryConfirmationHtml({service,request_kind:'checkout',email:'sample@example.test',reference:'00000000-0000-4000-8000-000000000123'});
+  for(const copy of [native,ui.selectors['[data-request-next]'].textContent,receipt]){
+   assert.match(copy,/listed work has a fixed fee/);
+   assert.match(copy,/different work is quoted separately before you decide/);
+   assert.doesNotMatch(copy,/email you about the work, price/);
+  }
+  assert.match(native,/Nothing is booked or charged/);
+  assert.match(receipt,/No payment has been taken and no project is booked/);
+ }
+ const switching=clientFixture({query:'?request_kind=checkout'});
+ switching.fields.service.value='website_baseline';switching.change(switching.fields.service);
+ assert.match(switching.selectors['[data-request-next]'].textContent,/fixed fee/);
+ switching.fields.service.value='focused_site';switching.change(switching.fields.service);
+ assert.doesNotMatch(switching.selectors['[data-request-next]'].textContent,/listed review/);
 });
 
 test('enhanced checkout preserves offer-specific buttons and the same website rule after query hydration',()=>{
@@ -205,8 +231,65 @@ test('enhanced neutral and explicit question submissions retain intent and use d
 test('native errors share visible field labels and distinguish an unconfirmed save from a known rejection',()=>{
  for(const [service,kind,label]of [['website_baseline','checkout','Website or social page'],['grow','checkout','Website or social page'],['unsure','question','Website or social page']]){
   const html=inquiryResponseHtml({service,request_kind:kind,status:422,message:'Check these details.',errors:{service:'Choose a service.',website:'Check this entry.'},retry:{...fixture,service,request_kind:kind}});
-  assert.ok(html.includes(label+': Check this entry.'));assert.match(html,/What do you need help with\?: Choose a service\./);assert.doesNotMatch(html,/Which plan\?/);
+  assert.ok(html.includes(label+': Check this entry.'));assert.match(html,/Package or service: Choose a service\./);assert.doesNotMatch(html,/Which plan\?/);
  }
  assert.match(inquiryResponseHtml({status:503,message:'The save is unconfirmed.'}),/Your message is not confirmed yet/);
  assert.match(inquiryResponseHtml({status:429,message:'Please wait before trying again.'}),/Your message wasn’t sent yet/);
+});
+
+
+test('native need choices retain each actual goal and never manufacture a default goal',()=>{
+ const neutral=validateInquiry({...nativeValues(inquiryFormMarkup({live:false})),...fixture}).value;
+ assert.equal(neutral.goal,undefined);assert.equal(neutral.service,'unsure');assert.equal(neutral.care_interest,undefined);
+ for(const [goal]of shared.inquiryContextFields.goal.options){
+  const html=prefillInquiryHtml(inquiryFormMarkup({live:false}),new URL('https://example.test/contact/?goal='+goal));
+  const values=nativeValues(html);assert.equal(values.goal,goal);assert.equal(validateInquiry({...values,...fixture}).value.goal,goal);
+  assert.equal([...html.matchAll(/type="radio"[^>]* checked/g)].length,1);
+ }
+});
+
+test('monthly interest preserves website intent, price, receipts and correction',()=>{
+ for(const service of builds)for(const care_interest of ['keep_running','improve','grow','discuss']){
+  const html=prefillInquiryHtml(inquiryFormMarkup({live:false},{service,checkout:true}),new URL('https://example.test/checkout/'+service.replaceAll('_','-')+'/?care_interest='+care_interest));
+  const values={...nativeValues(html),...fixture};const checked=validateInquiry(values);
+  assert.deepEqual(checked.errors,{});assert.equal(checked.value.care_interest,care_interest);assert.equal(checked.value.service,service);assert.equal(checked.value.request_kind,'checkout');assert.equal(checked.value.billing,undefined);
+  assert.equal([...html.matchAll(/name="care_interest"/g)].length,1);assert.match(html,/Nothing is added to the website price or enrolled automatically/);
+  const correction=inquiryResponseHtml({...checked.value,status:422,message:'Check your email.',errors:{email:'Check the address.'},retry:checked.value});assert.equal(nativeValues(correction).care_interest,care_interest);
+  const receipt=inquiryConfirmationHtml({...checked.value,reference:'00000000-0000-4000-8000-000000000123',synthetic:true});assert.match(receipt,/Monthly help to discuss after launch \(not enrolled\)/);
+  const cost=shared.calculateCost(shared.priceList(offers),{build:service.replace('_site',''),plan:'none',care_interest,hostingMonthly:0,external:0});assert.equal(cost.total,offers[service].public_price);
+ }
+ for(const service of [...monthly,'website_baseline','audit_fix_sprint','unsure'])assert.equal(validateInquiry({...fixture,service,care_interest:'grow'}).value.care_interest,undefined);
+ assert.ok(validateInquiry({...fixture,service:'launch_site',care_interest:'free_forever'}).errors.care_interest);
+ const changed=structuredClone(offers);changed.plans.keep_running.monthly_price=177;changed.plans.keep_running.public_name='Steady';assert.match(inquiryFormMarkup({live:false},{service:'launch_site',checkout:true,offers:changed}),/Steady — \$177\/month/);
+});
+
+test('native and JSON save monthly interest as nonbinding context without notification or enrollment',async()=>{
+ for(const service of ['focused_site','unsure'])for(const native of [false,true]){
+  const db=database();let queued=0;
+  try{
+   const values={...fixture,service,request_kind:'checkout',goal:'new_website',care_interest:'improve'};
+   const response=await worker.fetch(new Request('https://example.test/api/inquiries',{method:'POST',headers:{Origin:'https://example.test',Accept:'application/json','Content-Type':native?'application/x-www-form-urlencoded':'application/json','CF-Connecting-IP':'192.0.2.35'},body:native?new URLSearchParams(values):JSON.stringify(values)}),{DB:db,ENVIRONMENT:'production',INQUIRY_MODE:'synthetic',RELEASE_APPROVED:'true',FINGERPRINT_SECRET:'synthetic-monthly-interest-secret-long-enough'},{waitUntil(){queued++;}});
+   assert.equal(response.status,202);assert.equal(queued,0);const result=await response.json();assert.equal(result.care_interest,'improve');
+   const row=db.sqlite.prepare('SELECT payload,synthetic,delivery_status FROM inquiries').get(),saved=JSON.parse(row.payload);
+   assert.equal(saved.care_interest,'improve');assert.equal(saved.service,service);assert.equal(saved.billing,undefined);assert.equal(row.synthetic,1);assert.equal(row.delivery_status,'synthetic');
+  }finally{db.sqlite.close();}
+ }
+});
+
+test('changing away from a build clears monthly interest and changing back does not silently restore it',()=>{
+ const ui=clientFixture({service:'launch_site',query:'?care_interest=grow'});assert.equal(ui.fields.care_interest.value,'grow');assert.equal(ui.fields.care_interest.disabled,false);
+ ui.fields.service.value='improve';ui.change(ui.fields.service);assert.equal(ui.fields.care_interest.value,'');assert.equal(ui.fields.care_interest.disabled,true);
+ ui.fields.service.value='focused_site';ui.change(ui.fields.service);assert.equal(ui.fields.care_interest.value,'');assert.equal(ui.fields.care_interest.disabled,false);
+});
+
+
+test('monthly interest survives an undecided package only for an explicit website goal',()=>{
+ for(const goal of ['new_website','redesign','fix','care','search','unsure']){
+  const html=prefillInquiryHtml(inquiryFormMarkup({live:false}),new URL('https://example.test/contact/?goal='+goal+'&care_interest=grow'));
+  const value=validateInquiry({...nativeValues(html),...fixture}).value;
+  assert.equal(value.service,'unsure');assert.equal(value.goal,goal);assert.equal(value.care_interest,['new_website','redesign'].includes(goal)?'grow':undefined);
+ }
+ const ui=clientFixture({query:'?goal=new_website&care_interest=grow'});assert.equal(ui.fields.care_interest.value,'grow');assert.equal(ui.fields.care_interest.disabled,false);
+ ui.fields.goal.value='fix';ui.change(ui.fields.goal);assert.equal(ui.fields.care_interest.value,'');assert.equal(ui.fields.care_interest.disabled,true);
+ ui.fields.goal.value='redesign';ui.change(ui.fields.goal);assert.equal(ui.fields.care_interest.value,'');assert.equal(ui.fields.care_interest.disabled,false);
 });

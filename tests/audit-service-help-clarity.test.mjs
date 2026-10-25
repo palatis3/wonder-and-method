@@ -9,41 +9,48 @@ import {redesignPage} from '../src/search-guides.mjs';
 import {searchMetadata,searchSupplement} from '../src/search-content.mjs';
 import {journal} from '../src/journal.mjs';
 import {money} from '../src/shared.mjs';
+import {serviceCoverage} from '../src/service-area.mjs';
+import {serviceStates} from '../src/service-area-directory.mjs';
 
 const contractor=contractorService(offers,config);
 const text=html=>html.replace(/<[^>]*>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const hrefs=html=>[...html.matchAll(/href="([^"]+)"/g)].map(match=>match[1]);
 
-test('contractor page keeps all states and the district and a seven-item page plan without mobile table cards',()=>{
+test('contractor page links to complete coverage and keeps a seven-item page plan without mobile table cards',()=>{
  const title=text(contractor.match(/<h1>(.*?)<\/h1>/s)[1]);
  assert.equal(title,'Websites for contractors and home-service businesses.');
- for(const state of config.serviceCoverage.regions)assert.ok(contractor.includes(state));
+ assert.match(contractor,/<a href="\/areas\/">28 states and Washington, DC<\/a>/);
+ assert.deepEqual([...serviceCoverage(config).regions].sort(),serviceStates.map(state=>state.name).sort());
+ assert.equal(serviceCoverage(config).areaServed.length,29);
+ for(const state of ['Louisiana','Arkansas'])assert.ok(serviceCoverage(config).regions.includes(state));
+ assert.ok(!contractor.includes(serviceCoverage(config).region),'full region list stays in the directory and metadata');
  for(const trade of ['plumbing','electrical','HVAC','roofing','exterior','remodeling','landscaping','cleaning'])assert.ok(contractor.toLowerCase().includes(trade.toLowerCase()));
  const plan=contractor.match(/<h3>A sample seven-page plan<\/h3>(.*?)<\/section>/s)[1];
  assert.equal((plan.match(/<li>/g)||[]).length,7);
- assert.match(plan,/seven pages plus Focused’s two included guides use nine of its 15 pages/);
- assert.match(plan,/combine the service pages into a six-page Launch plan/);
+ assert.match(plan,/seven pages plus Focused Website’s 2 included guides use 9 of its 15 pages/);
+ assert.match(plan,/combine the service pages into a six-page Launch Website plan/);
  assert.doesNotMatch(contractor,/<table|compact-offer|data-label=/);
  const words=text(contractor).split(' ').length;
  assert.ok(words>=500&&words<=1200,`Contractor copy has ${words} words`);
 });
 
 test('contractor simplification preserves payment, editing, evidence and form boundaries near the decision',()=>{
- const packages=contractor.match(/<h2>Choose your website package\.<\/h2>(.*?)<\/section>/s)[1];
+ const packages=contractor.match(/<h2>Choose the pages your customers need\.<\/h2>(.*?)<\/section>/s)[1];
+ const assurances=contractor.match(/<h2>Writing, checks and future updates\.<\/h2>(.*?)<\/section>/s)[1];
  for(const id of ['launch_site','focused_site','signature_site'])assert.ok(packages.includes(money(offers[id].public_price)));
- assert.match(packages,/50% to book, 30% when you approve the design and 20% when you approve the working website, before launch/);
- assert.match(packages,/no drag-and-drop editor/);
- assert.match(packages,/Domain, hosting, paid tools, tax and approved extras are separate/);
+ assert.match(assurances,/50% to book, 30% when you approve the design and 20% when you approve the working website, before launch/);
+ assert.match(assurances,/No visual or drag-and-drop editor is included/);
+ assert.match(assurances,/Domain, hosting, paid tools, tax and approved extras are separate/);
  assert.match(contractor,/eligible business with authorized access/);
  assert.match(contractor,/A request is not a confirmed appointment or a quote/);
- assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate scope/);
+ assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate agreement on the work and price/);
  assert.match(contractor,/ready booking link or compatible standard embed may fit an included connection/);
  assert.ok(contractor.includes('A guided quote form costs '+money(offers.add_ons.find(item=>item.id==='guided_quote_form').public_price)));
  assert.match(contractor,/not an automatic price/);
- assert.match(contractor,/both fictional studio concepts/);
+ assert.match(contractor,/two fictional concepts below.*not examples of your completed jobs/);
  assert.doesNotMatch(contractor,/every request reaches your inbox|guaranteed (?:inbox|delivery)/i);
  const closing=contractor.match(/<section class="studio-closing">(.*?)<\/section>/s)[1];
- assert.match(closing,/>Discuss your website<\/a>/);
+ assert.match(closing,/>Ask about your website<\/a>/);
  assert.ok(hrefs(closing).some(url=>url.includes('goal=new_website')&&url.includes('request_kind=question#inquiry')));
 });
 
@@ -73,7 +80,8 @@ test('the three added guides share their canonical title and concise description
  assert.deepEqual(newGuides.map(item=>item.path),['/guides/website-maintenance-cost/','/guides/website-launch-checklist/','/guides/ai-website-or-custom/']);
  for(const item of newGuides){
   const article=journal.find(guide=>guide.path===item.path),metadata=searchMetadata[item.path];
-  assert.equal(item.title,article.title,item.path);
+  assert.equal(article.title,item.path==='/guides/website-maintenance-cost/'?'Website maintenance costs':item.title,item.path);
+  assert.equal(item.description,article.description,item.path);
   assert.equal(item.title,metadata.title,item.path);
   assert.equal(item.description,metadata.description,item.path);
   assert.ok(item.description.length<=160,item.path);

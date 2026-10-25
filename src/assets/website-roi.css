@@ -4,3 +4,5 @@
 @media(max-width:640px){.roi-table table{table-layout:fixed}.roi-table th:first-child{width:38%}.roi-table :is(th,td){padding:.75rem .35rem;font-size:.9375rem;overflow-wrap:anywhere}.roi-table th:nth-child(2){width:27%}.roi-table th:nth-child(3){width:35%}.roi-page .roi-explanation{padding-top:1rem}}
 
 #roi-stale{padding:.75rem 1rem;border-left:3px solid #8c641f;background:#fff4d5;color:#493713}
+
+.roi-assumption-check{padding:1rem;border-left:3px solid #8c641f;background:#fff4d5;color:#493713}
