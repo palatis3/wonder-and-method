@@ -122,7 +122,9 @@ test('portfolio previews, SEO topic navigation and early process overview work b
  await expect(limits.locator('..')).toHaveAttribute('open','');await expect(limits.locator('..')).toContainText('These limits describe research, not promised new pages.');await expect(page.locator('main')).toContainText('No ranking, traffic, inquiry, revenue or AI-citation result is guaranteed.');
  await page.goto('/process/?qa=1');
  const firstStep=page.getByRole('heading',{name:'Start with the business',exact:true});await expect(firstStep).toBeVisible();
- const box=await firstStep.boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
+ const timing=page.getByRole('heading',{name:'Build time and your review time',exact:true});await expect(timing).toBeVisible();
+ const box=await timing.boundingBox();expect(box.y+box.height).toBeLessThan(isMobile?1300:1000);
+ await expect(page.locator('.process-timing details')).not.toHaveAttribute('open','');
  for(const name of ['Agree and book','Review the design','Approve and launch','Receive your files and fixes','Decide how future updates happen'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible();
  await page.locator('#handoff-sample summary').click();
  const handoff=page.getByRole('link',{name:'See an example delivery folder',exact:true});await handoff.focus();await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/source-handoff\//);

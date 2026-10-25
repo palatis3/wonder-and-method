@@ -22,10 +22,10 @@ test('website payment milestones retain catalog amounts and explicit approval co
  for(const id of ['website_baseline','audit_fix_sprint','keep_running','improve','grow'])assert.throws(()=>projectMilestones(offers,{offerId:id}),/only apply to website builds/);
 });
 
-test('conditional calendar examples stay visible and original process bookmarks remain unique',()=>{
+test('build and review time stay visible, with detailed calendar examples and original bookmarks',()=>{
  const html=websiteProcess(config,offers);
  for(let i=1;i<=6;i++)assert.equal((html.match(new RegExp(`id="process-stage-${i}"`,'g'))||[]).length,1);
- assert.ok(html.indexOf('class="timing-total"')<html.indexOf('<details'));
+ assert.ok(html.indexOf('<strong>Your review time:</strong>')<html.indexOf('<details'));assert.match(html,/<details><summary>See example totals with full review windows<\/summary><p class="timing-total">/);
  for(const phrase of ['13–15 business days','15–18','17–20','after your agreed inputs are ready','access, decisions and extra work can move the launch date','Silence is never approval and does not trigger a payment'])assert.ok(html.includes(phrase));
  assert.match(html,/written proposal|proposal confirms the dates/);
 });

@@ -4,7 +4,7 @@ import {studioIcon} from './studio-motifs.mjs';
 
 export function contactPage(intake,offers,config){
  return `<header class="page-intro contact-intro contact-intro--studio">
-  <div class="contact-opening"><h1>Let’s talk about your website.</h1><p class="lede">Tell me what you want to change. Free to ask; nothing is booked or charged. We start by email.</p></div>
+  <div class="contact-opening"><h1>Let’s talk about your website.</h1><p class="lede">Tell me what you need help with. You do not need to choose a package. We start by email.</p></div>
  </header>
  <div class="contact-layout contact-page-layout">
   <div class="contact-form-column">${intake.live?'':`<div class="note">${e(intake.notice)}</div>`}${inquiryForm(intake,{offers})}</div>

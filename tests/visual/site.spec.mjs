@@ -47,10 +47,12 @@ test('county entry preserves readable local facts and place lists',async({page})
 });
 
 for(const [name,path,scrollTop] of [['floating-tools-home','/',0],['floating-tools-content','/areas/texas/milam-county/',600]]){
- test(`${name} remain separate over the page`,async({page})=>{
+ test(`${name} use the approved desktop corner or phone help row`,async({page})=>{
   await page.goto(path+'?qa=1');await settle(page);
   await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},scrollTop);
+  if(page.viewportSize().width<=767)await page.locator('.support-chat-launch').scrollIntoViewIfNeeded();
   await expect(page.locator('.support-chat-launch')).toBeVisible();
+  await expect(page.locator('.support-chat')).toHaveCSS('position',page.viewportSize().width<=767?'static':'fixed');
   if(scrollTop>=520)await expect(page.locator('.back-to-top')).toBeVisible();
   await expect(page).toHaveScreenshot(name+'.png');
  });
@@ -78,7 +80,13 @@ for(const [name,path] of [['service-questions','/services/web-design/'],['county
 }
 test('footer collapsed and expanded layouts',async({page})=>{
  await page.goto('/?qa=1');await settle(page);const footer=page.locator('footer.site-footer--compact');await footer.scrollIntoViewIfNeeded();
+ const groups=footer.locator('nav[aria-label="Footer"] > details.footer-group');
+ await expect(groups).toHaveCount(4);await expect(footer.locator('summary')).toHaveCount(5);
+ await expect(footer.locator('details.footer-group[open]')).toHaveCount(page.viewportSize().width>=768?4:0);
+ for(const group of await groups.all())if(await group.getAttribute('open')!==null)await group.locator(':scope > summary').click();
  await isolateContent(page);await expect(footer).toHaveScreenshot('footer-closed.png');
- for(const summary of await footer.locator('summary').all())await summary.click();
+ for(const group of await groups.all())await group.locator(':scope > summary').click();
+ await footer.locator('.footer-area-directories > summary').click();
+ await expect(footer.locator('details[open]')).toHaveCount(5);
  await expect(footer).toHaveScreenshot('footer-open.png');
 });

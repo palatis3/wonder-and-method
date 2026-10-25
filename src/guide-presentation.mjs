@@ -1,4 +1,5 @@
 import {guideDownload,guideDownloadLabel} from './guide-decisions.mjs';
+import {fictionalTemplateGuides} from './guide-scope-notes.mjs';
 
 // Consolidate preparation notes without removing dated source observations.
 export function withoutRepeatedPreparation(body){
@@ -6,6 +7,7 @@ export function withoutRepeatedPreparation(body){
   .replace('The proposed layout, worksheet and illustrative check are original website-planning analysis developed with AI assistance and editorial review. These organizations are cited as public examples; this article does not describe a client project or a partnership.','').replace(/\s+<\/p>/g,'</p>');
 }
 export function guidePreparationNote(item){
+ if(fictionalTemplateGuides.has(item.path.split('/').filter(Boolean).at(-1)))return '<aside class="guide-method" aria-label="Guide preparation"><p>These examples are fictional and do not describe client work or measured results. AI assisted the research and drafting; Wonder and Method is responsible for the published content. <a href="/about/#guide-method">Preparation and corrections</a>.</p></aside>';
  const publicExamples=['Business workflows','Local website cases'].includes(item.category);
  return `<aside class="guide-method" aria-label="Guide preparation"><p>AI assisted research and drafting.${publicExamples?' Named organizations are public examples, not clients or partners; their services were not transaction-tested.':''} Check current source instructions before using a dated example. <a href="/about/#guide-method">Preparation and corrections</a>.</p></aside>`;
 }

@@ -253,10 +253,10 @@ export const operatingGuideDetails = {
   "class-take-home": {
     "slug": "class-take-home",
     "path": "/guides/class-take-home/",
-    "title": "Workshop booking confirmations: plan the take-home handoff",
+    "title": "Workshop booking confirmations: explain what participants take home",
     "description": "Plan a workshop confirmation that explains materials and what students take home without promising unavailable services.",
     "category": "Business workflows",
-    "indexTitle": "Workshop booking confirmations: plan the take-home handoff",
+    "indexTitle": "Workshop booking confirmations: explain what participants take home",
     "indexDescription": "Explain materials, collection and what workshop students take home.",
     "answer": "Tell participants when their work will be ready, how to collect or transport it and who handles anything left behind.",
     "detail": "Include the arrangements for the specific class in its confirmation. Use the operator’s actual storage and support policies.",

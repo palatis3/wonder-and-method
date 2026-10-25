@@ -7,21 +7,29 @@ test('state choices stay alphabetical in the footer, finder and browse lists',as
  expect(await page.locator('#county-state option:not([value=""])').allTextContents()).toEqual(expected);
  expect(await page.locator('[data-state-directory-links] a>span').allTextContents()).toEqual(expected);
  expect((await page.locator('#counties>.county-region>summary').allTextContents()).map(name=>name.replace(/ \(\d+ [^)]+\)$/,''))).toEqual(expected);
- expect((await page.locator('#footer-areas-heading+div>a').allTextContents()).slice(1)).toEqual(expected);
+ expect((await page.locator('#footer-areas-heading+div a').allTextContents()).slice(1)).toEqual(expected);
 });
 
-test('corner tools float separately and yield to forms and menus',async({page},testInfo)=>{
+test('page help uses a phone row, desktop corner and deliberate form action',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One complete viewport matrix');test.setTimeout(60_000);
  const toolSurfaces=()=>page.locator('#site-help').evaluate(el=>['::before','::after'].map(pseudo=>getComputedStyle(el,pseudo).content));
  for(const width of [320,390,768,1024,1440]){
   await page.setViewportSize({width,height:900});
   for(const path of ['/about/','/services/','/contact/']){
    await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
-   const chat=page.locator('.support-chat-launch');await inViewport(chat);
-   expect((await chat.boundingBox()).width).toBe(48);
-   await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+   const chat=page.locator('.support-chat-launch');
+   if(path==='/contact/'){
+    await expect(chat).toHaveCount(0);
+    await expect(page.locator('.support-chat--inline')).toHaveCSS('position','static');
+    await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
+   }else{
+    if(width<=767)await chat.scrollIntoViewIfNeeded();await inViewport(chat);
+    if(width>=768)expect((await chat.boundingBox()).width).toBe(48);
+    else expect((await chat.boundingBox()).width).toBeGreaterThan(48);
+    await expect(page.locator('.support-chat')).toHaveCSS('position',width<=767?'static':'fixed');
+   }
    expect(await toolSurfaces()).toEqual(['none','none']);
-   if(width>=1280){
+   if(width>=1280&&path!=='/contact/'){
     const covered=await page.evaluate(()=>{
      const button=document.querySelector('.support-chat-launch').getBoundingClientRect(),hits=[];
      const walker=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);
@@ -35,10 +43,10 @@ test('corner tools float separately and yield to forms and menus',async({page},t
    }
    if(width===390||width===1440)await page.screenshot({path:testInfo.outputPath(`${width}-${path.split('/')[1]}-reading.png`)});
   }
-  await page.locator('#email').focus();await expect(page.locator('.support-chat-launch')).toBeHidden();
+  await page.locator('#email').focus();await expect(page.locator('.support-chat-launch')).toHaveCount(0);
   expect(await toolSurfaces()).toEqual(['none','none']);
   if(width===390)await page.screenshot({path:testInfo.outputPath('390-contact-focused.png')});
-  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();
+  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('[data-chat-open]')).toBeVisible();
   if(width<1024){
    await page.goto('/about/?qa=1');await page.locator('.menu-toggle').click();
    await expect(page.locator('.support-chat-launch')).toBeHidden();expect(await toolSurfaces()).toEqual(['none','none']);
@@ -53,9 +61,10 @@ const inViewport=async(locator)=>{
  expect(fits).toBe(true);
 };
 
-// Floating tools remain available while reading.
+// Desktop chat floats; phone chat is reached in the help row after main.
 const revealTools=async page=>{
  await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));
+ if(page.viewportSize().width<=767)await page.locator('.support-chat-launch').scrollIntoViewIfNeeded();
  await inViewport(page.locator('.support-chat-launch'));
 };
 
@@ -69,14 +78,20 @@ test('shared header contact and the single floating top link remain reachable ac
   }else{
    await expect(page.locator('.breadcrumb')).toHaveCount(0);
   }
-  const contact=page.locator(isMobile?(path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
+  const concept=path==='/work/fieldwork/';
+  const contact=page.locator(concept?'.concept-toolbar a[href="/contact/#inquiry"]':isMobile?(path==='/contact/'?'.menu-toggle':'.header-contact'):'#main-nav > a[href="/contact/#inquiry"]');
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).not.toBeInViewport();
   if(path==='/contact/'){
-   await expect(page.locator('.support-chat-launch')).toHaveCount(1);
+   await expect(page.locator('.support-chat-launch')).toHaveCount(0);
    await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
+  }else if(concept){
+   await expect(page.locator('#main-nav,.support-chat')).toHaveCount(0);
+   await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();
   }else await revealTools(page);
-  await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));await inViewport(page.locator('.back-to-top'));
+  await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));
+  if(page.viewportSize().width<=767)await page.locator('#site-help').scrollIntoViewIfNeeded();
+  await inViewport(page.locator('.back-to-top'));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
   await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
   const top=page.locator('.back-to-top');await inViewport(top);await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
@@ -126,17 +141,19 @@ test('blocked chat exposes a usable contact fallback and restores visible focus 
  await allowMockChat(page);
  await page.route('https://embed.tawk.to/**',route=>route.abort('blockedbyclient'));
  for(const scroll of [0,900]){
-  await page.goto('/?qa=1');await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),scroll);await inViewport(page.locator('.support-chat-launch'));await page.locator('.support-chat-launch').click();
+  await page.goto('/?qa=1');await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),scroll);
+  if(page.viewportSize().width<=767)await page.locator('.support-chat-launch').scrollIntoViewIfNeeded();
+  await inViewport(page.locator('.support-chat-launch'));await page.locator('.support-chat-launch').click();
   const contact=page.locator('.support-chat-fallback a');await inViewport(contact);await expect(contact).toBeFocused();
   await expect(contact).toHaveAttribute('href','/contact/');
   await page.locator('.support-chat-dismiss').click();await expect(page.locator('.support-chat')).toBeHidden();
-  const target=page.locator(scroll ? '.back-to-top' : '.site-header .wordmark');await expect(target).toBeFocused();await inViewport(target);
+  const target=page.locator(scroll||page.viewportSize().width<=767 ? '.back-to-top' : '.site-header .wordmark');await expect(target).toBeFocused();await inViewport(target);
  }
 });
 
 test('form pages keep chat available while yielding to focused fields in landscape',async({page})=>{
  await page.setViewportSize({width:390,height:320});await page.goto('/contact/?qa=1');await page.locator('#email').focus();
- await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.back-to-top')).toBeHidden();
+ await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toHaveCount(0);await expect(page.locator('.support-chat--inline')).toHaveCSS('position','static');await expect(page.locator('.back-to-top')).toBeHidden();
  const covered=await page.locator('#email').evaluate(el=>{const r=el.getBoundingClientRect();return !el.contains(document.elementFromPoint(r.left+8,r.top+8));});expect(covered).toBe(false);
  await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
@@ -295,20 +312,30 @@ test('ordinary scrolling preserves every page section and reachable tools',async
  }
 });
 
-test('chat and back-to-top stay in viewport corners throughout scrolling on every page type',async({page})=>{
+test('back-to-top and chat follow each viewport and page type',async({page})=>{
+ const phone=page.viewportSize().width<=767;
  for(const path of ['/','/pricing/','/services/','/services/seo/','/areas/','/contact/','/checkout/focused-site/','/guides/ai-search-visibility/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
+  const formPage=path==='/contact/'||path.startsWith('/checkout/');
   const chat=page.locator('.support-chat-launch'),top=page.locator('.back-to-top');
-  await inViewport(chat);await expect(top).toBeHidden();
+  await expect(top).toBeHidden();
+  if(formPage)await expect(chat).toHaveCount(0);
+  else if(!phone)await inViewport(chat);
+  await expect(page.locator('.support-chat')).toHaveCSS('position',phone||formPage?'static':'fixed');
   for(const y of [680,1200,760]){
    await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
-   await inViewport(chat);await inViewport(top);
-   const positions=await page.evaluate(()=>({chat:getComputedStyle(document.querySelector('.support-chat')).position,top:getComputedStyle(document.querySelector('.back-to-top')).position}));
-   expect(positions).toEqual({chat:'fixed',top:'fixed'});
-   expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);
-   expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
+   await expect(top).toBeVisible();await expect(top).toHaveCSS('position',phone?'static':'fixed');
+   if(!phone){await inViewport(top);expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);}
+   else expect(await top.evaluate(el=>el.getBoundingClientRect().top>=document.querySelector('main').getBoundingClientRect().bottom)).toBe(true);
+   if(!phone&&!formPage){
+    await inViewport(chat);expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
+   }
   }
+  if(formPage){await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));}
+  else await revealTools(page);
+  if(phone)await page.locator('#site-help').scrollIntoViewIfNeeded();
   await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
-  await expect(page.locator('.site-header .wordmark')).toBeFocused();await inViewport(chat);
+  await expect(page.locator('.site-header .wordmark')).toBeFocused();
+  if(!phone&&!formPage)await inViewport(chat);
  }
 });

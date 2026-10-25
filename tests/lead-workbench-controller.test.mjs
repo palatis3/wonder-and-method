@@ -39,7 +39,7 @@ for(const action of ['disable','reset'])test(`controller retains failed-${action
  assertUnresolved(app);assert.match(app.note(),/could not be cleared/);app.add();assertUnresolved(app);app.edit('Later synthetic edit');assertUnresolved(app);app.add();assertUnresolved(app);
  assert.equal(fixture.read(),original);assert.equal(mount(fixture.storage).get('sample-count').textContent,'1 of 1 sample inquiry shown.');
  fixture.faults.clear=false;app.click('reset-samples');assert.equal(fixture.read(),null);assert.match(app.note(),/^Memory only:/);assert.doesNotMatch(app.note(),/could not be cleared|older saved copy/);
- app.add();app.edit('After successful clear');assert.match(app.note(),/^Memory only:/);assert.equal(mount(fixture.storage).get('sample-count').textContent,'0 of 0 sample inquiries shown.');
+ app.add();app.edit('After successful clear');assert.match(app.note(),/^Memory only:/);assert.equal(mount(fixture.storage).get('sample-count').textContent,'1 of 1 sample inquiry shown.');assert.equal(fixture.read(),null,'The new fictional sample must not save itself');
 });
 
 test('successful overwrite resolves a failed-clear warning and successful clear resolves a failed-write warning',()=>{

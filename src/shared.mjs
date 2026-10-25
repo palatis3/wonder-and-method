@@ -37,7 +37,7 @@ export function inquirySubmitLabel(service='',checkout=false,requestKind='',o=of
  if(!checkout)return 'Send message';
  const offer=inquiryOffer(service,o);if(!offer)return 'Request my proposal';
  if(requestKind==='question')return `Send my ${offer.name} question`;
- return offer.monthly?`Request my ${offer.name} start`:offer.id==='website_baseline'?`Request my ${offer.name}`:offer.id==='audit_fix_sprint'?`Request my ${offer.name.replace(' Sprint','')} proposal`:`Request my ${offer.name.replace(' Website','')} proposal`;
+ return offer.monthly?`Request ${offer.id==='improve'?'an':'a'} ${offer.name} proposal`:offer.id==='website_baseline'?`Request my ${offer.name}`:offer.id==='audit_fix_sprint'?`Request my ${offer.name.replace(' Sprint','')} proposal`:`Request my ${offer.name.replace(' Website','')} proposal`;
 }
 export function inquiryMessagePrompt(service='',requestKind='checkout',neutral=false){
  return 'Your message';

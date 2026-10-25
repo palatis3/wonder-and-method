@@ -1,60 +1,60 @@
 {
-  "capturedAt": "2026-10-25T02:40:34.713Z",
+  "capturedAt": "2026-10-25T14:56:26.460Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
   },
   "sourceHashes": {
-    "src/premium-site.mjs": "33416b4f10e27bb9e8aafcd531992025bed46a8053d8a18ee8800cf1b114aea8",
+    "src/premium-site.mjs": "d5697fde6e0ed486526453f0f2fea8c3d1e4d5a904c196fe499d15860819d238",
     "src/home-proof.mjs": "3e9ef0af0895c810727e1db5f6ed0219ed17fc5103dab45d16f4f85c7956b4d9",
-    "src/site-chrome.mjs": "7265194dd36ea666a0666d0fac66d74fad26ddd1901610b1dee3bd4eff2e1eb2",
+    "src/site-chrome.mjs": "fadc793ab8d4ab2c92b1d770a084d96ff729380b600fc1d0f8de2855bfb5e4c4",
     "src/assets/layout-components.css": "9c4e63b40ef785ab960d71872e043410ee288a5dc9325ca1e21ef40cc4ef3f40",
-    "src/assets/site-refresh.css": "94aee8ee49a56a2dcf01cedc8b12183b0e3e8ce8bccd5c0768c80a8a9b1755ef",
+    "src/assets/site-refresh.css": "c1d2d67c9459b01a8f9622842a69989ac1d8681b21678bc0acc183efcaa31136",
     "src/living-city.mjs": "7be3e417ab5c8640220cd07f6cb692c0c0c35fb5c3bf588188f4873b8dc2dcd4",
-    "src/assets/living-city.css": "78f0fcb215c322e96fc769d4e7cfb51327d05b65e1feb76684224e3c4ba5535f",
+    "src/assets/living-city.css": "ad9dda64608a42254b6a68c5156c95ea72f692e59eaa7a635e7c2982198ab90f",
     "src/city-preview-captures.json": "c628f870013c2e32f1ac211f00ef04a98a730ba5e6aa3c6fbd0141e325108d5d",
     "public/living-city/manifest.json": "8c2bf9b9ebcd601a46613ce3ecaf80b41527885b10b534b508d1eedc43335305",
-    "src/assets/section-surfaces.css": "ec6689793cffd17cd7e45ce8461bdb8a47f9538a7d2eb139dc64d6f382ebf4e4",
-    "src/assets/support-chat.css": "358b88544bfccee79a42452f97ea3d82e3d8b3d15f15aa0ae9f9b83ab630f480"
+    "src/assets/section-surfaces.css": "22d4dc34b4d4f330db9237a2682299b4a6037974e9a6fca6c3bace3232ba1008",
+    "src/assets/support-chat.css": "22e88ad8769bc70361de48f656c53d5be0a322616d85076db3b38b38edd83ed5"
   },
   "homeCapture": {
     "path": "/assets/work/studio-website.webp",
     "width": 1425,
     "height": 990,
-    "bytes": 194394,
-    "sha256": "e287e4d595cf4e3971a9680e9869ca5877a4d1cd414e946f8a7219902efb2ed6",
+    "bytes": 194020,
+    "sha256": "82d1450158acb507446bf854fbb2eba9d8693dee34a2d3e497920ea37d19e33c",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/studio-website-240.webp",
         "width": 240,
         "height": 167,
-        "bytes": 8808,
-        "sha256": "24ed380908649764de25b285deaa4db83b61f64edefe74ebc236f20e740c76ee",
+        "bytes": 8872,
+        "sha256": "a0fd7baa9cb57f8b66a7e2a6aef5c0079a9dd181955894638006dc64e0d45b4e",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-480.webp",
         "width": 480,
         "height": 333,
-        "bytes": 26712,
-        "sha256": "0da20f1f35ba9efb5978b5bdd57544ec502b4ce2d52305015e648ae2294eb375",
+        "bytes": 26810,
+        "sha256": "cb8e7a3fb927c2ceb50e14ec674e7b7e3cfdec527d95b979a3addab3d6e1b096",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640,
         "height": 445,
-        "bytes": 40550,
-        "sha256": "9190697bfae6224807f9887f38b905b20e888739e995471fd88c6382d5fcc8b9",
+        "bytes": 40778,
+        "sha256": "ed88fdfd2a66ea26560891d6b7a5d91ecabfbeab9084c08e18573fdb21285f29",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-960.webp",
         "width": 960,
         "height": 667,
-        "bytes": 73134,
-        "sha256": "39756bc64a1318e00962733d17b5394473fbbc402a04483047fb39436108593c",
+        "bytes": 73366,
+        "sha256": "2a26fcbf79d7814be37b5f320f262285a5b0052ee006e18f911834e44c1f1b87",
         "quality": 82
       }
     ],
@@ -62,11 +62,11 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "64dc956e3d4a637b89c1403a4226fbcb757af78a0bdd496352dd1e2d764f9095"
+      "sha256": "39c4699067026e9bf51651507e28fb9a303c4fa3b0dfefdf0f209747ee2fbe0a"
     },
     "builtStyles": {
-      "dist/assets/site.css": "0135b263cc230a006a94e126a650bb51c4d615fcc7100890b47153525e809cea",
-      "dist/assets/living-city.css": "35d4af738bcc61e33be140d49a602c344c4f0b65a0aa20606ac82bbc92fe26bd"
+      "dist/assets/site.css": "0f5555bf0dc9d053ced9140c626da4b86db2dd43c7f3b2bee08bc8e8c3da925f",
+      "dist/assets/living-city.css": "b17769a360f7f435b558a978b0a90168b6c2c44d8b47126bd6de346a35988c3d"
     }
   },
   "trackerCapture": {

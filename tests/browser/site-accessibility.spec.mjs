@@ -6,7 +6,7 @@ test('shared chrome and page families pass automated accessibility checks with f
  await page.route('**/__site-axe.js',route=>route.fulfill({status:200,contentType:'text/javascript',body:axe}));
  for(const path of ['/','/pricing/','/services/web-design/','/services/website-audit/','/services/seo/','/work/','/contact/','/areas/new-york/','/guides/ai-search-visibility/','/payments/','/about/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
-  for(const summary of await page.locator('footer summary,.audit-sample-proof>summary').all())await summary.click();
+  for(const details of await page.locator('footer details,.audit-sample-proof').all())if(!await details.evaluate(el=>el.open))await details.locator(':scope > summary').click();
   await page.addScriptTag({url:'/__site-axe.js'});
   const violations=await page.evaluate(async()=>{
    const result=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});

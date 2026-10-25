@@ -200,7 +200,7 @@ export const areaGuideLinks = {
   "vermont/windsor": [
     {
       "path": "/guides/class-take-home/",
-      "title": "Workshop booking confirmations: plan the take-home handoff",
+      "title": "Workshop booking confirmations: explain what participants take home",
       "localFocus": false
     }
   ],

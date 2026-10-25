@@ -376,10 +376,10 @@
     },
     {
       "id": "crm_connection",
-      "public_name": "CRM lead connection",
+      "public_name": "Send inquiries to your CRM",
       "public_price": 450,
       "group": "Forms and connections",
-      "summary": "Send one form’s leads into one CRM.",
+      "summary": "Connect one existing form to one supported customer-management system (CRM).",
       "scope": "Connect one existing agreed form to one supported, client-owned CRM. Map up to 10 fields, use an agreed duplicate rule and check successful delivery plus visible failure handling.",
       "exclusions": [
         "CRM migration, historical imports, sales pipelines, multi-step automation and new forms are separate.",

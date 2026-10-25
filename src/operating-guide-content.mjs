@@ -842,7 +842,7 @@ export const operatingGuideContent = {
     },
     {
       "id": "planning-2",
-      "title": "Treat property access as its own dependency",
+      "title": "Confirm access to the yard separately",
       "body": "<p>Bert Jabin Yacht Yard's contractor-enrollment page, checked on October 22, 2026, requires paperwork before work, office confirmation and a pass for each boat. These are that property's arrangements, not an Anne Arundel County rule. A service provider should check current requirements with the yard rather than assume the owner's booking establishes access. Your website should name who will make that check and how an unresolved requirement affects scheduling.</p><p>Add the yard or marina name and a contact route to the job record. Keep the owner's requested work separate from contractor enrollment, site entry and any movement of the vessel. Record the state of each dependency in plain language: not checked, awaiting information or confirmed by the responsible party. Avoid a single ready label that conceals an outstanding site requirement. The customer should be able to see why a visit is still provisional.</p>"
     },
     {

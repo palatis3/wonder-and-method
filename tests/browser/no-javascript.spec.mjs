@@ -44,8 +44,12 @@ test('footer destinations and single back-to-top link work without JavaScript',a
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');await page.goto('/?qa=1');
  const footer=page.locator('footer');
  await footer.scrollIntoViewIfNeeded();
- for(const group of await footer.locator('details.footer-group').all())await group.locator('summary').click();
- for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(footer.locator(`a[href="${path}"]`)).toBeVisible();
+ await expect(footer.locator('details.footer-group[open]')).toHaveCount(4);
+ const destinations=footer.locator('nav[aria-label="Footer"]');
+ for(const path of ['/areas/','/payments/','/privacy/','/terms/','/accessibility/'])await expect(destinations.locator(`a[href="${path}"]`)).toBeVisible();
+ const directories=footer.locator('.footer-area-directories');await expect(directories).not.toHaveAttribute('open','');
+ await directories.locator(':scope > summary').focus();await page.keyboard.press('Enter');
+ await expect(directories.locator('a[href="/areas/new-york/"]')).toBeVisible();
  await page.locator('.back-to-top').click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
  await expect(footer.locator('a[href="#page-top"]')).toHaveCount(0);
 });
@@ -245,7 +249,7 @@ test('server-rendered proposal, general question and fixed monthly context work 
  for(const [path,service,kind,label] of [
   ['/contact/?request_kind=checkout#inquiry','unsure','checkout','Send message'],
   ['/contact/?request_kind=question#inquiry','unsure','question','Send message'],
-  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Request my Grow start']
+  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Request a Grow proposal']
  ]){
   await page.goto(path);await expect(page.locator('#service')).toHaveValue(service);await expect(page.locator('#request_kind')).toHaveValue(kind);
   await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();
@@ -259,6 +263,6 @@ test('server-rendered proposal, general question and fixed monthly context work 
   submitted=Object.fromEntries(new URLSearchParams(route.request().postData()));
   await route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><html lang="en"><title>Synthetic receipt</title><h1>Test request received</h1><p>No email sent.</p></html>'});
  });
- await page.getByRole('button',{name:'Request my Grow start',exact:true}).click();
+ await page.getByRole('button',{name:'Request a Grow proposal',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test request received'})).toBeVisible();expect(submitted).toMatchObject({service:'grow',request_kind:'checkout',priority:'article',website:'https://example.com/'});
 });

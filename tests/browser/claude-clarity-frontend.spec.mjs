@@ -3,14 +3,10 @@ import {readFile} from 'node:fs/promises';
 import {siteHeader,siteFooter} from '../../src/site-chrome.mjs';
 import {supportChatMarkup} from '../../src/support-chat.mjs';
 import {backToTopMarkup} from '../../src/navigation.mjs';
-import {conceptPages} from '../../src/portfolio-concepts.mjs';
-import {normalizeOfferCatalog} from '../../src/offer-catalog.mjs';
 
 const read=path=>readFile(new URL('../../'+path,import.meta.url),'utf8');
-const offers=normalizeOfferCatalog(JSON.parse(await read('config/offers.json')));
 const css=(await Promise.all(['style','journal','premium','site-refresh','layout-components','support-chat','section-surfaces'].map(name=>read(`src/assets/${name}.css`)))).join('\n');
 const brand=await read('src/assets/brand.css');
-const conceptCss=await read('src/assets/portfolio-concepts.css');
 const navigation=await read('src/assets/site-navigation.js');
 const tools=await read('src/assets/page-navigation.js');
 const chat=await read('src/assets/support-chat.js');
@@ -35,7 +31,8 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   const box=await header.boundingBox();expect(box.height).toBeLessThanOrEqual(90);
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);expect(await page.locator('footer nav').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(1);
+  await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer details.footer-group[open]')).toHaveCount(0);await expect(page.locator('footer summary')).toHaveCount(5);expect(await page.locator('footer nav[aria-label="Footer"]').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(1);
+  await expect(page.locator('.footer-essential').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();
@@ -44,10 +41,11 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
  }
 });
 
-test('floating page tools preserve focus and leave fields unobstructed',async({page})=>{
+test('phone help row preserves focus and leaves fields unobstructed',async({page})=>{
  await fixture(page);
  const launch=page.locator('.support-chat-launch');
- await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+ await expect(page.locator('.support-chat')).toHaveCSS('position','static');
+ await launch.scrollIntoViewIfNeeded();await expect(launch).toBeInViewport();
  expect((await launch.boundingBox()).width).toBeGreaterThanOrEqual(44);
  await launch.focus();
  await page.evaluate(()=>dispatchEvent(new Event('scroll')));
@@ -85,18 +83,19 @@ test('without scripts concept navigation and footer remain usable',async({browse
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
  try{
   const page=await context.newPage();
-  await page.route('**/__frontend-component-fixture',route=>route.fulfill({contentType:'text/html',body:'<!doctype html><html></html>'}));
-  await page.goto('http://127.0.0.1:4187/__frontend-component-fixture');
-  const concept=conceptPages({config:{},offers}).find(p=>p.path==='/work/hearthside/menu/').body.replace(/<script[\s\S]*?<\/script>/g,'');
-  await page.setContent(`<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${brand}\n${css}\n${conceptCss}</style></head><body class="studio-site">${siteHeader('/work/hearthside/menu/')}<main>${concept}</main>${supportChatMarkup(chatConfig)}${siteFooter({businessIdentity:'Wonder and Method'})}</body></html>`);
-  await expect(page.locator('#main-nav')).toBeVisible();
-  await page.locator('.service-navigation>summary').click();
-  await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
+  await page.goto('http://127.0.0.1:4187/work/hearthside/menu/?qa=1');
+  await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();
+  await expect(page.locator('.concept-toolbar a[href="/contact/#inquiry"]')).toBeVisible();
+  await expect(page.locator('#main-nav,.support-chat')).toHaveCount(0);
   await expect(page.locator('.concept-header nav').getByRole('link',{name:'Overview',exact:true})).toBeVisible();
   await expect(page.locator('.concept-menu-list article')).toHaveCount(3);
   await expect(page.locator('.concept-demo-form')).toHaveCount(0);
-  await page.locator('footer summary').filter({hasText:'Information'}).click();
-  await expect(page.locator('footer').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
+  await expect(page.locator('footer details.footer-group[open]')).toHaveCount(4);
+  await expect(page.locator('footer nav[aria-label="Footer"]').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
+  await page.goto('http://127.0.0.1:4187/about/?qa=1');
+  await expect(page.locator('#main-nav')).toBeVisible();
+  await page.locator('.service-navigation>summary').click();
+  await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await page.locator('.support-chat noscript a').click();
   await expect(page).toHaveURL(/\/contact\/#inquiry$/);
  }finally{await context.close();}

@@ -1,4 +1,5 @@
-import {money} from './shared.mjs';
+import {money,escapeHtml as e} from './shared.mjs';
+import {guideScopeNotes} from './guide-scope-notes.mjs';
 import {guideDetails as researchGuideDetails} from './guide-details.mjs';
 import {guideBuildTiming} from './research-guide-more.mjs';
 
@@ -10,7 +11,7 @@ const decisions={
  'seo-work-and-reporting':['Monthly SEO work should include research, an agreed website improvement, publication checks and a report of what was finished.','Agree on delivery dates for the work. Search results take longer to assess and have no guaranteed deadline; use comparable search and inquiry records to decide what to do next.'],
  'website-migration-checklist':['List your important old page addresses and where each should go on the new site.','For example, /lawn-care can move to /services/lawn-care/ when it answers the same need. Set up a permanent redirect, then test that old link and your contact form after launch.'],
  'custom-website-or-template':['Let content, update frequency and ownership decide the platform.','A firm changing service copy twice a year and a team posting weekly need different update routines. My website packages include source code and a written handoff. Before booking, agree who will make changes, check them and publish, and how often help will be needed.'],
- 'website-care-versus-seo':['Care keeps your website correct and working; SEO improves how a page answers what customers search for.','Updating hours or fixing a broken link is care. Rewriting an unclear service page is an improvement. Choose the work you need; monthly help is optional.'],
+ 'website-care-versus-seo':['Care provides routine website checks and small text, photo or link changes you supply. SEO adds researched improvements to pages and search content.','Updating supplied hours or replacing a supplied link may fit care; repairs depend on the cause and agreed scope. Choose the work you need; monthly help is optional.'],
  'website-audit-checklist':['Try the task your customer came to do and write down where it fails.','On your phone, find a service, check whether your job fits and try the inquiry route. Record the page, expected result and what happened. Use that record to agree on a review or a small fix, then repeat the same check.'],
 };
 export function guideDecision(path,o){
@@ -28,7 +29,7 @@ export function guideDecision(path,o){
  const added=researchGuideDetails[slug];
  const [answer,detail]=added?[added.answer,slug==='website-redesign-timeline'?guideBuildTiming(o)+'. '+added.detail:added.detail]:extra[slug]||decisions[slug]||[];
  if(!answer)throw Error(`Missing guide answer: ${path}`);
- return `<div class="guide-decision"><h2>The short answer</h2><p>${answer}</p><p>${detail}</p>${['Business workflows','Local website cases'].includes(added?.category)?'<p class="guide-scope"><strong>Website scope:</strong> Use this guide to plan page wording, simple inquiry fields and staff instructions. Accounts, carts, live booking, file uploads and automated approvals need a separate software assessment and quote; they are not included in the standard website packages.</p>':''}</div>`;
+ return `<div class="guide-decision"><h2>The short answer</h2><p>${answer}</p><p>${detail}</p>${guideScopeNotes[slug]?`<p class="guide-scope"><strong>Using this guide:</strong> ${e(guideScopeNotes[slug])}</p>`:''}</div>`;
 }
 
 export function guideDownload(path){

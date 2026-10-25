@@ -1,5 +1,5 @@
 /* The selected brush identity, shared by every page. */
-.studio-site{--paper:#f8f7f2;--subtle:#edf0e8;--ink:#0e1b2a;--blue:#334739;--light-blue:#b9c8b3;--line:#ced2c7;--slate:#4b574e;--clay:#334739;--moss:#334739}
+.studio-site{--paper:#f8f7f2;--subtle:#edf0e8;--ink:#0e1b2a;--blue:#334739;--light-blue:#b9c8b3;--line:#ced2c7;--slate:#4b574e;--clay:#a34f2e;--moss:#334739;--shadow-action:0 3px 10px #0e1b2a14;--shadow-overlay:0 12px 32px #0e1b2a24}
 html{--site-header-height:100px;scroll-padding-top:calc(var(--site-header-height) + 1rem);scroll-padding-bottom:1rem}
 .studio-site main [id]{scroll-margin-top:1rem}
 .studio-site .breadcrumb{font-size:.8rem;padding-top:1rem}

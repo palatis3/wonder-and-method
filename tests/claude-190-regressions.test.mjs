@@ -43,7 +43,7 @@ test('explicit decision-pack requests stay proposals without JavaScript and reta
  const {inquiryForm}=await import('../src/inquiry-form.mjs');
  const {prefillInquiryHtml}=await import('../src/inquiry-prefill.mjs');
  const {default:offers}=await import('../config/offers.json',{with:{type:'json'}});
- const labels={launch_site:'Request my Launch proposal',focused_site:'Request my Focused proposal',signature_site:'Request my Signature proposal',keep_running:'Request my Keep Running start',improve:'Request my Improve start',grow:'Request my Grow start',website_baseline:'Request my Website Baseline',audit_fix_sprint:'Request my Audit & Fix proposal'};
+ const labels={launch_site:'Request my Launch proposal',focused_site:'Request my Focused proposal',signature_site:'Request my Signature proposal',keep_running:'Request a Keep Running proposal',improve:'Request an Improve proposal',grow:'Request a Grow proposal',website_baseline:'Request my Website Baseline',audit_fix_sprint:'Request my Audit & Fix proposal'};
  for(const pack of buyerPacks(offers)){
   assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'},{checkout:true,service:pack.id}),new URL(pack.request,'https://example.test'));
   assert.match(html,/name="request_kind" value="checkout"/);

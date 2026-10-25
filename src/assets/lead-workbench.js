@@ -4,7 +4,10 @@ const workbench=document.querySelector('#lead-workbench');
 if(workbench){
  const get=id=>document.getElementById(id),status=get('workbench-status'),persistence=get('workbench-persistence'),remember=get('remember-samples');
  let storage;try{storage=window.localStorage;}catch{}
- const restored=readSaved(storage);let state=restored.state,selectedId=state.records[0]?.sampleId??null;
+ const restored=readSaved(storage);
+ // A first sample is a memory-only starting point, never an implicit save.
+ const initial=restored.status==='restored'?restored.state:addSample(emptyState(),SAMPLES[0].id).state;
+ let state=initial,selectedId=state.records[0]?.sampleId??null;
  remember.checked=restored.status==='restored';
  const announce=message=>{status.textContent=message;};
  let storageWarning='';
@@ -44,6 +47,6 @@ if(workbench){
  // Controls never become a native submission path when JavaScript is unavailable.
  workbench.hidden=false;get('workbench-loading').hidden=true;persistenceText();refresh();
  if(restored.status==='restored')announce('Saved sample inquiries restored from this browser.');
- else if(restored.status==='invalid'){persistence.textContent='Saved demo data was invalid and was not loaded. Start with the supplied samples; Reset removes the unusable saved copy.';announce('Invalid saved data was ignored; demo starts empty.');}
+ else if(restored.status==='invalid'){persistence.textContent='Saved demo data was invalid and was not loaded. Start with the supplied samples; Reset removes the unusable saved copy.';announce('Invalid saved data was ignored; one fictional sample is open in memory.');}
  else if(restored.status==='unavailable')persistence.textContent='Browser storage is unavailable. You can use the demo in memory; changes disappear on reload.';
 }

@@ -17,8 +17,8 @@
 .services-overview .services-overview-heading>p:last-child{margin:0;max-width:60ch;color:var(--slate);line-height:1.65}
 .services-overview .services-overview-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
 .services-overview .services-overview-options--three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.services-overview .services-overview-card{display:flex;flex-direction:column;min-width:0;padding:clamp(1.25rem,2.2vw,2rem);border:1px solid var(--line);border-radius:14px;background:#fffef9;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
-.services-overview .services-overview-card:hover{border-color:var(--blue);background:#f1f4ec}
+.services-overview .services-overview-card{display:flex;flex-direction:column;min-width:0;padding:clamp(1.25rem,2.2vw,2rem);border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.services-overview .services-overview-card:hover{border-color:var(--blue);background:var(--subtle)}
 .services-overview .services-overview-card h3{font:600 1.2rem/1.4 Manrope,Arial,sans-serif;margin:0 0 .7rem;letter-spacing:-.015em}
 .services-overview .services-overview-description{max-width:48ch;margin:0 0 1.5rem;line-height:1.65;color:var(--slate)}
 .services-overview .services-overview-price{margin:auto 0 1rem;padding-top:.25rem;font-size:1rem;line-height:1.6;font-weight:600}

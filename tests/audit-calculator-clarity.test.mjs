@@ -97,7 +97,7 @@ test('an existing-site review appears once and is superseded by the Sprint witho
 
 test('ROI controller renders complete scenarios, individual errors and reset without sending entries',async()=>{
  const source=(await readFile(new URL('../src/assets/website-roi.js',import.meta.url),'utf8')).replace(/^import [^\n]+\n/gm,'');
- const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:'',innerHTML:'',attributes:{},focus(){this.focused=true;},setAttribute(name,value){this.attributes[name]=value;},removeAttribute(name){delete this.attributes[name];},replaceChildren(){this.innerHTML='';}});return nodes.get(id);};
+ const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:'',innerHTML:'',querySelector(){return null;},attributes:{},focus(){this.focused=true;},setAttribute(name,value){this.attributes[name]=value;},removeAttribute(name){delete this.attributes[name];},replaceChildren(){this.innerHTML='';}});return nodes.get(id);};
  const form=get('website-roi'),listeners={};form.elements=Object.fromEntries(Object.entries(scenario).map(([key,value])=>[key,Object.assign(get('roi-'+key),{value:String(value)})]));form.addEventListener=(type,handler)=>{listeners[type]=handler;};
  const timers=[],counts=[];runInNewContext(source,{calculateWebsiteRoi,roiFields,breakEvenDisplayBound,countJourney(...args){counts.push(args);},Intl,setTimeout:fn=>{timers.push(fn);return timers.length;},clearTimeout(){},document:{getElementById:get}});
  assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-results-title').focused,undefined);
@@ -107,6 +107,12 @@ test('ROI controller renders complete scenarios, individual errors and reset wit
  form.elements.oneTime.value='$2,35';listeners.input();assert.equal(get('roi-results').hidden,false);assert.equal(get('roi-stale').hidden,false);listeners.submit({preventDefault(){}});assert.equal(form.elements.oneTime.attributes['aria-invalid'],'true');assert.equal(form.elements.oneTime.focused,true);
  form.elements.oneTime.value='2350';listeners.reset();timers.at(-1)();assert.equal(get('roi-results').hidden,false);assert.match(get('roi-output').innerHTML,/\$1,490/);assert.equal(form.elements.oneTime.attributes['aria-invalid'],undefined);
  listeners.input();timers.at(-1)();assert.deepEqual(counts,[['roi_calculate']]);
+ for(const [values,expected] of [
+  [{oneTime:'0.10',monthlyCost:'0.20',months:'1',contribution:'0.30'},'1'],
+  [{oneTime:'0.11',monthlyCost:'0.20',months:'1',contribution:'0.30'},'2'],
+  [{oneTime:'0',monthlyCost:'0',months:'1',contribution:'0'},'0'],
+  [{oneTime:'1',monthlyCost:'0',months:'1',contribution:'0'},'Not reachable']
+ ]){for(const [key,value] of Object.entries(values))form.elements[key].value=value;listeners.input();timers.at(-1)();assert.match(get('roi-output').innerHTML,new RegExp('class="roi-primary-number">'+expected+'<'),'Whole-customer break-even threshold handles cents and zero values');}
 });
 
 test('inquiry tracker keeps storage and download boundaries and links to relevant add-ons',async()=>{

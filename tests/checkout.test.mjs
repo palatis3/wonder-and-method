@@ -47,7 +47,7 @@ test('checkout explains the email reply and preserves synthetic-preview boundari
 test('build checkout keeps editing limits in the package details before the form and outside costs accessible',()=>{
  for(const page of checkoutPages(offers,intakeContent(config)).filter(p=>/-site\/$/.test(p.path))){
   const beforeForm=page.body.slice(0,page.body.indexOf('<form'));
-  assert.match(beforeForm,/No visual or drag-and-drop editor is included/);assert.match(beforeForm,/you or your developer can edit and publish the website files/);assert.match(beforeForm,/You can also send changes to me/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
+  assert.match(beforeForm,/No visual or drag-and-drop editor is included/);assert.match(beforeForm,/Future changes require editing and publishing the website files/);assert.match(beforeForm,/You can do this yourself if you have those skills, use another developer, or ask me about optional care/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
   assert.ok(page.body.indexOf('No visual or drag-and-drop editor is included')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
  }
 });

@@ -6,9 +6,9 @@ import {responsiveImageAttributes} from './responsive-images.mjs';
 import {BUFFALO_STUDY_PATH,buffaloStudyMedia} from './buffalo-study.mjs';
 
 const conceptDescriptions={
- fieldwork:'A landscaper’s website: three garden services, an illustrated plan and a project preparation checklist.',
- northline:'A remodeler’s website: kitchen, bathroom and layout work explained through a clear project process.',
- hearthside:'A pizzeria’s website: three pizzas with ingredients, sample prices and original illustration.'
+ fieldwork:'A visitor needs to compare garden services before asking for an estimate. This fictional design puts three services, an illustrated plan and a preparation checklist together.',
+ northline:'A homeowner needs to understand which remodeling jobs fit and how work begins. This fictional design pairs kitchen, bathroom and layout options with a clear project process.',
+ hearthside:'A diner needs to compare ingredients and prices quickly. This fictional design keeps three pizzas, sample prices and original illustrations together in a short menu.'
 };
 
 // Add completed projects here; the gallery does not need a new layout per medium.

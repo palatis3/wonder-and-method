@@ -19,15 +19,15 @@ export const careTaskTable=o=>table('Who handles five common website requests?',
  ['Connect a booking tool','Checking an agreed existing booking link differs from setting up or changing the connection.','Confirm the supported connection, account owner, provider bill and any separately quoted setup before proceeding.'],
  ['Restore a CMS after an incident','Outside standard care, along with CMS, plugin and theme updates, backups, restores and malware cleanup.','Host or a suitable specialist owns recovery. Automated monitoring has no 24/7 staffing or guaranteed repair time.']
 ]);
-export const careTaskExamples=o=>studioSection('task-owners','Who looks after each part?',p('Before care starts, we name the people responsible for your website, its accounts and recovery.')+'<div class="care-responsibilities"><div><h3>What I do</h3>'+ul([
+export const careTaskExamples=o=>studioSection('task-owners','Who looks after each part?',p('Before care starts, we name the people responsible for your website, its accounts and recovery.')+'<div class="care-responsibilities"><div><h3>Included</h3>'+ul([
  'Make the agreed small changes to existing sections using text and photos you approve.',
  'Check the main contact path and agreed tools, record any failed step or missing access, and explain what needs attention. A check is not a promise of unlimited repair.',
- 'Quote new pages, booking setup and repairs outside your plan separately. Original photography and a new gallery are different work from replacing a supplied photo.'
- ])+'</div><div><h3>What you arrange</h3>'+ul([
+ 'Record the agreed checks, completed small changes and anything that needs attention in your monthly report.'
+ ])+'</div><div><h3>You or your provider handle</h3>'+ul([
  'Supply final text, images you have permission to use and authorized access to the accounts needed for the work.',
  'Keep your domain, host and paid tools in your own accounts, with a named person responsible for renewals.',
- 'Keep a host or specialist responsible for the software and recovery work excluded above. We confirm that responsibility before enrollment.'
- ])+'</div></div>'+p('For each extra task, agree who does it, its price and how it will be checked. The '+a('/guides/website-maintenance-cost/#task-owners','maintenance-budget guide')+' helps record those responsibilities.'));
+ 'Keep a host or specialist responsible for CMS, plugin and theme updates, backups, restores and malware cleanup. We confirm that responsibility before enrollment.'
+ ])+'</div><div><h3>Separately quoted</h3>'+ul(['New pages, booking setup and repairs outside your plan.','Original photography or a new gallery, beyond replacing a supplied photo.','Research and substantial rewrites, unless they are an agreed monthly SEO improvement.'])+'</div></div>'+p('For each extra task, agree who does it, its price and how it will be checked. The '+a('/guides/website-maintenance-cost/#task-owners','maintenance-budget guide')+' helps record those responsibilities.'));
 
 export const seoWorkExample=o=>studioSection('choose-monthly-work','One example: make a service page useful',
  p('<strong>Fictional example:</strong> customers ask which repairs a business accepts. One researched page improvement could work like this:')+

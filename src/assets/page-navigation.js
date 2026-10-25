@@ -71,7 +71,7 @@ if(header){
   topLink.addEventListener('click',event=>{
    if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
    event.preventDefault();
-   header.querySelector('.wordmark')?.focus({preventScroll:true});
+   (header.querySelector('.wordmark')||header.querySelector('a[href]'))?.focus({preventScroll:true});
    window.scrollTo({top:0,behavior:reducedMotion.matches?'instant':'smooth'});
   });
  }

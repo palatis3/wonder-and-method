@@ -1,0 +1,24 @@
+const form=document.querySelector('[data-guide-filters]');
+if(form){
+ const search=form.querySelector('#guide-search'),category=form.querySelector('#guide-category'),status=form.querySelector('[data-guide-count]');
+ const groups=[...document.querySelectorAll('[data-guide-group]')].map(element=>({element,cards:[...element.querySelectorAll('.journal-card')].map(element=>({element,text:element.textContent.toLocaleLowerCase('en-US')}))}));
+ const examples=document.querySelector('.guide-examples'),total=groups.reduce((sum,group)=>sum+group.cards.length,0);
+ let beforeSearchOpen=examples?.open??false,wasActive=false;
+ const update=()=>{
+  const words=search.value.trim().toLocaleLowerCase('en-US').split(/\s+/).filter(Boolean),active=words.length>0||!!category.value;
+  if(active&&!wasActive)beforeSearchOpen=examples?.open??false;
+  let count=0;
+  for(const group of groups){let matches=0;for(const card of group.cards){const match=(!category.value||category.value===group.element.id)&&words.every(word=>card.text.includes(word));card.element.hidden=!match;if(match){matches++;count++;}}group.element.hidden=matches===0;}
+  if(examples){const hasMatches=groups.some(group=>examples.contains(group.element)&&!group.element.hidden);examples.hidden=!hasMatches;if(active)examples.open=hasMatches;else if(wasActive)examples.open=beforeSearchOpen;}
+  status.textContent=`${count} of ${total} guides shown.`+(count===0?' Try another keyword or reset the filters.':'');
+  wasActive=active;
+ };
+ form.addEventListener('submit',event=>{event.preventDefault();update();});
+ search.addEventListener('input',update);category.addEventListener('change',update);
+ // A native reset applies field defaults after the reset event. Wait until the
+ // next task so the result list reads those values, including with AX clicks.
+ form.addEventListener('reset',()=>{setTimeout(()=>{update();search.focus();},0);});
+ // Topic jumps also clear a conflicting filter, so their targets stay reachable.
+ document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{if(wasActive&&[...groups.map(group=>'#'+group.element.id),'#examples'].includes(link.getAttribute('href'))){search.value='';category.value='';update();}}));
+ form.hidden=false;update();
+}

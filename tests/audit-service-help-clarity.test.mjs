@@ -47,7 +47,7 @@ test('contractor simplification preserves payment, editing, evidence and form bo
  assert.match(contractor,/ready booking link or compatible standard embed may fit an included connection/);
  assert.ok(contractor.includes('A guided quote form costs '+money(offers.add_ons.find(item=>item.id==='guided_quote_form').public_price)));
  assert.match(contractor,/not an automatic price/);
- assert.match(contractor,/two fictional concepts below.*not examples of your completed jobs/);
+ assert.match(contractor,/two fictional concepts above.*not examples of your completed jobs/);
  assert.doesNotMatch(contractor,/every request reaches your inbox|guaranteed (?:inbox|delivery)/i);
  const closing=contractor.match(/<section class="studio-closing">(.*?)<\/section>/s)[1];
  assert.match(closing,/>Ask about your website<\/a>/);

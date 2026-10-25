@@ -69,7 +69,7 @@ test('contact starts with native need choices and keeps optional package/busines
  const html=inquiryFormMarkup({live:true});
  assert.match(html,/<legend>What do you need\? <span class="field-note">\(optional\)<\/span><\/legend>/);
  assert.equal([...html.matchAll(/type="radio"[^>]*name="goal"/g)].length,6);
- assert.match(html,/<details class="inquiry-package-choice" id="package-choice"><summary>Choose or change a package \(optional\)<\/summary>/);
+ assert.match(html,/<details class="inquiry-package-choice" id="package-choice"><summary>Already have a package in mind\? \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="service"')<html.indexOf('id="name"'));
  assert.match(html,/<details class="inquiry-extra"><summary>Business details \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
@@ -216,7 +216,7 @@ test('fixed-fee review wording stays consistent through native, enhanced and sav
 test('enhanced checkout preserves offer-specific buttons and the same website rule after query hydration',()=>{
  const build=clientFixture({fixed:true,service:'focused_site',query:'?addons=booking_setup'});assert.equal(build.button.textContent,'Request my Focused proposal');
  build.change(build.checks.find(input=>input.name==='addon_booking_setup'));assert.equal(build.button.textContent,'Request my Focused proposal');
- const care=clientFixture({fixed:true,service:'grow',query:'?goal=fix&addons=booking_setup'});assert.equal(care.fields.website.required,false);assert.equal(care.button.textContent,'Request my Grow start');assert.equal(care.selectors['[data-retained-addons]'].hidden,false);
+ const care=clientFixture({fixed:true,service:'grow',query:'?goal=fix&addons=booking_setup'});assert.equal(care.fields.website.required,false);assert.equal(care.button.textContent,'Request a Grow proposal');assert.equal(care.selectors['[data-retained-addons]'].hidden,false);
  const selected=care.checks.find(input=>input.name==='addon_booking_setup');assert.equal(selected.checked,true);assert.equal(selected.disabled,false);
  const review=clientFixture({fixed:true,service:'website_baseline'});assert.equal(review.fields.website.required,true);
  const question=clientFixture({fixed:true,service:'website_baseline',query:'?request_kind=question'});assert.equal(question.fields.website.required,false);assert.equal(question.fields.request_kind.value,'question');assert.equal(question.button.textContent,'Send my Website Baseline question');

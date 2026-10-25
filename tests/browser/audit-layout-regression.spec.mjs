@@ -43,7 +43,7 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
    await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
    await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
    if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
-   await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+   await expect(page.locator('.support-chat')).toHaveCSS('position',width<=767?'static':'fixed');
    const result=await page.evaluate(coveredContent);expect(result.hits,`${path} at ${y}`).toEqual([]);expect(result.outside).toEqual([]);visible+=result.visible;
    const focused=await page.evaluate(()=>{
     const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect());
@@ -96,16 +96,16 @@ test('navigation order, mobile Services alignment and footer disclosures agree',
     expect(Math.abs(metrics.a-metrics.s)).toBeLessThanOrEqual(1);expect(metrics.font).toBeGreaterThanOrEqual(15);expect(metrics.height).toBeGreaterThanOrEqual(44);
     await page.keyboard.press('Escape');
    }
-   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer summary')).toHaveCount(4);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
+   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer .footer-group > summary')).toHaveCount(4);await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
    await page.locator('footer').scrollIntoViewIfNeeded();await expect(page.locator('a.back-to-top[href="#page-top"]')).toBeVisible();
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
   }
  }
 });
 
-test('form pages retain floating chat and the deliberate inline opener',async({page})=>{
+test('form pages provide a deliberate inline chat opener without a floating duplicate',async({page})=>{
  for(const path of ['/contact/','/checkout/focused-site/']){
-  await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(1);
+  await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(0);
   await expect(page.locator('[data-chat-open]')).toBeVisible();await expect(page.locator('[data-chat-open]')).toHaveAttribute('aria-describedby','support-chat-description');
   expect(await page.locator('script[src^="https://embed.tawk.to/"]').count()).toBe(0);
  }

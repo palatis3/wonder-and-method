@@ -144,6 +144,7 @@ export async function bindCountyDirectory(root=document){
  const results=root.querySelector('[data-county-results]');
  const bestList=results?.querySelector('[data-county-best]'),moreList=results?.querySelector('[data-county-more]');
  const moreDetails=moreList?.closest('details');
+ const multipleNote=results?.querySelector('[data-county-multiple]');
  const stateLabels=Object.fromEntries(serviceStateInfo.map(state=>[state.id,state.name]));
  const areaPlural=controls.dataset.areaPlural||'areas';
  const browseAll=root.querySelector('[data-county-browse-all]'),stateLinks=root.querySelector('[data-state-directory-links]');
@@ -174,6 +175,7 @@ export async function bindCountyDirectory(root=document){
    const best=ordered.filter(card=>card.score===ordered[0]?.score),more=ordered.filter(card=>card.score!==ordered[0]?.score);
    bestList.replaceChildren(...(active?best.map(makeResult):[]));moreList.replaceChildren(...(active?more.map(makeResult):[]));
    results.hidden=!active||!count;directory.hidden=active;
+   if(multipleNote)multipleNote.hidden=!active||best.length<2||!best.some(card=>['city','town','municipality','place'].includes(card.match.type));
    if(moreDetails){moreDetails.hidden=!more.length;moreDetails.querySelector('summary').textContent='Other matching '+areaPlural+' ('+more.length+')';if(!active)moreDetails.open=false;}
   }
   if(navigation)navigation.hidden=active||!navigation.children.length;
