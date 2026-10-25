@@ -10,19 +10,18 @@ test('state choices stay alphabetical in the footer, finder and browse lists',as
  expect((await page.locator('#footer-areas-heading+div>a').allTextContents()).slice(1)).toEqual(expected);
 });
 
-test('fixed help uses wide margins or a separate bar and yields to forms and menus',async({page},testInfo)=>{
+test('corner tools float separately and yield to forms and menus',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One complete viewport matrix');test.setTimeout(60_000);
- const bar=()=>page.locator('#site-help').evaluate(el=>{const css=getComputedStyle(el,'::before');return {content:css.content,height:parseFloat(css.height),background:css.backgroundColor,visibility:css.visibility,position:css.position};});
+ const toolSurfaces=()=>page.locator('#site-help').evaluate(el=>['::before','::after'].map(pseudo=>getComputedStyle(el,pseudo).content));
  for(const width of [320,390,768,1024,1440]){
   await page.setViewportSize({width,height:900});
   for(const path of ['/about/','/services/','/contact/']){
    await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
    const chat=page.locator('.support-chat-launch');await inViewport(chat);
    expect((await chat.boundingBox()).width).toBe(48);
-   if(width<1280){
-    const help=await bar();expect(help.position).toBe('fixed');expect(help.height).toBeGreaterThanOrEqual(80);expect(help.visibility).toBe('visible');expect(help.background).not.toBe('rgba(0, 0, 0, 0)');
-    expect(await chat.evaluate((el,height)=>el.getBoundingClientRect().top>=innerHeight-height,help.height)).toBe(true);
-   }else{
+   await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
+   expect(await toolSurfaces()).toEqual(['none','none']);
+   if(width>=1280){
     const covered=await page.evaluate(()=>{
      const button=document.querySelector('.support-chat-launch').getBoundingClientRect(),hits=[];
      const walker=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);
@@ -37,12 +36,13 @@ test('fixed help uses wide margins or a separate bar and yields to forms and men
    if(width===390||width===1440)await page.screenshot({path:testInfo.outputPath(`${width}-${path.split('/')[1]}-reading.png`)});
   }
   await page.locator('#email').focus();await expect(page.locator('.support-chat-launch')).toBeHidden();
-  if(width<1280)await expect.poll(async()=>(await bar()).visibility).toBe('hidden');
+  expect(await toolSurfaces()).toEqual(['none','none']);
   if(width===390)await page.screenshot({path:testInfo.outputPath('390-contact-focused.png')});
+  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();
   if(width<1024){
    await page.goto('/about/?qa=1');await page.locator('.menu-toggle').click();
-   await expect(page.locator('.support-chat-launch')).toBeHidden();await expect.poll(async()=>(await bar()).visibility).toBe('hidden');
-   await page.keyboard.press('Escape');await expect(page.locator('.support-chat-launch')).toBeVisible();await expect.poll(async()=>(await bar()).visibility).toBe('visible');
+   await expect(page.locator('.support-chat-launch')).toBeHidden();expect(await toolSurfaces()).toEqual(['none','none']);
+   await page.keyboard.press('Escape');await expect(page.locator('.support-chat-launch')).toBeVisible();expect(await toolSurfaces()).toEqual(['none','none']);
   }
  }
 });

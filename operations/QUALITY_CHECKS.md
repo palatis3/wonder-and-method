@@ -14,6 +14,8 @@ The [CI implementation record](ci-checks-20261023/README.md) describes the exact
 
 Browser checks cover the floating back-to-top control, chat launcher, mocked chat loading, blocked-provider fallback, phone-menu behavior, keyboard focus and form-field obstruction. Every generated site page checks for the shared controls, loaded images/fonts, page errors and horizontal overflow. Representative page families receive automated accessibility checks with all footer groups expanded. Existing reduced-motion and no-JavaScript journeys remain part of verification.
 
+The corner controls must remain separate floating buttons without a shared bottom bar. A responsive regression checks 320–1440-pixel widths, tablet breakpoints and landscape layouts at the top, middle and end of representative pages, including a Texas brief and the contact form. It checks transparent shared chrome, unobstructed space between the buttons, round touch targets, shadows and pointer reachability. Dedicated homepage and scrolled-content screenshots preserve their appearance on desktop and phone. These checks run in the required verify and visual jobs before publication.
+
 These checks catch defined regressions; they do not prove every design choice is good, every external service is available or every assistive-technology experience is correct. CI never sends a real inquiry, chat message or payment. Live publication checks remain separate.
 
 ## Intentional content or design changes

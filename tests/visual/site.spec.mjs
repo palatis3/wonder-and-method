@@ -45,6 +45,16 @@ test('county entry preserves readable local facts and place lists',async({page})
  const entry=page.locator('#monroe');await expect(entry).toHaveAttribute('open','');
   await isolateContent(page);await expect(entry).toHaveScreenshot('county-entry.png');
 });
+
+for(const [name,path,scrollTop] of [['floating-tools-home','/',0],['floating-tools-content','/areas/texas/milam-county/',600]]){
+ test(`${name} remain separate over the page`,async({page})=>{
+  await page.goto(path+'?qa=1');await settle(page);
+  await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},scrollTop);
+  await expect(page.locator('.support-chat-launch')).toBeVisible();
+  if(scrollTop>=520)await expect(page.locator('.back-to-top')).toBeVisible();
+  await expect(page).toHaveScreenshot(name+'.png');
+ });
+}
 test('Georgia entry preserves government and place distinctions',async({page})=>{
  await page.goto('/areas/georgia/?qa=1#richmond');await settle(page);
  const entry=page.locator('#richmond');await expect(entry).toHaveAttribute('open','');

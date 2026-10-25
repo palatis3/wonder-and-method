@@ -58,17 +58,12 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
  }
 });
 
-function readingBottom(){
- const bar=getComputedStyle(document.querySelector('.site-tools'),'::before');
- return innerHeight-(bar.content!=='none'&&bar.visibility!=='hidden'?(parseFloat(bar.height)||0):0);
-}
-
 test('home hero controls remain clear and short screens fit the project action',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='desktop','One viewport matrix');await page.emulateMedia({reducedMotion:'reduce'});
  for(const [width,height] of [[1280,720],[1366,768],[1440,900],[844,390],[683,328]]){
   await page.setViewportSize({width,height});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
   await expect(page.locator('.support-chat-launch')).toBeVisible();
-  const primary=await page.locator('.city-primary').boundingBox();expect(primary.y+primary.height,`${width} project action clears the help bar`).toBeLessThanOrEqual(await page.evaluate(readingBottom));
+  const primary=await page.locator('.city-primary').boundingBox();expect(primary.y+primary.height,`${width} project action fits the viewport`).toBeLessThanOrEqual(await page.evaluate(()=>innerHeight));
   const controls=await page.locator('.city-primary,.city-explore,.city-choice').evaluateAll(nodes=>nodes.filter(node=>{const r=node.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}).map(node=>{const r=node.getBoundingClientRect();return {name:node.textContent.trim(),clear:node.contains(document.elementFromPoint(r.left+r.width/2,r.top+r.height/2))};}));
   expect(controls.filter(item=>!item.clear)).toEqual([]);
   if(height<=520)await page.screenshot({path:testInfo.outputPath(`short-landscape-${width}.png`)});
@@ -81,7 +76,7 @@ test('short touch screens let the header scroll away while the project action fi
  for(const [width,height] of [[844,390],[683,328]]){
   await page.setViewportSize({width,height});await page.goto('/?qa=1');await page.evaluate(()=>document.fonts.ready);
   expect(await page.evaluate(()=>matchMedia('(hover:none) and (pointer:coarse)').matches)).toBe(true);
-  const primary=await page.locator('.city-primary').boundingBox();expect(primary.y+primary.height).toBeLessThanOrEqual(await page.evaluate(readingBottom));
+  const primary=await page.locator('.city-primary').boundingBox();expect(primary.y+primary.height).toBeLessThanOrEqual(await page.evaluate(()=>innerHeight));
   await page.screenshot({path:testInfo.outputPath(`short-landscape-${width}.png`)});
   await page.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await expect.poll(()=>page.locator('.site-header').evaluate(node=>node.getBoundingClientRect().bottom)).toBeLessThanOrEqual(0);
  }

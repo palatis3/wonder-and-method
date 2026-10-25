@@ -50,10 +50,6 @@ if(header){
    // Separate show/hide thresholds prevent chatter near the top boundary.
    if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
    root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
-   const inReadingContent=active?.matches('a[href],button,summary,video,audio,[tabindex]:not([tabindex="-1"])')&&!active.closest('.site-tools');
-   const target=inReadingContent?active.getBoundingClientRect():null;
-   const helpHeight=parseFloat(getComputedStyle(document.querySelector('.site-tools'),'::before').height)||80;
-   root.classList.toggle('page-help-yielding',innerWidth<1280&&!!target&&target.top<innerHeight&&target.bottom>innerHeight-helpHeight);
    // Keep tools discoverable during ordinary reading and scrolling. Yield only
    // to the visitor's focused control; content hit tests hid chat on most pages.
    const states=floating.map(control=>blocked(control,active));
