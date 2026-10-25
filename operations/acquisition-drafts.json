@@ -1,9 +1,14 @@
 {
-  "status": "Unsent editable drafts; no contacts, external messages or wins",
-  "selected_lanes": [],
+  "status": "Owner selected website-only acquisition on October 25, 2026. Outreach drafts are deferred; no prospecting or outbound messages.",
+  "selected_lanes": ["owned website and organic search"],
+  "owner_direction": {
+    "recorded_on": "2026-10-25",
+    "instruction": "Keep acquisition limited to the website for now",
+    "scope": "Use the existing website, search visibility and inbound inquiry flow. Do not expand prospect research, prepare outbound campaigns or contact businesses unless the owner changes this direction."
+  },
   "sales_time_budget_hours": null,
   "prepared_research_reference": "C:/Wonder and Method/outputs/01a1372f-80d0-7bf0-b8dc-c159ebe59991/acquisition-screen-20261025.md",
-  "prepared_research_status": "October 25: three public business sites screened, one narrow consistency question with an unsent draft, two holds. No qualified opportunities, recipients selected, messages sent or acquisition lane authorized. Keep research separate from the actual buyer board.",
+  "prepared_research_status": "Deferred after the owner's October 25 website-only decision. Earlier screen covered three public business sites and one unsent draft; no qualified opportunities or messages. Retained as historical preparation, outside the actual buyer board.",
   "lanes_maximum": 2,
   "source_of_truth": "V5 growth-tests.json",
   "gates": [
