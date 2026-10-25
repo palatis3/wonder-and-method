@@ -19,10 +19,10 @@ const hrefs=html=>[...html.matchAll(/href="([^"]+)"/g)].map(match=>match[1]);
 test('contractor page links to complete coverage and keeps a seven-item page plan without mobile table cards',()=>{
  const title=text(contractor.match(/<h1>(.*?)<\/h1>/s)[1]);
  assert.equal(title,'Websites for contractors and home-service businesses.');
- assert.match(contractor,/<a href="\/areas\/">28 states and Washington, DC<\/a>/);
+ assert.match(contractor,/<a href="\/areas\/">29 states and Washington, DC<\/a>/);
  assert.deepEqual([...serviceCoverage(config).regions].sort(),serviceStates.map(state=>state.name).sort());
- assert.equal(serviceCoverage(config).areaServed.length,29);
- for(const state of ['Louisiana','Arkansas'])assert.ok(serviceCoverage(config).regions.includes(state));
+ assert.equal(serviceCoverage(config).areaServed.length,30);
+ for(const state of ['Louisiana','Arkansas','Texas'])assert.ok(serviceCoverage(config).regions.includes(state));
  assert.ok(!contractor.includes(serviceCoverage(config).region),'full region list stays in the directory and metadata');
  for(const trade of ['plumbing','electrical','HVAC','roofing','exterior','remodeling','landscaping','cleaning'])assert.ok(contractor.toLowerCase().includes(trade.toLowerCase()));
  const plan=contractor.match(/<h3>A sample seven-page plan<\/h3>(.*?)<\/section>/s)[1];

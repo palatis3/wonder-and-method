@@ -24,7 +24,7 @@ test('approved project answers are reachable once on the intended page, before i
    const q=item.question.trim().toLowerCase(),a=item.answer.trim().toLowerCase();
    assert.ok(!questions.has(q),path+' duplicate question');questions.add(q);
    assert.ok(!answers.has(a),path+' duplicate answer');answers.add(a);
-   for(const link of item.links){
+   for(const link of item.links||[]){
     assert.ok(link.label.trim(),path+' descriptive link');
     assert.ok(link.path.startsWith('/')&&!link.path.startsWith('//'),path+' internal link');
     const target=new URL(link.path,config.origin),destination=byPath.get(target.pathname);
@@ -45,7 +45,7 @@ test('approved project answers are reachable once on the intended page, before i
   for(const [index,item] of items.entries()){
    if(items.length===1){
     assert.equal(text(descendants(section).find(node=>node.tagName==='p')),item.answer,page.path+' complete visible answer');
-    assert.deepEqual(descendants(section).filter(node=>node.tagName==='a').map(node=>({path:attr(node,'href'),label:text(node)})),item.links,page.path+' answer links');
+    assert.deepEqual(descendants(section).filter(node=>node.tagName==='a').map(node=>({path:attr(node,'href'),label:text(node)})),item.links||[],page.path+' answer links');
     continue;
    }
    const children=details[index].childNodes.filter(node=>node.tagName);
@@ -53,7 +53,7 @@ test('approved project answers are reachable once on the intended page, before i
    assert.equal(text(children[0]),item.question,page.path+' question');
    assert.equal(text(children[1]),item.answer,page.path+' full answer');
    assert.equal(attr(details[index],'open'),undefined,page.path+' initially closed');
-   assert.deepEqual(descendants(details[index]).filter(node=>node.tagName==='a').map(node=>({path:attr(node,'href'),label:text(node)})),item.links,page.path+' answer links');
+   assert.deepEqual(descendants(details[index]).filter(node=>node.tagName==='a').map(node=>({path:attr(node,'href'),label:text(node)})),item.links||[],page.path+' answer links');
   }
   const contact=page.path.startsWith('/areas/')?nodes.find(node=>attr(node,'id')==='your-brief'):nodes.find(node=>(attr(node,'class')||'').split(' ').includes('studio-closing'));
   assert.ok(contact,page.path+' contact step exists');

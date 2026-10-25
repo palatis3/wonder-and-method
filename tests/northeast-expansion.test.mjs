@@ -39,7 +39,7 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
   const cardPayload=html.match(/data-county-search-cards>(.*?)<\/script>/s);
   const terms=cardPayload?await decodeCountySearchCards(JSON.parse(cardPayload[1]),names):null;
   const cards=[...html.matchAll(/data-cs="([^"]+)">[\s\S]*?<a data-cl href="([^"]+)"/g)];
-  assert.equal(cards.length,scope?scope.counties.length:1746);
+  assert.equal(cards.length,scope?scope.counties.length:2000);
   const expected=scope?scope.regions.flatMap(region=>regionCounties(scope,region).map(county=>({county,state:scope}))):serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>({county,state})));
   for(const [index,[,packed,route]] of cards.entries()){
    const {county,state}=expected[index];
@@ -52,15 +52,15 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
 
 test('six state hubs retain all 66 original entries while historical routes resolve to preserved destinations',()=>{
  assert.equal(newRoutes.length,72,'the historical six-hub and 66-area route fixture remains intact');
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,1259);assert.equal(byPath.size,1259);
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,1476);assert.equal(byPath.size,1476);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of priorRoutes){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1247);
- assert.equal((byPath.get('/areas/').html.match(/data-cs=/g)||[]).length,1746);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1464);
+ assert.equal((byPath.get('/areas/').html.match(/data-cs=/g)||[]).length,2000);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
   assert.deepEqual(Object.keys(northeastGeography[s.id]).sort(),s.areas.map(a=>a.slug).sort());
@@ -130,7 +130,7 @@ test('typed searches distinguish states, counties, current regions and same-name
   ['Clayton town DE',['delaware/kent','delaware/new-castle']],['Milford city DE',['delaware/kent','delaware/sussex']],
   ['Rutland city VT',['vermont/rutland']],['Rutland town VT',['vermont/rutland']]
  ])assert.deepEqual(matches(query),expected,query);
- assert.equal(cards.length,1746);
+ assert.equal(cards.length,2000);
 });
 
 test('all 333 provenance contexts roundtrip without accepting invented areas or business locations',()=>{

@@ -30,7 +30,7 @@ for(const route of build.routes){
  assert.equal(response.headers.get('Link'),['/404/','/payments/'].includes(route)?null:styles.join(', '),`Deployed CSS hints match page: ${route}`);
  pages.push({route,status:response.status,indexEligible:eligible,canonical:route!=='/404/',htmlMatches:true});
 }
-async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const path=resolve(dir,entry.name);if(entry.isDirectory())await walk(path);else assets.push(path);}}
+async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const path=resolve(dir,entry.name);if(entry.isDirectory())await walk(path);else if(path!==resolve(root,'dist/assets/asset-hashes.json'))assets.push(path);}}
 await walk(resolve(root,'dist/assets'));
 for(let i=0;i<assets.length;i+=6)await Promise.all(assets.slice(i,i+6).map(async path=>{
  const url='/'+relative(resolve(root,'dist'),path).replaceAll('\\','/');
@@ -41,7 +41,7 @@ for(let i=0;i<assets.length;i+=6)await Promise.all(assets.slice(i,i+6).map(async
  const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
  assert.equal(hash(Buffer.from(await response.arrayBuffer())),hash(await readFile(path)),url);
 }));
-for(const route of ['/review/','/authority/v5/offers.json','/operations/weekly-board.json','/config/site.json','/.runtime/credentials/cloudflare-production.dpapi','/missing-release-check/']){
+for(const route of ['/assets/asset-hashes.json','/ASSETS/ASSET-HASHES.JSON','/review/','/authority/v5/offers.json','/operations/weekly-board.json','/config/site.json','/.runtime/credentials/cloudflare-production.dpapi','/missing-release-check/']){
  const response=await fetch(origin+route);assert.equal(response.status,404,route);assert.match(response.headers.get('x-robots-tag')||'',/noindex/);privateRoutes.push({route,status:response.status});
 }
 const unauthorized=await fetch(origin+'/api/operator/inquiries');assert.equal(unauthorized.status,401);assert.match(unauthorized.headers.get('x-robots-tag')||'',/noindex/);

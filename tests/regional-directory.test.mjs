@@ -1,3 +1,4 @@
+import {gzipSync} from 'node:zlib';
 import {locationServicePages} from '../src/location-service-pages.mjs';
 import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
@@ -18,13 +19,13 @@ const directories=new Map(states.map(state=>[state.id,countyDirectory(state)]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=query=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query))).map(card=>card.state+'/'+card.slug).sort();
 
-test('seventeen expansion hubs expose 1413 entries within 30 public directory pages and preserve 333 original areas',()=>{
- assert.equal(states.length,17);assert.equal(pages.length,30);assert.equal(byPath.size,30);
- assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67],['south-carolina',46],['georgia',159],['mississippi',82],['alabama',67],['wisconsin',72],['illinois',102],['louisiana',64],['arkansas',75]]);
- assert.equal(cards.length,1746);
+test('eighteen expansion hubs expose 1667 entries within 31 public directory pages and preserve 333 original areas',()=>{
+ assert.equal(states.length,18);assert.equal(pages.length,31);assert.equal(byPath.size,31);
+ assert.deepEqual(states.map(state=>[state.id,state.counties.length]),[['virginia',133],['west-virginia',55],['michigan',83],['district-of-columbia',1],['indiana',92],['kentucky',120],['tennessee',95],['north-carolina',100],['florida',67],['south-carolina',46],['georgia',159],['mississippi',82],['alabama',67],['wisconsin',72],['illinois',102],['louisiana',64],['arkansas',75],['texas',254]]);
+ assert.equal(cards.length,2000);
  assert.equal(serviceStates.filter(state=>!regionalProfiles[state.id]).reduce((count,state)=>count+state.counties.length,0),333);
  const combined=countyDirectory();
- assert.equal((combined.match(/data-cs=/g)||[]).length,1746);
+ assert.equal((combined.match(/data-cs=/g)||[]).length,2000);
  assert.equal((combined.match(/data-county-area/g)||[]).length,0,'the combined finder does not repeat all detailed place lists');
  for(const state of states){
   assert.ok(byPath.has(state.path),state.path);
@@ -103,9 +104,12 @@ test('compact page-local search data round-trips and bounded hubs do not repeat 
  const longNames=['a'.repeat(36)+' one','a'.repeat(36)+' two'];
  assert.deepEqual(unpackCountyNames(packCountyNames(longNames)),longNames,'long common prefixes retain every character');
  for(const card of cards)assert.deepEqual(unpackCountySearch(packCountySearch(card.terms.join('|'),dictionary),names),card.terms,card.state+'/'+card.slug);
- assert.ok(Buffer.byteLength(countyDirectory())<375_000,'all-area search stays under 375 KB uncompressed');
+ const combined=countyDirectory();
+ assert.ok(Buffer.byteLength(combined)<450_000,'all-area search stays under 450 KB uncompressed');
+ assert.ok(gzipSync(combined).length<195_000,'all-area search stays under 195 KB gzip');
  for(const [state,html] of directories){
-  assert.ok(Buffer.byteLength(html)<200_000,state+' directory stays under 200 KB uncompressed');
+  assert.ok(Buffer.byteLength(html)<(state==='texas'?375_000:200_000),state+' directory stays within its reviewed uncompressed budget');
+  if(state==='texas')assert.ok(gzipSync(html).length<60_000,'Texas directory stays under 60 KB gzip');
   const sources=[...html.matchAll(/href="(https?:[^\"]+)"/g)].map(match=>match[1]);
   assert.equal(sources.length,new Set(sources).size,state+' cites each source URL once');
  }
@@ -135,6 +139,6 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
  assert.equal(count,333);assert.equal(Object.keys(retiredCountyRoutes).length,2);
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
- const changed=countyPages(altered);assert.equal(changed.length,30);
+ const changed=countyPages(altered);assert.equal(changed.length,31);
  for(const page of changed)for(const price of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);
 });

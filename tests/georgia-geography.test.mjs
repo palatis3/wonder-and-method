@@ -23,21 +23,21 @@ const municipalities=Object.values(geography).flatMap(area=>area.municipalityDet
 const communities=Object.values(geography).flatMap(area=>area.communities);
 
 test('Georgia preserves all 1,082 existing service records and 1,125 existing area identities',()=>{
- const prior=records.filter(record=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas'].some(state=>record.path.startsWith('/areas/'+state+'/')));
+ const prior=records.filter(record=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas'].some(state=>record.path.startsWith('/areas/'+state+'/')));
  assert.deepEqual(prior.map(record=>record.path).sort(),preservation.recordPaths);
  assert.equal(createHash('sha256').update(JSON.stringify(prior.map(beforeReviewedLocationEdits))).digest('hex'),preservation.recordsArraySha256);
- assert.deepEqual(serviceStates.filter(region=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas'].includes(region.id)).flatMap(region=>region.counties.map(county=>region.id+'/'+county.slug)).sort(),preservation.identities);
+ assert.deepEqual(serviceStates.filter(region=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas'].includes(region.id)).flatMap(region=>region.counties.map(county=>region.id+'/'+county.slug)).sort(),preservation.identities);
 });
 
 test('Georgia adds only the seven approved routes, retaining every existing route and sitemap entry',()=>{
  const pages=renderPages({config,offers,map,geography:erieGeography});
- const routes=pages.map(page=>page.path).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas)\//.test(path)).sort();
+ const routes=pages.map(page=>page.path).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas)\//.test(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1210);
  assert.equal(approvedPaths.length,7);
  assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
- assert.deepEqual(Object.keys(dates).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
  const sitemap=crawlFiles(config,pages).sitemap;
- const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas)\//.test(path)).sort();
+ const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas)\//.test(path)).sort();
  assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
  assert.deepEqual(records.filter(record=>record.path.startsWith('/areas/georgia/')).map(record=>record.path).sort(),approvedPaths.filter(path=>path!=='/areas/georgia/').sort());
 });

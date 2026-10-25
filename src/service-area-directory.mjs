@@ -43,7 +43,7 @@ export function serviceAreaDataForPath(path){
  return null;
 }
 const a=(path,label)=>`<a href="${e(path)}">${e(label)}</a>`;
-const placeTypeLabels={District:'Districts',City:'Cities',Town:'Towns',Village:'Villages',Borough:'Boroughs',Township:'Townships','Charter township':'Charter townships',Corporation:'Corporations','Consolidated city-county government':'Consolidated city-county governments','Urban county government':'Urban county governments','Metropolitan government':'Metropolitan governments','Inactive incorporated town':'Inactive incorporated towns','Town with suspended charter':'Towns with suspended charters','Census-designated place':'Census-designated places',Neighborhood:'Selected neighborhoods','Council ward':'Council wards',Precinct:'Precincts','Election precinct':'Election precincts'};
+const placeTypeLabels={District:'Districts',City:'Cities',Town:'Towns',Village:'Villages',Borough:'Boroughs',Township:'Townships','Charter township':'Charter townships',Corporation:'Corporations','Consolidated city-county government':'Consolidated city-county governments','Urban county government':'Urban county governments','Metropolitan government':'Metropolitan governments','Inactive incorporated town':'Inactive incorporated towns','Town with suspended charter':'Towns with suspended charters','Census-designated place':'Census-designated places',Neighborhood:'Selected neighborhoods','Council ward':'Council wards',Precinct:'Precincts','Election precinct':'Election precincts','Census county division':'Census county divisions (statistical)'};
 const sourceUrls=g=>[...new Set([...(g.sources||[]),...(g.communities||[]).flatMap(item=>[item.source,...(item.sources||[]),...(item.additionalSources||[])]),...(g.administrativeDistricts||[]).map(item=>item.source),...(g.municipalityDetails||[]).flatMap(item=>[item.source,...(item.sources||[]),...(item.additionalSources||[]),...(item.governmentTypeSources||[])])].filter(url=>typeof url==='string'&&/^https?:\/\//.test(url)))];
 function sourceLabel(url,context){
  const parsed=new URL(url);
@@ -117,7 +117,7 @@ export function countySearchText(county,state,region){
  for(const place of g?.municipalityDetails||[])if(place.type==='Charter township')add(place.name,'h');
  for(const place of g?.communities||[])add(place.name,place.type==='Neighborhood'?'n':place.type==='Census-designated place'?'x':'p');
  for(const district of g?.administrativeDistricts||[]){
-  const type=({'Election precinct':'e',Precinct:'q',District:'j',Township:'s',Ward:'w','Council ward':'w'})[district.type];
+  const type=({'Census county division':'z','Election precinct':'e',Precinct:'q',District:'j',Township:'s',Ward:'w','Council ward':'w'})[district.type];
   if(!type)throw Error('Unknown administrative place type: '+district.type);
   add(district.name,type);if(type==='w')add(district.name.replace(/^Ward\s+/i,''),type);
  }

@@ -99,6 +99,20 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
  const download=await page.request.get(await template.getAttribute('href'));expect(download.status()).toBe(200);expect((await download.text()).length).toBeGreaterThan(300);
 });
 
+test('Texas directory entries and reviewed county briefs remain usable without JavaScript',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
+ await page.goto('/areas/texas/?qa=1');await openNativeCountyLists(page,254);
+ const entry=await openNativeCountyEntry(page,'anderson','Palestine');
+ await expect(entry.getByRole('link',{name:/Web design/i})).toHaveAttribute('href','/areas/texas/anderson-county/');
+ await page.goto('/areas/texas/ellis-county/?qa=1');
+ const question=faqsByPath['/areas/texas/ellis-county/'][0];
+ await expect(page.locator('#service-questions').getByRole('heading',{name:question.question,exact:true})).toBeVisible();
+ await expect(page.locator('#service-questions p').first()).toHaveText(question.answer);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+ await page.getByRole('link',{name:'Ask about your website',exact:true}).first().click();
+ await expect(page.locator('input[name="county"]')).toHaveValue('texas/ellis-county');
+});
+
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
  await expect(page.getByRole('searchbox',{name:'County, parish, region or community'})).toBeDisabled();
@@ -145,7 +159,7 @@ test('New York county places and source references remain usable without JavaScr
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,1746);
+ await openNativeCountyLists(page,2000);
  await page.locator('.state-area-links a[href="/areas/pennsylvania/"]').click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);

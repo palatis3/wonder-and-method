@@ -52,7 +52,7 @@ test('published guides have unique metadata, visible authorship and matching art
 
 test('new guides keep publication gates, distinct downloads and reciprocal service links',async()=>{
  const comparison='/guides/website-care-versus-seo/',audit='/guides/website-audit-checklist/',held=[comparison,audit,...semrushGuidePaths];
- assert.equal(journal.length,65);assert.equal(pages.length,1259);for(const route of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===route));assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
+ assert.equal(journal.length,65);assert.equal(pages.length,1476);for(const route of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===route));assert.ok(pages.some(page=>page.path==='/services/'));assert.ok(pages.some(page=>page.path==='/payments/'));
  const gated=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>!held.includes(x.path))},offers,map,geography});
  assert.ok(!gated.some(x=>held.includes(x.path)));for(const page of gated)for(const target of held)assert.ok(!page.html.includes(`href="${target}"`),page.path+' -> held '+target);
  for(const path of ['/services/website-care/','/services/seo/'])assert.ok(pages.find(x=>x.path===path).html.includes(`href="${comparison}"`),path);

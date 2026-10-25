@@ -2604,5 +2604,83 @@
         }
       ]
     }
+  ],
+  "/areas/texas/bailey-county/": [
+    {
+      "question": "Should the room page reproduce the entire facilities policy?",
+      "answer": "The main page can explain the decisions an organizer needs first, such as the event purpose, proposed charges and request route, while linking to the complete approved policy. I would confirm with you which document is authoritative and how changes to it will reach the website. A short introduction should not replace the full policy or hide a condition that changes whether the event is suitable.",
+      "links": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Plan the content and supporting documents"
+        }
+      ]
+    }
+  ],
+  "/areas/texas/bosque-county/": [
+    {
+      "question": "What should happen to last year’s exhibition page when a new call opens?",
+      "answer": "I would keep useful past results under their year, clearly mark the old call as closed and give the new call its own approved dates and submission instructions. We can identify which information carries forward and which must be reviewed each year, then include that update process in the handoff. Reusing the page should not silently carry old deadlines or award terms into the new call.",
+      "links": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved content for each page"
+        }
+      ]
+    }
+  ],
+  "/areas/texas/eastland-county/": [
+    {
+      "question": "What can we do about links that still point to the former collection location?",
+      "answer": "First list the old references and identify which pages you control. On your own site, update the destination and explain the move where readers need that context; redirect a retired URL only after checking what useful content it still serves. For another organization’s page, prepare the corrected wording and destination for its owner to review. A website project cannot silently change a third party’s page.",
+      "links": [
+        {
+          "path": "/guides/website-migration-checklist/",
+          "label": "Plan changes to existing URLs"
+        }
+      ]
+    }
+  ],
+  "/areas/texas/ellis-county/": [
+    {
+      "question": "What if our downloadable rental sheet and website show different terms?",
+      "answer": "The responsible venue contact must identify the current approved terms before I rewrite either version. We can then list the affected pages, downloads and inquiry instructions and update them together within the agreed scope. Keep a version date and an owner for later changes. I would leave an unresolved charge out of a worked example rather than choose the cheaper or newer-looking line."
+    }
+  ],
+  "/areas/texas/garza-county/": [
+    {
+      "question": "Can we check the seating-request handoff without buying test tickets?",
+      "answer": "Yes, when the agreed work is content or inquiry handling. Use invented references approved by the owner and an authorized test destination to check that the performance and separate-order context survive the handoff. Do not send test requests to a live box office or create a paid order without a separately agreed method. Record which provider behavior could not be verified."
+    }
+  ],
+  "/areas/texas/hall-county/": [
+    {
+      "question": "Who should maintain room details when the booking provider also displays them?",
+      "answer": "Agree which approved room record is the reference, then list every place that repeats its bathroom and amenity information. The owner supplies changes; the website scope states which website fields and provider fields I can update. A link to an existing booking service does not include ongoing management of that service. Check the destination after a room name changes so the two descriptions still refer to the same option."
+    }
+  ],
+  "/areas/texas/rockwall-county/": [
+    {
+      "question": "Can the site explain card requirements without collecting identity documents?",
+      "answer": "Yes. We can publish an approved preparation list and direct applicants to the library’s existing desk or authorized process. The informational site does not need an identity-upload field to explain what to bring. If you later want online applications or document handling, we assess that separately with the responsible staff before choosing tools or collecting information."
+    }
+  ],
+  "/areas/texas/stephens-county/": [
+    {
+      "question": "Can an ended workshop remain as a record of the arts center’s work?",
+      "answer": "Yes, when the dated recap is useful and the center has permission to publish its photographs and participant work. We can agree on an archive format that identifies the completed workshop, removes expired registration actions and links to current programs. An archive should not imply the same instructor, project or terms are available again."
+    }
+  ],
+  "/areas/texas/sutton-county/": [
+    {
+      "question": "Will a tour-comparison project require new photography?",
+      "answer": "Not necessarily. Start with images you own or are authorized to use, identifying the actual tour format each image shows. I can assess whether that material explains the relevant differences and identify gaps in the brief. New photography, site visits or permissions for third-party images are separate work; publicly visible tour photographs are not automatically licensed for reuse."
+    }
+  ],
+  "/areas/texas/swisher-county/": [
+    {
+      "question": "Can we update the public borrowing explanation without replacing the catalog?",
+      "answer": "Yes, if the existing website supports the agreed changes. We can keep catalog and account tasks in their current system while improving the public explanation and links. Before quoting, identify who approves library policy and who can publish the website change; a catalog vendor and a website editor may have different responsibilities."
+    }
   ]
 }

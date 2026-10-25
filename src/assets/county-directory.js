@@ -55,12 +55,12 @@ export async function decodeCountyNames(payload){
 export async function decodeCountySearchCards(payload,names){
  return (await decodeCountyPayload(payload)).split('\n').map(value=>unpackCountySearch(value,names));
 }
-const placeTypes={parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x'};
+const placeTypes={parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z'};
 const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
 const typedPrefix=new RegExp('^('+typePattern+') of (.+)$'),typedSuffix=new RegExp('^(.+?) ('+typePattern+')$');
 const stateNames=Object.fromEntries(serviceStateInfo.flatMap(state=>[state.name,state.abbreviation,...(state.aliases||[])].map(name=>[normalizeCountyQuery(name),state.id])).sort((a,b)=>b[0].length-a[0].length));
 export function parseCountyQuery(value){
- let query=normalizeCountyQuery(value),state='',type='';
+ let query=normalizeCountyQuery(value),state='',type='',literalName='';
  for(const [name,id] of Object.entries(stateNames)){
   if(query===name){state=id;query='';break;}
   if(query.endsWith(' '+name)&&!query.endsWith(' of '+name)){state=id;query=query.slice(0,-name.length).trim();break;}
@@ -69,18 +69,23 @@ export function parseCountyQuery(value){
  if(query==='new york city')return {query,state,type};
  // District of Columbia is the name, not a "District of" type prefix.
  if(query==='district of columbia federal district')return {query:'district of columbia',state,type:'federal district'};
- const prefix=query.match(typedPrefix)||query.match(/^(election precinct|precinct|ward|district|township) (.+)$/);
+ const prefix=query.match(typedPrefix);
+ const barePrefix=query.match(/^(census county division|ccd|election precinct|precinct|ward|district|township) (.+)$/);
  const suffix=query.match(typedSuffix);
  // Preserve names ending in a place type, such as City of Traverse City.
  if(prefix){type=prefix[1];query=prefix[2];}
- else if(suffix){type=suffix[2];query=suffix[1];}
- return {query,state,type};
+ // Explicit CCD prefixes keep names such as Rio Grande City intact.
+ // Other suffixes disambiguate District Heights city and Ward County.
+ else if(barePrefix&&placeTypes[barePrefix[1]]==='z'){type=barePrefix[1];query=barePrefix[2];}
+ else if(suffix){literalName=query;type=suffix[2];query=suffix[1];}
+ else if(barePrefix){type=barePrefix[1];query=barePrefix[2];}
+ return {query,state,type,...(literalName?{literalName}:{})};
 }
 export function countyMatchScore(card,search,selectedState=''){
  return countyMatch(card,search,selectedState).score;
 }
 export const compareCountyMatches=(a,b)=>b.score-a.score||(b.population||0)-(a.population||0);
-const typeLabels={u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',a:'place',p:'place or region'};
+const typeLabels={u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',z:'Census county division (statistical)',a:'place',p:'place or region'};
 export function countyMatch(card,search,selectedState=''){
  if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return {score:0};
  if(!search.query)return {score:1,name:'',type:'state'};
@@ -93,7 +98,10 @@ export function countyMatch(card,search,selectedState=''){
   if(search.type&&!type.includes(placeTypes[search.type])&&!countyInMunicipalName)continue;
   // A typed name identifies the complete place; unqualified input can match
   // the start of any word, so Erie cannot accidentally match Deferiet.
-  const exact=name===search.query||countyInMunicipalName;
+  // A natural suffix query may itself be the complete legal name, e.g.
+  // Texas City. Keep this fallback exact and subject to the type filter;
+  // explicit prefixes such as City of Texas do not use it.
+  const exact=name===search.query||name===search.literalName||countyInMunicipalName;
   const match=exact||(!search.type&&(name.startsWith(search.query)||name.includes(' '+search.query)));
   // A merged name may identify both a county and its same-named city. Rank
   // explicit queries by the requested type, without the other type's bonus.
@@ -106,7 +114,7 @@ export function countyMatch(card,search,selectedState=''){
   const score=match?(exact?(city?8:matchType.includes('a')?7:isArea?6:5):isArea||matchType.includes('a')?2:1):0;
   const label=city?(type.includes('i')?'independent city':'city'):typeLabels[Object.keys(typeLabels).find(key=>type.includes(key))]||'place';
   const population=exact&&city?countyCityPopulations[card.state+'/'+name]||0:0;
-  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':search.type||label};
+  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':placeTypes[search.type]==='z'?typeLabels.z:search.type||label};
  }
  return result;
 }

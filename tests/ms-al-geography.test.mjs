@@ -18,7 +18,7 @@ import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
 const states=['mississippi','alabama'];
-const laterStates=['wisconsin','illinois','louisiana','arkansas'];
+const laterStates=['wisconsin','illinois','louisiana','arkansas','texas'];
 const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const isAddition=path=>states.some(state=>path.startsWith('/areas/'+state+'/'));
 
