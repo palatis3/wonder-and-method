@@ -63,12 +63,11 @@ test('county entry preserves readable local facts and place lists',async({page})
 });
 
 for(const [name,path,scrollTop] of [['floating-tools-home','/',0],['floating-tools-content','/areas/texas/milam-county/',600]]){
- test(`${name} use the approved desktop corner or phone help row`,async({page})=>{
+ test(`${name} use floating corners on desktop and phone`,async({page})=>{
   await page.goto(path+'?qa=1');await settle(page);
   await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},scrollTop);
-  if(page.viewportSize().width<=767)await page.locator('.support-chat-launch').scrollIntoViewIfNeeded();
   await expect(page.locator('.support-chat-launch')).toBeVisible();
-  await expect(page.locator('.support-chat')).toHaveCSS('position',page.viewportSize().width<=767?'static':'fixed');
+  await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
   if(scrollTop>=520)await expect(page.locator('.back-to-top')).toBeVisible();
   await expect(page).toHaveScreenshot(name+'.png');
  });
