@@ -26,6 +26,18 @@ async function settle(page){
   return [...document.images].filter(img=>img.getClientRects().length&&(!img.complete||!img.naturalWidth)).map(img=>img.currentSrc||img.src);
  });
  expect(broken,'Visible images must load before accepting a visual baseline').toEqual([]);
+ if(await city.count()){
+  // A full-page capture can precede Chromium rasterizing decoded offscreen
+  // artwork. Paint the actual viewport across the page before comparing it.
+  // Keep the real CSS, image bytes and layout intact.
+  const height=await page.evaluate(()=>document.documentElement.scrollHeight);
+  const step=page.viewportSize().height;
+  for(let y=0;y<height;y+=step){
+   await page.evaluate(async top=>{scrollTo({top,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));},y);
+   await page.screenshot({animations:'disabled'});
+  }
+  await page.evaluate(async()=>{scrollTo({top:0,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
+ }
  await page.mouse.move(0,0);
 }
 for(const [name,path] of [
