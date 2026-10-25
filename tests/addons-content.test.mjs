@@ -25,7 +25,7 @@ test('add-on service is discoverable, indexable and separate from all eight base
  assert.deepEqual(offers.add_ons.map(item=>item.id),expectedIds);
  assert.deepEqual(pages.filter(page=>page.path.startsWith('/checkout/')).map(page=>page.path).sort(),baseIds.map(id=>'/checkout/'+id.replaceAll('_','-')+'/').sort());
  assert.equal((pricing.html.match(/class="compact-offer"/g)||[]).length,8);
- assert.match(catalogue.html,/<h1>Add what your<br>website needs\.<\/h1>/);
+ assert.match(catalogue.html,/<h1>Website add-ons:<br>extra pages, forms and tools\.<\/h1>/);
  assert.match(catalogue.html,/class="studio-contact-note"/);
  assert.match(catalogue.html,/class="back-to-top"/);
  assert.match(catalogue.html,/class="support-chat/);

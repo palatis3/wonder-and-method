@@ -41,7 +41,7 @@ test('county service titles retain every market name and CTAs carry context with
   const display=locationServiceDisplay(entry),page=pages.find(x=>x.path===entry.path);
   assert.equal(display.market,entry.market.split(' / ').join(', '));assert.ok(page.title.startsWith('Web design for '));assert.equal(page.title,display.title);
   assert.ok(page.description.startsWith('Web design for '),entry.path);assert.doesNotMatch(page.description,/Example brief:/);assert.ok(page.description.length<=160,entry.path);
-  assert.ok(page.body.includes(escapeHtml(entry.lead)));assert.ok(page.body.includes(escapeHtml(entry.decision)));
+  assert.ok(page.body.includes(escapeHtml(entry.lead)));assert.ok(page.body.replace(/<\/p><p>/g,' ').includes(escapeHtml(entry.decision)));
   const links=[...page.body.matchAll(/href="([^"<>]*\/contact\/[^"<>]*)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://example.test')).filter(url=>url.origin==='https://example.test'&&url.pathname==='/contact/');
   assert.equal(links.length,2,entry.path);
   for(const url of links){assert.equal(url.searchParams.get('county'),entry.path.slice(7,-1));assert.equal(url.searchParams.get('request_kind'),'question');assert.equal(url.searchParams.get('goal'),null);}

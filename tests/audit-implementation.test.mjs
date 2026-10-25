@@ -130,7 +130,7 @@ test('source-handoff scopes survive quote drafting with clear agreed delivery li
  const html=pages.map(p=>p.html).join(' ');
  assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);
  const web=pages.find(p=>p.path==='/services/web-design/').html;
- assert.match(web,/website files, approved text and images, publishing instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
+ assert.match(web,/website files, approved text and images, and publishing instructions/);assert.doesNotMatch(web,/No browser editor|lead tracker is bundled/);
  assert.match(web,/one initial launch/i);
  assert.doesNotMatch(web,/ten products|twenty-five total variants|three principal screens|five stages|two staff permission levels/);
  assert.ok(pages.find(p=>p.path==='/services/seo/').html.includes('20-minute call or written review'));

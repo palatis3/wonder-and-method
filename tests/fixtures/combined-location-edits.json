@@ -14654,7 +14654,7 @@
     {
       "path": "/areas/indiana/brown-county/",
       "beforeSha256": "e2eae7434e370fe847b2867c41b1108722b1f17b59dc4239f781d11baa498fcd",
-      "afterSha256": "f43d7176b93226a26a3d5c9c8749f9e6a79e266dda0d94e18cc23912e1fb901e",
+      "afterSha256": "a74c9926000d18981d51eaebc971b081eb6e0911b17d047f90622d39b9bc09bd",
       "edits": [
         {
           "path": [
@@ -14673,6 +14673,15 @@
           "after": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
           "beforeExists": true,
           "afterExists": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": "Our Little World Studio in Nashville describes a weekend mug class that starts with wheel work on Friday, continues with a Saturday or Sunday return to trim and add a handle, and ends with the finished mug being shipped later. The return is part of making the object, not simply collecting it. I can clarify this sequence around an existing booking link or build a fuller workshop introduction that compares the attendance pattern of each activity. A visitor should be able to decide whether their weekend includes the required making time before selecting a class. The studio supplies current dates, participation rules and handoff instructions.",
+          "after": "Our Little World Studio in Nashville describes a weekend mug class that starts with wheel work on Friday. Participants return on Saturday or Sunday to trim and add a handle. The finished mug is shipped later. The return is part of making the object, not simply collecting it. I can clarify this sequence around an existing booking link or build a fuller workshop introduction that compares the attendance pattern of each activity. A visitor should be able to decide whether their weekend includes the required making time before selecting a class. The studio supplies current dates, participation rules and handoff instructions."
         }
       ]
     },
@@ -19042,7 +19051,7 @@
     {
       "path": "/areas/south-carolina/anderson-county/",
       "beforeSha256": "3fe3e959af5a758d90f37e5f6b779d4b47c0ae06b860cf4c52384ce45ea3f722",
-      "afterSha256": "4386238c353c472472720673b3e7df8d0857c90cab5b6aad9c6fd3a9ad2c86c8",
+      "afterSha256": "11071479f1a8fd4789fa18316e1abf8a862d27808f8ec1a53f8efc8a18920b68",
       "edits": [
         {
           "path": [
@@ -19052,6 +19061,15 @@
           "after": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
           "beforeExists": true,
           "afterExists": true
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": "Staar Tailors is a public research example: its bridal guidance accounts for portraits before the wedding, asks customers to bring their shoes and undergarments, and explains that an accurate quote follows a consultation where the dress is pinned and assessed. It also identifies steaming as an Anderson-only service. For a proposed alterations website, consider a customer with portraits on May 2 and a wedding on May 30. The request should retain both dates and explain why May 2 matters to the fitting conversation. Selecting a location should also preserve the requested service: an alteration inquiry and a steaming request need the correct location guidance. I can clarify this preparation beside an existing appointment route or build a fuller inquiry that carries the dates, service and location together. These are proposed content and inquiry choices, not findings about the tailor’s current website.",
+          "after": "Staar Tailors is a public research example. Its bridal guidance accounts for portraits before the wedding and asks customers to bring their shoes and undergarments. An accurate quote follows a consultation where the dress is pinned and assessed. It also identifies steaming as an Anderson-only service. For a proposed alterations website, consider a customer with portraits on May 2 and a wedding on May 30. The request should retain both dates and explain why May 2 matters to the fitting conversation. Selecting a location should also preserve the requested service: an alteration inquiry and a steaming request need the correct location guidance. I can clarify this preparation beside an existing appointment route or build a fuller inquiry that carries the dates, service and location together. These are proposed content and inquiry choices, not findings about the tailor’s current website."
         }
       ]
     },
@@ -19548,6 +19566,22 @@
           "after": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
           "beforeExists": true,
           "afterExists": true
+        }
+      ]
+    },
+    {
+      "path": "/areas/texas/armstrong-county/",
+      "beforeSha256": "0bb3d5d6aa7b4a4c28906dea905f07fe200871d9135bd289f71b069204288b05",
+      "afterSha256": "d84290e9271ec011f8e12e187ace0746c83a61ec6731ed13a275b1f2d6eda628",
+      "edits": [
+        {
+          "path": [
+            "decision"
+          ],
+          "beforeExists": true,
+          "afterExists": true,
+          "before": "MERUS Adventure describes its guided tours as priced per rig. The bundle includes the tour, the driver’s Daily Entry Pass and the rig’s Daily 4x4 Pass; additional passengers need their own entry passes. Guests bring an eligible full-size 4x4, while vehicle rental is a separate route. For a visitor-business website, I would make the vehicle count the first booking question and show the included driver beside the additional-passenger step. A proposed acceptance check uses two friends who each drive a vehicle and each bring one passenger: the content should lead them to two rig bookings and separate admission for the two passengers, without treating the group as one rig or charging all four people as additional passengers. Vehicle suitability and driving requirements would remain with the operator’s current instructions.",
+          "after": "MERUS Adventure describes its guided tours as priced per rig. The bundle includes the tour, the driver’s Daily Entry Pass and the rig’s Daily 4x4 Pass; additional passengers need their own entry passes. Guests bring an eligible full-size 4x4, while vehicle rental is a separate route. For a visitor-business website, I would make the vehicle count the first booking question and show the included driver beside the additional-passenger step. A proposed acceptance check uses two friends who each drive a vehicle and each bring one passenger. The content should lead them to two rig bookings and separate admission for the two passengers. It should not treat the group as one rig or charge all four people as additional passengers. Vehicle suitability and driving requirements would remain with the operator’s current instructions."
         }
       ]
     }

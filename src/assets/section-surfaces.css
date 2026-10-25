@@ -4,6 +4,7 @@
    1/18 of that section, avoiding viewport units that include a scrollbar. */
 .studio-site{--surface-sage:#edf0e8;--surface-stone:#f1eee6;--surface-process:#e7eef3;--accent:#a34f2e;--section-gutter:min(5.5555556%,4.5rem)}
 .studio-site main>section:not(.civic-hero,.living-city-hero),
+.studio-site main>details.section,
 .studio-site .home-content>section,
 .studio-site .journal-prose>section{
  position:relative;isolation:isolate

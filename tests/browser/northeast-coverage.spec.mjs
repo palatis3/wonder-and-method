@@ -38,6 +38,8 @@ for(const width of [320,768,1440])for(const state of fixture.states){
   const initial=await layout(page);expect(initial.overflow,route+' initial overflow').toBeLessThanOrEqual(1);expect(initial.clipped,route+' initial clipping').toEqual([]);
   expect(initial.layoutShift,route+' layout shift').toBeLessThanOrEqual(0.1);
   expect(await page.locator('[data-county-area]').evaluateAll(entries=>entries.map(entry=>entry.id).sort())).toEqual(state.areas.map(area=>area.slug).sort());
+  const browse=page.locator('[data-county-browse-all]');
+  await browse.locator(':scope > summary').click();await expect(browse).toHaveAttribute('open','');
   for(const summary of await page.locator('[data-county-directory] > details > summary').all())await summary.click();
   await expect(page.locator('[data-cs]:visible')).toHaveCount(state.areas.length);
   for(const area of state.areas){
@@ -106,6 +108,8 @@ test('state and district finder preserves cross-boundary and typed names, resets
 
 test('planning-region entry supports keyboard use and general inquiry context without a mismatched worksheet',async({page})=>{
  await page.goto('/areas/connecticut/?qa=1');await settle(page);
+ const browse=page.locator('[data-county-browse-all]');
+ await browse.locator(':scope > summary').click();await expect(browse).toHaveAttribute('open','');
  const entry=page.locator('#lower-connecticut-river-valley'),group=page.locator('.county-region').filter({has:entry});
  await group.locator(':scope > summary').click();
  const summary=entry.locator(':scope > summary');await summary.focus();await page.keyboard.press('Enter');

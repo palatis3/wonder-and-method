@@ -15,6 +15,7 @@ for(const [group,paths] of [['Wisconsin and Illinois',wiIlPaths.slice(2)],['wave
  for(const path of batch){
   const response=await page.goto(path+'?qa=1');expect(response.status()).toBe(200);
   await page.evaluate(()=>document.fonts.ready);
+  const planning=page.locator('details.local-planning-details');await expect(planning).not.toHaveAttribute('open','');await planning.locator(':scope > summary').click();await expect(planning).toHaveAttribute('open','');
   const table=page.locator('.location-planning-table table');await expect(table).toHaveCount(1);
   await expect(table.locator('caption')).not.toBeEmpty();await expect(table.getByRole('columnheader')).toHaveCount(4);await expect(table.getByRole('rowheader')).toHaveCount(4);
   const headers=await table.getByRole('columnheader').allTextContents();

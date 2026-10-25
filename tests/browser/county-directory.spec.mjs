@@ -88,6 +88,8 @@ test('county finder supports shared villages, county aliases and a useful empty 
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  await expect(search).toBeVisible();await expect(page.locator('[data-cs]')).toHaveCount(62);await expect(visible).toHaveCount(0);
+ const browse=page.locator('[data-county-browse-all]');await expect(browse).not.toHaveAttribute('open','');
+ await browse.locator(':scope > summary').click();await expect(browse).toHaveAttribute('open','');
  await page.locator('#western-new-york > summary').click();
  await expect(page.locator('#western-new-york')).toHaveAttribute('open','');
  const initiallyOpenCount=await page.locator('[data-cs]:visible').count();expect(initiallyOpenCount).toBeGreaterThan(0);
@@ -104,6 +106,7 @@ test('county finder supports shared villages, county aliases and a useful empty 
  await expect(page.getByText('No service areas match that search.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('0 areas match your search.');
  await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(search).toBeFocused();await expect(page.locator('[data-cs]:visible')).toHaveCount(initiallyOpenCount);await expect(visible).toHaveCount(0);await expect(page.locator('#western-new-york')).toHaveAttribute('open','');
+ await expect(browse).toHaveAttribute('open','');
  await expect(page.locator('[data-county-directory]')).toBeVisible();
  expect(searchRequests).toEqual([]);
 });

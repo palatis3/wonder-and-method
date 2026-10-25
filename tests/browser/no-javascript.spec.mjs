@@ -1,4 +1,12 @@
 import {test,expect} from './fixtures.mjs';
+
+test('all guides remain browsable when search enhancement is unavailable',async({page},testInfo)=>{
+ test.skip(testInfo.project.name!=='no-javascript','Native fallback coverage');
+ await page.goto('/guides/?qa=1');await expect(page.locator('[data-guide-filters]')).toBeHidden();
+ await expect(page.locator('.journal-card')).toHaveCount(65);
+ await page.locator('.guide-examples > summary').click();await expect(page.locator('.journal-card:visible')).toHaveCount(65);
+ const hrefs=await page.locator('.journal-card h3 a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));expect(new Set(hrefs).size).toBe(65);
+});
 import faqsByPath from '../../src/service-faqs.json' with {type:'json'};
 
 test('service and county project answers remain accessible by keyboard without JavaScript',async({page},testInfo)=>{

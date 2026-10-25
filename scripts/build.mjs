@@ -26,6 +26,19 @@ import {transform,build as bundle} from 'esbuild';
 const root=resolve(import.meta.dirname,'..');
 const readJSON=async path=>JSON.parse(await readFile(resolve(root,path),'utf8'));
 
+export async function minifyBrowserAsset(source,loader='js'){
+ return (await transform(source,{loader,minify:true,target:['chrome110','safari16']})).code;
+}
+async function minifyCopiedBrowserAssets(output){
+ // These top-level files run in the site. Downloadable examples and archives
+ // retain their readable source files.
+ const assets=resolve(output,'assets');
+ for(const name of await readdir(assets))if(/\.(?:js|css)$/.test(name)){
+  const file=resolve(assets,name);
+  await writeFile(file,await minifyBrowserAsset(await readFile(file,'utf8'),name.endsWith('.css')?'css':'js'));
+ }
+}
+
 export async function buildCssBundles(assets,{includeChat=false}={}){
  const readStyles=async names=>(await Promise.all(names.map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
  const minify=async css=>(await transform(css,{loader:'css',minify:true,target:['chrome110','safari16']})).code;
@@ -55,7 +68,7 @@ export function applyCssBundles(html,boot,{family}={}){
 }
 
 export async function buildBrowserBundles(root,config){
- const journeyVersion=createHash('sha256').update(await readFile(resolve(root,'src/assets/journey-counts.js'))).digest('hex').slice(0,12);
+ const journeyVersion=createHash('sha256').update(await minifyBrowserAsset(await readFile(resolve(root,'src/assets/journey-counts.js'),'utf8'))).digest('hex').slice(0,12);
  const offers=normalizeOfferCatalog(JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8')));
  const publicOffers=publicOfferProjection(offers);
  const publicInputs=()=>({name:'browser-public-inputs',setup(build){
@@ -148,6 +161,7 @@ if(output!==resolve(root,'dist')) throw new Error('Invalid output');
 await mkdir(output,{recursive:true});
 for(const name of await readdir(output)){const target=resolve(output,name);if(!target.startsWith(output+'\\')&&!target.startsWith(output+'/'))throw Error('Invalid build child');await rm(target,{recursive:true,force:true});}
 await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
+await minifyCopiedBrowserAssets(output);
 await writeCountyBriefs(output);
 await writeDownloadAliases(output);
 const workbenchStateVersion=createHash('sha256').update(await readFile(resolve(output,'assets/lead-workbench-state.js'))).digest('hex').slice(0,12);

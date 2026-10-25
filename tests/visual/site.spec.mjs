@@ -16,14 +16,16 @@ async function settle(page){
   await expect(city).toHaveAttribute('data-city-ready','true');
   await expect(city).toHaveAttribute('data-city-state','reduced');
  }
- await page.evaluate(async()=>{
+ const broken=await page.evaluate(async()=>{
   document.querySelectorAll('img').forEach(img=>img.loading='eager');
   document.querySelectorAll('video').forEach(video=>video.pause());
   await document.fonts.ready;
   await Promise.all([...document.images].map(img=>img.complete?Promise.resolve():new Promise(resolve=>{img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});setTimeout(resolve,7000);})));
   await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));
   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  return [...document.images].filter(img=>img.getClientRects().length&&(!img.complete||!img.naturalWidth)).map(img=>img.currentSrc||img.src);
  });
+ expect(broken,'Visible images must load before accepting a visual baseline').toEqual([]);
  await page.mouse.move(0,0);
 }
 for(const [name,path] of [

@@ -6,7 +6,7 @@ test('Services separates three needs and keeps every choice readable at enlarged
  for(const width of [320,390,768,1440])for(const enlarged of [false,true]){
   await page.setViewportSize({width,height:1000});await page.goto('/services/?qa=1');await page.evaluate(()=>document.fonts.ready);
   if(enlarged)await page.addStyleTag({url:'/__services-large-text.css'});
-  const overview=page.locator('.services-overview');await expect(overview.locator('h1')).toHaveText('The right help for your website.');
+  const overview=page.locator('.services-overview');await expect(overview.locator('h1')).toHaveText('Website design, SEO and care.');
   await expect(overview.locator('.services-overview-group')).toHaveCount(3);
   const cards=overview.locator('.services-overview-card');await expect(cards).toHaveCount(7);
   for(const card of await cards.all()){await expect(card).toBeVisible();expect(await card.evaluate(el=>el.scrollWidth<=el.clientWidth+1)).toBe(true);}
