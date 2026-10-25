@@ -1,17 +1,18 @@
 {
-  "captureCommit": "027dc80dd391963d3da35b9955f0d67c7aa67c82",
-  "captureRun": 40168755193,
-  "artifactId": 12589392249,
-  "artifactSha256": "749d6dd6bc99737c67465b1e6014069f4043b45818fe04c832ba058fdc378aad",
+  "captureCommit": "7fccc06abf9efc62801d4f85c9db135022bdb5dc",
+  "captureRun": 40185193217,
+  "artifactId": 12595697410,
+  "artifactSha256": "6943115d66dd01aeb7a1abc34ea6839f16bdea44ea86ef855515bb60bbd983de",
   "environment": "GitHub ubuntu-24.04; Node 24; pinned Playwright Chromium",
-  "reviewedAt": "2026-10-25T06:24:21.544753+00:00",
-  "review": "Primary final visual review: the illustrated Studio, Services, Areas and Information footer cards retain the independently reviewed desktop row, phone stack and expanded lists. Services has three need-based groups with seven cards; About omits the full personal name/profile link. All 30 whole-page final images are byte-identical to capture 40168499812: all changed control regions were inspected, desktop compact chat clears content and phone controls occupy a distinct bottom bar. Passing focused browser checks cover scrolling and yielding to forms, menus and focused links. The five isolated phone images affected by the new backdrop are now byte-identical to the first reviewed capture after the test-only content isolator was corrected. The other isolated images are unchanged. Prior independent visual findings are resolved through these final pixels plus the control-placement source and interaction reviews. No source or public content changed between captures 40168499812 and 40168755193.",
+  "reviewedAt": "2026-10-25T10:41:59.553Z",
+  "review": "Independent Astra and primary review accepted all 20 changed captures: fourteen prior-page differences are only the 28-to-29-state coverage text with identical surrounding pixels and dimensions; both expanded footers add Texas in alphabetical order; four new images show the complete Milam brief and Anderson place classifications on desktop and phone. Table cards, reading space, actions and existing control behavior remain usable. The other 34 images are byte-identical. Full-content preservation, all 216 new pages at desktop/phone/320px, and native browsing/search checks have separate evidence. No public rendering inputs changed after the captured commit; subsequent edits correct two browser-test expectations.",
+  "independentReviewSha256": "4ae5790af8fc47b5c6288a5e8224bf76e525709088cf61798da033b4ced04760",
   "files": [
     {
       "file": "linux/desktop/about.png",
       "width": 1440,
       "height": 2806,
-      "sha256": "d9063f27b2d1dcecfcf3d4106b659d77a42899618c1c2068ccaf7a3c4a4227ff"
+      "sha256": "d82d1be34fd7933135ebaac37afb9b184fa27e7d7c209174108f28d16f5214f3"
     },
     {
       "file": "linux/desktop/alabama-entry.png",
@@ -23,7 +24,7 @@
       "file": "linux/desktop/care.png",
       "width": 1440,
       "height": 5680,
-      "sha256": "dd6740d953ddff4f3b625c8c3c0ef408c76f5111a988773ef870bba5e77dae31"
+      "sha256": "c88c76db84df86d7ab5d16ce62bd9d957a6a495abfaa4e480b1e07417af85198"
     },
     {
       "file": "linux/desktop/concept.png",
@@ -53,7 +54,7 @@
       "file": "linux/desktop/county.png",
       "width": 1440,
       "height": 4331,
-      "sha256": "b6fed20a9f05ce8dd54f5eeadcdeb093c7cd775ed77356b24dde673e06678a09"
+      "sha256": "f79153f81c243c6ab189cab093d49a02cbdb01ae3854bf14b677ece25ec3a090"
     },
     {
       "file": "linux/desktop/district-directory.png",
@@ -70,8 +71,8 @@
     {
       "file": "linux/desktop/footer-open.png",
       "width": 1440,
-      "height": 1776,
-      "sha256": "a946ff6e30aff72a788039d3e379c0e42e124cf85d22a5657f182f7dc72c270b"
+      "height": 1820,
+      "sha256": "5d5554146b864ab7f95a35a4cd7bb8f6a4ddc0576db3b05d39a1a0e1fea11114"
     },
     {
       "file": "linux/desktop/georgia-entry.png",
@@ -89,7 +90,7 @@
       "file": "linux/desktop/home.png",
       "width": 1440,
       "height": 5423,
-      "sha256": "1ac25f5a7abfb74741f8c96c2f0c4cc0e81577ee5648ed30cccb8c4f01e936e9"
+      "sha256": "42fd9ca766a246aedaf9f054e9a45deeed78701ad7ed8e4d94ff71f2844af78f"
     },
     {
       "file": "linux/desktop/illinois-entry.png",
@@ -107,7 +108,7 @@
       "file": "linux/desktop/monthly-seo.png",
       "width": 1440,
       "height": 5686,
-      "sha256": "955bf60b08ec1f0166c908a6ff24982f70a02f21205379a8aa7a5305683f6f27"
+      "sha256": "8ce2a1e66f831be4cb8717ca07bf69471ff4f1cdd1e9bdf5e0faaa02c12102f1"
     },
     {
       "file": "linux/desktop/pricing.png",
@@ -137,13 +138,25 @@
       "file": "linux/desktop/services.png",
       "width": 1440,
       "height": 3336,
-      "sha256": "9c6937b70249abb5663e87015420fee34efcf8611de85c15754c44378e0bcabc"
+      "sha256": "082eb5ae508fc4f204661c047672e6a40ef43a3debcf258d1e62d8874c546058"
+    },
+    {
+      "file": "linux/desktop/texas-county.png",
+      "width": 1440,
+      "height": 5823,
+      "sha256": "9336e4c9d0fb290d5c23595a2e60e339d53c663f38b9e7d1dd86c8cebc22c90b"
+    },
+    {
+      "file": "linux/desktop/texas-entry.png",
+      "width": 1296,
+      "height": 784,
+      "sha256": "a1a414b8cb25d46505407eea2f7bc1ca7e7a44a4f5946981ef945463a7c86bea"
     },
     {
       "file": "linux/desktop/web-design.png",
       "width": 1440,
       "height": 7256,
-      "sha256": "08dd029cca276503450f9f1aef5c8250c3d6913164430ca4fecec168cf34b5fc"
+      "sha256": "dfc2328b13dfbec4aea6fcabb092fbcae7797471c381bd723e76f2d5d3bb3885"
     },
     {
       "file": "linux/desktop/wisconsin-entry.png",
@@ -161,7 +174,7 @@
       "file": "linux/phone/about.png",
       "width": 390,
       "height": 3917,
-      "sha256": "22dfb1d889d8b95f14adcbffe2ece90523d728f42c82275d006dd81da1261a30"
+      "sha256": "44939d7f3afdde94a11492b6571fb334eecd1e5cfaad39f426c7327555594732"
     },
     {
       "file": "linux/phone/alabama-entry.png",
@@ -173,7 +186,7 @@
       "file": "linux/phone/care.png",
       "width": 390,
       "height": 7784,
-      "sha256": "1cd06c80a282aa3664c49d4d6950ee671904317207f5773c4101dc90767e4ee1"
+      "sha256": "673907a8d1dcc75e4d03cbdc67da15a07c0eb190d22cbadbcd1f7622ef91e6d3"
     },
     {
       "file": "linux/phone/concept.png",
@@ -203,7 +216,7 @@
       "file": "linux/phone/county.png",
       "width": 390,
       "height": 5808,
-      "sha256": "285eeba0e309e4d962b6d53bc1e1d6a6cea64ddd64fc153b7db9cdffbb1a26b2"
+      "sha256": "00b41fb0bdf0701213b8d453644f7d046b1b1a68bb5aa4e5450c3c578a456748"
     },
     {
       "file": "linux/phone/district-directory.png",
@@ -220,8 +233,8 @@
     {
       "file": "linux/phone/footer-open.png",
       "width": 390,
-      "height": 3169,
-      "sha256": "0bc249f1835da43e7108bdc32edfa2a455b05001d08518ba85316e1cf48e00d4"
+      "height": 3213,
+      "sha256": "f26066dfdeebe8bb0d98e5fe0ef8a6834d9e3c357755efe9f0f0bdc05165dab1"
     },
     {
       "file": "linux/phone/georgia-entry.png",
@@ -239,7 +252,7 @@
       "file": "linux/phone/home.png",
       "width": 390,
       "height": 8471,
-      "sha256": "ab91c82704ca5df27e6a573d69c6be85d21a4ec1ea75a2979865bd05708c4e48"
+      "sha256": "bdbd95f8509567212a2031d3ffd60ade90e02f73910b8eae250658c1b753de93"
     },
     {
       "file": "linux/phone/illinois-entry.png",
@@ -257,7 +270,7 @@
       "file": "linux/phone/monthly-seo.png",
       "width": 390,
       "height": 8338,
-      "sha256": "276c91d672eed7ea620180ab416a02834d4c57470b77bc8b1f9a14dcfcdcad06"
+      "sha256": "7a806a4a07b7b38db3c9d4244b6e965426e0e62772d53c973a85e6cf173c216c"
     },
     {
       "file": "linux/phone/pricing.png",
@@ -287,13 +300,25 @@
       "file": "linux/phone/services.png",
       "width": 390,
       "height": 5242,
-      "sha256": "4d7c7cde8bd9c1fde24bd637ef5e7eba50ef9b81906bfc3da3e47022898ff8ea"
+      "sha256": "f734d60fd5d2bd649160c3b3ffd59c2be8783b6b451672be701e175dbe40dcf8"
+    },
+    {
+      "file": "linux/phone/texas-county.png",
+      "width": 390,
+      "height": 9480,
+      "sha256": "ae1269a9df37bcf2c92416d7b5adbc054ab18ba95b2b2165fd0ec9e03d440038"
+    },
+    {
+      "file": "linux/phone/texas-entry.png",
+      "width": 350,
+      "height": 1072,
+      "sha256": "65e3f72335f9da73f2f4e3d7dd6e464e8d0d28b71e3b1c459b243dce383e2fcc"
     },
     {
       "file": "linux/phone/web-design.png",
       "width": 390,
       "height": 8159,
-      "sha256": "aecd1b73e9cf0f257250e5970643f0ceaa67fc46c817ed3ac7c65832fb2e4835"
+      "sha256": "495336972b5440e6bbe8bfe6fa89b89a5b04c66ef00f383c9c9c1678a5b4c35a"
     },
     {
       "file": "linux/phone/wisconsin-entry.png",
@@ -307,46 +332,5 @@
       "height": 12290,
       "sha256": "58b1782a9def9c35a1f2f6c87e59b6d7728439412e9e725dbb1b5d3b09cfb646"
     }
-  ],
-  "changedFiles": [
-    "linux/desktop/about.png",
-    "linux/desktop/care.png",
-    "linux/desktop/concept.png",
-    "linux/desktop/contact.png",
-    "linux/desktop/county.png",
-    "linux/desktop/district-directory.png",
-    "linux/desktop/footer-closed.png",
-    "linux/desktop/footer-open.png",
-    "linux/desktop/guide.png",
-    "linux/desktop/home.png",
-    "linux/desktop/monthly-seo.png",
-    "linux/desktop/pricing.png",
-    "linux/desktop/regional-directory.png",
-    "linux/desktop/scope-request.png",
-    "linux/desktop/web-design.png",
-    "linux/desktop/work.png",
-    "linux/phone/about.png",
-    "linux/phone/care.png",
-    "linux/phone/concept.png",
-    "linux/phone/contact.png",
-    "linux/phone/county.png",
-    "linux/phone/district-directory.png",
-    "linux/phone/footer-closed.png",
-    "linux/phone/footer-open.png",
-    "linux/phone/guide.png",
-    "linux/phone/home.png",
-    "linux/phone/monthly-seo.png",
-    "linux/phone/pricing.png",
-    "linux/phone/regional-directory.png",
-    "linux/phone/scope-request.png",
-    "linux/phone/web-design.png",
-    "linux/phone/work.png",
-    "linux/desktop/services.png",
-    "linux/phone/services.png"
-  ],
-  "retainedPriorCapture": {
-    "captureCommit": "77f717b58db8be80831d30a961d5896a6e4e584d",
-    "captureRun": 40055174071,
-    "reviewedAt": "2026-10-24T02:47:16.641042+00:00"
-  }
+  ]
 }

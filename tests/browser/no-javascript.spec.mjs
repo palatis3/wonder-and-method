@@ -103,7 +103,7 @@ test('Texas directory entries and reviewed county briefs remain usable without J
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/texas/?qa=1');await openNativeCountyLists(page,254);
  const entry=await openNativeCountyEntry(page,'anderson','Palestine');
- await expect(entry.getByRole('link',{name:/Web design/i})).toHaveAttribute('href','/areas/texas/anderson-county/');
+ await expect(entry.getByRole('link',{name:'Website design for Anderson County',exact:true})).toHaveAttribute('href','/areas/texas/anderson-county/');
  await page.goto('/areas/texas/ellis-county/?qa=1');
  const question=faqsByPath['/areas/texas/ellis-county/'][0];
  await expect(page.locator('#service-questions').getByRole('heading',{name:question.question,exact:true})).toBeVisible();

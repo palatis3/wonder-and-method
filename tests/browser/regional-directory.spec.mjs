@@ -34,7 +34,7 @@ test('typed searches distinguish governments and keyboard results open services 
  const search=searchbox(page),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,paths] of [
-  ['Austin city TX',['/areas/texas/hays-county/','/areas/texas/travis-county/','/areas/texas/williamson-county/']],
+  ['Austin city TX',['/areas/texas/bastrop-county/','/areas/texas/hays-county/','/areas/texas/travis-county/','/areas/texas/williamson-county/']],
   ['Carson county TX',['/areas/texas/#carson']],
   ['Richmond city VA',['/areas/virginia/richmond-city/']],
   ['Richmond county VA',['/areas/virginia/richmond-county/']],
