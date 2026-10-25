@@ -55,6 +55,7 @@ jobs:
             output/site-contract/
             evidence/technical-check.json
             evidence/site-quality.json
+            output/seo/
           if-no-files-found: ignore
           retention-days: 14
   standards:
