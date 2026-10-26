@@ -85,6 +85,8 @@ jobs:
         with:
           name: site-build-${{ github.run_attempt }}
       - run: npm run ci:browser -- verify-build
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - run: npx playwright install --with-deps chromium
       - name: Execute the assigned tests with complete result accounting
         run: npm run ci:browser -- shard ${{ matrix.shard }}
@@ -136,6 +138,8 @@ jobs:
         with:
           name: site-build-${{ github.run_attempt }}
       - run: npm run ci:browser -- verify-build
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - run: npx playwright install --with-deps chromium
       - run: npm run ci:gate -- reading-accessibility
       - name: Retain gate evidence
@@ -237,6 +241,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - run: npx playwright install --with-deps firefox webkit
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
@@ -263,6 +269,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - run: npx playwright install --with-deps chromium
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
@@ -338,6 +346,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - name: Install pinned Chromium and matching fonts
         run: npx playwright install --with-deps chromium
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2

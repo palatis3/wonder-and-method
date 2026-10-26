@@ -28,7 +28,7 @@ for(const [group,paths] of [['Wisconsin and Illinois',wiIlPaths.slice(2)],['wave
    }
   }
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
-  await page.locator('.location-source-note summary').click();await expect(page.locator('.location-source-note')).toContainText(['Mississippi and Alabama','Wisconsin and Illinois'].includes(group)?'Reviewed October 24, 2026.':'Reviewed October 23, 2026.');
+  await page.locator('.location-source-note summary').click();await expect(page.locator('.location-source-note')).toContainText(['/areas/tennessee/hardeman-county/','/areas/tennessee/unicoi-county/'].includes(path)?'Reviewed October 26, 2026.':['Mississippi and Alabama','Wisconsin and Illinois'].includes(group)?'Reviewed October 24, 2026.':'Reviewed October 23, 2026.');
   await page.addScriptTag({url:'/__location-axe.js'});
   const violations=await page.evaluate(async()=>{const result=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return result.violations.map(({id,nodes})=>({id,targets:nodes.map(node=>node.target)}));});
   expect(violations,path).toEqual([]);

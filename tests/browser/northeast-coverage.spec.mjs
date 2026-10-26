@@ -68,7 +68,7 @@ for(const width of [320,768,1440])for(const state of fixture.states){
 test('state and district finder preserves cross-boundary and typed names, resets focus and sends no search requests',async({page})=>{
  await page.goto('/areas/?qa=1');
  const search=page.getByRole('searchbox',{name:'County, parish, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
- await expect(state.locator('option')).toHaveCount(41);
+ await expect(state.locator('option')).toHaveCount(43); // 41 states, Washington DC and the all-states option.
  await expect(state.getByRole('option',{name:'South Carolina',exact:true})).toHaveAttribute('value','south-carolina');
  for(const [name,id] of [['Georgia','georgia'],['Mississippi','mississippi'],['Alabama','alabama'],['Wisconsin','wisconsin'],['Illinois','illinois'],['Louisiana','louisiana'],['Arkansas','arkansas'],['Texas','texas'],['Missouri','missouri'],['Iowa','iowa'],['Minnesota','minnesota'],['Oklahoma','oklahoma']])await expect(state.getByRole('option',{name,exact:true})).toHaveAttribute('value',id);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});

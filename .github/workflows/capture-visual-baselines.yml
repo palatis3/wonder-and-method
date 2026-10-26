@@ -14,6 +14,8 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - name: Use the signed Ubuntu archive for browser dependencies
+        run: bash scripts/ci-ubuntu-archive.sh
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - name: Produce candidates for human visual review
