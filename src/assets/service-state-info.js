@@ -43,10 +43,18 @@ export const serviceStateInfo = [
  {id:'arizona',name:'Arizona',abbreviation:'AZ'},
  {id:'oregon',name:'Oregon',abbreviation:'OR'},
  {id:'nevada',name:'Nevada',abbreviation:'NV'},
- {id:'washington',name:'Washington',abbreviation:'WA'}
-].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri','nevada'].includes(state.id)?'service areas':'counties'}));
+ {id:'washington',name:'Washington',abbreviation:'WA'},
+ {id:'colorado',name:'Colorado',abbreviation:'CO'},
+ {id:'utah',name:'Utah',abbreviation:'UT'},
+ {id:'puerto-rico',name:'Puerto Rico',abbreviation:'PR',kind:'territory'}
+].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='puerto-rico'?'municipios':state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri','nevada'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){
+ if(regions.includes('Puerto Rico')){
+  const district=regions.some(name=>/^(?:Washington,? DC|District of Columbia)$/i.test(name));
+  const count=regions.length-1-(district?1:0);
+  return new Intl.ListFormat('en-US',{style:'long',type:'conjunction'}).format([...(count?[`${count} ${count===1?'state':'states'}`]:[]),...(district?['Washington, DC']:[]),'Puerto Rico']);
+ }
  const district=regions.some(name=>/^(?:Washington,? DC|District of Columbia)$/i.test(name));
  const count=regions.length-(district?1:0);
  if(district)return (count?`${count} ${count===1?'state':'states'} and `:'')+'Washington, DC';

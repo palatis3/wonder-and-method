@@ -1,0 +1,22 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "PASS_FINAL_KEYWORD_ACCEPTANCE",
+  "database": "US",
+  "counts": {
+    "uniqueQueries": 1573,
+    "numeric": 101,
+    "positiveEstimates": 66,
+    "explicitZeroEstimates": 35,
+    "unavailableEstimates": 1472,
+    "refreshRequired": 1544,
+    "numericPartialRefreshRequired": 73
+  },
+  "interpretation": [
+    "All171 areas retain individual content assessments. No page is created because a keyword merely exists.",
+    "Four source-category mappings corrected using seven new observed phrases and one existing measurement; old literal phrases retained as exploratory only for those areas. Maricao Las Indieras alias is unverified; Naguabo Rio Blanco is mailing context only.",
+    "Colorado Questions preview shows five color-design questions among68 displayed total suggestions; not localized questions. Utah shows best-company/salary/unclear queries. Puerto Rico shows no data.",
+    "All three proposed FAQ-topic reports show Nothing found/Update metrics and no Questions panel; no question volume or empty successful panel is inferred. FAQ candidates remain based on source-supported residual reader questions and complete body comparisons, pending cohort review.",
+    "No search-volume, ranking, local-office or Google-approval claims should be added to public pages. No new guides arise from these metrics."
+  ],
+  "publicationStatus": "Local integration; release gates pending."
+}

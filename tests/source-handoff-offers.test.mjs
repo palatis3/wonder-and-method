@@ -31,7 +31,7 @@ test('every rendered route and buyer pack withdraws positive promises of bundled
  const html=pages.map(p=>p.html).join('\n')+'\n'+JSON.stringify(buyerPacks(offers));
  for(const pattern of [/Focused and Signature include (?:supported |bounded )?CMS/i,/Focused adds a browser/i,/Signature includes one (?:agreed |scoped )?workflow/i,/Choose ONE: a new-inquiry tracker/i,/day-30 review with one (?:contained|agreed small)/i,/reviews around days 30, 60 and 90/i,/up to (?:60|90|120) minutes of (?:scheduled )?(?:training|handoff)/i,/\/assets\/editor-walkthrough\//,/name="workflow"/])assert.doesNotMatch(html,pattern);
  assert.match(pages.find(p=>p.path==='/').html,/href="\/pricing\/"/);for(const path of ['/pricing/','/services/web-design/','/work/source-handoff/']){const copy=pages.find(p=>p.path===path).html;assert.match(copy,/website files/i);assert.match(copy,/developer/i);assert.match(copy,/no (?:visual or )?drag-and-drop editor/i);}
- assert.equal(pages.length,2183);for(const path of ["/areas/louisiana/","/areas/arkansas/"])assert.ok(pages.some(page=>page.path===path),path);assert.ok(!pages.some(p=>p.path==='/work/content-editor/'));
+ assert.equal(pages.length,2299);for(const path of ["/areas/louisiana/","/areas/arkansas/"])assert.ok(pages.some(page=>page.path===path),path);assert.ok(!pages.some(p=>p.path==='/work/content-editor/'));
  const value=validateInquiry({name:'Synthetic',email:'sample@example.test',business:'Fictional studio',service:'signature_site',message:'Synthetic check of retired workflow choices.',workflow:'client_portal'}).value;
  assert.ok(!Object.hasOwn(value,'workflow'));
 });

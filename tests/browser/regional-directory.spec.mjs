@@ -3,7 +3,7 @@ import {retiredCountyRoutes} from '../../deployment/retired-county-routes.mjs';
 import currentLocationPaths from '../fixtures/current-location-paths.mjs';
 
 const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval'],['south-carolina',46,'charleston'],['georgia',159,'richmond'],['mississippi',82,'yalobusha'],['alabama',67,'madison'],['wisconsin',72,'menominee'],['illinois',102,'cook'],['texas',254,'anderson']];
-const searchbox=page=>page.getByRole('searchbox',{name:'County, parish, region or community',exact:true});
+const searchbox=page=>page.getByRole('searchbox',{name:'County, parish, municipio, region or community',exact:true});
 
 test('new hubs reveal saved entry fragments with complete place lists and no horizontal overflow',async({page},testInfo)=>{
  test.setTimeout(60_000);
@@ -30,8 +30,8 @@ test('new hubs reveal saved entry fragments with complete place lists and no hor
 
 test('typed searches distinguish governments and keyboard results open services while directory bookmarks reveal places',async({page})=>{
  await page.goto('/areas/?qa=1');
- await expect(page.locator('[data-cs]')).toHaveCount(2893);
- const search=searchbox(page),state=page.getByRole('combobox',{name:'State or district',exact:true});
+ await expect(page.locator('[data-cs]')).toHaveCount(3064);
+ const search=searchbox(page),state=page.getByRole('combobox',{name:'State, district or territory',exact:true});
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,paths] of [
   ['Austin city TX',['/areas/texas/bastrop-county/','/areas/texas/hays-county/','/areas/texas/travis-county/','/areas/texas/williamson-county/']],

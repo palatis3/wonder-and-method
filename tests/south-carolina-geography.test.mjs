@@ -1,3 +1,4 @@
+import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
@@ -19,7 +20,7 @@ import linkCorrections from '../operations/ci-checks-20261023/source-link-correc
 import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 // Keep this historical release contract scoped to its original regions; later
 // Georgia additions have their own independent geography/preservation checks.
-const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const historicalStates=serviceStates.filter(state=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates].includes(state.id));
 const identities=historicalStates.flatMap(s=>s.counties.map(c=>s.id+'/'+c.slug));

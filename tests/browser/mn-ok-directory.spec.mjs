@@ -4,7 +4,7 @@ const areaIdentity=href=>{
  const url=new URL(href,'http://127.0.0.1:4187'),parts=url.pathname.split('/').filter(Boolean);
  return parts[1]+'/'+(url.hash?url.hash.slice(1):parts[2].replace(/-county$/,''));
 };
-const searchLabel='County, parish, region or community';
+const searchLabel='County, parish, municipio, region or community';
 
 test('Minnesota finder distinguishes statistical territories and retains cross-county city memberships',async({page},testInfo)=>{
  await page.goto('/areas/minnesota/?qa=1');

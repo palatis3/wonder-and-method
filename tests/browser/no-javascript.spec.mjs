@@ -129,7 +129,7 @@ test('Texas directory entries and reviewed county briefs remain usable without J
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'County, parish, region or community'})).toBeDisabled();
+ await expect(page.getByRole('searchbox',{name:'County, parish, municipio, region or community'})).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-cs]')).toHaveCount(count);
  await expect(page.locator('[data-cs]:visible')).toHaveCount(0);
@@ -173,7 +173,7 @@ test('New York county places and source references remain usable without JavaScr
 test('state directories and Pennsylvania county details work without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/areas/?qa=1');
- await openNativeCountyLists(page,2893);
+ await openNativeCountyLists(page,3064);
  await page.locator('.state-area-links a[href="/areas/pennsylvania/"]').click();
  await openNativeCountyLists(page,67);
  await expect(page.locator('[data-county-directory] > details[open]')).toHaveCount(10);

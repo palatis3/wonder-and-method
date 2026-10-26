@@ -13,11 +13,11 @@ import {inquiryContextSummary,inquiryRequestSummary,escapeHtml} from '../src/sha
 import offers from '../config/offers.json' with {type:'json'};
 
 test('every reviewed service-area page has a generated allowlisted provenance key while all legacy keys remain',async()=>{
- assert.equal(legacy.length,333);assert.equal(additions.length,1703);assert.equal(serviceAreaContextOptions.length,2036);
+ assert.equal(legacy.length,333);assert.equal(additions.length,1816);assert.equal(serviceAreaContextOptions.length,2149);
  assert.deepEqual(serviceAreaContextOptions.slice(0,legacy.length),legacy);
  assert.deepEqual(additions,deriveLocationInquiryContexts(entries));await assertLocationInquiryContexts();
  const template=inquiryFormMarkup({live:true}),input={name:'Synthetic Person',email:'synthetic@example.test',service:'unsure',message:'Synthetic validation only. No message sent.'};
- const paths=[...entries.map(x=>x.path),'/areas/erie-county/'];assert.equal(new Set(paths).size,2034);
+ const paths=[...entries.map(x=>x.path),'/areas/erie-county/'];assert.equal(new Set(paths).size,2147);
  for(const path of paths){
   const url=new URL(serviceAreaQuestionHref(path),'https://example.test'),county=url.searchParams.get('county');
   assert.equal(url.searchParams.get('request_kind'),'question');assert.equal(url.searchParams.get('offer'),'unsure');assert.equal(url.searchParams.get('goal'),null);
@@ -36,11 +36,11 @@ test('every reviewed service-area page has a generated allowlisted provenance ke
 
 test('county service titles retain every market name and CTAs carry context without assuming a new build',()=>{
  const before=JSON.stringify(entries),pages=locationServicePages(offers);
- assert.equal(pages.length,2033);
+ assert.equal(pages.length,2146);
  for(const entry of entries){
   const display=locationServiceDisplay(entry),page=pages.find(x=>x.path===entry.path);
   assert.equal(display.market,entry.market.split(' / ').join(', '));assert.ok(page.title.startsWith('Web design for '));assert.equal(page.title,display.title);
-  assert.ok(page.description.startsWith('Web design for '),entry.path);assert.doesNotMatch(page.description,/Example brief:/);assert.ok(page.description.length<=160,entry.path);
+  assert.equal(page.description,display.description,entry.path);assert.match(page.description,/web design for /i,entry.path);assert.doesNotMatch(page.description,/Example brief:/);assert.ok(page.description.length<=160,entry.path);
   assert.ok(page.body.includes(escapeHtml(entry.lead)));assert.ok(page.body.replace(/<\/p><p>/g,' ').replace(/\s+/g,' ').includes(escapeHtml(entry.decision).replace(/\s+/g,' ')),entry.path);
   const links=[...page.body.matchAll(/href="([^"<>]*\/contact\/[^"<>]*)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://example.test')).filter(url=>url.origin==='https://example.test'&&url.pathname==='/contact/');
   assert.equal(links.length,2,entry.path);

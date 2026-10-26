@@ -10,7 +10,7 @@ export function articleDateSchema(article) {
 }
 
 // DC is a federal district; county-page Service nodes keep their own area.
-export const serviceAreas = config => serviceCoverage(config).regions.map(name => ({'@type':/^(?:Washington,? DC|District of Columbia)$/i.test(name)?'AdministrativeArea':'State',name}));
+export const serviceAreas = config => serviceCoverage(config).regions.map(name => ({'@type':/^(?:Washington,? DC|District of Columbia|Puerto Rico)$/i.test(name)?'AdministrativeArea':'State',name}));
 
 export function organizationSchema(config, logo) {
   const origin = config.origin;

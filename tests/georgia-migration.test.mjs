@@ -1,3 +1,4 @@
+import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
@@ -16,7 +17,7 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/georgia-approved-paths.json' with {type:'json'};
 
-const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0030 adds exactly seven Georgia keys and preserves all 1182 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);

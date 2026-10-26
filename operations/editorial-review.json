@@ -324,6 +324,106 @@
       "reason": "Retain: the 38-word sentence is a parallel list of three distinct yard-rule observations: bottom-washing location, topside-washing approval, and approval/containment for specified surface work. The final exception qualifier remains attached to the source summary. The surrounding paragraph separately states the sandblasting prohibition, and the brief explicitly sends method decisions to yard staff; shortening by dropping these distinctions would blur the intake question.",
       "reviewer": "Independent Astra reviewer (/root/astra_nvwa_integration_review)",
       "reviewedAt": "2026-10-26T17:45:46.493Z"
+    },
+    {
+      "route": "/areas/utah/carbon-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "d77ebb6cddc0c2e7309554335a00593fc70322aaae7ca2d33a2c6e12588e3901",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces three concrete event phases—joint session, simultaneous breakouts and meal service—that explain why an organizer must describe the sequence before selecting rooms. The sentence keeps the proposed content request and its practical reason together.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/utah/iron-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "91140b6327387b98f6d81e9726f66f830cc06673725a6434908aa46c88eee11b",
+      "disposition": "retain",
+      "reason": "Retain: the semicolon connects one hypothetical comparison between daily and seasonal rental instructions. Keeping the two states together makes the check explicit: replacing the selected product must also replace the applicable return rule.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/utah/juab-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "2d7795f0564d9dd755d46cb0eddd7e04802c8749d222a99e0e32260da8a4372c",
+      "disposition": "retain",
+      "reason": "Retain: the sentence pairs the simple 150-minus-96 seating calculation with its immediate limitation. The 54-seat difference is a question for the operator; it does not confirm layout capacity or available extra chairs. Separating the caveat from the example could overstate the result.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/utah/morgan-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "d519527a0a826413f7a029381cc9105a7f56429b7299e41a4e6f2914e62e9ab7",
+      "disposition": "retain",
+      "reason": "Retain: one hypothetical group-booking scenario connects the organizer’s phone booking to the participants’ release instructions and office meeting point. The colon introduces the concrete follow-through, including the important distinction between check-in and the river.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/aguada-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "7ab9dbed3e8a79cea5c8ab52bba9009d68c5ad35d82c24ef38d031b17b83938b",
+      "disposition": "retain",
+      "reason": "Retain: this is a single fictional acceptance check with parallel outcomes after two input changes. Activity timing and meeting instructions must update, stay dates must persist, and host arrangements must remain separate from room confirmation.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/anasco-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "59cdc3e423cccf2c50c3f9a473e1f9164877af007b95b008640390d2535a264c",
+      "disposition": "retain",
+      "reason": "Retain: the semicolon connects two parts of the same fictional venue-choice check. The explicit capacity mismatch, separate ceremony choice and staff review are concrete, and the ending avoids inventing accessibility or a weather fallback.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/arecibo-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "eb3151f413368dcf5be8d85f02e5788854059d3d48ae2d7b5e773bef8b462d40",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces a parallel acceptance checklist for changing a group outing and vehicle count. It preserves people totals, exposes unresolved meal arrangements, and updates parking without inventing an admission calculation.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/carolina-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "74c04d42e7b12e5f320870283cb9a83e1aa1d2dcde13e09fce6f63e270de93c9",
+      "disposition": "retain",
+      "reason": "Retain: the sentence summarizes three related published admission and reservation conditions. Its colon keeps staff follow-up and a required deposit directly attached to the statement that submitting the form alone does not confirm a reservation.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/juncos-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "5d6336a7ae6df5682d604e0531682260ae6f99cc8628f14306cd62eea6d5b209",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces an ordered list of practical salon choices—existing nail material, selected service and length, and an additional design selection. The list explains the proposed customer question order without unrelated clauses.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/puerto-rico/san-sebastian-municipio/",
+      "rule": "long-sentence",
+      "evidenceSha256": "76c05670d8fb777e94acfa4d387173409f5fee0a2e2d7271b686fe9c6c1fca13",
+      "disposition": "retain",
+      "reason": "Retain: one hypothetical organizer’s meal and overnight stay ties three parallel preparation tasks to a clear limit. Identifying the package, included services and sleeping arrangement does not promise room availability.",
+      "reviewer": "Primary Codex and independent Astra integration review",
+      "reviewedAt": "2026-10-26T22:51:07.380Z",
+      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
     }
   ]
 }

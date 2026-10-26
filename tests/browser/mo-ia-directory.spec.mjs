@@ -5,7 +5,7 @@ const areaIdentity=href=>{
  const parts=url.pathname.split('/').filter(Boolean);
  return parts[1]+'/'+(url.hash?url.hash.slice(1):parts[2].replace(/-county$/,''));
 };
-const searchLabel='County, parish, region or community';
+const searchLabel='County, parish, municipio, region or community';
 
 test('Missouri finder keeps St. Louis City separate from the county and retains all Kansas City counties',async({page},testInfo)=>{
  await page.goto('/areas/missouri/?qa=1');
