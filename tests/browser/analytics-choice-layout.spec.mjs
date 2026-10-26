@@ -1,7 +1,6 @@
 import {test,expect} from './fixtures.mjs';
 const paths=['/','/areas/nevada/','/areas/nevada/churchill-county/','/contact/','/guides/ai-search-visibility/','/services/web-design/'];
-test('optional analytics heading stays compact after shared site styles load',async({page},testInfo)=>{
- test.skip(testInfo.project.name!=='desktop','One project covers both requested widths without duplicate execution.');
+test('optional analytics heading stays compact after shared site styles load',async({page})=>{
  test.setTimeout(90_000);
  for(const {width,height} of [{width:1440,height:900},{width:320,height:640}]){
   await page.setViewportSize({width,height});
