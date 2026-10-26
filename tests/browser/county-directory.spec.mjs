@@ -31,11 +31,13 @@ test('city relevance keeps explicit county and state choices available',async({p
  await search.fill('District of Columbia Federal District DC');await expect(best).toHaveCount(1);await expect(best).toHaveAttribute('href','/areas/district-of-columbia/district-of-columbia/');
  await search.fill('City of Traverse City MI');await expect(best).toHaveCount(2);
  expect(await best.evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort())).toEqual(["/areas/michigan/grand-traverse-county/","/areas/michigan/leelanau-county/"]);
- await search.fill('Jackson county');await expect(best).toHaveCount(17);
+ await search.fill('Jackson county');await expect(best).toHaveCount(19);
  await expect(page.locator('[data-county-best] a[href="/areas/texas/#jackson"]')).toHaveText('Jackson County (Edna)');
  for(const [state,anchor] of [['missouri','Kansas City'],['iowa','Maquoketa']])await expect(page.locator(`[data-county-best] a[href="/areas/${state}/jackson-county/"]`)).toHaveText(`Jackson County (${anchor})`);
+ await expect(page.locator('[data-county-best] a[href="/areas/minnesota/jackson-county/"]')).toHaveText('Jackson County');
+ await expect(page.locator('[data-county-best] a[href="/areas/oklahoma/#jackson"]')).toHaveText('Jackson County (Altus)');
  await expect(page.locator('[data-county-more] a')).toHaveCount(0);
- await expect(page.locator('[data-county-best] li')).toContainText(Array(17).fill('Matched county: jackson'));
+ await expect(page.locator('[data-county-best] li')).toContainText(Array(19).fill('Matched county: jackson'));
  expect(requests).toEqual([]);
 });
 
@@ -129,17 +131,18 @@ test('combined finder disambiguates states and shared place names without sendin
  const search=page.getByRole('searchbox',{name:'County, parish, region or community'}),state=page.getByRole('combobox',{name:'State or district',exact:true});
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
- await expect(page.locator('[data-cs]')).toHaveCount(2214);await expect(visible).toHaveCount(0);
+ await expect(page.locator('[data-cs]')).toHaveCount(2378);await expect(visible).toHaveCount(0);
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
- await search.fill('Hamburg');await expect(visible).toHaveCount(12);expect(await targets()).toEqual(["/areas/arkansas/#ashley","/areas/erie-county/","/areas/illinois/#calhoun","/areas/indiana/franklin-county/","/areas/iowa/fremont-county/","/areas/michigan/livingston-county/","/areas/missouri/scott-county/","/areas/new-jersey/sussex-county/","/areas/ohio/fairfield-county/","/areas/pennsylvania/berks-county/","/areas/wisconsin/#marathon","/areas/wisconsin/#vernon"]);
+ await search.fill('Hamburg');await expect(visible).toHaveCount(13);expect(await targets()).toEqual(["/areas/arkansas/#ashley","/areas/erie-county/","/areas/illinois/#calhoun","/areas/indiana/franklin-county/","/areas/iowa/fremont-county/","/areas/michigan/livingston-county/","/areas/minnesota/carver-county/","/areas/missouri/scott-county/","/areas/new-jersey/sussex-county/","/areas/ohio/fairfield-county/","/areas/pennsylvania/berks-county/","/areas/wisconsin/#marathon","/areas/wisconsin/#vernon"]);
  await state.selectOption('pennsylvania');await expect(visible).toHaveCount(1);
  await expect(page.locator('[data-county-filter-controls]').getByRole('status')).toHaveText('1 area matches your search in Pennsylvania.');
  await search.fill('');await expect(visible).toHaveCount(67);
  await state.selectOption('new-york');await expect(visible).toHaveCount(62);
- await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-cs]')).toHaveCount(2214);
+ await page.getByRole('button',{name:'Clear',exact:true}).click();await expect(state).toHaveValue('');await expect(search).toBeFocused();await expect(visible).toHaveCount(0);await expect(page.locator('[data-cs]')).toHaveCount(2378);
  await search.fill('Hamburg township MI');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/michigan/livingston-county/"]);
  await search.fill('Hamburg CDP IN');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/indiana/franklin-county/"]);
  await search.fill('Hamburg city IA');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/iowa/fremont-county/"]);
+ await search.fill('Hamburg city MN');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/minnesota/carver-county/"]);
  await search.fill('New Hamburg CDP MO');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/missouri/scott-county/"]);
  await search.fill('Erie PA');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/pennsylvania/erie-county/"]);
  await search.fill('Erie NY');await expect(visible).toHaveCount(1);expect(await targets()).toEqual(["/areas/erie-county/"]);

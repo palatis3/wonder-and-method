@@ -1,3 +1,4 @@
+import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import {beforeReviewedLocationEdits} from './fixtures/reviewed-location-edits.mjs';
 import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import test from 'node:test';
@@ -17,8 +18,10 @@ import map from '../authority/v5/site-map.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
+const mnOkStates=mnOkPaths.filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+
 const states=['mississippi','alabama'];
-const laterStates=['wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa'];
+const laterStates=['wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates];
 const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const isAddition=path=>states.some(state=>path.startsWith('/areas/'+state+'/'));
 

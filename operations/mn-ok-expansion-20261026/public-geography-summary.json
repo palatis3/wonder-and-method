@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-10-26T01:00:06.438417+00:00",
+  "states": [
+    {
+      "stateId": "minnesota",
+      "uniqueEntities": 2774,
+      "incorporatedPlaces": 856,
+      "cdps": 60,
+      "types": {
+        "City": 856,
+        "Census-designated place": 60,
+        "Township": 1799,
+        "Unorganized territory": 59
+      },
+      "functionalStatuses": {
+        "A": 2632,
+        "S": 119,
+        "N": 23
+      },
+      "memberships": 2826,
+      "crossCountyPlaces": 50,
+      "grfcRows": 207165,
+      "directIncorporatedPartPopulationJoins": 904,
+      "missingCountyPartPopulationJoins": 1,
+      "wholePlaceTotalsReconciled": 855,
+      "zeroPopulationParts": 10,
+      "excludedFictitiousCitySubdivisions": 901,
+      "excludedUndefinedSubdivisions": 3,
+      "counties": 87
+    },
+    {
+      "stateId": "oklahoma",
+      "uniqueEntities": 1151,
+      "incorporatedPlaces": 600,
+      "cdps": 246,
+      "types": {
+        "Town": 435,
+        "City": 165,
+        "Census-designated place": 246,
+        "Census county division": 305
+      },
+      "functionalStatuses": {
+        "A": 592,
+        "I": 8,
+        "S": 551
+      },
+      "memberships": 1208,
+      "crossCountyPlaces": 51,
+      "grfcRows": 182520,
+      "directIncorporatedPartPopulationJoins": 643,
+      "missingCountyPartPopulationJoins": 9,
+      "wholePlaceTotalsReconciled": 591,
+      "zeroPopulationParts": 10,
+      "excludedFictitiousCitySubdivisions": 0,
+      "excludedUndefinedSubdivisions": 0,
+      "counties": 77
+    }
+  ],
+  "sourceManifest": "source-manifest.json",
+  "populationRule": "Use direct county/parish-part estimates only. Zero remains a geographic membership. CDP fallback is alphabetical, with null population, not inferred demand."
+}

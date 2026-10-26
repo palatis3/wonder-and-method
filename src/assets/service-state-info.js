@@ -31,7 +31,9 @@ export const serviceStateInfo = [
  {id:'arkansas',name:'Arkansas',abbreviation:'AR'},
  {id:'texas',name:'Texas',abbreviation:'TX'},
  {id:'missouri',name:'Missouri',abbreviation:'MO'},
- {id:'iowa',name:'Iowa',abbreviation:'IA'}
+ {id:'iowa',name:'Iowa',abbreviation:'IA'},
+ {id:'minnesota',name:'Minnesota',abbreviation:'MN'},
+ {id:'oklahoma',name:'Oklahoma',abbreviation:'OK'}
 ].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){

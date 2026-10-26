@@ -1,3 +1,4 @@
+import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import {beforeReviewedLocationEdits} from './fixtures/reviewed-location-edits.mjs';
 import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
 import test from 'node:test';
@@ -17,27 +18,29 @@ import map from '../authority/v5/site-map.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
+const mnOkStates=mnOkPaths.filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+
 const geography=georgiaGeography.georgia;
 const state=serviceStates.find(item=>item.id==='georgia');
 const municipalities=Object.values(geography).flatMap(area=>area.municipalityDetails);
 const communities=Object.values(geography).flatMap(area=>area.communities);
 
 test('Georgia preserves all 1,082 existing service records and 1,125 existing area identities',()=>{
- const prior=records.filter(record=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa'].some(state=>record.path.startsWith('/areas/'+state+'/')));
+ const prior=records.filter(record=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates].some(state=>record.path.startsWith('/areas/'+state+'/')));
  assert.deepEqual(prior.map(record=>record.path).sort(),preservation.recordPaths);
  assert.equal(createHash('sha256').update(JSON.stringify(prior.map(beforeReviewedLocationEdits))).digest('hex'),preservation.recordsArraySha256);
- assert.deepEqual(serviceStates.filter(region=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa'].includes(region.id)).flatMap(region=>region.counties.map(county=>region.id+'/'+county.slug)).sort(),preservation.identities);
+ assert.deepEqual(serviceStates.filter(region=>!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates].includes(region.id)).flatMap(region=>region.counties.map(county=>region.id+'/'+county.slug)).sort(),preservation.identities);
 });
 
 test('Georgia adds only the seven approved routes, retaining every existing route and sitemap entry',()=>{
  const pages=renderPages({config,offers,map,geography:erieGeography});
- const routes=pages.map(page=>page.path).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
+ const routes=pages.map(page=>page.path).filter(path=>!mnOkPaths.includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1210);
  assert.equal(approvedPaths.length,7);
  assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
- assert.deepEqual(Object.keys(dates).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>!mnOkPaths.includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
  const sitemap=crawlFiles(config,pages).sitemap;
- const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
+ const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!mnOkPaths.includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
  assert.deepEqual(records.filter(record=>record.path.startsWith('/areas/georgia/')).map(record=>record.path).sort(),approvedPaths.filter(path=>path!=='/areas/georgia/').sort());
 });

@@ -189,6 +189,33 @@
       "reason": "Retain this colon-led, parallel owner-input list: requested room, setup/cleanup duration, public access and the staff orientation. These concrete decisions describe the whole venue arrangement and remain easy to scan as one connected planning sentence.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
       "reviewedAt": "2026-10-25T22:57:23.454Z"
+    },
+    {
+      "route": "/areas/oklahoma/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "17e906e3163ab417dae4f3f45ba6d07d94473e693107edd1f5438c2d734e5e6b",
+      "disposition": "retain",
+      "reason": "Retain this 105-word source note: eight short sentences explain the same directory inventory, moving from its January 2026 date through place types, cross-county membership, inactive-town status and excluded Census placeholders. The final date limitation closes that single topic. Keeping these qualifications in the source disclosure lets readers distinguish statistical areas from governments without losing the explanation of which records were included.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
+      "reviewedAt": "2026-10-26T02:44:12.377Z"
+    },
+    {
+      "route": "/areas/minnesota/traverse-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "be223681cd02c646900831f95bc8bdc485c8246021703f71216a843e2544ca9a",
+      "disposition": "retain",
+      "reason": "Retain this 37-word planning sentence: the colon introduces two concrete consequences for one three-camper party, with parallel clauses separating the shared-pedestal limit from the inability to hold adjoining sites. The preceding paragraph already states the two-camper limit and first-come rule; this example makes their combined consequence clear without implying approval of an electrical arrangement.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
+      "reviewedAt": "2026-10-26T02:44:12.377Z"
+    },
+    {
+      "route": "/areas/oklahoma/woodward-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "f17a84cbaa64be1e12d3b3cb0f2510fa7abd9ac8bcf453c5931e079cea9f4f4a",
+      "disposition": "retain",
+      "reason": "Retain this 38-word comparison: the colon introduces three named spaces, and semicolons clearly separate the main event center, Building A and Building B. Each clause attaches a concrete feature to the correct space. Those parallel labels make the sentence easy to scan and support the next paragraph’s equipment, livestock and presentation-use comparison.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
+      "reviewedAt": "2026-10-26T02:44:12.377Z"
     }
   ]
 }

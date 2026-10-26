@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-26",
+  "status": "KEYWORD_RECONCILIATION_COMPLETE_WITH_RECORDED_LIMITATIONS",
+  "database": "US",
+  "uniqueBulkPhrases": 1377,
+  "countyPhrases": 328,
+  "representativeCityPhrases": 956,
+  "supplementalSourceServiceAndQuestionPhrases": 89,
+  "coreStateServicePhrases": 4,
+  "observedStatuses": {
+    "UNAVAILABLE_REFRESH_REQUIRED": 1305,
+    "OBSERVED_PARTIAL_REFRESH_REQUIRED": 54,
+    "OBSERVED": 18
+  },
+  "positiveEstimatePhrases": 40,
+  "explicitZeroPhrases": 32,
+  "unavailablePhrases": 1305,
+  "countyAssessmentsReconciled": 164,
+  "servicePagesRetained": 141,
+  "directoryOnlyRetained": 23,
+  "faqsRetained": 10,
+  "newGeneralGuides": 0,
+  "scope": "US estimates for exact phrase wording, not county-resident demand. Shared and overlapping phrase volumes are not summed. Missing and refresh-required fields remain unavailable; partial metrics retain their status. Keyword estimates do not establish source accuracy, page quality, Google approval or ranking eligibility.",
+  "questionPanels": [
+    {
+      "stateId": "minnesota",
+      "status": "OBSERVED_QUESTION_PANEL",
+      "questionCount": 1,
+      "newFaqsFromPanel": 0
+    },
+    {
+      "stateId": "oklahoma",
+      "status": "NO_QUESTION_DATA",
+      "questionCount": 0,
+      "newFaqsFromPanel": 0
+    }
+  ],
+  "contentDecision": "No title, body, service-page, FAQ or guide additions were driven solely by a keyword metric. All county dispositions retain their source, locality and complete-content review basis."
+}

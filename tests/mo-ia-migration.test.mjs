@@ -1,3 +1,4 @@
+import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import paths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import {journeyPageKey} from '../src/journey-page-key.mjs';
 import test from 'node:test';
@@ -56,7 +57,7 @@ test('0039 adds exactly two Missouri/Iowa directories and 166 reviewed county ke
  assert.equal(nextKeys.length,1616);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].sort(),nextKeys.slice().sort());
+ assert.deepEqual([...journeyPages].sort(),[...nextKeys,...mnOkPaths.map(journeyPageKey)].sort());
  // SQLite quotes the renamed table. Only the 168 approved page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

@@ -16,9 +16,9 @@ import worker from '../deployment/worker.mjs';
 const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(p=>[p.path,p])),crawl=crawlFiles(config,pages);
 
 test('only eight public request forms and three fictional detail pages leave the search listings',()=>{
- assert.equal(excluded.length,11);assert.equal(pages.length,1644);
+ assert.equal(excluded.length,11);assert.equal(pages.length,1787);
  assert.deepEqual(pages.filter(p=>p.path!=='/404/'&&!routeIndexEligible(p.path)).map(p=>p.path).sort(),excluded);
- assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,1632);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);
+ assert.equal((crawl.sitemap.match(/<loc>/g)||[]).length,1775);assert.equal(crawl.robots,`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);
  for(const path of excluded){const page=byPath.get(path);assert(page,path);assert.match(page.html,/<meta name="robots" content="noindex,follow">/);assert(!crawl.sitemap.includes(`<loc>${config.origin+path}</loc>`));assert(!crawl.llms.includes(`](${config.origin+path})`));assert.equal(privateRoute(path),false);assert(page.html.includes(config.origin+socialCardPath(path)),'accurate sharing retained');assert(page.html.includes('rel="canonical" href="'+config.origin+path+'"'));}
  for(const path of ['/work/','/work/fieldwork/','/work/northline/','/work/hearthside/','/work/source-handoff/','/work/lead-workbench/','/contact/','/privacy/','/payments/']){assert.equal(routeIndexEligible(path),true,path);assert(crawl.sitemap.includes(`<loc>${config.origin+path}</loc>`));assert.match(byPath.get(path).html,/<meta name="robots" content="index,follow">/);}
  assertPageDates(pages,dates);
@@ -36,5 +36,5 @@ test('every known public page uses the same one-hop canonical pathname registry'
  for(const {path} of pages.filter(p=>p.path!=='/404/'))for(const method of ['GET','HEAD'])for(const variant of [path,path.slice(0,-1)||'/',path+'index.html',path.toUpperCase().replaceAll('/','//')]){
   const input=new URL('http://www.wonderandmethod.com'+variant+query),target=publicRouteRedirect(input,method,config.origin);assert.equal(target,config.origin+path+query,path);assert.equal(publicRouteRedirect(new URL(target),method,config.origin),null,path);checked++;
  }
- assert.equal(checked,1643*8);
+ assert.equal(checked,1786*8);
 });

@@ -1,0 +1,4200 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "Locally integrated candidate; research and keyword reconciliation complete; publication deferred pending Kansas/Nebraska expansion and combined release gates",
+  "countyCount": 164,
+  "serviceCandidates": 141,
+  "directoryOnly": 23,
+  "faqs": 10,
+  "guides": 0,
+  "counties": [
+    {
+      "areaId": "minnesota/aitkin",
+      "name": "Aitkin County",
+      "fips": "27001",
+      "directoryPath": "/areas/minnesota/#aitkin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/aitkin-county/",
+      "readerDecision": "Explain tree suitability before delivery arrangements",
+      "rationale": "Source distinguishes horticultural hardiness/rootstock/compatible varieties from carrier geography and shipping charges established after order payment. Compared with King George site-observation advice and Gadsden dated-versus-live inventory, the draft adds a distinct selection/delivery/cost sequence. Calculator FAQ is a useful bounded commissioning question.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://gilbysorchard.com/resources/3-step-tree-selection/",
+        "https://gilbysorchard.com/shipping/",
+        "https://gilbysorchard.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/anoka",
+      "name": "Anoka County",
+      "fips": "27003",
+      "directoryPath": "/areas/minnesota/#anoka",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/anoka-county/",
+      "readerDecision": "Plan the group visit before the final headcount deadline",
+      "rationale": "The closed 2026 sales state is explicit. Headcount/payment deadline, meal vouchers and separate vehicle fees match the capture. The useful delta beyond St. Louis city later-addition terms and Cerro Gordo payment/time thresholds is season status plus meal and driver preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.bunkerbeach.com/group-reservations",
+        "https://www.anokacountymn.gov/m/directory/department?did=108"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/becker",
+      "name": "Becker County",
+      "fips": "27005",
+      "directoryPath": "/areas/minnesota/#becker",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose outdoor refuge activities without assuming the visitor center is open",
+      "rationale": "Tamarac primary home capture supports seasonal center access and February snowshoe rental. The winter subpage is 403, so attribute that finding to the home capture. Madison and Van Buren already cover component/season access. Detroit Mountain alternative has substantive rental detail but a 2025 heading and failed live capture; no current policy claim is approved. NO_ADDITION applies to the verified refuge brief, with the alternative explicitly unresolved.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 6,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 2,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/beltrami",
+      "name": "Beltrami County",
+      "fips": "27007",
+      "directoryPath": "/areas/minnesota/#beltrami",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/beltrami-county/",
+      "readerDecision": "Separate party-space time from the science-center visit",
+      "rationale": "Facts match the party page. Independent full comparison with iowa/emmet confirms that room duration versus shared activity access is already covered. Retain the custom-science-theme preparation and weekday staff-contact distinctions as the added commissioning value; the existing draft does include them. Make that difference explicit in the assessment rather than relying on an incorrect Harris/Buchanan party comparison. A sharper custom-theme-led title would help but is not required for factual validity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.hscbemidji.org/1_14_birthdays.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/benton",
+      "name": "Benton County",
+      "fips": "27009",
+      "directoryPath": "/areas/minnesota/#benton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/benton-county/",
+      "readerDecision": "Show the fairground rental window before choosing a space",
+      "rationale": "The discontinuous May-September window excluding July/August is explicit in source. The blocked-month check gives a usable first inquiry requirement beyond Davis component inclusions and Houston purpose-based facility selection. Capacities are requested from the owner, not inferred.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.bentonfairmn.com/p/off-season/rental"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/big-stone",
+      "name": "Big Stone County",
+      "fips": "27011",
+      "directoryPath": "/areas/minnesota/#big-stone",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/big-stone-county/",
+      "readerDecision": "Distinguish cabin capacity, paying guests and day visitors",
+      "rationale": "Cabin occupancy, included adult count, visitors, holiday payment and gathering approval all match source. Three distinct party counts and date-specific payment preparation add practical guidance beyond Dent unit/pet rules and Amelia event/accommodation division.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.rustlingelmsresort.com/cabins"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/blue-earth",
+      "name": "Blue Earth County",
+      "fips": "27013",
+      "directoryPath": "/areas/minnesota/#blue-earth",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/blue-earth-county/",
+      "readerDecision": "Check the research material before offering an appointment",
+      "rationale": "Source expressly redirects house/address/photo/specific finding-aid requests away from immediate scheduling, and separately offers email record orders from online indexes. Material preparation before appointment is a useful distinction beyond Chariton custodian/quote/release and Washington museum-versus-research routes.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://blueearthcountyhistory.com/research/",
+        "https://blueearthcountyhistory.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED": 1,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/brown",
+      "name": "Brown County",
+      "fips": "27015",
+      "directoryPath": "/areas/minnesota/#brown",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/brown-county/",
+      "readerDecision": "Compare brewery tour access and the way tickets are obtained",
+      "rationale": "Day-of public tickets, telephone private tours and separately ticketed expanded monthly access match source. This three-channel selection with route preparation adds useful local detail beyond Jefferson and Sutton format comparisons. No expanded production access is promised for regular tickets.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.schellsbrewery.com/brewery/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/carlton",
+      "name": "Carlton County",
+      "fips": "27017",
+      "directoryPath": "/areas/minnesota/#carlton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/carlton-county/",
+      "readerDecision": "Keep the river activity and meeting address together",
+      "rationale": "Source and Census evidence locate the rafting meeting point in Carlton County despite the Duluth office. Whitewater participation versus scenic float and 30-minute early arrival are supported. Botetourt already distinguishes office/campground addresses; the new value is preventing navigation to the correspondence office for either selected activity. Dallas office-first check-in is a different arrival sequence. A departure-address guide link would be more precise than only the river-section guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://minnesotawhitewater.com/who-can-go-rafting/",
+        "https://minnesotawhitewater.com/float-tour/",
+        "https://minnesotawhitewater.com/contact-us/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/carver",
+      "name": "Carver County",
+      "fips": "27019",
+      "directoryPath": "/areas/minnesota/#carver",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/carver-county/",
+      "readerDecision": "Plan the photo session and each person’s admission",
+      "rationale": "Session permit includes photographer admission while staff/clients need tickets; photographer membership retains advance-ticket requirement. Commercial/private-space branches are accurately attributed. Participant-level admission responsibilities add value beyond Ector, Caswell and the photography permission guide. FAQ about portfolio materials addresses publishing rights rather than re-answering the booking flow.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://arb.umn.edu/photography"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/cass",
+      "name": "Cass County",
+      "fips": "27021",
+      "directoryPath": "/areas/minnesota/#cass",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/cass-county/",
+      "readerDecision": "Keep camp selection separate from scholarship verification",
+      "rationale": "Overnight format and sponsor-contact verification match the capture. Draft correctly says report an award for verification rather than declare it verified. That registration dependency differs from Iowa Polk separate bus-funding eligibility. No child or financial documents are requested by a marketing form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.deep-portage.org/summer-camps"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/chippewa",
+      "name": "Chippewa County",
+      "fips": "27023",
+      "directoryPath": "/areas/minnesota/#chippewa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/chippewa-county/",
+      "readerDecision": "Choose the property and the part of the celebration together.",
+      "rationale": "Bowie and Henry explain property-specific museum visits and conditional building access. Grundy and Howard explain room configurations and planning packages. The new event-specific page adds a practical ceremony/reception/property comparison across three historic locations, with photographs, spatial identity and a combined event inquiry. It deliberately excludes the unresolved visitor calendar. Bureau, DeKalb and Chariton already cover the separately read research alternative, so that route adds no new draft.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.chippewacohistory.org/wedding-locations.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/chisago",
+      "name": "Chisago County",
+      "fips": "27025",
+      "directoryPath": "/areas/minnesota/#chisago",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/chisago-county/",
+      "readerDecision": "Compare the room rate with the services an event needs",
+      "rationale": "Included furniture, separate disposal fee, refundable cleaning deposit, optional AV/tech and variable golf-cart availability match source. The complete quote and indoor/grounds distinction adds concrete equipment/staff dependencies beyond Webster and Howell. No event price or equipment availability is invented.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.franconia.org/facility-rentals/hourly-rentals/",
+        "https://www.franconia.org/facility-rentals/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/clay",
+      "name": "Clay County",
+      "fips": "27027",
+      "directoryPath": "/areas/minnesota/#clay",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/clay-county/",
+      "readerDecision": "Route museum visits and room rentals to the right organization",
+      "rationale": "Society museum/archive/tour role and separate city Parks & Recreation rental contact are explicitly supported. Compared with Missouri Cass co-located research services and Texas Harrison multiple venue addresses, this adds cross-organization routing at one building. Shared-form FAQ usefully addresses receipt and reply ownership.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.hcscconline.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/clearwater",
+      "name": "Clearwater County",
+      "fips": "27029",
+      "directoryPath": "/areas/minnesota/#clearwater",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/clearwater-county/",
+      "readerDecision": "Ask for the newspaper and date before a research visit",
+      "rationale": "Physical and microfilm inventories explicitly have gaps; online catalog is described as photos/artifacts, and advance research notice is 24 hours. Draft does not guess the incomplete microfilm end year. Title/date uncertainty and format-specific availability add useful research preparation beyond Lucas/Washington and sibling Blue Earth.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.clearwatercountyhistory.org/research",
+        "https://www.clearwatercountyhistory.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/cook",
+      "name": "Cook County",
+      "fips": "27031",
+      "directoryPath": "/areas/minnesota/#cook",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/cook-county/",
+      "readerDecision": "Choose the course-registration route before payment",
+      "rationale": "Payment/assistance exceptions, existing-account recovery and membership processing delay are accurately sourced, including October 2026 update. Combined pre-registration preparation adds substantial detail beyond Posey finishing and Collin entitlement/channel guidance. Correct the homepage source label; avoid the conflicting youth-account instructions as the draft already does.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://northhouse.org/courses/registration-info",
+        "https://northhouse.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 5,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 5
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/cottonwood",
+      "name": "Cottonwood County",
+      "fips": "27033",
+      "directoryPath": "/areas/minnesota/#cottonwood",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/cottonwood-county/",
+      "readerDecision": "Keep the rented space, setup access and optional tour distinct.",
+      "rationale": "DeKalb and Eastland were weak matches for the original thin membership source. The actual 2026 rental form requires comparison with Grundy, Webster, Johnson, Madison and Blanco: those cover arrangements, staff roles, seasonal buildings and benefits. The new brief adds a combined room/grounds choice with indoor-only equipment, early setup, optional seasonal tours and volunteer access to the rented welcome center. It is a concrete preparation task rather than a renamed membership page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://heritagevillagemountainlake.com/contact.htm",
+        "https://heritagevillagemountainlake.com/index_htm_files/2026%20Reservation%20form%20for%20Heritage%20Village%20Welcome%20Center.pdf"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 13
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/crow-wing",
+      "name": "Crow Wing County",
+      "fips": "27035",
+      "directoryPath": "/areas/minnesota/#crow-wing",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/crow-wing-county/",
+      "readerDecision": "Match a longer stay to the actual campsite configuration",
+      "rationale": "W/E/S-only monthly terms excluding pull-through sites, selected sewer availability and separate cabin bedding preparation match source. Monthly eligibility tied to both hookups and geometry, plus a cabin branch, adds usable detail beyond Calhoun stay/category and Missouri Benton winter facilities.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://paulbunyanland.com/campground/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 2,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/dakota",
+      "name": "Dakota County",
+      "fips": "27037",
+      "directoryPath": "/areas/minnesota/#dakota",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/dakota-county/",
+      "readerDecision": "Choose the school program before applying group limits",
+      "rationale": "Program-specific grade/capacity/lunch timing is supported and distinct from Jefferson weekday/meeting-point and Woodbury rotation/second-reservation examples. However, source requires bringing the picnic lunch: change ambiguous includes-lunch wording before publication. Existing lunch-timing acceptance test should remain.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://dakotacity.org/school-field-trips-tours-and-camps/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 7,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 4,
+          "OBSERVED": 1
+        },
+        "explicitZeroPhrases": 2,
+        "positiveEstimatePhrases": 3,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/dodge",
+      "name": "Dodge County",
+      "fips": "27039",
+      "directoryPath": "/areas/minnesota/#dodge",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/dodge-county/",
+      "readerDecision": "Keep show ticket status and payment instructions specific",
+      "rationale": "Box-office versus bar card acceptance and catering-driven advance sales closure are supported. The October 9-25 dinner production has ended at review. Mark it explicitly as a dated ended example in the body and source observation, as the report already claims. The practical pre-performance cutoff adds value beyond Garza/Macon seating briefs; archive FAQ remains useful.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.mantorvilletheatrecompany.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/douglas",
+      "name": "Douglas County",
+      "fips": "27041",
+      "directoryPath": "/areas/minnesota/#douglas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/douglas-county/",
+      "readerDecision": "Distinguish a tasting-room visit from a reserved event",
+      "rationale": "Source supports no reserved tasting-room seating, over-20 notice, separate private-event contact, seasonal tour tickets and tasting sales ending 30 minutes before close. Full additional comparisons Surry, Hickman and Schuyler show the general visit/event distinction is already covered. This draft adds the concrete notice-without-seat-reservation test and early service cutoff; retain those as its justification.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://carloscreek.com/carlos-creek-winery/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/faribault",
+      "name": "Faribault County",
+      "fips": "27043",
+      "directoryPath": "/areas/minnesota/#faribault",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/faribault-county/",
+      "readerDecision": "Give campground, shelter and ballfield requests their own preparation.",
+      "rationale": "Fayette explains different arrival addresses. This brief instead distinguishes three request owners and prerequisites within the same municipal recreation offer.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://becity.org/index.php/play/parks-trails"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/fillmore",
+      "name": "Fillmore County",
+      "fips": "27045",
+      "directoryPath": "/areas/minnesota/#fillmore",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/fillmore-county/",
+      "readerDecision": "Keep the cave route, surface journey and preparation with each tour.",
+      "rationale": "Christian covers prepared versus wild routes and Camden covers school learning. This local brief also preserves a personal-vehicle transfer and a separately inaccessible surface component within one product.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.dnr.state.mn.us/state-parks/tours/mystery-cave.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 13
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/freeborn",
+      "name": "Freeborn County",
+      "fips": "27047",
+      "directoryPath": "/areas/minnesota/#freeborn",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/freeborn-county/",
+      "readerDecision": "Prepare a school visit around group rotations and the spaces actually offered.",
+      "rationale": "Woodbury covers rotations and a second booking; this brief combines class size with educational membership and unresolved village-season wording without manufacturing a date.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.lovehistory.org/tours"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/goodhue",
+      "name": "Goodhue County",
+      "fips": "27049",
+      "directoryPath": "/areas/minnesota/#goodhue",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/goodhue-county/",
+      "readerDecision": "Separate free museum entry from arranging a guided group visit.",
+      "rationale": "Audrain covers time-dependent formats and Franklin a shortened cave tour. This brief joins free independent entry, paid dedicated guide preparation and a requested condensed museum visit.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://potterymuseumredwing.org/tour",
+        "https://potterymuseumredwing.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11,
+          "OBSERVED": 1
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/grant",
+      "name": "Grant County",
+      "fips": "27051",
+      "directoryPath": "/areas/minnesota/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/grant-county/",
+      "readerDecision": "Compare the meeting plan as well as the room size.",
+      "rationale": "Calhoun and Wright cover the original camping/visitor lead, whose conflicting terms remain excluded. Kossuth explains one optional kitchenette and Grundy one expandable room. The new brief compares three different rooms using headcount, actual food facilities and presentation equipment, retaining a kitchen request and organization category for the city-office conversation. The complete comparison and owner inputs add substantial local commissioning value without claiming automatic suitability or fee waiver.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.thecityofelbowlake.com/how-do-i/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/hennepin",
+      "name": "Hennepin County",
+      "fips": "27053",
+      "directoryPath": "/areas/minnesota/#hennepin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/hennepin-county/",
+      "readerDecision": "Choose independent studio access or training before requesting equipment time.",
+      "rationale": "Boone covers permission to borrow and St Louis transfer sessions. This brief distinguishes training from independent studio use and maps consumables to artistic processes.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://mnbookarts.org/studios-and-equipment"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 7,
+          "OBSERVED": 2,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/houston",
+      "name": "Houston County",
+      "fips": "27055",
+      "directoryPath": "/areas/minnesota/#houston",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/houston-county/",
+      "readerDecision": "Choose the audience and delivery setting before arranging an owl program.",
+      "rationale": "Existing school-group examples concern visits on site. This brief also compares topic availability across virtual and off-site delivery and preserves venue and recording requirements.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.internationalowlcenter.org/",
+        "https://www.internationalowlcenter.org/schoolgroupprograms.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/hubbard",
+      "name": "Hubbard County",
+      "fips": "27057",
+      "directoryPath": "/areas/minnesota/#hubbard",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a museum visit, research purpose or scheduled art workshop.",
+      "rationale": "Camden covers educational-visit preparation, St Louis supported creative sessions, and the full timed-booking guide covers handoffs. The present evidence does not add substantial complete local project guidance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/isanti",
+      "name": "Isanti County",
+      "fips": "27059",
+      "directoryPath": "/areas/minnesota/#isanti",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/isanti-county/",
+      "readerDecision": "Describe the event’s season before comparing fairground buildings.",
+      "rationale": "Winnebago covers shared building access. This brief starts with a verified heated winter building and makes unprovided capacity/layout information explicit owner inputs.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.isanticountyfair.com/p/rentals/buildings--grounds-rental"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/itasca",
+      "name": "Itasca County",
+      "fips": "27061",
+      "directoryPath": "/areas/minnesota/#itasca",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/itasca-county/",
+      "readerDecision": "Give the teacher, bus driver and chaperones a shared arrival plan.",
+      "rationale": "Woodbury covers rotations; this brief gives separate actions to the teacher, driver and chaperones, and connects outdoor conditions and lunch to preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.mnhs.org/fieldtrips/forest-history/prepare",
+        "https://www.mnhs.org/foresthistory/visit"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/jackson",
+      "name": "Jackson County",
+      "fips": "27063",
+      "directoryPath": "/areas/minnesota/#jackson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/jackson-county/",
+      "readerDecision": "Separate a historic church ceremony from an outdoor event setup.",
+      "rationale": "Existing event responsibility pages cover furniture and accommodation. This example connects a historic church option with outdoor tents, seating and portable sound responsibilities.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.jacksonmn.com/fort-belmont/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/kanabec",
+      "name": "Kanabec County",
+      "fips": "27065",
+      "directoryPath": "/areas/minnesota/#kanabec",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/kanabec-county/",
+      "readerDecision": "Compare attendance with the furniture and time a gathering needs.",
+      "rationale": "Winnebago covers orientation and public use. This example distinguishes an 80-person capacity from 53 supplied chairs and carries setup/cleanup into the requested period.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://kanabechistory.weebly.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/kandiyohi",
+      "name": "Kandiyohi County",
+      "fips": "27067",
+      "directoryPath": "/areas/minnesota/#kandiyohi",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/kandiyohi-county/",
+      "readerDecision": "Choose research effort or a specific reproduction before discussing the charge.",
+      "rationale": "DeKalb and Chariton cover research modes and release. This brief separates obituary lookup, paper/photo copies and emailed scans, with a distinct high-resolution inquiry.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.kandiyohicountyhistory.com/research-hours-fees/",
+        "https://www.kandiyohicountyhistory.com/visit/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/kittson",
+      "name": "Kittson County",
+      "fips": "27069",
+      "directoryPath": "/areas/minnesota/#kittson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/kittson-county/",
+      "readerDecision": "Show which camping and recreation choices remain available during construction.",
+      "rationale": "Des Moines covers a closed cave and Van Buren dated facility closures. This brief prevents an open campground from promising lake recreation and separates construction targets from reopening.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.dnr.state.mn.us/state-parks/lake-bronson-dam-replacement-project.html",
+        "https://www.dnr.state.mn.us/input/environmentalreview/lake-bronson-dam-eaw.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 13
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/koochiching",
+      "name": "Koochiching County",
+      "fips": "27071",
+      "directoryPath": "/areas/minnesota/#koochiching",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/koochiching-county/",
+      "readerDecision": "Explain the shared museum ticket before arranging a group guide.",
+      "rationale": "Audrain and Wright cover tour formats and arrival. This brief explains shared two-museum admission alongside a requested guide and a group discount threshold.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.koochichingmuseums.org/faqs"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/lac-qui-parle",
+      "name": "Lac qui Parle County",
+      "fips": "27073",
+      "directoryPath": "/areas/minnesota/#lac-qui-parle",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/lac-qui-parle-county/",
+      "rationale": "Calhoun covers short/long-term categories; Throckmorton covers mandatory park-first payment and site amperage; Callahan separates a receipt from reservations; Black Hawk covers occupancy evidence. This complete brief connects requested contributions, a maximum stay and physical-versus-mailing arrival preparation. It does not claim a globally new payment principle. Shelby adds pass-specific upkeep and mandatory pre-camping fees; Osceola already covers physical/mailing addresses and mixed reservation methods. The local value here rests on requested contribution versus a nine-day maximum, not on address labeling alone. Traverse covers seasonal water, not this contribution question.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.lqpcomn.gov/263/County-Park",
+        "https://www.lqpcomn.gov/DocumentCenter/View/166/County-Park-Rules-and-Regulations"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/lake",
+      "name": "Lake County",
+      "fips": "27075",
+      "directoryPath": "/areas/minnesota/#lake",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/lake-county/",
+      "readerDecision": "Distinguish guided time from the building access included in a ticket.",
+      "rationale": "Madison covers winter components and Marion physical routes. This brief separates the guided portion from included later independent access and preserves each seasonal tour arrangement.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.mnhs.org/splitrock/activities"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/lake-of-the-woods",
+      "name": "Lake of the Woods County",
+      "fips": "27077",
+      "directoryPath": "/areas/minnesota/#lake-of-the-woods",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/lake-of-the-woods-county/",
+      "readerDecision": "Separate archive research, image delivery and publication permission.",
+      "rationale": "Chariton covers custody and payment. This example also distinguishes reproduction resolution and publication permission from purchasing a file or using the room.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://lakeofthewoodshistoricalsociety.com/visit-us/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/le-sueur",
+      "name": "Le Sueur County",
+      "fips": "27079",
+      "directoryPath": "/areas/minnesota/#le-sueur",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/le-sueur-county/",
+      "readerDecision": "Confirm the building, event lead time and public-park boundaries together.",
+      "rationale": "Winnebago covers shared public use. This brief adds the single rentable-building boundary, different notice for large events and attendance-charging as a rate question.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://neycenter.org/visit-us/rentals/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 13
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/lincoln",
+      "name": "Lincoln County",
+      "fips": "27081",
+      "directoryPath": "/areas/minnesota/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/lincoln-county/",
+      "readerDecision": "Keep cabin and campsite seasons, utilities and pet charges separate.",
+      "rationale": "Calhoun compares camping categories. This brief adds year-round cabin choice and different pet charges that must not migrate between cabin and campsite descriptions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://hendricksmn.net/campground/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/lyon",
+      "name": "Lyon County",
+      "fips": "27083",
+      "directoryPath": "/areas/minnesota/#lyon",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/lyon-county/",
+      "readerDecision": "Attach a temporary room closure to that room’s rental information.",
+      "rationale": "Van Buren covers a construction closure. This brief addresses temporary exhibit occupancy of one room and prevents the available substitute from inheriting the closed room’s layouts.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://lyoncomuseum.org/facility-rental/",
+        "https://lyoncomuseum.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/mcleod",
+      "name": "McLeod County",
+      "fips": "27085",
+      "directoryPath": "/areas/minnesota/#mcleod",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose museum research access or membership before assuming included services.",
+      "rationale": "Chariton and DeKalb already distinguish research access, paid work and reproduction; Washington covers local historical research planning. This source supplies insufficient additional workflow to justify another full service page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 7,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/mahnomen",
+      "name": "Mahnomen County",
+      "fips": "27087",
+      "directoryPath": "/areas/minnesota/#mahnomen",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose event room capacity and services before a venue inquiry.",
+      "rationale": "Both complete briefs reduce to existing room-configuration inquiry and seasonal research/donation guidance. Neither captured source supports additional project decisions beyond those records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/marshall",
+      "name": "Marshall County",
+      "fips": "27089",
+      "directoryPath": "/areas/minnesota/#marshall",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/marshall-county/",
+      "readerDecision": "Distinguish a campsite search from the park’s complete inventory.",
+      "rationale": "Adds a full owner briefing around total park inventory versus the online subset, date preservation, contact season and explicit rate year. Clayton covers a near-term booking cutoff and on-site occupancy, not this inventory/office distinction.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.co.marshall.mn.us/residents_visitors/florian_park/index.php"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/martin",
+      "name": "Martin County",
+      "fips": "27091",
+      "directoryPath": "/areas/minnesota/#martin",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish the performance venue from other organizational addresses and renovation notices.",
+      "rationale": "Current complete address/status comparators already support this project. The credible agricultural-center alternative lacks enough operating detail to add a substantial separate commission brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/meeker",
+      "name": "Meeker County",
+      "fips": "27093",
+      "directoryPath": "/areas/minnesota/#meeker",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/meeker-county/",
+      "readerDecision": "Give an oral-history contribution a different route from an archive search.",
+      "rationale": "Adds a concrete original-recording versus requested transcript versus collection contribution brief, with format/length preparation and a later permission handoff. Existing research pages address finding records or donating objects, not a spoken record and its derivative text.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.dasselhistorycenter.com/services"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/mille-lacs",
+      "name": "Mille Lacs County",
+      "fips": "27095",
+      "directoryPath": "/areas/minnesota/#mille-lacs",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/mille-lacs-county/",
+      "readerDecision": "Keep the class size attached to each optional lesson and craft.",
+      "rationale": "Adds program-specific capacity units: the 125-capacity core slot does not establish capacity for a 30-student lesson. The complete brief combines optional grade fit, staffing review and non-program stops rather than merely repeating a total-class rotation example.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.mnhs.org/fieldtrips/mille-lacs"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/morrison",
+      "name": "Morrison County",
+      "fips": "27097",
+      "directoryPath": "/areas/minnesota/#morrison",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/morrison-county/",
+      "rationale": "DeKalb covers help modes and donations; Chariton explicitly uses payment BEFORE research release; Bureau covers bounded questions/additional effort; Saline covers staff assessment. Nicollet covers separate uses, and Pipestone visit equipment/agreement. Morrison adds the opposite research/image billing sequences and initial-request card-invoice choice as connected acceptance cases. Warren also requires payment before copies are sent; Wise distinguishes current location and file availability. Neither supplies Morrison’s research-bill-with-results versus commercial-image-prepayment comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://morrisoncountyhistory.org/?page_id=1165",
+        "https://morrisoncountyhistory.org/?page_id=1193"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/mower",
+      "name": "Mower County",
+      "fips": "27099",
+      "directoryPath": "/areas/minnesota/#mower",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/mower-county/",
+      "readerDecision": "Separate independent trail equipment, a hosted tour and the trip to the site.",
+      "rationale": "Adds a concrete three-party preparation sequence: independent use of supplied equipment, a hosted trail tour, and separately arranged transit. Existing access guidance distinguishes facilities and assistance but does not supply this distinct advance-notice and provider comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://hormelnaturecenter.org/accessibility/",
+        "https://hormelnaturecenter.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/murray",
+      "name": "Murray County",
+      "fips": "27101",
+      "directoryPath": "/areas/minnesota/#murray",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/murray-county/",
+      "readerDecision": "Show which visit remains available when a guided tour is suspended.",
+      "rationale": "Adds same-day partial operating status by visit format, rather than a seasonal building closure or an exception permitting private tours. The commissioning guidance makes format inclusions, demonstrations and restricted interiors testable together.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://endoline.com/visitus/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 13
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/nicollet",
+      "name": "Nicollet County",
+      "fips": "27103",
+      "directoryPath": "/areas/minnesota/#nicollet",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/nicollet-county/",
+      "readerDecision": "Keep an image request separate from permission for its intended use.",
+      "rationale": "Adds intended-use preparation after identification of the material, including a concrete website-plus-print example. Existing research pages bound the search or distinguish custodians and payment; this page helps commission a permission-aware inquiry without claiming legal clearance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.nchsmn.org/research/research-hours-and-fees/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/nobles",
+      "name": "Nobles County",
+      "fips": "27105",
+      "directoryPath": "/areas/minnesota/#nobles",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish a casual museum visit, scheduled research, school visit and event rental.",
+      "rationale": "Existing complete visit/appointment and room-use briefs address these distinctions. The alternate rental source supports a valid conventional project but no substantial additional guidance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/norman",
+      "name": "Norman County",
+      "fips": "27107",
+      "directoryPath": "/areas/minnesota/#norman",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the intended museum and check its particular season and hours.",
+      "rationale": "The complete multiple-building and seasonal-opening records already supply this commission brief. Current direct hours take precedence over regional descriptions; no new feature is justified by the alternate.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/olmsted",
+      "name": "Olmsted County",
+      "fips": "27109",
+      "directoryPath": "/areas/minnesota/#olmsted",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/olmsted-county/",
+      "readerDecision": "Plan the visit around its purpose, including access outside normal hours.",
+      "rationale": "Adds after-hours grounds use and advance access to the full project brief; existing appointment and facility-hours examples do not resolve the photographer’s distinct permission route.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.olmstedhistory.com/discover"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/otter-tail",
+      "name": "Otter Tail County",
+      "fips": "27111",
+      "directoryPath": "/areas/minnesota/#otter-tail",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/otter-tail-county/",
+      "readerDecision": "Help a researcher continue when an online index does not answer the question.",
+      "rationale": "Adds online-index coverage as a decision point and preserves either a specific hit or a bounded no-result question through the handoff; the existing pages primarily bound staff searches and explain original-record custody.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.otchs.org/LibraryResearch/libraryHome.html",
+        "https://www.otchs.org/LibraryResearch/OnlineSearch.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/pennington",
+      "name": "Pennington County",
+      "fips": "27113",
+      "directoryPath": "/areas/minnesota/#pennington",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose an on-site historic-building visit or a records inquiry.",
+      "rationale": "The complete collection-location and multi-building visit comparators cover the concrete choices. The alternative is substantive but does not change the required project brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/pine",
+      "name": "Pine County",
+      "fips": "27115",
+      "directoryPath": "/areas/minnesota/#pine",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/pine-county/",
+      "readerDecision": "Check each part of a combined museum and café visit.",
+      "rationale": "Adds a concrete same-address meal-and-exhibits visit with separate daily windows and a seasonal third activity. The project guidance preserves the combined group request without inventing a bookable package.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://pinecountyhistory.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/pipestone",
+      "name": "Pipestone County",
+      "fips": "27117",
+      "directoryPath": "/areas/minnesota/#pipestone",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/pipestone-county/",
+      "readerDecision": "Prepare an archive visit before the researcher brings copying equipment.",
+      "rationale": "Adds practical pre-arrival equipment preparation and staff-copy workflow. Nicollet in this batch focuses on separately declared intended uses; this draft starts with conducting the physical research visit and obtaining a reproduction.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://pipestonecountymuseum.com/research-policies/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/polk",
+      "name": "Polk County",
+      "fips": "27119",
+      "directoryPath": "/areas/minnesota/#polk",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the correct historical organization and buildings available in the intended season.",
+      "rationale": "The seasonal-building and separate-location comparators already explain the project. Regional research information alone does not support a distinct staff-work brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/pope",
+      "name": "Pope County",
+      "fips": "27121",
+      "directoryPath": "/areas/minnesota/#pope",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Separate free museum visiting from paid research and dated special openings.",
+      "rationale": "The complete research and dated-event guidance already supports both briefs. Do not create a new current-season claim from the 2025 alternate notice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/ramsey",
+      "name": "Ramsey County",
+      "fips": "27123",
+      "directoryPath": "/areas/minnesota/#ramsey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/ramsey-county/",
+      "readerDecision": "Give teachers, bus drivers and accompanying parents the instructions they need.",
+      "rationale": "Adds preparation after program choice: distinct audiences receive applicable payment, packing and vehicle-arrival instructions. Existing education comparators chiefly choose the program, activities or participant category.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://rchs.com/gibbs-farm/for-educators/prepare-for-your-field-trip/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 4
+        },
+        "explicitZeroPhrases": 3,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/red-lake",
+      "name": "Red Lake County",
+      "fips": "27125",
+      "directoryPath": "/areas/minnesota/#red-lake",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/red-lake-county/",
+      "rationale": "Calhoun compares short/long stay categories and first-come sites; Benton covers winter utility preparation; Clayton explains an online cutoff; Des Moines/Van Buren handle partial closure. This complete brief connects seasonal-section eligibility, included party, guest preapproval and a conditional extension after arrival. Those substantive policies remain useful without inventing current opening. Carroll separates seasonal inquiry from ordinary booking and Adams preserves the booked campground identity. Crow Wing/Swift explain longer-stay site eligibility; Red Lake adds party preapproval and a conditional later extension. Shelby adds upkeep obligations rather than those later guest/extension decisions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.voyageursview.com/camping-1",
+        "https://www.voyageursview.com/",
+        "https://www.voyageursview.com/contact-us"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/redwood",
+      "name": "Redwood County",
+      "fips": "27127",
+      "directoryPath": "/areas/minnesota/#redwood",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/redwood-county/",
+      "readerDecision": "Plan the museum visit before adding another destination.",
+      "rationale": "Wright already explains recommended duration versus last entry; Marion covers multi-building admission and access; Bowie preserves property identity. This draft adds a useful worked combination: suggested duration exceeds the final entry interval, admission is day-valid, an unfinished building is visible but not touring, and the dugout is a separately reached and paid destination. The scope joins visit timing with actual inclusion and map choices rather than duplicating a last-entry paragraph.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://walnutgrove.org/museum-3/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 14,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 14
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/renville",
+      "name": "Renville County",
+      "fips": "27129",
+      "directoryPath": "/areas/minnesota/#renville",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/renville-county/",
+      "readerDecision": "Let a yearbook owner distinguish a permanent gift from a temporary scanning offer.",
+      "rationale": "Adds an inventory-linked contribution decision with school/year/count interpretation and permanent-gift versus temporary-original handling. Poweshiek addresses a donation pause during relocation, rather than a live structured collection need.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://renvillecountyhistory.com/renville-county-school-yearbooks-annuals-needed/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/rice",
+      "name": "Rice County",
+      "fips": "27131",
+      "directoryPath": "/areas/minnesota/#rice",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/rice-county/",
+      "readerDecision": "Give each historic site its own visit plan.",
+      "rationale": "Cooke and Madison explain public hours versus appointed house visits. This brief adds a complete two-property choice with different notice, party-size and arrival information, including a six-person house test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://rchistory.org/museum/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/rock",
+      "name": "Rock County",
+      "fips": "27133",
+      "directoryPath": "/areas/minnesota/#rock",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/rock-county/",
+      "readerDecision": "Connect the wildlife tour choice to boarding-pass collection.",
+      "rationale": "Edwards already connects wildlife expectations and a visitor-center departure. Blue Mounds supports an additional purchased-ticket to boarding-pass collection sequence, an explicit earlier deadline and a wrong-entrance check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.dnr.state.mn.us/state-parks/tours/prairie-and-bison.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/roseau",
+      "name": "Roseau County",
+      "fips": "27135",
+      "directoryPath": "/areas/minnesota/#roseau",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/roseau-county/",
+      "readerDecision": "Separate an exhibit visit from joining a working-factory tour.",
+      "rationale": "Duplin covers production-dependent tours; this brief adds industrial visitor preparation and threshold-based group routing, tested separately from the ordinary exhibit visit.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.polaris.com/en-us/polaris-experience-center/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/st-louis",
+      "name": "St. Louis County",
+      "fips": "27137",
+      "directoryPath": "/areas/minnesota/#st-louis",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/st-louis-county/",
+      "readerDecision": "Explain the actual route through a historic attraction.",
+      "rationale": "Jefferson and Winneshiek distinguish routes and formats. Glensheen supports a precise physical-versus-video visit comparison and separate-entrance plan, with a practical test that does not require medical disclosure.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://glensheen.org/visit/visitor-information/accessibility"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/scott",
+      "name": "Scott County",
+      "fips": "27139",
+      "directoryPath": "/areas/minnesota/#scott",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/scott-county/",
+      "readerDecision": "Help a teacher choose a history kit by the lesson they want to teach.",
+      "rationale": "Montgomery covers handling and kit logistics; Kenedy covers school-group fit. This page develops grade-dependent activity selection and the teacher’s lesson objective before the borrowing request.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.scottcountyhistory.org/trunks"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/sherburne",
+      "name": "Sherburne County",
+      "fips": "27141",
+      "directoryPath": "/areas/minnesota/#sherburne",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/sherburne-county/",
+      "readerDecision": "Describe how divided meeting rooms and kitchen access fit the event.",
+      "rationale": "Kossuth handles an optional kitchenette; Webster handles rental preparation. This brief adds divisible space, combined-only capacity and requester categories to a concrete layout inquiry.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.sherburnehistorycenter.org/roomrental"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/sibley",
+      "name": "Sibley County",
+      "fips": "27143",
+      "directoryPath": "/areas/minnesota/#sibley",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/sibley-county/",
+      "readerDecision": "Check the camping season and obtain overnight permission separately.",
+      "rationale": "The complete revised case supplies actionable local commissioning information, supported owner inputs and acceptance checks. Shared principles with the complete Benton, Barry and Osceola records are explicitly acknowledged; no global novelty or page quota is required. It develops the actual overnight-permission step and the loss-of-instruction risk when paper permits disappear, alongside seasonal facilities.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.sibleycounty.gov/Facilities/Facility/Details/High-Island-Creek-Park-4"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/stearns",
+      "name": "Stearns County",
+      "fips": "27145",
+      "directoryPath": "/areas/minnesota/#stearns",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/stearns-county/",
+      "readerDecision": "Choose a meeting layout before relying on the room’s largest capacity.",
+      "rationale": "Kossuth and Webster address amenities and rental requests. This brief centers on layout-dependent capacity with a numerical mismatch test, then connects partition and equipment choices.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://stearnshistorymuseum.org/room-rental/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/steele",
+      "name": "Steele County",
+      "fips": "27147",
+      "directoryPath": "/areas/minnesota/#steele",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/steele-county/",
+      "readerDecision": "Distinguish a museum tour from a full-day itinerary.",
+      "rationale": "Henry and Kenedy cover arranged group visits. This brief adds duration-led multi-site choice and a package-versus-suggested-itinerary distinction with meal ownership.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.schsmn.org/tours-field-trips",
+        "https://www.schsmn.org/visit-us"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/stevens",
+      "name": "Stevens County",
+      "fips": "27149",
+      "directoryPath": "/areas/minnesota/#stevens",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/stevens-county/",
+      "readerDecision": "Show which research materials visitors can use themselves and which staff must retrieve.",
+      "rationale": "Chariton and Andrew cover paid research scope; Liberty covers format access. This brief adds a specific self-service catalog-to-staff-retrieval sequence and material-handling boundary.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.stevenshistorymuseum.com/research-resources"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/swift",
+      "name": "Swift County",
+      "fips": "27151",
+      "directoryPath": "/areas/minnesota/#swift",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/swift-county/",
+      "readerDecision": "Keep tent-site amenities and longer stays visible before reservation.",
+      "rationale": "Osceola and Calhoun explain site types and registration. Appleton adds a within-category amenity exception combined with a duration-dependent contact route and a concrete eight-night test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://appletonmn.gov/camping",
+        "https://appletonmn.gov/?SEC=7E43AB7A-60EF-4AA0-B74E-832D690594AF&Type=B_BASIC"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/todd",
+      "name": "Todd County",
+      "fips": "27153",
+      "directoryPath": "/areas/minnesota/#todd",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a museum visit or ask about Battle Point pavilion use, with the correct date, facilities and contact for that activity.",
+      "rationale": "Cooke already develops appointed museum visits; Kossuth handles optional facilities and Cherokee facility-specific rental. The collected Todd evidence does not support a substantially fuller owner brief than those records. Historical project lists and old calendar links cannot establish new current reservation behavior.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/traverse",
+      "name": "Traverse County",
+      "fips": "27155",
+      "directoryPath": "/areas/minnesota/#traverse",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/traverse-county/",
+      "readerDecision": "Separate campsite allocation, dated water status and shared electrical arrangements.",
+      "rationale": "The complete revised case supplies actionable local commissioning information, supported owner inputs and acceptance checks. Shared principles with the complete Benton, Barry and Osceola records are explicitly acknowledged; no global novelty or page quota is required. It develops multi-camper facility preparation with a dated-status repair, a published shared-pedestal limit and an unreserved-arrival expectation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://traversecountymn.gov/community/traverse-county-park/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/wabasha",
+      "name": "Wabasha County",
+      "fips": "27157",
+      "directoryPath": "/areas/minnesota/#wabasha",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/wabasha-county/",
+      "readerDecision": "Make the admission choice clear before a visitor expects a program seat.",
+      "rationale": "Tom Green separates free entry and arranged activities; Dewitt covers experience distinctions. This brief adds ticket-level reserved-seat inclusion and a particular combination that changes the transaction route.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.nationaleaglecenter.org/visit/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/wadena",
+      "name": "Wadena County",
+      "fips": "27159",
+      "directoryPath": "/areas/minnesota/#wadena",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/wadena-county/",
+      "readerDecision": "Keep pavilion electricity separate from RV camping facilities.",
+      "rationale": "Kossuth handles optional room amenities and Barry first-come camping. This brief resolves a cross-use amenity ambiguity: electrical service for a reserved pavilion cannot imply RV hookups.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.wadenacounty.gov/225/Old-Wadena-Park-Campground"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/waseca",
+      "name": "Waseca County",
+      "fips": "27161",
+      "directoryPath": "/areas/minnesota/#waseca",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/waseca-county/",
+      "readerDecision": "Prepare a usable image request before asking an archive for a reproduction quote.",
+      "rationale": "Brooks separates viewing from reprints and Liberty connects record condition to reproduction methods. This brief adds identifier-specific high-resolution unavailability, requested output size and intended use to a concrete quote request, including an LU-prefix test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.wasecacountyhistorycenter.org/fees1"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/washington",
+      "name": "Washington County",
+      "fips": "27163",
+      "directoryPath": "/areas/minnesota/#washington",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/washington-county/",
+      "readerDecision": "Separate meeting-space rental from adding exhibit access.",
+      "rationale": "Kossuth covers a kitchen option; Webster rental preparation. This brief connects exhibit-access inclusion, food-location boundaries and post-estimate headcount reconciliation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.wchsmn.org/rentals/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 5,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 4,
+        "positiveEstimatePhrases": 4,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/watonwan",
+      "name": "Watonwan County",
+      "fips": "27165",
+      "directoryPath": "/areas/minnesota/#watonwan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/watonwan-county/",
+      "readerDecision": "Plan campsite facilities and a gathering shelter as separate choices.",
+      "rationale": "Osceola handles hookups and Cherokee separate facilities. This brief develops a group gathering with individually chosen campsite services and a City Hall shelter arrangement, including shared-map and status-maintenance inputs.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.madeliamn.com/recreation/camping/",
+        "https://www.madeliamn.com/recreation/city-parks/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/wilkin",
+      "name": "Wilkin County",
+      "fips": "27167",
+      "directoryPath": "/areas/minnesota/#wilkin",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish attending the fair from delivering an open-class exhibit, using the applicable event year and entry window.",
+      "rationale": "The entry-day distinction is real, but the captured dates are already past and no fuller current entrant preparation or supported transaction sequence was found. Existing timed-arrival and arranged-visit records already provide the applicable commissioning guidance. This is a no-addition decision, not a claim that the county lacks businesses.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/winona",
+      "name": "Winona County",
+      "fips": "27169",
+      "directoryPath": "/areas/minnesota/#winona",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/minnesota/winona-county/",
+      "readerDecision": "Explain school-visit support separately from free student admission.",
+      "rationale": "Kenedy distinguishes free school admission from reservation; Tom Green free entry from arranged activities. MMAM adds a support-material fee that persists on a free-admission day, a group-size division and educational preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://mmam.org/school-tours-selfguided"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/wright",
+      "name": "Wright County",
+      "fips": "27171",
+      "directoryPath": "/areas/minnesota/#wright",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the teaching trunk that suits the lesson and ask whether its first-come loan can fit the desired one-week period; use the separate research route for a records question.",
+      "rationale": "Montgomery already covers kit selection, handling and return preparation; Chariton and Andrew cover bounded research requests. The Wright loan facts and inventories do not provide a new decision sequence with enough additional owner guidance; Scott’s proposed brief has a stronger grade-specific lesson-selection distinction.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 6,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "minnesota/yellow-medicine",
+      "name": "Yellow Medicine County",
+      "fips": "27173",
+      "directoryPath": "/areas/minnesota/#yellow-medicine",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the county museum or Lund-Hoel House, then match the intended exhibit, house visit or family-history research to that place’s seasonal hours or appointment route.",
+      "rationale": "Cooke and Madison already explain fixed house hours versus appointed visits, while Andrew develops research requests. The substantive alternative adds local history but no materially different commissioning advice or acceptance test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/adair",
+      "name": "Adair County",
+      "fips": "40001",
+      "directoryPath": "/areas/oklahoma/#adair",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/adair-county/",
+      "readerDecision": "Keep parking, equipment and the operating season separate.",
+      "rationale": "Appanoose, Iron and Hardin already cover recreation inclusions and separate permissions. This brief adds a concrete maintenance problem across park access, per-vehicle parking, rental duration and pass benefits, with an explicit test for a passholder needing equipment during a seasonal shutdown.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://visitwoka.com/first-time-visit/",
+        "https://visitwoka.com/plan-your-visit/rentals/",
+        "https://visitwoka.com/season-pass/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/alfalfa",
+      "name": "Alfalfa County",
+      "fips": "40003",
+      "directoryPath": "/areas/oklahoma/#alfalfa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/alfalfa-county/",
+      "readerDecision": "Match the visit date and activity to the correct Salt Plains destination.",
+      "rationale": "Des Moines and Morgan discuss changing access; this adds a specific date-dependent change from digging to observation plus distinct headquarters and activity destinations. The project deliverable is a seasonal content and map inventory with two concrete arrival tests.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.fws.gov/refuge/salt-plains",
+        "https://www.fws.gov/refuge/salt-plains/visit-us"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/atoka",
+      "name": "Atoka County",
+      "fips": "40005",
+      "directoryPath": "/areas/oklahoma/#atoka",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/atoka-county/",
+      "readerDecision": "Keep the campground area and hut preparation attached to the stay.",
+      "rationale": "Wayne already covers lodging amenities and Decatur accommodation preparation. The local brief adds campground-area identity and a deliberate RV-to-hut substitution test, requiring a facility map and separate indoor, outdoor and shared-amenity content rather than generic cabin sales copy.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/mcgee-creek-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/beaver",
+      "name": "Beaver County",
+      "fips": "40007",
+      "directoryPath": "/areas/oklahoma/#beaver",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/beaver-county/",
+      "readerDecision": "Keep each park fee attached to what it counts.",
+      "rationale": "Hardin and Shelby cover separate recreation arrangements. This brief makes incompatible price units and calendar-year validity the central owner deliverable, with a specific comparison error to test and no unsupported calculator.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.townofbeaver.com/services-1-2",
+        "https://www.travelok.com/listings/view.profile/id.418"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/beckham",
+      "name": "Beckham County",
+      "fips": "40009",
+      "directoryPath": "/areas/oklahoma/#beckham",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/beckham-county/",
+      "readerDecision": "Give school organizers arrival instructions they can share.",
+      "rationale": "St. Louis City and Cerro Gordo cover museum-group choices. This brief adds distribution beyond the organizer: the arrive-together condition must survive copied school instructions and reach separately travelling sponsors, with a concrete acceptance check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.elkcity.com/city-hall/departments/elk-city-museums/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/blaine",
+      "name": "Blaine County",
+      "fips": "40011",
+      "directoryPath": "/areas/oklahoma/#blaine",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/blaine-county/",
+      "readerDecision": "Choose the group-camp arrangement before using a reservation link.",
+      "rationale": "Madison and Dent cover group use and reservation boundaries. The added project value is a sleeping-arrangement comparison tied to a different application channel from ordinary campsites, with a wrong-checkout test and distinct photo inventory.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/roman-nose-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/bryan",
+      "name": "Bryan County",
+      "fips": "40013",
+      "directoryPath": "/areas/oklahoma/#bryan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/bryan-county/",
+      "readerDecision": "Connect the collection a visitor wants to see with the day it is open.",
+      "rationale": "Madison and Henry cover public opening and museum arrangements. This adds floor-specific collection availability and a direct collection-page arrival test, requiring an inventory of exhibit labels and schedule links rather than a generic hours rewrite.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://threevalleymuseum.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 2,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/caddo",
+      "name": "Caddo County",
+      "fips": "40015",
+      "directoryPath": "/areas/oklahoma/#caddo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/caddo-county/",
+      "readerDecision": "Change arrival preparation when the accommodation changes.",
+      "rationale": "Sioux and Wayne cover stay choices and amenities. This brief specifically tests a change of accommodation after an arrival plan exists, keeping class-specific check-in and site extras together. It adds a useful content substitution check beyond paraphrasing campground policy.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.redrockcanyonadventurepark.com/park-policy",
+        "https://www.redrockcanyonadventurepark.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/canadian",
+      "name": "Canadian County",
+      "fips": "40017",
+      "directoryPath": "/areas/oklahoma/#canadian",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/canadian-county/",
+      "readerDecision": "Describe the event layout before assuming the arena floor is ready.",
+      "rationale": "Davis and Howell cover facility setup and event requirements. The additional value here is a dirt-to-event-surface preparation question plus the adjacent pavilion’s different environment, providing specific photo, specification and combined-space acceptance checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://ccexpocenter.com/indoor-arena/",
+        "https://ccexpocenter.com/elementor-page-348/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 14,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12,
+          "OBSERVED": 1,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/carter",
+      "name": "Carter County",
+      "fips": "40019",
+      "directoryPath": "/areas/oklahoma/#carter",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/carter-county/",
+      "readerDecision": "Plan key collection and caterer review before the event day.",
+      "rationale": "Warren, Webster and Adair cover venue inquiries and use conditions. This brief adds two chronological dependencies before event-day access: a business-day key handoff and approval before contracting an outside caterer, with explicit weekend and unapproved-vendor tests.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.ardmoremainstreet.com/rental-agreement/market-place-on-broadway/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 2,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/cherokee",
+      "name": "Cherokee County",
+      "fips": "40021",
+      "directoryPath": "/areas/oklahoma/#cherokee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/cherokee-county/",
+      "readerDecision": "Keep the float reservation separate from the overnight stay.",
+      "rationale": "Crawford ties floats to guest eligibility and included lunch; McDonald compares shuttle sequences; Allamakee separates owned equipment. This brief instead preserves two reservations across a multi-night stay and a day-specific float, with a season-status override and route-change arrival test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://peytonsplace.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/choctaw",
+      "name": "Choctaw County",
+      "fips": "40023",
+      "directoryPath": "/areas/oklahoma/#choctaw",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/choctaw-county/",
+      "readerDecision": "Separate public tours, private encounters and group requests.",
+      "rationale": "Woodford compares animal-related experiences and Audrain separates museum formats. This local project adds a specific group brief containing adult/child counts, purpose and expectations alongside a separately described observation-deck arrangement; its acceptance test checks that an education request survives the handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.endangeredarkfoundation.org/tours"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/cimarron",
+      "name": "Cimarron County",
+      "fips": "40025",
+      "directoryPath": "/areas/oklahoma/#cimarron",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/cimarron-county/",
+      "readerDecision": "Separate the Black Mesa hike from the overnight campsite.",
+      "rationale": "Wood and Fayette already explain activity-specific entrances; Tama distinguishes outdoor and building access. This brief adds separate facilities roughly fifteen miles apart, an overnight prohibition at the hiking destination and an itinerary test that prevents campsite confirmation from implying preserve access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/black-mesa-state-park-nature-preserve"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/cleveland",
+      "name": "Cleveland County",
+      "fips": "40027",
+      "directoryPath": "/areas/oklahoma/#cleveland",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/cleveland-county/",
+      "readerDecision": "Choose the food arrangement separately from exclusive pool use.",
+      "rationale": "Emmet distinguishes a private room from shared recreation, and Davis covers event-space preparation. This case adds exclusive waterpark use with excluded concessions and two mutually different food/payment arrangements, giving the owner a specific accounting-label inventory and switch-option test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.normanok.gov/residents-visitors/parks-recreation/westwood-family-aquatic-center/rentals"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 6,
+          "OBSERVED": 2,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 4,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/coal",
+      "name": "Coal County",
+      "fips": "40029",
+      "directoryPath": "/areas/oklahoma/#coal",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/coal-county/",
+      "readerDecision": "Ask whether the visitor is preserving old media or making a new recording.",
+      "rationale": "St. Louis County has detailed transfer-session timing and Cook addresses unfinalized discs. This brief does not repeat those unsupported specifics: it adds a task-level fork between preserving media and recording new audio at a local branch, with the owner supplying format and assistance information before publication.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.seolibraries.com/about/hours-locations/coal",
+        "https://www.seolibraries.com/digi-lab"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/comanche",
+      "name": "Comanche County",
+      "fips": "40031",
+      "directoryPath": "/areas/oklahoma/#comanche",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/comanche-county/",
+      "readerDecision": "Make the current visit plan take precedence during a building closure.",
+      "rationale": "Des Moines, Morgan and Madison cover changing museum access. The local value is a multi-year construction transition requiring a full page inventory, direct indoor-collection landing test and a separate education-confirmation route, while keeping projected reopening distinct from a booked date.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.discovermgp.org/",
+        "https://www.discovermgp.org/education"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/cotton",
+      "name": "Cotton County",
+      "fips": "40033",
+      "directoryPath": "/areas/oklahoma/#cotton",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether the available local sources support a useful printing, museum-visit or park-use website brief.",
+      "rationale": "Texas/Madison already provides substantive printing limits and Missouri/Butler a detailed self-service versus assisted-copy decision. Walters sources provide neither equivalent local preparation detail nor a different supported project brief. Population is not used as a filter.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/craig",
+      "name": "Craig County",
+      "fips": "40035",
+      "directoryPath": "/areas/oklahoma/#craig",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/craig-county/",
+      "readerDecision": "Show the room configuration, surface and kitchen choice together.",
+      "rationale": "Grundy discusses an opened wall and Kossuth an optional kitchen. This local brief combines concrete/carpet room choices with a named partitioned pair and explicitly tests the acoustic claim, then carries that arrangement into kitchen and deposit preparation. It requires a specific image/configuration inventory rather than a renamed generic room page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://craigcountyfairgrounds.com/rental_info",
+        "https://craigcountyfairgrounds.com/directions"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/creek",
+      "name": "Creek County",
+      "fips": "40037",
+      "directoryPath": "/areas/oklahoma/#creek",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/creek-county/",
+      "readerDecision": "Distinguish a museum visit from the Model T driving experience.",
+      "rationale": "Woodford and Audrain compare tour formats. This brief adds participatory driving with a license-presentation prerequisite, small-session enrollment and included museum admission; the acceptance check separates admission from participation without creating a public identity-upload flow.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.heartofroute66.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/custer",
+      "name": "Custer County",
+      "fips": "40039",
+      "directoryPath": "/areas/oklahoma/#custer",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/custer-county/",
+      "readerDecision": "Plan the grade mix and lunch space alongside the guided visit.",
+      "rationale": "Callaway covers a single supervision ratio and subgrouping; Woodbury adds rotations and a second museum. This brief carries grade-dependent review and an internal lunch-space request through one school itinerary.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://staffordmuseum.org/group-tours-school-visits/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/delaware",
+      "name": "Delaware County",
+      "fips": "40041",
+      "directoryPath": "/areas/oklahoma/#delaware",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/delaware-county/",
+      "readerDecision": "Separate a trail walk from a visit to the seasonal museum.",
+      "rationale": "The existing seasonal and grounds/interior cases establish the principle. The combined free daily trail, separately seasonal museum, and section-specific route description creates a useful local scope and three distinct checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://har-bervillage.com/nature-trails",
+        "https://har-bervillage.com/home"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/dewey",
+      "name": "Dewey County",
+      "fips": "40043",
+      "directoryPath": "/areas/oklahoma/#dewey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/dewey-county/",
+      "readerDecision": "Keep a larger party’s revised headcount attached to its approved pool time.",
+      "rationale": "Lampasas and Emmet cover request/payment and public/private scheduling. The incremental value here is the post-approval attendance change, working-day notice and staff resourcing handoff, with a concrete count-change check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://seilingok.com/swimming-pool"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/ellis",
+      "name": "Ellis County",
+      "fips": "40045",
+      "directoryPath": "/areas/oklahoma/#ellis",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/ellis-county/",
+      "readerDecision": "Identify the cattle service stage before discussing a delivery.",
+      "rationale": "Florida Madison explains consumer product/custom-harvest stages and processor handoffs. Pennsylvania Pike explains service differences among branches. The Ellis brief adds a producer’s choice among receiving, backgrounding, finishing and associated services before lot and timing review.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.uspremiumbeef.com/QCF.aspx?id=1829",
+        "https://ag.ok.gov/discharge-permitted-cafo-facilities/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/garfield",
+      "name": "Garfield County",
+      "fips": "40047",
+      "directoryPath": "/areas/oklahoma/#garfield",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/garfield-county/",
+      "readerDecision": "Keep supervision groups separate from an optional class’s capacity.",
+      "rationale": "The closest school pages cover booking and group thresholds. This brief specifically tests two simultaneous capacities—supervision group and educational class—and their relationship to payment preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.leonardos.org/field-trip-signup.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/garvin",
+      "name": "Garvin County",
+      "fips": "40049",
+      "directoryPath": "/areas/oklahoma/#garvin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/garvin-county/",
+      "readerDecision": "Describe the cabinet, countertop and millwork package before requesting an estimate.",
+      "rationale": "Johnston already covers cabinet/countertop scope. Additional value rests on the source’s commercial coordination across materials, shop drawings, fabrication and installation, with a revision-impact test rather than a renamed product list.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://cabinetprosokllc.com/pages/services"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/grady",
+      "name": "Grady County",
+      "fips": "40051",
+      "directoryPath": "/areas/oklahoma/#grady",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/grady-county/",
+      "readerDecision": "Choose the building by event activity and support spaces.",
+      "rationale": "Existing venue comparisons cover setup and rental readiness. This brief makes the dirt-arena versus presentation/kitchen choice explicit and tests cross-building amenity leakage.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.gradycountyfairgrounds.com/blank-13",
+        "https://www.gradycountyfairgrounds.com/blank-9",
+        "https://www.gradycountyfairgrounds.com/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/grant",
+      "name": "Grant County",
+      "fips": "40053",
+      "directoryPath": "/areas/oklahoma/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/grant-county/",
+      "readerDecision": "Distinguish an identified feed order from a request for a supplementation discussion.",
+      "rationale": "Pennsylvania Pike explains branch-specific services and contact routes; it does not provide an order-versus-consultation structure. The Grant brief adds a named feed product versus specialist discussion, hay-sampling preparation and a bulk-delivery/fulfillment question, while leaving actual branch supply to staff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.farmersgraincompany.com/fccp-feed-21791",
+        "https://www.farmersgraincompany.com/cbloc-2513"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/greer",
+      "name": "Greer County",
+      "fips": "40055",
+      "directoryPath": "/areas/oklahoma/#greer",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/greer-county/",
+      "readerDecision": "Show which sample preparation instructions apply before the drop-off.",
+      "rationale": "Missouri Worth distinguishes local-office and direct-laboratory submission, payment reference and results handling. The Greer brief instead makes sample material and an unknown requested test the first choices, then connects approved preparation to the county-office drop-off and payment step.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://extension.okstate.edu/county/greer/agriculture",
+        "https://extension.okstate.edu/county/greer"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/harmon",
+      "name": "Harmon County",
+      "fips": "40057",
+      "directoryPath": "/areas/oklahoma/#harmon",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Ask staff for an outside title and use the local branch for pickup and return.",
+      "rationale": "Worth already supplies a complete sample/submission/payment workflow; uncertain destination wording adds no safe improvement to it. The fully inspected local library alternative repeats Monroe’s staff-managed outside-loan request, pickup and return responsibilities, with less detail and no extra distinct selection or preparation rule. Card-based resource labels alone do not support a fuller commissioning brief. NO_ADDITION is based on this substantive alternative and full comparison, not the Extension access/conflict alone. The conflict remains a discarded-lead limitation rather than an asserted resolved operating fact.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 6,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 6
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/harper",
+      "name": "Harper County",
+      "fips": "40059",
+      "directoryPath": "/areas/oklahoma/#harper",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/harper-county/",
+      "readerDecision": "Separate published yard capacity from space for a particular incoming lot.",
+      "rationale": "The closest cattle-related record concerns meat orders and processing. This capacity-versus-availability brief has a different reader, requested information and failure case. It also differs from Ellis’s service-stage selection.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.prattfeedersgroup.com/buffalo-feeders",
+        "https://www.prattfeedersgroup.com/services",
+        "https://ag.ok.gov/discharge-permitted-cafo-facilities/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/haskell",
+      "name": "Haskell County",
+      "fips": "40061",
+      "directoryPath": "/areas/oklahoma/#haskell",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/haskell-county/",
+      "readerDecision": "Keep the rental option’s return time and arrival preparation together.",
+      "rationale": "The guide covers selected-product preparation; this case adds an explicit overnight exception to a general same-day return rule and restricted short slots. The local brief tests those branches together.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.evergreenmarina.com/boat-rentals"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/hughes",
+      "name": "Hughes County",
+      "fips": "40063",
+      "directoryPath": "/areas/oklahoma/#hughes",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/hughes-county/",
+      "readerDecision": "Keep the site’s utilities and approval method attached to the selected stay.",
+      "rationale": "Meigs handles site versus shared amenities, while Calhoun handles category and stay length. This brief connects distinct utility categories to checking the selected option’s provider label and actual approval status. The capture does not establish which current site, if any, uses a non-Instant Book path; the pending-state acceptance check is a proposed test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.holdenvillecityhall.com/holdenville-lake",
+        "https://roverpass.com/c/holdenville-city-lake-holdenville-ok/",
+        "https://www.wildlifedepartment.com/fishing/wheretofish/southeast/holdenville-lake"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/jackson",
+      "name": "Jackson County",
+      "fips": "40065",
+      "directoryPath": "/areas/oklahoma/#jackson",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "A reader requests an unavailable book and needs to know who handles borrowing and return.",
+      "rationale": "The library alternative is substantive but does not add enough beyond Monroe’s full outside-loan request, renewal and return treatment to support a separate service page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/jefferson",
+      "name": "Jefferson County",
+      "fips": "40067",
+      "directoryPath": "/areas/oklahoma/#jefferson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/jefferson-county/",
+      "readerDecision": "Separate watching the sale from starting buyer registration.",
+      "rationale": "Florida Madison is about farm/processor stages, not buyer approval. Coles concerns live-sale claim allocation and Berkshire retained property, so neither replaces this local report/view/registration handoff. The complete approved-buyer guide already supplies the general account-versus-permission principle; no new guide is justified. A Waurika service brief adds the actual shared location selector and sensitive-registration boundary to a public-route audit, with a useful returning-user check and owner inputs.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://westernlivestock.com/locations/waurika/",
+        "https://westernlivestock.com/buyer-registration/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/johnston",
+      "name": "Johnston County",
+      "fips": "40069",
+      "directoryPath": "/areas/oklahoma/#johnston",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "A group distinguishes free museum admission from a reserved guided visit.",
+      "rationale": "The museum brief duplicates the complete group-visit records. The substantive Blue River alternative establishes area-specific access and camping restrictions, but the proposed general itinerary content supplies no additional owner inquiry or service workflow beyond the existing experience-choice and timed-booking guides. Henry is relevant only to the original museum-access candidate, not camping.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/kay",
+      "name": "Kay County",
+      "fips": "40071",
+      "directoryPath": "/areas/oklahoma/#kay",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/kay-county/",
+      "readerDecision": "Attach every guest limit to its room, setup or package.",
+      "rationale": "The closest venue pages discuss setup and included facilities. This source provides three different numerical scopes; the brief’s incremental value is preventing arithmetic or substitution across room, layout and package.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.marlandgrandhome.com/rentalsandvenue.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/kingfisher",
+      "name": "Kingfisher County",
+      "fips": "40073",
+      "directoryPath": "/areas/oklahoma/#kingfisher",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/kingfisher-county/",
+      "readerDecision": "Explain what a combined admission includes and what is currently open.",
+      "rationale": "Texas Polk handles a full-site closure versus routine hours. The Chisholm requires partial-building status inside a combined-admission offer, plus structure-specific preparation. This is a distinct maintenance and acceptance check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.thechisholm.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/kiowa",
+      "name": "Kiowa County",
+      "fips": "40075",
+      "directoryPath": "/areas/oklahoma/#kiowa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/kiowa-county/",
+      "readerDecision": "Separate a school road-show request from a festival inquiry.",
+      "rationale": "Buchanan and Jefferson cover program choice and school logistics. This local brief concerns mobile delivery, school-versus-festival terms and host-site confirmation, rather than routing a group to a fixed venue.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://tommyfranksmuseum.org/education/roadshow.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/latimer",
+      "name": "Latimer County",
+      "fips": "40077",
+      "directoryPath": "/areas/oklahoma/#latimer",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/latimer-county/",
+      "readerDecision": "Give each kind of stay its own arrival instructions.",
+      "rationale": "The existing departure and campground records explain meeting points and arrival responsibilities. This brief adds a stay-type decision that changes the first destination and the appropriate reservation link, with a practical check for a guest towing an RV.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/robbers-cave-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/le-flore",
+      "name": "Le Flore County",
+      "fips": "40079",
+      "directoryPath": "/areas/oklahoma/#le-flore",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/le-flore-county/",
+      "readerDecision": "Explain what a kitchen includes for the selected accommodation.",
+      "rationale": "The Wayne and Floyd records already address equipment and lodging distinctions. The additional useful brief is a unit-specific meal-preparation inventory: the word kitchen alone must not copy group-camp equipment expectations into a cabin stay.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/lake-wister-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/lincoln",
+      "name": "Lincoln County",
+      "fips": "40081",
+      "directoryPath": "/areas/oklahoma/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/lincoln-county/",
+      "readerDecision": "Keep activity units and event requests separate.",
+      "rationale": "Emmet covers a reserved room versus shared activities and Johnson rental responsibilities. Route 66 Bowl adds a different commissioning problem: mixed game/person/credit units, separate shoes and a special session, carried into an event request without inventing a bundle. Distinct department hours and the activity priorities produce a concrete owner brief beyond the earlier short event form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.rt66bowl.com/bowling-and-attractions/",
+        "https://www.rt66bowl.com/events/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/logan",
+      "name": "Logan County",
+      "fips": "40083",
+      "directoryPath": "/areas/oklahoma/#logan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/logan-county/",
+      "readerDecision": "Separate changing a ticket from arriving late.",
+      "rationale": "Hood and Macon cover live-performance timing and booking. This project combines the before-travel change route with the on-the-way late-arrival route while keeping exchange, transfer and admission decisions separate. The useful work is the navigation and policy handoff, not another generic showtime paragraph.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://thepollard.org/policies/",
+        "https://tickets.thepollard.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/love",
+      "name": "Love County",
+      "fips": "40085",
+      "directoryPath": "/areas/oklahoma/#love",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/love-county/",
+      "readerDecision": "Describe the package unit before customers add their extras.",
+      "rationale": "The San Saba and experience-choice material distinguish products. This brief adds a bundled lodging-and-activity unit, where room count, party size and extra nights or rounds cannot be inferred from a package name.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.falconheadok.com/stay-play"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/mcclain",
+      "name": "McClain County",
+      "fips": "40087",
+      "directoryPath": "/areas/oklahoma/#mcclain",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/mcclain-county/",
+      "readerDecision": "Keep the selected location attached to its opening days.",
+      "rationale": "Webster already addresses branch-specific meeting timing. This local brief concerns choosing an office before visiting, with location-specific opening days and phone routing rather than meeting-room start and cleanup buffers.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://oklahoma.gov/health/locations/county-health-departments/mcclain-county-health-department.html"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/mccurtain",
+      "name": "McCurtain County",
+      "fips": "40089",
+      "directoryPath": "/areas/oklahoma/#mccurtain",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/mccurtain-county/",
+      "readerDecision": "Explain the trip conditions before asking for a preferred time.",
+      "rationale": "McDonald and Allamakee cover outfitter choices and participation conditions. This brief adds a two-part published participation condition before a preferred-time request, with an explicit distinction between a request and current operator confirmation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.tippacanoe.com/contact"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/mcintosh",
+      "name": "McIntosh County",
+      "fips": "40091",
+      "directoryPath": "/areas/oklahoma/#mcintosh",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/mcintosh-county/",
+      "readerDecision": "Show preparation and return times with the rental slot.",
+      "rationale": "Clay and Monroe cover marina and rental decisions. This brief adds the relationship among the selected block, advance lesson time and return, plus a specific supplied-versus-customer-provided preparation item. It is not a generic availability calendar.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.fountainheadmarina.com/boat-rentals-copy-copy"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/major",
+      "name": "Major County",
+      "fips": "40093",
+      "directoryPath": "/areas/oklahoma/#major",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/major-county/",
+      "readerDecision": "Distinguish visiting hours from vehicle access.",
+      "rationale": "Louisa and the Missouri recreation records discuss access and visitor preparation. This brief adds transport-specific access windows and the lack of an overnight product, requiring the website to avoid converting a walking-hours label into a vehicle-access promise.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/gloss-mountain-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/marshall",
+      "name": "Marshall County",
+      "fips": "40095",
+      "directoryPath": "/areas/oklahoma/#marshall",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/marshall-county/",
+      "readerDecision": "Route the visit to the right marina department.",
+      "rationale": "Clay and Monroe already cover rental and marina timing; Louisa addresses visitor access. This brief adds purpose-based department routing, the distinction between land and water fuel access, and a separate handoff to independent providers.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://pointevista.com/marina/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/mayes",
+      "name": "Mayes County",
+      "fips": "40097",
+      "directoryPath": "/areas/oklahoma/#mayes",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Understanding industrial capabilities before discussing a project.",
+      "rationale": "Use the existing industrial website planning guide; no local service draft is justified by these facts alone.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/murray",
+      "name": "Murray County",
+      "fips": "40099",
+      "directoryPath": "/areas/oklahoma/#murray",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/murray-county/",
+      "readerDecision": "Separate campus access, exhibits and arranged group visits.",
+      "rationale": "Story and Jefferson explain museum and group-visit choices. This brief adds free campus access alongside paid exhibits and arranged interpretation, so a group-size threshold does not become a claim that a guide or every attraction is included.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.chickasawculturalcenter.com/visit/groups-and-tours/",
+        "https://www.chickasawculturalcenter.com/visit/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/muskogee",
+      "name": "Muskogee County",
+      "fips": "40101",
+      "directoryPath": "/areas/oklahoma/#muskogee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/muskogee-county/",
+      "readerDecision": "Keep the overnight arrival separate from the activity visit.",
+      "rationale": "Emmet covers packaged activity distinctions and Dallas covers accommodation arrival. The added brief combines an overnight timetable with a separately ticketed daytime activity and its own purchase counter, without treating the lodging booking as activity admission.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.travelok.com/state-parks/greenleaf-state-park"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/noble",
+      "name": "Noble County",
+      "fips": "40103",
+      "directoryPath": "/areas/oklahoma/#noble",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/noble-county/",
+      "readerDecision": "Make preparation visible before a school visit is requested.",
+      "rationale": "Jefferson and Story cover group admission and visit selection. This brief adds preparation before the visit and a distinct post-booking resource handoff, so an organizer can scope the commitment before choosing a date.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://cherokee-strip-museum.org/a-day-at-rose-hill-school/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/nowata",
+      "name": "Nowata County",
+      "fips": "40105",
+      "directoryPath": "/areas/oklahoma/#nowata",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Deciding whether a museum visit or scheduled event fits a proposed trip.",
+      "rationale": "Retain existing museum and experience-choice guidance; do not turn historical event notices into a new county brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/okfuskee",
+      "name": "Okfuskee County",
+      "fips": "40107",
+      "directoryPath": "/areas/oklahoma/#okfuskee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/okfuskee-county/",
+      "readerDecision": "Check the season before treating a monthly stay as an available option.",
+      "rationale": "Calhoun separates long-stay areas and Benton seasonal amenities. The new draft connects the season with the availability of a monthly arrangement, placement and a later eligibility discussion, including a cross-season acceptance case and deferred evidence. The existing rental-fit guide handles the general principle; no new guide is needed. Exact cutoff and provider conflicts are not resolved by guessing and are excluded from definitive customer instructions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://okemahok.gov/city-services/okemah-lake/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/oklahoma",
+      "name": "Oklahoma County",
+      "fips": "40109",
+      "directoryPath": "/areas/oklahoma/#oklahoma",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/oklahoma-county/",
+      "readerDecision": "Keep the soft hold and contract deadlines distinct.",
+      "rationale": "Wapello, Webster, Howard and Johnson address room plans, supplier responsibilities and venue options. None develops the competing trigger dates of a soft hold and an issued contract. The current confirmation guide supplies the general state distinction; the local service brief adds an explicit contested-hold example and stage-specific owner inputs without automating acceptance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://nationalcowboymuseum.org/facility-rentals-okc/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED": 2,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 4,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/okmulgee",
+      "name": "Okmulgee County",
+      "fips": "40111",
+      "directoryPath": "/areas/oklahoma/#okmulgee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/okmulgee-county/",
+      "readerDecision": "Separate the initial catering request from the guaranteed guest count.",
+      "rationale": "Caroline and Wapello cover menu/service/layout quoting, while Webster covers venue staff and outside catering. The new brief contributes a timeline for estimated and guaranteed headcounts, the consequence of no update and later reduction limits, with university/external group routing. The quote and confirmation guides cover the reusable form principle, so separate local commissioning content is justified without another general guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://osuit.edu/student-life/food-dining/catering-services"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/osage",
+      "name": "Osage County",
+      "fips": "40113",
+      "directoryPath": "/areas/oklahoma/#osage",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/osage-county/",
+      "readerDecision": "Keep group admission and a guided visit as separate arrangements.",
+      "rationale": "Scott and Story cover group rates and museum visits. This brief adds the difference between paying-adult count, complimentary roles and an optional guided arrangement with its own lead time, useful for a coach organizer planning both admission and interpretation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://woolaroc.org/group-tours/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 13,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11,
+          "OBSERVED": 2
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 2,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/ottawa",
+      "name": "Ottawa County",
+      "fips": "40115",
+      "directoryPath": "/areas/oklahoma/#ottawa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/ottawa-county/",
+      "readerDecision": "Give a group lunch its own tour request.",
+      "rationale": "Adds a hosted meal on a theatre stage, a specific group threshold and a shared tour/meal request to the existing visit-type and room/program principles. The local brief explains what an owner must supply and how to test an undersized group.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://thecolemantheatre.org/lunch-on-stage/",
+        "https://thecolemantheatre.org/contact-us-tours/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/pawnee",
+      "name": "Pawnee County",
+      "fips": "40117",
+      "directoryPath": "/areas/oklahoma/#pawnee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/pawnee-county/",
+      "rationale": "Chariton covers a quote paid before release, Saline staff-classified scope, Washington appointments, Bureau evidence and effort limits, and DeKalb donations versus commissions. Pawnee’s complete brief instead explains an existing Donate-labeled payment route conditional on knowing the amount. The useful local work is preparation plus uncertain-total clarification plus the payment boundary, not the already-covered ranch closure. Wise checks an existing file before purchase; Warren uses estimates and payment before delivery. These differ from the source’s known-amount conditional use of a Donate-labeled route. Morrison’s new draft concerns opposite billing sequences, not this uncertain-total decision.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.pawneechs.org/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/payne",
+      "name": "Payne County",
+      "fips": "40119",
+      "directoryPath": "/areas/oklahoma/#payne",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/payne-county/",
+      "readerDecision": "Separate event-planning assistance from the services being booked.",
+      "rationale": "Goes beyond a room/program combination by connecting hotel-use qualification, quotation gathering and a city-bound transport-coordination offer. The owner receives three distinct acceptance cases.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.visitstillwater.org/meetings/services/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 1,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/pittsburg",
+      "name": "Pittsburg County",
+      "fips": "40121",
+      "directoryPath": "/areas/oklahoma/#pittsburg",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/pittsburg-county/",
+      "readerDecision": "Keep indoor and outdoor vendor applications on their own routes.",
+      "rationale": "Adds an actual two-organization application handoff and annual outside-vendor file to the existing vendor-status framework. The brief is about maintaining correct routing, not repeating a generic booth checklist.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://themcalesteritalianfestival.org/artscrafts.php"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/pontotoc",
+      "name": "Pontotoc County",
+      "fips": "40123",
+      "directoryPath": "/areas/oklahoma/#pontotoc",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/pontotoc-county/",
+      "readerDecision": "Make an audition inquiry different from a ticket question.",
+      "rationale": "The closest group and research records distinguish request purpose, but do not address performer submissions, audition scheduling and selection as different stages. The specific local workflow supports a service brief without a new general guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://mcswaintheatre.com/Contact.aspx",
+        "https://www.chickasaw.net/Our-Nation/Locations/McSwain-Theatre"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/pottawatomie",
+      "name": "Pottawatomie County",
+      "fips": "40125",
+      "directoryPath": "/areas/oklahoma/#pottawatomie",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/pottawatomie-county/",
+      "readerDecision": "Explain group registration even when admission is free.",
+      "rationale": "Adds the consequential free-admission-day registration and paid-guide distinction, plus the unguided-group rule, beyond ordinary school versus adult-group preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.mgmoa.org/group-visit"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 12,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 12
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/pushmataha",
+      "name": "Pushmataha County",
+      "fips": "40127",
+      "directoryPath": "/areas/oklahoma/#pushmataha",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/pushmataha-county/",
+      "readerDecision": "Compare sleeping privacy before choosing a ranch stay.",
+      "rationale": "Extends existing cabin equipment and dining comparisons with open sleeping privacy and the distinction between occupancy capacity and base-rate party size in a local ranch inventory.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://rebelhillguestranch.com/cabins.html",
+        "https://www.travelok.com/at/Antlers"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/roger-mills",
+      "name": "Roger Mills County",
+      "fips": "40129",
+      "directoryPath": "/areas/oklahoma/#roger-mills",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/roger-mills-county/",
+      "readerDecision": "Plan the indoor visit separately from the battlefield trail.",
+      "rationale": "Adds a concrete indoor/outdoor itinerary and segmented walking-route description to the existing building-access principles. It supplies owner inputs and checks for businesses recommending this nearby attraction.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.nps.gov/waba/planyourvisit/hours.htm",
+        "https://www.nps.gov/articles/nps-geodiversity-atlas-washita-battlefield-national-historic-site-oklahoma.htm"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/rogers",
+      "name": "Rogers County",
+      "fips": "40131",
+      "directoryPath": "/areas/oklahoma/#rogers",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/rogers-county/",
+      "readerDecision": "Choose school activities from the class size and grade.",
+      "rationale": "Adds activity-level group limits and maximum selection count to the general school-visit brief; the acceptance case is a larger class choosing a small-group activity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.willrogers.com/fieldtrips"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/seminole",
+      "name": "Seminole County",
+      "fips": "40133",
+      "directoryPath": "/areas/oklahoma/#seminole",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/seminole-county/",
+      "readerDecision": "Plan the field trip, lunch and funding as separate decisions.",
+      "rationale": "Combines a specific lunch time block, food-order cutoff and separate limited-funding application with useful owner commissioning checks. It exceeds the existing trip-versus-bus-funding explanation through the meal workflow.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.jasminemoran.com/group-visits/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/sequoyah",
+      "name": "Sequoyah County",
+      "fips": "40135",
+      "directoryPath": "/areas/oklahoma/#sequoyah",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/sequoyah-county/",
+      "readerDecision": "Confirm the chosen tour’s starting point and walking expectations.",
+      "rationale": "Applies the existing departure-address guide to a local multi-start custom itinerary, with specific separation of the cabin’s own address and wider tour arrangements. The service brief adds a route-version and walking-condition commissioning check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://visitcherokeenation.com/group-tours/",
+        "https://visitcherokeenation.com/attractions/sequoyahs-cabin-museum/",
+        "https://okshpo-share.org/NR_Record/831"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/stephens",
+      "name": "Stephens County",
+      "fips": "40137",
+      "directoryPath": "/areas/oklahoma/#stephens",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/stephens-county/",
+      "readerDecision": "Keep the learning program attached to its school-year dates.",
+      "rationale": "Adds school-year curriculum windows and a missing-confirmation-packet fallback to the existing class goal/count/date preparation. The proposed checks address a lesson carried into the wrong term.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://onthechisholmtrail.com/field-trips/"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/texas",
+      "name": "Texas County",
+      "fips": "40139",
+      "directoryPath": "/areas/oklahoma/#texas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/texas-county/",
+      "readerDecision": "Explain what changes when a library card needs renewal.",
+      "rationale": "Adds a returning-user service-continuity brief and recurring proof requirement to the existing initial applicant comparison; the acceptance check separates account expiry from item renewal.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://guymon.okpls.org/library-services"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 9,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/tillman",
+      "name": "Tillman County",
+      "fips": "40141",
+      "directoryPath": "/areas/oklahoma/#tillman",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish an ordinary museum visit from a special-event inquiry.",
+      "rationale": "The museum visit versus private event distinction is already substantially covered by the full venue and visit records. No additional facility-use detail supports a stronger locally grounded brief; the trail alternative does not justify inventing ordering policies.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/tulsa",
+      "name": "Tulsa County",
+      "fips": "40143",
+      "directoryPath": "/areas/oklahoma/#tulsa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/tulsa-county/",
+      "readerDecision": "Choose the photography request from the intended use and setting.",
+      "rationale": "Adds student-project preparation and distinct open-hours/after-hours garden conditions to the existing snapshot-versus-specialist and property-approval guidance. This is a local commissioning brief, not a new universal photography rule.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.philbrook.org/photography"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 7,
+          "OBSERVED": 2,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 3,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/wagoner",
+      "name": "Wagoner County",
+      "fips": "40145",
+      "directoryPath": "/areas/oklahoma/#wagoner",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/wagoner-county/",
+      "readerDecision": "Choose the building and the rooms before requesting event space.",
+      "rationale": "Adds a two-building comparison and independently rented room combinations, with time and equipment checks, beyond a single hall’s entrance or a room/program bundle.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.wagonerok.org/Departments/Parks-Public-Amenities"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 9,
+          "OBSERVED_PARTIAL_REFRESH_REQUIRED": 1
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 1,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/washington",
+      "name": "Washington County",
+      "fips": "40147",
+      "directoryPath": "/areas/oklahoma/#washington",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/washington-county/",
+      "readerDecision": "Distinguish a lawn photo session from an interior appointment.",
+      "rationale": "Provides an interior-after-hours permission and furniture-use brief distinct from Tulsa’s garden session routing and the existing commercial-image examples.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.frankphillipshome.org/photoshoots"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 11,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 11
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/washita",
+      "name": "Washita County",
+      "fips": "40149",
+      "directoryPath": "/areas/oklahoma/#washita",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Check the museum visit arrangement and separate it from other attractions.",
+      "rationale": "A museum-appointment page or seasonal-pool request would restate existing guidance without a new owner input, acceptance test or consequential local distinction supported by the source. The decision is no addition on this evidence, not a claim that the county lacks businesses.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/woods",
+      "name": "Woods County",
+      "fips": "40151",
+      "directoryPath": "/areas/oklahoma/#woods",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Select the correct campus before requesting a tour.",
+      "rationale": "Campus identity and separate scheduling routes repeat the existing full location and date-specific records. A current exceptions page could be useful for that institution, but these facts do not support a materially distinct county service brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [],
+      "keywordReview": {
+        "queriedPhrases": 8,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 8
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    },
+    {
+      "areaId": "oklahoma/woodward",
+      "name": "Woodward County",
+      "fips": "40153",
+      "directoryPath": "/areas/oklahoma/#woodward",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oklahoma/woodward-county/",
+      "readerDecision": "Compare event buildings by the work the event needs to do.",
+      "rationale": "Adds activity-dependent building choice across livestock, exhibition and training uses, including the limit of an electrical-fixture description. This is more specific than generic venue inclusion or capacity advice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_LIMITED_METRICS",
+      "sourceUrls": [
+        "https://www.woodwardeventcenter.com/book-venue"
+      ],
+      "keywordReview": {
+        "queriedPhrases": 10,
+        "metricStatuses": {
+          "UNAVAILABLE_REFRESH_REQUIRED": 10
+        },
+        "explicitZeroPhrases": 0,
+        "positiveEstimatePhrases": 0,
+        "decisionChanged": false
+      }
+    }
+  ],
+  "keywordSummary": {
+    "schemaVersion": 1,
+    "reviewDate": "2026-10-26",
+    "status": "KEYWORD_RECONCILIATION_COMPLETE_WITH_RECORDED_LIMITATIONS",
+    "database": "US",
+    "uniqueBulkPhrases": 1377,
+    "countyPhrases": 328,
+    "representativeCityPhrases": 956,
+    "supplementalSourceServiceAndQuestionPhrases": 89,
+    "coreStateServicePhrases": 4,
+    "observedStatuses": {
+      "UNAVAILABLE_REFRESH_REQUIRED": 1305,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 54,
+      "OBSERVED": 18
+    },
+    "positiveEstimatePhrases": 40,
+    "explicitZeroPhrases": 32,
+    "unavailablePhrases": 1305,
+    "countyAssessmentsReconciled": 164,
+    "servicePagesRetained": 141,
+    "directoryOnlyRetained": 23,
+    "faqsRetained": 10,
+    "newGeneralGuides": 0,
+    "scope": "US estimates for exact phrase wording, not county-resident demand. Shared and overlapping phrase volumes are not summed. Missing and refresh-required fields remain unavailable; partial metrics retain their status. Keyword estimates do not establish source accuracy, page quality, Google approval or ranking eligibility.",
+    "questionPanels": [
+      {
+        "stateId": "minnesota",
+        "status": "OBSERVED_QUESTION_PANEL",
+        "questionCount": 1,
+        "newFaqsFromPanel": 0
+      },
+      {
+        "stateId": "oklahoma",
+        "status": "NO_QUESTION_DATA",
+        "questionCount": 0,
+        "newFaqsFromPanel": 0
+      }
+    ],
+    "contentDecision": "No title, body, service-page, FAQ or guide additions were driven solely by a keyword metric. All county dispositions retain their source, locality and complete-content review basis."
+  }
+}

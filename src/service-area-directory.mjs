@@ -1,6 +1,6 @@
 import {gzipSync} from 'node:zlib';
 import {escapeHtml as e} from './shared.mjs';
-import {normalizeCountyQuery,parseCountyQuery,packCountySearch,packCountyNames,packCountySearchCards} from './assets/county-directory.js';
+import {normalizeCountyQuery,parseCountyQuery,packCountySearch,packCountyNames,packCountySearchCards,packCountyBase91} from './assets/county-directory.js';
 import {countyProfiles} from './county-profiles.mjs';
 import {countyGeography} from './county-geography.mjs';
 import {countyRegions} from './county-regions.mjs';
@@ -85,7 +85,7 @@ function areaDetails(county,state,references){
   // A shared status describes this entire typed list. Mixed statuses and
   // place-specific notes stay next to the individual names.
   const sharedStatus=places.length>1&&places[0].governmentStatus&&places.every(place=>place.governmentStatus===places[0].governmentStatus)?places[0].governmentStatus:'';
-  const heading=type==='Unorganized territory'&&state.id==='iowa'?'Unorganized territories (statistical)':placeTypeLabels[type]||type;
+  const heading=type==='Unorganized territory'&&['iowa','minnesota'].includes(state.id)?'Unorganized territories (statistical)':placeTypeLabels[type]||type;
   return `<div><h3>${e(heading)}</h3>${sharedStatus?`<p class="county-place-note">All places in this list: ${e(sharedStatus)}</p>`:''}<ul class="county-place-list">${places.map(place=>{const notes=[...new Set([place.note,sharedStatus?'':place.governmentStatus,place.town?'In the Town of '+place.town+'.':null].filter(Boolean))];return `<li>${e(place.name)}${notes.length?` <span class="county-place-note">${e(notes.join(' '))}</span>`:''}</li>`;}).join('')}</ul></div>`;
  }).join('');
  const aliases=(g.aliases||[]).filter(alias=>alias.note).map(alias=>`<li>${e(alias.name)}${alias.type?' ('+e(alias.type)+')':''}: ${e(alias.note)}</li>`).join('');
@@ -133,8 +133,11 @@ function cards(state,counties,dictionary,references,searchCards){
   const region=state.regions.find(item=>item.slugs.includes(county.slug));
   const anchor=county.anchor&&county.anchor!==county.name?` <span>(${e(county.anchor)})</span>`:'';
   const packed=packCountySearch(countySearchText(county,state,region),dictionary);
-  const search=searchCards?searchCards.push(packed)-1:packed;
-  return `<li data-cs="${e(search)}">${references?areaDetails(county,state,references):`<a data-cl href="${e(countyServicePath(county,state))}">${e(countyAreaName(county))}${anchor}</a>`}</li>`;
+  if(searchCards)searchCards.push(packed);
+  const search=searchCards?'':packed;
+  // Combined cards use DOM order. HTML permits the li end tag to be omitted
+  // before the next li or the end of its ul; the parsed list stays identical.
+  return `<li data-cs="${e(search)}">${references?areaDetails(county,state,references):`<a data-cl href="${e(countyServicePath(county,state))}">${e(countyAreaName(county))}${anchor}</a>`}${searchCards?'':'</li>'}`;
  }).join('')}</ul>`;
 }
 export function directoryControls(state){
@@ -143,11 +146,11 @@ export function directoryControls(state){
  const example=({texas:'Dallas, Travis County, or El Paso',louisiana:'Lafayette parish or Houma city',arkansas:'Little Rock or Springdale city',wisconsin:'Brookfield city or Brookfield town',illinois:'Naperville or Cicero township',mississippi:'Jackson or Oxford',alabama:'Huntsville or Fairhope',georgia:'Atlanta or Athens', 'south-carolina':'Charleston or Summerville',florida:'Miami or Longboat Key','new-york':'Ithaca or St. Lawrence',pennsylvania:'Harrisburg or State College',ohio:'Toledo or Yellow Springs','new-jersey':'Princeton or Paramus',connecticut:'Hartford or Groton','rhode-island':'Warwick or Bristol',massachusetts:'Boston or Amherst',delaware:'Newark or Smyrna',vermont:'Burlington or St. Albans','new-hampshire':'Concord or Coös',maine:'Portland or Bangor',maryland:'Baltimore city or Towson',virginia:'Richmond city or Fairfax county','west-virginia':'Charleston or Harpers Ferry',michigan:'Detroit or Bloomfield township','district-of-columbia':'Georgetown or Ward 3',indiana:'Indianapolis or Bloomington',kentucky:'Louisville or Lexington',tennessee:'Nashville or Knoxville','north-carolina':'Charlotte or Asheville'})[state?.id]||'Newark DE or Burlington VT';
  return `<div class="county-filter" data-area-plural="${plural}" data-county-filter-controls><p id="county-search-help">Search a place name; ZIP codes are not supported.${state?'':' Choose a state or district to narrow the results.'}</p>${state?'':`<div class="county-state-filter"><label for="county-state">State or district</label><select id="county-state" data-county-state-filter aria-controls="counties" disabled><option value="">All ${serviceRegionLabel}</option>${serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).map(item=>`<option value="${item.id}">${item.name}</option>`).join('')}</select></div>`}<div class="county-search-control"><label for="county-search">County, parish, region or community</label><div class="county-filter-row"><input id="county-search" type="search" maxlength="100" autocomplete="off" placeholder="For example, ${example}" aria-describedby="county-search-help" aria-controls="counties" disabled><button type="button" class="button button-secondary" disabled>Clear</button></div></div><p class="county-filter-status" role="status" aria-live="polite" aria-atomic="true">Browse all ${count} ${plural} below.</p><noscript><p>Search needs JavaScript. Open the lists below to browse every service area.</p></noscript></div>`;
 }
-function compressSearchPayload(value){
+function compressSearchPayload(value,{dense=false}={}){
  const compressed=gzipSync(value,{level:9});
  // RFC 1952 OS=255 (unknown) removes host metadata from identical builds.
  compressed[9]=255;
- return {encoding:'gzip-base64',data:compressed.toString('base64')};
+ return dense?{encoding:'gzip-base91',data:packCountyBase91(compressed)}:{encoding:'gzip-base64',data:compressed.toString('base64')};
 }
 export function countyDirectory(state,{compact=false}={}){
  const states=state?[state]:serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en'));
@@ -157,15 +160,15 @@ export function countyDirectory(state,{compact=false}={}){
  const placeNames=[...new Set(states.flatMap(item=>item.counties.flatMap(county=>countySearchText(county,item,item.regions.find(region=>region.slugs.includes(county.slug))).split('|').map(term=>term.slice(term.indexOf(':')+1)))))].sort();
  const dictionary={names:placeNames,indices:new Map(placeNames.map((name,index)=>[name,index]))};
  const packedNames=packCountyNames(dictionary.names);
- const namePayload=packedNames.length>20_000?compressSearchPayload(packedNames):packedNames;
- // The combined finder shares one compressed term stream. Card indices retain
- // the original order; all visible links remain ordinary, browsable HTML.
+ const namePayload=packedNames.length>20_000?compressSearchPayload(packedNames,{dense:!state}):packedNames;
+ // The combined finder shares one compressed term stream in native card order;
+ // all visible links remain ordinary, browsable HTML.
  const searchCards=state?null:[];
  const sections=state?state.regions.map(region=>({id:region.id,name:region.name,count:region.slugs.length,plural:state.areaPlural,html:cards(state,regionCounties(state,region),dictionary,references)})):states.map(item=>({id:item.id,name:item.name,count:item.counties.length,plural:item.areaPlural,html:cards(item,[...item.counties].sort((a,b)=>a.name.localeCompare(b.name)),dictionary,undefined,searchCards)}));
  const foldBrowse=compact||!!state;
  const alphabet=state&&state.counties.length>30?[...new Map([...state.counties].sort((a,b)=>a.name.localeCompare(b.name,'en')).map(county=>[county.name.charAt(0).toUpperCase(),county]).reverse()).entries()].reverse():[];
  const alphabetLinks=alphabet.length?`<nav class="county-alphabet" aria-label="Browse ${e(state.name)} areas by letter">${alphabet.map(([letter,county])=>`<a href="#${e(county.slug)}">${e(letter)}</a>`).join('')}</nav>`:'';
- const cardPayload=searchCards?`<script type="application/json" data-county-search-cards>${JSON.stringify({...compressSearchPayload(packCountySearchCards(searchCards)),format:'columns-v1'})}</script>`:'';
+ const cardPayload=searchCards?`<script type="application/json" data-county-search-cards>${JSON.stringify({...compressSearchPayload(packCountySearchCards(searchCards,{relative:true}),{dense:true}),format:'columns-delta-v1'})}</script>`:'';
  return directoryControls(state)+cardPayload+`<script type="application/json" data-county-place-names>${JSON.stringify(namePayload)}</script><section class="county-search-results" data-county-results hidden aria-label="Service area search results"><h2>Best matches</h2><p data-county-multiple hidden>Some places extend into more than one county; other places share a name. Check each matching area and use the actual address when a boundary matters.</p><ul class="county-result-list" data-county-best></ul><details hidden><summary>Other matching areas</summary><ul class="county-result-list" data-county-more></ul></details></section>${compact?serviceStateCards():''}${alphabetLinks}${foldBrowse?'<details class="county-browse-all" data-county-browse-all><summary>Browse all counties and regions</summary>':''}<div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} ${section.plural})</summary>${section.html}</details>`).join('')}</div>${foldBrowse?'</details>':''}<div class="county-search-empty" data-county-empty hidden><p><strong>No service areas match that search.</strong></p><p>Try a county, region or community name${state?'':', or choose a different state or district'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name+' '+state.areaPlural:'all service areas'}.</p></div>`+(references?.html||'');
 }
 export function serviceStateCards(){
