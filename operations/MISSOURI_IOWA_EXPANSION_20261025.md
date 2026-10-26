@@ -30,4 +30,18 @@ The local build and all 913 unit tests passed. Browser checks cover every new co
 
 All 183 final contextual guide links passed semantic review. Clay's link now supports comparing rental and marina arrangements; Worth retains the content-preparation guide. Three existing Florida connections were re-reviewed after the coverage count changed in their linked guide. The final local quality check reports no findings, and the accepted content snapshot preserves all earlier material after the documented coverage additions.
 
-Publication remains pending fresh Linux screenshot review, all 15 exact-source CI jobs, artifact parity, a fresh production backup and migration rehearsal, live verification and the genuine scheduled-recovery receipt. No indexing or ranking outcome is claimed.
+Published and verified.
+
+Published source `8cd5d0aa1bbd5a40270519156f529bb51de51b8d`; authenticated Worker `e0c778d5-68bc-4d23-8fd3-66d24c0ad524`; deployed 2026-10-26T00:18:11.786Z.
+
+All 1,644 live HTML routes and 2,311 public asset hashes match the tested build, with 1,632 eligible sitemap URLs. All 15 jobs in the [exact-source CI run](https://github.com/palatis3/wonder-and-method/actions/runs/40246808116) passed: nine named release gates, a shared core build and five browser partitions. The complete browser inventory passed 918 checks with 523 reviewed platform-specific skips. Reading checks passed 36 cases; visual checks passed 64 tests covering 72 images; Firefox/WebKit passed 72 checks with 20 intentional skips. All 3,965 generated files match between local and Linux builds. Six live desktop, phone and 320-pixel journeys passed.
+
+The SEO audit checked all 1,644 routes with 0 errors and 21 current editorial decisions. Outbound verification reports 2,959 reachable links, 0 confirmed broken and 113 unverified. Blocked or unavailable destinations remain unverified. Coverage includes 2,214 directory identities across 31 states plus DC, 1,506 commercial location records, 65 guides and 436 downloads. Routine QA sent no real inquiry, chat message, email or payment.
+
+A fresh private production export passed local restore, integrity, foreign-key checks and an offline migration rehearsal. Migration `0039_mo_ia_journey_pages.sql` preserved existing records and schemas while extending the daily analytics page keys from 1,448 to 1,616. All 38 prior migrations remain unchanged. The preceding Worker remains compatible with the additive schema; a code rollback must not restore an old database over newer inquiries.
+
+Authenticated health is healthy. A genuine scheduled recovery succeeded at 2026-10-26T01:17:29.907Z, with an external HTTPS receipt at 2026-10-26T01:17:31.652303+00:00. Email alerts remain enabled to support@wonderandmethod.com with a one-hour period and fifteen-minute grace. No manual heartbeat was sent.
+
+Search Console confirmed the sitemap submission at 2026-10-26T00:19:14Z. Its latest observed status is Success with 1,632 discovered pages. The verified live sitemap contains 1,632 eligible URLs; discovery counts can lag and do not establish indexing or rankings.
+
+No indexing or ranking outcome is claimed.
