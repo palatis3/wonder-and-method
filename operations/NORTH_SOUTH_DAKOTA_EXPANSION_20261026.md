@@ -1,4 +1,10 @@
-# North Dakota and South Dakota local content checkpoint
+# North Dakota and South Dakota
+
+Published and verified in the [eight-state release](EIGHT_STATE_EXPANSION_20261026.md). Source `488e1b847439feb0d151555935b336626a6078a0`; deployed 2026-10-26T09:50:43.074Z.
+
+## Historical local checkpoint
+
+The following dated checkpoint preserves the research and verification record before the combined release. Its pending-release statements and intermediate counts are historical; the linked release record above contains the final outcome.
 
 All 53 North Dakota counties and 66 South Dakota counties received individual source, locality and full-content comparison assessments. Independent review accepted 83 service pages (42 North Dakota, 41 South Dakota), five residual FAQ pairs and 36 directory-only decisions. No new general guide was warranted. All research holds are closed; unavailable sources and excluded leads remain recorded.
 

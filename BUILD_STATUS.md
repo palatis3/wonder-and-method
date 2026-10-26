@@ -1,20 +1,22 @@
-# Implementation status — October 25, 2026
+# Implementation status — October 26, 2026
 
-The [Missouri and Iowa expansion](operations/MISSOURI_IOWA_EXPANSION_20261025.md) is published and verified: two state directories, 166 separately researched service pages and six focused FAQs, with all 214 counties and county equivalents represented. The [footer and shared-control release](operations/FOOTER_SEMRUSH_20261025.md), [Forest palette release](operations/PALETTE_CLARITY_20261025.md), [Texas expansion](operations/TEXAS_EXPANSION_20261025.md) and earlier release records retain their historical scope.
+The [eight-state expansion](operations/EIGHT_STATE_EXPANSION_20261026.md) is published and verified: Minnesota, Oklahoma, Kansas, Nebraska, North Dakota, South Dakota, California and New Mexico, together with the footer and directory improvements.
 
 ## Current published website
 
-Published source `8cd5d0aa1bbd5a40270519156f529bb51de51b8d`; authenticated Worker `e0c778d5-68bc-4d23-8fd3-66d24c0ad524`; deployed 2026-10-26T00:18:11.786Z.
+Published source `488e1b847439feb0d151555935b336626a6078a0`; authenticated Worker `8d47a789-95b8-4d8a-be99-d103ca590844`; deployed 2026-10-26T09:50:43.074Z.
 
-All 1,644 live HTML routes and 2,311 public asset hashes match the tested build, with 1,632 eligible sitemap URLs. All 15 jobs in the [exact-source CI run](https://github.com/palatis3/wonder-and-method/actions/runs/40246808116) passed: nine named release gates, a shared core build and five browser partitions. The complete browser inventory passed 918 checks with 523 reviewed platform-specific skips. Reading checks passed 36 cases; visual checks passed 64 tests covering 72 images; Firefox/WebKit passed 72 checks with 20 intentional skips. All 3,965 generated files match between local and Linux builds. Six live desktop, phone and 320-pixel journeys passed.
+All 2,081 live application routes and 2,749 public asset hashes match the checked build. The sitemap contains 2,069 eligible URLs. All 15 jobs in the [exact-source CI run](https://github.com/palatis3/wonder-and-method/actions/runs/40296763807) passed, including the shared core build, five browser partitions and nine named release gates. All 4,840 generated files match the Linux build.
 
-The SEO audit checked all 1,644 routes with 0 errors and 21 current editorial decisions. Outbound verification reports 2,959 reachable links, 0 confirmed broken and 113 unverified. Blocked or unavailable destinations remain unverified. Coverage includes 2,214 directory identities across 31 states plus DC, 1,506 commercial location records, 65 guides and 436 downloads. Routine QA sent no real inquiry, chat message, email or payment.
+The complete browser inventory passed 1,188 checks with 559 independently reviewed platform-specific skips. Reading checks passed 36 cases; visual checks passed 64 tests covering 72 images; Firefox/WebKit passed 104 checks with 20 reviewed skips. All 33 live desktop, phone and 320-pixel journeys passed. Static SEO checked all 2,081 routes with zero errors and 36 exact editorial decisions. Outbound checks report 3,594 reachable, 0 confirmed broken and 146 unverified destinations; unavailable destinations are not reported as reachable.
 
-A fresh private production export passed local restore, integrity, foreign-key checks and an offline migration rehearsal. Migration `0039_mo_ia_journey_pages.sql` preserved existing records and schemas while extending the daily analytics page keys from 1,448 to 1,616. All 38 prior migrations remain unchanged. The preceding Worker remains compatible with the additive schema; a code rollback must not restore an old database over newer inquiries.
+The release adds eight state directories and 429 individually researched service pages, with 26 focused FAQ pairs and 143 directory-only decisions across 572 counties. It includes the compact-footer update, reviewed guide-link and scope corrections, and deferred directory search data. The current inventory contains 1,935 service records, 273 FAQ pairs on 203 pages and 2,786 county-equivalent directory entries across 39 states and Washington, DC. No new general guide was justified.
 
-Authenticated health is healthy. A genuine scheduled recovery succeeded at 2026-10-26T01:17:29.907Z, with an external HTTPS receipt at 2026-10-26T01:17:31.652303+00:00. Email alerts remain enabled to support@wonderandmethod.com with a one-hour period and fifteen-minute grace. No manual heartbeat was sent.
+A fresh private production backup passed restore, integrity, foreign-key checks and an offline rehearsal. Migrations 0040 through 0043 preserve preceding rows and schemas while extending daily analytics page keys from 1,616 to 2,053. All 39 preceding migrations remain unchanged. The preceding Worker remains compatible; a code rollback must not restore an older database over newer inquiries.
 
-Search Console confirmed the sitemap submission at 2026-10-26T00:19:14Z. Its latest observed status is Success with 1,632 discovered pages. The verified live sitemap contains 1,632 eligible URLs; discovery counts can lag and do not establish indexing or rankings.
+Authenticated health is healthy. A genuine scheduled recovery succeeded at 2026-10-26T10:17:29.745Z, followed by the external HTTPS receipt at 2026-10-26T10:17:30.404469+00:00. Email alerts remain enabled to support@wonderandmethod.com with a one-hour period and fifteen-minute grace. No manual heartbeat was sent.
+
+Search Console confirmed the verified sitemap submission at 2026-10-26T09:53:40.738Z. Submission and discovery do not establish indexing, rankings or traffic. Routine QA sent no real inquiry, chat message, email or payment. Later documentation-only commits do not change the deployed application identity.
 
 ## Offers and daily operation
 

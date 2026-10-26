@@ -1,4 +1,10 @@
-# California and New Mexico content checkpoint
+# California and New Mexico
+
+Published and verified in the [eight-state release](EIGHT_STATE_EXPANSION_20261026.md). Source `488e1b847439feb0d151555935b336626a6078a0`; deployed 2026-10-26T09:50:43.074Z.
+
+## Historical local checkpoint
+
+The following dated checkpoint preserves the research and verification record before the combined release. Its pending-release statements and intermediate counts are historical; the linked release record above contains the final outcome.
 
 All 58 California counties and 33 New Mexico counties received individual source, locality and complete-content comparisons. Independent review accepted 82 service pages, five residual FAQ answers and nine directory-only decisions. No new general guide was justified. Named organizations are public planning examples, not studio clients or endorsements; the studio remains based in Buffalo and works online.
 

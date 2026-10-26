@@ -1,4 +1,10 @@
-# Minnesota and Oklahoma expansion — local checkpoint
+# Minnesota and Oklahoma expansion
+
+Published and verified in the [eight-state release](EIGHT_STATE_EXPANSION_20261026.md). Source `488e1b847439feb0d151555935b336626a6078a0`; deployed 2026-10-26T09:50:43.074Z.
+
+## Historical local checkpoint
+
+The following dated checkpoint preserves the research and verification record before the combined release. Its pending-release statements and intermediate counts are historical; the linked release record above contains the final outcome.
 
 Locally validated; not published. At the user's request, Kansas and Nebraska will be researched and added before the combined update is sent through final CI, deployed, and checked in Search Console. This record does not claim deployment, indexing or rankings.
 

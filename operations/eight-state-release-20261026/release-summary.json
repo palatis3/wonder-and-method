@@ -1,0 +1,118 @@
+{
+  "status": "published-and-verified",
+  "completedAt": "2026-10-26T10:18:54.051Z",
+  "commit": "488e1b847439feb0d151555935b336626a6078a0",
+  "runtimeVersion": "8d47a789-95b8-4d8a-be99-d103ca590844",
+  "ci": {
+    "run": 40296763807,
+    "url": "https://github.com/palatis3/wonder-and-method/actions/runs/40296763807",
+    "allJobsPassed": true,
+    "jobs": 15,
+    "requiredGates": [
+      "verify",
+      "visual",
+      "standards",
+      "cross-browser",
+      "performance",
+      "dependencies",
+      "links",
+      "seo-editorial",
+      "reading-accessibility"
+    ],
+    "distributed": {
+      "runId": "40296763807",
+      "runAttempt": "1",
+      "ciInputsSha256": "890b36b1f14dd39d30b60ced05838e551143b25df78621c11bda9c63df040a12",
+      "planSha256": "5bbbe5fef8f815b3fdc8608c49ed3e2d9f6baa765a9a581291c05b82ec153d5d",
+      "shards": 5,
+      "tests": 1747
+    }
+  },
+  "site": {
+    "routes": 2081,
+    "assets": 2749,
+    "sitemapUrls": 2069,
+    "generatedFiles": 4840
+  },
+  "database": {
+    "migrations": [
+      {
+        "name": "0040_mn_ok_journey_pages.sql",
+        "sha256": "57a206ed7811a5cdd9a520c2af7053521afd363e7cbceda7d3cbb7e70b4c6c6f"
+      },
+      {
+        "name": "0041_ks_ne_journey_pages.sql",
+        "sha256": "b89dba2841d296d5f1894ecc1b5b080db291a23ebb335884571503b7c8472c69"
+      },
+      {
+        "name": "0042_nd_sd_journey_pages.sql",
+        "sha256": "27ade9959b512e0a40da2c1b3f6f971c10db197c2ca8c1516a9b035b14cdd937"
+      },
+      {
+        "name": "0043_ca_nm_journey_pages.sql",
+        "sha256": "abe4280a739b4be7a9f6254d0a41d12bd3344b1283d52ee37e42549c4f9f4d0e"
+      }
+    ],
+    "previousKeys": 1616,
+    "currentKeys": 2053,
+    "preservationVerified": true
+  },
+  "searchConsole": {
+    "submittedAt": "2026-10-26T09:53:40.738Z",
+    "sitemap": "https://wonderandmethod.com/sitemap.xml"
+  },
+  "recovery": {
+    "scheduledAt": "2026-10-26T10:17:29.745Z",
+    "receiverAt": "2026-10-26T10:17:30.404469+00:00"
+  },
+  "tests": {
+    "browserEvidence": "Complete distributed GitHub run; local deployment artifact verified byte-for-byte",
+    "ciBrowser": {
+      "startTime": "2026-10-26T09:12:33.918Z",
+      "duration": 1802596.62890625,
+      "expected": 1188,
+      "skipped": 559,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reading": {
+      "startTime": "2026-10-26T09:12:20.933Z",
+      "duration": 14663.042,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "liveBrowser": {
+      "startTime": "2026-10-26T09:57:42.326Z",
+      "duration": 60951.125,
+      "expected": 33,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "visual": {
+      "startTime": "2026-10-26T09:12:22.854Z",
+      "duration": 48750.284999999996,
+      "expected": 64,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "visualImages": 72,
+    "crossBrowser": {
+      "startTime": "2026-10-26T09:12:39.300Z",
+      "duration": 251399.247,
+      "expected": 104,
+      "skipped": 20,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "limits": [
+    "Automated checks cover every application route; editorial evidence records the pages and unchanged prior reviews it used.",
+    "Unverified external links are not counted as reachable.",
+    "No indexing, ranking, lead or revenue outcome is claimed.",
+    "Routine QA sent no real inquiry, chat message, email or payment."
+  ]
+}
