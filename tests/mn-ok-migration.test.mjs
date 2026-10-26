@@ -1,3 +1,4 @@
+import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
 import paths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
@@ -59,7 +60,7 @@ test('0040 adds exactly two Minnesota/Oklahoma directories and 141 reviewed coun
  assert.equal(nextKeys.length,1759);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].sort(),[...nextKeys,...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey)].sort());
+ assert.deepEqual([...journeyPages].sort(),[...nextKeys,...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...azOrPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey)].sort());
  // SQLite quotes the renamed table. Only the 143 approved page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

@@ -1,3 +1,4 @@
+import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
 import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
@@ -14,7 +15,7 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/ms-al-approved-paths.json' with {type:'json'};
 
-const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0031 adds exactly seven MS/AL keys and preserves all 1189 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);

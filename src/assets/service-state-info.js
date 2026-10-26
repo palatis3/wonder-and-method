@@ -39,7 +39,9 @@ export const serviceStateInfo = [
  {id:'north-dakota',name:'North Dakota',abbreviation:'ND'},
  {id:'south-dakota',name:'South Dakota',abbreviation:'SD'},
  {id:'california',name:'California',abbreviation:'CA'},
- {id:'new-mexico',name:'New Mexico',abbreviation:'NM'}
+ {id:'new-mexico',name:'New Mexico',abbreviation:'NM'},
+ {id:'arizona',name:'Arizona',abbreviation:'AZ'},
+ {id:'oregon',name:'Oregon',abbreviation:'OR'}
 ].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){

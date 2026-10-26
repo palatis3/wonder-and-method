@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-26",
+  "scope": "Exact two source corrections authorized by the completed Semrush audit. Before-records are historical acceptance evidence, not current business facts.",
+  "changes": [
+    {
+      "areaId": "tennessee/hardeman",
+      "path": "/areas/tennessee/hardeman-county/",
+      "beforeRecord": {
+        "areaId": "tennessee/hardeman",
+        "market": "Saulsbury / Hardeman County, TN",
+        "lead": "I help Hardeman County businesses make their websites easier to understand. A guest can see a cabin kitchen and beds in a listing while still needing to prepare items that are not supplied.",
+        "decisionTitle": "Explain what a furnished cabin provides and what guests still bring.",
+        "decision": "Cherokee Landing lists kitchen facilities and cookware for its cabins, then separately explains the guest's linen responsibility. For a cabin-rental website, I would keep supplied facilities and packing needs together for the specific accommodation. A furnished interior does not tell a guest everything they need for the stay. Clear content can help the group prepare practical questions before arrival without relying on a photograph or transferring another property's usual amenities to the cabin they are considering.",
+        "scopes": [
+          {
+            "title": "Clarify cabin provisions and packing",
+            "pages": [
+              "Named accommodation",
+              "Supplied facilities and items",
+              "Guest preparation"
+            ],
+            "request": "Help guests distinguish what the cabin contains from the things they must arrange themselves.",
+            "supplies": "Current unit descriptions, an accurate list of supplied items and the owner's approved guest-preparation instructions.",
+            "check": "A guest can identify the cabin's provided kitchen items and separately check what to bring for sleeping and other everyday needs."
+          },
+          {
+            "title": "Build a cabin-stay introduction",
+            "pages": [
+              "Accommodation and layout examples",
+              "Kitchen and shared facilities",
+              "Supplied items and guest packing",
+              "Current stay arrangements"
+            ],
+            "request": "Connect the particular cabin's facilities to a practical preparation discussion.",
+            "supplies": "Approved interior images, current amenity and provision lists, actual packing guidance and the existing process for confirming dates and unit details.",
+            "check": "A group can explain which cabin they mean, understand the provided facilities and resolve missing packing information before relying on a general furnished-cabin description."
+          }
+        ],
+        "planningTable": {
+          "title": "A cabin-provisions and packing brief",
+          "intro": "Use this as a website-content brief. The business owner supplies and approves the facts; these prompts do not establish service terms or approve a customer project.",
+          "columns": [
+            "Customer situation",
+            "What the website should explain",
+            "Owner information needed",
+            "Question it should help answer"
+          ],
+          "rows": [
+            [
+              "Selected cabin",
+              "The accommodation represented by the information.",
+              "Current names and accurate interior references.",
+              "Which cabin is the guest considering?"
+            ],
+            [
+              "Fixed facilities",
+              "The kitchen, bath and other spaces supplied with the unit.",
+              "Verified unit-specific facility descriptions.",
+              "What facilities are part of this accommodation?"
+            ],
+            [
+              "Provided items",
+              "The equipment and everyday items actually included.",
+              "The owner's current provision list.",
+              "What will guests find already there?"
+            ],
+            [
+              "Guest preparation",
+              "The items or arrangements guests provide themselves.",
+              "Approved packing guidance and a route for questions.",
+              "What should the group confirm or bring before arrival?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Choose a focused edit when guests cannot tell what a furnished cabin includes. Choose the fuller introduction when unit examples, facilities and preparation instructions also need to work together. A general inquiry can remain the starting point.",
+        "quoteQuestions": [
+          "Which supplied items should be listed beside each cabin?",
+          "What do guests most often assume is included when it is their responsibility?",
+          "How do you keep packing guidance attached to the accommodation actually booked?"
+        ],
+        "coverageNote": "This page is for Hardeman County website buyers. Thousand Trails Cherokee Landing publicly identifies its location in Saulsbury, Tennessee. Wonder and Method is a Buffalo studio working remotely. Public examples illustrate website-planning decisions and do not imply a client relationship.",
+        "sources": [
+          {
+            "url": "https://www.rvonthego.com/tennessee/cherokee-landing-campground/rentals",
+            "label": "Thousand Trails Cherokee Landing: public service information",
+            "observation": "Describes cabin kitchen equipment and enclosed bathrooms while separately stating that guests bring their own linens; gives the Saulsbury campground address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Gather approved website facts"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "tennessee/hardeman"
+        ],
+        "path": "/areas/tennessee/hardeman-county/",
+        "title": "Web Design for Saulsbury / Hardeman County, TN",
+        "description": "Web design for Saulsbury / Hardeman County, TN. Example brief: explain what a furnished cabin provides and what guests still bring.",
+        "servedAreas": [
+          {
+            "name": "Hardeman County",
+            "state": "Tennessee",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/tennessee/#hardeman",
+            "label": "Hardeman County place directory"
+          }
+        ]
+      },
+      "beforeRecordSha256": "ccc7956cc3aadaef82e1360e8fe036e0ab8f59f56e6b8dcc3fced7a6f88f328c",
+      "afterRecordSha256": "41d95c7e14a620df97de4e6ef48a2a70aeba05844625ab38644ed0e75f4770c7",
+      "changedFields": [
+        "lead",
+        "decision",
+        "scopes",
+        "planningTable",
+        "sources",
+        "checkedDate"
+      ],
+      "status": "INDEPENDENTLY_REVIEWED",
+      "review": "evidence/eight-state-release-20261026/semrush/final-review/review.json"
+    },
+    {
+      "areaId": "tennessee/unicoi",
+      "path": "/areas/tennessee/unicoi-county/",
+      "beforeRecord": {
+        "areaId": "tennessee/unicoi",
+        "market": "Erwin / Unicoi County, TN",
+        "lead": "I help Erwin and Unicoi County lodging and activity businesses explain how the parts of a visit fit together. A place that welcomes a guest’s pet for a stay may have different arrangements while that guest joins an activity.",
+        "decisionTitle": "Explain pet arrangements across the stay and planned activities.",
+        "decision": "USA Raft Adventure Resort's lodging and tubing pages describe pet permissions for stays alongside restrictions on leaving pets unattended and taking them tubing. For a combined lodging-and-activity website, I can make those related conditions easier to understand or build a fuller trip-planning introduction. A guest should recognize the unresolved pet arrangement before treating a lodging choice as a complete plan for an activity day.",
+        "scopes": [
+          {
+            "title": "Connect the relevant pet information",
+            "pages": [
+              "Selected accommodation and current pet terms",
+              "Activity participation limits",
+              "Questions before booking"
+            ],
+            "request": "Place the related owner-approved conditions together near the stay and activity descriptions, preserving a general inquiry route.",
+            "supplies": "Current pet policies by accommodation and activity, approved wording about unattended pets and the correct contact for questions.",
+            "check": "A guest planning to stay with a pet and go tubing can see that lodging permission does not settle where the pet will be during the trip."
+          },
+          {
+            "title": "Introduce combined stays and activities",
+            "pages": [
+              "Accommodation choices",
+              "Activity choices",
+              "Party and pet arrangements",
+              "Confirmation and preparation"
+            ],
+            "request": "Show how the selected stay and planned activities relate without implying that every combination is workable.",
+            "supplies": "Current accommodation and activity descriptions, permitted pet arrangements and the actual confirmation process.",
+            "check": "A visitor can describe the stay, activity and unresolved pet question together before assuming the whole itinerary is accepted."
+          }
+        ],
+        "planningTable": {
+          "title": "A stay-and-activity pet-information brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Accommodation",
+              "Identify the exact lodging choice.",
+              "Current unit-specific pet terms.",
+              "A general pet-friendly description does not override a unit exception."
+            ],
+            [
+              "Activity",
+              "Explain the relevant participation boundary.",
+              "The operator’s current pet rules for the selected activity.",
+              "Permission to stay is not confused with permission to join the trip."
+            ],
+            [
+              "Time away",
+              "Make unattended-pet conditions visible.",
+              "Approved conditions for the period guests are away.",
+              "The guest recognizes that the activity creates a separate arrangement to resolve."
+            ],
+            [
+              "Open question",
+              "Give uncertain combinations a clear contact route.",
+              "Who confirms the actual arrangements before booking.",
+              "The website does not invent pet supervision or imply an unoffered service."
+            ]
+          ]
+        },
+        "scopeTrigger": "Guests and the operator must resolve any pet-care arrangement. Itinerary automation, booking integrations and policy-management tools need separate website scope. This content explains the operator's current arrangements.",
+        "quoteQuestions": [
+          "Which accommodation and activity terms must a guest read together?",
+          "What needs to be clear about periods when guests are away from the lodging?",
+          "Who answers a combined stay-and-activity question before the guest books?"
+        ],
+        "coverageNote": "This page serves Erwin and Unicoi County buyers. USA Raft identifies its resort and Redbanks locations in the Erwin area. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://usaraft.com/lodging-2/",
+            "label": "USA Raft Adventure Resort: lodging and pet arrangements",
+            "observation": "Describes lodging pet permissions and exceptions, restricts leaving pets unattended, and lists both Erwin-area properties."
+          },
+          {
+            "url": "https://usaraft.com/tubing-lower-nolichucky/",
+            "label": "USA Raft Adventure Resort: tubing and pet arrangements",
+            "observation": "Excludes dogs from tubing and reminds guests that dogs cannot be left unsupervised in lodging units."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Vacation-rental websites: check the property and stay before offering dates"
+          },
+          {
+            "path": "/guides/website-maintenance-checklist/",
+            "label": "A website maintenance checklist for a small business"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "tennessee/unicoi"
+        ],
+        "path": "/areas/tennessee/unicoi-county/",
+        "title": "Web Design for Erwin / Unicoi County, TN",
+        "description": "Web design for Erwin / Unicoi County, TN. Example brief: explain pet arrangements across the stay and planned activities.",
+        "servedAreas": [
+          {
+            "name": "Unicoi County",
+            "state": "Tennessee",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/tennessee/#unicoi",
+            "label": "Unicoi County place directory"
+          }
+        ]
+      },
+      "beforeRecordSha256": "2f28381dd53c2c6d2577c844895da977fa54be97451275cf645859ac0bddf5c7",
+      "afterRecordSha256": "f453ac860338d156122e7e31365f6daa8a585028d8592f9d400c6cb153c4e3b1",
+      "changedFields": [
+        "decision",
+        "scopes",
+        "scopeTrigger",
+        "coverageNote",
+        "sources",
+        "checkedDate"
+      ],
+      "status": "INDEPENDENTLY_REVIEWED",
+      "review": "evidence/eight-state-release-20261026/semrush/final-review/review.json"
+    }
+  ]
+}

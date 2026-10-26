@@ -18,11 +18,11 @@ const byPath=new Map(locationServices.map(x=>[x.path,x]));
 test('Kansas/Nebraska preserve all 1647 prior service records and FAQs with exactly 123 reviewed additions',()=>{
  assert.equal(Object.keys(preservation.services).length,1647);
  assert.equal(Object.keys(preservation.newServices).length,123);
- assert.equal(locationServices.length,1935);assert.equal(approved.length,125);
+ assert.equal(locationServices.length,1983);assert.equal(approved.length,125);
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedSixStateGuideEdits(byPath.get(path))),hash,path);
  for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(faqs[path]),hash,path);
- assert.equal(Object.keys(faqs).length,203);
+ assert.equal(Object.keys(faqs).length,205);
  assert.equal(Object.keys(preservation.newFaqs).length,6);
  assert.equal(Object.keys(preservation.newFaqs).reduce((n,path)=>n+faqs[path].length,0),6);
  assert.deepEqual(['kansas','nebraska'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[63,60]);
@@ -30,7 +30,7 @@ test('Kansas/Nebraska preserve all 1647 prior service records and FAQs with exac
 
 test('all 198 assessed counties remain browseable while the 75 no-addition entries do not acquire service pages',()=>{
  const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.html]));
- assert.equal(pages.size,2081);assert.equal(decisions.counties.length,198);
+ assert.equal(pages.size,2131);assert.equal(decisions.counties.length,198);
  const noAdd=decisions.counties.filter(x=>x.serviceDecision==='NO_ADDITION');assert.equal(noAdd.length,75);
  for(const entry of decisions.counties){
   const [route,fragment]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${fragment}"`),entry.areaId);

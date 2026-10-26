@@ -1,3 +1,4 @@
+import {beforeReviewedSourceCorrections} from './reviewed-source-corrections.mjs';
 // Reconstruct frozen acceptance only for explicit link and scope corrections.
 // Every current record must first match the complete reviewed after-record hash.
 import assert from 'node:assert/strict';
@@ -8,6 +9,7 @@ const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('h
 const edits=new Map(review.changes.map(row=>[row.path,row]));
 assert.equal(edits.size,19);
 export function beforeReviewedSixStateGuideEdits(record){
+ record=beforeReviewedSourceCorrections(record);
  if(record.path===scopeCorrection.path){
   assert.equal(digest(record),scopeCorrection.afterRecordSha256,record.path+' corrected scope record');
   assert.equal(record.scopeTrigger,scopeCorrection.afterScopeTrigger);

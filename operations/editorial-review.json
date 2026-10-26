@@ -2,24 +2,6 @@
   "schemaVersion": 1,
   "decisions": [
     {
-      "route": "/work/buffalo-civic/",
-      "rule": "incoming-links",
-      "evidenceSha256": "2c9532597ae6bbd742af75daa6a919f62bb8274e862d77598d3928b2d4083372",
-      "disposition": "retain",
-      "reason": "Retain: the project is discoverable from its natural /work/ parent through the descriptive crawlable link “Explore Buffalo Civic”. This specialized portfolio destination does not need an unrelated second referring page solely to meet a link-count heuristic.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:56:16.337Z"
-    },
-    {
-      "route": "/work/lead-workbench/",
-      "rule": "incoming-links",
-      "evidenceSha256": "e75a2bc85bb1e58f8c55545e6fc5d317e822675511f23b4e2bd0820cdf12c464",
-      "disposition": "retain",
-      "reason": "Retain: /work/ supplies the crawlable, purpose-specific link “Try the inquiry tracker demo”. A single portfolio-parent entry is proportionate for this focused demonstration; duplicating navigation elsewhere would not establish additional editorial relevance.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:56:16.337Z"
-    },
-    {
       "route": "/privacy/",
       "rule": "long-sentence",
       "evidenceSha256": "dfe5caacaacac1aa31b2f9881425a1f9eeb570b3896a52017460fda3f35399de",
@@ -45,15 +27,6 @@
       "reason": "Retain: this is a compact example page plan, with semicolons separating the purpose of Home, Replacement, Process, Coverage, About and Contact. Named page labels make the parallel structure scannable; the sentence length does not obscure the proposed information architecture.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
       "reviewedAt": "2026-10-25T17:50:00.308Z"
-    },
-    {
-      "route": "/guides/website-launch-announcement/",
-      "rule": "incoming-links",
-      "evidenceSha256": "242f2dd31ca9451192bbb136946499da089e802fbb922e153561a43eedf55a4b",
-      "disposition": "retain",
-      "reason": "Retain: the /guides/ directory links directly with “Announce a new website with a useful customer message”, explaining the reader task before the visit. The guide has an appropriate discovery path despite falling below the two-referrer review threshold.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:56:16.337Z"
     },
     {
       "route": "/areas/tennessee/loudon-county/",
@@ -324,6 +297,15 @@
       "reason": "Retain: the sentence presents three parallel, distinct source statuses: the museum and cafe closure, a canceled history event and a play moved to a named library address. Keeping these together establishes the precise contrast the proposed event-status page must preserve; the specific relocated venue prevents a general closure notice from erasing a continuing event.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_dakota_integration_review)",
       "reviewedAt": "2026-10-26T07:33:29.029Z"
+    },
+    {
+      "route": "/areas/oregon/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "745030c8d8dbbee53d0b67e0720347a9fc3e1287cf3866a3d2fc29585184b113",
+      "disposition": "retain",
+      "reason": "Retain: this source-definition paragraph explains how to read the Oregon directory: the January 2026 inventory date, incorporated versus statistical places, cross-county duplication, CCD status, limits on tribal-government or reservation interpretations, and the specific inactive Greenhorn classification. Its short sentences each resolve a distinct possible misreading of the lists above, including the Greenhorn entries in Baker and Grant. Under Place types and official sources, followed by the source records, the complete explanation remains coherent and useful despite exceeding the paragraph-length heuristic. The nearby general methodology repeats shared definitions but does not include the Greenhorn-specific exception; it does not make this paragraph unclear or justify dropping that exception.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_azor_guide_ledger_review)",
+      "reviewedAt": "2026-10-26T13:59:28.323Z"
     }
   ]
 }

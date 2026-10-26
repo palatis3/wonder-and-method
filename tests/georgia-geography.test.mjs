@@ -1,3 +1,4 @@
+import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
 import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
@@ -21,7 +22,7 @@ import map from '../authority/v5/site-map.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
-const mnOkStates=[...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const geography=georgiaGeography.georgia;
 const state=serviceStates.find(item=>item.id==='georgia');
@@ -37,13 +38,13 @@ test('Georgia preserves all 1,082 existing service records and 1,125 existing ar
 
 test('Georgia adds only the seven approved routes, retaining every existing route and sitemap entry',()=>{
  const pages=renderPages({config,offers,map,geography:erieGeography});
- const routes=pages.map(page=>page.path).filter(path=>![...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
+ const routes=pages.map(page=>page.path).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1210);
  assert.equal(approvedPaths.length,7);
  assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
- assert.deepEqual(Object.keys(dates).filter(path=>![...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
  const sitemap=crawlFiles(config,pages).sitemap;
- const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>![...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
+ const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
  assert.deepEqual(records.filter(record=>record.path.startsWith('/areas/georgia/')).map(record=>record.path).sort(),approvedPaths.filter(path=>path!=='/areas/georgia/').sort());
 });

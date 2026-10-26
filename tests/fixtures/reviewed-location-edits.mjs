@@ -1,3 +1,4 @@
+import {beforeReviewedSourceCorrections} from './reviewed-source-corrections.mjs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import fixture from './combined-location-edits.json' with {type:'json'};
@@ -9,6 +10,7 @@ const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex
 // Preserve both contracts: the approved current edit and every historical field
 // outside that edit. Never refresh the historical expected hash from live data.
 export function beforeReviewedLocationEdits(record){
+ record=beforeReviewedSourceCorrections(record);
  return restoreReviewed(record,byPath.get(record.path),record.path);
 }
 export function beforeReviewedFaqEdits(path,answers){return restoreReviewed(answers,faqByPath.get(path),path);}

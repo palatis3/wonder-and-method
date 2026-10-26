@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-26",
+  "reason": "Use the established US inquiry spelling consistently; no factual or scope changes.",
+  "edits": [
+    {
+      "path": "/areas/oregon/curry-county/",
+      "beforeSha256": "346902fcb787c982a7309f60d1dc10c554b6f74970a466f7aa261e1a088f0d31",
+      "afterSha256": "7cf3ba0cb6a9e9f9c6bd5cb77090ea0effbc94011644a7b39df1bdc77643da28",
+      "changes": [
+        {
+          "pointer": "/decision",
+          "before": "Gold Beach Books describes new, used and rare books in its physical shop. Its books page says selected esoteric books are listed online and offers an AbeBooks route or direct telephone and email contact. The business lists separate contacts and opening hours for the bookshop and coffeehouse.\n\nFor a bookshop website, I would label the online selection accurately and keep the exact listing or copy reference available when a shopper chooses direct contact. Someone seeking a particular edition should be able to distinguish the listed copy from a general enquiry about a title on the shelves. The owner supplies the identifiers used in listings, the current marketplace destination and how staff answer availability questions.\n\nA focused project can clarify those choices beside the existing links. A fuller store introduction can connect subjects and collection interests to either the selected online stock or the bookshop conversation. Test a shopper who cannot find a title online and another who asks about a listed copy. Neither should receive an invented stock answer, and a book inquiry should reach the bookshop contact.",
+          "after": "Gold Beach Books describes new, used and rare books in its physical shop. Its books page says selected esoteric books are listed online and offers an AbeBooks route or direct telephone and email contact. The business lists separate contacts and opening hours for the bookshop and coffeehouse.\n\nFor a bookshop website, I would label the online selection accurately and keep the exact listing or copy reference available when a shopper chooses direct contact. Someone seeking a particular edition should be able to distinguish the listed copy from a general inquiry about a title on the shelves. The owner supplies the identifiers used in listings, the current marketplace destination and how staff answer availability questions.\n\nA focused project can clarify those choices beside the existing links. A fuller store introduction can connect subjects and collection interests to either the selected online stock or the bookshop conversation. Test a shopper who cannot find a title online and another who asks about a listed copy. Neither should receive an invented stock answer, and a book inquiry should reach the bookshop contact."
+        },
+        {
+          "pointer": "/quoteQuestions/1",
+          "before": "What reference identifies a particular copy across marketplace and direct enquiries?",
+          "after": "What reference identifies a particular copy across marketplace and direct inquiries?"
+        }
+      ]
+    },
+    {
+      "path": "/areas/oregon/deschutes-county/",
+      "beforeSha256": "8d5d6cc32f42e31ac42a5807626e5a7834f62b47d45db50d8866efe3f79a2f4b",
+      "afterSha256": "12e1827624e5df81f173617f24f7f72c3c0323d964dfdeaccff2088134fa76b7",
+      "changes": [
+        {
+          "pointer": "/decision",
+          "before": "Backporch Coffee Roasters’ FAQ publishes shipping days and a Friday cutoff for online bean orders. It separately offers advance telephone orders for event carafes, while ordinary food and drink orders are not taken by phone. The FAQ directs meeting and event enquiries to the Downtown café manager; the café page identifies that Bend location.\n\nFor a café and roaster website, I would begin with the customer’s purpose. A shipped bean order needs dispatch information; an event-carafe request needs the pickup conversation; a gathering needs the appropriate venue contact. The page should keep each route’s timing attached to that offer instead of showing one general deadline for all coffee orders.\n\nA focused project can clarify the choices beside existing shop and telephone links. A fuller website can connect products, cafés and event requests while carrying the selected location into the next step. Test a Friday bean order, a next-day carafe enquiry and a proposed Downtown meeting. Each should reach the relevant process without inheriting the others’ shipping cutoff, phone-order permission or venue availability.",
+          "after": "Backporch Coffee Roasters’ FAQ publishes shipping days and a Friday cutoff for online bean orders. It separately offers advance telephone orders for event carafes, while ordinary food and drink orders are not taken by phone. The FAQ directs meeting and event inquiries to the Downtown café manager; the café page identifies that Bend location.\n\nFor a café and roaster website, I would begin with the customer’s purpose. A shipped bean order needs dispatch information; an event-carafe request needs the pickup conversation; a gathering needs the appropriate venue contact. The page should keep each route’s timing attached to that offer instead of showing one general deadline for all coffee orders.\n\nA focused project can clarify the choices beside existing shop and telephone links. A fuller website can connect products, cafés and event requests while carrying the selected location into the next step. Test a Friday bean order, a next-day carafe inquiry and a proposed Downtown meeting. Each should reach the relevant process without inheriting the others’ shipping cutoff, phone-order permission or venue availability."
+        },
+        {
+          "pointer": "/scopes/0/check",
+          "before": "A carafe enquiry is not governed by the bean-shipping cutoff, and an ordinary drink is not presented as a phone order.",
+          "after": "A carafe inquiry is not governed by the bean-shipping cutoff, and an ordinary drink is not presented as a phone order."
+        },
+        {
+          "pointer": "/scopes/1/pages/0",
+          "before": "Downtown event enquiry",
+          "after": "Downtown event inquiry"
+        },
+        {
+          "pointer": "/quoteQuestions/2",
+          "before": "Which café and staff member handle gathering enquiries?",
+          "after": "Which café and staff member handle gathering inquiries?"
+        },
+        {
+          "pointer": "/sources/0/observation",
+          "before": "Separates bean shipping, advance event-carafe telephone orders, ordinary orders and Downtown meeting/event enquiries.",
+          "after": "Separates bean shipping, advance event-carafe telephone orders, ordinary orders and Downtown meeting/event inquiries."
+        }
+      ]
+    },
+    {
+      "path": "/areas/oregon/grant-county/",
+      "beforeSha256": "60d51ac63c4bc399d44daf8dd223c1e4b05ee3f0860572e26cb2189ec727b180",
+      "afterSha256": "c3576828b48d3ba83859f7958b4f0ad420f364917dace366d5debad7b2e08b19",
+      "changes": [
+        {
+          "pointer": "/scopes/1/check",
+          "before": "A party larger than one tour receives a useful enquiry route, while an old shop link points to the current shop location.",
+          "after": "A party larger than one tour receives a useful inquiry route, while an old shop link points to the current shop location."
+        }
+      ]
+    }
+  ]
+}

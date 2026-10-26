@@ -1,0 +1,748 @@
+{
+  "provenance": "Frozen AZ/OR candidate independently reconstructed from raw ACS26, GRFC and 2025 population estimates; 1,549,444 checks, no errors.",
+  "candidateSha256": "bd6282eb22410f87b0bc95afc5add77e71ce1e558935b4920f9052ff6e60bd98",
+  "reviewSha256": "588743776e936ae4de2474aa03357a58d666e6378fba8f45190dd7cf6ebb253a",
+  "countyDigests": {
+    "arizona/apache": "12640e9325c7616bb59504af2b8a65ee7b5510e2bcd22a36d70f7680b7a0bc55",
+    "arizona/cochise": "7b00a3a63612075bb92838d3b09a4da137deafc9ea6ebf3e0294eb9c1d15704d",
+    "arizona/coconino": "dd99a08822738a5e6c448f1db6fd1cfc0c70bbc418f82971435271e703a30ae6",
+    "arizona/gila": "a7426064f8d91d0179f82826a23aa7f5bfc75ab21511686025d7b8c489838426",
+    "arizona/graham": "bde8af1951b8da2c7f19e8e81b7855d6eebaebd1cc2bedd2ba5c69d66e4cc898",
+    "arizona/greenlee": "5fda129c202162a413bec274f90f5cddf853f4e59598324e88feca8f1718b76c",
+    "arizona/la-paz": "455bfab37414c43fd858846022025796061978ae33b6ac4440e2c8820f066361",
+    "arizona/maricopa": "4f476a24158f975d4be9996bbe1a49988717e28ac374a469ebf712659e847b49",
+    "arizona/mohave": "2bf584338426ffdf1f084840cb53a1604ca8d493a7c97bd9064b5135796a55fc",
+    "arizona/navajo": "4cafa4ee28c9e6aebb96db7faaed9665e0522324f1819948c24d2eaee63fe406",
+    "arizona/pima": "8d01b65fd0af91fbd38af0b664b89d62d333d4fbfb3ae07fcdbae06e92e2fb9b",
+    "arizona/pinal": "beafed8c28762837df0dbf85b2da3777a82386a2238d48feb0754a332fe64d16",
+    "arizona/santa-cruz": "eb6210f70841cfc6a7a640fa1ce7344c376dfee7293a9157e0025e0d187b2097",
+    "arizona/yavapai": "6bc7be217f59d8c24aa608d0375b9a5f105ce7392b4d5eef459bb5ca54dc17ad",
+    "arizona/yuma": "19f6191621b00d581377f07e675aea58d0694bec833f629835a93a3ed7338ea0",
+    "oregon/baker": "d118929743423c6fb6e30c8e8067913735190c8ae328295b974d111da5aa523a",
+    "oregon/benton": "a18dfb1206738a979c033b535c752569c5fa3eddd28fe1b2723712ad9c5a9556",
+    "oregon/clackamas": "1c584b3a15f5e9f7c1919aad339fd892b4733ef1c20da3fecb9b6d791072087b",
+    "oregon/clatsop": "0bf38528c0861283022465c3cab22a2bdce41a65b29a79c4c1f16d985fe6b1be",
+    "oregon/columbia": "7b70144308a03b0f477bfeb6d0816a9cce49e4618ab8be1b6a01b7cd0201ea23",
+    "oregon/coos": "0149937c801ca5187e449290cead93ef05c7e40b91350d2a1bec3bd41730adb4",
+    "oregon/crook": "194bacd7efc7d8d1600033c3867c2924ee96be5f1c3eccd5aef8a2bc0e4a3beb",
+    "oregon/curry": "ed8efe58ce6dcc4264eeab56e1fab0f3be01f95258605612d4abdba6e8775d4e",
+    "oregon/deschutes": "20e9deaedf0758ce2f2343dc052d55bf599ef4368a05eeda9f632a231e7806d2",
+    "oregon/douglas": "6f92dcb1ea6843067f54d411a87ff1479e0bef564a05b967cb2a572b81f51bab",
+    "oregon/gilliam": "9e65a06cbf63159302006aa7ee5f2dc1ab0fe688ac1a377ddefbf9f636a69bdc",
+    "oregon/grant": "d9f28219bb00e23448887420ca964d87315136d9c7bb94e153f0b50d99a85a30",
+    "oregon/harney": "d310e571276e72c04d2e3b1b645b9fa574041ec05f0befa67e60fb36b00dbb19",
+    "oregon/hood-river": "8e72293a3ca70b8d5827090210cce52c6345ce4206daa51a2acbf4c23d86a0d6",
+    "oregon/jackson": "1cb1d525cf265ce642e012bcd1b6c10785d22b09e8886f1cc9b0f02aa4ba5e70",
+    "oregon/jefferson": "b46fa0c0a02fb92565b1ffd934420335b293a43231a80421c97f623c09189952",
+    "oregon/josephine": "db6303625bbd1877bef3f1fb6419245643539e5e25c68aa157b8506dd06b1872",
+    "oregon/klamath": "88e4980f631601083d77242900f132bb111b54bb08479613060312cea8e0f9f3",
+    "oregon/lake": "6dfe1e4b77336c32fab7eaceb3d0f896eb55726c0d60825fc945bce704bb3c31",
+    "oregon/lane": "59126ac73fe67cb98b9b42f3036e60e2a6f3f501b2f69627c869e8d78c0a3ba2",
+    "oregon/lincoln": "b7f84f5ccf25d5d6cf8746439c3754020875c4f74281a2f4e6c9f3aa16c0b59e",
+    "oregon/linn": "f4bc6831eca893e368b29f5a1ee6d50af78d193934e75760732c041a78cd70a4",
+    "oregon/malheur": "b1454074b76529742a3c7524f6778733c0d525650644ac36cc2e6ec173bf59ff",
+    "oregon/marion": "401af05f1986ed15c3f544421d2e421b5c68628fdc8e756aec4af8a4df2368d9",
+    "oregon/morrow": "cb20bb160861cc97e10e4c2f7c95b3e0c79078e491e9d413093ad83c78f6ed05",
+    "oregon/multnomah": "67414faa16371a4fa580dc38dbace8ab9e9b619e5f1c1225620eeb9934834f24",
+    "oregon/polk": "c97f27f6c32747184b59604c1d282a5566d54d36ceb07dfd15b332bd94be75be",
+    "oregon/sherman": "0df3acaa812254d1463657e2c7359887634256bcbfd2a596844f5110cb08e0a7",
+    "oregon/tillamook": "1023cffabf35882b17f03310254c2a206966e4b3b39b2fde85aca5f03b19fa44",
+    "oregon/umatilla": "c509422614c800187529f8a46849cb395d6deb576ccb2427ee57cbf6a3023e48",
+    "oregon/union": "c6903a9b1ae32f76904a13ab514ab7f1af64b986693554e9aa0fdef354456938",
+    "oregon/wallowa": "3cbf027ddb37a9cf7b3d04bfa14a7e6895b15f916f44c31ab9f371d167dfa430",
+    "oregon/wasco": "d2a57bb472c47b21ed0ee29e60ff09c822eafebef0f5e780f0331bb48b6c9b97",
+    "oregon/washington": "11e67b115f151345dcbecf3c653dd1ed651bcf4032c1420214a83718149c5344",
+    "oregon/wheeler": "847e814b7e532ae9a29af429445cf61a0a8b37c95f39dd4abe0d872b8adaf481",
+    "oregon/yamhill": "48df52e23255dd5aa020c99bb857550ad40bf43ae43d8733f13b5670f2ea8460"
+  },
+  "crossCountyPlaces": [
+    {
+      "stateId": "arizona",
+      "name": "Apache Junction",
+      "type": "City",
+      "geoid": "0402830",
+      "censusName": "Apache Junction city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02409718",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04013",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 45672,
+      "countyPartPopulation2025": {
+        "04013": 383,
+        "04021": 45289
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Hayden",
+      "type": "Town",
+      "geoid": "0432020",
+      "censusName": "Hayden town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412739",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04007",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 510,
+      "countyPartPopulation2025": {
+        "04007": 510,
+        "04021": 0
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Marana",
+      "type": "Town",
+      "geoid": "0444270",
+      "censusName": "Marana town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412951",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04019",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 65523,
+      "countyPartPopulation2025": {
+        "04019": 65523,
+        "04021": 0
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Peoria",
+      "type": "City",
+      "geoid": "0454050",
+      "censusName": "Peoria city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411401",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04013",
+        "04025"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 200881,
+      "countyPartPopulation2025": {
+        "04013": 200881,
+        "04025": 0
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Queen Creek",
+      "type": "Town",
+      "geoid": "0458150",
+      "censusName": "Queen Creek town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412518",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04013",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 89770,
+      "countyPartPopulation2025": {
+        "04013": 74563,
+        "04021": 15207
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Sedona",
+      "type": "City",
+      "geoid": "0465350",
+      "censusName": "Sedona city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411858",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04005",
+        "04025"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 9619,
+      "countyPartPopulation2025": {
+        "04005": 2501,
+        "04025": 7118
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Wickenburg",
+      "type": "Town",
+      "geoid": "0482740",
+      "censusName": "Wickenburg town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02413484",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04013",
+        "04025"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 8305,
+      "countyPartPopulation2025": {
+        "04013": 6647,
+        "04025": 1658
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "Winkelman",
+      "type": "Town",
+      "geoid": "0483790",
+      "censusName": "Winkelman town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02413499",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "04007",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 290,
+      "countyPartPopulation2025": {
+        "04007": 288,
+        "04021": 2
+      }
+    },
+    {
+      "stateId": "arizona",
+      "name": "McNary",
+      "type": "Census-designated place",
+      "geoid": "0443430",
+      "censusName": "McNary CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408802",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "04001",
+        "04017"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "04001": null,
+        "04017": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "arizona",
+      "name": "Peridot",
+      "type": "Census-designated place",
+      "geoid": "0454190",
+      "censusName": "Peridot CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02409055",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "04007",
+        "04009"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "04007": null,
+        "04009": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "arizona",
+      "name": "Top-of-the-World",
+      "type": "Census-designated place",
+      "geoid": "0474820",
+      "censusName": "Top-of-the-World CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02409335",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "04007",
+        "04021"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "04007": null,
+        "04021": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "arizona",
+      "name": "Winslow West",
+      "type": "Census-designated place",
+      "geoid": "0483960",
+      "censusName": "Winslow West CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02409612",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "04005",
+        "04017"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "04005": null,
+        "04017": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "oregon",
+      "name": "Albany",
+      "type": "City",
+      "geoid": "4101000",
+      "censusName": "Albany city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02409675",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41003",
+        "41043"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 56894,
+      "countyPartPopulation2025": {
+        "41003": 9225,
+        "41043": 47669
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Gaston",
+      "type": "City",
+      "geoid": "4128100",
+      "censusName": "Gaston city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410575",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41067",
+        "41071"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 672,
+      "countyPartPopulation2025": {
+        "41067": 667,
+        "41071": 5
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Gates",
+      "type": "City",
+      "geoid": "4128200",
+      "censusName": "Gates city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410576",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41043",
+        "41047"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 482,
+      "countyPartPopulation2025": {
+        "41043": 48,
+        "41047": 434
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Greenhorn",
+      "type": "City",
+      "geoid": "4131050",
+      "censusName": "Greenhorn city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "I",
+      "censusNationalStandardCode": "02410658",
+      "censusClassCode": "C9",
+      "countyFips": [
+        "41001",
+        "41023"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41001": null,
+        "41023": null
+      },
+      "governmentStatus": "Inactive incorporated governmental unit (Census functional status I); retained as a legal incorporated place, not described as an active government."
+    },
+    {
+      "stateId": "oregon",
+      "name": "Idanha",
+      "type": "City",
+      "geoid": "4135800",
+      "censusName": "Idanha city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410094",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41043",
+        "41047"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 159,
+      "countyPartPopulation2025": {
+        "41043": 74,
+        "41047": 85
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Lake Oswego",
+      "type": "City",
+      "geoid": "4140550",
+      "censusName": "Lake Oswego city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411606",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41051",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 39722,
+      "countyPartPopulation2025": {
+        "41005": 37220,
+        "41051": 2498,
+        "41067": 4
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Mill City",
+      "type": "City",
+      "geoid": "4148150",
+      "censusName": "Mill City city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411107",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41043",
+        "41047"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 2125,
+      "countyPartPopulation2025": {
+        "41043": 1749,
+        "41047": 376
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Milwaukie",
+      "type": "City",
+      "geoid": "4148650",
+      "censusName": "Milwaukie city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411116",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41051"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 22114,
+      "countyPartPopulation2025": {
+        "41005": 22114,
+        "41051": 0
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Portland",
+      "type": "City",
+      "geoid": "4159000",
+      "censusName": "Portland city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411471",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41051",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 635109,
+      "countyPartPopulation2025": {
+        "41005": 850,
+        "41051": 632627,
+        "41067": 1632
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Rivergrove",
+      "type": "City",
+      "geoid": "4162250",
+      "censusName": "Rivergrove city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410964",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 536,
+      "countyPartPopulation2025": {
+        "41005": 489,
+        "41067": 47
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Salem",
+      "type": "City",
+      "geoid": "4164900",
+      "censusName": "Salem city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411764",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41047",
+        "41053"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 181779,
+      "countyPartPopulation2025": {
+        "41047": 151399,
+        "41053": 30380
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Tualatin",
+      "type": "City",
+      "geoid": "4174950",
+      "censusName": "Tualatin city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412103",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 28139,
+      "countyPartPopulation2025": {
+        "41005": 3192,
+        "41067": 24947
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Willamina",
+      "type": "City",
+      "geoid": "4182350",
+      "censusName": "Willamina city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412264",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41053",
+        "41071"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 2276,
+      "countyPartPopulation2025": {
+        "41053": 935,
+        "41071": 1341
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Wilsonville",
+      "type": "City",
+      "geoid": "4182800",
+      "censusName": "Wilsonville city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412277",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "41005",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 27833,
+      "countyPartPopulation2025": {
+        "41005": 24523,
+        "41067": 3310
+      }
+    },
+    {
+      "stateId": "oregon",
+      "name": "Cedar Mill",
+      "type": "Census-designated place",
+      "geoid": "4112150",
+      "censusName": "Cedar Mill CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408001",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "41051",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41051": null,
+        "41067": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "oregon",
+      "name": "Crooked River Ranch",
+      "type": "Census-designated place",
+      "geoid": "4116975",
+      "censusName": "Crooked River Ranch CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02787935",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "41017",
+        "41031"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41017": null,
+        "41031": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "oregon",
+      "name": "Fort Hill",
+      "type": "Census-designated place",
+      "geoid": "4126400",
+      "censusName": "Fort Hill CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02629773",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "41053",
+        "41071"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41053": null,
+        "41071": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "oregon",
+      "name": "Grand Ronde",
+      "type": "Census-designated place",
+      "geoid": "4130300",
+      "censusName": "Grand Ronde CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408316",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "41053",
+        "41071"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41053": null,
+        "41071": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "oregon",
+      "name": "West Haven-Sylvan",
+      "type": "Census-designated place",
+      "geoid": "4180025",
+      "censusName": "West Haven-Sylvan CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02409550",
+      "censusClassCode": "U2",
+      "countyFips": [
+        "41051",
+        "41067"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "41051": null,
+        "41067": null
+      },
+      "censusClassDescription": "Census-designated place without an official federally recognized name; retained as a current Census statistical place."
+    }
+  ],
+  "populationMissing": [
+    {
+      "geoid": "0464210",
+      "name": "San Tan Valley town",
+      "countyFips": "04021",
+      "functionalStatus": "A",
+      "reason": "No matching 2025 SUMLEV157 estimate for this 2026 geographic membership; population remains null."
+    },
+    {
+      "geoid": "4131050",
+      "name": "Greenhorn city",
+      "countyFips": "41001",
+      "functionalStatus": "I",
+      "reason": "No matching 2025 SUMLEV157 estimate for this 2026 geographic membership; population remains null."
+    },
+    {
+      "geoid": "4131050",
+      "name": "Greenhorn city",
+      "countyFips": "41023",
+      "functionalStatus": "I",
+      "reason": "No matching 2025 SUMLEV157 estimate for this 2026 geographic membership; population remains null."
+    }
+  ]
+}

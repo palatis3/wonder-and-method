@@ -18,11 +18,11 @@ const byPath=new Map(locationServices.map(x=>[x.path,x]));
 test('North/South Dakota preserve all 1770 prior service records and FAQs with exactly 83 reviewed additions',()=>{
  assert.equal(Object.keys(preservation.services).length,1770);
  assert.equal(Object.keys(preservation.newServices).length,83);
- assert.equal(locationServices.length,1935);assert.equal(approved.length,85);
+ assert.equal(locationServices.length,1983);assert.equal(approved.length,85);
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedSixStateGuideEdits(byPath.get(path))),hash,path);
  for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(faqs[path]),hash,path);
- assert.equal(Object.keys(faqs).length,203);
+ assert.equal(Object.keys(faqs).length,205);
  assert.equal(Object.keys(preservation.newFaqs).length,5);
  assert.equal(Object.keys(preservation.newFaqs).reduce((n,path)=>n+faqs[path].length,0),5);
  assert.deepEqual(['north-dakota','south-dakota'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[42,41]);
@@ -30,7 +30,7 @@ test('North/South Dakota preserve all 1770 prior service records and FAQs with e
 
 test('all 119 assessed counties remain browseable while the 36 no-addition entries do not acquire service pages',()=>{
  const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.html]));
- assert.equal(pages.size,2081);assert.equal(decisions.counties.length,119);
+ assert.equal(pages.size,2131);assert.equal(decisions.counties.length,119);
  const noAdd=decisions.counties.filter(x=>x.serviceDecision==='NO_ADDITION');assert.equal(noAdd.length,36);
  for(const entry of decisions.counties){
   const [route,fragment]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${fragment}"`),entry.areaId);

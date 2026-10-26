@@ -1,3 +1,4 @@
+import {azOrGeography,azOrAreaInventory} from './az-or-geography.mjs';
 import {caNmGeography,caNmAreaInventory} from './ca-nm-geography.mjs';
 import {ndSdGeography,ndSdAreaInventory} from './nd-sd-geography.mjs';
 import {ksNeGeography,ksNeAreaInventory} from './ks-ne-geography.mjs';
@@ -15,8 +16,8 @@ import {inKyTnNcGeography,inKyTnNcAreaInventory} from './in-ky-tn-nc-geography.m
 import {floridaGeography,floridaAreaInventory} from './florida-geography.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 
-export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography};
-export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory];
+export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography,...azOrGeography};
+export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory,...azOrAreaInventory];
 // The directory groups verified places within state/district hubs.
 // A county does not receive a separate commercial page merely to target its name.
 export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).map(stateId=>{

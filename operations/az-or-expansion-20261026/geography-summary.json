@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-10-26T10:39:52.821800+00:00",
+  "states": [
+    {
+      "stateId": "arizona",
+      "countiesOrParishes": 15,
+      "countyFunctionalStatuses": {
+        "A": 15
+      },
+      "excludedFictitiousPlaceBalances": 0,
+      "uniqueEntities": 547,
+      "incorporatedPlaces": 92,
+      "cdps": 375,
+      "types": {
+        "City": 46,
+        "Town": 46,
+        "Census-designated place": 375,
+        "Census county division": 80
+      },
+      "functionalStatuses": {
+        "A": 92,
+        "S": 455
+      },
+      "memberships": 559,
+      "crossCountyPlaces": 12,
+      "grfcRows": 159526,
+      "directIncorporatedPartPopulationJoins": 99,
+      "missingCountyPartPopulationJoins": 1,
+      "wholePlaceTotalsReconciled": 91,
+      "zeroPopulationParts": 3,
+      "excludedFictitiousCitySubdivisions": 0,
+      "excludedFictitiousTownSubdivisions": 0,
+      "excludedUndefinedSubdivisions": 0
+    },
+    {
+      "stateId": "oregon",
+      "countiesOrParishes": 36,
+      "countyFunctionalStatuses": {
+        "A": 36
+      },
+      "excludedFictitiousPlaceBalances": 0,
+      "uniqueEntities": 638,
+      "incorporatedPlaces": 241,
+      "cdps": 185,
+      "types": {
+        "City": 232,
+        "Town": 9,
+        "Census-designated place": 185,
+        "Census county division": 212
+      },
+      "functionalStatuses": {
+        "A": 240,
+        "I": 1,
+        "S": 397
+      },
+      "memberships": 659,
+      "crossCountyPlaces": 19,
+      "grfcRows": 132799,
+      "directIncorporatedPartPopulationJoins": 255,
+      "missingCountyPartPopulationJoins": 2,
+      "wholePlaceTotalsReconciled": 240,
+      "zeroPopulationParts": 1,
+      "excludedFictitiousCitySubdivisions": 0,
+      "excludedFictitiousTownSubdivisions": 0,
+      "excludedUndefinedSubdivisions": 0
+    }
+  ],
+  "sourceManifest": "source-manifest.json",
+  "populationRule": "Use direct county/parish-part estimates only. Zero remains a geographic membership. CDP fallback is alphabetical, with null population, not inferred demand."
+}

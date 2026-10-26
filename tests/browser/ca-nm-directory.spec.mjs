@@ -8,7 +8,7 @@ for(const item of cases)test(`${item.state} typed search retains cross-county, z
  const apiRequests=[],dataRequests=[];page.on('request',r=>{const p=new URL(r.url()).pathname;if(p.startsWith('/api/'))apiRequests.push(p);if(/^\/assets\/county-search-[a-f0-9]+\.bin$/.test(p))dataRequests.push(p);});
  for(const route of ['/areas/'+item.state+'/','/areas/']){
   await page.goto(route+'?qa=1');
-  await expect(page.locator('[data-cs]')).toHaveCount(route==='/areas/'?2786:item.count);
+  await expect(page.locator('[data-cs]')).toHaveCount(route==='/areas/'?2837:item.count);
   if(route==='/areas/')expect(dataRequests).toEqual([]);
   const search=page.getByRole('searchbox',{name:'County, parish, region or community'}),results=page.locator('[data-county-results] li');
   for(const [query,expected] of item.queries){

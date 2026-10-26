@@ -1,0 +1,39 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "AZ_OR_LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+  "database": "US",
+  "counts": {
+    "counties": 51,
+    "arizonaCounties": 15,
+    "oregonCounties": 36,
+    "serviceAdditions": 48,
+    "directoryOnlyNoAdditions": 3,
+    "faqPairs": 2,
+    "newGuides": 0,
+    "existingLinkedGuides": 16,
+    "keywordDrivenDispositionChanges": 0
+  },
+  "keywordTotals": {
+    "queries": 529,
+    "numeric": 67,
+    "positive": 46,
+    "explicitZero": 21,
+    "unavailable": 462,
+    "statusCounts": {
+      "UNAVAILABLE_REFRESH_REQUIRED": 461,
+      "OBSERVED": 34,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 33,
+      "UNAVAILABLE": 1
+    }
+  },
+  "questionsPanel": {
+    "completeCards": 2,
+    "arizonaSuggestions": 3,
+    "oregonSuggestions": 1,
+    "excludedSuggestions": 4,
+    "includedInSubmittedQueryCount": false,
+    "newFaqsFromSuggestions": 0
+  },
+  "interpretation": "Phrase estimates are not resident demand; overlapping estimates are not summed. Unavailable, explicit zero and partial/refresh states remain distinct.",
+  "publicationStatus": "Local integration; release gates pending."
+}

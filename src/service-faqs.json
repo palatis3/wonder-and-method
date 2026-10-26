@@ -2898,5 +2898,29 @@
       "question": "Can a school-visit page stay useful when the exhibits change?",
       "answer": "Yes. Keep the visit formats and teacher preparation on a lasting page, and maintain exhibit-specific photographs, dates and assignment links separately. Your team approves which materials still apply. When an exhibit changes, check linked classroom sheets and downloads as well as the page; changing its heading does not update those files. We agree which materials are included in the website work."
     }
+  ],
+  "/areas/oregon/linn-county/": [
+    {
+      "question": "Can the rental comparison work on a phone while we keep our existing booking tool?",
+      "answer": "I can design the room and package explanation for phones and make each booking link say which arrangement it opens. We should test the complete handoff on a phone and provide the venue’s approved contact route if someone cannot finish there. A readable comparison page does not change a third-party booking tool’s behavior; any replacement or integration needs its own scope.",
+      "links": [
+        {
+          "path": "/services/web-design/",
+          "label": "Agree the pages, forms and connections"
+        }
+      ]
+    }
+  ],
+  "/areas/oregon/tillamook-county/": [
+    {
+      "question": "Can we explain reservation changes without building a new customer account system?",
+      "answer": "Yes. Start with the instructions and contact route your existing provider actually supports. Tillamook's Creamery FAQ directs guests to their confirmation email to edit a tour reservation and to the Guest Experiences team for help. For your website, explain where the customer finds that route, what information identifies the reservation and what staff must confirm. A change request should not be described as an accepted amendment. A new portal or automatic connection is separate work; a clear help section may be enough.",
+      "links": [
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Describe what a request actually confirms"
+        }
+      ]
+    }
   ]
 }

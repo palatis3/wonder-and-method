@@ -1,0 +1,904 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "LOCAL_INTEGRATION_PENDING_RELEASE_GATES",
+  "countyCount": 51,
+  "serviceCandidates": 48,
+  "directoryOnly": 3,
+  "faqs": 2,
+  "guides": 0,
+  "counties": [
+    {
+      "areaId": "arizona/apache",
+      "name": "Apache County",
+      "fips": "04001",
+      "directoryPath": "/areas/arizona/#apache",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/apache-county/",
+      "readerDecision": "Separate arrival hours, destination time and staff-dependent experiences.",
+      "rationale": "Dundy covers named clinic clocks; Cook covers course registration and payment preparation; Grimes covers after-hours building staffing. The proposed complete local brief connects a destination clock with independently accessible grounds, two staff-dependent home experiences and the organized-group request path. Its acceptance example concerns an open entrance without a guaranteed interior experience. This is useful local project guidance, not a new general timing mechanism.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nps.gov/hutr/planyourvisit/hubbell-home.htm",
+        "https://www.nps.gov/hutr/planyourvisit/hours.htm"
+      ]
+    },
+    {
+      "areaId": "arizona/cochise",
+      "name": "Cochise County",
+      "fips": "04003",
+      "directoryPath": "/areas/arizona/#cochise",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/cochise-county/",
+      "readerDecision": "Keep group categories consistent through payment, supervision and arrival.",
+      "rationale": "Hall separates estimated attendance from later invoicing and named adults; Greene separates school/general timing; Callaway handles student capacity, subgrouping and outreach. Cochise adds the age-versus-role distinction within final attendance, then carries that classification into ongoing supervision and arrival preparation. The proposed work does not merely restate a ratio or repeat the general booking guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://azstateparks.com/kartchner/group-planning/school-groups",
+        "https://azstateparks.com/kartchner/group-planning/group-tour-information"
+      ]
+    },
+    {
+      "areaId": "arizona/coconino",
+      "name": "Coconino County",
+      "fips": "04005",
+      "directoryPath": "/areas/arizona/#coconino",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/coconino-county/",
+      "readerDecision": "Recheck the included experience when the event date or room changes.",
+      "rationale": "Horry concerns shared versus exclusive use; Scott concerns organizer entry, guest entry and cleanup. Coconino instead tests whether moving a venue date changes the included scientific experience and whether optional activity staffing can meet the request. Access timing supports this different decision rather than serving as the only local substitution.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://lowell.edu/visit/venue-rentals/onsite-private-events/"
+      ]
+    },
+    {
+      "areaId": "arizona/gila",
+      "name": "Gila County",
+      "fips": "04007",
+      "directoryPath": "/areas/arizona/#gila",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/gila-county/",
+      "readerDecision": "Keep the chosen hike and party preparation intact through a callback booking.",
+      "rationale": "Eddy separates a box-office question from paid tickets; King excludes restricted orders from voicemail. Gila accepts voicemail as the callback route but separates it from the subsequent booking and group-wide preparation. The service brief also covers route commitment and the published party limit. The existing timing guide already covers generic confirmation, so no new guide is proposed.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nps.gov/tont/planyourvisit/upper-cliff-dwelling-guided-tours.htm",
+        "https://www.nps.gov/tont/planyourvisit/index.htm"
+      ]
+    },
+    {
+      "areaId": "arizona/graham",
+      "name": "Graham County",
+      "fips": "04009",
+      "directoryPath": "/areas/arizona/#graham",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/graham-county/",
+      "readerDecision": "Separate a campus visit from the excursion that starts there.",
+      "rationale": "Presidio connects off-site itineraries to visitor-provided transport; Murray separates campus access from paid exhibits and groups. Graham connects a free base campus with a transported all-day mountain excursion and different content/reservation contacts. The complete project brief tests both experience selection and which office should answer the remaining question.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://eac.edu/community/discovery-park/"
+      ]
+    },
+    {
+      "areaId": "arizona/greenlee",
+      "name": "Greenlee County",
+      "fips": "04011",
+      "directoryPath": "/areas/arizona/#greenlee",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/greenlee-county/",
+      "readerDecision": "Compare the party package with the hall and kitchen arrangement.",
+      "rationale": "Emmet connects a room slot to shared recreation hours; Richland separates room time from all-day admission. Greenlee adds a choice between a defined shorter activity package and a hall/kitchen arrangement, with preparation and post-event review tied to the selected facility.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.morencitown.com/index.php/rental",
+        "https://www.morencitown.com/index.php/community-center"
+      ]
+    },
+    {
+      "areaId": "arizona/la-paz",
+      "name": "La Paz County",
+      "fips": "04012",
+      "directoryPath": "/areas/arizona/#la-paz",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/la-paz-county/",
+      "readerDecision": "Keep the site category attached to its arrival and change rules.",
+      "rationale": "Grant changes the contact route by booking lead time; Traverse preserves a wholly first-come allocation rule. La Paz requires the website to carry different allocation methods within one offer and preserve an existing reservation through a later change request, plus a distinct park destination for group camping.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://azstateparks.com/buckskin/camping-and-rvs/rv-and-tent-camping",
+        "https://azstateparks.com/buckskin/group-travel/group-sites"
+      ]
+    },
+    {
+      "areaId": "arizona/maricopa",
+      "name": "Maricopa County",
+      "fips": "04013",
+      "directoryPath": "/areas/arizona/#maricopa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/maricopa-county/",
+      "readerDecision": "Choose the learning format from experience and project needs.",
+      "rationale": "Alleghany distinguishes taught glass classes from graduate studio time; Santa Clara maps an assessed rental pathway; Morgan separates one-project introductions from foundation courses. Maricopa compares four current learning formats and tests the experienced newcomer whose venue history differs from skill level, plus the distinction between project guidance and extra practice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mesaartscenter.com/art-studio-info"
+      ]
+    },
+    {
+      "areaId": "arizona/mohave",
+      "name": "Mohave County",
+      "fips": "04015",
+      "directoryPath": "/areas/arizona/#mohave",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/mohave-county/",
+      "readerDecision": "Keep each museum stop’s practical conditions visible within a shared ticket.",
+      "rationale": "Kingfisher separates included buildings from temporary preservation closures; Marion explains multi-building validity, purchase points and stairs. Mohave uses the complete local combination of shared admission and independently varying pet/access conditions to commission destination-specific information and test the party’s whole route, without treating one condition as a universal fit assessment.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://historyisourthing.org/admission",
+        "https://historyisourthing.org/bonelli-house"
+      ]
+    },
+    {
+      "areaId": "arizona/navajo",
+      "name": "Navajo County",
+      "fips": "04017",
+      "directoryPath": "/areas/arizona/#navajo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/navajo-county/",
+      "readerDecision": "Keep room access separate from the view or amenity in its name.",
+      "rationale": "Hall distinguishes bathroom privacy from location; Essex compares cooking and dining facilities by room. Navajo separates a room category’s guaranteed floor from a category spanning two floors and tests an unresolved access request when another room is suggested. The property-fit guide supplies the general principle; this local brief applies it to room allocation and access evidence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.laposada.org/rooms"
+      ]
+    },
+    {
+      "areaId": "arizona/pima",
+      "name": "Pima County",
+      "fips": "04019",
+      "directoryPath": "/areas/arizona/#pima",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/pima-county/",
+      "readerDecision": "Keep the homeschool group booking and later boxed-lunch preorder in sequence.",
+      "rationale": "Chambers uses student bands for scheduling and separates parent payment and lunch departure; Itasca distributes arrival tasks among teacher, driver and chaperones; Greene separates school and general-group routes. Pima combines a multi-household homeschool booking with an organizer outside the chaperone allocation and a later boxed-lunch preorder dependent on a booked visit. Cochise in this cohort instead concerns age-versus-role classification and supervision continuity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://pimaair.org/homeschool-groups/"
+      ]
+    },
+    {
+      "areaId": "arizona/pinal",
+      "name": "Pinal County",
+      "fips": "04021",
+      "directoryPath": "/areas/arizona/#pinal",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/pinal-county/",
+      "readerDecision": "Separate digital tour preparation from proof of admission.",
+      "rationale": "Box Butte aligns a downloaded map with self-guided descriptions; Billings explains entitlement redemption into a dated ticket. Pinal distinguishes two different digital artifacts for the same visit, tests having one without the other, and connects a missing ticket to support without another purchase. This is a concrete local preparation brief rather than a new general booking guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://biosphere2.org/frequently-asked-questions"
+      ]
+    },
+    {
+      "areaId": "arizona/santa-cruz",
+      "name": "Santa Cruz County",
+      "fips": "04023",
+      "directoryPath": "/areas/arizona/#santa-cruz",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/santa-cruz-county/",
+      "readerDecision": "Check how the guest reaches a boat-in campsite before the reservation handoff.",
+      "rationale": "Cass separates optional equipment and pavilion reservations from campsite amenities; Sheridan prepares a camper and boat trailer for arrival. Santa Cruz makes boat transport necessary to reach the accommodation, then tests whether campsite arrival and the independent equipment arrangement remain workable after a time change. No rental availability is inferred.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://azstateparks.com/patagonia-lake/camping-and-cabins/rv-tent-camping",
+        "https://azstateparks.com/patagonia-lake/on-the-water/boating"
+      ]
+    },
+    {
+      "areaId": "arizona/yavapai",
+      "name": "Yavapai County",
+      "fips": "04025",
+      "directoryPath": "/areas/arizona/#yavapai",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/yavapai-county/",
+      "readerDecision": "Explain the group-booking choice before companions buy separate tickets.",
+      "rationale": "McCreary distinguishes a reserved car from assigned seats across excursion types; Clay separates tour atmosphere from railbike party capacity. Yavapai focuses on the purchase structure across several households and its consequence for together-seating assurance, then carries that group into presence-dependent ticket collection.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://verdecanyonrr.com/plan-your-visit/faqs/"
+      ]
+    },
+    {
+      "areaId": "arizona/yuma",
+      "name": "Yuma County",
+      "fips": "04027",
+      "directoryPath": "/areas/arizona/#yuma",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/arizona/yuma-county/",
+      "readerDecision": "Separate outside catering from venue-run ticketing and event services.",
+      "rationale": "Webster separates venue staffing from outside caterer choice and museum access; Dawson connects seasonal spaces with caterer responsibilities. Yuma adds the specific distinction between permitting outside catering and providing food-preparation space, then tests the separate venue-owned ticketing service before an organizer commissions online sales.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.yumaaz.gov/government/parks-recreation/yuma-art-center-historic-yuma-theatre",
+        "https://www.yumaaz.gov/home/showpublisheddocument/1979/637872598269300000"
+      ]
+    },
+    {
+      "areaId": "oregon/baker",
+      "name": "Baker County",
+      "fips": "41001",
+      "directoryPath": "/areas/oregon/#baker",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/baker-county/",
+      "readerDecision": "Choose the train excursion before choosing the departure address.",
+      "rationale": "Anderson handles a single train departure with layover and boarding information; Plumas and the departure-address guide establish destination specificity. This brief adds the date-dependent choice between two actual depots, distinct ride durations and a separate equipment promise, with concrete owner assets and direct-entry tests.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sumptervalleyrailroad.org/faq",
+        "https://www.sumptervalleyrailroad.org/"
+      ]
+    },
+    {
+      "areaId": "oregon/benton",
+      "name": "Benton County",
+      "fips": "41003",
+      "directoryPath": "/areas/oregon/#benton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/benton-county/",
+      "readerDecision": "Keep the plant order and pickup appointment connected.",
+      "rationale": "King George prepares planting-site photographs and observations of light, moisture and watering access for nursery advice; Gadsden addresses changing plant availability and stable information. This brief adds an actual two-provider order/appointment handoff, multiple-order references and an event building distinct from the office. The timed-booking guide covers the general separation but not this complete sale preparation and yearly maintenance brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.bentonswcd.org/annual-winter-native-plant-sale",
+        "https://www.bentonswcd.org/annual-winter-plant-sale-faqs",
+        "https://www.bentonswcd.org/2027-02-27-2027-winter-plant-sale-pick-up-day"
+      ]
+    },
+    {
+      "areaId": "oregon/clackamas",
+      "name": "Clackamas County",
+      "fips": "41005",
+      "directoryPath": "/areas/oregon/#clackamas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/clackamas-county/",
+      "readerDecision": "Explain production-run fit before asking for a finishing quote.",
+      "rationale": "Pendleton already covers manufacturing capability and LaPorte RFQ preparation. The production-order acceptance boundary is the useful local addition: the draft explicitly separates commercial fit from geometric capability and tests one-off versus recurring work without borrowing one operator’s policy for another.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.masicindustries.com/about",
+        "https://pametal.com/powder-coating/"
+      ]
+    },
+    {
+      "areaId": "oregon/clatsop",
+      "name": "Clatsop County",
+      "fips": "41007",
+      "directoryPath": "/areas/oregon/#clatsop",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/clatsop-county/",
+      "readerDecision": "Choose the learning program before fixing the school-trip schedule.",
+      "rationale": "Harvey and Freeborn cover school-group preparation and audience arrangements. This page adds the dated educational catalogue with program-specific start periods and unequal durations, then shows how selecting another lab affects the visit brief. It goes beyond a general group booking form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.crmm.org/learning-labs.html",
+        "https://www.crmm.org/group-visits.html",
+        "https://store.crmm.org/store/"
+      ]
+    },
+    {
+      "areaId": "oregon/columbia",
+      "name": "Columbia County",
+      "fips": "41009",
+      "directoryPath": "/areas/oregon/#columbia",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/columbia-county/",
+      "readerDecision": "Confirm the accepted seat service before preparing a shipment.",
+      "rationale": "Valencia handles a venue closure with relocated events; Addison distinguishes interior components and Knox explains hidden restoration work. This brief joins a temporary service boundary to irreversible customer preparation and staff-arranged equipment intake. Neither component selection nor a generic closure notice alone covers that task.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.oregonaero.com/",
+        "https://www.oregonaero.com/component/content/article?id=144%3Aaircraft-interior-upgrades-repair-station"
+      ]
+    },
+    {
+      "areaId": "oregon/coos",
+      "name": "Coos County",
+      "fips": "41011",
+      "directoryPath": "/areas/oregon/#coos",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/coos-county/",
+      "readerDecision": "Separate the shipyard lift arrangement from the work on the boat.",
+      "rationale": "Gloucester distinguishes short-haul purposes and service providers; Somerset and the marine guide cover service location and dependencies. This draft adds the port-versus-DIY-versus-independent-contractor decision and an out-of-area vessel’s pre-arrival handoff. It avoids merely repeating the general asset/location form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.portofcoosbay.com/charleston-marina-shipyard",
+        "https://www.portofcoosbay.com/marine-services-directory"
+      ]
+    },
+    {
+      "areaId": "oregon/crook",
+      "name": "Crook County",
+      "fips": "41013",
+      "directoryPath": "/areas/oregon/#crook",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/crook-county/",
+      "readerDecision": "Plan arena use, payment and stall access as separate steps.",
+      "rationale": "Kingman concerns separate facility resources and Harding distinguishes venue roles and rental preparation. The Crook brief instead resolves overlapping opening hours, staffed payment and physical unlocking. Its evening acceptance case adds specific value beyond a generic venue calendar.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.crookcountyfairgrounds.com/p/getconnected/open-riding",
+        "https://www.crookcountyfairgrounds.com/p/getconnected/stalls",
+        "https://www.crookcountyfairgrounds.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/curry",
+      "name": "Curry County",
+      "fips": "41015",
+      "directoryPath": "/areas/oregon/#curry",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/curry-county/",
+      "readerDecision": "Keep a selected online book listing distinct from the whole store.",
+      "rationale": "Wyandot separates ordinary retail from custom work and Nemaha carries catalogue references into research visits. This brief addresses partial external retail inventory and the identity of a particular secondhand/rare copy across direct and marketplace routes. The website work includes honest catalogue coverage, useful item references and departmental routing.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://goldbeachbooks.com/gold-beach-books/",
+        "https://goldbeachbooks.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/deschutes",
+      "name": "Deschutes County",
+      "fips": "41017",
+      "directoryPath": "/areas/oregon/#deschutes",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/deschutes-county/",
+      "readerDecision": "Separate shipped coffee, event pickup and a café gathering.",
+      "rationale": "Pitt addresses wholesale coffee use and Lexington distinguishes room versus whole-café hire. The Deschutes brief addresses three fulfillment purposes on one site, with separate timing rules and the specific Downtown event contact. Its difficult cases ensure rules cannot leak between shipping, pickup and venue requests.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.backporchcoffeeroasters.com/faq-contact",
+        "https://www.backporchcoffeeroasters.com/cafes"
+      ]
+    },
+    {
+      "areaId": "oregon/douglas",
+      "name": "Douglas County",
+      "fips": "41019",
+      "directoryPath": "/areas/oregon/#douglas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/douglas-county/",
+      "readerDecision": "Compare encounter dates and booking routes before planning the safari day.",
+      "rationale": "Nicholas already covers separate park admission and encounter places, and Torrance separates admission, activity credit and timed extras. That alone would not justify this draft. The complete brief instead adds seasonal encounter selection, phone-only advance arrangements and cross-session timing checks; separate admission is supporting context.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://wildlifesafari.net/pages/encounters",
+        "https://wildlifesafari.net/pages/prices-hours?view=main"
+      ]
+    },
+    {
+      "areaId": "oregon/gilliam",
+      "name": "Gilliam County",
+      "fips": "41021",
+      "directoryPath": "/areas/oregon/#gilliam",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/gilliam-county/",
+      "readerDecision": "Separate the seed order contact from the pickup facility.",
+      "rationale": "Grayson joins a wholesale assortment to fulfillment and Caldwell separates display from appointment-only workshop visits. This brief adds the central order-desk versus local seed collection relationship, with location-specific hours and a changed-destination acceptance case.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nwgrgr.com/fccp-new-seed-24382",
+        "https://www.nwgrgr.com/cbloc-3477"
+      ]
+    },
+    {
+      "areaId": "oregon/grant",
+      "name": "Grant County",
+      "fips": "41023",
+      "directoryPath": "/areas/oregon/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/grant-county/",
+      "readerDecision": "Distinguish the historic-building tour from the interpretive center and shop.",
+      "rationale": "Parker already distinguishes museum and historic interiors; Pottawatomie explains free admission with group registration. The local brief adds a small-capacity guided interior, a group larger than one departure and a relocated retail destination. These produce concrete content and maintenance work beyond rephrasing access rules.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://friendsofkamwahchung.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/harney",
+      "name": "Harney County",
+      "fips": "41025",
+      "directoryPath": "/areas/oregon/#harney",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish a separately rented soaking tub from the private bath attached to a selected stay; alternatively, discuss a custom saddle using gallery references.",
+      "rationale": "The complete Madison County record already handles the same timed public bath versus unit-specific private bath decision, including accurate amenity photographs and reservation routing. Motley adds stay preparation distinctions, and the full rental/experience guides cover the reusable work. Crane’s pond and cleaning details are useful operating facts, but this assessment did not establish a sufficiently different complete website project merely by adding them to the same bath comparison. The saddlery alternative establishes gallery-based custom design and a contact route for wait list/pricing, but it does not add a concrete customer decision beyond the full custom-order guide. This is an evidence-based no-addition judgment, not an unresearched county or a population screen.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "oregon/hood-river",
+      "name": "Hood River County",
+      "fips": "41027",
+      "directoryPath": "/areas/oregon/#hood-river",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/hood-river-county/",
+      "readerDecision": "Prepare the farm-stand visit before the customer reaches the payment sign.",
+      "rationale": "Gadsden distinguishes dated inventory documents from a live stock route, while Chittenden separates shipment and pickup stores. The island-payment guide already establishes preparation before travel. This local brief adds an unattended honor stand, real digital and non-digital methods, unreliable reception, a custom-order alternative to first-come stock and a private-residence boundary. These determine concrete content placement and an acceptance case rather than a renamed farm template.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.spiritedrootsfarm.com/general-7"
+      ]
+    },
+    {
+      "areaId": "oregon/jackson",
+      "name": "Jackson County",
+      "fips": "41029",
+      "directoryPath": "/areas/oregon/#jackson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/jackson-county/",
+      "readerDecision": "Keep a curated subscription box separate from an extra order.",
+      "rationale": "Newton explains repeated floral size/frequency and changing seasonal designs. Calumet explains post-arrival damage evidence and claim stages. This brief addresses a different pre-dispatch task: a curated box cannot absorb an extra purchase, and a requested date change belongs to one identifiable order. It supplies an owner-input list and a combined extra-item/date-change acceptance case.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://roguecreamery.com/pages/frequently-asked-questions"
+      ]
+    },
+    {
+      "areaId": "oregon/jefferson",
+      "name": "Jefferson County",
+      "fips": "41031",
+      "directoryPath": "/areas/oregon/#jefferson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/jefferson-county/",
+      "readerDecision": "Name the flight location before sending a visitor to choose a date.",
+      "rationale": "Polk already addresses a museum closure taking priority over ordinary hours, and Valencia keeps relocated events distinct from a closed home venue. Closure alone would not justify this page. The full ride-page alternative adds a traveling flight offer, event-specific online versus airport booking and the meaning of an unlisted participating location. The proposed work tests a missing listing without inventing its availability status.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://ericksoncollection.com/museum",
+        "https://ericksoncollection.com/book-warbird-rides",
+        "https://ericksoncollection.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/josephine",
+      "name": "Josephine County",
+      "fips": "41033",
+      "directoryPath": "/areas/oregon/#josephine",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/josephine-county/",
+      "readerDecision": "Explain the meal stop as part of the selected river excursion.",
+      "rationale": "Anderson connects a train selection to depot, ticket collection and linked-party arrangements; McCreary distinguishes car selection from assigned seats. This brief instead connects a boat-and-meal product to the purpose of a named lodge, shared family-style dining and questions that belong at reservation time. Its two acceptance cases test the offer itself rather than repeat boarding instructions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://hellgate.com/excursions/",
+        "https://hellgate.com/faqs/"
+      ]
+    },
+    {
+      "areaId": "oregon/klamath",
+      "name": "Klamath County",
+      "fips": "41035",
+      "directoryPath": "/areas/oregon/#klamath",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/klamath-county/",
+      "readerDecision": "Separate a train-museum visit from bringing equipment or attending a meet.",
+      "rationale": "Greenville separates a hosted makerspace visit from joining, and Scott compares provided fishing gear with the visitor’s own-gear preference. Train Mountain adds a specific change in participation rights when a guest brings equipment, plus event registration that membership does not universally include. The local project requires purpose-based navigation and two concrete changed-plan checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.trainmountain.org/membership/",
+        "https://trainmountain.org/visit/"
+      ]
+    },
+    {
+      "areaId": "oregon/lake",
+      "name": "Lake County",
+      "fips": "41037",
+      "directoryPath": "/areas/oregon/#lake",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/lake-county/",
+      "readerDecision": "Give a livestock seller a different starting point from a beef shopper.",
+      "rationale": "Saunders connects a producer delivering livestock with the separate buyers supplying cutting instructions; Ellis identifies cattle-service stages such as backgrounding. This brief concerns the website owner buying the animal from a producer while separately selling beef. The transaction direction, negotiated collection discussion and two distinct audience paths are different commissioning decisions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://rancherraised.com/beef-circuit",
+        "https://rancherraised.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/lane",
+      "name": "Lane County",
+      "fips": "41039",
+      "directoryPath": "/areas/oregon/#lane",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/lane-county/",
+      "readerDecision": "Explain the approval step before online studio registration.",
+      "rationale": "Lynchburg compares item, shelf and recurring firing; Johnson compares studio allowances, firing charges and readiness; Queens compares firing with workspace. Polk already separates membership, class history, approval and scheduled studio time, so the general approval principle is not new. This Eugene brief adds two explicit prior-learning routes, a staff-enabled recreation account and a teaching-versus-production purpose check, producing practical first-contact and account-status explanations.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.eugene-or.gov/5318/Amazon-Clay-Studio"
+      ]
+    },
+    {
+      "areaId": "oregon/lincoln",
+      "name": "Lincoln County",
+      "fips": "41041",
+      "directoryPath": "/areas/oregon/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/lincoln-county/",
+      "readerDecision": "Separate making glass with an artist from commissioning a finished piece.",
+      "rationale": "Gloucester and the marine-intake guide already cover the first shipyard lead’s handling/work relationship; the earlier Oregon Coos draft makes another marine-only brief less useful. Monroe explains later student glazing versus studio finishing, and the class-take-home guide covers post-class logistics. The selected glass brief adds a genuine product-versus-participation boundary: a visually related memorial object is a studio commission, while watching and making remain different offers. Collection is a connected supporting decision, not the sole claimed addition.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.lincolncityglasscenter.com/",
+        "https://www.lincolncityglasscenter.com/faq.html"
+      ]
+    },
+    {
+      "areaId": "oregon/linn",
+      "name": "Linn County",
+      "fips": "41043",
+      "directoryPath": "/areas/oregon/#linn",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/linn-county/",
+      "readerDecision": "Choose the event arrangement before comparing room rates.",
+      "rationale": "Richland separates party-room time from all-day admission and optional seasonal activities; Jasper separates public garden arrival from private-event space. This local brief distinguishes different commercial offers for the same rooms based on the activity being hosted, with a separate exclusive-use arrangement. A business-hosted celebration is the useful boundary case, alongside room atmosphere and activity inclusions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://albanycarousel.com/party-room-rentals/",
+        "https://albanycarousel.com/contact/"
+      ]
+    },
+    {
+      "areaId": "oregon/malheur",
+      "name": "Malheur County",
+      "fips": "41045",
+      "directoryPath": "/areas/oregon/#malheur",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/malheur-county/",
+      "readerDecision": "Separate a proposed extra performance from a listed school showing.",
+      "rationale": "Wapello and Kay already cover layout-specific venue capacities and catering, so the first venue-rental lead was not enough. Lamar prepares school-format and activity choices. The earlier Oregon Clatsop draft attaches grade, duration and start periods to learning labs. This brief adds a different state change: interest in a provisional extra showing must remain distinct from an advertised showing and a confirmed school booking, with a specific staff-controlled update process.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://4rcc.com/for-educators/"
+      ]
+    },
+    {
+      "areaId": "oregon/marion",
+      "name": "Marion County",
+      "fips": "41047",
+      "directoryPath": "/areas/oregon/#marion",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/marion-county/",
+      "readerDecision": "Match the iris format to its ordering and fulfillment season.",
+      "rationale": "Hickman keeps a selected plant attached to pickup or delivery questions; Chittenden separates pickup and shipment stores; Newton distinguishes repeated floral choices from changing seasonal designs. This brief adds three materially different forms of the same flower and nonmatching order/fulfillment seasons. The spring-gift check makes the local guidance useful beyond a general shipping-date explanation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.schreinersgardens.com/pages/bloom-season-tickets"
+      ]
+    },
+    {
+      "areaId": "oregon/morrow",
+      "name": "Morrow County",
+      "fips": "41049",
+      "directoryPath": "/areas/oregon/#morrow",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/morrow-county/",
+      "readerDecision": "Build the school visit around the learning request and the time it adds.",
+      "rationale": "Seminole separates visit, meals and scholarship funding; Chambers assigns student-count windows and lunch departure. This brief instead connects a broad educational-group definition, an hour-long self-directed base, curriculum requests and extra activity time. The commissioning examples test an expanded learning plan rather than copying either payment or funding sequence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://visitsage.com/index.php/schools"
+      ]
+    },
+    {
+      "areaId": "oregon/multnomah",
+      "name": "Multnomah County",
+      "fips": "41051",
+      "directoryPath": "/areas/oregon/#multnomah",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/multnomah-county/",
+      "readerDecision": "Keep admission and an included tour reservation as two visible steps.",
+      "rationale": "Halifax distinguishes guided interpretation from self-guided admission; Goodhue distinguishes free entry from a paid arranged guide. Here the public tour is included yet separately reserved, and admission timing must support a chosen tour. Two confirmation states and two different capacity units make the local commissioning checks useful beyond those records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://japanesegarden.org/tours-and-groups/"
+      ]
+    },
+    {
+      "areaId": "oregon/tillamook",
+      "name": "Tillamook County",
+      "fips": "41057",
+      "directoryPath": "/areas/oregon/#tillamook",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/tillamook-county/",
+      "readerDecision": "Send each visitor task to the place that can actually complete it.",
+      "rationale": "Schuyler compares visit activities and Menard separates independent use from hosted requests. This brief adds a verified task-to-channel map: free visit preparation, premium booking and on-site ordering do not share one completion destination. The mobile round-trip acceptance case tests that distinction without claiming a broken operator system. The complete new Linn carousel rental draft and FAQ were also compared: that FAQ explains phone-friendly package selection and the existing booking handoff. This brief distinguishes the tasks different tools can complete, and its separate FAQ concerns amendments to an existing reservation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.tillamook.com/visit-us/creamery",
+        "https://www.tillamook.com/faq/mobile-app/can-i-book-a-premium-experience-tour-within-the-tillamook-app",
+        "https://www.tillamook.com/faq/creamery"
+      ]
+    },
+    {
+      "areaId": "oregon/umatilla",
+      "name": "Umatilla County",
+      "fips": "41059",
+      "directoryPath": "/areas/oregon/#umatilla",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/umatilla-county/",
+      "readerDecision": "Explain how a tour time is agreed when office hours are not a departure schedule.",
+      "rationale": "Colorado separates property opening from office hours, and Eddy separates messages from paid online tickets. The Pendleton application instead explains a telephone-arranged departure whose operation depends on combined party numbers, with regular and special-event instructions kept distinct. Its test case avoids inventing a timetable, private group or web checkout.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://pendletonundergroundtours.org/"
+      ]
+    },
+    {
+      "areaId": "oregon/union",
+      "name": "Union County",
+      "fips": "41061",
+      "directoryPath": "/areas/oregon/#union",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/union-county/",
+      "readerDecision": "Keep a closed shared amenity separate from the lodging that remains available.",
+      "rationale": "Madison attaches private baths to units; Sandoval distinguishes walk-in and private-group visits; Alpine changes campground area and vehicle fit by season. This brief applies a dated shared-amenity closure across an otherwise operating property while retaining genuinely different private amenities. The owner prepares an affected-unit list and an unconfirmed-reopening state, not a renamed bath-product comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://grandehotsprings.com/"
+      ]
+    },
+    {
+      "areaId": "oregon/wallowa",
+      "name": "Wallowa County",
+      "fips": "41063",
+      "directoryPath": "/areas/oregon/#wallowa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/wallowa-county/",
+      "readerDecision": "Keep the departure, railcar choice and booking cutoff together.",
+      "rationale": "Clay separates atmosphere from seating, Lake explains boats versus passengers, and LaSalle addresses rider swapping. This application connects a specific departure change to a different online cutoff and car arrangement, including how to explain an apparent full state without claiming inventory. The operator is independently located in Joseph; the brief does not assert every route mile lies within Wallowa County.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://jbrailriders.com/faq/",
+        "https://jbrailriders.com/tours/valley-sights/"
+      ]
+    },
+    {
+      "areaId": "oregon/wasco",
+      "name": "Wasco County",
+      "fips": "41065",
+      "directoryPath": "/areas/oregon/#wasco",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/wasco-county/",
+      "readerDecision": "Check the route pair and notice period before treating a shuttle request as workable.",
+      "rationale": "Tioga identifies what moves, Newton preserves already-completed movement during changes, and McDonald connects float routes to shuttle direction. Here the initial request must satisfy a supported endpoint pair, a vehicle-count discussion and two distinct timing meanings. These are concrete commissioning and acceptance checks rather than another description of passenger versus vehicle transport.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://raftdra.com/shuttles/"
+      ]
+    },
+    {
+      "areaId": "oregon/washington",
+      "name": "Washington County",
+      "fips": "41067",
+      "directoryPath": "/areas/oregon/#washington",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/washington-county/",
+      "readerDecision": "Explain the diagnostic decision and its different next steps before the appliance arrives.",
+      "rationale": "Rockcastle explains mail-in versus local receipt and Wirt separates sales from service. The repair guide distinguishes inspection from approval. This local brief combines a current service-availability distinction with three different outcomes from one diagnostic charge, supplying concrete tests for a replacement choice and an unavailable home-visit request.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bandrappliances.com/services.php"
+      ]
+    },
+    {
+      "areaId": "oregon/wheeler",
+      "name": "Wheeler County",
+      "fips": "41069",
+      "directoryPath": "/areas/oregon/#wheeler",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/wheeler-county/",
+      "readerDecision": "Choose the kind of fossil outing before asking someone to arrange a guide.",
+      "rationale": "Palo Pinto keeps one park’s collecting permission complete; Quay distinguishes materials and access within museum exhibits. This brief handles a regional center’s multiple destinations and referral role. A changed place must carry a changed activity description and confirmation owner, not merely a new map pin. It does not republish generalized collecting law.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.oregonpaleolandscenter.com/common-fossils"
+      ]
+    },
+    {
+      "areaId": "oregon/yamhill",
+      "name": "Yamhill County",
+      "fips": "41071",
+      "directoryPath": "/areas/oregon/#yamhill",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/oregon/yamhill-county/",
+      "readerDecision": "Explain club signup, allocation and collection as separate stages.",
+      "rationale": "Schuyler concerns winery visits, Eau Claire distinguishes paid storage from layaway, and Cass separates membership from class or studio access. This brief explains a recurring product commitment after a no-fee signup item and the later pickup-to-shipping handoff. It gives a producer a maintained offer and member-instruction scope without inventing subscription software or legal advice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.yamhill.com/store-club?productTitle=estate-wine-club--1300226698--261--membership"
+      ]
+    },
+    {
+      "areaId": "oregon/polk",
+      "name": "Polk County",
+      "fips": "41053",
+      "directoryPath": "/areas/oregon/#polk",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Compare private-event access with the preparation and facilities the organizer needs.",
+      "rationale": "The Sippery is a substantive but narrow access-window example. Bracken already develops public hours, setup, event and later removal into a complete website brief. The museum was inspected as a credible alternative; Cottonwood already connects rented space, kitchen/equipment limits, setup access and museum operations. No additional commissioning decision is supported strongly enough by these two source sets to justify another service record. Retain the directory and existing guides.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "oregon/sherman",
+      "name": "Sherman County",
+      "fips": "41055",
+      "directoryPath": "/areas/oregon/#sherman",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Check the current season and actual campsite features before planning a visit.",
+      "rationale": "The museum lead would repeat maintained seasonal opening guidance already developed in Colorado and the event-update guide. The county park was inspected as a substantive alternative: its hookup, site-form and separate fairground amenities are already covered in deeper commissioning guidance by Crow Wing and Cass. The pages establish local facts but do not add a sufficiently developed reader decision for another service brief. Preserve both independent assessments without inventing monthly-stay terms from unreviewed attachments.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    }
+  ]
+}
