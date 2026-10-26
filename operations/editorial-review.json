@@ -216,6 +216,114 @@
       "reason": "Retain this 38-word comparison: the colon introduces three named spaces, and semicolons clearly separate the main event center, Building A and Building B. Each clause attaches a concrete feature to the correct space. Those parallel labels make the sentence easy to scan and support the next paragraph’s equipment, livestock and presentation-use comparison.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
       "reviewedAt": "2026-10-26T02:44:12.377Z"
+    },
+    {
+      "route": "/areas/kansas/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "08fbe93d67dd79120ead6770435ebb6ddc3aeed4045a55b0cca5f8e9c3d22095",
+      "disposition": "retain",
+      "reason": "Retain: this is a single inventory-method note composed of short factual sentences. Its length preserves distinctions that affect how the directory is interpreted: incorporated versus statistical places, cross-county relationships, township government status, the named Kansas consolidation exceptions, excluded Census placeholders and the January snapshot limit. Removing qualifications to meet a paragraph threshold would make the directory less accurate; each sentence has a discrete classification purpose.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/nebraska/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "43ee3f8de4322c76ce8434df1426907434451d61b0f2ba00cd0c9866e750afb6",
+      "disposition": "retain",
+      "reason": "Retain: the directory note keeps the Census date and coverage limits beside the place and subdivision classifications. Its short sentences distinguish statistical communities, active and inactive townships, election precincts without municipal government and excluded hierarchy placeholders. These are concrete interpretation instructions for the following inventory, with no promotional or repetitive filler added to the paragraph.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/kansas/coffey-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "6434fab8a69b508a1788f8565913a017ba5ce4f5ee058f836f77e519da23f296",
+      "disposition": "retain",
+      "reason": "Retain: the sentence describes one dated digitization project and preserves its newspaper title, coverage interval, six-month gap and distinction from undigitized microfilm. The chronological qualifiers make the later research-request example usable; the sentence's parallel factual clauses remain clear without suggesting that every issue in the broad interval exists online.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/kansas/nemaha-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "dbd9dbf5f418f593535ef3d32450b64d9e11d7474f3dafe47a9ccd0d61a0ad17",
+      "disposition": "retain",
+      "reason": "Retain: the sentence states one visitor acceptance check—retain references and the intended research date—followed by the specific misconception to avoid. Keeping the material-preparation qualification attached prevents exhibit opening hours from being interpreted as a confirmed research appointment. The actions and boundary are concrete and readable.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/kansas/ottawa-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "5354e382b94d599977ec1b79b549ecf0bfdff0c0ed998c97fe2e5cfc4a804cd5",
+      "disposition": "retain",
+      "reason": "Retain: this is a parallel comparison of fax sending and receiving, with first-page and additional-page rates kept together for each direction. Those four values explain why a generic per-page label would be misleading; the repeated structure makes the source example understandable without dropping a rate distinction.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/nebraska/richardson-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "ee4ccb1a7183054348b8f91167f15cce69d6e0a3cb39e867db6f1a0727a9a4b8",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces one concrete acceptance scenario comparing a short court party with a larger event. The following clause names the required choice of spaces and two precise false assumptions—opening hours as a reservation and every rental as the whole building. The length supports a useful test rather than adding an unrelated idea.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/nebraska/webster-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "355975d23b58dce6d2811b13b2e389ea03d524531387df89be515e3eb96d0624",
+      "disposition": "retain",
+      "reason": "Retain: the sentence sets up one returning visitor and explains the expected page behavior after the colon. The compact list of a shortened tour, refund and special booking option identifies exactly which unsupported responses the page must avoid while retaining the visitor's prior Childhood Home visit as useful context.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/south-dakota/brookings-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "422753bd3bde8a47e3746d22e030fb23d8ed28972062d7d2bded3f68ad6cadc2",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces an ordered three-part arrival sequence: wait for the staff greeting, send a representative with final counts, and prepare labeled lunch containers for transfer. The responsible roles and order are the subject of the brief. The list-like sentence remains clear and keeps the full handoff together.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/south-dakota/douglas-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "c7c1228a0a74f16e0239a5e46d5a59ff9e22fc74c447eddb5a9127263b4b04b4",
+      "disposition": "retain",
+      "reason": "Retain: the sentence compares three published home-support starting points and keeps each condition or reviewer attached to its program. The parallel enumeration separates provider-related visiting-nurse conditions, state-worker assessment and a private-pay route. These distinctions are necessary context for the proposed public contact comparison and do not make an eligibility determination.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/south-dakota/yankton-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "a8f615a124fbc281e08bd28d3b79d7572e4b9b3bc29331bef4d1a6fc26a3dd44",
+      "disposition": "retain",
+      "reason": "Retain: the hypothetical twelve-to-thirteen-person change is one staff-review test, and the semicolon cleanly separates the required behavior from two incorrect outcomes. It preserves the revised participant count without declaring the venue full or automatically confirming an instructor, making the threshold's practical meaning clear.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
+      "reviewedAt": "2026-10-26T05:53:50.737Z"
+    },
+    {
+      "route": "/areas/california/shasta-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "3ae86e3ab2dc7406c7a68f6d5c034fb72de446c4cf6441bc59f7bcffb546344b",
+      "disposition": "retain",
+      "reason": "Retain: the sentence follows one concrete acceptance check from online admission through gift-store exchange, boarding pass and activity, then uses a semicolon to name the two misleading outcomes to avoid. The reserved-departure and independent-driving exclusions preserve the actual arrival sequence; the sentence remains a coherent check rather than combining unrelated claims.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_dakota_integration_review)",
+      "reviewedAt": "2026-10-26T07:33:29.029Z"
+    },
+    {
+      "route": "/areas/new-mexico/valencia-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "80da9261d5917a3808ac3083bb1e14dae913a167e0905f5fe292f9335c159653",
+      "disposition": "retain",
+      "reason": "Retain: the sentence presents three parallel, distinct source statuses: the museum and cafe closure, a canceled history event and a play moved to a named library address. Keeping these together establishes the precise contrast the proposed event-status page must preserve; the specific relocated venue prevents a general closure notice from erasing a continuing event.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_dakota_integration_review)",
+      "reviewedAt": "2026-10-26T07:33:29.029Z"
     }
   ]
 }

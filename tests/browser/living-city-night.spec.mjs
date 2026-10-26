@@ -88,7 +88,7 @@ test('failed moon and film assets keep the homepage copy and project navigation 
   await expect(page.locator('[data-city-play]')).toHaveAccessibleName('Retry motion');
  }
  await expect(page.getByRole('heading',{name:'Web design & SEO. Built for small businesses.'})).toBeVisible();
- await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 33 states and Washington, DC.');
+ await expect(page.locator('.city-location')).toHaveText('Websites from $1,400. Serving businesses online across 39 states and Washington, DC.');
  await expect(page.locator('.home-starting-points')).toContainText('From $1,400');
  await expect(page.locator('#seo-services')).toContainText('From $400/month');await expect(page.locator('#seo-services')).toContainText('Useful content and researched website improvements');
  await expect(page.locator('.home-choice-grid>a')).toHaveCount(4);

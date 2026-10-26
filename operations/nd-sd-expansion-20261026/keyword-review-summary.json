@@ -1,0 +1,45 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+  "database": "US",
+  "counties": 119,
+  "northDakotaCounties": 53,
+  "southDakotaCounties": 66,
+  "serviceAdditions": 83,
+  "directoryOnlyNoAdditions": 36,
+  "faqPairs": 5,
+  "newGuides": 0,
+  "existingLinkedGuides": 14,
+  "keywordDrivenDispositionChanges": 0,
+  "queries": 969,
+  "numeric": 26,
+  "positive": 19,
+  "explicitZero": 7,
+  "statusCounts": {
+    "OBSERVED": 10,
+    "OBSERVED_PARTIAL_REFRESH_REQUIRED": 16,
+    "UNAVAILABLE_REFRESH_REQUIRED": 943
+  },
+  "metricAvailability": {
+    "OBSERVED": 10,
+    "OBSERVED_PARTIAL_REFRESH_REQUIRED": 16,
+    "UNAVAILABLE_REFRESH_REQUIRED": 943
+  },
+  "questionPanels": [
+    {
+      "stateId": "north-dakota",
+      "status": "NO_QUESTION_DATA",
+      "numericQuestionCount": null
+    },
+    {
+      "stateId": "south-dakota",
+      "status": "NO_QUESTION_DATA",
+      "numericQuestionCount": null
+    }
+  ],
+  "interpretation": "Phrase estimates are not county-resident demand. Overlapping phrase volumes are not summed. Unavailable, refresh-required, partial and explicit zero metrics retain their separate meanings.",
+  "publicationStatus": "Local integration only; California and New Mexico join the six preceding states before final CI and publication.",
+  "editorialGuideOverlay": "operations/six-state-release-20261026/guide-link-corrections.json",
+  "researchedGuideIntents": 15,
+  "guideIntentNote": "The researched itinerary intent remains in the historical observations; its final contextual links were removed by the separately recorded editorial review."
+}

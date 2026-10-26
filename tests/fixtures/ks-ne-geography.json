@@ -1,0 +1,894 @@
+{
+  "provenance": "Accepted candidate exhaustively reconstructed from raw Census sources by geography-independent-review/audit.py; 14,634 checks, zero failures. These hashes freeze that reviewed result, not a fresh source-fetch claim.",
+  "candidateSha256": "39c2007715a66c9b5d0424e957759339becb25e89ee01cf64f9767c8e71f770c",
+  "reviewSha256": "549f5363f9782eb1e116f0af14a571cf388868819238225cddcd0377ac586ce4",
+  "countyDigests": {
+    "kansas/allen": "4af5ada94e26ef087de69eaf0f4074f3276dfd1c69da30258802d844d119513c",
+    "kansas/anderson": "9e26f01b2b29f662c31572ce87fe775130b2bf9d20d8cafbb660e597e558b881",
+    "kansas/atchison": "a67d81cd183ebf8e0f384df80f128d5a510aa7ea8ae9d1a0818219205d77f776",
+    "kansas/barber": "bf00535527347d0b5e892ecbb7dc25905eff03c48b0e0f7fe0135451df9250d3",
+    "kansas/barton": "9753b84f1ac0612e5c15ba17f74b2942f9b252ba104d7776271ce3068fa9b9c4",
+    "kansas/bourbon": "f58e4eca9f97742d851c9e27bb0099f36914066f7254cac40c1dbe7ab8c49006",
+    "kansas/brown": "14371f3f107e1a432799f3f9dde9244a9afa65677a9da7b9f4f4a448cacf382e",
+    "kansas/butler": "5dc1f487a208b7a03205858bd6360a160f09324adae8a894e0c6ced393b894d7",
+    "kansas/chase": "2746e3416458b4932ea67bbefad58dd332ed9fdbfdeeb980d1d2a797117b75c2",
+    "kansas/chautauqua": "3fff8603a64fdcd8ffdb98452d7dc9bc86372bf5a9be624042875489e2890c89",
+    "kansas/cherokee": "0ad634e7407c2b82478c0e3d2a1beb3c126241a52ba8343dec1f984956c8d68a",
+    "kansas/cheyenne": "c892cc06db67df37e10e7ebdb2afc5b2ca4b80a5b182daaced1f730725417c22",
+    "kansas/clark": "6b49898b85d8513a767d6ed76f5d703479bed4695b0fd091ac7b5606e15fc1ef",
+    "kansas/clay": "a2c0f237537e02a65fcb24fa22a9a29e7dd1cb01cbfa35862e80fc4f2c452469",
+    "kansas/cloud": "b52a2bdef2db764efc3e694c8d0a8d4c35fae76bfdd7aecfdb698271b95b8f8b",
+    "kansas/coffey": "11bbfcab7303318cee9ae432e8d50e4db96ead8a321dd27db082cfb9403df233",
+    "kansas/comanche": "fcccb783c93a63f7ea2cc83bd81c971c98a38d5772f7bae43feeb7438cd7e395",
+    "kansas/cowley": "5d47d245d6e89ad8c4f1f22d4c195680be4e7ebdf83b4fe4f659b0dd7a0dddbc",
+    "kansas/crawford": "918a7e2e88d1b7f4f297641cda0ad3ebe7921af74238ea77899e144e68caeeaa",
+    "kansas/decatur": "e62ffdd5fba9c475dd4eb133b5ae6524f8601db4a62f3f8d951af17a3285c002",
+    "kansas/dickinson": "b1453b4e5a32f5609c955c1aefd6439b30cd141cea1373dca5f67ad1582d3901",
+    "kansas/doniphan": "80a4c4e42f77735eaceb19d117bd867d3ffd802c370736376ca54e740cedde5d",
+    "kansas/douglas": "c85c6ae672d74c3c40f5da41a41641c9806249e5cca833c3b50c6003128cf1df",
+    "kansas/edwards": "4840bf6c47cedfb529c8e036897f5c62e22c599e519f824ec7a6a9e4e5f15031",
+    "kansas/elk": "6694db3e23b7c204eef610e9bea7d9706ebb4d3c9f48333cfbf887989b2328da",
+    "kansas/ellis": "cdabf07bb7049657a003ae64853544af3f01f147e981dff9567ad88571743d37",
+    "kansas/ellsworth": "5e820e295be4a015e29e0c744bf3174f87165d80aae99f527a53c977a789dc96",
+    "kansas/finney": "b8c3a95bfb0c91cf629b8eaaac362f5b76f0db12ca0ab0b4e2edca757438bd30",
+    "kansas/ford": "64928d133218a3254a4e9f1f9820cc3b31150978be725a84e14777ff2c18f842",
+    "kansas/franklin": "c70692606134bd2db6b92ed9a018acd95c71e1b66634ae74cffdf3d94a988249",
+    "kansas/geary": "98e611dfba2d71cecfac0de114916b2dab0c1212c811cb3fa840582b2b2eeb38",
+    "kansas/gove": "5a46b6e5c76d0f679682c37354d5de8dc4b8a2293adf53de3a5f1dedbda758d3",
+    "kansas/graham": "057f90210b7b53f4a86f05fc2f2e78c460fff3ed5be95e6ae5e3ad0025617bbd",
+    "kansas/grant": "21edc9e10a095905ee22c2c2d36603e05ae3d5c1c4b5c5bbdca9313a26a44156",
+    "kansas/gray": "f4e8e352b2e121a18268c9af037a971cd6c86c19d8818ac4e0e01dc522f12acf",
+    "kansas/greeley": "d31a819904d5f250865ad12e73a99424e8831215ebc34997bfa83d6ab6c59860",
+    "kansas/greenwood": "06e351bc00d8dda4d73fd72ceb3b4baeb4bd11e8a7b5db31ebc0250407ef3515",
+    "kansas/hamilton": "93f0e824dc9e65380ce714781f9a78dd8f14e8785750efedcf84d33a69e33795",
+    "kansas/harper": "a5a10cd1c2f1accf1166188c9cef53a6020c1a608bc73759049f6976643d09c5",
+    "kansas/harvey": "f543ba8623537aac6d66aceed791e8db32687d4c881d5f32c749f6fe5f3793aa",
+    "kansas/haskell": "ced2e38d06af95715b36c208e7dfd61f596571cf79b238ce4d7b35de96973aaf",
+    "kansas/hodgeman": "ebe2ffd012b2501b3c0d3b220b35a5d0e38d9c42efc66d30548bda4b725808f0",
+    "kansas/jackson": "2e2a10e511f1da0ad605990424107c7dd21538d24421484e40b966a942feb2f3",
+    "kansas/jefferson": "c2b18d40518ea6886ed71d96a7201bda5a04ff5e61f464abc80a1b3e452b0f1f",
+    "kansas/jewell": "a81b855530c7fac909641982c8824e0b0c2faa787009434cbe76846022bba483",
+    "kansas/johnson": "d5775c25705902979b61d4cedfc4434ba2083ce6c5d39bfbeb10718550011930",
+    "kansas/kearny": "3f8bd98f9291db04897981182fc8e28c7d50ae01e6227b9882fd4e693d766b94",
+    "kansas/kingman": "3487f36c2eff960916c0728b79b819394197b4482b0c5c89457dcb3c1cf7971c",
+    "kansas/kiowa": "cc7a7d816e46a2928e4a6bf01057c548b0f3f4abe890ac5371ec3baad53ef10d",
+    "kansas/labette": "89eaaac5471a8fd566125744cdce30dde4fb52441e73e4165afc49f362159b02",
+    "kansas/lane": "31f54844c8a39c60fbb4e94afaf6448fefc5d8915cb1e6456f2852c8c9fef1b5",
+    "kansas/leavenworth": "39fa5677c29d8ae5334fd6d3a15e1ff27bb6d3a14fd7a8ed0b8237f7891098b8",
+    "kansas/lincoln": "f3c28f25f2c867cd60f594d6ce8f72f0234faace1a309a25eb74f33cf0c0e5f7",
+    "kansas/linn": "c9f94aa75ee385364c59702327bf196ba928ede974bc944f215e810fb1ba8478",
+    "kansas/logan": "aec67ee8ae34ef26bc379a0c71148eb6cf05a4e2c20f5d7764cfe863bb642ef1",
+    "kansas/lyon": "967e7fdbdf3abba8c3c352c546b18b2c1113a20c6ce2f96de27af934f751e10d",
+    "kansas/mcpherson": "c20c7b3fa1a9816c32f4cea5b4c55eb29511398acbe46916e2428092259fd569",
+    "kansas/marion": "c077410400c33b2e90476e17431569e86bf7013b2e226602656a911e9502e4d6",
+    "kansas/marshall": "b1f6274439814cb02ef59e0f55482e391075e9ac807180b52b577c29710c221a",
+    "kansas/meade": "aa0c72378388a5e769394b019b520f16922670893a642c3d5bf55b90ea9e023f",
+    "kansas/miami": "7c7b07f148544f0576843e5237e5d1cfc35ed9941f032acf822df97292f7d659",
+    "kansas/mitchell": "17d8c4254db10c989e4f43ed7994edceb24875127d66658f1c567587f9f95251",
+    "kansas/montgomery": "85201c2751e709611817779b3fb5b30ce1387685c42a0db87c40b50dd8123df4",
+    "kansas/morris": "6ccf791ed8876523274bf650530de03d30248945129d1c175320c09b1b58d603",
+    "kansas/morton": "279f8e7f3e4f3f7a3e31dae6e5c8a2d7d3a886f10da791e95b64f98a7e40e903",
+    "kansas/nemaha": "4c9c1368783dd344c0d58e245bc56b424f07f1d1f5ba51daf386637b3e84f037",
+    "kansas/neosho": "4a346daf837eef180b5900447d53ed3d2119b7f87b4059adb6e429833ab6ba75",
+    "kansas/ness": "810f5a8a17368db86baec7d6c8bd2a705e150f5f84913b3814b870ff82d80f40",
+    "kansas/norton": "f7906db76b7e55c110cc2fc3e0e8255272b88757732b79373bc58504341ae6c1",
+    "kansas/osage": "35475e19ed8d2436669a1f85294c8138d0d57b180e144f173c566abda266cae5",
+    "kansas/osborne": "a4dae50d807d865ced9bb33b33d0aa3820fc129c182b928f05f6bb292a7492ae",
+    "kansas/ottawa": "3ce385071c4afc8b6e8d638bf9dff7c845416d187fdc7f564682e43468f642dd",
+    "kansas/pawnee": "0b5c4411cb523bfd5d6011fe3e4c469a44d0a25e265e7be783e7f1423becdc5f",
+    "kansas/phillips": "5d7968b1a903f14cbbef2a9fddc2a21e1fe495e5ec461c7b0abbc181c82053c9",
+    "kansas/pottawatomie": "3f5a6378ff7c90f7ea3c522bbc3d67b2fe896d9e74ba4c732b2a85dc0b0e164c",
+    "kansas/pratt": "f4c9fc31897309f1c1200a0b0c6595b5c9b380e5802242c1d365cf9f56f27242",
+    "kansas/rawlins": "4dcb74edf1ff192160d6768a1b02540228fba6d9106de7cbd881a4f5a8960e3e",
+    "kansas/reno": "9aa1a1599d683215b2d31c3bedf5779e5c7e5510d91dd5bd00cf5f2c7a212c36",
+    "kansas/republic": "940737c49b25f3122a5d67ec654eac817e90796cc9471ddddf01d22016c2b18e",
+    "kansas/rice": "0da4bba66524a2c2384ccb21b11d8b64585bfca0852fd9d6edb8b4bb224473d2",
+    "kansas/riley": "01bb7af8fd9b871d943a39b9b36c8b26be1b669186d60c07448dba9bd2deb07f",
+    "kansas/rooks": "2a020632dca5f10e458c3b29d10a22a5fc60a650faf3c89bfd54bbe052103d8b",
+    "kansas/rush": "e06daef506fb4b0ba96bedcc25d7ad2b2db626dadc3f3c324b75f0b9cae91de1",
+    "kansas/russell": "769c7f9cb1f8c86460fcc35499093b503ce5ba1b4b3f1f493f4314c6693efb0d",
+    "kansas/saline": "09fe6cabae26ea21993ab68b9af34f04b050ed96e7710465a663a90f855d259a",
+    "kansas/scott": "15f386a029099140d980049715e46129e565e3ccacdb32a86cd9823b2c66a28c",
+    "kansas/sedgwick": "ead42720aea194230486aa6b2aca1177af83544ec26bb23419818335fbf3de2c",
+    "kansas/seward": "9dfbbfd7feacea41559bf4330e9d76f9f98bb593c099276515f5a50b017b298e",
+    "kansas/shawnee": "056afaab029444bbc6e68dcaea0f108419f7e09e4e8beb5226bffa428f318aa6",
+    "kansas/sheridan": "308018f2bffbc3b5ed1f9202e3b6f606af8922fd920152376a256b167ef05cbb",
+    "kansas/sherman": "656cb573935c552848482086ef8dff3058e47fb45ebf921ada76f80c7a49d869",
+    "kansas/smith": "5f86782b80994b8bdc3dc3880d396ef031f41448fa9e8325c1b8fa5b8dd7a887",
+    "kansas/stafford": "02222ce8e756a708fc1c17cddc986554486a9c4475570f5fa3864452c39fca69",
+    "kansas/stanton": "5c9c96beb833da17e2df17f592c40ef2d8aad5ce04220768f3c0ec8de56672d2",
+    "kansas/stevens": "bb4d9cb519f77db19aaf9ce44aeaa012801a3203f9a2273befebfaa5a9e7791b",
+    "kansas/sumner": "a7e31aa52aeca9fe1bb211827fa40bdd48ae1987d196dd8b16732602f4f62461",
+    "kansas/thomas": "33cbe72285ff67c19408d2a58d9d114cc63bd8afbf023dab00e2fe80d2ab74c2",
+    "kansas/trego": "5aa8fb3e67fa64f9a0cc6a74db46dba7c9a107a0bc4c7b9964214a3fd2491239",
+    "kansas/wabaunsee": "8c3a0960788a8a3f80ea56f27223ab485e34bd27e40949fd63fd0080bc592545",
+    "kansas/wallace": "7f85df6b5b00cc808e448d96a5ce3f61f76bbbb4571ed473aec3b92304e10732",
+    "kansas/washington": "3e500eb0e58e9d107339ec70936c31f28736b8d400dc3e34f3bbb5bef3c5ffb4",
+    "kansas/wichita": "51102764fd87cba2eec1878711f12445be42958c43d8a6848b27cb0291a76de4",
+    "kansas/wilson": "5c31fcddc3733961d1adaa48ee7b5dd515b14f14e9d2d43e99d6eb420620452a",
+    "kansas/woodson": "c64eeb8021379877f477495c6f2e1373c5755e57dbe1bb97539590a33c116a05",
+    "kansas/wyandotte": "56ec3d67e8c5eb1cc5f9add5cc3cab47022298dade7fa4ab9478cffe6f5c6c6e",
+    "nebraska/adams": "8bed54d14b21bed13a3d172de51938eca83a5d4160915669b967baf918e99d78",
+    "nebraska/antelope": "d2ba815d2884acca1ce7857f7c51e552f0f3e4b4cf419ab68a9fe42484ea9ec0",
+    "nebraska/arthur": "01e4fa0e04970984d1bf88e70e55916b03f09d68bf3435bd9d205bf0b6a91f0a",
+    "nebraska/banner": "ba061bd801ed5cf1fec69305fb36a2b4ea95bd1a66337e45058b95ca9ebc405d",
+    "nebraska/blaine": "3560d9417abd64e0d994c460c23b4340eb4247f864e6d2fe02fed4a553dc4235",
+    "nebraska/boone": "2d779a77aed84658c434ec96e99577943df4f6afd3cfd1f2872892b9105c1855",
+    "nebraska/box-butte": "5146603b1acc9f23a5d4b280913a6fda0792eaf6258125e1f5259f520b125297",
+    "nebraska/boyd": "34487795ebeb9fd370d2156368bd2ad4e5b1662afeb53e1312d6ff9518dd6bc6",
+    "nebraska/brown": "dc2380cff630d5828113b7c83105c829b62ca129afafd3a17e642990cf696bb3",
+    "nebraska/buffalo": "2a4108280cf015396b3ccba7a40cd97ad26bf6400d568b718c9bd66b25e67c4f",
+    "nebraska/burt": "824bbc153f32cb7c508bfada9330923a79ee4dd5897d5cfd983e2f47b7925f44",
+    "nebraska/butler": "19762ea089ba3c37290337034f98ec501d17d2b5befccd8cb47bc7f4a1f63678",
+    "nebraska/cass": "ddb0a825225d7999509f1d76040055ff726a7d6a9e533422851a8725b91276e8",
+    "nebraska/cedar": "bb4f230393acfd09c3d2d3ceff5c39a131e42d5a789a71781ba776277f5af395",
+    "nebraska/chase": "e7a1db4a546ee4e189eee82b6cf559db53282a25bc8c4759c68e68fb02ca7e8d",
+    "nebraska/cherry": "7620c87dd06865f1e302e516a41c2f52067cf670a0ecf311e43ee470b3008510",
+    "nebraska/cheyenne": "68a65be487df17e00395f36022ba499e80a921d97d0db268fa1a93b4ac3e88b4",
+    "nebraska/clay": "6632569b261eecaa5f88c9b1ef1ee4fd8c62ea54669d697fe42141b0417f55ad",
+    "nebraska/colfax": "be80f6c6abddd12aa76e78c0f7efea2d797b873b81aab5e4e1828e087637abcb",
+    "nebraska/cuming": "61b4f2ae92c40c455faad1583685b2b2cccaf3513c874679526774b3e50e09c0",
+    "nebraska/custer": "223cdb398f2e4793c7e241fa7696b7e72e5c87a86bbcdb1886daddd7954b1ff7",
+    "nebraska/dakota": "b18114a57010ad74e51c7cb541b892701c13bf7fa928dd26013dc72cec7da696",
+    "nebraska/dawes": "15ec14ac07680b5a82737f68f8a8c20abb1d50bcd745b49d93648dc3d288d30c",
+    "nebraska/dawson": "b7b654d56e72b4ac5cbf084aeac53ef13ace810e2b41708acf909b4f2cfffb09",
+    "nebraska/deuel": "5c7e80a6d8296130fecedbc56a674a87942ad023e1384bf920e30c0d907007d3",
+    "nebraska/dixon": "b221e75d08b9eefd79ac3db5d1946606cb1c270df8455829b29143b8f7e19849",
+    "nebraska/dodge": "4fc2addbba61a4aa4343c6c97f551d36037ca30ad57c97802f179f7a63480cb9",
+    "nebraska/douglas": "f422aaafde0cfc9d16d5f86a090a7f09d7ed23f34312309e5ba580e84ed81c99",
+    "nebraska/dundy": "1b2767827f95b74868f0ff30e9ee2f6f9bbf1430307f512bb840ea67177a1edb",
+    "nebraska/fillmore": "a1b1bac19da4e1f122309f295e12125a875ae0cfa3f28fc1e6b02463a2126770",
+    "nebraska/franklin": "6b44714ca77e80032312dc068d4a7d7a02910b69d0512f9a514080b2a43a84da",
+    "nebraska/frontier": "13f52bcb76e64781dced41f612390d73098ab2d07c95d83a9ea6311a1f8a16b0",
+    "nebraska/furnas": "ebf7cdc6cbf13deb5acf761509abad2ce25b20c580c83867da986aa082b6bc0e",
+    "nebraska/gage": "9d862dc544b617e16bd7a499c6faf5a21f5d2bc5c6b927ae9adf649bd57bd353",
+    "nebraska/garden": "b8798dff95d3c5e1ac3a6a1a1dd174eb67e8d0445994df0b3d5e1729a8daa9c4",
+    "nebraska/garfield": "a9130a4bed5e7027f37ddc1343157678bda02ca0f3e60f86b89fe2e6779a882b",
+    "nebraska/gosper": "328eb0151939deb6728d3b20203b664726f187652393e812bf0b67a6f2ad9c3d",
+    "nebraska/grant": "68ad65d672eb939e80e614539c2ed80c7ec30c72cf37d6d3340260d75cc5ea70",
+    "nebraska/greeley": "6e858538937e164f080d11bf765e80c7aed315a254dafbca4cd203bbbb76ea91",
+    "nebraska/hall": "87b1dc8de39e39b5d842af7dde55a936276d6b82780c3e7c12345df7b6bc0075",
+    "nebraska/hamilton": "d6bf892bbd3f1ab8d194e0d27f09de88063ee06f950e8767064e3451d5fae7ab",
+    "nebraska/harlan": "6968146fc142187f20b60c347c82d3dba6389227a490a3b6c7e2cf3b30d4a07f",
+    "nebraska/hayes": "0522f94032d888099331c323b14ba2eabccc0d5291a11d581cebc85189e716aa",
+    "nebraska/hitchcock": "0514139223fd9db85e640f4a97cd1057ee2630f1149f786bb32f2e48ccf72d86",
+    "nebraska/holt": "9559c60e67dc20d2e2a8bbce733953a4197f481a797b0426116a58320a8e9b71",
+    "nebraska/hooker": "48b23916c9c1400022d2bb17e006f5397f0ad28fdc3d4b58a35f00fc284517c7",
+    "nebraska/howard": "93666e04fa5249fa94489204b91c9bcac904b036328620d84638367404018364",
+    "nebraska/jefferson": "344ad5863f358bcf3392b57561ec99601603e7f207e93166ad37993930401b29",
+    "nebraska/johnson": "ed47f5fbbedb972828d4b72c7b15ac2204df076612eb955e3c18c39ad0b2aa4d",
+    "nebraska/kearney": "a3a2efc85709925bcf26540dd17bffc26e722e56c0f1ed27bd3582dfb180ed26",
+    "nebraska/keith": "3dcef27cf594bd46c31bd915232520416ddd59b362b2a3f0d88cbc1bf3ac9b89",
+    "nebraska/keya-paha": "4b9176c1d01df17d551025e400a5bc73b134148c61a575368b813192c7ed1d56",
+    "nebraska/kimball": "9696501245269c0af82d2fa4bb4d49ec791759ba5157d467f166bf7d7119ef5d",
+    "nebraska/knox": "07f60ffd20443f46df4c5c2be1f5cb402acb9ffdfb5f284b6fa7a8223eed16ca",
+    "nebraska/lancaster": "87f9ef24f0fc372ac8720ffedacae10ba9c214d4ec47c3b9a08f9f5406a6e1fd",
+    "nebraska/lincoln": "05aa31257cf71ca4801f734e984604a435e9ec21b9958aa4e96328a093e2277d",
+    "nebraska/logan": "1495b0ec3883b02d0427c24f43d1fbcc939627f60ed727779ad5e07ad99f9896",
+    "nebraska/loup": "1b7be99cb6317bce1f718633bf7e798b493d6127d9c20839e07701e220cb4385",
+    "nebraska/mcpherson": "52176bbe54cee893debed8899c5a84ea0a5621a20da9cb921de07ff192a11118",
+    "nebraska/madison": "28db4544e6f0fe95e39477969906406ab3c82b05a9ce62cdb09cacd23b70905e",
+    "nebraska/merrick": "6d27b58d2ef5a12705b483738e5d25902c1fa11334db4e00abee8df7dd15ca36",
+    "nebraska/morrill": "558f7c27270ce4281d79eac4e5ddcaf4a2180f2cc02e5ecaee6eb63436b5e1c4",
+    "nebraska/nance": "c5e3a0450e444636318569c6bda9aded7c99dea35de59e8d9ee17d7de386e21b",
+    "nebraska/nemaha": "56179a4525c909b076f6ca9d37e17a7b31c6a96ebc574cde07e40d36332fc149",
+    "nebraska/nuckolls": "200b50d1746406a52f3ede0688c738bd830c3898efa4f911364e7ce7c3f4e7f7",
+    "nebraska/otoe": "7fcb10552c6fd45a06553cf5d37ef8efe7f030acfc0b0e80946fdd42a64466ed",
+    "nebraska/pawnee": "93a31ba6a47a27131c0b37b043d9f67653f39aa288a799eb0331b6933a7ef97a",
+    "nebraska/perkins": "50538183673150d2f18b56323013a2581b809f493e4dde81be17ccbfecda8d5e",
+    "nebraska/phelps": "3fdfed549d5b336eac06199e9b8381e859326b987e833373f8094cc022aca10c",
+    "nebraska/pierce": "24e97bffd1fe36b73e32b07262119d29ad524af18220fe7466242d65dbc3a324",
+    "nebraska/platte": "fbf4a3eb70dd3754cd1b5759f834d69f18116b1e1fd2248dc9e82bcf3444d56a",
+    "nebraska/polk": "08956a7512a591ef0dda03c12ae0563616acf1b0c9789745d1435333e7881b3e",
+    "nebraska/red-willow": "708f59c464f08d79af67708cdba397d6e0f89ad16a996c4e7b2a4e720dc7e446",
+    "nebraska/richardson": "a751fcc834916799bfd164241afd26f973ae8f7efa46e1268287f4db20c9da9a",
+    "nebraska/rock": "f84098f1c6ddd10065a0fb0c67834b1d2a6b55018a831286245471ef6d96047a",
+    "nebraska/saline": "49b59a690b8400027a4da65ffa13aec3df0a7adf32dc8d4858e4f308f0bc4b70",
+    "nebraska/sarpy": "5bbb418165a724cbf4c022c17f95d6335a4ff09ac400c84928b9010b61605d0a",
+    "nebraska/saunders": "6483117e8a7e76309d2dfc8d76b431b78470d3a342466ce1221902faf75d9218",
+    "nebraska/scotts-bluff": "9d450fbb605e4539b1ea7abd125e00817354964141f1a422446df49224573be1",
+    "nebraska/seward": "db4212db9f17c17d4ecb9d1be4612c88d0a7bd6c1c6d86e284dd9d29d5c4f39b",
+    "nebraska/sheridan": "56ece408767e4f0fd82a2db53afa94ffc54c392ce9dea406ab80629fcf3d5857",
+    "nebraska/sherman": "9750eddcb4a5a3e5a7c160251162a81d8caf41e144f3a1b0598d5e05d2922e9b",
+    "nebraska/sioux": "632eafecc72cd78d1083af9fa1f7988841e5b53b80396f9f15112428c9906514",
+    "nebraska/stanton": "21c42ab939edac4b7cf136e04588fc786071321332cc4cda1fd1aa9cb20fa8d1",
+    "nebraska/thayer": "387bf9a68c991eec662db64b58e8f04f5b63a75cddf7c39ede2e285039ac0b56",
+    "nebraska/thomas": "c881c54aad632d41cc1e597243d9b6227cca138c4e57b409de6babc862007633",
+    "nebraska/thurston": "ea2a0884fbc6372b62700fd032d9230538534818aa9672a3bb12a80673b9b0b0",
+    "nebraska/valley": "0e492e9573f67afb3e0875b5048a3bf0af029cd8cb3b1d04fb07793696708242",
+    "nebraska/washington": "21570b96c7dd652fa1b065f35e230ebe6c3894b60de4029b0415d88c978e9694",
+    "nebraska/wayne": "58806c53d69710ea66fb3c070e9e38bfa69fba4050afd2c4942194807a7557fe",
+    "nebraska/webster": "cd9d2a59b3c3c1d50341ac950a61423e548d355559780ea78c1167989b4c8da8",
+    "nebraska/wheeler": "633b0737f14f195c67ebab7838ad3af377a9520463226d03fee9b1ec21751747",
+    "nebraska/york": "3e89de2c5f9186e34f423f710bd08e2b5f00aca23ab2fe63ce2ca95594abea28"
+  },
+  "populationMissing": [
+    {
+      "geoid": "2024550",
+      "name": "Frederick city",
+      "countyFips": "20159",
+      "functionalStatus": "I",
+      "reason": "No matching 2025 SUMLEV157 estimate for this 2026 geographic membership; population remains null."
+    }
+  ],
+  "crossCountyPlaces": [
+    {
+      "stateId": "kansas",
+      "name": "Bonner Springs",
+      "type": "City",
+      "geoid": "2007975",
+      "censusName": "Bonner Springs city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485548",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20091",
+        "20103",
+        "20209"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 7962,
+      "countyPartPopulation2025": {
+        "20091": 0,
+        "20103": 10,
+        "20209": 7952
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Cherokee",
+      "type": "City",
+      "geoid": "2012825",
+      "censusName": "Cherokee city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02393818",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20021",
+        "20037"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 599,
+      "countyPartPopulation2025": {
+        "20021": 0,
+        "20037": 599
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Clayton",
+      "type": "City",
+      "geoid": "2013675",
+      "censusName": "Clayton city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02393549",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20039",
+        "20137"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 45,
+      "countyPartPopulation2025": {
+        "20039": 3,
+        "20137": 42
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Clifton",
+      "type": "City",
+      "geoid": "2014200",
+      "censusName": "Clifton city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02393563",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20027",
+        "20201"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 457,
+      "countyPartPopulation2025": {
+        "20027": 185,
+        "20201": 272
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "De Soto",
+      "type": "City",
+      "geoid": "2017850",
+      "censusName": "De Soto city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485562",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20091",
+        "20103"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 7083,
+      "countyPartPopulation2025": {
+        "20091": 7083,
+        "20103": 0
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Geuda Springs",
+      "type": "City",
+      "geoid": "2026200",
+      "censusName": "Geuda Springs city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02394886",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20035",
+        "20191"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 158,
+      "countyPartPopulation2025": {
+        "20035": 11,
+        "20191": 147
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Herington",
+      "type": "City",
+      "geoid": "2031400",
+      "censusName": "Herington city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485590",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20041",
+        "20127"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 2101,
+      "countyPartPopulation2025": {
+        "20041": 2101,
+        "20127": 0
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Lake Quivira",
+      "type": "City",
+      "geoid": "2037975",
+      "censusName": "Lake Quivira city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485605",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20091",
+        "20209"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1005,
+      "countyPartPopulation2025": {
+        "20091": 952,
+        "20209": 53
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Manhattan",
+      "type": "City",
+      "geoid": "2044250",
+      "censusName": "Manhattan city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485618",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20149",
+        "20161"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 54673,
+      "countyPartPopulation2025": {
+        "20149": 1,
+        "20161": 54672
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Mulvane",
+      "type": "City",
+      "geoid": "2049100",
+      "censusName": "Mulvane city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02395137",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20173",
+        "20191"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 7030,
+      "countyPartPopulation2025": {
+        "20173": 5996,
+        "20191": 1034
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Oakley",
+      "type": "City",
+      "geoid": "2051825",
+      "censusName": "Oakley city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02395293",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20063",
+        "20109",
+        "20193"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1974,
+      "countyPartPopulation2025": {
+        "20063": 4,
+        "20109": 1924,
+        "20193": 46
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Oswego",
+      "type": "City",
+      "geoid": "2053450",
+      "censusName": "Oswego city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485637",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20021",
+        "20099"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1621,
+      "countyPartPopulation2025": {
+        "20021": 0,
+        "20099": 1621
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Sabetha",
+      "type": "City",
+      "geoid": "2062025",
+      "censusName": "Sabetha city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485648",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20013",
+        "20131"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 2474,
+      "countyPartPopulation2025": {
+        "20013": 7,
+        "20131": 2467
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Sedgwick",
+      "type": "City",
+      "geoid": "2063800",
+      "censusName": "Sedgwick city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02396570",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20079",
+        "20173"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1575,
+      "countyPartPopulation2025": {
+        "20079": 1381,
+        "20173": 194
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Simpson",
+      "type": "City",
+      "geoid": "2065650",
+      "censusName": "Simpson city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02395891",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20029",
+        "20123"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 81,
+      "countyPartPopulation2025": {
+        "20029": 0,
+        "20123": 81
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Solomon",
+      "type": "City",
+      "geoid": "2066275",
+      "censusName": "Solomon city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02395908",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20041",
+        "20169"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1007,
+      "countyPartPopulation2025": {
+        "20041": 1006,
+        "20169": 1
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Spring Hill",
+      "type": "City",
+      "geoid": "2067625",
+      "censusName": "Spring Hill city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00485653",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "20091",
+        "20121"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 10777,
+      "countyPartPopulation2025": {
+        "20091": 6730,
+        "20121": 4047
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Vining",
+      "type": "City",
+      "geoid": "2073950",
+      "censusName": "Vining city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02397147",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20027",
+        "20201"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 43,
+      "countyPartPopulation2025": {
+        "20027": 34,
+        "20201": 9
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Wamego",
+      "type": "City",
+      "geoid": "2075325",
+      "censusName": "Wamego city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02397188",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20149",
+        "20197"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 4912,
+      "countyPartPopulation2025": {
+        "20149": 4912,
+        "20197": 0
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Willard",
+      "type": "City",
+      "geoid": "2079250",
+      "censusName": "Willard city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02397313",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "20177",
+        "20197"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 68,
+      "countyPartPopulation2025": {
+        "20177": 63,
+        "20197": 5
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Fort Riley",
+      "type": "Census-designated place",
+      "geoid": "2023975",
+      "censusName": "Fort Riley CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02393004",
+      "censusClassCode": "M2",
+      "countyFips": [
+        "20061",
+        "20161"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "20061": null,
+        "20161": null
+      }
+    },
+    {
+      "stateId": "kansas",
+      "name": "Peck",
+      "type": "Census-designated place",
+      "geoid": "2055175",
+      "censusName": "Peck CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02804535",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "20173",
+        "20191"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "20173": null,
+        "20191": null
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Emerson",
+      "type": "Village",
+      "geoid": "3115710",
+      "censusName": "Emerson village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02398827",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31043",
+        "31051",
+        "31173"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 825,
+      "countyPartPopulation2025": {
+        "31043": 328,
+        "31051": 380,
+        "31173": 117
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Halsey",
+      "type": "Village",
+      "geoid": "3120680",
+      "censusName": "Halsey village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02398226",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31009",
+        "31171"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 62,
+      "countyPartPopulation2025": {
+        "31009": 3,
+        "31171": 59
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Newman Grove",
+      "type": "City",
+      "geoid": "3134230",
+      "censusName": "Newman Grove city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00838343",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "31119",
+        "31141"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 632,
+      "countyPartPopulation2025": {
+        "31119": 620,
+        "31141": 12
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Oxford",
+      "type": "Village",
+      "geoid": "3137910",
+      "censusName": "Oxford village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02399606",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31065",
+        "31083"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 701,
+      "countyPartPopulation2025": {
+        "31065": 524,
+        "31083": 177
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Palisade",
+      "type": "Village",
+      "geoid": "3138130",
+      "censusName": "Palisade village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02399611",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31085",
+        "31087"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 277,
+      "countyPartPopulation2025": {
+        "31085": 13,
+        "31087": 264
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Randolph",
+      "type": "City",
+      "geoid": "3140675",
+      "censusName": "Randolph city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02396319",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "31027",
+        "31139"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 892,
+      "countyPartPopulation2025": {
+        "31027": 890,
+        "31139": 2
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Shelton",
+      "type": "Village",
+      "geoid": "3144700",
+      "censusName": "Shelton village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02399798",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31019",
+        "31079"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1042,
+      "countyPartPopulation2025": {
+        "31019": 1042,
+        "31079": 0
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Tilden",
+      "type": "City",
+      "geoid": "3148935",
+      "censusName": "Tilden city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "00838282",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "31003",
+        "31119"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 982,
+      "countyPartPopulation2025": {
+        "31003": 303,
+        "31119": 679
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Trumbull",
+      "type": "Village",
+      "geoid": "3149285",
+      "censusName": "Trumbull village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02400006",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31001",
+        "31035"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 200,
+      "countyPartPopulation2025": {
+        "31001": 0,
+        "31035": 200
+      }
+    },
+    {
+      "stateId": "nebraska",
+      "name": "Wakefield",
+      "type": "City",
+      "geoid": "3151070",
+      "censusName": "Wakefield city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02397168",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "31051",
+        "31179"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1527,
+      "countyPartPopulation2025": {
+        "31051": 1166,
+        "31179": 361
+      }
+    }
+  ]
+}

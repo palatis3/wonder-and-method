@@ -1,3 +1,6 @@
+import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
+import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
+import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
 import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import texasPaths from './fixtures/texas-approved-paths.json' with {type:'json'};
@@ -11,7 +14,7 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/wi-il-approved-paths.json' with {type:'json'};
 
-const laterPageKeys=new Set([...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0032 adds exactly five WI/IL keys and preserves all 1196 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);

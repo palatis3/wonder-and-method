@@ -8,8 +8,8 @@ import {readFile} from 'node:fs/promises';
 import {renderPages} from '../src/pages.mjs';
 import {northeastGeography} from '../src/northeast-geography.mjs';
 import {northeastProfiles,northeastBuyerTasks,northeastSearchQuestions,northeastQuestionSources} from '../src/northeast-content.mjs';
-import {serviceStates,countyPath,countyServicePath,countySearchText,countyDirectory,serviceAreaDataForPath,regionCounties} from '../src/service-area-directory.mjs';
-import {parseCountyQuery,countyMatch,packCountySearch,unpackCountySearch,decodeCountyNames,decodeCountySearchCards} from '../src/assets/county-directory.js';
+import {serviceStates,countyPath,countyServicePath,countySearchText,countyDirectory,countySearchAsset,serviceAreaDataForPath,regionCounties} from '../src/service-area-directory.mjs';
+import {parseCountyQuery,countyMatch,packCountySearch,unpackCountySearch,decodeCountyNames,decodeCountySearchCards,decodeCountySearchAsset} from '../src/assets/county-directory.js';
 import {countyPages} from '../src/service-counties.mjs';
 import {crawlFiles} from '../src/seo.mjs';
 import {countyContextOptions} from '../src/approved-rerun-county-context.mjs';
@@ -34,12 +34,15 @@ test('compact finder payload preserves every original typed term and its order',
 
 test('page-local finder dictionaries roundtrip every place on the combined and state directories',async()=>{
  for(const scope of [undefined,...serviceStates]){
-  const html=countyDirectory(scope),names=await decodeCountyNames(JSON.parse(html.match(/data-county-place-names>(.*?)<\/script>/s)[1]));
+  const html=countyDirectory(scope),asset=html.match(/data-county-search-asset>(.*?)<\/script>/s);
+  const decoded=asset?await decodeCountySearchAsset(countySearchAsset().bytes):null;
+  if(asset)assert.equal(JSON.parse(asset[1]).path,countySearchAsset().path);
+  const names=decoded?.names||await decodeCountyNames(JSON.parse(html.match(/data-county-place-names>(.*?)<\/script>/s)[1]));
   assert.equal(new Set(names).size,names.length);
   const cardPayload=html.match(/data-county-search-cards>(.*?)<\/script>/s);
-  const terms=cardPayload?await decodeCountySearchCards(JSON.parse(cardPayload[1]),names):null;
+  const terms=decoded?.entries||(cardPayload?await decodeCountySearchCards(JSON.parse(cardPayload[1]),names):null);
   const cards=[...html.matchAll(/data-cs="([^"]*)">[\s\S]*?<a data-cl href="([^"]+)"/g)];
-  assert.equal(cards.length,scope?scope.counties.length:2378);
+  assert.equal(cards.length,scope?scope.counties.length:2786);
   const expected=scope?scope.regions.flatMap(region=>regionCounties(scope,region).map(county=>({county,state:scope}))):serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>({county,state})));
   for(const [index,[,packed,route]] of cards.entries()){
    const {county,state}=expected[index];
@@ -52,15 +55,15 @@ test('page-local finder dictionaries roundtrip every place on the combined and s
 
 test('six state hubs retain all 66 original entries while historical routes resolve to preserved destinations',()=>{
  assert.equal(newRoutes.length,72,'the historical six-hub and 66-area route fixture remains intact');
- assert.equal(priorRoutes.length,286);assert.equal(pages.length,1787);assert.equal(byPath.size,1787);
+ assert.equal(priorRoutes.length,286);assert.equal(pages.length,2081);assert.equal(byPath.size,2081);
  assert.deepEqual(pages.filter(p=>!approvedLocationPaths.includes(p.path)&&!priorRoutes.includes(p.path)&&fixture.states.some(state=>p.path.startsWith('/areas/'+state.id+'/'))).map(p=>p.path).sort(),fixture.states.map(state=>'/areas/'+state.id+'/').sort());
  for(const route of priorRoutes){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!byPath.has(route));assert.ok(byPath.has(hub),route);if(slug)assert.ok(byPath.get(hub).html.includes(`id="${slug}"`),route);}
   else assert.ok(byPath.has(route),route);
  }
- const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,1775);
- assert.equal((byPath.get('/areas/').html.match(/data-cs=/g)||[]).length,2378);
+ const sitemap=crawlFiles(config,pages).sitemap;assert.equal((sitemap.match(/<loc>/g)||[]).length,2069);
+ assert.equal((byPath.get('/areas/').html.match(/data-cs=/g)||[]).length,2786);
  for(const s of fixture.states){
   assert.deepEqual(northeastProfiles[s.id].map(a=>a.slug).sort(),s.areas.map(a=>a.slug).sort());
   assert.deepEqual(Object.keys(northeastGeography[s.id]).sort(),s.areas.map(a=>a.slug).sort());
@@ -130,7 +133,7 @@ test('typed searches distinguish states, counties, current regions and same-name
   ['Clayton town DE',['delaware/kent','delaware/new-castle']],['Milford city DE',['delaware/kent','delaware/sussex']],
   ['Rutland city VT',['vermont/rutland']],['Rutland town VT',['vermont/rutland']]
  ])assert.deepEqual(matches(query),expected,query);
- assert.equal(cards.length,2378);
+ assert.equal(cards.length,2786);
 });
 
 test('all 333 provenance contexts roundtrip without accepting invented areas or business locations',()=>{

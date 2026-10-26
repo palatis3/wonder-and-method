@@ -1,0 +1,2047 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "Local integration only; combined six-state release gates must pass before GitHub publication and deployment.",
+  "countyCount": 119,
+  "serviceCandidates": 83,
+  "directoryOnly": 36,
+  "faqs": 5,
+  "guides": 0,
+  "keywordSummary": {
+    "reviewDate": "2026-10-26",
+    "status": "LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+    "database": "US",
+    "counties": 119,
+    "northDakotaCounties": 53,
+    "southDakotaCounties": 66,
+    "serviceAdditions": 83,
+    "directoryOnlyNoAdditions": 36,
+    "faqPairs": 5,
+    "newGuides": 0,
+    "existingLinkedGuides": 15,
+    "keywordDrivenDispositionChanges": 0,
+    "queries": 969,
+    "numeric": 26,
+    "positive": 19,
+    "explicitZero": 7,
+    "statusCounts": {
+      "OBSERVED": 10,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 16,
+      "UNAVAILABLE_REFRESH_REQUIRED": 943
+    },
+    "metricAvailability": {
+      "OBSERVED": 10,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 16,
+      "UNAVAILABLE_REFRESH_REQUIRED": 943
+    },
+    "questionPanels": [
+      {
+        "stateId": "north-dakota",
+        "status": "NO_QUESTION_DATA",
+        "numericQuestionCount": null
+      },
+      {
+        "stateId": "south-dakota",
+        "status": "NO_QUESTION_DATA",
+        "numericQuestionCount": null
+      }
+    ],
+    "interpretation": "Phrase estimates are not county-resident demand. Overlapping phrase volumes are not summed. Unavailable, refresh-required, partial and explicit zero metrics retain their separate meanings.",
+    "publicationStatus": "Local integration only; combined six-state release gates must pass before GitHub publication and deployment."
+  },
+  "counties": [
+    {
+      "areaId": "north-dakota/adams",
+      "name": "Adams County",
+      "fips": "38001",
+      "directoryPath": "/areas/north-dakota/#adams",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a virtual museum visit, arranged physical visit or the correct clinic contact.",
+      "rationale": "Olmsted already covers gallery opening versus arranged specialist access; Atchison covers virtual versus onsite modes; Hamilton covers department-specific contact routing. The researched local facts change names and hours but do not support a sufficiently distinct commissioned project beyond those complete records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/barnes",
+      "name": "Barnes County",
+      "fips": "38003",
+      "directoryPath": "/areas/north-dakota/#barnes",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose staffed visitor-center help or a self-guided audio route.",
+      "rationale": "Box Butte already gives detailed self-guided-map project preparation, including access constraints; Atchison distinguishes self-directed digital and live/onsite experiences. No additional Barnes-specific operating decision justified a new service or guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/benson",
+      "name": "Benson County",
+      "fips": "38005",
+      "directoryPath": "/areas/north-dakota/#benson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/benson-county/",
+      "readerDecision": "Separate keeping an RV site from staying in the RV.",
+      "rationale": "Adds a three-part occupancy/site-retention/vehicle-storage matrix and a utility-fit acceptance case. Sherman distinguishes seasonal application from overnight booking; Stewart distinguishes storage from occupied RVs; neither combines all three entitlements within one operator’s product comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://spiritlakecasino.com/resort/rv-park/",
+        "https://gfappspublic.nd.gov/wheretofish/LakeDetail.aspx?PopOut=Yes&lake=275"
+      ]
+    },
+    {
+      "areaId": "north-dakota/billings",
+      "name": "Billings County",
+      "fips": "38007",
+      "directoryPath": "/areas/north-dakota/#billings",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/billings-county/",
+      "readerDecision": "Give pass holders, voucher holders and groups the right ticket route.",
+      "rationale": "Adds entitlement-specific pre-checkout routing alongside group itinerary triage. Ford covers guided group access and Dodge sale status; the timed-booking guide explains pass-versus-reservation broadly but not this multi-route commissioning and maintenance work.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://medora.com/faq/",
+        "https://medora.com/groups/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/bottineau",
+      "name": "Bottineau County",
+      "fips": "38009",
+      "directoryPath": "/areas/north-dakota/#bottineau",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/bottineau-county/",
+      "readerDecision": "Show access, equipment and instruction as separate choices.",
+      "rationale": "Adds cross-product age-band comparison and an acceptance case where free admission does not imply free gear. Johnson focuses on swim placement and Marshall on class versus studio access; this project concerns independently priced components of one visit.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://skibwp.com/prices/",
+        "https://skibwp.com/contact/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/bowman",
+      "name": "Bowman County",
+      "fips": "38011",
+      "directoryPath": "/areas/north-dakota/#bowman",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/bowman-county/",
+      "readerDecision": "Keep a seasonal field-trip description separate from open registration.",
+      "rationale": "Combines honest seasonal availability with a two-location educational day and personal-vehicle responsibility. Nemaha covers a suspended cruise; the additional scope here preserves a field/museum itinerary and explicitly prevents annual rollover from reopening registration.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://ptrm.org/visit/",
+        "https://ptrm.org/site-tours/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/burke",
+      "name": "Burke County",
+      "fips": "38013",
+      "directoryPath": "/areas/north-dakota/#burke",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Compare verified campsite utilities and contact the selected operator.",
+      "rationale": "Watonwan already separates amenities and facilities; Dixon and Lac Qui Parle cover first-come camping versus reservations. The county list supports accurate comparison but lacks enough operator-specific process to add substantial project guidance beyond those records. Unpublished utilities are not treated as absent.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/burleigh",
+      "name": "Burleigh County",
+      "fips": "38015",
+      "directoryPath": "/areas/north-dakota/#burleigh",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/burleigh-county/",
+      "readerDecision": "Ask how an event changes through the day before quoting the room.",
+      "rationale": "Adds a time sequence to room selection: initial setup versus later changeover, equipment versus operating labor and generic connectivity versus a specific technical requirement. Webster and Craig cover room/catering responsibilities and configurations, but not this combined run-of-day inquiry.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bismarckstate.edu/about/Campus-Facilities/facilityrental/",
+        "https://bismarckstate.edu/about/campus-facilities/facilityrental/guidelines/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/cass",
+      "name": "Cass County",
+      "fips": "38017",
+      "directoryPath": "/areas/north-dakota/#cass",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/cass-county/",
+      "readerDecision": "Explain which membership step serves a class and which enables studio use.",
+      "rationale": "Adds two different prerequisite sequences across class purchase and independent studio use, with medium-specific plans and material exclusions. Polk and Hennepin cover studio approval and access; Marshall covers lesson versus studio choice, but not the membership-before-discounted-checkout sequence beside a separate studio enrollment path.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://plainsart.org/programs-learning/",
+        "https://plainsart.org/programs-learning/open-ceramics-studio/",
+        "https://plainsart.org/plan-your-visit/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/cavalier",
+      "name": "Cavalier County",
+      "fips": "38019",
+      "directoryPath": "/areas/north-dakota/#cavalier",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/cavalier-county/",
+      "readerDecision": "Match the cleaning request to the available process and location.",
+      "rationale": "Adds process-level routing across fixed and portable equipment, rather than generic branch selection. Gove distinguishes elevator/shop routes and Grant distinguishes known orders from advice; this brief preserves the required processing capability as the handoff criterion.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.cityoflangdon.com/business.html",
+        "https://www.customgrainseed.com/seed-cleaning-and-conditioning"
+      ]
+    },
+    {
+      "areaId": "north-dakota/dickey",
+      "name": "Dickey County",
+      "fips": "38021",
+      "directoryPath": "/areas/north-dakota/#dickey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/dickey-county/",
+      "readerDecision": "Show the service schedule that changes with a longer stay.",
+      "rationale": "Adds recurring service cadence to accommodation selection. Swift covers length-related contact, Wayne property amenities and Roane payment versus lease duration; the distinct acceptance case is a monthly choice that changes cleaning frequency.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://ellendaleextendedstay.com/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/divide",
+      "name": "Divide County",
+      "fips": "38023",
+      "directoryPath": "/areas/north-dakota/#divide",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish short-term campsite return rules and arranged museum access.",
+      "rationale": "Frontier already commissions a stay-limit and return-interval explanation; changing the number of days does not add meaningful project value. Tama covers grounds versus appointed indoor access. Both researched alternatives are adequately evidenced but duplicative.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/dunn",
+      "name": "Dunn County",
+      "fips": "38025",
+      "directoryPath": "/areas/north-dakota/#dunn",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/dunn-county/",
+      "readerDecision": "Let an oral-history request choose the story in print or the recorded voice.",
+      "rationale": "Adds the distinction between a transcribed narrative and the original voice, retaining item identity across media and pre-production confirmation. Lane distinguishes copy formats and outsourced production; Butler research scope. This project connects two substantive representations of one interview without becoming a genealogy intake.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://dunncountymuseum.org/oralhistory/",
+        "https://dunncountymuseum.org/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/eddy",
+      "name": "Eddy County",
+      "fips": "38027",
+      "directoryPath": "/areas/north-dakota/#eddy",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/eddy-county/",
+      "readerDecision": "Separate ticket questions from paid reservations.",
+      "rationale": "Adds a concrete purchase-versus-message distinction for a part-time arts box office, with performance identity and acceptance tests. Logan OK addresses exchanges/late arrival; Dodge MN addresses production sales state/payment location. Neither supplies this message-to-purchase commissioning brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.dprca.com/blank-2/",
+        "https://app.arts-people.com/index.php?show=317790"
+      ]
+    },
+    {
+      "areaId": "north-dakota/emmons",
+      "name": "Emmons County",
+      "fips": "38029",
+      "directoryPath": "/areas/north-dakota/#emmons",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Whether a campground visitor needs an advance reservation or arrival instructions for the specific park.",
+      "rationale": "The supported material is facility and seasonal orientation. Osceola already handles campground-specific reservation actions and Dixon handles seasonal camping facilities. No additional specific commissioning workflow is supported without inventing reservation rules, event rental rights or availability.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/foster",
+      "name": "Foster County",
+      "fips": "38031",
+      "directoryPath": "/areas/north-dakota/#foster",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/foster-county/",
+      "readerDecision": "Show how a group stay uses several rooms or buildings.",
+      "rationale": "Hall TX explains a detached bathroom for a room and Medina separates access from bathroom attributes. The Foster brief adds a multi-building group arrangement, possible house/cabin combination and a large-party review route. It gives a nine-person test without allocating rooms or pricing the stay.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.pipestemcreek.com/lodging/",
+        "https://www.pipestemcreek.com/contact/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/golden-valley",
+      "name": "Golden Valley County",
+      "fips": "38033",
+      "directoryPath": "/areas/north-dakota/#golden-valley",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/golden-valley-county/",
+      "readerDecision": "Let the purpose of a studio visit determine the next step.",
+      "rationale": "Chatham NC compares sale, showroom and item availability; Marshall IN compares teaching formats. The local whole project instead separates staff-dependent observation, ordinary shopping and a maker-reviewed set discussion without inventing lessons or guaranteed access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://prairiefirepottery.com/pages/faqs"
+      ]
+    },
+    {
+      "areaId": "north-dakota/grand-forks",
+      "name": "Grand Forks County",
+      "fips": "38035",
+      "directoryPath": "/areas/north-dakota/#grand-forks",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/grand-forks-county/",
+      "readerDecision": "Plan the room change before promising the event schedule.",
+      "rationale": "Anoka concerns final group count and Howard private ceremony/reception time. This page makes room-reset time part of the initial agenda and connects that agenda to staged inputs and contact ownership. A two-hour gap test shows the concrete design purpose.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.aleruscenter.com/event-planner-toolkit"
+      ]
+    },
+    {
+      "areaId": "north-dakota/grant",
+      "name": "Grant County",
+      "fips": "38037",
+      "directoryPath": "/areas/north-dakota/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/grant-county/",
+      "readerDecision": "Choose the reservation route from the intended arrival date.",
+      "rationale": "Dixon and Osceola separate first-come/reservable campgrounds. Lake Tschida adds a time-dependent change of route for the same intended stay and a campsite/cabin arrival distinction. The three-day-ahead check is substantive and does not infer vacancy.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://laketschida.org/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/griggs",
+      "name": "Griggs County",
+      "fips": "38039",
+      "directoryPath": "/areas/north-dakota/#griggs",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/griggs-county/",
+      "readerDecision": "Choose the experience before choosing a destination.",
+      "rationale": "Edwards TX distinguishes surface viewing from a cavern and Crawford IN tour time. This local project compares two locations under one attraction name, identifies what can actually be entered and retains location-specific preparation rather than using one generic map.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.history.nd.gov/historicsites/minutemanmissile/faq.html"
+      ]
+    },
+    {
+      "areaId": "north-dakota/hettinger",
+      "name": "Hettinger County",
+      "fips": "38041",
+      "directoryPath": "/areas/north-dakota/#hettinger",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Whether the selected lodging option includes the facilities and activity arrangements a guest expects.",
+      "rationale": "Medina and Floyd already provide complete room-specific facilities briefs, and Mahaska plus the timed-handoff guide cover accommodation separately from nearby activity access. The sources do not establish a distinct owner-specific package or workflow sufficient to add another page without extrapolating.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/kidder",
+      "name": "Kidder County",
+      "fips": "38043",
+      "directoryPath": "/areas/north-dakota/#kidder",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/kidder-county/",
+      "readerDecision": "Keep the stay, applicable terms and change contact together.",
+      "rationale": "Dent keeps unit pet terms and phone booking together; Dimmit handles changed hunting-party counts. This brief concerns which accommodation/date condition applies and which channel actually requests a cancellation, with an explicit owner-definition step before any date logic is commissioned.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://nineteen26lodging.com/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/lamoure",
+      "name": "LaMoure County",
+      "fips": "38045",
+      "directoryPath": "/areas/north-dakota/#lamoure",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/lamoure-county/",
+      "readerDecision": "Give each part of a park gathering its own arrangement.",
+      "rationale": "LeSueur handles permitted rental building and public-park boundaries, and Osceola separates campground booking routes. This brief adds the organizer’s multipart reunion checklist and tests that a hall arrangement does not imply camping, museum or golf confirmation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://lamourecountynd.com/memorial-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/logan",
+      "name": "Logan County",
+      "fips": "38047",
+      "directoryPath": "/areas/north-dakota/#logan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/logan-county/",
+      "readerDecision": "Show sleeping layout and connecting-room requests separately.",
+      "rationale": "Floyd compares cabin kitchens and Medina/Hall bathroom distinctions. Mozy adds a connecting-room request distinct from a larger single unit, with room-number continuity and an acceptance test that does not infer occupancy from beds.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mozyinn.com/rooms",
+        "https://www.mozyinn.com/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mchenry",
+      "name": "McHenry County",
+      "fips": "38049",
+      "directoryPath": "/areas/north-dakota/#mchenry",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/mchenry-county/",
+      "readerDecision": "Give the catalog, ordering route and confirmation period their own status.",
+      "rationale": "Gadsden distinguishes dated availability from live inventory; the event guide tracks invitations and ended events. This local supplier brief separately tracks catalog publication, order-route activation and the confirmation period. The staged update acceptance test is distinct.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ndsu.edu/ndfs/nursery"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mcintosh",
+      "name": "McIntosh County",
+      "fips": "38051",
+      "directoryPath": "/areas/north-dakota/#mcintosh",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/mcintosh-county/",
+      "readerDecision": "Check the shipping season before planning a shipped order.",
+      "rationale": "ChathamGA addresses item/destination exceptions, JeffersonAL local-versus-shipped dates, LinnMO weekly dispatch/repeat orders and HuntingdonPA seasonal outlets. The McIntosh brief adds the decision whether a shipping season is available at all while local shopping remains a separate route.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.prideofdakota.nd.gov/companies/profile/stanssupervalu/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mckenzie",
+      "name": "McKenzie County",
+      "fips": "38053",
+      "directoryPath": "/areas/north-dakota/#mckenzie",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/mckenzie-county/",
+      "readerDecision": "Carry the event plan from a room inquiry into the technical discussion.",
+      "rationale": "Canadian covers surfaces, Grady building selection and Kingman resource counts. This proposed McKenzie brief uses the operator's staged inquiry-to-AV discussion to distinguish early fit information from later technical preparation and explicitly retests requirements after a room substitution.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mcagexpo.com/facility",
+        "https://www.mcagexpo.com/contact"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mclean",
+      "name": "McLean County",
+      "fips": "38055",
+      "directoryPath": "/areas/north-dakota/#mclean",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/mclean-county/",
+      "readerDecision": "Plan the accommodation and the equipment rental as separate choices.",
+      "rationale": "Floyd and Harrison already explain cabin differences; Kimble and the booking guide separate access and equipment. The local brief combines the specific no-indoor-plumbing/cooking distinction with independent equipment dates, supplies and larger-group availability preparation. It offers a concrete two-part website commission, not a new general booking mechanism.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.parkrec.nd.gov/fort-stevenson-state-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mercer",
+      "name": "Mercer County",
+      "fips": "38057",
+      "directoryPath": "/areas/north-dakota/#mercer",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Should a website distinguish ordinary museum entry, appointment visits and year-round outdoor access from building hours?",
+      "rationale": "Complete existing records already cover separate office/public hours, appointment-only interiors, seasonal components and holiday/ground access. The museum hour conflict is excluded rather than treated as evidence of demand. The NPS alternative supplies no additional commissioning scope beyond these established explanations.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/morton",
+      "name": "Morton County",
+      "fips": "38059",
+      "directoryPath": "/areas/north-dakota/#morton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/morton-county/",
+      "readerDecision": "Keep an event-room rental distinct from the surrounding visitor attractions.",
+      "rationale": "Madison distinguishes seasonal museum components and Tama separates public access from room rental. Morton adds a commissioning brief around year-round room hire inside a seasonal visitor setting, plus public versus reserved shelter electrical access; the acceptance test concerns an event agenda rather than ordinary attraction admission.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.parkrec.nd.gov/fort-abraham-lincoln-state-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/mountrail",
+      "name": "Mountrail County",
+      "fips": "38061",
+      "directoryPath": "/areas/north-dakota/#mountrail",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/mountrail-county/",
+      "readerDecision": "Describe the complete room-access period before asking about an event rate.",
+      "rationale": "Thomas includes setup time in an archival-event brief, Grady compares buildings and DeWitt labels office versus visit hours. Mountrail turns the published meeting/social distinction and separate booking-office instructions into a complete request timeline, staff review and document-maintenance project with a four-hour access test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.co.mountrail.nd.us/subpage/82",
+        "https://www.co.mountrail.nd.us/subpage/83"
+      ]
+    },
+    {
+      "areaId": "north-dakota/nelson",
+      "name": "Nelson County",
+      "fips": "38063",
+      "directoryPath": "/areas/north-dakota/#nelson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/nelson-county/",
+      "readerDecision": "Move each visitor task to its matching page when a website changes.",
+      "rationale": "The migration guide already supplies the technical URL-map method and East Feliciana addresses booking continuity after an operator-name change. Nelson applies that work to a documented upcoming site shutdown with separate campground, pavilion and heritage-village tasks and request-not-reservation semantics. No new general migration guide is needed.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "http://stumplakepark.com/",
+        "https://www.nelsonco.org/stump_lake_park___village/index.php"
+      ]
+    },
+    {
+      "areaId": "north-dakota/oliver",
+      "name": "Oliver County",
+      "fips": "38065",
+      "directoryPath": "/areas/north-dakota/#oliver",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Should a combined venue or multi-location service website clarify the offered activity and the appropriate existing contact?",
+      "rationale": "Jackson already develops the restaurant-within-golf-venue task substantially. Rawlins and Knox fully cover existing clinical routes and the distinction between facility/service availability. Available Center evidence supports the businesses and contact choices but not a richer distinct workflow; no copied county page is justified.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/pembina",
+      "name": "Pembina County",
+      "fips": "38067",
+      "directoryPath": "/areas/north-dakota/#pembina",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/pembina-county/",
+      "readerDecision": "Compare the meeting format before treating nearby spaces as interchangeable.",
+      "rationale": "Grady supplies the basic building comparison and Thomas includes setup time. Pembina adds concrete ceremony/meal/presentation differences with seasonal and multi-day rental boundaries, and an acceptance check that prevents amenities migrating across rooms during a combined event inquiry.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.parkrec.nd.gov/icelandic-state-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/pierce",
+      "name": "Pierce County",
+      "fips": "38069",
+      "directoryPath": "/areas/north-dakota/#pierce",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/pierce-county/",
+      "readerDecision": "Give school, general-group and organized-tour visitors the right preparation.",
+      "rationale": "Koochiching already distinguishes guides and group terms; Saline compares zoo programs; Rapides addresses qualifying counts. Pierce's complete brief instead combines three organizer categories with self-guided education requests and an outdoor unconditioned-building visit, yielding a specific preparation and content-maintenance commission.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.prairievillagemuseum.org/group-tours",
+        "https://www.prairievillagemuseum.org/services-7",
+        "https://www.prairievillagemuseum.org/tips-for-your-visit"
+      ]
+    },
+    {
+      "areaId": "north-dakota/ramsey",
+      "name": "Ramsey County",
+      "fips": "38071",
+      "directoryPath": "/areas/north-dakota/#ramsey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/ramsey-county/",
+      "readerDecision": "Explain the level of support before a guest chooses a fishing package.",
+      "rationale": "Willacy explains package nights/meals and Kimble separates access, equipment and stays. Ramsey's distinct project centers on support-level comparison, guest equipment, a vehicle/restroom constraint and the day-house/sleeper distinction, with a novice-without-equipment test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.woodlandresort.com/ice-fishing-packages"
+      ]
+    },
+    {
+      "areaId": "north-dakota/ransom",
+      "name": "Ransom County",
+      "fips": "38073",
+      "directoryPath": "/areas/north-dakota/#ransom",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/ransom-county/",
+      "readerDecision": "Describe horse-camping facilities separately from ordinary stay amenities.",
+      "rationale": "Knox explains guest-supplied equestrian preparation and Wheeler gives a fill-before-parking sequence. Ransom's proposed commission instead binds the actual site classification to corral and shared-water location, maps and trailer suitability questions; it does not copy either operator's preparation rules.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.parkrec.nd.gov/fort-ransom-state-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/renville",
+      "name": "Renville County",
+      "fips": "38075",
+      "directoryPath": "/areas/north-dakota/#renville",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/renville-county/",
+      "readerDecision": "Keep a vacant-looking campsite distinct from permission to occupy it.",
+      "rationale": "Bladen differentiates seasonal recreation and Wheeler sequences utility access. Renville adds an explicit unreserved-arrival decision before occupying an apparently empty pitch and links equipment placement to the separately documented seasonal agreement. The project explains concrete arrival and departure work rather than reproducing all park rules.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.renvillecountynd.org/community/mouse-river-park/",
+        "https://renvillecountynd.org/documents/2026-mouse-river-park-campground-rules.pdf"
+      ]
+    },
+    {
+      "areaId": "north-dakota/richland",
+      "name": "Richland County",
+      "fips": "38077",
+      "directoryPath": "/areas/north-dakota/#richland",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/richland-county/",
+      "readerDecision": "Separate party-room time from the rest of a visitor's day.",
+      "rationale": "Saline compares program eligibility, Rapides qualifying counts and Madison seasonal components. Richland's complete project concerns two-hour private room access versus all-day admission, optional educational content and consistency of season-dependent package inclusions. It avoids all disputed encounter eligibility claims.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.chahinkapazoo.org/events-tours-parties-experiences/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/rolette",
+      "name": "Rolette County",
+      "fips": "38079",
+      "directoryPath": "/areas/north-dakota/#rolette",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/rolette-county/",
+      "readerDecision": "Plan the event space and the guests’ arrival as separate decisions.",
+      "rationale": "Leavenworth separates an activity from installation approval; Stearns compares room layouts. This brief combines divided-level event planning, a seasonal facility inquiry and an independently governed international-arrival handoff, with concrete owner inputs and a 150-person acceptance case.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://peacegarden.com/rentals/",
+        "https://peacegarden.com/discover/faq/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/sargent",
+      "name": "Sargent County",
+      "fips": "38081",
+      "directoryPath": "/areas/north-dakota/#sargent",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/sargent-county/",
+      "readerDecision": "Explain on-site research tools before offering staff research help.",
+      "rationale": "Coffey distinguishes documented collection gaps, Pawnee distinguishes uncertain charges from known-amount payment, and Dodge separates office and tour hours. Sargent adds the practical choice between a dedicated on-site cemetery workstation, microfilm equipment and staff-assisted research without implying online access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sargentcountymuseum.org/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/sheridan",
+      "name": "Sheridan County",
+      "fips": "38083",
+      "directoryPath": "/areas/north-dakota/#sheridan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/sheridan-county/",
+      "readerDecision": "Prepare the campsite request and the boat-trailer arrival together.",
+      "rationale": "Frontier addresses maximum stays and required absence; Lac qui Parle addresses first-come donations. This brief instead keeps campground reservations and a second boat-trailer movement in one owner-approved preparation sequence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.co.sheridan.nd.us/departments/parks-and-recreation",
+        "https://www.co.sheridan.nd.us/image/cache/HofferLakeBrochure2025.pdf"
+      ]
+    },
+    {
+      "areaId": "north-dakota/sioux",
+      "name": "Sioux County",
+      "fips": "38085",
+      "directoryPath": "/areas/north-dakota/#sioux",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/sioux-county/",
+      "readerDecision": "Separate the trip arrangement from the question of who pays for it.",
+      "rationale": "Allegany and Swain explain transport segments within visitor packages. Sioux adds independent trip feasibility and funding review, an inter-provider connection and a deliberately non-sensitive public handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://sittingbull.edu/sitting-bull-college/community/transport/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/slope",
+      "name": "Slope County",
+      "fips": "38087",
+      "directoryPath": "/areas/north-dakota/#slope",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/slope-county/",
+      "readerDecision": "Explain remote camping preparation without promising a held site.",
+      "rationale": "Dixon covers mixed reservation and payment routes; Cimarron separates hiking from camping destinations; Owsley covers vehicle-aware directions. Slope combines a wholly first-come remote stay with saveable arrival/payment preparation and a clear no-power decision, grounded in the exact federal campsite page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.fs.usda.gov/r01/dpg/recreation/burning-coal-vein-campground"
+      ]
+    },
+    {
+      "areaId": "north-dakota/stark",
+      "name": "Stark County",
+      "fips": "38089",
+      "directoryPath": "/areas/north-dakota/#stark",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/stark-county/",
+      "readerDecision": "Choose the arena’s operating mode before planning the event layout.",
+      "rationale": "The museum lead overlaps Kingfisher and Murray and had blocked origin retrieval. The fresh Ice Center alternative extends Isanti seasonal building choice and Houston facility use into two arena modes, audience capacity versus event layout, and party-room versus public-session access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://dickinsonparks.org/west-river-ice-center/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/steele",
+      "name": "Steele County",
+      "fips": "38091",
+      "directoryPath": "/areas/north-dakota/#steele",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Decide whether seasonal visit and event information warrants its own brief.",
+      "rationale": "Dodge already develops purpose-specific museum/office schedules and appointment preparation in more detail. The golf alternative supports a general course/event introduction but lacks dated availability, event preparation, capacities or a specific service handoff sufficient for an additional complete local commissioning brief. Furnas and Isanti already supply stronger seasonal-use and venue-selection guidance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/stutsman",
+      "name": "Stutsman County",
+      "fips": "38093",
+      "directoryPath": "/areas/north-dakota/#stutsman",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/stutsman-county/",
+      "readerDecision": "Keep the landmark, large-vehicle turnaround and optional ride distinct.",
+      "rationale": "Owsley treats road approach suitability; Beckham treats school groups arriving together; the departure guide contains general vehicle branches. Stutsman adds an on-site turnaround involving a neighboring attraction plus an independent paid ride schedule, developed into a complete arrival/activity website brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.frontiervillagend.com/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/towner",
+      "name": "Towner County",
+      "fips": "38095",
+      "directoryPath": "/areas/north-dakota/#towner",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/towner-county/",
+      "readerDecision": "Keep campsite self-registration separate from other online payments.",
+      "rationale": "Audi retrieval failed and the golf page has explicitly old 2023 rates. The campground alternative supplies a current readable source. Dixon addresses payment locations; Faribault separates recreation requests. Cando adds a concrete review of a shared organization’s payment navigation against a cash/check-only campsite process.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.cityofcando.com/campground-swimming-pool-city-park"
+      ]
+    },
+    {
+      "areaId": "north-dakota/traill",
+      "name": "Traill County",
+      "fips": "38097",
+      "directoryPath": "/areas/north-dakota/#traill",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Assess whether the local camping or arena choice adds a complete project brief.",
+      "rationale": "Hughes develops utility-specific campsite choice and approval paths beyond Willowood’s short description. Isanti and Houston already develop seasonal facility use and separate activity needs. The community-center alternative confirms seasonal uses but gives no current rental process, event capacities or host preparation to build a substantial additional commission without invention.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/walsh",
+      "name": "Walsh County",
+      "fips": "38099",
+      "directoryPath": "/areas/north-dakota/#walsh",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/walsh-county/",
+      "readerDecision": "Explain which availability record staff actually confirms.",
+      "rationale": "Marshall distinguishes an online subset of inventory from the whole park; Hughes distinguishes instant and pending provider approvals. Walsh documents explicitly unlinked online and office records, making the authoritative-record discussion and false-positive availability check more concrete than either comparator.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://graftonparks.com/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/ward",
+      "name": "Ward County",
+      "fips": "38101",
+      "directoryPath": "/areas/north-dakota/#ward",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/ward-county/",
+      "readerDecision": "Prepare the host location before requesting a traveling animal program.",
+      "rationale": "The initial encounter lead closely overlaps Nicholas and Saline. The substantive Zoo To You alternative extends Rush host-space preparation and Kiowa school/event routing with live-animal operational dependence, on-site versus off-site choice and location-dependent preparation without inventing an automated eligibility tool.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://rooseveltparkzoo.com/zoo-to-you/"
+      ]
+    },
+    {
+      "areaId": "north-dakota/wells",
+      "name": "Wells County",
+      "fips": "38103",
+      "directoryPath": "/areas/north-dakota/#wells",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Assess dated fair content and the preparation for library parcel services.",
+      "rationale": "The fair material supports the existing dated-event guide, without evidence for a current fair workflow. The substantive library alternative supports a pre-labeled parcel explanation, but Morgan’s complete shipping brief already explains code, label, package state and accepted return routes more fully. Merely adding library printing beside UPS drop-off would invite unsupported label-printing or return-code claims; Childress already handles service-specific public access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "north-dakota/williams",
+      "name": "Williams County",
+      "fips": "38105",
+      "directoryPath": "/areas/north-dakota/#williams",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/north-dakota/williams-county/",
+      "readerDecision": "Explain the advance-reservation boundary before a near-term gathering.",
+      "rationale": "Jackson describes shelters that cannot be reserved at all, and Faribault separates facility request routes. Williams adds a time-dependent transition between reservable and first-come use, with a concrete tomorrow-date check and consistent named-pavilion handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.willistonparks.com/pavilion-rentals"
+      ]
+    },
+    {
+      "areaId": "south-dakota/aurora",
+      "name": "Aurora County",
+      "fips": "46003",
+      "directoryPath": "/areas/south-dakota/#aurora",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Decide whether a museum visit or campground stay has enough distinct planning requirements to support a new website brief.",
+      "rationale": "NO_ADDITION: Minnesota/Crow Wing and Nebraska/Platte already explain selected-site utilities and stay fit. The dated local example adds no substantial project decision beyond those full records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/beadle",
+      "name": "Beadle County",
+      "fips": "46005",
+      "directoryPath": "/areas/south-dakota/#beadle",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/beadle-county/",
+      "readerDecision": "Commission a venue page that carries room choice into equipment responsibility and staff-operated room setup.",
+      "rationale": "ADD_DRAFT: Sherburne covers partitions and kitchens, Phelps covers broad equipment/staff requests, and Craig covers surface/partition choices. This draft adds the concrete dependency between room-specific sound responsibility and a keyed divider that renters cannot operate, with owner inputs and change-of-room acceptance checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sdstatefair.com/assets/docs/uploads/Facility-Rentals/nordby-exhibit-hall-facility-use-guidelines.pdf"
+      ]
+    },
+    {
+      "areaId": "south-dakota/bennett",
+      "name": "Bennett County",
+      "fips": "46007",
+      "directoryPath": "/areas/south-dakota/#bennett",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Decide how a healthcare site should distinguish general contact from a named therapy appointment route.",
+      "rationale": "NO_ADDITION: Kansas/Stanton, Kansas/Rawlins and Nebraska/Franklin already cover provider-controlled service and appointment routing. A new local department name would not add meaningful commissioning value.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/bon-homme",
+      "name": "Bon Homme County",
+      "fips": "46009",
+      "directoryPath": "/areas/south-dakota/#bon-homme",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether seasonal park facilities or a library research request create a distinct local website project.",
+      "rationale": "NO_ADDITION: Nebraska/Dixon and Missouri/Barry cover seasonal amenity distinctions; Kansas/Coffey addresses research evidence gaps. The complete local sources do not add a new project mechanism.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/brookings",
+      "name": "Brookings County",
+      "fips": "46011",
+      "directoryPath": "/areas/south-dakota/#brookings",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/brookings-county/",
+      "readerDecision": "Commission a school-trip page that makes the bus arrival and lunch handoff usable by the whole group.",
+      "rationale": "ADD_DRAFT: Minnesota/Ramsey, Nebraska/Hall and Texas/Chambers cover group roles, counts, billing and lunch timing. The added project centers on the physical transfer of lunches between bus, staff and assigned room, combined with a separately confirmed lunch reservation; the acceptance test follows the actual handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://prairieplay.org/wp-content/uploads/2026/01/fieldtrip_information_2026-FINAL-WEB.pdf"
+      ]
+    },
+    {
+      "areaId": "south-dakota/brown",
+      "name": "Brown County",
+      "fips": "46013",
+      "directoryPath": "/areas/south-dakota/#brown",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/brown-county/",
+      "readerDecision": "Commission rental content that separates confirmed indoor seating from first-come patio space and fits setup into room access.",
+      "rationale": "ADD_DRAFT: Minnesota/Le Sueur separates rented buildings from public park use and Minnesota/Kanabec distinguishes capacity from furniture. Here the combined commissioning task is to establish an indoor plan independent of first-come overflow, then fit renter furniture work inside staff-controlled access. This is proposed planning guidance, not a new park weather policy.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.aberdeen.sd.us/DocumentView.aspx?DID=734"
+      ]
+    },
+    {
+      "areaId": "south-dakota/brule",
+      "name": "Brule County",
+      "fips": "46015",
+      "directoryPath": "/areas/south-dakota/#brule",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether a museum group visit or a photography-permission branch needs a new local service brief.",
+      "rationale": "NO_ADDITION: Minnesota/Goodhue covers guided visits versus admission; Oklahoma/Tulsa and Texas/Ector closely cover personal/commercial photography, exhibit restrictions and permission. The full comparison removed the preliminary candidate.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/buffalo",
+      "name": "Buffalo County",
+      "fips": "46017",
+      "directoryPath": "/areas/south-dakota/#buffalo",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether distinct property contacts or tribal enrollment form categories create a new website brief.",
+      "rationale": "NO_ADDITION: Kansas/Crawford and Oklahoma/Marshall already distinguish buildings, departments and contact purposes. The sources do not support a distinct new commissioned feature.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/butte",
+      "name": "Butte County",
+      "fips": "46019",
+      "directoryPath": "/areas/south-dakota/#butte",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether museum admission and private venue rental require a distinct project beyond existing event guidance.",
+      "rationale": "NO_ADDITION: Minnesota/Washington, Iowa/Dallas and Texas/Wichita already cover museum/event scope, deposit distinctions and complete rental arrangements. Different amounts or capacity do not add a new reader decision.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/campbell",
+      "name": "Campbell County",
+      "fips": "46021",
+      "directoryPath": "/areas/south-dakota/#campbell",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether a motel or park stay supplies a distinct booking-preparation brief.",
+      "rationale": "NO_ADDITION: Minnesota/Lincoln, Nebraska/Madison and Missouri/Barry cover property choice and seasonal amenity limits. No additional supported commissioning decision emerged.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/charles-mix",
+      "name": "Charles Mix County",
+      "fips": "46023",
+      "directoryPath": "/areas/south-dakota/#charles-mix",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/charles-mix-county/",
+      "readerDecision": "Commission guided-trip content that separates a standard boat day from a custom destination and lodging/meal quote.",
+      "rationale": "ADD_DRAFT: Minnesota/Carlton, Nebraska/Buffalo and Kentucky/Lawrence cover experience choice, equipment and separate boat/stay arrangements. This local project addresses a custom destination changing the quoted bundle and responsibility for meals/lodging, with a test that a special-request lake never inherits the standard outing’s confirmation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.skipperbrosguiding.com/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/clark",
+      "name": "Clark County",
+      "fips": "46025",
+      "directoryPath": "/areas/south-dakota/#clark",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether community-room rental or transportation contact instructions justify a new page.",
+      "rationale": "NO_ADDITION: Oklahoma/Carter and Texas/Karnes already cover keys and event preparation/return; Nebraska/Sarpy covers administrative service routing. The local source does not add enough beyond those full bodies.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/clay",
+      "name": "Clay County",
+      "fips": "46027",
+      "directoryPath": "/areas/south-dakota/#clay",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/clay-county/",
+      "readerDecision": "Commission visit-choice content that explains staff involvement before using tour labels.",
+      "rationale": "ADD_DRAFT: Kansas/Atchison, Minnesota/Goodhue and Iowa/Story distinguish visit modes and confirmation. This brief adds a particular naming problem: self-guided can still mean staff-accompanied. It supplies an owner-approved staff-role comparison and a comprehension test instead of merely adding another tour category.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nmmusd.org/visit-us/tours-group-visits"
+      ]
+    },
+    {
+      "areaId": "south-dakota/codington",
+      "name": "Codington County",
+      "fips": "46029",
+      "directoryPath": "/areas/south-dakota/#codington",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/codington-county/",
+      "readerDecision": "Commission school-visit content that separates admission category from an optional education program.",
+      "rationale": "ADD_DRAFT: Minnesota/Winona separates admission from programs, Oklahoma/Garfield separates supervision from classes, and Missouri/Callaway handles group counts. The new brief combines geographic and institution-type categories with a dated school-year checkpoint, so selecting a free program does not determine admission.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.brambleparkzoo.com/education/education-fees/",
+        "https://www.brambleparkzoo.com/education/education-fees/rules-and-regulations/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/corson",
+      "name": "Corson County",
+      "fips": "46031",
+      "directoryPath": "/areas/south-dakota/#corson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/corson-county/",
+      "readerDecision": "Commission lodging content that carries an owner-verified accommodation category into cancellation instructions.",
+      "rationale": "ADD_DRAFT: Oklahoma/Logan covers arrival versus change rules, Iowa/Dallas separates charges, and Wisconsin/Iowa covers booking-provider cancellation handoff. This page adds owner-controlled mapping across overlapping lodging labels and requires a content review before any product-specific rule is displayed. The ambiguity is a commissioning input, not an invented resolution.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://grandrivercasino.com/lodging/",
+        "https://grandrivercasino.com/contact/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/custer",
+      "name": "Custer County",
+      "fips": "46033",
+      "directoryPath": "/areas/south-dakota/#custer",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/custer-county/",
+      "readerDecision": "Commission tour-choice content that distinguishes the entrance method from the full route and preparation requirements.",
+      "rationale": "ADD_DRAFT: Oklahoma/Sequoyah, Kansas/Reno, Minnesota/Fillmore and Missouri/Christian cover route fit, access and tour choice. This brief makes a shared elevator entrance explicitly insufficient to describe the trip and compares the in-cave routes, with a concrete acceptance check for an elevator-only assumption.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nps.gov/jeca/planyourvisit/scenictour.htm",
+        "https://www.nps.gov/jeca/planyourvisit/discoverytour.htm"
+      ]
+    },
+    {
+      "areaId": "south-dakota/davison",
+      "name": "Davison County",
+      "fips": "46035",
+      "directoryPath": "/areas/south-dakota/#davison",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/davison-county/",
+      "readerDecision": "Connect event layout to the costs and arrangements that need review.",
+      "rationale": "Stearns and Kanabec cover layout and furniture; Canadian covers space/surface choice. This brief connects a layout change with ticket-related charges and production review in the same proposal.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.cornpalace.com/152/Rates-Capacity",
+        "https://cornpalace.com/153/Corn-Palace-Rental-Policy",
+        "https://www.cornpalace.com/151/Book-the-Corn-Palace"
+      ]
+    },
+    {
+      "areaId": "south-dakota/day",
+      "name": "Day County",
+      "fips": "46037",
+      "directoryPath": "/areas/south-dakota/#day",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish refuge access from visitor-center hours and campground facilities.",
+      "rationale": "Delaware already fully explains grounds versus building hours, while Dixon/Wheeler cover campsite utility and arrival choices. Neither complete local lead supplied a substantial new commissioning decision beyond those records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/deuel",
+      "name": "Deuel County",
+      "fips": "46039",
+      "directoryPath": "/areas/south-dakota/#deuel",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/deuel-county/",
+      "readerDecision": "Compare the room, furniture and food-preparation needs together.",
+      "rationale": "Kanabec already separates furniture from capacity. Deuel adds the main-kitchen versus kitchenette decision and a meal-change acceptance check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://clearlakesd.com/community-center/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/dewey",
+      "name": "Dewey County",
+      "fips": "46041",
+      "directoryPath": "/areas/south-dakota/#dewey",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Separate the campground arrival location from a remote administrative contact.",
+      "rationale": "Lac qui Parle already distinguishes administrative mailing information from campground arrival and first-come camping; Wheeler covers utility preparation. The departure-address guide fully covers the proposed improvement. A county-named repetition would add little.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/douglas",
+      "name": "Douglas County",
+      "fips": "46043",
+      "directoryPath": "/areas/south-dakota/#douglas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/douglas-county/",
+      "readerDecision": "Explain who reviews each home-support request.",
+      "rationale": "Stanton concerns visit purpose, Rooks laboratory ordering and Palo Alto library delivery. This adds a distinct comparison of provider-linked, state-assessed and private-pay home-support review.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://dcmhsd.org/services/visiting-nurse-homemakers/",
+        "https://dcmhsd.org/locations/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/edmunds",
+      "name": "Edmunds County",
+      "fips": "46045",
+      "directoryPath": "/areas/south-dakota/#edmunds",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/edmunds-county/",
+      "readerDecision": "Keep an expected service return separate from an available appointment.",
+      "rationale": "Knox distinguishes mobile dates and Zapata branch closure. This adds the intermediate expected-return state and a maintainable editorial transition.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bowdlehc.com/facilities/outreach/",
+        "https://bowdlehc.com/facilities/therapy/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/fall-river",
+      "name": "Fall River County",
+      "fips": "46047",
+      "directoryPath": "/areas/south-dakota/#fall-river",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/fall-river-county/",
+      "readerDecision": "Show the school preparation that comes before the museum visit.",
+      "rationale": "Freeborn covers rotations and Harvey/Neosho kit or visit choices. This adds a dependency where school preparation supplies the later excavation activity, making sequence and resource-version consistency consequential.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://mammothsite.org/steam-education/",
+        "https://mammothsite.org/visit/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/faulk",
+      "name": "Faulk County",
+      "fips": "46049",
+      "directoryPath": "/areas/south-dakota/#faulk",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/faulk-county/",
+      "readerDecision": "Attach appointment times and contacts to the service being requested.",
+      "rationale": "Knox separates hospital access from mobile dates. Faulk adds different appointment starts inside an open clinic and service-specific booking ownership, with two routing checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://faulktonmedical.org/our-clinics/",
+        "https://faulktonmedical.org/contact-us/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/grant",
+      "name": "Grant County",
+      "fips": "46051",
+      "directoryPath": "/areas/south-dakota/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/grant-county/",
+      "readerDecision": "Connect a granite-block selection to inspection and transport.",
+      "rationale": "Osceola/Mahoning cover countertop images and layout; Armstrong memorial stock and remaining work. This is block-yard inspection and transport with condition terminology and variable measurement assumptions. The RFQ guide covers review generally, not these material/loading distinctions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://dakotagranite.com/commercial/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/gregory",
+      "name": "Gregory County",
+      "fips": "46053",
+      "directoryPath": "/areas/south-dakota/#gregory",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Identify which campsite and utility provision applies to a stay.",
+      "rationale": "The complete comparators already cover first-come versus reservable sites and utility/arrival preparation. The second lead did not provide a distinct enough request or operational sequence to justify a full county service brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/haakon",
+      "name": "Haakon County",
+      "fips": "46055",
+      "directoryPath": "/areas/south-dakota/#haakon",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Route wellness and therapy questions to the appropriate provider discussion.",
+      "rationale": "Rooks already distinguishes wellness/self-requested laboratory work from clinician-ordered tests. Stanton and Rawlins cover purpose/contact boundaries. The therapy alternative adds a service list but no sufficiently distinct nonclinical website commissioning decision.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/hamlin",
+      "name": "Hamlin County",
+      "fips": "46057",
+      "directoryPath": "/areas/south-dakota/#hamlin",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish local visit and campsite arrangements from out-of-county examples.",
+      "rationale": "Dixon covers campsite choice while Rice and DeWitt cover separate historic sites, seasons and contact arrangements. The actual Hamlin alternatives did not add a new project decision beyond those complete records. Rejected geography is not silently used to generate a page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/hand",
+      "name": "Hand County",
+      "fips": "46059",
+      "directoryPath": "/areas/south-dakota/#hand",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/hand-county/",
+      "readerDecision": "Explain what changes when a short campsite stay becomes longer.",
+      "rationale": "Lac qui Parle covers donation camping and a maximum stay; Wheeler utilities and Dixon reservations. Hand adds a payment-basis transition and an extension scenario.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://miller.sdcity.gov/departments/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/hanson",
+      "name": "Hanson County",
+      "fips": "46061",
+      "directoryPath": "/areas/south-dakota/#hanson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/hanson-county/",
+      "readerDecision": "Keep meter-reporting instructions with the correct payment route.",
+      "rationale": "Stonewall covers payment submission versus posting. This adds a reporting prerequisite, two organizations sharing a site and payment versus authorization purpose.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.drw-hrw.com/hanson-payment-options"
+      ]
+    },
+    {
+      "areaId": "south-dakota/harding",
+      "name": "Harding County",
+      "fips": "46063",
+      "directoryPath": "/areas/south-dakota/#harding",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Explain library facilities and visit information without inventing usage rules.",
+      "rationale": "Madison and Trinity already explain richer print-job and computer-permission decisions; DeWitt handles office/visit hours. A facilities list alone does not justify a new workflow or page, and no local limits are invented.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/hughes",
+      "name": "Hughes County",
+      "fips": "46065",
+      "directoryPath": "/areas/south-dakota/#hughes",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/hughes-county/",
+      "readerDecision": "Help educators choose between a shipped kit and a gallery class.",
+      "rationale": "Neosho/Harvey compare kits and visits. This local brief combines grade/month matching, statewide shipping with return included and a separate family resource, tested with a mismatched-month request.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://history.sd.gov/museum/education.aspx",
+        "https://history.sd.gov/museum/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/hutchinson",
+      "name": "Hutchinson County",
+      "fips": "46067",
+      "directoryPath": "/areas/south-dakota/#hutchinson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/hutchinson-county/",
+      "readerDecision": "Connect a gathering to the place and permission it needs.",
+      "rationale": "Delaware covers grounds/building hours and Washington rental versus admission. This connects those boundaries with a food-preparation condition and event-contract responsibility in an evening cooking scenario.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://freemanacademy.org/arboretum/plan-your-visit/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/hyde",
+      "name": "Hyde County",
+      "fips": "46069",
+      "directoryPath": "/areas/south-dakota/#hyde",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Plan a group retreat with meeting time, meals and outdoor activities.",
+      "rationale": "The Grand Lodge is a valid Hyde County public example at county-level map precision, but its current corporate offer does not add substantial project guidance beyond the complete Craig County record: meeting purpose, organizer-led time, venue-led activities, meals, accommodation and a staff-planned proposal are already covered. Colfax additionally covers distinct attendance, beds and per-meal counts. Replacing their venue names or adding hunting examples would repeat the same website decisions. No tested inquiry failure or independently supported new planning constraint establishes a further brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/jackson",
+      "name": "Jackson County",
+      "fips": "46071",
+      "directoryPath": "/areas/south-dakota/#jackson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/jackson-county/",
+      "readerDecision": "Choose a bookable room or a limited pet-room telephone request.",
+      "rationale": "Dent handles telephone lodging and limited pet units; Eastland handles future services. This complete brief combines an ordinary online booking handoff with an exception route and separates planned inventory from current accommodation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.grandpajoesplace.com/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/jerauld",
+      "name": "Jerauld County",
+      "fips": "46073",
+      "directoryPath": "/areas/south-dakota/#jerauld",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/jerauld-county/",
+      "readerDecision": "Choose open grounds, an arranged interior tour or an event-space request.",
+      "rationale": "Steele compares short tours and a full itinerary; Bowie keeps multi-property arrangements together. This brief adds purpose-specific grounds/interior/rental choices with different confirmation owners in the same local heritage offer.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://wessingtonsprings.squarespace.com/historical-tours",
+        "https://wessingtonsprings.squarespace.com/facilities"
+      ]
+    },
+    {
+      "areaId": "south-dakota/jones",
+      "name": "Jones County",
+      "fips": "46075",
+      "directoryPath": "/areas/south-dakota/#jones",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Plan a self-guided attraction visit using current hours and admission.",
+      "rationale": "Baylor and Box Butte give fuller arrival and self-guided preparation mechanisms. Available Jones material supplies ordinary hours and collection breadth, without enough additional project detail to justify another service page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/kingsbury",
+      "name": "Kingsbury County",
+      "fips": "46077",
+      "directoryPath": "/areas/south-dakota/#kingsbury",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/kingsbury-county/",
+      "readerDecision": "Choose an overnight type and daytime visit plan together.",
+      "rationale": "Brunswick separates fees; Caddo changes arrival by lodging; Minnesota Lincoln separates seasonal cabins. The new brief connects all three to a once-per-stay admission and seasonal living-history activity plan with explicit accommodation-switch tests.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ingallshomestead.com/camping",
+        "https://www.ingallshomestead.com/hours-and-visitor-info"
+      ]
+    },
+    {
+      "areaId": "south-dakota/lake",
+      "name": "Lake County",
+      "fips": "46079",
+      "directoryPath": "/areas/south-dakota/#lake",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/lake-county/",
+      "readerDecision": "Use a campsite description without reviving historical arrival instructions.",
+      "rationale": "Crosby prioritizes one closure; Sibley separates season and permission. The draft specifies a maintainable inventory of nested campsite pages, stable physical facts, historical operating instructions and coordinated reopening review.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.prairievillage.org/camping/",
+        "https://www.prairievillage.org/village-campsite-352/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/lawrence",
+      "name": "Lawrence County",
+      "fips": "46081",
+      "directoryPath": "/areas/south-dakota/#lawrence",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/lawrence-county/",
+      "readerDecision": "Understand the entrance and exhibit environment before visiting.",
+      "rationale": "Marion and St. Louis describe physical paths and video alternatives; this draft connects sound, captions and on-request headphones with entrance preparation and a nonmedical question route.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://sanfordlab.org/slhvc/plan-your-visit"
+      ]
+    },
+    {
+      "areaId": "south-dakota/lincoln",
+      "name": "Lincoln County",
+      "fips": "46083",
+      "directoryPath": "/areas/south-dakota/#lincoln",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose an outdoor stay without assuming every water facility operates year-round.",
+      "rationale": "Benton already provides complete off-season facility and preparation guidance; Minnesota Lincoln covers category-specific seasons and utilities. The current local facts add no sufficiently developed new commissioning guidance after the alternative check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/lyman",
+      "name": "Lyman County",
+      "fips": "46085",
+      "directoryPath": "/areas/south-dakota/#lyman",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/lyman-county/",
+      "readerDecision": "Compare named hunting packages without assuming omitted services.",
+      "rationale": "Willacy explains nights/meals and Dimmit group changes. This draft adds a three-category owner-approved inclusion matrix that treats silence as unresolved, then checks package switching.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://feathersandfinslodge.com/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/marshall",
+      "name": "Marshall County",
+      "fips": "46091",
+      "directoryPath": "/areas/south-dakota/#marshall",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/marshall-county/",
+      "readerDecision": "Request a finished component while preserving process responsibility and quantity context.",
+      "rationale": "Bergen focuses project stage; Washington restoration stages; WV Jackson separates finish/artwork. This draft explicitly connects supplier-coordinated finishing to the required supplied condition and initial-versus-annual quantity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.rpmmachining.net/capabilities/secondary-operations/",
+        "https://www.rpmmachining.net/contact/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/mccook",
+      "name": "McCook County",
+      "fips": "46087",
+      "directoryPath": "/areas/south-dakota/#mccook",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a campground or cabin and check which water facilities operate for the intended season before following the reservation route.",
+      "rationale": "The substantive park alternative supports real seasonal preparation and accommodation-selection decisions. However, the full Missouri/Benton record already separates open camping from operating water/showers and places maintained status beside the booking route; Minnesota/Lincoln already attaches accommodation type, season and utilities to the chosen stay. The full vacation-rental-property-fit guide preserves a specific listing and dates through inquiry/booking, and experience-product-choice covers relevant inclusions. Named campground/site ranges on the map supply local facts, but no additional routing constraint, confirmed facility exception or distinct handoff beyond those complete records was established. A new McCook page would repeat that complete project guidance. Haiar/Feterl remain limited leads, not the basis for closing the alternative obligation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/mcpherson",
+      "name": "McPherson County",
+      "fips": "46089",
+      "directoryPath": "/areas/south-dakota/#mcpherson",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Plan a seasonal museum visit or choose a municipal campsite inquiry.",
+      "rationale": "Colorado/Sabine cover seasonal museum arrangements and Hughes covers campsite utilities/approval. The captures do not establish a new process beyond those complete resources; no unsupported QR failure is asserted.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/meade",
+      "name": "Meade County",
+      "fips": "46093",
+      "directoryPath": "/areas/south-dakota/#meade",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/meade-county/",
+      "readerDecision": "State whether an offered object is a donation, loan or auction contribution.",
+      "rationale": "Freestone sequences artifact approval; Kerr separates gift purposes. Meade adds loan versus ownership-transfer intention and auction disposition, checked using the same fictional object with different purposes.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sturgismuseum.com/curation-form"
+      ]
+    },
+    {
+      "areaId": "south-dakota/mellette",
+      "name": "Mellette County",
+      "fips": "46095",
+      "directoryPath": "/areas/south-dakota/#mellette",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/mellette-county/",
+      "readerDecision": "Request follow-up processing or taxidermy without assuming it is part of every trip.",
+      "rationale": "Dimmit handles changed group terms and Willacy nights/meals. This draft focuses on an explicitly requested post-hunt specialist arrangement, separate from trip transport and lodging.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.prairiehighlandslodge.com/about/",
+        "https://www.prairiehighlandslodge.com/contact/",
+        "https://www.prairiehighlandslodge.com/lodging/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/miner",
+      "name": "Miner County",
+      "fips": "46097",
+      "directoryPath": "/areas/south-dakota/#miner",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Ask about a current campsite instead of treating a historic venue proposal as an operating offer.",
+      "rationale": "Hughes and Sibley already supply deeper site-utility and approval guidance. The city campground description supports basic contact planning, without additional locally evidenced scope that merits a page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/minnehaha",
+      "name": "Minnehaha County",
+      "fips": "46099",
+      "directoryPath": "/areas/south-dakota/#minnehaha",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/minnehaha-county/",
+      "readerDecision": "Distinguish a closing public campus, future butterfly garden and later aquarium.",
+      "rationale": "Comanche covers renovation with outdoor access; Eastland separates present/planned services. The draft adds multiple replacement milestones, a gap between public closure and target opening, and a narrow program exception without treating them as one reopening.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.greatzoo.org/butterfly-experience-moving-to-zoo-bha-closing/",
+        "https://www.greatzoo.org/butterfly-house-closure-faq/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/moody",
+      "name": "Moody County",
+      "fips": "46101",
+      "directoryPath": "/areas/south-dakota/#moody",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/moody-county/",
+      "readerDecision": "Keep lesson registration, payment and class-time confirmation distinct.",
+      "rationale": "Johnson covers skill levels, class minimums and payment at registration. This brief adds a separated online/offline payment sequence, location-specific methods and a later schedule notice, with an explicit expired-season gate.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.cityofflandreau.com/index.asp?SEC=7FFC5DDB-2B8A-4745-8CE2-5274CFB72D44"
+      ]
+    },
+    {
+      "areaId": "south-dakota/oglala-lakota",
+      "name": "Oglala Lakota County",
+      "fips": "46102",
+      "directoryPath": "/areas/south-dakota/#oglala-lakota",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Prepare a respectful cultural visit and distinguish taking photographs from later publication.",
+      "rationale": "The photo rule is substantive but the proposed visitor-preparation/permission treatment would be thin beside Caswell’s complete photography-visit brief and Nicollet’s intended-use permission brief. No source supports a richer image-licensing workflow for this institution. The college alternative adds no independently developed local project scope.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/pennington",
+      "name": "Pennington County",
+      "fips": "46103",
+      "directoryPath": "/areas/south-dakota/#pennington",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/pennington-county/",
+      "readerDecision": "Keep seasonal hours and admission information on the same visit date.",
+      "rationale": "Colorado keeps each museum’s seasonal days and admission together; this brief adds the attraction’s actual adjoining date-period boundary, synchronized admission categories and group contact in one maintainable record. The full owner-input and boundary-test guidance adds local project value beyond a renamed schedule.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.reptilegardens.com/visit/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/perkins",
+      "name": "Perkins County",
+      "fips": "46105",
+      "directoryPath": "/areas/south-dakota/#perkins",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/perkins-county/",
+      "readerDecision": "Separate the group lodge stay from a larger event request.",
+      "rationale": "Nash separates event/getting-ready/lodging use; Colfax separates day, bed and meal counts. This lodge brief adds a separate event-application threshold to a modest sleeping capacity, plus minimum-stay and guest-supplied bedding checks. It does not claim that a bedroom count settles event permission.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://gfp.sd.gov/parks/detail/shadehill-recreation-area/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/potter",
+      "name": "Potter County",
+      "fips": "46107",
+      "directoryPath": "/areas/south-dakota/#potter",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Give short stays and seasonal accommodation inquiries different next steps.",
+      "rationale": "The completed draft repeats Carroll’s seasonal-inquiry versus short-stay booking guidance, including accommodation choice, owner terms and inquiry status. The additional accommodation labels do not add substantial project value.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/roberts",
+      "name": "Roberts County",
+      "fips": "46109",
+      "directoryPath": "/areas/south-dakota/#roberts",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/roberts-county/",
+      "readerDecision": "Distinguish a historic-house visit from a program brought to another community.",
+      "rationale": "Rush prepares a traveling physical display and host logistics; Colorado keeps different museum schedules attached. This brief connects a traveling performance request with the seasonal ownership of an on-site house visit. It supplies a winter off-site host test without inventing display or transport requirements.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sissetonmuseum.com/stavig-house"
+      ]
+    },
+    {
+      "areaId": "south-dakota/sanborn",
+      "name": "Sanborn County",
+      "fips": "46111",
+      "directoryPath": "/areas/south-dakota/#sanborn",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/sanborn-county/",
+      "readerDecision": "Describe where connectivity is needed before comparing internet plans.",
+      "rationale": "Montgomery defines cabling deliverables and IT responsibilities; Childress separates public internet from borrowing entitlements. This brief instead distinguishes incoming service, internal Wi-Fi and a separate building/outdoor coverage question, while retaining residential/business offer boundaries.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://santel.coop/residential/internet/",
+        "https://santel.coop/business/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/spink",
+      "name": "Spink County",
+      "fips": "46115",
+      "directoryPath": "/areas/south-dakota/#spink",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/spink-county/",
+      "readerDecision": "Separate a home-service question from an appointment at a foot-care clinic.",
+      "rationale": "Stanton and Dundy cover service-location and branch schedules. This brief adds two different delivery settings within one home-health department, with clinic appointment and in-home assessment kept distinct.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.redfieldcmh.org/departments/home-health"
+      ]
+    },
+    {
+      "areaId": "south-dakota/stanley",
+      "name": "Stanley County",
+      "fips": "46117",
+      "directoryPath": "/areas/south-dakota/#stanley",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/stanley-county/",
+      "readerDecision": "Keep the room rental, access form and setup time in one preparation sequence.",
+      "rationale": "Karnes separates key collection/return from room time; Clay distinguishes organization-specific forms. This brief adds a purchased rental followed by a separate access-information form, tested with setup/cleanup and the still-incomplete post-purchase step.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://magpiesgp.com/products/rent-magpies-gathering-place-3-hour-time-slot",
+        "https://magpiesgp.com/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/sully",
+      "name": "Sully County",
+      "fips": "46119",
+      "directoryPath": "/areas/south-dakota/#sully",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/sully-county/",
+      "readerDecision": "Choose the material and direction before showing receiving or loadout hours.",
+      "rationale": "Gove routes the requested work to the correct branch; Dundy retains branch and time-zone context. This brief instead routes material and delivery/collection direction to different windows and sales/scheduling contacts at one plant.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://ringneckenergysd.com/contact/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/todd",
+      "name": "Todd County",
+      "fips": "46121",
+      "directoryPath": "/areas/south-dakota/#todd",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Keep an annual food summit’s date and ended state consistent across program and event pages.",
+      "rationale": "The full farm-event guide already supplies dated modules, owner approval, ended states, future-unconfirmed states and review of repeated invitations. This case adds a second conflicting date but no substantial new website-project advice. A new county page would mostly repeat that guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/tripp",
+      "name": "Tripp County",
+      "fips": "46123",
+      "directoryPath": "/areas/south-dakota/#tripp",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Compare hunt days, lodging nights and included work before requesting dates.",
+      "rationale": "NO_ADDITION: complete Texas/Willacy already separates activity days from lodging nights, included meals and extras, package versus activity-only offers, and the selected package/dates/party handoff for a staff-confirmed itinerary. H&H changes the durations and guiding labels without a substantial new commissioning task. The already-read Triple H alternative adds no independently supported task beyond those full records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "south-dakota/turner",
+      "name": "Turner County",
+      "fips": "46125",
+      "directoryPath": "/areas/south-dakota/#turner",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/turner-county/",
+      "readerDecision": "Separate free fair entry from the selected grandstand event and its organizer.",
+      "rationale": "Hamilton handles organizer ownership and the event-state guide handles expiration. This local brief combines a free outer gate with separately priced grandstand categories and multiple organizers across an edition change.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://turnercountyfair.com/",
+        "https://turnercountyfair.com/grandstand-ticket-prices/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/union",
+      "name": "Union County",
+      "fips": "46127",
+      "directoryPath": "/areas/south-dakota/#union",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/union-county/",
+      "readerDecision": "Distinguish open trails from arranged building and mobility tours.",
+      "rationale": "Adds three access formats at one preserve, including a separately arranged mobility option. Existing arrival and trip-format examples do not supply this outdoor/interior/assisted-visit handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://gfp.sd.gov/parks/detail/adams-homestead-and-nature-preserve/"
+      ]
+    },
+    {
+      "areaId": "south-dakota/walworth",
+      "name": "Walworth County",
+      "fips": "46129",
+      "directoryPath": "/areas/south-dakota/#walworth",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/walworth-county/",
+      "readerDecision": "Give first-time drive-in visitors a usable arrival, audio and exit sequence.",
+      "rationale": "Wheeler covers before-parking utility tasks; Aransas covers the tour starting building. This brief adds distinct vehicle entry/exit and an audio-equipment fallback to a first-visit sequence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://pheasantdrivein.weebly.com/faq.html",
+        "https://pheasantdrivein.weebly.com/contact.html"
+      ]
+    },
+    {
+      "areaId": "south-dakota/yankton",
+      "name": "Yankton County",
+      "fips": "46135",
+      "directoryPath": "/areas/south-dakota/#yankton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/south-dakota/yankton-county/",
+      "readerDecision": "Keep party size and instructor arrangements attached to the chosen activity.",
+      "rationale": "Mille Lacs separates core and optional-lesson limits; Steuben counts projects versus people. This brief connects a private party’s changing count to additional staffing and separates it from a drop-in route.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.neyac.org/archery-parties",
+        "https://www.neyac.org/",
+        "https://www.neyac.org/contact-us"
+      ]
+    },
+    {
+      "areaId": "south-dakota/ziebach",
+      "name": "Ziebach County",
+      "fips": "46137",
+      "directoryPath": "/areas/south-dakota/#ziebach",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the correct public office or service contact before planning a visit.",
+      "rationale": "The strongest primary material would repeat existing service/office routing and schedule advice. The alternatives do not add a well-supported reader decision with substantial project guidance. No-addition follows evidence and comparator review, not population or a quota.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    }
+  ]
+}

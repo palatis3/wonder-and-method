@@ -1,0 +1,15 @@
+# North Dakota and South Dakota local content checkpoint
+
+All 53 North Dakota counties and 66 South Dakota counties received individual source, locality and full-content comparison assessments. Independent review accepted 83 service pages (42 North Dakota, 41 South Dakota), five residual FAQ pairs and 36 directory-only decisions. No new general guide was warranted. All research holds are closed; unavailable sources and excluded leads remain recorded.
+
+The integration preserves all 1,770 preceding service records and 263 preceding FAQ pairs. It adds 85 routes including two state directories, bringing the application to 1,997 routes, 1,853 service records and 268 FAQ pairs. The directory includes 2,695 county-equivalent entries across 37 states and Washington, DC. The combined six-state release adds 347 service pages and six directories; all 481 counties have individual content decisions.
+
+The signed-in Semrush review covers 969 distinct US phrases: 904 base phrases and 65 source-place, service, FAQ and linked-guide supplements. Twenty-six have numeric estimates, including seven explicit zeros; 943 require refresh and remain unavailable. Sixteen numeric records are partial and require refresh. Both state Questions panels reported no data. These are phrase estimates, not county-resident demand; overlapping estimates are not summed. No content disposition changed solely because of a keyword estimate.
+
+Independent geography reconstruction checked all 119 counties, 3,297 distinct entities and 3,316 county memberships. Incorporated places, CDPs, townships and unorganized territories retain their source types; inactive entities remain excluded from current municipality lists. Cross-county places retain every applicable county membership. Three counties have no qualifying active municipality, with clearly labeled community alternatives rather than invented municipal listings.
+
+The combined finder preserves native links and complete ordered search terms. Search data loads as a hashed static asset only on interaction. A retained earlier serializer evaluated against the same final 2,695-area inventory provides an equivalent-inventory payload comparison: total compressed transfer decreases from 224,454 to 223,380 bytes; initial HTML remains within the existing limits. This is a reconstructed comparison, not a past deployed measurement.
+
+The additive 0042 journey-page migration is prepared but not deployed. Inquiry contexts, sharing images and reviewed dates are generated for the new pages. Preservation fixtures bind preceding and added records. Independent technical review covers geography, serializer equivalence, native browsing, typed searches, cross-browser behavior and populated-database migration safety.
+
+This is the local research and integration checkpoint for the combined Minnesota/Oklahoma/Kansas/Nebraska/North Dakota/South Dakota release. Final editorial, browser, visual, performance, GitHub CI, production deployment and post-deployment gates are recorded separately; this document does not claim that those release gates have passed.

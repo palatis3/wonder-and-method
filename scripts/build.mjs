@@ -1,3 +1,4 @@
+import {countySearchAsset} from '../src/service-area-directory.mjs';
 import {assertOfferBindings} from './check-offer-bindings.mjs';
 import {normalizeOfferCatalog,publicOfferProjection} from '../src/offer-catalog.mjs';
 import {execFileSync} from 'node:child_process';
@@ -161,6 +162,8 @@ if(output!==resolve(root,'dist')) throw new Error('Invalid output');
 await mkdir(output,{recursive:true});
 for(const name of await readdir(output)){const target=resolve(output,name);if(!target.startsWith(output+'\\')&&!target.startsWith(output+'/'))throw Error('Invalid build child');await rm(target,{recursive:true,force:true});}
 await cp(resolve(root,'src/assets'),resolve(output,'assets'),{recursive:true});
+const searchAsset=countySearchAsset();
+await writeFile(resolve(output,'.'+searchAsset.path),searchAsset.bytes);
 await minifyCopiedBrowserAssets(output);
 await writeCountyBriefs(output);
 await writeDownloadAliases(output);

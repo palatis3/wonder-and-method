@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {gzipSync} from 'node:zlib';
-import {packCountySearch,packCountySearchCards,decodeCountySearchCards,packCountyBase91,unpackCountyBase91} from '../src/assets/county-directory.js';
+import {decodeCountySearchAsset,packCountyNames,packCountySearch,packCountySearchCards,decodeCountySearchCards,packCountyBase91,unpackCountyBase91} from '../src/assets/county-directory.js';
 const envelope=bytes=>({encoding:'gzip-base64',format:'columns-v1',data:gzipSync(bytes).toString('base64')});
 
 test('column search encoding preserves large dictionary indices, repeated names, merged types and card order',async()=>{
@@ -52,4 +52,17 @@ test('dense transport rejects malformed alphabet, compression, headers and out-o
   const broken=Buffer.concat([Buffer.from(JSON.stringify({...header,...patch})+'\n'),bytes.subarray(end+1)]);
   await assert.rejects(()=>decodeCountySearchCards(denseEnvelope(broken),['first','second']),/Invalid county search/);
  }
+});
+
+const assetEnvelope=(names,cards)=>{
+ const text=Buffer.from(packCountyNames(names)),header=Buffer.alloc(4);header.writeUInt32LE(text.length);
+ return gzipSync(Buffer.concat([header,text,packCountySearchCards(cards,{relative:true})]));
+};
+test('static search asset preserves ordered typed terms and rejects damaged framing',async()=>{
+ const names=['alpha','beta'],cards=['ca:1,-1|y:1','s:0'];
+ const decoded=await decodeCountySearchAsset(assetEnvelope(names,cards));
+ assert.deepEqual(decoded,{names,entries:[['ca:beta','ca:alpha','y:beta'],['s:alpha']]});
+ for(const data of [new Uint8Array([1,2,3]),gzipSync(Buffer.from([0,0,0])),gzipSync(Buffer.from([255,255,255,255,0]))])await assert.rejects(()=>decodeCountySearchAsset(data));
+ await assert.rejects(()=>decodeCountySearchAsset(assetEnvelope(['alpha'],['y:1'])),/Missing county search name/);
+ const valid=assetEnvelope(names,cards);await assert.rejects(()=>decodeCountySearchAsset(valid.subarray(0,valid.length-5)));
 });

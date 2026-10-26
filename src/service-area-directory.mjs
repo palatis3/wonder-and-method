@@ -1,4 +1,5 @@
 import {gzipSync} from 'node:zlib';
+import {createHash} from 'node:crypto';
 import {escapeHtml as e} from './shared.mjs';
 import {normalizeCountyQuery,parseCountyQuery,packCountySearch,packCountyNames,packCountySearchCards,packCountyBase91} from './assets/county-directory.js';
 import {countyProfiles} from './county-profiles.mjs';
@@ -85,7 +86,7 @@ function areaDetails(county,state,references){
   // A shared status describes this entire typed list. Mixed statuses and
   // place-specific notes stay next to the individual names.
   const sharedStatus=places.length>1&&places[0].governmentStatus&&places.every(place=>place.governmentStatus===places[0].governmentStatus)?places[0].governmentStatus:'';
-  const heading=type==='Unorganized territory'&&['iowa','minnesota'].includes(state.id)?'Unorganized territories (statistical)':placeTypeLabels[type]||type;
+  const heading=type==='Unorganized territory'&&['iowa','minnesota','north-dakota','south-dakota'].includes(state.id)?'Unorganized territories (statistical)':placeTypeLabels[type]||type;
   return `<div><h3>${e(heading)}</h3>${sharedStatus?`<p class="county-place-note">All places in this list: ${e(sharedStatus)}</p>`:''}<ul class="county-place-list">${places.map(place=>{const notes=[...new Set([place.note,sharedStatus?'':place.governmentStatus,place.town?'In the Town of '+place.town+'.':null].filter(Boolean))];return `<li>${e(place.name)}${notes.length?` <span class="county-place-note">${e(notes.join(' '))}</span>`:''}</li>`;}).join('')}</ul></div>`;
  }).join('');
  const aliases=(g.aliases||[]).filter(alias=>alias.note).map(alias=>`<li>${e(alias.name)}${alias.type?' ('+e(alias.type)+')':''}: ${e(alias.note)}</li>`).join('');
@@ -132,8 +133,7 @@ function cards(state,counties,dictionary,references,searchCards){
  return `<ul class="county-hub-grid${references?' county-area-grid':''}" data-county-state="${state.id}">${counties.map(county=>{
   const region=state.regions.find(item=>item.slugs.includes(county.slug));
   const anchor=county.anchor&&county.anchor!==county.name?` <span>(${e(county.anchor)})</span>`:'';
-  const packed=packCountySearch(countySearchText(county,state,region),dictionary);
-  if(searchCards)searchCards.push(packed);
+  const packed=searchCards?'':packCountySearch(countySearchText(county,state,region),dictionary);
   const search=searchCards?'':packed;
   // Combined cards use DOM order. HTML permits the li end tag to be omitted
   // before the next li or the end of its ul; the parsed list stays identical.
@@ -152,24 +152,39 @@ function compressSearchPayload(value,{dense=false}={}){
  compressed[9]=255;
  return dense?{encoding:'gzip-base91',data:packCountyBase91(compressed)}:{encoding:'gzip-base64',data:compressed.toString('base64')};
 }
+let combinedSearchAsset;
+// One content-addressed static file carries the same dictionary and ordered
+// columns as the former inline payload. It is fetched only when search is used.
+export function countySearchAsset(){
+ if(combinedSearchAsset)return combinedSearchAsset;
+ const states=serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en'));
+ const terms=states.flatMap(state=>state.counties.toSorted((a,b)=>a.name.localeCompare(b.name)).map(county=>countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug)))));
+ const names=[...new Set(terms.flatMap(card=>card.split('|').map(term=>term.slice(term.indexOf(':')+1))))].sort();
+ const dictionary={names,indices:new Map(names.map((name,index)=>[name,index]))};
+ const nameBytes=Buffer.from(packCountyNames(names)),header=Buffer.alloc(4);header.writeUInt32LE(nameBytes.length);
+ const columns=packCountySearchCards(terms.map(card=>packCountySearch(card,dictionary)),{relative:true});
+ const bytes=gzipSync(Buffer.concat([header,nameBytes,columns]),{level:9});bytes[9]=255;
+ const path='/assets/county-search-'+createHash('sha256').update(bytes).digest('hex').slice(0,20)+'.bin';
+ return combinedSearchAsset={path,bytes};
+}
 export function countyDirectory(state,{compact=false}={}){
  const states=state?[state]:serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en'));
  const references=state?hubReferences(state):null;
  // Repeated place names across counties share a page-local dictionary. The
  // visible links remain ordinary HTML, including when JavaScript is disabled.
- const placeNames=[...new Set(states.flatMap(item=>item.counties.flatMap(county=>countySearchText(county,item,item.regions.find(region=>region.slugs.includes(county.slug))).split('|').map(term=>term.slice(term.indexOf(':')+1)))))].sort();
+ const placeNames=state?[...new Set(states.flatMap(item=>item.counties.flatMap(county=>countySearchText(county,item,item.regions.find(region=>region.slugs.includes(county.slug))).split('|').map(term=>term.slice(term.indexOf(':')+1)))))].sort():[];
  const dictionary={names:placeNames,indices:new Map(placeNames.map((name,index)=>[name,index]))};
  const packedNames=packCountyNames(dictionary.names);
  const namePayload=packedNames.length>20_000?compressSearchPayload(packedNames,{dense:!state}):packedNames;
  // The combined finder shares one compressed term stream in native card order;
  // all visible links remain ordinary, browsable HTML.
- const searchCards=state?null:[];
+ const searchCards=!state;
  const sections=state?state.regions.map(region=>({id:region.id,name:region.name,count:region.slugs.length,plural:state.areaPlural,html:cards(state,regionCounties(state,region),dictionary,references)})):states.map(item=>({id:item.id,name:item.name,count:item.counties.length,plural:item.areaPlural,html:cards(item,[...item.counties].sort((a,b)=>a.name.localeCompare(b.name)),dictionary,undefined,searchCards)}));
  const foldBrowse=compact||!!state;
  const alphabet=state&&state.counties.length>30?[...new Map([...state.counties].sort((a,b)=>a.name.localeCompare(b.name,'en')).map(county=>[county.name.charAt(0).toUpperCase(),county]).reverse()).entries()].reverse():[];
  const alphabetLinks=alphabet.length?`<nav class="county-alphabet" aria-label="Browse ${e(state.name)} areas by letter">${alphabet.map(([letter,county])=>`<a href="#${e(county.slug)}">${e(letter)}</a>`).join('')}</nav>`:'';
- const cardPayload=searchCards?`<script type="application/json" data-county-search-cards>${JSON.stringify({...compressSearchPayload(packCountySearchCards(searchCards,{relative:true}),{dense:true}),format:'columns-delta-v1'})}</script>`:'';
- return directoryControls(state)+cardPayload+`<script type="application/json" data-county-place-names>${JSON.stringify(namePayload)}</script><section class="county-search-results" data-county-results hidden aria-label="Service area search results"><h2>Best matches</h2><p data-county-multiple hidden>Some places extend into more than one county; other places share a name. Check each matching area and use the actual address when a boundary matters.</p><ul class="county-result-list" data-county-best></ul><details hidden><summary>Other matching areas</summary><ul class="county-result-list" data-county-more></ul></details></section>${compact?serviceStateCards():''}${alphabetLinks}${foldBrowse?'<details class="county-browse-all" data-county-browse-all><summary>Browse all counties and regions</summary>':''}<div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} ${section.plural})</summary>${section.html}</details>`).join('')}</div>${foldBrowse?'</details>':''}<div class="county-search-empty" data-county-empty hidden><p><strong>No service areas match that search.</strong></p><p>Try a county, region or community name${state?'':', or choose a different state or district'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name+' '+state.areaPlural:'all service areas'}.</p></div>`+(references?.html||'');
+ const cardPayload=searchCards?`<script type="application/json" data-county-search-asset>${JSON.stringify({path:countySearchAsset().path,format:'columns-delta-v1'})}</script>`:'';
+ return directoryControls(state)+cardPayload+(state?`<script type="application/json" data-county-place-names>${JSON.stringify(namePayload)}</script>`:'')+`<section class="county-search-results" data-county-results hidden aria-label="Service area search results"><h2>Best matches</h2><p data-county-multiple hidden>Some places extend into more than one county; other places share a name. Check each matching area and use the actual address when a boundary matters.</p><ul class="county-result-list" data-county-best></ul><details hidden><summary>Other matching areas</summary><ul class="county-result-list" data-county-more></ul></details></section>${compact?serviceStateCards():''}${alphabetLinks}${foldBrowse?'<details class="county-browse-all" data-county-browse-all><summary>Browse all counties and regions</summary>':''}<div id="counties" data-county-directory>${sections.map(section=>`<details class="county-region county-section" id="${section.id}"><summary>${e(section.name)} (${section.count} ${section.plural})</summary>${section.html}</details>`).join('')}</div>${foldBrowse?'</details>':''}<div class="county-search-empty" data-county-empty hidden><p><strong>No service areas match that search.</strong></p><p>Try a county, region or community name${state?'':', or choose a different state or district'}. ZIP codes aren't supported. Clear the search to browse ${state?'the '+state.name+' '+state.areaPlural:'all service areas'}.</p></div>`+(references?.html||'');
 }
 export function serviceStateCards(){
  return `<nav class="state-area-links" aria-label="State and district directories" data-state-directory-links><h2>Browse by state</h2><ul>${serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).map(state=>`<li><a href="${e(state.path)}"><span>${e(state.name)}</span><small>${state.counties.length} ${e(state.areaPlural)}</small></a></li>`).join('')}</ul></nav>`;

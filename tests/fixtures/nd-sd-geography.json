@@ -1,0 +1,511 @@
+{
+  "provenance": "Accepted candidate independently reconstructed from raw ACS26/GRFC/2025 estimates; 21,475 checks with zero failures. Hashes freeze reviewed content, not a new source fetch.",
+  "candidateSha256": "d2c401cbae3f10d802c6bdab9c8caf3a1a656143cfb9c7b6d95b880e1704f742",
+  "reviewSha256": "06a1fa3895d3b411951ff588d8f83bde6eaa12f8c3bf75472a38f604cb4ba661",
+  "countyDigests": {
+    "north-dakota/adams": "8ed927f7a5acb00479bec1355ac1b48f4d35a56d5119b4f76f05bf2b7ee024f9",
+    "north-dakota/barnes": "922556cfd8d57ed65c1dfe41ed4be1988c37de401e5b8ec87dc39020acdb2d0c",
+    "north-dakota/benson": "92849aa2dbebad6969871a0c6ab4c94393b3b5efb893ef3de621b60f8f7f18af",
+    "north-dakota/billings": "3bc3126864f1df1c91c1ea0bbb1dd120e763f2c963b21b2be7e1215696132838",
+    "north-dakota/bottineau": "3bd22e5bf5fc7ea1befd8e11fa30c643ad3979cfb8f5e91e0de78f115cc005e0",
+    "north-dakota/bowman": "68f444c769b8ad577e59145664bb0e8a0bc339f4f36557961e639de4fed495a2",
+    "north-dakota/burke": "a6042c2f18ec103399710000b056046aa6fda4c73156c4315052f4a4171390df",
+    "north-dakota/burleigh": "e7be6fbd835c8a9225383932a56da3949ffbe47d274e1d154f7d992b584d3c72",
+    "north-dakota/cass": "228b11e4570ef42d5650619c7616ccc2626b480490668a3c475fb913a68f1f48",
+    "north-dakota/cavalier": "e02e0bde19be4e24c3da64bb9bdc39897ac19106d49ab9e5c78737ac34cab2a2",
+    "north-dakota/dickey": "d38ae163b13426a4d336135829dc57cae902fbb4af41f5520060ed0f976751f7",
+    "north-dakota/divide": "70a2e4b96970849dcad09ff1e259ca11deb2ed28eda5614c534912e8b297f41a",
+    "north-dakota/dunn": "3e5a0750dd239b2eee0ab61d28bc9884a1325cb22885bccff45f18a8798cb164",
+    "north-dakota/eddy": "4e09bede332ef18f27ed0a5757dbab5c424ff8b14ec10d922bd97d5437b66a33",
+    "north-dakota/emmons": "41b483c5b60861e02a51fc0aae0f922233a61761eada3a62cb513f080183d855",
+    "north-dakota/foster": "e9bc8e70132a277990b32ebb2a32e96c0eb0e41b49118d5b69da16a502a2e0ea",
+    "north-dakota/golden-valley": "dd0a4508232d4d6508d87397bb5110ddf34fc4b72bba0909878b4313ae7801c4",
+    "north-dakota/grand-forks": "a4096c69dea0affc096d04747ecee133ed1fd6a52ee0e213b3f7c4dc6101619a",
+    "north-dakota/grant": "f66d72b0c4141047db8f4f67614dcfaf2e670336191a45c04ed08c345fac5a66",
+    "north-dakota/griggs": "08b35f1a58896727d77e0573c59cfb068e98334e1fbb00f88b3b8b99f4dd1841",
+    "north-dakota/hettinger": "e519a039ede6a625e867695f291d1ac31c67bf2f42f82de742ff5d5d1f1d3f4c",
+    "north-dakota/kidder": "25cf4cf89768bfaca29cfd364d095c42c3d33e53c390470f4bf421741260dd8d",
+    "north-dakota/lamoure": "c5962712ac55f8f10837eed6576ce28c33c90d727bbc1e06064ae374622993cd",
+    "north-dakota/logan": "c58ac123d9500d23e47befe8ff582219200740daa2444a4424ec101a03dcb899",
+    "north-dakota/mchenry": "8d03e1461d64221a089a10ad673f7c089079df1bed1564617624d15217e8e21f",
+    "north-dakota/mcintosh": "a40468e5c47e721aab6b317c5bb3723e95686f60c431dc4139edb4ddb9a407a1",
+    "north-dakota/mckenzie": "2ed650367e9fa00f6328a75d395cc2a966aa37bccbb3baf4551cf5bc0d674d61",
+    "north-dakota/mclean": "b6a20983297f957532da598741b05519e6588b4866b2c14364c9aa391f8ad378",
+    "north-dakota/mercer": "5536deea142ec740b88eab95da2ee11d80a474219cd8186355d6b1330276df2f",
+    "north-dakota/morton": "69182c7b632b6d93e39a139314b1f29dd6a08fe5789b8343150959df96515653",
+    "north-dakota/mountrail": "46dfdcc2a153e231806d45f1affaa0215158017fad85988ff67d9fddb9d9f797",
+    "north-dakota/nelson": "a5a3df7ace29db8dfb110f43c302eb44a5f13fa75f3b6686c5c558c6a61737a8",
+    "north-dakota/oliver": "701aac2d0fe404fb7267a732fef22b6ec82155c44b7e4c45511dbaed4165433c",
+    "north-dakota/pembina": "33a676c5c7a1bc1b542309bb232367fe04c276f6cb8a815d839f4085801083a7",
+    "north-dakota/pierce": "84442c8a3b990b57fc33f61c7fbf3a21acaadcc49c478a0d92b8617c553036b0",
+    "north-dakota/ramsey": "76c87d16be59ee62ffdf5dd5b69f021c114f99bede9af2fae4bcb55ea52edffe",
+    "north-dakota/ransom": "a3621554f63e63e9cb989f0f00343f7c3e342f0e94c154a42b157945e214f5af",
+    "north-dakota/renville": "befd180dbea09546b8b4e497603e2d7f04b2caf89938f5b753b6bae340720773",
+    "north-dakota/richland": "247fea4617a44baa26b52d6ee647d9d86f398af7d0b3e69386e25c9129bdc9a0",
+    "north-dakota/rolette": "1e5f67ea9784c2396650cc1bcd341d0b7211892db9daeb83ee90ee2fd5d4faab",
+    "north-dakota/sargent": "2f0e7bdc562022698a1f0151465272fe7816602970c8d17f5f1073856fddab3b",
+    "north-dakota/sheridan": "a3dd50577c1afe79b933660aae37d380a6489f156c9130a82aba0d3ee9cc4603",
+    "north-dakota/sioux": "0dac8b273f67141056710777fe9982e692bc5f265c626daa7d0b2de87a87acad",
+    "north-dakota/slope": "f5cd621a32f93e712316267c26d404d089863f1e8bda94664f44ac03bcd78341",
+    "north-dakota/stark": "ddf21827e85335e22f76432934debbaf73515e2baacce0399432ff92fd8b9c10",
+    "north-dakota/steele": "aa72921214aa165ba3ce90c4c5c27ab864db89877bdd7e1156e1af1367030697",
+    "north-dakota/stutsman": "20274d77e7c4db01c590379a0cad5d228faceb40a455d3281b2ad6f00bf33d98",
+    "north-dakota/towner": "e0d09248ade5fb7ae4efaa889af8a2da1a61a685e2c34033edec7fa55f585b3e",
+    "north-dakota/traill": "cb25292a8e1316d6449ca48a56533fc733d7fcdf03b202c4d994488f2318deb3",
+    "north-dakota/walsh": "f01fb71cfc00ee1b7b882ec37d23c3cfcbed3da8d8422100a778031076ab8400",
+    "north-dakota/ward": "f6ceb5e9e840a16d2ef5aaa34c7d4c72444d94c23954d26e353e993b4e910d74",
+    "north-dakota/wells": "bd953eade0137aa22b515b12713b4f3b0a0aad29ea3ecc261a122980475c8972",
+    "north-dakota/williams": "7d4256eb38dcf50b22cefb7a87f81effb417ddb27c0deb7c81194d1651045ee5",
+    "south-dakota/aurora": "32cf80dedf6323d9b79da0c66af831d85238331430dd974cf846046391d64a90",
+    "south-dakota/beadle": "edf9084ac76f6b7dae0dbd051b0deb66ad04b50cdf1fd181ef73c73ece09832f",
+    "south-dakota/bennett": "925fd4a6a85203e86da93f0a5d60de0df7c196db9487388d0f8281d5f0ffad61",
+    "south-dakota/bon-homme": "a735eb1f5536d1d9a271c226a3415a75d17d3deeb49c43e7ea3dbee8a41d85fc",
+    "south-dakota/brookings": "6848570a6bf5a3b1a32c14b59032192d4e8eb91d5f2a52482331d8f82fed4f0b",
+    "south-dakota/brown": "9306942b477e927563d4fac132a47513e96fb76ebe00ebe977b37d22477b13d4",
+    "south-dakota/brule": "da49435f00f45d7bd7685ae102840ebff9f5436e42693705be001e87a77a732e",
+    "south-dakota/buffalo": "c8e987f01d5e230e02fb51354006c43051e6ba128bd3d28a2a5a3e090cfe2692",
+    "south-dakota/butte": "15aca26b56197fdcafc99ec9703f245eb40b9b58621d00fcf3531609d5b2a7e5",
+    "south-dakota/campbell": "c193e8f6d319e4eab4bd4fee926c06bfeda73d19cbbd27b18e0576b2751a81f1",
+    "south-dakota/charles-mix": "b810cd421d2335c2f0c9543afe09e41347908aa8c6a8e9dbef91162638130878",
+    "south-dakota/clark": "e962fc7011cef36ad9771db6eaff98553fbdfaaa66c8e6f32abad5bff6e47b8a",
+    "south-dakota/clay": "3f99d7340dbb8f880f08eb90f440723480795725a43fe2787abbc6868669fb0a",
+    "south-dakota/codington": "b6332147689490d27a7e4087d589b0ad3bb860924914e75a6bf247433ea3f187",
+    "south-dakota/corson": "285dc288e7f73c3a8f8d0166824f3642df8840a213fb7c0e44795b1baa063455",
+    "south-dakota/custer": "8810be1636f10f73162265cb15faf751e9bb3a74f062c6c56591bfc17b48c2c6",
+    "south-dakota/davison": "dde053a9178c20a2f2cee5f94a909845b3b5da5701df29493c0ed79a70c64096",
+    "south-dakota/day": "5f64ae31b7b72122a4f86215aab1d117726996844548a5f75d41ba776da8bae3",
+    "south-dakota/deuel": "96ef047ebb1902dd2cc2b01dd71d9ad4c8de1b039480821f5fe27edb3b2b4cf3",
+    "south-dakota/dewey": "73ecde7bf903d1f6a65d97be2d98cc71634dbece1845233bef1625fca60ad295",
+    "south-dakota/douglas": "4ea2a8de7627e56c91d5c2396de8176c643a52e38996c32c5ad74b7f4417baf1",
+    "south-dakota/edmunds": "5131a5a17545beb2566ae93dc7d646709f431ee4eaacd78b4a7474ce499f0ecf",
+    "south-dakota/fall-river": "b8ae6ec4dbcb907976a1aed37f57d27bf4bec61cc22a717b61e76f06760708a4",
+    "south-dakota/faulk": "78c4f9b5ebeb253ab93e10cb63672f11da7543d634c075cca450d6c7b3866242",
+    "south-dakota/grant": "9c22f9f17b7060f636e1fdb93934f05fc6b33454a99da799de8b2a3d68d3a168",
+    "south-dakota/gregory": "efdf30b98f1cf88efd8942c4645021775b5d9d1dac2969ebbbd6e9bbc9138561",
+    "south-dakota/haakon": "9fdc8d1788da49d966c6adf848dd38b068644a521b189ac052c4d93ea5ff41a8",
+    "south-dakota/hamlin": "e0f4a51cc55d1c409faca4a6799a3982e7f2d63f539ee633ad30b5cb9b096b04",
+    "south-dakota/hand": "abbcd1764bc2d152c04cc0b52a1790d00bc63f51b1b132f854bab80613d8af5b",
+    "south-dakota/hanson": "31e2713f4143913801863c0755b490ad76339362e6b76f84ece9e236d7a49691",
+    "south-dakota/harding": "5b4b9f9066cddfdb06ab1c833a6c6118273208df3f1ba5c00b7d2c238ff6a439",
+    "south-dakota/hughes": "f5e12ccdd363777ba8d393a31bfb7fbcbaae741badc816229607f83a07be13eb",
+    "south-dakota/hutchinson": "ea67f71c8b8f03de947d9264f88b1d1cadaa8403b2407b818c5d8a7237032b71",
+    "south-dakota/hyde": "dd2738dd68d45708866fbd2e254a4dc4c12f35e8cb1a040c19071d5bfddc30d8",
+    "south-dakota/jackson": "926944b9e26bc4d0340615335262dc8528671f108090922ecf04494cbfec53a0",
+    "south-dakota/jerauld": "1fd2a8a9db87083528f8b9df0c049ed513c5f843b4416d90e6a228994f26c4f4",
+    "south-dakota/jones": "91aa28fb2b92b9ceb7bf2259eca2cdb77164832bd0ee95261b73ec6b9cde409d",
+    "south-dakota/kingsbury": "4231d2dc25277e7dc91ba751f28f54ec6f6d39d32066a79a12f6e9e12d971471",
+    "south-dakota/lake": "947d96a11403d09fd57ae417d12b6e0600468571858aa3631ba9b8da51b4702a",
+    "south-dakota/lawrence": "7eca439e06f44a5d8f41583cc94fa861fee4582a7873cce7d33b25f0ddaed284",
+    "south-dakota/lincoln": "619e288304ed8839fb2fe27e8f385e2d7c5d5fa077fb10787d04fbc9a9156d3f",
+    "south-dakota/lyman": "75de6170d3c1252bc0a20a98903cde21b26f9217d0400f6b680577a149e62855",
+    "south-dakota/mccook": "8af895d978e34f1938f999be488ea18d9bf4cd5f68bbade8acc7ee6bd867a1b2",
+    "south-dakota/mcpherson": "22c1d52d795437aea6e7e33062afca9fd29a2f1fd4d9f1ac5a726725dc0aac28",
+    "south-dakota/marshall": "f608379848e102f9ccba891bfda2b48541cc1af8aa9df814d81c4785822b94c1",
+    "south-dakota/meade": "8618150ccb6d1a1585dab2aa9cb2d9a57dde209b6b72d23359a68b3c834ac776",
+    "south-dakota/mellette": "dd272339cdaf852bed06dc7fa1fa557f2d6001782f3f98705d08bd4baae39e8a",
+    "south-dakota/miner": "ee254d388ad45bd3a93e543ab77abb06aade6be0450e7dde5b54d4628dc8907b",
+    "south-dakota/minnehaha": "af98942eb80b01e4f5b84e280b7c671049891a92d9b527baf11e1a78815f2e55",
+    "south-dakota/moody": "27181b8239e70fc0895bb6216c94dc768aa5e0d729191a10773990e6305e3065",
+    "south-dakota/oglala-lakota": "2d501b8d2b48edd41802b6e605a76c6688ffbd57e468488554ac33ca65ad6759",
+    "south-dakota/pennington": "392861f35781402072cc23981eded88383d96bb3d92a459de8cda3f71c00ff44",
+    "south-dakota/perkins": "f6116db63b0b11dfef95023eb471a0c34de2ff402d83567cf30947dc906cef1f",
+    "south-dakota/potter": "65f252e437fef5e815d8a89ac121ad7f57cc8de4402ac9c242dd5d63c18f135b",
+    "south-dakota/roberts": "f11453dceedcb653d62606f012040ea473574f1add6b862a21a9249eb59db30c",
+    "south-dakota/sanborn": "16df956da2fee4422acdaa06dde8468efb55b8388bc633f1fecfe54421f1889f",
+    "south-dakota/spink": "ff911999e7dcc70048fe048cce29aef5a56734fc6aec2d16ac14ea3efd9cf1ac",
+    "south-dakota/stanley": "6eaa88cf1575c8f5db1ebc537c245d2a3f2bbd89db96f41c3560476b25058a90",
+    "south-dakota/sully": "2969ced99da28aac7c254a5dcaaa1350807b2533b07364bfe24d71a18f7def10",
+    "south-dakota/todd": "7cf13daebc69eb226f2d9b20a10e18963b2c4ac4179b059a26225f0ec5a89303",
+    "south-dakota/tripp": "083bbe29b7e06013c64d717c98c1d4364eab6646b8bd6c86500c450e1faa874c",
+    "south-dakota/turner": "a5b5cf47d7ff1ca4976df4de818dcf40d0ffeb45ebb6bea3083ddec0f6c051a7",
+    "south-dakota/union": "8e2f4f419d53173dd5c893426aabc9ad9dfd7bd2e4c1e483904c9f033c4dfcc9",
+    "south-dakota/walworth": "27d033b0ff31aac5b8c8d0613a3babf3c294d94c8ae5cd038bd861fb84aada01",
+    "south-dakota/yankton": "29417861e297d2e478b36db6bf1045665b8669112897f97c49c2181ad9b5ede7",
+    "south-dakota/ziebach": "33df96d6bad95f3eae2b3ef54c486fb941093edb14ebf7776b609c9940aebada"
+  },
+  "populationMissing": [],
+  "crossCountyPlaces": [
+    {
+      "stateId": "north-dakota",
+      "name": "Enderlin",
+      "type": "City",
+      "geoid": "3824260",
+      "censusName": "Enderlin city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036024",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38017",
+        "38073"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 860,
+      "countyPartPopulation2025": {
+        "38017": 6,
+        "38073": 854
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Grandin",
+      "type": "City",
+      "geoid": "3832300",
+      "censusName": "Grandin city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036065",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38017",
+        "38097"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 191,
+      "countyPartPopulation2025": {
+        "38017": 191,
+        "38097": 0
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Lehr",
+      "type": "City",
+      "geoid": "3845740",
+      "censusName": "Lehr city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036125",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38047",
+        "38051"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 80,
+      "countyPartPopulation2025": {
+        "38047": 11,
+        "38051": 69
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Reynolds",
+      "type": "City",
+      "geoid": "3866260",
+      "censusName": "Reynolds city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036236",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38035",
+        "38097"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 273,
+      "countyPartPopulation2025": {
+        "38035": 97,
+        "38097": 176
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Sarles",
+      "type": "City",
+      "geoid": "3870780",
+      "censusName": "Sarles city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036254",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38019",
+        "38095"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 21,
+      "countyPartPopulation2025": {
+        "38019": 19,
+        "38095": 2
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Tower City",
+      "type": "City",
+      "geoid": "3879340",
+      "censusName": "Tower City city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036298",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38003",
+        "38017"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 273,
+      "countyPartPopulation2025": {
+        "38003": 0,
+        "38017": 273
+      }
+    },
+    {
+      "stateId": "north-dakota",
+      "name": "Wilton",
+      "type": "City",
+      "geoid": "3886580",
+      "censusName": "Wilton city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01036337",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "38015",
+        "38055"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 702,
+      "countyPartPopulation2025": {
+        "38015": 184,
+        "38055": 518
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Arlington",
+      "type": "City",
+      "geoid": "4602180",
+      "censusName": "Arlington city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267267",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46011",
+        "46077"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 926,
+      "countyPartPopulation2025": {
+        "46011": 9,
+        "46077": 917
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Beresford",
+      "type": "City",
+      "geoid": "4604980",
+      "censusName": "Beresford city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267283",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46083",
+        "46127"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 2105,
+      "countyPartPopulation2025": {
+        "46083": 363,
+        "46127": 1742
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Box Elder",
+      "type": "City",
+      "geoid": "4606620",
+      "censusName": "Box Elder city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267290",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46093",
+        "46103"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 13936,
+      "countyPartPopulation2025": {
+        "46093": 5041,
+        "46103": 8895
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Eagle Butte",
+      "type": "City",
+      "geoid": "4617620",
+      "censusName": "Eagle Butte city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267361",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46041",
+        "46137"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1269,
+      "countyPartPopulation2025": {
+        "46041": 661,
+        "46137": 608
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Hermosa",
+      "type": "Town",
+      "geoid": "4628300",
+      "censusName": "Hermosa town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267418",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46033",
+        "46103"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 370,
+      "countyPartPopulation2025": {
+        "46033": 370,
+        "46103": 0
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Irene",
+      "type": "City",
+      "geoid": "4631940",
+      "censusName": "Irene city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267437",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46027",
+        "46125",
+        "46135"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 439,
+      "countyPartPopulation2025": {
+        "46027": 195,
+        "46125": 239,
+        "46135": 5
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Iroquois",
+      "type": "City",
+      "geoid": "4632020",
+      "censusName": "Iroquois city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267438",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46005",
+        "46077"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 294,
+      "countyPartPopulation2025": {
+        "46005": 64,
+        "46077": 230
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Sioux Falls",
+      "type": "City",
+      "geoid": "4659020",
+      "censusName": "Sioux Falls city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267566",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46083",
+        "46099"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 213748,
+      "countyPartPopulation2025": {
+        "46083": 41645,
+        "46099": 172103
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Wessington",
+      "type": "City",
+      "geoid": "4670140",
+      "censusName": "Wessington city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "01267631",
+      "censusClassCode": "C5",
+      "countyFips": [
+        "46005",
+        "46059"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 201,
+      "countyPartPopulation2025": {
+        "46005": 193,
+        "46059": 8
+      }
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Lake Poinsett",
+      "type": "Census-designated place",
+      "geoid": "4635480",
+      "censusName": "Lake Poinsett CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02584558",
+      "censusClassCode": "U2",
+      "countyFips": [
+        "46011",
+        "46057"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "46011": null,
+        "46057": null
+      },
+      "censusClassDescription": "Census-designated place without an official federally recognized name; retained as a current Census statistical place."
+    },
+    {
+      "stateId": "south-dakota",
+      "name": "Mansfield",
+      "type": "Census-designated place",
+      "geoid": "4640580",
+      "censusName": "Mansfield CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02628848",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "46013",
+        "46115"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "46013": null,
+        "46115": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    }
+  ]
+}

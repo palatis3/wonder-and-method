@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-10-26T04:46:57.704182+00:00",
+  "states": [
+    {
+      "stateId": "north-dakota",
+      "countiesOrParishes": 53,
+      "countyFunctionalStatuses": {
+        "A": 53
+      },
+      "excludedFictitiousPlaceBalances": 0,
+      "uniqueEntities": 1805,
+      "incorporatedPlaces": 355,
+      "cdps": 51,
+      "types": {
+        "City": 355,
+        "Census-designated place": 51,
+        "Township": 1309,
+        "Unorganized territory": 90
+      },
+      "functionalStatuses": {
+        "A": 1660,
+        "S": 141,
+        "I": 4
+      },
+      "memberships": 1812,
+      "crossCountyPlaces": 7,
+      "grfcRows": 85250,
+      "directIncorporatedPartPopulationJoins": 362,
+      "missingCountyPartPopulationJoins": 0,
+      "wholePlaceTotalsReconciled": 355,
+      "zeroPopulationParts": 2,
+      "excludedFictitiousCitySubdivisions": 362,
+      "excludedFictitiousTownSubdivisions": 0,
+      "excludedUndefinedSubdivisions": 0
+    },
+    {
+      "stateId": "south-dakota",
+      "countiesOrParishes": 66,
+      "countyFunctionalStatuses": {
+        "A": 66
+      },
+      "excludedFictitiousPlaceBalances": 0,
+      "uniqueEntities": 1492,
+      "incorporatedPlaces": 310,
+      "cdps": 175,
+      "types": {
+        "City": 157,
+        "Town": 153,
+        "Census-designated place": 175,
+        "Township": 899,
+        "Unorganized territory": 108
+      },
+      "functionalStatuses": {
+        "A": 1208,
+        "S": 283,
+        "I": 1
+      },
+      "memberships": 1504,
+      "crossCountyPlaces": 11,
+      "grfcRows": 72922,
+      "directIncorporatedPartPopulationJoins": 320,
+      "missingCountyPartPopulationJoins": 0,
+      "wholePlaceTotalsReconciled": 310,
+      "zeroPopulationParts": 1,
+      "excludedFictitiousCitySubdivisions": 166,
+      "excludedFictitiousTownSubdivisions": 154,
+      "excludedUndefinedSubdivisions": 0
+    }
+  ],
+  "sourceManifest": "source-manifest.json",
+  "populationRule": "Use direct county/parish-part estimates only. Zero remains a geographic membership. CDP fallback is alphabetical, with null population, not inferred demand."
+}

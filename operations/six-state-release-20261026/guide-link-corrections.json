@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26T05:51:20.424Z",
+  "reviewedBy": "Primary full affected-record/guide review plus independent Astra complete cohort review",
+  "status": "APPLIED_INDEPENDENTLY_REVIEWED",
+  "scope": "Only relatedGuides changed on 19 newly integrated KS/NE/ND/SD records. Original accepted research drafts, source receipts, keyword observations and preservation hashes remain immutable; this explicit overlay is applied after that acceptance.",
+  "findingFileSha256": "bd105618b1ae8d5bafe3d9b306d5a2ee91dae6b78259c8911df99c27b98a3925",
+  "beforeSourceSha256": "92cdc890c04afb368b154e04380ada11a0cf9eccd48ca5c908308fcc6b213c7f",
+  "counts": {
+    "records": 1853,
+    "changedRecords": 19,
+    "removals": 15,
+    "replacements": 4,
+    "unchangedRecords": 1834
+  },
+  "guideSets": {
+    "ksNe": {
+      "before": [
+        "/guides/class-take-home/",
+        "/guides/contractor-website-checklist/",
+        "/guides/custom-print-order/",
+        "/guides/departure-address/",
+        "/guides/experience-product-choice/",
+        "/guides/farm-event-website-updates/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/itinerary-dependency-review/",
+        "/guides/kayak-rental-access-information/",
+        "/guides/manufacturing-rfq-form/",
+        "/guides/marion-county-equestrian-stay-website/",
+        "/guides/quote-request-form/",
+        "/guides/repair-authorization-form/",
+        "/guides/shipping-date-and-quote/",
+        "/guides/timed-booking-handoff/",
+        "/guides/vacation-rental-property-fit/",
+        "/guides/website-content-template/",
+        "/guides/website-launch-checklist/",
+        "/guides/website-maintenance-checklist/",
+        "/guides/website-redesign-brief/"
+      ],
+      "after": [
+        "/guides/class-take-home/",
+        "/guides/contractor-website-checklist/",
+        "/guides/custom-print-order/",
+        "/guides/departure-address/",
+        "/guides/experience-product-choice/",
+        "/guides/farm-event-website-updates/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/itinerary-dependency-review/",
+        "/guides/kayak-rental-access-information/",
+        "/guides/manufacturing-rfq-form/",
+        "/guides/marion-county-equestrian-stay-website/",
+        "/guides/quote-request-form/",
+        "/guides/repair-authorization-form/",
+        "/guides/shipping-date-and-quote/",
+        "/guides/timed-booking-handoff/",
+        "/guides/vacation-rental-property-fit/",
+        "/guides/website-content-template/",
+        "/guides/website-launch-checklist/",
+        "/guides/website-maintenance-checklist/",
+        "/guides/website-redesign-brief/"
+      ]
+    },
+    "ndSd": {
+      "before": [
+        "/guides/departure-address/",
+        "/guides/experience-product-choice/",
+        "/guides/farm-event-website-updates/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/itinerary-dependency-review/",
+        "/guides/kayak-rental-access-information/",
+        "/guides/manufacturing-rfq-form/",
+        "/guides/quote-request-form/",
+        "/guides/shipping-date-and-quote/",
+        "/guides/timed-booking-handoff/",
+        "/guides/vacation-rental-property-fit/",
+        "/guides/website-content-template/",
+        "/guides/website-maintenance-checklist/",
+        "/guides/website-migration-checklist/",
+        "/guides/website-redesign-brief/"
+      ],
+      "after": [
+        "/guides/departure-address/",
+        "/guides/experience-product-choice/",
+        "/guides/farm-event-website-updates/",
+        "/guides/inquiry-confirmation-examples/",
+        "/guides/kayak-rental-access-information/",
+        "/guides/manufacturing-rfq-form/",
+        "/guides/quote-request-form/",
+        "/guides/shipping-date-and-quote/",
+        "/guides/timed-booking-handoff/",
+        "/guides/vacation-rental-property-fit/",
+        "/guides/website-content-template/",
+        "/guides/website-maintenance-checklist/",
+        "/guides/website-migration-checklist/",
+        "/guides/website-redesign-brief/"
+      ]
+    }
+  },
+  "changes": [
+    {
+      "areaId": "kansas/elk",
+      "from": "/guides/experience-product-choice/",
+      "action": "remove",
+      "reason": "The complete county brief addresses provider credentials, official sign-in/fallback and support descriptions. The guide addresses tour access, inclusions, ages, transport and booking channels; it supplies no credential/access-troubleshooting method. Retain quote-request-form for the actual safe support intake.",
+      "path": "/areas/kansas/elk-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/experience-product-choice/",
+          "label": "Compare service choices before the next step"
+        },
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Plan the information a useful inquiry needs"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Plan the information a useful inquiry needs"
+        }
+      ],
+      "beforeRecordSha256": "e3ba9304bd87692a64fee08d45a58a6acc7b7dac97dced77b801b37d0ff78426",
+      "afterRecordSha256": "ad6f554aa6da1fd9af09e4d4a9c81c7fd265c707744c6d233b9f064d00f80468"
+    },
+    {
+      "areaId": "kansas/ellis",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "remove",
+      "reason": "The county brief distinguishes one camp provider's included session interval from that same provider's separately charged early-arrival night/pickup. The guide specifically manages promises dependent on another operator, using service-change and conflict records. No external-operator dependency is developed in this brief. Retain timed-booking-handoff.",
+      "path": "/areas/kansas/ellis-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/timed-booking-handoff/",
+          "label": "Keep arrival and booking instructions together"
+        },
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Maintain promises that depend on another provider"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/timed-booking-handoff/",
+          "label": "Keep arrival and booking instructions together"
+        }
+      ],
+      "beforeRecordSha256": "c506f3b774eb300884fe1ac312d1db26ba245290870cf48f6bf73f0aed797fd0",
+      "afterRecordSha256": "278410af1e2897d15c7d2e2a6f3b7209e1961d794825df33b5005d3742b53a0f"
+    },
+    {
+      "areaId": "kansas/lyon",
+      "from": "/guides/class-take-home/",
+      "action": "remove",
+      "reason": "The brief concerns child/adult attendance, enrollment-dependent class status and cancellation/absence. It has no finished work, materials, storage, collection or transport task. The guide's main actionable lesson is post-class take-home logistics; its small class-category cancellation example does not justify this broadly labeled association. Retain inquiry-confirmation-examples for the actual session-status task.",
+      "path": "/areas/kansas/lyon-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/class-take-home/",
+          "label": "Connect the chosen class to its preparation"
+        },
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Describe the request and next step accurately"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Describe the request and next step accurately"
+        }
+      ],
+      "beforeRecordSha256": "fa27e49cf6b1a0ea043258d529b6b680b2394e0dc37ce7a71c19bf26e6004b7b",
+      "afterRecordSha256": "3d9f017dc3cf4e81ea67e407c9e5314d5b2e7ae971e7a5485134a92503d089cd"
+    },
+    {
+      "areaId": "kansas/rawlins",
+      "from": "/guides/quote-request-form/",
+      "action": "remove",
+      "reason": "The brief routes refills through pharmacies and results/appointment preparation through existing approved clinical channels; it explicitly avoids using a general inquiry for those tasks. The linked guide designs a first project/quote/scheduled-service inquiry. Website-content-template already supports the public task-based navigation and approved wording directly.",
+      "path": "/areas/kansas/rawlins-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare owner-approved website content"
+        },
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Prepare a useful first request"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare owner-approved website content"
+        }
+      ],
+      "beforeRecordSha256": "4e6e19b0e6ae5fab6e43d801e8282ff36d05e634ef0dd4b138dbd2a0c9e9fe89",
+      "afterRecordSha256": "e8bee658211bd5eaf9aff21747c8b2803d12f5b67da21928415aae7d0c86890b"
+    },
+    {
+      "areaId": "kansas/rooks",
+      "from": "/guides/inquiry-confirmation-examples/",
+      "action": "replace",
+      "to": "/guides/website-content-template/",
+      "label": "Prepare approved service and contact content",
+      "reason": "The brief is public service-route, result-delivery and payment-boundary content; it proposes no received/pending/confirmed message or new form workflow. The confirmation guide's saved-record and notification checks do not advance that task. Website-content-template directly supports approved service distinctions and appropriate contact routes.",
+      "path": "/areas/kansas/rooks-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what an inquiry confirms"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved service and contact content"
+        }
+      ],
+      "beforeRecordSha256": "e5378bd2e7ee3000d456de54517b6949e73ec2b0103b88d2178476a2bfe8949c",
+      "afterRecordSha256": "a058cfaf87e38efc2efbdf64a3be4dd6d9e6b75f9e9ecec380d23c2aa72bba3f"
+    },
+    {
+      "areaId": "nebraska/gosper",
+      "from": "/guides/experience-product-choice/",
+      "action": "replace",
+      "to": "/guides/quote-request-form/",
+      "label": "Choose useful questions for the event request",
+      "reason": "The complete brief concerns separate player/meal counts, arrival/service times and requested assistance in an existing event inquiry. It does not compare experience access or package inclusions. The field-planning guide directly supplies the keep/defer/remove method needed to preserve those independently meaningful inputs.",
+      "path": "/areas/nebraska/gosper-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/experience-product-choice/",
+          "label": "Compare the practical differences between options"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Choose useful questions for the event request"
+        }
+      ],
+      "beforeRecordSha256": "c6a5ff86a826fb76cda0dc1705ecea81f735b74a8908046b4b8e3942fe5d0a53",
+      "afterRecordSha256": "586dd10fd34e5b06d5e42a3cf53fd77750c167c8cc0f28f83fa5d159f881cfb5"
+    },
+    {
+      "areaId": "nebraska/madison",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "replace",
+      "to": "/guides/experience-product-choice/",
+      "label": "Compare room and accommodation inclusions",
+      "reason": "The brief compares one hotel's meeting rooms requiring a stay and a 24-hour package with attached sleeping rooms. The linked itinerary guide is for changing or unverified outside-operator services; no such external dependency is developed here. The experience guide directly supports practical inclusions and precise package choice.",
+      "path": "/areas/nebraska/madison-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Review dependencies in a visitor itinerary"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/experience-product-choice/",
+          "label": "Compare room and accommodation inclusions"
+        }
+      ],
+      "beforeRecordSha256": "df5e0253af69cf36438fc641d2b3a881b4b6d73cef2e1e97a65f380522354629",
+      "afterRecordSha256": "fb3686345a8af8bb9892a7051bdb14b9c89df41028ec1cd9cdf44f739aa689b0"
+    },
+    {
+      "areaId": "north-dakota/bowman",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "remove",
+      "reason": "The brief concerns one museum's seasonal registration and its own field-to-museum program, with participant transport. It develops no outside operator or changing external service promise, which is the itinerary guide's central method. The seasonal-update and departure guides directly cover the actual tasks.",
+      "path": "/areas/north-dakota/bowman-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/farm-event-website-updates/",
+          "label": "Keep seasonal registration information current"
+        },
+        {
+          "path": "/guides/departure-address/",
+          "label": "Clarify the meeting point and arrival instructions"
+        },
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Review the dependencies in a visitor itinerary"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/farm-event-website-updates/",
+          "label": "Keep seasonal registration information current"
+        },
+        {
+          "path": "/guides/departure-address/",
+          "label": "Clarify the meeting point and arrival instructions"
+        }
+      ],
+      "beforeRecordSha256": "fa3b3d7c24a99dfd06de89871a30b16f1cc927df90d25f06a1acf40f866447cc",
+      "afterRecordSha256": "db9c24605020962983a52e9bcf534814becb3b3b5385f68366bf68799596fc17"
+    },
+    {
+      "areaId": "north-dakota/cass",
+      "from": "/guides/inquiry-confirmation-examples/",
+      "action": "remove",
+      "reason": "The brief explains membership purchase order, class checkout and orientation before independent studio use. It does not design inquiry receipt, delivery or pending-review messages. The confirmation guide focuses on those inquiry records and email tests; experience-product-choice already covers the actual access and inclusion decision.",
+      "path": "/areas/north-dakota/cass-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/experience-product-choice/",
+          "label": "Help readers choose the experience they need"
+        },
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what an inquiry confirmation means"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/experience-product-choice/",
+          "label": "Help readers choose the experience they need"
+        }
+      ],
+      "beforeRecordSha256": "3137ede1677958c723f094f7c3ed703336a281f3bdfb2fe9cd74c31330d47e82",
+      "afterRecordSha256": "16aa94aa3ac364ea183e9eed7814cd12acca402b8cab4bd9f711b2b7fff80f1d"
+    },
+    {
+      "areaId": "north-dakota/cavalier",
+      "from": "/guides/manufacturing-rfq-form/",
+      "action": "remove",
+      "reason": "The cleaning brief concerns crop material, quantities, goals and fixed versus portable processes; it does not involve drawings, part revisions, fabrication starting states or production geometry. The manufacturing guide's technical RFQ method adds no developed task beyond the already-linked first-inquiry guide.",
+      "path": "/areas/north-dakota/cavalier-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/manufacturing-rfq-form/",
+          "label": "Prepare a request staff can assess"
+        },
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Prepare a useful first inquiry"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Prepare a useful first inquiry"
+        }
+      ],
+      "beforeRecordSha256": "dda37c96275eec95980672d9f69ea4d25ff1839ae894cf69e81d40e5cc77086d",
+      "afterRecordSha256": "857f7f5604d9b3c8c581564c745794636343aca535325b2bbd48f832448e5817"
+    },
+    {
+      "areaId": "south-dakota/brookings",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "remove",
+      "reason": "The brief is one museum's bus, lunch-transfer and separate lunch-space confirmation process. It contains no external operator or changed outside service promise, which the itinerary guide's dependency register is built to review. The confirmation guide directly supports its unconfirmed lunch-space distinction.",
+      "path": "/areas/south-dakota/brookings-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Review the steps that depend on confirmation"
+        },
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what happens after an inquiry"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what happens after an inquiry"
+        }
+      ],
+      "beforeRecordSha256": "18d7fc8f97797bdcf0b6f8775bcf0ed4c846ae2c66377eb1356bb07b2c8c546f",
+      "afterRecordSha256": "4b24775b74e4f84bb24558b44721a02d3acda2cfe7c5ba0594ef8e8abb3296ac"
+    },
+    {
+      "areaId": "south-dakota/brown",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "remove",
+      "reason": "The venue's own reserved room, shared first-come patio and permit access period define the brief. No outside-operator change or evidence conflict is developed. The redesign brief already supports translating the indoor-plan and access-period requirements into reviewable website work.",
+      "path": "/areas/south-dakota/brown-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/website-redesign-brief/",
+          "label": "Prepare a website redesign brief"
+        },
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Review the steps that depend on confirmation"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-redesign-brief/",
+          "label": "Prepare a website redesign brief"
+        }
+      ],
+      "beforeRecordSha256": "13ad301745f1b26c2379e58b48bc0cf334ee8f3179c2ff807e3f3a66f9955fb8",
+      "afterRecordSha256": "dfe5dbd46c2efb282d4a4b400390237d32f53a86cb2a014360209231f0304058"
+    },
+    {
+      "areaId": "south-dakota/corson",
+      "from": "/guides/inquiry-confirmation-examples/",
+      "action": "remove",
+      "reason": "The complete brief maps accommodation products to owner-approved policies and existing change-help contacts; it proposes no inquiry receipt, delivery or pending-confirmation message. The confirmation guide's actual-record and email tests do not advance that policy-mapping task. The property-fit guide directly supports keeping each product's own terms.",
+      "path": "/areas/south-dakota/corson-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/vacation-rental-property-fit/",
+          "label": "Explain which stay fits"
+        },
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what happens after an inquiry"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/vacation-rental-property-fit/",
+          "label": "Explain which stay fits"
+        }
+      ],
+      "beforeRecordSha256": "457ea82e4ec85670d0330ab99fb4208b25958defd4394e205ba4c26bf46f25fc",
+      "afterRecordSha256": "c778760e742502025317696f281caca362da0a0ac45e13ed83eff02c05d26c1b"
+    },
+    {
+      "areaId": "south-dakota/douglas",
+      "from": "/guides/inquiry-confirmation-examples/",
+      "action": "remove",
+      "reason": "The brief explains care-program starting points, professional review ownership and a public help contact, without designing any acknowledgment or confirmation state. The confirmation guide focuses on actual saved inquiries and received notifications. Website-content-template directly covers the approved public explanation and route.",
+      "path": "/areas/south-dakota/douglas-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        },
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what happens after an inquiry"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "beforeRecordSha256": "f538f76a124030196b867c33fa40a7e05abbb714617946e9b3240ca5716a71b8",
+      "afterRecordSha256": "a41eb68a5bae9fc78b5f286abe1b09dde7319e17951403acf1c60dbfd7afea49"
+    },
+    {
+      "areaId": "south-dakota/edmunds",
+      "from": "/guides/timed-booking-handoff/",
+      "action": "remove",
+      "reason": "The brief's commission is a maintained public status list for an expected service return versus a confirmed schedule; it does not develop a selected booking, ticket, check-in or confirmation handoff. Website-content-template directly supports the approved status fields, contact wording and update owner.",
+      "path": "/areas/south-dakota/edmunds-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/timed-booking-handoff/",
+          "label": "Keep the booking handoff clear"
+        },
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "beforeRecordSha256": "0826b2513948643b711515ebf3c851a18452c23d7083b99cbf5bca17d915fc42",
+      "afterRecordSha256": "96bce164ee4d3d118facb3d17ecc9e881a8014f1d77b637e8b5c9e172b1afd13"
+    },
+    {
+      "areaId": "south-dakota/hand",
+      "from": "/guides/departure-address/",
+      "action": "remove",
+      "reason": "The brief explains a three-day payment threshold, first-come allocation and utility provision. It does not develop a disputed destination, meeting point, route, map or arrival-location decision. The departure-address guide's actual-location method is not established by the brief's generic arrival heading; website-content-template covers its approved stay and utility explanations.",
+      "path": "/areas/south-dakota/hand-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/departure-address/",
+          "label": "Connect the visit to its arrival information"
+        },
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "beforeRecordSha256": "ef5daa1499dc2753bb68e30ae6353657de7bc7b67ca0104df7e2808c246b3ebd",
+      "afterRecordSha256": "e717104f1d10c1e6ca7d5f7b8ee7790f5340e2637b5286860178fb2964311103"
+    },
+    {
+      "areaId": "south-dakota/hanson",
+      "from": "/guides/inquiry-confirmation-examples/",
+      "action": "remove",
+      "reason": "The brief prepares utility-specific payment links, meter-reading instructions and separate ACH enrollment. It proposes no inquiry acknowledgement or receipt-state behavior. The confirmation guide's saved-record and notification examples do not support those public payment-route labels; website-content-template does.",
+      "path": "/areas/south-dakota/hanson-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/inquiry-confirmation-examples/",
+          "label": "Explain what happens after an inquiry"
+        },
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/website-content-template/",
+          "label": "Prepare approved website content"
+        }
+      ],
+      "beforeRecordSha256": "25d8ac82d942e4f15c2a37afd40eb0d2fb43042a615feab0945177a5f636a428",
+      "afterRecordSha256": "6af8f6ad66e9ae74615ec662e5b3bbb7f0e30456e13ea7d250cb75265b91ce84"
+    },
+    {
+      "areaId": "south-dakota/hutchinson",
+      "from": "/guides/departure-address/",
+      "action": "remove",
+      "reason": "The brief distinguishes grounds and building hours, picnic conditions and event permission, without a map, entrance, meeting point or route problem. The departure-address guide resolves actual arrival destinations and transport preparation. The retained quote-request-form guide addresses the real activity/facility inquiry.",
+      "path": "/areas/south-dakota/hutchinson-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/departure-address/",
+          "label": "Connect the visit to its arrival information"
+        },
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Prepare a useful quote request"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/quote-request-form/",
+          "label": "Prepare a useful quote request"
+        }
+      ],
+      "beforeRecordSha256": "bb1151413f2efd6f90211271a9352a7b0c3a1270943e9b107efab1643236b1c2",
+      "afterRecordSha256": "abc30b048693347864acfe74dc4bfa60796c4eff8e1558f868d7e451c85aaa74"
+    },
+    {
+      "areaId": "south-dakota/minnehaha",
+      "from": "/guides/itinerary-dependency-review/",
+      "action": "replace",
+      "to": "/guides/farm-event-website-updates/",
+      "label": "Maintain dated visit invitations and future-opening status",
+      "reason": "The brief manages the organization's own closing campus, targeted replacement opening and narrow school exception rather than another operator's itinerary dependency. The seasonal-update guide directly distinguishes ended, confirmed and unconfirmed invitations, requires explicit dates and audiences, and prevents reactivating an offer by changing the year.",
+      "path": "/areas/south-dakota/minnehaha-county/",
+      "beforeRelatedGuides": [
+        {
+          "path": "/guides/itinerary-dependency-review/",
+          "label": "Maintain a visit plan when access and services change"
+        }
+      ],
+      "afterRelatedGuides": [
+        {
+          "path": "/guides/farm-event-website-updates/",
+          "label": "Maintain dated visit invitations and future-opening status"
+        }
+      ],
+      "beforeRecordSha256": "1e137704a7ad8a07fb00884d3249fc69665183a15b9164f4a9ba38fc92d1cee6",
+      "afterRecordSha256": "cf994b74f22cf540988acc32a7baeac6d53a80f1286ab6eb9fc6d37dea7c064d"
+    }
+  ],
+  "afterSourceSha256": "194574074984ae34785ac2fe684fb8b747b700e71aa174dc74246cd7c53f9b50"
+}

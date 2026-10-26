@@ -1,0 +1,31 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+  "database": "US",
+  "counties": 91,
+  "californiaCounties": 58,
+  "newMexicoCounties": 33,
+  "serviceAdditions": 82,
+  "directoryOnlyNoAdditions": 9,
+  "faqPairs": 5,
+  "newGuides": 0,
+  "existingLinkedGuides": 16,
+  "keywordDrivenDispositionChanges": 0,
+  "queries": 845,
+  "numeric": 160,
+  "positive": 130,
+  "explicitZero": 30,
+  "unavailable": 685,
+  "statusCounts": {
+    "OBSERVED": 57,
+    "OBSERVED_PARTIAL_REFRESH_REQUIRED": 103,
+    "UNAVAILABLE_REFRESH_REQUIRED": 685
+  },
+  "metricAvailability": {
+    "OBSERVED": 57,
+    "OBSERVED_PARTIAL_REFRESH_REQUIRED": 103,
+    "UNAVAILABLE_REFRESH_REQUIRED": 685
+  },
+  "interpretation": "Phrase estimates are not county-resident demand. Overlapping phrase volumes are not summed. Unavailable, refresh-required, partial and explicit zero metrics retain their separate meanings.",
+  "publicationStatus": "Local integration only; combined eight-state release gates must pass before GitHub publication and deployment."
+}

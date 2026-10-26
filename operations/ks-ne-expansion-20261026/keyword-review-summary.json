@@ -1,0 +1,30 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+  "database": "US",
+  "counties": 198,
+  "kansas": 105,
+  "nebraska": 93,
+  "acceptedServiceDrafts": 123,
+  "upheldNoAddition": 75,
+  "acceptedFaqPairs": 6,
+  "newGuides": 0,
+  "linkedGuideIntents": 20,
+  "queries": 1555,
+  "keywordDrivenDispositionChanges": 0,
+  "metricAvailability": {
+    "queries": 1555,
+    "numeric": 40,
+    "positive": 29,
+    "explicitZero": 11,
+    "statusCounts": {
+      "UNAVAILABLE_REFRESH_REQUIRED": 1515,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 23,
+      "OBSERVED": 17
+    }
+  },
+  "questionPanels": "Both settled US state Questions panels: n/a / no data; not zero demand.",
+  "interpretation": "Phrase estimates are not county-resident demand. Overlapping phrase volumes are not summed. Unavailable, refresh-required, partial and explicit zero metrics retain their separate meanings.",
+  "publicationStatus": "Local integration only; California and New Mexico join the six preceding states before final CI and publication.",
+  "editorialGuideOverlay": "operations/six-state-release-20261026/guide-link-corrections.json"
+}

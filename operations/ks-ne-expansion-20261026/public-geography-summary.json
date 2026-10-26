@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-10-26T03:28:00.554782+00:00",
+  "states": [
+    {
+      "stateId": "kansas",
+      "countiesOrParishes": 105,
+      "countyFunctionalStatuses": {
+        "A": 103,
+        "C": 2
+      },
+      "excludedFictitiousPlaceBalances": 1,
+      "uniqueEntities": 2131,
+      "incorporatedPlaces": 625,
+      "cdps": 114,
+      "types": {
+        "City": 625,
+        "Census-designated place": 114,
+        "Township": 1392
+      },
+      "functionalStatuses": {
+        "A": 1881,
+        "I": 135,
+        "N": 1,
+        "S": 114
+      },
+      "memberships": 2155,
+      "crossCountyPlaces": 22,
+      "grfcRows": 173545,
+      "directIncorporatedPartPopulationJoins": 646,
+      "missingCountyPartPopulationJoins": 1,
+      "wholePlaceTotalsReconciled": 624,
+      "zeroPopulationParts": 7,
+      "excludedFictitiousCitySubdivisions": 129,
+      "excludedUndefinedSubdivisions": 0
+    },
+    {
+      "stateId": "nebraska",
+      "countiesOrParishes": 93,
+      "countyFunctionalStatuses": {
+        "A": 93
+      },
+      "excludedFictitiousPlaceBalances": 0,
+      "uniqueEntities": 1699,
+      "incorporatedPlaces": 528,
+      "cdps": 65,
+      "types": {
+        "Village": 381,
+        "City": 147,
+        "Census-designated place": 65,
+        "Township": 411,
+        "Election precinct": 680,
+        "District": 15
+      },
+      "functionalStatuses": {
+        "A": 847,
+        "S": 65,
+        "I": 92,
+        "N": 695
+      },
+      "memberships": 1710,
+      "crossCountyPlaces": 10,
+      "grfcRows": 123869,
+      "directIncorporatedPartPopulationJoins": 539,
+      "missingCountyPartPopulationJoins": 0,
+      "wholePlaceTotalsReconciled": 528,
+      "zeroPopulationParts": 2,
+      "excludedFictitiousCitySubdivisions": 76,
+      "excludedUndefinedSubdivisions": 0
+    }
+  ],
+  "sourceManifest": "source-manifest.json",
+  "populationRule": "Use direct county/parish-part estimates only. Zero remains a geographic membership. CDP fallback is alphabetical, with null population, not inferred demand."
+}

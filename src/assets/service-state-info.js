@@ -33,7 +33,13 @@ export const serviceStateInfo = [
  {id:'missouri',name:'Missouri',abbreviation:'MO'},
  {id:'iowa',name:'Iowa',abbreviation:'IA'},
  {id:'minnesota',name:'Minnesota',abbreviation:'MN'},
- {id:'oklahoma',name:'Oklahoma',abbreviation:'OK'}
+ {id:'oklahoma',name:'Oklahoma',abbreviation:'OK'},
+ {id:'kansas',name:'Kansas',abbreviation:'KS'},
+ {id:'nebraska',name:'Nebraska',abbreviation:'NE'},
+ {id:'north-dakota',name:'North Dakota',abbreviation:'ND'},
+ {id:'south-dakota',name:'South Dakota',abbreviation:'SD'},
+ {id:'california',name:'California',abbreviation:'CA'},
+ {id:'new-mexico',name:'New Mexico',abbreviation:'NM'}
 ].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){

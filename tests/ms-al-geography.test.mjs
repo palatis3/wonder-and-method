@@ -1,3 +1,6 @@
+import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
+import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
+import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
 import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import {beforeReviewedLocationEdits} from './fixtures/reviewed-location-edits.mjs';
 import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
@@ -18,7 +21,7 @@ import map from '../authority/v5/site-map.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
-const mnOkStates=mnOkPaths.filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const states=['mississippi','alabama'];
 const laterStates=['wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates];

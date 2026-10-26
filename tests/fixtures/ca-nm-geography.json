@@ -1,0 +1,473 @@
+{
+  "provenance": "Accepted candidate independently reconstructed from raw ACS26/GRFC/2025 estimates; 48,484 assertions, zero errors. Frozen reviewed content, not a new source fetch.",
+  "candidateSha256": "7c63df0cb59bca893b668b8540d1983660258071f5d05c119f32f5d1dc55309d",
+  "reviewSha256": "9bdf5898b3ef8380c21983aa6d1c9f83b2e00024849c40db62fb7c8f5dc64fb5",
+  "countyDigests": {
+    "california/alameda": "799b994bf22ae5c3799359f123c7a6bea2db5fdbdc0c8dafa49802171a402eb2",
+    "california/alpine": "955d2fe8af0dfce764ea448477dbae8f7a82052b8e1122dcca0bb69204de499d",
+    "california/amador": "c408d02a56e3ba1b9791a852773f598efeb1574c516a0627f771ca8ee23e9a39",
+    "california/butte": "4d627fdbff34192426c31298d80912a9b7c911ba29e992d1d2e6ba2c97f30aba",
+    "california/calaveras": "7e4df7999d5bd89daab7b039303cc6ac59186bb57692f7b5952bc032c87a98c4",
+    "california/colusa": "01f8542045ca97d10489395f3835d6dd978dd26e998915776078647e9e2e13e5",
+    "california/contra-costa": "0540681818708a985bc88d72118e4fc73cccef352f02863a8dded51e4909b460",
+    "california/del-norte": "7c1c2f1c15e082ee7e3415457cb21ce8c2198c3b22a9345a15ee81c98ca64a25",
+    "california/el-dorado": "8cb47822b90e04679e9afbc792b398a1b51f9c2ff420f5a9a42f9af2ae1fc0ce",
+    "california/fresno": "716710b4956760ceb563564cffefacf2641bf769d3f673891b01a8aa384d1487",
+    "california/glenn": "0e799ae659636a895b8a43208eab8e084b9d58439639d6bd7c3a74767d26c709",
+    "california/humboldt": "3d650987803781aa23d0fda7f41732090cbf2bdfdb6e39a7390cad5f299c57ee",
+    "california/imperial": "5eb45f9ee1374b1049eaa98656b45920c43a813c60737ba1f43a4a87ee5cc25e",
+    "california/inyo": "338c4e22f96ebc4de3b930fb023d0d77f97a658dd4b98e65ddcf66acfcf3ea7d",
+    "california/kern": "f2da9cec3323363d428805350dc2ffd6ad272004eac97c2666a5618b2e93a3ab",
+    "california/kings": "d1b4acd54811c7317fe66598da4ce8adcb8b90301f57dedfa03a7105e46ac599",
+    "california/lake": "f0e1ecf2b7fddaa2afd706bd0a15d2882f9d7c966783e701f792e1acfefb8452",
+    "california/lassen": "9d2cfa543ae60833231b2f5e98fee411c01448d3c6609054b614aa0b63b21d31",
+    "california/los-angeles": "783c6cc47d81a849b7b43854422c4a773e128c230fd817eff085485611a4bb6b",
+    "california/madera": "a4ca74a0e0baea8a3a68faef304b7d736a99a6be8f74fbf1b04f394ef02a92b8",
+    "california/marin": "15c387a921c57449e342ccfcd2d4efb42f5c20ec3a450c51cc783619550d7345",
+    "california/mariposa": "f81da48da0da2e590d5b15db48e4449eb76af95510fa38f3b0ea620c18a062bc",
+    "california/mendocino": "4e0ccd22b215fef9e59171eaabb16865eb278ce8f1c015f9c81800ad5b779888",
+    "california/merced": "9d7abb87db93f11011ba6c1bbf97b1ae72f07c417341b27d6d44945645cacd47",
+    "california/modoc": "564f9f59e347529fe38d201b23a49de3b0b358e5666cc823ad6df40188835856",
+    "california/mono": "b1f64372ec20335979a7867989867f93a199e39bdd01724b0bd4dd70d9242ea0",
+    "california/monterey": "fd7065a39c8984efcc8f78636f9a044759d5e2d16f88298cbb9eb6582cbc3a28",
+    "california/napa": "be83a8c1c6065cf13cbafa0e827b618b64a10c2e270c6d7953fae6ba3e821e0a",
+    "california/nevada": "9efe9a534908b2d4e427f5e5c9037051d5c0b693b8dfbddfe6d84472f4014278",
+    "california/orange": "bb149c82c6e9f9effdb3e57732dfd6db7ccb79c1487ec9b975bb603ca592f013",
+    "california/placer": "4b9e8fd97aee06bd260ce23879928aff90fb1ffc0dde99d6d15d73bd63f5091c",
+    "california/plumas": "b356675173b8e11d534f4d43a89312e7c45151c1dd8c154855a8d1378a9815e4",
+    "california/riverside": "c9840da12771ecb9b21a5a2b78c5c82e819969d6821d71eb632bedac5062b326",
+    "california/sacramento": "d8eef3b73d576f9445b9a584bac5e75f62f61233ff5a6b8819071807b95a67ab",
+    "california/san-benito": "e3df90fed14a8a9280fde21bad065a1b9d9f6eb03f4c017c34596928ccfabe85",
+    "california/san-bernardino": "c619a60ca09d7eff034d36caf5ba6abb5be8a2054b1a2966c73981861418cace",
+    "california/san-diego": "b45e1bbdc62033e81a11f71de139691fe8996040c2dd95f670aed788c490d4f4",
+    "california/san-francisco": "c4ad99e83d69d6f49b62d993798b809969904b121652efa332425c9393717acc",
+    "california/san-joaquin": "1965b188d9b09e1aa58978eb6dc3d5dcde516003430ba0a8907bdcc72938a7df",
+    "california/san-luis-obispo": "9f176e2835a3e40f414b9e6ba52a3da11d26cba3a71d5e4c452095df223737f7",
+    "california/san-mateo": "533642a0a3669891c8c8c8bf70774378527c8142399bdb322eaeddf4db2c8df8",
+    "california/santa-barbara": "6d2dc062b62f979d82189aa63a962d9aed0fded2dd7c21e65f4940790a8e3154",
+    "california/santa-clara": "08927e5ad125b41d2ec91840afd3debc212e872c62debaaa5383c5e98676913a",
+    "california/santa-cruz": "3feb462d56adcf488285e15191dddbe7e4ce3e18e77158600fc3e5665d9797bb",
+    "california/shasta": "71b3fcab10cc7334c862e6db18ba2c05d5ff569fcdf110d479580c5f495d3603",
+    "california/sierra": "237310872727a4da049d675d3808ff576628afe5b17f3f97b505026a6b66ea46",
+    "california/siskiyou": "e78651750f69e716ed8d569bd301b0a2cde25ae0cf63d85154265766e1dea247",
+    "california/solano": "523e7911c0bcef8bd107cd6a28cce7213844ab8b84cbe552f04904f39e860808",
+    "california/sonoma": "5080c1dbcd4d9e481aa4b531d2fda6e23f04ad47889d0d807a25cc05dde67b24",
+    "california/stanislaus": "7e5e63ba217da67197818f82067be9593bc82a240cd88cc345a08a831ae76828",
+    "california/sutter": "d29babfebfc181ba94993ec7a8fdb7d6990d92da285f58e278ee60b7ef34578f",
+    "california/tehama": "ba5d9d9b7ced07af28a328a4cd42be416aa0e8662509e8e2add228fa5fb45ce0",
+    "california/trinity": "c1f21b947565c3db437e0cfc153bb97c759a2534df6e4988341bedd61ca07d9e",
+    "california/tulare": "0bedc7328d560951bf5330eda7a848368aa298157531a1b73a8f33d3135685d3",
+    "california/tuolumne": "0e2f80370dbc626cd90e1dc031a64541ea37f252b085ad73b2088ba0e64657c9",
+    "california/ventura": "d371a326ffae06bb3fecccf31c4e93f54e0e9d38708e631b952855bffe626ce3",
+    "california/yolo": "f3ccdb07bcf41e1c0257f9a7299508327ecbef246c7563db4c496210ec88ddb7",
+    "california/yuba": "55964b9e2af5fd6177edb2c7a6eb46c95dc292303faa6254ead797974fa23d47",
+    "new-mexico/bernalillo": "9afa5b1e8eeeac911917c0224c96ffdf34f6e0c5958b7814990582d4cfe54e83",
+    "new-mexico/catron": "944e10f8ad5e4eec16f085da733aa599047517367d6aeccf0c0cffccf8d9452c",
+    "new-mexico/chaves": "72a953a9e9d142b9df51d9de3063a03fdff8c4a2b37e41983b6405ff916f6c7f",
+    "new-mexico/cibola": "4008636926915e34851378d5cfbd825f2c4e91f27eaf726e1786abed728febce",
+    "new-mexico/colfax": "e92e5ab8b03c520dd38f3b4366afcf458d72c2c5f955d24c0177f01be6e91a47",
+    "new-mexico/curry": "7ef433c01b5c929c179bfb715dd0eec3574ed1dc2c9a94002ed20e01fccf1d61",
+    "new-mexico/de-baca": "287fae947840fe7fbb560de3b65829a7ec35f848fb371f71290dac904242991d",
+    "new-mexico/dona-ana": "111e2624757395226c562202f6df49d0d3385fc9bfc36107cc59a29764debce1",
+    "new-mexico/eddy": "8930e73b62b14bd5bd74a920ec19be7e99f09090a4fda655684d8d7a5018e389",
+    "new-mexico/grant": "0c61fc86ad6ad1d1776e078b07b6aca8b01fef5a42bc85446585d5fd0edcd383",
+    "new-mexico/guadalupe": "306ac7ee4c7713820b8d706dba72b2a7113165d7631f9b073c60d762ab4d6e07",
+    "new-mexico/harding": "9c9083f23febc9e16e05dd437e6b5cff6e24d36c0d3a702fda1e591618896e6d",
+    "new-mexico/hidalgo": "a73e4ef2a1ac9154f687cef460137d7370abcb5550c934946019aa0ffef5acc6",
+    "new-mexico/lea": "e8b21d3b45576664a0619bb361fc299a13fa7acca5ecd1704f379b8c5805f566",
+    "new-mexico/lincoln": "deb7b8829f3e9d7be0e2397c5e7158bc8d3ec4833497f2e93434b3eff7d2d9be",
+    "new-mexico/los-alamos": "8060368e31efd1e5e30dea33d507d69734ff4a65227a027a48f2884ef752c0cf",
+    "new-mexico/luna": "8f3820a3892c003cf62894ab457068267561b0c36edf08d45528609d558d1c5a",
+    "new-mexico/mckinley": "13ab5ae1cca1cc25794808edd847c71915250d551587bb241d0a6f0db9e6332a",
+    "new-mexico/mora": "3560293f68de15a88a52e1e78d04bf9ddfb885a15f4d9db2a5f57d621b56d383",
+    "new-mexico/otero": "053236d610d02cbcd467c427ce30db8674983ea968b35c083d5db4679bd518cb",
+    "new-mexico/quay": "1bcec924961d27aaf0f49d2d533765c0073a30213e1de80e317741672247d833",
+    "new-mexico/rio-arriba": "9a31606b9e24a47a49c742e1d75569135f779c8444e6299bc6dd3cff337e87eb",
+    "new-mexico/roosevelt": "a46a161be0283525ce8fde433e80f7631d42d77172484c35b292920d86cdcf7f",
+    "new-mexico/sandoval": "7be7af58162b520eb9de7438f9232fe26e5540aa060cb17af6d5fd0e3491bbd9",
+    "new-mexico/san-juan": "e8eebfa5323f210d9faeea8ad5dd2cc224781b5e1b828036fd21415a07767761",
+    "new-mexico/san-miguel": "ba7bc67edd57ff59341f60992361c1147f02350b00ee3920e1ea480c6673e149",
+    "new-mexico/santa-fe": "429175ef25eae1e6f8e4d88eb7f3f149a4b85aa08af7d8bfbcf5d0c16f66c14e",
+    "new-mexico/sierra": "40ca7f4f02f89e1e7f331452934269da6906183bb993e2928658307f7dcf7e79",
+    "new-mexico/socorro": "a0f06da7cfb5d8f64b63d0c3a2106610f57b2776dc73acbd86b463ff5b7d2c96",
+    "new-mexico/taos": "04e958e5c02ee3225497546be342feae0d8780e9480eafe9ad4731049297da37",
+    "new-mexico/torrance": "883e5f010d2378661cab15a7e7f0c91f049b678f6fc5c85263afc1384a93283d",
+    "new-mexico/union": "6f491261b80b60ba2f614c71bc9b1a396f344eb9df7a52ef2cba63b6cee4b167",
+    "new-mexico/valencia": "36ca1e70628148268b7ebbb260598c887c92135e7e0e35b5710ae95e0191e852"
+  },
+  "populationMissing": [],
+  "crossCountyPlaces": [
+    {
+      "stateId": "california",
+      "name": "Aromas",
+      "type": "Census-designated place",
+      "geoid": "0602812",
+      "censusName": "Aromas CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02407764",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "06053",
+        "06069"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "06053": null,
+        "06069": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "california",
+      "name": "Kingvale",
+      "type": "Census-designated place",
+      "geoid": "0638604",
+      "censusName": "Kingvale CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02628744",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "06057",
+        "06061"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "06057": null,
+        "06061": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "california",
+      "name": "Kirkwood",
+      "type": "Census-designated place",
+      "geoid": "0638646",
+      "censusName": "Kirkwood CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408489",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "06003",
+        "06005"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "06003": null,
+        "06005": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "california",
+      "name": "Tahoma",
+      "type": "Census-designated place",
+      "geoid": "0677728",
+      "censusName": "Tahoma CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02628793",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "06017",
+        "06061"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "06017": null,
+        "06061": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Edgewood",
+      "type": "Town",
+      "geoid": "3522380",
+      "censusName": "Edgewood town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412467",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "35001",
+        "35043",
+        "35049"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 6157,
+      "countyPartPopulation2025": {
+        "35001": 20,
+        "35043": 0,
+        "35049": 6137
+      }
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Española",
+      "type": "City",
+      "geoid": "3525170",
+      "censusName": "Española city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410456",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "35039",
+        "35049"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 10458,
+      "countyPartPopulation2025": {
+        "35039": 7058,
+        "35049": 3400
+      }
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Mosquero",
+      "type": "Village",
+      "geoid": "3550300",
+      "censusName": "Mosquero village",
+      "censusLSAD": "47",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02413574",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "35021",
+        "35047"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 90,
+      "countyPartPopulation2025": {
+        "35021": 90,
+        "35047": 0
+      }
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Rio Rancho",
+      "type": "City",
+      "geoid": "3563460",
+      "censusName": "Rio Rancho city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410954",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "35001",
+        "35043"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 114419,
+      "countyPartPopulation2025": {
+        "35001": 4,
+        "35043": 114415
+      }
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Barton",
+      "type": "Census-designated place",
+      "geoid": "3506220",
+      "censusName": "Barton CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02806682",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35001",
+        "35049"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35001": null,
+        "35049": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Bluewater",
+      "type": "Census-designated place",
+      "geoid": "3508180",
+      "censusName": "Bluewater CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02806710",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35006",
+        "35031"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35006": null,
+        "35031": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Chaparral",
+      "type": "Census-designated place",
+      "geoid": "3514250",
+      "censusName": "Chaparral CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408012",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35013",
+        "35035"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35013": null,
+        "35035": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Chimayo",
+      "type": "Census-designated place",
+      "geoid": "3514950",
+      "censusName": "Chimayo CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02408026",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35039",
+        "35049"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35039": null,
+        "35049": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Crystal",
+      "type": "Census-designated place",
+      "geoid": "3519080",
+      "censusName": "Crystal CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02407690",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35031",
+        "35045"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35031": null,
+        "35045": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Manzano Springs",
+      "type": "Census-designated place",
+      "geoid": "3546770",
+      "censusName": "Manzano Springs CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02584177",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35001",
+        "35057"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35001": null,
+        "35057": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Ojo Caliente",
+      "type": "Census-designated place",
+      "geoid": "3553590",
+      "censusName": "Ojo Caliente CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02806783",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35039",
+        "35055"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35039": null,
+        "35055": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Rio Chiquito",
+      "type": "Census-designated place",
+      "geoid": "3563110",
+      "censusName": "Rio Chiquito CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02409170",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35039",
+        "35049"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35039": null,
+        "35049": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    },
+    {
+      "stateId": "new-mexico",
+      "name": "Timberlake",
+      "type": "Census-designated place",
+      "geoid": "3577930",
+      "censusName": "Timberlake CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02806736",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "35006",
+        "35031"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "35006": null,
+        "35031": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    }
+  ]
+}

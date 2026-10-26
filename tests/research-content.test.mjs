@@ -22,7 +22,7 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,1787);
+ assert.equal(previous.length,278);assert.equal(pages.length,2081);
  for(const path of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===path),path);
  for(const route of previous){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);

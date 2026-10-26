@@ -1,3 +1,6 @@
+import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
+import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
+import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
 import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import {gzipSync} from 'node:zlib';
 import {beforeReviewedLocationEdits,beforeReviewedFaqEdits} from './fixtures/reviewed-location-edits.mjs';
@@ -19,10 +22,10 @@ import preservation from './fixtures/wi-il-preservation.json' with {type:'json'}
 import records from '../src/location-service-data.json' with {type:'json'};
 import faqs from '../src/service-faqs.json' with {type:'json'};
 import {wiIlGeography,wiIlAreaInventory} from '../src/wi-il-geography.mjs';
-import {serviceStates,countyDirectory,countySearchText} from '../src/service-area-directory.mjs';
-import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,unpackCountySearch,unpackCountyBase91} from '../src/assets/county-directory.js';
+import {serviceStates,countyDirectory,countySearchText,countySearchAsset} from '../src/service-area-directory.mjs';
+import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,decodeCountySearchAsset,unpackCountySearch,unpackCountyBase91} from '../src/assets/county-directory.js';
 
-const mnOkStates=mnOkPaths.filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const additions=['wisconsin','illinois'];
 const laterStates=['louisiana','arkansas','texas','missouri','iowa',...mnOkStates];
@@ -90,18 +93,22 @@ test('new typed searches retain cross-county places and distinguish towns, towns
 });
 
 test('compressed dictionary preserves every term while keeping the existing payload budget',async()=>{
- const html=countyDirectory(),payload=JSON.parse(html.match(/data-county-place-names>(.*?)<\/script>/s)[1]);
- assert.equal(payload.encoding,'gzip-base91');
- assert.deepEqual([...unpackCountyBase91(payload.data).subarray(0,10)],[31,139,8,0,0,0,0,0,2,255]);
- const names=await decodeCountyNames(payload);
+ const html=countyDirectory(),descriptor=JSON.parse(html.match(/data-county-search-asset>(.*?)<\/script>/s)[1]);
+ const asset=countySearchAsset();assert.equal(descriptor.path,asset.path);
+ assert.deepEqual([...asset.bytes.subarray(0,10)],[31,139,8,0,0,0,0,0,2,255]);
  const expectedTerms=serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>[...state.counties].sort((a,b)=>a.name.localeCompare(b.name)).map(county=>countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')));
- const terms=await decodeCountySearchCards(JSON.parse(html.match(/data-county-search-cards>(.*?)<\/script>/s)[1]),names);
+ const {entries:terms}=await decodeCountySearchAsset(asset.bytes);
  const actual=[...html.matchAll(/data-cs="([^"]*)"/g)].map((match,index)=>terms[match[1]===''?index:Number(match[1])]);
  assert.deepEqual(actual,expectedTerms);
- assert.equal(actual.length,2378);
+ assert.equal(actual.length,2786);
  assert.ok(Buffer.byteLength(html)<450_000);
  assert.ok(gzipSync(html).length<195_000);
- for(const state of serviceStates.filter(state=>['wisconsin','illinois'].includes(state.id)))assert.ok(Buffer.byteLength(countyDirectory(state))<200_000,state.id);
+ for(const state of serviceStates.filter(state=>['wisconsin','illinois'].includes(state.id))){
+  const stateHtml=countyDirectory(state);assert.ok(Buffer.byteLength(stateHtml)<200_000,state.id);
+  const payload=JSON.parse(stateHtml.match(/data-county-place-names>(.*?)<\/script>/s)[1]);
+  if(payload.encoding==='gzip-base91')assert.deepEqual([...unpackCountyBase91(payload.data).subarray(0,10)],[31,139,8,0,0,0,0,0,2,255]);
+  assert.ok((await decodeCountyNames(payload)).length>0);
+ }
 });
 
 

@@ -1,0 +1,1616 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "Local integration only; combined eight-state release gates must pass before GitHub publication and deployment.",
+  "countyCount": 91,
+  "serviceCandidates": 82,
+  "directoryOnly": 9,
+  "faqs": 5,
+  "guides": 0,
+  "keywordSummary": {
+    "reviewDate": "2026-10-26",
+    "status": "LOCAL_CONTENT_AND_KEYWORD_RECONCILIATION_ACCEPTED",
+    "database": "US",
+    "counties": 91,
+    "californiaCounties": 58,
+    "newMexicoCounties": 33,
+    "serviceAdditions": 82,
+    "directoryOnlyNoAdditions": 9,
+    "faqPairs": 5,
+    "newGuides": 0,
+    "existingLinkedGuides": 16,
+    "keywordDrivenDispositionChanges": 0,
+    "queries": 845,
+    "numeric": 160,
+    "positive": 130,
+    "explicitZero": 30,
+    "unavailable": 685,
+    "statusCounts": {
+      "OBSERVED": 57,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 103,
+      "UNAVAILABLE_REFRESH_REQUIRED": 685
+    },
+    "metricAvailability": {
+      "OBSERVED": 57,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 103,
+      "UNAVAILABLE_REFRESH_REQUIRED": 685
+    },
+    "interpretation": "Phrase estimates are not county-resident demand. Overlapping phrase volumes are not summed. Unavailable, refresh-required, partial and explicit zero metrics retain their separate meanings.",
+    "publicationStatus": "Local integration only; combined eight-state release gates must pass before GitHub publication and deployment."
+  },
+  "counties": [
+    {
+      "areaId": "california/alameda",
+      "name": "Alameda County",
+      "fips": "06001",
+      "directoryPath": "/areas/california/#alameda",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/alameda-county/",
+      "readerDecision": "Carry the overnight package through the organizer’s next steps.",
+      "rationale": "Giles separates a group’s day activity from its overnight arrangement, and Kingsbury connects accommodation preparation with seasonal activities. St. Louis City already covers the original group, later additions, payment timing and a separately arranged guide. Alameda reuses those group-planning principles in an organizer-owned estimate-to-final sequence tied to the selected overnight package’s meals and activities. Its acceptance check preserves that package through preparation. The additional value is the coordinated overnight-program brief, not a new general principle about group changes or confirmation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://uss-hornet.org/tours-and-programs/live-aboard-adventure/"
+      ]
+    },
+    {
+      "areaId": "california/alpine",
+      "name": "Alpine County",
+      "fips": "06003",
+      "directoryPath": "/areas/california/#alpine",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/alpine-county/",
+      "readerDecision": "Change the place, fit and reservation instructions together when a season changes.",
+      "rationale": "Barry already discusses seasonal camping changes; Lincoln and Van Buren cover accommodation fit and seasonal activity choices. The added owner task here synchronizes a physical-area conversion with different vehicle limits, map labels and a reservation-route change. It is not a new general seasonal-update principle: the existing farm-event guide already provides the maintenance framework.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.parks.ca.gov/?page_id=508"
+      ]
+    },
+    {
+      "areaId": "california/amador",
+      "name": "Amador County",
+      "fips": "06005",
+      "directoryPath": "/areas/california/#amador",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/amador-county/",
+      "readerDecision": "Show what visitors enter, see from outside or experience as a simulation.",
+      "rationale": "Parker compares included rooms and guided access, Henry distinguishes heritage experiences, and Atchison addresses separate visitor offers. This project adds an evidence check between historical imagery/depth and present-day route, plus explicit interior/exterior/simulation labels. Those labels and the reader retelling test give a heritage owner more than a renamed admission comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://kennedygoldmine.com/"
+      ]
+    },
+    {
+      "areaId": "california/butte",
+      "name": "Butte County",
+      "fips": "06007",
+      "directoryPath": "/areas/california/#butte",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/butte-county/",
+      "readerDecision": "Keep a destination’s general welcome separate from each production tour’s requirements.",
+      "rationale": "Brown compares regular, private and extended brewery-tour access and their ticket channels. Jefferson compares house and garden tours with age, stairs and advance access arrangements. Butte reuses product-specific participation guidance, then connects it to venue-wide family messaging and the difference between entering a production setting and seeing active machinery. The two acceptance checks test both participation fit and production expectations, giving the owner a useful combined website brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://sierranevada.com/visit/chico/tours/faqs",
+        "https://sierranevada.com/visit/chico/tour/beer-geek-tour-california"
+      ]
+    },
+    {
+      "areaId": "california/calaveras",
+      "name": "Calaveras County",
+      "fips": "06009",
+      "directoryPath": "/areas/california/#calaveras",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/calaveras-county/",
+      "readerDecision": "Connect class commitment and experience level to the right instructor inquiry.",
+      "rationale": "The first cave-tour lead repeats Grundy, Burnet and Kendall. The selected studio brief differs from Cass membership/independent studio access and Buchanan group-size/delivery format: it preserves learner time commitment, prior experience and the responsible instructor while retiring completed workshops. The existing experience-choice guide supports comparison; the class-take-home guide was rejected because firing, collection or unfinished work is not established here.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.quylekilns.com/blank-2",
+        "https://www.quylekilns.com/_files/ugd/51ea2e_960d8d68887449b98c7759120f7761d9.pdf"
+      ]
+    },
+    {
+      "areaId": "california/colusa",
+      "name": "Colusa County",
+      "fips": "06011",
+      "directoryPath": "/areas/california/#colusa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/colusa-county/",
+      "readerDecision": "Join the rice specification, brand starting point and pack format in one useful brief.",
+      "rationale": "Mecklenburg distinguishes branding relationships, Warren formula versus supplied packaging, and Gallia existing design versus development. This draft adds the processor-specific three-way brief: rice/milling requirement, brand readiness and pack form, with unknowns preserved for sales rather than implied combinatorial availability. Sully and Cavalier agricultural processing cases do not cover this private-label rice handoff. General RFQ guidance already exists, so no new guide is proposed.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.chmrice.com/operations/",
+        "https://www.chmrice.com/products/",
+        "https://www.chmrice.com/packing-options/"
+      ]
+    },
+    {
+      "areaId": "california/contra-costa",
+      "name": "Contra Costa County",
+      "fips": "06013",
+      "directoryPath": "/areas/california/#contra-costa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/contra-costa-county/",
+      "readerDecision": "Explain the step from a brief garden question to a site consultation and design proposal.",
+      "rationale": "Horry compares public-hours parties with exclusive after-hours use at a pinball museum. Jessamine separates retail plant purchases from landscape outcomes, while King George prepares DIY nursery questions using photographs, light, moisture and watering access. Contra Costa reuses the useful distinction between customer aims, then develops the owner’s first-help options: quick advice, a site consultation and later design deliverables. Its portfolio and acceptance checks connect the selected level of help to what the customer actually receives.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ruthbancroftgarden.org/landscape-design-service/"
+      ]
+    },
+    {
+      "areaId": "california/del-norte",
+      "name": "Del Norte County",
+      "fips": "06015",
+      "directoryPath": "/areas/california/#del-norte",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/del-norte-county/",
+      "readerDecision": "Explain the access dependency before offering a timed lighthouse stop.",
+      "rationale": "Bland, Stone and Baylor already cover visitor hours, tour choices and timing. The initial Ocean World lead added little beyond those. The selected draft addresses a physical-access dependency for a third-party itinerary: a tide-derived time is not operator confirmation or crossing permission, and changes must reach every dependent promise. The existing itinerary-dependency guide directly supports this work; no new guide is warranted.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://delnortehistory.org/battery-point-lighthouse/"
+      ]
+    },
+    {
+      "areaId": "california/el-dorado",
+      "name": "El Dorado County",
+      "fips": "06017",
+      "directoryPath": "/areas/california/#el-dorado",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/el-dorado-county/",
+      "readerDecision": "Keep the seasonal product and its buying route together.",
+      "rationale": "Robertson covers seasonal farm availability, Lewis split shipments after ordering, and Johnson routes by recipient destination. This draft handles the earlier decision: product category and temporary promotion determine which existing buying route applies. Its ended-event acceptance case and fresh/perishable handoff add a concrete producer brief, while the existing seasonal-update guide already covers the general maintenance principle.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://boavista.com/plan-your-visit/"
+      ]
+    },
+    {
+      "areaId": "california/fresno",
+      "name": "Fresno County",
+      "fips": "06019",
+      "directoryPath": "/areas/california/#fresno",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/fresno-county/",
+      "readerDecision": "Prepare the arrival around current access and the last group’s finish time.",
+      "rationale": "Orange explains specific visitor-equipment configurations, Wilbarger already distinguishes first entry from whole-group completion and onward transport, and Kaufman prepares group visits around available time, docent arrangements and arrival mode. Fresno reuses the whole-group completion principle. Its additional project value is the coordinated brief for temporary construction-notice ownership, current arrival instructions, individual route confirmation and the complete group visit. The Spanish-content versus Spanish-guide FAQ addresses a separate commissioning question left outside the main body.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://undergroundgardens.com/faq/"
+      ]
+    },
+    {
+      "areaId": "california/glenn",
+      "name": "Glenn County",
+      "fips": "06021",
+      "directoryPath": "/areas/california/#glenn",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/glenn-county/",
+      "readerDecision": "Separate the product buyer, prospective grower and existing account holder.",
+      "rationale": "Sully and Cavalier distinguish agricultural processing relationships; Guernsey distinguishes buying material from processing customer-owned material. This draft adds the third, returning-user task of retrieving private grower reports and makes the navigation and public-inquiry boundary explicit. The approved-buyer-account guide was read and rejected because a grower report account is not a buying or bidding approval workflow.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.riverwestprocessing.com/processing",
+        "https://www.riverwestprocessing.com/almond-grower-services"
+      ]
+    },
+    {
+      "areaId": "california/humboldt",
+      "name": "Humboldt County",
+      "fips": "06023",
+      "directoryPath": "/areas/california/#humboldt",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/humboldt-county/",
+      "readerDecision": "Describe the main route and optional section separately, in words as well as on the map.",
+      "rationale": "York’s narrated/non-narrated boat choice made the first Madaket lead duplicative; Hardin covers access decisions, and Cherokee route-specific participation. The selected draft adds an optional branch that must remain distinguishable in both diagram and text without making the whole attraction appear unavailable. It specifies equivalent map labels and a bypass acceptance case. The kayak-access guide was rejected as a paddlesport-specific handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://redwoodskywalk.com/plan-your-visit/",
+        "https://redwoodskywalk.com/faq/"
+      ]
+    },
+    {
+      "areaId": "california/imperial",
+      "name": "Imperial County",
+      "fips": "06025",
+      "directoryPath": "/areas/california/#imperial",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/imperial-county/",
+      "readerDecision": "Connect the lesson format to its materials and confirmation steps.",
+      "rationale": "Montgomery and Hughes already compare educational programs and delivery locations. This draft adds the coupled physical-kit/live-session handoff and the distinction between freely available archived recordings and a requested staffed lesson. Class-take-home was read but rejected: materials arriving before a lesson are not unfinished work collected after a class.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ivdesertmuseum.org/education/field-trip-program"
+      ]
+    },
+    {
+      "areaId": "california/inyo",
+      "name": "Inyo County",
+      "fips": "06027",
+      "directoryPath": "/areas/california/#inyo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/inyo-county/",
+      "readerDecision": "Keep each ride date attached to its ticket seller and operating window.",
+      "rationale": "Nemaha, McPherson and Anderson already discuss museum/railway schedules and special activities. This draft adds event-specific seller identity and payment location attached to the date, plus the distinction between a published operating window and a demand-dependent extension. The island-payment guide was rejected because its cash-preparation context is not needed to explain this museum ticket handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.lawsmuseum.org/train-ride-schedule"
+      ]
+    },
+    {
+      "areaId": "california/kern",
+      "name": "Kern County",
+      "fips": "06029",
+      "directoryPath": "/areas/california/#kern",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/kern-county/",
+      "readerDecision": "Give the introductory flight and the training budget their own explanations.",
+      "rationale": "Dare and Hoke already separate experience types and flight time from visit time. This complete brief adds the transition from an introductory product to separately supplied aircraft and independent instruction, with owner inputs and a budget-comprehension acceptance case. It is not justified by the duration distinction alone.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bakersfieldflyingclub.com/learn-to-fly/",
+        "https://bakersfieldflyingclub.com/"
+      ]
+    },
+    {
+      "areaId": "california/kings",
+      "name": "Kings County",
+      "fips": "06031",
+      "directoryPath": "/areas/california/#kings",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the custom-apparel route that matches artwork readiness, production method and timing.",
+      "rationale": "Complete Charles, New Castle and Chester records already explain custom-print inquiry, artwork, process and order readiness. The complete custom-print-order guide covers the same transition to an accepted job. Neither local source adds enough distinct project guidance beyond those full records.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "california/lake",
+      "name": "Lake County",
+      "fips": "06033",
+      "directoryPath": "/areas/california/#lake",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/lake-county/",
+      "readerDecision": "Name what the booking quantity actually counts.",
+      "rationale": "Harlan covers overnight possession, LaSalle covers rider changes and Union counts children within capacity. This brief adds the booking unit itself and its interaction with a multi-boat party and rental-period selection. The owner must supply a coherent capacity table before implementation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://disneysboatrentals.com/faq/",
+        "https://disneysboatrentals.com/rentals/",
+        "https://disneysboatrentals.com/rentals/1-8-hr-boat-rental-in-lakeport-ca/",
+        "https://disneysboatrentals.com/rentals/2-7-day-boat-rentals-in-lakeport-ca/"
+      ]
+    },
+    {
+      "areaId": "california/lassen",
+      "name": "Lassen County",
+      "fips": "06035",
+      "directoryPath": "/areas/california/#lassen",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Describe the rental job and needed period before expecting a particular item or container to be available.",
+      "rationale": "Laurel already connects the equipment request with the job, while Clare explains rental choices and staff confirmation. The full quote-request guide supplies the same initial inquiry principle. A county label and flexible rental periods do not create additional value.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "california/los-angeles",
+      "name": "Los Angeles County",
+      "fips": "06037",
+      "directoryPath": "/areas/california/#los-angeles",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/los-angeles-county/",
+      "readerDecision": "Connect the film on the reel to the files needed for the next stage.",
+      "rationale": "St. Louis explains media-transfer preparation, Snyder separates copying from restoration and Transylvania connects artwork capture to its output. The local production brief goes further into independent scan-resolution and motion-picture file-format choices, multiple downstream deliverables and a usable unknown-material inquiry. It reuses the sound output-first principle with a substantially different complete project.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://originsarchival.com/pages/film-scanning-services-2024"
+      ]
+    },
+    {
+      "areaId": "california/madera",
+      "name": "Madera County",
+      "fips": "06039",
+      "directoryPath": "/areas/california/#madera",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/madera-county/",
+      "readerDecision": "Start the winery brief with what the customer already has.",
+      "rationale": "Guernsey covers toll processing, Washington covers material blending and Leelanau distinguishes wine from its label. This draft combines a materially different commercial choice among wine supply, customer-owned wine processing and shiners, then gives the owner a concrete inquiry and acceptance example for each starting point. The manufacturing RFQ guide is broader and does not require a new general guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.sjwineco.com/winery-services/"
+      ]
+    },
+    {
+      "areaId": "california/marin",
+      "name": "Marin County",
+      "fips": "06041",
+      "directoryPath": "/areas/california/#marin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/marin-county/",
+      "readerDecision": "Show the whole course schedule before its first date.",
+      "rationale": "Livingston compares experiences, Cook separates registration routes and Berkeley connects packs to sessions. This local project adds an indivisible multi-week date set and a truthful unpublished-date state, with a separate custom-family route. It does not justify a new general experience-choice guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.seasailing.org/adult-family-sailing"
+      ]
+    },
+    {
+      "areaId": "california/mariposa",
+      "name": "Mariposa County",
+      "fips": "06043",
+      "directoryPath": "/areas/california/#mariposa",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose an event space by room arrangement, kitchen need and setup access rather than floor area alone.",
+      "rationale": "Deuel already compares room and kitchen requirements, Craig covers event configuration and Logan separates setup/cleanup access from event time. The local facilities are real and substantive, but the proposed project adds no sufficient new owner decision. The shared-kitchen guide targets food-business production and is not a direct substitute for venue rental.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "california/mendocino",
+      "name": "Mendocino County",
+      "fips": "06045",
+      "directoryPath": "/areas/california/#mendocino",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/mendocino-county/",
+      "readerDecision": "Connect the approved door design to the components being supplied.",
+      "rationale": "Washington distinguishes door finishing choices; Nelson explains the roles of different materials in furniture; Perry covers customer approval of manufacturing changes, and Martin already explains drawings through installation. This draft is useful only as the complete design-to-firm-price and component-supply brief, including door/jamb/hardware boundaries. It adds no new general approval mechanism and should not be expanded into a generic guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mendocinodoors.com/howIwork.html",
+        "https://www.mendocinodoors.com/ShippingCase/default.html",
+        "https://www.mendocinodoors.com/"
+      ]
+    },
+    {
+      "areaId": "california/merced",
+      "name": "Merced County",
+      "fips": "06047",
+      "directoryPath": "/areas/california/#merced",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/merced-county/",
+      "readerDecision": "Separate cemetery confirmation, design approval and installation responsibility.",
+      "rationale": "Licking covers cemetery preparation, Perry covers additions to existing memorials and Henry covers literal inscription content. The distinct project value is the physical installation split between base and upright top, connected to separate cemetery and design approvals. The main body already answers the useful order-preparation questions; no extra FAQ is warranted.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mercedcemetery.com/policy-and-guidelines"
+      ]
+    },
+    {
+      "areaId": "california/modoc",
+      "name": "Modoc County",
+      "fips": "06049",
+      "directoryPath": "/areas/california/#modoc",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/modoc-county/",
+      "readerDecision": "Make the selected room and arrival instructions usable offline.",
+      "rationale": "Madison covers private bathing and overnight stays, Jackson connects pets to particular rooms and Hall identifies bathroom location. The added task is carrying selected-room exceptions into a compact pre-travel and offline arrival resource. This is more than a restatement of lodging policies.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://surprisevalleyhotsprings.com/rates-policies/"
+      ]
+    },
+    {
+      "areaId": "california/mono",
+      "name": "Mono County",
+      "fips": "06051",
+      "directoryPath": "/areas/california/#mono",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/mono-county/",
+      "readerDecision": "Route the visit before asking the customer to choose a procedure.",
+      "rationale": "Lamoille already describes boot-fit preparation and Dane distinguishes a new bicycle fitting from applying measurements in an existing fit sheet. This brief is justified by the owner-maintained routing table between new retail/demo visits, accessory visits and unresolved fit assessments, with distinct acceptance examples. An industrial repair-authorization guide would imply a stronger RMA process than this task needs, so it is not linked.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://footloosesports.com/ski-boot-fitting/"
+      ]
+    },
+    {
+      "areaId": "california/monterey",
+      "name": "Monterey County",
+      "fips": "06053",
+      "directoryPath": "/areas/california/#monterey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/monterey-county/",
+      "readerDecision": "Choose the referral direction before choosing course dates.",
+      "rationale": "Cook explains registration paths, Pendleton distinguishes course-supplied equipment from personal gear subject to instructor review and Ottawa identifies prior preparation. This local brief adds a bidirectional provider handoff in which the same course family has opposite included stages. The complete project helps an owner specify course comparison, private review and route-specific acceptance cases.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://montereybayscuba.com/index.php?course=padi-open-water-referral&page=lessons.php",
+        "https://montereybayscuba.com/index.php?page=rentals.php"
+      ]
+    },
+    {
+      "areaId": "california/napa",
+      "name": "Napa County",
+      "fips": "06055",
+      "directoryPath": "/areas/california/#napa",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/napa-county/",
+      "readerDecision": "Describe the release plan before treating it as a batch of shipping labels.",
+      "rationale": "McMinn covers packing and shipping, Androscoggin covers stored kits and Washington covers distribution. This draft adds the repeated wine-club release as a coordinated inventory, collateral and pack-variant project, separated from daily order entry. It supplies scope and acceptance examples rather than presenting a generic fulfillment category page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.bodegashipping.com/services/"
+      ]
+    },
+    {
+      "areaId": "california/nevada",
+      "name": "Nevada County",
+      "fips": "06057",
+      "directoryPath": "/areas/california/#nevada",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/nevada-county/",
+      "readerDecision": "Keep the four requested rehearsal days separate from the package purchase.",
+      "rationale": "Berkeley already connects class-pack purchase with session selection, and Logan separates setup access from event time. This complete local brief combines a four-session request, a one-session-per-day constraint and roll-in preparation, with an explicit requirement to verify the checkout before writing confirmations. It should not become a new generic pack-purchase guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.minersharmonymusic.com/rehearsal-space/"
+      ]
+    },
+    {
+      "areaId": "california/orange",
+      "name": "Orange County",
+      "fips": "06059",
+      "directoryPath": "/areas/california/#orange",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/orange-county/",
+      "readerDecision": "Connect the machine a project needs to the class, membership and reservation steps.",
+      "rationale": "Greenville covers hosted visits versus membership; Polk covers membership, studio permission and scheduling; Johnson covers access and firing charges. The completed Orange body instead starts with a desired machine and commissions an equipment-to-class cross-reference, a nonmember class route, membership timing and independent-project materials preparation. Human sign-off remains explicit.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://urbanworkshop.net/faq/"
+      ]
+    },
+    {
+      "areaId": "california/placer",
+      "name": "Placer County",
+      "fips": "06061",
+      "directoryPath": "/areas/california/#placer",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/placer-county/",
+      "readerDecision": "Plan a private event around the retail closing time, dining space and attached ceremony.",
+      "rationale": "Howard distinguishes ceremonies and receptions from public hours; Greensville addresses shared indoor fallback space. The Placer draft brings after-hours retail use, indoor versus conditional patio capacity, reception-dependent ceremonies and food arrangements into the first event-fit inquiry. Its 100-person check shows the specific consequence without inventing unconditional capacity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.highhandnursery.com/weddings-private-events/"
+      ]
+    },
+    {
+      "areaId": "california/plumas",
+      "name": "Plumas County",
+      "fips": "06063",
+      "directoryPath": "/areas/california/#plumas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/plumas-county/",
+      "readerDecision": "Keep session participants separate from the seats in a particular locomotive.",
+      "rationale": "Anderson covers tickets and the departure depot; Swain covers packaged itinerary timing. Plumas compares ordinary admission, riding and supervised operation, then separates total session participants from simultaneous equipment seats. The substitution check requires renewed seating discussion, and train-ride inclusions remain tied to the operating day.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://museum.wplives.org/ral/",
+        "https://museum.wplives.org/Visit%20Us/"
+      ]
+    },
+    {
+      "areaId": "california/riverside",
+      "name": "Riverside County",
+      "fips": "06065",
+      "directoryPath": "/areas/california/#riverside",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/riverside-county/",
+      "readerDecision": "Separate a photo-session request, property permission and the subsequent payment.",
+      "rationale": "Tulsa already routes photography by use and permission, Caswell distinguishes tour photography from specialist visits, and Bee distinguishes admission from space permission. The completed Riverside commission adds an ordered request/approval/payment path, verifiable acknowledgement wording, a total count including photographers and a calendar-versus-session-capacity check. This is a narrower incremental service case, not grounds for a new general guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://gardens.ucr.edu/photography"
+      ]
+    },
+    {
+      "areaId": "california/sacramento",
+      "name": "Sacramento County",
+      "fips": "06067",
+      "directoryPath": "/areas/california/#sacramento",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/sacramento-county/",
+      "readerDecision": "Show direct donation drop-off and a partner pickup as different arrangements.",
+      "rationale": "Gillespie separates entrances and hours; Freestone handles advance board approval. Sacramento commissions the choice between direct staffed drop-off and an external pickup provider, with appointment-free access distinguished from final in-person acceptance. The completed neighboring San Francisco draft instead centers mixed construction-load descriptions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://habitatgreatersac.org/restore/restoredonate/"
+      ]
+    },
+    {
+      "areaId": "california/san-benito",
+      "name": "San Benito County",
+      "fips": "06069",
+      "directoryPath": "/areas/california/#san-benito",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a scenicflight versus training, or a lodging unit with its specific amenities.",
+      "rationale": "The supported scenic-flight choice largely repeats Dare and the complete experience-product-choice guide. The substantive Paicines alternative repeats the selected-unit and amenities work in Missouri Cedar, Texas Brewster and vacation-rental-property-fit. Neither lead provides enough additional complete county service guidance, so NO_ADDITION is an editorial decision after complete research, not a source-gap HOLD.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "california/san-bernardino",
+      "name": "San Bernardino County",
+      "fips": "06071",
+      "directoryPath": "/areas/california/#san-bernardino",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-bernardino-county/",
+      "readerDecision": "Explain the waiver step that precedes the actual meeting-point instructions.",
+      "rationale": "Cole separates confirmation and waiver; Iron separates park access from shuttle and first-visit preparation. The complete departure-address guide handles office versus departure location. The new county body applies a specific dependency: electronic-waiver completion precedes receiving the meeting pin. It commissions missing-message help and two travel-segment explanations without publishing a pin or assuming the office is the meeting point.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://actiontourscalifornia.com/product/zipline-tour/"
+      ]
+    },
+    {
+      "areaId": "california/san-diego",
+      "name": "San Diego County",
+      "fips": "06073",
+      "directoryPath": "/areas/california/#san-diego",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-diego-county/",
+      "readerDecision": "Keep a firing-space estimate separate from the studio’s review of the actual batch.",
+      "rationale": "Queens separates firing from workspace; Stafford maintains batch identity; Lynchburg compares item/shelf/membership charging; Johnson separates access and firing charges. San Diego focuses on a calculator explicitly described as approximate: retaining the batch description, distinguishing flatware/full-load options and revisiting the estimate when pieces change. The narrow incremental value remains subject to independent editorial review.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.freeformclay.com/firing"
+      ]
+    },
+    {
+      "areaId": "california/san-francisco",
+      "name": "San Francisco County",
+      "fips": "06075",
+      "directoryPath": "/areas/california/#san-francisco",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-francisco-county/",
+      "readerDecision": "Describe each part of a mixed salvage load before treating it as one acceptable donation.",
+      "rationale": "Chowan separates selling reclaimed material from commissioning work; Freestone handles board approval. San Francisco commissions a mixed-load description with separate category, quantity and completeness questions, and replies that identify the relevant group. This differs from neighboring Sacramento’s direct-drop-off versus partner-pickup decision.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://buildingresources.org/donations/"
+      ]
+    },
+    {
+      "areaId": "california/san-joaquin",
+      "name": "San Joaquin County",
+      "fips": "06077",
+      "directoryPath": "/areas/california/#san-joaquin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-joaquin-county/",
+      "readerDecision": "Keep sample collection cutoffs separate from the analysis turnaround target.",
+      "rationale": "Worth distinguishes local-office/direct-lab routes, payment references and processing from shipping; Greer covers material-specific preparation; Summit covers method-selection questions. Lodi adds a maintained multi-location cutoff table, scheduled courier days, late-drop consequences and a distinct after-hours access step. The owner must define the target clock rather than inherit an invented total delivery promise.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.lodiwinelabs.com/pages/courier",
+        "https://www.lodiwinelabs.com/pages/analysis-landing-page"
+      ]
+    },
+    {
+      "areaId": "california/san-luis-obispo",
+      "name": "San Luis Obispo County",
+      "fips": "06079",
+      "directoryPath": "/areas/california/#san-luis-obispo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-luis-obispo-county/",
+      "readerDecision": "Give a sold-out performance an accurate standby path without turning it into a ticket.",
+      "rationale": "Logan handles ticket changes and late arrival; Sangamon covers membership-related class waitlist priority; Dodge marks closed productions. SLO REP supplies a different task: a physical queue for one performance, return timing, staff seat assignment at show time and an explicit separate choice of another performance. No online standby system is inferred.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.slorep.org/our-venue/wait-list-policy/"
+      ]
+    },
+    {
+      "areaId": "california/san-mateo",
+      "name": "San Mateo County",
+      "fips": "06081",
+      "directoryPath": "/areas/california/#san-mateo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/san-mateo-county/",
+      "readerDecision": "Compare the full rental payment and accessory choice before the agreement handoff.",
+      "rationale": "Pennsylvania Washington separates accessories and handoff; Georgia Gwinnett handles sizing and rental credit. Heriz adds aligned accessory configurations, recurring totals and initial three-month charges, followed by an expressly in-store agreement handoff. The public inquiry avoids asking for the completed agreement.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://herizmusic.com/rental-instruments/"
+      ]
+    },
+    {
+      "areaId": "california/santa-barbara",
+      "name": "Santa Barbara County",
+      "fips": "06083",
+      "directoryPath": "/areas/california/#santa-barbara",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/santa-barbara-county/",
+      "readerDecision": "Compare waiting to sell with leaving items under the drop-off terms.",
+      "rationale": "Moore covers consignment status and Aiken covers advance paperwork. The Santa Barbara body makes seller eligibility and the disposition of unpurchased items visible before choosing drop-off. It separates queue entry from purchase acceptance and mail-in terms from local terms. This differs from SLO’s performance-admission queue.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://crossroadstrading.com/location/santa-barbara-state-st/"
+      ]
+    },
+    {
+      "areaId": "california/santa-clara",
+      "name": "Santa Clara County",
+      "fips": "06085",
+      "directoryPath": "/areas/california/#santa-clara",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/santa-clara-county/",
+      "readerDecision": "Show how classes and assessed practice lead to independent hot-shop rental.",
+      "rationale": "Polk covers membership and studio permission; Wood covers machine-use preparation; Greenville covers hosted visits and membership; Douglas covers workshop participation choices. BAGI’s full body adds parallel courses and assessed practice, a final orientation, returning-after-absence guidance and an experienced-artist route. Orange starts from a particular tool; Santa Clara starts from program milestones and human progress assessment.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bagi.org/pages/renter-prerequisites-hot-shop",
+        "https://bagi.org/pages/practice-sessions-for-hot-shop-rentals",
+        "https://bagi.org/pages/rentals"
+      ]
+    },
+    {
+      "areaId": "california/santa-cruz",
+      "name": "Santa Cruz County",
+      "fips": "06087",
+      "directoryPath": "/areas/california/#santa-cruz",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/santa-cruz-county/",
+      "readerDecision": "Show where a rail trip begins and whether it brings the visitor back.",
+      "rationale": "Anderson explains depot and boarding-pass handoffs; Nemaha handles an unavailable excursion beside lodging. This brief adds a two-origin journey with a one-way exception and an explicit return-to-car check, while separating current seasonal status from static times. The existing experience guide supplies the general comparison method; no new guide mechanism is needed.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://roaringcamp.com/excursions/santa-cruz-beach-train-2",
+        "https://roaringcamp.com/",
+        "https://roaringcamp.com/excursions/redwood-forest-steam-train"
+      ]
+    },
+    {
+      "areaId": "california/shasta",
+      "name": "Shasta County",
+      "fips": "06089",
+      "directoryPath": "/areas/california/#shasta",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/shasta-county/",
+      "readerDecision": "Separate a dated admission purchase from the tour assigned at arrival.",
+      "rationale": "Stone covers counter assignment and surface activities; Grundy compares walking and adventure tours. This proposed project makes the online purchase-to-boarding distinction coexist with a shared boat/bus journey and a transport-only participant, yielding a specific multi-stage party check. It extends the local business brief without just changing the cave name.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.lakeshastacaverns.com/frequently-asked-questions"
+      ]
+    },
+    {
+      "areaId": "california/sierra",
+      "name": "Sierra County",
+      "fips": "06091",
+      "directoryPath": "/areas/california/#sierra",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/sierra-county/",
+      "readerDecision": "Bring the bicycle’s preparation into the shuttle conversation.",
+      "rationale": "Pocahontas handles rental versus own-bike riders; Washington handles rental fitting and meeting point; Ashland handles electrical repair scope. This brief combines a dated shuttle with a separately confirmed repair prerequisite and model/size inquiry, including a mixed-rider staff test. The useful deliverable is preparation and routing content, not a copied rental comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.downievilleoutfitters.net/"
+      ]
+    },
+    {
+      "areaId": "california/siskiyou",
+      "name": "Siskiyou County",
+      "fips": "06093",
+      "directoryPath": "/areas/california/#siskiyou",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/siskiyou-county/",
+      "readerDecision": "Help each learner find the right lesson route before choosing extras.",
+      "rationale": "Bottineau distinguishes admission, rentals and instruction; Essex explains first-come rental availability. This project adds learner-by-learner routing for age, activity and uncertain ability, with a separate purchase channel for one lesson format and a test that avoids family-wide automatic classification.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://skipark.squarespace.com/winter/group-lessons"
+      ]
+    },
+    {
+      "areaId": "california/solano",
+      "name": "Solano County",
+      "fips": "06095",
+      "directoryPath": "/areas/california/#solano",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/solano-county/",
+      "readerDecision": "Keep the tour format separate from whether the factory is producing.",
+      "rationale": "Roseau separates an exhibit center from a production-dependent factory tour; Miami compares farm packages and seasonal production. Here guided versus self-guided is independent of production running, so the owner needs two distinct content controls. The weekend guided-party check and department-hour test make the local commissioning brief more than a renamed tour comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.jellybelly.com/cs/node/343",
+        "https://www.jellybelly.com/visitor-center"
+      ]
+    },
+    {
+      "areaId": "california/sonoma",
+      "name": "Sonoma County",
+      "fips": "06097",
+      "directoryPath": "/areas/california/#sonoma",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/sonoma-county/",
+      "readerDecision": "Plan the safari, overnight stay and meals as separate parts of one visit.",
+      "rationale": "Saline handles group age and activity format, Finney seasonal visit choices, and Washington separate transport and lodging. The additional project here is a component-specific participation rule within an overnight stay, with bed arrangements and dining confirmations tested together. The existing experience guide covers the general principle; the external-operator itinerary guide is not linked to this single-property brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://safariwest.org/online-reservations/"
+      ]
+    },
+    {
+      "areaId": "california/stanislaus",
+      "name": "Stanislaus County",
+      "fips": "06099",
+      "directoryPath": "/areas/california/#stanislaus",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/stanislaus-county/",
+      "readerDecision": "Describe the event format before choosing a room by capacity.",
+      "rationale": "Houston distinguishes facility purpose, and Winneshiek separates event components. This project adds the difference between a published standing capacity and an unapproved seated layout across a theater/lobby portfolio. Its useful output is an event-format brief and same-headcount layout test, not a generic venue list.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.galloarts.org/AboutUs/Rentals.aspx",
+        "https://www.galloarts.org/AboutUs/MarieDamrellGalloGrandLobby.aspx"
+      ]
+    },
+    {
+      "areaId": "california/sutter",
+      "name": "Sutter County",
+      "fips": "06101",
+      "directoryPath": "/areas/california/#sutter",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/sutter-county/",
+      "readerDecision": "Prepare the product assortment and label assets before requesting a private-label quote.",
+      "rationale": "Mecklenburg handles branding inputs; the wholesale and print guides cover order readiness and artwork separately. The local project joins mixed-case assortment with one-template consistency and customer barcode ownership, using a quote-readiness test rather than implying ordinary cart checkout.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://privatelabeling.sutterbuttesoliveoil.com/",
+        "https://sutterbuttesoliveoil.com/pages/wholesale"
+      ]
+    },
+    {
+      "areaId": "california/tehama",
+      "name": "Tehama County",
+      "fips": "06103",
+      "directoryPath": "/areas/california/#tehama",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/tehama-county/",
+      "readerDecision": "Give optional sale documents a purpose, owner and removal date.",
+      "rationale": "Greenwood separates current sale catalogs from archives; Moore separates consignment submission from acceptance. This project adds an optional document with a different reviewer and a limited public lifetime. Its before/after-sale test adds useful content ownership and removal guidance without creating a veterinary service.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://redbluffbullsale.com/wp-content/uploads/2026/09/2027-Gelding-Entry.pdf"
+      ]
+    },
+    {
+      "areaId": "california/trinity",
+      "name": "Trinity County",
+      "fips": "06105",
+      "directoryPath": "/areas/california/#trinity",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/trinity-county/",
+      "readerDecision": "Distinguish a private rehearsal from an event with an audience.",
+      "rationale": "The rafting leads overlapped Carlton and Polk and the river-section guide. Houston compares facility purpose and Stanley provisional venue inquiry. The stronger alternative adds an audience boundary that changes the rental category, plus technician use distinct from physical stage access. That audience-transition test differs from Stanislaus’s capacity/layout test.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.tapaconline.org/uploads/1/2/9/5/129558070/2026_trinity_players_facilities_contract.pdf",
+        "https://www.tapaconline.org/booking.html"
+      ]
+    },
+    {
+      "areaId": "california/tulare",
+      "name": "Tulare County",
+      "fips": "06107",
+      "directoryPath": "/areas/california/#tulare",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/tulare-county/",
+      "readerDecision": "Label what happens at each shuttle stop before publishing its time.",
+      "rationale": "Plymouth distinguishes entrances and Anderson depots. The local project adds stop purpose and time semantics on a two-direction route, plus separation of valley and in-park seasonal service. The departure-address guide supports putting the correct starting point beside the action; ferry-route guidance is not linked to a bus brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://sequoiashuttle.com/",
+        "https://www.nps.gov/seki/planyourvisit/parktransit.htm"
+      ]
+    },
+    {
+      "areaId": "california/tuolumne",
+      "name": "Tuolumne County",
+      "fips": "06109",
+      "directoryPath": "/areas/california/#tuolumne",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/tuolumne-county/",
+      "readerDecision": "Keep the promised excursion separate from the locomotive expected to pull it.",
+      "rationale": "McCreary distinguishes a car choice from assigned seats and Nemaha seasonal experience availability. This project adds scheduled equipment that is explicitly subject to substitution, photo-claim control and a separate caboose constraint check. It is different from Santa Cruz’s origin/return problem.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://railtown1897.org/visit/excursion-train-rides"
+      ]
+    },
+    {
+      "areaId": "california/ventura",
+      "name": "Ventura County",
+      "fips": "06111",
+      "directoryPath": "/areas/california/#ventura",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/ventura-county/",
+      "readerDecision": "Connect the boat dates, campsite and gear before presenting an overnight island trip.",
+      "rationale": "Washington separates ferry and lodging, Accomack boat arrangements and Harrison trip duration. The ferry guide already covers the general camping dependency, so no new guide is needed. The local business project adds an exact island/outbound/return/campsite review and a separate gear change test for the Ventura operator’s stated sequence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.islandpackers.com/information/faq/"
+      ]
+    },
+    {
+      "areaId": "california/yolo",
+      "name": "Yolo County",
+      "fips": "06113",
+      "directoryPath": "/areas/california/#yolo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/yolo-county/",
+      "readerDecision": "Explain the pickup commitment before revealing a private host address.",
+      "rationale": "Newton covers recurring seasonal flowers, Livingston fulfillment handoffs and Gadsden dated stock. The distinct commissioning brief combines count-versus-frequency comprehension with useful public pickup information and private-address release, then checks a single-box change. The generic content template helps collect approved facts; the shipping guide is not linked because this is local pickup.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://fullbellyfarm.com/our-csa/"
+      ]
+    },
+    {
+      "areaId": "california/yuba",
+      "name": "Yuba County",
+      "fips": "06115",
+      "directoryPath": "/areas/california/#yuba",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/california/yuba-county/",
+      "readerDecision": "Prepare each household’s campsite requirements before the group books.",
+      "rationale": "Adams covers reserved-site identity, Botetourt separates trip and camping arrangements, and Meigs locates amenities. This project adds household-by-household equipment fit and separate confirmation state within one group, then distinguishes camping from fixed rental accommodation. It differs from Sonoma’s components within one stay.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://collinslake.com/reservations"
+      ]
+    },
+    {
+      "areaId": "new-mexico/bernalillo",
+      "name": "Bernalillo County",
+      "fips": "35001",
+      "directoryPath": "/areas/new-mexico/#bernalillo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/bernalillo-county/",
+      "readerDecision": "Choose whether a kitchen website needs a facility-use comparison, a mobile commissary explanation, or both before inviting a tour.",
+      "rationale": "The local brief makes the distinction between producing food, leaving supplies, handing orders to customers and servicing a mobile unit concrete. Owner inputs and acceptance cases establish what to commission beyond a generic availability form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.abq-food-truck.com/services",
+        "https://www.abq-food-truck.com/contact"
+      ]
+    },
+    {
+      "areaId": "new-mexico/catron",
+      "name": "Catron County",
+      "fips": "35003",
+      "directoryPath": "/areas/new-mexico/#catron",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/catron-county/",
+      "readerDecision": "Decide how a retreat property website should connect private sleeping arrangements, shared gathering spaces and a whole-property inquiry.",
+      "rationale": "The combined accommodation and facility-status brief supplies a distinct buyout acceptance case: an all-private-room request and indoor workshop requirement must remain unresolved until the owner reviews actual allocations and current space.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://doubletcatwalkresort.com/en/host-a-retreat",
+        "https://doubletcatwalkresort.com/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/chaves",
+      "name": "Chaves County",
+      "fips": "35005",
+      "directoryPath": "/areas/new-mexico/#chaves",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/chaves-county/",
+      "readerDecision": "Choose how a party website should distinguish activity participants, accompanying adults, package materials and the reserved room.",
+      "rationale": "The owner receives a concrete comparison and inquiry test that distinguishes fifteen attendees from twelve activity participants, with package materials and refreshments reviewed separately. It does not merely rename an existing party-duration page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://spaceportroswellnm.com/party",
+        "https://spaceportroswellnm.com/about"
+      ]
+    },
+    {
+      "areaId": "new-mexico/cibola",
+      "name": "Cibola County",
+      "fips": "35006",
+      "directoryPath": "/areas/new-mexico/#cibola",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/cibola-county/",
+      "readerDecision": "Decide how a local visitor business should explain an Acoma visit while separately checking permission for the photographs it wants to publish.",
+      "rationale": "The deliverable is a practical content-and-image approval brief for a local business commissioning a site. It pairs a maintained external tour handoff with a separately reviewable image-use record, without converting tribal guidelines into a service sold by the studio.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://skycityacoma.org/",
+        "https://skycityacoma.org/acoma-pueblo/guidelines/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/colfax",
+      "name": "Colfax County",
+      "fips": "35007",
+      "directoryPath": "/areas/new-mexico/#colfax",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/colfax-county/",
+      "readerDecision": "Choose how a lesson website should connect the participant's experience with the actual package and a season's sales status.",
+      "rationale": "The service brief distinguishes readiness for a first-timer bundle from merely wanting its equipment, and makes program description versus sale availability a separately maintained choice. Those are concrete owner inputs and tests beyond the existing ski admission comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.angelfireresort.com/activities/winter-activities/skiing-and-snowboarding/adult-ski-snowboard-lessons/",
+        "https://www.angelfireresort.com/activities/winter-activities/skiing-and-snowboarding/childrens-group-lessons/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/curry",
+      "name": "Curry County",
+      "fips": "35009",
+      "directoryPath": "/areas/new-mexico/#curry",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/curry-county/",
+      "readerDecision": "Decide how an event venue website should separate an initial room inquiry from the later menu, attendance and production details needed for an accepted event.",
+      "rationale": "The website project gives organizers a staged preparation plan while keeping the initial inquiry manageable. A concrete test changes the expected attendance after menu discussion and checks that the final-count question reaches staff without silently revising the room agreement or equipment plan.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.clovisnm.gov/m/faq?cat=25",
+        "https://www.clovisnm.gov/396/Services"
+      ]
+    },
+    {
+      "areaId": "new-mexico/de-baca",
+      "name": "De Baca County",
+      "fips": "35011",
+      "directoryPath": "/areas/new-mexico/#de-baca",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether a new county page adds useful project guidance beyond existing indoor/outdoor visitor-route and campsite comparisons.",
+      "rationale": "NO_ADDITION after both substantive leads and complete comparisons. Useful local facts do not by themselves justify a new service page; the proposed owner work and acceptance checks are already developed in the existing records. This is an editorial conclusion, not a population filter or an unresolved-research HOLD.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "new-mexico/dona-ana",
+      "name": "Doña Ana County",
+      "fips": "35013",
+      "directoryPath": "/areas/new-mexico/#dona-ana",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/dona-ana-county/",
+      "readerDecision": "Choose how a pecan buyer's website should explain the condition and quantity of a seller's lot before a price discussion.",
+      "rationale": "The seller-side lot-condition brief adds useful commercial content beyond generic B2B intake: an owner must explain what already happened to the pecans and what a price label does or does not apply to. A changed lot type is tested without automatically carrying over the first price basis.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://ziapecan.com/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/eddy",
+      "name": "Eddy County",
+      "fips": "35015",
+      "directoryPath": "/areas/new-mexico/#eddy",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/eddy-county/",
+      "readerDecision": "Choose how a local visitor business should compare the zoo walking route with a separate nearby nature trail before giving directions.",
+      "rationale": "A business owner can commission a small local-information repair with specific content and a route-switch acceptance check, or a fuller outing section. This is distinct from a broad attractions list and does not sell or guarantee third-party access.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.emnrd.nm.gov/spd/find-a-park/living-desert-zoo-and-gardens-state-park/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/grant",
+      "name": "Grant County",
+      "fips": "35017",
+      "directoryPath": "/areas/new-mexico/#grant",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Determine whether a pottery-class completion page or a variable-hours studio page adds enough owner guidance beyond existing full records.",
+      "rationale": "NO_ADDITION after current substantive class evidence, a credible studio alternative, independent locality and complete comparisons. This is not a claim that Silver City businesses lack website needs; it means these researched mechanisms do not merit another dedicated service page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "new-mexico/guadalupe",
+      "name": "Guadalupe County",
+      "fips": "35019",
+      "directoryPath": "/areas/new-mexico/#guadalupe",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/guadalupe-county/",
+      "readerDecision": "Choose how a visitor or dive-business website should prepare customers for the correct official permit role and validity period without duplicating the city's application.",
+      "rationale": "The website brief adds a practical role-and-calendar acceptance case: a Wednesday/Thursday visit crosses the official weekly period, while a student booking still needs the responsible permit arrangement. It scopes a public preparation handoff rather than recreating a sensitive application.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://visitsantarosanm.com/dive-permit-application/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/harding",
+      "name": "Harding County",
+      "fips": "35021",
+      "directoryPath": "/areas/new-mexico/#harding",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/harding-county/",
+      "readerDecision": "Match the arena paperwork and overnight arrangements to the visitor’s role.",
+      "rationale": "Kingman already separates spectators, stalls and campers; Davis distinguishes exclusive grounds use and separately arranged facilities. Harding does not claim those distinctions as new. Its additional project value is the role-specific document structure for all arena users versus facility renters, tested alongside school-use timing and overnight needs. The usefulness is the coordinated owner brief and acceptance scenarios, not a new general principle.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mosquero.net/arena"
+      ]
+    },
+    {
+      "areaId": "new-mexico/hidalgo",
+      "name": "Hidalgo County",
+      "fips": "35023",
+      "directoryPath": "/areas/new-mexico/#hidalgo",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/hidalgo-county/",
+      "readerDecision": "Connect the intended tour time, party size and guide confirmation.",
+      "rationale": "Goodhue and Murray comparators distinguish independent visits from arranged tours, including a self-guided fallback in the latter. Hidalgo must preserve the opposite guided-only boundary and combine it with party-level minimums and a call-based confirmation. That produces a materially different planning and testing brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.shakespeareghostown.com/tours",
+        "https://www.nmhistoricwomen.org/new-mexico-historic-women/women-of-shakespeare-emma-marble-muir-rita-wells-hill-janaloo-hill-hough/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/lea",
+      "name": "Lea County",
+      "fips": "35025",
+      "directoryPath": "/areas/new-mexico/#lea",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/lea-county/",
+      "readerDecision": "Choose the next step from the activity, not a single registration button.",
+      "rationale": "Cherokee’s current/expired/gift membership states and Cass’s membership-before-class sequence do not supply the same activity-to-channel brief. Lea combines no-registration drop-in participation, online programs and an in-person household review, with separate acceptance checks for each.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.corehobbs.com/faqs.html",
+        "https://www.corehobbs.com/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/lincoln",
+      "name": "Lincoln County",
+      "fips": "35027",
+      "directoryPath": "/areas/new-mexico/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/lincoln-county/",
+      "readerDecision": "Keep age, lesson format and arrival preparation together.",
+      "rationale": "Essex distinguishes rental allocation and Fayette distinguishes equipment/instruction/tours. Lincoln adds participant-level age thresholds combined with different enrollment methods inside a shared family outing, with an explicit mixed-age test and preparation order.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.skiapache.com/plan-your-trip/ski-and-ride-lessons/",
+        "https://www.skiapache.com/faqs/",
+        "https://www.env.nm.gov/public-notices/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/los-alamos",
+      "name": "Los Alamos County",
+      "fips": "35028",
+      "directoryPath": "/areas/new-mexico/#los-alamos",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/los-alamos-county/",
+      "readerDecision": "Keep the whole school group visible while planning each visit.",
+      "rationale": "Montgomery TX covers trunks, visits and speakers; Seminole OK covers trip funding/lunch timing. This page instead retains total cohort information before splitting visits and connects location, district and transport to that plan. It offers different owner inputs and acceptance checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://peecnature.org/field-trips/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/luna",
+      "name": "Luna County",
+      "fips": "35029",
+      "directoryPath": "/areas/new-mexico/#luna",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose an ordinary museum visit or arrange a collection-specific research appointment.",
+      "rationale": "The full Goliad record already connects collections, narrower archive staff availability, topic preparation and on-site research; Washington IA already separates museum admission and research appointments and warns that a topic does not establish a record exists. Adding an internal image-database distinction is too slight to justify another full local project page. The alternate winery likewise repeats existing Duplin tour/dining planning.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "new-mexico/mckinley",
+      "name": "McKinley County",
+      "fips": "35031",
+      "directoryPath": "/areas/new-mexico/#mckinley",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/mckinley-county/",
+      "readerDecision": "Choose how customers can ask about pieces that are not in the online catalog.",
+      "rationale": "Jefferson/Hudson cover buyer roles and trade inquiries; Mitchell NC covers the moment a unique artwork is secured in checkout. McKinley instead asks what the owner can maintain online and how staff assist selection of unlisted changing pieces, keeping that choice separate from retail/trade context. No checkout or hold policy is borrowed.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.silverdusttrading.com/",
+        "https://runningbeartrading.com/about/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/mora",
+      "name": "Mora County",
+      "fips": "35033",
+      "directoryPath": "/areas/new-mexico/#mora",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Distinguish an ordinary mill visit from a dated operating demonstration, and check the current season.",
+      "rationale": "McPherson KS already distinguishes ordinary static mill visits from a dated machinery event, including past-event media and operator-confirmed next dates. Louisa IA covers seasonal indoor access. The live Mora hatchery alternative describes public viewing, a short tour of fish-culture spaces and staff question assistance; it is not evidence of a separately arranged tour product. Montgomery NC already develops the visitor-role and work-viewing explanation. Neither candidate supplies substantial additional project guidance after complete-record review.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "new-mexico/otero",
+      "name": "Otero County",
+      "fips": "35035",
+      "directoryPath": "/areas/new-mexico/#otero",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/otero-county/",
+      "readerDecision": "Choose the gift packaging before treating the artwork as ready to print.",
+      "rationale": "Bertie NC and Rutherford TN cover print/custom gift feasibility and artwork/order details. Otero adds package-specific print area as an input that must precede artwork assumptions, and tests a smaller-bag repeat order against screen reuse. That is a concrete product-selection and maintenance brief beyond renaming an artwork checklist.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.heartofthedesert.com/corporate-gifts-from-heart-of-the-desert/",
+        "https://www.heartofthedesert.com/locations/alamogordo/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/quay",
+      "name": "Quay County",
+      "fips": "35037",
+      "directoryPath": "/areas/new-mexico/#quay",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/quay-county/",
+      "readerDecision": "Caption the material and the visitor’s access together.",
+      "rationale": "Montgomery NC distinguishes observing studio work from hands-on workshops; Henry IA distinguishes building access. Quay adds object-level material identification and tactile permission, with explicit public-window versus student-study separation. The proposed photo inventory and acceptance tests are specific, usable work beyond generic visit-format labels.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.mesalands.edu/page/mesalands-community-colleges-dinosaur-museum-and-natural-science-laboratory"
+      ]
+    },
+    {
+      "areaId": "new-mexico/rio-arriba",
+      "name": "Rio Arriba County",
+      "fips": "35039",
+      "directoryPath": "/areas/new-mexico/#rio-arriba",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/rio-arriba-county/",
+      "readerDecision": "Separate class readiness from the materials chosen for the project.",
+      "rationale": "Orange NC covers craft prerequisites/materials and Monroe PA covers class work that requires later finishing/collection. Rio Arriba instead separates pre-supplied loom/warp from the student’s on-site weft choice, with rug-versus-blanket consequences and uncertainty allowed before selection. It adds a different preparation and owner-content brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.handweavers.com/classes/",
+        "https://www.handweavers.com/contact"
+      ]
+    },
+    {
+      "areaId": "new-mexico/roosevelt",
+      "name": "Roosevelt County",
+      "fips": "35041",
+      "directoryPath": "/areas/new-mexico/#roosevelt",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/roosevelt-county/",
+      "readerDecision": "Turn a history-tour request into a lesson and materials brief.",
+      "rationale": "Denton connects grade/learning aim to an itinerary; Muscatine organizes learning goals, adults and date choices; Ochiltree organizes a selected museum activity. Roosevelt adds the deliverables staff must prepare: period-specific archive objects, requested classroom sheets and digital gallery content, with explicit owner inputs and acceptance checks.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 1,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.enmu.edu/about/general-information/local-events-and-info/arts-and-culture/roosevelt-county-museum"
+      ]
+    },
+    {
+      "areaId": "new-mexico/san-juan",
+      "name": "San Juan County",
+      "fips": "35045",
+      "directoryPath": "/areas/new-mexico/#san-juan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/san-juan-county/",
+      "readerDecision": "Compare a museum visit with a guide-led day in the landscape.",
+      "rationale": "Presidio compares inclusions and transport, Jefferson compares named tour choices, and San Patricio compares excursion scope. This draft combines a museum/full-day branch with a named distance/season/carrying test; the proposed preparation and scope choices make it useful beyond repeating a tour description.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.salmonruins.com/tours.html",
+        "https://www.salmonruins.com/contact.html"
+      ]
+    },
+    {
+      "areaId": "new-mexico/san-miguel",
+      "name": "San Miguel County",
+      "fips": "35047",
+      "directoryPath": "/areas/new-mexico/#san-miguel",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/san-miguel-county/",
+      "readerDecision": "Plan a special weekend without turning every activity into a room package.",
+      "rationale": "Sullivan separates performances and meals, Ozark explains a dinner included through an accommodation arrangement, and Ford ties a seasonal package to arrival. This event instead offers separately listed activities plus an optional room discount: the project keeps day-visitor participation, RSVP meaning and lodging choice distinct, then retires the dated invitation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://castanedahotel.org/fred-harvey-weekend-2026/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/sandoval",
+      "name": "Sandoval County",
+      "fips": "35043",
+      "directoryPath": "/areas/new-mexico/#sandoval",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/sandoval-county/",
+      "readerDecision": "Give walk-in soaks and arranged private groups different next steps.",
+      "rationale": "Madison compares a timed bath with lodging; Lampasas contrasts open-hours and after-hours pool parties; Phillips handles party counts and price bands. Sandoval adds a non-reservable ordinary-visit action beside a before-opening arranged group, tested against two operators with different rules and a separate admission cutoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://jemezhotsprings.com/rates-hours/",
+        "https://jemezspringsbathhouse.com/faq/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/santa-fe",
+      "name": "Santa Fe County",
+      "fips": "35049",
+      "directoryPath": "/areas/new-mexico/#santa-fe",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/santa-fe-county/",
+      "readerDecision": "Brief a cooking event around participation, the meal and requested extras.",
+      "rationale": "Montgomery explains watching versus taking part, Douglas compares group participation and finished art, and Buchanan compares workshop format/location. This draft extends the useful principle to a cooking/dining/presentation brief whose optional additions affect equipment, space and staff review; it offers concrete commission scopes and an acceptance check.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://santafeschoolofcooking.com/private-events/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/sierra",
+      "name": "Sierra County",
+      "fips": "35051",
+      "directoryPath": "/areas/new-mexico/#sierra",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/sierra-county/",
+      "readerDecision": "Explain a timed soak when the booking tool uses hotel labels.",
+      "rationale": "Madison, McLean and Lawrence separate experiences, lodging and equipment. None of the full comparators explains translating hotel night/arrival labels for a timed soak. The added value is a practical pre-provider content project with explicit one-session and changed-stay tests, not another generic separate-bookings warning.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://riverbendhotsprings.com/more-info/"
+      ]
+    },
+    {
+      "areaId": "new-mexico/socorro",
+      "name": "Socorro County",
+      "fips": "35053",
+      "directoryPath": "/areas/new-mexico/#socorro",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/socorro-county/",
+      "readerDecision": "Finish visitor preparation before the phone needs to go offline.",
+      "rationale": "Midland preserves road restrictions, Lubbock branches arrival routes and Jeff Davis keeps notices with programs. Socorro adds a pre-departure/printed preparation deliverable that must remain usable with no map, buttons or QR code, tied to the actual limited-connectivity and device policy.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://public.nrao.edu/visit/very-large-array/",
+        "https://public.nrao.edu/visit/very-large-array/dos-and-donts/",
+        "https://www.socorrocounty.net/general-information"
+      ]
+    },
+    {
+      "areaId": "new-mexico/taos",
+      "name": "Taos County",
+      "fips": "35055",
+      "directoryPath": "/areas/new-mexico/#taos",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/taos-county/",
+      "readerDecision": "Explain the work a student should bring to the first class.",
+      "rationale": "Stafford covers identifying outside pottery through firing, Posey covers selected pieces after participation, Morgan covers class progression and Cass distinguishes studio-use membership. Taos adds the condition of work before the first lesson and a course-specific preparation block. The class-take-home guide addresses later completion and is deliberately not linked.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.taosceramics.com/classes",
+        "https://www.taosceramics.com/class-policies",
+        "https://www.taosceramics.com/contact"
+      ]
+    },
+    {
+      "areaId": "new-mexico/torrance",
+      "name": "Torrance County",
+      "fips": "35057",
+      "directoryPath": "/areas/new-mexico/#torrance",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/torrance-county/",
+      "readerDecision": "Keep admission, activity credit and timed extras distinct.",
+      "rationale": "Cass treats group counts and arrival, Travis links reservation/payment/access, and Collin handles entitlements/proof/channel. Torrance adds a mixed visit of admission, shareable activity credit and an optional timed purchase, with explicit quantity and collection checks across the ticket handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://mccallpumpkinpatch.com/products/fall-admission",
+        "https://mccallpumpkinpatch.com/pages/faq"
+      ]
+    },
+    {
+      "areaId": "new-mexico/union",
+      "name": "Union County",
+      "fips": "35059",
+      "directoryPath": "/areas/new-mexico/#union",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Confirm the museum visit or current park activity before travel.",
+      "rationale": "DeWitt already separates office/public hours and private tours; Wright handles last admission and guided visits; Mitchell connects lake activity, equipment and current conditions. Neither Union source yielded enough additional website commission guidance after full comparison. County identity alone does not justify a renamed page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "new-mexico/valencia",
+      "name": "Valencia County",
+      "fips": "35061",
+      "directoryPath": "/areas/new-mexico/#valencia",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/new-mexico/valencia-county/",
+      "readerDecision": "Keep a relocated event visible while the regular venue is closed.",
+      "rationale": "Crosby gives closure priority over routine hours, Morgan explains closure exceptions, and Pine separates museum/café components. Valencia adds separately maintained canceled and relocated event states plus a direct-old-link test and a new destination; it is a fuller event-content commission rather than another closure banner.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.harveyhousemuseum.org/",
+        "https://www.belen-nm.gov/AlertCenter.aspx?AID=1st-St-Harvey-House-CLOSED-31"
+      ]
+    }
+  ]
+}

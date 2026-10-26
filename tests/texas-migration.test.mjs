@@ -1,3 +1,6 @@
+import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
+import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
+import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
 import mnOkPaths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import paths from './fixtures/texas-approved-paths.json' with {type:'json'};
@@ -58,7 +61,7 @@ test('0038 adds exactly the Texas directory and 216 reviewed county keys and pre
  assert.equal(nextKeys.length,1448);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].sort(),[...nextKeys,...moIaPaths.map(journeyPageKey),...mnOkPaths.map(journeyPageKey)].sort());
+ assert.deepEqual([...journeyPages].sort(),[...nextKeys,...moIaPaths.map(journeyPageKey),...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey),...mnOkPaths.map(journeyPageKey)].sort());
  // SQLite quotes the renamed table. Only the 217 approved page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

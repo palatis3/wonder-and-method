@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "APPLIED_INDEPENDENTLY_REVIEWED",
+  "reason": "Quality gate identified unclear responsibility for operational printer work; assign that work to the operator and IT provider, and assess proposed website connections separately.",
+  "appliedAt": "2026-10-26T06:02:40.990Z",
+  "path": "/areas/kansas/sumner-county/",
+  "beforeScopeTrigger": "A focused device-help page can support a working printer service. Expand the project when instructions, alternatives and collection information are scattered across several pages. Driver installation, network changes, print software and document handling require separate operational scope.",
+  "afterScopeTrigger": "A focused device-help page can support a working printer service. Expand the project when instructions, alternatives and collection information are scattered across several pages. The operator and its IT provider remain responsible for driver installation, network changes, print software and document handling. Any website upload or print-system connection needs a separate technical assessment.",
+  "beforeRecordSha256": "0f8f55db42a02584eccf59707e44d2eb1ee3be9a825cca0f2ace6bb6928a806f",
+  "afterRecordSha256": "37eca732477d9bca12b5a99a5f9667f347251c6796f55b8d8c75777b42a22abd",
+  "immutableAcceptancePreserved": true
+}

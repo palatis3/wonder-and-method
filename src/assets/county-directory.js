@@ -2,7 +2,7 @@ import {serviceStateInfo} from './service-state-info.js';
 import {countyCityPopulations} from './county-city-populations.js';
 // data-cs and data-cl keep repeated search-card markup compact; visible names and links remain complete.
 // Search stays in this browser; names are stored once per official place type.
-export const normalizeCountyQuery=value=>String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\bsaint\b/g,'st').replace(/['’]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+export const normalizeCountyQuery=value=>String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\bsaint\b/g,'st').replace(/['â€™]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
 // Consecutive names of the same type share one prefix in the HTML payload.
 // Normalized place names contain no commas, pipes or colons.
 export function packCountySearch(value,dictionary){
@@ -136,6 +136,55 @@ export async function decodeCountySearchCards(payload,names){
  if(['columns-v1','columns-delta-v1'].includes(payload?.format))return unpackCountySearchCards(await decodeCountyPayload(payload,true),names,payload.format==='columns-delta-v1');
  return (await decodeCountyPayload(payload)).split('\n').map(value=>unpackCountySearch(value,names));
 }
+export async function decodeCountySearchAsset(bytes){
+ const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+ const data=new Uint8Array(await new Response(stream).arrayBuffer());
+ if(data.length<5)throw new Error('Invalid county search asset');
+ const length=new DataView(data.buffer,data.byteOffset,data.byteLength).getUint32(0,true);
+ if(!length||length>=data.length-4)throw new Error('Invalid county search dictionary length');
+ const names=unpackCountyNames(new TextDecoder('utf-8',{fatal:true}).decode(data.subarray(4,4+length)));
+ if(names.some(name=>!name||normalizeCountyQuery(name)!==name))throw new Error('Invalid county search dictionary');
+ return {names,entries:unpackCountySearchCards(data.subarray(4+length),names,true)};
+}
+function deferCountySearch(root,descriptor,controls,input,clear,status,stateFilter){
+ let loading;
+ const reveal=()=>{
+  let target;try{target=root.getElementById(decodeURIComponent((root.defaultView?.location.hash||'').slice(1)));}catch{return;}
+  if(!target||!root.querySelector('[data-county-directory]').contains(target))return;
+  for(let element=target;element;element=element.parentElement)if(element.matches?.('details'))element.open=true;
+  target.scrollIntoView({block:'start'});
+ };
+ root.defaultView?.addEventListener('hashchange',reveal);reveal();
+ const active=()=>Boolean(input.value.trim()||stateFilter?.value);
+ const load=()=>{
+  clear.disabled=!active();
+  if(loading)return loading;
+  status.textContent='Loading search...';controls.setAttribute('aria-busy','true');
+  loading=(async()=>{
+   try {
+    const asset=JSON.parse(descriptor.textContent);
+    if(asset.format!=='columns-delta-v1'||!/^\/assets\/county-search-[a-f0-9]{20}\.bin$/.test(asset.path))throw new Error('Invalid county search asset path');
+    const response=await fetch(asset.path,{credentials:'same-origin'});
+    if(!response.ok)throw new Error('County search request failed');
+    const prepared=await decodeCountySearchAsset(await response.arrayBuffer());
+    if(!await bindCountyDirectory(root,prepared))throw new Error('County search could not initialize');
+    input.removeEventListener('focus',load);input.removeEventListener('input',load);
+    stateFilter?.removeEventListener('focus',load);stateFilter?.removeEventListener('change',load);
+    clear.removeEventListener('click',reset);root.defaultView?.removeEventListener('hashchange',reveal);
+   } catch {
+    status.textContent='Search could not load. Browse the service areas below, or type again to retry.';
+   } finally {controls.removeAttribute('aria-busy');loading=null;}
+  })();
+  return loading;
+ };
+ const reset=()=>{input.value='';if(stateFilter)stateFilter.value='';clear.disabled=true;input.focus();};
+ input.addEventListener('focus',load);input.addEventListener('input',load);
+ stateFilter?.addEventListener('focus',load);stateFilter?.addEventListener('change',load);
+ clear.addEventListener('click',reset);
+ input.disabled=false;if(stateFilter)stateFilter.disabled=false;controls.hidden=false;clear.disabled=!active();
+ // A restored query must not remain silently unapplied after back navigation.
+ if(active())load();
+}
 const placeTypes={parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z','unorganized territory':'o'};
 const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
 const typedPrefix=new RegExp('^('+typePattern+') of (.+)$'),typedSuffix=new RegExp('^(.+?) ('+typePattern+')$');
@@ -199,19 +248,21 @@ export function countyMatch(card,search,selectedState=''){
  }
  return result;
 }
-export async function bindCountyDirectory(root=document){
+export async function bindCountyDirectory(root=document,prepared){
  const directory=root.querySelector('[data-county-directory]');
  if(!directory)return;
  const controls=root.querySelector('[data-county-filter-controls]');
  const input=controls?.querySelector('input'),clear=controls?.querySelector('button'),status=controls?.querySelector('[role="status"]');
  const empty=root.querySelector('[data-county-empty]'),navigation=root.querySelector('[data-county-region-nav]'),stateFilter=controls?.querySelector('[data-county-state-filter]');
  if(!controls||!input||!clear||!status||!empty)return;
+ const assetData=root.querySelector('[data-county-search-asset]');
+ if(assetData&&!prepared){deferCountySearch(root,assetData,controls,input,clear,status,stateFilter);return true;}
  const nameData=root.querySelector('[data-county-place-names]');
  const cardData=root.querySelector('[data-county-search-cards]');
  let names,cards;
  try {
-  names=nameData?await decodeCountyNames(JSON.parse(nameData.textContent)):undefined;
-  const entries=cardData?await decodeCountySearchCards(JSON.parse(cardData.textContent),names):null;
+  names=prepared?.names||(nameData?await decodeCountyNames(JSON.parse(nameData.textContent)):undefined);
+  const entries=prepared?.entries||(cardData?await decodeCountySearchCards(JSON.parse(cardData.textContent),names):null);
   const elements=[...directory.querySelectorAll('[data-cs]')];
   if(entries&&entries.length!==elements.length)throw new Error('County card count mismatch');
   cards=elements.map((element,index)=>{
@@ -220,7 +271,7 @@ export async function bindCountyDirectory(root=document){
    return {element,index,state:element.closest('[data-county-state]').dataset.countyState,terms};
   });
  }
- catch {status.textContent='Search is unavailable. Browse the service areas below.';return;}
+ catch {status.textContent='Search is unavailable. Browse the service areas below.';return false;}
  const sections=[...directory.querySelectorAll('.county-section')];
  const results=root.querySelector('[data-county-results]');
  const bestList=results?.querySelector('[data-county-best]'),moreList=results?.querySelector('[data-county-more]');
@@ -233,7 +284,7 @@ export async function bindCountyDirectory(root=document){
   const row=root.createElement('li'),link=card.element.querySelector('[data-cl]').cloneNode(true),why=root.createElement('p');
   link.removeAttribute('aria-hidden');
   why.className='county-match-reason';
-  why.textContent=stateLabels[card.state]+(card.match.name?' · Matched '+card.match.type+': '+card.match.name: ' · Service area');
+  why.textContent=stateLabels[card.state]+(card.match.name?' Â· Matched '+card.match.type+': '+card.match.name: ' Â· Service area');
   row.append(link,why);return row;
  };
  let filtering=false,openBeforeSearch=new Set();
@@ -299,6 +350,9 @@ export async function bindCountyDirectory(root=document){
   }
  });
  root.defaultView?.addEventListener('hashchange',()=>openTarget());
- input.disabled=false;if(stateFilter)stateFilter.disabled=false;controls.hidden=false;update();openTarget();
+ input.disabled=false;if(stateFilter)stateFilter.disabled=false;controls.hidden=false;update();
+ // Lazy setup already revealed the initial fragment. A query or state chosen
+ // during loading takes precedence; later fragment navigation still clears it.
+ if(!prepared||!filtering)openTarget();return true;
 }
 if(typeof document!=='undefined')bindCountyDirectory();
