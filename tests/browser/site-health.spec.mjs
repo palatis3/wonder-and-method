@@ -41,7 +41,7 @@ for(let offset=0;offset<routes.length;offset+=25){
     // Presence alone misses controls hidden by a future CSS or boot-script edit.
     await expect(page.locator('.support-chat-launch')).toHaveCount(1);
     if(health.concept){await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();await expect(page.locator('.concept-toolbar a[href="/contact/#inquiry"]')).toBeVisible();}
-    else if(health.form)await expect(page.locator('[data-chat-open]')).toBeVisible();
+    await expect(page.locator('[data-chat-open]')).toHaveCount(0);
     await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
     await expect(page.locator('.back-to-top')).toHaveCSS('position','fixed');
     await expect(page.locator('.support-chat-launch')).toBeInViewport();

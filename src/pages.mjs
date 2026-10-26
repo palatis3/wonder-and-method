@@ -69,7 +69,6 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   const conditional=approvedConditionalPages(config,o,{previewDrafts});
   const guideLink=(path,label)=>conditional.some(p=>p.path===path)?`<p>${link(path,label,'text-link')}</p>`:'';
   function page(path,title,description,body){
-    const formPage=path==='/contact/'||path.startsWith('/checkout/')||/^\/work\/[^/]+\/request\/$/.test(path);
     const conceptPage=conceptCatalog.some(x=>path.startsWith(x.path));
     const chatMarkup=supportChatMarkup(config);
     body=premiumBody(path,{config,offers:o})??body;
@@ -94,7 +93,6 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
       }else body=beforeClosing(body,serviceQuestions);
     }
     if(path.startsWith('/services/')&&path!=='/services/')body=beforeClosing(body,serviceAreaLinks());
-    if(formPage&&chatMarkup)body+='<p class="inline-chat-action"><button type="button" data-chat-open aria-describedby="support-chat-description" hidden>Chat with Terry</button><span>Live chat uses cookies.</span></p>';
     if(searchMetadata[path]){const metadata=searchMetadata[path];title=metadata.title;if(metadata.description)description=typeof metadata.description==='function'?metadata.description(o,config):metadata.description;}
     if(path.startsWith('/guides/')&&path!=='/guides/')body=body.replace(/(<header class="journal-header">[\s\S]*?<p class="lede">)[\s\S]*?(<\/p>)/,(_m,start,end)=>start+e(description)+end);
     if(path.startsWith('/services/')&&path!=='/services/'&&!body.includes('service-intro-action')){const offer=path==='/services/website-care/'?'keep_running':'unsure';const goal=path==='/services/seo/'?'search':path==='/services/website-care/'?'':path==='/services/website-audit/'?'fix':path==='/services/website-redesign/'?'redesign':'new_website';body=body.replace('</header>',`<p class="service-intro-action"><a class="button" href="/contact/?offer=${offer}${goal?'&amp;goal='+goal:''}&amp;request_kind=question#inquiry">${path==='/services/website-care/'?'Ask about '+e(o.plans.keep_running.public_name):path==='/services/seo/'?'Ask about monthly SEO':'Ask about your project'}</a> <a class="text-link" href="/pricing/">Compare prices</a></p></header>`);}

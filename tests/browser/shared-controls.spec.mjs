@@ -38,7 +38,7 @@ test('page help floats in separate corners at every width and yields to form edi
   await page.locator('#email').focus();await expect(page.locator('.support-chat-launch')).toBeHidden();
   expect(await toolSurfaces()).toEqual(['none','none']);
   if(width===390)await page.screenshot({path:testInfo.outputPath('390-contact-focused.png')});
-  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('[data-chat-open]')).toBeVisible();
+  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();
   if(width<1024){
    await page.goto('/about/?qa=1');await page.locator('.menu-toggle').click();
    await expect(page.locator('.support-chat-launch')).toBeHidden();expect(await toolSurfaces()).toEqual(['none','none']);
@@ -75,7 +75,7 @@ test('shared header contact and the single floating top link remain reachable ac
   await inViewport(contact);await expect(page.locator('.back-to-top')).not.toBeInViewport();
   if(path==='/contact/'){
    await expect(page.locator('.support-chat-launch')).toBeVisible();
-   await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
+   await expect(page.locator('[data-chat-open]')).toHaveCount(0);await inViewport(page.locator('.support-chat-launch'));
   }else if(concept){
    await expect(page.locator('#main-nav')).toHaveCount(0);await expect(page.locator('.support-chat-launch')).toBeVisible();
    await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();
@@ -144,7 +144,7 @@ test('form pages keep chat available while yielding to focused fields in landsca
  await page.setViewportSize({width:390,height:320});await page.goto('/contact/?qa=1');await page.locator('#email').focus();
  await expect(page.locator('#email')).toBeFocused();await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');await expect(page.locator('.back-to-top')).toBeHidden();
  const covered=await page.locator('#email').evaluate(el=>{const r=el.getBoundingClientRect();return !el.contains(document.elementFromPoint(r.left+8,r.top+8));});expect(covered).toBe(false);
- await page.locator('[data-chat-open]').scrollIntoViewIfNeeded();await inViewport(page.locator('[data-chat-open]'));
+ await expect(page.locator('[data-chat-open]')).toHaveCount(0);await page.locator('#email').evaluate(el=>el.blur());await inViewport(page.locator('.support-chat-launch'));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
 });
 

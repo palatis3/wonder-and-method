@@ -32,7 +32,9 @@ test('compact phone header and footer preserve usable navigation at320 and390',a
   await expect(header.getByRole('link',{name:'Contact',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await expect(page.locator('footer details.footer-group')).toHaveCount(4);await expect(page.locator('footer details.footer-group[open]')).toHaveCount(0);await expect(page.locator('footer summary')).toHaveCount(5);expect(await page.locator('footer nav[aria-label="Footer"]').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(1);
-  await expect(page.locator('.footer-essential').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
+  await expect(page.locator('.footer-essential')).toHaveCount(0);
+  await page.locator('#footer-information-heading').click();
+  await expect(page.locator('#footer-information-heading+div').getByRole('link',{name:'Privacy',exact:true})).toBeVisible();
   await page.getByRole('button',{name:'Menu',exact:true}).click();
   await expect(page.locator('.service-navigation > summary')).toBeVisible();await expect(page.locator('.service-navigation')).not.toHaveAttribute('open','');await page.locator('.service-navigation > summary').click();await expect(page.locator('.service-links').getByRole('link',{name:'All services',exact:true})).toBeVisible();
   await expect(page.locator('#main-nav').getByRole('link',{name:'Process',exact:true})).toBeVisible();

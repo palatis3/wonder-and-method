@@ -60,7 +60,7 @@ async function exerciseControls(page,path){
   await expect(page.locator('#form-status')).toContainText('Synthetic reading check');await expect(page.locator('#form-status')).toBeVisible();
   await expect(email).toHaveValue('reading@example.test');await expect(submit).toBeEnabled();
  }
- const contact=page.getByRole('navigation',{name:'Quick footer links'}).getByRole('link',{name:'Contact',exact:true});await contact.focus();await expect(contact).toBeFocused();await expect(contact).toBeVisible();
+ const contact=page.getByRole('navigation',{name:'Footer',exact:true}).getByRole('link',{name:'Contact',exact:true});await contact.focus();await expect(contact).toBeFocused();await expect(contact).toBeVisible();
 }
 
 for(const path of routes)for(const mode of ['reflow-320','text-200','text-spacing'])test(`${mode}: ${path} retains readable expanded content and controls`,async({page})=>{

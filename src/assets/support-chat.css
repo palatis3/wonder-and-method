@@ -21,9 +21,6 @@
 .support-chat-fallback{font-size:1rem}
 .support-chat-fallback a{display:inline-flex;align-items:center;min-height:44px}
 
-.studio-site .inline-chat-action{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 1rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line)}
-.studio-site .inline-chat-action [data-chat-open]{display:inline-flex;align-items:center;padding:0;background:none;border:0;border-radius:0;color:inherit;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
-.studio-site .inline-chat-action span{color:var(--slate);font-size:.875rem}
 
 .support-chat:has(.support-chat-launch:not([hidden]),.support-chat-fallback:not([hidden])){position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;max-width:calc(100vw - 2rem)}
 .support-chat-launch{display:flex;width:48px;height:48px;min-height:48px;padding:0;gap:0;border-radius:50%}

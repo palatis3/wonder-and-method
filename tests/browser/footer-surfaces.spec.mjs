@@ -16,8 +16,9 @@ test('compact footer retains keyboard access and every published area',async({pa
  await groups.nth(2).locator('details > summary').click();
  const areas=groups.nth(2).locator('a');await expect(areas).toHaveCount(serviceStateInfo.length+1);
  expect(await areas.evaluateAll(links=>links.map(link=>({href:link.getAttribute('href'),name:link.textContent.trim()})))).toEqual([{href:'/areas/',name:'Service areas'},...serviceStateInfo.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).map(state=>({href:'/areas/'+state.id+'/',name:state.name}))]);
- for(const path of ['/payments/','/accessibility/'])await expect(groups.nth(3).locator('a[href="'+path+'"]')).toBeVisible();
- for(const path of ['/contact/#inquiry','/pricing/','/privacy/','/terms/'])await expect(footer.locator('.footer-essential a[href="'+path+'"]')).toBeVisible();
+ for(const path of ['/privacy/','/terms/','/payments/','/accessibility/'])await expect(groups.nth(3).locator('a[href="'+path+'"]')).toBeVisible();
+ for(const path of ['/contact/#inquiry','/pricing/'])await expect(groups.nth(0).locator('a[href="'+path+'"]')).toBeVisible();
+ await expect(footer.locator('.footer-essential')).toHaveCount(0);
  const destinations=await footer.locator('a[href]').evaluateAll(links=>links.map(link=>new URL(link.href).pathname));
  expect(new Set(destinations).size,'Each footer destination appears once').toBe(destinations.length);
 });

@@ -231,8 +231,6 @@
 
 
 .studio-site .site-footer--compact nav{grid-template-columns:repeat(4,minmax(0,1fr))}
-.studio-site .site-footer--compact nav.footer-essential{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;padding-bottom:1.25rem}
-.studio-site .site-footer--compact .footer-essential a{min-height:44px;display:inline-flex;align-items:center}
 @media(max-width:767px){.studio-site .site-footer--compact nav{grid-template-columns:1fr}.studio-site .site-footer--compact .footer-group summary{padding:.5rem 0}.studio-site .footer-section-label{font-size:1rem}}
 
 /* Depth marks an action or overlay. Reading surfaces remain flat. */

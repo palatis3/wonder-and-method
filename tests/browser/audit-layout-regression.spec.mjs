@@ -103,10 +103,10 @@ test('navigation order, mobile Services alignment and footer disclosures agree',
  }
 });
 
-test('form pages retain a deliberate inline chat alternative and one floating launcher',async({page})=>{
+test('form pages retain one floating chat launcher without duplicate inline actions',async({page})=>{
  for(const path of ['/contact/','/checkout/focused-site/']){
   await page.goto(path+'?qa=1');await expect(page.locator('.support-chat-launch')).toHaveCount(1);await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
-  await expect(page.locator('[data-chat-open]')).toBeVisible();await expect(page.locator('[data-chat-open]')).toHaveAttribute('aria-describedby','support-chat-description');
+  await expect(page.locator('[data-chat-open]')).toHaveCount(0);await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat-launch')).toHaveAttribute('aria-describedby','support-chat-description');
   expect(await page.locator('script[src^="https://embed.tawk.to/"]').count()).toBe(0);
  }
 });

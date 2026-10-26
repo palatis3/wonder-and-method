@@ -23,8 +23,7 @@ test('every route keeps one return control and one studio chat launcher',()=>{
    assert.match(p.html,/href="\/contact\/#inquiry">Contact the studio<\/a>/);
 
   }
-  const formPage=p.path==='/contact/'||p.path.startsWith('/checkout/')||/^\/work\/[^/]+\/request\/$/.test(p.path);
-  if(formPage){assert.match(p.html,/<button\b[^>]+data-chat-open[^>]+aria-describedby="support-chat-description"[^>]*>Chat with Terry<\/button>/,p.path);}
+  assert.doesNotMatch(p.html,/inline-chat-action|data-chat-open|Live chat uses cookies\./,p.path);
   assert.equal((p.html.match(/<button class="support-chat-launch"/g)||[]).length,1,p.path);assert.match(p.html,/<small>Uses cookies<\/small>/,p.path);
   assert.match(p.html,/id="support-chat-description"[^>]*>Chat runs on an outside service that uses cookies/);
   assert.match(p.html,/<noscript><p><a href="\/contact\/#inquiry">Use the contact form<\/a>\. Live chat needs JavaScript\.<\/p><\/noscript>/);
