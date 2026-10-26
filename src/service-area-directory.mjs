@@ -36,7 +36,8 @@ export const serviceStates=[
 ].map(state=>({...serviceStateInfo.find(item=>item.id===state.id),...state}));
 export const countyPath=(county,state=serviceStates[0])=>state.id==='new-york'&&county.slug==='erie'?'/areas/erie-county/':state.path+'#'+county.slug;
 export const countyServicePath=(county,state=serviceStates[0])=>locationServiceForArea(state.id+'/'+county.slug)?.path||countyPath(county,state);
-export const countyAreaName=county=>county.areaType==='Federal District'?'Washington, DC':county.areaType==='Independent City'?`${county.name} City`:`${county.name} ${county.areaType||'County'}`;
+const isIndependentCity=county=>county.areaType?.toLowerCase()==='independent city';
+export const countyAreaName=county=>county.areaType==='Federal District'?'Washington, DC':isIndependentCity(county)?(/\bcity$/i.test(county.name)?county.name:`${county.name} City`):`${county.name} ${county.areaType||'County'}`;
 export const countyLabel=(county,state=serviceStates[0])=>county.boroughLabel?`${county.boroughLabel} · ${county.name} County`:(state.id==='new-york'?({kings:'Brooklyn · Kings County','new-york':'Manhattan · New York County',richmond:'Staten Island · Richmond County'})[county.slug]:null)||countyAreaName(county);
 export const regionCounties=(state,region)=>region.slugs.map(slug=>state.counties.find(county=>county.slug===slug)).filter(Boolean);
 export function serviceAreaDataForPath(path){
@@ -90,7 +91,7 @@ function areaDetails(county,state,references){
   return `<div><h3>${e(heading)}</h3>${sharedStatus?`<p class="county-place-note">All places in this list: ${e(sharedStatus)}</p>`:''}<ul class="county-place-list">${places.map(place=>{const notes=[...new Set([place.note,sharedStatus?'':place.governmentStatus,place.town?'In the Town of '+place.town+'.':null].filter(Boolean))];return `<li>${e(place.name)}${notes.length?` <span class="county-place-note">${e(notes.join(' '))}</span>`:''}</li>`;}).join('')}</ul></div>`;
  }).join('');
  const aliases=(g.aliases||[]).filter(alias=>alias.note).map(alias=>`<li>${e(alias.name)}${alias.type?' ('+e(alias.type)+')':''}: ${e(alias.note)}</li>`).join('');
- const area=countyAreaName(county),type=county.areaType==='Independent City'?'Independent city; separate from surrounding counties.':county.areaType==='Federal District'?'Federal district and Census county equivalent. Wards and neighborhoods are separate categories below.':county.areaType==='Parish'?'Parish directory. Places crossing a parish boundary may appear in more than one entry.':county.areaType==='Planning Region'?'Planning region and current Census county equivalent; distinct from the former county boundaries.':'County directory. Places crossing a county boundary may appear in more than one entry.';
+ const area=countyAreaName(county),type=isIndependentCity(county)?'Independent city; separate from surrounding counties.':county.areaType==='Federal District'?'Federal district and Census county equivalent. Wards and neighborhoods are separate categories below.':county.areaType==='Parish'?'Parish directory. Places crossing a parish boundary may appear in more than one entry.':county.areaType==='Planning Region'?'Planning region and current Census county equivalent; distinct from the former county boundaries.':'County directory. Places crossing a county boundary may appear in more than one entry.';
  const note=countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote;
  const localNote=note?`<p class="county-geography-note">${e(note)}</p>`:'';
  const guides=areaGuideLinks[state.id+'/'+county.slug]||[];
@@ -107,7 +108,7 @@ export function countySearchText(county,state,region){
  const types={cities:'c',towns:'t',villages:'v',boroughs:'b',townships:'s',plantations:'l',other:'m'};
  const terms=new Map();
  const add=(name,type)=>{const value=normalizeCountyQuery(name||'');if(value)terms.set(value,[...new Set((terms.get(value)||'')+type)].join(''));};
- add(county.name,county.areaType==='Federal District'?'d':county.areaType==='Parish'?'u':county.areaType==='Planning Region'?'r':county.areaType==='Independent City'?'i':'y');
+ add(county.name,county.areaType==='Federal District'?'d':county.areaType==='Parish'?'u':county.areaType==='Planning Region'?'r':isIndependentCity(county)?'i':'y');
  for(const alias of g?.aliases||[]){
   const type=({city:'c',town:'t',village:'v',borough:'b',township:'s',plantation:'l',municipality:'m','municipality name variant':'m',district:'d',neighborhood:'n',ward:'w'})[alias.type?.toLowerCase()]||'p';
   add(alias.name,type);

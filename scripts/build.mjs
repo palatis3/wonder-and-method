@@ -9,6 +9,7 @@ import {writeBuyerPacks} from './build-buyer-packs.mjs';
 import {writeCountyBriefs} from './build-county-briefs.mjs';
 import {writeDownloadAliases} from './build-download-aliases.mjs';
 import {supportChatCsp} from '../src/support-chat.mjs';
+import {googleAnalyticsEnabled} from '../src/google-analytics.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
 import {fingerprintStaticAssets,versionAssetReferences} from './version-static-assets.mjs';
@@ -147,6 +148,7 @@ const config=await readJSON('config/site.json');
 const captures=await readJSON('src/portfolio-captures.json');
 for(const [file,sha] of Object.entries(captures.sourceHashes))if(createHash('sha256').update(await readFile(resolve(root,file))).digest('hex')!==sha)console.warn('Portfolio homepage screenshot may be stale: '+file+' changed since '+captures.capturedAt+'.');
 const chatCsp=supportChatCsp(config);
+const googleAnalytics=googleAnalyticsEnabled(config);
 const offers=normalizeOfferCatalog(await readJSON('config/offers.json'));
 const map=await readJSON('authority/v5/site-map.json');
 const tokens=await readJSON('authority/v5/design-tokens.json');
@@ -222,7 +224,7 @@ const staticHeaders=`/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-${bootHash}'${chatCsp?' '+chatCsp.script:''}; style-src 'self'${chatCsp?' '+chatCsp.style:''}; img-src 'self' data:${chatCsp?' '+chatCsp.image:''}; font-src 'self'${chatCsp?' '+chatCsp.font:''}; connect-src 'self'${chatCsp?' '+chatCsp.connect:''}; frame-src ${chatCsp?chatCsp.frame:"'none'"}; media-src 'self'${chatCsp?' '+chatCsp.media:''}; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-${bootHash}'${chatCsp?' '+chatCsp.script:''}${googleAnalytics?' https://www.googletagmanager.com':''}; style-src 'self'${chatCsp?' '+chatCsp.style:''}; img-src 'self' data:${chatCsp?' '+chatCsp.image:''}${googleAnalytics?' https://www.googletagmanager.com https://*.google-analytics.com':''}; font-src 'self'${chatCsp?' '+chatCsp.font:''}; connect-src 'self'${chatCsp?' '+chatCsp.connect:''}${googleAnalytics?' https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com':''}; frame-src ${chatCsp?chatCsp.frame:"'none'"}; media-src 'self'${chatCsp?' '+chatCsp.media:''}; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'
   Cache-Control: no-cache
 ${config.searchIndexing!==true?'  X-Robots-Tag: noindex, nofollow, noarchive, noimageindex\n':''}
 /assets/*

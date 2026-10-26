@@ -1,3 +1,4 @@
+import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
@@ -34,10 +35,10 @@ import offers from '../config/offers.json' with {type:'json'};
 import map from '../authority/v5/site-map.json' with {type:'json'};
 import geography from '../authority/v5/geography.json' with {type:'json'};
 
-test('1983 approved commercial pages preserve 1993 directory identities, truthful provider schema and legacy worksheets',async()=>{
+test('2033 approved commercial pages preserve 2043 directory identities, truthful provider schema and legacy worksheets',async()=>{
  assert.equal(approvedPaths.length,59);assert.equal(followupPaths.length,6);assert.equal(nextPaths.length,8);assert.equal(waveOnePaths.length,48);assert.equal(waveTwoPaths.length,144);assert.equal(waveThreePaths.length,192);assert.equal(waveFourPaths.length,611);
- assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...azOrPaths.slice(2),...caNmPaths.slice(2),...ksNePaths.slice(2),...ndSdPaths.slice(2),...mnOkPaths.slice(2),...moIaPaths.slice(2),...texasPaths.slice(1),...countyDepth,...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
- const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,1993);assert.equal(new Set(areaIds).size,1993);
+ assert.deepEqual(locationServices.map(entry=>entry.path).sort(),[...nvWaPaths.slice(2),...azOrPaths.slice(2),...caNmPaths.slice(2),...ksNePaths.slice(2),...ndSdPaths.slice(2),...mnOkPaths.slice(2),...moIaPaths.slice(2),...texasPaths.slice(1),...countyDepth,...wiIlPaths.slice(2),...msAlPaths.filter(path=>path!=='/areas/mississippi/'&&path!=='/areas/alabama/'),...approvedPaths,...followupPaths,...nextPaths,...waveOnePaths,...waveTwoPaths,...waveThreePaths,...waveFourPaths,...scPaths.filter(p=>p!=='/areas/south-carolina/'),...gaPaths.filter(p=>p!=='/areas/georgia/')].sort());
+ const areaIds=locationServices.flatMap(entry=>entry.areaIds);assert.equal(areaIds.length,2043);assert.equal(new Set(areaIds).size,2043);
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  assert.equal(Object.keys(reviewedWorksheets).length,72);
  assert.equal(locationServices.filter(entry=>entry.legacyWorksheet&&reviewedWorksheets[entry.areaId]===entry.legacyWorksheet).length,71);

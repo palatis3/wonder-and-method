@@ -1,0 +1,237 @@
+{
+  "provenance": "Independently reconstructed NV/WA geography from raw ACS26, GRFC and direct 2025 county-part population estimates; 1,148,611 checks, no findings.",
+  "candidateSha256": "98a7bebd0c5634df56190eeeba6826d26977f9a801bc28729df0e06b6945d1cd",
+  "reviewSha256": "7993703ba27a18e3444c88ba689ef8772aa1b77bdbca11cd669b6f7e74ce46ff",
+  "countyDigests": {
+    "nevada/churchill": "1947fb863692cce76a5e0a03c3d16c467031499524f95bf9ec9fc080e60917cd",
+    "nevada/clark": "68049751f28445bd8808a1c2aaed6d27d0a1b30c5e3cb7d7a0b1cc7b4b3af2b2",
+    "nevada/douglas": "fc04fa01a49b76cdf38cffda7e5a136a475ae93ff0cc280f52d05b7a56ab3635",
+    "nevada/elko": "55721a037159813cfd91f1d8b126b091db2272f5e8c54ae992171250ca3322e4",
+    "nevada/esmeralda": "ca2f0a0276147ffb3c40fc98f7369a3fd8a5e1b922cc8351e6a572ed0843ee24",
+    "nevada/eureka": "83195f6e5ca496cecd2460bb8a01c524f69c2488eb467f6c177c0e8834ae0f84",
+    "nevada/humboldt": "9d2c8231b3462e47263d40a9d093e5260926e4ea9a8b5b4ac02d792ddd92c61c",
+    "nevada/lander": "eb939f14ea81db8b6c42188ba4a5527a0d343194fe51d667a28574db69d8f41a",
+    "nevada/lincoln": "f12b15797d73ff6eb6899620294c301c87d3d8512f1aaceffa168f68999305f8",
+    "nevada/lyon": "e103d569b0e0f66f15f72d7f5639c30752117972b902652ed725a18e218ad47e",
+    "nevada/mineral": "b901de3aae9b1cfbb0efd9aa4aceb1933503190982a4704e5a30bcf8291252d6",
+    "nevada/nye": "fd7f686b115ee3732e9ddb7f3e0b7d813e596570c8d18d64bb834030e37271d5",
+    "nevada/pershing": "743b1a4b3cafe3941601a1a481a9c3c918048e59b445513c6d69481db598ab8f",
+    "nevada/storey": "c541620ee815ec4929621eb8be5e426f896bf7754a0b0315fa042e28bc136323",
+    "nevada/washoe": "49e3a1b90575035f86d7a2996375aa928e2f65212478c2dac71e6babfe910703",
+    "nevada/white-pine": "65bf74ea9c4930ebb02fae174ebaf4b256b7fb40bb9722a0dab57b0fa717b949",
+    "nevada/carson-city": "da3256cb5877dce89dedab326502de13ce572b6a9a50a4ad5052dfea884588f9",
+    "washington/adams": "7df2bfbc86b8e782fa5aa6f5560da1ddcaf8384e657c8dd7f84cc6e72d311d2b",
+    "washington/asotin": "83af4eac06e4ab1a12546aec682185173a1827c783ea27b0afec59a9c77f2600",
+    "washington/benton": "51d26dbaca1c397456b9db506e3b4a04d7f7975fd41520e069d1be3d4917ea74",
+    "washington/chelan": "af3665ba77bb72b1662e47a85ba8bfe6962d91209e87da870c51d9c536b263d0",
+    "washington/clallam": "c8b1af1fe764334ea114eae45a1150e515ddb4cfdcf1aa17c4ad005e494c9663",
+    "washington/clark": "14a25c45ae204f03766e40c8a106185895582d2778fd462acb7bb2d8774108c3",
+    "washington/columbia": "5d433667aa96f0081ad7fe0717b00b5255a84210ee0987e5e06506f446c483f1",
+    "washington/cowlitz": "767223095d2d14507b9c7e7ac489bb9fea758028c4b0631c24e61ee8e0549b66",
+    "washington/douglas": "9784879c0e5867eb244d9c430fc938a16c2edcd6463204fb8b74c18d83bd7042",
+    "washington/ferry": "3a9ee0189f8e7e1db024a58517ed597435fbf35efaa785e927421bbab272d129",
+    "washington/franklin": "6d39bd11737aed19d9f7ede7ba6dded36a421bf1f5f7b7f7b21ef4a0e0c637c8",
+    "washington/garfield": "63690f60bc6b76a0207189ac4ec5d8fc173b11b7f01af5524467b962db97fc16",
+    "washington/grant": "92a21cc89424ebb3d18284442253c108c4f36ed9401f5a3ea4a5796455593a0e",
+    "washington/grays-harbor": "3996cf0e3d15eff51f6fdf8e5a5e3523a835417a2e95e124100748ce724ed4c9",
+    "washington/island": "11f509042d0c8f3aa1c60f077fdb4f2698b4c3534e80c4be0a30e4a2f6f28db2",
+    "washington/jefferson": "fbdb05760195ad21b41cbcb85b08d77b866ae815a0116a10f56fb47ff1f6e7fd",
+    "washington/king": "4fd5a73d206313ca759a0e4942b361c080fa18b291cc3879842455c78260688a",
+    "washington/kitsap": "f73fde98eba5859b51d0a612ee942b82a28ff0903f6bf974c167eb0f7aa7f1aa",
+    "washington/kittitas": "2e955d7e1219eb81c5fce95d024499d1af40fd1b2094e8b5005c61f92471168c",
+    "washington/klickitat": "7cf8b34237a5c7e16ec0a4c0a90bc4bae0d54dd262854b42da31abb595cd2ea1",
+    "washington/lewis": "ae2d2df902e6b9320095fda9d217857f0341e31f07ccaf385b6a2c667960c992",
+    "washington/lincoln": "040168e5eade0a3ee54f7b9cc3bf12d8734946b1c2b5d33c2236c69412c91df1",
+    "washington/mason": "829f9a74ae82624637d091322ddb5905b2bbe9b016d7f938e84ccd13d218d6b9",
+    "washington/okanogan": "3efaa783e5c8fbfacf466e29eed88fc90d16d05d9b1b97df8619e2fb827416af",
+    "washington/pacific": "221e7637ff5f0f33b786c624f3a819b1190c0cbeb63a843c0e030358183f68bb",
+    "washington/pend-oreille": "e488001fd563e026b6ccad71401b990392a54d988995e9bf71da1e80cfa534ec",
+    "washington/pierce": "7f15fea8c2b67b80b3417118ce69f633a7d9d3508f53fee508b018f2dc2e3000",
+    "washington/san-juan": "963174f427f4b70c688c59baf1b5324360dae1594fc402f5ee1ef5e3c793dc93",
+    "washington/skagit": "c15bd641c38248f564f3825c0a1dc88b1513a32af7bff4b2e0a16c1ccf437819",
+    "washington/skamania": "baccef21b242bc3e83f392a2482b60afa4c9d34ac76334c4e4b4d649cf50142c",
+    "washington/snohomish": "e3ee10f7d4b3677fd4553aab1da611918b2711458ea5a6427a46e77bafe16c99",
+    "washington/spokane": "90bd440b6352c095e47d055530c553a80c90eff36e52fe56cf8bba8bc3080816",
+    "washington/stevens": "4b0e0af852909efd5ce2867acb80b021731b4ee2f4fb5b45a73771332283a54e",
+    "washington/thurston": "bde8ba1e16f61d94ca17cacfde6f737662bd3a2bf5a6aca1a9f86a0d76d88f5c",
+    "washington/wahkiakum": "2187e3aeacb8cd9b12ff1ffe49fb6093c7e98e6836bad935f21d0c01fec77953",
+    "washington/walla-walla": "5347b2a497307dca248ab1193150328f1834ff68dfdc4e3be2f08d224c8dd625",
+    "washington/whatcom": "6f058af46af78683fcc6d504446cdd787d489097461fbede288143611abcb958",
+    "washington/whitman": "909defa8186f01b4493ddc01e464dcc91b9fcbaea50dc3cffddb72d265afe31d",
+    "washington/yakima": "af0b9f5b30fc65a3abce3af694334214ce365dbe06c9ddf64c8389d14d6c2276"
+  },
+  "crossCountyPlaces": [
+    {
+      "stateId": "washington",
+      "name": "Auburn",
+      "type": "City",
+      "geoid": "5303180",
+      "censusName": "Auburn city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02409755",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53033",
+        "53053"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 86301,
+      "countyPartPopulation2025": {
+        "53033": 76637,
+        "53053": 9664
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Bothell",
+      "type": "City",
+      "geoid": "5307380",
+      "censusName": "Bothell city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02409882",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53033",
+        "53061"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 52199,
+      "countyPartPopulation2025": {
+        "53033": 31871,
+        "53061": 20328
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Coulee Dam",
+      "type": "Town",
+      "geoid": "5315115",
+      "censusName": "Coulee Dam town",
+      "censusLSAD": "43",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02413249",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53017",
+        "53025",
+        "53047"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 1241,
+      "countyPartPopulation2025": {
+        "53017": 201,
+        "53025": 0,
+        "53047": 1040
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Enumclaw",
+      "type": "City",
+      "geoid": "5322045",
+      "censusName": "Enumclaw city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02410448",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53033",
+        "53053"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 13172,
+      "countyPartPopulation2025": {
+        "53033": 13172,
+        "53053": 0
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Milton",
+      "type": "City",
+      "geoid": "5346020",
+      "censusName": "Milton city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411114",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53033",
+        "53053"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 8911,
+      "countyPartPopulation2025": {
+        "53033": 1854,
+        "53053": 7057
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Pacific",
+      "type": "City",
+      "geoid": "5352495",
+      "censusName": "Pacific city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02411349",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53033",
+        "53053"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 7056,
+      "countyPartPopulation2025": {
+        "53033": 7014,
+        "53053": 42
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Woodland",
+      "type": "City",
+      "geoid": "5379625",
+      "censusName": "Woodland city",
+      "censusLSAD": "25",
+      "censusFunctionalStatus": "A",
+      "censusNationalStandardCode": "02412301",
+      "censusClassCode": "C1",
+      "countyFips": [
+        "53011",
+        "53015"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": 6611,
+      "countyPartPopulation2025": {
+        "53011": 80,
+        "53015": 6531
+      }
+    },
+    {
+      "stateId": "washington",
+      "name": "Queets",
+      "type": "Census-designated place",
+      "geoid": "5356905",
+      "censusName": "Queets CDP",
+      "censusLSAD": "57",
+      "censusFunctionalStatus": "S",
+      "censusNationalStandardCode": "02585025",
+      "censusClassCode": "U1",
+      "countyFips": [
+        "53027",
+        "53031"
+      ],
+      "geographyKind": "place",
+      "wholePlacePopulation2025": null,
+      "countyPartPopulation2025": {
+        "53027": null,
+        "53031": null
+      },
+      "censusClassDescription": "Census-designated place with an official federally recognized name."
+    }
+  ],
+  "populationMissing": []
+}

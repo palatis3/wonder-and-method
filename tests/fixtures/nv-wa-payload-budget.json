@@ -1,0 +1,15 @@
+{
+  "provenance": "Retained pre-optimization KS/NE serializer evaluated against the same current 2893-area inventory and native links. This is a reconstructed equivalent-inventory comparison, not a past deployed measurement.",
+  "areaCount": 2893,
+  "baselineSourceHashes": {
+    "previousSerializer": "9434cc14da12774200e8570da2ab15808ba04e1056ae5c3a41f54d0c4f30533a",
+    "modeledSerializer": "6d2f1c97bf6b18e3ef333cea14dff64e4b825fca0b47b378c14c8256595015ff",
+    "independentCityAdaptation": "Current countyAreaName and case-insensitive independent-city typing applied to old serializer; inline packing and native markup unchanged.",
+    "previousClient": "b0a68461fed44f1af914d0bfeecd70e3bc52f6d8c4b132603f7db9749930b20e",
+    "currentSerializer": "ad8c088fd618d826014e9749bcd742c8e28349ae73d72a7d3c8c0ad9cbb19b8d",
+    "currentClient": "e66564df6d9984b0b1298e037ea4418af742aa8e502ec3b99f1630f1e9dd7566",
+    "geography": "98a7bebd0c5634df56190eeeba6826d26977f9a801bc28729df0e06b6945d1cd"
+  },
+  "baselineTotalGzip": 248758,
+  "baselineAllServicePathsTotalGzip": 248642
+}

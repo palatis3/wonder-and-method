@@ -421,7 +421,7 @@
     "rights": "Email support@wonderandmethod.com for questions or to request access, correction or deletion of your inquiry. Include the inquiry reference if you have it; do not send identity documents or passwords in the first message. We may ask for proportionate confirmation that the inquiry is yours. We assess requests under the law that applies and explain any information we need to retain and why.",
     "locations": "The selected services may process information in the United States and other countries where they operate. The inquiry system is not represented as New York-only storage. Provider policies describe their international processing arrangements.",
     "changes": "We will update this notice when our inquiry practices change and show the review date. New analytics, marketing tools or materially different uses require a fresh review before they are enabled.",
-    "reviewedAt": "2026-10-19",
+    "reviewedAt": "2026-10-26",
     "processors": [
       {
         "name": "Cloudflare",
@@ -452,13 +452,19 @@
         "name": "Stripe",
         "purpose": "Host agreed invoice payments and receipts; process billing and payment data, payment status, fraud prevention and related support",
         "policyUrl": "https://stripe.com/privacy"
+      },
+      {
+        "name": "Google Analytics",
+        "purpose": "Measure consented website visits and interactions using cookies and technical information; advertising personalization and Google signals are disabled",
+        "policyUrl": "https://policies.google.com/privacy"
       }
     ],
     "chat": "tawk.to receives your messages, supplied name or email, page address, IP address and browser details. It may load an emoji file from jsDelivr. I read and answer chats through its dashboard or app; I do not use AI chat agents. A returning-visitor cookie may last six months; other storage lasts for the session. Avoid passwords, payment details and sensitive information.",
     "payments": "For agreed work, Stripe hosts the payment page and processes payment details. We provide the customer contact, invoice description, amount and related billing information needed for that transaction. We receive invoice and payment status and limited payment-method information for reconciliation and support; our website does not collect full card numbers. Please do not send payment details through our inquiry form, email or chat.",
     "paymentRetention": "Client scopes, invoices and payment records are separate from unsuccessful inquiries. We retain the records needed to deliver the agreed work, keep accounts, meet applicable legal obligations and resolve disputes; the 90-day unsuccessful-inquiry period does not apply to these records. Stripe also retains information under its own policy and applicable requirements. You can contact us about access, correction or deletion, and we will explain any records we must retain.",
     "analytics": "Counted actions include page views; offer, service, question and contact-link choices; goals; form starts and saved confirmations; guide and full-details download clicks; email clicks; opening chat; and an intentional valid ROI calculation, at most once per page load. ROI inputs and results stay in the browser and are never included in counts. Each record contains a UTC day or month, a fixed event, service and page key, a total, and a broad source category for page views. The browser classifies the referring site or campaign parameter locally; it never sends the raw referrer, campaign value or full URL in a count. These are events, not unique people or linked journeys. Email and chat choices do not prove a message was sent. Obvious bot signatures and my testing visits are excluded; my private testing preference can be stored in my browser. Blockers, privacy choices, bots and outages affect totals. Monthly collection starts prospectively; old daily history is not reconstructed. The first and current months may be incomplete, and a missing month does not establish zero visitors. Hourly cleanup removes dates and months outside the stated windows, even when collection is paused; cleanup failures can delay removal. Provider recovery copies can remain longer.",
-    "workbench": "The optional inquiry tracker demonstration uses fictional sample records. Changes remain in memory unless you choose to keep them in this browser. That choice writes unprotected local storage available to this website on this browser, until you reset the tracker or clear site data. No demo records are sent to the studio. Downloaded CSV files remain wherever you save them; reset does not remove those files. Do not put real customer information in the demo."
+    "workbench": "The optional inquiry tracker demonstration uses fictional sample records. Changes remain in memory unless you choose to keep them in this browser. That choice writes unprotected local storage available to this website on this browser, until you reset the tracker or clear site data. No demo records are sent to the studio. Downloaded CSV files remain wherever you save them; reset does not remove those files. Do not put real customer information in the demo.",
+    "googleAnalytics": "If you allow analytics, Google Analytics receives page addresses without query strings or fragments, the referring website origin, page titles, browser and device information, approximate location and website interactions. Google uses analytics cookies to distinguish visits and measure engagement. Enhanced measurement can record scrolling, public outbound links, downloads and form interactions; the site does not send form answers, inquiry references or ROI calculator values to Analytics. A saved-inquiry event is sent only after the server confirms a saved inquiry. Automatic form-submit events do not prove an inquiry was saved. Google Analytics does not load before you allow it, and stays off for Global Privacy Control, Do Not Track, owner testing and pages with search or unsupported query parameters. Google signals and advertising personalization are disabled. Analytics cookies last up to 180 days without renewing their expiry on each visit. Your allow or decline choice is stored locally for 180 days. Use Analytics choices in the footer to change it; declining stops future collection and clears this site’s Analytics cookies. It does not erase data already sent to Google. Google Analytics user-level and event-level retention is set to two months, without resetting the period for new activity. These controls do not limit most standard aggregated reports, which can remain longer. Blocking, consent choices and excluded pages mean Analytics is not a complete visitor count."
   },
   "homeEdition": "living-city",
   "supportChat": {
@@ -471,7 +477,7 @@
   },
   "serviceCoverage": {
     "base": "Buffalo",
-    "region": "New York, Pennsylvania, Ohio, New Jersey, Connecticut, Rhode Island, Massachusetts, Delaware, Vermont, New Hampshire, Maine, Maryland, Virginia, West Virginia, Michigan, Washington, DC, Indiana, Kentucky, Tennessee, North Carolina, Florida, South Carolina, Georgia, Mississippi, Alabama, Wisconsin, Illinois, Louisiana, Arkansas, Texas, Missouri, Iowa, Minnesota, Oklahoma, Kansas, Nebraska, North Dakota, South Dakota, California, New Mexico, Arizona, Oregon",
+    "region": "New York, Pennsylvania, Ohio, New Jersey, Connecticut, Rhode Island, Massachusetts, Delaware, Vermont, New Hampshire, Maine, Maryland, Virginia, West Virginia, Michigan, Washington, DC, Indiana, Kentucky, Tennessee, North Carolina, Florida, South Carolina, Georgia, Mississippi, Alabama, Wisconsin, Illinois, Louisiana, Arkansas, Texas, Missouri, Iowa, Minnesota, Oklahoma, Kansas, Nebraska, North Dakota, South Dakota, California, New Mexico, Arizona, Oregon, Nevada, Washington",
     "regions": [
       "New York",
       "Pennsylvania",
@@ -514,7 +520,9 @@
       "California",
       "New Mexico",
       "Arizona",
-      "Oregon"
+      "Oregon",
+      "Nevada",
+      "Washington"
     ],
     "country": "United States"
   },
@@ -526,5 +534,12 @@
   },
   "projectTiming": "Planned build work: Launch Website 3–5 business days, Focused Website 5–8 and Signature Website 7–10, once your page list, facts, photos and account access are ready. Add your review time: two rounds, each allowing up to five business days. Your proposal confirms the start and launch dates; missing information or extra work can move them.",
   "firstConversation": "We start by email. Terry replies to the address you provide. If a call would help, we arrange one together; you do not need to book a call before sending your question or project details.",
-  "civicWorkArchive": true
+  "civicWorkArchive": true,
+  "googleAnalytics": {
+    "enabled": true,
+    "measurementId": "G-9LGFBVBKWP",
+    "consent": "basic-opt-in",
+    "reviewedAt": "2026-10-26",
+    "evidenceReference": "evidence/google-analytics-20261026/implementation-review.json"
+  }
 }

@@ -32,6 +32,9 @@ export function countJourney(event,service='unsure',localResourceKey=''){
  if(!services.includes(service))service='unsure';
  // Resource identity is only a page-local deduplication key; it is never sent.
  const key=event+':'+service+(event==='resource_select'?':'+localResourceKey:'');if(sent.has(key))return;sent.add(key);
+ // Only fixed event/service names reach the separately consented adapter.
+ // No field values, resource URL, page URL or reference is included.
+ if(typeof CustomEvent==='function')document.dispatchEvent?.(new CustomEvent('wm:journey',{detail:{event,service}}));
  const categories={'/':'home','/pricing/':'pricing','/guides/':'guide_index','/areas/':'areas','/services/web-design/':'service_new','/services/website-redesign/':'service_redesign','/services/seo/':'service_seo','/services/website-care/':'service_care','/services/website-audit/':'service_audit','/services/contractor-websites/':'service_contractors','/work/lead-workbench/':'work_demo','/contact/':'contact'};
  const path=location.pathname,page=document.documentElement.dataset.journeyPage||categories[path]||(path.startsWith('/guides/')?'guide':path.startsWith('/services/')?'service':path.startsWith('/areas/')?'county':path.startsWith('/work/')?'work':path.startsWith('/checkout/')?'request':'other');
  fetch('/api/journey-counts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event,service,page,source:event==='page_view'?sourceCategory():'not_recorded'}),credentials:'omit',referrerPolicy:'no-referrer',keepalive:true}).catch(()=>{});

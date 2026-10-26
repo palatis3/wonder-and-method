@@ -306,6 +306,24 @@
       "reason": "Retain: this source-definition paragraph explains how to read the Oregon directory: the January 2026 inventory date, incorporated versus statistical places, cross-county duplication, CCD status, limits on tribal-government or reservation interpretations, and the specific inactive Greenhorn classification. Its short sentences each resolve a distinct possible misreading of the lists above, including the Greenhorn entries in Baker and Grant. Under Place types and official sources, followed by the source records, the complete explanation remains coherent and useful despite exceeding the paragraph-length heuristic. The nearby general methodology repeats shared definitions but does not include the Greenhorn-specific exception; it does not make this paragraph unclear or justify dropping that exception.",
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_azor_guide_ledger_review)",
       "reviewedAt": "2026-10-26T13:59:28.323Z"
+    },
+    {
+      "route": "/areas/nevada/",
+      "rule": "long-paragraph",
+      "evidenceSha256": "1a5547e2d84658b6796ed71ef5bb379b568761390c33273f9ee05cf42df2723e",
+      "disposition": "retain",
+      "reason": "Retain: this 109-word source note uses short sentences to distinguish municipalities, statistical CDPs and CCDs, tribal-name limits, cross-county membership and the January source vintage. Its final two sentences clarify Carson City’s independent status and active city government. Keeping these related source qualifications together avoids implying that the Census county-layer status describes an inactive city government; no sentence is a long chain of unrelated claims.",
+      "reviewer": "Independent Astra reviewer (/root/astra_nvwa_integration_review)",
+      "reviewedAt": "2026-10-26T17:45:46.487Z"
+    },
+    {
+      "route": "/areas/washington/pacific-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "5601c7f3b5319d1aa38bd080e5001b63e222451901493d404fd8644e01e08f52",
+      "disposition": "retain",
+      "reason": "Retain: the 38-word sentence is a parallel list of three distinct yard-rule observations: bottom-washing location, topside-washing approval, and approval/containment for specified surface work. The final exception qualifier remains attached to the source summary. The surrounding paragraph separately states the sandblasting prohibition, and the brief explicitly sends method decisions to yard staff; shortening by dropping these distinctions would blur the intake question.",
+      "reviewer": "Independent Astra reviewer (/root/astra_nvwa_integration_review)",
+      "reviewedAt": "2026-10-26T17:45:46.493Z"
     }
   ]
 }

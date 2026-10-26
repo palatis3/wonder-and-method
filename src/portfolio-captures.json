@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-26T13:42:06.391Z",
+  "capturedAt": "2026-10-26T17:42:08.063Z",
   "homeViewport": {
     "width": 1425,
     "height": 990
@@ -7,7 +7,7 @@
   "sourceHashes": {
     "src/premium-site.mjs": "d5697fde6e0ed486526453f0f2fea8c3d1e4d5a904c196fe499d15860819d238",
     "src/home-proof.mjs": "3e9ef0af0895c810727e1db5f6ed0219ed17fc5103dab45d16f4f85c7956b4d9",
-    "src/site-chrome.mjs": "a5f929d684ad925c08da16d450334cfa5142cf0239d41afa310b7166a9a7254d",
+    "src/site-chrome.mjs": "e738ae84c22ef7b535f2a671e7525483288eeeb04bc374215e37f13ff833ebbc",
     "src/assets/layout-components.css": "9c4e63b40ef785ab960d71872e043410ee288a5dc9325ca1e21ef40cc4ef3f40",
     "src/assets/site-refresh.css": "c1d2d67c9459b01a8f9622842a69989ac1d8681b21678bc0acc183efcaa31136",
     "src/living-city.mjs": "7be3e417ab5c8640220cd07f6cb692c0c0c35fb5c3bf588188f4873b8dc2dcd4",
@@ -21,40 +21,40 @@
     "path": "/assets/work/studio-website.webp",
     "width": 1425,
     "height": 990,
-    "bytes": 193768,
-    "sha256": "86043d5067d4374ff7ed5412d5fa69a66f2d98f1a2c8f68cd75199ed7850fd19",
+    "bytes": 194056,
+    "sha256": "7f8aecc87aef0569dafdd81bd63a425c3f3e7da602c657b8020aec0f161e14c4",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/studio-website-240.webp",
         "width": 240,
         "height": 167,
-        "bytes": 8938,
-        "sha256": "f53593af5717373e5c4d91bc31247db4ffd195ee39fb917448b24c9bdba48489",
+        "bytes": 8972,
+        "sha256": "3f85edbcff719d38f312af7b48f83bb906410f1455a6eda14ab0a8278965322c",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-480.webp",
         "width": 480,
         "height": 333,
-        "bytes": 26808,
-        "sha256": "fb781833ad543c59c8ded7a393b856512b9679b94ed6434da0017f619642a583",
+        "bytes": 26800,
+        "sha256": "c662d350571e47d70c14be77fa2c88d319af32e29d65acd2dc3954e86a6d913e",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640,
         "height": 445,
-        "bytes": 40750,
-        "sha256": "97df004c5b1b6beefda5fa551b7ccce161e1557b7329e6ce4e8b0d9ee9a13e5c",
+        "bytes": 40662,
+        "sha256": "503cc53509e52b1144dc7380e33755dd8f457899e088af01f043088fca8afe84",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-960.webp",
         "width": 960,
         "height": 667,
-        "bytes": 73318,
-        "sha256": "e69c342a78745b9e4f6de49bd4d55085fe4abeef2c80d98dd7d0006c4ad9e4a5",
+        "bytes": 73364,
+        "sha256": "6686268c85c5849ab9821a16663c1fffd7661a8d38f287fccfbd4176f87282f2",
         "quality": 82
       }
     ],
@@ -62,7 +62,7 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "980a18489544c13457a3c976cf690d3da1ce4a500ee162e46054605d68521c6d"
+      "sha256": "82b0a0ab20ea2a19bf1e20ac82704a23b613567400b793dccbc41b92532875bf"
     },
     "builtStyles": {
       "dist/assets/site.css": "97a4a75a392dc2da240e5ec6f6f79f6cf41a9560c6ae6dd17eec90233380a3cb",

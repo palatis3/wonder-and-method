@@ -41,8 +41,10 @@ export const serviceStateInfo = [
  {id:'california',name:'California',abbreviation:'CA'},
  {id:'new-mexico',name:'New Mexico',abbreviation:'NM'},
  {id:'arizona',name:'Arizona',abbreviation:'AZ'},
- {id:'oregon',name:'Oregon',abbreviation:'OR'}
-].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri'].includes(state.id)?'service areas':'counties'}));
+ {id:'oregon',name:'Oregon',abbreviation:'OR'},
+ {id:'nevada',name:'Nevada',abbreviation:'NV'},
+ {id:'washington',name:'Washington',abbreviation:'WA'}
+].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri','nevada'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){
  const district=regions.some(name=>/^(?:Washington,? DC|District of Columbia)$/i.test(name));

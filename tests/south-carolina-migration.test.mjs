@@ -1,3 +1,4 @@
+import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import caNmPaths from './fixtures/ca-nm-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
@@ -15,7 +16,7 @@ import {journeyPageKey} from '../src/journey-page-key.mjs';
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/south-carolina-approved-paths.json' with {type:'json'};
 
-const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...azOrPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
+const laterPageKeys=new Set([...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths,...countyDepth,'/areas/louisiana/','/areas/arkansas/'].map(journeyPageKey));
 
 test('migration 0029 adds exactly 15 SC keys and preserves all 1167 historical keys, records and constraints',async t=>{
  const directory=new URL('../deployment/migrations/',import.meta.url);

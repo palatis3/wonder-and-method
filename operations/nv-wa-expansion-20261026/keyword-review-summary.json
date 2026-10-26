@@ -1,0 +1,33 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "PASS_FINAL_KEYWORD_ACCEPTANCE",
+  "database": "US",
+  "counts": {
+    "areas": 56,
+    "acceptedServices": 50,
+    "boundedNoAddition": 6,
+    "hold": 0,
+    "newFaqPairs": 0,
+    "newGuides": 0,
+    "baseUniquePhrases": 386,
+    "supplementalUniquePhrases": 147,
+    "baseReuseMappings": 90
+  },
+  "observedSummary": {
+    "uniqueQueries": 533,
+    "positiveEstimates": 45,
+    "explicitZeroEstimates": 49,
+    "unavailableEstimates": 439,
+    "refreshRequired": 502,
+    "numericPartialRefreshRequired": 65
+  },
+  "interpretation": [
+    "US exact-phrase estimates are not resident-local demand; state, city, county, category and general-guide contexts remain separate.",
+    "No summing overlapping query estimates; partial-refresh values remain partial, and unavailable is distinct from numeric zero.",
+    "Two positive county phrases are Clark WA 30 and Lewis WA 10, both partial refresh.",
+    "Supplemental positives are general existing guide topics: vacation rental website design 480, website content template 210, website redesign brief 20 partial refresh. These do not require new guides.",
+    "Questions panels showed no suggestions, not proof of no reader questions. The reviewed body-content/task overlap supports zero FAQ additions.",
+    "Categories and locality words describe inspected examples; they do not establish incorporated boundaries, a local studio office, county-wide demand, popularity, rankings or outcomes."
+  ],
+  "publicationStatus": "Local integration; release gates pending."
+}

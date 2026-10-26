@@ -1,0 +1,986 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "LOCAL_INTEGRATION_PENDING_RELEASE_GATES",
+  "countyCount": 56,
+  "serviceCandidates": 50,
+  "directoryOnly": 6,
+  "faqs": 0,
+  "guides": 0,
+  "counties": [
+    {
+      "areaId": "nevada/churchill",
+      "name": "Churchill County",
+      "fips": "32001",
+      "directoryPath": "/areas/nevada/#churchill",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/churchill-county/",
+      "readerDecision": "Choose the museum request or the cave visit before planning the group’s arrival.",
+      "rationale": "Three organizer routes and a museum-first caravan sequence make the request and arrival review concrete. Unlike Okanogan, the key handoff is a staged physical journey and the museum form explicitly excludes the cave.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ccmuseum.org/visit/childrens-tour/",
+        "https://www.ccmuseum.org/visit/hidden-cave/"
+      ]
+    },
+    {
+      "areaId": "nevada/clark",
+      "name": "Clark County",
+      "fips": "32003",
+      "directoryPath": "/areas/nevada/#clark",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/clark-county/",
+      "readerDecision": "Separate a mine tour from a photo shoot or other use of the site.",
+      "rationale": "Gallery entry and non-professional photography are tested against a separate site-use inquiry. This is not another minimum-party tour brief.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://eldoradocanyonminetours.com/mine-tours.html",
+        "https://www.eldoradocanyonminetours.com/photosmoviesweddings.html"
+      ]
+    },
+    {
+      "areaId": "nevada/douglas",
+      "name": "Douglas County",
+      "fips": "32005",
+      "directoryPath": "/areas/nevada/#douglas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/douglas-county/",
+      "readerDecision": "Keep grounds access, open-house dates and a private guided visit separate.",
+      "rationale": "Grounds, dated all-ages interior openings and restricted private tours receive separate maintenance and age-condition checks. The dated-visit expiry exercise adds practical preparation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://dangberg.org/visit/"
+      ]
+    },
+    {
+      "areaId": "nevada/elko",
+      "name": "Elko County",
+      "fips": "32007",
+      "directoryPath": "/areas/nevada/#elko",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/elko-county/",
+      "readerDecision": "Route an education inquiry to the organization that runs the selected program.",
+      "rationale": "An approved education-program record combines audience, season, organizer and action, tested on a company-scheduled school program and a public family activity. External routing itself is not novel.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://museumelko.squarespace.com/education"
+      ]
+    },
+    {
+      "areaId": "nevada/esmeralda",
+      "name": "Esmeralda County",
+      "fips": "32009",
+      "directoryPath": "/areas/nevada/#esmeralda",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/esmeralda-county/",
+      "readerDecision": "Show the end date as well as the start time for an overnight experience.",
+      "rationale": "A Friday-to-Saturday finish and guided-hour versus whole-visit duration require specific content fields and a season-boundary check; generic booking timing does not replace that exercise.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://justjeri.com/?page_id=2003"
+      ]
+    },
+    {
+      "areaId": "nevada/eureka",
+      "name": "Eureka County",
+      "fips": "32011",
+      "directoryPath": "/areas/nevada/#eureka",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose a room layout or recreation booking type before using a capacity or price.",
+      "rationale": "The Opera House layout and pool-party alternatives provide ordinary capacity/category distinctions already worked through in Stearns and McKenzie. No additional developed project is supported by these inspected leads; no population criterion applied.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "nevada/humboldt",
+      "name": "Humboldt County",
+      "fips": "32013",
+      "directoryPath": "/areas/nevada/#humboldt",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/humboldt-county/",
+      "readerDecision": "Compare room arrangement and movement between sessions before choosing a hall.",
+      "rationale": "An agenda connects simultaneous sessions, room levels, divided spaces and equipment. The multi-level movement question and concurrent-session exercise add useful planning beyond a maximum-capacity table, though room-sequence advice already exists.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://winnemucca.com/east-hall-facility/",
+        "https://winnemucca.com/west-hall-facility/",
+        "https://winnemucca.com/wp-content/uploads/winnemucca-facilities-east-hall.pdf"
+      ]
+    },
+    {
+      "areaId": "nevada/lander",
+      "name": "Lander County",
+      "fips": "32015",
+      "directoryPath": "/areas/nevada/#lander",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Identify the locally applicable swim group and enrollment route; separately distinguish present museum visits from a planned expansion.",
+      "rationale": "The independently completed Cookhouse alternative supports a bounded current-versus-proposed no-addition result. The swim-label mapping remains unresolved and excluded; it is not declared solved. Eastland is an additional direct present-versus-future comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "nevada/lincoln",
+      "name": "Lincoln County",
+      "fips": "32017",
+      "directoryPath": "/areas/nevada/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/lincoln-county/",
+      "readerDecision": "Describe the campsite’s seasonal utilities separately from campground access.",
+      "rationale": "The owner must distinguish individual hookups, shared water, other seasonal facilities and site-category reservation actions. This adds a workable facility inventory beyond simply applying a closure notice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://parks.nv.gov/parks/kershaw-ryan"
+      ]
+    },
+    {
+      "areaId": "nevada/lyon",
+      "name": "Lyon County",
+      "fips": "32019",
+      "directoryPath": "/areas/nevada/#lyon",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/lyon-county/",
+      "readerDecision": "Resolve kitchen approval and preparation before treating the room as ready for food service.",
+      "rationale": "Building-specific kitchen approval, office-hours appliance instruction and staffing across preparation/cleanup form a real project sequence. Unlike Franklin, this is event preparation after choosing a venue, not food-business onboarding.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.lyon-county.org/316/County-Facility-Rental",
+        "https://www.lyon-county.org/DocumentView.asp?DID=25"
+      ]
+    },
+    {
+      "areaId": "nevada/mineral",
+      "name": "Mineral County",
+      "fips": "32021",
+      "directoryPath": "/areas/nevada/#mineral",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/mineral-county/",
+      "readerDecision": "Name who will operate and return equipment before requesting an off-site loan.",
+      "rationale": "The location of equipment use changes responsibility and the collection/return conversation. Named off-site responsibility and room-key preparation do not grant borrower competence.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://mineralcountylibrary.com/wp-content/uploads/2024/10/2024-Policy-Manual.pdf"
+      ]
+    },
+    {
+      "areaId": "nevada/nye",
+      "name": "Nye County",
+      "fips": "32023",
+      "directoryPath": "/areas/nevada/#nye",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Choose the appropriate party-size contact route and understand the reservation-change cutoff.",
+      "rationale": "The winery party thresholds and the separate cancellation-cutoff alternative do not produce a developed extra project beyond existing group and booking instructions. This is a bounded decision, not absence of possible county businesses.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "nevada/pershing",
+      "name": "Pershing County",
+      "fips": "32027",
+      "directoryPath": "/areas/nevada/#pershing",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/pershing-county/",
+      "readerDecision": "Treat each recurring event as a separate key collection and return cycle.",
+      "rationale": "A returning organizer must return keys after each accepted event and arrange the next handoff. The two-occurrence custody test differs usefully from obtaining approval for a series, although it substantially overlaps prior key-access advice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.pershingcountynv.gov/news_detail_T10_R203.php",
+        "https://www.pershingcountynv.gov/community/community_center/index.php"
+      ]
+    },
+    {
+      "areaId": "nevada/storey",
+      "name": "Storey County",
+      "fips": "32029",
+      "directoryPath": "/areas/nevada/#storey",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/storey-county/",
+      "readerDecision": "Distinguish launching a weekday tour from joining one already arranged.",
+      "rationale": "Establishing a weekday departure and joining an established one use different party and deadline questions. That state change is distinct from Klickitat minimum charging and ordinary event-wide minimums.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.virginiacityghosttours.com/appointments"
+      ]
+    },
+    {
+      "areaId": "nevada/washoe",
+      "name": "Washoe County",
+      "fips": "32031",
+      "directoryPath": "/areas/nevada/#washoe",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/washoe-county/",
+      "readerDecision": "Separate school admission eligibility from the steps needed to arrange a bus.",
+      "rationale": "School admission category is separated from district-bus authorization and the confirmed-visit-to-school-booked-bus sequence. The three institution cases expose meaningful handoff differences.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://nvdm.org/learn/field-trips/"
+      ]
+    },
+    {
+      "areaId": "nevada/white-pine",
+      "name": "White Pine County",
+      "fips": "32033",
+      "directoryPath": "/areas/nevada/#white-pine",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/white-pine-county/",
+      "readerDecision": "Separate the event being arranged from travel-professional onboarding.",
+      "rationale": "Event service and purchaser role are independent axes. A private charter inquiry need not become trade onboarding; tax documents remain outside the general form.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://nnry.com/groups-charters/"
+      ]
+    },
+    {
+      "areaId": "nevada/carson-city",
+      "name": "Carson City",
+      "fips": "32510",
+      "directoryPath": "/areas/nevada/#carson-city",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/nevada/carson-city/",
+      "readerDecision": "Choose the group visit before applying public hours or adding a ride.",
+      "rationale": "Group-specific days can differ from public hours, while rides remain separately conditional. The school, younger-class and adult motorcar cases provide a complete group-planning exercise.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.carsonrailroadmuseum.org/plan-a-tour/"
+      ]
+    },
+    {
+      "areaId": "washington/adams",
+      "name": "Adams",
+      "fips": "53001",
+      "directoryPath": "/areas/washington/#adams",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/adams-county/",
+      "readerDecision": "Keep every requested area in the event brief.",
+      "rationale": "The request retains multiple areas, different fee bases and an adjacent independent operator when a space changes. That combined-event brief adds to ordinary single-room comparison.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.co.adams.wa.gov/DocumentCenter/View/1567/Adams-County-Fairgrounds-Facility-Rental",
+        "https://www.othellowa.gov/maps/location/AdamsCountyFairandRodeoGrounds"
+      ]
+    },
+    {
+      "areaId": "washington/asotin",
+      "name": "Asotin",
+      "fips": "53003",
+      "directoryPath": "/areas/washington/#asotin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/asotin-county/",
+      "readerDecision": "Let the completed payment step determine the arrival instructions.",
+      "rationale": "Operator-confirmed payment can remove a physical office stop. The before/after message test is materially different from merely publishing the correct dock address.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.hellscanyontours.com/general-info/"
+      ]
+    },
+    {
+      "areaId": "washington/benton",
+      "name": "Benton",
+      "fips": "53005",
+      "directoryPath": "/areas/washington/#benton",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/benton-county/",
+      "readerDecision": "Keep class size separate from the size of the whole visit.",
+      "rationale": "Class-level limits and price units coexist with a separate simultaneous-visit ceiling. A 60-pupil request retains both actual attendance and unresolved grouping, without inventing allocation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://visitthereach.us/field-trips/",
+        "https://visitthereach.us/education-resources/field-trip-registration/"
+      ]
+    },
+    {
+      "areaId": "washington/chelan",
+      "name": "Chelan",
+      "fips": "53007",
+      "directoryPath": "/areas/washington/#chelan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/chelan-county/",
+      "readerDecision": "Build the wedding brief around the people who arrive at different times.",
+      "rationale": "Guest, wedding-party and supplier instructions have different times and facilities. Changing ceremony to reception prompts role-specific preparation rather than merely changing capacity.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ohmegardens.org/planyourspecialevent/pages/weddings",
+        "https://www.ohmegardens.org/planyourspecialevent/frequently-asked-questions"
+      ]
+    },
+    {
+      "areaId": "washington/clallam",
+      "name": "Clallam",
+      "fips": "53009",
+      "directoryPath": "/areas/washington/#clallam",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/clallam-county/",
+      "readerDecision": "Compare room equipment before comparing available hours.",
+      "rationale": "Equal-capacity room alternatives differ by equipment, and the automatically blocked staff interval is not customer time. Both dimensions are necessary to the acceptance example.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.nols.org/meeting-rooms/",
+        "https://www.nols.org/locations-hours/"
+      ]
+    },
+    {
+      "areaId": "washington/clark",
+      "name": "Clark",
+      "fips": "53011",
+      "directoryPath": "/areas/washington/#clark",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/clark-county/",
+      "readerDecision": "Recheck the adult arrangements when a school visit changes season.",
+      "rationale": "A season change alters adult treatment and a session-count change alters the deposit unit. The revision example goes beyond a seasonal dates page.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://pomeroyfarm.org/field-trips/",
+        "https://pomeroyfarm.org/homeschool-day/",
+        "https://clark.wa.gov/community-planning/pomeroy-living-history-farm"
+      ]
+    },
+    {
+      "areaId": "washington/columbia",
+      "name": "Columbia",
+      "fips": "53013",
+      "directoryPath": "/areas/washington/#columbia",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "The independently located Dumas Station visit page distinguishes ordinary tasting, call-ahead seating and a separate Harvest Hosts RV stay. Complete Minnesota Douglas, Tennessee Hickman and Virginia Brunswick records already supply ordinary-versus-reserved visits, separately arranged extras and overnight/activity distinctions, with owner inputs and acceptance tests. Adding a membership name does not establish substantial new website-project guidance. Liberty Theater also repeats the complete Dodge/Eddy event-channel distinctions, but its retained homepage does not establish the street address used for geocoding; that lead is supplementary and is not relied on for county-complete evidence. No addition is justified by the inspected, fully located winery route; this is not a claim about all county businesses.",
+      "rationale": "The located Dumas tasting/reserved-seating/overnight alternative is covered by complete Douglas, Hickman and Brunswick projects. Theater address linkage, dated Bluewood terms and contradictory shipping claims remain excluded.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "washington/cowlitz",
+      "name": "Cowlitz",
+      "fips": "53015",
+      "directoryPath": "/areas/washington/#cowlitz",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "The museum’s limited online catalogue and curator-assisted research repeat complete Otter Tail, Coffey and Floyd guidance on incomplete digitization and staff follow-up. Its separate substantive education offer supplies classroom presentations versus on-site/custom tours, county-dependent travel expenses and unavailable dates. Complete Deaf Smith and Montgomery already separate educational formats and host locations; Harvey treats education-related travel and follow-up; Clatsop carries program-specific dates into the request. Changing the local cost boundary and holiday interval does not create substantial new owner-facing project guidance. This is a bounded no-addition decision for the inspected leads, not a claim about all county businesses.",
+      "rationale": "Incomplete catalog plus staff research, and classroom versus onsite educational delivery, are covered by complete Otter Tail/Deaf Smith and retained batch comparisons. The out-of-county nursery is excluded rather than counted as local support.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "washington/douglas",
+      "name": "Douglas",
+      "fips": "53017",
+      "directoryPath": "/areas/washington/#douglas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/douglas-county/",
+      "readerDecision": "Route a lost-item question by where the item was last seen.",
+      "rationale": "A post-visit lost-item task uses last-seen location to choose a custodian and preserves an unsure/after-hours route. It is meaningfully different from selecting a tour organizer.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.flywenatchee.com/lost-found"
+      ]
+    },
+    {
+      "areaId": "washington/ferry",
+      "name": "Ferry",
+      "fips": "53019",
+      "directoryPath": "/areas/washington/#ferry",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/ferry-county/",
+      "readerDecision": "Include the return visit in the collecting experience.",
+      "rationale": "The mandatory center-to-dig-to-center loop and staff review of take-home finds affect the onward itinerary. A quantity allowance does not promise release of particular finds.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://stonerosefossil.org/fossilhunting/visitors-information/",
+        "https://stonerosefossil.org/visitor-info/school-field-trips/"
+      ]
+    },
+    {
+      "areaId": "washington/franklin",
+      "name": "Franklin",
+      "fips": "53021",
+      "directoryPath": "/areas/washington/#franklin",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/franklin-county/",
+      "readerDecision": "Show what is needed before the meeting and what follows it.",
+      "rationale": "The published pre/post-meeting boundary, owner of each stage and upcoming operator-change review make a concrete onboarding content commission. It strongly overlaps the shared-kitchen guide and should remain a local worked application, not a new guide.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.pasco-wa.gov/1255/Pasco-Specialty-Kitchen",
+        "https://wa-pasco2.civicplus.com/bids.aspx?bidID=376"
+      ]
+    },
+    {
+      "areaId": "washington/garfield",
+      "name": "Garfield",
+      "fips": "53023",
+      "directoryPath": "/areas/washington/#garfield",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/garfield-county/",
+      "readerDecision": "Keep the permission route attached to the exact land area.",
+      "rationale": "A maintained named-area/permission-owner table and destination-change test prevent one permit from implying access across neighboring authorities. This concerns area authority, not an activity bundle.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.pse.com/en/pages/tours-and-recreation/lower-snake-river-tours",
+        "https://apps.ecology.wa.gov/facilitysite/FacilitySite/FacilitySiteReport/100004592"
+      ]
+    },
+    {
+      "areaId": "washington/grant",
+      "name": "Grant",
+      "fips": "53025",
+      "directoryPath": "/areas/washington/#grant",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/grant-county/",
+      "readerDecision": "Use the full camping product name when equipment and support differ.",
+      "rationale": "Exact near-identical camping names carry opposite RV treatment; full product identity survives replacement and support checks. The text does not conflate the RV-name distinction with the separate support-provider distinction.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.gorgeamphitheatre.com/camping/faq",
+        "https://www.gorgeamphitheatre.com/camping/options",
+        "https://apps.ecology.wa.gov/separ/Main/SEPA/Record.aspx?SEPANumber=202600161"
+      ]
+    },
+    {
+      "areaId": "washington/grays-harbor",
+      "name": "Grays Harbor County",
+      "fips": "53027",
+      "directoryPath": "/areas/washington/#grays-harbor",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/grays-harbor-county/",
+      "readerDecision": "Keep the moorage customer, vessel and slip request separate.",
+      "rationale": "Boat sale, customer contract and replacement-vessel suitability are distinct. The buyer and continuing customer cases produce more than a generic waitlist explanation.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.portofgraysharbor.com/news/moorage-list-Tkzof-ehysm-j3mt2"
+      ]
+    },
+    {
+      "areaId": "washington/island",
+      "name": "Island County",
+      "fips": "53029",
+      "directoryPath": "/areas/washington/#island",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/island-county/",
+      "readerDecision": "Plan the occupied hours and usable spaces before the event schedule.",
+      "rationale": "Delivery-to-cleanup occupancy is combined with approved-room limits, catering-only kitchen use and weather-driven room/catering review. The combined acceptance checks are useful despite close prior access-timeline examples.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.fourspringshouse.com/wp-content/uploads/general_info.pdf",
+        "https://www.fourspringshouse.com/"
+      ]
+    },
+    {
+      "areaId": "washington/jefferson",
+      "name": "Jefferson County",
+      "fips": "53031",
+      "directoryPath": "/areas/washington/#jefferson",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/jefferson-county/",
+      "readerDecision": "Make course-specific preparation override a general tools-included message.",
+      "rationale": "The selected intensive course overrides general beginner tools-included language; inbound shipping and prepaid return responsibility are separate. The course-change example requires useful content maintenance.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ptwoodschool.org/what-to-expect",
+        "https://www.ptwoodschool.org/foundations-of-woodworking-ii"
+      ]
+    },
+    {
+      "areaId": "washington/king",
+      "name": "King County",
+      "fips": "53033",
+      "directoryPath": "/areas/washington/#king",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/king-county/",
+      "readerDecision": "Explain what an inventory label lets a borrower do next.",
+      "rationale": "In-stock is not necessarily available to this borrower; item/type waitlist and reservation receipt/approval also differ. A branch-specific status glossary addresses a concrete catalog handoff.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://seattlereconomy.org/how-it-works/"
+      ]
+    },
+    {
+      "areaId": "washington/kitsap",
+      "name": "Kitsap County",
+      "fips": "53035",
+      "directoryPath": "/areas/washington/#kitsap",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/kitsap-county/",
+      "readerDecision": "Separate entering the building, using a studio and helping on a project.",
+      "rationale": "The helper is a different person whose role can change from carrying to tool use. Building, studio and machine permission remain distinct; this is not Whatcom’s returning-member lapse case.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://bainbridgebarn.org/about/frequently-asked-questions/",
+        "https://bainbridgebarn.org/studios/woodworking/woodworking-faq/"
+      ]
+    },
+    {
+      "areaId": "washington/kittitas",
+      "name": "Kittitas County",
+      "fips": "53037",
+      "directoryPath": "/areas/washington/#kittitas",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/kittitas-county/",
+      "readerDecision": "Keep service orders, account authority and urgent calls on their own routes.",
+      "rationale": "Operational orders exclude general email/text, later calls have a handoff, and emergency contact is not an order queue. Representative authority is separately distinguished from transfer.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.kittitasreclamationdistrict.org/orderwater",
+        "https://www.kittitasreclamationdistrict.org/_files/ugd/538c51_f914f86414e9486f83e691534b487ceb.pdf",
+        "https://www.kittitasreclamationdistrict.org/"
+      ]
+    },
+    {
+      "areaId": "washington/klickitat",
+      "name": "Klickitat County",
+      "fips": "53039",
+      "directoryPath": "/areas/washington/#klickitat",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/klickitat-county/",
+      "readerDecision": "Distinguish a group discount threshold from a private-tour minimum charge.",
+      "rationale": "Actual attendance differs from minimum charge and discount eligibility. The eight-person example preserves the true count while showing a ten-person charge basis; it does not duplicate departure minimum advice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.maryhillmuseum.org/adult-group-tours",
+        "https://www.maryhillmuseum.org/discover/for-educators/k-12-school-tours"
+      ]
+    },
+    {
+      "areaId": "washington/lewis",
+      "name": "Lewis County",
+      "fips": "53041",
+      "directoryPath": "/areas/washington/#lewis",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/lewis-county/",
+      "readerDecision": "Explain what is private before a group chooses its train ride.",
+      "rationale": "Privacy can concern seats, one car or an entire charter; program discounts have a different scope. A private carriage and a school group are tested without promising a private train.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://steamtrainride.com/groups-and-charters/",
+        "https://steamtrainride.com/wp-content/uploads/2026/02/2026-Charter-or-Group-Form-1.pdf"
+      ]
+    },
+    {
+      "areaId": "washington/lincoln",
+      "name": "Lincoln County",
+      "fips": "53043",
+      "directoryPath": "/areas/washington/#lincoln",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/lincoln-county/",
+      "readerDecision": "Choose the processing instruction route before asking for extra cuts.",
+      "rationale": "A fixed standard option rejects additional cuts, so a changed request must revisit its instruction document. Conflicting deadline triggers stay excluded rather than invented.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.limitbidpacking.com/"
+      ]
+    },
+    {
+      "areaId": "washington/mason",
+      "name": "Mason County",
+      "fips": "53045",
+      "directoryPath": "/areas/washington/#mason",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/mason-county/",
+      "readerDecision": "Show which part of the business is open before asking for a reservation.",
+      "rationale": "Shopping and dining have separate schedules and party routes, and late arrival does not move the reservation end. The combined chooser and timing example go beyond a generic open/closed notice.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://hamahamaoysters.com/pages/oyster-saloon",
+        "https://hamahamaoysters.com/pages/farm-store"
+      ]
+    },
+    {
+      "areaId": "washington/okanogan",
+      "name": "Okanogan County",
+      "fips": "53047",
+      "directoryPath": "/areas/washington/#okanogan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/okanogan-county/",
+      "readerDecision": "Match the activity and trail operator before linking a pass.",
+      "rationale": "Activity plus actual trail operator selects the pass issuer; equipment and instruction remain separate providers. Changing to Pearrygin reopens the pass question rather than copying an entitlement.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://methowtrails.org/passes",
+        "https://methowtrails.org/methow-trails-system"
+      ]
+    },
+    {
+      "areaId": "washington/pacific",
+      "name": "Pacific County",
+      "fips": "53049",
+      "directoryPath": "/areas/washington/#pacific",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/pacific-county/",
+      "readerDecision": "Describe the work method before treating a boatyard space as permission.",
+      "rationale": "A haul/space arrangement is not approval of a changed work method. An unknown-method option and changed-preparation review are useful website intake choices without operational work instructions.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://poiwa.specialdistrict.org/boatyard-terms-of-use"
+      ]
+    },
+    {
+      "areaId": "washington/pend-oreille",
+      "name": "Pend Oreille County",
+      "fips": "53051",
+      "directoryPath": "/areas/washington/#pend-oreille",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/pend-oreille-county/",
+      "readerDecision": "Distinguish an existing-service transfer from other connection requests.",
+      "rationale": "Existing service transferred to POVN is distinguished from existing physical fiber or new occupancy. Uncertain property status and wireless alternatives receive staff review without fee or installation promises.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://povn.com/fiber-internet/",
+        "https://povn.com/wireless-internet/"
+      ]
+    },
+    {
+      "areaId": "washington/pierce",
+      "name": "Pierce County",
+      "fips": "53053",
+      "directoryPath": "/areas/washington/#pierce",
+      "serviceDecision": "NO_ADDITION",
+      "servicePath": null,
+      "readerDecision": "Can a museum visitor choose self-guided access, a guided route or a separate driving experience from the information available?",
+      "rationale": "Guided/self-guided building access and the short Model T alternative do not add a sufficiently developed project. Complete Oklahoma Creek directly reinforces the Model T overlap; past dates are not promoted as current.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": []
+    },
+    {
+      "areaId": "washington/san-juan",
+      "name": "San Juan County",
+      "fips": "53055",
+      "directoryPath": "/areas/washington/#san-juan",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/san-juan-county/",
+      "readerDecision": "Explain a solo booking across boats, lodging and arrival.",
+      "rationale": "A solo customer can share a boat while having a separate camping tent; inn itineraries differ again. The component-by-component sharing and independent ferry test adds practical value.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://sanjuankayak.com/san-juan-kayak-tours-faqs/",
+        "https://sanjuankayak.com/multi-day-trips/"
+      ]
+    },
+    {
+      "areaId": "washington/skagit",
+      "name": "Skagit County",
+      "fips": "53057",
+      "directoryPath": "/areas/washington/#skagit",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/skagit-county/",
+      "readerDecision": "Keep admission and flower quantities separate.",
+      "rationale": "Admission, bouquet/stem sale units and physical buckets are distinct. A two-bouquet example and a non-entry purchase branch test more than generic ticket extras.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://tulipvalley.com/pages/about-faqs"
+      ]
+    },
+    {
+      "areaId": "washington/skamania",
+      "name": "Skamania County",
+      "fips": "53059",
+      "directoryPath": "/areas/washington/#skamania",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/skamania-county/",
+      "readerDecision": "Plan the accompanying guest as well as the participant.",
+      "rationale": "An observer may follow a trail or stay at a viewing point depending on activity. Participant and observer preparations are tested separately without promising they remain together.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://zipnskamania.com/",
+        "https://zipnskamania.com/faqs/"
+      ]
+    },
+    {
+      "areaId": "washington/snohomish",
+      "name": "Snohomish County",
+      "fips": "53061",
+      "directoryPath": "/areas/washington/#snohomish",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/snohomish-county/",
+      "readerDecision": "Show included access before offering a ticket upgrade.",
+      "rationale": "Ticket-free, general and timed-tour access are distinguished for both new buyers and existing ticket holders. Upgrade uncertainty and duplicate-purchase prevention add to ordinary factory/museum comparisons.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.boeingfutureofflight.com/visit",
+        "https://www.boeingfutureofflight.com/visitor-guidelines"
+      ]
+    },
+    {
+      "areaId": "washington/spokane",
+      "name": "Spokane County",
+      "fips": "53063",
+      "directoryPath": "/areas/washington/#spokane",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/spokane-county/",
+      "readerDecision": "Connect vendor type, attendance dates and site needs.",
+      "rationale": "Vendor category, selected attendance dates and equipment footprint are retained together. The partial-season trailer request and expired-cycle check make the application brief usable.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.spokanefarmersmarket.org/copy-of-vendor-resource"
+      ]
+    },
+    {
+      "areaId": "washington/stevens",
+      "name": "Stevens County",
+      "fips": "53065",
+      "directoryPath": "/areas/washington/#stevens",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/stevens-county/",
+      "readerDecision": "Explain what changes across a multi-visit lesson package.",
+      "rationale": "Three visits have changing access, later-session scheduling and a separate purchase opportunity after completion. The sequence requires more than one static package description.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.ski49n.com/mountain-services/first-time-lessons"
+      ]
+    },
+    {
+      "areaId": "washington/thurston",
+      "name": "Thurston County",
+      "fips": "53067",
+      "directoryPath": "/areas/washington/#thurston",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/thurston-county/",
+      "readerDecision": "Distinguish online stock from what is ready in the shop.",
+      "rationale": "Offsite online stock requires a physical transfer before collection. Order receipt, transfer and actual readiness are separate content/message states, unlike King’s borrower-specific hold.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://lostandfoundcrafts.com/"
+      ]
+    },
+    {
+      "areaId": "washington/wahkiakum",
+      "name": "Wahkiakum County",
+      "fips": "53069",
+      "directoryPath": "/areas/washington/#wahkiakum",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/wahkiakum-county/",
+      "readerDecision": "Separate booking today from arriving late on an existing booking.",
+      "rationale": "A new room-for-tonight inquiry and an existing guest’s late arrival are different tasks. Online cutoff is not sold-out evidence, and the request remains pending until accepted.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://hotelcathlamet.com/our-rooms/",
+        "https://hotelcathlamet.com/location/"
+      ]
+    },
+    {
+      "areaId": "washington/walla-walla",
+      "name": "Walla Walla County",
+      "fips": "53071",
+      "directoryPath": "/areas/washington/#walla-walla",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/walla-walla-county/",
+      "readerDecision": "Explain earning and using rewards by transaction.",
+      "rationale": "The same club transaction can earn points but not redeem them; annual tier and retained points also differ. The transaction/year-change matrix is substantive and does not invent balances.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://wallawallavintners.com/wine-club/"
+      ]
+    },
+    {
+      "areaId": "washington/whatcom",
+      "name": "Whatcom County",
+      "fips": "53073",
+      "directoryPath": "/areas/washington/#whatcom",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/whatcom-county/",
+      "readerDecision": "Explain what a returning member must recheck.",
+      "rationale": "Cancellation creates a returning-member training-validity question independent of membership payment. An uncertain date goes to staff; this differs from a helper’s permissions at Kitsap.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://wiki.bellinghammakerspace.org/books/member-handbook/page/membership",
+        "https://bellinghammakerspace.org/"
+      ]
+    },
+    {
+      "areaId": "washington/whitman",
+      "name": "Whitman County",
+      "fips": "53075",
+      "directoryPath": "/areas/washington/#whitman",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/whitman-county/",
+      "readerDecision": "Show how quantity and shipping conditions change the parcel plan.",
+      "rationale": "Five-to-six cans changes parcel count, while route conditions and dispatch govern another decision. The boundary test gives a concrete explanation without rate calculations.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://creamery.wsu.edu/shipping/",
+        "https://creamery.wsu.edu/cougar-cheese/faqs/",
+        "https://creamery.wsu.edu/ferdinands-ice-cream-shoppe/hours-and-location/"
+      ]
+    },
+    {
+      "areaId": "washington/yakima",
+      "name": "Yakima County",
+      "fips": "53077",
+      "directoryPath": "/areas/washington/#yakima",
+      "serviceDecision": "CONTENT_SUPPORTED",
+      "servicePath": "/areas/washington/yakima-county/",
+      "readerDecision": "Define what leaves production and what remains in storage.",
+      "rationale": "Starting materials and selected production stage are joined to bulk/case/dry-goods storage and release needs. The finished-cases-versus-bulk test keeps a genuine production handoff visible.",
+      "guideDecision": "NO_ADDITION",
+      "faqCount": 0,
+      "keywordStatus": "RECONCILED_WITH_RECORDED_METRIC_LIMITATIONS",
+      "keywordDrivenDispositionChange": false,
+      "sourceUrls": [
+        "https://www.hyattvineyards.com/custom-services",
+        "https://www.hyattvineyards.com/contact"
+      ]
+    }
+  ]
+}

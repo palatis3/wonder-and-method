@@ -1,3 +1,4 @@
+import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
 import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
@@ -11,7 +12,7 @@ import {journeyPages} from '../deployment/journey-dimensions.mjs';
 import {saveJourneyCount,cleanJourneyCounts} from '../deployment/journey-counts.mjs';
 import {saveJourneyTotals} from '../deployment/journey-months.mjs';
 
-for(const phase of [{id:41,label:'Kansas/Nebraska',paths:ksNePaths,previous:1759,total:1884,suffix:'ks_ne',future:[...ndSdPaths,...caNmPaths,...azOrPaths]},{id:42,label:'North/South Dakota',paths:ndSdPaths,previous:1884,total:1969,suffix:'nd_sd',future:[...caNmPaths,...azOrPaths]},{id:43,label:'California/New Mexico',paths:caNmPaths,previous:1969,total:1969+caNmPaths.length,suffix:'ca_nm',future:azOrPaths},{id:44,label:'Arizona/Oregon',paths:azOrPaths,previous:2053,total:2103,suffix:'az_or',future:[]}]){
+for(const phase of [{id:41,label:'Kansas/Nebraska',paths:ksNePaths,previous:1759,total:1884,suffix:'ks_ne',future:[...ndSdPaths,...caNmPaths,...azOrPaths,...nvWaPaths]},{id:42,label:'North/South Dakota',paths:ndSdPaths,previous:1884,total:1969,suffix:'nd_sd',future:[...caNmPaths,...azOrPaths,...nvWaPaths]},{id:43,label:'California/New Mexico',paths:caNmPaths,previous:1969,total:1969+caNmPaths.length,suffix:'ca_nm',future:[...azOrPaths,...nvWaPaths]},{id:44,label:'Arizona/Oregon',paths:azOrPaths,previous:2053,total:2103,suffix:'az_or',future:nvWaPaths},{id:45,label:'Nevada/Washington',paths:nvWaPaths,previous:2103,total:2155,suffix:'nv_wa',future:[]}]){
 const paths=phase.paths;
 const directory=new URL('../deployment/migrations/',import.meta.url);
 const names=(await readdir(directory)).filter(name=>/^\d{4}.*\.sql$/.test(name)&&Number(name.slice(0,4))<phase.id).sort();
