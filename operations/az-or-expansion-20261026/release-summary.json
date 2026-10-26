@@ -1,0 +1,106 @@
+{
+  "status": "published-and-verified",
+  "completedAt": "2026-10-26T16:18:41.787Z",
+  "commit": "94666c0d430669eec288fb8e11f4a1dbe90ef6ba",
+  "runtimeVersion": "05342620-a584-4092-ae84-d67693d1258e",
+  "ci": {
+    "run": 40346959733,
+    "url": "https://github.com/palatis3/wonder-and-method/actions/runs/40346959733",
+    "allJobsPassed": true,
+    "jobs": 15,
+    "requiredGates": [
+      "verify",
+      "visual",
+      "standards",
+      "cross-browser",
+      "performance",
+      "dependencies",
+      "links",
+      "seo-editorial",
+      "reading-accessibility"
+    ],
+    "distributed": {
+      "runId": "40346959733",
+      "runAttempt": "1",
+      "ciInputsSha256": "ecafad7f377007fea32d5ecad2308fe09d8268a5b61fff1eff6492aa47e62ce5",
+      "planSha256": "046adfc0f67ef6b84cb8a97758d19d9ce34af21f1c31944d737e1649147277c3",
+      "shards": 5,
+      "tests": 1786
+    }
+  },
+  "site": {
+    "routes": 2131,
+    "assets": 2799,
+    "sitemapUrls": 2119,
+    "generatedFiles": 4940
+  },
+  "database": {
+    "migrations": [
+      {
+        "name": "0044_az_or_journey_pages.sql",
+        "sha256": "68230b63642ccb9bca4e0560054725b3f09bd9b2d3d50e2f4ec3d4dee6c68ff9"
+      }
+    ],
+    "previousKeys": 2053,
+    "currentKeys": 2103,
+    "preservationVerified": true
+  },
+  "searchConsole": {
+    "submittedAt": "2026-10-26T15:58:20.909Z",
+    "sitemap": "https://wonderandmethod.com/sitemap.xml"
+  },
+  "recovery": {
+    "scheduledAt": "2026-10-26T16:17:39.796Z",
+    "receiverAt": "2026-10-26T16:17:40.993970+00:00"
+  },
+  "tests": {
+    "browserEvidence": "Complete distributed GitHub run; local deployment artifact verified byte-for-byte",
+    "ciBrowser": {
+      "startTime": "2026-10-26T15:17:43.646Z",
+      "duration": 1198701.9318847656,
+      "expected": 1223,
+      "skipped": 563,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reading": {
+      "startTime": "2026-10-26T15:17:44.580Z",
+      "duration": 16596.115999999998,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "liveBrowser": {
+      "startTime": "2026-10-26T15:46:24.236Z",
+      "duration": 104325.661,
+      "expected": 45,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "visual": {
+      "startTime": "2026-10-26T15:17:41.217Z",
+      "duration": 48134.529,
+      "expected": 64,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "visualImages": 72,
+    "crossBrowser": {
+      "startTime": "2026-10-26T15:18:18.852Z",
+      "duration": 301997.67699999997,
+      "expected": 116,
+      "skipped": 20,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "limits": [
+    "Automated checks cover every application route; editorial evidence records the pages and unchanged prior reviews it used.",
+    "Unverified external links are not counted as reachable.",
+    "No indexing, ranking, lead or revenue outcome is claimed.",
+    "Routine QA sent no real inquiry, chat message, email or payment."
+  ]
+}
