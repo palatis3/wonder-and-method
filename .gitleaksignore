@@ -1,0 +1,9 @@
+# Exact reviewed false positives only; future file/line/commit identities remain scanned.
+# SHA-256 geography preservation fixture; county names Keya Paha and Dickey trigger the generic key detector.
+c1dddc4aeb31fd5bb4bf9a6f080606cafc38039b:tests/fixtures/ks-ne-geography.json:generic-api-key:162
+# SHA-256 geography preservation fixture; county names Keya Paha and Dickey trigger the generic key detector.
+c1dddc4aeb31fd5bb4bf9a6f080606cafc38039b:tests/fixtures/nd-sd-geography.json:generic-api-key:16
+# Historical published Worker version UUID, also identified in the public release record.
+6821bf81e5fa96e593455194a08d06e31d52b775:operations/location-wave-two-20261023/reviews/publication.md:generic-api-key:9
+# Historical published Worker version UUID, also identified in the public release record.
+a3eb99f89a3a193b9c94a627fa40aa10146cf931:operations/location-wave-two-20261023/reviews/publication.md:generic-api-key:9
