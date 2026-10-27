@@ -1,3 +1,4 @@
+import {beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import {beforeReviewedSourceCorrections} from './fixtures/reviewed-source-corrections.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -20,7 +21,7 @@ test('Missouri/Iowa retain every prior service and FAQ and exactly the independe
  assert.equal(locationServices.length,2266);assert.equal(approved.length,168);
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedSourceCorrections(byPath.get(path))),hash,path);
- for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(faqs[path]),hash,path);
+ for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
  assert.equal(Object.keys(faqs).length,Object.keys(preservation.faqs).length+37);
  assert.equal(Object.values(preservation.newFaqs).length,6);
  const counts=['missouri','iowa'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length);

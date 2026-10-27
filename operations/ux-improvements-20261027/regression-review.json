@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "reviewerModel": "gpt-6-astra",
+  "status": "clean_bounded_regression_review",
+  "findings": [],
+  "reviewedFiles": [
+    "tests/fixtures/reviewed-ux-copy-edits.mjs",
+    "tests/fixtures/ux-copy-edits.json",
+    "tests/fixtures/reviewed-source-corrections.mjs",
+    "tests/fixtures/reviewed-location-edits.mjs",
+    "tests/ux-copy-preservation.test.mjs",
+    "tests/audit-inquiry-clarity.test.mjs",
+    "tests/plan-clarity.test.mjs",
+    "tests/public-review-boundary.test.mjs",
+    "tests/location-services.test.mjs",
+    "tests/rerun2-guide-consolidation.test.mjs",
+    "changed regional *-content.test.mjs preservation adapters"
+  ],
+  "evidence": {
+    "historicalFixtures": "git diff HEAD -- tests/fixtures/*.json is empty; historical expected fixture files remain frozen.",
+    "independentRestoration": "All 49 current records reconstruct byte-for-value to parsed HEAD records; the Queens FAQ reconstructs to its exact HEAD array.",
+    "leafValidation": "All 295 explicit before/after leaf values match HEAD/current data and both hashes in the independently reviewed local-copy ledger.",
+    "helperBoundary": "Full current-record after hash is asserted before cloning/restoration. Only listed paths are restored, each after value is checked, and the resulting full before hash is asserted. Unlisted records pass through to existing historical checks, so the adapter does not waive their checks.",
+    "historicalComposition": "UX restoration runs before the older source/location reconstruction layers; their existing full-record and historical hashes remain enforced.",
+    "targetedTests": {
+      "command": "node --test tests/ux-copy-preservation.test.mjs",
+      "passed": 2,
+      "failed": 0,
+      "coverage": "49 records/295 fields/one FAQ and rejection of wording, source URL, unexpected property and FAQ tampering."
+    },
+    "commercialAssertions": "Required-form ordering is updated while goal count, package disclosure and existing request fields remain checked. Pricing uses one outside-cost statement with optional-month cost calculation; numeric research/graphics and cost-boundary checks remain. About heading changes without removing identity or fictional/non-results checks. Local pages check displayed build prices and canonical price/audit links rather than requiring now-removed monthly enrollment text. Guides still check every plan price actually displayed, canonical comparison links, configured review fees/page limits, improvement pluralization and no-automatic-care-charge wording.",
+    "restoredSource": "Guide fees and improvement allowances are derived from supplied offers; pricing has the project-calendar link. Software/plugin/theme/backup/restore/malware exclusions and improvement-pause choice remain."
+  },
+  "editorialDisposition": {
+    "path": "/areas/idaho/bear-lake-county/",
+    "evidenceHash": "1721a91b29d654d23dc4bbc790259b4cf024a42f4d1737d120dac2032a6e22d0",
+    "decision": "retain",
+    "passage": "Its boat and PWC instructions require customers to complete check-in at the shop (called “check-on” in the operator’s instructions), even when delivery is selected, and say that lake delivery is available only to North Beach State Park.",
+    "reason": "One attributed operator rule keeps two linked customer constraints together: selecting delivery does not waive shop check-in, and delivery is limited to North Beach State Park. The brief parenthetical explains the source-specific term check-on while the main instruction consistently uses check-in. The sentence has a clear subject and parallel requirements; shortening solely for a length threshold is not necessary to correct meaning or comprehension.",
+    "limits": "Disposition is an editorial assessment against the reviewed source corpus, not new external verification of current operator policy."
+  },
+  "hashes": {
+    "tests/fixtures/reviewed-ux-copy-edits.mjs": "7cd619ef86eb90445c1131778d8ef0f8ec598162bae86efeffcc1ca4da5851a2",
+    "tests/fixtures/ux-copy-edits.json": "470b3d42982e0c9318193fc2e49423b8dcaedb8c1d85e98312db71142942e64f",
+    "tests/ux-copy-preservation.test.mjs": "5052d3dd1ee7c98eaabb5ec058c40d791e0a9105bf5c7ec68a70da45682e7543"
+  },
+  "limits": [
+    "No full suite, build, browser, visual baseline or external research run.",
+    "Only the owned regression-review JSON was written.",
+    "Fixture/source conclusions apply to reviewed current contents; later content edits require updating explicit reviewed evidence and rerunning gates."
+  ]
+}

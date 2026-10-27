@@ -8,6 +8,6 @@ export function contactPage(intake,offers,config){
  </header>
  <div class="contact-layout contact-page-layout">
   <div class="contact-form-column">${intake.live?'':`<div class="note">${e(intake.notice)}</div>`}${inquiryForm(intake,{offers})}</div>
-  <section class="contact-expectations" aria-labelledby="before-contact"><span class="contact-aside-mark">${studioIcon('studio')}</span><h2 id="before-contact">Hello, I’m Terry.</h2><p>You’ll work directly with me on the design, writing and build, online from Buffalo.</p><p>Outside costs are listed separately in your proposal.</p><p class="contact-response-note">${e(config.responseWindow)}</p><ul class="link-row"><li><a href="/pricing/">Compare prices and included work</a></li><li><a href="/process/">See how projects work</a></li></ul></section>
+  <section class="contact-expectations" aria-labelledby="before-contact"><span class="contact-aside-mark">${studioIcon('studio')}</span><h2 id="before-contact">Hello, I’m Terry.</h2><p>You’ll work directly with me on the design, writing and build, online from Buffalo.</p><p>Outside costs are listed separately in your proposal.</p><ul class="link-row"><li><a href="/pricing/">Compare prices and included work</a></li><li><a href="/process/">See how projects work</a></li></ul></section>
  </div>`;
 }

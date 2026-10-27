@@ -504,6 +504,17 @@
       "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
       "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
       "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/idaho/bear-lake-county/",
+      "severity": "review",
+      "rule": "long-sentence",
+      "detail": "1 sentences exceed 35 words; review for clarity.",
+      "evidenceSha256": "1721a91b29d654d23dc4bbc790259b4cf024a42f4d1737d120dac2032a6e22d0",
+      "disposition": "retain",
+      "reason": "The attributed operator rule keeps mandatory shop check-in despite selected delivery and the North Beach-only delivery boundary together. Its short parenthetical explains the source-specific “check-on” wording without adopting it as customer instructions; independent review found the sentence clear in context.",
+      "reviewer": "Independent Astra review; operations/ux-improvements-20261027/regression-review.json",
+      "reviewedAt": "2026-10-27"
     }
   ]
 }

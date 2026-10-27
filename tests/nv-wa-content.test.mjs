@@ -1,3 +1,4 @@
+import {beforeReviewedUxCopyEdits,beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import coUtPrPreservation from './fixtures/co-ut-pr-preservation.json' with {type:'json'};
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -20,9 +21,9 @@ test('Nevada/Washington preserve all 1983 prior records and all FAQs with exactl
  assert.equal(Object.keys(preservation.services).length,1983);assert.equal(Object.keys(preservation.newServices).length,50);
  assert.equal(locationServices.length,2266);assert.equal(approved.length,52);
  assert.deepEqual([...approved.slice(2)].sort(),Object.keys(preservation.newServices).sort());
- for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(byPath.get(path)),hash,path);
+ for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxCopyEdits(byPath.get(path))),hash,path);
  assert.deepEqual(Object.keys(faqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(coUtPrPreservation.newFaqs)].sort());
- for(const [path,hash]of Object.entries(preservation.faqs))assert.equal(digest(faqs[path]),hash,path);
+ for(const [path,hash]of Object.entries(preservation.faqs))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
  assert.equal(Object.keys(faqs).length,208);assert.equal(Object.values(faqs).flat().length,278);
  assert.deepEqual(['nevada','washington'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[14,36]);
 });

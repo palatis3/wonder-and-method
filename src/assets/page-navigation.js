@@ -51,8 +51,10 @@ if(header){
    if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
    root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
    // Keep tools discoverable during ordinary reading and scrolling. Yield only
-   // to the visitor's focused control; content hit tests hid chat on most pages.
-   const states=floating.map(control=>blocked(control,active));
+   // to focused controls and visible inquiry fields, including before focus.
+   const formControls=[...document.querySelectorAll('#inquiry input:not([type="hidden"]),#inquiry textarea,#inquiry select,#inquiry button,#inquiry summary')].filter(field=>field.getClientRects().length&&!field.closest('[hidden],.honeypot'));
+   const overlapsField=control=>{const r=control.getBoundingClientRect();return formControls.some(field=>{const t=field.getBoundingClientRect();return t.width&&t.height&&Math.min(r.right,t.right)>Math.max(r.left,t.left)-8&&Math.min(r.bottom,t.bottom)>Math.max(r.top,t.top)-8;});};
+   const states=floating.map(control=>blocked(control,active)||overlapsField(control));
    floating.forEach((control,index)=>control.classList.toggle('is-obstructing-controls',states[index]));
   };
   const scheduleTools=()=>{if(!queued){queued=true;requestAnimationFrame(updateTools);}};

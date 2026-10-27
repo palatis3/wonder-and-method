@@ -246,3 +246,34 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 
 /* Existing service destinations, grouped by the buyer’s next job. */
 .service-links>.service-link-group{border-top:1px solid var(--line);margin-top:.25rem;padding-top:.25rem}
+
+/* Buyer decisions use the existing type and palette, with room for enlarged text. */
+.about-evidence,.addon-task-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.about-evidence article,.addon-task-choices>a{border-top:1px solid var(--line);padding:1.25rem 0;min-width:0}
+.about-evidence h3{font-size:1.4rem;line-height:1.25;margin:.25rem 0 .75rem}
+.about-evidence p{font-size:1rem;line-height:1.7}
+.addon-task-choices{margin-bottom:2rem}.addon-task-choices>a{color:inherit;text-decoration:none}
+.addon-task-choices strong,.addon-task-choices span{display:block}.addon-task-choices strong{color:var(--forest,#264a3d);text-decoration:underline;text-underline-offset:.2em}.addon-task-choices span{margin-top:.5rem;font-size:1rem}
+.process-calendar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;padding:0;gap:1rem;margin:1.5rem 0}
+.process-calendar li{padding:1rem;border-top:3px solid var(--forest,#264a3d);background:var(--subtle,#edf1e9);min-width:0}
+.process-calendar li:nth-child(even){border-top-style:dashed;background:transparent}.process-calendar strong,.process-calendar span{display:block}.process-calendar span{margin-top:.5rem}
+.before-after-example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.before-after-example article,.handoff-start-preview,.service-evidence{padding:1.5rem;background:var(--subtle,#edf1e9);border:1px solid var(--line)}
+.service-evidence{margin-block:2rem}.service-evidence h2{font-size:1.7rem!important}.service-evidence p{max-width:75ch}
+.handoff-start-preview{max-width:75ch;margin-block:1.5rem}.handoff-start-preview dt{font-weight:700}.handoff-start-preview dd{margin:0 0 .8rem}
+.roi-extra-scenarios>summary,.guide-case-details>summary{min-height:44px;padding:.8rem 0;font-weight:650;cursor:pointer}
+.roi-extra-scenarios{margin-block:1.5rem;border-block:1px solid var(--line)}
+.project-case-summary{max-width:75ch}.project-case-summary h3{font-size:1.25rem;line-height:1.4;margin:1.5rem 0 .5rem}
+.studio-pricing .pricing-common-costs{max-width:78ch}.studio-pricing #website-packages>.editing-model{font-size:1rem;max-width:78ch;margin:1rem 0}
+@media(max-width:850px){.process-calendar{grid-template-columns:repeat(2,minmax(0,1fr))}.about-evidence,.addon-task-choices{grid-template-columns:1fr;gap:.5rem}}
+@media(max-width:500px){.before-after-example,.process-calendar{grid-template-columns:1fr}.process-calendar{gap:.5rem}.process-calendar li{padding:.8rem 1rem}.handoff-start-preview,.service-evidence{padding:1.1rem}}
+
+/* Keep the price decision near the start, with material terms before the cards. */
+.studio-site.studio-pricing .pricing-intro{padding-block:1.5rem .75rem}
+.studio-site.studio-pricing .pricing-intro h1{margin:.4rem 0 .75rem;line-height:1.05}
+.studio-site.studio-pricing .pricing-intro .lede{margin-bottom:1rem}
+.studio-site.studio-pricing .pricing-intro .page-jump{padding-block:.35rem}
+.studio-site.studio-pricing #website-packages{padding-top:2rem}
+.studio-site.studio-pricing #website-packages>.editing-model{padding-block:.75rem;margin:.75rem 0}
+.studio-site.studio-pricing .pricing-common-costs{margin:.5rem 0 1.25rem;font-size:1rem;line-height:1.5}
+@media(max-width:767px){.studio-site.studio-pricing .pricing-intro h1{font-size:2.5rem}.studio-site.studio-pricing .pricing-intro .page-jump{gap:.1rem 1rem}.studio-site.studio-pricing #website-packages{padding-top:1.25rem}.studio-site.studio-pricing #website-packages>h2{margin-bottom:.6rem}.studio-site.studio-pricing .pricing-intro .page-jump a{font-size:.9375rem}}

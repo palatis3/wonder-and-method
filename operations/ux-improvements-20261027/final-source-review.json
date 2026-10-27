@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "reviewer": {
+    "model": "gpt-6-astra",
+    "role": "independent source audit",
+    "ownership": "operations/ux-improvements-20261027/final-source-review.json"
+  },
+  "status": "clean_bounded_source_review",
+  "findings": [],
+  "inputEvidence": {
+    "head": "f5342668c2a46ebab1f10122e76e4c4ae4176175",
+    "meaningfulSourceDiffSha256": "ca561f3166be8946ff54b9d6ec4f31a5f1bf9bd367e48bba123ebc05772c486a",
+    "auditSha256": "28393132bd4d996889501b3b5e2cd927fe76499330e930772b0d08b53a2bf799",
+    "localDataSha256": "509cccd6895d5c134b85a9e1edc4ded92c3aa05927861911e7f5111d0689e6d3",
+    "localLedgerSha256": "0f2c0b71a4f68eece58a35c17607dfd1a94aa9b495ca1860738845a185a1f6f1",
+    "qaPlan": "operations/ux-improvements-20261027/qa-plan.json",
+    "priorCheckpoint": "operations/ux-improvements-20261027/checkpoint-review.json"
+  },
+  "closedCheckpointItems": [
+    {
+      "id": "UX-CHECK-01",
+      "path": "src/journal.mjs",
+      "line": 194,
+      "status": "source_fix_verified",
+      "evidence": "Generated timed-booking article has exactly one instance of each of planning-2, planning-3, planning-4, planning-5 and related-cases, on the details element. Minimal VM invocations of the real shared revealAnchor handler open each target.",
+      "runtimeEvidence": "Primary reports 18 browser cases passing; not independently rerun."
+    },
+    {
+      "path": "src/service-faqs.json",
+      "line": 2388,
+      "status": "fixed",
+      "evidence": "Queens multilingual FAQ now addresses the buyer service and inquiry pages, with preparation instructions, approved translations, maintenance responsibility and reply-language support retained. Firing instructions are a clearly subordinate example."
+    }
+  ],
+  "localReview": {
+    "records": 2266,
+    "changedRecords": 49,
+    "unchangedRecords": 2217,
+    "changedLeafFields": 295,
+    "ledgerBeforeAndAfterLeafHashes": "All 295 before/after hashes match actual HEAD/current values.",
+    "ledgerAndDiffPathSets": "Exact match; neither missing nor additional paths.",
+    "auditAndDataFileHashes": "Both match ledger.",
+    "protectedFieldViolations": [],
+    "sourceUrlsAndObservations": "Unchanged for all records.",
+    "sourceLabels": "Only the documented distinct Osceola labels change.",
+    "routesIdsOrderCountsCheckedDates": "Unchanged.",
+    "faqChanges": "Only the separately authorized Queens question/answer change; source-data worker did not alter FAQ arrays.",
+    "offerCatalog": "config/offers.json and normalization source unchanged; no price or allowance data changes.",
+    "defectCoverage": {
+      "expected": 18,
+      "covered": 18,
+      "missing": [],
+      "paths": [
+        "/areas/california/modoc-county/",
+        "/areas/idaho/bingham-county/",
+        "/areas/iowa/monona-county/",
+        "/areas/iowa/monroe-county/",
+        "/areas/iowa/montgomery-county/",
+        "/areas/iowa/polk-county/",
+        "/areas/kentucky/lee-county/",
+        "/areas/maryland/anne-arundel-county/",
+        "/areas/maryland/montgomery-county/",
+        "/areas/michigan/grand-traverse-county/",
+        "/areas/minnesota/houston-county/",
+        "/areas/minnesota/kanabec-county/",
+        "/areas/minnesota/le-sueur-county/",
+        "/areas/south-dakota/moody-county/",
+        "/areas/south-dakota/pennington-county/",
+        "/areas/south-dakota/turner-county/",
+        "/areas/texas/cochran-county/",
+        "/areas/texas/crockett-county/"
+      ]
+    },
+    "priorityCoverage": {
+      "expected": 45,
+      "covered": 45,
+      "missing": [],
+      "paths": [
+        "/areas/iowa/monona-county/",
+        "/areas/iowa/monroe-county/",
+        "/areas/iowa/montgomery-county/",
+        "/areas/iowa/polk-county/",
+        "/areas/maryland/anne-arundel-county/",
+        "/areas/maryland/montgomery-county/",
+        "/areas/michigan/grand-traverse-county/",
+        "/areas/minnesota/houston-county/",
+        "/areas/minnesota/kanabec-county/",
+        "/areas/minnesota/le-sueur-county/",
+        "/areas/south-dakota/moody-county/",
+        "/areas/south-dakota/pennington-county/",
+        "/areas/south-dakota/turner-county/",
+        "/areas/texas/cochran-county/",
+        "/areas/texas/crockett-county/",
+        "/areas/alaska/nome-census-area/",
+        "/areas/california/tehama-county/",
+        "/areas/iowa/osceola-county/",
+        "/areas/iowa/poweshiek-county/",
+        "/areas/iowa/sac-county/",
+        "/areas/iowa/scott-county/",
+        "/areas/iowa/sioux-county/",
+        "/areas/kansas/coffey-county/",
+        "/areas/minnesota/lyon-county/",
+        "/areas/missouri/henry-county/",
+        "/areas/missouri/livingston-county/",
+        "/areas/montana/liberty-county/",
+        "/areas/montana/mccone-county/",
+        "/areas/nebraska/grant-county/",
+        "/areas/nevada/pershing-county/",
+        "/areas/new-mexico/quay-county/",
+        "/areas/oklahoma/custer-county/",
+        "/areas/oklahoma/ellis-county/",
+        "/areas/oklahoma/texas-county/",
+        "/areas/oregon/klamath-county/",
+        "/areas/pennsylvania/philadelphia-county/",
+        "/areas/queens-county/",
+        "/areas/south-dakota/fall-river-county/",
+        "/areas/texas/dallas-county/",
+        "/areas/texas/fannin-county/",
+        "/areas/texas/gregg-county/",
+        "/areas/texas/harris-county/",
+        "/areas/washington/king-county/",
+        "/areas/west-virginia/upshur-county/",
+        "/areas/wyoming/albany-county/"
+      ]
+    },
+    "changedPaths": [
+      "/areas/alaska/nome-census-area/",
+      "/areas/california/modoc-county/",
+      "/areas/california/tehama-county/",
+      "/areas/idaho/bear-lake-county/",
+      "/areas/idaho/bingham-county/",
+      "/areas/iowa/monona-county/",
+      "/areas/iowa/monroe-county/",
+      "/areas/iowa/montgomery-county/",
+      "/areas/iowa/osceola-county/",
+      "/areas/iowa/polk-county/",
+      "/areas/iowa/poweshiek-county/",
+      "/areas/iowa/sac-county/",
+      "/areas/iowa/scott-county/",
+      "/areas/iowa/sioux-county/",
+      "/areas/kansas/coffey-county/",
+      "/areas/kentucky/lee-county/",
+      "/areas/maryland/anne-arundel-county/",
+      "/areas/maryland/montgomery-county/",
+      "/areas/michigan/grand-traverse-county/",
+      "/areas/minnesota/houston-county/",
+      "/areas/minnesota/kanabec-county/",
+      "/areas/minnesota/le-sueur-county/",
+      "/areas/minnesota/lyon-county/",
+      "/areas/missouri/henry-county/",
+      "/areas/missouri/livingston-county/",
+      "/areas/montana/liberty-county/",
+      "/areas/montana/mccone-county/",
+      "/areas/nebraska/grant-county/",
+      "/areas/nevada/pershing-county/",
+      "/areas/new-mexico/quay-county/",
+      "/areas/oklahoma/custer-county/",
+      "/areas/oklahoma/ellis-county/",
+      "/areas/oklahoma/texas-county/",
+      "/areas/oregon/klamath-county/",
+      "/areas/pennsylvania/philadelphia-county/",
+      "/areas/queens-county/",
+      "/areas/south-dakota/fall-river-county/",
+      "/areas/south-dakota/moody-county/",
+      "/areas/south-dakota/pennington-county/",
+      "/areas/south-dakota/turner-county/",
+      "/areas/texas/cochran-county/",
+      "/areas/texas/crockett-county/",
+      "/areas/texas/dallas-county/",
+      "/areas/texas/fannin-county/",
+      "/areas/texas/gregg-county/",
+      "/areas/texas/harris-county/",
+      "/areas/washington/king-county/",
+      "/areas/west-virginia/upshur-county/",
+      "/areas/wyoming/albany-county/"
+    ],
+    "editorialEvidence": "Retained prior source review of changed leads, decisions and customer-action patterns; the exact unchanged ledger/data hashes validate those inputs. Rechecked coverage and protection of geographic/source/offer data. No further actor-label, malformed-heading or invented-claim defect identified."
+  },
+  "requirements": [
+    {
+      "id": "D1",
+      "result": "source_pass",
+      "evidence": "home-proof.mjs describes static landscape, remodeling and menu content; absent selection/cart/form interactions are no longer promised."
+    },
+    {
+      "id": "D2",
+      "result": "source_pass_runtime_owned_by_primary",
+      "evidence": "page-navigation.js computes overlap with visible inquiry controls before focus; existing visibility CSS preserves control geometry while hiding obstructing launchers. Scroll, resize, focus, toggle and relevant layout events remain bound."
+    },
+    {
+      "id": "D3",
+      "result": "source_pass",
+      "evidence": "Exact-match flag groups all exact names visibly while retaining original type/state filters. Targeted pure-function cases confirm Anchorage municipality/city and AK restrictions; partial matches remain separate."
+    },
+    {
+      "id": "D4",
+      "result": "source_pass",
+      "evidence": "All 18 flagged paths are in the exact verified 49-record ledger; corrected customer actions remain distinct from supplied owner inputs."
+    },
+    {
+      "id": "P1",
+      "result": "source_pass",
+      "evidence": "Name/email/message precede optional goal/package fields. Existing field ids/names, request summary, selected service, validation/error references, retained add-ons, callback and no-JS submission structure remain intact."
+    },
+    {
+      "id": "P2",
+      "result": "source_pass",
+      "evidence": "Pricing starts with fit, price and booking amount. Booking amounts generated from the current offer catalog are $700/$1,175/$1,850 and exactly equal payment_schedule[0]. Shared full inclusions, form/connection limitations, provider costs, payment milestones, approval, cancellation, page counts, timing and fault-correction terms remain available. Monthly first-payment/Baseline rules and care exclusions remain stated."
+    },
+    {
+      "id": "P3",
+      "result": "source_pass",
+      "evidence": "Homepage inserts AssetRounds, Terry and starting choices before fictional gallery. Work/About/service proof explains actual website work or expressly fictional/studio examples; no new measured business outcome or invented client relationship found."
+    },
+    {
+      "id": "P4",
+      "result": "source_pass",
+      "evidence": "Concise no-visual-editor/code-skills disclosure precedes package cards on pricing/design/redesign and links to source-handoff explanation. Generated pricing confirms ordering."
+    },
+    {
+      "id": "P5",
+      "result": "source_pass",
+      "evidence": "Shared local introduction is shorter; general business inquiry leads into optional example questions. Scope detail, public-example attribution, source links, source review dates and existing fragments remain. All 45 priority local records are covered."
+    },
+    {
+      "id": "P6",
+      "result": "source_pass",
+      "evidence": "Custom/template answer addresses layout/task fit; care/SEO and cost guides reduce plan repetition without losing software/plugin/theme exclusion or pause boundaries. Timed-booking cases are optional with working fragment targets. All 13 changed related pairs propagate into guideDetails and resolve to two actual journal destinations."
+    }
+  ],
+  "additionalCoverage": [
+    "Inspected add-on task links, source-handoff preview, ROI scenario disclosure, consent wording and process timeline; no material content/function regression found.",
+    "Reviewed cumulative meaningful source diff ignoring line-ending churn; no source or baseline edits made by reviewer."
+  ],
+  "limits": [
+    "This is a source/targeted pure-function audit, not a release approval or exhaustive live UX assessment.",
+    "No full build, test suite, browser run, rendered-all-local-page review, visual baseline update or external source re-research performed by reviewer. Primary owns those gates.",
+    "Primary was still refining pricing whitespace and mobile scene crop. Their final visual appearance is outside this source conclusion.",
+    "No new engagement, conversion, lead-quality or search-result evidence exists here; no such outcome is claimed.",
+    "Future changes after the recorded diff hash need their own verification."
+  ]
+}

@@ -1,3 +1,4 @@
+import {beforeReviewedUxFaqEdits} from './reviewed-ux-copy-edits.mjs';
 import {beforeReviewedSourceCorrections} from './reviewed-source-corrections.mjs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -13,7 +14,7 @@ export function beforeReviewedLocationEdits(record){
  record=beforeReviewedSourceCorrections(record);
  return restoreReviewed(record,byPath.get(record.path),record.path);
 }
-export function beforeReviewedFaqEdits(path,answers){return restoreReviewed(answers,faqByPath.get(path),path);}
+export function beforeReviewedFaqEdits(path,answers){return restoreReviewed(beforeReviewedUxFaqEdits(path,answers),faqByPath.get(path),path);}
 function restoreReviewed(record,change,path){
  if(!change)return record;
  assert.equal(hash(record),change.afterSha256,path+' approved current record');

@@ -1,3 +1,4 @@
+import {beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import {beforeReviewedSixStateGuideEdits} from './fixtures/reviewed-six-state-guide-edits.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -21,7 +22,7 @@ test('North/South Dakota preserve all 1770 prior service records and FAQs with e
  assert.equal(locationServices.length,2266);assert.equal(approved.length,85);
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedSixStateGuideEdits(byPath.get(path))),hash,path);
- for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(faqs[path]),hash,path);
+ for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
  assert.equal(Object.keys(faqs).length,208);
  assert.equal(Object.keys(preservation.newFaqs).length,5);
  assert.equal(Object.keys(preservation.newFaqs).reduce((n,path)=>n+faqs[path].length,0),5);

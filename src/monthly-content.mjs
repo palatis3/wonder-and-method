@@ -102,7 +102,7 @@ export function monthlySharedScope(o){
  return `<p>Every plan includes automated monitoring, monthly website and contact-form checks, ${e(smallChanges)}, a quarterly website check and a monthly report.</p>`;
 }
 
-export function monthlyScopeTable(o,{showCommonScope=true}={}) {
+export function monthlyScopeTable(o,{showCommonScope=true,expanded=true}={}) {
  const ids = ['keep_running', 'improve', 'grow'];
  const plans = ids.map(id => o.plans[id]);
  const rows = [
@@ -114,7 +114,7 @@ export function monthlyScopeTable(o,{showCommonScope=true}={}) {
   ['Extra graphic or newsletter excerpt', 'Not included', 'Not included', `${o.plans.grow.promotion_reuse.quantity} extra graphic${o.plans.grow.promotion_reuse.quantity===1?'':'s'} or short excerpt${o.plans.grow.promotion_reuse.quantity===1?'':'s'}`],
   ['Report and review', 'Monthly report; no standing call', ...['improve','grow'].map(id=>`Monthly report and ${o.plans[id].review_minutes}-minute call or written review`)]
  ];
- return `<details class="pricing-detail-table" open><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${showCommonScope?monthlySharedScope(o):''}<p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. ${e(o.plans.grow.public_name)}’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p></details>`;
+ return `<details class="pricing-detail-table"${expanded?' open':''}><summary>Compare monthly plans</summary><div class="comparison-scroll"><table class="pricing-comparison"><caption>Each column shows the plan’s total included work</caption><thead><tr><th scope="col">What you get</th>${plans.map(p => `<th scope="col">${e(p.public_name)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${e(row[0])}</th>${row.slice(1).map(cell => `<td>${e(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${showCommonScope?monthlySharedScope(o):''}<p>A promotional graphic or newsletter draft/setup can replace one main improvement when agreed in advance. ${e(o.plans.grow.public_name)}’s extra graphic or newsletter excerpt is separate: approved content becomes a simple existing-brand graphic with a caption, or a newsletter excerpt. Public posting or sending requires your explicit approval.</p></details>`;
 }
 
 export function monthlyCampaignExample(o) {

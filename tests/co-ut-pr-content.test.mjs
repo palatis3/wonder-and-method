@@ -1,3 +1,4 @@
+import {beforeReviewedUxCopyEdits,beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -19,9 +20,9 @@ test('CO/UT/PR preserve 2033 prior services and 275 FAQ pairs with exactly 113 s
  assert.equal(Object.keys(preservation.services).length,2033);assert.equal(Object.keys(preservation.newServices).length,113);
  assert.equal(locationServices.length,2266);assert.equal(approved.length,116);
  assert.deepEqual([...approved.slice(3)].sort(),Object.keys(preservation.newServices).sort());
- for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(byPath.get(path)),hash,path);
+ for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxCopyEdits(byPath.get(path))),hash,path);
  assert.deepEqual(Object.keys(faqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(preservation.newFaqs)].sort());
- for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(faqs[path]),hash,path);
+ for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
  assert.equal(Object.keys(faqs).length,208);assert.equal(Object.values(faqs).flat().length,278);
 });
 

@@ -5,7 +5,7 @@ import {studioIcon} from './studio-motifs.mjs';
 
 export function workPreviewStrip({id='fieldwork',title='See the customer journey in a working example.'}={}){
  const item=conceptCatalog.find(item=>item.id===id)||conceptCatalog[0];
- const lesson={fieldwork:'Compare three landscaping services, choose one, and see that choice carried into a sample inquiry. Fieldwork is a fictional studio concept.',northline:'Choose a remodeling project and try a brief that asks about the room, priorities and timing. Northline is a fictional studio concept.',hearthside:'Choose pizza quantities and a sample pickup time, then check the order summary before continuing. Hearthside is a fictional studio concept.'}[item.id];
+ const lesson={fieldwork:'Compare three landscaping services, an illustrated garden plan and the preparation checklist. Fieldwork is a fictional studio concept.',northline:'Explore kitchen, bathroom and interior remodeling services, with room priorities and steps for planning a project. Northline is a fictional studio concept.',hearthside:'Compare three illustrated pizzas, ingredients and sample prices on a short menu. Hearthside is a fictional studio concept.'}[item.id];
  return `<section class="work-preview-strip" aria-label="${e(item.name)} website example"><a href="${item.path}" aria-label="Explore ${e(item.name)} concept"><img src="${item.image}" ${responsiveImageAttributes(item.image,'(max-width:767px) calc(100vw - 40px), 340px')} loading="lazy" alt="${e(item.name)} website concept."></a><div><p class="eyebrow">From the portfolio</p><h2>${e(title)}</h2><p>${e(lesson)}</p><p><a href="${item.path}">Explore ${e(item.name)}</a></p></div></section>`;
 }
 

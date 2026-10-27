@@ -16,8 +16,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/ferry-booking-status-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "ferry-route-and-last-mile",
+      "inquiry-confirmation-examples"
     ],
     "steps": [
       [
@@ -58,8 +58,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/ferry-route-and-last-mile-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "departure-address",
+      "ferry-booking-status"
     ],
     "steps": [
       [
@@ -99,8 +99,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/experience-product-choice-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "timed-booking-handoff",
+      "itinerary-dependency-review"
     ],
     "steps": [
       [
@@ -139,8 +139,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/departure-address-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "ferry-route-and-last-mile",
+      "timed-booking-handoff"
     ],
     "steps": [
       [
@@ -179,8 +179,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/timed-booking-handoff-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "inquiry-confirmation-examples",
+      "itinerary-dependency-review"
     ],
     "steps": [
       [
@@ -227,8 +227,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/photography-location-confirmation-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "quote-request-form",
+      "itinerary-dependency-review"
     ],
     "steps": [
       [
@@ -266,8 +266,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/class-take-home-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "experience-product-choice",
+      "inquiry-confirmation-examples"
     ],
     "steps": [
       [
@@ -304,8 +304,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/shipping-date-and-quote-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "wholesale-order-readiness",
+      "custom-print-order"
     ],
     "steps": [
       [
@@ -342,8 +342,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/custom-print-order-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "personalization-preview",
+      "quote-request-form"
     ],
     "steps": [
       [
@@ -380,8 +380,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/personalization-preview-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "custom-print-order",
+      "inquiry-confirmation-examples"
     ],
     "steps": [
       [
@@ -418,8 +418,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/itinerary-dependency-review-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "timed-booking-handoff",
+      "ferry-route-and-last-mile"
     ],
     "steps": [
       [
@@ -457,8 +457,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/river-section-and-release-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "kayak-rental-access-information",
+      "timed-booking-handoff"
     ],
     "steps": [
       [
@@ -496,8 +496,8 @@ export const operatingGuideDetails = {
     "download": "/assets/guides/island-payment-preparation-worksheet.txt",
     "downloadLabel": "Download the planning worksheet",
     "related": [
-      "website-content-template",
-      "website-audit-checklist"
+      "ferry-booking-status",
+      "itinerary-dependency-review"
     ],
     "steps": [
       [

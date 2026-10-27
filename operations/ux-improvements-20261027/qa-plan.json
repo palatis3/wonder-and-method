@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-27",
+  "scope": "User-authorized strict audit fixes and every highest-value improvement; final self-audit before release",
+  "checks": [
+    {
+      "id": "D1",
+      "claim": "Concept promises match static pages",
+      "verification": "Contractor links, six concept destinations; rendered copy and normal navigation"
+    },
+    {
+      "id": "D2",
+      "claim": "Inquiry fields are unobstructed",
+      "verification": "320/390/768/1440; initial and scroll positions, before/after focus, keyboard; inline chat retained"
+    },
+    {
+      "id": "D3",
+      "claim": "All exact-name location matches stay visible",
+      "verification": "Anchorage/Anchorage AK, other shared names, explicit types, state filter, clear/reset, keyboard"
+    },
+    {
+      "id": "D4",
+      "claim": "Flagged local copy reads naturally",
+      "verification": "All 49 changed records, complete rendered text; all 18 D4 and 45 priority paths covered"
+    },
+    {
+      "id": "P1",
+      "claim": "Core inquiry fields precede optional choices",
+      "verification": "General question, preselected package, add-ons, validation, recovery, no-JS; synthetic local submission only"
+    },
+    {
+      "id": "P2",
+      "claim": "Pricing is a shorter decision with accurate terms",
+      "verification": "All package prices/booking amounts, editing disclosure before cards, common inclusions, compare/details/deep links, phone length"
+    },
+    {
+      "id": "P3",
+      "claim": "Real work and maker precede concept gallery",
+      "verification": "Homepage initial/scroll, animation+tabs unchanged; Work case and About evidence; no invented portrait/client/results"
+    },
+    {
+      "id": "P4",
+      "claim": "Editing model is clear before package choice",
+      "verification": "Pricing, Web Design, Redesign at desktop/phone; disclosures and source handoff routes"
+    },
+    {
+      "id": "P5",
+      "claim": "Local template focuses on business need",
+      "verification": "All routes retained, shorter shared sales copy, distinct example, expanded scope, generic inquiry plus optional example questions, source honesty"
+    },
+    {
+      "id": "P6",
+      "claim": "Weak guides lead with useful answer/example",
+      "verification": "Custom/template, care-vs-SEO, maintenance cost, SEO reporting, timed-booking; 13 specific related pairs; TOC to collapsed examples"
+    },
+    {
+      "id": "P7",
+      "claim": "Supporting design refinements remain usable",
+      "verification": "Consent allow/decline/settings, mobile hero crop, process timeline, add-on task chooser, source preview, ROI advanced disclosure"
+    },
+    {
+      "id": "Regression",
+      "claim": "Existing behavior and publication gates pass",
+      "verification": "Unit, complete route layout, accessibility/reading, Firefox/WebKit, visual, SEO/editorial, links, HTML, dependency, performance, reproducibility and exact-source CI"
+    },
+    {
+      "id": "Exploratory",
+      "claim": "Unusual states stay usable",
+      "verification": "320px with enlarged text and open details/menu; preserved request/add-ons after invalid submit; ambiguous exact names with state filter"
+    }
+  ],
+  "contentPolicy": "No new location pages, route removals, indexing changes, prices, scope promises, fabricated testimonials or portraits. Existing factual source dates retained unless rechecked.",
+  "release": "Use existing GitHub/Cloudflare workflow with all exact-commit gates; no real lead, payment or chat submission for QA."
+}

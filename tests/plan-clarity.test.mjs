@@ -15,8 +15,9 @@ const offers=await read('config/offers.json'),prices=priceList(offers),legacy=aw
 
 test('pricing separates actual first-year bills and derives research and graphic totals from offers',()=>{
  const before=JSON.stringify(offers),html=clearPricing(offers);
- assert.equal((html.match(/class="offer-first-year"/g)||[]).length,3);
- assert.match(html,/actual domain, hosting and tool bills, tax and approved extras/);
+ assert.equal((html.match(/class="offer-first-year"/g)||[]).length,0,'Use one shared cost explanation instead of repeating it in every card');
+ assert.equal((html.match(/class="pricing-common-costs"/g)||[]).length,1);
+ assert.match(html,/Domain, hosting, paid tools, tax and approved extras cost separately/);
  assert.match(html,/If you choose a monthly plan, add its price × the number of months you want/);
  assert.doesNotMatch(html,/First-year studio fees = website price \+ 12/);
  for(const id of ['launch_site','focused_site','signature_site']){

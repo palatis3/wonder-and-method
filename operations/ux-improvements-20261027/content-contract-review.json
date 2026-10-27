@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-10-27T13:56:37.171Z",
+  "pages": 2436,
+  "downloads": 436,
+  "assets": 2655,
+  "changes": 2440,
+  "fieldCounts": {
+    "htmlSha256": 2423,
+    "textSha256": 2304,
+    "headings": 2289,
+    "links": 2287,
+    "schemaSha256": 17,
+    "ids": 2,
+    "media": 1
+  },
+  "metadataChanges": [
+    {
+      "path": "guides/class-take-home/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/custom-print-order/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/custom-website-or-template/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/departure-address/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/experience-product-choice/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/ferry-booking-status/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/ferry-route-and-last-mile/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/island-payment-preparation/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/itinerary-dependency-review/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/personalization-preview/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/photography-location-confirmation/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/river-section-and-release/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/seo-work-and-reporting/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/shipping-date-and-quote/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/timed-booking-handoff/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/website-care-versus-seo/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    },
+    {
+      "path": "guides/website-maintenance-cost/index.html",
+      "key": "schemaSha256",
+      "change": "Article dateModified updated to the actual content review date; all other schema values preserved"
+    }
+  ],
+  "idChanges": [
+    {
+      "path": "index.html",
+      "added": [
+        "featured-work"
+      ],
+      "removed": []
+    },
+    {
+      "path": "services/web-design/index.html",
+      "added": [
+        "assetrounds-preview-heading",
+        "featured-work"
+      ],
+      "removed": []
+    }
+  ],
+  "nonPageChanges": [
+    "Changed asset: _headers",
+    "Changed asset: assets/analytics-consent.css",
+    "Changed asset: assets/asset-hashes.json",
+    "Changed asset: assets/buyer-packs/owned-audit-two-fix-record.json",
+    "Changed asset: assets/client.js",
+    "Changed asset: assets/counties.css",
+    "Changed asset: assets/county-directory.js",
+    "Changed asset: assets/living-city.css",
+    "Changed asset: assets/page-navigation.js",
+    "Changed asset: assets/site-guides.css",
+    "Changed asset: assets/site.css",
+    "Changed asset: assets/work/studio-website-240.webp",
+    "Changed asset: assets/work/studio-website-480.webp",
+    "Changed asset: assets/work/studio-website-640.webp",
+    "Changed asset: assets/work/studio-website-960.webp",
+    "Changed asset: assets/work/studio-website.webp",
+    "Changed asset: sitemap.xml"
+  ],
+  "inputChangesSha256": "663c41b0939c7c16939d4e4c1a62aa63a881bb2386ee30b4d5a5f2a9134dd556",
+  "reviewBasis": "Source reviews and desktop/phone visual inspection cover intended shared consent, pricing, local template, contact, real-work ordering, service and guide changes. All 49 local records independently reviewed, with exact historical preservation and 1176 contextual relationships accepted. Inventories, downloads, search titles/descriptions/canonicals/robots and prior fragment ids are preserved. The only schema changes are actual guide review dates, verified by restoring each prior date and comparing its complete schema hash.",
+  "acceptance": "Reviewed intentional changes; normal content gate remains unchanged."
+}

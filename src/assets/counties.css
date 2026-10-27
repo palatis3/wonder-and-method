@@ -115,3 +115,6 @@ ul.county-hub-grid [data-cl]{display:flex;flex-wrap:wrap;align-items:center;gap:
 .county-browse-all>summary{cursor:pointer;min-height:48px;padding:1rem .25rem;font-weight:650}
 .county-browse-all[hidden],.state-area-links[hidden]{display:none}
 @media(max-width:800px){.state-area-links ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:.25rem 1rem}}
+
+.county-reading #questions{margin:1rem 0;border-block:1px solid var(--line)}
+.county-reading #questions>summary{min-height:44px;padding:.75rem 0;font-weight:650;cursor:pointer}

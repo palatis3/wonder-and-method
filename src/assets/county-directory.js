@@ -256,7 +256,7 @@ export function countyMatch(card,search,selectedState=''){
   const score=match?(exact?(city?8:matchType.includes('a')?7:isArea?6:5):isArea||matchType.includes('a')?2:1):0;
   const label=city?(type.includes('i')?'independent city':'city'):typeLabels[Object.keys(typeLabels).find(key=>matchType.includes(key))]||'place';
   const population=exact&&city?countyCityPopulations[card.state+'/'+name]||0:0;
-  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':['z','o','G','I','J'].includes(placeTypes[search.type])?typeLabels[placeTypes[search.type]]:search.type||label};
+  if(score>result.score)result={score,name,population,exact,type:countyInMunicipalName?'municipality':['z','o','G','I','J'].includes(placeTypes[search.type])?typeLabels[placeTypes[search.type]]:search.type||label};
  }
  return result;
 }
@@ -319,7 +319,8 @@ export async function bindCountyDirectory(root=document,prepared){
   filtering=active;empty.hidden=count!==0;clear.disabled=!active;
   if(separateResults){
    const ordered=cards.filter(card=>card.score).sort((a,b)=>compareCountyMatches(a.match,b.match)||a.index-b.index);
-   const best=ordered.filter(card=>card.score===ordered[0]?.score),more=ordered.filter(card=>card.score!==ordered[0]?.score);
+   const isBest=card=>ordered.some(item=>item.match.exact)?card.match.exact:card.score===ordered[0]?.score;
+   const best=ordered.filter(isBest),more=ordered.filter(card=>!isBest(card));
    bestList.replaceChildren(...(active?best.map(makeResult):[]));moreList.replaceChildren(...(active?more.map(makeResult):[]));
    results.hidden=!active||!count;directory.hidden=active;
    if(multipleNote)multipleNote.hidden=!active||best.length<2||!best.some(card=>['city','town','municipality','place'].includes(card.match.type));

@@ -65,12 +65,15 @@ test('all checkouts lead with price and no-charge reassurance, with complete sco
  }
 });
 
-test('contact starts with native need choices and keeps optional package/business details behind labeled disclosures',()=>{
+test('contact starts with required fields and keeps optional choices and labeled disclosures',()=>{
  const html=inquiryFormMarkup({live:true});
  assert.match(html,/<legend>What do you need\? <span class="field-note">\(optional\)<\/span><\/legend>/);
  assert.equal([...html.matchAll(/type="radio"[^>]*name="goal"/g)].length,6);
  assert.match(html,/<details class="inquiry-package-choice" id="package-choice"><summary>Already have a package in mind\? \(optional\)<\/summary>/);
- assert.ok(html.indexOf('id="service"')<html.indexOf('id="name"'));
+ assert.ok(html.indexOf('id="name"')<html.indexOf('id="email"'));
+ assert.ok(html.indexOf('id="email"')<html.indexOf('id="message"'));
+ assert.ok(html.indexOf('id="message"')<html.indexOf('name="goal"'));
+ assert.ok(html.indexOf('id="message"')<html.indexOf('id="service"'));
  assert.match(html,/<details class="inquiry-extra"><summary>Business details \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));

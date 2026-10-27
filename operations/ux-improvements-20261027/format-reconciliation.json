@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-27T14:01:50.736Z",
+  "reason": "Restore original mixed line endings without changing any logical source line; keep unrelated source lines byte-identical to HEAD.",
+  "guideRenderer": {
+    "reviewedSha256": "5041ec2184007a39598ffaece6e8bcbae74c6afae2f7a8343f247f450d31fed7",
+    "currentSha256": "3bf9fbf096659bcfcbf8cb0512dc5f593aeb7637d77758a1577ff528e7485d35",
+    "proof": "Converting current logical lines to the uniformly CRLF form used for the independent review reproduces the exact reviewed SHA-256.",
+    "guidePurposeFingerprints": "Unchanged; normal gate recomputes each exact rendered article text."
+  }
+}

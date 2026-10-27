@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-27T14:05:08.094Z",
+  "changes": [
+    "Changed asset: assets/buyer-packs/owned-audit-two-fix-record.json"
+  ],
+  "beforeSha256": "97e74a27293cb1a227895776031d976df5d6ee99317674191badcb9b64862ba1",
+  "afterSha256": "6cb320ba74f51c5ea3248ad85e16e2b0334a04cf0120de50dfc7b69a2e0c7cb4",
+  "reason": "The generated owned-work record refreshes its source fingerprints after restoring original mixed line endings. All HTML pages, inventories, downloads and other asset bytes still match the accepted UX baseline. Final-build homepage screenshot is byte-identical to the retained portfolio capture.",
+  "acceptance": "Retain this one regenerated evidence asset; no other content change."
+}

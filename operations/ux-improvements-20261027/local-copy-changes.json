@@ -1,0 +1,2068 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "Targeted local copy repairs; no route, offer, FAQ, source-destination or checked-date changes.",
+  "dataFile": "src/location-service-data.json",
+  "auditInputSha256": "28393132bd4d996889501b3b5e2cd927fe76499330e930772b0d08b53a2bf799",
+  "beforeSha256": "1a9dfd9ac6df55a84fe48ffd4faa3cc1eb2236e3ec6ecaec4f49ceb3927e9f53",
+  "afterSha256": "509cccd6895d5c134b85a9e1edc4ded92c3aa05927861911e7f5111d0689e6d3",
+  "counts": {
+    "records": 2266,
+    "changedRecords": 49,
+    "unchangedRecords": 2217,
+    "reviseEarlyCovered": 45,
+    "confirmedD4Covered": 18,
+    "additionalTerminologyRecord": 1,
+    "changedFields": 295
+  },
+  "verification": {
+    "jsonParse": "passed",
+    "recordIdsOrderAndCount": "passed",
+    "uniqueIdsAndRoutes": "passed",
+    "allUntargetedRecordsUnchanged": "passed",
+    "nonCopyFieldsUnchanged": "passed",
+    "faqsOfferTermsRoutesSourceUrlsSourceObservationsAndCheckedDatesUnchanged": "passed",
+    "sourceLabelException": "Two Osceola links given distinct labels; destinations and observations unchanged.",
+    "scopeCountsAndSchema": "passed",
+    "knownDefectivePhrasesRemoved": "passed",
+    "customerActionFieldReview": "All changed-record requests reviewed; provider/editor work moved to deliverables or owner inputs.",
+    "renderedReview": "Not performed by this worker; root owns build and rendered verification."
+  },
+  "unresolved": [
+    {
+      "path": "/areas/queens-county/",
+      "item": "Audit recommends a broader multilingual FAQ. Existing FAQ arrays are preserved under the delegated invariant; the buyer-facing lead and project questions now cover the broader business need."
+    }
+  ],
+  "changes": [
+    {
+      "path": "/areas/alaska/nome-census-area/",
+      "areaId": "alaska/nome",
+      "reasons": [
+        "Move geographic verification detail into the source note. Lead with the marine contractor audience and show the short inquiry plus port-preparation link that would actually be delivered."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "de920eff5de2b9cd8fc23bc73f0a0dd01b37b16229eee7c9f8406baf8eaa103d",
+          "afterSha256": "c3cff33eb835dbc44c0ce3236f9891414bb62ce2af34b2a66695aa5d81396150"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "88a331d5cc6648c26cd8400f0a5e5f46eb5ed7241ff65aa4d893da17fc9cc853",
+          "afterSha256": "b8effddb284c1d746d53affbdabca29ad4167afaa938cb0a30035e8934078073"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "a9760bae748c7b16d49a229d452179038b0f442e42a19cb5cf5253073b9acea1",
+          "afterSha256": "37ef5f71b57f3e92d1617ad19ebe61f610782cddc1054f6026666d57949f0961"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "8bc4d78aafec4cf1e325bf67651b7b63dd1d0fa3e03c21bd184ac9ad7e6d3c4d",
+          "afterSha256": "56b8df7a2853d413a15cd6c6d2614a2cf5083eeaf4dca7fc81420c859409777a"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "888fbd2da11dffa9b889ccbe83683be88f9f9a123e30159fbaba795a40221721",
+          "afterSha256": "fcf181c573338fa70cafae87fd97986e706e58273e5921977ccbc098f6300c5b"
+        },
+        {
+          "field": "/coverageNote",
+          "beforeSha256": "dcd05b7249683bdfbb0ebb163698023371526e038d5cda4f1e5f93948d257654",
+          "afterSha256": "a1abb7c2fa0edff0a8431aa01b6d629e6075ad28edd33347e5894ef41299a71c"
+        }
+      ],
+      "recordBeforeSha256": "8635fff86400dcb710a96f550e3dd37b5538e57f6520125ffd54ee273cda2bc2",
+      "recordAfterSha256": "edd7ae5d56151f9b5eecc3c0ff71e1c7cf7825a183b990cf56e7c5f4e477a7f6"
+    },
+    {
+      "path": "/areas/california/modoc-county/",
+      "areaId": "california/modoc",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4)."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "fc1ed59b0670ff914c184070fb45d39400c31732e82be77287dd356b2d381302",
+          "afterSha256": "d47e5e644e1ff740be4ee173d832560c9219fa35b046a2f6d72194e170f4395d"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "17bdf4a5562f18590e3d83c0a91a45c575341166852c1dc7d36743cdc309aa07",
+          "afterSha256": "175dc68e96be74bc3e3d7ae05478b00aa5d24f9f6786b10ef76c61124b3f62d8"
+        }
+      ],
+      "recordBeforeSha256": "21c9ab8c8db4c056c159ebb3330b5de1f0c618a722b59dcd82ec432f0f45fd42",
+      "recordAfterSha256": "832a541c027aa5faf30c34ecfb0ec27bb4a13850698fc54d955411cf3336e952"
+    },
+    {
+      "path": "/areas/california/tehama-county/",
+      "areaId": "california/tehama",
+      "reasons": [
+        "Introduce it as 'For auctions and events with documents that expire'. Show one fictional current-versus-archived document card and its availability message before the specialist explanation."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "d6ad19ca4607b547555cae0782684b22b5f1b4cca8be3d5cc038e903fb89104c",
+          "afterSha256": "39f555b119d959b0665cf04024c6cce75a7a18177b541fc299ee2215dbe0528f"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "79376d08890f2b1170b891e3093e19a06a398ae9a12651b575622bed972951c0",
+          "afterSha256": "70928d5d092f2fe0ceea07d4b2bef9d6c1a73320c7051cca308ed7e94c816513"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "b61dbe225e6c9ab65e8b318639d0246e641e9a015b50248f88bedb7f93ec581e",
+          "afterSha256": "598396c8257e77ff47c673a1ba4fefab95e8c96ad312feca9b5fafd329c7d575"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "bc3c2eebb7960ece45ee5cd1f786445e9568237bc737e7d4465dbf6dff5564f8",
+          "afterSha256": "85d3c0fd7ccff5ef09136b88c8e85919e46e98a891921758b7fad8d579a40108"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "28eb1418c93935471e3a121c1b2371c3494fb08c999f3d2da31d893bd23b23df",
+          "afterSha256": "620f24877bfc1d88a6a2f6eb3e9eb7ae103e5e980afd0da94fa0775004364fc7"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "63f147d2adceba5152736bebb4075344ba096dc916942ddec9f83eee7c42e8b9",
+          "afterSha256": "c5a2e6b9f9e92d0692b707c87c3a19dfee1053c8542b14dffaa0e9e2704e8e37"
+        }
+      ],
+      "recordBeforeSha256": "e6a3b7b5424bedb0122505a747ff40c461f8b9a8f197a122db8bac8bfb015d06",
+      "recordAfterSha256": "dcd9ede69275fbd04bf1fa442e005bc9f0c6fda739c363e2891c24811d778b87"
+    },
+    {
+      "path": "/areas/idaho/bear-lake-county/",
+      "areaId": "idaho/bear-lake",
+      "reasons": [
+        "Use shop check-in consistently, explain the source term once and make both next actions customer-facing (local review LC3)."
+      ],
+      "fields": [
+        {
+          "field": "/decision",
+          "beforeSha256": "637904c282c7cee50fe9ee5bef4becd6b4eff799bed480232af6c0fd8224b8d7",
+          "afterSha256": "c2d162af06385039d0861fa2b5c6f5a4e740e801cde21cf41f7de936c6de88f6"
+        },
+        {
+          "field": "/scopes/0/pages/0",
+          "beforeSha256": "3b1a7148192b94c286f2a9fc4026c84864e5b2d00bd92a502ea583d3266f07e4",
+          "afterSha256": "e474ffd8cedb0f9bf9c088c8a6fb5d9adb61dba23fdefafd3235ac5ee5bf8899"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "713832cc076962178752750571993c964ffb6880fcd52f7bb5866b38fcd01a12",
+          "afterSha256": "98dd3dcc7b53232d9ed1c9acc582a4f6f0892c640107d57e69502aa83c723ecf"
+        },
+        {
+          "field": "/scopes/0/supplies",
+          "beforeSha256": "c9cafa4d8aeab05d67662ac71e4992cffda1f19b3397240fa030f6d507ec11d6",
+          "afterSha256": "b62bc0658265089d621cbe0c0697bf26d3704054a878e89d48e659796e264358"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "cc0f6bedeaf0887f215eac617370745c2bee0c4357d6358e9ebd2a9a214ebe2c",
+          "afterSha256": "76eae1793e0b60b49f441f45f3494e4e28ac0ea93afaeb389473904ca367656c"
+        }
+      ],
+      "recordBeforeSha256": "80794dece28386a04a1b788322675960a90a689e2a1efee2eb2ed4281b316f4c",
+      "recordAfterSha256": "37fab137775b8d51096d6948543a96852b7410505d1e1b04b2934cafdbb543cd"
+    },
+    {
+      "path": "/areas/idaho/bingham-county/",
+      "areaId": "idaho/bingham",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4)."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "cc6de390033e69911d9be775bfe1456da4539a167d5f18f61b4c4db8a75186db",
+          "afterSha256": "1aa7f6aa21ac5a25a5daa686866e4d2fba8175616af7c79b5923d5611bc7d588"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "b374ef60acbeba74e8dd3ef62a2ae39d5f1c9340d383a8c98412ae63f79ebc31",
+          "afterSha256": "0808f1492950da26687b92e196c9bfce63cd776b05cd01851d7381bd41895961"
+        }
+      ],
+      "recordBeforeSha256": "40858a231c1576672cbfd8c19e26514c596cdd8dfc786028168626e9a7ab86cb",
+      "recordAfterSha256": "9e56c9626d760866e0b2a78de0ef8c2000109b13d7456855ba30956075b354de"
+    },
+    {
+      "path": "/areas/iowa/monona-county/",
+      "areaId": "iowa/monona",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Replace outline labels with natural deliverable headings and explicit update responsibilities."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "3fd24f4bfaed2aee7b3baa5ff7735b2a51e5aabfebe1d7105684c8ec7d8e8c2d",
+          "afterSha256": "f4be3bf14d4dcb67d6e63bd30fe68066cac0fbebc26ed896701ebe9713e9da4d"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "74059bf42657224981c02bff1992cef8cfad9c4b5c6db35e9a6a936ff4d8b47a",
+          "afterSha256": "c8842e9c1114150853f0325ea19800ae150e330469184f7d6b872ceef3b030f9"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "7b8a9fbc4a98f5d01e92cc37376a5a62fe3092f01b14dccc6432b7c60ccff25e",
+          "afterSha256": "5de381004e73c716f99b9729f50977a3826f3c1f9ca3204819497a2d87e75e62"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "2aa0e1e0bc3a5d7862b8d389797244946ce1b6aea828dcd0616875dda4b56124",
+          "afterSha256": "5de381004e73c716f99b9729f50977a3826f3c1f9ca3204819497a2d87e75e62"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "ce68e099c33552dddafa87179285ef51488be9d454103ba3f590c32451fe40a7",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "672a115e5f565aacf4f9c6fce9ac61a4c1d594a3f749f85ee4a20d0b2077c5fe",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "51674c42cd86d9dc7aba24e413774f05d24322f7550a15349daebf90883f723e",
+          "afterSha256": "3dcb5655257fc294532f39a565004b6ff838ee930f5be4091ade3b8956c7daab"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "e8ff3966bd908a10fd02996138422caa6d2425e464749023def15ee02743ae32",
+          "afterSha256": "fbd1dd8b3543e7e3173a1595c1719862f1bd33f66f91b139d902556c438a6324"
+        }
+      ],
+      "recordBeforeSha256": "0959aa5cefbb9d5e60e60ba933231b2cc9c249cbe4c46ba3fb0fc8c0d0d976a9",
+      "recordAfterSha256": "54c3dd6f1ecc35cb8a0a32fbde74899c6fe28857db7d92160d9f288b1b7af921"
+    },
+    {
+      "path": "/areas/iowa/monroe-county/",
+      "areaId": "iowa/monroe",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Replace outline labels with natural deliverable headings and explicit update responsibilities."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "6325d86b191dfcbf26296de29c2c6829f1cba966396e5e46914f2e5c3b82bb9f",
+          "afterSha256": "c2c334275558515f00fe06ceb03b80314d5dd796d7c82d05808c56590df1ab08"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "50cc62801cb6a06b65406f07d66e305d58e05c873ee32e525a3139c3bd4b4591",
+          "afterSha256": "6b77bbd4af696e87805308295bad798c08571dd5d0178aa53397b6f89ee1d156"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "949b9ced1a51883dea34db63f7ed770a25458e79aafe869ee4e9007ea197bffb",
+          "afterSha256": "3343acc55529838afc42eb9a3c150a4cc514a6421c011ebab180a4a5a3402bab"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "1aef71906566dbc9f1ec79205bdd30c6ac72ee4986b3bcb3ae8484f21cbaa83c",
+          "afterSha256": "3343acc55529838afc42eb9a3c150a4cc514a6421c011ebab180a4a5a3402bab"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "f94f39c050527f267b324a6192025f30b788222a037af33b71b055a30d927e20",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "9fe36726a701c446921df1eb2a8f084faf3f9ccc44c2b22fac7252aeba8a7c08",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "2ecbadadff013332e21f277d6ddd34e5ea8aaccd38cf46d429004d71b6cae9c5",
+          "afterSha256": "a53a231887cd192f626e6d7c50239b4e874a50f47edcba94985c92be7436a85a"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "819079f4064319ff08609035f52a777d9df66e363e3f214c06e216bb9225b0e0",
+          "afterSha256": "a4dc6d40c30c4598f1dd340c82d66553114ca7f491c2295413b221fd3cdcb24e"
+        }
+      ],
+      "recordBeforeSha256": "dff16b87a6be3b89121f3d25ad5bf32548207c23df1dd27cb2366589257b5194",
+      "recordAfterSha256": "61e5978590bb423c1a378b2ed9e75dc15e72780d735336c41bdc871e2de1c2a5"
+    },
+    {
+      "path": "/areas/iowa/montgomery-county/",
+      "areaId": "iowa/montgomery",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Replace outline labels with natural deliverable headings and explicit update responsibilities."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "d0aea48b873470b808287a779470846bd058fadf28c1ba8202346fef4ca66e89",
+          "afterSha256": "dddd3bc9c4595e71a9d4efb2eca721e09e3a4fd9ee9930e8d6faa5ceb8a20159"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "60c19bb0611275f9b0be2815d0ed0afac21458e95c5c89b44e8375ba88f0e5c2",
+          "afterSha256": "66b4a63a0c93b7ce80e3ce2c3e98bb7f9b00da41d6f3ffdcd364a047dc1468e0"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "b228432eddf1841073f0d9d02f4b96cd2c9dcf29a440580ce55d0ba9eaa3c5f5",
+          "afterSha256": "c3129ef4b25fc882c9adf4cbe455c200fb5bf2c792eb8bd1c6b8e8423a7dd3bf"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "22fc9dc083ee23bd53e4f8d95392303b5e1a6ef5db9462aa31c57686dbec2d5a",
+          "afterSha256": "c3129ef4b25fc882c9adf4cbe455c200fb5bf2c792eb8bd1c6b8e8423a7dd3bf"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "120e7c86e490accdedafb505d8cb6e3cbae3dbe54b6602c8c77fa6f61c2b49c2",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "2046672c5c58b063d6457b5032ea3c2c7d70bf6cc050c11c29582ba25067b4cf",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "9427e068e5ab749e4b22ea0487e76bb2118c60ba798ce8d92afebb2ccf648e94",
+          "afterSha256": "f999b5da86c1b3f3f5c3a6e3f515bb180825924b66c2b6c260205b182af174ba"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "092898e23f49355c5a6ea37dd10f2ba402bc3fb7c014abc8f1f693ea891f8256",
+          "afterSha256": "fde5b82b1fc18b46ef1c2cadbe01205c2166d6d25d7186390288926cee32e3b6"
+        }
+      ],
+      "recordBeforeSha256": "ce855d3bedc072e26eab7828c100a8bdd984c2bb0c8f63c1c7e52e629ac5dbde",
+      "recordAfterSha256": "8c19ea382c4891600da00547ff2cec02788426f1ea1c6437970afc627eb8fcb4"
+    },
+    {
+      "path": "/areas/iowa/osceola-county/",
+      "areaId": "iowa/osceola",
+      "reasons": [
+        "Show one action per campground and separately label visiting/mailing addresses. Consolidate repeated scope content; give the two source links distinct descriptive labels if they lead to distinct pages."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "7841de09c8edb9cadaca4e04f5679c2287f319e3aa4f3d795cf307ab183e2f67",
+          "afterSha256": "f6ff51b059e0582cacd0d6eb36700b133e01f0749fbcdc7483ff77bbe84e2c03"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "3f5de3df7ba39fe127306a02266c12f719a7fbe51d3608e9738a411561eb7e95",
+          "afterSha256": "2d378be0cbfc24e40cb4802de27766dc60807051c7cf68682e81f2ecd15cd98a"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "f74e0454b3c076b85b4d2d234300595ad555b38ebc1e79b7157f4e9fd2c25e1b",
+          "afterSha256": "e088f608c4eab0db6b9530e1fc74bdbe1d851d3c6664d0e2ad1da27f972c8988"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "d1c13906f9e544d90ff1f676d30838f0433f5fc7e256dfea6c15ea4ea0c8d62f",
+          "afterSha256": "9fbef677cb5db288cc7c244b92de0e9bc9f0f1fa849e51485c4962d5b330d878"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "c8affea35657db60f5a9928210eb63313cd7bbe18c1661920bacc4eec4a1576d",
+          "afterSha256": "9fbef677cb5db288cc7c244b92de0e9bc9f0f1fa849e51485c4962d5b330d878"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "23181d8c10c24394b26a2e47ab2f1dbfcb7b782c547703a53eb05bb730e4b0a2",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "d653eee0da4e57f27cce20c33c3af17e012721c796b1f0a7bfd5c0162623ffaf",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "767455a8a3a4e7b37e862a47a22ce1764e41a4987ed9fee78c424ef6c6ecc0e0",
+          "afterSha256": "8b742848b72a8c1cc9a2a37eb9af0db361c8a972d7b97675e56ced565f40c2e6"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "b9a7b19174f2fe7ba06823b0dd5388814299e9809133755c11bb72c2dec7f3de",
+          "afterSha256": "b0a0fbe77f79b301d34c4620f28500160a738f99a6f2e44c26c2d188e3c20b3f"
+        },
+        {
+          "field": "/sources/0/label",
+          "beforeSha256": "4fbfcab7c21a62f67e883948352fab899ebd28635c27b0e2dd1d727816d1b19e",
+          "afterSha256": "cae832a7bd34503f5e7deb4f9f586a90196ca2af918ac71d10bab00dbcfc240b"
+        },
+        {
+          "field": "/sources/1/label",
+          "beforeSha256": "4fbfcab7c21a62f67e883948352fab899ebd28635c27b0e2dd1d727816d1b19e",
+          "afterSha256": "c1ed437c99767da2fc085c90a7370f198da03fe3346e9aa05286fc58d1f78bec"
+        }
+      ],
+      "recordBeforeSha256": "1d7501aadf3a0c63482a540233b095262c879fbb1255b07a68f9e272b5491316",
+      "recordAfterSha256": "ce243b89515aac5088418050d2b6db27ada1d2e7b5390dd5c5a2a388eca94998"
+    },
+    {
+      "path": "/areas/iowa/polk-county/",
+      "areaId": "iowa/polk",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Replace outline labels with natural deliverable headings and explicit update responsibilities."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "4e30119f341955fd7cf6c879d4606a71a8c95217a613d5b46fec79a610798bd0",
+          "afterSha256": "474eac642ee5336d7c848ee4f88254456ef2562ab710102aa57aaff05b483c64"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "0bcb0ba6b6731a34be69ed3eee3a9af0c1688d2ade140ff8a49cf71edb13edfb",
+          "afterSha256": "43e917d281aebe21aabff74ae7a8f356ebf34680a0860e0101cf7115d3387a00"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "b596288d8fdc3dd1585655f2a0a00e13c44c98043fa92829297af46251bd8480",
+          "afterSha256": "626966fd2b62ffe45b875fb265ec9da5760083e3cd783e69d4b67c3c6311d748"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "17412862c19814fb3f5a6d414d4387e6532a20cd1d1bd4daf8186d663ff3b266",
+          "afterSha256": "626966fd2b62ffe45b875fb265ec9da5760083e3cd783e69d4b67c3c6311d748"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "c5850551158f06af59594516ef483b0a33140cfeb00123ab68529d84488688d5",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "8a49bfcb33bdc7cf029a96ec87b366afa4969d5cb5928792f280cadfa0eda66e",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "ac902f3c328eeaf8cce67626507da9d6ab4a845a205cd2db144a77a66deb6dd8",
+          "afterSha256": "7dd5cfd2cf48745ce616ad326cd4ccff9516e5de80196e8a23386dc3c47df4b6"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "e36bfc0473fa13e3c620db065c44c7ff234c2211343c6987fc2423cbb1457ec2",
+          "afterSha256": "10f4af4fc8b7d79363bcf0ba03d117271c43d38ee755c52eab16a4e16d27bc6f"
+        }
+      ],
+      "recordBeforeSha256": "99157fc1ef40b2de3bf056ce723b3288d9c3d3a4797b5dbfbe781632cefc6e62",
+      "recordAfterSha256": "8c62135c627d122dcf4c90b6f46adbbdc1478607cb1c89ea9ade1e8c6eff585d"
+    },
+    {
+      "path": "/areas/iowa/poweshiek-county/",
+      "areaId": "iowa/poweshiek",
+      "reasons": [
+        "Show a current-address panel and a separate donation-status notice with owner/review fields; keep one compact scope explanation and retain the explicit non-promised restart date."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "239a6442eda4352b97cd740af502a539bc1f09cf2d09410e8bfa8a4e7c6580c4",
+          "afterSha256": "b53eb02428eaf70819f680da5a70f522628056b8db532eea57dd20a1dfaa901b"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "588f99dfc5a8d620f126448cb05fce3efd0d9481245355599990754a262ea16b",
+          "afterSha256": "33f968a54809c8c9d09c667f7a9b2fa4ee0322f8c8408dc731d3d0e062515d79"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "52be6aa78c230875127dc9345244723a80be1905d7ac1bc6fe0c27be782a3022",
+          "afterSha256": "9a319647daedc44f86f8b099b49d4e1c20c8bb9ca91e77a6c724591aac8f5087"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "e45cfe8a42e5ba08a3195fde20dff021dcd750d53f6ff999b006e3ce96f62d33",
+          "afterSha256": "e31511f92d458c6d2e0833cbd67648dea6df9549c163020a4dac5a080fae60de"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "913582879db12a25d62fa42697b52ab31b888c99acd1f08027bb33b98af224c0",
+          "afterSha256": "e31511f92d458c6d2e0833cbd67648dea6df9549c163020a4dac5a080fae60de"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "aad30f30dea52f8c5dfb90a90d2b9e15b12252746fd5b086618b8b1fbe57cdab",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "84a2439a5589d0b0ce9f7bf8d63b69c48dd090b8c1b51a90aecc271b45646503",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "0d1df425b4e329659c2d64d00cffed51aefdc299427e06c115eef7c8dbdeb141",
+          "afterSha256": "ec71c3a206afb74715fa647bca92e79a70736791da49b9ca6080f243c4b270aa"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "d08212fa9cd4ea01f521c1495a76a919552cd72247f8b5d503d5ffd7bfed6593",
+          "afterSha256": "7dcb6e56cd5c0fd129fa328dcd0959bc5d56b2a16fcdd20dbaf8cb8906664898"
+        }
+      ],
+      "recordBeforeSha256": "caeaa8d69e9b0c7dee2c1a2cfc47ce0f7ecf2c81636e22467145e3f708ede3ff",
+      "recordAfterSha256": "a90d88615bf52625e214f2f5957674950bbddc476c53877eb072c16191d54ada"
+    },
+    {
+      "path": "/areas/iowa/sac-county/",
+      "areaId": "iowa/sac",
+      "reasons": [
+        "Present one numbered arrival example using owner-approved rules; put campsite/cabin route differences in a short comparison, then name the editing scope once."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "3e5086322e261139c53b5baac233302e3c10b2d71e0658dfd0b256334149ab31",
+          "afterSha256": "6e2e80b626c0dc25f9ee9d1e4e1ec0a2d159c38610de30e72caee58bf78d3781"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "6f6fbcf8a15b44b7c9fe43c528dd286572d0b82a892525bba4774b5c89af52a8",
+          "afterSha256": "9d2aaadd380f1552abf8535fe46e31b471214037c204e97a4bbbee1c2dbecaf6"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "eb91eb8a67f98a8cf77571c84e551656e74c6f301eb3be64f64fe754ff465521",
+          "afterSha256": "86763c504892c97895f3510090ecdb7e90e7200f161dccfc5226d01756c7be73"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "f02e0219e3f7c358770ddc7e044bd50f3f8c8f7e5dd0c36a5179049061c9ab45",
+          "afterSha256": "86a6d55f25b8a516f82c9aa655de3f4b54a71039f2c01d0f00e64b71708721be"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "188f70bc55c128fbd06c9753335e90d32ef6e86a149d52d0f60f71afdcd9fa74",
+          "afterSha256": "86a6d55f25b8a516f82c9aa655de3f4b54a71039f2c01d0f00e64b71708721be"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "7b6dd0b56a85a07743764a949f58cda14958c5e650eb7ee7735476b2984a0ac4",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "dbc11706559608b5299aa74e8387c7f690aba4cd378ed44e02be9eced8feb840",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "5a92068e60740d6476a8764a78c18a73e3a2e81f8dd222e7ca7a17f3f8ea78ba",
+          "afterSha256": "aa1c763a252ca7de8b4a966fc94197fd913390a4b4c7dbf0c78db959c350775b"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "5e8da71b1491dc951242eacd89205b48d2230cc0af42fef95a1b3ea42597c2f1",
+          "afterSha256": "3f4da708b0d6e163e51fce55302e77cedfae560308cbba8f6ae16cd4f886a391"
+        }
+      ],
+      "recordBeforeSha256": "67770c6e994323bd41af4e754b8fc5f356b3d8fa9957e5d4db6152a3b77a91f7",
+      "recordAfterSha256": "21b6381fb706a4014d19ad45820ff51be0b16865f40654930c1b5ed4eb38ac07"
+    },
+    {
+      "path": "/areas/iowa/scott-county/",
+      "areaId": "iowa/scott",
+      "reasons": [
+        "Show three labeled count fields and an explicit staff-review message for the unresolved minimum. Remove repeated lists and use a plain heading such as 'Prepare the group inquiry'."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "7e7aa0831c03e439f265146f68e89f5d13aecd8b787e5071cff867268c61d1af",
+          "afterSha256": "9fc39049b89952c0caaa95d43083a2f76cfd802db723e646200fde19cdafa80b"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "0504a578e32736715ddce5e7d3c08787c42166e48efcdca684c0c00a4716c3fc",
+          "afterSha256": "9787a4c113e4e097978b53632e8ba6b2d9bf6bf630497bd511d7e90ae8c1e83e"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "2e28b3caf04d1f6f950a81f21b45307c4aa92bc5b934b6ad22e2f38220bee8d5",
+          "afterSha256": "d79146a3d3d711cbeb675381aa256b9d10db2f55e623d96b22c3da69bd4ba23b"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "2ad1d1a3bc3ae4db67e2d28d37229b3aec527863f0c0bb372f39cd334e038d50",
+          "afterSha256": "f7ebfc0b7891a25d177096eed9ab18ca9170be12497266e8d246f64343a0fc74"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "a55317b8cc777f5799ce720e61884c46cb2d17a0d12737814cdf15e35ab3947f",
+          "afterSha256": "f7ebfc0b7891a25d177096eed9ab18ca9170be12497266e8d246f64343a0fc74"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "ddbec9439697e732ac154a8ba97cbbf159f1276282781c883c212323c417fc19",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "3ebfb93ee08b72156b05954c2e02da2ceda524fce54b1057023020fe1372f07c",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "3e37871b60be9d9640d27e0781e549721449578b9a892594d9bbc82974ccf062",
+          "afterSha256": "504f1c606cf41a04a69692c17055f1210203428f47bdbe391b97cfe6dee90529"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "4ac44ef248d691562065c3e20ca18aabe01a3bcdb8bd89964daf56e17e59b4bb",
+          "afterSha256": "b3d37eb07ac8840175f24ae89986056d5e8ef641aa4002071326f9303ff08f63"
+        }
+      ],
+      "recordBeforeSha256": "dc433ec06702eac9c60f0cc0963e8a967303dcecc90942bc35ff066aa81993f6",
+      "recordAfterSha256": "2800a3b75f28691323e39ae988f6b51f3fe83b09c1c864aa33851b9a536f6de7"
+    },
+    {
+      "path": "/areas/iowa/sioux-county/",
+      "areaId": "iowa/sioux",
+      "reasons": [
+        "Show two illustrative cabin cards with season and park-specific arrival times; use a single scope block that distinguishes a listing edit from the full comparison."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "928fd25106d4270673d4045575fa630d641993072c014852cf3f7c600e29910e",
+          "afterSha256": "a956a70a0efc1b146eab5a616b81bab42db34e086d1e4915a6e67a1e2ea5847a"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "8c4eb09302e4f8608c83cbe7992e7f8927edd9f9191fc30fb84ef793caa06225",
+          "afterSha256": "852800159f5a126badeac68287d6892af8fef7636cbc7962d5e76d2fb99d8dd4"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "ad7be3e35b8206a21e1cc8d6e80a37c3f72ba701053d033c2dc362900b365317",
+          "afterSha256": "3eb3f731ab638b95ebc8870901347e7b43b7f2bce71968f9ef8a73478391408b"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "ea48c222419f228e44e45787888c8f378b94f789a596baabe6624e37f042c843",
+          "afterSha256": "e4b8e1f71b17c373bceb31981f394de1ca7a9dda6a2aa89c200c7776012116a6"
+        },
+        {
+          "field": "/scopes/1/pages/0",
+          "beforeSha256": "09cbaa1ae52be0ebed80f46a9653d24339cd057d1d4e48a901f321390b13d880",
+          "afterSha256": "e4b8e1f71b17c373bceb31981f394de1ca7a9dda6a2aa89c200c7776012116a6"
+        },
+        {
+          "field": "/scopes/1/pages/1",
+          "beforeSha256": "67a56ada8bc9758e8b3fd0f645bd27928b022f089c2831b1b9efb1e541eb5c8f",
+          "afterSha256": "fa10c91c35c28a12f1a66ebc095cfc0400f804c2b3bff29a7723d86a2dfeaddd"
+        },
+        {
+          "field": "/scopes/1/pages/2",
+          "beforeSha256": "11fe4f3ab7c51885cf477d1168ce6d575916b25d0b73adc75889fff29cca6a7c",
+          "afterSha256": "cfc6a48be98b9a4ca1ff65f8d13a8a3ca88b18bac9e988bf9ae2114615a996bd"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "89cf22d0426e388004513ad3973fb2a7eaea851a4b619cdb476e8577b47daf0e",
+          "afterSha256": "1fa4a10bf9ec35a26a182b688d49dc854da8974b5ae388ccc10952410995ef7a"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "52cd7bcc11c4606d8a8f3b92e71c7bff76f431c21b14f854b326403c363bf6af",
+          "afterSha256": "7e2178e3bce2e5f85d7dd918768c4751f12c80589f6422557bf82104f87449e5"
+        }
+      ],
+      "recordBeforeSha256": "043413e9df99c9c58543c77c241b24219cbac29a14162a68a979482463e98a20",
+      "recordAfterSha256": "d7a5d8204e56c7b9468c2c2d1cd2c968b1a5144f1d28fee1e6fa510d8fbdc6db"
+    },
+    {
+      "path": "/areas/kansas/coffey-county/",
+      "areaId": "kansas/coffey",
+      "reasons": [
+        "Lead with one fictional result state: 'Not digitized', 'Known gap' or 'Ask staff'. Move detailed historical coverage to the evidence note and make the purchasable deliverable a concise collection-status page."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "5cc613d95e8d9e9c1a47f775c77fcae4b54b317e3471a7df18bdaf84366a285e",
+          "afterSha256": "ca206fad54125ca04c96405cdda43d97993fba6cc54c2bec5c57265e661b4f1b"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "8a8d1afe595770f655e3567ad0b7ddc43f821c1929c54aa998a2ec4e7da24f09",
+          "afterSha256": "88d7b6f226b6ba49fd7d92c9cfc8fb6806ff54c1f3801b5aed05e964a26b46f7"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "e0f7671635958866ec496557b141b36a0169743f5878ba55d6c3f5ed77947427",
+          "afterSha256": "b574a27940651670dcd2d591e442913c2bf4a938959d180d59ae465ef84aad4a"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "a6d57f8aeef38adc4ea2d5d4997fd329839f8b4b77b549439dc0bbac668f9972",
+          "afterSha256": "e69d064a9ee9fc866ca13ee836bf043b781b8cc45602c225fd1e70893742cfc4"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "fd24568cf6121ab5529fcb32618a445dc052a6b7dfe43f97b0ee4632438f8770",
+          "afterSha256": "288e37a56dc13a953d341e38f572a856a2450a8118033a3403cb6898f1b2bcad"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "bee4970e396e970348ceed76db8b863324e21e678ec2cd8745049632f17e086d",
+          "afterSha256": "ef5ef7a01fdd78d791decf1ef2ba9fb8359b77d501ae718252b46f56e5963ee1"
+        }
+      ],
+      "recordBeforeSha256": "f6938e93d310d8b27e14297f64bbc4491c8155c63cc5bb08c1b9f367a8b856d9",
+      "recordAfterSha256": "3e64d8205a6a75733440a4f423a5292957de75058494690efaedc8d904e434e8"
+    },
+    {
+      "path": "/areas/kentucky/lee-county/",
+      "areaId": "kentucky/lee",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4)."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "a0e88cd7113edc77bcdfeab68ccbdf02f16988223888ea46279d727b1ac4ec2e",
+          "afterSha256": "ebecba60680be60138d62f7b16ba27aa701aa1f37b8dc54109e82d77aad3771c"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "58cb932ff29f42e05105877f8ebf187c1545269fc1c5e500abbead3e89f0b24c",
+          "afterSha256": "2a12ef7fce24495537636a7e00815ebfc0e0b8872c6eec29150e40c5fb277a83"
+        }
+      ],
+      "recordBeforeSha256": "a8836d5a99c8ad384b7cb2256733f5bede3e8f086bf4dfdebac1e53cebecdb7d",
+      "recordAfterSha256": "72be072dd0ba590ac7b400bf3ca4bf35cb0fded4a5910c4c2b2bb3f0cae8e7fd"
+    },
+    {
+      "path": "/areas/maryland/anne-arundel-county/",
+      "areaId": "maryland/anne-arundel",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Make every answer an end-customer action, or deliberately rename the field and consistently change its audience."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "c7375222d4ebff34cf95e9c79e734c49e3e609fcfbb36696274cb546c6eaa0b0",
+          "afterSha256": "0e139d68ace30ae0ba07d7acba9c144027486abd9bdaff6695787a639ff6fd2f"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "5014637187895a4f4a78c177364ca9b61c00971b55240187badc441781084eb3",
+          "afterSha256": "fd6d23dcd0245bb5bd910de21179a2fcb2227ec5db366e1a86c0d65d3f04b26e"
+        }
+      ],
+      "recordBeforeSha256": "2ce1567ddfdccd0a78b3aac82854a28e9f5a81957e038d084d6f8e2276e0119e",
+      "recordAfterSha256": "506069199884dd411ccf38b6a5e5f23c6b7ecd0085c3736df4668f69675d1190"
+    },
+    {
+      "path": "/areas/maryland/montgomery-county/",
+      "areaId": "maryland/montgomery",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Make every answer an end-customer action, or deliberately rename the field and consistently change its audience."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "23ad94bea606b47bf1f55cf6341d84b0ff967e0fa2d1d46827887cc91581977b",
+          "afterSha256": "32b978982522b0e3334a26096ce7f8abe0abff9dc465f5c6527f48fbafe9a40e"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "1a22c0d1facb273fc5c7709d9fc6a8391a698bc34b6703c581396997ef0d960e",
+          "afterSha256": "154a30c749e073608de15dd703a96aa8f419870b7d9fa1ba2d8a71044351b5fd"
+        }
+      ],
+      "recordBeforeSha256": "348ac293e59f8e3ec295ccdc871879f4eae6ca314188633781f628f16493097d",
+      "recordAfterSha256": "579ab205c8e41c866318ffb9b6c7a482e95934ee7375b475a92bc5bff7ed318f"
+    },
+    {
+      "path": "/areas/michigan/grand-traverse-county/",
+      "areaId": "michigan/grand-traverse",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Make every answer an end-customer action, or deliberately rename the field and consistently change its audience."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "a08a0c12464e441211e3ff0fdaea896aa47388eb321ff4a6406b35800f383379",
+          "afterSha256": "f7288ac4263693fcdd3876e0772d3243b76d6878d46769db61af49a25066bec1"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "b7b75aea6f70dac315bd0c7b5bf17c9cf24dcccc67d2d5759cb63c47646a8716",
+          "afterSha256": "b597e124ffce6d45b3f74dd8ddae09d480790fd930a8c4b812c7f49dcf29b496"
+        }
+      ],
+      "recordBeforeSha256": "ed07efdd609679e138cfabe97da45bb8d19b8e4a8d0d300a5186873db4175594",
+      "recordAfterSha256": "8e5540bb624eb884bee1e638010049a92b54e99bd476dd39a3c98f8a31305ca3"
+    },
+    {
+      "path": "/areas/minnesota/houston-county/",
+      "areaId": "minnesota/houston",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "A larger project can add a booking and preparation page that stays consistent with the program comparison."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "96f0fc61e91113c591e9566a1c9a5dd4576ec04cb587dab7e1a63c1f25c0a653",
+          "afterSha256": "81572bc62471be9d82178ef9979b0b94cc4fd2540ae62bff22437d244d40e0f6"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "a1bfd854c56e17a4314e2190cdfccfff46aca708fac6409458ac777e8016332a",
+          "afterSha256": "63d636a7f5d47397983eee809e91cda147c6ae28ef22810e10c67a969f5b525a"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "362ddcd858b2760d92f8db158e34dec247e50ca54120355b19906e82362eb3f5",
+          "afterSha256": "75a5d1f6fcf8afd9ba66999849529e6e8a461acc37e3ad6af19ea22df2921e8e"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "c561446c6f63ce5a57d79ecdffbd272f8b44c0aa1084f7c6b10ba55bdc1f41da",
+          "afterSha256": "21642dbf17a403587c156617dfd40cd834b879321625acfb2ac3f680b006883a"
+        }
+      ],
+      "recordBeforeSha256": "77eeccf3788589887218116af65558a981bf5f791e16aee05c171b6266235094",
+      "recordAfterSha256": "84d00671da9234db2947e9c95acd52d5230868eb1c7062faf990910e74bba75b"
+    },
+    {
+      "path": "/areas/minnesota/kanabec-county/",
+      "areaId": "minnesota/kanabec",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Tell the venue your guest count, seating plan and full setup-to-cleanup time before asking it to confirm the arrangement."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "d9500b13488070055bb66dec535e3557ddbc776012d4dd8c158d401da52e0af5",
+          "afterSha256": "6555f234d47545d2b0ea9bc4915ac1df2a2c2e6e26df40d5bf0dd9bfa122ada4"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "d8045e091dccd619a2123bf43902f09221f2b75f8cfef353fc5a51a383a59ee6",
+          "afterSha256": "5203dea4fa2a07574df0bc0a58817409aa5ce94b816266ce8d9de281fd834d93"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "450323435fcbba90af5d02d006123f2935c406f23190177ab54340da7015cd1a",
+          "afterSha256": "a48707220394b54b8f67665aafee5eb54672b3eea26154ea2405160d5ffcc162"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "151fdb831c9aaa927190ae1f3dcf74e82dfe17ff5690cef09592f94264a33e0e",
+          "afterSha256": "635909fbd97c1bd9c019100a3a93930dea0ea4fcf2b4a7a45419393ae05e4d5a"
+        }
+      ],
+      "recordBeforeSha256": "4c68246190efa202617e892a256389dfd9978bd83c739ed7f17d435cd2673cba",
+      "recordAfterSha256": "ff3ef14b1b39be72775dc39fc56fd461d61354d5e7bfb1c716e97de8864e58a3"
+    },
+    {
+      "path": "/areas/minnesota/le-sueur-county/",
+      "areaId": "minnesota/le-sueur",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Discuss the building, event and required notice with the venue before treating the arrangement as confirmed."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "23b66335c93ed4c29e2f02f52c66f827a9732bd5abaef4a9d1f1aa36450aa9ba",
+          "afterSha256": "b7204b7b5fdb25a93f5d68de926acc2720e66a6f99c8ad7de0744f7d0bf07d95"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "980570ec76f6463795ec1a47e80c30969881ee50df13649cd9cb45d1825e22c9",
+          "afterSha256": "17165e09eb35927a05eb8880a236141d8f02a1ddb2c074dc7b61a6888932ac2f"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "aac75a84facbd8ffd70fc09f379ceb998493ed1a3a8631af2eb668790e84b95f",
+          "afterSha256": "07f96c612a206db165883c0f650447ce3b14e82570853d5be9dbd3d718bdde17"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "f23d6b39d3bc507e3064fc11cf7d8c23536879814b5eec193b6e454060af0c26",
+          "afterSha256": "0c2218dcc42994ca8eb1a39a15bbc9754960a4ad3a9d9e422e221d1ee5d82047"
+        }
+      ],
+      "recordBeforeSha256": "5f75f83358342bf13e32812e85c09bdbb765fff5fc719c71bc8e23f5ee1ff491",
+      "recordAfterSha256": "af172241b69349d5629e9a7d0fcd3dfcf3ec31224fdf6fd5d90ccba03e005ad3"
+    },
+    {
+      "path": "/areas/minnesota/lyon-county/",
+      "areaId": "minnesota/lyon",
+      "reasons": [
+        "Name deliverables: room comparison, current-status notice and inquiry instructions. Retain the closure as dated context and lead with maintaining changing offers. No stale-status claim is made."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "9e33637cf612f5dd848d4712e72c084bea06f11637aa5d05ce4c4965c630c73a",
+          "afterSha256": "09480e4268103a9931464039fa1533fded7129fef62c2544f0ef6e09f20a18c0"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "516fecc6f6d4e66086726737fb9cec06b9cc73ca5933a7751f7f26127bca38e0",
+          "afterSha256": "f4443fa392f3c7053db3e74ec149d609b1d6cf8da3a064ed8a826b0c4797b355"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "95ac692b8d6a8123cb75777e0bc8ab9807ba0d8a88476b6638a103a2008a1499",
+          "afterSha256": "df73a40c24ead67371652173fadfffda61372eb0a9fc41f1fb5a067d76c1f7bd"
+        },
+        {
+          "field": "/scopes/0/title",
+          "beforeSha256": "e836f0b4bfa363f0086d2bf3ec2feb80fad491be9f0b99b133342e61cdcc0329",
+          "afterSha256": "ab8ab2ba12d5d791ffe83ff0effee93effb39c83a9b11241388c5b4c665e818a"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "8a4867c6de85309551e354f02073761d72f1edcf5210ef85fd89826bbc201704",
+          "afterSha256": "3dc29226b37aad4f5cf1e8bd93dbe02182e56b86dd03e75f2cf873d19c058253"
+        },
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "bca67ea8ce6a44403a6e54d4a7f2d7b75de6e60ac04018cbf6ae792fc5ffe4ad",
+          "afterSha256": "674b20afaea0046de713c4cc1b84a8cb5588e03a6226289f28d5eb7d1af24cbc"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "a7b99cd1990fce61f626babb465bd303fdef891d30997114ddfcd53c8fc86d77",
+          "afterSha256": "9efe3cb36876020161d3af8bd2e7e18dc0fd6727e53fb5f2d4067619efe37832"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "3bc4724b83cd40b861c8847e6deee9ea97c746716094a97e5c194c9c32193a42",
+          "afterSha256": "52be7bb7b430193213c09b7bdd4488afed34deb62d50df2752d86d1cf10cbd42"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "d4bb5b4842759aa17c6f7d4294c2889d6ab237c7383d1c4528e6192df2b3043f",
+          "afterSha256": "82038c6bd6a0c42e71966c890a9fac19544bfad3c69846c0f707c772598c0215"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "ed2a3ef2cbe65c2f11c0fd3ecb4c6df271eb9b8a7594a0485541b627f25e6841",
+          "afterSha256": "a445e67721fd5d3dd49a68ad58c9f12152187de3c7e2bd1ebda21f778a33075a"
+        }
+      ],
+      "recordBeforeSha256": "26d387c454fa310165719cdea510e1fb0939824f413304b6c5567a71e7b1473e",
+      "recordAfterSha256": "8f050277a914d4d6d63f77e3dad56d02a3399de7c834b3e41ec1923e0870fa4b"
+    },
+    {
+      "path": "/areas/missouri/henry-county/",
+      "areaId": "missouri/henry",
+      "reasons": [
+        "Lead with helping visitors prepare before following an external service. Use the pass as a short example and ask which external tools or links confuse this buyer's customers."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "db1550b7fffaf4f5fedd8854f8922e824c46eabd060374477ebbf051ab5fb1b1",
+          "afterSha256": "02177bd310f61b159c5fa0f0a9229ba21602d213bdc8af890925dd003be5f25b"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "60eaca6204215579d1b0306da8da4b334995dc4fed4e90ec43df784c80b468e7",
+          "afterSha256": "2b9bd1fec07e8d5386cd674a512d42d3da543473cc1a5c2c3e94010239efec81"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "291c9d968d822cdc3e2b941c2e547b57dd32d120e974792bee4fc2b16a4f42b2",
+          "afterSha256": "3fca62e4cdd456188e06d718d2436cd3cc7d8290553a10aaef1cea2a04c981cb"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "68547ef3d0967381714040129b69f4f3f0968eb028c5c185d3162cb8f0bd0d80",
+          "afterSha256": "5b01323e618a33881f7c4d5827a538d002beec8141c7cc017338223775d89885"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "c61fe89c81f6422c0acbbcb4ebf598ae51a515afd8faedf91eb3fab4a0674f7d",
+          "afterSha256": "c17161527a3a626fbb79beb833f39dfa70ddf84e2aa129c73239d9e403490cd0"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "f06eb3e3703b1ca0ded5c6ad4ac36e5c0d982315ba00580b4bac32d457108c36",
+          "afterSha256": "eb5f44f89b26764ce3021d726805a84f55b737575dd9d07b91bf821f1d39da04"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "45c7bc9cac3ffab717bca8e6ea9f5911ba27b57426042eff367d4f01fa3b7a09",
+          "afterSha256": "946f0e01c2724d55fc524ff7860912a4ef9c2550b725a2893c04eb519f5db3f8"
+        }
+      ],
+      "recordBeforeSha256": "80ff04bdbe404b77aa53eb3f0aeaa93470b14ce2522b9be2ac59f6acc972f305",
+      "recordAfterSha256": "ade2aaed00ae00e0e7ebbb49eee27c21dc715ac6910d7dd3975cde1a350f91c6"
+    },
+    {
+      "path": "/areas/missouri/livingston-county/",
+      "areaId": "missouri/livingston",
+      "reasons": [
+        "Ask which customers need different instructions, what is unclear on the current site, and who approves the process. Keep library specifics inside the optional example."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "5456dd542ce6e061d68ab09498d1529e1b524836a61df21125f0572930190cb8",
+          "afterSha256": "80bd470df6b207a007249bcc81bb4cae3957ad878a2b6e2ef73471ab0927cafa"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "c773f185dd518b28abf8cea4aed512eafd193cae0fe964f7c0805925aa8cd8c8",
+          "afterSha256": "3ed62fd09f740261c04dc2c94bbea060cd266c8a08ce75164b3550cc6e3a80b9"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "4087f9034c8dfc1f0c3f9554e98108fa8bea34b9cacb04bf48efb380b53a59ee",
+          "afterSha256": "1ac1854a954a461e0223d3a579e5de14bb8349bcea3ee5f823db42ea396db8a4"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "c407549334b37a3d2cbca9e073d9a694cf10384006b48f4bab10e8af61c1986c",
+          "afterSha256": "440c3be7da42f88f9df25bc0a9a0560725b81c7d874a965b96695b773a5ac268"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "e91a709a3e91097eb23f3ee584c22638a72a2e4f4103844fce0a1f7cb28ee411",
+          "afterSha256": "0b6d2cd44de2236af73d68d838c022727ae7a9815f4515327602953882636884"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "51c44ae23493774892e15e2e4b9844865a7347d03225385ca1576e89180b380c",
+          "afterSha256": "3c3576477f3a99d127adeec14b403b53164cb2ec77f3840d45a6bce490ced22f"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "0a9a993ba66810d35c4e40e505765974ff6c26ec3be8e4427d6b79ae9dd2ff6e",
+          "afterSha256": "6d3ad38eee317f773e4bd42943c79876c656694ec92bb04d262cb9969ac076b5"
+        }
+      ],
+      "recordBeforeSha256": "57e7d4dbc2b0de4481b903dbac726e75825148e719fe0e5255d94dfea8c086e5",
+      "recordAfterSha256": "1878d4828523cfb0fa1e3ed2861af90d497d0a9218ff40c3aff0eda161440d09"
+    },
+    {
+      "path": "/areas/montana/liberty-county/",
+      "areaId": "montana/liberty",
+      "reasons": [
+        "Lead with current versus legacy customer tools. Move exact dates into the source note and ask about retained systems, destinations and support ownership. No incorrect-date claim is made."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "efead0a272e67ed51761767585f387aee5d802cb6a8837779bbb4ca55e23209e",
+          "afterSha256": "5b111854bcd60c57e077aed29656631b110719b99689f3c6f3f3f5394ea6d271"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "c96eed652d4ed65b6c59a5277fc386dd02bd832f0350c30a9c1d8039675cb70f",
+          "afterSha256": "03239c4c6d4b7030f13b6517db4f7ad93b74c58d5f11c5ca38cf928d6ddeb494"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "1ee3769f6a141d5120f8ccd6c7da4aeafe4fb117eac63a9dab935d6b243cbc2c",
+          "afterSha256": "e33fe9188c3c0843d5cad8612877663312d38a4c1752c701c7860ec06c802881"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "b6d612da162601c66ad2e6a883fc6f251748a66e9388a41fb3ac5f38e9396517",
+          "afterSha256": "ec9f1762efd5fe3cdd08998168e4757f068699fb0b6fc8816c0de2b253a10517"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "a152b3e038c13f9ca7393e3a61d7d286605514a4e3e4956ff5ee6476b3a81839",
+          "afterSha256": "ad587a85e85a1fb0b6a9a6e765dc00009495aa11eec8ed79096d1d60b2b55623"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "84ec720190a71811ced0d3122ab023063177770ba70bdc06d63cdb7a78c13523",
+          "afterSha256": "d0de4152d1925a556409910af3fb92311870435b464433a04e4dd4cc38269d4c"
+        }
+      ],
+      "recordBeforeSha256": "a9ac36ca8fe953cb0b14573c46fb78f754bc6b21bb611f67c4de3bb3d178c95c",
+      "recordAfterSha256": "0773c2a963172f248073e154fad011ecfd75c6a41747bd1805aa5e413e0d4675"
+    },
+    {
+      "path": "/areas/montana/mccone-county/",
+      "areaId": "montana/mccone",
+      "reasons": [
+        "Lead with who completes each step and what remains after submission. Keep one applicant/provider example, move the deadline into the source note, and state the website deliverable earlier."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "9bb912f94275d1641084e76bd00f1734afdef796298a1f0c0319cb8213dac570",
+          "afterSha256": "8b49734fb520c675a256e4c18f324983f591db2554a7e3dff52d81c521b3974a"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "17aa140b9626ea39a2803f320906f9b963ffcdedb8a672c3b4bed534b99e2877",
+          "afterSha256": "12ab8580af469eb0f81807ce4c41e7a2d202ca665c11f00436b8594653348e94"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "1ac5736177c4021aa5ccc86d11d739a48d4ebbaa6d7212e2220f22397604a43b",
+          "afterSha256": "b67e4db045b9fed886cce47436dde112c163c4bafaf0c439f3fefb80cf3158a8"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "f5625d9ac046e182153829d67cfd79ec73d1720b5dc3ec5946eac9a15d274b8f",
+          "afterSha256": "1f6bdd2f782bca7ffada96333a9e73230c7f48dccc120d176c78e07457616800"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "00f2bca204498a38b11c30240fad0b24f0a89c671e3311e50de9a5fe64a535c1",
+          "afterSha256": "f051ed1778e3e176283a63e9ade03601928913f3548727d6cdc416e42e0eae86"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "a5e68980cdbcc4846d2f142fd14c268f0576f40a6c1c0a06da269540f5f4b66d",
+          "afterSha256": "fe2f48336578a34f65d170f86a31295b5ac20075dff45f0cfea2a9f8bc659ac9"
+        }
+      ],
+      "recordBeforeSha256": "a5dfd27c6eeb1d8fa5414c932bab3f3a1ddf47b40b0c653641c0af858cddd529",
+      "recordAfterSha256": "8738763651b6f94ff84f30ce24ea463649d5e69e74933d2a6c80a81edca32c6c"
+    },
+    {
+      "path": "/areas/nebraska/grant-county/",
+      "areaId": "nebraska/grant",
+      "reasons": [
+        "Frame the lesson around multi-person requests and responsibilities; keep kit and library-card specifics optional and close with the buyer's actual customer journey."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "d17c76c7f9f5cd188adced0472c4efad7c515d41defb5bc7fab35ba0fe6d204d",
+          "afterSha256": "2dc380e1262870251cd7114a26725e61e4d675132d2abf360b1db4f14b2ab7a0"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "6089263616af95815fc1e9a4257236c8c01f96c6a84bec7e9cdc7e2aa1a15cd4",
+          "afterSha256": "576c686fb6f618144b2ccaf04a5d505b00068c4e072a0db5ff0c0eb0553e6567"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "c46632af3fac7ca7659bb968ba493dee58666d213aba283bc2a44558234eafdb",
+          "afterSha256": "5e5877c985e617ecd050b6971aac518f2f3f44f9fbbce11dbdd89b729ebc4165"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "357401e861f8b92a89409e2828ed105d42c6be329ebd47d7e7ea3c886279fbe0",
+          "afterSha256": "4632ff08818848adb2a8cf7e049281ad6e205c04e6790a2e55ee51b761b3a005"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "417c9adbc5432961a7969deff2fcfc80ecbf7113d3a56b06af3f3763b0a82a90",
+          "afterSha256": "df284be65587e559bb09b6a35c0e6eda9f08ed84820b7a844a2bc3667263fb9d"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "4d098291140a255bb6e2aaff5d67c51082bc3ab9960ed0d01b96906358683833",
+          "afterSha256": "de197d87b0409b905f88ca9b70c0495293c3d366d0efd3898081a7773293794c"
+        }
+      ],
+      "recordBeforeSha256": "0e09d5e9f522d56177a7cc01ce97e5ed934d488c169800a6a68494158e883d33",
+      "recordAfterSha256": "3a116b0b9ddabe254142a8f441c3e0d00a86524cfc39361dc66377908ab82caf"
+    },
+    {
+      "path": "/areas/nevada/pershing-county/",
+      "areaId": "nevada/pershing",
+      "reasons": [
+        "Frame the service around preparing repeat bookings. Shorten the key example and ask what must be arranged for each repeat customer visit."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "19d610657ab78b33a218cbc39184a8e271d68113f8f86b32177c4738c11c5f33",
+          "afterSha256": "7d00b5f67291aa58c398cc95bc70508214107332fd453d25a84c8527aa38269d"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "0718fe25f558199880be4c2bd2dc491e5210672a226008c5edf6a89c6426f204",
+          "afterSha256": "39a4f5494afcf2715845b082c9bebc0a2188c925a63f33b29bbcb82960cf6dc4"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "6c763543f5b045c55bbcbdee3351425504bff618bec18ef3663a5b47b31952c7",
+          "afterSha256": "4b749660218ab9b666c00fc43975d3042765c411bf737116e153379733834b22"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "c6783900957d281f981e817b06f13c539d9576a12d34718d2e030c0553df9903",
+          "afterSha256": "4fd518a74e3e9a51249bd1f98ffc4cdea9bcd9f7ab1df91c34e6a4c6bc4d9ed2"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "9ee53e7cc906e8ae3da2baf686261bcb042de39092c66b4bb7f8d9180f5dd0cc",
+          "afterSha256": "8ecdb5760b744a3d2651469d40be638102c2b5175b8907bc1c41fc118ea4ff4d"
+        }
+      ],
+      "recordBeforeSha256": "df584b58f895ecc8ec5a5dab750daa52b7210495970dab492d07f94f2bd1a2ad",
+      "recordAfterSha256": "0f88ee6faaacbe3b5048971aa501e3030b9051f5316e717b4ea8fc023d69a706"
+    },
+    {
+      "path": "/areas/new-mexico/quay-county/",
+      "areaId": "new-mexico/quay",
+      "reasons": [
+        "Lead with accurate captions explaining what customers can buy, see or do. Keep the fossil example compact and ask which of the buyer's photographs need context."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "c2367a33267bcd0dbfc14b424d06571124fa32852c8abe2e094c7645977d87ba",
+          "afterSha256": "6e37b50e65cff4d71f07a8318df7e808b11c77a2e57e5701f3f613992b64ff0e"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "f20600dfece3a1e0df17885379dfdb8a716785548af6fe3a6ff2c9ffbc64e104",
+          "afterSha256": "dc80aa6f9979d8d8fb2dc4e987f352ed827426571d2e5894fba7c57d311242bd"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "9b46101824c8e4122f087a8b45ced1cbd8f4d2170d9163c98006ad1a0ee63843",
+          "afterSha256": "9fed93c97305286d61a2a8bfaea6a5f2796916970eb6528a624a6266a90af35a"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "207c7fef7f97226750733aa361ffdaedf51d62063f3300ef05e92babf34b5d8b",
+          "afterSha256": "c901b479f5aba38283cae26db1d874655a959e8a546668d5b38874f6319a1b91"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "eb4dcbaafb5cef887327226e48d6a229b3bf7b7eb4c62313f39029b93f00c189",
+          "afterSha256": "c0da70f7a96d85f089e231b4bfb65f2c5a6f93b3b4f78295608d7759bac496cd"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "4ed2c977bf01a8a3cf7605e730043b119e7816cdcc8d3b05b6c732ae1c670524",
+          "afterSha256": "fd15e3a1acf24b4531b81a821044c7f859825c2e3bc4ea7b13a8b941f7627dca"
+        }
+      ],
+      "recordBeforeSha256": "0eba98f54c98d05833899841f91259cde6f7cb9a9839617e4ab4c09b3bd6335f",
+      "recordAfterSha256": "f68e196a71d591468f553d3d58e3d5d63b6a6438b5dc1ac396c5a33d94a72a1e"
+    },
+    {
+      "path": "/areas/oklahoma/custer-county/",
+      "areaId": "oklahoma/custer",
+      "reasons": [
+        "Introduce collecting the right details for different customer groups. End with actual services and inquiry-flow questions; keep school-tour details in the labeled example."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "c120803bffc49815d6af1031434e4bc8aeeb544ca40b62f723c450c14197129a",
+          "afterSha256": "ea83dd247cd50dca38e177e9e59ab2b836cefe0d8d110a5b10c9c92a80be390f"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "c120803bffc49815d6af1031434e4bc8aeeb544ca40b62f723c450c14197129a",
+          "afterSha256": "1464f38a6307d4f216c074267294723b361a1fdc67d326d1500b2bb5de0408c6"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "ff0dfcb672abeb79b28353af80ebcd72b9ccddabdec384b47cc6b6c8b0932118",
+          "afterSha256": "fc6264a2b16cf3d33a714797e95f15026ac40d9cedad7ced2d1692fcdb5dafdd"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "8ce3c8f45dd5010aeb0231dde7dd1c6b10fa9dd658b34a9600c276fdb2947943",
+          "afterSha256": "b835646be47908bae3a3dfae7ff6ef20394f190dc9639dafebe8d5fcd77c679b"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "9273d1e8f7e9cd4f223e091accc21aaad7c6c3fe54ba2b887457e45ad2e4b0b5",
+          "afterSha256": "f68c8d23abe38e455ad0360a011fd97e726f8c1c505e12ae9ceb08076c3d80a5"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "ffefeaebfef2a086584ff0de820fd1936ccf754722c752d19ca560f6780209e8",
+          "afterSha256": "0eef12d3b76ef4281d9314c3917065a5d538edd2edd37bc46236e30f420ad997"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "dfc6ed3a644a0051b0ef8eb602ed9f5b9de54ece6f7d822040ab4cf57dc21225",
+          "afterSha256": "ac45859737480154738d27cddf3c8baa27ba3ea8c83bfecbf952987eed457178"
+        }
+      ],
+      "recordBeforeSha256": "a96d1c55863af9006fe9337aea1f694d3eeeae81daefd88bcec4e03cb5ff3f8d",
+      "recordAfterSha256": "afef5da0ac0ea1f197882919c2b9f6936b9414636709b13f2721a22bf54c932e"
+    },
+    {
+      "path": "/areas/oklahoma/ellis-county/",
+      "areaId": "oklahoma/ellis",
+      "reasons": [
+        "Lead with identifying the requested service before collecting delivery details. Retain cattle vocabulary within an optional agricultural example and ask generally about service categories."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "b7c0ef6f47e2a57dabc58a783d38033258c4c75b7ab40e799fc6d626ab57c8e2",
+          "afterSha256": "ab1af1cbfddba6e06ca8a0de7ff2f56a5aa2cf7190434b97ab8e1879bb6d6d63"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "b7c0ef6f47e2a57dabc58a783d38033258c4c75b7ab40e799fc6d626ab57c8e2",
+          "afterSha256": "fb88b165b95b37c914e9b51f799a1adc6fc58e24461f5b6fce6b2bcd579d294b"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "8929d5eb96448c008c399742c06037e488e000586aa5faf1f3ceb334eae78dac",
+          "afterSha256": "a5da35df21da504afc8de30e3d8e6fb3b9fc27cc6da041ef7347d96310839bbd"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "a90896c0bda86f76ad21bfb8d9ccb15e72be6b94774e7af809753c4af8d818fc",
+          "afterSha256": "2a3b216d2285f0a599160142f3001a0bc53ba939923b1df2462db9aea24b5414"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "5db829bfba7a12fed2235bc1a09e9ec2e77c1b0871252ff1da11ab74e7306cdb",
+          "afterSha256": "e769a636dab6f39179b13805d49112ae06103388a9340219a6f4c0d3be3bd48f"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "c631dbb171cde00a7db6f4e145def25769abdbd6141ad0e2618a04e3457aad67",
+          "afterSha256": "16eb93da242b728550bbd219df2347a739b81f8ea6fe0434ba43074681d9d755"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "899a27622c800f842d6968fb1f58dee6566bab8602abaae65eb9df967a1b0257",
+          "afterSha256": "29ca9a45f60c348faef30d3d83716a4fe3583072909a3076a79ab6238d57ae46"
+        }
+      ],
+      "recordBeforeSha256": "c85a8b04125174832a3916fc6b4ce6a73e3647bcf4a1bdd5b24f260537be8d00",
+      "recordAfterSha256": "03008969dcfd1d939c998d8900535bb1bb0601bcfdd51b1f1f5f507e63913ff8"
+    },
+    {
+      "path": "/areas/oklahoma/texas-county/",
+      "areaId": "oklahoma/texas",
+      "reasons": [
+        "Lead with returning-customer renewal and support routes. Ask which existing account system must remain and what customers confuse; keep the library scenario short."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "855732ea041955f4b5eb856b25f4008fa399d6f4390c6f5337ce057e45577e3b",
+          "afterSha256": "dea7914fb702ba6df13fd8c3642f1536863298d0d63dde4e848287831cc0ea35"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "bd011bde3856a406d738353602132537a6587458ad47db5e0f652e9177c05a6f",
+          "afterSha256": "385196d2efb2b18fbbc22d1b76eca82d56aa76e16406452c96340a8a75fcef5f"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "610af4a52aaab9e86e249597daedf9e9e48bb49730cccccacf77227871327ff6",
+          "afterSha256": "2cac7a86146e1c985aa82d22641ae821b75ef909a67fcfa0edc567dc17338b01"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "9613627798500323263672381d91f6f4377772caeb63af2ea9319a1c533e234c",
+          "afterSha256": "20d309d39eb60cd67502c9ff4f49158a9a438167149ba967f41e9dfcf50ed0cc"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "a90d43e794536a9e15adedb2dbac8c54eea4690642dd4a9411f768a3a23b0a22",
+          "afterSha256": "aaa1d9e2701ff3ec2ac6eb1f06ce607497a053fe7fbc8e1ac0293476a627ee4f"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "3f8ec676ad556b63ca937f9f8c9572a25aee8172f67326e270c2dbf8eb47ee5a",
+          "afterSha256": "f73403847d94a120ff03fa29f791c2622e63dc22329ad628fac79cfcb4528a13"
+        }
+      ],
+      "recordBeforeSha256": "4f2e1e150a904c517e709f9d0210e0410cc577f1a451ee2069127d7dbfb425c1",
+      "recordAfterSha256": "5227bd1881bd056f2e5dfdd5fa86af9e6a316f94567478e46a624aae4da65ee6"
+    },
+    {
+      "path": "/areas/oregon/klamath-county/",
+      "areaId": "oregon/klamath",
+      "reasons": [
+        "Lead with separating visitors, members and event participants. Keep one train example and invite other businesses to discuss different customer groups."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "b9229fb108c5c64ae0069382545274c013a442067027250c25acfd71a7154e06",
+          "afterSha256": "db79bc7f7813a8e358bd1c7c9683ca83e125eb40eef9afd55940698482ea81a1"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "0fe0d4170cea624046c50f92a811257a141546e9185d95f9cfb9308fd3292b8d",
+          "afterSha256": "a43a6eb5a5da84f120d53edad6e0a7a4ac6da51ef28cd113da53820e5ea054b7"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "e207c251120975a5cf190f9212301c3dd48752eeb617fe518852a29bfdd10485",
+          "afterSha256": "fbf2bbf62c477476f2c3e32791ee67d4d015fbcc1f47f92dad73a2004737eae5"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "ccb6c1535c494a3d72a760fd811e90e2299a309fa91728c0f07d3f07e1e82741",
+          "afterSha256": "6171310786c0c04cf806b589388405ec294a748b5471dde5cbd4db2c6f40afdb"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "1a03d67c62b6ee65f69e16989c5fe8cd122753946e847b09fd9d363f6331f88e",
+          "afterSha256": "ab2f8737388398f8ee05e1982fbf42b67ad395d5cba82cb54b70cec8d0c91f1f"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "24f56162c53f4afa36e7b427101f409423436ecd7e6ff57d2b0b9508a9579e37",
+          "afterSha256": "5c35580e88b89767e66f85929fcad58962ef7086d3eff35b6d698e5218bc3de1"
+        }
+      ],
+      "recordBeforeSha256": "223906c3e35ed637919c43fe090595cdbe4cceedfbf600d3724c395a79a5fed8",
+      "recordAfterSha256": "5f7d352c1b1bcd81860f8bdec387e2e1f64d3dd4c0742459b6a20eec3c076058"
+    },
+    {
+      "path": "/areas/pennsylvania/philadelphia-county/",
+      "areaId": "pennsylvania/philadelphia",
+      "reasons": [
+        "Open the differentiated section with broader service-site needs such as explaining deliverables, showing evidence and improving inquiries. Retain the assessment case as a labeled optional example or specialist guide; use a general project question before the CTA."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "00bca561ea7a58a076fc199aeb6ff3f4dae2d4136c067e7da1277ec4b12711f0",
+          "afterSha256": "a822323e8066110bc90e8f912ed643782fe6a4f2c03ff98018d8428fea591790"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "fea172b7a803af645687b5b64d21c64f08ebd8adab5542138507a9e5deae0c77",
+          "afterSha256": "c8d1787195ecc2ac01ba948c4ab44d5b856dd805f337f02e36261e906a29099f"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "bc259b5d2f56a09118ec932875ecf65e26c9b86914cfd05c10a0adf889c181be",
+          "afterSha256": "caf83f1f3b64e5887a093dc7882ab607079d0b66ddd20d6aa6422711b5dd1f3b"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "10485ecff70a6436e43c04de0f56463d99dd7096ee7af7311c3772fa86408436",
+          "afterSha256": "4bf4865c2a604589b331274610df5ec22089d029757a4463cf767d4166870794"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "75c4a056cb0cee5d0f091165cf203ba912bca8f16bf1381e6c40faca470cc172",
+          "afterSha256": "f7a3e48558f1ba0da99a71a9256edb0088baa51c4866bcb40c3857d0a7406c64"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "4ac2dee89ad14c0a8a18a6383f1876a8ca7dafc65ef73bdd4f348b46b2a3d78a",
+          "afterSha256": "14e0aa1c340c79678bb47add152156a58ea8cc68593e8ee0d88eb02e3c36219f"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "e6cee3fb4c0aaa51553bb858d0d7d82b4b8d1225c3681fc0c56bb9a359dbcb0b",
+          "afterSha256": "15dea899e4f3762ba62222d221edbd05d3b1c8545d4f8ae9aeade31e56bc3f64"
+        }
+      ],
+      "recordBeforeSha256": "e1eae92328036dfeb3934ccbfe7690e5808879376368e4ff12bda62b3acfb285",
+      "recordAfterSha256": "0482daf5a981db1c5c605488a01d6f5f0309d7675144b7119d37431424a6713b"
+    },
+    {
+      "path": "/areas/queens-county/",
+      "areaId": "new-york/queens",
+      "reasons": [
+        "Explain common booking/service-selection needs first. Move detailed firing preparation into an optional industry example and make the multilingual FAQ applicable to the buyer's own business."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "5eb405821ad87c32cebf729343aaddd95ad8d544ed6e5dbc0acfa2594061a21f",
+          "afterSha256": "a5d39126500ca868f55d58012897637c50ec6b8f26603b08b6f9d84841461fac"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "00a9a4516da7ffec9d51ff0fcab1ad799df9f3d440ada0fd86200863827bbedd",
+          "afterSha256": "611c949a827593ffb0d43f7013b2d98602ff947aec4697573fd25ba60b92831d"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "dab0c0e21945359778f56f3c7c0cb7f7907c0bfade03511fdf9651ce0e86c2a3",
+          "afterSha256": "ef33ea6126f5f71cf657c6d9e121cccb5e90053b474ac084f2ed1cd07b7b4085"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "82da5b9515c5744ab2cfd78c7dcbd47acf4b0abcce04375441bf8b0813fce524",
+          "afterSha256": "5785914b2c286faf8b35973c91c02fd4049cf9fbe67adfa1e2571a39f7eb1ff2"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "cdfb064e978644c9addfb37fb6a4c3f64ee671a71b07b6dbea15bd8572451f17",
+          "afterSha256": "818d8a76efaa901a2cb2028e44e51bcbc8613c4b0c3d8d65e85ad2e5ed424c4f"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "7521de3f8ade01b15ae2611c0a492bb6e370defb6aeb3f4e1edda381ce8d333f",
+          "afterSha256": "0c1740a9bcbfc52ef2b849f8ccfdaf506d4384c255f15695a9ed145747bb9a4e"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "6d6ccf783aab48fb600dcc8516510aaaabf3bbb1cb4b9223c12ef78e9073df21",
+          "afterSha256": "70491a5e2d7ec51fa6f11c263456b08e78a808804f817e7f8c1a1893b8e9ee60"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "2dc55f618fad0fae31d10d07571b63af7994d867e630a90d19fe1168fa0a5127",
+          "afterSha256": "85bd0476498db463e478d74eb941c98158017a37be9ab4177ebc0df39f3681e3"
+        }
+      ],
+      "recordBeforeSha256": "baa9245124c2ba515da7b18b7ebd062da599af6454cb266a321cdf534936ec82",
+      "recordAfterSha256": "767dfe2e39e9c000f38ee30bb9168593a0195111db652e4ee7966fd9701e670a"
+    },
+    {
+      "path": "/areas/south-dakota/fall-river-county/",
+      "areaId": "south-dakota/fall-river",
+      "reasons": [
+        "Present the wider value of connecting booking, preparation and arrival information. Keep the school exercise as one supporting illustration and ask a general question about what customers need before an appointment or visit."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "08720b40e2d6c8272f2a756cde0624d2b3ea09428938ecab7a7c102cc28b7718",
+          "afterSha256": "141261cc1cc758fb346d400d92c3a19bc924e8a272d7fa0c1dd780a10d5bf051"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "9315f431f8137ea28973fbbdf8ad73999533c872abe325b4c114575152f70370",
+          "afterSha256": "849839d82afae4fd9b12a5d5972d185e72ec524ddab24c1d2ff6eaf5f50d87b2"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "3d9eea012bb1a2e583dab216eec2c147a341775f5f2d50dba93d38de3308ed7d",
+          "afterSha256": "b2cc0be628cb1a3e81fa67aeea53556a478303412e1e8cdd2749b1d458291d50"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "1050b6783c429a00501ccab5f60be03e1a82554b3daf185b90c9a337509b2413",
+          "afterSha256": "e17fe9668183b2434566f0990e6cfaf034409871e1f4bd07c68b24164ee86406"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "715ec6a98d28f4c02663a09aec997819e10bd49b93352757373c32388fa48cc5",
+          "afterSha256": "0cc975dc524da81ccd5da7a33eb3949619a397ee76c376c2952aeecbbc80f4f0"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "6f9a7abd3e1a508e425a3613ce9ea073ca73205722a84ed32e8c9ae0ab4bed2b",
+          "afterSha256": "e4709538349db92cece771b3cf344d2840170a839c387f6f42aa1294a16e63b2"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "a0b9635f1f1ce00f53023a68008cf849b50089d9986ed9c6d707594f07343492",
+          "afterSha256": "2a8b757a5713e45c53a9494b67bffefb73095f144f3b808bd23bebe30cb1ace0"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "8dabbbeb7e41bad83f21a8d06a46ffd772bb53acdbf70830c2b39904aba46145",
+          "afterSha256": "fc2070e0f0139deffd72a3c06a9041aee9f2eaa6b6d28ba2310a21a2b3ac2423"
+        }
+      ],
+      "recordBeforeSha256": "3010b33e45dda977f4a29a551535898c0e77dde728b3713a3b3163f088fc27a5",
+      "recordAfterSha256": "fd93e8e28a29e6b7611551ee7425ddb4206e6ad3f4c6b0729fa064f1a559252e"
+    },
+    {
+      "path": "/areas/south-dakota/moody-county/",
+      "areaId": "south-dakota/moody",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Use 'Explain what remains after registration' as the heading. Keep a parent-facing next action distinct from owner tasks to approve payment and schedule wording."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "5a30acb45dd842538707c9c51e7c5126798415e86b5f436b1a270092744fad5f",
+          "afterSha256": "68e85a757009e2310af44d45ecfd37c8d5a3a6b63f0aa81c6bf6770db3f01bb5"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "ca5393cd9ed98f5aa827147429b313d75febbc1da62fed0d684051be6b3a4b5b",
+          "afterSha256": "a9bd576656ef32012139822aed83bf69a821f909ca9efb95ad78487077832fd6"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "fe53e3df3b3171fb794900673f91c2e63624228e337f531d7d32cbc474a6fdc3",
+          "afterSha256": "1fdcd11e0e59aab9db011e857dbb87a6dfb330c30274c2ccb43c8537a7752386"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "8a52b15b091cbbe31f21d75a7d9aece3425dae710767b02657108da18403c04a",
+          "afterSha256": "2911e1418abb63d768af3d0000405366bfdcf7de7839a06ac00096dba457e30c"
+        }
+      ],
+      "recordBeforeSha256": "3c78d78bfda52bf2561cf81788126a68c3592953b3438413a34e27f8208be511",
+      "recordAfterSha256": "429460d7ff737e1ce377dd5b2a37f18da90224d0b0779eb762ee0621db1ae270"
+    },
+    {
+      "path": "/areas/south-dakota/pennington-county/",
+      "areaId": "south-dakota/pennington",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Use 'Keep seasonal hours and admission details current.' State the visitor's action in visitor language and the editor's update responsibility under owner inputs. Rewrite the scope sentence as a specific deliverable."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "8539b81f63addde00a7815d7052d2c4926fdc413a5be804485b3fd404adf543c",
+          "afterSha256": "63f3694518b5e322710ea39fe0797322d213ff2a8e0a814ebd63ac0914ec9c1c"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "99beea69c739453fc117bc31685a2500945d46f0b25a82c376c5374394e2c6b2",
+          "afterSha256": "3978bc83043d1e424f951b552014a27add5a9c948df99d4a51e32c00fbaa0519"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "101243148af7bb3c1a07018503e9c07880bebeec1323280f2e47be2bffdd6a6f",
+          "afterSha256": "aab4fd7c4e1218b29bb323b21ceb74f3496656855a8893445ae77ea8710ce3a5"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "16a6007d63407f92d637a4bde948520545052c806e9612987c90f73cd9e64dee",
+          "afterSha256": "8f50b8ccb3de8d0b2f537aa32d88a4cdef6f37b894bce45da7f6e6a279892a67"
+        }
+      ],
+      "recordBeforeSha256": "19ca382f79cc5a23d5388f135a357506b3121d64138e1f28066eee60fcc67ffd",
+      "recordAfterSha256": "2fe68345b696f80b751ac88a3f936fc3893b3eb62fd9d5905ef9935f3a210dbc"
+    },
+    {
+      "path": "/areas/south-dakota/turner-county/",
+      "areaId": "south-dakota/turner",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Rename the second card 'Keep the fair year current.' Give the visitor a concrete instruction such as checking the year on the event listing; place program replacement and link approval under owner preparation. This defect is in the expanded planning content, not an admission policy or broken form."
+      ],
+      "fields": [
+        {
+          "field": "/scopes/1/title",
+          "beforeSha256": "bf07267f5a9eb9af17fb461e4e21c0822eb1973a5f36481f2f0f56859c05bb60",
+          "afterSha256": "03da488c0148cdad42f542a86a9fc6f58db72710d086583120598b225190a708"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "8f740635e0a8a224683832201dffb717b6ab198c0131a0612a66f724906b3906",
+          "afterSha256": "c8555c5b3851decae5e829bdc8c1d92a6741eb6c10447c1b15e52d90bf249a35"
+        },
+        {
+          "field": "/scopes/1/supplies",
+          "beforeSha256": "ecee830ca743da64f3a9711345e8a6ae0dbad4a15893f4ed5811f0283958508d",
+          "afterSha256": "6bcb2c896ef15344d47de5b662cdbf6af672b43cf690dcfa2249dd1b1481a0ce"
+        },
+        {
+          "field": "/scopeTrigger",
+          "beforeSha256": "451f4c180d9acae00c4fc0f168ac8cb0a1891d0b281745a28df4e4ad0f972adb",
+          "afterSha256": "9316ecf14486a792b1769a98bbdc8f8f550410b0a0d9aea1ec0a672eaf3ba008"
+        }
+      ],
+      "recordBeforeSha256": "209dbbfba9f437735004ed29117ae299b460112efe71270d146f61feae44a208",
+      "recordAfterSha256": "04998e632782c37b71dbcdf446b9accf544801d7dd197d2c41d8a747d90a722a"
+    },
+    {
+      "path": "/areas/texas/cochran-county/",
+      "areaId": "texas/cochran",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Ask two natural questions: 'Which service should each access link open?' and 'Who helps when a customer cannot sign in?' Keep provider-specific telephone formatting as a secondary example, and explain the wider website deliverable."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "91371adfc7ed4167b3c5cc6da2a4279c50a6bb109444bd272caef0188ec00212",
+          "afterSha256": "e022ef9a1faa77277bc4165ecac14209e802e143cb84228f440b929ef8ff1a0c"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "2fa3b346e8f591b66e748cd6228f30e2e5fca41207deea7faee3c67142e430a5",
+          "afterSha256": "3942be3844d8b391de7e0e7a98c892038a9d258b95de18b8eaf73ca17fe345d8"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "b1ca92f19f2f6b98966aa31c9887cc788d63cddaa0b0245b898f131bd949815f",
+          "afterSha256": "07b4387dbb908eb499368c1a0c87f0713ebbbe3b1efbeec391bbde0f978a5dbb"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "98807e7e4b12b10ef5b08de5a3eae27e0624f6bb2fcb86053494a9dbb13c3857",
+          "afterSha256": "be2de407a4f57589fb3cee3e1e56a8097a6fced3fbf14d8cd29cf021b6045883"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "e46dbf31fa491eccaf98d86f1db7f41ad4b937422bbf6abb94840b270610a7bc",
+          "afterSha256": "67ee24f265a01c12154aa3de2a9c96d61a96d8caba172c010e3ddcc08fb076b2"
+        }
+      ],
+      "recordBeforeSha256": "4dcfdce4749e608b84da35defc426aa3c9b6967947853792497e9070b1a56897",
+      "recordAfterSha256": "16a983c707410d7f9381473fe6b47f387769d1fdff6c81f0890faf2557b99625"
+    },
+    {
+      "path": "/areas/texas/crockett-county/",
+      "areaId": "texas/crockett",
+      "reasons": [
+        "Correct confirmed grammar, heading or customer/provider actor defects (D4).",
+        "Rewrite the question as 'Which services require customers to call ahead, and why?' Broaden the buyer-facing introduction to preparation instructions across services; retain lamination as one short illustration."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "fc15344be3025f79a3e2fe4f3bc3839a2ca50e1e75110c66c0810d050c1e9201",
+          "afterSha256": "db4c2df735e2831df47ec08e9f17bcdfbeae399a8fa4ac34cb77e62be44eccbe"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "5e1c582cce82d198040bbd19506f08fc3d2b2f5e688c3d08fc947860916cf406",
+          "afterSha256": "5db07640026edaecd8bea800ea0d160c6d0424ec87fad6ef7f1350afb6690d3e"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "655ca9086656a43e839523edc5dde03f08fda06ad6bfb6c3bd23864b967befec",
+          "afterSha256": "a556febfacf8b4c112f23d7cbfbb04cb634b2312a06996cea6a9b15787181142"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "ed0961a0f0d0ce1e4e2d435a623354dff71c63420931437bf3b08609be933a94",
+          "afterSha256": "f30e6959390b62f3e295e0eee42a961ac8b373ca14a85de9f5ad1cc23539214b"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "6054935d3688ba3e95492084cb4e40c2c18fa9bd58e5cb2e15fc5757f6056174",
+          "afterSha256": "546eef7a32dd60954ef0c144d187c99e53984cdb9ac7ca2d197964b30a2e03cd"
+        }
+      ],
+      "recordBeforeSha256": "b5c17dfba57db3faf3b2f062d6cf3b768a9d632ba5ff10cec3e6bea4a058c345",
+      "recordAfterSha256": "4d12850691a128539b0ab325b53e657769c81388a4bcce45a483f20a190daee7"
+    },
+    {
+      "path": "/areas/texas/dallas-county/",
+      "areaId": "texas/dallas",
+      "reasons": [
+        "Lead with what the design service changes for different customer groups, then use a shorter museum example. Replace duplicate narrative/check text with one concrete before/after choice and a general project inquiry prompt."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "04d7ddfed63fd5f1d7385490c3e701d195ed1d6aca1499f52e63a90aa0b70ec5",
+          "afterSha256": "a4ebb2ce425545dfee6fd52b0f7b68873d8d5efdaea1b0ed54944b1bb470980b"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "41ea8d329129ffec51904e6e0ca295781bf98bb704546721a249ff961552bb22",
+          "afterSha256": "7f5093c4ad9de01c6722d675b48e29d887460e87d02a185a10b52e677d184840"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "deb87a312f5d69a79e0de405462d1036053293ee3763d9aaedbae9ec2538bd3c",
+          "afterSha256": "86f342b1e8ea560ecbb6d2ebfd682a579c96f4a11cdb7af4abb804893c6670e8"
+        },
+        {
+          "field": "/scopes/0/check",
+          "beforeSha256": "55c5c69cf5834bec88c2772dbc824d78dcd9ef4daab9efc2bed5e2e7a9bfb0e3",
+          "afterSha256": "c3f2042aeeea1f271119acb9f0cafeeefbf59ecd2a50f7fce7bcefd7a7337332"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "d7a037448173b1ddb04b60c782640f99835d8d5edf8dde1d4c37f47c46358a2b",
+          "afterSha256": "1ce7ecbcd1cc7d889c83eb3d07f50a5dcfce26929814e1d6319e650f676f9933"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "a2a48f4acd9d36033664e73774cec61ab29eadd345ad676cbeaf45f9d5e6a44f",
+          "afterSha256": "9ef289bdfeebe6615088241fdc4d7fe6d3f90c828ae98b57d563053d1a5698ec"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "5a629546200a5b11feeeff8ae74d91b8813aa19ec4420448775cff2a0aef4b34",
+          "afterSha256": "bd513337a7858575fb2919a6b5bf54247ce5febeb7e5e211529af79bb88a2de0"
+        }
+      ],
+      "recordBeforeSha256": "5cf1e313ba16fb05ddb9ccd7cc0bf399f3f9db422dab720995c1582c5a6a4ad3",
+      "recordAfterSha256": "8890bd36f6b6f30900985f03f8f65824b83672d267a2948f8f0f664fd369f680"
+    },
+    {
+      "path": "/areas/texas/fannin-county/",
+      "areaId": "texas/fannin",
+      "reasons": [
+        "Name the domain immediately if retaining the example. Prefer a broad buyer problem such as explaining account stages; reduce the policy reset to one illustration and use natural, nonrepetitive project questions."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "3cdfd0ce6882a6381860ae9c1677cad89e8d0ab698db8e4889b3b20057880f29",
+          "afterSha256": "5199fa1588eeb50033f7ee04d0654bee4f0f3cde6074c7962f339a0ca534f561"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "09f639f3524c6d9ec43780104ec5d46025d7c74e4dabdad33ba975f3ab4f83af",
+          "afterSha256": "de4ac6687f93a6a9a2de484230a20a4dcb4b7afba796b03fa0e47c41e6658292"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "34f3e9a3f9eb58a4828bf74b379a38db5b92bcebb350856cfdb554e1394d222b",
+          "afterSha256": "184cec21888143ef2958a0ad73d711aa4c1c57c9a3ddb6b918af8dbb5f35712d"
+        },
+        {
+          "field": "/scopes/0/supplies",
+          "beforeSha256": "9626d6d1a87ebd844a2444709bfa0ea38844083aa272d110d8e205e73e428b90",
+          "afterSha256": "d909d7d4ea395ae81ab432ddc9c3657b39ae61777942525999591935a7aece3d"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "5973c0f029c0a3e9036e580bf1c8645c2fa6785fbc6330c0a55f87bdc62b40f0",
+          "afterSha256": "66eba4e6d3577f440d291076eb80fe3417473411e305636adb56825feaaae02f"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "39e73dc9f05c35c6dc070fac720035912075b7e3a4bed5e10c5ec010697ca46f",
+          "afterSha256": "6c83db78136d962e5fd19881a0a573ea18cd3cd1eb46d4327b89fc984656875e"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "c62e5f2b7d3aeed796471858b1ada005ece015e6d27b30fbb8bfe7a5b7866e3b",
+          "afterSha256": "03dd7797707558ef0e30ec941cb356774c431733b136bae1d3fc6d125e6a92bf"
+        }
+      ],
+      "recordBeforeSha256": "c655af2a2deb67ecbcde8648f8a8fcacffbc10cb478c55cad43719fa22bb73a8",
+      "recordAfterSha256": "c2180daad79b93ed846ba30145da492210467bfca729dd5445550ab4eb2e35af"
+    },
+    {
+      "path": "/areas/texas/gregg-county/",
+      "areaId": "texas/gregg",
+      "reasons": [
+        "Translate the principle to 'Help customers understand availability and their next action.' Keep the game-lending rule as a short worked example; replace the repeated table/card vocabulary with a sample customer-facing sentence."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "e3a81334005b286172f8da41c5d73615a8c5929c9dd4c53964e13267586a1359",
+          "afterSha256": "3e011b1fded1fd09db5f98c654857cc13a92cb4860bc0f61dcb2b2af7f8bae61"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "8b8b44cb3c62ed87e828f2482af05d69f6d46bd9b9bcd72beffb915ec1f5eff5",
+          "afterSha256": "e2b8c4b62e99fad712f6b2efac81d27909bfa968f7e4f53b775caa0535870848"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "c2de38f786e2414ad9e338fcd62a6f74dc7c2cb6b4e094e7ae5cd65edb49a773",
+          "afterSha256": "46fff50c4bc10307a5f09e75ab8d7473790d51afc451b030793dc16a333b347c"
+        },
+        {
+          "field": "/scopes/0/supplies",
+          "beforeSha256": "8ccd3ebabd4f6a6caa744ffbdd8739a25187e67c20ed13543e40d6a9498394f2",
+          "afterSha256": "9bbf7c6694b975a182750b1e433b54f7262efaca671bbede7295882711a0c8f6"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "aa98b358b857cda757dbd0c61be2cafa5a28ea59e7cf1a1935a9daca8f0db85c",
+          "afterSha256": "da9299a2c6883c131bc1b6dfabb87eb335dc486965596bfa9232e74ea6e3b61a"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "9f6b1bc07e8f98245e46c9b692695b19a0e9236c83377e0ed6683793932463f4",
+          "afterSha256": "0161f92f3d8c3e73e1d5a9db5fb90de6d6bafe448575f1b7401b71a0286fc0b9"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "09434afba010204ed0c9e9e0c793f05832ada6778eee813e673b7f7d6898f2d0",
+          "afterSha256": "6f10e209a686ca7254a3b97d08bc8dd5cec2a28d66cad0dc1da0f9a30fea76e9"
+        }
+      ],
+      "recordBeforeSha256": "02a540b711de84ed3e68b12e40198785806e0431497ffef4b45b40e3de0d21c0",
+      "recordAfterSha256": "be2f6a2b5c99230b4fb1cf880f097b4e9c265f1e1724b771d1b3f24fd95e4c34"
+    },
+    {
+      "path": "/areas/texas/harris-county/",
+      "areaId": "texas/harris",
+      "reasons": [
+        "Introduce the broader service-design principle in ordinary business language, spell out or remove the acronym from the summary, and keep admission details inside an explicitly optional attraction example."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "f797ff4a920553f6a430a33f81106ce86f25fdc2f925ff6b71355a42a61ff898",
+          "afterSha256": "32f1ee8ee1ddd6848ea301067c11f3697662b6204b266043d51f7c653d05f8c7"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "640d8ef54b94c395994cdbc46bbb870611238b8b9815630fd00d7292d9d53183",
+          "afterSha256": "84c1d16a6a2990b317e227da960d8de1b411457e37645236168bc25f41c8c41c"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "625f3e4b91854679024b3032e04e817d2236031cd3b9aeefd79ceb4cd20a7214",
+          "afterSha256": "282373722fbc0a2515ba5d97226c61fdd4bd66ed02b1dedac3ef91dd7afa419b"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "60441d20ce254da281449bfc7d948bb9a4facd881f5c865e96efdcb6286b6ffc",
+          "afterSha256": "76cdce7926fdf14d3afec6e399bc29a8069848f12f1928edf50045f99ddb31b5"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "5c02aac900f6417817080aaf82679979d31490f89d511b3372c99b69d6681f95",
+          "afterSha256": "939db8e6fe622ea0d2acd6e6a7ba7d3ea2fd09aa2c8ee8983b58633141907d60"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "e13a869c02944c0cabea434ae12ad293474aff9100fad5143d97fb0bbe47db5f",
+          "afterSha256": "7adf940529783b40322f3bd65efe230ac35582d7b2a121008de357ec9fff26b5"
+        }
+      ],
+      "recordBeforeSha256": "f44c84e3167ef78065f575e68e197c331d4312473b910b1395286643e3690a81",
+      "recordAfterSha256": "11246a10945f9bd9e841d135d165bbec80aac8af9a935a7309d554b3e015b320"
+    },
+    {
+      "path": "/areas/washington/king-county/",
+      "areaId": "washington/king",
+      "reasons": [
+        "Preserve the status glossary as a strong specialist example. Add a broader introduction showing relevance to retailers, rental providers and service inquiries, and give a non-catalog business an equally clear next step."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "b6faa53b1afcc603da69b6ae71ee92c09141c8722bb5e2874cffb940cc4ef329",
+          "afterSha256": "e9734bab6b69fb18304370303a69b5298a52082f482c26143b11ab212c56d4c2"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "67a4933ce233e6de4f41fc9c6042d459bc70be16f389aa4f55e9f3e8d2120fe1",
+          "afterSha256": "bcb543e18bec20e8a61a0a7231615056cc9010d4aad5a39522936c4f381f2f1b"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "30aa219b2c459563c70b38c3cd7fdbd4fc8408c44c580a0711edc24400834f12",
+          "afterSha256": "53fa9db4a11915f4b09ff02b50a73fb7d7585d0de7913be5fc079051ca7a4160"
+        },
+        {
+          "field": "/quoteQuestions/0",
+          "beforeSha256": "002bd1a5f7d1a847de7e1318cc4be8fbd7b3d4064aecda3d105e9302ce518271",
+          "afterSha256": "2454fb32e0c122f7814eeced785eeb59b3f7bd6339941358799c6d8f20094797"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "4a36c41339b484918a2dccac08e5bfdbaa62d1cc555a957a8019032801914c64",
+          "afterSha256": "f5f3785d0229b5d3ec891b43ff395bbb1e4fd883b658af4012c4e64b05026e86"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "6a335050e5f3e2ea46f37c0cd7959520dd246f68cdabfd705ac5f1125fdfb246",
+          "afterSha256": "2f6f1944b06736510e30407c5b2b39e7e3a99a9ee61e8fb6b70541392f05c8f3"
+        }
+      ],
+      "recordBeforeSha256": "612cabd283a993e26d3613fcbe2287d651aeba13d5b49b1ff6523866a964f967",
+      "recordAfterSha256": "0d1bcca252dad8d4357ca730aafceca3244c974fddae45028c9c2aecff7a0e0e"
+    },
+    {
+      "path": "/areas/west-virginia/upshur-county/",
+      "areaId": "west-virginia/upshur",
+      "reasons": [
+        "Lead with helping customers distinguish components, finished products and custom work. Keep basket bottoms as a concise illustration and show one sample improved product caption."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "160a9b1d9048cee3e0faca61a4ee385517f9c37e52fc00a9df4a39dec62ae5a2",
+          "afterSha256": "0d5c0bf57b23499c3d9150f251ab28abc265351cdf42b11062e112886ef219d6"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "3b1cb1c95af5ae501ab7ca8b1b03d2b1b66e52b84917ba4398fc73d41a30a446",
+          "afterSha256": "b05a63fd1dd2d00d0039ca170dbd177c09604f4f08f1cd46b2694242814b222d"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "5aaedfadcf1a2de2a1841629751a3f7c91315f25d93f9bc64e9bf340b348e9aa",
+          "afterSha256": "428f02ec57f1596512d7c90f63fe4842a91d8c6eb27fba4ce50390e241298d09"
+        },
+        {
+          "field": "/scopes/0/request",
+          "beforeSha256": "13cb934fa7e7da80702078a782801c5edd0c798217f32c66edcdf2165e756430",
+          "afterSha256": "535dc9eecb08528b082ec80ffdffdb52c9512f4dfe444322a421035911ebc078"
+        },
+        {
+          "field": "/scopes/1/request",
+          "beforeSha256": "fe0bd15c761e0a7afe5c3b019f96d7463aa0de7ae4eb55beabcf5461080b7b83",
+          "afterSha256": "48b52609ac7596298701672ed00fb056ad4f22a8f66180fdc47c0351d5c5ae5f"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "bd152408ebce4e92f824d93a9f3e0dd0abaea7763f8512576eb3e9474b57736a",
+          "afterSha256": "38285eee526d00675921e3c7ba477268d2f1a077e7a1ad0dbed2e29791177f5e"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "c292174d40d0702e4f9a15ea88035928794b5d7cea1074578d5e3e5f8e2ff40d",
+          "afterSha256": "72ea532035adf79778d8aa947a508ae49db3d28c6e29e28b2de13ceeb2d0547e"
+        }
+      ],
+      "recordBeforeSha256": "412f335033137cf848052e8815fd12d6cf088795d51ab5f74eccd020367aee08",
+      "recordAfterSha256": "2b14119a79c72ea4984030b55bba2502c0e66d1d03f588cb8cc0277a59e55e71"
+    },
+    {
+      "path": "/areas/wyoming/albany-county/",
+      "areaId": "wyoming/albany",
+      "reasons": [
+        "Use the brief to explain the general buyer benefit of clear venue inclusions, then reserve the mansion-photography detail for the example heading or narrative."
+      ],
+      "fields": [
+        {
+          "field": "/lead",
+          "beforeSha256": "04dba9e89404fd2744c2b7a408d155a2f8dc66e56e9527dea1c6a7c25f753b53",
+          "afterSha256": "c2379e0cc758243453e5d40597fd0bba0eeff8c346526399597aed8c9cb4f511"
+        },
+        {
+          "field": "/decisionTitle",
+          "beforeSha256": "e102c60c686b80d317ad4519bcd01bcf92c37fd860f8171d535fa7086bfbc292",
+          "afterSha256": "32d044949bd2d562d620af93c0c9a1a7cbd8f74a5121a93b9ab3cf0974ac3f05"
+        },
+        {
+          "field": "/decision",
+          "beforeSha256": "756b88db2abd4517edf79d106bbc6a7c82de6045d6e136a3184c065a1f1cce44",
+          "afterSha256": "58d3dcdeabbbdbee0367ea0084c518e6413e41f2b5d4a7fb5a077d38d4b3a93c"
+        },
+        {
+          "field": "/quoteQuestions/1",
+          "beforeSha256": "33cad4ea70627c24172b6de32277ea64363b0c9eb61bf7921b715f1d810de0f5",
+          "afterSha256": "97e8275dbe8f56749e027e4e281cf16f4d6116d755ab19a84889d8220aaf0ff5"
+        },
+        {
+          "field": "/quoteQuestions/2",
+          "beforeSha256": "d99247dc66d0261668bb7136c0d9a45ff127c384d7194c34817d98358b145b2d",
+          "afterSha256": "cb3d2b22120b0ae5f939d801f0b0898ad50332b36896e7c186d09418762e0829"
+        }
+      ],
+      "recordBeforeSha256": "efa564af33ebeec66cb217f230e09e7b0b66ae005fe41708220f1566456d5714",
+      "recordAfterSha256": "dac73da62664145f9a022de949ee64116f6d06f0e71fc02cb763547c04fc2dea"
+    }
+  ]
+}

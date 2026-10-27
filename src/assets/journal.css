@@ -116,3 +116,7 @@
 .studio-site .guide-examples{margin:2rem 0 3rem;padding:1rem 0;border-block:1px solid var(--line)}
 .studio-site .guide-examples>summary{font-size:1.2rem;font-weight:650;min-height:44px;align-content:center;cursor:pointer}
 .studio-site .guide-examples>.journal-group{margin-top:2rem}
+
+.journal-prose .guide-case-details{border-block:1px solid var(--line);padding:.5rem 0}
+.journal-prose .guide-case-details>summary{font-size:1.15rem;line-height:1.5}
+.journal-prose .guide-case-details[open]>summary{margin-bottom:1rem}

@@ -545,7 +545,7 @@
           "Useful initial description",
           "Shared acknowledgment"
         ],
-        "request": "Identify what needs work before asking for detail. Use a concise description where it avoids complicated conditional forms.",
+        "request": "Choose the service category and describe the property, vehicle or other object that needs work.",
         "supplies": "The service categories and examples of missing or irrelevant details in current inquiries.",
         "check": "A vehicle request and a property request retain the correct category and reach the team without contradictory instructions."
       },
@@ -557,7 +557,7 @@
           "Shared coverage and evidence",
           "Agreed inquiry routes"
         ],
-        "request": "Separate explanations where preparation or assessment differs. Add forms only when their required information or recipients genuinely differ.",
+        "request": "Read the relevant service explanation, describe the work you need and follow that service’s inquiry route.",
         "supplies": "Approved examples for each service and a map of shared versus different questions.",
         "check": "Each service page leads to an appropriate inquiry, and the received message makes the intended work clear."
       }
@@ -973,7 +973,7 @@
           "Intended image uses",
           "Project approver"
         ],
-        "request": "Ask for the organization's intended uses, an approved reference if available and the person who can confirm requirements. Keep ordinary individual bookings available.",
+        "request": "Describe where the organization will use the images, share an approved visual reference if available and name the person who confirms requirements.",
         "supplies": "The shared requirements that affect preparation and the existing tools used for scheduling, releases and delivery.",
         "check": "One inquiry preserves the organization's style and deliverable expectations without asking for every participant's personal record."
       },
@@ -985,7 +985,7 @@
           "Preparation and approval",
           "Company inquiry and individual booking"
         ],
-        "request": "Use examples to explain how a coordinated set differs from unrelated portraits, then leave the final image specification for the project discussion.",
+        "request": "Compare the team examples, describe the shared visual direction and ask the photographer to confirm the deliverables before arranging sessions.",
         "supplies": "Permission to publish representative sets, accurate descriptions of deliverables and the actual approval process.",
         "check": "A buyer can compare relevant examples and describe the shared direction; the inquiry identifies who approves it before sessions are arranged."
       }
@@ -4507,7 +4507,7 @@
           "Turnover information and next responsibilities",
           "Included or separately agreed follow-up"
         ],
-        "request": "Explain what the customer receives when the installed work is handed over, who handles the next action and how to ask about later service.",
+        "request": "Check what you will receive at turnover, identify your next responsibilities and ask about any later care you need.",
         "supplies": "Actual turnover materials, approved responsibility wording and the business’s current description of included and optional follow-up.",
         "check": "A customer can identify their next contact and the information they will receive. They can distinguish an installation handoff from an agreement for continuing maintenance."
       },
@@ -4519,7 +4519,7 @@
           "Establishment and turnover",
           "Later maintenance and inquiry route"
         ],
-        "request": "Show how the services relate across a project’s life, using accurate examples and clear points where the scope or responsible person changes.",
+        "request": "Choose design, installation or ongoing care, then ask the business to confirm where the requested service starts and ends.",
         "supplies": "Current service boundaries, approved project photographs and the person who confirms each handoff and maintenance description.",
         "check": "A prospect comparing the whole project can see what follows construction. A visitor seeking only ongoing care can find that service without assuming every build includes it."
       }
@@ -45140,9 +45140,9 @@
   {
     "areaId": "new-york/queens",
     "market": "Queens / Queens County, NY",
-    "lead": "Access to a kiln and access to a place to make the work are different purchases. I help Queens studios explain what a firing service includes and what an artist must prepare before requesting it.",
-    "decisionTitle": "Explain whether the artist needs firing, workspace, or both.",
-    "decision": "AlterWork Studios in Long Island City distinguishes memberships, short-term workspace and kiln rental. Its firing offer requires premade pieces for bisque firing and describes a limited glazing-workspace arrangement for customers reserving both firings. For a studio website, those boundaries deserve a clear comparison before someone transports unfinished work. I can clarify the firing introduction or build a fuller service comparison while retaining the studio’s actual application and review process.",
+    "lead": "Customers need to compare services, understand what is included and prepare before they book. I help Queens businesses connect those choices to clear inquiries and existing booking tools. A ceramics studio’s firing and workspace options offer one optional industry example.",
+    "decisionTitle": "Compare services and preparation before booking.",
+    "decision": "Local planning example. AlterWork Studios in Long Island City distinguishes memberships, short-term workspace and kiln rental. Its firing offer requires premade pieces for bisque firing and describes a limited glazing-workspace arrangement for customers reserving both firings. For a studio website, those boundaries deserve a clear comparison before someone transports unfinished work. I can clarify the firing introduction or build a fuller service comparison while retaining the studio’s actual application and review process.",
     "scopes": [
       {
         "title": "Clarify the firing-service boundary",
@@ -45151,7 +45151,7 @@
           "Materials and preparation review",
           "Workspace questions and inquiry"
         ],
-        "request": "Explain what must already be made and how to ask about the firing service, with a general question route preserved.",
+        "request": "Describe the pieces already made, check the preparation requirements and ask staff whether the firing service fits your work.",
         "supplies": "Accepted firing services, preparation requirements and the information staff need before accepting work.",
         "check": "An artist with an unmade project understands that a kiln request alone does not grant space to fabricate it."
       },
@@ -45163,7 +45163,7 @@
           "Kiln and glazing arrangements",
           "Application and staff review"
         ],
-        "request": "Show the access and preparation differences without replacing the studio’s existing approval tools.",
+        "request": "Compare membership, short-term workspace and firing arrangements, then ask staff to confirm the access you need.",
         "supplies": "Current access rules, orientation or experience requirements and the actual scope of each arrangement.",
         "check": "An artist needing a place to glaze can identify the relevant question without assuming any kiln booking includes unrestricted studio use."
       }
@@ -45206,9 +45206,9 @@
     },
     "scopeTrigger": "Clarify the firing page if the other offers are already coherent. A broader build is useful when memberships, workspace rental and firing are presented as interchangeable access.",
     "quoteQuestions": [
-      "What must be made or prepared before a firing request can be accepted?",
-      "Which material details require staff review?",
-      "When is workspace included, separately available or unavailable with a firing service?"
+      "Which services do customers confuse before they book?",
+      "What must customers prepare, and which details need staff review?",
+      "Which questions need translated answers for your own customers?"
     ],
     "coverageNote": "AlterWork Studios lists 40-20 22nd Street, Long Island City, Queens. Wonder and Method is a Buffalo studio working remotely with businesses in this county. Named businesses are public examples, not clients or partners.",
     "sources": [
@@ -62707,9 +62707,9 @@
   {
     "areaId": "pennsylvania/philadelphia",
     "market": "Philadelphia / Philadelphia County, PA",
-    "lead": "A report that helps an organization choose its next step is different from a formal building plan. I help Philadelphia specialists make that boundary clear when they describe assessment services.",
-    "decisionTitle": "Explain what the space assessment helps decide and what needs a later plan.",
-    "decision": "The Conservation Center for Art & Historic Artifacts describes a space assessment for collection storage with a report, workbook and options for the organization to consider. It explicitly distinguishes that assessment from a formal space plan involving building design and construction. For a specialist-service website, I can clarify the output and its use or build a fuller introduction connecting current constraints, decision makers and later work. A buyer should know what the assessment provides without treating it as construction documentation.",
+    "lead": "A service website should explain what the buyer receives, show relevant evidence and make the first inquiry useful. I help Philadelphia businesses clarify deliverables and service boundaries, using a collection-storage assessment as one optional specialist example.",
+    "decisionTitle": "Explain the deliverable before the project inquiry.",
+    "decision": "Local planning example. The Conservation Center for Art & Historic Artifacts describes a space assessment for collection storage with a report, workbook and options for the organization to consider. It explicitly distinguishes that assessment from a formal space plan involving building design and construction. For a specialist-service website, I can clarify the output and its use or build a fuller introduction connecting current constraints, decision makers and later work. A buyer should know what the assessment provides without treating it as construction documentation.",
     "scopes": [
       {
         "title": "Clarify assessment output and purpose",
@@ -62718,7 +62718,7 @@
           "Report and options to consider",
           "Next decisions and general questions"
         ],
-        "request": "Explain what the customer receives and the decisions it can inform.",
+        "request": "Describe the storage decision your organization faces and ask which assessment deliverables would help you make it.",
         "supplies": "Your current assessment deliverables, actual scope and examples approved for publication.",
         "check": "An organization can discuss reorganizing its collection storage without assuming the assessment supplies architectural construction drawings."
       },
@@ -62730,7 +62730,7 @@
           "Recommendations and organizational choices",
           "Separate planning and implementation roles"
         ],
-        "request": "Show how the assessment supports a next step while keeping later professional services distinct.",
+        "request": "Review what the assessment provides, then ask what separate planning or implementation work your next step would require.",
         "supplies": "Actual preparation needs, decision-maker involvement and your process for agreeing any additional consultation.",
         "check": "A board considering renovation can distinguish recommendations from a commissioned formal plan and identify what further work still needs agreement."
       }
@@ -62773,8 +62773,8 @@
     },
     "scopeTrigger": "A clearer deliverable comparison may be enough. A fuller build helps when assessment, planning and implementation appear as one undifferentiated service.",
     "quoteQuestions": [
-      "What decision is your assessment designed to support?",
-      "What does the customer receive and how can they use it?",
+      "Which service or deliverable is hardest for customers to understand?",
+      "What examples can you show, and what should a buyer learn from them?",
       "Which later planning or implementation services need separate agreement?"
     ],
     "coverageNote": "The Conservation Center for Art & Historic Artifacts lists its Philadelphia location at 264 South 23rd Street in Philadelphia County. Wonder and Method is a Buffalo studio working remotely with businesses in this county. Named businesses are public examples, not clients or partners.",
@@ -72403,7 +72403,7 @@
           "Equipment handoff locations",
           "Passenger-travel responsibility"
         ],
-        "request": "Help customers understand exactly what is transported and what they still need to arrange.",
+        "request": "Identify the boat and proposed equipment handoff points, and arrange passenger travel separately.",
         "supplies": "Actual equipment services, approved handoff descriptions and precise passenger-transport wording.",
         "check": "A customer bringing their own kayak can ask about moving it without assuming the service includes a ride for the paddler."
       },
@@ -72415,7 +72415,7 @@
           "Handoff and travel responsibilities",
           "Existing reservations and general questions"
         ],
-        "request": "Explain the different outing formats and equipment arrangements without conflating their inclusions.",
+        "request": "Choose the outing and equipment arrangement, then ask the operator to confirm the handoffs while checking your group’s own travel plan.",
         "supplies": "Approved service comparisons, current destination descriptions, actual equipment handoffs and operator-maintained planning instructions.",
         "check": "A visitor can distinguish the selected outing, the boat arrangement and the group's own travel plan before proceeding."
       }
@@ -115825,9 +115825,9 @@
   {
     "areaId": "west-virginia/upshur",
     "market": "Upshur County, WV",
-    "lead": "A workshop can sell components for someone else’s project as well as complete objects. I help Upshur County makers explain what the buyer is actually asking the shop to supply.",
-    "decisionTitle": "Make the basket component distinguishable from a finished wooden object.",
-    "decision": "Buckhannon Upshur Work Adjustment Center presents basket bottoms in several styles alongside other woodworking such as benches, bins and shelving. For an illustrative workshop website, I can clarify product captions or organize a fuller catalog introduction. A basket-bottom inquiry should preserve the component’s shape and appearance without implying that the workshop supplies the finished basket around it.",
+    "lead": "Customers should be able to distinguish a component, a finished product and custom work. I help Upshur County makers write clear product captions and organize inquiries around what they actually supply. Basket bottoms offer one concise example.",
+    "decisionTitle": "Distinguish components, finished products and custom work.",
+    "decision": "Local planning example. Buckhannon Upshur Work Adjustment Center presents basket bottoms in several styles alongside other woodworking such as benches, bins and shelving. For an illustrative workshop website, I can clarify product captions or organize a fuller catalog introduction. A basket-bottom inquiry should preserve the component’s shape and appearance without implying that the workshop supplies the finished basket around it.\n\nIllustrative caption: “Wooden basket bottom — a component for your basket-making project. Ask about the pictured shape and decoration; a completed basket is not included in this example.” The maker would approve the caption and available options.",
     "scopes": [
       {
         "title": "Clarify the component examples",
@@ -115836,7 +115836,7 @@
           "Shape and decorative treatment",
           "Product questions and inquiry"
         ],
-        "request": "Explain what each component example shows and what the buyer needs to discuss.",
+        "request": "Choose a component example and describe the shape and decoration you need when asking the workshop for details.",
         "supplies": "Approved images, current product descriptions and the information staff request about a component.",
         "check": "A visitor can identify a basket bottom and distinguish its shape from its decorative treatment."
       },
@@ -115848,7 +115848,7 @@
           "Example captions and supplied work",
           "Custom questions and owner updates"
         ],
-        "request": "Organize the workshop’s range around what is actually supplied.",
+        "request": "Identify whether you need a component, a finished object or custom work, and send that choice with your inquiry.",
         "supplies": "Current product families, accurate captions, accepted custom-work descriptions and update ownership.",
         "check": "A basket maker and a customer seeking a complete wooden bin can each describe the intended purchase without assuming the same production scope."
       }
@@ -115892,8 +115892,8 @@
     "scopeTrigger": "The workshop prepares and approves production drawings. Product configurators and live-inventory connections need a separate website specification. The catalog can explain choices through the existing inquiry route.",
     "quoteQuestions": [
       "Which examples are components rather than complete products?",
-      "How should buyers distinguish shape from decoration?",
-      "What custom questions can staff assess through the present route?"
+      "What should each product caption say is included?",
+      "Which custom-work questions can staff assess through the current inquiry route?"
     ],
     "coverageNote": "For Upshur County, WV website buyers. Buckhannon Upshur Work Adjustment Center lists 211 Little Sand Run Road, Buckhannon, in Upshur County. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
     "sources": [
@@ -128574,8 +128574,8 @@
   {
     "areaId": "texas/cochran",
     "market": "Cochran County, TX",
-    "lead": "A digital-resource login may depend on the selected library as well as the card itself. I help Morton and Cochran County organizations put the right provider and credential instructions beside each access link.",
-    "decisionTitle": "Choose the correct digital-library provider and credential format before asking for login help.",
+    "lead": "Customers need to reach the right service and know where to get help if access fails. I help Cochran County organizations build clear resource menus with service-specific instructions and a maintained support route. Digital-library access is one example.",
+    "decisionTitle": "Connect each service link to its access instructions and support.",
     "decision": "Love Memorial Library in Morton gives West Texas Digital Library users three instructions: select the library, enter the library card number, and use the telephone number on file with its area code and dashes. For your website, I can make provider-specific access instructions available beside each resource link, and route unknown credentials to staff. A hypothetical patron reaching West Texas Digital Library can check library selection and telephone formatting before assuming the card itself is invalid.",
     "scopes": [
       {
@@ -128604,9 +128604,9 @@
     ],
     "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of resource and library selection. A fuller build can connect digital-resource introduction with maintained help links. Public instructions can support the existing staff and catalog routes. Borrower-account access, credential handling and eligibility decisions need separate assessment; no borrowing history is needed for this content brief.",
     "quoteQuestions": [
-      "Which library selection and credential format does each provider actually require?",
-      "What should customers know about required credential format?",
-      "Who confirms the information for staff recovery route?"
+      "Which service should each access link open?",
+      "Who helps when a customer cannot sign in?",
+      "Which existing provider instructions and support links must remain current?"
     ],
     "coverageNote": "For website projects in Cochran County, including the Morton example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
     "sources": [
@@ -129683,8 +129683,8 @@
   {
     "areaId": "texas/crockett",
     "market": "Crockett County, TX",
-    "lead": "Some services need preparation even while the building is open. I help Ozona and Crockett County organizations put that preparation beside the relevant service so visitors know what to do before arriving.",
-    "decisionTitle": "Identify which library service needs preparation before arrival.",
+    "lead": "Customers should know what to prepare before arriving for a service. I help Crockett County organizations build service menus that put call-ahead instructions, material questions and staff contacts beside the relevant choice. Library lamination is one example.",
+    "decisionTitle": "Show preparation beside the service that needs it.",
     "decision": "Crockett County Public Library specifically asks lamination customers to contact it shortly in advance so the machine can warm up. It separately lists printing, faxing, meeting facilities and digital access help. For your website, I can build a service menu with preparation notes at the relevant action, using a short inquiry for unknown material or timing questions. A hypothetical lamination visitor sees the call-ahead warm-up request before leaving, while ordinary printing is not assigned an invented appointment rule.",
     "scopes": [
       {
@@ -129713,9 +129713,9 @@
     ],
     "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of service-specific preparation. A fuller build can connect service menu with staff confirmation. The proposed content can support the existing inquiry or booking route. Live availability, payments and new reservation behavior need separate assessment; staff confirm actual arrangements.",
     "quoteQuestions": [
-      "Which services need staff preparation before a visitor arrives?",
-      "What should customers know about lamination call-ahead note?",
-      "Who confirms the information for ordinary hours and help route?"
+      "Which services require customers to call ahead, and why?",
+      "What materials or timing details should customers discuss before arriving?",
+      "Who approves the preparation instructions and keeps the service contacts current?"
     ],
     "coverageNote": "For website projects in Crockett County, including the Ozona example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
     "sources": [
@@ -129940,9 +129940,9 @@
   {
     "areaId": "texas/dallas",
     "market": "Dallas County, TX",
-    "lead": "Free admission does not always mean that every visit uses the same reservation route. I help Dallas County organizations explain visit categories before a family, member or group chooses tickets.",
-    "decisionTitle": "Choose the visit category before treating free admission or membership as the whole reservation.",
-    "decision": "Dallas Museum of Art requires tickets for every visitor despite free general admission and publishes distinct member and school-group routes. It states that school and similar organized groups must use the school program rather than general admission tickets. For your website, I can put visit purpose before the ticket button, then retain the selected route and preparation through the confirmation and arrival instructions. A hypothetical community class is shown the school-group route rather than a general-admission workaround; its final instructions preserve the actual operator and entrance.",
+    "lead": "Different customer groups may need different booking or inquiry routes. I help Dallas County organizations put the visitor’s purpose before the action button and keep the selected service in the preparation instructions. A museum’s individual and school-group routes illustrate the work.",
+    "decisionTitle": "Match the customer group to the right next step.",
+    "decision": "Local planning example. Dallas Museum of Art requires tickets for every visitor despite free general admission and publishes distinct member and school-group routes. It states that school and similar organized groups must use the school program rather than general admission tickets. For your website, I can put visit purpose before the ticket button, then retain the selected route and preparation through the confirmation and arrival instructions. A hypothetical community class is shown the school-group route rather than a general-admission workaround; its final instructions preserve the actual operator and entrance.\n\nThe proposed change is concrete: replace one undifferentiated ticket action with a choice between an individual visit and an organized-group visit, each leading to the existing appropriate route. The owner supplies and approves those categories.",
     "scopes": [
       {
         "title": "Clarify individual and member routes",
@@ -129953,7 +129953,7 @@
         ],
         "request": "Identify the visit category before choosing individual, member or organized-group reservations.",
         "supplies": "Visit category, participant count, required reservation type, applicable lead time and operator-specific entrance.",
-        "check": "A hypothetical community class is shown the school-group route rather than a general-admission workaround; its final instructions preserve the actual operator and entrance."
+        "check": "An organized-group visitor can identify the dedicated program route before selecting tickets; the inquiry preserves the group category."
       },
       {
         "title": "Connect visit-purpose selection to the next step",
@@ -129970,9 +129970,9 @@
     ],
     "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of individual and member routes. A fuller build can connect visit-purpose selection with operator-specific handoff. The proposed content can support the existing inquiry or booking route. Live availability, payments and new reservation behavior need separate assessment; staff confirm actual arrangements.",
     "quoteQuestions": [
-      "Which visitors must use a dedicated program even when general admission is free?",
-      "What should customers know about organized-group requirements?",
-      "Who confirms the information for category-specific preparation?"
+      "Which customer groups need different booking or inquiry routes?",
+      "What does each group need to know before proceeding?",
+      "Which part of your current website sends people to the wrong next step?"
     ],
     "coverageNote": "For website projects in Dallas County, including the Dallas example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
     "sources": [
@@ -131490,9 +131490,9 @@
   {
     "areaId": "texas/fannin",
     "market": "Fannin County, TX",
-    "lead": "A restarted probation period cannot be understood from the signup date alone. I help Fannin County businesses turn that kind of customer decision into clear website content.",
-    "decisionTitle": "Explain what restarts a probation period before relying on its original end date.",
-    "decision": "Bonham Public Library publishes a 90-day new-borrower probation with limited borrowing. A late return during probation adds another 90-day period after the item is returned and all fines and fees are paid. For a proposed lending website, I would show the event that starts the new period beside the ordinary probation explanation. A signup date alone cannot settle the next borrowing stage after a late item. The page should help a borrower ask staff to confirm the current status through the existing private account route, while a public example explains the sequence with invented dates. I can clarify that sequence on an existing policy page or connect registration, restricted borrowing and status questions in a fuller introduction. The page would explain the policy rather than calculate a patron’s eligibility.",
+    "lead": "Customers need to understand their account stage and which action changes it. I help Fannin County organizations explain those stages and connect uncertain cases to account support. A library’s new-borrower probation policy provides one example.",
+    "decisionTitle": "Explain account stages and the route to status confirmation.",
+    "decision": "Local planning example. Bonham Public Library publishes a 90-day new-borrower probation with limited borrowing. A late return during probation adds another 90-day period after the item is returned and all fines and fees are paid. For a proposed lending website, I would show the event that starts the new period beside the ordinary probation explanation. A signup date alone cannot settle the next borrowing stage after a late item. The page should help a borrower ask staff to confirm the current status through the existing private account route, while a public example explains the sequence with invented dates. I can clarify that sequence on an existing policy page or connect registration, restricted borrowing and status questions in a fuller introduction. The page would explain the policy rather than calculate a patron’s eligibility.",
     "scopes": [
       {
         "title": "Clarify the probation explanation",
@@ -131502,7 +131502,7 @@
           "Private status confirmation"
         ],
         "request": "Ask staff to confirm the current borrowing stage through the established private route.",
-        "supplies": "The approved restart condition and restricted borrowing stage; Which staff route confirms return, payment and current status; How the policy is reviewed when its terms change.",
+        "supplies": "The approved restart condition and restricted borrowing stage; which staff route confirms return, payment and current status; how the policy is reviewed when its terms change.",
         "check": "A fictional borrower returns an overdue item near the original day 90 and pays later. The explanation does not announce full privileges on the original signup anniversary."
       },
       {
@@ -131519,9 +131519,9 @@
     ],
     "scopeTrigger": "A focused edit can explain the probation sequence with a fictional example. A fuller introduction can connect registration, borrowing stages and account help. Staff confirms actual borrower dates; an account calculator would require separate assessment.",
     "quoteQuestions": [
-      "What should the website explain about the approved restart condition and restricted borrowing stage?",
-      "What should the website explain about which staff route confirms return, payment and current status?",
-      "What should the website explain about how the policy is reviewed when its terms change?"
+      "Which account stages do customers need explained?",
+      "What events change a customer’s next step?",
+      "Who confirms private account status and approves public policy updates?"
     ],
     "coverageNote": "This public example is in Bonham, Fannin County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
     "sources": [
@@ -133260,9 +133260,9 @@
   {
     "areaId": "texas/gregg",
     "market": "Gregg County, TX",
-    "lead": "Another copy of a title is different from borrowing the same physical copy again. I help Gregg County businesses turn that kind of customer decision into clear website content.",
-    "decisionTitle": "Distinguish the returned copy from another copy of the same title.",
-    "decision": "Longview Public Library says video games cannot be renewed. Its media instructions require returned items to remain on the shelf for 24 hours while allowing patrons to borrow another available copy of the same item. For a proposed lending page, I would keep the physical copy and the title distinct when explaining a repeat request. Returning a game should not read as an immediate renewal of that same copy. The page can show the published waiting condition and direct a borrower to the catalog or front desk to ask about another copy. A focused edit would improve those adjacent instructions; a fuller borrowing introduction would connect material types, renewal choices and staff questions without presenting catalog availability as a completed checkout.",
+    "lead": "Help customers understand availability and their next action. I help Gregg County organizations explain the difference between seeing an item listed, asking for it and being able to collect it. A library game-lending rule provides one worked example.",
+    "decisionTitle": "Turn availability information into a useful next step.",
+    "decision": "Local planning example. Longview Public Library says video games cannot be renewed. Its media instructions require returned items to remain on the shelf for 24 hours while allowing patrons to borrow another available copy of the same item. For a proposed lending page, I would keep the physical copy and the title distinct when explaining a repeat request. Returning a game should not read as an immediate renewal of that same copy. The page can show the published waiting condition and direct a borrower to the catalog or front desk to ask about another copy. A focused edit would improve those adjacent instructions; a fuller borrowing introduction would connect material types, renewal choices and staff questions without presenting catalog availability as a completed checkout.\n\nIllustrative customer-facing wording: “This game cannot be renewed. You can ask the catalog or front desk about another available copy of the same title.” The returned copy’s published waiting condition would remain beside that instruction.",
     "scopes": [
       {
         "title": "Clarify the media return instructions",
@@ -133272,7 +133272,7 @@
           "Another-copy inquiry"
         ],
         "request": "Ask about another copy through the catalog or front desk while respecting the returned item’s published condition.",
-        "supplies": "The current rules by material type; How the catalog identifies title availability versus a specific copy; The approved staff route for another-copy questions.",
+        "supplies": "The current rules by material type; how the catalog identifies title availability versus a specific copy; the approved staff route for another-copy questions.",
         "check": "A fictional borrower returning a game can ask about another copy of the same title without assuming the returned copy is immediately available again."
       },
       {
@@ -133289,9 +133289,9 @@
     ],
     "scopeTrigger": "A focused edit can distinguish a returned copy from another copy of the same title. A fuller introduction can connect loan conditions, renewal choices and the catalog. Availability checks and account automation would need separate scope.",
     "quoteQuestions": [
-      "What should the website explain about the current rules by material type?",
-      "What should the website explain about how the catalog identifies title availability versus a specific copy?",
-      "What should the website explain about the approved staff route for another-copy questions?"
+      "Which availability terms confuse your customers?",
+      "How should customers ask about an alternative item?",
+      "Which existing system or staff member confirms that an item can be collected?"
     ],
     "coverageNote": "This public example is in Longview, Gregg County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
     "sources": [
@@ -134016,9 +134016,9 @@
     }
   },
   {
-    "lead": "A museum ticket choice can depend on who is coming and which proof they need to bring. I help Harris County organizations make those requirements understandable before visitors reach checkout.",
-    "decisionTitle": "Connect party eligibility, ticket choice and arrival proof.",
-    "decision": "Children's Museum Houston requires adults to have a child in their party. Its visitor instructions also give ASTC Passport visitors an online code step and ask them to present a qualifying membership card at the box office. For a proposed museum site, I would explain those as different checks: whether the party fits the visit, which ticket route applies and what must be shown on arrival. A hypothetical adult-only visitor should encounter the party requirement before selecting admission. A reciprocal visitor should not read a completed online step as proof that the box-office requirement has disappeared. The museum's current terms remain authoritative; the proposed site organizes the preparation around the existing ticket provider.",
+    "lead": "A service page should explain who an offer is for, which option to choose and what to bring. I help Harris County organizations keep those instructions together before customers book. Museum admission and reciprocal membership provide an optional attraction example.",
+    "decisionTitle": "Explain service fit and preparation before booking.",
+    "decision": "Local planning example. Children's Museum Houston requires adults to have a child in their party. Its visitor instructions also give visitors using the Association of Science and Technology Centers (ASTC) Passport program an online code step and ask them to present a qualifying membership card at the box office. For a proposed museum site, I would explain those as different checks: whether the party fits the visit, which ticket route applies and what must be shown on arrival. A hypothetical adult-only visitor should encounter the party requirement before selecting admission. A reciprocal visitor should not read a completed online step as proof that the box-office requirement has disappeared. The museum's current terms remain authoritative; the proposed site organizes the preparation around the existing ticket provider.",
     "scopes": [
       {
         "title": "Clarify the admission preparation page",
@@ -134046,9 +134046,9 @@
     ],
     "scopeTrigger": "A focused update can make the current ticket instructions clearer. A fuller site is useful when visit fit, reciprocal admission and arrival information are spread across pages. The museum verifies eligibility and proof. The public project does not need membership documents or children's personal information; account verification and ticket-provider changes require separate scope.",
     "quoteQuestions": [
-      "Which party requirements should be visible before ticket selection?",
-      "Which discounts or reciprocal routes still require proof on arrival?",
-      "Where should a visitor go when their situation is not covered by the published options?"
+      "Which customer requirements should appear before booking?",
+      "Which options require something to be shown or confirmed on arrival?",
+      "Where should a customer ask when the published choices do not cover their situation?"
     ],
     "areaId": "texas/harris",
     "market": "Harris County, TX",
@@ -151510,9 +151510,9 @@
   {
     "areaId": "missouri/henry",
     "market": "Henry County, MO",
-    "lead": "For a Henry County website project, start with the choice a customer needs to make. A visitor needs to know whether to prepare a printed advance pass or follow the onsite process, without confusing either with a campsite or boat reservation.",
-    "decisionTitle": "Explain which day-use pass instructions apply before a visitor arrives.",
-    "decision": "The federal Windsor Crossing Boat Ramp pass page distinguishes an advance purchase, which must be printed and matches a date and vehicle plate, from an onsite purchase and its proof-of-payment instructions. For your website, I can organize advance pass preparation, onsite pass instructions, correct facility link so the next step follows the selected option. Select the intended facility and purchase route, then follow the official pass service with the required date and vehicle information ready.",
+    "lead": "Customers often leave a business website to buy, book or apply through another service. I help Henry County businesses explain what to prepare before that handoff and link to the correct destination. A public day-use pass is one example.",
+    "decisionTitle": "Prepare customers before they follow an external service.",
+    "decision": "Local planning example. The federal Windsor Crossing Boat Ramp pass page distinguishes an advance purchase, which must be printed and matches a date and vehicle plate, from an onsite purchase and its proof-of-payment instructions. For your website, I can explain advance and onsite purchase separately and link each route to the correct facility. Select the intended facility and purchase route, then follow the official pass service with the required date and vehicle information ready.",
     "scopes": [
       {
         "title": "Explain which day-use pass instructions apply before a visitor arrives",
@@ -151526,11 +151526,11 @@
         "check": "Test an advance buyer before departure and an onsite buyer on a phone. Neither route should borrow the other's display instructions or describe payment as a reserved space."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect advance pass preparation with correct facility link. Agree the content owner and review process before selecting forms or connections. Keep plate and payment entry on the official service; do not collect those details in a general inquiry.",
+    "scopeTrigger": "A focused edit can add preparation instructions beside an existing external-service link. A fuller project can compare the available routes and keep the right facility and instructions attached to each. Agree who reviews destination changes. Vehicle-plate and payment entry stay on the official service.",
     "quoteQuestions": [
-      "The current official purchasing URL, facility identifier, display instructions for both routes and responsibility for checking changes to the federal service — which of these can you supply?",
-      "Which parts of this proposed request should your team change: Select the intended facility and purchase route, then follow the official pass service with the required date and vehicle information ready.",
-      "Who should approve the result of this check: Test an advance buyer before departure and an onsite buyer on a phone. Neither route should borrow the other's display instructions or describe payment as a reserved space."
+      "Which external tools or links confuse your customers?",
+      "What must a customer prepare before leaving your site?",
+      "Who checks the destination links and approves changes to the instructions?"
     ],
     "coverageNote": "Website project planning for Henry County, including the public example near Clinton. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
     "sources": [
@@ -152601,9 +152601,9 @@
   {
     "areaId": "missouri/livingston",
     "market": "Livingston County, MO",
-    "lead": "For a Livingston County website project, start with the choice a customer needs to make. An applicant needs to prepare for the appropriate in-person route without assuming that a general online question completes enrollment.",
-    "decisionTitle": "Show which library-card preparation route applies to each applicant.",
-    "decision": "Livingston County Library distinguishes resident or property-taxpayer eligibility from paid nonresident options. Its application guidance asks for identity and address evidence, has an additional tax-receipt route, and requires a parent to sign in person for children in the stated age range. For your website, I can organize applicant route comparison, what to bring, child and nonresident applications so the next step follows the selected option. Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
+    "lead": "Different customers may need different preparation before they apply or visit. I help Livingston County organizations compare those routes, explain what to bring and keep questions connected to the right staff contact. Library-card applications offer one example.",
+    "decisionTitle": "Show the preparation that applies to each customer.",
+    "decision": "Local planning example. Livingston County Library distinguishes resident or property-taxpayer eligibility from paid nonresident options. Its application guidance asks for identity and address evidence, has an additional tax-receipt route, and requires a parent to sign in person for children in the stated age range. For your website, I can compare applicant categories and attach the correct preparation checklist to each. Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
     "scopes": [
       {
         "title": "Show which library-card preparation route applies to each applicant",
@@ -152617,11 +152617,11 @@
         "check": "Test a nonresident property owner, a paid nonresident and a parent applying for a child. Each should see the relevant evidence and in-person step without the website deciding eligibility."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect applicant route comparison with child and nonresident applications. Agree the content owner and review process before selecting forms or connections. No public form should request identity scans, tax documents or a child's detailed personal information.",
+    "scopeTrigger": "A focused edit can clarify an existing application page. A fuller project can compare customer categories, attach the right preparation checklist and explain the staff review. Identity documents and detailed child information remain in the organization’s approved process.",
     "quoteQuestions": [
-      "Approved eligibility wording, accepted evidence, current nonresident term options, child-signature instructions and the branch contact for disputed cases — which of these can you supply?",
-      "Which parts of this proposed request should your team change: Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
-      "Who should approve the result of this check: Test a nonresident property owner, a paid nonresident and a parent applying for a child. Each should see the relevant evidence and in-person step without the website deciding eligibility."
+      "Which customer groups need different instructions?",
+      "What is unclear on your current website?",
+      "Who approves each process and handles exceptions?"
     ],
     "coverageNote": "Website project planning for Livingston County, including the public example in or near Chillicothe. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
     "sources": [
@@ -159725,12 +159725,12 @@
   {
     "areaId": "iowa/monona",
     "market": "Monona County, IA",
-    "lead": "Check the stay length and packing list before choosing cabin dates.",
+    "lead": "I help Monona County, IA organizations make the cabin description and stay rules easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Check the stay length and packing list before choosing cabin dates.",
     "decision": "Monona County Conservation’s RT Reese Cabin listing describes year-round availability, a two-night minimum for Friday and Saturday nights and a three-night minimum for the named summer holidays. It lists a furnished kitchen but asks renters to supply bedding, pillows, towels and toiletries.\n\nFor a lodging website, I would put the selected dates, minimum stay and bring-along list beside the cabin description. A furnished cabin should not imply that every personal item is supplied. The owner confirms the current calendar and rules; a date inquiry alone does not establish availability.",
     "scopes": [
       {
-        "title": "Check the stay length and packing list before choosing cabin dates",
+        "title": "Explain cabin stay requirements",
         "pages": [
           "Present ordinary weekend and named holiday minimums beside the date inquiry.",
           "Separate fixed kitchen facilities from guest-supplied sleeping and washing items.",
@@ -159741,18 +159741,18 @@
         "check": "A proposed one-night Friday stay is not presented as a ready-to-book option."
       },
       {
-        "title": "Connect stay dates, what to pack, booking handoff",
+        "title": "Connect the cabin choice to a prepared arrival",
         "pages": [
-          "Stay dates — Present ordinary weekend and named holiday minimums beside the date inquiry.",
-          "What to pack — Separate fixed kitchen facilities from guest-supplied sleeping and washing items.",
-          "Booking handoff — Retain the exact cabin and dates when linking to the existing reservation provider."
+          "Connect the cabin choice to a prepared arrival",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Choose cabin dates that meet the stay minimum, check the packing list, and use the linked reservation route for that cabin.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating stay dates, what to pack, booking handoff.",
+        "supplies": "Owner-approved information for the cabin’s minimum stays, packing list and reservation link, the current destination links and a named editor responsible for keeping them current.",
         "check": "A visitor can tell that a furnished kitchen does not mean bedding and towels are included. Changing to a holiday weekend prompts a review of stay length before the handoff."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify stay dates on an existing page. A fuller project can connect stay dates, what to pack, booking handoff across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the cabin description and stay rules. A fuller project can connect the packing information and the handoff to the correct reservation listing. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which stay dates require a longer booking?",
       "Which supplied items and guest packing items should the cabin page distinguish?",
@@ -159827,12 +159827,12 @@
   {
     "areaId": "iowa/monroe",
     "market": "Monroe County, IA",
-    "lead": "Tell readers which materials can leave the library and who decides an outside loan renewal.",
+    "lead": "I help Monroe County, IA organizations make the distinction between on-site research and borrowing easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Tell readers which materials can leave the library and who decides an outside loan renewal.",
     "decision": "Carnegie-Evans Public Library’s circulation policy places genealogy materials, historic books and reference books in an on-site-use category. It separately describes ordinary borrowing, holds and interlibrary loans; renewal of an outside loan requires permission from the lending library.\n\nI would organize a library or archive introduction around the material and the intended use: research in the building, borrow from the collection or ask staff for an outside loan. A catalog or collection description should not turn every listed resource into a take-home item. Preparation can remain on a public page while account decisions stay with staff.",
     "scopes": [
       {
-        "title": "Tell readers which materials can leave the library and who decides an outside loan renewal",
+        "title": "Explain how each collection can be used",
         "pages": [
           "Put on-site research beside the borrowing options, with each material category named.",
           "Explain the staff request and the lending library’s separate renewal decision.",
@@ -159843,18 +159843,18 @@
         "check": "A genealogy visitor is shown the on-site route rather than a promise to borrow the original record."
       },
       {
-        "title": "Connect material and purpose, outside loan, return route",
+        "title": "Connect research, borrowing and returns",
         "pages": [
-          "Material and purpose — Put on-site research beside the borrowing options, with each material category named.",
-          "Outside loan — Explain the staff request and the lending library’s separate renewal decision.",
-          "Return route — Match return instructions to the material that was borrowed."
+          "Connect research, borrowing and returns",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Identify the material you need, ask library staff whether it can be borrowed, request any outside-loan renewal through staff, and follow the return route for that material.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating material and purpose, outside loan, return route.",
+        "supplies": "Owner-approved information for on-site material categories, outside-loan requests and return instructions, the current destination links and a named editor responsible for keeping them current.",
         "check": "A renewal inquiry does not display an invented extension date. The proposed instructions keep the book receptacle distinct from the DVD receptacle."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify material and purpose on an existing page. A fuller project can connect material and purpose, outside loan, return route across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the distinction between on-site research and borrowing. A fuller project can connect outside-loan requests, renewal questions and material-specific return instructions. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which materials can be borrowed and which must be used on site?",
       "Who confirms a renewal when another library supplied the item?",
@@ -159929,12 +159929,12 @@
   {
     "areaId": "iowa/montgomery",
     "market": "Montgomery County, IA",
-    "lead": "Check whether an exam fits the available proctoring arrangement before scheduling it.",
+    "lead": "I help Montgomery County, IA organizations make the requirements staff must review before accepting an exam easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Check whether an exam fits the available proctoring arrangement before scheduling it.",
     "decision": "Red Oak Public Library’s proctor policy requires advance scheduling and director approval, says the exam must end at least 30 minutes before closing, and does not allow installation of special software. Staff observe while performing other duties; the policy says constant uninterrupted observation may not be possible.\n\nFor a service website, I would explain the institutional requirements that need review before a student chooses a time. The public page can help someone prepare the exam duration, delivery method and supervision requirement without collecting the test, credentials or identification. Availability and acceptance remain staff decisions.",
     "scopes": [
       {
-        "title": "Check whether an exam fits the available proctoring arrangement before scheduling it",
+        "title": "Explain which exams staff can consider",
         "pages": [
           "Explain which institution requirements staff must review before accepting the request.",
           "Ask for duration and show that completion must precede closing.",
@@ -159945,18 +159945,18 @@
         "check": "An exam requiring uninterrupted observation is sent for review rather than described as automatically supported."
       },
       {
-        "title": "Connect exam fit, time needed, materials and return",
+        "title": "Connect exam preparation to staff approval",
         "pages": [
-          "Exam fit — Explain which institution requirements staff must review before accepting the request.",
-          "Time needed — Ask for duration and show that completion must precede closing.",
-          "Materials and return — Separate receipt of the exam from its scheduled sitting and return to the institution."
+          "Connect exam preparation to staff approval",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Send the library the exam provider requirements, expected duration and return instructions; ask staff to confirm suitability before scheduling.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating exam fit, time needed, materials and return.",
+        "supplies": "Owner-approved information for supervision limits, scheduling requirements and exam-material instructions, the current destination links and a named editor responsible for keeping them current.",
         "check": "A two-hour exam requested one hour before the required finish time is visibly unsuitable. The student can identify the need to check that materials arrived before traveling."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify exam fit on an existing page. A fuller project can connect exam fit, time needed, materials and return across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the requirements staff must review before accepting an exam. A fuller project can connect scheduling preparation and the receipt and return of exam materials. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which exam requirements must staff approve before accepting a date?",
       "How long must the exam finish before closing?",
@@ -160235,12 +160235,12 @@
   {
     "areaId": "iowa/osceola",
     "market": "Osceola County, IA",
-    "lead": "Keep each campground’s arrival and reservation method attached to its name.",
+    "lead": "I help Osceola County, IA organizations make each park’s reservation or first-come arrival instructions easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Keep each campground’s arrival and reservation method attached to its name.",
-    "decision": "Osceola County’s recreation page says Hawkeye Point campsites are first come, first served and do not accept reservations. The same page links a reservation system for Sam Robinson Memorial Park in Sibley. Hawkeye Point’s page also distinguishes its physical address from the foundation’s mailing address.\n\nFor an accommodation or recreation website, I would organize the choice by the exact campground before showing an action. A shared list of places should not make one site’s booking link appear to reserve another. A short arrival panel can also keep the place to visit separate from the address used for correspondence.",
+    "decision": "Osceola County’s recreation page says Hawkeye Point campsites are first come, first served and do not accept reservations. The same page links a reservation system for Sam Robinson Memorial Park in Sibley. Hawkeye Point’s page also distinguishes its physical address from the foundation’s mailing address.\n\nFor an accommodation or recreation website, I would organize the choice by the exact campground before showing an action. A shared list of places should not make one site’s booking link appear to reserve another. A short arrival panel can also keep the place to visit separate from the address used for correspondence.\n\nA proposed park comparison would show “Hawkeye Point — first-come arrival; no reservations” and “Sam Robinson Memorial Park — follow this park’s reservation link.” Each arrival panel would label “Visit address” separately from “Mailing address,” using owner-verified addresses.",
     "scopes": [
       {
-        "title": "Keep each campground’s arrival and reservation method attached to its name",
+        "title": "Give each campground its own next step",
         "pages": [
           "Give each park its own reservation or arrival instruction.",
           "Explain what a first-come site means in the owner’s approved wording.",
@@ -160251,18 +160251,18 @@
         "check": "Selecting Hawkeye Point does not send the visitor to another park’s reservation calendar."
       },
       {
-        "title": "Connect campground choice, availability and arrival",
+        "title": "Add arrival panels for each park",
         "pages": [
-          "Choose the site — Give each park its own reservation or arrival instruction.",
-          "Understand availability — Explain what a first-come site means in the owner’s approved wording.",
-          "Travel to the right place — Label physical and mailing addresses by purpose."
+          "Add arrival panels for each park",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Choose the park first, follow its stated first-come or reservation process, and use that park address for the trip.",
-        "supplies": "Owner-approved campground names, each park’s arrival or reservation instructions, destination addresses and current links, plus the person responsible for updates.",
+        "supplies": "Owner-approved information for park-specific booking methods, physical addresses and mailing addresses, the current destination links and a named editor responsible for keeping them current.",
         "check": "A question about availability is not acknowledged as a held campsite. A map action uses the physical destination rather than the foundation’s mailing address."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify the arrival or reservation method for one campground. A fuller project can connect campground choice, availability and destination information across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify each park’s reservation or first-come arrival instructions. A fuller project can connect separate arrival and correspondence addresses with the correct park links. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which sites take reservations and which use arrival registration?",
       "What can staff actually confirm about an unreserved site?",
@@ -160272,12 +160272,12 @@
     "sources": [
       {
         "url": "https://osceolacountyia.gov/living-here/hawkeye-point/",
-        "label": "Osceola County: Hawkeye Point and recreation",
+        "label": "Osceola County: Hawkeye Point arrival and mailing addresses",
         "observation": "Identifies Hawkeye Point’s physical and mailing addresses and states its campsites do not accept reservations."
       },
       {
         "url": "https://osceolacountyia.gov/living-here/parks-and-recreation/",
-        "label": "Osceola County: Hawkeye Point and recreation",
+        "label": "Osceola County: parks and recreation booking methods",
         "observation": "Lists Hawkeye Point as first come and links reservations for Sam Robinson Memorial Park."
       }
     ],
@@ -160444,12 +160444,12 @@
   {
     "areaId": "iowa/polk",
     "market": "Polk County, IA",
-    "lead": "Separate a school’s field-trip request from a request for bus funding.",
+    "lead": "I help Polk County, IA organizations make the school field-trip request instructions easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Separate a school’s field-trip request from a request for bus funding.",
     "decision": "Polk County Conservation welcomes school field-trip requests but gives county districts priority and says outside-county schools may request spring trips after March 15. Its separate bus scholarship information limits assistance to schools in Polk County, describes one bus per trip up to $200 per school, and asks for the scholarship form at least two weeks before the event.\n\nFor an education-program website, I would give scheduling and transport assistance separate preparation lists. A school can be eligible to ask about a visit without being eligible for the same funding. The public page should identify the school’s location and requested term, then direct the organizer to the appropriate existing form without promising a place or reimbursement.",
     "scopes": [
       {
-        "title": "Separate a school’s field-trip request from a request for bus funding",
+        "title": "Explain the field-trip request",
         "pages": [
           "Explain priority and the request window beside the program inquiry.",
           "Give the bus application its own eligibility and deadline.",
@@ -160460,18 +160460,18 @@
         "check": "An outside-county spring inquiry sees its request timing rather than a blanket statement that every school has the same window."
       },
       {
-        "title": "Connect visit request, transport assistance, separate outcomes",
+        "title": "Keep trip and funding decisions separate",
         "pages": [
-          "Visit request — Explain priority and the request window beside the program inquiry.",
-          "Transport assistance — Give the bus application its own eligibility and deadline.",
-          "Separate outcomes — Name what staff confirm for the trip and what the funding process confirms."
+          "Keep trip and funding decisions separate",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Submit the field-trip request with school and group details, apply separately for any eligible bus assistance, and wait for each outcome.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating visit request, transport assistance, separate outcomes.",
+        "supplies": "Owner-approved information for trip request windows, bus assistance terms and separate confirmation messages, the current destination links and a named editor responsible for keeping them current.",
         "check": "An accepted visit does not display a promise that both buses in a two-bus trip will be reimbursed. A scholarship form receipt is not presented as an awarded payment or a booked field trip."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify visit request on an existing page. A fuller project can connect visit request, transport assistance, separate outcomes across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the school field-trip request instructions. A fuller project can connect the separate bus-assistance application and each decision’s confirmation. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which schools have different request windows?",
       "Who qualifies to apply for transport help and what does it cover?",
@@ -160648,12 +160648,12 @@
   {
     "areaId": "iowa/poweshiek",
     "market": "Poweshiek County, IA",
-    "lead": "Separate visiting the new museum from offering an artifact donation.",
+    "lead": "I help Poweshiek County, IA organizations make the current museum address and arrival information easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Separate visiting the new museum from offering an artifact donation.",
-    "decision": "Grinnell Historical Museum identifies its current home at 703 First Avenue and says it opened that location to visitors in June 2025. The same page says new artifact donations are paused and expresses a hope of resuming in late 2026. It also describes the continuing work of moving and caring for collections.\n\nFor an organization moving premises, I would distinguish the public visit, the collections work and the decision to accept new material. Opening the building to visitors does not mean every service has resumed. A donation inquiry should preserve the current pause and point to approved contact information; an expected restart period should not become an automatic reopening promise.",
+    "decision": "Grinnell Historical Museum identifies its current home at 703 First Avenue and says it opened that location to visitors in June 2025. The same page says new artifact donations are paused and expresses a hope of resuming in late 2026. It also describes the continuing work of moving and caring for collections.\n\nFor an organization moving premises, I would distinguish the public visit, the collections work and the decision to accept new material. Opening the building to visitors does not mean every service has resumed. A donation inquiry should preserve the current pause and point to approved contact information; an expected restart period should not become an automatic reopening promise.\n\nThe proposed page would have two separate panels: “Visit: 703 First Avenue” and “Artifact donations: paused — contact staff before bringing an item.” The editor would maintain a notice owner, review date and approved replacement text. The stated hope of resuming in late 2026 would remain an expectation, not a promised reopening.",
     "scopes": [
       {
-        "title": "Separate visiting the new museum from offering an artifact donation",
+        "title": "Show the current visit address",
         "pages": [
           "Make the current visit address distinct from historical photographs and the former site.",
           "Show whether new material is being accepted and who can confirm a change.",
@@ -160664,18 +160664,18 @@
         "check": "A visitor using an old museum story can still find the First Avenue destination."
       },
       {
-        "title": "Connect current destination, donation status, changing notices",
+        "title": "Maintain a separate donation-status notice",
         "pages": [
-          "Current destination — Make the current visit address distinct from historical photographs and the former site.",
-          "Donation status — Show whether new material is being accepted and who can confirm a change.",
-          "Changing notices — Give temporary service notices an owner and a review date."
+          "Maintain a separate donation-status notice",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Use the current museum destination to plan a visit; check the artifact-intake notice before contacting staff about a donation.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating current destination, donation status, changing notices.",
+        "supplies": "Owner-approved information for the current visit address, donation status and temporary service notices, the current destination links and a named editor responsible for keeping them current.",
         "check": "An artifact inquiry does not tell the donor to drop an object off during a published pause. The phrase late 2026 does not silently turn into acceptance when the calendar reaches that period."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify current destination on an existing page. A fuller project can connect current destination, donation status, changing notices across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the current museum address and arrival information. A fuller project can connect a separately maintained artifact-intake notice with an owner and review date. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which address should a first-time visitor use today?",
       "Which services remain paused after the building opens?",
@@ -160750,12 +160750,12 @@
   {
     "areaId": "iowa/sac",
     "market": "Sac County, IA",
-    "lead": "Explain what occupies a first-come campsite before presenting it as claimed.",
+    "lead": "I help Sac County, IA organizations make the first-come campsite arrival instructions easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Explain what occupies a first-come campsite before presenting it as claimed.",
-    "decision": "Sac County Conservation’s FAQ says its campsites are not reserved in advance. It defines occupancy using a completed registration with the fee deposited, a receipt on the post and a camping unit placed on the site. The same FAQ separately discusses cabin reservations and cabin check-in.\n\nFor a campground website, I would keep advance-reservation language away from first-come sites and explain the owner’s actual arrival procedure in a short sequence. A payment or a paper receipt may be one step in the process rather than the whole claim to a site. The website should help visitors prepare while leaving actual occupancy and availability with the operator.",
+    "decision": "Sac County Conservation’s FAQ says its campsites are not reserved in advance. It defines occupancy using a completed registration with the fee deposited, a receipt on the post and a camping unit placed on the site. The same FAQ separately discusses cabin reservations and cabin check-in.\n\nFor a campground website, I would keep advance-reservation language away from first-come sites and explain the owner’s actual arrival procedure in a short sequence. A payment or a paper receipt may be one step in the process rather than the whole claim to a site. The website should help visitors prepare while leaving actual occupancy and availability with the operator.\n\nA proposed arrival example would present the published steps in order: 1. Complete registration and deposit the fee. 2. Display the receipt on the post. 3. Place the camping unit on the site. The operator would approve the sequence before publication. A separate cabin option would lead to cabin reservation and check-in instructions.",
     "scopes": [
       {
-        "title": "Explain what occupies a first-come campsite before presenting it as claimed",
+        "title": "Explain the campsite arrival sequence",
         "pages": [
           "Label the campsite arrival route separately from cabin reservations.",
           "List registration, fee, posted receipt and physical unit placement in order.",
@@ -160766,18 +160766,18 @@
         "check": "A cabin-account instruction is not reused as a promise to reserve a campsite."
       },
       {
-        "title": "Connect reservation method, on-site sequence, leaving and changes",
+        "title": "Separate campsite arrival from cabin reservations",
         "pages": [
-          "Reservation method — Label the campsite arrival route separately from cabin reservations.",
-          "On-site sequence — List registration, fee, posted receipt and physical unit placement in order.",
-          "Leaving and changes — Point unresolved arrival questions to the staff route."
+          "Separate campsite arrival from cabin reservations",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Check the first-come rules, follow the payment and receipt sequence, and meet the stated physical-occupancy requirement before treating a campsite as claimed.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating reservation method, on-site sequence, leaving and changes.",
+        "supplies": "Owner-approved information for first-come registration steps, cabin reservation instructions and staff contact details, the current destination links and a named editor responsible for keeping them current.",
         "check": "A hypothetical visitor who has only filled out a form is not told the campsite is occupied. The page does not invent a remote hold or a rule allowing an empty site to be kept."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify reservation method on an existing page. A fuller project can connect reservation method, on-site sequence, leaving and changes across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the first-come campsite arrival instructions. A fuller project can connect the cabin reservation route and staff help for changes or uncertainty. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which accommodation types use first-come registration?",
       "What steps establish occupancy at an individual campsite?",
@@ -160852,12 +160852,12 @@
   {
     "areaId": "iowa/scott",
     "market": "Scott County, IA",
-    "lead": "Keep paying visitors separate from the driver and tour-guide count.",
+    "lead": "I help Scott County, IA organizations make the three separate group-count fields easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Keep paying visitors separate from the driver and tour-guide count.",
-    "decision": "Buffalo Bill Museum in LeClaire publishes a bus-tour admission rate with a twelve-person minimum and says bus-tour guides and drivers enter free. Its bus-tour page describes the museum as a regional-history visit.\n\nFor a group-visit website, I would ask an organizer to distinguish visitors from accompanying drivers and guides, and have the owner state which people count toward the published minimum. The page can explain the group route without silently counting free companions as paying guests or inventing a policy for a smaller party. A clear inquiry should retain the proposed visit date and the unresolved headcount question.",
+    "decision": "Buffalo Bill Museum in LeClaire publishes a bus-tour admission rate with a twelve-person minimum and says bus-tour guides and drivers enter free. Its bus-tour page describes the museum as a regional-history visit.\n\nFor a group-visit website, I would ask an organizer to distinguish visitors from accompanying drivers and guides, and have the owner state which people count toward the published minimum. The page can explain the group route without silently counting free companions as paying guests or inventing a policy for a smaller party. A clear inquiry should retain the proposed visit date and the unresolved headcount question.\n\nThe proposed inquiry would label three counts separately: “Visitors,” “Tour guides” and “Drivers.” An illustrative response for ten visitors plus two accompanying staff would say, “Staff need to confirm which people count toward the minimum; this inquiry does not confirm the visit.”",
     "scopes": [
       {
-        "title": "Keep paying visitors separate from the driver and tour-guide count",
+        "title": "Prepare the group inquiry",
         "pages": [
           "Separate visitors, guides and drivers in the preparation instructions.",
           "Explain the minimum and route smaller or uncertain groups to staff.",
@@ -160868,18 +160868,18 @@
         "check": "A group described as ten visitors plus two staff is not automatically treated as satisfying a twelve-person minimum."
       },
       {
-        "title": "Connect party composition, minimum and review, visit planning",
+        "title": "Keep group counts and staff review together",
         "pages": [
-          "Party composition — Separate visitors, guides and drivers in the preparation instructions.",
-          "Minimum and review — Explain the minimum and route smaller or uncertain groups to staff.",
-          "Visit planning — Keep the proposed date and group type with the inquiry."
+          "Keep group counts and staff review together",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Give staff separate counts for paying visitors, drivers and tour guides, and ask which people count toward the minimum before confirming the group visit.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating party composition, minimum and review, visit planning.",
+        "supplies": "Owner-approved information for visitor, guide and driver categories, minimum-count wording and group contact details, the current destination links and a named editor responsible for keeping them current.",
         "check": "The page does not invent a small-group surcharge or automatic rejection. A group question stays an inquiry until the museum confirms the arrangement."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify party composition on an existing page. A fuller project can connect party composition, minimum and review, visit planning across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the three separate group-count fields. A fuller project can connect the proposed visit date, minimum-count question and staff confirmation. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which travelers pay, and which companions enter without charge?",
       "Who counts toward the minimum and what should a smaller party ask?",
@@ -161056,12 +161056,12 @@
   {
     "areaId": "iowa/sioux",
     "market": "Sioux County, IA",
-    "lead": "Preserve the selected cabin’s season and arrival time during comparison.",
+    "lead": "I help Sioux County, IA organizations make the named cabin comparison easier to use. The proposed work below shows how the customer’s choice leads to the right next step.",
     "decisionTitle": "Preserve the selected cabin’s season and arrival time during comparison.",
-    "decision": "Sioux County Conservation’s cabin overview identifies Foxes Den and Bluegill Bungalow at Oak Grove Park as year-round cabins, and Eagles Nest and Whitetail, also at Oak Grove Park, as available April 15 through October 15. It separately gives different check-in and check-out times for Oak Grove and Big Sioux Recreation Area cabins, and says guests supply linens, utensils and toiletries.\n\nFor a cabin website, I would keep the unit name, park, operating season and arrival information in the comparison rather than treating all cabins as one product. A group switching between units should see which details change. The existing reservation provider can continue to handle actual availability while the introduction helps guests choose the right listing.",
+    "decision": "Sioux County Conservation’s cabin overview identifies Foxes Den and Bluegill Bungalow at Oak Grove Park as year-round cabins, and Eagles Nest and Whitetail, also at Oak Grove Park, as available April 15 through October 15. It separately gives different check-in and check-out times for Oak Grove and Big Sioux Recreation Area cabins, and says guests supply linens, utensils and toiletries.\n\nFor a cabin website, I would keep the unit name, park, operating season and arrival information in the comparison rather than treating all cabins as one product. A group switching between units should see which details change. The existing reservation provider can continue to handle actual availability while the introduction helps guests choose the right listing.\n\nTwo illustrative comparison cards would read “Foxes Den · Oak Grove Park · year-round” and “Eagles Nest · Oak Grove Park · April 15–October 15.” Each would carry the owner-approved Oak Grove arrival and departure times. A Big Sioux listing would use that park’s own times, rather than inherit them from an Oak Grove selection.",
     "scopes": [
       {
-        "title": "Preserve the selected cabin’s season and arrival time during comparison",
+        "title": "Compare cabins by park and season",
         "pages": [
           "Put each cabin’s season beside its capacity and park.",
           "Carry the chosen park’s own check-in and check-out times forward.",
@@ -161072,18 +161072,18 @@
         "check": "A January inquiry does not present Eagles Nest as equivalent to a year-round cabin."
       },
       {
-        "title": "Connect unit and season, arrival and departure, packing",
+        "title": "Carry the chosen cabin into arrival preparation",
         "pages": [
-          "Unit and season — Put each cabin’s season beside its capacity and park.",
-          "Arrival and departure — Carry the chosen park’s own check-in and check-out times forward.",
-          "Packing — Separate shared guest-supplied items from unit-specific appliances."
+          "Carry the chosen cabin into arrival preparation",
+          "Current instructions and links for the selected option",
+          "Owner review and update responsibilities"
         ],
         "request": "Select the cabin, check its season and arrival and departure times, review what to bring, and use its reservation route.",
-        "supplies": "Approved service descriptions, the existing destination links and the person responsible for updating unit and season, arrival and departure, packing.",
+        "supplies": "Owner-approved information for cabin seasons, park-specific arrival times and packing instructions, the current destination links and a named editor responsible for keeping them current.",
         "check": "Switching between the two parks changes the arrival information instead of retaining the first park’s times. A larger cabin’s refrigerator or cooking setup is not assumed to exist in every unit."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify unit and season on an existing page. A fuller project can connect unit and season, arrival and departure, packing across the service introduction and inquiry. The written proposal should name the pages, owner-approved information and existing handoff; new accounts, payments, booking behavior, automation or uploads require separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the named cabin comparison. A fuller project can connect the chosen park’s arrival and departure times and the cabin packing list. The proposal names the pages, approved content and existing handoff. New accounts, payments, booking behavior, automation or uploads require separate assessment.",
     "quoteQuestions": [
       "Which named cabins are seasonal?",
       "Which check-in and check-out times change with the park?",
@@ -164944,17 +164944,17 @@
     "decision": "International Owl Center distinguishes ordinary public admission from specially scheduled group programs. Its group page offers on-site, off-site and virtual formats, with some topics available only in person. It states that live-owl programs must be indoors in a generally insect-proof building, sets an on-site group maximum of 60 and says programs may not be recorded.\n\nFor an educational provider’s website, I would connect the audience’s age range, topic and delivery setting before the program inquiry. A school arranging an off-site visit needs venue requirements; a remote audience needs a topic offered virtually. Public opening hours are useful for individual visits but do not establish a school booking. The owner supplies the current program matrix and confirms the actual arrangement. The website should explain preparation without deciding animal welfare, venue suitability or platform capacity on its own.",
     "scopes": [
       {
-        "title": "Clarify audience and topic and the first inquiry",
+        "title": "Match the audience to a program",
         "pages": [
           "Show which topics suit the stated audience and delivery format.",
           "Explain the indoor venue requirement and distinguish the center’s capacity from an off-site group."
         ],
-        "request": "Discuss audience and topic and location through the owner’s existing contact before treating an arrangement as agreed.",
+        "request": "Tell the provider the group’s age range, preferred topic and delivery location, then ask staff to confirm the program arrangement.",
         "supplies": "Approved program descriptions, ages and in-person/virtual availability. Current venue requirements and staff contact for exceptions or uncertainty.",
         "check": "A virtual request does not choose an in-person-only topic."
       },
       {
-        "title": "Connect audience and topic, location and booking and preparation",
+        "title": "Connect program choice to booking preparation",
         "pages": [
           "Show which topics suit the stated audience and delivery format.",
           "Explain the indoor venue requirement and distinguish the center’s capacity from an off-site group.",
@@ -164965,7 +164965,7 @@
         "check": "A group inquiry is not treated as ordinary walk-in admission or permission to record."
       }
     ],
-    "scopeTrigger": "Start with audience and topic and location on the existing page. Expand the work when booking and preparation needs its own preparation content and must stay consistent with those earlier choices.",
+    "scopeTrigger": "Start by clarifying the audience, topic and delivery location on the existing program page. A larger project can add a booking and preparation page that stays consistent with the program comparison.",
     "quoteQuestions": [
       "Can you supply approved program descriptions, ages and in-person/virtual availability?",
       "Can you supply current venue requirements and staff contact for exceptions or uncertainty?",
@@ -165374,17 +165374,17 @@
     "decision": "Kanabec History Center describes a banquet room with an approximate capacity of 80, 53 chairs and 11 tables. It asks renters to include additional setup and cleanup time, states a three-hour minimum for member and nonmember rentals, and describes the grounds as a separate rental choice with slightly higher rent.\n\nFor a community rental venue, I would make the planning page distinguish a room’s attendance capacity from the furniture supplied for a particular layout. An organizer expecting 70 seated guests needs a chair and table conversation even when the group is below the published capacity. The inquiry should include the complete setup-to-cleanup period and whether the grounds are wanted. A fuller commission can connect room photographs with layouts and a responsibility list; staff confirms the actual arrangement and any additional furniture.",
     "scopes": [
       {
-        "title": "Clarify attendance and seating and the first inquiry",
+        "title": "Explain seating and the full rental period",
         "pages": [
           "Show room capacity and supplied tables/chairs as separate facts.",
           "Ask for preparation, guest time and cleanup within the requested interval."
         ],
-        "request": "Discuss attendance and seating and full event period through the owner’s existing contact before treating an arrangement as agreed.",
+        "request": "Tell the venue your guest count, seating plan and full setup-to-cleanup time before asking it to confirm the arrangement.",
         "supplies": "Verified capacity and furniture inventory for each layout. Current minimum rental period and timing rules.",
         "check": "A 70-person seated meal is not promised 70 included chairs merely because it is below room capacity."
       },
       {
-        "title": "Connect attendance and seating, full event period and room or grounds",
+        "title": "Compare room and grounds arrangements",
         "pages": [
           "Show room capacity and supplied tables/chairs as separate facts.",
           "Ask for preparation, guest time and cleanup within the requested interval.",
@@ -165395,7 +165395,7 @@
         "check": "Choosing the room does not silently add exclusive grounds use."
       }
     ],
-    "scopeTrigger": "Start with attendance and seating and full event period on the existing page. Expand the work when room or grounds needs its own preparation content and must stay consistent with those earlier choices.",
+    "scopeTrigger": "A focused edit can distinguish attendance capacity, supplied seating and the full rental period. A fuller project can compare the room and grounds and connect each choice to its preparation and staff inquiry.",
     "quoteQuestions": [
       "Can you supply verified capacity and furniture inventory for each layout?",
       "Can you supply current minimum rental period and timing rules?",
@@ -166014,17 +166014,17 @@
     "decision": "Ney Nature Center identifies the Education Building as its only rentable building; other farm buildings are used for storage or classes. Its rental page distinguishes ordinary requests made at least two weeks ahead from large events requiring at least three months. It says the park remains public and that an event charging attendance does not qualify for the stated nonprofit rate.\n\nFor a community venue website, I would connect the requested building with the event’s size, purpose and preparation period. A nonprofit organizer selling tickets needs a rate discussion, rather than assuming the organization’s name determines the charge. Photographs of other buildings should explain their role without suggesting they are rental alternatives. A focused edit can clarify this on the rental page; a fuller project can connect event examples, layouts and park access while preserving the owner’s review of large events, tents and overnight proposals.",
     "scopes": [
       {
-        "title": "Clarify available building and the first inquiry",
+        "title": "Identify the rentable building",
         "pages": [
           "Identify the Education Building and explain which photographed buildings are outside the rental offer.",
           "Distinguish ordinary requests from large events before asking for the date."
         ],
-        "request": "Discuss available building and event and lead time through the owner’s existing contact before treating an arrangement as agreed.",
+        "request": "Discuss the building, event and required notice with the venue before treating the arrangement as confirmed.",
         "supplies": "Verified building uses, layouts and equipment. Approved lead times and staff review criteria.",
         "check": "A historic-farm photograph does not imply that building can be booked."
       },
       {
-        "title": "Connect available building, event and lead time and public use and rate",
+        "title": "Explain event notice, public access and rate review",
         "pages": [
           "Identify the Education Building and explain which photographed buildings are outside the rental offer.",
           "Distinguish ordinary requests from large events before asking for the date.",
@@ -166035,7 +166035,7 @@
         "check": "A nonprofit ticketed event is not automatically quoted the nonprofit rate."
       }
     ],
-    "scopeTrigger": "Start with available building and event and lead time on the existing page. Expand the work when public use and rate needs its own preparation content and must stay consistent with those earlier choices.",
+    "scopeTrigger": "A focused edit can identify the rentable building and explain how much notice each event needs. A fuller project can connect building choices, shared park access and rate questions to the staff review.",
     "quoteQuestions": [
       "Can you supply verified building uses, layouts and equipment?",
       "Can you supply approved lead times and staff review criteria?",
@@ -166219,22 +166219,22 @@
   {
     "areaId": "minnesota/lyon",
     "market": "Lyon County, MN",
-    "lead": "A temporary exhibit can take one room out of rental use while another remains available. Keep each room’s status and details together.",
-    "decisionTitle": "Attach a temporary room closure to that room’s rental information.",
-    "decision": "Lyon County Museum’s rental page carries an October 15, 2026 update saying its conference room is unavailable because of a temporary exhibit while its Ice Cream Shop remains available to rent. The page also retains conference-room layouts, equipment and general rental preparation, including at least one week’s notice and an agreement before the event.\n\nFor a museum or venue with changing room use, I would commission a room-specific status treatment that keeps the available choice usable and the unavailable room clearly labeled. An organizer should not infer that conference-room furniture or layouts describe the Ice Cream Shop. The first inquiry can name the event and available room, with staff confirming capacity, equipment and date. A fuller project can keep room introductions, notices and the inquiry wording aligned, with a named owner responsible for changing the status when the exhibit ends.",
+    "lead": "When an offer changes, customers need to see which choices remain available. I help Lyon County venues build a room comparison, current-status notices and inquiry instructions that keep each room’s facts together. A dated museum rental notice illustrates the work.",
+    "decisionTitle": "Keep room choices usable when availability changes.",
+    "decision": "Local planning example. Lyon County Museum’s rental page carries an October 15, 2026 update saying its conference room is unavailable because of a temporary exhibit while its Ice Cream Shop remains available to rent. The page also retains conference-room layouts, equipment and general rental preparation, including at least one week’s notice and an agreement before the event.\n\nFor a museum or venue with changing room use, I would commission a room-specific status treatment that keeps the available choice usable and the unavailable room clearly labeled. An organizer should not infer that conference-room furniture or layouts describe the Ice Cream Shop. The first inquiry can name the event and available room, with staff confirming capacity, equipment and date. A fuller project can keep room introductions, notices and the inquiry wording aligned, with a named owner responsible for changing the status when the exhibit ends.",
     "scopes": [
       {
-        "title": "Clarify room status and the first inquiry",
+        "title": "Compare rooms and their current status",
         "pages": [
           "Show the temporary conference-room closure beside that room’s description.",
           "Describe the available Ice Cream Shop using its own verified facts."
         ],
-        "request": "Discuss room status and alternative room through the owner’s existing contact before treating an arrangement as agreed.",
+        "request": "Check each room’s current status, describe your event and ask staff to confirm a suitable room before making arrangements.",
         "supplies": "Current room status, notice date and update owner. Owner-approved capacity, equipment and photographs for that room.",
         "check": "The retained conference-room layout does not look like an invitation to book it now."
       },
       {
-        "title": "Connect room status, alternative room and preparation",
+        "title": "Connect the selected room to event preparation",
         "pages": [
           "Show the temporary conference-room closure beside that room’s description.",
           "Describe the available Ice Cream Shop using its own verified facts.",
@@ -166245,11 +166245,11 @@
         "check": "Submitting an inquiry does not reserve the room or establish that every listed item is included."
       }
     ],
-    "scopeTrigger": "Start with room status and alternative room on the existing page. Expand the work when preparation needs its own preparation content and must stay consistent with those earlier choices.",
+    "scopeTrigger": "Start with a dated status notice and a room comparison using each room’s own facts. A fuller project can connect those choices to preparation, notice requirements and a staff-reviewed inquiry, with an editor responsible for future changes.",
     "quoteQuestions": [
-      "Can you supply current room status, notice date and update owner?",
-      "Can you supply owner-approved capacity, equipment and photographs for that room?",
-      "Can you supply current rental instructions and who approves a request?"
+      "Which rooms need a dated status notice?",
+      "What capacity, equipment and photographs belong to each room?",
+      "Who approves changed status and the instructions for requesting a room?"
     ],
     "coverageNote": "For website projects in Lyon County, including the Marshall example. Wonder and Method works online from Buffalo, New York. Named organizations are public examples, not clients, partners or endorsements.",
     "sources": [
@@ -170106,9 +170106,9 @@
   {
     "areaId": "oklahoma/custer",
     "market": "Custer County, OK",
-    "lead": "Plan the grade mix and lunch space alongside the guided visit.",
-    "decisionTitle": "Plan the grade mix and lunch space alongside the guided visit.",
-    "decision": "Stafford Air and Space Museum offers weekday guided tours for groups of at least ten with two weeks’ advance booking. Its school guidance changes the adult-to-student ratio by grade band and asks groups to reserve the conference room separately when bringing sack lunches.\n\nFor a group-visit website, I would keep the grade mix, accompanying adults and lunch plan together. The organizer should be able to describe a mixed-age group without being given one universal supervision ratio. A lunch request should remain visible when the tour is discussed, with staff confirming the actual space arrangement.",
+    "lead": "A useful inquiry asks for the details that matter to the selected customer group. I help Custer County organizations connect service choices to clear preparation and staff review. A school-tour request is one example of keeping different needs together.",
+    "decisionTitle": "Collect the right details for each customer group.",
+    "decision": "Local planning example. Stafford Air and Space Museum offers weekday guided tours for groups of at least ten with two weeks’ advance booking. Its school guidance changes the adult-to-student ratio by grade band and asks groups to reserve the conference room separately when bringing sack lunches.\n\nFor a group-visit website, I would keep the grade mix, accompanying adults and lunch plan together. The organizer should be able to describe a mixed-age group without being given one universal supervision ratio. A lunch request should remain visible when the tour is discussed, with staff confirming the actual space arrangement.",
     "scopes": [
       {
         "title": "Plan the grade mix and lunch space alongside the guided visit",
@@ -170122,11 +170122,11 @@
         "check": "A trip with first and seventh graders retains both grades for staff review. A weekend request does not imply a volunteer-guided tour is available. A confirmed tour does not silently become a confirmed lunch-room reservation."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify grade mix on the existing page. A fuller project can connect grade mix, tour date, lunch space across the introduction and staff handoff. Agree the actual pages, approved information and update owner before selecting forms or connections.",
+    "scopeTrigger": "A focused edit can clarify which group details an inquiry needs. A fuller project can connect group categories, requested dates and separately arranged space to staff review. The proposal names the pages, approved information and update owner.",
     "quoteQuestions": [
-      "How should a mixed-grade group describe its students and adults?",
-      "Who confirms lunch space independently of the tour?",
-      "Where should the organizer find instructions when the plan changes?"
+      "Which services and customer groups should your website distinguish?",
+      "What information is missing from current inquiries?",
+      "Which requests need a separate confirmation or staff review?"
     ],
     "coverageNote": "Website project planning for Custer County, using the public Stafford Air and Space Museum example associated with Weatherford. Wonder and Method works online from Buffalo, New York. Named organizations are public examples, not clients, partners or endorsements.",
     "sources": [
@@ -170384,9 +170384,9 @@
   {
     "areaId": "oklahoma/ellis",
     "market": "Ellis County, OK",
-    "lead": "Identify the cattle service stage before discussing a delivery.",
-    "decisionTitle": "Identify the cattle service stage before discussing a delivery.",
-    "decision": "U.S. Premium Beef’s qualified-feedlot profile for 3M&H Land and Cattle describes receiving, backgrounding and finishing, alongside cattle procurement, sorting and individual weighing. The profile gives a Gage address; Oklahoma’s agriculture department independently lists the facility in Ellis County.\n\nA proposed cattle-service website can explain the stages the business actually handles and invite a producer to name the help needed. Receiving a group of cattle, asking about procurement and discussing a later feeding stage should not all arrive as an unexplained delivery request. The operator reviews suitability, dates and arrangements; the website presents the approved service boundaries.",
+    "lead": "Identify the requested service before asking for delivery details. I help Ellis County businesses explain their service categories and collect enough context for a useful first response. Cattle receiving, backgrounding and finishing provide an agricultural example.",
+    "decisionTitle": "Make the requested service clear in the first inquiry.",
+    "decision": "Local planning example. U.S. Premium Beef’s qualified-feedlot profile for 3M&H Land and Cattle describes receiving, backgrounding and finishing, alongside cattle procurement, sorting and individual weighing. The profile gives a Gage address; Oklahoma’s agriculture department independently lists the facility in Ellis County.\n\nA proposed cattle-service website can explain the stages the business actually handles and invite a producer to name the help needed. Receiving a group of cattle, asking about procurement and discussing a later feeding stage should not all arrive as an unexplained delivery request. The operator reviews suitability, dates and arrangements; the website presents the approved service boundaries.",
     "scopes": [
       {
         "title": "Identify the cattle service stage before discussing a delivery",
@@ -170400,11 +170400,11 @@
         "check": "An inquiry about backgrounding retains that stage in the staff handoff. A procurement inquiry is not presented as cattle already scheduled to arrive. An inquiry records requested timing without reserving a pen or accepting delivery."
       }
     ],
-    "scopeTrigger": "A focused edit can clarify service stage on the existing page. A fuller project can connect service stage, additional work, initial review across the introduction and staff handoff. Agree the actual pages, approved information and update owner before selecting forms or connections.",
+    "scopeTrigger": "A focused edit can clarify the service categories on an existing page. A fuller project can explain related work and collect the details needed for the operator’s initial review. The proposal names the pages, approved information and update owner.",
     "quoteQuestions": [
-      "Which service stages do you accept inquiries about?",
-      "What lot information changes the first useful response?",
-      "Who confirms the final receiving arrangements?"
+      "Which service categories should customers choose between?",
+      "What details change your first useful response?",
+      "Who confirms timing and delivery arrangements after the inquiry?"
     ],
     "coverageNote": "Website project planning for Ellis County, using the public 3M&H Land and Cattle example associated with Gage. Wonder and Method works online from Buffalo, New York. Named organizations are public examples, not clients, partners or endorsements.",
     "sources": [
@@ -173954,9 +173954,9 @@
   {
     "areaId": "oklahoma/texas",
     "market": "Texas County, OK",
-    "lead": "Renewing access to a service is different from renewing an individual borrowed item. I help Texas County businesses turn that choice into useful website content.",
-    "decisionTitle": "Explain what changes when a library card needs renewal.",
-    "decision": "Guymon Public Library distinguishes regular card renewal from the annual eligibility verification for certain nonresident cardholders who work, attend school or pay property taxes in Texas County. It says expired cards must be renewed before borrowing, downloading e-content or using online databases can continue.\n\nFor a membership or public-service website, I would connect the reader’s existing access category to the renewal step before sending them to an account login. The website can explain what evidence staff may need without collecting identity scans or account credentials in a general inquiry. A focused commission can clarify renewal preparation and the staff-help route. A fuller project can connect first-time eligibility, changed contact details and later renewal so readers do not confuse renewing a card with extending an individual loan.",
+    "lead": "Returning customers need a clear route to renew access, update details or ask for help. I help Texas County organizations explain those choices while preserving their existing account system. Library-card renewal is one example of separating access renewal from an individual transaction.",
+    "decisionTitle": "Give returning customers a clear renewal and support route.",
+    "decision": "Local planning example. Guymon Public Library distinguishes regular card renewal from the annual eligibility verification for certain nonresident cardholders who work, attend school or pay property taxes in Texas County. It says expired cards must be renewed before borrowing, downloading e-content or using online databases can continue.\n\nFor a membership or public-service website, I would connect the reader’s existing access category to the renewal step before sending them to an account login. The website can explain what evidence staff may need without collecting identity scans or account credentials in a general inquiry. A focused commission can clarify renewal preparation and the staff-help route. A fuller project can connect first-time eligibility, changed contact details and later renewal so readers do not confuse renewing a card with extending an individual loan.",
     "scopes": [
       {
         "title": "Existing access: clarify the first choice",
@@ -174011,9 +174011,9 @@
     },
     "scopeTrigger": "A renewal explanation can use an existing staff-help route. Connecting eligibility, changed details and expiring access requires an owner-approved content plan; it does not by itself add account access or document collection.",
     "quoteQuestions": [
-      "Which renewal interval depends on the member’s category?",
-      "What changes to contact details require staff review?",
-      "Which account questions must stay with the existing library system?"
+      "Which existing account system must remain in place?",
+      "What do returning customers confuse about renewal or changed details?",
+      "Who approves public instructions and handles private account questions?"
     ],
     "coverageNote": "For Texas County website buyers, using a public Guymon-area example. Wonder and Method is based in Buffalo and works online with Oklahoma businesses. The named organizations are planning examples, not clients or endorsements.",
     "sources": [
@@ -176433,9 +176433,9 @@
   {
     "areaId": "kansas/coffey",
     "market": "Coffey County, KS",
-    "lead": "A missing search result and a documented gap in surviving records need different explanations.",
-    "decisionTitle": "Explain collection gaps before asking a researcher to search again.",
-    "decision": "Coffey County Museum’s 2013 Timelines newsletter reported that some Burlington newspaper issues from 1870–1872 were missing from its microfilm collection. Its August 2024 newsletter described a later digitization project covering The Daily Republican from November 1922 to September 1949, with a gap from July through December 1928, and distinguished that work from microfilm still awaiting digitization. These dated examples illustrate different collection limits; current holdings and research arrangements need confirmation with the museum.\n\nFor a local-history organization, I would commission collection descriptions that distinguish an unsuccessful search from a known limitation of the source. A reader seeking an obituary from a documented missing issue needs that coverage note before being sent back to the same index. Explain which publication, period and format the statement covers, then offer the institution’s actual research contact or relevant alternative sources without promising they contain the answer. Keep this different from material that exists but has not been digitized: the next useful action depends on the reason it is unavailable.",
+    "lead": "I can build a collection-status page that tells readers why material is unavailable and what to do next. A fictional result might say “Not digitized — ask staff about access,” while a documented gap needs a different message. Coffey County historical records provide an example.",
+    "decisionTitle": "Explain the reason a collection item is unavailable.",
+    "decision": "The proposed collection-status page would distinguish “Not digitized,” “Known gap” and “Ask staff,” each with the collection name, covered period and an appropriate next action. Those are proposed labels; staff would confirm which applies to each collection.\n\nLocal planning example. Coffey County Museum’s 2013 Timelines newsletter reported that some Burlington newspaper issues from 1870–1872 were missing from its microfilm collection. Its August 2024 newsletter described a later digitization project covering The Daily Republican from November 1922 to September 1949, with a gap from July through December 1928, and distinguished that work from microfilm still awaiting digitization. These dated examples illustrate different collection limits; current holdings and research arrangements need confirmation with the museum.\n\nFor a local-history organization, I would commission collection descriptions that distinguish an unsuccessful search from a known limitation of the source. A reader seeking an obituary from a documented missing issue needs that coverage note before being sent back to the same index. Explain which publication, period and format the statement covers, then offer the institution’s actual research contact or relevant alternative sources without promising they contain the answer. Keep this different from material that exists but has not been digitized: the next useful action depends on the reason it is unavailable.",
     "scopes": [
       {
         "title": "Name the kind of gap",
@@ -176459,9 +176459,9 @@
     ],
     "scopeTrigger": "Begin with accurate coverage notes on the research page. Extend the work when multiple collections require maintained date and format descriptions; a searchable catalog or document-delivery system is a separate commission.",
     "quoteQuestions": [
-      "Which gaps are documented, and which simply reflect incomplete cataloging or digitization?",
-      "What alternative sources can you responsibly suggest for a missing period?",
-      "What must accompany a research question so staff do not repeat the same unsuccessful search?"
+      "Which unavailable materials are not digitized, and which have documented gaps?",
+      "What should readers include in a staff research question?",
+      "Who approves coverage notes and maintains the alternative-source links?"
     ],
     "coverageNote": "For website projects in Coffey County, Kansas. Wonder and Method is based in Buffalo, New York, and works online. Named organizations are public examples, not clients, partners or endorsements.",
     "sources": [
@@ -183760,9 +183760,9 @@
   {
     "areaId": "nebraska/grant",
     "market": "Grant County, NE",
-    "lead": "A shared book kit has a group borrower and a complete set of items to return. I help Grant County organizations explain that responsibility before a club treats the kit like separate personal loans.",
-    "decisionTitle": "Explain how a book-club kit stays with its responsible group from request to return.",
-    "decision": "Grant County Library’s policy says a book club uses a club card with two registered contacts, checks out the whole kit and may have only one kit at a time. The kit must be checked against its contents list and returned at the circulation desk by a listed contact, rather than placed in the drop box. The policy also gives separate renewal preparation.\n\nFor a proposed library website, I would make a short club-kit preparation page with three stages: the group request, collection of the complete kit and return of the checked contents. The public instructions can explain who coordinates the loan without exposing card numbers or borrowing records. In an illustrative club whose members return books separately, the page should show that the responsible contact needs to assemble the complete kit for the library’s stated return process. Link the current request and staff help routes, and keep actual eligibility, availability and renewal decisions with library staff.",
+    "lead": "When several people share a request, the website should identify who coordinates it and what each person must do. I help Grant County organizations explain that responsibility from the first inquiry through completion. A library book-club kit is one example.",
+    "decisionTitle": "Explain responsibilities in a multi-person request.",
+    "decision": "Local planning example. Grant County Library’s policy says a book club uses a club card with two registered contacts, checks out the whole kit and may have only one kit at a time. The kit must be checked against its contents list and returned at the circulation desk by a listed contact, rather than placed in the drop box. The policy also gives separate renewal preparation.\n\nFor a proposed library website, I would make a short club-kit preparation page with three stages: the group request, collection of the complete kit and return of the checked contents. The public instructions can explain who coordinates the loan without exposing card numbers or borrowing records. In an illustrative club whose members return books separately, the page should show that the responsible contact needs to assemble the complete kit for the library’s stated return process. Link the current request and staff help routes, and keep actual eligibility, availability and renewal decisions with library staff.",
     "scopes": [
       {
         "title": "Prepare the club request",
@@ -183789,9 +183789,9 @@
     ],
     "scopeTrigger": "A focused help page can explain this process without changing the circulation system. A fuller library site can organize borrowing instructions by material type. Library accounts, borrower records and transaction handling require separate assessment.",
     "quoteQuestions": [
-      "Who is responsible for the complete kit rather than one book?",
-      "What must be checked and packed before return?",
-      "Which renewal and return instructions differ from ordinary loans?"
+      "Who coordinates your customer’s request?",
+      "Which steps must the group complete together?",
+      "Where does your current customer journey leave the next responsibility unclear?"
     ],
     "coverageNote": "For website projects in Grant County, Nebraska. Wonder and Method is based in Buffalo, New York, and works online with Nebraska businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -191130,9 +191130,9 @@
   {
     "areaId": "south-dakota/fall-river",
     "market": "Fall River County, SD",
-    "lead": "A school activity may begin in the classroom before the class reaches the museum. I help Fall River County education and visitor businesses explain that sequence to teachers.",
-    "decisionTitle": "Show the school preparation that comes before the museum visit.",
-    "decision": "The Mammoth Site education page describes a third-grade erosion program with two stages: students first make small sinkholes and bury replica bones at school, then excavate during the on-site session. It also presents other grade-specific programs and a scheduling contact.\n\nFor an education-program website, I would connect the selected grade and activity to a teacher preparation sequence. Keep pre-visit instructions, materials and the on-site activity attached to the same program version. A teacher should be able to distinguish a normal museum visit from a scheduled activity that needs work beforehand. The education team approves the sequence and identifies essential preparation. Test a teacher who sees only the visit date: the school activity should still be visible before the class arrives.",
+    "lead": "Booking, preparation and arrival instructions should describe the same appointment or visit. I help Fall River County businesses connect those steps so customers know what to do beforehand. A museum school program provides one supporting example.",
+    "decisionTitle": "Connect the booking choice to preparation and arrival.",
+    "decision": "Local planning example. The Mammoth Site education page describes a third-grade erosion program with two stages: students first make small sinkholes and bury replica bones at school, then excavate during the on-site session. It also presents other grade-specific programs and a scheduling contact.\n\nI would connect the booking choice to the correct preparation resource and arrival instructions. In this example, the teacher would see the at-school activity before treating the museum date as the complete program. The education team supplies the current materials, approves the sequence and names who updates the page and resource together.",
     "scopes": [
       {
         "title": "Explain the two-stage activity",
@@ -191141,7 +191141,7 @@
           "At-school preparation",
           "On-site session"
         ],
-        "request": "Put the classroom activity before the visit in the planning sequence.",
+        "request": "Review the selected program’s classroom activity and arrange the required preparation before the museum visit.",
         "supplies": "Educator-approved descriptions and preparation instructions.",
         "check": "A teacher sees school preparation before treating the visit as the whole program."
       },
@@ -191152,16 +191152,16 @@
           "Scheduling conversation",
           "Version and update owner"
         ],
-        "request": "Connect the correct preparation resource to the program.",
+        "request": "Use the preparation resource for your chosen program and ask the education team about any mismatch or missing material.",
         "supplies": "Current materials, their maintainer and the scheduling contact.",
         "check": "The page and preparation instructions still describe the same activity after an edit."
       }
     ],
     "scopeTrigger": "A focused edit can connect program choice and teacher preparation. A fuller build can organize current program resources and scheduling inquiries. Class registration, payments and learning-platform connections need separate assessment.",
     "quoteQuestions": [
-      "Which programs need classroom work before arrival?",
-      "What materials must the teacher receive?",
-      "Who checks the page and teacher resource together?"
+      "What do customers need before an appointment or visit?",
+      "Which instructions or materials must they receive in advance?",
+      "Who keeps the booking page and preparation resources consistent?"
     ],
     "coverageNote": "For website projects in Fall River County, South Dakota. Wonder and Method is based in Buffalo, New York, and works online with South Dakota businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -192491,17 +192491,17 @@
         "check": "An archived 2026 page does not invite a new 2027 registration. A family planning to pay by card is not sent to a cash-or-check-only desk."
       },
       {
-        "title": "Connect remaining step with the existing contact route",
+        "title": "Explain what remains after registration",
         "pages": [
           "Distinguish registration, payment and the later time notice.",
           "Keep the selected option and its approved instructions together through the next action."
         ],
-        "request": "Prepare the remaining step explanation and check the actual destination with the owner.",
-        "supplies": "Actual registration route, payment acknowledgement and schedule-notice process. The maintained destination link, current acknowledgement and the person responsible for updates.",
+        "request": "Check whether payment and the class-time notice remain outstanding after registering, and follow the approved payment and contact instructions.",
+        "supplies": "The actual registration destination, approved payment acknowledgement and schedule-notice wording, plus the editor who checks those links for each new season.",
         "check": "Completing one step does not display an invented paid or scheduled status."
       }
     ],
-    "scopeTrigger": "A focused edit fits when the existing season information and destination already work. A fuller project can connect season, payment location, remaining step across the related pages. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
+    "scopeTrigger": "A focused edit can clarify the current season and registration route. A fuller project can add a step-by-step explanation of registration, payment and the later class-time notice. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
     "quoteQuestions": [
       "Which registration instruction is authoritative for the new season?",
       "Where can each payment method be used?",
@@ -192591,17 +192591,17 @@
         "check": "November 1 and November 2 do not share a copied fall schedule. A group is not quoted by multiplying ordinary admission without approval."
       },
       {
-        "title": "Connect next update with the existing contact route",
+        "title": "Keep seasonal hours and admission details current",
         "pages": [
           "Record which period replaces the current one.",
           "Keep the selected option and its approved instructions together through the next action."
         ],
-        "request": "Prepare the next update explanation and check the actual destination with the owner.",
-        "supplies": "Named editor and approved future operating information. The maintained destination link, current acknowledgement and the person responsible for updates.",
+        "request": "Check that the published season covers your intended visit date. If it does not, ask the attraction to confirm hours and admission before planning the visit.",
+        "supplies": "A named editor, approved future operating information and verified ticket or group-contact links for each season.",
         "check": "Dates beyond the published schedule remain unresolved."
       }
     ],
-    "scopeTrigger": "A focused edit fits when the existing visit period information and destination already work. A fuller project can connect visit period, party type, next update across the related pages. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
+    "scopeTrigger": "A focused edit can align a visit period’s hours and admission details. A fuller project can create maintained seasonal records, separate group instructions and a contact message for dates not yet covered. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
     "quoteQuestions": [
       "Which hours and admission details must change together?",
       "Which visitors need a separate group conversation?",
@@ -193301,17 +193301,17 @@
         "check": "A free-gate invitation does not promise free grandstand admission. Reserved and general admission are not merged into one unexplained price."
       },
       {
-        "title": "Connect edition with the existing contact route",
+        "title": "Keep the fair year current",
         "pages": [
           "Keep the program year beside every event instruction.",
           "Keep the selected option and its approved instructions together through the next action."
         ],
-        "request": "Prepare the edition explanation and check the actual destination with the owner.",
-        "supplies": "Approved new-year program and retirement process for old details. The maintained destination link, current acknowledgement and the person responsible for updates.",
+        "request": "Check the year on the event listing, then follow the current organizer’s ticket or contact instructions for your chosen event.",
+        "supplies": "The approved new-year program, replacement or retirement instructions for old listings, current organizer links and the editor responsible for checking them.",
         "check": "A 2027 fair announcement does not convert 2026 ticket information into current terms."
       }
     ],
-    "scopeTrigger": "A focused edit fits when the existing admission layer information and destination already work. A fuller project can connect admission layer, selected event, edition across the related pages. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
+    "scopeTrigger": "A focused edit can clarify free gate entry and separate event admission. A fuller project can create a dated program with event-specific organizers, ticket links and a process for replacing the prior year’s details. The proposal names the actual content and handoff checks; accounts, payments, custom booking, automation and uploads need separate assessment.",
     "quoteQuestions": [
       "Which activities have admission separate from the fair gate?",
       "Who owns each event’s current ticket or contact instructions?",
@@ -195415,7 +195415,7 @@
           "Owner-approved check-in steps",
           "Contact and assistance instructions"
         ],
-        "request": "Create a concise, printable page linked from the existing pre-arrival communication.",
+        "request": "Save or print the property address, check-in steps and assistance contact before traveling.",
         "supplies": "Current arrival wording, accurate directions, assistance contact and the information guests should save before travel.",
         "check": "A guest who has saved the page can find the property and understand the approved check-in process without reopening the website."
       },
@@ -195427,7 +195427,7 @@
           "Booking handoff",
           "Before-travel checklist"
         ],
-        "request": "Keep room exceptions visible during comparison and repeat only the details needed for the selected stay in the arrival instructions.",
+        "request": "Compare the room-specific features, choose the room that fits your stay, and save its arrival instructions before departure.",
         "supplies": "Owner-confirmed room features, current stay rules, the existing reservation workflow and approved pre-arrival content.",
         "check": "A guest selecting a room without an oven notices that exception before planning meals and can save the instructions for the same property."
       }
@@ -197754,9 +197754,9 @@
   {
     "areaId": "california/tehama",
     "market": "Tehama County, CA",
-    "lead": "A sale catalog can contain documents that are available only for a defined review period. I help Tehama County event and auction businesses explain what each document is for and who evaluates it.",
-    "decisionTitle": "Give optional sale documents a purpose, owner and removal date.",
-    "decision": "The Red Bluff Bull & Gelding Sale’s 2027 gelding-entry packet distinguishes entry requirements from optional diagnostic images provided for prospective buyers’ own veterinarians to review. It says those images are not part of the committee’s evaluation and will not remain available after the sale.\n\nFor a sale website, I would define the document’s role before adding a download or upload feature. Imagine a prospective buyer opening an older catalog and assuming every linked file is current, or a seller treating an optional image submission as an approval. A content plan can identify the sale year, required versus optional material, who reviews it and when access ends. A fuller project can carry those distinctions through entry instructions, current catalog pages and the archived sale. I would test a record before the sale and after its stated availability period: the page should explain the document’s current state rather than leave an unexplained broken link or imply ongoing access. Specialist evaluation belongs to the buyer’s veterinarian and the sale’s designated decision makers. A marketing inquiry should collect only the information needed to route a question, not reproduce sensitive fields from an entry form.",
+    "lead": "For auctions and events with documents that expire, I can build current and archived document notices that explain what is available, who reviews it and when access ends. A Tehama County sale packet provides one example of this website work.",
+    "decisionTitle": "Show whether an event document is current or archived.",
+    "decision": "Illustrative document states: “Current event — document available until the stated access-end date” and “Archived event — document no longer available; contact the organizer with questions.” I would build these notices into the document listing, with an owner and approved expiry wording.\n\nLocal planning example. The Red Bluff Bull & Gelding Sale’s 2027 gelding-entry packet distinguishes entry requirements from optional diagnostic images provided for prospective buyers’ own veterinarians to review. It says those images are not part of the committee’s evaluation and will not remain available after the sale.\n\nFor a sale website, I would define the document’s role before adding a download or upload feature. Imagine a prospective buyer opening an older catalog and assuming every linked file is current, or a seller treating an optional image submission as an approval. A content plan can identify the sale year, required versus optional material, who reviews it and when access ends. A fuller project can carry those distinctions through entry instructions, current catalog pages and the archived sale. I would test a record before the sale and after its stated availability period: the page should explain the document’s current state rather than leave an unexplained broken link or imply ongoing access. Specialist evaluation belongs to the buyer’s veterinarian and the sale’s designated decision makers. A marketing inquiry should collect only the information needed to route a question, not reproduce sensitive fields from an entry form.",
     "scopes": [
       {
         "title": "Clarify the document instructions",
@@ -197784,9 +197784,9 @@
     ],
     "scopeTrigger": "Start with content and responsibility when the existing entry system works. A fuller catalog project can organize current and archived records. Secure uploads, document storage, payments and approval workflows require separate assessment; the website does not evaluate animal health or fitness.",
     "quoteQuestions": [
-      "Which materials are optional, and who evaluates each one?",
-      "When should the public page stop offering a document?",
-      "What does a submission receipt establish before anyone reviews the entry?"
+      "Which event documents have a limited availability period?",
+      "Who owns each document and approves its public description?",
+      "What should visitors see when access has ended?"
     ],
     "coverageNote": "For website projects in Tehama County, using the public Red Bluff area example discussed here. Wonder and Method is based in Buffalo, New York, and works online with California businesses. Named organizations are planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -199581,9 +199581,9 @@
   {
     "areaId": "new-mexico/quay",
     "market": "Quay County, NM",
-    "lead": "A museum photograph may show an original specimen, a touchable replica or work seen through a laboratory window. I help Quay County organizations explain what visitors can actually see and do in each part of a collection.",
-    "decisionTitle": "Caption the material and the visitor’s access together.",
-    "decision": "Mesalands Community College’s Dinosaur Museum describes authentic fossils alongside bronze replicas, including casts visitors can touch. It explains that visitors may observe students and a professor through a laboratory viewing window, while some collections are stored away from public display. Its paleontology program is a separate route for people interested in student fieldwork.\n\nFor a museum website, I would make a photo and caption inventory part of the brief. An image of a bronze cast should identify why touching is offered there; a photograph of fossil preparation should explain the viewing window rather than imply access to the workbench. I can clarify an existing exhibit introduction or build a fuller visitor guide that connects the object, material, location and permitted activity. Someone interested in learning paleontology should find the education route, while a family planning an ordinary visit should understand what the museum invitation includes. The museum would approve exhibit descriptions and current access information.",
+    "lead": "Photographs should explain what customers can buy, see or do. I help Quay County businesses review images and write captions that distinguish a product, a demonstration and an activity the visitor can actually join. Museum fossils and replicas provide one example.",
+    "decisionTitle": "Make photographs clear about what is offered.",
+    "decision": "Local planning example. Mesalands Community College’s Dinosaur Museum describes authentic fossils alongside bronze replicas, including casts visitors can touch. It explains that visitors may observe students and a professor through a laboratory viewing window, while some collections are stored away from public display. Its paleontology program is a separate route for people interested in student fieldwork.\n\nI would review the photographs and write captions naming the object, what the visitor can do and where it is shown. A bronze-cast caption would explain the touchable replica; a laboratory image would identify observation through the window. A separate education link would serve people interested in study or fieldwork. The owner approves each caption and current access information.",
     "scopes": [
       {
         "title": "Clarify the exhibit photographs and captions",
@@ -199611,9 +199611,9 @@
     ],
     "scopeTrigger": "An image-and-caption review fits when the visitor page already works. A fuller build can connect collection stories, public access and education links. Exhibit access and demonstrations remain the museum’s decisions; the page should not promise active laboratory work at every visit.",
     "quoteQuestions": [
-      "Does each photograph identify the object’s material and location?",
-      "Which objects may visitors touch, and which activities are observed?",
-      "Which student activities need a separate education link rather than a visitor invitation?"
+      "Which photographs on your site need more context?",
+      "What can a customer buy, see or do in each pictured example?",
+      "Who approves captions and keeps access or availability information current?"
     ],
     "sources": [
       {
@@ -203286,9 +203286,9 @@
   {
     "areaId": "oregon/klamath",
     "market": "Klamath County, OR",
-    "lead": "Visiting a miniature railway, operating a member’s train and bringing a train of your own are different arrangements. I help Klamath County membership organizations explain those choices before visitors prepare equipment or choose the wrong participation route.",
-    "decisionTitle": "Separate a train-museum visit from bringing equipment or attending a meet.",
-    "decision": "Train Mountain offers public museum visits and separately describes membership as required to bring train equipment or register for meets. Its membership page allows guests to operate a member’s equipment but not bring their own, and says membership does not include Triennial registration fees. Its visitor page currently distinguishes winter walking visits from seasonal rail tours.\n\nFor a railway or equipment-based club website, I would begin with what the person wants to do: visit, attend with a member, bring equipment or join an organized meet. Explain the relevant membership and event steps beside that purpose. A guest’s permission to use someone else’s equipment should not be read as permission to transport their own, and membership should not be presented as registration for every event.\n\nA focused update can connect the visitor and membership pages. A fuller club introduction can explain equipment participation, meet registration and the separate current public-visit information. Test a member’s guest who changes plans from borrowing a train to bringing one, and a member preparing for the Triennial. Both should find the additional arrangement they need to discuss. The organization confirms equipment acceptance, training, event places and physical access.",
+    "lead": "Visitors, members and event participants may need different instructions. I help Klamath County organizations compare those routes and connect each group to the right preparation and contact. A miniature railway club provides one example.",
+    "decisionTitle": "Separate visitor, member and event-participant routes.",
+    "decision": "Local planning example. Train Mountain offers public museum visits and separately describes membership as required to bring train equipment or register for meets. Its membership page allows guests to operate a member’s equipment but not bring their own, and says membership does not include Triennial registration fees. Its visitor page currently distinguishes winter walking visits from seasonal rail tours.\n\nI would build a participation comparison with separate visitor, guest, member and event-registration routes. One example makes the distinction concrete: a guest switching from using a member’s train to bringing their own would encounter the membership requirement before preparing equipment. The organization supplies the current rules and confirms participation; membership and event registration remain separate steps.",
     "scopes": [
       {
         "title": "Identify the intended participation",
@@ -203315,9 +203315,9 @@
     ],
     "scopeTrigger": "A focused participation comparison can join existing visitor and membership information. A fuller club site can connect equipment questions and event registration. Membership accounts, access control, equipment records and event payment connections need separate assessment.",
     "quoteQuestions": [
-      "Which activities are open to ordinary visitors, guests and members?",
-      "What changes when a guest wants to bring personal equipment?",
-      "Which events have registration separate from membership benefits?"
+      "Which customer groups need different instructions on your site?",
+      "What does each group need before visiting or participating?",
+      "Which events or services require an arrangement separate from membership?"
     ],
     "coverageNote": "For website projects in Klamath County, using the public Chiloquin example discussed here. Wonder and Method is based in Buffalo, New York, and works online with Oregon businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -205318,9 +205318,9 @@
   {
     "areaId": "nevada/pershing",
     "market": "Pershing County, NV",
-    "lead": "Booking a series of meetings does not necessarily provide continuous access between them. I help Pershing County venues explain what a returning organizer needs to do after each event and before the next.",
-    "decisionTitle": "Treat each recurring event as a separate key collection and return cycle.",
-    "decision": "Pershing County’s community-center notice, dated September 24, 2026 on the county homepage, says keys must be returned after each event and not kept between events. The community-center page lists rental resources and asks customers to call for an office appointment.\n\nFor a proposed venue website, I would keep the recurring reservation and the physical-access arrangements as separate parts of the organizer’s plan. A monthly meeting series can have accepted dates while still needing a fresh key handoff for each occurrence. The preparation summary should name the event date and approved collection/return contact so that instructions are not read as permanent access permission.\n\nAsk the owner what public information organizers need to arrange the handoff, who handles a change in the responsible organizer and how the next occurrence is reviewed. Keep security-sensitive procedures in the staff’s appropriate exchange. Test two meetings a month apart: finishing the first should still lead to the required key return, and preparing the second should prompt the next collection arrangement. Do not let a recurring-calendar label or a repeated confirmation message erase that cycle.",
+    "lead": "Returning customers still need the right preparation for each visit. I help Pershing County venues connect repeat bookings to current arrival instructions, contacts and follow-up tasks. A community-center key-return rule illustrates why a series booking needs an event-by-event plan.",
+    "decisionTitle": "Prepare customers for each repeat booking.",
+    "decision": "Local planning example. Pershing County’s community-center notice, dated September 24, 2026 on the county homepage, says keys must be returned after each event and not kept between events. The community-center page lists rental resources and asks customers to call for an office appointment.\n\nI would build a repeat-visit preparation section tied to the actual event date. For a monthly meeting, it would explain the key return after this event and the contact for arranging access to the next. The owner supplies approved public instructions and handles changed organizers or security-sensitive details through the existing staff route. Repeated dates would not imply continuous access.",
     "scopes": [
       {
         "title": "Explain the event-by-event access cycle",
@@ -205347,8 +205347,8 @@
     ],
     "scopeTrigger": "A focused event-preparation section can clarify the cycle. A fuller project can connect recurring requests, calendar information and organizer preparation. Access control, staff appointments and automated reminders need separate assessment.",
     "quoteQuestions": [
-      "What must happen after every occurrence in a recurring series?",
-      "How does a returning organizer arrange the next key collection?",
+      "What must be arranged for each repeat customer visit?",
+      "Which instructions can change between bookings?",
       "Who reviews a change in the person responsible for the event?"
     ],
     "coverageNote": "For website projects in Pershing County, using the public Lovelock example discussed here. Wonder and Method is based in Buffalo, New York, and works online with Nevada businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
@@ -207116,9 +207116,9 @@
     "checkedDate": "2026-10-26"
   },
   {
-    "lead": "An item showing in stock may already be held for someone else. I help King County lending and rental businesses explain availability, waitlists and approved reservations without treating every catalog label as permission to collect.",
-    "decisionTitle": "Explain what an inventory label lets a borrower do next.",
-    "decision": "Seattle REconomy’s borrowing instructions distinguish ordinary tools, generally available first come, from selected reservable equipment. Its waitlist guidance allows a request for a specific tool or a type of tool, and explains that a returned item held for a borrower can still appear in stock. Reservation requests for eligible equipment receive an acknowledgement before a separate approval email. Its Northeast Seattle and Shoreline libraries also maintain separate inventories and opening schedules.\n\nFor a proposed lending website, I would write a small status glossary beside the catalog link and carry the selected library into the instructions. The key question is what the visitor should do now: visit for an ordinary available tool, join a waitlist, respond to a hold or wait for reservation approval. The page should identify which source actually controls each status.\n\nBegin with a content review if the lending software already works. If the project includes a catalog connection, acceptance requires more than a successful search: test an in-stock item held for another borrower, a request for any suitable tool, and an unapproved equipment reservation. Staff must be able to explain those cases without the website promising an item that the catalog label alone cannot establish.",
+    "lead": "Retailers, rental providers and service businesses need to explain what availability means for the next customer action. I help King County businesses clarify status labels, inquiries and confirmation messages. A tool-library catalog provides a detailed example; the same review can start with your existing product or service page.",
+    "decisionTitle": "Explain what an availability label lets a customer do next.",
+    "decision": "Local planning example. Seattle REconomy’s borrowing instructions distinguish ordinary tools, generally available first come, from selected reservable equipment. Its waitlist guidance allows a request for a specific tool or a type of tool, and explains that a returned item held for a borrower can still appear in stock. Reservation requests for eligible equipment receive an acknowledgement before a separate approval email. Its Northeast Seattle and Shoreline libraries also maintain separate inventories and opening schedules.\n\nFor a proposed lending website, I would write a small status glossary beside the catalog link and carry the selected library into the instructions. The key question is what the visitor should do now: visit for an ordinary available tool, join a waitlist, respond to a hold or wait for reservation approval. The page should identify which source actually controls each status.\n\nBegin with a content review if the lending software already works. If the project includes a catalog connection, acceptance requires more than a successful search: test an in-stock item held for another borrower, a request for any suitable tool, and an unapproved equipment reservation. Staff must be able to explain those cases without the website promising an item that the catalog label alone cannot establish.",
     "scopes": [
       {
         "title": "Explain availability before the catalog handoff",
@@ -207145,9 +207145,9 @@
     ],
     "scopeTrigger": "A short explanation can improve an existing catalog handoff. A fuller lending website can coordinate branches, borrowing categories and help content. Live inventory, account access, hold expiry and reservation automation require separate assessment. Keep borrower identity documents out of a public general inquiry.",
     "quoteQuestions": [
-      "Which visible statuses can be mistaken for immediate collection?",
-      "Can a waitlist request name a type of tool instead of one item?",
-      "Which message actually approves an equipment reservation?"
+      "Which status or availability wording confuses your customers?",
+      "What should happen after a product or service inquiry?",
+      "Which system or person confirms that a request is approved?"
     ],
     "areaId": "washington/king",
     "market": "King County, WA",
@@ -218399,17 +218399,17 @@
     "market": "Bear Lake County, ID",
     "lead": "Delivery to the water can still require a visit to an off-lake shop first. I help Bear Lake County rental businesses explain the order of those handoffs before a customer makes travel plans.",
     "decisionTitle": "Show the shop check-in before the lake delivery.",
-    "decision": "North Bear Rentals says it is not located on Bear Lake. Its boat and PWC instructions require customers to complete check-on at the shop, even when delivery is selected, and say that lake delivery is available only to North Beach State Park. The FAQ also directs visitors to separate park parking arrangements.\n\nFor an outfitter website, I would begin with the selected equipment and handoff method, then show the actual sequence: shop check-on, customer transport or agreed delivery, launch, and return. Keep the shop address distinct from the launch location. A delivery button should explain the service area and the earlier customer obligation beside the choice, rather than leaving it only in a general FAQ.\n\nIn a hypothetical test, a customer chooses delivery and enters a different Bear Lake beach as the destination. The page should identify the published delivery limit and send the unresolved request to staff; it should not confirm delivery everywhere around the lake. A North Beach selection must still retain the shop check-on and the separate parking preparation. Use maintained operator and park links for current launch conditions rather than promising access from a rental confirmation.",
+    "decision": "North Bear Rentals says it is not located on Bear Lake. Its boat and PWC instructions require customers to complete check-in at the shop (called “check-on” in the operator’s instructions), even when delivery is selected, and say that lake delivery is available only to North Beach State Park. The FAQ also directs visitors to separate park parking arrangements.\n\nFor an outfitter website, I would begin with the selected equipment and handoff method, then show the actual sequence: shop check-in, customer transport or agreed delivery, launch, and return. Keep the shop address distinct from the launch location. A delivery button should explain the service area and the earlier customer obligation beside the choice, rather than leaving it only in a general FAQ.\n\nIn a hypothetical test, a customer chooses delivery and enters a different Bear Lake beach as the destination. The page should identify the published delivery limit and send the unresolved request to staff; it should not confirm delivery everywhere around the lake. A North Beach selection must still retain the shop check-in and the separate parking preparation. Use maintained operator and park links for current launch conditions rather than promising access from a rental confirmation.",
     "scopes": [
       {
         "title": "Make the first stop clear",
         "pages": [
-          "Shop check-on",
+          "Shop check-in",
           "Selected equipment",
           "Delivery or customer transport"
         ],
-        "request": "Explain where every required handoff begins.",
-        "supplies": "Current check-on rules, shop directions and what the selected delivery actually covers.",
+        "request": "Visit the shop for the required check-in before continuing to the agreed delivery or launch location.",
+        "supplies": "Current check-in rules, shop directions and what the selected delivery actually covers.",
         "check": "Choosing delivery does not erase a required shop visit."
       },
       {
@@ -218420,7 +218420,7 @@
           "Separate parking information",
           "Return handoff"
         ],
-        "request": "Identify unresolved access or destination questions before the booking handoff.",
+        "request": "Check the supported delivery destination and park preparation, and ask staff about unresolved access questions before booking.",
         "supplies": "Approved delivery area, official park links and current return arrangements.",
         "check": "A different beach is not accepted as though it were the published delivery destination."
       }
@@ -218485,7 +218485,7 @@
           "Owner-approved identification help",
           "Dependent filter instructions"
         ],
-        "request": "Show what is required before the filters become useful.",
+        "request": "Find the machine serial number using the identification help, then enter it before choosing parts filters. Ask staff if you cannot identify the machine.",
         "supplies": "Actual identifier rules, approved guidance and the fields that depend on a lookup.",
         "check": "A customer with only a model name can understand why more identification is needed."
       },
@@ -218496,7 +218496,7 @@
           "No-record explanation",
           "Parts or manual inquiry"
         ],
-        "request": "Preserve the attempted lookup for staff review.",
+        "request": "Send staff the attempted serial number and describe the parts or manual you need when the lookup returns no record.",
         "supplies": "Actual error states, support contact and minimum details staff need.",
         "check": "A no-result state does not assert a compatibility decision or discard the attempted identifier."
       }
@@ -221990,9 +221990,9 @@
   {
     "areaId": "montana/liberty",
     "market": "Liberty County, MT",
-    "lead": "A patient may need an older record, a new appointment or directions to a visiting specialist. I help Liberty County service organizations separate those tasks so a familiar sign-in button does not become the answer to every request.",
-    "decisionTitle": "Separate record-date routing from appointment scheduling.",
-    "decision": "Logan Health’s Chester patient-portal page gives date-based directions among PatientConnect, myHealth and MyCareCorner. It introduces PatientConnect with an April 1, 2025 launch date, directs records from December 1, 2023 through March 31, 2025 to myHealth, and directs earlier records to MyCareCorner. Its clinic page separately gives a local contact for primary-care appointments and says specialty appointments are made through the provider’s office, with Chester requested as the location.\n\nFor a proposed clinic website, I would offer separate choices for finding records and arranging a visit. A hypothetical patient looking for a 2024 record should see the published historical route rather than assume that signing into the newest portal will locate it. Someone arranging a specialist visit needs the provider’s booking contact and intended location; a successful portal sign-in is not evidence that an appointment exists. These distinctions can be explained without asking the person to enter symptoms, a record number or a document into the public site.\n\nThe owner would supply current approved portal labels, date guidance, support contacts and scheduling destinations. A focused update can organize those links around the person’s task. A fuller project can connect service descriptions, location-specific scheduling and arrival preparation. Test an older-record request and a specialty appointment request separately. The first should preserve the date guidance and offer help when the record is not found; the second should identify who schedules the visit and which location must be requested. Portal history can overlap, so the website should repeat the provider’s routing guidance without guaranteeing exclusive storage or complete records in any one system.",
+    "lead": "Customers may need an older system for one task and a current service for another. I help Liberty County organizations label those destinations by purpose, explain which tool remains in use and provide a support route. A clinic’s record and scheduling links illustrate the distinction.",
+    "decisionTitle": "Separate current and legacy tools by customer task.",
+    "decision": "Local planning example. Logan Health’s Chester patient-portal page gives date-based directions among PatientConnect, myHealth and MyCareCorner. It introduces PatientConnect with an April 1, 2025 launch date, directs records from December 1, 2023 through March 31, 2025 to myHealth, and directs earlier records to MyCareCorner. Its clinic page separately gives a local contact for primary-care appointments and says specialty appointments are made through the provider’s office, with Chester requested as the location.\n\nThe website deliverable is a task-based link directory: find a record, arrange a primary-care visit or contact the specialist’s office. It would keep the provider’s published historical date guidance beside the record links and give each task a support contact. An illustrative 2024 record request would retain the historical route; a specialty appointment inquiry would retain the requested Chester location. The owner approves destinations and date wording. The public page would neither collect clinical records nor imply that signing in creates an appointment.",
     "scopes": [
       {
         "title": "Route a record request by published date guidance",
@@ -222019,9 +222019,9 @@
     ],
     "scopeTrigger": "A public navigation update can support existing provider systems. A fuller website can organize multiple clinics and visiting services. Patient accounts, health records, secure messaging, appointment integrations and clinical intake require separate technical and privacy review. This brief does not migrate data, provide medical advice or promise that a particular record is available.",
     "quoteQuestions": [
-      "Is the person seeking an existing record or arranging a new visit?",
-      "Which approved dates distinguish the record-access routes?",
-      "Who actually schedules each type of visit, and how is its location specified?"
+      "Which current and older systems must remain available?",
+      "Which destination should open for each customer task?",
+      "Who owns support and approves changes to routing instructions?"
     ],
     "coverageNote": "For website projects in Liberty County, Montana. Wonder and Method is based in Buffalo, New York, and works online. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -222152,9 +222152,9 @@
   {
     "areaId": "montana/mccone",
     "market": "McCone County, MT",
-    "lead": "An online application can leave another organization with a separate part to complete. I help McCone County service businesses explain who supplies each item, where it goes and which date matters before a customer assumes the request is ready for review.",
-    "decisionTitle": "Keep the applicant’s request separate from the previous provider’s evidence.",
-    "decision": "McCone Electric Cooperative’s new-service page asks for a start-of-service date and directs applicants to a separate credit-release form. The applicant completes the utility-account section; the previous or present utility completes the credit-rating section. The form says the information is used to evaluate a request to waive a security deposit, gives a mailing destination, and requires the rating to reach the cooperative within fifteen days of the application date.\n\nFor a proposed service-application website, I would show who completes each part before the customer begins. A hypothetical applicant may have sent the online request while the previous utility has not returned its section. The website should explain that remaining handoff and the existing contact for questions. It should not label an online submission as a received credit reference or an approved deposit waiver. The requested start date also should not replace the application date in the explanation of the evidence deadline.\n\nAsk the owner for the actual responsibilities, approved document route, date wording and staff contact when evidence is missing. A focused edit can put this sequence beside the current application and official form. A fuller project can connect service requests, preparation and follow-up instructions while keeping sensitive information in the authorized process. Test a completed applicant section with an unfinished provider section, then a customer moving the requested start date. The first should identify who still needs to act; the second should leave the documented deadline basis clear and direct any exception to staff. Neither test requires collecting a credit history through a general website inquiry.",
+    "lead": "A submitted request may still depend on another person or organization. I help McCone County businesses build a step-by-step explanation of who completes each part, where it goes and what remains after submission. A utility application is one example.",
+    "decisionTitle": "Show who acts next after a request is submitted.",
+    "decision": "Local planning example. McCone Electric Cooperative’s new-service page asks for a start-of-service date and directs applicants to a separate credit-release form. The applicant completes the utility-account section; the previous or present utility completes the credit-rating section. The form says the information is used to evaluate a request to waive a security deposit, gives a mailing destination, and requires the rating to reach the cooperative within fifteen days of the application date.\n\nI would build a process page with three clearly assigned steps: submit the service request, complete the applicant’s section and arrange for the previous provider to return its evidence. A submitted application would still show the provider step as outstanding until the authorized process confirms receipt. The requested service start date would remain separate from the documented application-based deadline. The owner supplies the current form, return route and exception contact; sensitive records stay in that approved process.",
     "scopes": [
       {
         "title": "Show who completes and returns each part",
@@ -222181,9 +222181,9 @@
     ],
     "scopeTrigger": "A focused process explanation can support the existing forms. A fuller website can connect new-service preparation with accurate follow-up guidance. Account systems, credit checks, sensitive uploads, automated reminders, date calculations and eligibility decisions require separate assessment. The cooperative determines service arrangements and deposit treatment; this example does not establish either outcome.",
     "quoteQuestions": [
-      "Who completes each section, and who returns it?",
-      "Which date starts the evidence deadline?",
-      "Where should a customer ask about an incomplete reference without sending sensitive information through a public inquiry?"
+      "Who completes and returns each part of the request?",
+      "What should the customer understand is still pending after submission?",
+      "Who approves deadline wording and helps with missing information?"
     ],
     "coverageNote": "For website projects in McCone County, Montana. Wonder and Method is based in Buffalo, New York, and works online. McCone Electric Cooperative is a public planning example, not a client, partner or endorsement.",
     "sources": [
@@ -223643,9 +223643,9 @@
   {
     "areaId": "wyoming/albany",
     "market": "Albany County, WY",
-    "lead": "Keep event space, catering arrangements and mansion photography distinct. I help Albany County organizations turn that decision into a clear website project.",
-    "decisionTitle": "Keep event space, catering arrangements and mansion photography distinct.",
-    "decision": "The Laramie Plains Museum describes the Alice Hardie Stevens Event Center with a catering kitchen, while explaining that the museum does not provide catering. Its rental information also separates use of the east lawn from access to the buildings. Photography inside the Ivinson Mansion requires arrangements with staff so it does not conflict with tours.\n\nFor a venue website in Albany County, I would build the inquiry around the spaces and activities the organizer actually needs. A wedding reception in the event center, photographs in the mansion and time on the lawn are three arrangements to describe, even if they happen on the same day. One venue photograph should not imply that every pictured room belongs to the rental.\n\nA focused project can label the included spaces and put the photography contact beside the relevant image. A larger project can connect room descriptions, catering preparation and a short inquiry that staff review. Ask for the event, preferred date, intended spaces, photography plans and reply details within the agreed form scope. Staff retain responsibility for access permission and the actual rental agreement; submitting an inquiry does not reserve the mansion or settle a tour conflict.",
+    "lead": "A venue website should make included spaces and separately arranged services clear before an inquiry. I help Albany County venues connect room descriptions, preparation and staff review so customers can explain the event they need. A museum venue provides one example.",
+    "decisionTitle": "Explain venue inclusions before the event inquiry.",
+    "decision": "Local planning example. The Laramie Plains Museum describes the Alice Hardie Stevens Event Center with a catering kitchen, while explaining that the museum does not provide catering. Its rental information also separates use of the east lawn from access to the buildings. Photography inside the Ivinson Mansion requires arrangements with staff so it does not conflict with tours.\n\nFor a venue website in Albany County, I would build the inquiry around the spaces and activities the organizer actually needs. A wedding reception in the event center, photographs in the mansion and time on the lawn are three arrangements to describe, even if they happen on the same day. One venue photograph should not imply that every pictured room belongs to the rental.\n\nA focused project can label the included spaces and put the photography contact beside the relevant image. A larger project can connect room descriptions, catering preparation and a short inquiry that staff review. Ask for the event, preferred date, intended spaces, photography plans and reply details within the agreed form scope. Staff retain responsibility for access permission and the actual rental agreement; submitting an inquiry does not reserve the mansion or settle a tour conflict.",
     "scopes": [
       {
         "title": "Label the spaces included in an event rental",
@@ -223673,8 +223673,8 @@
     "scopeTrigger": "A focused edit can clarify the existing content and contact links. A fuller project connects the described choices and preparation across the agreed pages. The written proposal names the deliverables; accounts, payment processing, reservations, uploads, automation and integrations require separate assessment. An ordinary form stays within the agreed field and handoff limits.",
     "quoteQuestions": [
       "Which spaces are included in the selected rental?",
-      "Who arranges catering and mansion photography?",
-      "What information helps staff check a photography request against tours?"
+      "Which services must the customer arrange separately?",
+      "What event details help staff review the requested spaces and activities?"
     ],
     "coverageNote": "For website projects in Albany County, Wyoming. Wonder and Method works online from Buffalo, New York. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
@@ -226678,9 +226678,9 @@
   {
     "areaId": "alaska/nome",
     "market": "Nome Census Area, AK",
-    "lead": "A vessel project can require yard space, a haul plan and separately arranged workers. I help Nome-area marine businesses explain which part of that preparation their own service covers before a customer treats the whole project as scheduled.",
-    "decisionTitle": "Keep the contractor request separate from port and haul approval.",
-    "decision": "The Port of Nome's current forms page links a haul-out/launch user agreement. That linked document, bearing older revision dates, asks for vessel details, a step-by-step operational plan, crew and equipment information, and port approval. Its terms describe an open-yard arrangement in which the user manages the work and contracts for services. This is a published preparation example, not a studio interpretation of the current tariff or permission to carry out a job.\n\nFor a proposed marine contractor website, I would first identify the vessel, requested work, current location and intended timing. Then explain which port or movement arrangements the customer still needs to resolve with the responsible parties. A contractor’s willingness to discuss a repair does not approve the haul, allocate a storage area or establish another vendor's authorization.\n\nAsk the business owner for its actual service boundary and approved handoff to the port. A compact preparation section can link the port's maintained forms page and explain what the contractor needs before discussing a visit. It should not copy old form requirements into a permanent local checklist or invite sensitive insurance and crew records into a general website inquiry.\n\nUse a hypothetical owner who requests repair work while the haul plan is still under review. The contact response should preserve the work request and name the unresolved arrangement without saying the job is booked. If the owner later changes the worksite or the contractor’s role, review the dependent arrangements again. Marine professionals and the port determine equipment, permissions, insurance and safe operations; the website can only make their separate responsibilities easier to understand.",
+    "lead": "Marine contractors need an inquiry that identifies the vessel, requested work, location and timing, plus a clear link to port preparation. I help Nome-area businesses explain their own work and the arrangements customers must resolve separately.",
+    "decisionTitle": "Build a marine-work inquiry with a separate port-preparation link.",
+    "decision": "Local planning example. The Port of Nome's current forms page links a haul-out/launch user agreement. That linked document, bearing older revision dates, asks for vessel details, a step-by-step operational plan, crew and equipment information, and port approval. Its terms describe an open-yard arrangement in which the user manages the work and contracts for services. This is a published preparation example, not a studio interpretation of the current tariff or permission to carry out a job.\n\nI would build a short inquiry asking for the vessel, requested work, current or intended worksite and preferred timing. Beside it, a port-preparation section would link the maintained forms page and identify the arrangements the customer must resolve separately. For example, a repair request with a haul plan still under review would remain an inquiry, with the outstanding port step named. The contractor supplies its actual service boundaries; the port and qualified providers confirm movement, access and safe operations. Later documents stay in the approved channel.",
     "scopes": [
       {
         "title": "Describe the contractor service request",
@@ -226708,10 +226708,10 @@
     "scopeTrigger": "A content project can explain dependencies and preserve existing contacts. Insurance uploads, work orders, permit processing, signatures, haul scheduling and approval tracking need separate assessment. The port, vessel owner and qualified marine providers retain legal, technical and operational responsibilities.",
     "quoteQuestions": [
       "What work can your business agree to independently?",
-      "Which port, movement or site arrangements must be resolved separately?",
-      "Who receives updated information if the location or work changes?"
+      "Which vessel, worksite and timing details do you need in the first inquiry?",
+      "Who maintains the official port link and receives changed worksite information?"
     ],
-    "coverageNote": "The Port of Nome document identifies the local port office and facility use in Nome. The University of Alaska profile independently places Nome in Nome Census Area; the port is a city institution, not a census-area government. Wonder and Method works online from Buffalo, New York. Named organizations are public planning examples, not clients, partners or endorsements.",
+    "coverageNote": "The Port of Nome documents provide a local planning example for marine contractor websites. Wonder and Method works online from Buffalo, New York with Nome-area businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
       {
         "url": "https://www.nomealaska.org/1352/Port-Forms",

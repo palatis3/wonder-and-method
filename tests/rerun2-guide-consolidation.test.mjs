@@ -85,7 +85,9 @@ test('review and monthly plan prices and pluralization use each render’s confi
  changed.plans.grow.priorities=4;
  for(const slug of ['website-maintenance-cost','website-care-versus-seo','seo-work-and-reporting']){
   const revised=body(slug,changed);
-  for(const id of ['keep_running','improve','grow'])assert.ok(revised.includes(money(changed.plans[id].monthly_price)),`${slug}: ${id}`);
+  const displayed=slug==='website-maintenance-cost'?['keep_running']:slug==='seo-work-and-reporting'?['improve','grow']:['keep_running','improve','grow'];
+  for(const id of displayed)assert.ok(revised.includes(money(changed.plans[id].monthly_price)),`${slug}: ${id}`);
+  assert.ok(revised.includes('/pricing/#after-launch'),slug+' links the full current comparison');
  }
  const review=body('contact-form-not-working',changed);
  for(const price of [383,887])assert.ok(review.includes(money(price)));

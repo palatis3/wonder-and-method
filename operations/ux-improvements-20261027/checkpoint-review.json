@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "reviewType": "Independent implementation checkpoint; source review",
+  "status": "source_fix_verified_runtime_verification_pending",
+  "findings": [
+    {
+      "id": "UX-CHECK-01",
+      "severity": "P2",
+      "path": "src/journal.mjs",
+      "line": 194,
+      "title": "Keep optional-case fragment targets on the disclosure",
+      "evidence": "renderSection retains id=planning-2, planning-3, planning-4, planning-5 and related-cases on an outer section, then places the previously visible body in a closed child details. The generated table of contents still links to those ids. src/assets/site-navigation.js:6 only opens target.closest(details) and ancestor disclosures, so these links do not reveal their case content.",
+      "reproduction": "Open /guides/timed-booking-handoff/#planning-2 or select that entry in In this guide. The page scrolls to a closed summary and the referenced case stays hidden.",
+      "impact": "Existing deep links and the guide contents no longer reveal the requested case; visitors must discover and open it manually.",
+      "minimalFix": "For optional cases, put the existing id on details and omit it from the wrapper section. Alternatively, make the shared reveal handler open this specific direct child disclosure.",
+      "verification": "Static markup and shared anchor-handler inspection; a minimal VM invocation of the existing handler with an outer-section target confirms no disclosure-open path.",
+      "status": "fixed_by_primary_during_review",
+      "resolution": "Primary moved the existing optional-case fragment id onto details and removed it from the wrapper. Source fix verified; primary will verify direct links, table-of-contents links and history navigation in browser."
+    }
+  ],
+  "remainingAuditItems": [
+    {
+      "path": "src/service-faqs.json",
+      "line": 2388,
+      "item": "Queens multilingual FAQ remains firing-specific. The local worker ledger explicitly deferred broadening it because FAQs were outside that worker ownership.",
+      "minimalFix": "Broaden the question and answer to translation of the buyer business service/preparation/inquiry pages, retaining owner approval, maintenance and reply-language boundaries."
+    }
+  ],
+  "coverage": [
+    "Reviewed meaningful diff ignoring end-of-line churn across inquiry form, floating tools, directory matching, homepage proof ordering, pricing and editing disclosures, local templates, guides, service evidence, Work/About, source handoff, add-on navigation and analytics prompt.",
+    "Checked directory exact-name grouping against existing type/state constraints; no new filtering defect found.",
+    "Read all changed local record lead/decision/request patterns through bounded extracts; independently verified 49 changed records with only permitted copy keys and unchanged source URLs/observations.",
+    "Source provenance, fictional-example labeling, account ownership and payment boundaries remain visible or linked in reviewed changes."
+  ],
+  "limits": [
+    "No broad test suite, build, browser or visual audit run; primary owns those gates.",
+    "External public sources were not re-researched; review compared provenance and changes to the existing source corpus.",
+    "Pricing and care wording were concurrently being adjusted by primary; explicitly excluded known in-progress care exclusion wording and CRLF normalization.",
+    "This is a checkpoint, not confirmation that every original audit finding is resolved."
+  ]
+}

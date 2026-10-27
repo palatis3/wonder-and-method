@@ -241,3 +241,5 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 
 .city-copy .city-location,.city-package-note,.city-reveal-copy p:not(.city-reveal-category):not(.city-reveal-title){font-size:1rem}
 .city-reveal-copy .city-reveal-category,.city-controls .city-status,.city-controls button,.city-reveal-bar,.city-reveal-copy a{font-size:.875rem}
+/* Let the two phone actions share a row when they fit; retain wrapping at 320px. */
+@media(max-width:767px){.city-actions{gap:8px 16px}.city-copy .city-primary{padding-inline:16px}}
