@@ -424,6 +424,56 @@
       "reviewer": "Primary Codex and independent Astra integration review",
       "reviewedAt": "2026-10-26T22:51:07.380Z",
       "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/idaho/adams-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "a9981134a8110a10b7642fcfec2c917eb2b46f7abef2d7deeafe127877ed86a6",
+      "disposition": "retain",
+      "reason": "Retain: this sentence summarizes one published equipment-only agreement, connecting collection/transport/return and the seven-day limit to emergency cancellation because of the facility’s incident-command role. Keeping the emergency condition with the off-site rental terms supports the specific planning distinction without inventing a separate policy.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
+      "reviewedAt": "2026-10-27T01:02:15.069Z",
+      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/montana/carter-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "493c8adc3327893e7cd9e62cc22c4c74c24dce8aab61ed6398698d5f214fdf99",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces three parallel pieces of lesson information—available digital material, required or optional physical materials, and the actual kit custodian. Together they define the proposed resource record and avoid sending every kit inquiry to the page publisher.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
+      "reviewedAt": "2026-10-27T01:02:15.069Z",
+      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/montana/fergus-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "9a9d960f5d01abd0e9155d1af809d475983864659d0fbd992208d7160a6f15d8",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces a concrete preparation sequence before buying studio access: class or orientation route, staff confirmation, and the current class schedule. These related checks explain the same pass-selection decision and remain readable as one list.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
+      "reviewedAt": "2026-10-27T01:02:15.069Z",
+      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/montana/garfield-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "d1f51a312479d9f19fbddcc42fe7aaa1690ed275beeefbc63f8ba2f3de117e5a",
+      "disposition": "retain",
+      "reason": "Retain: two hypothetical changes have distinct acceptance outcomes within one comparison. Changed ground returns to staff for the rate, while extra time reveals the extension contact; neither change silently calculates or grants an outcome.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
+      "reviewedAt": "2026-10-27T01:02:15.069Z",
+      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/montana/rosebud-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "c36afb74f7e9b5f4a5f617a5cccb8b3f8cdb7bc320668e355497b1fb8a4fdd24",
+      "disposition": "retain",
+      "reason": "Retain: one sentence tests two changes against two corresponding mistaken confirmation states. A changed event date and renter-forwarded insurance each require follow-up; neither automatically preserves approval or completes the professional’s handoff.",
+      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
+      "reviewedAt": "2026-10-27T01:02:15.069Z",
+      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
     }
   ]
 }

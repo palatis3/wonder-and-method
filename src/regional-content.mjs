@@ -1,3 +1,4 @@
+import {idMtGeography,idMtAreaInventory} from './id-mt-geography.mjs';
 import {coUtPrGeography,coUtPrAreaInventory} from './co-ut-pr-geography.mjs';
 import {nvWaGeography,nvWaAreaInventory} from './nv-wa-geography.mjs';
 import {azOrGeography,azOrAreaInventory} from './az-or-geography.mjs';
@@ -18,8 +19,8 @@ import {inKyTnNcGeography,inKyTnNcAreaInventory} from './in-ky-tn-nc-geography.m
 import {floridaGeography,floridaAreaInventory} from './florida-geography.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 
-export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography,...azOrGeography,...nvWaGeography,...coUtPrGeography};
-export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory,...azOrAreaInventory,...nvWaAreaInventory,...coUtPrAreaInventory];
+export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography,...azOrGeography,...nvWaGeography,...coUtPrGeography,...idMtGeography};
+export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory,...azOrAreaInventory,...nvWaAreaInventory,...coUtPrAreaInventory,...idMtAreaInventory];
 // The directory groups verified places within state, district and territory hubs.
 // A county does not receive a separate commercial page merely to target its name.
 export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).map(stateId=>{

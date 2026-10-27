@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import {parseFragment} from 'parse5';
 import {countyDirectory,countySearchAsset,serviceStates,countySearchText,countyServicePath,countyAreaName} from '../src/service-area-directory.mjs';
 import {decodeCountySearchAsset} from '../src/assets/county-directory.js';
-import budget from './fixtures/co-ut-pr-payload-budget.json' with {type:'json'};
+import budget from './fixtures/id-mt-payload-budget.json' with {type:'json'};
 
 const attribute=(node,name)=>node.attrs?.find(item=>item.name===name)?.value;
 const all=node=>[node,...(node.childNodes||[]).flatMap(all)];
@@ -24,15 +24,15 @@ test('combined payload retains all typed terms, native links and the complete pa
  assert.equal(descriptor.path,asset.path);assert.equal(descriptor.format,'columns-delta-v1');
  assert.equal(asset.path,'/assets/county-search-'+createHash('sha256').update(asset.bytes).digest('hex').slice(0,20)+'.bin');
  const client=readFileSync(new URL('../src/assets/county-directory.js',import.meta.url));
- // Reconstructed inline transport uses the same 3064-area inventory and client.
+ // Reconstructed inline transport uses the same 3164-area inventory and client.
  // The reviewed fixture includes deferred data and both browser modules.
  assert.ok(gzipSync(html).length+asset.bytes.length+gzipSync(client).length<=budget.baselineTotalGzip,'combined HTML, deferred data and client must improve the equivalent-inventory transfer');
  let withServicePaths=html;
- for(const state of serviceStates.filter(state=>['north-dakota','south-dakota','california','new-mexico','arizona','oregon','nevada','washington','colorado','utah','puerto-rico'].includes(state.id)))for(const county of state.counties){
+ for(const state of serviceStates.filter(state=>['north-dakota','south-dakota','california','new-mexico','arizona','oregon','nevada','washington','colorado','utah','puerto-rico','idaho','montana'].includes(state.id)))for(const county of state.counties){
   withServicePaths=withServicePaths.replace('href="'+countyServicePath(county,state)+'"','href="/areas/'+state.id+'/'+county.slug+(state.id==='puerto-rico'?'-municipio/':'-county/')+'"');
  }
  assert.ok(Buffer.byteLength(withServicePaths)<450_000&&gzipSync(withServicePaths).length<195_000);
- assert.ok(gzipSync(withServicePaths).length+asset.bytes.length+gzipSync(client).length<=budget.baselineAllServicePathsTotalGzip,'all 488 eleven-region service paths remain below the equivalent-inventory baseline');
+ assert.ok(gzipSync(withServicePaths).length+asset.bytes.length+gzipSync(client).length<=budget.baselineAllServicePathsTotalGzip,'all 588 thirteen-region service paths remain below the equivalent-inventory baseline');
  const {entries:terms}=await decodeCountySearchAsset(asset.bytes);
  const expected=serviceStates.toSorted((a,b)=>a.name.localeCompare(b.name,'en')).flatMap(state=>state.counties.toSorted((a,b)=>a.name.localeCompare(b.name)).map(county=>({state,county})));
  assert.equal(expected.length,budget.areaCount);assert.equal(terms.length,expected.length);

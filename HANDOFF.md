@@ -1,6 +1,12 @@
 # Operating handoff
 
-Current published application: [Analytics consent layout correction](operations/ANALYTICS_CONSENT_FIX_20261026.md), source `7276436059258d34aa826ac0162c7b80b9497a32`, deployed 2026-10-26T20:45:51.274Z. Nevada and Washington content, Google Analytics configuration and all earlier reviewed coverage are retained.
+Current published application: [Colorado, Utah and Puerto Rico](operations/co-ut-pr-expansion-20261026/RELEASE.md), source `76a5b665f52447579de68703de60b57003b7ea05`, runtime `22055743-5bfc-41d9-9507-55485ed6ad4b`, deployed 2026-10-27T00:22:53.176Z. All 2,299 routes and 2,969 assets match the tested build; exact-source CI, live verification, Search Console submission and scheduled recovery with external monitoring receipt are complete.
+
+The [Idaho and Montana candidate](operations/id-mt-expansion-20261026/RELEASE.md) adds 69 reviewed service pages and two state directories. It remains pending exact-source CI, Linux screenshot acceptance and production verification.
+
+## Retained prior release record
+
+Previously published application: [Analytics consent layout correction](operations/ANALYTICS_CONSENT_FIX_20261026.md), source `7276436059258d34aa826ac0162c7b80b9497a32`, deployed 2026-10-26T20:45:51.274Z. Nevada and Washington content, Google Analytics configuration and all earlier reviewed coverage are retained.
 
 The consent heading now stays compact on every tested page layout, including 320-pixel phones. Published source: `7276436059258d34aa826ac0162c7b80b9497a32`. Published runtime version: `efb7d38d-3130-430a-9fe7-39039fc8fb4a`. Deployed 2026-10-26T20:45:51.274Z. The change is one CSS selector plus a browser regression; consent behavior, event tags, page content, routes, database code and schema are unchanged from the verified Nevada/Washington release.
 

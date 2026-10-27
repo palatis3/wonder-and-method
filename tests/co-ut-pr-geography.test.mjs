@@ -17,8 +17,8 @@ const matches=q=>cards.filter(c=>countyMatch(c,parseCountyQuery(q)).score).map(c
 test('CO/UT/PR retain every approved geographic object and distinguish states from territory',()=>{
  assert.equal(coUtPrAreaInventory.length,171);assert.equal(new Set(coUtPrAreaInventory.map(c=>c.fips)).size,171);
  assert.deepEqual(states.map(s=>[s.id,s.counties.length]),[['colorado',64],['utah',29],['puerto-rico',78]]);
- assert.equal(serviceStateInfo.filter(s=>s.kind==='state').length,45);assert.equal(serviceStateInfo.length,47);
- assert.equal(serviceRegionLabel,'45 states, Washington, DC, and Puerto Rico');
+ assert.equal(serviceStateInfo.filter(s=>s.kind==='state').length,47);assert.equal(serviceStateInfo.length,49);
+ assert.equal(serviceRegionLabel,'47 states, Washington, DC, and Puerto Rico');
  for(const state of states){const distinct=new Map();let memberships=0;
   for(const c of coUtPrAreaInventory.filter(c=>c.stateId===state.id)){
    const g=coUtPrGeography[state.id][c.slug];assert.equal(digest(g),expected.areaDigests[state.id+'/'+c.slug]);

@@ -1,3 +1,4 @@
+import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import azOrPaths from './fixtures/az-or-approved-paths.json' with {type:'json'};
@@ -24,7 +25,7 @@ import map from '../authority/v5/site-map.json' with {type:'json'};
 import erieGeography from '../authority/v5/geography.json' with {type:'json'};
 import dates from '../config/page-dates.json' with {type:'json'};
 
-const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const states=['mississippi','alabama'];
 const laterStates=['wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates];

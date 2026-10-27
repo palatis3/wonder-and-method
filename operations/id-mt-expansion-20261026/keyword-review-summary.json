@@ -1,0 +1,27 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "PASS_FINAL_KEYWORD_ACCEPTANCE",
+  "database": "US",
+  "counts": {
+    "uniqueQueries": 828,
+    "statuses": {
+      "UNAVAILABLE_REFRESH_REQUIRED": 763,
+      "OBSERVED": 37,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 28
+    },
+    "numericVolumes": 65,
+    "positiveVolumes": 55,
+    "explicitZeroVolumes": 10,
+    "unavailableVolumes": 763
+  },
+  "interpretation": [
+    "No overlapping query volumes are summed.",
+    "Unavailable, partial and explicit-zero states are preserved.",
+    "Regional Questions panels have no data; this does not establish zero demand.",
+    "The 27 question seeds are exploratory phrases, not Semrush-provided questions.",
+    "A national phrase estimate does not establish county-resident demand.",
+    "FAQ no-addition decisions follow full-body and comparison review, not an empty-file or no-data shortcut."
+  ],
+  "publicationStatus": "Private integration candidate; release gates pending.",
+  "independentReviewSha256": "9d2c2abb6ed2f0702e1ffc7737ee1628044cc36759c80adaa2994681ca50a74f"
+}
