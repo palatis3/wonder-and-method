@@ -1,3 +1,4 @@
+import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
@@ -65,7 +66,7 @@ test('0038 adds exactly the Texas directory and 216 reviewed county keys and pre
  assert.equal(nextKeys.length,1448);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].sort(),[...nextKeys,...moIaPaths.map(journeyPageKey),...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...azOrPaths.map(journeyPageKey),...nvWaPaths.map(journeyPageKey),...coUtPrPaths.map(journeyPageKey),...idMtPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey),...mnOkPaths.map(journeyPageKey)].sort());
+ assert.deepEqual([...journeyPages].sort(),[...nextKeys,...moIaPaths.map(journeyPageKey),...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...azOrPaths.map(journeyPageKey),...nvWaPaths.map(journeyPageKey),...coUtPrPaths.map(journeyPageKey),...idMtPaths.map(journeyPageKey),...wyHiAkPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey),...mnOkPaths.map(journeyPageKey)].sort());
  // SQLite quotes the renamed table. Only the 217 approved page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

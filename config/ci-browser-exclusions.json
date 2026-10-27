@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "reviewedBy": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-  "reviewedAt": "2026-10-27T01:02:15.069Z",
-  "basis": "Preserve prior skip reasons and predicates. Desktop all-route tests still exercise both 360px and 1440px widths on all 2370 routes. Extend terminal batch 2276–2299 to 2276–2300 and add three batches through2370 in the same two duplicate phone projects. All 45 new Idaho/Montana focused browser tests run. No coverage assertion or performance budget is removed. Independently reviewed: evidence/id-mt-expansion-20261026/integration-review/global-delta/ci-approval.json.",
+  "reviewedBy": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
+  "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
+  "basis": "Preserve every previous skip reason and predicate. Desktop all-route cases still check both360px and1440px on all2424routes. Extend the prior terminal range2351–2370 to2351–2375 and add2376–2400/2401–2424 in the same two duplicate phone projects. All42new WY/HI/AK focused browser cases run. No coverage assertion, link check or payload/performance budget is removed. Source bindings reflect updated inventory counts and the tested Buffalo separator regression. Independently reviewed: evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/ci-approval.json.",
   "sourceFiles": {
     "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
     "tests/browser/audit-layout-regression.spec.mjs": "15ce8e77aee45d0d13c300f632f33b980d7a69857f28a299c513d45bb40d1207",
@@ -12,17 +12,17 @@
     "tests/browser/header-resize.spec.mjs": "7ec2453abadffe16c0596375b6116f3fd444b32bff8daad69d04c9bb5142a918",
     "tests/browser/living-city-accessibility.spec.mjs": "376c6a61b670d869c64f3468271630262c0fb896ba3a1a5fb7eb27756d636c69",
     "tests/browser/living-city-motion-polish.spec.mjs": "eefef091140963e0cdfa84bc902119ad3a5790ad9ec69dc7a5ca47f80a4c40a3",
-    "tests/browser/living-city-night.spec.mjs": "33332963c0ea1e3879463985ce8abaa645cdda902e0571c816abe9717e6d7874",
+    "tests/browser/living-city-night.spec.mjs": "d5616cedb1d536b48cab857cdcdc0da5e4aed9e189979f6e120b38eeb665f7d0",
     "tests/browser/location-next-planning.spec.mjs": "fa92b027090c0cc43fa98d41e6e9367bb570299ab83af0df03d12ec5dc4396ee",
     "tests/browser/location-planning.spec.mjs": "cb765d897729ffdb55640e1bc2916cc50d08292bad35562820f0627047d6283c",
     "tests/browser/location-wave-four-planning.spec.mjs": "6da150dcaea263cc65f1b4a2c74d1f66139ceebb9b4457e8c68d70347162b953",
     "tests/browser/location-wave-one-planning.spec.mjs": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
     "tests/browser/location-wave-three-planning.spec.mjs": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
     "tests/browser/location-wave-two-planning.spec.mjs": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
-    "tests/browser/no-javascript.spec.mjs": "bec10cc15938f171675371eca331ab9d0394e5bfbb3eed9a9b0688bab1d73592",
-    "tests/browser/northeast-coverage.spec.mjs": "4914f416badd0783ead93005362a1d8b6afd21594ec5302aee2375afecdab027",
+    "tests/browser/no-javascript.spec.mjs": "fe346c8e2de6b7ab2c60dcb73dd98af044316cbb421b4c308f2921dff7508e91",
+    "tests/browser/northeast-coverage.spec.mjs": "e0aa14a1a6a176572ca39daa8d70b0ff36aa19facc832033ef7f6c4068a5bfb1",
     "tests/browser/palette-clarity.spec.mjs": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
-    "tests/browser/regional-directory.spec.mjs": "ae89fdfbc9ebefe4c82293ee150a35233df875f288d3d569596d05c78cca9c2b",
+    "tests/browser/regional-directory.spec.mjs": "da04f742acab896fa76b8f1a200aafa434ac935aa8fdbdf3a1a45fc056a5e6ac",
     "tests/browser/shared-controls.spec.mjs": "dce4caf88c91c5e98a001745c81cbe8bcc97f0082e0b385793e42f4bb0a91a4e",
     "tests/browser/site-accessibility.spec.mjs": "4fa345631db704a5c8ebe10546bbc9d6b2301fca7bd15ee222ed064f68e130a6",
     "tests/browser/site-health.spec.mjs": "47c8ff3f2cfc301acfc87d89a8dcaf3f6ccb89ae6db93dbb93e4c990aa64cab1",
@@ -1730,7 +1730,17 @@
       "reason": "One complete desktop/phone matrix"
     },
     {
-      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2351–2370",
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2351–2375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2376–2400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2401–2424",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },
@@ -2760,7 +2770,17 @@
       "reason": "One complete desktop/phone matrix"
     },
     {
-      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2351–2370",
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2351–2375",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2376–2400",
+      "file": "tests/browser/site-health.spec.mjs",
+      "reason": "One complete desktop/phone matrix"
+    },
+    {
+      "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2401–2424",
       "file": "tests/browser/site-health.spec.mjs",
       "reason": "One complete desktop/phone matrix"
     },

@@ -1,3 +1,4 @@
+import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
@@ -29,7 +30,7 @@ import {wiIlGeography,wiIlAreaInventory} from '../src/wi-il-geography.mjs';
 import {serviceStates,countyDirectory,countySearchText,countySearchAsset} from '../src/service-area-directory.mjs';
 import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,decodeCountySearchAsset,unpackCountySearch,unpackCountyBase91} from '../src/assets/county-directory.js';
 
-const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
+const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths].filter(path=>/^\/areas\/[^/]+\/$/.test(path)).map(path=>path.split('/')[2]);
 
 const additions=['wisconsin','illinois'];
 const laterStates=['louisiana','arkansas','texas','missouri','iowa',...mnOkStates];
@@ -104,7 +105,7 @@ test('compressed dictionary preserves every term while keeping the existing payl
  const {entries:terms}=await decodeCountySearchAsset(asset.bytes);
  const actual=[...html.matchAll(/data-cs="([^"]*)"/g)].map((match,index)=>terms[match[1]===''?index:Number(match[1])]);
  assert.deepEqual(actual,expectedTerms);
- assert.equal(actual.length,3164);
+ assert.equal(actual.length,3222);
  assert.ok(Buffer.byteLength(html)<450_000);
  assert.ok(gzipSync(html).length<195_000);
  for(const state of serviceStates.filter(state=>['wisconsin','illinois'].includes(state.id))){

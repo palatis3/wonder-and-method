@@ -17,7 +17,7 @@ const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.
 
 test('CO/UT/PR preserve 2033 prior services and 275 FAQ pairs with exactly 113 services and three FAQs added',()=>{
  assert.equal(Object.keys(preservation.services).length,2033);assert.equal(Object.keys(preservation.newServices).length,113);
- assert.equal(locationServices.length,2215);assert.equal(approved.length,116);
+ assert.equal(locationServices.length,2266);assert.equal(approved.length,116);
  assert.deepEqual([...approved.slice(3)].sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(byPath.get(path)),hash,path);
  assert.deepEqual(Object.keys(faqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(preservation.newFaqs)].sort());
@@ -26,7 +26,7 @@ test('CO/UT/PR preserve 2033 prior services and 275 FAQ pairs with exactly 113 s
 });
 
 test('all 171 areas retain directory destinations and 58 no-additions remain directory-only',()=>{
- assert.equal(pages.size,2370);assert.equal(decisions.areas.length,171);
+ assert.equal(pages.size,2424);assert.equal(decisions.areas.length,171);
  assert.equal(decisions.areas.filter(x=>x.serviceDecision==='NO_ADDITION').length,58);
  for(const entry of decisions.areas){
   const [route,id]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${id}"`));

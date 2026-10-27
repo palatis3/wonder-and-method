@@ -17,8 +17,8 @@ const matches=q=>cards.filter(c=>countyMatch(c,parseCountyQuery(q)).score).map(c
 test('ID/MT preserve all independently reviewed geographic objects and 100 county identities',()=>{
  assert.equal(idMtAreaInventory.length,100);assert.equal(new Set(idMtAreaInventory.map(c=>c.fips)).size,100);
  assert.deepEqual(states.map(s=>[s.id,s.counties.length]),[['idaho',44],['montana',56]]);
- assert.equal(serviceStateInfo.filter(s=>s.kind==='state').length,47);assert.equal(serviceStateInfo.length,49);
- assert.equal(serviceRegionLabel,'47 states, Washington, DC, and Puerto Rico');
+ assert.equal(serviceStateInfo.filter(s=>s.kind==='state').length,50);assert.equal(serviceStateInfo.length,52);
+ assert.equal(serviceRegionLabel,'50 states, Washington, DC, and Puerto Rico');
  for(const state of states){const distinct=new Map();let memberships=0;
   for(const c of idMtAreaInventory.filter(c=>c.stateId===state.id)){
    const g=idMtGeography[state.id][c.slug];assert.equal(digest(g),expected.areaDigests[state.id+'/'+c.slug]);

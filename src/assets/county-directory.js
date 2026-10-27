@@ -186,14 +186,19 @@ function deferCountySearch(root,descriptor,controls,input,clear,status,stateFilt
  if(active())load();
 }
 // A–F preserve Puerto Rico's categories; G identifies a statistical consolidated-city balance.
-const placeTypes={'consolidated city balance':'G','consolidated city county':'m','consolidated city':'m',municipio:'A',barrio:'B','barrio pueblo':'C',subbarrio:'D','zona urbana':'E',comunidad:'F',parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z','unorganized territory':'o'};
+// H–J distinguish Alaska city-and-borough, census-area and census-subarea types.
+const placeTypes={'city and borough':'H','census area':'I','census subarea':'J','consolidated city balance':'G','consolidated city county':'m','consolidated city':'m',municipio:'A',barrio:'B','barrio pueblo':'C',subbarrio:'D','zona urbana':'E',comunidad:'F',parish:'u',district:'j',city:'c',town:'t',village:'v',borough:'b',township:'s','charter township':'h',county:'y','planning region':'r','independent city':'i',plantation:'l',municipality:'m',corporation:'m','consolidated city county government':'m','urban county government':'m','metropolitan government':'m',neighborhood:'n',ward:'w',precinct:'q','election precinct':'e','federal district':'d','census designated place':'x',cdp:'x','census county division':'z',ccd:'z','unorganized territory':'o'};
 const typePattern=Object.keys(placeTypes).sort((a,b)=>b.length-a.length).join('|');
 const typedPrefix=new RegExp('^('+typePattern+') of (.+)$'),typedSuffix=new RegExp('^(.+?) ('+typePattern+')$');
 const spanishTypedPrefix=/^(barrio pueblo|zona urbana|municipio|subbarrio|barrio|comunidad) de (.+)$/;
 const stateNames=Object.fromEntries(serviceStateInfo.flatMap(state=>[state.name,state.abbreviation,...(state.aliases||[])].map(name=>[normalizeCountyQuery(name),state.id])).sort((a,b)=>b[0].length-a[0].length));
 export function parseCountyQuery(value){
  let query=normalizeCountyQuery(value),state='',type='',literalName='';
- for(const [name,id] of Object.entries(stateNames)){
+ // These existing place names end in a newly supported state token. Protect
+ // both the bare name and its typed-prefix form before stripping state tokens.
+ // A further explicit state suffix still disambiguates the complete place name.
+ const literalPlaceName=['so hi','valley hi','west wyoming'].includes((query.match(typedPrefix)||query.match(spanishTypedPrefix))?.[2]||query);
+ for(const [name,id] of literalPlaceName?[]:Object.entries(stateNames)){
   if(query===name){state=id;query='';break;}
   if(query.endsWith(' '+name)&&!query.endsWith(' of '+name)){state=id;query=query.slice(0,-name.length).trim();break;}
  }
@@ -205,13 +210,13 @@ export function parseCountyQuery(value){
  // District of Columbia is the name, not a "District of" type prefix.
  if(query==='district of columbia federal district')return {query:'district of columbia',state,type:'federal district'};
  const prefix=query.match(typedPrefix)||query.match(spanishTypedPrefix);
- const barePrefix=query.match(/^(consolidated city balance|barrio pueblo|zona urbana|municipio|subbarrio|barrio|comunidad|census county division|ccd|unorganized territory|election precinct|precinct|ward|district|township) (.+)$/);
+ const barePrefix=query.match(/^(census subarea|census area|city and borough|consolidated city balance|barrio pueblo|zona urbana|municipio|subbarrio|barrio|comunidad|census county division|ccd|unorganized territory|election precinct|precinct|ward|district|township) (.+)$/);
  const suffix=query.match(typedSuffix);
  // Preserve names ending in a place type, such as City of Traverse City.
  if(prefix){type=prefix[1];query=prefix[2];}
  // Explicit CCD prefixes keep names such as Rio Grande City intact.
  // Other suffixes disambiguate District Heights city and Ward County.
- else if(barePrefix&&(placeTypes[barePrefix[1]]==='z'||/[A-G]/.test(placeTypes[barePrefix[1]]))){type=barePrefix[1];query=barePrefix[2];}
+ else if(barePrefix&&(placeTypes[barePrefix[1]]==='z'||/[A-J]/.test(placeTypes[barePrefix[1]]))){type=barePrefix[1];query=barePrefix[2];}
  else if(suffix){literalName=query;type=suffix[2];query=suffix[1];}
  else if(barePrefix){type=barePrefix[1];query=barePrefix[2];}
  // The official balance name includes (balance); keep its government name distinct.
@@ -222,7 +227,7 @@ export function countyMatchScore(card,search,selectedState=''){
  return countyMatch(card,search,selectedState).score;
 }
 export const compareCountyMatches=(a,b)=>b.score-a.score||(b.population||0)-(a.population||0);
-const typeLabels={G:'consolidated city balance (statistical)',A:'municipio',B:'barrio',C:'barrio-pueblo',D:'subbarrio',E:'zona urbana (Census-designated place)',F:'comunidad (Census-designated place)',u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',z:'Census county division (statistical)',o:'unorganized territory (statistical)',a:'place',p:'place or region'};
+const typeLabels={H:'city and borough',I:'census area (statistical)',J:'census subarea (statistical)',G:'consolidated city balance (statistical)',A:'municipio',B:'barrio',C:'barrio-pueblo',D:'subbarrio',E:'zona urbana (Census-designated place)',F:'comunidad (Census-designated place)',u:'parish',j:'district',y:'county',r:'planning region',i:'independent city',d:'federal district',c:'city',t:'town',v:'village',b:'borough',h:'charter township',s:'township',l:'plantation',m:'municipality',n:'neighborhood',w:'ward',q:'precinct',e:'election precinct',x:'Census-designated place',z:'Census county division (statistical)',o:'unorganized territory (statistical)',a:'place',p:'place or region'};
 export function countyMatch(card,search,selectedState=''){
  if((selectedState&&card.state!==selectedState)||(search.state&&card.state!==search.state))return {score:0};
  if(!search.query)return {score:1,name:'',type:'state'};
@@ -243,7 +248,7 @@ export function countyMatch(card,search,selectedState=''){
   // A merged name may identify both a county and its same-named city. Rank
   // explicit queries by the requested type, without the other type's bonus.
   const matchType=search.type?(countyInMunicipalName?'m':placeTypes[search.type]):type;
-  const isArea=/[uyridA]/.test(matchType);
+  const isArea=/[uyridAHI]/.test(matchType);
   // An unqualified city name should not disappear behind an identically named
   // county. Explicit type/state restrictions above still take precedence.
   // Keep other exact names ahead of partial matches and retain every match.
@@ -251,7 +256,7 @@ export function countyMatch(card,search,selectedState=''){
   const score=match?(exact?(city?8:matchType.includes('a')?7:isArea?6:5):isArea||matchType.includes('a')?2:1):0;
   const label=city?(type.includes('i')?'independent city':'city'):typeLabels[Object.keys(typeLabels).find(key=>matchType.includes(key))]||'place';
   const population=exact&&city?countyCityPopulations[card.state+'/'+name]||0:0;
-  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':['z','o','G'].includes(placeTypes[search.type])?typeLabels[placeTypes[search.type]]:search.type||label};
+  if(score>result.score)result={score,name,population,type:countyInMunicipalName?'municipality':['z','o','G','I','J'].includes(placeTypes[search.type])?typeLabels[placeTypes[search.type]]:search.type||label};
  }
  return result;
 }
@@ -291,7 +296,7 @@ export async function bindCountyDirectory(root=document,prepared){
   const row=root.createElement('li'),link=card.element.querySelector('[data-cl]').cloneNode(true),why=root.createElement('p');
   link.removeAttribute('aria-hidden');
   why.className='county-match-reason';
-  why.textContent=stateLabels[card.state]+(card.match.name?' Â· Matched '+card.match.type+': '+card.match.name: ' Â· Service area');
+  why.textContent=stateLabels[card.state]+(card.match.name?' \u00b7 Matched '+card.match.type+': '+card.match.name: ' \u00b7 Service area');
   row.append(link,why);return row;
  };
  let filtering=false,openBeforeSearch=new Set();

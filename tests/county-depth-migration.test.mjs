@@ -1,3 +1,4 @@
+import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
 import nvWaPaths from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
@@ -66,7 +67,7 @@ test('0037 adds exactly the 28 reviewed county keys and preserves populated rows
  assert.equal(nextKeys.length,1231);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths].map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths].map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
  // SQLite quotes the renamed table. Only the 28 page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()),oldSchema);
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

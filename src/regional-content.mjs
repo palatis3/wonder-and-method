@@ -1,3 +1,4 @@
+import {wyHiAkGeography,wyHiAkAreaInventory} from './wy-hi-ak-geography.mjs';
 import {idMtGeography,idMtAreaInventory} from './id-mt-geography.mjs';
 import {coUtPrGeography,coUtPrAreaInventory} from './co-ut-pr-geography.mjs';
 import {nvWaGeography,nvWaAreaInventory} from './nv-wa-geography.mjs';
@@ -19,8 +20,8 @@ import {inKyTnNcGeography,inKyTnNcAreaInventory} from './in-ky-tn-nc-geography.m
 import {floridaGeography,floridaAreaInventory} from './florida-geography.mjs';
 import {serviceStateInfo} from './assets/service-state-info.js';
 
-export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography,...azOrGeography,...nvWaGeography,...coUtPrGeography,...idMtGeography};
-export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory,...azOrAreaInventory,...nvWaAreaInventory,...coUtPrAreaInventory,...idMtAreaInventory];
+export const regionalGeography={...virginiaExpansionGeography,...michiganDcGeography,...inKyTnNcGeography,...floridaGeography,...southCarolinaGeography,...georgiaGeography,...msAlGeography,...wiIlGeography,...laArGeography,...texasGeography,...moIaGeography,...mnOkGeography,...ksNeGeography,...ndSdGeography,...caNmGeography,...azOrGeography,...nvWaGeography,...coUtPrGeography,...idMtGeography,...wyHiAkGeography};
+export const regionalAreaInventory=[...virginiaExpansionAreaInventory,...michiganDcAreaInventory,...inKyTnNcAreaInventory,...floridaAreaInventory,...southCarolinaAreaInventory,...georgiaAreaInventory,...msAlAreaInventory,...wiIlAreaInventory,...laArAreaInventory,...texasAreaInventory,...moIaAreaInventory,...mnOkAreaInventory,...ksNeAreaInventory,...ndSdAreaInventory,...caNmAreaInventory,...azOrAreaInventory,...nvWaAreaInventory,...coUtPrAreaInventory,...idMtAreaInventory,...wyHiAkAreaInventory];
 // The directory groups verified places within state, district and territory hubs.
 // A county does not receive a separate commercial page merely to target its name.
 export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).map(stateId=>{
@@ -28,7 +29,10 @@ export const regionalProfiles=Object.fromEntries(Object.keys(regionalGeography).
  const areas=regionalAreaInventory.filter(area=>area.stateId===stateId).sort((a,b)=>a.name.localeCompare(b.name,'en'));
  return [stateId,areas.map(area=>{
   const geography=regionalGeography[stateId][area.slug];
-  if(!geography||!geography.representativePlaces?.length)throw Error('Incomplete area directory: '+stateId+'/'+area.slug);
-  return {...area,path:state.path+'#'+area.slug,directoryOnly:true,region:state.name,anchor:geography.representativePlaces[0].name};
+  // Kalawao has no Census incorporated place or CDP. Its county identity and
+  // statistical county subdivision remain valid without inventing a town anchor.
+  const noCensusPlaces=stateId==='hawaii'&&area.slug==='kalawao'&&geography?.municipalityDetails?.length===0&&geography?.communities?.length===0;
+  if(!geography||(!geography.representativePlaces?.length&&!noCensusPlaces))throw Error('Incomplete area directory: '+stateId+'/'+area.slug);
+  return {...area,path:state.path+'#'+area.slug,directoryOnly:true,region:state.name,anchor:geography.representativePlaces[0]?.name||''};
  })];
 }));

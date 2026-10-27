@@ -1,0 +1,29 @@
+{
+  "reviewDate": "2026-10-26",
+  "status": "PASS_FINAL_KEYWORD_ACCEPTANCE",
+  "database": "US",
+  "counts": {
+    "uniqueQueries": 539,
+    "statuses": {
+      "UNAVAILABLE_REFRESH_REQUIRED": 493,
+      "OBSERVED": 26,
+      "OBSERVED_PARTIAL_REFRESH_REQUIRED": 20
+    },
+    "numericVolumes": 46,
+    "positiveVolumes": 37,
+    "explicitZeroVolumes": 9,
+    "unavailableVolumes": 493
+  },
+  "interpretation": [
+    "US phrase estimates are not county-resident demand; overlapping phrases are never summed.",
+    "Unavailable values are distinct from explicit zeros, and partial-refresh states are retained. No refresh was purchased or requested.",
+    "The 57 synthesized owner questions are exploratory phrases, not Semrush-provided questions. Their FAQ judgments follow complete-body review.",
+    "Semrush-suggested regional questions are recorded separately; shared service and directory copy already answers general remote-service coverage.",
+    "All58 areas have recorded source and content decisions; none is excluded by population or a keyword-volume threshold."
+  ],
+  "publicationStatus": "Private candidate; content and keyword review accepted. Technical release gates pending.",
+  "independentReview": {
+    "path": "evidence/wy-hi-ak-expansion-20261026/final-content-review/review.json",
+    "sha256": "1e57f3c743ee7e714b48caa42f70206c332d41f742429d90517a2c5527620031"
+  }
+}

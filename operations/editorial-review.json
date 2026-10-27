@@ -474,6 +474,36 @@
       "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
       "reviewedAt": "2026-10-27T01:02:15.069Z",
       "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/wyoming/hot-springs-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "e2ed8c2bc7ed99af6b40c6632198119fcd98a27c8e91239d81279c4e64b4d406",
+      "disposition": "retain",
+      "reason": "Retain: the colon introduces one ordered visitor preparation sequence: select the dig, prepare clothing, check in at the museum and use operator transport. These linked steps explain why a museum-admission link cannot substitute for the dig handoff. The sequence is concrete and readable as one sentence.",
+      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
+      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
+      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/alaska/copper-river-census-area/",
+      "rule": "long-sentence",
+      "evidenceSha256": "d403c2cc2fcd029a0547e8a0a60b14c29fb6deb96d6f2f58b5f57e817470ac17",
+      "disposition": "retain",
+      "reason": "Retain: a single hypothetical switch from driving to flying has two linked acceptance outcomes: replace inapplicable parking instructions and reopen local pickup review. Keeping the change and both consequences together makes clear that a prior activity booking does not confirm a revised arrival arrangement.",
+      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
+      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
+      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
+    },
+    {
+      "route": "/areas/alaska/denali-borough/",
+      "rule": "long-sentence",
+      "evidenceSha256": "5517124f8d85ac8633868a865d66a78d2534e0039e7350f593b51cdf095caa6b",
+      "disposition": "retain",
+      "reason": "Retain: one hypothetical family meets the stated age range but has an unresolved equipment-fit question. The sentence keeps the independent condition and staff-review outcome attached, avoiding an implication that satisfying age requirements alone confirms physical suitability.",
+      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
+      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
+      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
     }
   ]
 }

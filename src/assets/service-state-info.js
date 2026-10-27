@@ -48,8 +48,11 @@ export const serviceStateInfo = [
  {id:'utah',name:'Utah',abbreviation:'UT'},
  {id:'puerto-rico',name:'Puerto Rico',abbreviation:'PR',kind:'territory'},
  {id:'idaho',name:'Idaho',abbreviation:'ID'},
- {id:'montana',name:'Montana',abbreviation:'MT'}
-].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='puerto-rico'?'municipios':state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri','nevada'].includes(state.id)?'service areas':'counties'}));
+ {id:'montana',name:'Montana',abbreviation:'MT'},
+ {id:'wyoming',name:'Wyoming',abbreviation:'WY'},
+ {id:'hawaii',name:'Hawaii',abbreviation:'HI'},
+ {id:'alaska',name:'Alaska',abbreviation:'AK'}
+].map(state=>({kind:'state',...state,path:`/areas/${state.id}/`,areaPlural:state.id==='alaska'?'boroughs and census areas':state.id==='puerto-rico'?'municipios':state.id==='louisiana'?'parishes':state.kind==='district'?'district guide':state.id==='connecticut'?'planning regions':['maryland','virginia','missouri','nevada'].includes(state.id)?'service areas':'counties'}));
 
 export function serviceRegionSummary(regions){
  if(regions.includes('Puerto Rico')){
